@@ -1,0 +1,48 @@
+[
+  {
+    "id": "eopan",
+    "slug": "eopan",
+    "name": "EOPAN",
+    "fullName": "Élève Officier Pilote de l'Aéronautique Navale",
+    "organization": "Marine nationale",
+    "kind": "concours",
+    "order": 1,
+    "description": "Préparer le concours de pilote de l'aéronautique navale : sélection, culture Marine, appareils, bases et entraînement."
+  },
+  {
+    "id": "eopn",
+    "slug": "eopn",
+    "name": "EOPN",
+    "fullName": "Élève Officier du Personnel Navigant",
+    "organization": "Armée de l'Air et de l'Espace",
+    "kind": "concours",
+    "order": 2,
+    "description": "Préparer le concours du personnel navigant de l'Armée de l'Air et de l'Espace : sélection, culture Air, appareils, bases et entraînement."
+  },
+  {
+    "id": "alat",
+    "slug": "alat",
+    "name": "ALAT",
+    "fullName": "Aviation Légère de l'Armée de Terre",
+    "organization": "Armée de Terre",
+    "kind": "concours",
+    "order": 3,
+    "description": "Préparer la sélection de pilote de l'Aviation Légère de l'Armée de Terre : hélicoptères, culture Terre, unités et entraînement."
+  },
+  {
+    "id": "psychotechnique",
+    "slug": "psychotechnique",
+    "name": "Tests psychotechniques",
+    "kind": "transverse",
+    "order": 4,
+    "description": "S'entraîner aux épreuves psychotechniques des trois concours : mémoire, attention, raisonnement spatial, logique et calcul mental."
+  },
+  {
+    "id": "fondamentaux",
+    "slug": "fondamentaux",
+    "name": "Fondamentaux aéronautiques",
+    "kind": "transverse",
+    "order": 5,
+    "description": "Le socle théorique commun : météorologie, aérodynamique, navigation, facteurs humains, anglais aéronautique et culture de l'aviation."
+  }
+]
