@@ -5,7 +5,7 @@ import type { FicheType } from "./content-schemas";
  * les contenus n'ont pas tous le même cycle de vie. Une fiche dont
  * `verifiedAt` dépasse son intervalle est signalée « à re-vérifier » au
  * rapport éditorial. Une mise à jour exceptionnelle reste toujours
- * possible : passer manuellement `status` à `a-reverifier` déclenche la
+ * possible : passer manuellement `status` à `a-mettre-a-jour` déclenche la
  * revue hors délai.
  */
 

@@ -68,9 +68,16 @@ describe("fiches pilotes", () => {
     expect(getReadingMinutes(rafale!)).toBeLessThan(15);
   });
 
-  it("liste les fiches d'une catégorie triées par titre", () => {
-    const bases = getFichesByCategory("eopan", "bases").map((f) => f.title);
-    expect(bases).toEqual([...bases].sort((a, b) => a.localeCompare(b, "fr")));
-    expect(bases.length).toBeGreaterThanOrEqual(2);
+  it("classe chaque pilote dans sa famille documentaire (recatégorisation validée)", () => {
+    expect(getFichesByCategory("eopan", "navires").map((f) => f.id)).toContain(
+      "eopan.bases.charles-de-gaulle"
+    );
+    expect(getFichesByCategory("eopan", "unites").map((f) => f.id)).toContain(
+      "eopan.bases.flottille-11f"
+    );
+    expect(getFichesByCategory("eopan", "concepts").map((f) => f.id)).toContain(
+      "eopan.procedures.catobar"
+    );
+    // Les IDs restent gelés malgré le déplacement : le graphe n'a pas bougé.
   });
 });

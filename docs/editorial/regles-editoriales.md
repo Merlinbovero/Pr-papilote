@@ -1,5 +1,11 @@
 # Règles éditoriales
 
+**Règle cardinale (validée)** : chaque fiche publiée doit pouvoir être considérée comme **une référence**. Publier moins, mais à un niveau exceptionnel — jamais l'inverse. La qualité documentaire est la priorité absolue de PrépaPilote.
+
+## Workflow éditorial
+
+`brouillon` → `relecture` → `validee` → `publie` ; `a-mettre-a-jour` (fiche servie avec avertissement, en attente de re-vérification) ; `archivee` (retirée du site, conservée dans l'historique). Chaque changement important est tracé : l'historique Git est l'audit trail documentaire (qui, quoi, quand, pourquoi via les messages de commit), complété par `verifiedAt` affiché sur la fiche.
+
 ## Standards de qualité (toute fiche publiée)
 
 - **Claire** : une idée par paragraphe, paragraphes courts, listes et tableaux dès que la donnée s'y prête.

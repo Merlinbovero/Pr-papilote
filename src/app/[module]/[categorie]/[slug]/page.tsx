@@ -131,11 +131,24 @@ export default async function FichePage({ params }: FichePageProps) {
 
   return (
     <main className="w-full min-w-0">
-      {fiche.status !== "publie" ? (
+      {fiche.status === "relecture" || fiche.status === "validee" ? (
         <Alert className="mb-6 print:hidden">
-          <AlertTitle>Fiche en relecture</AlertTitle>
+          <AlertTitle>
+            {fiche.status === "relecture" ? "Fiche en relecture" : "Fiche validée"}
+          </AlertTitle>
           <AlertDescription>
-            Ce contenu attend la validation éditoriale finale avant publication.
+            {fiche.status === "relecture"
+              ? "Ce contenu attend la validation éditoriale finale avant publication."
+              : "Contenu validé, en attente de publication."}
+          </AlertDescription>
+        </Alert>
+      ) : null}
+      {fiche.status === "a-mettre-a-jour" ? (
+        <Alert className="border-warning mb-6 print:hidden">
+          <AlertTitle>Fiche en cours de mise à jour</AlertTitle>
+          <AlertDescription>
+            Une information de cette fiche est en cours de re-vérification ; certaines données
+            peuvent évoluer.
           </AlertDescription>
         </Alert>
       ) : null}

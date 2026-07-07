@@ -12,6 +12,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Modifié
 
+- 2026-07-07 — Arbitrages post-pilotes : familles documentaires distinctes dans le référentiel des concours (Navires, Bases aériennes, BAN, Unités, Concepts aéronautiques, Histoire, Personnalités ajoutés — 20 catégories) avec recatégorisation des pilotes (Charles de Gaulle → Navires, 11F → Unités, CATOBAR → Concepts) démontrant les garanties du système : IDs gelés (graphe intact) et redirections permanentes (3 entrées, aucune URL cassée) ; workflow éditorial étendu à six statuts (brouillon, relecture, validée, publiée, à mettre à jour, archivée) avec bannières dédiées ; règle cardinale consignée (chaque fiche publiée = une référence).
+
 - 2026-07-07 — Design System officiel (Volume II ch. 2) : `docs/design-system.md` réécrit en référence absolue (tokens complets avec règle unique des variantes d'état, échelles typographie/espacements/rayons/ombres/bordures, breakpoints officiels, conventions de nommage, gabarit de documentation de composant, risques) ; token `info` ajouté (clair + sombre) ; bibliothèque d'animations commune `src/lib/motion.ts` (durées, courbes, variants partagés).
 
 - 2026-07-07 — Doctrine du Framework UI consignée (`docs/ui-framework.md`, Volume II ch. 1) : six questions avant toute décision, pages sans logique, justification obligatoire des nouveaux composants et dépendances, sémantique des couleurs, critère de complétude du framework (les 11 gabarits constructibles sans nouveau composant). Règle 10 ajoutée à `AGENTS.md`.

@@ -61,15 +61,15 @@ Vocabulaire **contrôlé** dans `content/_referentiels/tags.json` : `{ slug, lab
 
 ### Traçabilité
 
-| Champ           | Règle                                                                                                                                 | Exploité par                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| `createdAt`     | Déclaré à la création                                                                                                                 | tri, rapports                                       |
-| `updatedAt`     | **Calculé** depuis l'historique Git                                                                                                   | affichage, flux « récemment mis à jour »            |
-| `verifiedAt`    | Déclaré **à chaque vérification humaine** ; affiché sur la fiche                                                                      | confiance, rapport de fraîcheur                     |
-| `author`        | Identifiant du rédacteur-valideur                                                                                                     | audit                                               |
-| `sources[]`     | ≥ 1 obligatoire : `{ title, url?, kind: officiel/institutionnel/presse/ouvrage, consultedAt }` ; la première est la source principale | affichage, crédibilité                              |
-| `status`        | `brouillon` → `relecture` → `publie` → `a-reverifier`                                                                                 | publication (seul `publie` sort au build), rapports |
-| `schemaVersion` | Version du modèle de fiche                                                                                                            | migrations de contenu                               |
+| Champ           | Règle                                                                                                                                 | Exploité par                                                       |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `createdAt`     | Déclaré à la création                                                                                                                 | tri, rapports                                                      |
+| `updatedAt`     | **Calculé** depuis l'historique Git                                                                                                   | affichage, flux « récemment mis à jour »                           |
+| `verifiedAt`    | Déclaré **à chaque vérification humaine** ; affiché sur la fiche                                                                      | confiance, rapport de fraîcheur                                    |
+| `author`        | Identifiant du rédacteur-valideur                                                                                                     | audit                                                              |
+| `sources[]`     | ≥ 1 obligatoire : `{ title, url?, kind: officiel/institutionnel/presse/ouvrage, consultedAt }` ; la première est la source principale | affichage, crédibilité                                             |
+| `status`        | `brouillon` → `relecture` → `validee` → `publie` · `a-mettre-a-jour` (servie avec avertissement) · `archivee`                         | publication (production : `publie` et `a-mettre-a-jour`), rapports |
+| `schemaVersion` | Version du modèle de fiche                                                                                                            | migrations de contenu                                              |
 
 ### Cycles de vérification différenciés
 
@@ -81,4 +81,4 @@ Les contenus n'ont pas tous le même cycle de vie (règles implémentées dans `
 | Organisation des armées, unités, bases, appareils, navires, armement          | **12 mois**             |
 | Notions techniques (BIA, aérodynamique, météo, physique, maths), dictionnaire | **24 mois** (indicatif) |
 
-Une fiche dont `verifiedAt` dépasse son intervalle apparaît « à re-vérifier » au rapport éditorial. **Mise à jour exceptionnelle** : quand une information importante évolue (réforme, retrait de service, nouvel arrêté), passer manuellement `status: a-reverifier` déclenche la revue immédiatement, indépendamment des délais.
+Une fiche dont `verifiedAt` dépasse son intervalle apparaît « à re-vérifier » au rapport éditorial. **Mise à jour exceptionnelle** : quand une information importante évolue (réforme, retrait de service, nouvel arrêté), passer manuellement `status: a-mettre-a-jour` déclenche la revue immédiatement, indépendamment des délais.

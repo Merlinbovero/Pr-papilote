@@ -111,8 +111,11 @@ function getIndex(): ContentIndex {
   return indexCache;
 }
 
+const PRODUCTION_STATUSES = new Set(["publie", "a-mettre-a-jour"]);
+const PREVIEW_STATUSES = new Set(["relecture", "validee", "publie", "a-mettre-a-jour"]);
+
 function isVisible(status: string): boolean {
-  return status === "publie" || (includeDrafts() && status !== "brouillon");
+  return PRODUCTION_STATUSES.has(status) || (includeDrafts() && PREVIEW_STATUSES.has(status));
 }
 
 /** Toutes les fiches visibles dans l'environnement courant. */

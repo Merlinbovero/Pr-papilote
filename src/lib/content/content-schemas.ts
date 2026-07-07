@@ -18,8 +18,21 @@ export const CONTENT_SCHEMA_VERSION = 1;
 
 export const concoursSchema = z.enum(["eopan", "eopn", "alat"]);
 
-/** Statut de validation : seul « publie » sort au build. */
-export const contentStatusSchema = z.enum(["brouillon", "relecture", "publie", "a-reverifier"]);
+/**
+ * Workflow éditorial complet (validé) :
+ * brouillon → relecture → validee → publie ; a-mettre-a-jour signale une
+ * révision nécessaire (la fiche reste servie, avec avertissement) ;
+ * archivee sort du site mais reste dans l'historique Git.
+ * En production ne sortent que « publie » et « a-mettre-a-jour ».
+ */
+export const contentStatusSchema = z.enum([
+  "brouillon",
+  "relecture",
+  "validee",
+  "publie",
+  "a-mettre-a-jour",
+  "archivee",
+]);
 
 /**
  * Les familles d'objets du graphe documentaire rendues par une fiche

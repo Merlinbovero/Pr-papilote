@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "source": "/eopan/bases/charles-de-gaulle",
+    "destination": "/eopan/navires/charles-de-gaulle"
+  },
+  {
+    "source": "/eopan/bases/flottille-11f",
+    "destination": "/eopan/unites/flottille-11f"
+  },
+  {
+    "source": "/eopan/procedures/catobar",
+    "destination": "/eopan/concepts/catobar"
+  }
+]
