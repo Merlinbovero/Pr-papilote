@@ -6,6 +6,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
+- 2026-07-07 — Consignation de la conception validée (Prompts 1–3) : `docs/VISION.md` (vision officielle + 16 arbitrages), refonte de `docs/ARCHITECTURE.md` (quatre couches, modèle de contenu, routes, base de données, recherche), création de `docs/design-system.md`, mise à jour des règles projet (`AGENTS.md`).
+
 - 2026-07-07 — Initialisation de l'environnement de développement professionnel :
   - Projet Next.js 16 (App Router, `src/`, TypeScript strict, ESLint) + Tailwind CSS v4.
   - shadcn/ui (style radix-nova) avec 30 composants de base dans `src/components/ui/`.
