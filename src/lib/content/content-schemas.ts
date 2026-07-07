@@ -218,68 +218,103 @@ const infoboxValueSchema = z.union([z.string().min(1), z.number(), z.array(z.str
 // Fiche
 // ---------------------------------------------------------------------------
 
-export const ficheMetadataSchema = z
-  .object({
-    schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
-    id: contentIdSchema,
-    type: ficheTypeSchema,
-    title: z.string().min(1),
-    slug: slugSchema,
-    summary: z.string().min(20).max(300),
-    module: slugSchema,
-    category: slugSchema,
-    subcategory: slugSchema.optional(),
-    tags: z.array(slugSchema).default([]),
-    concours: z.array(concoursSchema).default([]),
-    /** 1 découverte · 2 concours · 3 expert */
-    level: z.int().min(1).max(3),
-    createdAt: isoDateSchema,
-    /** Posée à chaque vérification humaine ; affichée sur la fiche. */
-    verifiedAt: isoDateSchema,
-    author: z.string().min(1),
-    /** ≥ 1 source ; la première est la source principale. */
-    sources: z.array(sourceSchema).min(1),
-    status: contentStatusSchema,
-    relations: ficheRelationsSchema.default({}),
-    /** Données structurées des fiches-objet (exigences par type). */
-    infobox: z.record(z.string(), infoboxValueSchema).optional(),
-  })
-  .superRefine((fiche, ctx) => {
-    const requiredKeys = INFOBOX_REQUIRED_KEYS[fiche.type];
-    if (requiredKeys) {
-      if (!fiche.infobox) {
+/** Forme brute (extensible) des métadonnées — voir ficheMetadataSchema. */
+export const ficheMetadataBaseSchema = z.object({
+  schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
+  id: contentIdSchema,
+  type: ficheTypeSchema,
+  title: z.string().min(1),
+  slug: slugSchema,
+  summary: z.string().min(20).max(300),
+  module: slugSchema,
+  category: slugSchema,
+  subcategory: slugSchema.optional(),
+  tags: z.array(slugSchema).default([]),
+  concours: z.array(concoursSchema).default([]),
+  /** 1 découverte · 2 concours · 3 expert */
+  level: z.int().min(1).max(3),
+  createdAt: isoDateSchema,
+  /** Posée à chaque vérification humaine ; affichée sur la fiche. */
+  verifiedAt: isoDateSchema,
+  author: z.string().min(1),
+  /** ≥ 1 source ; la première est la source principale. */
+  sources: z.array(sourceSchema).min(1),
+  status: contentStatusSchema,
+  relations: ficheRelationsSchema.default({}),
+  /** Données structurées des fiches-objet (exigences par type). */
+  infobox: z.record(z.string(), infoboxValueSchema).optional(),
+});
+
+type FicheLike = z.infer<typeof ficheMetadataBaseSchema>;
+
+/** Règles transverses des fiches (infobox par type, valeurs interdites). */
+export function refineFiche(fiche: FicheLike, ctx: z.RefinementCtx): void {
+  const requiredKeys = INFOBOX_REQUIRED_KEYS[fiche.type];
+  if (requiredKeys) {
+    if (!fiche.infobox) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["infobox"],
+        message: `Le type « ${fiche.type} » (famille objet) exige une infobox.`,
+      });
+      return;
+    }
+    for (const key of requiredKeys) {
+      if (!(key in fiche.infobox)) {
         ctx.addIssue({
           code: "custom",
-          path: ["infobox"],
-          message: `Le type « ${fiche.type} » (famille objet) exige une infobox.`,
+          path: ["infobox", key],
+          message: `Clé d'infobox obligatoire manquante pour « ${fiche.type} » : ${key}.`,
         });
-        return;
-      }
-      for (const key of requiredKeys) {
-        if (!(key in fiche.infobox)) {
-          ctx.addIssue({
-            code: "custom",
-            path: ["infobox", key],
-            message: `Clé d'infobox obligatoire manquante pour « ${fiche.type} » : ${key}.`,
-          });
-        }
       }
     }
-    if (fiche.infobox) {
-      for (const [key, value] of Object.entries(fiche.infobox)) {
-        const values = Array.isArray(value) ? value : [value];
-        if (values.some(isForbiddenInfoboxValue)) {
-          ctx.addIssue({
-            code: "custom",
-            path: ["infobox", key],
-            message: `Valeur d'approximation interdite pour « ${key} » : omettre le champ plutôt que l'inventer.`,
-          });
-        }
+  }
+  if (fiche.infobox) {
+    for (const [key, value] of Object.entries(fiche.infobox)) {
+      const values = Array.isArray(value) ? value : [value];
+      if (values.some(isForbiddenInfoboxValue)) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["infobox", key],
+          message: `Valeur d'approximation interdite pour « ${key} » : omettre le champ plutôt que l'inventer.`,
+        });
       }
     }
-  });
+  }
+}
+
+export const ficheMetadataSchema = ficheMetadataBaseSchema.superRefine(refineFiche);
 
 export type FicheMetadata = z.infer<typeof ficheMetadataSchema>;
+
+// ---------------------------------------------------------------------------
+// Corps d'une fiche (format YAML — décision consignée dans ARCHITECTURE.md)
+// ---------------------------------------------------------------------------
+
+export const ficheSectionContentSchema = z.object({
+  id: slugSchema,
+  title: z.string().min(1),
+  strate: z.enum(["approfondir", "maitriser"]).default("approfondir"),
+  /** Corps en Markdown (GFM : tableaux, listes). */
+  body: z.string().min(1),
+});
+
+export const ficheContentSchema = z.object({
+  essentiel: z.object({
+    /** ≤ 250 mots, autosuffisant — la lecture 30 secondes. */
+    body: z.string().min(50),
+    aRetenir: z.array(z.string().min(1)).min(1).max(6),
+  }),
+  sections: z.array(ficheSectionContentSchema).min(1),
+  pieges: z.array(z.string().min(1)).default([]),
+});
+
+/** Fichier de fiche complet : métadonnées + corps. */
+export const ficheFileSchema = ficheMetadataBaseSchema
+  .extend({ content: ficheContentSchema })
+  .superRefine(refineFiche);
+
+export type FicheFile = z.infer<typeof ficheFileSchema>;
 
 // ---------------------------------------------------------------------------
 // Question (banque centrale)

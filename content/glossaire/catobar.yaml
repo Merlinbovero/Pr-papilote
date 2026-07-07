@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.catobar
+title: CATOBAR
+definition: >-
+  Principe de mise en œuvre des avions sur porte-avions combinant décollage
+  assisté par catapulte et récupération par brins d'arrêt. C'est celui du
+  porte-avions Charles de Gaulle.
+sigleExpansion: Catapult Assisted Take-Off But Arrested Recovery
+english: CATOBAR
+synonyms: []
+ficheId: eopan.procedures.catobar
+tags: []
+status: relecture

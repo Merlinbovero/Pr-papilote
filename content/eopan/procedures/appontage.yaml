@@ -1,0 +1,84 @@
+schemaVersion: 1
+id: eopan.procedures.appontage
+type: procedure
+title: Appontage
+slug: appontage
+summary: >-
+  Manœuvre d'atterrissage d'un aéronef sur le pont d'un porte-avions :
+  l'avion accroche avec sa crosse l'un des brins d'arrêt tendus en travers
+  de la piste oblique.
+module: eopan
+category: procedures
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-07"
+verifiedAt: "2026-07-07"
+author: prepapilote
+status: relecture
+sources:
+  - title: École de l'aviation embarquée — une promotion qualifiée à l'appontage (Marine nationale)
+    url: https://www.defense.gouv.fr/marine/actualites/ecole-laviation-embarquee-eae-nouvelle-promotion-pilotes-qualifiee-a-lappontage
+    kind: officiel
+    consultedAt: "2026-07-07"
+  - title: Porte-avions — Marine nationale, Ministère des Armées
+    url: https://www.defense.gouv.fr/marine/forces-surface/porte-avions
+    kind: officiel
+    consultedAt: "2026-07-07"
+relations:
+  prerequisites: [eopan.procedures.catobar]
+content:
+  essentiel:
+    body: |
+      L'appontage est l'atterrissage d'un aéronef sur le pont d'envol d'un
+      porte-avions. Sur un bâtiment CATOBAR comme le Charles de Gaulle,
+      l'avion se présente sur la piste oblique, crosse d'appontage sortie,
+      et vient accrocher l'un des trois brins d'arrêt tendus en travers du
+      pont : il s'immobilise en quelques dizaines de mètres.
+
+      C'est l'une des manœuvres les plus exigeantes de l'aviation : la piste
+      est courte, étroite et mobile. La précision requise explique la place
+      centrale de la qualification à l'appontage dans la formation des
+      pilotes de l'aéronautique navale.
+    aRetenir:
+      - Atterrissage sur porte-avions, sur la piste oblique, crosse sortie.
+      - L'avion accroche l'un des 3 brins d'arrêt et s'arrête en quelques dizaines de mètres.
+      - Au toucher, le pilote remet systématiquement plein gaz — pour redécoller si aucun brin n'est accroché (« bolter »).
+      - Qualification clé de la formation des pilotes de chasse de l'aéronautique navale.
+  sections:
+    - id: contexte
+      title: Contexte d'application
+      body: |
+        L'appontage conclut chaque vol du groupe aérien embarqué. Il
+        s'applique aux avions dotés d'une crosse (Rafale M, E-2 Hawkeye)
+        sur les porte-avions équipés de brins d'arrêt — c'est le volet
+        « récupération » du principe CATOBAR.
+    - id: deroule
+      title: Déroulé type
+      body: |
+        1. **Présentation** : l'avion rejoint le circuit d'appontage et
+           s'aligne sur la piste oblique du porte-avions.
+        2. **Finale** : le pilote tient une pente et une vitesse précises,
+           aidé par le dispositif optique d'aide à l'appontage et guidé par
+           l'officier d'appontage depuis la plateforme dédiée.
+        3. **Toucher** : crosse sortie, l'avion touche le pont dans la zone
+           des brins **en remettant plein gaz** au même instant.
+        4. **Arrêt ou remise de gaz** : si la crosse accroche un brin,
+           l'avion s'immobilise ; sinon — c'est le « bolter » — il
+           redécolle immédiatement grâce à la poussée déjà affichée, et se
+           représente.
+    - id: acteurs
+      title: Acteurs et moyens
+      body: |
+        - **Le pilote**, dont la qualification à l'appontage est délivrée et
+          entretenue par des campagnes dédiées ;
+        - **l'officier d'appontage**, pilote expérimenté qui guide et note
+          chaque appontage depuis le pont ;
+        - **le dispositif optique** d'aide à l'appontage, qui matérialise le
+          plan de descente ;
+        - **les brins d'arrêt** — trois sur le Charles de Gaulle — et leurs
+          équipes de pont.
+  pieges:
+    - À l'appontage, on remet plein gaz au toucher — c'est l'inverse de l'intuition d'un atterrissage classique ; l'avion ne freine que par le brin.
+    - Ne pas confondre appontage (atterrissage sur porte-avions) et apposage/amerrissage ; pour un hélicoptère, on parle aussi d'appontage mais sans brins.
+    - Le « bolter » (brin manqué) n'est pas une faute en soi — c'est une éventualité prévue par la procédure.

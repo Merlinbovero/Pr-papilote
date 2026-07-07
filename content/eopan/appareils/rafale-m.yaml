@@ -1,0 +1,110 @@
+schemaVersion: 1
+id: eopan.appareils.rafale-m
+type: appareil
+title: Rafale M
+slug: rafale-m
+summary: >-
+  Chasseur multirôle embarqué de l'aéronautique navale, version marine du
+  Rafale, mis en œuvre depuis le porte-avions Charles de Gaulle.
+module: eopan
+category: appareils
+subcategory: avions-de-chasse
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-07"
+verifiedAt: "2026-07-07"
+author: prepapilote
+status: relecture
+sources:
+  - title: Rafale — Dassault Aviation
+    url: https://www.dassault-aviation.com/fr/defense/rafale/
+    kind: institutionnel
+    consultedAt: "2026-07-07"
+  - title: Marine nationale — Ministère des Armées
+    url: https://www.defense.gouv.fr/marine
+    kind: officiel
+    consultedAt: "2026-07-07"
+relations:
+  factual:
+    - predicate: embarque-sur
+      target: eopan.bases.charles-de-gaulle
+    - predicate: applique
+      target: eopan.procedures.catobar
+infobox:
+  constructeur: Dassault Aviation
+  role: Chasseur multirôle embarqué
+  armees: [Marine nationale]
+  miseEnService: 2004
+  statut: En service
+  equipage: "1"
+content:
+  essentiel:
+    body: |
+      Le Rafale M (« Marine ») est la version embarquée du Rafale, l'avion de
+      combat biréacteur de Dassault Aviation. Mis en service dans la Marine
+      nationale en 2004, il constitue aujourd'hui l'unique avion de combat de
+      l'aéronautique navale française.
+
+      Monoplace, il est conçu pour opérer depuis le porte-avions Charles de
+      Gaulle : décollage par catapulte et récupération par brins d'arrêt,
+      selon le principe CATOBAR. Sa cellule est adaptée en conséquence —
+      crosse d'appontage et train d'atterrissage renforcé notamment.
+
+      Polyvalent, il couvre l'ensemble des missions de l'aviation de combat :
+      supériorité et défense aériennes, assaut contre la terre et contre les
+      navires, reconnaissance, et participation à la dissuasion nucléaire.
+    aRetenir:
+      - Version marine du Rafale, monoplace, embarquée sur le Charles de Gaulle.
+      - Mise en service dans la Marine nationale en 2004.
+      - Mise en œuvre CATOBAR — catapultage au décollage, brins d'arrêt à l'appontage.
+      - Couvre toutes les missions, de la défense aérienne à la dissuasion nucléaire.
+  sections:
+    - id: role-et-missions
+      title: Rôle et missions
+      body: |
+        Le Rafale M assure, au sein du groupe aérien embarqué, la totalité du
+        spectre des missions de combat : supériorité et défense aériennes,
+        appui et frappes contre des objectifs terrestres, action contre les
+        navires, reconnaissance tactique et volet aéronaval de la dissuasion
+        nucléaire.
+
+        Cette polyvalence est au cœur du concept Rafale : un même appareil,
+        au sein d'une même mission, peut enchaîner des tâches différentes —
+        ce que Dassault Aviation désigne par le terme « omnirôle ».
+    - id: specificites-marine
+      title: Spécificités de la version Marine
+      body: |
+        Par rapport aux versions de l'Armée de l'Air et de l'Espace (Rafale B
+        biplace et Rafale C monoplace), le Rafale M est adapté à la mise en
+        œuvre depuis un porte-avions :
+
+        - **crosse d'appontage** pour l'accrochage des brins d'arrêt ;
+        - **train d'atterrissage renforcé**, dimensionné pour les catapultages
+          et les appontages ;
+        - aménagements propres à la vie embarquée (échelle intégrée,
+          points d'ancrage de pont).
+
+        Il n'existe pas de version biplace embarquée : tous les Rafale de la
+        Marine sont des monoplaces.
+    - id: unites
+      title: Unités et bases
+      body: |
+        Les Rafale M sont mis en œuvre par les trois flottilles de chasse de
+        l'aéronautique navale — 11F, 12F et 17F — toutes stationnées à la
+        base d'aéronautique navale (BAN) de Landivisiau, dans le Finistère.
+        Chaque année, deux flottilles sont tournées vers le porte-avions
+        tandis que la troisième assure à terre la transformation des jeunes
+        pilotes sur Rafale Marine.
+    - id: reperes-historiques
+      title: Repères historiques
+      strate: maitriser
+      body: |
+        Le Rafale est « combat proven » depuis 2007 et compte parmi les
+        avions de combat les plus engagés en opérations. Dans la Marine, il
+        a progressivement remplacé l'ensemble des types précédents jusqu'à
+        devenir l'avion de combat unique de l'aéronautique navale.
+  pieges:
+    - Le Rafale M est toujours monoplace — il n'existe pas de version biplace embarquée, contrairement au Rafale B de l'Armée de l'Air et de l'Espace.
+    - Les flottilles de Rafale M sont basées à terre (BAN Landivisiau) et embarquent sur le porte-avions lors des déploiements — l'avion n'est pas affecté en permanence à bord.
+    - Ne pas confondre la mise en service dans la Marine (2004) avec celle dans l'Armée de l'Air (2006).

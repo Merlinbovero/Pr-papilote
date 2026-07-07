@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
+import { getFichesByCategory, getFicheHref } from "@/lib/content/fiches";
 import { getCategories, getCategory, getModule } from "@/lib/content/referentials";
 
 export const dynamicParams = false;
@@ -38,6 +41,7 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
   if (!mod || !category) {
     notFound();
   }
+  const fiches = getFichesByCategory(mod.slug, category.slug);
 
   return (
     <main className="space-y-8">
@@ -52,15 +56,35 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
         <h1 className="text-3xl font-bold tracking-tight">{category.name}</h1>
         <p className="text-muted-foreground">{mod.name}</p>
       </header>
-      <Empty className="border">
-        <EmptyHeader>
-          <EmptyTitle>Contenu en cours de production</EmptyTitle>
-          <EmptyDescription>
-            Les fiches de cette catégorie seront publiées progressivement. Chaque fiche indiquera
-            ses sources et sa date de dernière vérification.
-          </EmptyDescription>
-        </EmptyHeader>
-      </Empty>
+      {fiches.length === 0 ? (
+        <Empty className="border">
+          <EmptyHeader>
+            <EmptyTitle>Contenu en cours de production</EmptyTitle>
+            <EmptyDescription>
+              Les fiches de cette catégorie seront publiées progressivement. Chaque fiche indiquera
+              ses sources et sa date de dernière vérification.
+            </EmptyDescription>
+          </EmptyHeader>
+        </Empty>
+      ) : (
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label="Fiches de la catégorie">
+          {fiches.map((fiche) => (
+            <li key={fiche.id}>
+              <Link
+                href={getFicheHref(fiche)}
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="hover:border-primary/40 h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="text-base">{fiche.title}</CardTitle>
+                    <CardDescription>{fiche.summary}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }

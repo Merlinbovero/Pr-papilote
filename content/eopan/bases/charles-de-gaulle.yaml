@@ -1,0 +1,104 @@
+schemaVersion: 1
+id: eopan.bases.charles-de-gaulle
+type: navire
+title: Porte-avions Charles de Gaulle
+slug: charles-de-gaulle
+summary: >-
+  Unique porte-avions français, à propulsion nucléaire, mis en œuvre par la
+  Marine nationale ; il catapulte et récupère le groupe aérien embarqué
+  selon le principe CATOBAR.
+module: eopan
+category: bases
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-07"
+verifiedAt: "2026-07-07"
+author: prepapilote
+status: relecture
+sources:
+  - title: Porte-avions — Marine nationale, Ministère des Armées
+    url: https://www.defense.gouv.fr/marine/forces-surface/porte-avions
+    kind: officiel
+    consultedAt: "2026-07-07"
+  - title: Les catapultes du porte-avions Charles de Gaulle — Cols bleus
+    url: https://www.colsbleus.defense.gouv.fr/sites/default/files/2021-05/CatpulteV12.pdf
+    kind: officiel
+    consultedAt: "2026-07-07"
+relations:
+  factual:
+    - predicate: applique
+      target: eopan.procedures.catobar
+infobox:
+  type: Porte-avions à propulsion nucléaire
+  classe: Charles de Gaulle (bâtiment unique)
+  portDAttache: Toulon
+  miseEnService: 2001
+  statut: En service
+  longueur: 261,5 m
+  deplacement: environ 42 000 t
+  aeronefsEmbarques: [Rafale M, E-2 Hawkeye, hélicoptères]
+content:
+  essentiel:
+    body: |
+      Le Charles de Gaulle est l'unique porte-avions de la Marine nationale
+      et le navire amiral de la flotte française. Admis au service actif en
+      2001, basé à Toulon, il est le seul porte-avions à propulsion
+      nucléaire construit hors des États-Unis.
+
+      Long de 261,5 mètres pour environ 42 000 tonnes, il met en œuvre le
+      groupe aérien embarqué — une quarantaine d'aéronefs — grâce à deux
+      catapultes à vapeur et trois brins d'arrêt : c'est un porte-avions
+      CATOBAR, capable de lancer un avion toutes les 30 secondes.
+
+      Cœur du groupe aéronaval, il permet à la France de projeter sa
+      puissance aérienne depuis la mer, sans dépendre de bases à l'étranger.
+    aRetenir:
+      - Unique porte-avions français, à propulsion nucléaire (2 réacteurs), basé à Toulon.
+      - Admis au service actif en 2001 ; 261,5 m ; environ 42 000 t.
+      - CATOBAR — 2 catapultes à vapeur, 3 brins d'arrêt ; un catapultage possible toutes les 30 s.
+      - "Met en œuvre le groupe aérien embarqué (~40 aéronefs : Rafale M, E-2 Hawkeye, hélicoptères)."
+  sections:
+    - id: missions
+      title: Missions
+      body: |
+        Le porte-avions est l'outil de projection de puissance de la Marine
+        nationale : il déplace une base aérienne souveraine au plus près des
+        théâtres d'opérations. Ses missions couvrent la projection de
+        puissance contre la terre, la maîtrise de l'espace aéromaritime, la
+        dissuasion nucléaire (composante aéronavale) et le recueil de
+        renseignement.
+
+        Il n'opère jamais seul : il est le cœur du groupe aéronaval, escorté
+        de frégates, d'un sous-marin nucléaire d'attaque et de bâtiments de
+        soutien.
+    - id: aviation-embarquee
+      title: Aviation embarquée
+      body: |
+        Le groupe aérien embarqué compte une quarantaine d'aéronefs : Rafale
+        M pour le combat, E-2 Hawkeye pour le guet aérien avancé, et
+        hélicoptères pour la sauvegarde et les liaisons.
+
+        La mise en œuvre suit le principe CATOBAR : au décollage, deux
+        catapultes à vapeur accélèrent l'avion de 0 à 250 km/h en 75 mètres ;
+        à l'appontage, l'avion accroche l'un des trois brins d'arrêt tendus
+        en travers du pont oblique.
+    - id: caracteristiques
+      title: Caractéristiques
+      body: |
+        | Caractéristique | Valeur |
+        | --- | --- |
+        | Longueur | 261,5 m |
+        | Largeur | 65 m |
+        | Déplacement | ~42 000 t |
+        | Propulsion | nucléaire — 2 réacteurs |
+        | Catapultes | 2, à vapeur |
+        | Brins d'arrêt | 3 |
+        | Aéronefs | ~40 |
+
+        Ses soutes lui donnent une autonomie d'environ deux semaines
+        d'opérations aériennes intensives.
+  pieges:
+    - « Porte-avions nucléaire » désigne la propulsion (2 réacteurs), pas l'armement du navire.
+    - Le Charles de Gaulle est un porte-avions CATOBAR (catapultes + brins), à ne pas confondre avec les porte-aéronefs à tremplin ou les porte-hélicoptères amphibies (PHA).
+    - C'est l'unique porte-avions français — la France n'en possède qu'un seul en service.

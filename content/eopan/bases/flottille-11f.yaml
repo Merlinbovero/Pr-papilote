@@ -1,0 +1,81 @@
+schemaVersion: 1
+id: eopan.bases.flottille-11f
+type: flottille
+title: Flottille 11F
+slug: flottille-11f
+summary: >-
+  La plus ancienne formation de chasse de l'aéronautique navale, équipée de
+  Rafale M et stationnée à la BAN Landivisiau ; elle embarque sur le
+  porte-avions Charles de Gaulle.
+module: eopan
+category: bases
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-07"
+verifiedAt: "2026-07-07"
+author: prepapilote
+status: relecture
+sources:
+  - title: BAN Landivisiau — la flottille 11F change de commandant (Marine nationale)
+    url: https://www.defense.gouv.fr/marine/actualites/ban-landivisiau-flottille-11f-change-commandant
+    kind: officiel
+    consultedAt: "2026-07-07"
+  - title: La base d'aéronautique navale de Landivisiau fête ses 60 ans (Marine nationale)
+    url: https://www.defense.gouv.fr/marine/actualites/base-daeronautique-navale-landivisiau-fete-ses-60-ans
+    kind: officiel
+    consultedAt: "2026-07-07"
+relations:
+  factual:
+    - predicate: dote-de
+      target: eopan.appareils.rafale-m
+infobox:
+  appellation: Flottille 11F
+  ban: BAN Landivisiau
+  appareils: [Rafale M]
+  missions: [Assaut, Défense aérienne, Appui, Reconnaissance]
+content:
+  essentiel:
+    body: |
+      La flottille 11F est l'une des trois flottilles de chasse de
+      l'aéronautique navale, avec les 12F et 17F. Héritière de l'escadrille
+      AC1 — première escadrille de chasse de l'aéronautique navale, créée le
+      1er mars 1919 — elle en est la plus ancienne formation de chasse.
+
+      Équipée d'une douzaine de Rafale M et forte d'environ 150 marins, des
+      techniciens aux pilotes, elle est stationnée à la base d'aéronautique
+      navale de Landivisiau (Finistère) et embarque régulièrement sur le
+      porte-avions Charles de Gaulle au sein du groupe aérien embarqué.
+    aRetenir:
+      - Une des trois flottilles de chasse de l'aéronautique navale (avec les 12F et 17F).
+      - Héritière de l'escadrille AC1 (1er mars 1919) — la plus ancienne formation de chasse de l'aéronavale.
+      - Environ 150 marins et une douzaine de Rafale M.
+      - Stationnée à la BAN Landivisiau, embarque sur le Charles de Gaulle.
+  sections:
+    - id: missions
+      title: Missions
+      body: |
+        Depuis la terre comme depuis le porte-avions, la 11F conduit les
+        missions de combat de l'aéronautique navale : assaut contre la terre
+        et contre les navires, interception et défense aérienne, appui des
+        troupes, reconnaissance tactique — et participation à la posture
+        permanente de sûreté aérienne depuis le territoire national.
+    - id: organisation
+      title: Organisation et rythme
+      body: |
+        Les trois flottilles de chasse alternent : chaque année, deux
+        d'entre elles sont tournées vers les déploiements du porte-avions
+        tandis que la troisième reste à Landivisiau pour assurer la
+        transformation des jeunes pilotes sur Rafale Marine avant leur
+        affectation en flottille opérationnelle.
+    - id: traditions
+      title: Histoire et traditions
+      strate: maitriser
+      body: |
+        La filiation avec l'escadrille AC1 inscrit la 11F dans plus d'un
+        siècle d'aviation navale française. Ses traditions, son insigne et
+        son histoire opérationnelle font partie de la culture attendue d'un
+        candidat EOPAN.
+  pieges:
+    - Une flottille est l'unité de l'aéronautique navale — l'équivalent de l'escadron dans l'Armée de l'Air et de l'Espace ; ne pas mélanger les deux termes.
+    - La 11F est stationnée à terre (BAN Landivisiau) et embarque sur le porte-avions lors des déploiements — elle n'est pas basée en permanence à bord.
