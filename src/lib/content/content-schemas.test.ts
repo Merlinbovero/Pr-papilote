@@ -86,8 +86,20 @@ describe("ficheMetadataSchema", () => {
     );
   });
 
-  it("couvre les 16 types dans la carte des familles", () => {
+  it("couvre tous les types dans la carte des familles", () => {
     expect(Object.keys(FICHE_FAMILIES).sort()).toEqual([...ficheTypeSchema.options].sort());
+  });
+
+  it("refuse une valeur d'approximation dans une infobox (on n'invente jamais)", () => {
+    const result = ficheMetadataSchema.safeParse({
+      ...ficheAppareil,
+      infobox: { ...ficheAppareil.infobox, vitesseMax: "inconnu" },
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("accepte une infobox sans les champs optionnels (omis plutôt qu'approximés)", () => {
+    expect(ficheMetadataSchema.safeParse(ficheAppareil).success).toBe(true);
   });
 });
 

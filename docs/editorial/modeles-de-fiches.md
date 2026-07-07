@@ -15,7 +15,9 @@ Une illustration est **exigée** quand le type la déclare (voir tableaux) ; à 
 
 ## Famille 1 — Fiches-objet (avec infobox)
 
-Types : `appareil`, `base-aerienne`, `ban`, `regiment`, `escadron`, `armement`.
+Types : `appareil`, `helicoptere`, `navire`, `base-aerienne`, `ban`, `regiment`, `escadron`, `flottille`, `armement`.
+
+**Règle absolue des infobox : on n'invente jamais une information pour remplir un champ.** Chaque modèle distingue champs obligatoires et optionnels (`INFOBOX_REQUIRED_KEYS` / `INFOBOX_OPTIONAL_KEYS` dans le schéma) ; un champ optionnel inconnu est **omis**. Une infobox incomplète vaut toujours mieux qu'une donnée approximative — les valeurs d'approximation (« n/a », « inconnu », « à compléter »…) sont rejetées par la validation.
 
 | Type            | Infobox (structurée)                                                                                                                    | Sections obligatoires (Approfondir)                              | Optionnelles                                             | Illustration                                |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------- |
@@ -24,9 +26,14 @@ Types : `appareil`, `base-aerienne`, `ban`, `regiment`, `escadron`, `armement`.
 | `ban`           | idem base, spécificités Marine (BAN, rattachement)                                                                                      | Missions · Flottilles                                            | Historique                                               | carte de localisation                       |
 | `regiment`      | appellation, subordination, garnison, appareils, missions, insigne                                                                      | Missions · Appareils · Implantation                              | Historique et traditions                                 | insigne                                     |
 | `escadron`      | appellation, base, appareils, missions, insigne (idem flottille pour la Marine)                                                         | Missions · Appareils · Base                                      | Historique et traditions                                 | insigne                                     |
+| `helicoptere`   | constructeur, rôle, armée(s), mise en service, statut, équipage (+ opt. : motorisation, vitesse max, plafond, rayon, emport)            | Rôle et missions · Caractéristiques · Versions · Unités et bases | Historique · Engagements · Culture                       | photo/silhouette + trois-vues SVG souhaitée |
+| `navire`        | type, classe, port d'attache, mise en service, statut (+ opt. : déplacement, longueur, équipage, aéronefs embarqués, armement)          | Missions · Aviation embarquée · Caractéristiques                 | Historique · Engagements                                 | photo ou silhouette                         |
+| `flottille`     | appellation, BAN, appareils, missions (+ opt. : insigne, devise, traditions)                                                            | Missions · Appareils · BAN                                       | Historique et traditions                                 | insigne                                     |
 | `armement`      | type, guidage, portée (classe), porteurs, statut                                                                                        | Emploi · Porteurs · Caractéristiques                             | Historique                                               | photo ou schéma                             |
 
 Les infobox sont des **données** (validées par schéma) : elles alimentent les tableaux comparatifs et la génération de questions (« Quel est le porteur du… »).
+
+Les autres grands types possèdent aussi leur « modèle structuré » : `procedure` et `mission` par leurs sections normées (famille 3), `document` par sa notice (émetteur, date, type, droits), `notion-bia` par son tableau formules/ordres de grandeur, `terme` par ses champs fixes (famille 5). Même principe partout : structure imposée, champs inconnus omis.
 
 ## Famille 2 — Fiches-notion (pédagogiques)
 

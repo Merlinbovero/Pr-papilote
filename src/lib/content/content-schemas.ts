@@ -21,14 +21,17 @@ export const concoursSchema = z.enum(["eopan", "eopn", "alat"]);
 /** Statut de validation : seul « publie » sort au build. */
 export const contentStatusSchema = z.enum(["brouillon", "relecture", "publie", "a-reverifier"]);
 
-/** Les 16 types de fiches (le terme de dictionnaire est une entité à part). */
+/** Les 19 types de fiches (le terme de dictionnaire est une entité à part). */
 export const ficheTypeSchema = z.enum([
   // Famille objet (avec infobox)
   "appareil",
+  "helicoptere",
+  "navire",
   "base-aerienne",
   "ban",
   "regiment",
   "escadron",
+  "flottille",
   "armement",
   // Famille notion (pédagogique)
   "notion-bia",
@@ -50,10 +53,13 @@ export type FicheFamily = "objet" | "notion" | "processus" | "contexte";
 
 export const FICHE_FAMILIES: Record<FicheType, FicheFamily> = {
   appareil: "objet",
+  helicoptere: "objet",
+  navire: "objet",
   "base-aerienne": "objet",
   ban: "objet",
   regiment: "objet",
   escadron: "objet",
+  flottille: "objet",
   armement: "objet",
   "notion-bia": "notion",
   "notion-meteo": "notion",
@@ -67,15 +73,63 @@ export const FICHE_FAMILIES: Record<FicheType, FicheFamily> = {
   "personnage-historique": "contexte",
 };
 
-/** Clés d'infobox exigées par type de fiche-objet (modeles-de-fiches.md). */
+/**
+ * Modèles d'infobox par type de fiche-objet (modeles-de-fiches.md).
+ * Règle absolue : ON N'INVENTE JAMAIS UNE DONNÉE POUR REMPLIR UN CHAMP.
+ * Un champ optionnel inconnu est omis ; une infobox incomplète vaut
+ * toujours mieux qu'une donnée approximative.
+ */
 export const INFOBOX_REQUIRED_KEYS: Partial<Record<FicheType, readonly string[]>> = {
   appareil: ["constructeur", "role", "armees", "miseEnService", "statut", "equipage"],
+  helicoptere: ["constructeur", "role", "armees", "miseEnService", "statut", "equipage"],
+  navire: ["type", "classe", "portDAttache", "miseEnService", "statut"],
   "base-aerienne": ["nomComplet", "code", "localisation", "armee"],
   ban: ["nomComplet", "code", "localisation"],
   regiment: ["appellation", "garnison", "appareils", "missions"],
   escadron: ["appellation", "base", "appareils", "missions"],
+  flottille: ["appellation", "ban", "appareils", "missions"],
   armement: ["type", "guidage", "portee", "porteurs"],
 };
+
+/** Champs optionnels reconnus (jamais remplis approximativement). */
+export const INFOBOX_OPTIONAL_KEYS: Partial<Record<FicheType, readonly string[]>> = {
+  appareil: ["motorisation", "vitesseMax", "plafond", "rayonDAction", "armementPrincipal"],
+  helicoptere: [
+    "motorisation",
+    "vitesseMax",
+    "plafond",
+    "rayonDAction",
+    "armementPrincipal",
+    "capaciteEmport",
+  ],
+  navire: ["deplacement", "longueur", "equipage", "aeronefsEmbarques", "armementPrincipal"],
+  "base-aerienne": ["unitesStationnees", "appareilsPresents", "effectifs"],
+  ban: ["rattachement", "flottilles", "appareilsPresents"],
+  regiment: ["subordination", "insigne", "devise"],
+  escadron: ["insigne", "devise", "traditions"],
+  flottille: ["insigne", "devise", "traditions"],
+  armement: ["statut", "masse", "vitesse"],
+};
+
+/**
+ * Valeurs interdites dans une infobox : marqueurs d'approximation.
+ * Le bon geste est d'omettre le champ, pas de le remplir « à peu près ».
+ */
+const FORBIDDEN_INFOBOX_VALUES = new Set([
+  "n/a",
+  "na",
+  "inconnu",
+  "inconnue",
+  "?",
+  "tbd",
+  "todo",
+  "a completer",
+  "à compléter",
+]);
+
+export function isForbiddenInfoboxValue(value: unknown): boolean {
+  return typeof value === "string" && FORBIDDEN_INFOBOX_VALUES.has(value.trim().toLowerCase());
+}
 
 // ---------------------------------------------------------------------------
 // Briques communes
@@ -155,6 +209,18 @@ export const ficheMetadataSchema = z
             code: "custom",
             path: ["infobox", key],
             message: `Clé d'infobox obligatoire manquante pour « ${fiche.type} » : ${key}.`,
+          });
+        }
+      }
+    }
+    if (fiche.infobox) {
+      for (const [key, value] of Object.entries(fiche.infobox)) {
+        const values = Array.isArray(value) ? value : [value];
+        if (values.some(isForbiddenInfoboxValue)) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["infobox", key],
+            message: `Valeur d'approximation interdite pour « ${key} » : omettre le champ plutôt que l'inventer.`,
           });
         }
       }

@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Modifié
+
+- 2026-07-07 — Arbitrages éditoriaux intégrés : trois nouveaux types de fiches-objet (`helicoptere`, `navire`, `flottille`) avec leurs modèles d'infobox ; champs d'infobox optionnels formalisés et **valeurs d'approximation rejetées par la validation** (on n'invente jamais une donnée) ; cycles de fraîcheur différenciés (6/12/24 mois selon la nature, `freshness.ts`) avec mise à jour exceptionnelle possible ; référentiel de redirections permanentes (`redirects.json` branché sur la plateforme) pour fusionner ou déplacer des catégories sans casser d'URL.
+
 ### Ajouté
 
 - 2026-07-07 — Système éditorial complet (`docs/editorial/`) : taxonomie unique (sous-catégorie = métadonnée, hors URL), 17 modèles de fiches en 5 familles, dictionnaire des métadonnées, graphe de relations typées, stratégie de quiz (banque centrale + sélecteurs + carnet d'erreurs SRS), pipeline d'ingestion documentaire (« enrichir avant créer »), règles éditoriales et de rédaction, risques et parades à l'échelle. Contrat implémenté en schémas Zod (`content-schemas.ts`, 15 tests).

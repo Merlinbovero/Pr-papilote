@@ -24,6 +24,7 @@ Architecture documentaire officielle. Ces documents gouvernent toute production 
 | ----------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | Nouveau concours                    | Entrée dans `modules.json` (kind `concours`) + dossier `content/<slug>/` | Aucun — les catégories concours et les Fondamentaux sont déjà partagés |
 | Nouvelle catégorie / sous-catégorie | Entrée de référentiel                                                    | Aucun                                                                  |
+| Fusion / déplacement de catégorie   | Entrée de référentiel + redirections dans `redirects.json`               | Aucun — les IDs gelés préservent relations et données utilisateur      |
 | Nouveau contenu                     | Fichier dans `content/`, validé par schéma                               | Aucun                                                                  |
 | Nouveau document public             | Notice dans `content/documents/` + binaire dans Storage                  | Aucun                                                                  |
 | Nouveau type de fiche               | Modèle documenté ici + extension du schéma (versionnée)                  | `src/lib/content/` uniquement                                          |

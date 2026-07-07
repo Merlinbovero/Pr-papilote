@@ -29,7 +29,7 @@ Exemples de sous-catégories initiales (référentiel à enrichir à la demande,
 ## Identifiants
 
 - **ID de contenu** : `module.categorie.slug` au moment de la création (ex. `eopn.appareils.rafale-b`), **gelé à vie**. Après création il est opaque : si la fiche change de catégorie ou de titre, l'ID ne bouge pas — c'est lui que la base utilisateur, les relations et les questions référencent. La CI interdit la disparition d'un ID référencé.
-- **Slug d'URL** : kebab-case français, stable sauf nécessité ; un changement de slug impose une redirection permanente (à consigner dans la config).
+- **Slug d'URL** : kebab-case français, stable sauf nécessité ; tout changement (slug, fusion ou déplacement de catégorie) ajoute une entrée `{ source, destination }` dans `content/_referentiels/redirects.json` — redirection permanente servie par la plateforme, **aucune URL publiée ne meurt**.
 - **Questions** : `q.` + domaine + numéro libre gelé (ex. `q.meteo.0042`). **Termes** : `terme.finesse`. **Documents** : `doc.` + slug (ex. `doc.arrete-eopan-2026`). **Quiz** : `quiz.` + slug. **Schémas** : `schema.` + slug.
 
 ## Tags
@@ -43,7 +43,7 @@ Vocabulaire **contrôlé** dans `content/_referentiels/tags.json` : `{ slug, lab
 | Champ                 | Rôle                                                                         | Exploité par                                     |
 | --------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------ |
 | `id`                  | Identifiant gelé                                                             | tout (progression, relations, quiz)              |
-| `type`                | Un des 17 types de fiche (voir modeles-de-fiches.md)                         | rendu (gabarit), recherche (filtre)              |
+| `type`                | Un des 19 types de fiche (voir modeles-de-fiches.md)                         | rendu (gabarit), recherche (filtre)              |
 | `title` / `slug`      | Titre affiché / segment d'URL                                                | SEO, recherche                                   |
 | `summary`             | Résumé d'une à deux phrases                                                  | résultats de recherche, cartes, meta description |
 | `module` / `category` | Rattachement taxonomique                                                     | navigation, recherche contextuelle, progression  |
@@ -71,6 +71,14 @@ Vocabulaire **contrôlé** dans `content/_referentiels/tags.json` : `{ slug, lab
 | `status`        | `brouillon` → `relecture` → `publie` → `a-reverifier`                                                                                 | publication (seul `publie` sort au build), rapports |
 | `schemaVersion` | Version du modèle de fiche                                                                                                            | migrations de contenu                               |
 
-### Règle de validité périssable
+### Cycles de vérification différenciés
 
-`geopolitique`, `retex`, `conditions`, `selection` : une fiche dont `verifiedAt` dépasse **12 mois** passe automatiquement en `a-reverifier` au rapport (6 mois pour les conditions d'un concours). Les autres catégories : 24 mois.
+Les contenus n'ont pas tous le même cycle de vie (règles implémentées dans `src/lib/content/freshness.ts` — la plus courte l'emporte) :
+
+| Nature                                                                        | Intervalle de revue     |
+| ----------------------------------------------------------------------------- | ----------------------- |
+| Géopolitique · RETEX · conditions et parcours de sélection des concours       | **6 mois**              |
+| Organisation des armées, unités, bases, appareils, navires, armement          | **12 mois**             |
+| Notions techniques (BIA, aérodynamique, météo, physique, maths), dictionnaire | **24 mois** (indicatif) |
+
+Une fiche dont `verifiedAt` dépasse son intervalle apparaît « à re-vérifier » au rapport éditorial. **Mise à jour exceptionnelle** : quand une information importante évolue (réforme, retrait de service, nouvel arrêté), passer manuellement `status: a-reverifier` déclenche la revue immédiatement, indépendamment des délais.
