@@ -43,6 +43,8 @@
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
   --color-concours-eopan: var(--concours-eopan);
   --color-concours-eopn: var(--concours-eopn);
   --color-concours-alat: var(--concours-alat);
@@ -78,6 +80,8 @@
   --success-foreground: oklch(0.985 0 0);
   --warning: oklch(0.62 0.13 70);
   --warning-foreground: oklch(0.985 0 0);
+  --info: oklch(0.52 0.1 235);
+  --info-foreground: oklch(0.985 0 0);
   --concours-eopan: oklch(0.42 0.09 250);
   --concours-eopn: oklch(0.52 0.1 230);
   --concours-alat: oklch(0.48 0.09 145);
@@ -120,6 +124,8 @@
   --success-foreground: oklch(0.145 0 0);
   --warning: oklch(0.75 0.14 75);
   --warning-foreground: oklch(0.145 0 0);
+  --info: oklch(0.72 0.09 235);
+  --info-foreground: oklch(0.145 0 0);
   --concours-eopan: oklch(0.68 0.1 250);
   --concours-eopn: oklch(0.72 0.1 230);
   --concours-alat: oklch(0.7 0.11 145);

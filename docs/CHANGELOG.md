@@ -6,6 +6,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Modifié
 
+- 2026-07-07 — Design System officiel (Volume II ch. 2) : `docs/design-system.md` réécrit en référence absolue (tokens complets avec règle unique des variantes d'état, échelles typographie/espacements/rayons/ombres/bordures, breakpoints officiels, conventions de nommage, gabarit de documentation de composant, risques) ; token `info` ajouté (clair + sombre) ; bibliothèque d'animations commune `src/lib/motion.ts` (durées, courbes, variants partagés).
+
 - 2026-07-07 — Doctrine du Framework UI consignée (`docs/ui-framework.md`, Volume II ch. 1) : six questions avant toute décision, pages sans logique, justification obligatoire des nouveaux composants et dépendances, sémantique des couleurs, critère de complétude du framework (les 11 gabarits constructibles sans nouveau composant). Règle 10 ajoutée à `AGENTS.md`.
 
 - 2026-07-07 — Arbitrages éditoriaux intégrés : trois nouveaux types de fiches-objet (`helicoptere`, `navire`, `flottille`) avec leurs modèles d'infobox ; champs d'infobox optionnels formalisés et **valeurs d'approximation rejetées par la validation** (on n'invente jamais une donnée) ; cycles de fraîcheur différenciés (6/12/24 mois selon la nature, `freshness.ts`) avec mise à jour exceptionnelle possible ; référentiel de redirections permanentes (`redirects.json` branché sur la plateforme) pour fusionner ou déplacer des catégories sans casser d'URL.

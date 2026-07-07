@@ -31,6 +31,7 @@ const paletteTokens = [
   { name: "destructive", className: "bg-destructive", usage: "Danger, réponse fausse" },
   { name: "success", className: "bg-success", usage: "Réponse juste, vérifié" },
   { name: "warning", className: "bg-warning", usage: "Avertissement, à re-vérifier" },
+  { name: "info", className: "bg-info", usage: "Information neutre, encarts" },
   { name: "concours-eopan", className: "bg-concours-eopan", usage: "Marqueur EOPAN" },
   { name: "concours-eopn", className: "bg-concours-eopn", usage: "Marqueur EOPN" },
   { name: "concours-alat", className: "bg-concours-alat", usage: "Marqueur ALAT" },
