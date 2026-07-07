@@ -6,6 +6,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
+- 2026-07-07 — Système éditorial complet (`docs/editorial/`) : taxonomie unique (sous-catégorie = métadonnée, hors URL), 17 modèles de fiches en 5 familles, dictionnaire des métadonnées, graphe de relations typées, stratégie de quiz (banque centrale + sélecteurs + carnet d'erreurs SRS), pipeline d'ingestion documentaire (« enrichir avant créer »), règles éditoriales et de rédaction, risques et parades à l'échelle. Contrat implémenté en schémas Zod (`content-schemas.ts`, 15 tests).
 - 2026-07-07 — Intégration continue : workflow GitHub Actions (lint + types + format + tests unitaires + build, puis E2E Playwright) sur chaque PR.
 - 2026-07-07 — Fondations Supabase (sans clés — état « non configuré » propre) :
   - Migration SQL fondatrice : profils, sessions de travail, tentatives de quiz, réponses individuelles (append-only), répétition espacée, avancement de lecture, résultats psychotechniques, agrégats anonymes — RLS activée partout, politiques « propriétaire uniquement ».

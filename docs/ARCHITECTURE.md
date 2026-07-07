@@ -150,3 +150,11 @@ Next 16 renomme middleware en `proxy.ts`. Les contrôles d'accès se font dans l
 ### 2026-07-07 — Supabase non configuré = état dégradé propre
 
 Tant que les clés ne sont pas fournies (variables d'environnement), les pages d'authentification et l'espace progression affichent un état « non configuré » explicite. Le build et les tests ne dépendent jamais des secrets.
+
+### 2026-07-07 — La sous-catégorie est une métadonnée, pas un segment d'URL
+
+Les fiches restent à `/{module}/{categorie}/{slug}` ; la sous-catégorie (référentiel fermé) groupe, filtre et structure sans jamais casser d'URL lors des réorganisations. Détail : `docs/editorial/taxonomie-et-metadonnees.md`.
+
+### 2026-07-07 — Système éditorial consigné et machine-vérifiable
+
+L'architecture documentaire complète vit dans `docs/editorial/` (taxonomie, 17 modèles de fiches en 5 familles, métadonnées, graphe de relations, stratégie quiz et documentaire, règles de rédaction). Son contrat exécutoire est implémenté dans `src/lib/content/content-schemas.ts` : fiches (infobox exigée par type d'objet), questions (union discriminée par type, explication et relation « évalue » obligatoires), quiz (sélecteur XOR liste explicite), termes, notices de documents (droits de rediffusion contrôlés).
