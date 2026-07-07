@@ -7,7 +7,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # PrépaPilote — Règles de projet
 
-Plateforme web de préparation aux concours **EOPAN** (Marine nationale), **EOPN** (Armée de l'Air et de l'Espace) et **ALAT** (Armée de Terre). Vision officielle : `docs/VISION.md`. Architecture : `docs/ARCHITECTURE.md`. Design system : `docs/design-system.md`. Ces trois documents font autorité.
+Plateforme web de préparation aux concours **EOPAN** (Marine nationale), **EOPN** (Armée de l'Air et de l'Espace) et **ALAT** (Armée de Terre). Vision officielle : `docs/VISION.md`. Architecture : `docs/ARCHITECTURE.md`. Design system : `docs/design-system.md`. Framework UI : `docs/ui-framework.md`. Système éditorial : `docs/editorial/`. Ces documents font autorité.
 
 ## Stack
 
@@ -28,6 +28,7 @@ Dix skills dans `.claude/skills/` (nextjs-expert, react-ui-architect, tailwind-e
 7. **Documentation synchrone** : `docs/CHANGELOG.md` et docs concernées mises à jour dans le même commit que le code.
 8. **Frontière des données** : le contenu vit dans `content/` (jamais en base) ; Supabase ne stocke que les données utilisateur, référencées par ID de contenu stables et gelés. Les routes documentaires n'instancient jamais le client Supabase.
 9. **Secrets** : uniquement en variables d'environnement. Le build et les tests ne dépendent jamais des secrets (état « non configuré » propre).
+10. **Framework UI** (`docs/ui-framework.md`) : toute page est une composition de composants du catalogue ; créer un composant exige de justifier pourquoi les existants ne suffisent pas ; toute nouvelle dépendance est justifiée dans ARCHITECTURE.md ; les couleurs portent un sens (bleu=navigation, vert=validation, orange=attention, rouge=erreur, gris=secondaire) ; les pages ne contiennent presque aucune logique.
 
 ## Structure
 
