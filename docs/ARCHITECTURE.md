@@ -158,3 +158,7 @@ Les fiches restent à `/{module}/{categorie}/{slug}` ; la sous-catégorie (réf�
 ### 2026-07-07 — Système éditorial consigné et machine-vérifiable
 
 L'architecture documentaire complète vit dans `docs/editorial/` (taxonomie, 17 modèles de fiches en 5 familles, métadonnées, graphe de relations, stratégie quiz et documentaire, règles de rédaction). Son contrat exécutoire est implémenté dans `src/lib/content/content-schemas.ts` : fiches (infobox exigée par type d'objet), questions (union discriminée par type, explication et relation « évalue » obligatoires), quiz (sélecteur XOR liste explicite), termes, notices de documents (droits de rediffusion contrôlés).
+
+### 2026-07-07 — Gabarit de fiche : composants prop-pilotés, format de contenu différé
+
+Le gabarit officiel (docs/editorial/gabarit-fiche.md) est implémenté en composants recevant des props typées (`src/components/content/`), validés sur la prévisualisation interne `/design-system/fiche` avec des données explicitement fictives. Le format de fichier du corps des fiches (MDX vs structure JSON) sera arrêté avec les cinq fiches pilotes : les composants n'en dépendent pas, la décision reste réversible à coût nul.

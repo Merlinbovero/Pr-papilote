@@ -14,6 +14,28 @@ Règle : tout nouveau composant partagé ajoute son entrée ici, dans le même c
 | `ModuleCard`     | `components/shared/module-card.tsx`     | Carte d'accueil d'un module : visuel plein cadre, nom en très gros   | `module`, `orientation`, `imageSrc?`, `imageAlt?` |
 | `SearchCommand`  | `features/search/search-command.tsx`    | Palette de recherche globale (Ctrl/Cmd+K), filtrage par notre moteur | `entries: SearchEntry[]`                          |
 
+## Gabarit de fiche (`src/components/content/` — voir docs/editorial/gabarit-fiche.md)
+
+Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats dans `types.ts`), indépendants du futur format de fichier du contenu.
+
+| Composant           | Rôle                                                                                 | Quand ne pas l'utiliser                                     |
+| ------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| `FicheHeader`       | En-tête normalisé : H1, résumé, badges, temps de lecture, vérification, bouton PDF   | Hors d'une fiche — les hubs ont leur propre en-tête         |
+| `VerifiedBadge`     | Badge de confiance « Vérifié le » (`success`/`warning` selon fraîcheur)              | Pour tout autre statut (utiliser `Badge`)                   |
+| `Infobox`           | Données structurées d'une fiche-objet (`card` latérale/mobile, `table` impression)   | Pour du texte libre — l'infobox ne contient que des données |
+| `EssentialBlock`    | « L'essentiel » : lecture 30 s + puces « À retenir »                                 | Jamais deux par fiche                                       |
+| `FicheSection`      | Section H2 ancrée, badge « Expert » si strate `maitriser`                            | Hors du corps de fiche                                      |
+| `PitfallsBlock`     | « Pièges et erreurs fréquentes » (encadré `warning`)                                 | Si le modèle du type ne le prévoit pas                      |
+| `TableOfContents`   | Sommaire « Sur cette fiche » avec section active (client, IntersectionObserver)      | Pages courtes sans sections                                 |
+| `RelationBlock`     | Encart de relations du graphe (préalables, liées, voir également) ; nul si vide      | Pour des liens libres hors graphe                           |
+| `SourceList`        | Sources numérotées ancrées, « consulté le » public                                   | —                                                           |
+| `DocumentList`      | Documents associés/téléchargeables avec type et poids                                | —                                                           |
+| `TrainingBlock`     | Pont volontaire vers le quiz de la fiche (désactivé tant que le moteur n'existe pas) | Jamais de statistiques personnelles ici                     |
+| `FicheNav`          | Pied de fiche : précédent/suivant, retour, traçabilité, signalement                  | —                                                           |
+| `TermTooltip`       | Terme du dictionnaire : souligné pointillé + définition en infobulle (client)        | Pour un lien ordinaire                                      |
+| `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                         | Jamais permanent, jamais dans l'URL canonique               |
+| `PrintButton`       | Déclenche la vue impression (client)                                                 | —                                                           |
+
 ## Moteur de recherche (`src/features/search/`)
 
 - `types.ts` — contrat `SearchEntry` / `SearchOptions` : l'UI ne dépend que de lui.

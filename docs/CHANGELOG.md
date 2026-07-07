@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Ajouté
+
+- 2026-07-07 — Gabarit officiel de fiche (validé) : `docs/editorial/gabarit-fiche.md` (quatre niveaux de lecture 30 s / 5 min / 20–30 min / approfondissement, règles arbitrées : séparation stricte des modes avec seule action « liste de révision » discrète, « Maîtriser » badgé Expert, infobox latérale desktop / après L'essentiel en mobile, vue impression) ; 15 composants du gabarit dans `src/components/content/` (en-tête, infobox 2 variantes, essentiel, sections, pièges, sommaire actif, relations, sources, documents, entraînement, pied, infobulle de terme, pastille passerelle) ; prévisualisation interne `/design-system/fiche` avec données explicitement fictives ; 6 tests unitaires + 2 tests E2E dédiés.
+
 ### Modifié
 
 - 2026-07-07 — Design System officiel (Volume II ch. 2) : `docs/design-system.md` réécrit en référence absolue (tokens complets avec règle unique des variantes d'état, échelles typographie/espacements/rayons/ombres/bordures, breakpoints officiels, conventions de nommage, gabarit de documentation de composant, risques) ; token `info` ajouté (clair + sombre) ; bibliothèque d'animations commune `src/lib/motion.ts` (durées, courbes, variants partagés).
