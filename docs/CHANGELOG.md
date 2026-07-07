@@ -6,6 +6,11 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
+- 2026-07-07 — Intégration continue : workflow GitHub Actions (lint + types + format + tests unitaires + build, puis E2E Playwright) sur chaque PR.
+- 2026-07-07 — Fondations Supabase (sans clés — état « non configuré » propre) :
+  - Migration SQL fondatrice : profils, sessions de travail, tentatives de quiz, réponses individuelles (append-only), répétition espacée, avancement de lecture, résultats psychotechniques, agrégats anonymes — RLS activée partout, politiques « propriétaire uniquement ».
+  - Pages d'authentification (connexion, inscription, mot de passe oublié) sur Server Actions validées par Zod.
+  - Espace `/progression` protégé : tableau de bord global + cinq vues par module ; page `/compte`.
 - 2026-07-07 — Fondations V1 de la plateforme :
   - Design system : accent bleu institutionnel, tokens succès/avertissement et marqueurs concours (clair + sombre), thème clair/sombre/système, route interne `/design-system`.
   - Référentiels de contenu (`content/_referentiels/`) : 5 modules et leurs catégories (structure identique garantie entre les trois concours), chargeurs validés par Zod.
