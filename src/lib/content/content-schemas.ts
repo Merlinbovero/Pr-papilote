@@ -21,7 +21,11 @@ export const concoursSchema = z.enum(["eopan", "eopn", "alat"]);
 /** Statut de validation : seul « publie » sort au build. */
 export const contentStatusSchema = z.enum(["brouillon", "relecture", "publie", "a-reverifier"]);
 
-/** Les 19 types de fiches (le terme de dictionnaire est une entité à part). */
+/**
+ * Les familles d'objets du graphe documentaire rendues par une fiche
+ * (le terme de dictionnaire, le document, la question et le schéma sont
+ * des objets portés par leurs entités propres).
+ */
 export const ficheTypeSchema = z.enum([
   // Famille objet (avec infobox)
   "appareil",
@@ -33,7 +37,12 @@ export const ficheTypeSchema = z.enum([
   "escadron",
   "flottille",
   "armement",
+  "organisation",
+  "unite",
+  "grade",
+  "infrastructure",
   // Famille notion (pédagogique)
+  "concept",
   "notion-bia",
   "notion-meteo",
   "notion-navigation",
@@ -61,6 +70,11 @@ export const FICHE_FAMILIES: Record<FicheType, FicheFamily> = {
   escadron: "objet",
   flottille: "objet",
   armement: "objet",
+  organisation: "objet",
+  unite: "objet",
+  grade: "objet",
+  infrastructure: "objet",
+  concept: "notion",
   "notion-bia": "notion",
   "notion-meteo": "notion",
   "notion-navigation": "notion",
@@ -89,6 +103,10 @@ export const INFOBOX_REQUIRED_KEYS: Partial<Record<FicheType, readonly string[]>
   escadron: ["appellation", "base", "appareils", "missions"],
   flottille: ["appellation", "ban", "appareils", "missions"],
   armement: ["type", "guidage", "portee", "porteurs"],
+  organisation: ["nomComplet", "tutelle", "role"],
+  unite: ["appellation", "subordination", "missions"],
+  grade: ["armee", "categorie"],
+  infrastructure: ["type", "localisation"],
 };
 
 /** Champs optionnels reconnus (jamais remplis approximativement). */
@@ -109,6 +127,10 @@ export const INFOBOX_OPTIONAL_KEYS: Partial<Record<FicheType, readonly string[]>
   escadron: ["insigne", "devise", "traditions"],
   flottille: ["insigne", "devise", "traditions"],
   armement: ["statut", "masse", "vitesse"],
+  organisation: ["effectifs", "etatMajor", "creation"],
+  unite: ["base", "appareils", "insigne"],
+  grade: ["insigne", "codeOtan"],
+  infrastructure: ["dimensions", "miseEnService"],
 };
 
 /**
@@ -144,11 +166,40 @@ export const sourceSchema = z.object({
   consultedAt: isoDateSchema,
 });
 
+/** Niveaux de relation du graphe (graphe-documentaire.md §liens). */
+export const relationWeightSchema = z.enum(["forte", "moyenne", "complementaire"]);
+export type RelationWeight = z.infer<typeof relationWeightSchema>;
+
 /**
- * Relations typées déclarées (relations-et-quiz.md).
- * prerequisites = « prérequis » · related = « complémentaire » ·
- * specializes = « approfondit » · variantOf = « variante-de » ·
- * documents = relation « source » vers des notices.
+ * Prédicat du registre factuel (content/_referentiels/predicats.json) :
+ * vocabulaire fermé, libellé inverse calculable, familles autorisées,
+ * poids par défaut.
+ */
+export const predicateSchema = z.object({
+  id: slugSchema,
+  label: z.string().min(1),
+  inverseLabel: z.string().min(1),
+  weight: relationWeightSchema,
+  sourceFamilies: z.array(ficheTypeSchema).min(1),
+  targetFamilies: z.array(ficheTypeSchema).min(1),
+});
+export const predicatesFileSchema = z.array(predicateSchema).min(1);
+export type Predicate = z.infer<typeof predicateSchema>;
+
+/** Arête factuelle : prédicat du référentiel + cible + poids surchargé éventuel. */
+export const factualEdgeSchema = z.object({
+  predicate: slugSchema,
+  target: contentIdSchema,
+  weight: relationWeightSchema.optional(),
+});
+export type FactualEdge = z.infer<typeof factualEdgeSchema>;
+
+/**
+ * Relations typées déclarées (relations-et-quiz.md, graphe-documentaire.md).
+ * Registre pédagogique : prerequisites = « prérequis » · related =
+ * « complémentaire » · specializes = « approfondit » · variantOf =
+ * « variante-de » · documents = relation « source ».
+ * Registre factuel : factual = arêtes à prédicats (« embarque-sur »…).
  */
 export const ficheRelationsSchema = z
   .object({
@@ -157,6 +208,7 @@ export const ficheRelationsSchema = z
     specializes: z.array(contentIdSchema).default([]),
     variantOf: z.array(contentIdSchema).default([]),
     documents: z.array(contentIdSchema).default([]),
+    factual: z.array(factualEdgeSchema).default([]),
   })
   .partial();
 

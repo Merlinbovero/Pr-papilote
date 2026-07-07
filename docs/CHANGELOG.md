@@ -6,6 +6,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
+- 2026-07-07 — Graphe documentaire consacré cœur du projet (Volume II ch. 3) : doctrine `docs/editorial/graphe-documentaire.md` (objets, familles, deux registres de relations, trois niveaux de poids, liens intelligents calculés) ; référentiel fermé des prédicats factuels (6 prédicats initiaux avec libellés inverses et familles autorisées) ; 5 familles d'objets ajoutées au contrat (organisation, unité, grade, infrastructure, concept — 24 types de fiches) ; arêtes factuelles pondérées dans les schémas ; résolveur de graphe pur (`graph.ts`, liens bidirectionnels + erreurs bloquantes) couvert par 5 tests.
 - 2026-07-07 — Gabarit officiel de fiche (validé) : `docs/editorial/gabarit-fiche.md` (quatre niveaux de lecture 30 s / 5 min / 20–30 min / approfondissement, règles arbitrées : séparation stricte des modes avec seule action « liste de révision » discrète, « Maîtriser » badgé Expert, infobox latérale desktop / après L'essentiel en mobile, vue impression) ; 15 composants du gabarit dans `src/components/content/` (en-tête, infobox 2 variantes, essentiel, sections, pièges, sommaire actif, relations, sources, documents, entraînement, pied, infobulle de terme, pastille passerelle) ; prévisualisation interne `/design-system/fiche` avec données explicitement fictives ; 6 tests unitaires + 2 tests E2E dédiés.
 
 ### Modifié

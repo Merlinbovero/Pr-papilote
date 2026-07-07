@@ -1,0 +1,78 @@
+[
+  {
+    "id": "mis-en-oeuvre-par",
+    "label": "Mis en œuvre par",
+    "inverseLabel": "Met en œuvre",
+    "weight": "forte",
+    "sourceFamilies": ["appareil", "helicoptere", "navire", "armement"],
+    "targetFamilies": ["organisation", "unite", "regiment", "escadron", "flottille"]
+  },
+  {
+    "id": "embarque-sur",
+    "label": "Embarque sur",
+    "inverseLabel": "Embarque",
+    "weight": "forte",
+    "sourceFamilies": ["appareil", "helicoptere"],
+    "targetFamilies": ["navire"]
+  },
+  {
+    "id": "affecte-a",
+    "label": "Affecté à",
+    "inverseLabel": "Accueille",
+    "weight": "forte",
+    "sourceFamilies": ["unite", "regiment", "escadron", "flottille"],
+    "targetFamilies": ["base-aerienne", "ban", "navire"]
+  },
+  {
+    "id": "dote-de",
+    "label": "Doté de",
+    "inverseLabel": "Équipe",
+    "weight": "forte",
+    "sourceFamilies": [
+      "appareil",
+      "helicoptere",
+      "navire",
+      "unite",
+      "regiment",
+      "escadron",
+      "flottille"
+    ],
+    "targetFamilies": ["armement", "appareil", "helicoptere", "infrastructure"]
+  },
+  {
+    "id": "applique",
+    "label": "Applique",
+    "inverseLabel": "Est appliqué par",
+    "weight": "moyenne",
+    "sourceFamilies": [
+      "procedure",
+      "mission",
+      "appareil",
+      "helicoptere",
+      "navire",
+      "unite",
+      "regiment",
+      "escadron",
+      "flottille"
+    ],
+    "targetFamilies": ["concept", "procedure", "infrastructure"]
+  },
+  {
+    "id": "fait-partie-de",
+    "label": "Fait partie de",
+    "inverseLabel": "Comprend",
+    "weight": "moyenne",
+    "sourceFamilies": [
+      "unite",
+      "regiment",
+      "escadron",
+      "flottille",
+      "organisation",
+      "base-aerienne",
+      "ban",
+      "infrastructure",
+      "grade"
+    ],
+    "targetFamilies": ["organisation", "base-aerienne", "ban", "navire", "grade"]
+  }
+]

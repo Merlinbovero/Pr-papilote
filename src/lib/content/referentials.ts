@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { predicatesFileSchema, type Predicate } from "./content-schemas";
 import { categoriesFileSchema, modulesFileSchema, type Category, type Module } from "./schemas";
 
 /**
@@ -72,4 +73,19 @@ export function getCategories(moduleSlug: string): Category[] {
 /** Une catégorie d'un module par slug, ou undefined. */
 export function getCategory(moduleSlug: string, categorySlug: string): Category | undefined {
   return getCategories(moduleSlug).find((c) => c.slug === categorySlug);
+}
+
+let predicatesCache: Predicate[] | undefined;
+
+/** Le référentiel fermé des prédicats du registre factuel du graphe. */
+export function getPredicates(): Predicate[] {
+  if (!predicatesCache) {
+    const predicates = predicatesFileSchema.parse(readJson("predicats.json"));
+    const ids = new Set(predicates.map((p) => p.id));
+    if (ids.size !== predicates.length) {
+      throw new Error("Référentiel prédicats : identifiants en double");
+    }
+    predicatesCache = predicates;
+  }
+  return predicatesCache;
 }

@@ -4,6 +4,7 @@ Architecture documentaire officielle. Ces documents gouvernent toute production 
 
 | Document                                                   | Contenu                                                                       |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [graphe-documentaire.md](graphe-documentaire.md)           | **Le cœur du projet** : objets, familles, prédicats, niveaux de relation      |
 | [taxonomie-et-metadonnees.md](taxonomie-et-metadonnees.md) | Hiérarchie complète, identifiants, tags, dictionnaire des métadonnées         |
 | [modeles-de-fiches.md](modeles-de-fiches.md)               | Les 17 modèles de fiches (5 familles) : sections obligatoires et optionnelles |
 | [relations-et-quiz.md](relations-et-quiz.md)               | Le graphe documentaire et la stratégie de génération des quiz                 |

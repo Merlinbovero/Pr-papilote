@@ -162,3 +162,7 @@ L'architecture documentaire complète vit dans `docs/editorial/` (taxonomie, 17 
 ### 2026-07-07 — Gabarit de fiche : composants prop-pilotés, format de contenu différé
 
 Le gabarit officiel (docs/editorial/gabarit-fiche.md) est implémenté en composants recevant des props typées (`src/components/content/`), validés sur la prévisualisation interne `/design-system/fiche` avec des données explicitement fictives. Le format de fichier du corps des fiches (MDX vs structure JSON) sera arrêté avec les cinq fiches pilotes : les composants n'en dépendent pas, la décision reste réversible à coût nul.
+
+### 2026-07-07 — Le graphe documentaire devient le modèle central (Volume II, ch. 3)
+
+PrépaPilote est une base de connaissances ; le site n'est que l'interface qui l'explore. Tout contenu est un objet documentaire (famille, relations, gabarit) ; les pages sont des projections. Deux registres de relations : pédagogique (existant) et factuel — prédicats fermés (`content/_referentiels/predicats.json`) avec libellé inverse, familles autorisées et poids par défaut (forte/moyenne/complémentaire), résolus par `src/lib/content/graph.ts` (arête déclarée d'un côté, liens des deux côtés, erreurs bloquantes en CI). Cinq familles ajoutées : organisation, unité, grade, infrastructure, concept. Doctrine complète : docs/editorial/graphe-documentaire.md.
