@@ -1,0 +1,38 @@
+import Link from "next/link";
+import { UserIcon } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { SearchCommand } from "@/features/search/search-command";
+import { buildSearchEntries } from "@/features/search/entries";
+
+/**
+ * Header global, présent sur toutes les pages : logo, recherche sobre,
+ * connexion. L'index de la palette est construit au build depuis les
+ * référentiels.
+ */
+export function SiteHeader() {
+  const entries = buildSearchEntries();
+
+  return (
+    <header className="bg-background/95 sticky top-0 z-40 border-b backdrop-blur">
+      <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="focus-visible:ring-ring rounded-sm text-lg font-bold tracking-tight focus-visible:ring-2 focus-visible:outline-none"
+        >
+          Prépa<span className="text-primary">Pilote</span>
+        </Link>
+        <div className="ml-auto flex items-center gap-2">
+          <SearchCommand entries={entries} />
+          <ThemeToggle />
+          <Button asChild variant="outline" size="sm">
+            <Link href="/connexion">
+              <UserIcon aria-hidden className="size-4" />
+              <span className="hidden sm:inline">Connexion</span>
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+}

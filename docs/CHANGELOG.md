@@ -6,6 +6,13 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
+- 2026-07-07 — Fondations V1 de la plateforme :
+  - Design system : accent bleu institutionnel, tokens succès/avertissement et marqueurs concours (clair + sombre), thème clair/sombre/système, route interne `/design-system`.
+  - Référentiels de contenu (`content/_referentiels/`) : 5 modules et leurs catégories (structure identique garantie entre les trois concours), chargeurs validés par Zod.
+  - Layout global : header (logo, recherche, thème, connexion), footer sobre, fil d'Ariane accessible, page 404.
+  - Accueil sobre : trois cartes concours verticales + deux cartes transverses horizontales, placeholders remplaçables par configuration.
+  - Routes de modules générées depuis les référentiels : 73 pages statiques (hubs de modules et de catégories avec états vides).
+  - Fondations de la recherche : contrat `SearchEntry`/provider, fonction pure Fuse.js testée, palette Ctrl/Cmd+K groupée par type, page `/recherche` avec requête dans l'URL.
 - 2026-07-07 — Consignation de la conception validée (Prompts 1–3) : `docs/VISION.md` (vision officielle + 16 arbitrages), refonte de `docs/ARCHITECTURE.md` (quatre couches, modèle de contenu, routes, base de données, recherche), création de `docs/design-system.md`, mise à jour des règles projet (`AGENTS.md`).
 
 - 2026-07-07 — Initialisation de l'environnement de développement professionnel :
