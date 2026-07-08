@@ -3,7 +3,7 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { ficheFileSchema, termeSchema, type FicheFile, type Terme } from "./content-schemas";
 import { resolveFactualGraph, type GraphNode, type ResolvedLink } from "./graph";
-import { getCategory, getModule, getModules, getPredicates } from "./referentials";
+import { getCategory, getModules, getPredicates } from "./referentials";
 
 /**
  * Chargement des objets documentaires depuis content/ (format YAML,

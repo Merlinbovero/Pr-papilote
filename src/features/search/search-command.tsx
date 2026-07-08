@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { SearchIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,20 +13,25 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { searchEntries } from "./search";
+import { cn } from "@/lib/utils";
+import { searchEntries, suggestCorrection } from "./search";
+import { SearchResultItem } from "./search-result-item";
 import { SEARCH_TYPE_LABELS, type SearchEntry, type SearchEntryType } from "./types";
 
 interface SearchCommandProps {
-  /** Index de recherche, construit côté serveur depuis les référentiels. */
+  /** Index de recherche, construit côté serveur (indexeur de build). */
   entries: SearchEntry[];
+  /** hero : barre large et centrée (accueil) ; compact : header. */
+  variant?: "compact" | "hero";
 }
 
 /**
- * Palette de recherche globale (Ctrl/Cmd+K). Présente partout via le
- * header ; la recherche approfondie vit sur /recherche.
+ * Palette de recherche unique (Ctrl/Cmd+K) — même index, même
+ * classement partout. Le module courant (URL) sert de boost contextuel.
  */
-export function SearchCommand({ entries }: SearchCommandProps) {
+export function SearchCommand({ entries, variant = "compact" }: SearchCommandProps) {
   const router = useRouter();
+  const params = useParams<{ module?: string }>();
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
 
@@ -41,9 +46,19 @@ export function SearchCommand({ entries }: SearchCommandProps) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  const moduleSlug = typeof params?.module === "string" ? params.module : undefined;
+
   const results = React.useMemo(
-    () => searchEntries(entries, query, { limit: 12 }),
-    [entries, query]
+    () => searchEntries(entries, query, { limit: 12, moduleSlug }),
+    [entries, query, moduleSlug]
+  );
+
+  const correction = React.useMemo(
+    () =>
+      query.trim().length > 2 && results.length === 0
+        ? suggestCorrection(entries, query)
+        : undefined,
+    [entries, query, results.length]
   );
 
   const grouped = React.useMemo(() => {
@@ -66,12 +81,19 @@ export function SearchCommand({ entries }: SearchCommandProps) {
     <>
       <Button
         variant="outline"
-        size="sm"
-        className="text-muted-foreground w-full justify-start gap-2 sm:w-56"
+        size={variant === "hero" ? "lg" : "sm"}
+        className={cn(
+          "text-muted-foreground justify-start gap-2",
+          variant === "hero" ? "w-full max-w-xl" : "w-full sm:w-56"
+        )}
         onClick={() => setOpen(true)}
       >
         <SearchIcon aria-hidden className="size-4" />
-        <span className="flex-1 text-left">Rechercher…</span>
+        <span className="flex-1 text-left">
+          {variant === "hero"
+            ? "Rechercher un appareil, une notion, une procédure…"
+            : "Rechercher…"}
+        </span>
         <kbd className="bg-muted pointer-events-none hidden rounded px-1.5 font-mono text-xs sm:inline">
           Ctrl K
         </kbd>
@@ -82,22 +104,38 @@ export function SearchCommand({ entries }: SearchCommandProps) {
         title="Recherche"
         description="Rechercher dans PrépaPilote"
       >
-        {/* Le filtrage est fait par notre moteur (Fuse), pas par cmdk. */}
+        {/* Le filtrage et le classement sont faits par notre moteur, pas par cmdk. */}
         <Command shouldFilter={false}>
           <CommandInput
-            placeholder="Module, catégorie, notion…"
+            placeholder="Appareil, notion, procédure, sigle…"
             value={query}
             onValueChange={setQuery}
           />
           <CommandList>
             <CommandEmpty>
-              {query.trim().length === 0 ? "Commencez à taper pour chercher." : "Aucun résultat."}
+              {query.trim().length === 0 ? (
+                "Commencez à taper pour chercher."
+              ) : correction ? (
+                <>
+                  Vouliez-vous dire{" "}
+                  <button
+                    type="button"
+                    className="text-primary underline underline-offset-4"
+                    onClick={() => setQuery(correction)}
+                  >
+                    {correction}
+                  </button>
+                  {" ?"}
+                </>
+              ) : (
+                "Essayez un sigle, un synonyme ou une orthographe approchée."
+              )}
             </CommandEmpty>
             {[...grouped.entries()].map(([type, items]) => (
               <CommandGroup key={type} heading={SEARCH_TYPE_LABELS[type]}>
                 {items.map((item) => (
                   <CommandItem key={item.id} value={item.id} onSelect={() => onSelect(item.url)}>
-                    <span>{item.title}</span>
+                    <SearchResultItem entry={item} />
                   </CommandItem>
                 ))}
               </CommandGroup>

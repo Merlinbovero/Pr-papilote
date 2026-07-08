@@ -239,6 +239,10 @@ export const ficheMetadataBaseSchema = z.object({
   title: z.string().min(1),
   slug: slugSchema,
   summary: z.string().min(20).max(300),
+  /** Alias de recherche (sigles, appellations) — clés d'entrée vers l'URL canonique. */
+  aliases: z.array(z.string().min(1)).default([]),
+  /** Priorité éditoriale de recherche (0–5) : départage les homonymes. */
+  searchPriority: z.int().min(0).max(5).default(0),
   module: slugSchema,
   category: slugSchema,
   subcategory: slugSchema.optional(),

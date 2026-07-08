@@ -6,6 +6,7 @@ slug: rafale-m
 summary: >-
   Chasseur multirôle embarqué de l'aéronautique navale, version marine du
   Rafale, mis en œuvre depuis le porte-avions Charles de Gaulle.
+aliases: [Rafale Marine]
 module: eopan
 category: appareils
 subcategory: avions-de-chasse

@@ -38,9 +38,12 @@ Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats
 
 ## Moteur de recherche (`src/features/search/`)
 
-- `types.ts` — contrat `SearchEntry` / `SearchOptions` : l'UI ne dépend que de lui.
-- `search.ts` — `searchEntries(entries, query, options)` : fonction pure (Fuse.js), testée.
-- `entries.ts` — `buildSearchEntries()` : construit l'index depuis les référentiels au build ; s'enrichira des fiches, termes, documents et quiz.
+- `types.ts` — contrat `SearchEntry`/`SearchOptions`/`SearchOutcome` : l'UI ne dépend que de lui.
+- `normalize.ts` — normalisation française (accents, casse, pluriels) + distance d'édition bornée, testée.
+- `search.ts` — scorer pondéré (correspondance × champ × type × contexte × priorité) + flou Fuse.js + `suggestCorrection` + `searchWithFallback` (zéro impasse), testés.
+- `entries.ts` — indexeur de build (`buildSearchEntries`, mémoïsé) : modules, catégories, fiches (alias, priorité), termes.
+- `search-result-item.tsx` — résultat riche du design system : icône de famille, badge de type, titre, résumé, contexte. Utilisé par la palette et `/recherche`.
+- `search-command.tsx` — palette unique (variantes `compact` header / `hero` accueil), boost contextuel via l'URL, correction dans l'état vide.
 
 ## Modèle d'entrée
 
