@@ -254,6 +254,10 @@ export const ficheMetadataBaseSchema = z.object({
   /** Posée à chaque vérification humaine ; affichée sur la fiche. */
   verifiedAt: isoDateSchema,
   author: z.string().min(1),
+  /** Valideur de la dernière relecture, distinct de l'auteur. */
+  reviewer: z.string().min(1).optional(),
+  /** Compteur d'évolutions significatives du contenu (l'historique complet vit dans Git). */
+  version: z.int().min(1).default(1),
   /** ≥ 1 source ; la première est la source principale. */
   sources: z.array(sourceSchema).min(1),
   status: contentStatusSchema,
@@ -344,6 +348,8 @@ const questionIdSchema = z
 const questionBaseShape = {
   schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
   id: questionIdSchema,
+  /** Thème didactique explicite (regroupement principal des questions). */
+  theme: slugSchema,
   statement: z.string().min(10),
   /** L'explication enseigne : obligatoire et substantielle. */
   explanation: z.string().min(20),
@@ -447,6 +453,32 @@ export const termeSchema = z.object({
 });
 
 export type Terme = z.infer<typeof termeSchema>;
+
+// ---------------------------------------------------------------------------
+// Image (ressource indépendante, réutilisable — relation « illustre »)
+// ---------------------------------------------------------------------------
+
+export const imageSchema = z.object({
+  schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
+  id: z.string().regex(/^image\.[a-z0-9-]+$/),
+  title: z.string().min(1),
+  description: z.string().min(10),
+  /** Texte alternatif : obligatoire, descriptif (accessibilité). */
+  alt: z.string().min(5),
+  author: z.string().min(1),
+  /** Provenance précise (page, banque, service émetteur). */
+  source: z.string().min(1),
+  /** Licence vérifiée — AUCUNE image sans droit établi. */
+  license: z.string().min(1),
+  /** Date de l'image ou de sa publication (ISO). */
+  date: isoDateSchema,
+  /** Binaire dans Storage (jamais dans Git). */
+  storagePath: z.string().min(1).optional(),
+  tags: z.array(slugSchema).default([]),
+  status: contentStatusSchema,
+});
+
+export type ImageResource = z.infer<typeof imageSchema>;
 
 // ---------------------------------------------------------------------------
 // Notice de document public

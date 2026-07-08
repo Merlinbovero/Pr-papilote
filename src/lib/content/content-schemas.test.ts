@@ -5,6 +5,7 @@ import {
   ficheMetadataSchema,
   FICHE_FAMILIES,
   ficheTypeSchema,
+  imageSchema,
   questionSchema,
   quizSchema,
   termeSchema,
@@ -107,6 +108,7 @@ describe("questionSchema", () => {
   const qcm = {
     schemaVersion: CONTENT_SCHEMA_VERSION,
     id: "q.meteo.0001",
+    theme: "meteorologie",
     kind: "qcm",
     statement: "Quel nuage est associé aux orages ?",
     choices: ["Cirrus", "Cumulonimbus", "Stratus"],
@@ -185,6 +187,34 @@ describe("quizSchema", () => {
 
   it("refuse un quiz sans sélecteur ni liste", () => {
     expect(quizSchema.safeParse(base).success).toBe(false);
+  });
+});
+
+describe("imageSchema", () => {
+  const image = {
+    schemaVersion: CONTENT_SCHEMA_VERSION,
+    id: "image.exemple",
+    title: "Image d'exemple",
+    description: "Fixture de test de l'entité image indépendante.",
+    alt: "Description alternative de l'image d'exemple.",
+    author: "Auteur d'exemple",
+    source: "https://exemple.fr/image",
+    license: "CC BY-SA 4.0",
+    date: "2026-01-01",
+    status: "brouillon",
+  } as const;
+
+  it("accepte une image complète (auteur, source, licence, alt, date, description)", () => {
+    expect(imageSchema.safeParse(image).success).toBe(true);
+  });
+
+  it("refuse une image sans licence vérifiée", () => {
+    const { license: _license, ...sansLicence } = image;
+    expect(imageSchema.safeParse(sansLicence).success).toBe(false);
+  });
+
+  it("refuse un texte alternatif vide ou dérisoire", () => {
+    expect(imageSchema.safeParse({ ...image, alt: "img" }).success).toBe(false);
   });
 });
 
