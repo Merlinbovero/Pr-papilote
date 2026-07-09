@@ -36,6 +36,13 @@ Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats
 | `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                         | Jamais permanent, jamais dans l'URL canonique               |
 | `PrintButton`       | Déclenche la vue impression (client)                                                 | —                                                           |
 
+## Progression (`src/features/progression/` + `src/lib/progression/`)
+
+- `lib/progression/config.ts` — seuils de maîtrise configurables (jamais codés en dur).
+- `lib/progression/derive.ts` — fonctions pures testées : `overallStats`, `themeMastery`, `strengthsAndWeaknesses`, `weeklyTrend`, `journey` (parcours dans le temps), `recommendations` (règles explicables).
+- `features/progression/stat-card.tsx` · `theme-mastery-list.tsx` (code couleur sémantique) · `recommendation-list.tsx` (motif affiché). Prévisualisation : `/design-system/progression`.
+- Pas de streak (décision ch. 7) ; tout privé, aucune comparaison entre utilisateurs.
+
 ## Moteur pédagogique (`src/features/quiz/`)
 
 - `engine.ts` — fonctions pures testées : `seededShuffle`/`createRng` (mélange déterministe par graine), `filterQuestions`/`selectQuestions` (sélection pondérée jamais-vues > anciennes > récentes), `isCorrect` (scoring par format), `scoreEpreuve` (barème d'examen, plancher zéro).
