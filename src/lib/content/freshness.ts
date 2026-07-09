@@ -56,3 +56,24 @@ export function isReviewOverdue(
   deadline.setMonth(deadline.getMonth() + getReviewIntervalMonths(fiche));
   return today > deadline;
 }
+
+/**
+ * État éditorial unifié (ch. 8 §6) : les trois marqueurs « À jour /
+ * À vérifier / Mise à jour nécessaire » dérivés d'une seule source
+ * (statut × fraîcheur), pour ne jamais juger la même fiche de deux façons.
+ */
+export type EditorialState = "a-jour" | "a-verifier" | "mise-a-jour-necessaire";
+
+export function editorialState(
+  fiche: { type: FicheType; category: string; verifiedAt: string; status: string },
+  today: Date
+): EditorialState {
+  // Décision humaine explicite : prime sur le cycle automatique.
+  if (fiche.status === "a-mettre-a-jour") {
+    return "mise-a-jour-necessaire";
+  }
+  if (isReviewOverdue(fiche, today)) {
+    return "a-verifier";
+  }
+  return "a-jour";
+}

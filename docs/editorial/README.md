@@ -2,14 +2,15 @@
 
 Architecture documentaire officielle. Ces documents gouvernent toute production de contenu ; aucune fiche ne se crée hors de ce cadre. La partie machine-vérifiable du système vit dans `src/lib/content/` (schémas Zod) : **un contenu qui ne passe pas la validation ne se publie pas**.
 
-| Document                                                   | Contenu                                                                       |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| [graphe-documentaire.md](graphe-documentaire.md)           | **Le cœur du projet** : objets, familles, prédicats, niveaux de relation      |
-| [taxonomie-et-metadonnees.md](taxonomie-et-metadonnees.md) | Hiérarchie complète, identifiants, tags, dictionnaire des métadonnées         |
-| [modeles-de-fiches.md](modeles-de-fiches.md)               | Les 17 modèles de fiches (5 familles) : sections obligatoires et optionnelles |
-| [relations-et-quiz.md](relations-et-quiz.md)               | Le graphe documentaire et la stratégie de génération des quiz                 |
-| [strategie-documentaire.md](strategie-documentaire.md)     | Pipeline d'ingestion des documents publics (enrichir avant créer)             |
-| [regles-editoriales.md](regles-editoriales.md)             | Qualité, style, neutralité, règles de rédaction                               |
+| Document                                                   | Contenu                                                                               |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [graphe-documentaire.md](graphe-documentaire.md)           | **Le cœur du projet** : objets, familles, prédicats, niveaux de relation              |
+| [taxonomie-et-metadonnees.md](taxonomie-et-metadonnees.md) | Hiérarchie complète, identifiants, tags, dictionnaire des métadonnées                 |
+| [modeles-de-fiches.md](modeles-de-fiches.md)               | Les 17 modèles de fiches (5 familles) : sections obligatoires et optionnelles         |
+| [relations-et-quiz.md](relations-et-quiz.md)               | Le graphe documentaire et la stratégie de génération des quiz                         |
+| [strategie-documentaire.md](strategie-documentaire.md)     | Pipeline d'ingestion des documents publics (enrichir avant créer)                     |
+| [regles-editoriales.md](regles-editoriales.md)             | Qualité, style, neutralité, règles de rédaction                                       |
+| [gestion-documentaire.md](gestion-documentaire.md)         | **Chaîne éditoriale (ch. 8)** : workflow, versions/motif, documents, contrôle qualité |
 
 ## Principes fondateurs
 

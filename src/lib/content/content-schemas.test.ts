@@ -102,6 +102,41 @@ describe("ficheMetadataSchema", () => {
   it("accepte une infobox sans les champs optionnels (omis plutôt qu'approximés)", () => {
     expect(ficheMetadataSchema.safeParse(ficheAppareil).success).toBe(true);
   });
+
+  it("accepte un historique de révisions cohérent avec la version", () => {
+    const result = ficheMetadataSchema.safeParse({
+      ...ficheAppareil,
+      version: 2,
+      revisions: [
+        { date: "2026-07-07", version: 1, motif: "Création.", author: "proprietaire" },
+        {
+          date: "2026-07-08",
+          version: 2,
+          motif: "Mise à jour des sources.",
+          author: "proprietaire",
+          reviewer: "relecteur",
+        },
+      ],
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("refuse un historique dont la dernière version ne coïncide pas avec version", () => {
+    const result = ficheMetadataSchema.safeParse({
+      ...ficheAppareil,
+      version: 1,
+      revisions: [{ date: "2026-07-08", version: 2, motif: "Écart.", author: "proprietaire" }],
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("refuse un motif de révision vide", () => {
+    const result = ficheMetadataSchema.safeParse({
+      ...ficheAppareil,
+      revisions: [{ date: "2026-07-07", version: 1, motif: "", author: "proprietaire" }],
+    });
+    expect(result.success).toBe(false);
+  });
 });
 
 describe("questionSchema", () => {
@@ -241,6 +276,7 @@ describe("termeSchema et documentNoticeSchema", () => {
       issuer: "Ministère des Armées",
       publishedAt: "2026-01-01",
       kind: "brochure",
+      summary: "Résumé de consultation du document d'exemple, suffisamment détaillé.",
       officialUrl: "https://www.defense.gouv.fr/exemple",
       rights: "lien-seul",
       storagePath: "documents/exemple.pdf",
@@ -250,5 +286,20 @@ describe("termeSchema et documentNoticeSchema", () => {
     expect(documentNoticeSchema.safeParse({ ...notice, storagePath: undefined }).success).toBe(
       true
     );
+  });
+
+  it("exige un résumé de consultation (ch. 8 §3)", () => {
+    const notice = {
+      schemaVersion: CONTENT_SCHEMA_VERSION,
+      id: "doc.exemple",
+      title: "Document d'exemple",
+      issuer: "Ministère des Armées",
+      publishedAt: "2026-01-01",
+      kind: "brochure",
+      officialUrl: "https://www.defense.gouv.fr/exemple",
+      rights: "lien-seul",
+      status: "brouillon",
+    };
+    expect(documentNoticeSchema.safeParse(notice).success).toBe(false);
   });
 });

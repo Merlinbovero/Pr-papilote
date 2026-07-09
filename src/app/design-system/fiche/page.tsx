@@ -14,6 +14,7 @@ import { RelationBlock } from "@/components/content/relation-block";
 import { SourceList } from "@/components/content/source-list";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { TermTooltip } from "@/components/content/term-tooltip";
+import { RevisionHistory } from "@/components/content/revision-history";
 import { TrainingBlock } from "@/components/content/training-block";
 
 export const metadata: Metadata = {
@@ -199,6 +200,24 @@ export default function FicheGabaritPreviewPage() {
           />
 
           <TrainingBlock questionCount={34} />
+
+          <RevisionHistory
+            revisions={[
+              {
+                date: "2026-07-07",
+                version: 1,
+                motif: "Création de la fiche de démonstration.",
+                author: "Rédaction (démo)",
+              },
+              {
+                date: "2026-07-08",
+                version: 2,
+                motif: "Mise à jour des données de l'infobox après vérification des sources.",
+                author: "Rédaction (démo)",
+                reviewer: "Relecture (démo)",
+              },
+            ]}
+          />
 
           <FicheNav
             previous={{ label: "Fiche précédente (démo)", href: "#" }}

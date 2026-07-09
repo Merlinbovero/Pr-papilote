@@ -179,6 +179,22 @@ export const sourceSchema = z.object({
   consultedAt: isoDateSchema,
 });
 
+/**
+ * Entrée d'historique d'une fiche (ch. 8 §5). Git reste la vérité des
+ * diffs ; ce registre structuré porte le MOTIF de chaque évolution
+ * significative, affichable sur la fiche et vérifiable au contrôle qualité.
+ */
+export const revisionSchema = z.object({
+  date: isoDateSchema,
+  /** Numéro de version atteint par cette révision (croissant). */
+  version: z.int().min(1),
+  /** Pourquoi la fiche a évolué (jamais vide). */
+  motif: z.string().min(1),
+  author: z.string().min(1),
+  reviewer: z.string().min(1).optional(),
+});
+export type Revision = z.infer<typeof revisionSchema>;
+
 /** Niveaux de relation du graphe (graphe-documentaire.md §liens). */
 export const relationWeightSchema = z.enum(["forte", "moyenne", "complementaire"]);
 export type RelationWeight = z.infer<typeof relationWeightSchema>;
@@ -274,6 +290,12 @@ export const ficheMetadataBaseSchema = z.object({
   reviewer: z.string().min(1).optional(),
   /** Compteur d'évolutions significatives du contenu (l'historique complet vit dans Git). */
   version: z.int().min(1).default(1),
+  /**
+   * Historique structuré des révisions (motifs). Facultatif : une fiche
+   * neuve peut n'avoir aucune entrée. Quand il existe, la dernière version
+   * du registre doit coïncider avec `version` (cf. refineFiche).
+   */
+  revisions: z.array(revisionSchema).default([]),
   /** ≥ 1 source ; la première est la source principale. */
   sources: z.array(sourceSchema).min(1),
   status: contentStatusSchema,
@@ -314,6 +336,33 @@ export function refineFiche(fiche: FicheLike, ctx: z.RefinementCtx): void {
           code: "custom",
           path: ["infobox", key],
           message: `Valeur d'approximation interdite pour « ${key} » : omettre le champ plutôt que l'inventer.`,
+        });
+      }
+    }
+  }
+  if (fiche.revisions.length > 0) {
+    const versions = fiche.revisions.map((r) => r.version);
+    if (new Set(versions).size !== versions.length) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["revisions"],
+        message: "Historique : numéros de version en double.",
+      });
+    }
+    const maxVersion = Math.max(...versions);
+    if (maxVersion !== fiche.version) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["revisions"],
+        message: `Historique : la dernière révision (v${maxVersion}) doit coïncider avec version (v${fiche.version}).`,
+      });
+    }
+    for (let i = 1; i < fiche.revisions.length; i++) {
+      if (fiche.revisions[i].date < fiche.revisions[i - 1].date) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["revisions", i, "date"],
+          message: "Historique : les révisions doivent être ordonnées par date croissante.",
         });
       }
     }
@@ -593,6 +642,8 @@ export const documentNoticeSchema = z
     issuer: z.string().min(1),
     publishedAt: isoDateSchema,
     kind: z.enum(["arrete", "rapport", "brochure", "documentation", "communique", "autre"]),
+    /** Résumé de consultation (ch. 8 §3) : la notice se lit sur le site. */
+    summary: z.string().min(20).max(400),
     officialUrl: z.url(),
     /**
      * lien-seul (défaut) : on pointe vers la source, on ne rediffuse pas.

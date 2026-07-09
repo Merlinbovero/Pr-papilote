@@ -34,6 +34,8 @@ Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats
 | `FicheNav`          | Pied de fiche : précédent/suivant, retour, traçabilité, signalement                  | —                                                           |
 | `TermTooltip`       | Terme du dictionnaire : souligné pointillé + définition en infobulle (client)        | Pour un lien ordinaire                                      |
 | `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                         | Jamais permanent, jamais dans l'URL canonique               |
+| `RevisionHistory`   | Historique des révisions (version, date, motif, auteur/relecteur) ; nul si vide      | Pour un simple horodatage — utiliser l'audit du pied        |
+| `NoticeDocument`    | Notice de document public consultable sur site (résumé, source, fiches liées)        | Pour un simple lien de téléchargement                       |
 | `PrintButton`       | Déclenche la vue impression (client)                                                 | —                                                           |
 
 ## Progression (`src/features/progression/` + `src/lib/progression/`)

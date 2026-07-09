@@ -11,12 +11,15 @@ import { Infobox } from "@/components/content/infobox";
 import { Markdown } from "@/components/content/markdown";
 import { PitfallsBlock } from "@/components/content/pitfalls-block";
 import { RelationBlock } from "@/components/content/relation-block";
+import { RevisionHistory } from "@/components/content/revision-history";
 import { SourceList } from "@/components/content/source-list";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { TrainingBlock } from "@/components/content/training-block";
-import type { InfoboxEntry, RelationItem, TocItem } from "@/components/content/types";
-import type { FicheFile } from "@/lib/content/content-schemas";
+import type { DocumentItem, InfoboxEntry, RelationItem, TocItem } from "@/components/content/types";
+import type { DocumentNotice, FicheFile } from "@/lib/content/content-schemas";
 import {
+  getDocumentHref,
+  getDocumentsForFiche,
   getFiche,
   getFicheById,
   getFicheHref,
@@ -26,7 +29,7 @@ import {
   getReadingMinutes,
   getTermesForFiche,
 } from "@/lib/content/fiches";
-import { isReviewOverdue } from "@/lib/content/freshness";
+import { editorialState } from "@/lib/content/freshness";
 import { infoboxLabel } from "@/lib/content/infobox-labels";
 import { getCategory, getModule } from "@/lib/content/referentials";
 
@@ -56,6 +59,15 @@ const LEVEL_LABELS: Record<number, string> = {
   1: "Découverte",
   2: "Niveau concours",
   3: "Expert",
+};
+
+const DOCUMENT_KIND_LABELS: Record<DocumentNotice["kind"], string> = {
+  arrete: "Arrêté",
+  rapport: "Rapport",
+  brochure: "Brochure",
+  documentation: "Documentation",
+  communique: "Communiqué",
+  autre: "Document",
 };
 
 export async function generateMetadata({ params }: FichePageProps): Promise<Metadata> {
@@ -103,7 +115,13 @@ export default async function FichePage({ params }: FichePageProps) {
     });
 
   const termes = getTermesForFiche(fiche.id);
-  const overdue = isReviewOverdue(fiche, new Date());
+  const state = editorialState(fiche, new Date());
+
+  const documents: DocumentItem[] = getDocumentsForFiche(fiche).map((doc) => ({
+    title: doc.title,
+    kindLabel: DOCUMENT_KIND_LABELS[doc.kind],
+    href: getDocumentHref(doc),
+  }));
 
   const infoboxEntries: InfoboxEntry[] = fiche.infobox
     ? Object.entries(fiche.infobox).map(([key, value]) => ({
@@ -172,7 +190,7 @@ export default async function FichePage({ params }: FichePageProps) {
         levelLabel={LEVEL_LABELS[fiche.level] ?? `Niveau ${fiche.level}`}
         readingMinutes={getReadingMinutes(fiche)}
         verifiedAt={fiche.verifiedAt}
-        overdue={overdue}
+        overdue={state === "a-verifier"}
       />
 
       <div className="mt-8 gap-10 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]">
@@ -210,7 +228,7 @@ export default async function FichePage({ params }: FichePageProps) {
 
           {fiche.content.pieges.length > 0 ? <PitfallsBlock items={fiche.content.pieges} /> : null}
 
-          <DocumentList documents={[]} />
+          <DocumentList documents={documents} />
 
           <SourceList sources={fiche.sources} />
 
@@ -224,6 +242,8 @@ export default async function FichePage({ params }: FichePageProps) {
           ) : null}
 
           <TrainingBlock questionCount={0} />
+
+          <RevisionHistory revisions={fiche.revisions} />
 
           <FicheNav
             previous={

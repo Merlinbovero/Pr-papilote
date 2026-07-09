@@ -34,3 +34,11 @@ export interface TocItem {
   id: string;
   label: string;
 }
+
+export interface RevisionItem {
+  date: string;
+  version: number;
+  motif: string;
+  author: string;
+  reviewer?: string;
+}

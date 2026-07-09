@@ -1,7 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { ficheFileSchema, termeSchema, type FicheFile, type Terme } from "./content-schemas";
+import {
+  documentNoticeSchema,
+  ficheFileSchema,
+  questionSchema,
+  termeSchema,
+  type DocumentNotice,
+  type FicheFile,
+  type Question,
+  type Terme,
+} from "./content-schemas";
 import { resolveFactualGraph, type GraphNode, type ResolvedLink } from "./graph";
 import { getCategory, getModules, getPredicates } from "./referentials";
 
@@ -40,6 +49,8 @@ function readYamlFiles(dir: string): { file: string; data: unknown }[] {
 interface ContentIndex {
   fiches: FicheFile[];
   termes: Terme[];
+  documents: DocumentNotice[];
+  questions: Question[];
   linksByObject: Map<string, ResolvedLink[]>;
 }
 
@@ -69,7 +80,15 @@ function buildIndex(): ContentIndex {
     termeSchema.parse(data)
   );
 
-  // Intégrité des relations pédagogiques et des renvois de termes
+  const documents = readYamlFiles(path.join(CONTENT_DIR, "documents")).map(({ data }) =>
+    documentNoticeSchema.parse(data)
+  );
+  const documentIds = new Set(documents.map((doc) => doc.id));
+  if (documentIds.size !== documents.length) {
+    throw new Error("Contenu : identifiants de documents en double");
+  }
+
+  // Intégrité des relations pédagogiques, des renvois de termes et des documents
   for (const fiche of fiches) {
     const declared = [
       ...(fiche.relations.prerequisites ?? []),
@@ -80,6 +99,26 @@ function buildIndex(): ContentIndex {
     for (const target of declared) {
       if (!ids.has(target)) {
         throw new Error(`${fiche.id} : relation pédagogique vers un ID inexistant « ${target} »`);
+      }
+    }
+    for (const docId of fiche.relations.documents ?? []) {
+      if (!documentIds.has(docId)) {
+        throw new Error(`${fiche.id} : document associé inexistant « ${docId} »`);
+      }
+    }
+  }
+
+  const questions = readYamlFiles(path.join(CONTENT_DIR, "questions")).map(({ data }) =>
+    questionSchema.parse(data)
+  );
+  const questionIds = new Set(questions.map((q) => q.id));
+  if (questionIds.size !== questions.length) {
+    throw new Error("Contenu : identifiants de questions en double");
+  }
+  for (const question of questions) {
+    for (const target of question.evaluates) {
+      if (!ids.has(target)) {
+        throw new Error(`${question.id} : évalue une fiche inexistante « ${target} »`);
       }
     }
   }
@@ -101,7 +140,7 @@ function buildIndex(): ContentIndex {
     throw new Error(`Graphe documentaire invalide :\n${errors.join("\n")}`);
   }
 
-  return { fiches, termes, linksByObject };
+  return { fiches, termes, documents, questions, linksByObject };
 }
 
 function getIndex(): ContentIndex {
@@ -121,6 +160,24 @@ function isVisible(status: string): boolean {
 /** Toutes les fiches visibles dans l'environnement courant. */
 export function getFiches(): FicheFile[] {
   return getIndex().fiches.filter((fiche) => isVisible(fiche.status));
+}
+
+/**
+ * Contenu BRUT, tous statuts confondus — réservé au contrôle qualité
+ * éditorial (`content-check`), qui juge y compris les brouillons.
+ */
+export function getAllContent(): {
+  fiches: FicheFile[];
+  documents: DocumentNotice[];
+  questions: Question[];
+} {
+  const index = getIndex();
+  return { fiches: index.fiches, documents: index.documents, questions: index.questions };
+}
+
+/** Questions visibles de la banque (vide tant qu'aucune n'est produite). */
+export function getQuestions(): Question[] {
+  return getIndex().questions.filter((question) => isVisible(question.status));
 }
 
 export function getFichesByCategory(moduleSlug: string, categorySlug: string): FicheFile[] {
@@ -152,6 +209,35 @@ export function getFicheHref(fiche: Pick<FicheFile, "module" | "category" | "slu
 export function getFicheLinks(id: string): ResolvedLink[] {
   const visibleIds = new Set(getFiches().map((fiche) => fiche.id));
   return (getIndex().linksByObject.get(id) ?? []).filter((link) => visibleIds.has(link.targetId));
+}
+
+/** Notices de documents visibles dans l'environnement courant, triées. */
+export function getDocuments(): DocumentNotice[] {
+  return getIndex()
+    .documents.filter((doc) => isVisible(doc.status))
+    .sort((a, b) => a.title.localeCompare(b.title, "fr"));
+}
+
+export function getDocument(id: string): DocumentNotice | undefined {
+  return getDocuments().find((doc) => doc.id === id);
+}
+
+/** Documents associés à une fiche (via `relations.documents`), dans l'ordre déclaré. */
+export function getDocumentsForFiche(fiche: FicheFile): DocumentNotice[] {
+  return (fiche.relations.documents ?? []).flatMap((id) => {
+    const doc = getDocument(id);
+    return doc ? [doc] : [];
+  });
+}
+
+/** Fiches visibles renvoyant vers un document donné. */
+export function getFichesForDocument(docId: string): FicheFile[] {
+  return getFiches().filter((fiche) => (fiche.relations.documents ?? []).includes(docId));
+}
+
+/** URL canonique d'une notice de document. */
+export function getDocumentHref(doc: Pick<DocumentNotice, "id">): string {
+  return `/documents/${doc.id.replace(/^doc\./, "")}`;
 }
 
 /** Termes visibles du dictionnaire, triés. */
