@@ -36,6 +36,12 @@ Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats
 | `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                         | Jamais permanent, jamais dans l'URL canonique               |
 | `PrintButton`       | Déclenche la vue impression (client)                                                 | —                                                           |
 
+## Moteur pédagogique (`src/features/quiz/`)
+
+- `engine.ts` — fonctions pures testées : `seededShuffle`/`createRng` (mélange déterministe par graine), `filterQuestions`/`selectQuestions` (sélection pondérée jamais-vues > anciennes > récentes), `isCorrect` (scoring par format), `scoreEpreuve` (barème d'examen, plancher zéro).
+- `quiz-player.tsx` — lecteur au design system : question, réponses (choix unique/multiple), correction pédagogique (explication + notes de distracteurs + fiches à approfondir), chronomètre facultatif, progression, restitution ; jouable sans compte. Prévisualisation : `/design-system/quiz`.
+- Examen blanc : `examSchema` (contrat) — moteur paramétrique sur la banque, jamais une collection statique.
+
 ## Moteur de recherche (`src/features/search/`)
 
 - `types.ts` — contrat `SearchEntry`/`SearchOptions`/`SearchOutcome` : l'UI ne dépend que de lui.

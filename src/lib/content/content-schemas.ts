@@ -345,6 +345,15 @@ const questionIdSchema = z
   .string()
   .regex(/^q\.[a-z0-9-]+\.[a-z0-9-]+$/, "identifiant attendu : q.domaine.numero");
 
+/** Libellés officiels des niveaux (le niveau guide, il ne juge pas). */
+export const DIFFICULTY_LABELS: Record<number, string> = {
+  1: "Découverte",
+  2: "Fondamental",
+  3: "Concours",
+  4: "Avancé",
+  5: "Expert",
+};
+
 const questionBaseShape = {
   schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
   id: questionIdSchema,
@@ -369,7 +378,13 @@ export const questionSchema = z.discriminatedUnion("kind", [
     ...questionBaseShape,
     kind: z.literal("qcm"),
     choices: z.array(z.string().min(1)).min(3).max(6),
+    /** Une seule bonne réponse = choix unique ; plusieurs = choix multiple. */
     correctChoices: z.array(z.int().min(0)).min(1),
+    /**
+     * Pourquoi chaque mauvaise réponse est fausse (clé = index du choix),
+     * renseignée quand cela apporte une valeur pédagogique.
+     */
+    distractorNotes: z.record(z.string(), z.string().min(5)).optional(),
   }),
   z.object({
     ...questionBaseShape,
@@ -394,6 +409,25 @@ export const questionSchema = z.discriminatedUnion("kind", [
     tolerance: z.number().min(0).default(0),
     unit: z.string().optional(),
   }),
+  z.object({
+    ...questionBaseShape,
+    kind: z.literal("ordre"),
+    /** Éléments dans l'ordre CORRECT ; l'affichage mélange par graine. */
+    items: z.array(z.string().min(1)).min(3).max(8),
+  }),
+  z
+    .object({
+      ...questionBaseShape,
+      kind: z.literal("texte-a-trous"),
+      /** Texte contenant les marqueurs {{1}}, {{2}}, … */
+      text: z.string().min(10),
+      /** Réponses acceptées par trou, dans l'ordre des marqueurs. */
+      gaps: z.array(z.object({ accepted: z.array(z.string().min(1)).min(1) })).min(1),
+    })
+    .refine(
+      (q) => q.gaps.every((_, index) => q.text.includes(`{{${index + 1}}}`)),
+      "Chaque trou déclaré doit avoir son marqueur {{n}} dans le texte."
+    ),
 ]);
 
 export type Question = z.infer<typeof questionSchema>;
@@ -404,13 +438,19 @@ export type Question = z.infer<typeof questionSchema>;
 
 export const quizSelectorSchema = z.object({
   module: slugSchema.optional(),
+  /** Thèmes didactiques des questions. */
+  themes: z.array(slugSchema).optional(),
   categories: z.array(slugSchema).optional(),
   subcategories: z.array(slugSchema).optional(),
+  /** Compétences évaluées (tags du référentiel). */
   tags: z.array(slugSchema).optional(),
   concours: z.array(concoursSchema).optional(),
+  /** Familles d'objets des fiches évaluées (mélange inter-familles). */
+  families: z.array(ficheTypeSchema).optional(),
   difficulty: z.tuple([z.int().min(1).max(5), z.int().min(1).max(5)]).optional(),
   count: z.int().min(1).max(200),
 });
+export type QuizSelector = z.infer<typeof quizSelectorSchema>;
 
 export const quizSchema = z
   .object({
@@ -432,6 +472,45 @@ export const quizSchema = z
   });
 
 export type Quiz = z.infer<typeof quizSchema>;
+
+// ---------------------------------------------------------------------------
+// Examen blanc : un MOTEUR paramétrique, jamais une collection statique.
+// Les épreuves sélectionnent dans la banque ; une liste explicite reste
+// possible pour reproduire un format officiel à l'identique (l'exception).
+// ---------------------------------------------------------------------------
+
+export const examEpreuveSchema = z
+  .object({
+    title: z.string().min(1),
+    selector: quizSelectorSchema.optional(),
+    questions: z.array(questionIdSchema).min(1).optional(),
+    /** Durée de l'épreuve en secondes. */
+    timingSeconds: z.int().positive(),
+    bareme: z.object({
+      pointsParBonne: z.number().positive(),
+      penaliteParFausse: z.number().min(0).default(0),
+    }),
+    consignes: z.string().optional(),
+  })
+  .refine((epreuve) => Boolean(epreuve.selector) !== Boolean(epreuve.questions), {
+    message:
+      "Une épreuve définit soit « selector », soit « questions » — exactement l'un des deux.",
+  });
+
+export const examSchema = z.object({
+  schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
+  id: z.string().regex(/^examen\.[a-z0-9-]+$/),
+  title: z.string().min(1),
+  concours: concoursSchema,
+  description: z.string().optional(),
+  /** Structure calquée sur un format officiel → sourcée et datée. */
+  sources: z.array(sourceSchema).default([]),
+  epreuves: z.array(examEpreuveSchema).min(1),
+  status: contentStatusSchema,
+});
+
+export type Exam = z.infer<typeof examSchema>;
+export type ExamEpreuve = z.infer<typeof examEpreuveSchema>;
 
 // ---------------------------------------------------------------------------
 // Terme du dictionnaire (vocabulaire canonique du site)
