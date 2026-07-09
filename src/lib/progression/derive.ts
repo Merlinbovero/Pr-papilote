@@ -12,6 +12,8 @@ export interface AttemptRecord {
   questionId: string;
   theme: string;
   moduleSlug: string;
+  /** Compétences transversales sollicitées par la question (référentiel fermé). */
+  competencies?: string[];
   isCorrect: boolean;
   durationMs?: number;
   /** ISO. */
@@ -51,18 +53,48 @@ export function overallStats(attempts: AttemptRecord[], moduleSlug?: string): Ov
   };
 }
 
-export interface ThemeMastery {
-  theme: string;
+export interface Mastery {
   answered: number;
   correctRate: number;
   level: MasteryLevel;
 }
 
+export interface ThemeMastery extends Mastery {
+  theme: string;
+}
+
+export interface CompetencyMastery extends Mastery {
+  competency: string;
+}
+
 /**
- * Maîtrise par thème sur les questions récentes (fenêtre configurable).
- * Un thème sous le minimum de questions reste « en cours » : on ne juge
- * jamais sur trop peu de données.
+ * Niveau de maîtrise d'un groupe de tentatives, sur les questions récentes
+ * (fenêtre configurable). Sous le minimum de questions, on reste « en
+ * cours » : on ne juge jamais sur trop peu de données. Cœur partagé par la
+ * maîtrise par thème et par compétence — une seule logique configurable.
  */
+function masteryOf(list: AttemptRecord[], config: MasteryConfig): Mastery {
+  const recent = [...list]
+    .sort((a, b) => b.answeredAt.localeCompare(a.answeredAt))
+    .slice(0, config.recentWindow);
+  const answered = recent.length;
+  const correct = recent.filter((a) => a.isCorrect).length;
+  const rate = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+  let level: MasteryLevel;
+  if (answered < config.minQuestions) {
+    level = "en-cours";
+  } else if (rate < config.aRevoirMax) {
+    level = "a-revoir";
+  } else if (rate >= config.maitriseMin) {
+    level = "maitrise";
+  } else {
+    level = "en-cours";
+  }
+  return { answered, correctRate: rate, level };
+}
+
+/** Maîtrise par thème sur les questions récentes (fenêtre configurable). */
 export function themeMastery(
   attempts: AttemptRecord[],
   config: MasteryConfig = DEFAULT_MASTERY_CONFIG
@@ -73,29 +105,31 @@ export function themeMastery(
     list.push(attempt);
     byTheme.set(attempt.theme, list);
   }
+  return [...byTheme.entries()]
+    .map(([theme, list]) => ({ theme, ...masteryOf(list, config) }))
+    .sort((a, b) => a.theme.localeCompare(b.theme, "fr"));
+}
 
-  const result: ThemeMastery[] = [];
-  for (const [theme, list] of byTheme) {
-    const recent = [...list]
-      .sort((a, b) => b.answeredAt.localeCompare(a.answeredAt))
-      .slice(0, config.recentWindow);
-    const answered = recent.length;
-    const correct = recent.filter((a) => a.isCorrect).length;
-    const rate = answered > 0 ? Math.round((correct / answered) * 100) : 0;
-
-    let level: MasteryLevel;
-    if (answered < config.minQuestions) {
-      level = "en-cours";
-    } else if (rate < config.aRevoirMax) {
-      level = "a-revoir";
-    } else if (rate >= config.maitriseMin) {
-      level = "maitrise";
-    } else {
-      level = "en-cours";
+/**
+ * Maîtrise par compétence transversale : même logique configurable que par
+ * thème, mais une tentative alimente TOUTES les compétences qu'elle sollicite
+ * (progression indépendante par compétence — delta chapitre 7).
+ */
+export function competencyMastery(
+  attempts: AttemptRecord[],
+  config: MasteryConfig = DEFAULT_MASTERY_CONFIG
+): CompetencyMastery[] {
+  const byCompetency = new Map<string, AttemptRecord[]>();
+  for (const attempt of attempts) {
+    for (const competency of attempt.competencies ?? []) {
+      const list = byCompetency.get(competency) ?? [];
+      list.push(attempt);
+      byCompetency.set(competency, list);
     }
-    result.push({ theme, answered, correctRate: rate, level });
   }
-  return result.sort((a, b) => a.theme.localeCompare(b.theme, "fr"));
+  return [...byCompetency.entries()]
+    .map(([competency, list]) => ({ competency, ...masteryOf(list, config) }))
+    .sort((a, b) => a.competency.localeCompare(b.competency, "fr"));
 }
 
 /** Points forts (mieux réussis) et points faibles (à revoir en priorité). */
@@ -235,4 +269,122 @@ export function recommendations(
   }
 
   return out;
+}
+
+// ---------------------------------------------------------------------------
+// Objectifs personnels (delta chapitre 7) — volontairement simples
+// ---------------------------------------------------------------------------
+
+/** Les cinq types d'objectifs validés. Aucun autre : liste fermée. */
+export type ObjectiveType =
+  "terminer-domaine" | "reviser-concours" | "examen-blanc" | "consulter-fiches" | "effectuer-quiz";
+
+export interface Objective {
+  id: string;
+  type: ObjectiveType;
+  label: string;
+  /** Cible à atteindre : nombre pour les objectifs de comptage, 100 (%) pour les objectifs de couverture. */
+  target: number;
+  /** Portée facultative (module pour « terminer un domaine », concours pour « réviser un concours »). */
+  moduleSlug?: string;
+  concours?: string;
+  /** ISO. */
+  createdAt: string;
+  /** ISO ; présent une fois l'objectif marqué atteint par l'utilisateur. */
+  completedAt?: string;
+}
+
+/**
+ * Mesures dérivées alimentant les objectifs (assemblées par l'appelant à
+ * partir des tentatives, sessions et lectures). Tout reste dérivé : aucun
+ * compteur d'objectif n'est stocké.
+ */
+export interface ObjectiveMetrics {
+  fichesConsulted: number;
+  quizzesCompleted: number;
+  examsCompleted: number;
+  /** Couverture 0..1 du domaine/concours visé (fraction de thèmes maîtrisés). */
+  coverageRatio?: number;
+}
+
+export interface ObjectiveProgress {
+  current: number;
+  target: number;
+  ratio: number;
+  done: boolean;
+}
+
+/** Avancement dérivé d'un objectif. Personnel, sans comparaison ni classement. */
+export function objectiveProgress(
+  objective: Objective,
+  metrics: ObjectiveMetrics
+): ObjectiveProgress {
+  const target = Math.max(1, objective.target);
+  let current: number;
+  switch (objective.type) {
+    case "consulter-fiches":
+      current = metrics.fichesConsulted;
+      break;
+    case "effectuer-quiz":
+      current = metrics.quizzesCompleted;
+      break;
+    case "examen-blanc":
+      current = metrics.examsCompleted;
+      break;
+    case "terminer-domaine":
+    case "reviser-concours":
+      current = Math.round((metrics.coverageRatio ?? 0) * target);
+      break;
+  }
+  const capped = Math.min(current, target);
+  return {
+    current: capped,
+    target,
+    ratio: Math.round((capped / target) * 100),
+    done: Boolean(objective.completedAt) || capped >= target,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Reprendre (delta chapitre 7) — mémoire du travail, JAMAIS un streak
+// ---------------------------------------------------------------------------
+
+export interface ResumePoint {
+  /** Dernier module travaillé, ou undefined si aucune activité. */
+  moduleSlug: string | undefined;
+  /** Dernière activité (ISO) : fin de session ou dernière tentative. */
+  lastActivityAt: string | undefined;
+  /** Révisions interrompues à reprendre (questions du carnet dues). */
+  dueReviewCount: number;
+}
+
+/**
+ * Où reprendre immédiatement : dernier module travaillé, dernière activité,
+ * révisions en attente. On mémorise le point de reprise, jamais un compteur
+ * de jours consécutifs (décision ch. 7 : pas de streak).
+ */
+export function resumePoint(
+  attempts: AttemptRecord[],
+  sessions: StudySessionRecord[],
+  dueReviewCount = 0
+): ResumePoint {
+  const lastSession = sessions.reduce<StudySessionRecord | undefined>((latest, s) => {
+    const at = s.endedAt ?? s.startedAt;
+    const best = latest ? (latest.endedAt ?? latest.startedAt) : undefined;
+    return !best || at > best ? s : latest;
+  }, undefined);
+  const lastAttempt = attempts.reduce<AttemptRecord | undefined>(
+    (latest, a) => (!latest || a.answeredAt > latest.answeredAt ? a : latest),
+    undefined
+  );
+
+  const sessionAt = lastSession?.endedAt ?? lastSession?.startedAt;
+  const attemptAt = lastAttempt?.answeredAt;
+  const lastActivityAt = [sessionAt, attemptAt].filter(Boolean).sort().at(-1);
+  const moduleSlug =
+    sessionAt && (!attemptAt || sessionAt >= attemptAt)
+      ? lastSession?.moduleSlug
+      : lastAttempt?.moduleSlug;
+
+  return { moduleSlug, lastActivityAt, dueReviewCount };
 }

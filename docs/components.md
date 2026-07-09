@@ -39,9 +39,10 @@ Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats
 ## Progression (`src/features/progression/` + `src/lib/progression/`)
 
 - `lib/progression/config.ts` — seuils de maîtrise configurables (jamais codés en dur).
-- `lib/progression/derive.ts` — fonctions pures testées : `overallStats`, `themeMastery`, `strengthsAndWeaknesses`, `weeklyTrend`, `journey` (parcours dans le temps), `recommendations` (règles explicables).
-- `features/progression/stat-card.tsx` · `theme-mastery-list.tsx` (code couleur sémantique) · `recommendation-list.tsx` (motif affiché). Prévisualisation : `/design-system/progression`.
+- `lib/progression/derive.ts` — fonctions pures testées : `overallStats`, `themeMastery` et `competencyMastery` (même cœur `masteryOf` — progression indépendante par compétence), `strengthsAndWeaknesses`, `weeklyTrend`, `journey` (parcours dans le temps), `recommendations` (règles explicables), `objectiveProgress` (objectifs simples dérivés), `resumePoint` (point de reprise, jamais un streak).
+- `features/progression/stat-card.tsx` · `mastery-list.tsx` (générique thèmes/compétences, code couleur sémantique) · `recommendation-list.tsx` (motif affiché) · `objective-list.tsx` (avancement dérivé) · `resume-block.tsx` (« Reprendre »). Prévisualisation sobre : `/design-system/progression`.
 - Pas de streak (décision ch. 7) ; tout privé, aucune comparaison entre utilisateurs.
+- Tableau de bord **sobre** (règle fondamentale) : Reprendre → repères du parcours → à travailler aujourd'hui → détail (maîtrise par thème/compétence).
 
 ## Moteur pédagogique (`src/features/quiz/`)
 

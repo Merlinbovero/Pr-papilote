@@ -1,13 +1,17 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_MASTERY_CONFIG } from "./config";
 import {
+  competencyMastery,
   journey,
+  objectiveProgress,
   overallStats,
   recommendations,
+  resumePoint,
   strengthsAndWeaknesses,
   themeMastery,
   weeklyTrend,
   type AttemptRecord,
+  type Objective,
   type StudySessionRecord,
 } from "./derive";
 
@@ -79,6 +83,104 @@ describe("themeMastery — seuils configurables", () => {
   it("respecte une configuration alternative (jamais codé en dur)", () => {
     const strict = { ...DEFAULT_MASTERY_CONFIG, maitriseMin: 95, minQuestions: 1 };
     expect(themeMastery(many("meteo", 9, 10), strict)[0].level).toBe("en-cours");
+  });
+});
+
+describe("competencyMastery — progression indépendante par compétence", () => {
+  it("répartit une tentative sur toutes ses compétences", () => {
+    const attempts = Array.from({ length: 10 }, (_, i) =>
+      attempt({
+        competencies: ["calcul-mental", "raisonnement-logique"],
+        isCorrect: i < 9,
+        answeredAt: `2026-07-${String(i + 1).padStart(2, "0")}T10:00:00.000Z`,
+      })
+    );
+    const mastery = competencyMastery(attempts);
+    expect(mastery.map((m) => m.competency)).toEqual(["calcul-mental", "raisonnement-logique"]);
+    expect(mastery[0].level).toBe("maitrise");
+  });
+
+  it("ignore les tentatives sans compétence", () => {
+    expect(competencyMastery([attempt({ competencies: [] })])).toHaveLength(0);
+    expect(competencyMastery([attempt({})])).toHaveLength(0);
+  });
+
+  it("applique la même logique de seuils que les thèmes", () => {
+    const attempts = Array.from({ length: 10 }, (_, i) =>
+      attempt({
+        competencies: ["vision-spatiale"],
+        isCorrect: i < 2,
+        answeredAt: `2026-07-${String(i + 1).padStart(2, "0")}T10:00:00.000Z`,
+      })
+    );
+    expect(competencyMastery(attempts)[0].level).toBe("a-revoir");
+  });
+});
+
+describe("objectiveProgress — objectifs simples et dérivés", () => {
+  const base = (over: Partial<Objective>): Objective => ({
+    id: "o",
+    type: "consulter-fiches",
+    label: "Consulter 30 fiches",
+    target: 30,
+    createdAt: "2026-01-01T10:00:00.000Z",
+    ...over,
+  });
+
+  it("compte les fiches consultées et plafonne à la cible", () => {
+    const p = objectiveProgress(base({ target: 30 }), {
+      fichesConsulted: 45,
+      quizzesCompleted: 0,
+      examsCompleted: 0,
+    });
+    expect(p.current).toBe(30);
+    expect(p.done).toBe(true);
+  });
+
+  it("dérive la couverture pour « terminer un domaine »", () => {
+    const p = objectiveProgress(base({ type: "terminer-domaine", target: 100 }), {
+      fichesConsulted: 0,
+      quizzesCompleted: 0,
+      examsCompleted: 0,
+      coverageRatio: 0.4,
+    });
+    expect(p.current).toBe(40);
+    expect(p.ratio).toBe(40);
+    expect(p.done).toBe(false);
+  });
+
+  it("respecte une complétion marquée manuellement", () => {
+    const p = objectiveProgress(base({ completedAt: "2026-02-01T10:00:00.000Z" }), {
+      fichesConsulted: 1,
+      quizzesCompleted: 0,
+      examsCompleted: 0,
+    });
+    expect(p.done).toBe(true);
+  });
+});
+
+describe("resumePoint — mémoire du travail, jamais un streak", () => {
+  it("retient le dernier module travaillé et les révisions dues", () => {
+    const point = resumePoint(
+      [attempt({ moduleSlug: "eopan", answeredAt: "2026-06-01T10:00:00.000Z" })],
+      [
+        {
+          moduleSlug: "eopn",
+          startedAt: "2026-06-05T10:00:00.000Z",
+          endedAt: "2026-06-05T11:00:00.000Z",
+        },
+      ],
+      3
+    );
+    expect(point.moduleSlug).toBe("eopn");
+    expect(point.lastActivityAt).toBe("2026-06-05T11:00:00.000Z");
+    expect(point.dueReviewCount).toBe(3);
+  });
+
+  it("reste sûr sans aucune activité", () => {
+    const point = resumePoint([], []);
+    expect(point.moduleSlug).toBeUndefined();
+    expect(point.dueReviewCount).toBe(0);
   });
 });
 

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { MasteryLevel } from "@/lib/progression/config";
-import type { ThemeMastery } from "@/lib/progression/derive";
+import type { Mastery } from "@/lib/progression/derive";
 
 /** Code couleur sémantique : vert maîtrisé, orange à revoir, gris non commencé. */
 const LEVEL_STYLE: Record<MasteryLevel, { label: string; bar: string; text: string }> = {
@@ -10,30 +10,36 @@ const LEVEL_STYLE: Record<MasteryLevel, { label: string; bar: string; text: stri
   "non-commence": { label: "Non commencé", bar: "bg-muted", text: "text-muted-foreground" },
 };
 
-/** Maîtrise par thème, avec jauge et libellé de niveau. */
-export function ThemeMasteryList({
+export interface MasteryItem extends Mastery {
+  /** Clé stable (thème ou compétence). */
+  key: string;
+  label: string;
+}
+
+/**
+ * Liste de maîtrise avec jauge et libellé de niveau. Générique : sert la
+ * maîtrise par thème comme par compétence (même logique dérivée).
+ */
+export function MasteryList({
   items,
-  labelOf,
+  ariaLabel,
+  emptyLabel = "Vos résultats apparaîtront ici après vos premiers entraînements.",
 }: {
-  items: ThemeMastery[];
-  /** Slug de thème → libellé lisible. */
-  labelOf?: (theme: string) => string;
+  items: MasteryItem[];
+  ariaLabel: string;
+  emptyLabel?: string;
 }) {
   if (items.length === 0) {
-    return (
-      <p className="text-muted-foreground text-sm">
-        Vos thèmes travaillés apparaîtront ici après vos premiers entraînements.
-      </p>
-    );
+    return <p className="text-muted-foreground text-sm">{emptyLabel}</p>;
   }
   return (
-    <ul className="space-y-3" aria-label="Maîtrise par thème">
+    <ul className="space-y-3" aria-label={ariaLabel}>
       {items.map((item) => {
         const style = LEVEL_STYLE[item.level];
         return (
-          <li key={item.theme} className="space-y-1">
+          <li key={item.key} className="space-y-1">
             <div className="flex items-center justify-between text-sm">
-              <span>{labelOf ? labelOf(item.theme) : item.theme}</span>
+              <span>{item.label}</span>
               <span className={cn("font-medium", style.text)}>
                 {style.label}
                 {item.answered > 0 ? ` · ${item.correctRate} %` : ""}

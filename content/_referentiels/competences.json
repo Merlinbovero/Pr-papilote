@@ -1,0 +1,62 @@
+[
+  {
+    "id": "calcul-mental",
+    "label": "Calcul mental",
+    "description": "Effectuer rapidement et sans erreur des opérations arithmétiques (conversions, proportions, temps-vitesse-distance).",
+    "domain": "Psychotechnique"
+  },
+  {
+    "id": "raisonnement-logique",
+    "label": "Raisonnement logique",
+    "description": "Identifier des règles, des suites et des analogies ; déduire une conclusion à partir de prémisses.",
+    "domain": "Psychotechnique"
+  },
+  {
+    "id": "vision-spatiale",
+    "label": "Vision spatiale",
+    "description": "Se représenter et manipuler mentalement des objets dans l'espace (rotations, plans, orientation).",
+    "domain": "Psychotechnique"
+  },
+  {
+    "id": "attention-concentration",
+    "label": "Attention et concentration",
+    "description": "Maintenir la vigilance et détecter des cibles ou des écarts sous contrainte de temps.",
+    "domain": "Psychotechnique"
+  },
+  {
+    "id": "memoire",
+    "label": "Mémoire",
+    "description": "Mémoriser puis restituer des informations visuelles, verbales ou numériques.",
+    "domain": "Psychotechnique"
+  },
+  {
+    "id": "connaissances-aeronautiques",
+    "label": "Connaissances aéronautiques",
+    "description": "Maîtriser les fondamentaux du vol : aérodynamique, instruments, réglementation, sécurité.",
+    "domain": "Connaissances"
+  },
+  {
+    "id": "meteorologie",
+    "label": "Météorologie",
+    "description": "Interpréter les phénomènes météorologiques et leurs conséquences sur le vol.",
+    "domain": "Connaissances"
+  },
+  {
+    "id": "navigation",
+    "label": "Navigation",
+    "description": "Lire une carte, calculer un cap et une route, se repérer et corriger une dérive.",
+    "domain": "Connaissances"
+  },
+  {
+    "id": "anglais-aeronautique",
+    "label": "Anglais aéronautique",
+    "description": "Comprendre et employer la phraséologie et le vocabulaire aéronautiques en anglais.",
+    "domain": "Langues"
+  },
+  {
+    "id": "culture-militaire",
+    "label": "Culture militaire et défense",
+    "description": "Connaître les armées, les grades, les matériels et les enjeux de défense français.",
+    "domain": "Connaissances"
+  }
+]

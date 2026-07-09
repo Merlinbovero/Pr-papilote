@@ -112,12 +112,12 @@ Gabarits limités (~11) : accueil, hub module, hub catégorie, fiche, fiche-obje
 
 ## Base de données (données utilisateur uniquement)
 
-Tables : `profiles`, `study_sessions`, `quiz_attempts`, `question_attempts` (table maîtresse, append-only), `review_items` (répétition espacée), `fiche_progress`, `psychotech_results`, `question_stats` (agrégats anonymes, écrits par rôle de service).
+Tables : `profiles`, `study_sessions`, `quiz_attempts`, `question_attempts` (table maîtresse, append-only), `review_items` (répétition espacée), `fiche_progress`, `psychotech_results`, `question_stats` (agrégats anonymes, écrits par rôle de service), `favorites` (notion unique de favori — fiche/document/carte/quiz, migration 0002), `objectives` (objectifs personnels, intention seulement — l'avancement reste dérivé, migration 0003).
 
 Règles :
 
 - **RLS sur toutes les tables**, politique par défaut « refuser », `user_id = auth.uid()` ;
-- carnet d'erreurs et cinq progressions = **vues calculées** sur `question_attempts` (jamais de compteurs stockés qui divergent) ;
+- carnet d'erreurs, cinq progressions, **maîtrise par thème et par compétence**, **avancement des objectifs** et **point de reprise** = **vues calculées** sur `question_attempts`/`study_sessions` (jamais de compteurs stockés qui divergent) ; compétences transversales portées par les questions (`competencies[]`, référentiel fermé `content/_referentiels/competences.json`) ;
 - références au contenu par **ID texte stable, sans clé étrangère** (le contenu n'est pas en base) ; intégrité garantie par script CI côté contenu ;
 - index composites `(user_id, content_id)` et `(user_id, created_at)` dès le départ.
 
@@ -186,3 +186,5 @@ Système de quiz consigné (docs/editorial/moteur-pedagogique.md). Contrat éten
 ### 2026-07-07 — Progression utilisateur (Volume II, ch. 7)
 
 Progression consignée (docs/editorial/progression.md). Dérivée à la demande de question_attempts/study_sessions/review_items (jamais de compteurs stockés) : tableau de bord global + 5 vues par module. Seuils de maîtrise CONFIGURABLES (src/lib/progression/config.ts, défauts < 60 / 60–79 / ≥ 80 %, jamais codés en dur). Axe motivant = le parcours dans le temps (depuis quand, heures investies, évolution) — PAS de streak (décision : aucune pression quotidienne). Tout est privé : aucune comparaison, classement ni moyenne entre utilisateurs. Moteur de dérivation pur testé (src/lib/progression/derive.ts : stats, maîtrise par thème, forces/faiblesses, tendance hebdo, journey, recommandations par règles explicables avec motif affiché). Composants au design system (StatCard, ThemeMasteryList, RecommendationList) ; prévisualisation fictive /design-system/progression. Migration 0002 : table revision_list (favoris, RLS). Câblage Supabase (lecture réelle) différé à l'intégration.
+
+Deltas validés (2026-07-09) : (1) **Compétences** — référentiel fermé competences.json + getCompetences(), champ competencies[] sur les questions, competencyMastery à progression indépendante réutilisant le cœur masteryOf (même logique configurable que les thèmes). (2) **Objectifs** — cinq types fermés (terminer un domaine, réviser un concours, examen blanc, consulter N fiches, effectuer N quiz), avancement dérivé (objectiveProgress), migration 0003 (objectives) ne mémorisant que l'intention. (3) **Favoris** — notion UNIQUE : revision_list renommée favorites avec type de contenu (fiche/document/carte/quiz) ; « Réviser mes favoris » = simple vue. (4) **Séries** — pas de streak confirmé, mais resumePoint mémorise le point de reprise (dernier module, dernière activité, révisions dues) sans compteur de jours. Composant générique MasteryList (thèmes + compétences), ObjectiveList, ResumeBlock. Tableau de bord réorganisé selon la règle de sobriété : Reprendre → repères → à travailler aujourd'hui → détail.

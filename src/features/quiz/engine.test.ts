@@ -16,6 +16,7 @@ const base = {
   explanation: "Explication pédagogique de démonstration, suffisamment longue.",
   evaluates: ["fondamentaux.meteorologie.exemple"],
   tags: [],
+  competencies: [],
   concours: ["eopan" as const],
   status: "publie" as const,
 };

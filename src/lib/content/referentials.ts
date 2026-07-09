@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
-import { predicatesFileSchema, type Predicate } from "./content-schemas";
+import {
+  competencesFileSchema,
+  predicatesFileSchema,
+  type Competence,
+  type Predicate,
+} from "./content-schemas";
 import { categoriesFileSchema, modulesFileSchema, type Category, type Module } from "./schemas";
 
 /**
@@ -88,4 +93,24 @@ export function getPredicates(): Predicate[] {
     predicatesCache = predicates;
   }
   return predicatesCache;
+}
+
+let competencesCache: Competence[] | undefined;
+
+/** Le référentiel fermé des compétences transversales évaluées. */
+export function getCompetences(): Competence[] {
+  if (!competencesCache) {
+    const competences = competencesFileSchema.parse(readJson("competences.json"));
+    const ids = new Set(competences.map((c) => c.id));
+    if (ids.size !== competences.length) {
+      throw new Error("Référentiel compétences : identifiants en double");
+    }
+    competencesCache = competences;
+  }
+  return competencesCache;
+}
+
+/** Une compétence par identifiant, ou undefined si inconnue. */
+export function getCompetence(id: string): Competence | undefined {
+  return getCompetences().find((c) => c.id === id);
 }

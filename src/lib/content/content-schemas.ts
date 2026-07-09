@@ -199,6 +199,22 @@ export const predicateSchema = z.object({
 export const predicatesFileSchema = z.array(predicateSchema).min(1);
 export type Predicate = z.infer<typeof predicateSchema>;
 
+/**
+ * Compétence transversale (content/_referentiels/competences.json) :
+ * référentiel FERMÉ des aptitudes que les concours évaluent (calcul
+ * mental, raisonnement, vision spatiale…). Une compétence traverse
+ * plusieurs thèmes ; les questions la référencent par `competencies[]`.
+ */
+export const competenceSchema = z.object({
+  id: slugSchema,
+  label: z.string().min(1),
+  description: z.string().min(1),
+  /** Regroupement d'affichage (ex. « Psychotechnique », « Connaissances »). */
+  domain: z.string().min(1),
+});
+export const competencesFileSchema = z.array(competenceSchema).min(1);
+export type Competence = z.infer<typeof competenceSchema>;
+
 /** Arête factuelle : prédicat du référentiel + cible + poids surchargé éventuel. */
 export const factualEdgeSchema = z.object({
   predicate: slugSchema,
@@ -366,6 +382,12 @@ const questionBaseShape = {
   evaluates: z.array(contentIdSchema).min(1),
   difficulty: z.int().min(1).max(5),
   tags: z.array(slugSchema).default([]),
+  /**
+   * Compétences transversales évaluées (référentiel fermé
+   * content/_referentiels/competences.json). Une question peut solliciter
+   * plusieurs compétences ; chacune a sa progression indépendante.
+   */
+  competencies: z.array(slugSchema).default([]),
   concours: z.array(concoursSchema).default([]),
   source: sourceSchema.optional(),
   status: contentStatusSchema,
