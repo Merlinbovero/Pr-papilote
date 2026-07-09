@@ -28,7 +28,9 @@ export function SiteHeader() {
           <Button asChild variant="outline" size="sm">
             <Link href="/connexion">
               <UserIcon aria-hidden className="size-4" />
-              <span className="hidden sm:inline">Connexion</span>
+              {/* Libellé toujours dans l'arbre d'accessibilité : visible dès sm,
+                  lisible par lecteur d'écran en icône seule sur mobile. */}
+              <span className="sr-only sm:not-sr-only">Connexion</span>
             </Link>
           </Button>
         </div>

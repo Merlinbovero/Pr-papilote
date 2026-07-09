@@ -38,7 +38,7 @@ export function SourceList({ sources }: SourceListProps) {
                   href={source.url}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="text-primary underline-offset-4 hover:underline"
+                  className="text-primary underline underline-offset-4"
                 >
                   {source.title}
                 </a>

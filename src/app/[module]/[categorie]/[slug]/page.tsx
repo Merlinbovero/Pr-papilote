@@ -76,9 +76,12 @@ export async function generateMetadata({ params }: FichePageProps): Promise<Meta
   if (!fiche) {
     return {};
   }
+  const canonical = getFicheHref(fiche);
   return {
     title: fiche.title,
     description: fiche.summary,
+    alternates: { canonical },
+    openGraph: { type: "article", title: fiche.title, description: fiche.summary, url: canonical },
     robots: fiche.status === "publie" ? undefined : { index: false, follow: false },
   };
 }

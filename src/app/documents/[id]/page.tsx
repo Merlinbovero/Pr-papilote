@@ -40,9 +40,12 @@ export async function generateMetadata({ params }: DocumentPageProps): Promise<M
   if (!doc) {
     return {};
   }
+  const canonical = `/documents/${id}`;
   return {
     title: doc.title,
     description: doc.summary,
+    alternates: { canonical },
+    openGraph: { type: "article", title: doc.title, description: doc.summary, url: canonical },
     robots: doc.status === "publie" ? undefined : { index: false, follow: false },
   };
 }

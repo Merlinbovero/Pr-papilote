@@ -1,0 +1,25 @@
+import AxeBuilder from "@axe-core/playwright";
+import { expect, test } from "@playwright/test";
+
+/**
+ * Accessibilité automatisée (ch. 9 §5) : scan axe des pages clés sur les
+ * critères WCAG 2 niveaux A et AA. L'accessibilité fait partie de la qualité
+ * du produit — une régression casse la CI.
+ */
+const keyPages: { name: string; path: string }[] = [
+  { name: "accueil", path: "/" },
+  { name: "hub de module", path: "/eopan" },
+  { name: "fiche documentaire", path: "/eopan/appareils/rafale-m" },
+  { name: "recherche", path: "/recherche" },
+  { name: "dictionnaire", path: "/dictionnaire" },
+];
+
+for (const { name, path } of keyPages) {
+  test(`${name} ne présente aucune violation WCAG A/AA`, async ({ page }) => {
+    await page.goto(path);
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(results.violations).toEqual([]);
+  });
+}

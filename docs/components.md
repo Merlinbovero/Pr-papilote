@@ -4,15 +4,16 @@ Composants de `src/components/shared/`, `src/components/layout/` et des moteurs 
 
 Règle : tout nouveau composant partagé ajoute son entrée ici, dans le même commit.
 
-| Composant        | Emplacement                             | Rôle                                                                 | Props principales                                 |
-| ---------------- | --------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------- |
-| `SiteHeader`     | `components/layout/site-header.tsx`     | Header global : logo, palette de recherche, thème, connexion         | —                                                 |
-| `SiteFooter`     | `components/layout/site-footer.tsx`     | Pied de page sobre : liens vers les cinq modules                     | —                                                 |
-| `SiteBreadcrumb` | `components/layout/site-breadcrumb.tsx` | Fil d'Ariane accessible (`aria-label="Fil d'Ariane"`)                | `items: { label, href? }[]`                       |
-| `ThemeProvider`  | `components/layout/theme-provider.tsx`  | Fournit le thème clair/sombre/système (next-themes, classe)          | `children`                                        |
-| `ThemeToggle`    | `components/layout/theme-toggle.tsx`    | Menu de bascule de thème                                             | —                                                 |
-| `ModuleCard`     | `components/shared/module-card.tsx`     | Carte d'accueil d'un module : visuel plein cadre, nom en très gros   | `module`, `orientation`, `imageSrc?`, `imageAlt?` |
-| `SearchCommand`  | `features/search/search-command.tsx`    | Palette de recherche globale (Ctrl/Cmd+K), filtrage par notre moteur | `entries: SearchEntry[]`                          |
+| Composant        | Emplacement                             | Rôle                                                                                        | Props principales                                                   |
+| ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `SiteHeader`     | `components/layout/site-header.tsx`     | Header global : logo, palette de recherche, thème, connexion                                | —                                                                   |
+| `SiteFooter`     | `components/layout/site-footer.tsx`     | Pied de page sobre : liens vers les cinq modules                                            | —                                                                   |
+| `SiteBreadcrumb` | `components/layout/site-breadcrumb.tsx` | Fil d'Ariane accessible (`aria-label="Fil d'Ariane"`)                                       | `items: { label, href? }[]`                                         |
+| `ThemeProvider`  | `components/layout/theme-provider.tsx`  | Fournit le thème clair/sombre/système (next-themes, classe)                                 | `children`                                                          |
+| `ThemeToggle`    | `components/layout/theme-toggle.tsx`    | Menu de bascule de thème                                                                    | —                                                                   |
+| `ModuleCard`     | `components/shared/module-card.tsx`     | Carte d'accueil d'un module : visuel plein cadre, nom en très gros                          | `module`, `orientation`, `imageSrc?`, `imageAlt?`                   |
+| `ContentImage`   | `components/shared/content-image.tsx`   | Image de contenu sur next/image : alt + dimensions imposés, lazy, AVIF/WebP, légende/crédit | `src`, `alt`, `width`, `height`, `caption?`, `credit?`, `priority?` |
+| `SearchCommand`  | `features/search/search-command.tsx`    | Palette de recherche globale (Ctrl/Cmd+K), filtrage par notre moteur                        | `entries: SearchEntry[]`                                            |
 
 ## Gabarit de fiche (`src/components/content/` — voir docs/editorial/gabarit-fiche.md)
 
