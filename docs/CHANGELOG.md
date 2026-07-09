@@ -6,6 +6,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Modifié
 
+- 2026-07-09 — Plan directeur des Fondamentaux aéronautiques validé (`docs/editorial/plan-fondamentaux.md`, référence de production) : socle de ~36 fiches classées en trois priorités A (indispensables V1) / B (importantes) / C (approfondissements) ; relations du graphe, compétences couvertes, familles d'objets (aucune fiche-objet), documents candidats, dépendances et ordre de production. Arbitrage BIA : retiré des catégories-disciplines du module `fondamentaux` (il devient un **parcours** réutilisant la base partagée) ; catégories réordonnées selon la progression pédagogique (physique/maths → aéro → méca → météo → nav → instruments → environnement → histoire/culture → dictionnaire).
 - 2026-07-09 — Entrée en phase de construction : les **cinq fiches pilotes validées définitivement** comme références éditoriales officielles (statut `relecture` → `publie` : Rafale M, porte-avions Charles de Gaulle, Flottille 11F, CATOBAR, Appontage) ; elles deviennent les modèles officiels du projet. Ordre de production validé (`docs/roadmap.md`) : Fondamentaux → EOPAN → EOPN → ALAT → Dictionnaire (en dernier), production progressive, chaque famille validée avant la suivante. Les deux termes pilotes du dictionnaire (`catobar`, `appontage`) restent en `relecture` jusqu'à la phase dictionnaire.
 
 ### Ajouté
