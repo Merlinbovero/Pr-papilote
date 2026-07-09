@@ -20,11 +20,15 @@ level: 1
 createdAt: "2026-07-09"
 verifiedAt: "2026-07-09"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-09"
     version: 1
     motif: Création — première fiche du socle des Fondamentaux (point d'entrée).
+    author: prepapilote
+  - date: "2026-07-09"
+    version: 2
+    motif: Ajout des schémas et des tableaux d'unités (homogénéité du socle).
     author: prepapilote
 status: publie
 sources:
@@ -78,6 +82,13 @@ content:
 
         Le SI n'est pas qu'une convention scolaire : c'est la garantie qu'une
         mesure signifie la même chose partout dans le monde.
+
+        | Grandeur    | Unité de base SI | Symbole |
+        | ----------- | ---------------- | ------- |
+        | Longueur    | mètre            | m       |
+        | Masse       | kilogramme       | kg      |
+        | Temps       | seconde          | s       |
+        | Température  | kelvin           | K       |
     - id: les-unites-aeronautiques
       title: Les unités propres à l'aéronautique
       body: |
@@ -97,6 +108,19 @@ content:
         On rencontre aussi le **pouce de mercure (inHg)** pour le calage
         altimétrique dans le monde anglo-saxon : la pression standard de
         1013,25 hPa équivaut à 29,92 inHg.
+
+        | Grandeur    | Unité aéronautique | Symbole | Équivalent SI |
+        | ----------- | ------------------ | ------- | ------------- |
+        | Altitude    | pied               | ft      | 0,3048 m      |
+        | Vitesse     | nœud               | kt      | 1,852 km/h    |
+        | Pression    | hectopascal        | hPa     | 100 Pa        |
+        | Température  | degré Celsius      | °C      | K − 273,15    |
+      figures:
+        - schemaId: unites-en-situation
+          alt: Un avion avec trois annotations — altitude en pieds, vitesse en nœuds, pression en hectopascals.
+          caption: Les unités aéronautiques en situation — altitude en pieds, vitesse en nœuds, pression en hectopascals.
+          width: 440
+          height: 240
     - id: les-conversions-courantes
       title: Les conversions les plus courantes
       body: |
@@ -110,6 +134,12 @@ content:
         Le **niveau de vol (Flight Level, FL)** exprime une altitude
         pression en centaines de pieds : FL100 correspond à 10 000 ft,
         FL350 à 35 000 ft.
+      figures:
+        - schemaId: abaque-vitesse
+          alt: Un abaque à deux échelles parallèles reliant les km/h et les nœuds, 185 km/h correspondant à 100 nœuds.
+          caption: Abaque de conversion — les deux échelles se lisent à la même hauteur (185 km/h ≈ 100 kt).
+          width: 300
+          height: 250
     - id: convertir-de-tete
       title: Convertir de tête
       strate: maitriser

@@ -13,9 +13,9 @@
 
 Le BIA n'est **pas** une catégorie-discipline. Les catégories représentent des **disciplines aéronautiques** ; le BIA est un **parcours pédagogique** qui réutilise ces mêmes fiches. Même principe pour les entrées thématiques d'EOPAN/EOPN/ALAT. Un parcours = un chemin de lecture ordonné sur des IDs de fiches existantes (conception d'URL/format à définir ultérieurement, hors de ce plan). Bénéfice : une base unique sert tous les publics.
 
-## 3. Trois niveaux de priorité (socle ~37 fiches)
+## 3. Trois niveaux de priorité (socle ~35 fiches)
 
-- **A — indispensables à la V1** (17) : le cœur incontournable du vol, ouvert par la fiche d'entrée SI & unités.
+- **A — indispensables à la V1** (16) : le cœur incontournable du vol, ouvert par la fiche d'entrée SI & unités.
 - **B — importantes, produites juste après** (14).
 - **C — approfondissements de la V1** (6).
 
@@ -45,10 +45,9 @@ Légende : **A** indispensable · **B** importante · **C** approfondissement. C
 - **A** Le Système international d'unités (SI) et les unités aéronautiques — **point d'entrée absolu** (`connaissances-aeronautiques`, `calcul-mental`)
 - **A** Pression, forces et unités (`raisonnement-logique`, `connaissances-aeronautiques`)
 
-### Mathématiques utiles (`concept`)
+### Mathématiques utiles — intégrées, jamais isolées (décision 2026-07-09)
 
-- **A** Proportions, règle de trois & conversions (`calcul-mental`)
-- **B** Trigonométrie appliquée (cap, dérive) (`calcul-mental`, `raisonnement-logique`)
+Pas de fiche-outil de calcul indépendante. Les notions mathématiques (proportions, conversions, trigonométrie appliquée) sont **intégrées** aux fiches où elles apportent une **valeur directe** : les conversions dans la fiche SI, la règle de trois dans les calculs de navigation, la trigonométrie dans le cap et la dérive. On optimise le parcours d'apprentissage plutôt que d'isoler des outils de calcul.
 
 ### Aérodynamique (`notion-aerodynamique`)
 
@@ -101,7 +100,7 @@ Légende : **A** indispensable · **B** importante · **C** approfondissement. C
 
 - **C** Vocabulaire de base du vol _(compétence : `anglais-aeronautique`)_
 
-**Répartition** : A = 17 · B = 14 · C = 6 · **total 37** (dont la fiche d'entrée SI).
+**Répartition** : A = 16 · B = 13 · C = 6 · **total 35** (maths intégrées, non comptées comme fiches isolées).
 
 ## 6. Relations principales du graphe (et dépendances de production)
 
@@ -125,7 +124,7 @@ Peu, et seulement en **référence** : DGAC/SIA (programme BIA, réglementation)
 
 ## 9. Ordre de production interne
 
-1. **Socle physique** : Physique · SI & unités (point d'entrée) → Physique · Pression → Maths · Proportions (A).
+1. **Socle physique** : Physique · SI & unités (point d'entrée) → Physique · Pression, forces et unités (A). Les notions de calcul sont **intégrées** à ces fiches et aux suivantes, jamais isolées.
 2. **Cœur du vol** : Aérodynamique (A) → Mécanique du vol (A) → Instruments · Altimètre → Météo (A) → Navigation (A).
 3. **Compléments B** : reste aéro/météo/nav/instruments, trigonométrie, espaces aériens, alphabet OACI.
 4. **Approfondissements C** du socle.

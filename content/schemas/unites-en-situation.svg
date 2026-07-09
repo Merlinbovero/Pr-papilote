@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .lbl { font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .fill { fill: currentColor; }
+    .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .accent { fill: #3b82f6; }
+  </style>
+  <!-- Silhouette d'avion simple, vu de dessus -->
+  <g transform="translate(210,130)">
+    <path class="fill" d="M-8,-58 Q0,-70 8,-58 L8,20 L58,44 L58,56 L8,40 L8,64 L22,76 L22,84 L0,78 L-22,84 L-22,76 L-8,64 L-8,40 L-58,56 L-58,44 L-8,20 Z" />
+  </g>
+  <!-- Callout altitude -->
+  <line class="muted" x1="210" y1="66" x2="210" y2="30" stroke-dasharray="4 4" />
+  <text x="210" y="22" text-anchor="middle" class="lbl">Altitude — pied (ft)</text>
+  <!-- Callout vitesse -->
+  <line class="muted" x1="268" y1="176" x2="360" y2="176" stroke-dasharray="4 4" />
+  <text x="364" y="180" class="lbl">Vitesse — nœud (kt)</text>
+  <!-- Callout pression -->
+  <line class="muted" x1="152" y1="176" x2="60" y2="176" stroke-dasharray="4 4" />
+  <text x="56" y="180" text-anchor="end" class="lbl">Pression — hectopascal (hPa)</text>
+</svg>
