@@ -19,25 +19,26 @@ Règle : tout nouveau composant partagé ajoute son entrée ici, dans le même c
 
 Prévisualisation vivante : `/design-system/fiche`. Tous prop-pilotés (contrats dans `types.ts`), indépendants du futur format de fichier du contenu.
 
-| Composant           | Rôle                                                                                 | Quand ne pas l'utiliser                                     |
-| ------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| `FicheHeader`       | En-tête normalisé : H1, résumé, badges, temps de lecture, vérification, bouton PDF   | Hors d'une fiche — les hubs ont leur propre en-tête         |
-| `VerifiedBadge`     | Badge de confiance « Vérifié le » (`success`/`warning` selon fraîcheur)              | Pour tout autre statut (utiliser `Badge`)                   |
-| `Infobox`           | Données structurées d'une fiche-objet (`card` latérale/mobile, `table` impression)   | Pour du texte libre — l'infobox ne contient que des données |
-| `EssentialBlock`    | « L'essentiel » : lecture 30 s + puces « À retenir »                                 | Jamais deux par fiche                                       |
-| `FicheSection`      | Section H2 ancrée, badge « Expert » si strate `maitriser`                            | Hors du corps de fiche                                      |
-| `PitfallsBlock`     | « Pièges et erreurs fréquentes » (encadré `warning`)                                 | Si le modèle du type ne le prévoit pas                      |
-| `TableOfContents`   | Sommaire « Sur cette fiche » avec section active (client, IntersectionObserver)      | Pages courtes sans sections                                 |
-| `RelationBlock`     | Encart de relations du graphe (préalables, liées, voir également) ; nul si vide      | Pour des liens libres hors graphe                           |
-| `SourceList`        | Sources numérotées ancrées, « consulté le » public                                   | —                                                           |
-| `DocumentList`      | Documents associés/téléchargeables avec type et poids                                | —                                                           |
-| `TrainingBlock`     | Pont volontaire vers le quiz de la fiche (désactivé tant que le moteur n'existe pas) | Jamais de statistiques personnelles ici                     |
-| `FicheNav`          | Pied de fiche : précédent/suivant, retour, traçabilité, signalement                  | —                                                           |
-| `TermTooltip`       | Terme du dictionnaire : souligné pointillé + définition en infobulle (client)        | Pour un lien ordinaire                                      |
-| `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                         | Jamais permanent, jamais dans l'URL canonique               |
-| `RevisionHistory`   | Historique des révisions (version, date, motif, auteur/relecteur) ; nul si vide      | Pour un simple horodatage — utiliser l'audit du pied        |
-| `NoticeDocument`    | Notice de document public consultable sur site (résumé, source, fiches liées)        | Pour un simple lien de téléchargement                       |
-| `PrintButton`       | Déclenche la vue impression (client)                                                 | —                                                           |
+| Composant           | Rôle                                                                                                                                   | Quand ne pas l'utiliser                                           |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `FicheHeader`       | En-tête normalisé : H1, résumé, badges, temps de lecture, vérification, bouton PDF                                                     | Hors d'une fiche — les hubs ont leur propre en-tête               |
+| `VerifiedBadge`     | Badge de confiance « Vérifié le » (`success`/`warning` selon fraîcheur)                                                                | Pour tout autre statut (utiliser `Badge`)                         |
+| `Infobox`           | Données structurées d'une fiche-objet (`card` latérale/mobile, `table` impression)                                                     | Pour du texte libre — l'infobox ne contient que des données       |
+| `EssentialBlock`    | « L'essentiel » : lecture 30 s + puces « À retenir »                                                                                   | Jamais deux par fiche                                             |
+| `FicheSection`      | Section H2 ancrée, badge « Expert » si strate `maitriser`                                                                              | Hors du corps de fiche                                            |
+| `PitfallsBlock`     | « Pièges et erreurs fréquentes » (encadré `warning`)                                                                                   | Si le modèle du type ne le prévoit pas                            |
+| `TableOfContents`   | Sommaire « Sur cette fiche » avec section active (client, IntersectionObserver)                                                        | Pages courtes sans sections                                       |
+| `RelationBlock`     | Encart de relations du graphe (préalables, liées, voir également) ; nul si vide                                                        | Pour des liens libres hors graphe                                 |
+| `SourceList`        | Sources numérotées ancrées, « consulté le » public                                                                                     | —                                                                 |
+| `DocumentList`      | Documents associés/téléchargeables avec type et poids                                                                                  | —                                                                 |
+| `TrainingBlock`     | Pont volontaire vers le quiz de la fiche (désactivé tant que le moteur n'existe pas)                                                   | Jamais de statistiques personnelles ici                           |
+| `FicheNav`          | Pied de fiche : précédent/suivant, retour, traçabilité, signalement                                                                    | —                                                                 |
+| `TermTooltip`       | Terme du dictionnaire : souligné pointillé + définition en infobulle (client)                                                          | Pour un lien ordinaire                                            |
+| `CrossModuleReturn` | Pastille « Retour : X » éphémère de passerelle inter-modules                                                                           | Jamais permanent, jamais dans l'URL canonique                     |
+| `FicheFigure`       | Schéma pédagogique : SVG original de `content/schemas/` inséré en ligne (traits `currentColor`, thème clair/sombre), légende, sans CLS | Pour une photo ou un visuel avec droits — utiliser `ContentImage` |
+| `RevisionHistory`   | Historique des révisions (version, date, motif, auteur/relecteur) ; nul si vide                                                        | Pour un simple horodatage — utiliser l'audit du pied              |
+| `NoticeDocument`    | Notice de document public consultable sur site (résumé, source, fiches liées)                                                          | Pour un simple lien de téléchargement                             |
+| `PrintButton`       | Déclenche la vue impression (client)                                                                                                   | —                                                                 |
 
 ## Progression (`src/features/progression/` + `src/lib/progression/`)
 

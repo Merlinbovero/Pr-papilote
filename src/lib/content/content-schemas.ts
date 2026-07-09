@@ -385,12 +385,34 @@ export type FicheMetadata = z.infer<typeof ficheMetadataSchema>;
 // Corps d'une fiche (format YAML — décision consignée dans ARCHITECTURE.md)
 // ---------------------------------------------------------------------------
 
+/**
+ * Schéma pédagogique d'une fiche : SVG original, sobre, homogène au design
+ * system et libre de droits (stocké dans content/schemas/<schemaId>.svg).
+ * Obligatoire dès que son absence pénaliserait la compréhension (processus
+ * de production). Le SVG est inséré en ligne : ses traits héritent de la
+ * couleur du texte (thème clair/sombre).
+ */
+export const ficheFigureSchema = z.object({
+  /** Fichier content/schemas/<schemaId>.svg. */
+  schemaId: slugSchema,
+  /** Texte alternatif descriptif (accessibilité — obligatoire). */
+  alt: z.string().min(5),
+  /** Légende affichée sous le schéma. */
+  caption: z.string().min(1).optional(),
+  /** Dimensions du viewBox (ratio) — évite tout décalage de mise en page. */
+  width: z.int().positive(),
+  height: z.int().positive(),
+});
+export type FicheFigure = z.infer<typeof ficheFigureSchema>;
+
 export const ficheSectionContentSchema = z.object({
   id: slugSchema,
   title: z.string().min(1),
   strate: z.enum(["approfondir", "maitriser"]).default("approfondir"),
   /** Corps en Markdown (GFM : tableaux, listes). */
   body: z.string().min(1),
+  /** Schémas illustrant la section, rendus après le corps. */
+  figures: z.array(ficheFigureSchema).default([]),
 });
 
 export const ficheContentSchema = z.object({

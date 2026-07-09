@@ -1,0 +1,157 @@
+schemaVersion: 1
+id: fondamentaux.physique.pression-forces-unites
+type: concept
+title: Pression, forces et unités
+slug: pression-forces-unites
+summary: >-
+  La force (un vecteur, en newtons) et la pression (une force répartie sur une
+  surface, en pascals) sont les deux grandeurs qui gouvernent le vol. Cette
+  fiche les définit et introduit leurs unités.
+objectifs:
+  - Distinguer une force (vecteur — intensité, direction, sens, point d'application) d'une simple valeur numérique.
+  - Énoncer et appliquer la relation pression = force / surface (p = F / S).
+  - Associer les unités correctes — le newton à la force, le pascal et l'hectopascal à la pression.
+aliases: [force, pression, newton, pascal]
+module: fondamentaux
+category: physique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — deuxième fiche du socle des Fondamentaux.
+    author: prepapilote
+status: relecture
+sources:
+  - title: "BIPM — Le Système international d'unités (SI) : le newton et le pascal"
+    url: https://www.bipm.org/fr/publications/si-brochure
+    kind: institutionnel
+    consultedAt: "2026-07-09"
+  - title: "OACI — Annexe 5 : Unités de mesure à utiliser dans l'exploitation en vol et au sol"
+    url: https://www.bazl.admin.ch/dam/bazl/fr/dokumente/Fachleute/Regulationen_und_Grundlagen/icao-annex/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf.download.pdf/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf
+    kind: officiel
+    consultedAt: "2026-07-09"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites: [fondamentaux.physique.systeme-international-et-unites]
+content:
+  essentiel:
+    body: |
+      Deux grandeurs physiques gouvernent le vol : la **force** et la
+      **pression**.
+
+      Une **force** est une action mécanique capable de modifier le mouvement
+      d'un corps ou de le déformer ; on la représente par un **vecteur** et on
+      la mesure en **newtons (N)**. La **pression** décrit la façon dont une
+      force se répartit sur une surface : c'est une force divisée par une aire,
+      mesurée en **pascals (Pa)** — et, en aéronautique, en **hectopascals
+      (hPa)**.
+
+      Comprendre ces deux notions, c'est disposer du langage de l'aérodynamique
+      (portance, traînée), de la météorologie (pression atmosphérique) et des
+      instruments de vol.
+    aRetenir:
+      - Une force est un vecteur — point d'application, direction, sens et intensité ; unité le newton (N).
+      - La pression répartit une force sur une surface — p = F / S ; unité le pascal (Pa), soit N/m².
+      - L'aéronautique mesure la pression en hectopascals (1 hPa = 100 Pa) ; environ 1013 hPa au niveau de la mer.
+      - En vol, quatre forces principales — poids, poussée, portance, traînée.
+  sections:
+    - id: qu-est-ce-qu-une-force
+      title: Qu'est-ce qu'une force ?
+      body: |
+        Une **force** est une action mécanique qui peut modifier le mouvement
+        d'un corps (le mettre en mouvement, l'accélérer, le freiner) ou le
+        déformer.
+
+        On la décrit par un **vecteur**, entièrement défini par quatre
+        caractéristiques :
+
+        - son **point d'application** (où elle s'exerce) ;
+        - sa **direction** (la droite qui la porte) ;
+        - son **sens** (vers où elle pousse ou tire) ;
+        - son **intensité** (sa « force », mesurée en newtons).
+
+        L'unité de force du Système international est le **newton (N)** : c'est
+        la force qui communique à une masse de 1 kilogramme une accélération de
+        1 mètre par seconde carrée (1 N = 1 kg·m·s⁻²).
+      figures:
+        - schemaId: force-vecteur
+          alt: Une force représentée par un vecteur, avec son point d'application, sa direction, son sens et son intensité.
+          caption: Une force est un vecteur — point d'application, direction, sens et intensité.
+          width: 420
+          height: 260
+    - id: qu-est-ce-que-la-pression
+      title: Qu'est-ce que la pression ?
+      body: |
+        La **pression** exprime la façon dont une force se **répartit** sur une
+        surface. Elle est égale à la force pressante divisée par l'aire de la
+        surface sur laquelle elle s'exerce :
+
+        **p = F / S**
+
+        Son unité SI est le **pascal (Pa)**, égal à un newton par mètre carré
+        (1 Pa = 1 N/m²). Le pascal étant très petit, l'aéronautique et la
+        météorologie emploient l'**hectopascal (hPa)**, qui vaut 100 pascals.
+
+        Une même force appliquée sur une **petite** surface produit une pression
+        **plus forte** que sur une **grande** surface — c'est pourquoi une lame
+        fine coupe alors qu'une semelle large ne s'enfonce pas dans la neige.
+
+        L'**atmosphère** elle-même exerce une pression : le poids de la colonne
+        d'air située au-dessus de nous « pèse » sur chaque surface. Au niveau de
+        la mer, cette **pression atmosphérique** vaut en moyenne 1013 hPa.
+      figures:
+        - schemaId: pression-force-surface
+          alt: Une même force appliquée sur une petite puis une grande surface, illustrant p égale F sur S.
+          caption: À force égale, plus la surface est petite, plus la pression est forte.
+          width: 460
+          height: 210
+        - schemaId: pression-atmospherique
+          alt: Une colonne d'air pesant sur le sol, illustrant la pression atmosphérique.
+          caption: La pression atmosphérique — le poids de la colonne d'air au-dessus de la surface.
+          width: 420
+          height: 260
+    - id: forces-et-pressions-en-vol
+      title: Forces et pressions en vol
+      body: |
+        En vol, un avion est soumis à **quatre forces** principales :
+
+        - le **poids**, dû à la gravité, dirigé vers le bas ;
+        - la **poussée** (ou traction), fournie par les moteurs, qui propulse
+          l'avion vers l'avant ;
+        - la **portance**, qui le soutient, dirigée vers le haut ;
+        - la **traînée**, la résistance de l'air, opposée au mouvement.
+
+        Ces quatre forces et leur équilibre seront étudiés en détail dans les
+        fiches d'aérodynamique et de mécanique du vol.
+
+        La pression, quant à elle, intervient tout autour de l'appareil : celle
+        de l'air varie le long de l'aile et du fuselage. On distingue à ce titre
+        la pression **statique** (celle de l'air au repos) et la pression
+        **dynamique** (liée à la vitesse) — deux notions simplement évoquées ici
+        et développées dans la fiche « Chaîne Pitot-statique ».
+    - id: ordres-de-grandeur
+      title: Ordres de grandeur
+      strate: maitriser
+      body: |
+        Quelques repères pour fixer les idées :
+
+        - le **poids** d'un corps, en newtons, vaut environ sa masse (en kg)
+          multipliée par 9,81 ; un adulte de 70 kg « pèse » ainsi près de 700 N ;
+        - la **pression atmosphérique** au niveau de la mer (environ 1013 hPa)
+          équivaut à une charge d'à peu près 1 kilogramme-force par centimètre
+          carré ;
+        - une variation de **1 hPa** est infime à l'échelle humaine, mais
+          suffit à faire varier l'altitude indiquée d'environ 8 mètres — ce qui
+          justifie le soin apporté au calage altimétrique.
+  pieges:
+    - Ne pas confondre la masse (en kilogrammes, la quantité de matière) et le poids (en newtons, une force) — sur la Lune, la masse est identique mais le poids est plus faible.
+    - La pression n'est pas une force — c'est une force rapportée à une surface (p = F / S).
+    - Attention au facteur 100 entre le pascal et l'hectopascal — 1013 hPa valent 101 300 Pa.

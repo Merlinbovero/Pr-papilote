@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   CONTENT_SCHEMA_VERSION,
   documentNoticeSchema,
+  ficheFigureSchema,
   ficheMetadataSchema,
   FICHE_FAMILIES,
   ficheTypeSchema,
@@ -60,6 +61,21 @@ describe("ficheMetadataSchema", () => {
     expect(ficheMetadataSchema.safeParse({ ...ficheAppareil, objectifs: [] }).success).toBe(false);
     const { objectifs: _objectifs, ...sansObjectifs } = ficheAppareil;
     expect(ficheMetadataSchema.safeParse(sansObjectifs).success).toBe(false);
+  });
+
+  it("valide un schéma pédagogique (alt et dimensions obligatoires)", () => {
+    expect(
+      ficheFigureSchema.safeParse({
+        schemaId: "force-vecteur",
+        alt: "Une force représentée par un vecteur.",
+        width: 420,
+        height: 260,
+      }).success
+    ).toBe(true);
+    expect(
+      ficheFigureSchema.safeParse({ schemaId: "force-vecteur", alt: "x", width: 420, height: 260 })
+        .success
+    ).toBe(false);
   });
 
   it("refuse une fiche-objet sans infobox", () => {

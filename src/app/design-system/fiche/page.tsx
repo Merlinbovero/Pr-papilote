@@ -5,6 +5,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CrossModuleReturn } from "@/components/content/cross-module-return";
 import { DocumentList } from "@/components/content/document-list";
 import { EssentialBlock } from "@/components/content/essential-block";
+import { FicheFigure } from "@/components/content/fiche-figure";
 import { FicheHeader } from "@/components/content/fiche-header";
 import { FicheNav } from "@/components/content/fiche-nav";
 import { FicheSection } from "@/components/content/fiche-section";
@@ -144,6 +145,13 @@ export default function FicheGabaritPreviewPage() {
               idée par paragraphe, intertitres informatifs : la lecture 5 minutes se fait en
               parcourant ces sections.
             </p>
+            <FicheFigure
+              schemaId="force-vecteur"
+              alt="Schéma de démonstration : une force représentée par un vecteur."
+              caption="Schéma de démonstration (SVG original, adapté au thème)."
+              width={420}
+              height={260}
+            />
           </FicheSection>
 
           <FicheSection id="caracteristiques" title="Caractéristiques">

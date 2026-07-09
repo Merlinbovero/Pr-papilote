@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 210" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .lbl { font-size: 12px; }
+    .title { font-size: 15px; font-weight: 600; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .accent { stroke: #3b82f6; fill: none; stroke-width: 3; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="28" text-anchor="middle">p = F / S</text>
+  <!-- Petite surface : forte pression -->
+  <line class="accent" x1="120" y1="62" x2="120" y2="120" marker-end="url(#ac)" />
+  <text x="128" y="92">F</text>
+  <rect class="ink" x="100" y="124" width="40" height="24" />
+  <line class="ink" x1="50" y1="150" x2="190" y2="150" />
+  <text x="120" y="172" text-anchor="middle" class="lbl">petite surface S</text>
+  <text x="120" y="190" text-anchor="middle" class="lbl">→ forte pression</text>
+  <!-- Grande surface : faible pression -->
+  <line class="accent" x1="340" y1="62" x2="340" y2="120" marker-end="url(#ac)" />
+  <text x="348" y="92">F</text>
+  <rect class="ink" x="290" y="124" width="100" height="24" />
+  <line class="ink" x1="250" y1="150" x2="430" y2="150" />
+  <text x="340" y="172" text-anchor="middle" class="lbl">grande surface S</text>
+  <text x="340" y="190" text-anchor="middle" class="lbl">→ faible pression</text>
+</svg>

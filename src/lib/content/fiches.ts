@@ -106,6 +106,14 @@ function buildIndex(): ContentIndex {
         throw new Error(`${fiche.id} : document associé inexistant « ${docId} »`);
       }
     }
+    for (const section of fiche.content.sections) {
+      for (const figure of section.figures) {
+        const svgPath = path.join(CONTENT_DIR, "schemas", `${figure.schemaId}.svg`);
+        if (!fs.existsSync(svgPath)) {
+          throw new Error(`${fiche.id} : schéma introuvable « ${figure.schemaId}.svg »`);
+        }
+      }
+    }
   }
 
   const questions = readYamlFiles(path.join(CONTENT_DIR, "questions")).map(({ data }) =>

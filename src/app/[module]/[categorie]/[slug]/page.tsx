@@ -4,6 +4,7 @@ import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { DocumentList } from "@/components/content/document-list";
 import { EssentialBlock } from "@/components/content/essential-block";
+import { FicheFigure } from "@/components/content/fiche-figure";
 import { FicheHeader } from "@/components/content/fiche-header";
 import { FicheNav } from "@/components/content/fiche-nav";
 import { FicheSection } from "@/components/content/fiche-section";
@@ -226,6 +227,9 @@ export default async function FichePage({ params }: FichePageProps) {
               strate={section.strate}
             >
               <Markdown>{section.body}</Markdown>
+              {section.figures.map((figure) => (
+                <FicheFigure key={figure.schemaId} {...figure} />
+              ))}
             </FicheSection>
           ))}
 
