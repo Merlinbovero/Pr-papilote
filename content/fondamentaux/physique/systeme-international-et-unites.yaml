@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: fondamentaux.physique.systeme-international-et-unites
+type: concept
+title: Le Système international d'unités (SI) et les unités aéronautiques
+slug: systeme-international-et-unites
+summary: >-
+  Le Système international (SI) fixe les grandeurs et unités de référence ;
+  l'aéronautique y ajoute des unités historiques (pied, nœud, hectopascal).
+  Cette fiche pose ce langage commun et ses conversions.
+objectifs:
+  - Identifier les principales grandeurs physiques et leurs unités du Système international.
+  - Reconnaître les unités propres à l'aéronautique (pied, nœud, hectopascal, Mach) et la grandeur mesurée par chacune.
+  - Convertir les unités usuelles (nœud ↔ km/h, pied ↔ mètre, degré Celsius ↔ kelvin).
+aliases: [SI, unités aéronautiques, système international d'unités]
+module: fondamentaux
+category: physique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — première fiche du socle des Fondamentaux (point d'entrée).
+    author: prepapilote
+status: relecture
+sources:
+  - title: "OACI — Annexe 5 : Unités de mesure à utiliser dans l'exploitation en vol et au sol"
+    url: https://www.bazl.admin.ch/dam/bazl/fr/dokumente/Fachleute/Regulationen_und_Grundlagen/icao-annex/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf.download.pdf/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf
+    kind: officiel
+    consultedAt: "2026-07-09"
+  - title: "BIPM — Le Système international d'unités (SI), brochure officielle"
+    url: https://www.bipm.org/fr/publications/si-brochure
+    kind: institutionnel
+    consultedAt: "2026-07-09"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+content:
+  essentiel:
+    body: |
+      Mesurer, c'est comparer une **grandeur** (une longueur, une masse, une
+      vitesse…) à une **unité** de référence. Le **Système international
+      d'unités (SI)** fixe ces références au niveau mondial : le mètre pour
+      les longueurs, le kilogramme pour les masses, la seconde pour le temps,
+      le kelvin pour les températures.
+
+      L'aviation civile internationale adopte le SI (OACI, Annexe 5), mais
+      conserve à titre dérogatoire quelques **unités historiques** encore
+      universellement employées : le **pied** pour les altitudes, le **nœud**
+      pour les vitesses, l'**hectopascal** pour la pression. Savoir à quelle
+      grandeur se rapporte chaque unité — et convertir les plus courantes —
+      est le tout premier réflexe du candidat.
+    aRetenir:
+      - Le SI est la référence mondiale ; l'aéronautique conserve des unités historiques (pied, nœud, hectopascal).
+      - 1 pied = 0,3048 m ; 1 nœud = 1,852 km/h ; pression standard au niveau de la mer = 1013,25 hPa.
+      - Le niveau de vol (FL) s'exprime en centaines de pieds — FL100 = 10 000 ft.
+      - Une unité mesure une grandeur — ne jamais confondre les deux.
+  sections:
+    - id: le-systeme-international
+      title: Le Système international (SI)
+      body: |
+        Le SI repose sur sept **unités de base**, chacune rattachée à une
+        grandeur physique. Quatre suffisent pour débuter en aéronautique :
+
+        - la **longueur** → le **mètre** (m) ;
+        - la **masse** → le **kilogramme** (kg) ;
+        - le **temps** → la **seconde** (s) ;
+        - la **température** → le **kelvin** (K).
+
+        Les trois autres (ampère, mole, candela) sont plus éloignées du vol.
+        Toutes les autres unités « dérivent » de ces bases : une vitesse est
+        une longueur divisée par un temps (m/s), une pression est une force
+        par unité de surface (le pascal, Pa).
+
+        Le SI n'est pas qu'une convention scolaire : c'est la garantie qu'une
+        mesure signifie la même chose partout dans le monde.
+    - id: les-unites-aeronautiques
+      title: Les unités propres à l'aéronautique
+      body: |
+        Pour des raisons historiques et de sécurité (éviter tout changement
+        international mal coordonné), l'OACI autorise, à côté du SI, des
+        unités supplétives d'usage très répandu :
+
+        - **altitude et hauteur → le pied (ft)** : 1 ft = 0,3048 m exactement ;
+        - **vitesse → le nœud (kt)** : 1 nœud = 1 mille marin par heure, soit
+          1,852 km/h (le mille marin vaut 1852 m) ;
+        - **pression → l'hectopascal (hPa)** : unité principale de pression
+          depuis 1979, numériquement égale à l'ancien millibar (1 hPa = 1 mbar) ;
+        - **température → le degré Celsius (°C)** en usage courant ;
+        - **vitesse relative → le nombre de Mach**, rapport (sans unité) entre
+          la vitesse de l'aéronef et la vitesse du son.
+
+        On rencontre aussi le **pouce de mercure (inHg)** pour le calage
+        altimétrique dans le monde anglo-saxon : la pression standard de
+        1013,25 hPa équivaut à 29,92 inHg.
+    - id: les-conversions-courantes
+      title: Les conversions les plus courantes
+      body: |
+        Quelques conversions reviennent en permanence :
+
+        - **nœud → km/h** : multiplier par **1,852** (≈ 1,85). 100 kt ≈ 185 km/h ;
+        - **pied → mètre** : multiplier par **0,3048** (≈ 0,3). 3000 ft ≈ 914 m ;
+        - **mètre → pied** : multiplier par **3,28** (≈ 3,3) ;
+        - **degré Celsius → kelvin** : ajouter **273,15**. 15 °C = 288,15 K.
+
+        Le **niveau de vol (Flight Level, FL)** exprime une altitude
+        pression en centaines de pieds : FL100 correspond à 10 000 ft,
+        FL350 à 35 000 ft.
+    - id: convertir-de-tete
+      title: Convertir de tête
+      strate: maitriser
+      body: |
+        En épreuve, la vitesse de calcul prime. Quelques repères mentaux :
+
+        - **nœud → km/h** : « ×2 puis j'enlève un peu » (×1,85). 120 kt ≈ 222 km/h ;
+        - **pied → mètre** : « ×0,3 ». 5000 ft ≈ 1500 m (valeur exacte 1524 m) ;
+        - **mètre → pied** : « ×3,3 ». 1000 m ≈ 3300 ft ;
+        - **FL** : j'ajoute deux zéros. FL80 = 8000 ft.
+
+        Ces approximations suffisent pour un ordre de grandeur ; on ne
+        recourt à la valeur exacte que lorsqu'elle est demandée.
+  pieges:
+    - Ne pas confondre la grandeur (ce que l'on mesure) et l'unité (comment on la mesure) — une vitesse se mesure en nœuds, le nœud n'est pas « une vitesse » en soi.
+    - Le nœud est déjà une vitesse (un mille marin par heure) — l'expression « nœuds par heure » est fausse.
+    - Hectopascal et millibar désignent la même valeur (1 hPa = 1 mbar) — ce ne sont pas deux unités différentes.
+    - Le niveau de vol s'exprime en centaines de pieds — FL100 = 10 000 ft, et non 100 ft.
+    - Le kelvin s'écrit sans le mot « degré » ni le symbole « ° » — on note 288 K, jamais 288 °K.

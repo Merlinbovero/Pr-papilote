@@ -6,6 +6,10 @@ slug: rafale-m
 summary: >-
   Chasseur multirôle embarqué de l'aéronautique navale, version marine du
   Rafale, mis en œuvre depuis le porte-avions Charles de Gaulle.
+objectifs:
+  - Identifier le Rafale M comme l'unique avion de combat embarqué de l'aéronautique navale française.
+  - Expliquer les spécificités de la version Marine (crosse d'appontage, train renforcé, mise en œuvre CATOBAR).
+  - Situer le Rafale M au sein de ses flottilles et de sa base de Landivisiau.
 aliases: [Rafale Marine]
 module: eopan
 category: appareils

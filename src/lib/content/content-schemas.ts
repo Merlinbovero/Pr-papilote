@@ -271,6 +271,14 @@ export const ficheMetadataBaseSchema = z.object({
   title: z.string().min(1),
   slug: slugSchema,
   summary: z.string().min(20).max(300),
+  /**
+   * Objectifs pédagogiques opérationnels (acquis, verbes d'action —
+   * « ce que l'utilisateur sait faire »). Champ SYSTÈME, distinct du bloc
+   * « À retenir » (destiné au lecteur) : réutilisable par la progression,
+   * les compétences, les quiz, les recommandations et les parcours.
+   * Obligatoire : toute fiche déclare explicitement ce qu'elle fait acquérir.
+   */
+  objectifs: z.array(z.string().min(5)).min(1),
   /** Alias de recherche (sigles, appellations) — clés d'entrée vers l'URL canonique. */
   aliases: z.array(z.string().min(1)).default([]),
   /** Priorité éditoriale de recherche (0–5) : départage les homonymes. */

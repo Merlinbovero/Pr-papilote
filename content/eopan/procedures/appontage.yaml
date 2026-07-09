@@ -7,6 +7,10 @@ summary: >-
   Manœuvre d'atterrissage d'un aéronef sur le pont d'un porte-avions :
   l'avion accroche avec sa crosse l'un des brins d'arrêt tendus en travers
   de la piste oblique.
+objectifs:
+  - Décrire la manœuvre d'appontage sur la piste oblique, crosse sortie.
+  - Expliquer le rôle des brins d'arrêt et la remise de gaz systématique au toucher.
+  - Reconnaître l'appontage comme qualification clé du pilote de chasse embarqué.
 aliases: []
 module: eopan
 category: procedures

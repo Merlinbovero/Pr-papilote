@@ -13,9 +13,9 @@
 
 Le BIA n'est **pas** une catégorie-discipline. Les catégories représentent des **disciplines aéronautiques** ; le BIA est un **parcours pédagogique** qui réutilise ces mêmes fiches. Même principe pour les entrées thématiques d'EOPAN/EOPN/ALAT. Un parcours = un chemin de lecture ordonné sur des IDs de fiches existantes (conception d'URL/format à définir ultérieurement, hors de ce plan). Bénéfice : une base unique sert tous les publics.
 
-## 3. Trois niveaux de priorité (socle ~36 fiches)
+## 3. Trois niveaux de priorité (socle ~37 fiches)
 
-- **A — indispensables à la V1** (16) : le cœur incontournable du vol.
+- **A — indispensables à la V1** (17) : le cœur incontournable du vol, ouvert par la fiche d'entrée SI & unités.
 - **B — importantes, produites juste après** (14).
 - **C — approfondissements de la V1** (6).
 
@@ -42,6 +42,7 @@ Légende : **A** indispensable · **B** importante · **C** approfondissement. C
 
 ### Physique utile (`concept`)
 
+- **A** Le Système international d'unités (SI) et les unités aéronautiques — **point d'entrée absolu** (`connaissances-aeronautiques`, `calcul-mental`)
 - **A** Pression, forces et unités (`raisonnement-logique`, `connaissances-aeronautiques`)
 
 ### Mathématiques utiles (`concept`)
@@ -100,7 +101,7 @@ Légende : **A** indispensable · **B** importante · **C** approfondissement. C
 
 - **C** Vocabulaire de base du vol _(compétence : `anglais-aeronautique`)_
 
-**Répartition** : A = 16 · B = 14 · C = 6 · **total 36**.
+**Répartition** : A = 17 · B = 14 · C = 6 · **total 37** (dont la fiche d'entrée SI).
 
 ## 6. Relations principales du graphe (et dépendances de production)
 
@@ -124,7 +125,7 @@ Peu, et seulement en **référence** : DGAC/SIA (programme BIA, réglementation)
 
 ## 9. Ordre de production interne
 
-1. **Socle physique** : Physique · Pression → Maths · Proportions (A).
+1. **Socle physique** : Physique · SI & unités (point d'entrée) → Physique · Pression → Maths · Proportions (A).
 2. **Cœur du vol** : Aérodynamique (A) → Mécanique du vol (A) → Instruments · Altimètre → Météo (A) → Navigation (A).
 3. **Compléments B** : reste aéro/météo/nav/instruments, trigonométrie, espaces aériens, alphabet OACI.
 4. **Approfondissements C** du socle.

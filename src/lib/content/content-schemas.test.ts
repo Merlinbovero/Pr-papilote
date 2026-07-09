@@ -18,6 +18,7 @@ const ficheAppareil = {
   title: "Appareil d'exemple",
   slug: "appareil-exemple",
   summary: "Fixture de test du contrat éditorial pour une fiche-objet de type appareil.",
+  objectifs: ["Identifier l'appareil d'exemple et son rôle."],
   module: "eopn",
   category: "appareils",
   subcategory: "avions-de-chasse",
@@ -53,6 +54,12 @@ describe("ficheMetadataSchema", () => {
 
   it("refuse une fiche sans source", () => {
     expect(ficheMetadataSchema.safeParse({ ...ficheAppareil, sources: [] }).success).toBe(false);
+  });
+
+  it("exige au moins un objectif pédagogique (champ système)", () => {
+    expect(ficheMetadataSchema.safeParse({ ...ficheAppareil, objectifs: [] }).success).toBe(false);
+    const { objectifs: _objectifs, ...sansObjectifs } = ficheAppareil;
+    expect(ficheMetadataSchema.safeParse(sansObjectifs).success).toBe(false);
   });
 
   it("refuse une fiche-objet sans infobox", () => {

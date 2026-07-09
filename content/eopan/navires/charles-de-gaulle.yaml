@@ -7,6 +7,10 @@ summary: >-
   Unique porte-avions français, à propulsion nucléaire, mis en œuvre par la
   Marine nationale ; il catapulte et récupère le groupe aérien embarqué
   selon le principe CATOBAR.
+objectifs:
+  - Identifier le Charles de Gaulle comme l'unique porte-avions français, à propulsion nucléaire.
+  - Expliquer le principe CATOBAR mis en œuvre à bord (catapultes et brins d'arrêt).
+  - Décrire le rôle du navire comme porteur du groupe aérien embarqué.
 aliases: [CDG, Porte-avions, R91, PA Charles de Gaulle]
 module: eopan
 category: navires

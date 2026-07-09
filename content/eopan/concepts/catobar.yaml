@@ -7,6 +7,10 @@ summary: >-
   Principe de mise en œuvre des avions sur porte-avions combinant décollage
   assisté par catapulte et récupération par brins d'arrêt — celui du
   Charles de Gaulle.
+objectifs:
+  - Définir le principe CATOBAR (catapultage au décollage, brins d'arrêt à la récupération).
+  - Expliquer l'avantage du CATOBAR (avions plus lourds en carburant et en armement).
+  - Distinguer le CATOBAR des autres principes de mise en œuvre embarquée.
 aliases: [Catapult Assisted Take-Off But Arrested Recovery]
 module: eopan
 category: concepts

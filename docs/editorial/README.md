@@ -11,7 +11,8 @@ Architecture documentaire officielle. Ces documents gouvernent toute production 
 | [strategie-documentaire.md](strategie-documentaire.md)     | Pipeline d'ingestion des documents publics (enrichir avant créer)                                  |
 | [regles-editoriales.md](regles-editoriales.md)             | Qualité, style, neutralité, règles de rédaction                                                    |
 | [gestion-documentaire.md](gestion-documentaire.md)         | **Chaîne éditoriale (ch. 8)** : workflow, versions/motif, documents, contrôle qualité              |
-| [plan-fondamentaux.md](plan-fondamentaux.md)               | **Plan de production** de la famille Fondamentaux aéronautiques (socle 36 fiches, priorités A/B/C) |
+| [processus-production.md](processus-production.md)         | **Processus officiel** : dossier de conception validé avant rédaction, champ `objectifs[]`         |
+| [plan-fondamentaux.md](plan-fondamentaux.md)               | **Plan de production** de la famille Fondamentaux aéronautiques (socle 37 fiches, priorités A/B/C) |
 
 ## Principes fondateurs
 
