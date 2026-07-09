@@ -7,7 +7,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # PrépaPilote — Règles de projet
 
-Plateforme web de préparation aux concours **EOPAN** (Marine nationale), **EOPN** (Armée de l'Air et de l'Espace) et **ALAT** (Armée de Terre). Vision officielle : `docs/VISION.md`. Architecture : `docs/ARCHITECTURE.md`. Design system : `docs/design-system.md`. Framework UI : `docs/ui-framework.md`. Système éditorial : `docs/editorial/`. Ces documents font autorité.
+Plateforme web de préparation aux concours **EOPAN** (Marine nationale), **EOPN** (Armée de l'Air et de l'Espace) et **ALAT** (Armée de Terre). Vision officielle : `docs/VISION.md`. Gouvernance et principes : `docs/gouvernance.md`. Architecture : `docs/ARCHITECTURE.md`. Design system : `docs/design-system.md`. Framework UI : `docs/ui-framework.md`. Système éditorial : `docs/editorial/`. Qualité technique : `docs/qualite-technique.md`. Décisions majeures : `docs/adr/`. Feuille de route : `docs/roadmap.md`. Ces documents font autorité.
 
 ## Stack
 
