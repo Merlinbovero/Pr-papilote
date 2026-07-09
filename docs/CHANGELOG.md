@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Modifié
+
+- 2026-07-09 — Entrée en phase de construction : les **cinq fiches pilotes validées définitivement** comme références éditoriales officielles (statut `relecture` → `publie` : Rafale M, porte-avions Charles de Gaulle, Flottille 11F, CATOBAR, Appontage) ; elles deviennent les modèles officiels du projet. Ordre de production validé (`docs/roadmap.md`) : Fondamentaux → EOPAN → EOPN → ALAT → Dictionnaire (en dernier), production progressive, chaque famille validée avant la suivante. Les deux termes pilotes du dictionnaire (`catobar`, `appontage`) restent en `relecture` jusqu'à la phase dictionnaire.
+
 ### Ajouté
 
 - 2026-07-09 — Gouvernance et clôture du Volume II (ch. 10) : doctrine de gouvernance (`docs/gouvernance.md` — six principes fondateurs, cadres non négociables, critère des trois questions, contributions, documentation) ; feuille de route V1/V2/V3 (`docs/roadmap.md`) ; registre d'idées futures (`docs/idees-futures.md`) ; registre de dette technique distinguant reports assumés et dette réelle (`docs/dette-technique.md`) ; pratique ADR formalisée (`docs/adr/` — modèle + quatre décisions structurantes : contenu en Git, identifiants gelés, progression dérivée sans streak, examens paramétriques). `AGENTS.md` pointant l'ensemble. Audit complet des chapitres 1–10 : cohérence confirmée, aucune contradiction bloquante, architecture prête pour la production de contenu.

@@ -11,8 +11,18 @@ Fondations **livrées** (Volume II, ch. 1–10) :
 Reste à faire pour la V1 :
 
 - **Intégration Supabase réelle** : câblage lecture/écriture de la progression, des favoris et des objectifs ; authentification effective (état « non configuré » propre jusque-là).
-- **Production de contenu** : validation définitive des cinq fiches pilotes, puis montée en charge progressive (dictionnaire d'abord, une fiche pilote par famille).
+- **Production de contenu** : cinq fiches pilotes **validées définitivement comme références officielles** (statut `publie`, 2026-07-09) ; production progressive par famille, chaque famille validée avant la suivante.
 - **Banque de questions** initiale reliée aux fiches publiées (couverture surveillée par `content:check`).
+
+### Ordre de production validé (2026-07-09)
+
+Production **progressive**, jamais de masse. Chaque famille est validée avant de passer à la suivante ; la qualité prime.
+
+1. **Fondamentaux aéronautiques**
+2. **EOPAN**
+3. **EOPN**
+4. **ALAT**
+5. **Dictionnaire** — en dernier : il enrichit naturellement les fiches déjà produites et réutilise leurs définitions (les deux termes pilotes `catobar` et `appontage` restent en `relecture` jusqu'à cette phase).
 
 ## V2 — améliorations importantes
 
