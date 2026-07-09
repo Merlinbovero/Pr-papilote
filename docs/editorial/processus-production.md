@@ -38,6 +38,31 @@ Chaque fiche possède des **objectifs pédagogiques explicites et indépendants 
 4. **`content:check`** avant publication (documents, fraîcheur, couverture) ; puis passage en `publie` après validation éditoriale du contenu rédigé.
 5. **Une fiche validée avant la suivante** — production progressive, jamais de masse.
 
-## 4. Portée
+## 4. Contrôle qualité avant publication (obligatoire)
+
+Avant tout passage en `publie`, chaque fiche est évaluée sur **neuf critères** :
+
+1. **Exactitude** scientifique et technique.
+2. **Qualité et fiabilité des sources**.
+3. **Clarté** des explications.
+4. **Progression pédagogique**.
+5. **Cohérence** avec les autres fiches.
+6. **Qualité des illustrations et des schémas**.
+7. **Qualité des liens** du graphe documentaire.
+8. **Pertinence des objectifs pédagogiques** (`objectifs[]`).
+9. **Potentiel de création de quiz**.
+
+## 5. Auto-évaluation critique (à la fin de chaque fiche)
+
+À la fin de chaque fiche, une **auto-évaluation critique honnête** est produite :
+
+- les **points forts** ;
+- les **limites** éventuelles ;
+- les **améliorations possibles** ;
+- un **score global sur 100**, **justifié**.
+
+L'objectif **n'est pas** d'atteindre artificiellement 100/100, mais de **maintenir un niveau de qualité constant** sur tout PrépaPilote. Si l'auto-évaluation révèle une **faiblesse importante**, la fiche est **corrigée avant** publication.
+
+## 6. Portée
 
 Ce processus s'applique à **toutes** les familles (Fondamentaux → EOPAN → EOPN → ALAT → Dictionnaire) et à toute fiche future. Il complète `plan-fondamentaux.md` (le plan directeur de la première famille) et `gestion-documentaire.md` (la chaîne éditoriale).
