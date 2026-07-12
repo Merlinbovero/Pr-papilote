@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.hawkeye-01
+kind: qcm
+theme: guet-aerien
+statement: >-
+  Quel est le rôle principal du E-2C Hawkeye au sein du groupe aéronaval ?
+choices:
+  - Le guet aérien — détecter, suivre et coordonner à longue distance
+  - La chasse et la défense aérienne rapprochée
+  - Le ravitaillement en vol des Rafale M
+  - Le transport de fret entre la terre et le porte-avions
+correctChoices: [0]
+explanation: >-
+  Le Hawkeye est l'avion de guet aérien (alerte avancée) de l'aéronautique
+  navale. Il n'est pas armé — sa mission est de détecter, suivre les pistes et
+  coordonner l'action des chasseurs grâce à son radar tournant.
+evaluates: [eopan.appareils.e-2c-hawkeye]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

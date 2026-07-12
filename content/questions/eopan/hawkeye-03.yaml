@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.hawkeye-03
+kind: qcm
+theme: guet-aerien
+statement: >-
+  Pourquoi le Hawkeye détecte-t-il des cibles basses bien avant les radars des
+  navires ?
+choices:
+  - Parce que son altitude repousse l'horizon radar
+  - Parce que son radar émet une puissance dix fois supérieure
+  - Parce qu'il vole plus vite que les cibles
+  - Parce qu'il est équipé de caméras à très longue focale
+correctChoices: [0]
+explanation: >-
+  C'est l'altitude qui fait la différence : un radar de navire est limité par
+  l'horizon, tandis qu'en portant le radar en altitude, le Hawkeye repousse cet
+  horizon très loin et voit les cibles basses bien plus tôt.
+evaluates: [eopan.appareils.e-2c-hawkeye]
+difficulty: 2
+competencies: [connaissances-aeronautiques, raisonnement-logique]
+concours: [eopan]
+status: publie

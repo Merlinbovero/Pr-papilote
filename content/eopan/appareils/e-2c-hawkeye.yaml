@@ -1,0 +1,137 @@
+schemaVersion: 1
+id: eopan.appareils.e-2c-hawkeye
+type: appareil
+title: E-2C Hawkeye
+slug: e-2c-hawkeye
+summary: >-
+  Avion de guet aérien embarqué de l'aéronautique navale — les « yeux » du groupe
+  aéronaval. Mis en œuvre par la flottille 4F depuis le porte-avions Charles de
+  Gaulle, il assure la surveillance aérienne à longue distance grâce à son radar
+  tournant.
+objectifs:
+  - Identifier le E-2C Hawkeye comme l'avion de guet aérien (alerte avancée) de l'aéronautique navale.
+  - Expliquer son rôle — étendre la portée radar du groupe aéronaval bien au-delà de l'horizon des navires.
+  - Situer l'appareil au sein de la flottille 4F et de sa base de Lann-Bihoué, et sa mise en œuvre embarquée.
+aliases: [Hawkeye, E-2, avion radar, guet aérien embarqué, alerte avancée]
+module: eopan
+category: appareils
+subcategory: guet-aerien
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — fiche-objet appareil, l'avion de guet aérien E-2C Hawkeye de l'aéronautique navale.
+    author: prepapilote
+sources:
+  - title: "E-2C Hawkeye — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/e2c-hawkeye
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Hawkeye — les yeux de la flotte (Mer et Marine)"
+    url: https://www.meretmarine.com/fr/defense/hawkeye-les-yeux-de-la-flotte
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+status: publie
+relations:
+  factual:
+    - predicate: embarque-sur
+      target: eopan.bases.charles-de-gaulle
+    - predicate: applique
+      target: eopan.procedures.catobar
+  related:
+    - eopan.appareils.rafale-m
+    - eopan.presentation.le-concours-eopan
+infobox:
+  constructeur: Northrop Grumman
+  role: Guet aérien embarqué (alerte avancée)
+  armees: [Marine nationale]
+  miseEnService: 1998
+  statut: En service
+  equipage: "5"
+content:
+  essentiel:
+    body: |
+      Le **E-2C Hawkeye** est l'avion de **guet aérien** de l'aéronautique
+      navale — l'appareil qui « **voit loin** » pour tout le groupe aéronaval.
+      Reconnaissable à sa grande **soucoupe radar** tournant au-dessus du
+      fuselage, il n'est **pas armé** : sa mission est de **détecter**,
+      **suivre** et **coordonner**.
+
+      Construit par l'américain **Northrop Grumman**, il est mis en œuvre par la
+      **flottille 4F**, basée à **Lann-Bihoué** (près de Lorient). La Marine en
+      arme trois exemplaires, livrés à partir de **1998**.
+
+      Embarqué sur le **porte-avions Charles de Gaulle** (mise en œuvre
+      **CATOBAR**, comme le Rafale M), il assure la **surveillance aérienne à
+      longue distance** autour du groupe : depuis son **altitude**, son radar
+      porte bien au-delà de l'**horizon** des navires et détecte des cibles
+      qu'un radar de bord ne verrait pas encore.
+    aRetenir:
+      - Le E-2C Hawkeye est l'avion de guet aérien (alerte avancée) de l'aéronautique navale — les « yeux » du groupe aéronaval.
+      - Il n'est pas armé — son rôle est de détecter, suivre et coordonner grâce à son radar tournant.
+      - Construit par Northrop Grumman, mis en œuvre par la flottille 4F basée à Lann-Bihoué.
+      - Embarqué sur le Charles de Gaulle en CATOBAR, il étend la portée radar du groupe bien au-delà de l'horizon des navires.
+  sections:
+    - id: role-le-guet-aerien
+      title: Rôle — le guet aérien
+      body: |
+        La mission du Hawkeye est le **guet aérien**, aussi appelé **alerte
+        avancée** (en anglais _AEW_, *Airborne Early Warning*). Concrètement,
+        c'est un **radar volant** : il **détecte** les aéronefs et les navires
+        sur un large secteur, **suit** simultanément un grand nombre de pistes,
+        et **coordonne** l'action des chasseurs — un rôle de **tour de contrôle
+        et de vigie** au profit de tout le groupe aéronaval.
+
+        L'intérêt tient à l'**altitude**. Un radar installé sur un navire est
+        limité par l'**horizon** : il ne voit pas les cibles volant bas au-delà
+        d'une certaine distance. En portant le radar **en altitude**, le Hawkeye
+        **repousse cet horizon** très loin et détecte les menaces **bien plus
+        tôt**. C'est ce gain de temps qui fait toute sa valeur.
+      figures:
+        - schemaId: guet-aerien-hawkeye
+          alt: Un porte-avions dont le radar est limité par l'horizon, et un E-2C Hawkeye en altitude dont la couverture radar s'étend bien au-delà, détectant une cible basse au loin.
+          caption: Depuis son altitude, le Hawkeye repousse l'horizon radar du groupe et détecte les cibles basses bien avant les navires.
+          width: 460
+          height: 300
+    - id: caracteristiques-et-equipage
+      title: Caractéristiques et équipage
+      body: |
+        Le Hawkeye se distingue par son **rotodôme** — le grand disque qui
+        **tourne** en permanence au-dessus du fuselage et abrite l'antenne du
+        **radar**. C'est un **turbopropulseur** (hélices), adapté aux longues
+        veilles et à la mise en œuvre depuis un pont d'envol.
+
+        Il embarque un **équipage de cinq** : **deux pilotes** à l'avant, qui
+        conduisent l'avion, et **trois opérateurs** à l'arrière, dans le
+        **poste tactique**, qui exploitent le radar et surveillent l'espace
+        aérien et maritime sur **360°**.
+
+        Comme le Rafale M, le Hawkeye opère selon le principe **CATOBAR** :
+        **catapultage** au décollage, **brins d'arrêt** à l'appontage. Sa
+        cellule est donc, elle aussi, conçue pour l'**embarquement**.
+    - id: unite-et-avenir
+      title: Unité et avenir
+      strate: maitriser
+      body: |
+        Les trois Hawkeye français sont regroupés au sein de la **flottille
+        4F**, stationnée à la **base d'aéronautique navale de Lann-Bihoué**
+        (près de Lorient) et embarquée sur le **Charles de Gaulle** lors des
+        déploiements.
+
+        Ces appareils, entrés en service à partir de **1998**, doivent être
+        **remplacés** par une version plus récente, le **E-2D Advanced
+        Hawkeye**, également de Northrop Grumman. Le premier appareil neuf est
+        attendu à partir de **2027**, pour une entrée en service progressive à
+        la fin de la décennie — la Marine conservant ainsi une capacité de guet
+        aérien embarqué, capacité rare que **peu de marines** dans le monde
+        possèdent.
+  pieges:
+    - Le Hawkeye n'est pas un avion de combat et n'est pas armé — c'est un avion radar (guet aérien), à ne pas confondre avec le Rafale M.
+    - Son intérêt vient de l'altitude — c'est elle qui repousse l'horizon radar, pas une puissance d'émission « magique ».
+    - Ne pas confondre le E-2C actuel avec le E-2D Advanced Hawkeye, sa future relève attendue à partir de 2027.
