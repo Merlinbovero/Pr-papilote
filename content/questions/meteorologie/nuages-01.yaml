@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.nuages-01
+kind: qcm
+theme: les-nuages
+statement: >-
+  De quoi un nuage est-il fait ?
+choices:
+  - "De gouttelettes d'eau ou de cristaux de glace"
+  - "De vapeur d'eau invisible"
+  - "De poussières sèches"
+  - "D'air simplement réchauffé"
+correctChoices: [0]
+explanation: >-
+  Un nuage est fait de minuscules gouttelettes d'eau ou de cristaux de glace,
+  issus de la condensation de la vapeur d'eau. La vapeur, elle, est invisible.
+evaluates: [fondamentaux.meteorologie.les-nuages]
+difficulty: 1
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

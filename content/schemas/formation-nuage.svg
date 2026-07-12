@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .cloud { stroke: currentColor; fill: none; stroke-width: 2; }
+    .ground { stroke: currentColor; fill: none; stroke-width: 2; }
+    .rise { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .level { stroke: #94a3b8; fill: none; stroke-width: 1.5; stroke-dasharray: 6 4; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="24" text-anchor="middle">La formation d'un nuage</text>
+  <!-- Niveau de condensation -->
+  <line class="level" x1="60" y1="150" x2="360" y2="150" />
+  <text class="sub" x="358" y="142" text-anchor="end">niveau de condensation (point de rosée)</text>
+  <!-- Nuage -->
+  <path class="cloud" d="M156,150 C146,130 166,116 184,124 C190,104 220,104 228,124 C250,116 266,134 256,150 Z" />
+  <text class="lbl" x="206" y="98" text-anchor="middle">nuage (vapeur condensée)</text>
+  <!-- Air qui monte -->
+  <line class="rise" x1="206" y1="244" x2="206" y2="156" marker-end="url(#ac)" />
+  <text class="accent-t" x="298" y="196" text-anchor="middle">l'air humide monte</text>
+  <text class="sub" x="298" y="212" text-anchor="middle">et se refroidit</text>
+  <!-- Sol -->
+  <line class="ground" x1="40" y1="250" x2="380" y2="250" />
+  <text class="sub" x="110" y="196" text-anchor="middle">air non saturé</text>
+</svg>
