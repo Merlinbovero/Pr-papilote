@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.pheno-02
+kind: qcm
+theme: phenomenes-dangereux
+statement: >-
+  Dans quelles conditions le givrage menace-t-il l'avion ?
+choices:
+  - "En air humide à température négative (0 à −40 °C)"
+  - "Uniquement lorsqu'il neige"
+  - "Par temps chaud et sec"
+  - "Seulement au-dessus de 15 °C"
+correctChoices: [0]
+explanation: >-
+  Le givrage survient en air humide (nuage, pluie surfondue) à température
+  négative. La glace alourdit l'avion, déforme le profil et réduit la portance.
+evaluates: [fondamentaux.meteorologie.phenomenes-dangereux]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

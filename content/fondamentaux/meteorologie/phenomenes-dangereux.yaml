@@ -1,0 +1,145 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.phenomenes-dangereux
+type: notion-meteo
+title: Les phénomènes météorologiques dangereux
+slug: phenomenes-dangereux
+summary: >-
+  Les principaux dangers météo sont la turbulence, le givrage, le cisaillement de
+  vent, la visibilité réduite et l'orage. Le cumulonimbus les concentre presque
+  tous — turbulence, givrage, grêle, foudre, cisaillement — et ne se traverse jamais.
+objectifs:
+  - Nommer les principaux phénomènes météorologiques dangereux (turbulence, givrage, cisaillement, visibilité réduite, orage).
+  - Expliquer le givrage (glace en air humide sous 0 °C) et le cisaillement de vent (variation brutale près du sol).
+  - Identifier le cumulonimbus comme concentrant ces dangers et énoncer la règle de ne jamais le traverser.
+aliases:
+  [
+    phénomènes dangereux,
+    orage,
+    givrage,
+    turbulence,
+    cisaillement,
+    wind shear,
+    microrafale,
+    cumulonimbus,
+  ]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — dix-neuvième fiche du socle, les phénomènes météorologiques dangereux (clôt le bloc météorologie).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Les cumulonimbus — Météo-France"
+    url: https://meteofrance.com/comprendre-la-meteo/orages/les-cumulonimbus
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.les-nuages
+    - fondamentaux.meteorologie.le-vent
+  related:
+    - fondamentaux.meteorologie.temperature-et-humidite
+content:
+  essentiel:
+    body: |
+      Certains phénomènes météo menacent directement la sécurité du vol. Les
+      connaître, c'est savoir les **éviter**.
+
+      Cinq dangers reviennent sans cesse : la **turbulence** (secousses de
+      l'air), le **givrage** (accumulation de glace sur l'avion), le
+      **cisaillement de vent** (variation brutale du vent), la **visibilité
+      réduite** (brouillard, précipitations) et l'**orage**.
+
+      Un nuage les concentre presque tous : le **cumulonimbus**. Nuage d'orage
+      géant, il réunit à lui seul turbulence sévère, givrage, grêle, foudre et
+      cisaillement — d'où la règle absolue : **on ne traverse jamais un
+      cumulonimbus**.
+    aRetenir:
+      - Les principaux dangers météo sont la turbulence, le givrage, le cisaillement de vent, la visibilité réduite et l'orage.
+      - Le givrage (accumulation de glace) survient en air humide à température négative ; il alourdit l'avion et dégrade la portance.
+      - Le cisaillement de vent est une variation brutale du vent, surtout dangereuse près du sol au décollage et à l'atterrissage.
+      - Le cumulonimbus concentre presque tous ces dangers — on ne le traverse jamais.
+  sections:
+    - id: les-principaux-dangers
+      title: Les principaux dangers
+      body: |
+        Plusieurs phénomènes dégradent la sécurité du vol.
+
+        - La **turbulence** : des secousses dues à des mouvements désordonnés de
+          l'air. Elle peut être **thermique** (convection), **mécanique**
+          (relief, obstacles), de **sillage** (derrière un autre avion) ou
+          survenir en **air clair** près des courants-jets.
+        - Le **givrage** : de la glace se dépose sur l'avion quand il vole dans
+          de l'air humide (nuage, pluie surfondue) à température **négative**
+          (entre 0 et −40 °C). La glace **alourdit** l'avion, **déforme** le
+          profil, **réduit la portance** et peut **obstruer** les sondes.
+        - La **visibilité réduite** : brouillard, brume, fortes précipitations
+          ou neige diminuent la visibilité, cruciale pour le vol à vue.
+        - Les **précipitations** intenses (pluie, grêle) et la **foudre**,
+          associées aux orages.
+    - id: le-cisaillement-de-vent
+      title: Le cisaillement de vent
+      body: |
+        Le **cisaillement de vent** (*wind shear*) est une **variation brutale**
+        de la force ou de la direction du vent sur une **courte distance**. Il
+        est particulièrement dangereux **près du sol**, au **décollage** et à
+        l'**atterrissage**, là où l'avion vole lentement et manque de marge.
+
+        Sa forme la plus redoutée est la **rafale descendante** (ou
+        **microrafale**) : une colonne d'air qui **plonge** sous un nuage
+        d'orage, s'écrase au sol et s'étale. Un avion qui la traverse rencontre
+        d'abord un fort **vent de face** (qui le fait monter), puis, en quelques
+        secondes, un **vent arrière** : sa portance **chute** brutalement — une
+        situation critique à basse hauteur.
+      figures:
+        - schemaId: cisaillement-microrafale
+          alt: Une rafale descendante sous un nuage qui s'étale au sol, un avion en approche rencontrant un vent de face puis un vent arrière.
+          caption: La microrafale plonge et s'étale au sol ; l'avion passe d'un vent de face à un vent arrière, et sa portance chute.
+          width: 460
+          height: 260
+    - id: l-orage-et-le-cumulonimbus
+      title: L'orage et le cumulonimbus
+      strate: maitriser
+      body: |
+        L'**orage** est le phénomène dangereux par excellence, et son siège est
+        le **cumulonimbus (Cb)** — ce nuage géant, large de plusieurs kilomètres
+        et haut jusqu'à la tropopause.
+
+        À lui seul, le Cb réunit **cinq dangers majeurs** :
+
+        - une **turbulence** violente (ascendances et descendances puissantes) ;
+        - du **givrage** intense ;
+        - de la **grêle**, projetée parfois loin du nuage ;
+        - la **foudre** ;
+        - une **visibilité** fortement réduite, plus le **cisaillement** en
+          périphérie.
+
+        La conduite à tenir est sans nuance : **on contourne largement un
+        cumulonimbus, on ne le traverse jamais.** Ces règles et l'analyse des
+        messages météo (METAR, TAF) seront approfondies dans les fiches de
+        réglementation et de préparation du vol.
+      figures:
+        - schemaId: cumulonimbus-dangers
+          alt: Un cumulonimbus avec ses dangers étiquetés — turbulence, givrage, grêle, foudre, cisaillement et visibilité réduite.
+          caption: Le cumulonimbus concentre presque tous les dangers météo ; on le contourne largement, sans jamais le traverser.
+          width: 460
+          height: 300
+  pieges:
+    - Le givrage n'exige pas qu'il neige — il suffit d'air humide (nuage, pluie surfondue) à température négative.
+    - Le cisaillement de vent est surtout dangereux près du sol — au décollage et à l'atterrissage, faute de marge.
+    - Le cumulonimbus ne se traverse jamais, même s'il semble « contournable » — la grêle et le cisaillement portent loin du nuage.
