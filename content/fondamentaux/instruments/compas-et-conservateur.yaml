@@ -1,0 +1,146 @@
+schemaVersion: 1
+id: fondamentaux.instruments.compas-et-conservateur
+type: concept
+title: Le compas et le conservateur de cap
+slug: compas-et-conservateur
+summary: >-
+  Le compas magnétique indique le cap magnétique via une rose aimantée : toujours
+  disponible, mais instable (erreurs de virage et d'accélération). Le conservateur
+  de cap, gyroscopique, donne un cap stable mais dérive et se recale sur le compas.
+objectifs:
+  - Expliquer le fonctionnement du compas magnétique (rose aimantée, cap magnétique) et son rôle de secours.
+  - Décrire le conservateur de cap (gyroscopique, stable, mais soumis à la dérive et au recalage).
+  - Citer les erreurs du compas (virage, accélération, déviation) et la complémentarité des deux instruments.
+aliases:
+  [
+    compas,
+    compas magnétique,
+    conservateur de cap,
+    directionnel,
+    cap magnétique,
+    erreurs du compas,
+    gyroscopique,
+  ]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — trente-quatrième fiche du socle, le compas et le conservateur de cap (clôt le bloc instruments).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Le compas magnétique — lavionnaire.fr"
+    url: https://www.lavionnaire.fr/InstNavigCompas.php
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — instruments"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.instruments.horizon-artificiel
+    - fondamentaux.navigation.declinaison-magnetique
+  related:
+    - fondamentaux.navigation.cap-route-et-derive
+content:
+  essentiel:
+    body: |
+      Pour tenir un **cap**, le pilote dispose de deux instruments
+      **complémentaires** : le **compas magnétique** et le **conservateur de
+      cap**.
+
+      Le **compas magnétique** est le plus simple et le plus **fiable dans la
+      durée** : une **rose aimantée**, flottant dans un liquide, s'aligne sur le
+      champ **magnétique** terrestre et indique le **cap magnétique**. Il est
+      **toujours** présent, sans énergie. Mais il est **instable** : il oscille
+      et se **fausse** en virage ou à l'accélération.
+
+      Le **conservateur de cap** est un instrument **gyroscopique** : il affiche
+      un cap **stable**, sans les oscillations du compas. En revanche, il
+      **dérive** lentement et doit être **recalé** régulièrement sur le compas,
+      en vol stabilisé.
+    aRetenir:
+      - Le compas magnétique indique le cap magnétique grâce à une rose aimantée ; il est toujours disponible mais instable.
+      - Il se fausse en virage (retarde au nord, devance au sud) et à l'accélération (aux caps est et ouest).
+      - Le conservateur de cap est gyroscopique — stable, mais il dérive et doit être recalé sur le compas.
+      - Les deux sont complémentaires — le compas sert de référence, le conservateur de lecture stable.
+  sections:
+    - id: le-compas-magnetique
+      title: Le compas magnétique
+      body: |
+        Le **compas magnétique** est l'instrument de cap le plus **ancien** et le
+        plus **sûr** : il ne dépend d'**aucune énergie**. Une **rose aimantée**
+        (des barreaux aimantés portant une graduation en degrés) **flotte** dans
+        un liquide amortisseur ; comme une boussole, elle s'oriente sur le champ
+        **magnétique** de la Terre.
+
+        Le pilote lit le **cap magnétique** en face d'un repère fixe, la **ligne
+        de foi**. C'est le cap que suit l'avion par rapport au nord
+        **magnétique** — à corriger de la déclinaison pour obtenir le cap vrai,
+        vu précédemment.
+
+        Toujours présent à bord et sans alimentation, le compas est l'instrument
+        de cap de **secours** par excellence.
+      figures:
+        - schemaId: compas-magnetique
+          alt: Un cadran de compas magnétique avec sa rose aimantée graduée N, E, S, W et la ligne de foi servant de repère de lecture.
+          caption: La rose aimantée s'oriente sur le nord magnétique ; on lit le cap en face de la ligne de foi.
+          width: 300
+          height: 300
+    - id: le-conservateur-de-cap
+      title: Le conservateur de cap
+      body: |
+        Le compas a un défaut : il **bouge sans cesse**. Dès que l'avion
+        accélère, ralentit ou vire, la rose **oscille** et son indication devient
+        **inexploitable** pendant la manœuvre.
+
+        Le **conservateur de cap** (ou directionnel) résout ce problème. C'est un
+        instrument **gyroscopique** : un **gyroscope** garde une direction fixe
+        (comme pour l'horizon artificiel) et entraîne une **rose des caps** qui
+        reste **stable**, même en virage. Le pilote y lit un cap **net** et
+        **immédiat**.
+
+        Son défaut à lui : comme tout gyroscope, il **dérive** lentement
+        (précession). Il faut donc, en **vol stabilisé**, le **recaler** de temps
+        en temps sur le **compas magnétique**.
+      figures:
+        - schemaId: compas-conservateur
+          alt: Le compas magnétique et le conservateur de cap côte à côte, avec une flèche de recalage du conservateur sur le compas.
+          caption: Le conservateur de cap donne un cap stable mais dérive ; on le recale régulièrement sur le compas.
+          width: 460
+          height: 240
+    - id: les-erreurs-et-la-complementarite
+      title: Les erreurs et la complémentarité
+      strate: maitriser
+      body: |
+        Le compas magnétique souffre de plusieurs **erreurs** qu'un pilote doit
+        connaître.
+
+        - **Erreurs de virage** : en virant à partir du **nord**, le compas
+          **retarde** ; à partir du **sud**, il **devance**. L'erreur croît avec
+          l'**inclinaison**.
+        - **Erreurs d'accélération** : aux caps **est** et **ouest**, une
+          accélération ou une décélération fausse momentanément l'indication.
+          Elle disparaît une fois la vitesse **stabilisée**.
+        - **Déviation** : les masses métalliques du bord perturbent le compas (vu
+          avec la déclinaison) ; on la relève sur une **courbe de déviation**.
+
+        D'où la **complémentarité** : le **compas** donne la **référence** (nord
+        magnétique), mais mal en manœuvre ; le **conservateur** donne une lecture
+        **stable**, mais dérive. On **recale** le second sur le premier — chacun
+        compense le défaut de l'autre.
+  pieges:
+    - Le compas magnétique n'est fiable que stabilisé — en virage ou à l'accélération, son indication est fausse.
+    - Le conservateur de cap ne trouve pas le nord tout seul — il faut le recaler sur le compas, car il dérive.
+    - En virant depuis le nord le compas retarde, depuis le sud il devance — une erreur à ne pas confondre.

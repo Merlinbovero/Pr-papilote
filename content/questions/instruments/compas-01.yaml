@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.compas-01
+kind: qcm
+theme: compas-conservateur
+statement: >-
+  Que indique le compas magnétique ?
+choices:
+  - "Le cap magnétique"
+  - "L'altitude"
+  - "La vitesse"
+  - "L'assiette"
+correctChoices: [0]
+explanation: >-
+  Une rose aimantée s'oriente sur le champ magnétique terrestre : le compas
+  indique le cap magnétique, lu en face de la ligne de foi.
+evaluates: [fondamentaux.instruments.compas-et-conservateur]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
