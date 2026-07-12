@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.instruments.alt-05
+kind: vrai-faux
+theme: altimetre
+statement: >-
+  Quand l'air est plus froid que l'ISA, l'altimètre indique une altitude
+  inférieure à la réalité.
+answer: false
+explanation: >-
+  C'est l'inverse : par air plus froid que l'ISA, l'altimètre sur-lit (il indique
+  plus haut que la réalité), et l'avion est en fait plus bas que l'altitude affichée.
+evaluates: [fondamentaux.instruments.altimetre]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
