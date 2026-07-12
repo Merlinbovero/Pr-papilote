@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.radio-communications.alpha-03
+kind: association
+theme: alphabet-oaci
+statement: >-
+  Associez chaque lettre à son mot-code OACI.
+pairs:
+  - left: "A"
+    right: "Alfa"
+  - left: "J"
+    right: "Juliett"
+  - left: "Z"
+    right: "Zulu"
+explanation: >-
+  A se dit Alfa (sans « ph »), J se dit Juliett (avec deux « t ») et Z se dit Zulu.
+evaluates: [fondamentaux.radio-communications.alphabet-oaci]
+difficulty: 2
+competencies: [anglais-aeronautique, memoire]
+concours: [eopan, eopn, alat]
+status: publie

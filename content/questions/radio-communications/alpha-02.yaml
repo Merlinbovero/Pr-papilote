@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.radio-communications.alpha-02
+kind: qcm
+theme: alphabet-oaci
+statement: >-
+  Quel mot-code correspond à la lettre R ?
+choices:
+  - "Romeo"
+  - "Robert"
+  - "Rio"
+  - "Radio"
+correctChoices: [0]
+explanation: >-
+  La lettre R s'épelle « Romeo » dans l'alphabet phonétique de l'OACI.
+evaluates: [fondamentaux.radio-communications.alphabet-oaci]
+difficulty: 2
+competencies: [anglais-aeronautique, memoire]
+concours: [eopan, eopn, alat]
+status: publie

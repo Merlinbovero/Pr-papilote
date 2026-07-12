@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 2; }
+    .boxA { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .big { font-size: 20px; font-weight: 700; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 13px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="26" text-anchor="middle">Pourquoi épeler avec des mots</text>
+  <!-- À la radio : lettres confondues -->
+  <rect class="box" x="28" y="58" width="150" height="126" rx="6" />
+  <text class="sub" x="103" y="80" text-anchor="middle">à la radio, sons proches</text>
+  <text class="big" x="103" y="122" text-anchor="middle">B ? D ?</text>
+  <text class="big" x="103" y="150" text-anchor="middle">P ? T ?</text>
+  <text class="sub" x="103" y="172" text-anchor="middle">lettres confondues</text>
+  <!-- Flèche -->
+  <line class="flow" x1="184" y1="121" x2="272" y2="121" marker-end="url(#ac)" />
+  <!-- Mots-codes distincts -->
+  <rect class="boxA" x="282" y="58" width="150" height="126" rx="6" />
+  <text class="accent-t" x="357" y="82" text-anchor="middle">mots-codes distincts</text>
+  <text class="lbl" x="357" y="106" text-anchor="middle">Bravo · Delta</text>
+  <text class="lbl" x="357" y="130" text-anchor="middle">Papa · Tango</text>
+  <text class="sub" x="357" y="160" text-anchor="middle">compris du premier coup</text>
+</svg>
