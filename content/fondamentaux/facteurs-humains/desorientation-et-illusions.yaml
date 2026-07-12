@@ -1,0 +1,147 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.desorientation-et-illusions
+type: concept
+title: La désorientation et les illusions sensorielles
+slug: desorientation-et-illusions
+summary: >-
+  Sans références visuelles, le corps perçoit mal l'attitude de l'avion : c'est la
+  désorientation spatiale, due à une oreille interne trompeuse. Des illusions
+  (accélération, spirale, leans) contredisent la réalité. La parade : croire les instruments, pas ses sensations.
+objectifs:
+  - Définir la désorientation spatiale et expliquer le rôle trompeur de l'oreille interne sans références visuelles.
+  - Décrire des illusions sensorielles classiques (accélération, spirale, leans, illusions visuelles).
+  - Énoncer la parade — faire confiance aux instruments plutôt qu'à ses sensations.
+aliases:
+  [
+    désorientation spatiale,
+    illusions sensorielles,
+    oreille interne,
+    système vestibulaire,
+    spirale,
+    leans,
+    instruments,
+  ]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — trente-et-unième fiche du socle, la désorientation spatiale et les illusions sensorielles (bloc facteurs humains).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Désorientation spatiale et illusions sensorielles — ministère (DGAC)"
+    url: https://www.ecologie.gouv.fr/sites/default/files/documents/Desorientation_spatiale_illusions_sensorielles.pdf
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Illusions sensorielles en aviation — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Illusions_sensorielles_en_aviation
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.instruments.horizon-artificiel
+  related:
+    - fondamentaux.facteurs-humains.hypoxie-et-altitude
+content:
+  essentiel:
+    body: |
+      Sans **références visuelles extérieures** — de nuit, dans les nuages —, le
+      corps humain n'est **pas fiable** pour percevoir l'attitude de l'avion.
+      C'est la **désorientation spatiale**.
+
+      En cause : notre **oreille interne** (le système **vestibulaire**), qui
+      renseigne le cerveau sur les accélérations et l'équilibre. Elle est faite
+      pour la marche, pas pour le vol : lors de virages prolongés ou
+      d'accélérations, elle envoie des informations **trompeuses**. Le pilote
+      « sent » une attitude qui n'est **pas** la vraie.
+
+      Ces **illusions sensorielles** sont responsables de nombreux accidents. La
+      seule parade est de **faire confiance aux instruments** — l'horizon
+      artificiel en tête — **et non à ses sensations**.
+    aRetenir:
+      - Sans références visuelles extérieures, le corps perçoit mal l'attitude de l'avion — c'est la désorientation spatiale.
+      - L'oreille interne (système vestibulaire) envoie des informations trompeuses en vol (virages, accélérations).
+      - Les illusions sensorielles provoquent de nombreux accidents, même chez les pilotes expérimentés.
+      - La parade est de croire les instruments (horizon artificiel), pas ses sensations.
+  sections:
+    - id: pourquoi-on-se-desoriente
+      title: Pourquoi on se désoriente
+      body: |
+        Au sol, notre équilibre s'appuie sur trois sources : la **vue**,
+        l'**oreille interne** et les **sensations du corps** (muscles, appuis).
+        Tant qu'on **voit** l'horizon, tout concorde.
+
+        Mais en vol **sans visibilité**, la vue ne joue plus. Restent l'oreille
+        interne et les sensations — or elles se **trompent**. Le système
+        **vestibulaire** (des **canaux** sensibles aux rotations et des capteurs
+        sensibles à la **gravité** et aux **accélérations**) confond facilement
+        une accélération avec une inclinaison, ou « oublie » un virage lent et
+        régulier.
+
+        Le cerveau, privé de la vue, **croit** ces fausses informations et se
+        construit une image **erronée** de l'attitude de l'avion.
+    - id: les-illusions-classiques
+      title: Les illusions classiques
+      body: |
+        Quelques illusions reviennent souvent.
+
+        - **L'illusion d'accélération** : au décollage, une forte accélération
+          est ressentie comme un **cabré** (nez qui monte). Le réflexe — piquer —
+          est **dangereux** près du sol.
+        - **La « spirale »** : après un virage **prolongé**, l'oreille interne
+          « oublie » la rotation. En redressant, le pilote a l'impression de
+          **tourner dans l'autre sens** et tend à **réengager** le virage —
+          l'avion descend alors en spirale.
+        - **Les « leans »** : une sensation d'**inclinaison** persistante, alors
+          que l'avion est à plat.
+        - **Des illusions visuelles** existent aussi à l'atterrissage (piste en
+          pente, de nuit, par mauvaise visibilité), faussant l'appréciation de la
+          hauteur.
+
+        Toutes ont un point commun : les **sensations** contredisent la
+        **réalité**.
+      figures:
+        - schemaId: illusion-acceleration
+          alt: Un avion qui accélère à plat sur la piste, tandis que le pilote ressent à tort une assiette cabrée, nez qui monte.
+          caption: À l'accélération, le pilote ressent un cabré alors que l'avion est à plat — pousser sur le manche serait dangereux.
+          width: 460
+          height: 240
+    - id: la-parade-croire-les-instruments
+      title: La parade — croire les instruments
+      strate: maitriser
+      body: |
+        Face à des sensations trompeuses, il n'existe qu'une **règle**, simple à
+        énoncer mais difficile à appliquer : **faire confiance aux instruments**,
+        pas à son ressenti.
+
+        L'**horizon artificiel**, le badin, l'altimètre et le variomètre donnent
+        l'attitude et la trajectoire **réelles**. En vol sans visibilité, on les
+        **lit** et on leur **obéit**, même quand le corps « crie » le contraire.
+        C'est tout l'objet du vol aux **instruments (IFR)** et de l'entraînement
+        associé.
+
+        Le piège est que l'illusion peut être si **puissante** qu'un pilote, même
+        **conscient** du risque, en vient à croire ses sensations plutôt que ses
+        instruments. D'où l'importance d'un **entraînement** régulier et d'une
+        **discipline** stricte du regard sur les instruments.
+      figures:
+        - schemaId: croire-instruments
+          alt: Des sensations trompeuses figurées par un point d'interrogation opposées à un horizon artificiel qui indique la vérité.
+          caption: En cas de doute, l'instrument dit la vérité — on croit l'horizon artificiel, pas ses sensations.
+          width: 460
+          height: 240
+  pieges:
+    - La désorientation ne touche pas que les débutants — même un pilote expérimenté peut succomber à une illusion.
+    - Une accélération est ressentie comme un cabré — c'est une illusion, il ne faut pas piquer par réflexe.
+    - En vol sans visibilité, on obéit aux instruments et non à ses sensations, même si elles semblent évidentes.

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.facteurs-humains.deso-03
+kind: vrai-faux
+theme: desorientation
+statement: >-
+  Au décollage, une forte accélération peut être ressentie comme un cabré (nez
+  qui monte).
+answer: true
+explanation: >-
+  C'est l'illusion d'accélération : l'oreille interne interprète l'accélération
+  comme une assiette cabrée. Piquer par réflexe serait dangereux près du sol.
+evaluates: [fondamentaux.facteurs-humains.desorientation-et-illusions]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

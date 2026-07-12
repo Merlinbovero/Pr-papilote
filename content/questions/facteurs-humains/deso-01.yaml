@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.deso-01
+kind: qcm
+theme: desorientation
+statement: >-
+  Qu'est-ce que la désorientation spatiale ?
+choices:
+  - "Une mauvaise perception de l'attitude de l'avion sans références visuelles"
+  - "Une panne des instruments de bord"
+  - "Une perte de la radio"
+  - "Une erreur de navigation sur la carte"
+correctChoices: [0]
+explanation: >-
+  La désorientation spatiale est une mauvaise appréciation de l'attitude et de la
+  position de l'avion, faute de références visuelles extérieures (nuit, nuages).
+evaluates: [fondamentaux.facteurs-humains.desorientation-et-illusions]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

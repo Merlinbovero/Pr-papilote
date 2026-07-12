@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.deso-04
+kind: qcm
+theme: desorientation
+statement: >-
+  Face à des sensations trompeuses en vol sans visibilité, que doit faire le pilote ?
+choices:
+  - "Faire confiance aux instruments plutôt qu'à ses sensations"
+  - "Suivre ses sensations, plus fiables"
+  - "Fermer les yeux quelques instants"
+  - "Couper les instruments"
+correctChoices: [0]
+explanation: >-
+  La seule parade est de croire les instruments (horizon artificiel en tête) et
+  non ses sensations, même quand le corps semble indiquer le contraire.
+evaluates: [fondamentaux.facteurs-humains.desorientation-et-illusions]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
