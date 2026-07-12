@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.facteurs-humains.hypo-03
+kind: vrai-faux
+theme: hypoxie
+statement: >-
+  En altitude, la proportion d'oxygène dans l'air descend en dessous de 21 %.
+answer: false
+explanation: >-
+  La proportion d'oxygène reste d'environ 21 % à toute altitude. C'est sa
+  pression partielle qui diminue, car la pression totale de l'air baisse.
+evaluates: [fondamentaux.facteurs-humains.hypoxie-et-altitude]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

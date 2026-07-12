@@ -1,0 +1,143 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.hypoxie-et-altitude
+type: concept
+title: L'hypoxie et l'altitude
+slug: hypoxie-et-altitude
+summary: >-
+  En altitude, la pression baisse : la proportion d'oxygène reste 21 % mais sa
+  pression partielle diminue, d'où l'hypoxie. Insidieuse, elle altère le jugement
+  et donne une fausse euphorie. Le temps utile de conscience chute ; on se protège par l'oxygène et la pressurisation.
+objectifs:
+  - Expliquer pourquoi l'altitude réduit l'oxygène disponible (baisse de la pression partielle d'oxygène).
+  - Décrire l'hypoxie et son caractère insidieux (jugement altéré, euphorie trompeuse).
+  - Énoncer les protections (temps utile de conscience, oxygène de complément, pressurisation).
+aliases:
+  [
+    hypoxie,
+    altitude,
+    pression partielle oxygène,
+    temps utile de conscience,
+    TUC,
+    pressurisation,
+    dépressurisation,
+  ]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — trentième fiche du socle, l'hypoxie et l'altitude (bloc facteurs humains).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Médecine aéronautique — hypoxie (Dr Christian Gomez)"
+    url: https://sofia.medicalistes.fr/spip/IMG/pdf/Medecine_aeronautique_Dr_Christian_Gomez_.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — facteurs humains"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.atmosphere-standard
+  related:
+    - fondamentaux.aerodynamique.air-et-proprietes
+content:
+  essentiel:
+    body: |
+      En montant, la **pression** de l'air diminue. Or l'air contient toujours
+      **21 %** d'oxygène : ce qui change, c'est qu'il y a **moins de molécules**
+      au total, donc **moins d'oxygène** disponible à chaque respiration. Le sang
+      en capte moins : c'est l'**hypoxie**, le manque d'oxygène des tissus, en
+      particulier du **cerveau**.
+
+      L'hypoxie est d'autant plus dangereuse qu'elle est **insidieuse** : elle
+      altère le **jugement** et provoque une **euphorie** trompeuse, si bien que
+      le pilote ne se rend **pas compte** de son état.
+
+      Plus on monte, plus le **temps utile de conscience** — le temps pour réagir
+      après une perte de pression — se **raccourcit**. La parade est l'**oxygène**
+      de complément et la **pressurisation** de la cabine.
+    aRetenir:
+      - En altitude, la pression baisse — il y a moins de molécules d'oxygène, donc moins d'O2 pour le corps (hypoxie).
+      - La proportion d'oxygène reste 21 % à toute altitude ; c'est sa pression partielle qui diminue.
+      - L'hypoxie est insidieuse — elle altère le jugement et donne une fausse euphorie.
+      - Le temps utile de conscience diminue avec l'altitude ; on se protège par l'oxygène et la pressurisation.
+  sections:
+    - id: moins-d-oxygene-en-altitude
+      title: Moins d'oxygène en altitude
+      body: |
+        L'air respiré contient toujours environ **21 % d'oxygène**, au sol comme
+        à 10 000 mètres. Pourtant, respirer devient **de plus en plus difficile**
+        en altitude. Pourquoi ?
+
+        Parce que la **pression** de l'air **diminue** avec l'altitude : l'air se
+        **raréfie**, il y a **moins de molécules** dans le même volume. Même si la
+        **proportion** d'oxygène ne change pas, la quantité **réellement
+        disponible** à chaque inspiration **chute**. On parle de baisse de la
+        **pression partielle d'oxygène**.
+
+        Le sang capte donc moins d'oxygène, et les organes les plus gourmands — au
+        premier rang le **cerveau** — commencent à en manquer.
+      figures:
+        - schemaId: hypoxie-pression-o2
+          alt: Deux volumes d'air, l'un près du sol riche en molécules, l'autre en altitude beaucoup plus pauvre, la proportion d'oxygène restant de 21 %.
+          caption: La proportion d'oxygène reste 21 %, mais l'air se raréfie en altitude — il y a moins d'oxygène disponible.
+          width: 440
+          height: 280
+    - id: une-menace-insidieuse
+      title: Une menace insidieuse
+      body: |
+        L'hypoxie serait moins grave si l'on **sentait** venir le danger. Or
+        c'est l'inverse : ses effets **trompent** le pilote.
+
+        Les premiers signes sont discrets : **maux de tête**, **somnolence**,
+        **vision** qui se trouble, **picotements**, coloration bleutée des lèvres
+        et des ongles. Mais surtout, l'hypoxie altère le **jugement** et provoque
+        une **euphorie** et un **faux sentiment de sécurité** : la victime **perd
+        son autocritique** et se croit parfaitement lucide alors qu'elle ne l'est
+        plus.
+
+        C'est ce qui la rend **redoutable** : sans oxygène, un pilote peut prendre
+        de mauvaises décisions, puis **perdre connaissance**, sans jamais avoir eu
+        conscience du problème.
+    - id: temps-utile-de-conscience-et-prevention
+      title: Temps utile de conscience et prévention
+      strate: maitriser
+      body: |
+        À haute altitude, tout va très vite. Le **temps utile de conscience
+        (TUC)** — le délai pendant lequel on peut encore **agir efficacement**
+        après une dépressurisation — se **réduit** drastiquement : de l'ordre de
+        **30 minutes** vers le FL180, il tombe à quelques **minutes** au FL250 et
+        à moins d'une **minute** au-delà du FL350.
+
+        D'où deux protections :
+
+        - l'**oxygène de complément**, obligatoire pour l'équipage au-dessus de
+          certaines altitudes ;
+        - la **pressurisation** de la cabine, qui maintient à l'intérieur une
+          « **altitude cabine** » bien plus basse que l'altitude réelle de vol.
+
+        En cas de **dépressurisation**, la règle est de mettre **immédiatement**
+        son masque à oxygène — avant d'aider les autres — puis de **descendre**
+        au plus vite.
+      figures:
+        - schemaId: temps-utile-conscience
+          alt: Des barres montrant le temps utile de conscience décroissant avec l'altitude, d'environ 30 minutes au FL180 à moins d'une minute au FL350.
+          caption: Le temps utile de conscience s'effondre avec l'altitude — d'environ 30 min au FL180 à moins d'une minute au FL350.
+          width: 440
+          height: 240
+  pieges:
+    - Ce n'est pas la proportion d'oxygène qui baisse en altitude (toujours 21 %), mais sa pression partielle.
+    - L'hypoxie ne prévient pas — elle donne au contraire une euphorie trompeuse, d'où son danger.
+    - En cas de dépressurisation, on met son propre masque à oxygène d'abord, puis on aide les autres.

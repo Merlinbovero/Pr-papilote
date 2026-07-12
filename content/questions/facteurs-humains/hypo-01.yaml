@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.hypo-01
+kind: qcm
+theme: hypoxie
+statement: >-
+  Qu'est-ce que l'hypoxie ?
+choices:
+  - "Un manque d'oxygène au niveau des tissus"
+  - "Un excès d'oxygène dans le sang"
+  - "Une baisse de la température du corps"
+  - "Un simple mal des transports"
+correctChoices: [0]
+explanation: >-
+  L'hypoxie est une insuffisance d'oxygène au niveau des tissus, en particulier
+  du cerveau, provoquée en altitude par la baisse de la pression partielle d'oxygène.
+evaluates: [fondamentaux.facteurs-humains.hypoxie-et-altitude]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
