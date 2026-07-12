@@ -148,3 +148,11 @@ Ordre pédagogique optimisé (parcours global, pas seulement des fiches isolées
 10. Le décrochage aérodynamique
 
 **L'atmosphère standard (ISA)** est avancée en 4ᵉ position : présentée juste après les propriétés de l'air, elle sert de référence à la météorologie, aux instruments, aux performances et à une grande partie de l'aérodynamique. **L'équilibre et le centrage** suit immédiatement cette séquence (fiche 11).
+
+## 11. Passage en production de masse (2026-07-12)
+
+Les dix premières fiches sont **figées comme référence absolue** ; la production se poursuit de façon **autonome, par lots**, au même standard scientifique, pédagogique, graphique et éditorial.
+
+- **Quiz obligatoires** : chaque nouvelle fiche est produite **avec son jeu de quiz** dans la banque centrale (`content/questions/`, ≥ 5 questions, difficultés 1–3 minimum, formats variés), selon `relations-et-quiz.md`. Les **dix fiches de référence** seront rétro-dotées de leurs quiz dans un lot dédié.
+- **Bloc Mécanique du vol** engagé : fiche 11 « L'équilibre et le centrage » puis fiche 12 « Les axes et les gouvernes » **publiées**. Suite pédagogique retenue : **Le virage (facteur de charge)** → approfondissement **Décrochage & vrille** (renvoi depuis la fiche décrochage), puis passage au bloc **Météorologie** (ISA déjà posée).
+- **Rythme** : lots de plusieurs fiches, rapport de synthèse en fin de lot ; interruption réservée aux contradictions scientifiques, ambiguïtés éditoriales majeures et décisions d'architecture.
