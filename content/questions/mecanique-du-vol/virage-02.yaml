@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.virage-02
+kind: qcm
+theme: virage
+statement: >-
+  En virage en palier, pourquoi le pilote doit-il augmenter la portance ?
+choices:
+  - "Parce qu'une partie de la portance devient horizontale et ne compense plus le poids"
+  - "Parce que le poids de l'avion augmente"
+  - "Parce que la poussée du moteur diminue"
+  - "Parce que la traînée disparaît"
+correctChoices: [0]
+explanation: >-
+  En virage, la portance penche : une partie devient horizontale. La composante
+  verticale restante ne suffit plus à compenser le poids ; il faut donc
+  augmenter la portance totale pour garder l'altitude.
+evaluates: [fondamentaux.mecanique-du-vol.virage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

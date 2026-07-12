@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .accent-axis { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .curve { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .guide { stroke: #94a3b8; fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .dot { fill: #3b82f6; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="24" text-anchor="middle">Le facteur de charge en virage</text>
+  <!-- Axes -->
+  <line class="accent-axis" x1="70" y1="222" x2="70" y2="46" marker-end="url(#ac)" />
+  <text class="lbl" x="70" y="40" text-anchor="middle">facteur de charge (n)</text>
+  <line class="ink" x1="70" y1="222" x2="392" y2="222" />
+  <text class="lbl" x="322" y="244">inclinaison</text>
+  <!-- Graduations n=1 et n=2 -->
+  <text class="sub" x="62" y="214" text-anchor="end">1</text>
+  <text class="sub" x="62" y="134" text-anchor="end">2</text>
+  <!-- Courbe n = 1/cos(inclinaison) -->
+  <path class="curve" d="M70,214 Q200,196 269,177 T336,126 L360,96" />
+  <!-- Repère 60° -> 2 g -->
+  <line class="guide" x1="336" y1="222" x2="336" y2="126" />
+  <line class="guide" x1="70" y1="126" x2="336" y2="126" />
+  <circle class="dot" cx="336" cy="126" r="4" />
+  <text class="sub" x="336" y="236" text-anchor="middle">60°</text>
+  <text class="accent-t" x="330" y="116" text-anchor="end">2 g</text>
+  <!-- Formule -->
+  <text class="accent-t" x="150" y="70" text-anchor="middle">n = 1 / cos(inclinaison)</text>
+</svg>

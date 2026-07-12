@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.virage-01
+kind: qcm
+theme: virage
+statement: >-
+  Comment un avion amorce-t-il un virage ?
+choices:
+  - "En s'inclinant grâce aux ailerons"
+  - "En braquant la seule gouverne de direction"
+  - "En augmentant la poussée du moteur"
+  - "En baissant le nez avec la profondeur"
+correctChoices: [0]
+explanation: >-
+  Un avion tourne en s'inclinant (roulis) grâce aux ailerons. La portance,
+  inclinée avec l'avion, fournit une composante horizontale qui courbe la
+  trajectoire. La gouverne de direction ne sert qu'à coordonner le virage.
+evaluates: [fondamentaux.mecanique-du-vol.virage]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

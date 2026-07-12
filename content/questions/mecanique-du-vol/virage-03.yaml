@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.virage-03
+kind: vrai-faux
+theme: virage
+statement: >-
+  En virage, la vitesse de décrochage est plus élevée qu'en vol en ligne droite.
+answer: true
+explanation: >-
+  Le facteur de charge augmente en virage, et la vitesse de décrochage augmente
+  avec lui. À 60° d'inclinaison, elle croît d'environ 40 %. On peut donc
+  décrocher à une vitesse plus élevée qu'en ligne droite.
+evaluates: [fondamentaux.mecanique-du-vol.virage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

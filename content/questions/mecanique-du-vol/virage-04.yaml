@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.virage-04
+kind: calcul
+theme: virage
+statement: >-
+  En virage en palier à 60° d'inclinaison, quel est le facteur de charge (sans
+  unité) ?
+answerValue: 2
+tolerance: 0
+explanation: >-
+  Le facteur de charge vaut n = 1 / cos(inclinaison). À 60°, cos(60°) = 0,5,
+  donc n = 1 / 0,5 = 2. La structure et les occupants supportent alors deux fois
+  le poids de l'avion (2 g).
+evaluates: [fondamentaux.mecanique-du-vol.virage]
+difficulty: 3
+competencies: [connaissances-aeronautiques, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie
