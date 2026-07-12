@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.instruments.pito-05
+kind: vrai-faux
+theme: pitot-statique
+statement: >-
+  Une prise statique bouchée n'affecte que le variomètre.
+answer: false
+explanation: >-
+  Une prise statique obstruée fausse trois instruments à la fois : l'altimètre,
+  le variomètre et l'anémomètre. D'où l'importance de la visite prévol.
+evaluates: [fondamentaux.instruments.chaine-pitot-statique]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

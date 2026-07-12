@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.pito-01
+kind: qcm
+theme: pitot-statique
+statement: >-
+  Que mesure le tube de Pitot ?
+choices:
+  - "La pression totale"
+  - "La pression statique seule"
+  - "La température de l'air"
+  - "L'altitude"
+correctChoices: [0]
+explanation: >-
+  Ouvert face au vent relatif, le tube de Pitot mesure la pression totale, somme
+  de la pression statique et de la pression dynamique (due à la vitesse).
+evaluates: [fondamentaux.instruments.chaine-pitot-statique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

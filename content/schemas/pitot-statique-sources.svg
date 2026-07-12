@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .part { stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .lead { stroke: #94a3b8; fill: none; stroke-width: 1; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le tube de Pitot et la prise statique</text>
+  <!-- Fuselage (nez à droite) -->
+  <path class="plane" d="M320,120 C305,110 260,106 205,107 L110,109 C98,110 90,115 90,120 C90,125 98,130 110,131 L205,133 C260,134 305,130 320,120 Z" />
+  <path class="plane" d="M104,109 L96,88 L120,108 Z" />
+  <!-- Tube de Pitot (face au vent) -->
+  <line class="part" x1="320" y1="122" x2="356" y2="122" />
+  <line class="part" x1="356" y1="116" x2="356" y2="128" />
+  <line class="lead" x1="352" y1="118" x2="360" y2="92" />
+  <text class="lbl" x="364" y="86" text-anchor="middle">tube de Pitot</text>
+  <text class="sub" x="364" y="102" text-anchor="middle">(pression totale)</text>
+  <!-- Prise statique (affleurante) -->
+  <circle cx="172" cy="131" r="3.5" fill="currentColor" />
+  <line class="lead" x1="172" y1="134" x2="172" y2="168" />
+  <text class="lbl" x="172" y="184" text-anchor="middle">prise statique</text>
+  <text class="sub" x="172" y="200" text-anchor="middle">(pression statique)</text>
+  <!-- Vent relatif -->
+  <line class="flow" x1="440" y1="150" x2="356" y2="150" marker-end="url(#ac)" />
+  <text class="accent-t" x="398" y="166" text-anchor="middle">vent relatif</text>
+</svg>

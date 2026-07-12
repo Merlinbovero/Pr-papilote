@@ -1,0 +1,146 @@
+schemaVersion: 1
+id: fondamentaux.instruments.chaine-pitot-statique
+type: concept
+title: La chaîne Pitot-statique
+slug: chaine-pitot-statique
+summary: >-
+  La chaîne Pitot-statique alimente les instruments : le tube de Pitot capte la
+  pression totale (face au vent), la prise statique la pression statique ; leur
+  différence est la pression dynamique (vitesse). Altimètre et variomètre utilisent la statique, l'anémomètre les deux.
+objectifs:
+  - Distinguer la pression totale (tube de Pitot) et la pression statique (prise statique) et définir la pression dynamique.
+  - Indiquer quels instruments utilisent la pression statique et lequel utilise aussi la pression totale.
+  - Expliquer les risques d'obstruction (givrage) et le rôle du réchauffage Pitot.
+aliases:
+  [
+    Pitot,
+    tube de Pitot,
+    prise statique,
+    pression totale,
+    pression dynamique,
+    chaîne anémobarométrique,
+    réchauffage Pitot,
+  ]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-cinquième fiche du socle, la chaîne Pitot-statique (bloc instruments).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Tube de Pitot — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Tube_de_Pitot
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — instruments"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.physique.pression-forces-unites
+    - fondamentaux.instruments.altimetre
+  related:
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      Plusieurs instruments de bord — l'**altimètre**, l'**anémomètre**, le
+      **variomètre** — ne fonctionnent pas seuls : ils sont alimentés par la
+      **chaîne Pitot-statique**, qui leur fournit des **pressions**.
+
+      Deux prises captent l'air :
+
+      - le **tube de Pitot**, ouvert **face au vent relatif**, mesure la
+        **pression totale (Pt)** — la somme de la pression statique et de la
+        pression **dynamique** (celle due à la vitesse) ;
+      - la **prise statique**, disposée **perpendiculairement** à l'écoulement,
+        mesure la **pression statique (Ps)** — celle de l'air au repos.
+
+      L'**altimètre** et le **variomètre** n'utilisent que la **statique** ;
+      l'**anémomètre**, lui, compare **totale et statique** pour en déduire la
+      vitesse.
+    aRetenir:
+      - La chaîne Pitot-statique fournit aux instruments deux pressions — la pression totale et la pression statique.
+      - Le tube de Pitot (face au vent) capte la pression totale ; la prise statique capte la pression statique.
+      - La différence entre pression totale et pression statique est la pression dynamique, liée à la vitesse.
+      - Altimètre et variomètre utilisent la pression statique ; l'anémomètre utilise les deux.
+  sections:
+    - id: deux-sources-de-pression
+      title: Deux sources de pression
+      body: |
+        L'avion capte l'air par **deux prises** distinctes.
+
+        - Le **tube de Pitot** est un petit tube ouvert **face au vent relatif**.
+          L'air qui s'y engouffre y est **arrêté** : le tube mesure la **pression
+          totale (Pt)**, somme de la **pression statique** (l'air ambiant) et de
+          la **pression dynamique** (le supplément dû à la **vitesse**).
+        - La **prise statique** est une petite ouverture **affleurante**,
+          disposée **perpendiculairement** à l'écoulement (souvent sur le flanc
+          du fuselage). Elle mesure la seule **pression statique (Ps)**, celle de
+          l'air **au repos**.
+
+        En résumé : **Pt = Ps + pression dynamique**. La différence entre les
+        deux prises isole donc la **pression dynamique**, directement liée à la
+        **vitesse**.
+      figures:
+        - schemaId: pitot-statique-sources
+          alt: Un avion de profil avec le tube de Pitot ouvert face au vent relatif captant la pression totale et la prise statique affleurante captant la pression statique.
+          caption: Le tube de Pitot, face au vent, capte la pression totale ; la prise statique, affleurante, capte la pression statique.
+          width: 460
+          height: 240
+    - id: quel-instrument-utilise-quoi
+      title: Quel instrument utilise quoi
+      body: |
+        Chaque instrument puise dans ces pressions selon son besoin.
+
+        - L'**altimètre** et le **variomètre** n'ont besoin que de la **pression
+          statique** : c'est elle qui traduit l'**altitude** et ses
+          **variations**.
+        - L'**anémomètre** a besoin des **deux** : en soustrayant la pression
+          statique de la pression totale, il obtient la **pression dynamique**,
+          dont il déduit la **vitesse**.
+
+        Ces trois instruments forment la **chaîne anémobarométrique** — le mot
+        dit bien qu'ils reposent sur la mesure de l'**air** (anémo-) et de la
+        **pression** (baro-).
+      figures:
+        - schemaId: chaine-anemobarometrique
+          alt: Un schéma reliant la prise statique à l'altimètre, au variomètre et à l'anémomètre, et le tube de Pitot à l'anémomètre seul.
+          caption: La pression statique alimente les trois instruments ; seul l'anémomètre reçoit aussi la pression totale du Pitot.
+          width: 460
+          height: 280
+    - id: obstructions-et-securite
+      title: Obstructions et sécurité
+      strate: maitriser
+      body: |
+        Ces prises exposées à l'air extérieur peuvent se **boucher** — et une
+        prise obstruée fausse gravement les instruments.
+
+        - Le **givrage** est le principal danger : par temps froid et humide, de
+          la glace peut obturer le Pitot ou la prise statique. Les avions en sont
+          protégés par un **réchauffage Pitot** (une résistance chauffante),
+          enclenché en conditions givrantes.
+        - Un **corps étranger** (insecte, eau, cache oublié) produit le même
+          effet.
+        - En cas de statique bouchée, une **source statique de secours** peut
+          être sélectionnée.
+
+        Si le **Pitot** est obstrué, l'**anémomètre** devient faux ; si la
+        **statique** est obstruée, **trois** instruments se dérèglent à la fois.
+        D'où l'importance de la **visite prévol** et du **réchauffage Pitot**.
+  pieges:
+    - Le tube de Pitot mesure la pression totale (statique + dynamique), pas la seule pression dynamique.
+    - L'altimètre et le variomètre n'utilisent que la pression statique — seul l'anémomètre utilise aussi le Pitot.
+    - Une prise statique bouchée fausse trois instruments d'un coup (altimètre, variomètre, anémomètre) — d'où la vigilance prévol.
