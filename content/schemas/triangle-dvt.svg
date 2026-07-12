@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .tri { stroke: currentColor; fill: none; stroke-width: 2; }
+    .div { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .big { font-size: 20px; font-weight: 700; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 13px; }
+  </style>
+  <text class="title" x="190" y="26" text-anchor="middle">Le triangle distance-vitesse-temps</text>
+  <!-- Triangle -->
+  <path class="tri" d="M190,54 L86,196 L294,196 Z" />
+  <!-- Séparations -->
+  <line class="div" x1="138" y1="125" x2="242" y2="125" />
+  <line class="div" x1="190" y1="125" x2="190" y2="196" />
+  <!-- Cellules -->
+  <text class="big" x="190" y="106" text-anchor="middle">D</text>
+  <text class="big" x="160" y="172" text-anchor="middle">V</text>
+  <text class="big" x="220" y="172" text-anchor="middle">t</text>
+  <!-- Formules -->
+  <text class="accent-t" x="190" y="228" text-anchor="middle">D = V × t</text>
+  <text class="accent-t" x="190" y="248" text-anchor="middle">t = D / V     V = D / t</text>
+</svg>

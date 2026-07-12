@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.navigation.tvd-03
+kind: calcul
+theme: temps-vitesse-distance
+statement: >-
+  Combien de temps faut-il pour parcourir 90 milles marins à 180 nœuds (en
+  minutes) ?
+answerValue: 30
+tolerance: 0
+unit: "min"
+explanation: >-
+  t = D / V = 90 / 180 = 0,5 heure, soit 30 minutes.
+evaluates: [fondamentaux.navigation.temps-vitesse-distance]
+difficulty: 2
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie
