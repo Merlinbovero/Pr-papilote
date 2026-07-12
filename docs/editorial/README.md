@@ -12,6 +12,7 @@ Architecture documentaire officielle. Ces documents gouvernent toute production 
 | [regles-editoriales.md](regles-editoriales.md)             | Qualité, style, neutralité, règles de rédaction                                                    |
 | [gestion-documentaire.md](gestion-documentaire.md)         | **Chaîne éditoriale (ch. 8)** : workflow, versions/motif, documents, contrôle qualité              |
 | [processus-production.md](processus-production.md)         | **Processus officiel** : dossier de conception validé avant rédaction, champ `objectifs[]`         |
+| [convention-schemas.md](convention-schemas.md)             | **Convention graphique** des schémas : une grandeur = une représentation constante                 |
 | [plan-fondamentaux.md](plan-fondamentaux.md)               | **Plan de production** de la famille Fondamentaux aéronautiques (socle 37 fiches, priorités A/B/C) |
 
 ## Principes fondateurs
