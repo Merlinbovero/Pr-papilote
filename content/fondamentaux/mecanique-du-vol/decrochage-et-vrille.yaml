@@ -1,0 +1,134 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.decrochage-et-vrille
+type: notion-aerodynamique
+title: Le décrochage et la vrille
+slug: decrochage-et-vrille
+summary: >-
+  La vrille est un décrochage asymétrique auto-entretenu — une aile décroche plus
+  que l'autre et l'avion part en autorotation, descendant en tire-bouchon nez bas.
+  On en sort en arrêtant la rotation (palonnier opposé) puis en réduisant l'incidence.
+objectifs:
+  - Définir la vrille comme un décrochage asymétrique auto-entretenu (autorotation).
+  - Expliquer l'entrée en vrille (une aile décroche avant l'autre en vol dissymétrique à basse vitesse).
+  - Énoncer le principe de sortie (arrêter la rotation au palonnier opposé, puis réduire l'incidence) et le rôle de la prévention.
+aliases: [vrille, décrochage asymétrique, autorotation, spin, tire-bouchon]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — quatorzième fiche du socle, décrochage asymétrique et vrille (approfondissement, clôt le bloc mécanique du vol).
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — mécanique du vol"
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Autorotation et vrille — lavionnaire.fr"
+    url: https://www.lavionnaire.fr/MecaVrille.php
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.decrochage
+    - fondamentaux.mecanique-du-vol.virage
+  related:
+    - fondamentaux.mecanique-du-vol.axes-et-gouvernes
+content:
+  essentiel:
+    body: |
+      Le décrochage vu précédemment était **symétrique** : les deux ailes
+      décrochent ensemble. Mais si une aile décroche **avant** l'autre, le
+      décrochage devient **asymétrique** — et peut dégénérer en **vrille**.
+
+      La **vrille** est un décrochage asymétrique **auto-entretenu** : l'aile la
+      plus décrochée s'enfonce, l'autre continue de porter, et l'avion se met à
+      **tourner sur lui-même** en descendant en **tire-bouchon**, nez bas. C'est
+      l'**autorotation**.
+
+      Le principe de sortie est toujours le même : **arrêter la rotation**
+      (palonnier à fond au sens opposé) puis **réduire l'incidence** (manche en
+      avant). La procédure exacte figure dans le **manuel de vol** de chaque
+      avion.
+    aRetenir:
+      - Une vrille est un décrochage asymétrique auto-entretenu — une aile décroche plus que l'autre et l'avion part en autorotation.
+      - Elle survient au décrochage en vol dissymétrique (souvent un virage lent mal coordonné) et fait descendre l'avion en tire-bouchon, nez bas.
+      - Pour en sortir, on arrête la rotation au palonnier opposé, puis on réduit l'incidence manche en avant.
+      - La meilleure parade reste la prévention — ne pas décrocher, surtout en vol dissymétrique à basse vitesse et basse hauteur.
+  sections:
+    - id: du-decrochage-symetrique-a-l-asymetrique
+      title: Du décrochage symétrique au décrochage asymétrique
+      body: |
+        Au décrochage « normal », les deux ailes atteignent l'angle critique **en
+        même temps** : l'avion s'enfonce **à plat**, sans rouler.
+
+        Mais il suffit d'une **dissymétrie** — un léger **dérapage**, une aile un
+        peu plus inclinée, un vol mal **coordonné** — pour qu'une aile atteigne
+        l'angle critique **avant** l'autre. Cette aile décroche : elle **perd sa
+        portance** et **s'enfonce**, tandis que l'autre, encore portante,
+        **monte**. L'avion se met à **rouler et pivoter** vers l'aile décrochée.
+
+        Le plus perfide : l'aile qui s'enfonce voit son **incidence augmenter**
+        encore (elle décroche davantage), pendant que l'aile qui monte voit la
+        sienne **diminuer** (elle décroche moins). L'asymétrie **s'entretient**
+        d'elle-même : c'est l'**autorotation**.
+      figures:
+        - schemaId: vrille-asymetrie
+          alt: Un avion vu de face avec une aile encore portante qui monte et l'autre décrochée qui s'enfonce, provoquant une autorotation.
+          caption: Une aile décroche avant l'autre — elle s'enfonce, l'autre monte, et l'asymétrie s'auto-entretient en autorotation.
+          width: 460
+          height: 260
+    - id: la-vrille
+      title: La vrille
+      body: |
+        Quand l'autorotation s'installe, l'avion entre en **vrille** : il descend
+        en **tire-bouchon** autour d'un axe vertical, **nez bas**, à une vitesse
+        de rotation élevée et avec une **forte perte d'altitude**.
+
+        Contrairement à une **spirale** (où l'avion vole vite, ailes non
+        décrochées), la vrille est un **décrochage** qui se maintient : la
+        vitesse reste **faible** et les ailes restent **décrochées**. C'est ce
+        qui la rend dangereuse **près du sol**, où l'altitude manque pour
+        récupérer.
+      figures:
+        - schemaId: vrille-trajectoire
+          alt: La trajectoire hélicoïdale d'une vrille, un avion descendant en tire-bouchon nez bas avec une forte perte d'altitude.
+          caption: En vrille, l'avion descend en tire-bouchon, nez bas, à vitesse faible et forte perte d'altitude.
+          width: 380
+          height: 300
+    - id: sortir-et-surtout-eviter
+      title: Sortir d'une vrille, et surtout l'éviter
+      strate: maitriser
+      body: |
+        Le principe de sortie découle de la cause. Dans l'ordre :
+
+        1. **réduire la puissance** (les gaz) et mettre les **ailerons au
+           neutre** ;
+        2. **arrêter la rotation** avec le **palonnier** braqué à fond **au sens
+           opposé** à la rotation ;
+        3. **réduire l'incidence** en mettant le **manche en avant**, pour faire
+           cesser le décrochage ;
+        4. une fois la rotation stoppée, **neutraliser** les commandes et
+           **ressortir** du piqué en douceur.
+
+        Ce n'est qu'un **principe** : chaque avion a sa procédure, décrite dans
+        son **manuel de vol**.
+
+        La vraie parade est la **prévention**. Une vrille naît presque toujours
+        d'un **décrochage en vol dissymétrique à basse vitesse** : voler
+        **coordonné**, surveiller la **vitesse** et l'**incidence**, et se méfier
+        des **virages lents à basse hauteur** suffit à l'éviter.
+  pieges:
+    - Une vrille n'est pas une simple spirale — c'est un décrochage (ailes décrochées, vitesse faible) qui s'auto-entretient, pas un virage engagé à grande vitesse.
+    - Tirer sur le manche en vrille aggrave le décrochage — il faut au contraire réduire l'incidence (manche en avant).
+    - La procédure de sortie dépend de l'avion — cette fiche en donne le principe, elle ne remplace jamais le manuel de vol.

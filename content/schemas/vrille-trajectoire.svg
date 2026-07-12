@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .helix { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .axis { stroke: #94a3b8; fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+  </style>
+  <defs>
+    <marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
+    </marker>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="190" y="24" text-anchor="middle">La vrille — descente en tire-bouchon</text>
+  <!-- Petit avion (vue de dessus), nez bas en haut de la trajectoire -->
+  <path class="plane" d="M150,54 L150,74 M132,64 L168,64 M144,80 L156,80" />
+  <text class="sub" x="196" y="60" text-anchor="start">nez bas, ailes décrochées</text>
+  <!-- Trajectoire hélicoïdale -->
+  <path class="helix" d="M150,72 C96,86 96,114 150,128 C204,142 204,170 150,184 C96,198 96,226 150,240 C204,254 204,278 168,286" marker-end="url(#ac)" />
+  <!-- Axe de descente -->
+  <line class="axis" x1="300" y1="70" x2="300" y2="284" marker-end="url(#am)" />
+  <text class="sub" x="312" y="180" text-anchor="start">forte perte</text>
+  <text class="sub" x="312" y="194" text-anchor="start">d'altitude</text>
+  <text class="sub" x="150" y="300" text-anchor="middle">rotation continue, vitesse faible</text>
+</svg>

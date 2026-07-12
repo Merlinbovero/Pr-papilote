@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.vrille-03
+kind: qcm
+theme: decrochage-vrille
+statement: >-
+  Pour arrêter la rotation d'une vrille, quelle est l'action principale ?
+choices:
+  - "Braquer le palonnier à fond au sens opposé à la rotation"
+  - "Tirer sur le manche"
+  - "Mettre les gaz à fond"
+  - "Incliner davantage aux ailerons"
+correctChoices: [0]
+distractorNotes:
+  "1": "Tirer sur le manche augmente l'incidence et aggrave le décrochage."
+explanation: >-
+  On arrête l'autorotation en braquant le palonnier à fond au sens opposé à la
+  rotation, puis on réduit l'incidence en mettant le manche en avant. La
+  procédure exacte dépend du manuel de vol de l'avion.
+evaluates: [fondamentaux.mecanique-du-vol.decrochage-et-vrille]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

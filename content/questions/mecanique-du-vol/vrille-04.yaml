@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.vrille-04
+kind: ordre
+theme: decrochage-vrille
+statement: >-
+  Remettez dans l'ordre les actions du principe de sortie de vrille.
+items:
+  - "Réduire la puissance et mettre les ailerons au neutre"
+  - "Braquer le palonnier à fond au sens opposé à la rotation"
+  - "Mettre le manche en avant pour réduire l'incidence"
+  - "Neutraliser les commandes et ressortir du piqué"
+explanation: >-
+  L'ordre découle de la cause : réduire les gaz et neutraliser les ailerons,
+  arrêter la rotation au palonnier opposé, réduire l'incidence manche en avant,
+  puis, la rotation stoppée, neutraliser et ressortir du piqué. La procédure
+  exacte figure dans le manuel de vol de l'avion.
+evaluates: [fondamentaux.mecanique-du-vol.decrochage-et-vrille]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
