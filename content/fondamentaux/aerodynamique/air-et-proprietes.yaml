@@ -1,0 +1,146 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.air-et-proprietes
+type: notion-aerodynamique
+title: L'air et ses propriétés
+slug: air-et-proprietes
+summary: >-
+  L'air est un fluide pesant, compressible et visqueux. Sa densité — qui dépend
+  de la pression, de la température, de l'altitude et de l'humidité — gouverne la
+  portance, la traînée et les performances. Une propriété clé du vol.
+objectifs:
+  - Décrire l'air comme un fluide pesant, compressible et visqueux.
+  - Définir la masse volumique de l'air et citer ses facteurs (pression, température, altitude, humidité).
+  - Expliquer pourquoi la densité de l'air est déterminante pour le vol.
+  - Relier les propriétés de l'air à leurs conséquences concrètes (décollage, chaleur, altitude, portance et traînée).
+aliases: [air, masse volumique, densité de l'air]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — troisième fiche du socle, entrée de l'aérodynamique.
+    author: prepapilote
+status: relecture
+sources:
+  - title: "OACI — Atmosphère type internationale (ISA, Doc 7488)"
+    kind: officiel
+    consultedAt: "2026-07-09"
+  - title: "SKYbrary — International Standard Atmosphere (ISA)"
+    url: https://skybrary.aero/articles/international-standard-atmosphere-isa
+    kind: institutionnel
+    consultedAt: "2026-07-09"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.physique.systeme-international-et-unites
+    - fondamentaux.physique.pression-forces-unites
+content:
+  essentiel:
+    body: |
+      Voler, c'est se déplacer dans un fluide : l'**air**. Comprendre ses
+      propriétés, c'est comprendre pourquoi et comment un avion vole.
+
+      L'air est un **fluide pesant** (il a une masse), **compressible** (on peut
+      le comprimer) et **visqueux** (il « accroche » légèrement aux surfaces). Sa
+      grandeur la plus importante pour le vol est sa **masse volumique**, ou
+      densité (ρ) : environ **1,225 kg/m³** en **atmosphère standard (ISA), au
+      niveau moyen de la mer**.
+
+      Cette densité n'est pas fixe : elle diminue avec l'altitude et avec la
+      chaleur. Or portance et traînée lui sont proportionnelles — d'où son rôle
+      central, du décollage jusqu'à la croisière.
+    aRetenir:
+      - L'air est un fluide pesant, compressible et visqueux.
+      - Sa masse volumique vaut environ 1,225 kg/m³ en atmosphère standard (ISA) au niveau moyen de la mer.
+      - La densité diminue avec l'altitude et avec la chaleur ; l'air humide est un peu moins dense.
+      - Moins l'air est dense, moins il y a de portance et de poussée — donc des performances dégradées.
+  sections:
+    - id: air-fluide-pesant
+      title: L'air, un fluide pesant
+      body: |
+        L'air qui nous entoure est un **mélange gazeux**, composé pour l'essentiel
+        d'**azote** (environ 78 %) et d'**oxygène** (environ 21 %), le reste étant
+        de l'argon, du dioxyde de carbone et de la vapeur d'eau.
+
+        Comme tout corps matériel, l'air possède une **masse** : un mètre cube
+        d'air n'est pas « vide ». On la mesure par sa **masse volumique** (ou
+        densité), notée ρ, en kilogrammes par mètre cube (kg/m³).
+
+        En **atmosphère standard (ISA)**, au **niveau moyen de la mer**
+        (température de 15 °C, pression de 1013,25 hPa), la masse volumique de
+        l'air vaut environ **1,225 kg/m³**. C'est cette masse, mise en mouvement
+        autour des ailes, qui rend le vol possible.
+      figures:
+        - schemaId: air-masse
+          alt: Un mètre cube d'air schématisé, d'une masse d'environ 1,225 kilogrammes en atmosphère standard au niveau de la mer.
+          caption: Un mètre cube d'air « pèse » environ 1,225 kg en atmosphère standard (ISA), au niveau moyen de la mer.
+          width: 380
+          height: 220
+    - id: densite-et-facteurs
+      title: La densité de l'air et ses facteurs
+      body: |
+        La masse volumique de l'air n'est pas constante : elle varie avec
+        plusieurs facteurs.
+
+        - **La pression** : plus l'air est comprimé, plus il est dense.
+        - **La température** : l'air chaud se dilate et devient **moins** dense
+          que l'air froid.
+        - **L'altitude** : en montant, la pression chute — l'air se raréfie et la
+          densité **diminue**.
+        - **L'humidité** : la vapeur d'eau étant plus légère que l'air sec, l'air
+          humide est légèrement **moins** dense (effet plus discret).
+
+        La valeur de 1,225 kg/m³ n'est donc qu'une **référence** en atmosphère
+        standard (ISA) au niveau moyen de la mer ; en conditions réelles, la
+        densité change en permanence.
+      figures:
+        - schemaId: air-densite-altitude
+          alt: Une colonne d'air dont les molécules s'espacent avec l'altitude, illustrant la diminution de la densité.
+          caption: Plus on monte, plus l'air se raréfie — la densité diminue avec l'altitude.
+          width: 360
+          height: 260
+    - id: pourquoi-le-pilote-doit-comprendre
+      title: Pourquoi un pilote doit-il comprendre les propriétés de l'air ?
+      body: |
+        Comprendre les propriétés de l'air n'est pas un exercice théorique : la
+        densité a des **conséquences directes** sur le vol.
+
+        - **Performances au décollage** : moins l'air est dense, moins l'aile
+          produit de portance et moins l'hélice ou le réacteur fournit de
+          poussée. La distance de décollage **s'allonge**.
+        - **Influence de la chaleur** : par forte température, l'air est moins
+          dense — un décollage par jour chaud est plus « poussif » que par temps
+          froid.
+        - **Influence de l'altitude** : sur un terrain d'altitude, l'air raréfié
+          dégrade encore les performances (c'est l'*altitude-densité*).
+        - **Impact sur la portance et la traînée** : toutes deux sont
+          **proportionnelles à la densité de l'air**. Quand la densité baisse, il
+          faut voler plus vite pour conserver la même portance.
+
+        En clair : le même avion ne se comporte pas de la même façon un matin
+        d'hiver au bord de la mer et un après-midi d'été en montagne.
+    - id: compressibilite-et-viscosite
+      title: Compressibilité et viscosité
+      strate: maitriser
+      body: |
+        Deux propriétés plus fines complètent le tableau.
+
+        - **La compressibilité** : l'air peut être comprimé, sa densité varie. Aux
+          vitesses de l'aviation légère, on néglige souvent cet effet ; il devient
+          important à grande vitesse, à l'approche du **nombre de Mach** 1.
+        - **La viscosité** : l'air « accroche » légèrement aux surfaces. C'est
+          elle qui crée, tout contre la paroi de l'aile, une fine **couche
+          limite** — notion développée dans la fiche « L'écoulement de l'air ».
+  pieges:
+    - Ne pas confondre la masse volumique (densité) et la masse — la densité rapporte une masse à un volume.
+    - L'air chaud est moins dense que l'air froid, et l'air humide est un peu moins dense que l'air sec (contre-intuitif).
+    - La valeur 1,225 kg/m³ n'a de sens qu'en atmosphère standard (ISA) au niveau moyen de la mer — en conditions réelles, elle varie sans cesse.

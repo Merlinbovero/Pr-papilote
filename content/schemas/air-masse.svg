@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .face { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .dot { fill: currentColor; }
+    .accent-t { fill: #3b82f6; font-weight: 600; }
+  </style>
+  <text class="title" x="190" y="26" text-anchor="middle">L'air a une masse</text>
+  <!-- Cube pseudo-3D -->
+  <polygon class="face" points="120,60 146,42 256,42 230,60" />
+  <polygon class="face" points="230,60 256,42 256,142 230,160" />
+  <rect class="ink" x="120" y="60" width="110" height="100" />
+  <!-- Molécules -->
+  <g class="dot">
+    <circle cx="140" cy="82" r="2.5" /><circle cx="175" cy="73" r="2.5" /><circle cx="205" cy="90" r="2.5" />
+    <circle cx="150" cy="106" r="2.5" /><circle cx="190" cy="112" r="2.5" /><circle cx="214" cy="122" r="2.5" />
+    <circle cx="136" cy="132" r="2.5" /><circle cx="171" cy="140" r="2.5" /><circle cx="205" cy="146" r="2.5" />
+    <circle cx="162" cy="86" r="2.5" />
+  </g>
+  <text class="accent-t" x="175" y="184" text-anchor="middle">1 m³ d'air ≈ 1,225 kg</text>
+  <text class="sub" x="175" y="202" text-anchor="middle">en atmosphère standard (ISA), au niveau moyen de la mer</text>
+</svg>
