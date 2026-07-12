@@ -1,0 +1,133 @@
+schemaVersion: 1
+id: fondamentaux.navigation.declinaison-magnetique
+type: notion-navigation
+title: La déclinaison magnétique
+slug: declinaison-magnetique
+summary: >-
+  La déclinaison magnétique est l'angle entre le nord vrai (carte) et le nord
+  magnétique (boussole) ; elle dépend du lieu et du temps. Elle convertit le cap
+  vrai en cap magnétique — Est on retranche, Ouest on ajoute. La déviation donne le cap compas.
+objectifs:
+  - Définir la déclinaison magnétique (angle nord vrai / nord magnétique) et sa variation dans l'espace et le temps.
+  - Convertir un cap vrai en cap magnétique selon le sens de la déclinaison (Est on retranche, Ouest on ajoute).
+  - Distinguer la déclinaison de la déviation et situer le cap compas.
+aliases:
+  [déclinaison, déclinaison magnétique, cap vrai, cap magnétique, cap compas, déviation, isogones]
+module: fondamentaux
+category: navigation
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-troisième fiche du socle, la déclinaison magnétique et la conversion des caps (bloc navigation).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Le compas magnétique — lavionnaire.fr"
+    url: https://www.lavionnaire.fr/InstNavigCompas.php
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.navigation.cap-route-et-derive
+  related:
+    - fondamentaux.navigation.terre-et-coordonnees
+content:
+  essentiel:
+    body: |
+      La **carte** est orientée au **nord vrai** (géographique), mais la
+      **boussole** de l'avion pointe vers le **nord magnétique**. L'angle entre
+      les deux est la **déclinaison magnétique (D)**.
+
+      Elle **dépend du lieu** (les cartes la donnent par des lignes **isogones**)
+      et **évolue lentement** dans le temps. Elle est dite **Est** ou **Ouest**
+      selon que le nord magnétique se trouve à l'est ou à l'ouest du nord vrai.
+
+      Son rôle : passer du **cap vrai** (mesuré sur la carte) au **cap
+      magnétique** (celui que le pilote suit à la boussole). Règle simple :
+      **déclinaison Est, on retranche ; déclinaison Ouest, on ajoute**.
+    aRetenir:
+      - La déclinaison magnétique est l'angle entre le nord vrai (carte) et le nord magnétique (boussole).
+      - Elle dépend du lieu (lignes isogones) et évolue lentement dans le temps.
+      - Elle convertit le cap vrai en cap magnétique — Est on retranche, Ouest on ajoute.
+      - En France métropolitaine, la déclinaison est aujourd'hui faible (proche de zéro).
+  sections:
+    - id: le-nord-vrai-et-le-nord-magnetique
+      title: Le nord vrai et le nord magnétique
+      body: |
+        Deux « nords » coexistent en navigation.
+
+        - Le **nord vrai** (ou géographique) est la direction du **pôle Nord**,
+          celle des **méridiens** et des **cartes**.
+        - Le **nord magnétique** est la direction indiquée par la **boussole**,
+          vers le **pôle Nord magnétique**. Celui-ci n'est **pas** au pôle
+          géographique et se **déplace** d'année en année.
+
+        L'écart angulaire entre ces deux directions, en un lieu donné, est la
+        **déclinaison magnétique (D)**. Les cartes aéronautiques la publient sous
+        forme de **lignes isogones** (points de même déclinaison). En France
+        métropolitaine, elle est aujourd'hui **faible**, de l'ordre de 1 à 2°.
+      figures:
+        - schemaId: nord-vrai-magnetique
+          alt: Deux flèches nord, l'une vers le nord vrai géographique et l'autre vers le nord magnétique, séparées par l'angle de déclinaison.
+          caption: La déclinaison est l'écart entre le nord vrai (carte) et le nord magnétique (boussole).
+          width: 420
+          height: 240
+    - id: convertir-le-cap-vrai-en-cap-magnetique
+      title: Convertir le cap vrai en cap magnétique
+      body: |
+        Un cap peut se mesurer par rapport à l'un ou l'autre nord :
+
+        - le **cap vrai (Cv)** se lit sur la **carte**, par rapport au nord vrai ;
+        - le **cap magnétique (Cm)** est celui que le pilote **affiche** et
+          **suit à la boussole**.
+
+        Pour passer de l'un à l'autre, on applique la déclinaison, avec une règle
+        simple :
+
+        - **déclinaison Est → on retranche** : Cm = Cv − D ;
+        - **déclinaison Ouest → on ajoute** : Cm = Cv + D.
+
+        (Moyen mnémotechnique anglais : *east is least, west is best*.) Par
+        exemple, un cap vrai de 090° avec une déclinaison de 2° Ouest donne un
+        cap magnétique de **092°**.
+      figures:
+        - schemaId: declinaison-est-ouest
+          alt: Deux roses des vents montrant qu'avec une déclinaison Est on retranche et avec une déclinaison Ouest on ajoute pour obtenir le cap magnétique.
+          caption: Déclinaison Est, on retranche ; déclinaison Ouest, on ajoute — pour passer du cap vrai au cap magnétique.
+          width: 460
+          height: 220
+    - id: la-deviation-et-le-cap-compas
+      title: La déviation et le cap compas
+      strate: maitriser
+      body: |
+        Un dernier écart existe, propre à **chaque avion** : les masses
+        métalliques et les circuits électriques du bord **perturbent** la
+        boussole. C'est la **déviation (d)**, l'angle entre le nord magnétique et
+        le **nord compas**.
+
+        On distingue alors un troisième cap, le **cap compas (Cc)** — la valeur
+        réellement lue sur l'instrument. La chaîne complète des corrections
+        s'écrit :
+
+        **cap vrai = cap compas + déviation + déclinaison**
+
+        La déviation, faible et propre à l'appareil, est relevée sur une **courbe
+        de déviation** affichée près du compas. Pour le socle, retenez surtout la
+        **déclinaison**, qui relie la carte à la boussole.
+  pieges:
+    - La déclinaison n'est pas fixe — elle dépend du lieu (isogones) et change lentement avec les années.
+    - Ne pas confondre déclinaison (nord vrai / nord magnétique) et déviation (nord magnétique / nord compas, propre à l'avion).
+    - Le sens de la correction dépend du côté — déclinaison Est on retranche, Ouest on ajoute, pour obtenir le cap magnétique.

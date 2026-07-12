@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.navigation.decl-05
+kind: vrai-faux
+theme: declinaison
+statement: >-
+  La déviation et la déclinaison désignent la même chose.
+answer: false
+explanation: >-
+  Non : la déclinaison sépare le nord vrai du nord magnétique ; la déviation
+  sépare le nord magnétique du nord compas et elle est propre à chaque avion
+  (masses métalliques du bord).
+evaluates: [fondamentaux.navigation.declinaison-magnetique]
+difficulty: 3
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

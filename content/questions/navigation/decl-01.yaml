@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.navigation.decl-01
+kind: qcm
+theme: declinaison
+statement: >-
+  Qu'est-ce que la déclinaison magnétique ?
+choices:
+  - "L'angle entre le nord vrai et le nord magnétique"
+  - "L'angle entre le cap et la route"
+  - "La variation de la pression atmosphérique"
+  - "L'écart entre deux altitudes"
+correctChoices: [0]
+explanation: >-
+  La déclinaison magnétique est l'angle, en un lieu donné, entre le nord vrai
+  (géographique, celui des cartes) et le nord magnétique (celui de la boussole).
+evaluates: [fondamentaux.navigation.declinaison-magnetique]
+difficulty: 1
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie
