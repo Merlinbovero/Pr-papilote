@@ -1,0 +1,138 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.temperature-et-humidite
+type: notion-meteo
+title: La température et l'humidité
+slug: temperature-et-humidite
+summary: >-
+  La température mesure l'agitation des molécules ; l'air chaud est moins dense.
+  L'humidité relative est le rapport entre la vapeur présente et le maximum
+  possible, qui croît avec la température. Au point de rosée, l'air saturé condense.
+objectifs:
+  - Définir la température (agitation moléculaire) et rappeler ses effets sur l'altitude et la densité de l'air.
+  - Définir l'humidité relative et expliquer que l'air chaud peut contenir plus de vapeur d'eau que l'air froid.
+  - Définir le point de rosée et relier l'écart température–point de rosée à la formation du brouillard et des nuages.
+aliases:
+  [température, humidité, humidité relative, vapeur d'eau, point de rosée, saturation, condensation]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — dix-septième fiche du socle, la température et l'humidité (bloc météorologie).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Comprendre la météo — Météo-France"
+    url: https://meteofrance.com/comprendre-la-meteo
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Point de rosée — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Point_de_ros%C3%A9e
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.air-et-proprietes
+    - fondamentaux.meteorologie.atmosphere-standard
+content:
+  essentiel:
+    body: |
+      Deux grandeurs météo façonnent l'état de l'air : sa **température** et son
+      **humidité**.
+
+      La **température** mesure l'agitation des molécules de l'air ; en
+      aéronautique, on l'exprime en **degrés Celsius**. Elle **diminue** avec
+      l'altitude et gouverne la **densité** de l'air (l'air chaud est moins
+      dense).
+
+      L'**humidité** est la quantité de **vapeur d'eau** contenue dans l'air. On
+      la mesure surtout par l'**humidité relative** (en %) : le rapport entre la
+      vapeur présente et le **maximum** que l'air peut contenir à cette
+      température. Quand l'air, en se refroidissant, atteint ce maximum — la
+      **saturation** —, la vapeur se **condense** : c'est le **point de rosée**,
+      à l'origine de la rosée, du brouillard et des nuages.
+    aRetenir:
+      - La température mesure l'agitation des molécules ; elle diminue avec l'altitude et l'air chaud est moins dense.
+      - L'humidité relative est le rapport entre la vapeur d'eau présente et le maximum possible à cette température.
+      - L'air chaud peut contenir plus de vapeur d'eau que l'air froid.
+      - Le point de rosée est la température à laquelle l'air, refroidi, se sature (100 %) et la vapeur se condense.
+  sections:
+    - id: la-temperature
+      title: La température
+      body: |
+        La **température** traduit l'**agitation** des molécules qui composent
+        l'air : plus elles s'agitent, plus il fait chaud. On la mesure en
+        **degrés Celsius (°C)** dans l'usage courant, en **kelvins (K)** dans le
+        Système international.
+
+        Deux effets déjà rencontrés sont essentiels :
+
+        - la température **diminue** avec l'altitude (environ **2 °C par
+          1000 ft** dans le modèle ISA) ;
+        - l'air chaud est **moins dense** que l'air froid, ce qui **dégrade les
+          performances** (portance, poussée) par forte chaleur.
+
+        La température est donc un paramètre de premier plan, du confort en
+        cabine jusqu'aux distances de décollage.
+    - id: l-humidite
+      title: L'humidité
+      body: |
+        L'air contient toujours un peu de **vapeur d'eau** — de l'eau à l'état
+        **gazeux**, invisible. C'est l'**humidité**.
+
+        La grandeur clé est l'**humidité relative**, exprimée en **pourcentage** :
+        c'est le rapport entre la vapeur **réellement présente** et la quantité
+        **maximale** que l'air peut contenir à sa température.
+
+        - À **100 %**, l'air est **saturé** : il ne peut plus absorber de vapeur.
+        - Point capital : ce maximum **augmente avec la température**. L'air
+          **chaud** peut contenir **beaucoup plus** de vapeur que l'air
+          **froid**.
+
+        C'est pourquoi un même air peut passer de « sec » à « saturé » simplement
+        en **refroidissant**, sans qu'on lui ajoute une goutte d'eau.
+      figures:
+        - schemaId: humidite-relative
+          alt: Deux volumes d'air, l'un froid contenant peu de vapeur d'eau au maximum, l'autre chaud pouvant en contenir beaucoup plus.
+          caption: L'air chaud peut contenir plus de vapeur d'eau que l'air froid ; l'humidité relative rapporte la vapeur présente à ce maximum.
+          width: 460
+          height: 240
+    - id: le-point-de-rosee-et-la-condensation
+      title: Le point de rosée et la condensation
+      strate: maitriser
+      body: |
+        Le **point de rosée** est la **température** à laquelle un air donné,
+        **refroidi**, atteint la **saturation** (100 % d'humidité relative). En
+        dessous, l'excès de vapeur se **condense** en fines gouttelettes d'eau
+        liquide.
+
+        L'**écart** entre la température de l'air et son point de rosée mesure sa
+        proximité de la saturation :
+
+        - un **grand écart** → air sec, ciel dégagé ;
+        - un **petit écart** → air proche de la saturation, **brouillard** ou
+          **nuages bas** probables.
+
+        Cette condensation est le moteur des phénomènes visibles : la **rosée**
+        (sur les surfaces au sol), le **brouillard** (près du sol) et les
+        **nuages** (en altitude), étudiés dans la fiche suivante.
+      figures:
+        - schemaId: point-de-rosee
+          alt: De l'air qui se refroidit jusqu'au point de rosée, où la vapeur d'eau atteint la saturation et se condense en gouttelettes.
+          caption: Quand l'air refroidit jusqu'au point de rosée, il se sature (100 %) et la vapeur se condense en gouttelettes.
+          width: 460
+          height: 240
+  pieges:
+    - L'humidité relative dépend de la température — un même air voit son humidité relative monter s'il se refroidit, sans ajout d'eau.
+    - L'air chaud contient plus de vapeur d'eau que l'air froid, et non l'inverse.
+    - Un petit écart entre la température et le point de rosée signale un air proche de la saturation — brouillard ou nuages probables.

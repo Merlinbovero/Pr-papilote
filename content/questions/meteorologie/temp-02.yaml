@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.temp-02
+kind: qcm
+theme: temperature-humidite
+statement: >-
+  Qu'est-ce que l'humidité relative ?
+choices:
+  - "Le rapport entre la vapeur d'eau présente et le maximum possible à cette température"
+  - "La température de l'air ambiant"
+  - "La quantité totale d'eau dans l'atmosphère"
+  - "La pression exercée par l'air sec"
+correctChoices: [0]
+explanation: >-
+  L'humidité relative (en %) est le rapport entre la vapeur d'eau réellement
+  présente et le maximum que l'air peut contenir à sa température. À 100 %, l'air
+  est saturé.
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie
