@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .bezel { stroke: currentColor; fill: none; stroke-width: 2; }
+    .lead { stroke: #94a3b8; fill: none; stroke-width: 1; }
+    .needle { stroke: #ffffff; fill: none; stroke-width: 3; }
+    .arc-white { stroke: #ffffff; fill: none; stroke-width: 6; }
+    .arc-green { stroke: #16a34a; fill: none; stroke-width: 6; }
+    .arc-yellow { stroke: #eab308; fill: none; stroke-width: 6; }
+    .tick-red { stroke: #dc2626; fill: none; stroke-width: 5; }
+  </style>
+  <text class="title" x="170" y="26" text-anchor="middle">Les arcs du badin</text>
+  <!-- Cadran : face sombre (l'instrument) -->
+  <circle class="bezel" cx="150" cy="180" r="126" />
+  <circle cx="150" cy="180" r="120" fill="#0f172a" />
+  <!-- Arc vert : utilisation normale (Vs1 -> Vno) -->
+  <path class="arc-green" d="M60,213 A96,96 0 0 1 233,132" />
+  <!-- Arc jaune : prudence (Vno -> Vne) -->
+  <path class="arc-yellow" d="M233,132 A96,96 0 0 1 233,228" />
+  <!-- Trait rouge : VNE -->
+  <line class="tick-red" x1="233" y1="222" x2="252" y2="234" />
+  <!-- Arc blanc (intérieur) : volets (Vso -> Vfe) -->
+  <path class="arc-white" d="M96,234 A76,76 0 0 1 77,155" />
+  <!-- Aiguille -->
+  <line class="needle" x1="150" y1="180" x2="77" y2="138" />
+  <circle cx="150" cy="180" r="5" fill="#ffffff" />
+  <!-- Étiquettes -->
+  <line class="lead" x1="72" y1="150" x2="30" y2="120" />
+  <text class="lbl" x="30" y="114" text-anchor="middle">arc blanc</text>
+  <text class="lbl" x="30" y="130" text-anchor="middle" fill="#94a3b8" style="font-size:11px">(volets)</text>
+  <line class="lead" x1="120" y1="270" x2="90" y2="312" />
+  <text class="lbl" x="90" y="326" text-anchor="middle">arc vert (normal)</text>
+  <line class="lead" x1="244" y1="180" x2="300" y2="150" />
+  <text class="lbl" x="300" y="144" text-anchor="middle">arc jaune</text>
+  <text class="lbl" x="300" y="160" text-anchor="middle" fill="#94a3b8" style="font-size:11px">(prudence)</text>
+  <line class="lead" x1="250" y1="230" x2="300" y2="250" />
+  <text class="lbl" x="300" y="256" text-anchor="middle">trait rouge</text>
+  <text class="lbl" x="300" y="272" text-anchor="middle" fill="#94a3b8" style="font-size:11px">(VNE)</text>
+</svg>

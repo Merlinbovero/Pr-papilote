@@ -12,6 +12,10 @@
 
 Fond **transparent** (la carte `bg-card` de `FicheFigure` fournit l'arrière-plan). Jamais d'autre couleur sans justification.
 
+### Exception justifiée — codes couleur normalisés (2026-07-12)
+
+Certains instruments portent un **code couleur normalisé** dont les couleurs _sont_ l'information pédagogique : elles doivent être reconnues telles quelles par le candidat. Les représenter en niveaux de gris trahirait le sujet. On admet donc, **pour ces seuls schémas** (cadran du badin et cadrans normalisés à venir), l'emploi des **couleurs réglementaires réelles** — par exemple, sur l'anémomètre : arc **blanc** (volets), arc **vert** (utilisation normale), arc **jaune** (prudence), trait **rouge** (VNE). Le reste du schéma reste sobre (encre, accent, gris). Cette exception est **fermée** : elle ne s'applique qu'aux codes couleur officiels d'instruments, jamais par confort esthétique.
+
 ## Typographie
 
 `system-ui` — titre 14 px semi-gras, libellés 13 px, sous-texte 11 px (muted). Nombres et unités lisibles, jamais tronqués.
