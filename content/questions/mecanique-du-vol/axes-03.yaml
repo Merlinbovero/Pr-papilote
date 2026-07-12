@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.axes-03
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Quelle commande le pilote utilise-t-il pour agir sur la gouverne de direction ?
+choices:
+  - "Le palonnier"
+  - "Le manche vers l'avant ou l'arrière"
+  - "Le manche vers la gauche ou la droite"
+  - "La manette des gaz"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le manche d'avant en arrière commande la profondeur (tangage)."
+  "2": "Le manche latéralement commande les ailerons (roulis)."
+explanation: >-
+  La gouverne de direction (lacet) est commandée par le palonnier, les deux
+  pédales au sol du poste. Le manche, lui, commande la profondeur (tangage) et
+  les ailerons (roulis).
+evaluates: [fondamentaux.mecanique-du-vol.axes-et-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.axes-01
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Autour de quel axe l'avion s'incline-t-il pour amorcer un virage ?
+choices:
+  - "L'axe de roulis"
+  - "L'axe de tangage"
+  - "L'axe de lacet"
+  - "L'axe de poussée"
+correctChoices: [0]
+explanation: >-
+  L'inclinaison de l'avion se fait autour de l'axe de roulis (longitudinal),
+  commandée par les ailerons. C'est ce mouvement qui amorce un virage.
+evaluates: [fondamentaux.mecanique-du-vol.axes-et-gouvernes]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

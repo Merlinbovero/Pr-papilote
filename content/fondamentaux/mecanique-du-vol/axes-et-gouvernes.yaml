@@ -1,0 +1,138 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.axes-et-gouvernes
+type: notion-aerodynamique
+title: Les axes et les gouvernes
+slug: axes-et-gouvernes
+summary: >-
+  L'avion tourne autour de trois axes passant par son centre de gravité — roulis,
+  tangage et lacet. À chaque axe correspond une gouverne (ailerons, profondeur,
+  direction), actionnée par le manche et le palonnier.
+objectifs:
+  - Nommer les trois axes de l'avion (roulis, tangage, lacet) et le mouvement associé à chacun.
+  - Associer chaque axe à sa gouverne (ailerons, gouverne de profondeur, gouverne de direction).
+  - Expliquer avec quelle commande (manche, palonnier) le pilote actionne chaque gouverne.
+aliases:
+  [axes, gouvernes, roulis, tangage, lacet, ailerons, profondeur, direction, manche, palonnier]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — douzième fiche du socle, les trois axes et les gouvernes (mécanique du vol).
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — mécanique du vol"
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Pilotage d'un avion — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Pilotage_d'un_avion
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.mecanique-du-vol.quatre-forces
+  related:
+    - fondamentaux.mecanique-du-vol.equilibre-et-centrage
+content:
+  essentiel:
+    body: |
+      Pour piloter, il faut pouvoir orienter l'avion dans les trois dimensions.
+      L'avion peut tourner autour de **trois axes** qui passent tous par son
+      **centre de gravité** :
+
+      - l'axe de **roulis** (longitudinal, du nez à la queue) : l'avion
+        **s'incline** ;
+      - l'axe de **tangage** (transversal, d'un bout d'aile à l'autre) : le nez
+        **monte ou descend** ;
+      - l'axe de **lacet** (vertical) : le nez **pivote à droite ou à gauche**.
+
+      À chaque axe correspond une **gouverne** : les **ailerons** (roulis), la
+      **gouverne de profondeur** (tangage) et la **gouverne de direction**
+      (lacet). Le pilote les actionne avec le **manche** et le **palonnier**.
+    aRetenir:
+      - L'avion tourne autour de trois axes passant par son centre de gravité — le roulis, le tangage et le lacet.
+      - Le roulis incline l'avion (ailerons), le tangage lève ou baisse le nez (profondeur), le lacet le fait pivoter à plat (direction).
+      - Le manche commande les ailerons et la profondeur ; le palonnier commande la gouverne de direction.
+      - Une gouverne dévie l'écoulement pour créer une force qui fait tourner l'avion autour de son axe.
+  sections:
+    - id: les-trois-axes
+      title: Les trois axes
+      body: |
+        Un avion évolue dans l'espace : il peut tourner dans les trois
+        dimensions. Ces rotations se font autour de **trois axes**
+        perpendiculaires, qui se croisent tous au **centre de gravité**.
+
+        - L'**axe de roulis** est **longitudinal** : il va du nez à la queue.
+          Tourner autour de lui **incline** l'avion sur le côté — c'est le
+          **roulis**, qui sert à amorcer un virage.
+        - L'**axe de tangage** est **transversal** : il va d'un bout d'aile à
+          l'autre. Tourner autour de lui **lève ou baisse le nez** — c'est le
+          **tangage**, qui commande la montée et la descente.
+        - L'**axe de lacet** est **vertical**. Tourner autour de lui fait
+          **pivoter le nez à plat**, vers la droite ou la gauche — c'est le
+          **lacet**.
+
+        Comme toutes les rotations passent par le centre de gravité, ce sont les
+        mêmes axes que ceux de l'équilibre étudié précédemment.
+      figures:
+        - schemaId: trois-axes
+          alt: Un avion vu de dessus avec ses trois axes passant par le centre de gravité — roulis (longitudinal), tangage (transversal) et lacet (vertical).
+          caption: Les trois axes (roulis, tangage, lacet) se croisent au centre de gravité ; la rotation autour de chacun porte son nom.
+          width: 460
+          height: 280
+    - id: les-gouvernes
+      title: Les gouvernes
+      body: |
+        À chaque axe correspond une **gouverne** : une surface mobile, placée au
+        **bord de fuite** d'une aile ou de l'empennage. En se braquant, elle
+        **dévie l'écoulement** et crée une force qui fait tourner l'avion.
+
+        - Les **ailerons**, au bord de fuite des ailes (vers les extrémités),
+          agissent en **sens opposé** : l'un se lève, l'autre s'abaisse, ce qui
+          **incline** l'avion → **roulis**.
+        - La **gouverne de profondeur**, au bord de fuite de l'empennage
+          horizontal, fait **monter ou descendre le nez** → **tangage**.
+        - La **gouverne de direction**, sur la **dérive** (l'empennage
+          vertical), fait **pivoter le nez** → **lacet**.
+
+        Une gouverne ne « pousse » pas l'avion : elle **modifie l'écoulement**,
+        et c'est la variation de portance locale qui crée le **moment** de
+        rotation autour de l'axe.
+      figures:
+        - schemaId: gouvernes
+          alt: Un avion vu de dessus avec ses gouvernes en évidence — ailerons en bout d'aile, gouverne de profondeur et gouverne de direction à l'arrière.
+          caption: Chaque gouverne agit sur un axe — ailerons (roulis), profondeur (tangage), direction (lacet).
+          width: 460
+          height: 280
+    - id: les-commandes-du-pilote
+      title: Les commandes du pilote
+      strate: maitriser
+      body: |
+        Le pilote actionne les gouvernes depuis le poste de pilotage avec **deux
+        commandes principales**.
+
+        - Le **manche** (ou le volant) : le **pousser** ou le **tirer** agit sur
+          la **profondeur** (tangage) ; le déplacer à **gauche ou à droite** agit
+          sur les **ailerons** (roulis).
+        - Le **palonnier**, deux **pédales** au sol du poste : appuyer sur l'une
+          ou l'autre agit sur la **gouverne de direction** (lacet).
+
+        En pratique, ces commandes se **combinent**. Pour un **virage**, par
+        exemple, le pilote incline l'avion aux ailerons (roulis) tout en
+        coordonnant au palonnier (lacet) pour garder un vol **symétrique**.
+        Cette coordination sera détaillée dans la fiche consacrée au virage.
+  pieges:
+    - Les ailerons se braquent en sens opposé (l'un monte, l'autre descend) — ils inclinent l'avion, ils ne le font pas monter.
+    - La gouverne de direction ne fait pas « tourner » l'avion comme un volant de voiture — elle contrôle le lacet ; le virage s'amorce d'abord aux ailerons.
+    - Une gouverne ne pousse pas l'avion — elle dévie l'écoulement pour créer un moment autour d'un axe.

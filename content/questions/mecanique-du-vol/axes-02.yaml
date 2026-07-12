@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.axes-02
+kind: association
+theme: axes-gouvernes
+statement: >-
+  Associez chaque gouverne à l'axe sur lequel elle agit.
+pairs:
+  - left: "Ailerons"
+    right: "Roulis"
+  - left: "Gouverne de profondeur"
+    right: "Tangage"
+  - left: "Gouverne de direction"
+    right: "Lacet"
+explanation: >-
+  Chaque gouverne agit sur un seul axe : les ailerons commandent le roulis, la
+  gouverne de profondeur le tangage et la gouverne de direction le lacet.
+evaluates: [fondamentaux.mecanique-du-vol.axes-et-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

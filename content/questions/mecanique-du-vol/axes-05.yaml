@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.axes-05
+kind: vrai-faux
+theme: axes-gouvernes
+statement: >-
+  La gouverne de direction sert à faire tourner l'avion, exactement comme le
+  volant d'une voiture.
+answer: false
+explanation: >-
+  La gouverne de direction contrôle le lacet (le pivotement du nez à plat) et
+  sert surtout à garder un vol symétrique. Un virage s'amorce d'abord en
+  inclinant l'avion aux ailerons (roulis), pas au palonnier.
+evaluates: [fondamentaux.mecanique-du-vol.axes-et-gouvernes]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
