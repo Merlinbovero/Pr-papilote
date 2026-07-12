@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .force { stroke: currentColor; fill: none; stroke-width: 2.5; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Les quatre forces du vol</text>
+  <!-- Silhouette d'avion (vue de profil, nez à droite) -->
+  <path class="plane" d="M300,140 C285,131 245,127 205,128 L178,129 C170,130 166,135 166,140 C166,145 170,150 178,151 L205,152 C245,153 285,149 300,140 Z" />
+  <path class="plane" d="M180,129 L172,110 L194,128 Z" />
+  <!-- Portance (haut) -->
+  <line class="force" x1="230" y1="124" x2="230" y2="62" marker-end="url(#a)" />
+  <text class="lbl" x="230" y="52" text-anchor="middle">portance</text>
+  <!-- Poids (bas) -->
+  <line class="force" x1="230" y1="156" x2="230" y2="218" marker-end="url(#a)" />
+  <text class="lbl" x="230" y="234" text-anchor="middle">poids</text>
+  <!-- Poussée (avant, vers le nez) -->
+  <line class="force" x1="304" y1="140" x2="392" y2="140" marker-end="url(#a)" />
+  <text class="lbl" x="348" y="132" text-anchor="middle">poussée</text>
+  <!-- Traînée (arrière) -->
+  <line class="force" x1="162" y1="140" x2="74" y2="140" marker-end="url(#a)" />
+  <text class="lbl" x="118" y="132" text-anchor="middle">traînée</text>
+  <text class="sub" x="230" y="250" text-anchor="middle">deux forces verticales, deux forces horizontales</text>
+</svg>
