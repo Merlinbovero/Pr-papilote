@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.cartographie.carte-03
+kind: qcm
+theme: echelle-carte
+statement: >-
+  Quelle est l'échelle des cartes aéronautiques OACI/VFR françaises ?
+choices:
+  - "1/500 000"
+  - "1/25 000"
+  - "1/10 000"
+  - "1/5 000 000"
+correctChoices: [0]
+explanation: >-
+  Les cartes OACI/VFR de référence en France sont au 1/500 000 (1 cm pour 5 km),
+  un bon compromis entre détail et surface couverte.
+evaluates: [fondamentaux.cartographie.echelle-et-mesures]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

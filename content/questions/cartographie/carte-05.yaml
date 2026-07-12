@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.cartographie.carte-05
+kind: qcm
+theme: echelle-carte
+statement: >-
+  Comment mesure-t-on une distance entre deux points sur une carte OACI ?
+choices:
+  - "En reportant l'écart entre les deux points sur l'échelle graphique"
+  - "En comptant les carreaux du quadrillage"
+  - "En mesurant l'altitude entre les deux points"
+  - "En lisant la fréquence radio indiquée"
+correctChoices: [0]
+explanation: >-
+  On relève l'écart entre les deux points (compas ou bord de feuille) puis on le
+  reporte sur l'échelle graphique de la carte pour lire la distance en km ou en NM.
+evaluates: [fondamentaux.cartographie.echelle-et-mesures]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

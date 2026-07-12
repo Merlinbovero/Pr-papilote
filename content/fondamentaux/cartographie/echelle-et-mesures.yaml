@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: fondamentaux.cartographie.echelle-et-mesures
+type: concept
+title: L'échelle et les mesures sur la carte
+slug: echelle-et-mesures
+summary: >-
+  L'échelle d'une carte est le rapport entre une distance sur la carte et la
+  distance réelle. Au 1/500 000 (carte OACI/VFR), 1 cm vaut 5 km. On mesure une
+  distance en la reportant sur l'échelle graphique (km ou milles marins).
+objectifs:
+  - Définir l'échelle d'une carte (rapport distance carte / distance réelle) et l'interpréter (1/500 000 donne 1 cm pour 5 km).
+  - Mesurer une distance sur une carte à l'aide de l'échelle graphique (kilomètres, milles marins).
+  - Distinguer grande et petite échelle et situer la carte OACI/VFR au 1/500 000.
+aliases:
+  [échelle, carte, cartographie, échelle graphique, OACI, VFR, grande échelle, petite échelle]
+module: fondamentaux
+category: cartographie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — trente-deuxième fiche du socle, l'échelle et les mesures sur la carte (bloc cartographie).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Carte OACI-VFR — Géoportail (IGN)"
+    url: https://www.geoportail.gouv.fr/donnees/carte-oaci-vfr
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation et cartographie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.navigation.terre-et-coordonnees
+  related:
+    - fondamentaux.navigation.temps-vitesse-distance
+content:
+  essentiel:
+    body: |
+      Une **carte** est une représentation **réduite** du terrain. Le rapport de
+      cette réduction est l'**échelle** : le rapport entre une **distance sur la
+      carte** et la **distance réelle** correspondante.
+
+      Une échelle de **1/500 000** signifie que **1 cm** sur la carte représente
+      **500 000 cm**, soit **5 km** au sol. C'est l'échelle des cartes
+      aéronautiques **OACI/VFR** françaises.
+
+      Pour **mesurer** une distance, on relève l'écart entre deux points (au
+      compas ou au bord d'une feuille) puis on le **reporte sur l'échelle**
+      graphique de la carte, graduée en **kilomètres** et en **milles marins**.
+    aRetenir:
+      - L'échelle est le rapport entre une distance sur la carte et la distance réelle correspondante.
+      - Une échelle de 1/500 000 signifie que 1 cm sur la carte vaut 5 km au sol — c'est celle des cartes OACI/VFR.
+      - On mesure une distance en la reportant sur l'échelle graphique de la carte (km ou milles marins).
+      - Plus le dénominateur est grand, plus l'échelle est petite (moins de détails, plus de surface couverte).
+  sections:
+    - id: qu-est-ce-qu-une-echelle
+      title: Qu'est-ce qu'une échelle
+      body: |
+        Impossible de dessiner un pays à sa taille réelle : une carte le
+        **réduit**. L'**échelle** indique de **combien**.
+
+        C'est un **rapport** sans unité : le premier nombre est la distance sur
+        la **carte**, le second la même distance dans la **réalité**, dans la
+        **même unité**. Ainsi **1/500 000** veut dire « **1 unité** sur la carte
+        = **500 000 unités** au sol ».
+
+        En pratique, il suffit de convertir : **1 cm** de carte = 500 000 cm =
+        **5 000 m** = **5 km**. À l'inverse, **1 km** réel occupe
+        100 000 / 500 000 cm = **0,2 cm** = **2 mm** sur la carte.
+    - id: mesurer-une-distance
+      title: Mesurer une distance
+      body: |
+        Pour connaître la distance entre deux points d'une route :
+
+        1. on **relève** l'écartement entre les deux points — avec un **compas de
+           navigation** ou en **reportant** cet écart sur le bord d'une feuille ;
+        2. on **applique** cet écartement sur l'**échelle graphique** imprimée en
+           marge de la carte ;
+        3. on **lit** directement la distance, en **kilomètres** ou en **milles
+           marins** (les deux échelles y figurent souvent).
+
+        Un repère utile, vu précédemment : sur un **méridien**, **une minute de
+        latitude vaut un mille marin**. L'échelle des **latitudes**, sur les
+        bords de la carte, sert donc aussi de **règle** à distances.
+      figures:
+        - schemaId: echelle-principe
+          alt: Un court segment de 1 cm sur la carte égal à un long segment de 5 km dans la réalité, illustrant l'échelle 1/500 000.
+          caption: À l'échelle 1/500 000, 1 cm sur la carte représente 5 km au sol.
+          width: 460
+          height: 200
+    - id: grande-et-petite-echelle
+      title: Grande et petite échelle
+      strate: maitriser
+      body: |
+        Le vocabulaire est **contre-intuitif**. On parle de **grande échelle**
+        quand le **rapport est grand**, c'est-à-dire quand le **dénominateur est
+        petit** (ex. 1/25 000) : la carte est très **détaillée** mais couvre une
+        **petite** zone. À l'inverse, une **petite échelle** (ex. 1/1 000 000)
+        couvre une **grande** zone avec **peu** de détails.
+
+        Les cartes **aéronautiques OACI/VFR** au **1/500 000** sont un bon
+        compromis : assez détaillées pour la navigation à vue, tout en couvrant
+        une large région. Elles condensent le **relief**, les **aérodromes**, les
+        **espaces aériens**, les **zones** réglementées, les **obstacles** et les
+        **fréquences** radio.
+      figures:
+        - schemaId: grande-petite-echelle
+          alt: Deux cartes comparées, l'une à grande échelle couvrant une petite zone très détaillée, l'autre à petite échelle couvrant une grande zone peu détaillée.
+          caption: Grande échelle — petite zone très détaillée ; petite échelle — grande zone peu détaillée.
+          width: 460
+          height: 220
+  pieges:
+    - L'échelle est un rapport sans unité — 1/500 000 vaut « 1 cm pour 5 km » quelle que soit l'unité de départ.
+    - Une « grande échelle » couvre une petite zone très détaillée ; une « petite échelle » couvre une grande zone — c'est contre-intuitif.
+    - Sur la carte, l'échelle des latitudes sert de règle — une minute de latitude vaut un mille marin.
