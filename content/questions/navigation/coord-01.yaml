@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.navigation.coord-01
+kind: qcm
+theme: terre-coordonnees
+statement: >-
+  Par rapport à quoi mesure-t-on la latitude d'un point ?
+choices:
+  - "L'équateur"
+  - "Le méridien de Greenwich"
+  - "Le pôle Nord"
+  - "Le méridien local"
+correctChoices: [0]
+explanation: >-
+  La latitude mesure la position nord-sud par rapport à l'équateur (de 0° à
+  l'équateur à 90° aux pôles), le long des parallèles.
+evaluates: [fondamentaux.navigation.terre-et-coordonnees]
+difficulty: 1
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

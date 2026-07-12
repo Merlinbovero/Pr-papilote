@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .arc { stroke: currentColor; fill: none; stroke-width: 2; }
+    .radius { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .minute { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="210" y="24" text-anchor="middle">La minute d'arc et le mille marin</text>
+  <!-- Centre de la Terre -->
+  <circle cx="70" cy="210" r="3" fill="currentColor" />
+  <text class="sub" x="70" y="228" text-anchor="middle">centre de la Terre</text>
+  <!-- Arc de méridien -->
+  <path class="arc" d="M330,150 A180,180 0 0,0 236,52" />
+  <text class="lbl" x="330" y="140" text-anchor="start">arc de méridien</text>
+  <!-- Rayons délimitant 1 degré (exagéré) -->
+  <line class="radius" x1="70" y1="210" x2="330" y2="150" />
+  <line class="radius" x1="70" y1="210" x2="236" y2="52" />
+  <text class="lbl" x="250" y="110" text-anchor="middle" transform="rotate(-20 250 110)">1° de latitude = 60 minutes</text>
+  <!-- 1 minute (segment mis en avant) -->
+  <line class="minute" x1="330" y1="150" x2="316" y2="128" />
+  <text class="accent-t" x="342" y="176" text-anchor="middle">1 minute d'arc</text>
+  <text class="accent-t" x="342" y="192" text-anchor="middle">= 1 mille marin</text>
+  <text class="sub" x="342" y="208" text-anchor="middle">≈ 1852 m</text>
+</svg>

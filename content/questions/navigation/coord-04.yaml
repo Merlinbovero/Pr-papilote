@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.navigation.coord-04
+kind: calcul
+theme: terre-coordonnees
+statement: >-
+  À combien de milles marins correspond 1° de latitude ?
+answerValue: 60
+tolerance: 0
+unit: "milles marins"
+explanation: >-
+  Une minute d'arc de latitude vaut un mille marin, et 1° contient 60 minutes :
+  1° de latitude correspond donc à 60 milles marins.
+evaluates: [fondamentaux.navigation.terre-et-coordonnees]
+difficulty: 2
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie
