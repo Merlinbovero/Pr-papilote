@@ -51,4 +51,12 @@ Registre des évolutions envisagées (ch. 10 §7). Les idées y sont **décrites
 - Priorité : V3 (explicitement hors V1, arbitrage Prompt 1).
 - Statut : proposée.
 
+### IF-006 Illustrations photographiques annotées
+
+- Description : compléter les schémas par des **photographies annotées** d'aéronefs ou de pièces réelles (aile, profil, instrument), pour relier le schéma pédagogique au réel.
+- Justification : ancrer immédiatement la notion dans un aéronef concret (demande éditoriale, fiche « Le profil d'aile »).
+- Priorité : **V1 dès que possible**, mais **conditionnée** à deux prérequis : une image aux **droits établis** (règle absolue « aucune image sans droit établi » — CC0/domaine public ou autorisation) et le **pipeline d'images** (entité `image`, binaire en Storage — aujourd'hui différé à l'intégration Supabase). Le composant `ContentImage` (alt, dimensions, crédit) est déjà prêt à les afficher.
+- Risques / coût : rechercher et vérifier les licences ; jamais de photo sans droit. Ne pas fabriquer de fausse source.
+- Statut : proposée (slot réservé ; ni champ mort ni photo fabriquée en attendant).
+
 > Réévaluation : à chaque fin de cycle de production de contenu, ce registre est relu et repriorisé.
