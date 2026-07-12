@@ -1,0 +1,147 @@
+schemaVersion: 1
+id: fondamentaux.reglementation.espaces-aeriens
+type: concept
+title: Les espaces aériens
+slug: espaces-aeriens
+summary: >-
+  L'espace aérien est découpé en sept classes (A à G) pour la sécurité et la
+  séparation. Les classes A à E sont contrôlées, F et G non contrôlées ; A (IFR
+  seul) est la plus restrictive, G la plus libre. Des zones P, R et D s'y superposent.
+objectifs:
+  - Distinguer les espaces aériens contrôlés (A à E) et non contrôlés (F, G).
+  - Situer les sept classes de la plus restrictive (A, IFR seul) à la plus libre (G).
+  - Identifier les zones à statut particulier (P interdites, R réglementées, D dangereuses).
+aliases: [espaces aériens, classes d'espace, VFR, IFR, contrôlé, CTR, TMA, zones P R D]
+module: fondamentaux
+category: reglementation
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-huitième fiche du socle, les espaces aériens (bloc réglementation).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Classe d'espace aérien — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Classe_d'espace_a%C3%A9rien
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — réglementation"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.pression-et-calage
+content:
+  essentiel:
+    body: |
+      Le ciel n'est pas un espace libre : il est **découpé** en portions aux
+      règles précises, pour assurer la **sécurité** et la **séparation** des
+      aéronefs. L'OACI définit **sept classes**, de **A à G**.
+
+      On distingue d'abord deux grandes familles :
+
+      - les **espaces contrôlés** (**A à E**), où un **contrôle aérien** rend des
+        services et, selon la classe, **sépare** les avions ;
+      - les **espaces non contrôlés** (**F et G**), où le contrôle n'assure
+        **aucune séparation** — chacun assure sa propre sécurité.
+
+      La classe **A** est la plus **restrictive** (vols aux instruments, **IFR**,
+      uniquement) ; la classe **G** est la plus **libre**. Entre les deux, les
+      règles se relâchent progressivement, et le **vol à vue (VFR)** est admis à
+      partir de la classe B.
+    aRetenir:
+      - L'espace aérien est divisé en sept classes (A à G) pour assurer la sécurité et la séparation.
+      - Les classes A à E sont contrôlées ; les classes F et G ne le sont pas.
+      - La classe A (IFR seul) est la plus restrictive ; la classe G est la plus libre.
+      - Des zones à statut particulier — P interdites, R réglementées, D dangereuses — se superposent au découpage.
+  sections:
+    - id: pourquoi-decouper-le-ciel
+      title: Pourquoi découper le ciel
+      body: |
+        Avec des milliers d'avions en vol, laisser chacun voler « au hasard »
+        serait dangereux. L'espace aérien est donc **organisé** : découpé en
+        **volumes** aux règles connues, où des organismes de **contrôle** rendent
+        des **services** (séparation, information, alerte).
+
+        Deux types de vol coexistent :
+
+        - le **vol aux instruments (IFR)**, guidé par les instruments et le
+          contrôle, praticable sans visibilité ;
+        - le **vol à vue (VFR)**, où le pilote se dirige en **voyant** le sol et
+          les autres avions.
+
+        Selon la portion de ciel, l'un, l'autre ou les deux sont admis, avec des
+        exigences (contact **radio**, **clairance**, équipements) plus ou moins
+        strictes.
+    - id: les-classes-a-a-g
+      title: Les classes A à G
+      body: |
+        Les sept classes vont du plus **contrôlé** au plus **libre**.
+
+        **Espaces contrôlés (A à E)** — un contrôle aérien rend des services :
+
+        - **A** : **IFR seulement**, séparation de tous les vols. La plus
+          restrictive.
+        - **B** : IFR et VFR, séparation de tous.
+        - **C** : IFR et VFR ; le contrôle sépare les IFR entre eux et des VFR ;
+          les VFR reçoivent l'**information de trafic**.
+        - **D** : proche de C, mais la séparation vis-à-vis des VFR se fait
+          plutôt par **information**.
+        - **E** : le contrôle ne sépare que les **IFR entre eux** ; le VFR y est
+          admis **sans clairance**.
+
+        **Espaces non contrôlés (F et G)** — le contrôle **n'assure aucune
+        séparation** ; on y reçoit au plus un **service d'information de vol**.
+        La classe **G** est l'espace le plus libre.
+
+        La **radio** est obligatoire dans les classes contrôlées A à D.
+      figures:
+        - schemaId: classes-espaces
+          alt: Les sept classes d'espace aérien de A à G, les classes A à E contrôlées et F, G non contrôlées, du plus restrictif au plus libre.
+          caption: Sept classes, de A (contrôlée, IFR seul) à G (la plus libre) ; A à E sont contrôlées, F et G ne le sont pas.
+          width: 460
+          height: 220
+    - id: structure-et-zones-particulieres
+      title: Structure et zones particulières
+      strate: maitriser
+      body: |
+        Ces classes se répartissent dans une **structure** verticale et
+        horizontale.
+
+        - Autour d'un aérodrome contrôlé, une **CTR** (zone de contrôle) protège
+          les décollages et atterrissages, du sol jusqu'à une certaine hauteur.
+        - Au-dessus et autour, une **TMA** (région de contrôle terminale) gère
+          les arrivées et les départs.
+        - En route, des **voies aériennes (AWY)** et l'espace **supérieur**
+          (souvent classe A) canalisent le trafic.
+
+        Se superposent enfin des **zones à statut particulier**, à connaître
+        absolument :
+
+        - les zones **P** (**interdites**) : survol interdit (sites sensibles) ;
+        - les zones **R** (**réglementées**) : accès soumis à conditions ;
+        - les zones **D** (**dangereuses**) : activités dangereuses (tirs,
+          voltige militaire).
+
+        Préparer un vol, c'est d'abord savoir **dans quels espaces** on va passer
+        et **quelles règles** ils imposent.
+      figures:
+        - schemaId: structure-espace
+          alt: Une coupe de l'espace aérien avec la CTR autour de l'aérodrome, la TMA au-dessus, l'espace supérieur et une zone P/R/D à statut particulier.
+          caption: Autour d'un aérodrome, la CTR et la TMA structurent l'espace ; des zones P, R ou D à statut particulier s'y ajoutent.
+          width: 460
+          height: 260
+  pieges:
+    - Les classes A à E sont contrôlées, F et G ne le sont pas — le contrôle n'y assure aucune séparation.
+    - Le vol à vue (VFR) n'est pas admis en classe A, réservée aux vols aux instruments (IFR).
+    - Zones P, R et D — P interdite, R réglementée (sous conditions), D dangereuse ; ne pas les confondre.

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.reglementation.esp-02
+kind: qcm
+theme: espaces-aeriens
+statement: >-
+  Quelles classes correspondent à des espaces aériens contrôlés ?
+choices:
+  - "Les classes A à E"
+  - "Les classes A à G"
+  - "Les classes F et G seulement"
+  - "Les classes A et B seulement"
+correctChoices: [0]
+explanation: >-
+  Les classes A à E sont contrôlées (le contrôle rend des services et, selon la
+  classe, sépare les avions). Les classes F et G ne sont pas contrôlées.
+evaluates: [fondamentaux.reglementation.espaces-aeriens]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

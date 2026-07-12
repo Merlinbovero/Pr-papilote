@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .ctrl { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .free { stroke: currentColor; fill: none; stroke-width: 2; }
+    .letter { font-size: 22px; font-weight: 700; }
+    .brk { stroke: #3b82f6; fill: none; stroke-width: 1.5; }
+    .brkf { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .arrow { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Les classes d'espace aérien</text>
+  <!-- Brackets -->
+  <path class="brk" d="M32,84 L32,92 M316,84 L316,92 M32,84 L316,84" />
+  <text class="accent-t" x="174" y="76" text-anchor="middle">espace contrôlé (A–E)</text>
+  <path class="brkf" d="M322,84 L322,92 M432,84 L432,92 M322,84 L432,84" />
+  <text class="sub" x="377" y="76" text-anchor="middle">non contrôlé (F–G)</text>
+  <!-- Boxes A..E (contrôlé) -->
+  <rect class="ctrl" x="32" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="58" y="138" text-anchor="middle">A</text>
+  <rect class="ctrl" x="90" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="116" y="138" text-anchor="middle">B</text>
+  <rect class="ctrl" x="148" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="174" y="138" text-anchor="middle">C</text>
+  <rect class="ctrl" x="206" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="232" y="138" text-anchor="middle">D</text>
+  <rect class="ctrl" x="264" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="290" y="138" text-anchor="middle">E</text>
+  <!-- Boxes F,G (non contrôlé) -->
+  <rect class="free" x="322" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="348" y="138" text-anchor="middle">F</text>
+  <rect class="free" x="380" y="100" width="52" height="56" rx="4" />
+  <text class="letter" x="406" y="138" text-anchor="middle">G</text>
+  <!-- Flèche de gradient -->
+  <line class="arrow" x1="40" y1="182" x2="424" y2="182" marker-end="url(#a)" />
+  <text class="sub" x="232" y="200" text-anchor="middle">du plus contrôlé (A, IFR seul) au plus libre (G)</text>
+</svg>
