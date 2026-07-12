@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.equilibre-03
+kind: qcm
+theme: equilibre-centrage
+statement: >-
+  Qu'est-ce qui compense le moment piqueur créé par la portance de l'aile ?
+choices:
+  - "La déportance de l'empennage horizontal"
+  - "La poussée du moteur"
+  - "La traînée de l'aile"
+  - "Le poids appliqué au centre de gravité"
+correctChoices: [0]
+distractorNotes:
+  "3": "Le poids s'applique en G : il ne crée aucun moment de rotation."
+explanation: >-
+  La portance de l'aile, appliquée un peu en arrière du centre de gravité, fait
+  piquer l'avion. L'empennage horizontal produit une déportance qui, grâce à son
+  grand bras de levier, équilibre ce moment piqueur.
+evaluates: [fondamentaux.mecanique-du-vol.equilibre-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

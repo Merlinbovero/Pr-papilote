@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.equilibre-05
+kind: vrai-faux
+theme: equilibre-centrage
+statement: >-
+  Un centrage trop arrière rend l'avion plus sûr, car il devient plus léger à
+  piloter.
+answer: false
+explanation: >-
+  Un centrage trop arrière ne rend pas l'avion « plus léger » : il réduit sa
+  stabilité, le rend difficile à contrôler et dangereux, en particulier au
+  décrochage. Le centre de gravité doit toujours rester dans la plage définie
+  par le constructeur.
+evaluates: [fondamentaux.mecanique-du-vol.equilibre-et-centrage]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

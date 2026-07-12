@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.equilibre-02
+kind: vrai-faux
+theme: equilibre-centrage
+statement: >-
+  L'empennage horizontal produit une portance vers le haut qui soulève la queue
+  de l'avion.
+answer: false
+explanation: >-
+  L'empennage horizontal produit le plus souvent une déportance — une force
+  dirigée vers le bas. Grâce à son grand bras de levier, elle compense le moment
+  piqueur créé par la portance de l'aile et maintient l'équilibre longitudinal.
+evaluates: [fondamentaux.mecanique-du-vol.equilibre-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

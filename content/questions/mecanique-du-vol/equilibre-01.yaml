@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.equilibre-01
+kind: qcm
+theme: equilibre-centrage
+statement: >-
+  Autour de quel point un avion pivote-t-il en vol ?
+choices:
+  - "Son centre de gravité"
+  - "Le centre de son aile"
+  - "Le nez de l'appareil"
+  - "Son empennage arrière"
+correctChoices: [0]
+explanation: >-
+  L'avion tourne autour de son centre de gravité (G), le point d'équilibre de sa
+  masse. C'est en G que s'applique le poids, qui ne crée donc aucun moment de
+  rotation.
+evaluates: [fondamentaux.mecanique-du-vol.equilibre-et-centrage]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
