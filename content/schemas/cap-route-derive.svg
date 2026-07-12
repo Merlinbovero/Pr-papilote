@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .dir { stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .wind { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .arc { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Cap, route et dérive</text>
+  <!-- Repère nord -->
+  <line class="plane" x1="44" y1="70" x2="44" y2="40" marker-end="url(#a)" />
+  <text class="sub" x="44" y="86" text-anchor="middle">N</text>
+  <!-- Cap : axe de l'avion -->
+  <line class="dir" x1="140" y1="190" x2="306" y2="74" marker-end="url(#a)" />
+  <text class="lbl" x="300" y="66" text-anchor="middle">cap (nez de l'avion)</text>
+  <!-- Route : trace au sol -->
+  <line class="dir" x1="140" y1="190" x2="338" y2="120" marker-end="url(#a)" />
+  <text class="lbl" x="346" y="126" text-anchor="start">route (trace au sol)</text>
+  <!-- Vent de travers -->
+  <line class="wind" x1="214" y1="72" x2="250" y2="104" marker-end="url(#ac)" />
+  <text class="accent-t" x="210" y="66" text-anchor="end">vent</text>
+  <!-- Dérive -->
+  <path class="arc" d="M215,162 A80,80 0 0,0 206,144" />
+  <text class="sub" x="238" y="152" text-anchor="start">dérive</text>
+  <!-- Petit avion orienté au cap -->
+  <g transform="rotate(-35 140 190)">
+    <path class="plane" d="M132,190 C139,186 159,185 170,190 C159,195 139,195 132,190 Z" />
+    <path class="plane" d="M137,188 L132,179 L144,188 Z" />
+  </g>
+</svg>

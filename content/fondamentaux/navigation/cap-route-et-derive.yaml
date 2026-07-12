@@ -1,0 +1,132 @@
+schemaVersion: 1
+id: fondamentaux.navigation.cap-route-et-derive
+type: notion-navigation
+title: Cap, route et dérive
+slug: cap-route-et-derive
+summary: >-
+  Le cap est la direction du nez de l'avion (en degrés depuis le nord), la route
+  sa trajectoire réelle au sol. Le vent de travers crée un écart entre les deux,
+  la dérive, que le pilote corrige en pointant vers le vent. Le nord magnétique diffère du nord vrai.
+objectifs:
+  - Définir le cap (direction du nez, en degrés depuis le nord) et la route (trajectoire réelle au sol).
+  - Définir la dérive comme l'angle entre le cap et la route, dû au vent de travers, et expliquer sa correction.
+  - Distinguer le nord vrai et le nord magnétique et nommer la déclinaison magnétique.
+aliases: [cap, route, dérive, heading, track, nord vrai, nord magnétique, déclinaison]
+module: fondamentaux
+category: navigation
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-et-unième fiche du socle, cap, route et dérive (bloc navigation).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Cap (navigation) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Cap_(navigation)
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.navigation.terre-et-coordonnees
+    - fondamentaux.meteorologie.le-vent
+content:
+  essentiel:
+    body: |
+      Pour aller d'un point à un autre, un pilote doit maîtriser trois notions :
+      le **cap**, la **route** et la **dérive**.
+
+      Le **cap** est la direction vers laquelle **pointe le nez** de l'avion,
+      mesurée en **degrés** (de 0 à 360°) dans le sens des aiguilles d'une montre
+      à partir du **nord**. La **route** est la **trajectoire réellement suivie**
+      par rapport au sol.
+
+      Les deux **diffèrent** dès qu'il y a du **vent de travers**, qui pousse
+      l'avion sur le côté. L'angle entre le cap et la route est la **dérive**.
+      Pour suivre la route voulue, le pilote **corrige** son cap en « pointant »
+      vers le vent.
+    aRetenir:
+      - Le cap est la direction du nez de l'avion, en degrés (0 à 360°) depuis le nord.
+      - La route est la trajectoire réellement suivie par rapport au sol.
+      - La dérive est l'angle entre le cap et la route, due au vent de travers.
+      - Pour tenir sa route, le pilote corrige le cap en pointant vers le vent.
+  sections:
+    - id: le-cap-et-la-route
+      title: Le cap et la route
+      body: |
+        Le **cap** (*heading*) est la direction vers laquelle est **orienté le
+        nez** de l'avion. On le donne en **degrés**, de **0° à 360°**, mesurés
+        dans le **sens horaire** à partir du **nord** : cap 090 vers l'est, cap
+        180 vers le sud, cap 270 vers l'ouest.
+
+        La **route** (*track*) est la **trace au sol** de l'avion — le chemin
+        qu'il parcourt réellement au-dessus de la Terre.
+
+        Sans vent, **cap et route se confondent** : l'avion va là où il pointe.
+        Mais dès qu'un vent souffle **de travers**, tout change.
+    - id: la-derive
+      title: La dérive
+      body: |
+        Un **vent de travers** pousse l'avion **latéralement**. Résultat : sa
+        **trajectoire réelle** (la route) s'écarte de la direction de son **nez**
+        (le cap).
+
+        L'angle entre les deux — entre le **cap** et la **route** — est la
+        **dérive**. En vol, elle est due **uniquement au vent** : plus le vent
+        traversier est fort (et plus l'avion est lent), plus la dérive est
+        grande.
+
+        Pour ne pas être déporté, le pilote **corrige la dérive** : il oriente le
+        nez **vers le vent**, d'un angle égal à la dérive. Ainsi, même si l'avion
+        « regarde » un peu de côté, sa **route** reste celle qu'il visait — c'est
+        le principe du vol **en crabe**.
+      figures:
+        - schemaId: cap-route-derive
+          alt: Un avion dont le nez pointe selon le cap tandis que sa route au sol est déviée par un vent de travers, l'angle entre les deux étant la dérive.
+          caption: Le vent de travers écarte la route du cap ; l'angle entre les deux est la dérive, que le pilote corrige en pointant vers le vent.
+          width: 460
+          height: 260
+    - id: les-trois-nords-et-la-declinaison
+      title: Les nords et la déclinaison
+      strate: maitriser
+      body: |
+        Encore faut-il savoir **de quel nord** on parle.
+
+        - Le **nord vrai (géographique)** est la direction du **pôle Nord**, le
+          long des méridiens. C'est le nord des **cartes**.
+        - Le **nord magnétique** est la direction indiquée par la **boussole** ;
+          il pointe vers le **pôle Nord magnétique**, qui n'est **pas** au même
+          endroit et se **déplace** lentement.
+
+        L'angle entre les deux est la **déclinaison magnétique (D)**. Elle fait
+        la différence entre le **cap vrai** (par rapport au nord géographique) et
+        le **cap magnétique** (celui que suit le pilote à la boussole). Cette
+        correction, et la façon de l'appliquer, sont détaillées dans la fiche
+        « La déclinaison magnétique ».
+
+        Une **estimation** rapide de la dérive est possible : à angle faible, la
+        dérive (en degrés) vaut environ le **vent traversier divisé par la
+        vitesse propre**, multiplié par 60 — un usage direct de la
+        **trigonométrie** approchée, développé avec le calcul de navigation.
+      figures:
+        - schemaId: nord-vrai-magnetique
+          alt: Deux flèches nord, l'une vers le nord vrai géographique et l'autre vers le nord magnétique, séparées par l'angle de déclinaison.
+          caption: Le nord magnétique (boussole) diffère du nord vrai (carte) ; leur écart est la déclinaison magnétique.
+          width: 420
+          height: 240
+  pieges:
+    - Le cap (où pointe le nez) n'est pas la route (où va réellement l'avion) — le vent les sépare.
+    - En navigation aérienne, la dérive est due uniquement au vent, pas à un « courant ».
+    - Le nord magnétique (boussole) diffère du nord vrai (carte) — l'écart est la déclinaison, à prendre en compte.
