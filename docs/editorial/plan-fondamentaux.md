@@ -131,3 +131,20 @@ Peu, et seulement en **référence** : DGAC/SIA (programme BIA, réglementation)
 5. Puis famille suivante (EOPAN), et le **Dictionnaire en dernier**.
 
 Chaque fiche : gabarit officiel, sources vérifiées, relations au graphe, compétences déclarées, passage `content:check` avant `publie`.
+
+## 10. Séquence validée des dix premières fiches (2026-07-09)
+
+Ordre pédagogique optimisé (parcours global, pas seulement des fiches isolées). Chaque fiche est prérequis de la suivante.
+
+1. Le Système international d'unités (SI) et les unités aéronautiques — **publiée**
+2. Pression, forces et unités — **publiée**
+3. L'air et ses propriétés
+4. L'atmosphère standard (ISA)
+5. L'écoulement de l'air
+6. Le profil d'aile
+7. La portance
+8. La traînée
+9. Les quatre forces du vol
+10. Le décrochage aérodynamique
+
+**L'atmosphère standard (ISA)** est avancée en 4ᵉ position : présentée juste après les propriétés de l'air, elle sert de référence à la météorologie, aux instruments, aux performances et à une grande partie de l'aérodynamique. **L'équilibre et le centrage** suit immédiatement cette séquence (fiche 11).
