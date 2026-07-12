@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.physique.pression-04
+kind: calcul
+theme: force-pression
+statement: >-
+  À combien de pascals correspondent 1013 hectopascals ?
+answerValue: 101300
+tolerance: 0
+unit: "Pa"
+explanation: >-
+  1 hPa = 100 Pa. Donc 1013 hPa = 101 300 Pa. Attention au facteur 100 entre le
+  pascal et l'hectopascal.
+evaluates: [fondamentaux.physique.pression-forces-unites]
+difficulty: 2
+competencies: [connaissances-aeronautiques, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

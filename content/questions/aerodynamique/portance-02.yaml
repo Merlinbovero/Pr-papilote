@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.portance-02
+kind: qcm
+theme: portance
+statement: >-
+  Comment la portance varie-t-elle avec la vitesse ?
+choices:
+  - "Elle croît avec le carré de la vitesse"
+  - "Elle est proportionnelle à la vitesse"
+  - "Elle diminue quand la vitesse augmente"
+  - "Elle ne dépend pas de la vitesse"
+correctChoices: [0]
+explanation: >-
+  La portance croît avec le carré de la vitesse : doubler la vitesse, à incidence
+  constante, quadruple la portance.
+evaluates: [fondamentaux.aerodynamique.portance]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

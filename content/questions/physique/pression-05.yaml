@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.physique.pression-05
+kind: qcm
+theme: force-pression
+statement: >-
+  À force égale, comment varie la pression si la surface d'appui diminue ?
+choices:
+  - "Elle augmente"
+  - "Elle diminue"
+  - "Elle reste constante"
+  - "Elle s'annule"
+correctChoices: [0]
+explanation: >-
+  À force égale, plus la surface est petite, plus la pression est forte
+  (p = F / S). C'est pourquoi une lame fine coupe et un ski large ne s'enfonce pas.
+evaluates: [fondamentaux.physique.pression-forces-unites]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

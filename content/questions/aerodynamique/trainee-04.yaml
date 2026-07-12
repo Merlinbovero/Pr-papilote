@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.trainee-04
+kind: qcm
+theme: trainee
+statement: >-
+  Qu'appelle-t-on la finesse d'un avion ?
+choices:
+  - "Le rapport portance / traînée"
+  - "Le rapport poids / poussée"
+  - "Sa vitesse maximale"
+  - "La surface de son aile"
+correctChoices: [0]
+explanation: >-
+  La finesse est le rapport portance / traînée, un nombre sans unité qui mesure
+  l'efficacité aérodynamique.
+evaluates: [fondamentaux.aerodynamique.trainee]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

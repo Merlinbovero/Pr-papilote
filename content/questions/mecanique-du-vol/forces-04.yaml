@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.forces-04
+kind: vrai-faux
+theme: quatre-forces
+statement: >-
+  Un avion en palier à vitesse constante est en équilibre, même s'il avance vite.
+answer: true
+explanation: >-
+  Équilibre ne signifie pas immobilité : la résultante des forces est nulle,
+  l'avion avance à vitesse constante sans accélérer ni changer d'altitude.
+evaluates: [fondamentaux.mecanique-du-vol.quatre-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

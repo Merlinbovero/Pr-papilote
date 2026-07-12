@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.ecoulement-05
+kind: vrai-faux
+theme: ecoulement-air
+statement: >-
+  L'effet Venturi (le lien vitesse-pression) suffit à lui seul à expliquer la portance d'une aile.
+answer: false
+explanation: >-
+  Le lien vitesse-pression est réel, mais il n'explique pas à lui seul la
+  portance. D'autres effets interviennent (voir la fiche « La portance »).
+evaluates: [fondamentaux.aerodynamique.ecoulement-de-l-air]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

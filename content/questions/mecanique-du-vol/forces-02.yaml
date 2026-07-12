@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.forces-02
+kind: association
+theme: quatre-forces
+statement: >-
+  Associez chaque force du vol à sa direction.
+pairs:
+  - left: "Poids"
+    right: "Vers le bas"
+  - left: "Poussée"
+    right: "Vers l'avant"
+  - left: "Traînée"
+    right: "Vers l'arrière"
+explanation: >-
+  Le poids agit vers le bas, la poussée vers l'avant, la traînée vers l'arrière ;
+  la portance, elle, agit vers le haut, perpendiculaire au vent relatif.
+evaluates: [fondamentaux.mecanique-du-vol.quatre-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

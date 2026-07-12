@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.portance-01
+kind: qcm
+theme: portance
+statement: >-
+  Quel est le rôle de la portance ?
+choices:
+  - "Elle soutient l'avion, perpendiculairement au vent relatif"
+  - "Elle freine l'avion"
+  - "Elle propulse l'avion vers l'avant"
+  - "Elle alourdit l'avion"
+correctChoices: [0]
+explanation: >-
+  La portance est la force qui soutient l'avion ; elle est perpendiculaire au
+  vent relatif et s'oppose au poids.
+evaluates: [fondamentaux.aerodynamique.portance]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

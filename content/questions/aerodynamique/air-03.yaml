@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: q.aerodynamique.air-03
+kind: vrai-faux
+theme: proprietes-air
+statement: >-
+  L'air chaud est plus dense que l'air froid.
+answer: false
+explanation: >-
+  C'est l'inverse : l'air chaud se dilate et devient moins dense que l'air froid.
+evaluates: [fondamentaux.aerodynamique.air-et-proprietes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

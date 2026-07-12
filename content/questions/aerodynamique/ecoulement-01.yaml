@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.ecoulement-01
+kind: qcm
+theme: ecoulement-air
+statement: >-
+  Comment visualise-t-on l'écoulement de l'air autour d'une aile ?
+choices:
+  - "Par des filets d'air (lignes de courant)"
+  - "Par des flèches de force"
+  - "Par des isobares"
+  - "Par des vecteurs de poids"
+correctChoices: [0]
+explanation: >-
+  On visualise l'écoulement par des filets d'air (lignes de courant) : chaque
+  filet est la trajectoire suivie par une petite portion d'air.
+evaluates: [fondamentaux.aerodynamique.ecoulement-de-l-air]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

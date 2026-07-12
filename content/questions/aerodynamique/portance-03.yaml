@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.portance-03
+kind: vrai-faux
+theme: portance
+statement: >-
+  Le « mythe du temps de transit égal » explique correctement la portance d'une aile.
+answer: false
+explanation: >-
+  Ce mythe est faux : les mesures montrent que l'air de l'extrados arrive en
+  avance. Il n'explique pas la portance.
+evaluates: [fondamentaux.aerodynamique.portance]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

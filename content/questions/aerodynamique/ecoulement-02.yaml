@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.ecoulement-02
+kind: qcm
+theme: ecoulement-air
+statement: >-
+  Dans un rétrécissement, que fait la vitesse de l'air ?
+choices:
+  - "Elle augmente"
+  - "Elle diminue"
+  - "Elle s'annule"
+  - "Elle ne change pas"
+correctChoices: [0]
+explanation: >-
+  Le débit se conserve (vitesse × surface). Si la section se resserre, la vitesse
+  augmente, comme l'eau d'une rivière dans un passage étroit.
+evaluates: [fondamentaux.aerodynamique.ecoulement-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
