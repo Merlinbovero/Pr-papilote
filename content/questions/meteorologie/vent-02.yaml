@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.vent-02
+kind: qcm
+theme: le-vent
+statement: >-
+  D'où souffle un vent annoncé « 270° » ?
+choices:
+  - "De l'ouest"
+  - "De l'est"
+  - "Du nord"
+  - "Du sud"
+correctChoices: [0]
+explanation: >-
+  On nomme le vent par la direction d'où il vient. 270° correspond à l'ouest : ce
+  vent souffle donc de l'ouest vers l'est.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

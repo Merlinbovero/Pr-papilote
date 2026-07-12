@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.vent-01
+kind: qcm
+theme: le-vent
+statement: >-
+  Qu'est-ce qui est à l'origine du vent ?
+choices:
+  - "Les différences de pression"
+  - "La rotation des hélices"
+  - "La seule chaleur du soleil"
+  - "Le passage des nuages"
+correctChoices: [0]
+explanation: >-
+  Le vent naît des différences de pression : l'air s'écoule des hautes pressions
+  vers les basses pressions pour rééquilibrer l'atmosphère.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 1
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

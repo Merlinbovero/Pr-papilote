@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.vent-03
+kind: vrai-faux
+theme: le-vent
+statement: >-
+  Un vent de face augmente la vitesse de l'avion par rapport au sol.
+answer: false
+explanation: >-
+  Un vent de face réduit la vitesse sol (il freine la progression sur le sol).
+  C'est le vent arrière qui, lui, augmente la vitesse sol.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

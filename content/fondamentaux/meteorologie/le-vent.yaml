@@ -1,0 +1,140 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.le-vent
+type: notion-meteo
+title: Le vent
+slug: le-vent
+summary: >-
+  Le vent est le déplacement horizontal de l'air, des hautes vers les basses
+  pressions. On le décrit par sa direction (d'où il vient, en degrés) et sa
+  vitesse (en nœuds). Il déplace la masse d'air — vitesse propre et vitesse sol diffèrent.
+objectifs:
+  - Définir le vent (déplacement horizontal de l'air dû aux différences de pression) et le décrire par sa direction et sa vitesse.
+  - Expliquer la convention de direction (le vent est nommé d'où il vient) et son unité (le nœud).
+  - Distinguer vitesse propre et vitesse sol, et expliquer les effets d'un vent de face, arrière et de travers.
+aliases: [vent, direction du vent, nœuds, vitesse sol, vitesse propre, dérive, vent de face]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — seizième fiche du socle, le vent et son effet sur le vol (bloc météorologie).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Comprendre le vent — Météo-France"
+    url: https://meteofrance.com/comprendre-la-meteo/le-vent
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.physique.pression-forces-unites
+  related:
+    - fondamentaux.meteorologie.pression-et-calage
+content:
+  essentiel:
+    body: |
+      Le **vent** est le **déplacement horizontal de l'air**. Il naît des
+      **différences de pression** : l'air s'écoule des **hautes** pressions vers
+      les **basses** pressions, comme pour rééquilibrer l'atmosphère.
+
+      On le décrit par deux nombres : sa **direction** — celle **d'où il vient**,
+      exprimée en degrés par rapport au nord — et sa **vitesse**, en **nœuds**.
+      Un vent « 270° / 15 kt » vient de l'ouest à 15 nœuds.
+
+      Pour le vol, le vent est capital : il déplace toute la **masse d'air** dans
+      laquelle l'avion évolue. Il modifie donc la trajectoire et la vitesse de
+      l'avion **par rapport au sol**.
+    aRetenir:
+      - Le vent est le déplacement horizontal de l'air, des hautes pressions vers les basses pressions.
+      - On le décrit par sa direction (celle d'où il vient, en degrés) et sa vitesse (en nœuds).
+      - Le vent déplace la masse d'air — la vitesse par rapport au sol diffère de la vitesse dans l'air.
+      - On décolle et on atterrit face au vent, qui réduit la vitesse sol et la distance nécessaire.
+  sections:
+    - id: qu-est-ce-que-le-vent
+      title: Qu'est-ce que le vent ?
+      body: |
+        Le **vent** est le **mouvement horizontal** de l'air. Son moteur : les
+        **différences de pression** d'un endroit à l'autre. Là où l'air est plus
+        comprimé (hautes pressions), il pousse vers là où il l'est moins (basses
+        pressions). Plus l'écart de pression est marqué sur une courte distance,
+        plus le vent est **fort**.
+
+        On caractérise un vent par deux grandeurs :
+
+        - sa **direction**, celle **d'où il souffle**, donnée en **degrés** par
+          rapport au nord (un vent de 360° vient du nord, de 090° de l'est, de
+          270° de l'ouest) ;
+        - sa **vitesse** (ou force), donnée en **nœuds**.
+
+        Attention à la convention : on nomme toujours le vent par la direction
+        **d'où il vient**, jamais vers où il va.
+      figures:
+        - schemaId: vent-pression
+          alt: Deux zones de pression, une haute (A) et une basse (D), avec le vent soufflant de la haute vers la basse pression.
+          caption: Le vent naît des différences de pression et souffle des hautes vers les basses pressions.
+          width: 460
+          height: 240
+    - id: le-vent-et-le-vol
+      title: Le vent et le vol
+      body: |
+        L'avion ne vole pas « sur » le sol, mais **dans une masse d'air** — et
+        cette masse d'air **bouge** avec le vent. Il faut donc distinguer deux
+        vitesses :
+
+        - la **vitesse propre** (ou vitesse air) : celle de l'avion **par rapport
+          à l'air** ;
+        - la **vitesse sol** : celle de l'avion **par rapport au sol**.
+
+        Le vent fait la différence entre les deux :
+
+        - un **vent de face** **réduit** la vitesse sol ;
+        - un **vent arrière** l'**augmente** ;
+        - un **vent de travers** **pousse** l'avion sur le côté : l'avion
+          « **dérive** », et sa route s'écarte de son cap.
+
+        Voler dans le vent, c'est un peu comme nager dans une rivière : on avance
+        dans l'eau, mais le courant nous emporte aussi.
+      figures:
+        - schemaId: triangle-des-vitesses
+          alt: Un triangle des vitesses où la vitesse propre plus le vent donnent la vitesse sol, avec un angle de dérive.
+          caption: La vitesse sol (route) est la somme de la vitesse propre et du vent ; le vent de travers crée la dérive.
+          width: 460
+          height: 260
+    - id: decoller-et-se-diriger-avec-le-vent
+      title: Décoller et se diriger avec le vent
+      strate: maitriser
+      body: |
+        Deux conséquences pratiques.
+
+        **Au décollage et à l'atterrissage**, on se place **face au vent**. Le
+        vent de face **ajoute** sa vitesse à celle de l'air sur l'aile : l'avion
+        atteint sa portance à une **vitesse sol plus faible**, ce qui
+        **raccourcit** la distance nécessaire. C'est pourquoi la piste en service
+        change selon le vent.
+
+        **En navigation**, le vent de travers oblige à **corriger le cap** : le
+        pilote « pointe » légèrement le nez **vers le vent** pour que sa **route**
+        réelle reste la bonne. Cette correction — la **dérive** — sera calculée
+        dans la fiche « Cap, route et dérive ».
+
+        À plus grande échelle, le vent n'est pas exactement dirigé des hautes vers
+        les basses pressions : la **rotation de la Terre** (force de Coriolis) le
+        **dévie**, si bien qu'en altitude il souffle presque **parallèlement aux
+        isobares**. Ce raffinement est simplement introduit ici.
+  pieges:
+    - Le vent est nommé par la direction d'où il vient — un « vent d'ouest » souffle depuis l'ouest, vers l'est.
+    - Ne pas confondre vitesse propre (dans l'air) et vitesse sol (par rapport au sol) — le vent fait toute la différence.
+    - On décolle et on atterrit face au vent, jamais vent arrière — le vent de face réduit la distance nécessaire.
