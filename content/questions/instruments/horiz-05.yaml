@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.instruments.horiz-05
+kind: vrai-faux
+theme: horizon-artificiel
+statement: >-
+  L'horizon artificiel est particulièrement utile pour voler dans les nuages ou
+  de nuit.
+answer: true
+explanation: >-
+  Sans référence visuelle extérieure (nuages, nuit), les sensations trompent le
+  pilote : l'horizon artificiel devient indispensable pour connaître l'assiette.
+evaluates: [fondamentaux.instruments.horizon-artificiel]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

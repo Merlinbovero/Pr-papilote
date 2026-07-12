@@ -1,0 +1,134 @@
+schemaVersion: 1
+id: fondamentaux.instruments.horizon-artificiel
+type: concept
+title: L'horizon artificiel
+slug: horizon-artificiel
+summary: >-
+  L'horizon artificiel indique l'assiette de l'avion (tangage et roulis) par
+  rapport à l'horizon, indispensable au vol sans visibilité. Il repose sur un
+  gyroscope dont l'axe garde une direction fixe. Le cadran montre une maquette fixe devant le ciel (bleu) et la terre (marron).
+objectifs:
+  - Définir l'assiette (tangage et roulis) et le rôle de l'horizon artificiel, indispensable au vol sans visibilité.
+  - Expliquer le principe du gyroscope (fixité de l'axe dans l'espace) et son entraînement.
+  - Lire l'horizon artificiel (maquette fixe, ciel et terre, ligne d'horizon, échelle d'inclinaison).
+aliases:
+  [horizon artificiel, assiette, gyroscope, tangage, roulis, instrument gyroscopique, maquette]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-septième fiche du socle, l'horizon artificiel (bloc instruments).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Horizon artificiel — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Horizon_artificiel
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — instruments"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.mecanique-du-vol.axes-et-gouvernes
+content:
+  essentiel:
+    body: |
+      L'**horizon artificiel** indique l'**assiette** de l'avion — son
+      **tangage** (nez haut ou bas) et son **roulis** (inclinaison) — par rapport
+      à l'horizon. C'est l'instrument **indispensable** pour voler **sans
+      référence visuelle extérieure**, dans les nuages ou de nuit.
+
+      Son principe est le **gyroscope** : une toupie qui tourne très vite garde
+      la **direction de son axe fixe dans l'espace**, quels que soient les
+      mouvements de l'avion. L'instrument compare donc en permanence l'**avion** à
+      cette référence stable.
+
+      Sur le cadran, une **maquette d'avion fixe** se détache devant une sphère
+      mobile : le **ciel** en **bleu** au-dessus, la **terre** en **marron** en
+      dessous, séparés par la **ligne d'horizon**.
+    aRetenir:
+      - L'horizon artificiel indique l'assiette de l'avion (tangage et roulis) par rapport à l'horizon.
+      - Il repose sur un gyroscope, dont l'axe garde une direction fixe dans l'espace.
+      - Il est indispensable au vol sans visibilité (nuages, nuit).
+      - Le cadran montre une maquette d'avion fixe, le ciel (bleu) et la terre (marron) séparés par la ligne d'horizon.
+  sections:
+    - id: indiquer-l-assiette
+      title: Indiquer l'assiette
+      body: |
+        Sans repères extérieurs — dans un nuage, la nuit —, un pilote **perd**
+        vite le sens de la verticale : ses sensations le trompent. Il lui faut un
+        instrument qui montre en permanence l'**assiette** de l'avion.
+
+        L'assiette se décrit par deux angles, déjà rencontrés avec les axes :
+
+        - le **tangage** : le nez **au-dessus** ou **au-dessous** de l'horizon
+          (montée, descente) ;
+        - le **roulis** : l'**inclinaison** des ailes (virage).
+
+        L'horizon artificiel affiche les deux **d'un seul coup d'œil**. C'est
+        pourquoi il occupe la place **centrale** du tableau de bord.
+    - id: le-principe-du-gyroscope
+      title: Le principe du gyroscope
+      body: |
+        Le cœur de l'instrument est un **gyroscope** : un petit **rotor** qui
+        tourne à très grande vitesse (entraîné par un moteur **électrique** ou par
+        une **dépression**).
+
+        Un gyroscope possède une propriété remarquable, la **fixité** : tant
+        qu'il tourne, son **axe garde sa direction dans l'espace**, quels que
+        soient les mouvements de son support. Monté sur des **cardans** (des
+        anneaux articulés), le rotor reste ainsi **stable** pendant que l'avion
+        **pivote autour de lui**.
+
+        L'horizon artificiel exploite cette stabilité : le gyroscope matérialise
+        une **verticale de référence**, et l'instrument mesure l'écart entre
+        l'avion et elle.
+      figures:
+        - schemaId: gyroscope-fixite
+          alt: Un gyroscope monté sur cardans, son rotor en rotation rapide gardant la direction de son axe fixe pendant que le support bouge.
+          caption: Un gyroscope en rotation garde la direction de son axe dans l'espace, quels que soient les mouvements de l'avion.
+          width: 420
+          height: 260
+    - id: lire-l-horizon-artificiel
+      title: Lire l'horizon artificiel
+      strate: maitriser
+      body: |
+        La lecture est **intuitive**, car l'image reproduit ce que verrait le
+        pilote dehors.
+
+        - Une **maquette d'avion**, **fixe** au centre, représente l'appareil vu
+          de derrière.
+        - Derrière elle, une sphère mobile montre le **ciel (bleu)** en haut et
+          la **terre (marron)** en bas, séparés par la **ligne d'horizon**.
+        - Si le nez **monte**, l'horizon **descend** sous la maquette ; s'il
+          **descend**, l'horizon monte.
+        - Si l'avion **s'incline**, l'horizon **bascule** ; une **échelle** en
+          haut du cadran donne l'**angle d'inclinaison** (10°, 20°, 30°, 45°,
+          60°).
+
+        L'horizon artificiel fait partie des instruments **gyroscopiques**, avec
+        le **conservateur de cap** (directionnel) et l'**indicateur de virage**.
+        Comme tous, il craint les **pannes d'alimentation** (électrique ou
+        dépression), d'où la présence d'instruments de **secours**.
+      figures:
+        - schemaId: horizon-artificiel-lecture
+          alt: Un cadran d'horizon artificiel avec le ciel bleu, la terre marron, la ligne d'horizon inclinée et la maquette d'avion jaune fixe au centre.
+          caption: La maquette d'avion reste fixe ; le ciel (bleu) et la terre (marron) basculent derrière elle pour montrer l'assiette.
+          width: 320
+          height: 320
+  pieges:
+    - L'horizon artificiel indique l'assiette (tangage et roulis), pas l'altitude ni la vitesse.
+    - C'est la maquette d'avion qui est fixe ; c'est l'horizon (ciel et terre) qui bouge derrière elle.
+    - Instrument gyroscopique, il dépend d'une alimentation (électrique ou dépression) — une panne le rend inutilisable.

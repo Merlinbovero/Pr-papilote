@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.instruments.horiz-03
+kind: vrai-faux
+theme: horizon-artificiel
+statement: >-
+  Sur l'horizon artificiel, c'est la maquette d'avion qui bouge et l'horizon qui
+  reste fixe.
+answer: false
+explanation: >-
+  C'est l'inverse : la maquette d'avion est fixe au centre, et c'est l'horizon
+  (le ciel et la terre) qui bascule derrière elle pour montrer l'assiette.
+evaluates: [fondamentaux.instruments.horizon-artificiel]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
