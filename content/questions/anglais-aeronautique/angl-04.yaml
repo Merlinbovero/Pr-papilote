@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.angl-04
+kind: qcm
+theme: vocabulaire-vol
+statement: >-
+  Que signifie « Roger » en phraséologie aéronautique ?
+choices:
+  - "Bien reçu (message compris)"
+  - "Oui"
+  - "Je m'exécute"
+  - "Répétez"
+correctChoices: [0]
+distractorNotes:
+  "2": "« Je m'exécute » se dit « Wilco » (will comply)."
+explanation: >-
+  « Roger » signifie que le message a été bien reçu et compris. Pour indiquer
+  qu'on va exécuter l'instruction, on dit « Wilco ».
+evaluates: [fondamentaux.anglais-aeronautique.vocabulaire-de-base]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

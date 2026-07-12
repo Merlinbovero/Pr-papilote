@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.angl-03
+kind: qcm
+theme: vocabulaire-vol
+statement: >-
+  À la radio, que dit-on pour « oui » en phraséologie standard ?
+choices:
+  - "Affirm"
+  - "Yes"
+  - "Roger"
+  - "OK"
+correctChoices: [0]
+distractorNotes:
+  "2": "« Roger » signifie « bien reçu », pas « oui »."
+explanation: >-
+  « Affirm » signifie oui et « Negative » signifie non. Les mots « yes », « no »
+  et « OK » sont proscrits à la radio, car trop ambigus.
+evaluates: [fondamentaux.anglais-aeronautique.vocabulaire-de-base]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

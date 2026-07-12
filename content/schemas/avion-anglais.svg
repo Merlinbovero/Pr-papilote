@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .en { font-size: 12px; font-weight: 600; }
+    .fr { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .lead { stroke: #94a3b8; fill: none; stroke-width: 1; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Les parties de l'avion (EN / FR)</text>
+  <!-- Fuselage -->
+  <path class="plane" d="M118,138 C160,128 300,130 336,136 C350,138 350,148 336,150 C300,156 160,158 118,148 C110,145 110,141 118,138 Z" />
+  <!-- Dérive + empennage -->
+  <path class="plane" d="M132,136 L120,110 L150,134 Z" />
+  <line class="plane" x1="112" y1="143" x2="150" y2="143" />
+  <!-- Cockpit -->
+  <path class="plane" d="M300,132 q14,-12 30,-2" />
+  <!-- Aile + volet -->
+  <path class="plane" d="M214,150 L252,150 L238,180 L202,180 Z" />
+  <!-- Train d'atterrissage -->
+  <line class="plane" x1="220" y1="180" x2="220" y2="200" />
+  <circle class="plane" cx="220" cy="205" r="7" />
+  <line class="plane" x1="320" y1="150" x2="320" y2="196" />
+  <circle class="plane" cx="320" cy="201" r="7" />
+  <!-- Hélice -->
+  <line class="plane" x1="346" y1="122" x2="346" y2="164" stroke-width="2.5" />
+  <!-- Étiquettes -->
+  <line class="lead" x1="316" y1="126" x2="300" y2="72" />
+  <text class="en" x="300" y="60" text-anchor="middle">cockpit</text>
+  <text class="fr" x="300" y="74" text-anchor="middle">(poste de pilotage)</text>
+  <line class="lead" x1="130" y1="120" x2="70" y2="86" />
+  <text class="en" x="66" y="74" text-anchor="end">tail / fin</text>
+  <text class="fr" x="66" y="88" text-anchor="end">(empennage)</text>
+  <line class="lead" x1="224" y1="172" x2="150" y2="212" />
+  <text class="en" x="146" y="216" text-anchor="end">wing</text>
+  <text class="fr" x="146" y="230" text-anchor="end">(aile)</text>
+  <line class="lead" x1="320" y1="196" x2="378" y2="214" />
+  <text class="en" x="382" y="210" text-anchor="start">landing gear</text>
+  <text class="fr" x="382" y="224" text-anchor="start">(train)</text>
+  <line class="lead" x1="346" y1="126" x2="392" y2="92" />
+  <text class="en" x="396" y="82" text-anchor="start">propeller</text>
+  <text class="fr" x="396" y="96" text-anchor="start">(hélice)</text>
+</svg>
