@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .ground { stroke: currentColor; fill: none; stroke-width: 2; }
+    .measure { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .guide { stroke: #94a3b8; fill: none; stroke-width: 1; stroke-dasharray: 4 4; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Les calages QNH et QFE</text>
+  <!-- Niveau de la mer -->
+  <line class="ground" x1="30" y1="240" x2="300" y2="240" />
+  <text class="sub" x="30" y="256" text-anchor="start">niveau de la mer (0)</text>
+  <!-- Aérodrome (relief) -->
+  <path class="ground" d="M300,240 L300,190 L436,190 L436,240" />
+  <line class="ground" x1="322" y1="190" x2="418" y2="190" />
+  <text class="sub" x="368" y="208" text-anchor="middle">aérodrome</text>
+  <!-- Avion en vol -->
+  <path class="plane" d="M205,82 C212,78 232,77 244,82 C232,87 212,87 205,82 Z" />
+  <path class="plane" d="M210,80 L205,71 L217,80 Z" />
+  <!-- Guides horizontaux -->
+  <line class="guide" x1="62" y1="82" x2="372" y2="82" />
+  <!-- QNH : altitude / mer -->
+  <line class="measure" x1="62" y1="240" x2="62" y2="82" marker-start="url(#ac)" marker-end="url(#ac)" />
+  <text class="accent-t" x="72" y="150" text-anchor="start">altitude</text>
+  <text class="accent-t" x="72" y="166" text-anchor="start">(QNH)</text>
+  <!-- QFE : hauteur / aérodrome -->
+  <line class="measure" x1="372" y1="190" x2="372" y2="82" marker-start="url(#ac)" marker-end="url(#ac)" />
+  <text class="accent-t" x="362" y="132" text-anchor="end">hauteur</text>
+  <text class="accent-t" x="362" y="148" text-anchor="end">(QFE)</text>
+  <text class="sub" x="230" y="274" text-anchor="middle">au sol, l'altimètre indique l'altitude du terrain (QNH) ou 0 (QFE)</text>
+</svg>

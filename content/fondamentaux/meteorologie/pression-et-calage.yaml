@@ -1,0 +1,135 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.pression-et-calage
+type: notion-meteo
+title: La pression et le calage altimétrique
+slug: pression-et-calage
+summary: >-
+  L'altimètre mesure une pression et la traduit en altitude selon l'ISA ; il faut
+  lui donner un calage. Le QNH donne l'altitude (mer), le QFE la hauteur
+  (aérodrome), le calage standard 1013 hPa les niveaux de vol. 1 hPa vaut ~28 ft.
+objectifs:
+  - Expliquer que l'altimètre mesure une pression convertie en altitude et qu'il nécessite un calage.
+  - Distinguer les calages QNH (altitude/mer), QFE (hauteur/aérodrome) et standard 1013 hPa (niveaux de vol).
+  - Énoncer la règle de sécurité « du fort vers le faible, attention danger » et l'ordre de grandeur 1 hPa vaut environ 28 ft.
+aliases: [calage, QNH, QFE, QNE, "1013", altimètre, niveau de vol, altitude de transition]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — quinzième fiche du socle, la pression et le calage altimétrique (bloc météorologie).
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie et altimétrie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Calage altimétrique — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Calage_altim%C3%A9trique
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.atmosphere-standard
+    - fondamentaux.physique.pression-forces-unites
+content:
+  essentiel:
+    body: |
+      L'**altimètre** ne mesure pas directement une altitude : il mesure une
+      **pression**, qui diminue avec l'altitude, puis la traduit en hauteur à
+      l'aide du modèle **ISA**. Encore faut-il lui préciser **à partir de quelle
+      pression** compter : c'est le **calage altimétrique**.
+
+      Trois calages principaux existent :
+
+      - le **QNH** — l'altimètre affiche l'**altitude** par rapport au **niveau de
+        la mer** (au sol sur un aérodrome, il indique l'altitude du terrain) ;
+      - le **QFE** — l'altimètre affiche la **hauteur** par rapport à
+        l'**aérodrome** (au sol, il indique 0) ;
+      - le **calage standard 1013,25 hPa** — au-dessus d'une certaine altitude,
+        tous les avions l'adoptent pour voler en **niveaux de vol (FL)**, sur une
+        référence commune.
+
+      Une variation de **1 hPa** correspond à environ **28 pieds** — d'où
+      l'importance d'un calage juste.
+    aRetenir:
+      - L'altimètre mesure une pression et la convertit en altitude selon l'ISA ; il faut lui fournir un calage.
+      - QNH — l'altimètre indique l'altitude par rapport au niveau de la mer (au sol, l'altitude du terrain).
+      - QFE — l'altimètre indique la hauteur par rapport à l'aérodrome (au sol, il indique 0).
+      - Calage standard 1013,25 hPa — au-dessus de l'altitude de transition, on vole en niveaux de vol sur une référence commune ; 1 hPa vaut environ 28 ft.
+  sections:
+    - id: l-altimetre-a-besoin-d-une-reference
+      title: L'altimètre a besoin d'une référence
+      body: |
+        L'**altimètre** est un baromètre : il mesure la **pression** de l'air,
+        qui **diminue** avec l'altitude. En appliquant la loi de décroissance de
+        l'**ISA**, il traduit cette pression en une **altitude**.
+
+        Mais la pression au sol **change** d'un jour et d'un lieu à l'autre. Pour
+        que l'altimètre indique la bonne valeur, il faut lui préciser la
+        **pression de référence** à partir de laquelle il compte : c'est le
+        **calage**, que l'on affiche dans une petite fenêtre de l'instrument (la
+        fenêtre de Kollsman).
+
+        Régler le calage, c'est choisir **où se trouve le zéro** de l'altimètre.
+    - id: qnh-qfe-et-calage-standard
+      title: QNH, QFE et calage standard
+      body: |
+        Trois calages répondent à trois besoins.
+
+        - Le **QNH** ramène la pression au **niveau de la mer**. Avec ce calage,
+          l'altimètre affiche l'**altitude** (par rapport à la mer) : posé sur un
+          aérodrome, il indique l'**altitude du terrain**. C'est le calage de la
+          navigation à basse altitude.
+        - Le **QFE** est la pression **au niveau de l'aérodrome**. Avec ce
+          calage, l'altimètre affiche la **hauteur** au-dessus du terrain : au
+          sol, il indique **0**. Pratique pour les tours de piste.
+        - Le **calage standard**, **1013,25 hPa**, est une référence
+          **commune** : au-dessus d'une **altitude de transition**, tous les
+          avions l'affichent et volent en **niveaux de vol (FL)**. Deux avions
+          voisins se comparent ainsi sur la **même** référence, même si la
+          pression réelle varie.
+      figures:
+        - schemaId: calages-altimetriques
+          alt: Un avion en vol au-dessus d'un aérodrome et de la mer, avec l'altitude mesurée depuis la mer (QNH) et la hauteur depuis l'aérodrome (QFE).
+          caption: Le QNH mesure l'altitude depuis le niveau de la mer ; le QFE mesure la hauteur depuis l'aérodrome.
+          width: 460
+          height: 280
+    - id: transition-et-securite
+      title: Transition et sécurité
+      strate: maitriser
+      body: |
+        En **montant**, on passe du calage QNH (altitudes) au calage standard
+        1013 en franchissant l'**altitude de transition** ; en **descendant**, on
+        repasse au QNH au **niveau de transition**. Chaque changement de calage se
+        **vérifie** et s'**annonce** : c'est une étape de sécurité.
+
+        La finesse du calage compte : **1 hPa** vaut environ **28 pieds**. Un
+        calage erroné de quelques hectopascals décale l'altitude indiquée de
+        dizaines de mètres.
+
+        Le piège classique tient en une formule : **« du fort vers le faible,
+        attention danger »**. En volant vers une région de pression (ou de
+        température) **plus basse** sans recaler, l'altimètre **sur-lit** : il
+        indique une altitude **supérieure** à la réalité — l'avion est en fait
+        **plus bas** que prévu, dangereusement près du relief.
+      figures:
+        - schemaId: calage-transition
+          alt: Une échelle d'altitude avec une altitude de transition séparant le vol en altitudes (calage QNH) en bas du vol en niveaux de vol (calage 1013 hPa) en haut.
+          caption: Sous l'altitude de transition, on vole en altitudes (QNH) ; au-dessus, en niveaux de vol (calage standard 1013 hPa).
+          width: 460
+          height: 260
+  pieges:
+    - QNH donne une altitude (référence mer), QFE une hauteur (référence aérodrome) — ne pas confondre les deux.
+    - Le calage 1013 hPa ne donne pas une hauteur réelle sol — il sert de référence commune pour les niveaux de vol.
+    - « Du fort vers le faible, attention danger » — voler vers une pression (ou une température) plus basse sans recaler fait sur-lire l'altimètre, l'avion est plus bas qu'indiqué.

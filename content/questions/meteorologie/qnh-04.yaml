@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.meteorologie.qnh-04
+kind: calcul
+theme: calage-altimetrique
+statement: >-
+  Sachant que 1 hPa correspond à environ 28 ft, à combien de pieds équivaut une
+  erreur de calage de 5 hPa ?
+answerValue: 140
+tolerance: 5
+unit: "ft"
+explanation: >-
+  1 hPa vaut environ 28 ft. Une erreur de 5 hPa correspond donc à 5 × 28 = 140 ft
+  d'écart sur l'altitude indiquée.
+evaluates: [fondamentaux.meteorologie.pression-et-calage]
+difficulty: 2
+competencies: [connaissances-aeronautiques, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie
