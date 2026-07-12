@@ -1,0 +1,141 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.decrochage
+type: notion-aerodynamique
+title: Le décrochage aérodynamique
+slug: decrochage
+summary: >-
+  Le décrochage est la perte brutale de portance qui survient quand l'angle
+  d'incidence dépasse l'angle critique — l'écoulement décolle de l'extrados. Il
+  dépend de l'incidence, pas de la vitesse ; on en sort en réduisant l'incidence.
+objectifs:
+  - Définir le décrochage comme la perte de portance survenant au-delà de l'angle d'incidence critique.
+  - Expliquer son origine (le décollement de l'écoulement sur l'extrados à forte incidence).
+  - Énoncer qu'il dépend de l'angle d'incidence et non de la vitesse, et que la correction consiste à réduire l'incidence.
+aliases: [décrochage, stall, angle critique, incidence critique, Cz max, décollement]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — dixième fiche du socle, clôt le bloc aérodynamique par la limite de la portance.
+    author: prepapilote
+status: relecture
+sources:
+  - title: "NASA — Glenn Research Center, Lift vs. Angle of Attack"
+    url: https://www.grc.nasa.gov/WWW/k-12/WindTunnel/WTExpKids/tsld006.htm
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.portance
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      Une aile ne porte pas indéfiniment : au-delà d'un certain **angle
+      d'incidence**, elle **décroche**. Le **décrochage** est la **perte brutale
+      de portance** qui survient quand l'incidence dépasse une valeur limite,
+      l'**angle d'incidence critique**.
+
+      À cet angle, l'air ne parvient plus à suivre l'extrados : l'écoulement
+      **décolle**, se met à tourbillonner, et la portance s'effondre. Le
+      décrochage dépend donc de l'**incidence**, et non de la vitesse — on peut
+      décrocher aussi bien lentement qu'à grande vitesse.
+
+      La sortie est toujours la même : **réduire l'angle d'incidence** pour
+      recoller l'écoulement, la gestion de la puissance venant ensuite.
+    aRetenir:
+      - Le décrochage est la perte brutale de portance quand l'incidence dépasse l'angle critique.
+      - Il vient du décollement de l'écoulement sur l'extrados, qui cesse de suivre la surface.
+      - Il dépend de l'angle d'incidence, pas de la vitesse — on peut décrocher à toute vitesse.
+      - La première action pour en sortir est de réduire l'angle d'incidence.
+  sections:
+    - id: qu-est-ce-que-le-decrochage
+      title: Qu'est-ce que le décrochage ?
+      body: |
+        Sur la fiche « La portance », on a vu que la portance **augmente avec
+        l'angle d'incidence**. Mais cette progression a une **limite**.
+
+        Au-delà d'un certain angle — l'**angle d'incidence critique**, de l'ordre
+        de 15° pour un profil classique — l'air ne peut plus contourner
+        l'extrados sans s'en détacher. L'écoulement **décolle** de la surface, se
+        désorganise en **tourbillons**, et la portance **chute brutalement**
+        tandis que la traînée **augmente**. C'est le **décrochage**.
+
+        Ce n'est donc pas l'aile qui « casse » : c'est l'**écoulement** qui
+        abandonne l'extrados.
+      figures:
+        - schemaId: decrochage-ecoulement
+          alt: Deux profils comparés — à gauche à faible incidence l'air suit la surface, à droite au-delà de l'angle critique l'air décolle et tourbillonne.
+          caption: À faible incidence l'écoulement reste collé ; au-delà de l'angle critique il décolle de l'extrados et la portance chute.
+          width: 460
+          height: 260
+    - id: une-affaire-d-incidence-pas-de-vitesse
+      title: Une affaire d'incidence, pas de vitesse
+      body: |
+        L'idée essentielle — et contre-intuitive — est que le décrochage est
+        gouverné par l'**angle d'incidence**, non par la vitesse. L'angle
+        critique est une **caractéristique fixe** de l'aile : il ne change ni
+        avec la vitesse, ni avec le poids.
+
+        On associe souvent le décrochage aux **basses vitesses**, car voler
+        lentement oblige à **cabrer** (forte incidence) pour garder assez de
+        portance. Mais on peut tout aussi bien décrocher à **grande vitesse** :
+        dans un **virage serré** ou une **ressource** (sortie de piqué), le
+        pilote impose une forte incidence, et l'aile peut atteindre l'angle
+        critique en pleine vitesse.
+
+        La courbe portance/incidence le résume : elle monte jusqu'à un
+        **maximum** — le **Cz max**, atteint à l'angle critique — puis
+        **redescend**.
+      figures:
+        - schemaId: decrochage-courbe-cz
+          alt: Une courbe de portance en fonction de l'incidence qui monte jusqu'à un maximum (Cz max) à l'angle critique, puis chute.
+          caption: La portance croît avec l'incidence jusqu'au Cz max, à l'angle critique — au-delà, c'est le décrochage.
+          width: 420
+          height: 260
+    - id: reconnaitre-et-corriger
+      title: Reconnaître et corriger
+      strate: maitriser
+      body: |
+        Le décrochage s'**annonce**. Juste avant, plusieurs signes apparaissent :
+
+        - un **buffeting** — des vibrations dues à l'air turbulent qui frappe
+          l'empennage ;
+        - une **alarme** de décrochage (avertisseur sonore) sur la plupart des
+          avions ;
+        - des **commandes** qui deviennent **molles**, moins efficaces.
+
+        La correction découle directement de la cause : puisque le décrochage
+        vient d'une **incidence excessive**, il faut **réduire l'angle
+        d'incidence** — « rendre la main » — pour que l'écoulement **recolle** et
+        que la portance revienne. La **puissance** est ensuite augmentée pour
+        reprendre de la vitesse et limiter la perte d'altitude.
+
+        > **En sécurité — l'essentiel**
+        >
+        > - un avion décroche lorsqu'il dépasse son **angle d'incidence critique** ;
+        > - le décrochage peut survenir à **faible comme à grande vitesse** ;
+        > - la première action consiste à **réduire l'angle d'incidence** ;
+        > - la **gestion de la puissance** vient ensuite, en complément.
+
+        Les valeurs précises (vitesse de décrochage, influence du **facteur de
+        charge** en virage, rôle des **volets** hypersustentateurs) seront
+        étudiées dans les fiches consacrées aux performances et au vol lent.
+  pieges:
+    - Le décrochage dépend de l'angle d'incidence, pas de la vitesse — on peut décrocher à grande vitesse.
+    - La bonne réaction est de réduire l'incidence (« rendre la main »), surtout pas de tirer sur le manche.
+    - L'angle critique ne change pas avec le poids ni la vitesse — c'est une caractéristique de l'aile.

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .profile { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .divider { stroke: #94a3b8; fill: none; stroke-width: 1; stroke-dasharray: 4 4; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Écoulement collé et décollé</text>
+  <line class="divider" x1="230" y1="44" x2="230" y2="240" />
+
+  <!-- GAUCHE : incidence faible, écoulement collé -->
+  <text class="lbl" x="115" y="52" text-anchor="middle">incidence faible</text>
+  <line class="flow" x1="18" y1="150" x2="58" y2="150" marker-end="url(#ac)" />
+  <path class="profile" d="M66,156 C96,143 152,141 178,150 C150,161 100,166 66,156 Z" />
+  <path class="flow" d="M60,144 C100,128 150,130 196,146" marker-end="url(#ac)" />
+  <path class="flow" d="M60,162 C100,170 150,168 196,159" marker-end="url(#ac)" />
+  <text class="sub" x="115" y="196" text-anchor="middle">l'air suit la surface</text>
+  <text class="sub" x="115" y="212" text-anchor="middle">— portance normale</text>
+
+  <!-- DROITE : au-delà de l'angle critique, décollement -->
+  <text class="lbl" x="345" y="52" text-anchor="middle">au-delà de l'angle critique</text>
+  <line class="flow" x1="250" y1="168" x2="290" y2="168" marker-end="url(#ac)" />
+  <g transform="rotate(-16 348 150)">
+    <path class="profile" d="M300,158 C330,146 386,146 410,153 C386,161 336,168 300,158 Z" />
+  </g>
+  <!-- filet qui décolle -->
+  <path class="flow" d="M292,150 C316,138 340,134 356,142" marker-end="url(#ac)" />
+  <!-- tourbillons sur l'extrados -->
+  <path class="flow" d="M360,132 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
+  <path class="flow" d="M388,128 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
+  <text class="sub" x="345" y="196" text-anchor="middle">l'air décolle et tourbillonne</text>
+  <text class="sub" x="345" y="212" text-anchor="middle">— la portance chute</text>
+</svg>
