@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.dominos-03
+kind: vrai-faux
+theme: dominos
+statement: >-
+  Dans un test de dominos, le haut et le bas d'une série suivent forcément la même règle.
+answer: false
+explanation: >-
+  Faux. Le haut et le bas suivent souvent deux règles différentes et
+  indépendantes (par exemple +1 en haut et −2 en bas). Le bon réflexe est de
+  les traiter comme deux suites séparées.
+evaluates: [psychotechnique.exercices.les-dominos]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

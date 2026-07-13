@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.psychotechnique.dominos-02
+kind: qcm
+theme: dominos
+statement: >-
+  Soit la suite de dominos (haut|bas) : 1|2, 3|4, 5|6, ?|?. En appliquant une
+  progression de +2 en haut comme en bas, quel est le dernier domino ?
+choices:
+  - 0|1
+  - 7|8
+  - 6|0
+  - 1|2
+correctChoices: [0]
+explanation: >-
+  Haut : 1, 3, 5 → +2 → 7, soit 0 après le cycle (6 + 1 = 0). Bas : 2, 4, 6 →
+  +2 → 8, soit 1. Le dernier domino est 0|1 — le cycle 0-6 s'applique aux deux
+  moitiés.
+evaluates: [psychotechnique.exercices.les-dominos]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

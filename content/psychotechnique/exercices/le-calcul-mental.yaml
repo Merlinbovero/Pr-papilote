@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-calcul-mental
+type: concept
+title: Le calcul mental
+slug: le-calcul-mental
+summary: >-
+  Calculer vite et juste sans calculatrice — décompositions, multiplications
+  astucieuses, pourcentages, proportions et le grand classique aéronautique,
+  le triangle temps-vitesse-distance.
+objectifs:
+  - Maîtriser les techniques de décomposition pour additionner, soustraire et multiplier vite.
+  - Calculer pourcentages et proportions sans poser d'opération.
+  - Résoudre les problèmes temps-vitesse-distance, omniprésents dans les sélections de pilote.
+aliases: [calcul mental, calcul rapide, temps vitesse distance, TVD, proportions]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'entraînement calcul mental, ouverture du module Psychotechnique (Lot G).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.les-suites-logiques
+    - fondamentaux.navigation.temps-vitesse-distance
+content:
+  essentiel:
+    body: |
+      Le calcul mental des sélections ne demande pas d'être un prodige — il
+      demande des **automatismes**. Trois piliers :
+
+      - **Décomposer** — 47 + 38 se calcule 47 + 40 − 2 = 85 ; 63 × 9 se
+        calcule 63 × 10 − 63 = 567.
+      - **Pourcentages malins** — 10 % s'obtient en décalant la virgule ;
+        tout le reste s'assemble (15 % = 10 % + 5 % ; 5 % = la moitié de
+        10 %).
+      - **Temps-vitesse-distance** — d = v × t, avec le réflexe du
+        **facteur de base** : la vitesse en unités **par minute** (120 kt =
+        2 NM/min ; 300 km/h = 5 km/min).
+
+      La vitesse vient de la **pratique quotidienne** — quelques minutes par
+      jour, sans calculatrice, suffisent à transformer ses performances en
+      quelques semaines.
+    aRetenir:
+      - Décomposer systématiquement — arrondir puis corriger (+ 38 = + 40 − 2).
+      - 10 % = décaler la virgule ; construire 15 %, 20 %, 5 % à partir de 10 %.
+      - d = v × t — convertir la vitesse en unités par minute (120 kt = 2 NM/min).
+      - Multiplier par 5 = multiplier par 10 puis diviser par 2 (et ×25 = ×100 ÷ 4).
+  sections:
+    - id: techniques-de-base
+      title: Les techniques de base
+      body: |
+        **Addition/soustraction** — arrondir puis corriger :
+        56 + 29 = 56 + 30 − 1 = 85 ; 82 − 47 = 82 − 50 + 3 = 35.
+
+        **Multiplication** — passer par les dizaines et les compléments :
+
+        - ×5 → ×10 puis ÷2 (48 × 5 = 480 ÷ 2 = 240) ;
+        - ×25 → ×100 puis ÷4 (32 × 25 = 3200 ÷ 4 = 800) ;
+        - ×9 → ×10 moins une fois (74 × 9 = 740 − 74 = 666) ;
+        - ×11 → ×10 plus une fois (43 × 11 = 430 + 43 = 473) ;
+        - décomposer — 17 × 6 = (10 + 7) × 6 = 60 + 42 = 102.
+
+        **Division** — simplifier d'abord : 540 ÷ 12 = 270 ÷ 6 = 45.
+
+        **Ordres de grandeur** — avant tout calcul, estimer le résultat ; en
+        QCM, l'estimation élimine souvent trois réponses sur quatre.
+    - id: pourcentages-et-proportions
+      title: Pourcentages et proportions
+      body: |
+        Tout se construit à partir de **10 %** (virgule décalée) et de
+        **1 %** (deux décalages) :
+
+        - 15 % de 260 → 26 + 13 = 39 ;
+        - 30 % de 180 → 18 × 3 = 54 ;
+        - 4 % de 350 → 3,5 × 4 = 14.
+
+        **Proportions** — passer par l'**unité** : si 6 articles coûtent 90 €,
+        un article coûte 15 €, donc 9 articles coûtent 135 €. Ce « retour à
+        l'unité » résout la quasi-totalité des problèmes de règle de trois
+        sans poser de fraction.
+
+        Attention aux **évolutions successives** — +10 % puis −10 % ne
+        revient pas au point de départ (×1,1 × 0,9 = ×0,99).
+    - id: temps-vitesse-distance
+      title: Temps, vitesse, distance
+      strate: maitriser
+      body: |
+        Le grand classique des sélections de pilote — trois grandeurs liées
+        par **d = v × t**. Le réflexe qui change tout : raisonner **par
+        minute**.
+
+        - 120 kt → **2 NM/min** ; 300 kt → 5 NM/min ; 420 kt → 7 NM/min
+          (diviser les nœuds par 60) ;
+        - 300 km/h → **5 km/min** ; 90 km/h → 1,5 km/min.
+
+        Exemples :
+
+        - 35 NM à 420 kt → 35 ÷ 7 = **5 min** ;
+        - 12 min à 300 km/h → 12 × 5 = **60 km** ;
+        - 18 NM en 6 min → 3 NM/min → **180 kt**.
+
+        Convertir les **durées** en minutes avant de calculer (1 h 24 =
+        84 min), et connaître les fractions d'heure usuelles — 15 min = ¼ h,
+        20 min = ⅓ h, 45 min = ¾ h.
+  pieges:
+    - Poser mentalement l'opération « comme à l'école » au lieu de décomposer — lent et source d'erreurs.
+    - En temps-vitesse-distance, mélanger les unités (nœuds et minutes, km/h et secondes) — tout convertir avant de calculer.
+    - +10 % puis −10 % ne ramène pas à la valeur initiale — les pourcentages successifs se multiplient, ils ne s'additionnent pas.
+    - Négliger l'ordre de grandeur — une vérification d'une seconde qui évite les réponses absurdes.

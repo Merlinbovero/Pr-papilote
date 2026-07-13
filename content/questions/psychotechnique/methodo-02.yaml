@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.methodo-02
+kind: vrai-faux
+theme: methodologie-psychotechnique
+statement: >-
+  Pour préparer les tests psychotechniques, une longue session de bachotage la veille est plus efficace que des séances courtes et régulières.
+answer: false
+explanation: >-
+  Faux. Les aptitudes se construisent par la régularité : des séances courtes
+  (15 à 30 minutes) et fréquentes créent les automatismes. Le bachotage tardif
+  n'améliore rien et entame la vigilance du jour J.
+evaluates: [psychotechnique.methodologie.reussir-les-tests-psychotechniques]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

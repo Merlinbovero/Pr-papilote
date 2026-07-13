@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.psychotechnique.suites-01
+kind: qcm
+theme: suites-logiques
+statement: >-
+  Quel est le terme suivant de la suite 1, 2, 4, 7, 11, … ?
+choices:
+  - "16"
+  - "15"
+  - "22"
+  - "13"
+correctChoices: [0]
+explanation: >-
+  Les différences sont +1, +2, +3, +4 : elles progressent de 1. Le terme
+  suivant est donc 11 + 5 = 16. C'est une suite à écarts croissants.
+evaluates: [psychotechnique.exercices.les-suites-logiques]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

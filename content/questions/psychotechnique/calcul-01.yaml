@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.calcul-01
+kind: calcul
+theme: calcul-mental
+statement: >-
+  Calculez de tête : 48 × 5.
+answerValue: 240
+tolerance: 0
+explanation: >-
+  Multiplier par 5 revient à multiplier par 10 puis diviser par 2 :
+  48 × 10 = 480, puis 480 ÷ 2 = 240.
+evaluates: [psychotechnique.exercices.le-calcul-mental]
+difficulty: 1
+competencies: [calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

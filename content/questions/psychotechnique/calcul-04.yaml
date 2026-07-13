@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.psychotechnique.calcul-04
+kind: calcul
+theme: calcul-mental
+statement: >-
+  Six articles identiques coûtent 90 €. Combien coûtent 9 articles ?
+answerValue: 135
+tolerance: 0
+unit: "€"
+explanation: >-
+  Retour à l'unité : un article coûte 90 ÷ 6 = 15 €. Neuf articles coûtent
+  donc 9 × 15 = 135 €.
+evaluates: [psychotechnique.exercices.le-calcul-mental]
+difficulty: 1
+competencies: [calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

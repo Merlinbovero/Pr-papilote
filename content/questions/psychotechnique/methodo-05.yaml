@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.methodo-05
+kind: qcm
+theme: methodologie-psychotechnique
+statement: >-
+  Pourquoi les armées accordent-elles autant d'importance aux tests psychotechniques ?
+choices:
+  - Ces aptitudes prédisent la capacité à apprendre vite et à traiter l'information sous pression
+  - Ils permettent d'évaluer les connaissances aéronautiques
+  - Ils remplacent la visite médicale
+  - Ils mesurent uniquement le niveau en mathématiques
+correctChoices: [0]
+explanation: >-
+  Un pilote militaire doit acquérir vite des procédures, calculer sans
+  calculatrice, se représenter l'espace et partager son attention. Les tests
+  psychotechniques prédisent cette capacité d'apprentissage sous pression.
+evaluates: [psychotechnique.methodologie.reussir-les-tests-psychotechniques]
+difficulty: 2
+competencies: [raisonnement-logique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

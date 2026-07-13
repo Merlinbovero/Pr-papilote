@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: psychotechnique.methodologie.reussir-les-tests-psychotechniques
+type: concept
+title: Réussir les tests psychotechniques
+slug: reussir-les-tests-psychotechniques
+summary: >-
+  Les tests psychotechniques ne mesurent pas des connaissances mais des
+  aptitudes — logique, calcul, spatial, mémoire, attention. La bonne stratégie
+  tient en trois mots — comprendre les formats, s'entraîner régulièrement,
+  gérer le temps.
+objectifs:
+  - Comprendre ce que mesurent les tests psychotechniques des sélections de pilote.
+  - Identifier les grandes familles d'épreuves (logique, calcul, spatial, mémoire, attention).
+  - Adopter une méthode d'entraînement et une gestion du temps efficaces le jour J.
+aliases: [tests psychotechniques, tests d'aptitude, préparation psychotechnique, méthode]
+module: psychotechnique
+category: methodologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche de méthodologie, ouverture du module Psychotechnique (Lot G).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.presentation.le-concours-eopan
+content:
+  essentiel:
+    body: |
+      Les tests psychotechniques évaluent des **aptitudes**, pas des
+      connaissances : on ne les « révise » pas comme un cours, on s'y
+      **entraîne** comme à un sport. Les sélections de pilote (EOPAN, EOPN,
+      ALAT) y recourent massivement, car ces aptitudes prédisent la capacité à
+      **apprendre vite** et à **traiter l'information sous pression** — le
+      quotidien d'un pilote militaire.
+
+      Les grandes familles d'épreuves :
+
+      - **raisonnement logique** — suites, dominos, analogies, matrices ;
+      - **calcul mental** — opérations rapides, proportions, conversions ;
+      - **vision spatiale** — rotations mentales, patrons de cubes, caps ;
+      - **mémoire** — chiffres, formes, paramètres à restituer ;
+      - **attention et multitâche** — détecter, suivre, faire deux choses à
+        la fois sans se dégrader.
+
+      Trois leviers font la différence — **connaître les formats** (aucune
+      surprise le jour J), **s'entraîner régulièrement** (des séances courtes
+      et fréquentes battent une veillée d'armes), **gérer le temps** (ne
+      jamais s'enliser sur un item).
+    aRetenir:
+      - Les tests mesurent des aptitudes — on s'y entraîne, on ne les révise pas.
+      - Cinq familles — logique, calcul mental, vision spatiale, mémoire, attention/multitâche.
+      - Des séances courtes et régulières valent mieux qu'un bachotage tardif.
+      - Le temps est la vraie difficulté — savoir passer un item et y revenir.
+  sections:
+    - id: ce-que-mesurent-les-tests
+      title: Ce que mesurent les tests
+      body: |
+        Un pilote militaire doit **acquérir vite** des procédures nouvelles,
+        **calculer** en vol sans calculatrice, se **représenter** l'espace en
+        trois dimensions, **mémoriser** des paramètres et **partager son
+        attention** entre pilotage, navigation et radio. Chaque famille de
+        tests cible l'une de ces aptitudes.
+
+        C'est pourquoi les armées y attachent tant d'importance : un candidat
+        brillant en culture générale mais lent sous contrainte de temps aura
+        du mal en formation. Bonne nouvelle — ces aptitudes **s'améliorent**
+        nettement avec un entraînement adapté, surtout la vitesse d'exécution.
+    - id: methode-d-entrainement
+      title: La méthode d'entraînement
+      body: |
+        1. **Découvrir** chaque format sans chrono — comprendre la logique de
+           l'épreuve, les pièges classiques.
+        2. **S'entraîner par famille**, en séances courtes (15 à 30 minutes)
+           mais **fréquentes** — la régularité construit les automatismes.
+        3. **Introduire le chrono** progressivement, jusqu'à travailler
+           systématiquement en temps limité.
+        4. **Analyser ses erreurs** — chaque faute a une cause (règle non vue,
+           calcul bâclé, précipitation) qu'il faut nommer pour la corriger.
+        5. **Simuler** enfin des sessions complètes, enchaînant les épreuves,
+           pour habituer le cerveau à la fatigue du jour J.
+    - id: gerer-le-jour-j
+      title: Gérer le jour J
+      strate: maitriser
+      body: |
+        Le jour de la sélection, la **gestion du temps** prime :
+
+        - lire la **consigne** à fond — chaque format a ses règles propres ;
+        - ne jamais **s'enliser** — un item qui résiste après 30 à 60 secondes
+          se passe ; on y revient s'il reste du temps ;
+        - garder un **rythme** régulier plutôt que des à-coups ;
+        - soigner l'**hygiène de vie** en amont — sommeil, hydratation ; la
+          vigilance est une aptitude testée, ne l'entamez pas vous-même.
+
+        Enfin, rester **honnête** avec les questionnaires de personnalité
+        quand il y en a : ils comportent des échelles de cohérence, et un
+        profil « trop parfait » se détecte.
+  pieges:
+    - Bachoter la veille ne sert à rien — les aptitudes se construisent par un entraînement régulier sur plusieurs semaines.
+    - S'enliser sur un item difficile fait perdre les points des items faciles qui suivent — savoir passer est une compétence.
+    - Négliger la consigne d'un format « déjà vu » — d'une passation à l'autre, les règles (barème, pénalités) peuvent changer.
