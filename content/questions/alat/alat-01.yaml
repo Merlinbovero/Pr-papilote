@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.alat-01
+kind: qcm
+theme: presentation-alat
+statement: >-
+  Que signifie l'acronyme ALAT ?
+choices:
+  - Aviation légère de l'Armée de terre
+  - Aéronautique de liaison de l'armée de terre
+  - Armée de l'air et des troupes
+  - Aviation lourde d'appui tactique
+correctChoices: [0]
+explanation: >-
+  L'ALAT est l'Aviation légère de l'Armée de terre : la composante hélicoptères
+  de l'Armée de terre, dédiée à l'aérocombat.
+evaluates: [alat.presentation.devenir-pilote-alat]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

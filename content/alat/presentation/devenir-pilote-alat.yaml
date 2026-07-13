@@ -1,0 +1,122 @@
+schemaVersion: 1
+id: alat.presentation.devenir-pilote-alat
+type: concept
+title: L'ALAT et la voie du pilote
+slug: devenir-pilote-alat
+summary: >-
+  L'ALAT est l'aviation d'hélicoptères de l'Armée de terre. On y devient pilote
+  après un recrutement d'officier ou de sous-officier, puis la formation à
+  l'EALAT — initiale à Dax, tactique au Luc — avant l'affectation en régiment.
+objectifs:
+  - Présenter l'ALAT comme la composante hélicoptères de l'Armée de terre et le métier de pilote d'aérocombat.
+  - Décrire la voie du pilote ALAT (recrutement, formation à l'EALAT, affectation en régiment).
+  - Situer les grands sites de formation (Dax, Le Cannet-des-Maures / Le Luc).
+aliases: [ALAT, aviation légère de l'armée de terre, pilote ALAT, aérocombat, EALAT]
+module: alat
+category: presentation
+tags: []
+concours: [alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'ouverture de la famille ALAT, présentation et voie du pilote.
+    author: prepapilote
+sources:
+  - title: "École de l'aviation légère de l'Armée de terre — Ministère des Armées"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre/ecole-laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "École de l'aviation légère de l'Armée de terre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/%C3%89cole_de_l'aviation_l%C3%A9g%C3%A8re_de_l'Arm%C3%A9e_de_terre
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.presentation.le-concours-eopan
+    - eopn.presentation.le-concours-eopn
+content:
+  essentiel:
+    body: |
+      L'**ALAT** — *Aviation légère de l'Armée de terre* — est la composante
+      **hélicoptères** de l'**Armée de terre**. Ses équipages pratiquent
+      l'**aérocombat** : ils appuient les troupes au sol, transportent des
+      hommes et du matériel, reconnaissent et frappent, en volant souvent
+      **très bas**, au plus près du **terrain**.
+
+      Devenir **pilote de l'ALAT** ne passe pas par un concours unique comme
+      l'EOPN. On rejoint d'abord l'**Armée de terre** — comme **officier**
+      (notamment via l'**École spéciale militaire de Saint-Cyr**) ou comme
+      **sous-officier** — puis on choisit l'**arme ALAT**.
+
+      Vient ensuite la **formation** à l'**EALAT** (École de l'aviation légère
+      de l'Armée de terre) : d'abord le **pilotage initial** à **Dax**, puis la
+      **formation tactique** et la **spécialisation** sur machine au **Cannet-
+      des-Maures** (Le Luc). L'élève rejoint enfin un **régiment**
+      d'hélicoptères de combat.
+    aRetenir:
+      - L'ALAT est la composante hélicoptères de l'Armée de terre — elle pratique l'aérocombat au plus près du terrain.
+      - On devient pilote ALAT après un recrutement d'officier (Saint-Cyr) ou de sous-officier, puis le choix de l'arme.
+      - La formation se déroule à l'EALAT — pilotage initial à Dax, tactique et spécialisation au Luc.
+      - Le pilote rejoint ensuite un régiment d'hélicoptères de combat (RHC).
+  sections:
+    - id: l-alat-l-aviation-de-l-armee-de-terre
+      title: L'ALAT, l'aviation de l'Armée de terre
+      body: |
+        Chaque armée a sa composante aérienne : la **Marine** a l'aéronautique
+        navale, l'**Armée de l'air et de l'Espace** est l'aviation par
+        excellence, et l'**Armée de terre** a l'**ALAT**. Sa spécialité :
+        l'**hélicoptère**, mis au service des **forces terrestres**.
+
+        L'ALAT met en œuvre des hélicoptères de **combat** (le **Tigre**), de
+        **manœuvre** et de **transport** (le **Caïman**, le **Cougar**), de
+        **reconnaissance** (la **Gazelle**). Leur point commun : agir **au
+        contact** de la bataille terrestre, souvent en vol **tactique** à très
+        basse hauteur, pour appuyer, transporter ou renseigner les troupes.
+    - id: la-voie-du-pilote
+      title: La voie du pilote
+      body: |
+        Le chemin vers le pilotage à l'ALAT est **propre à l'Armée de terre**.
+        On s'y **engage** d'abord — comme **officier** (par exemple après
+        l'**École spéciale militaire de Saint-Cyr**) ou comme **sous-officier**
+        — avant de choisir l'**arme** ALAT.
+
+        La formation aéronautique se fait ensuite à l'**EALAT** :
+
+        - le **pilotage initial** à la base école **Général Navelet** de
+          **Dax** (Landes), notamment sur l'hélicoptère-école **H120** ;
+        - la **formation tactique** et la **spécialisation** sur système d'armes
+          à la base école **Général Lejay** du **Cannet-des-Maures** (Le Luc).
+
+        Cette formation, **longue** (de l'ordre de deux ans à l'EALAT), mène à
+        l'affectation en **régiment**.
+      figures:
+        - schemaId: parcours-formation-alat
+          alt: Les quatre étapes pour devenir pilote de l'ALAT — recrutement dans l'Armée de terre, formation initiale à Dax, formation tactique au Luc, puis affectation en régiment.
+          caption: La voie du pilote ALAT, du recrutement à l'affectation en régiment, en passant par l'EALAT (Dax puis Le Luc).
+          width: 440
+          height: 300
+    - id: une-formation-exigeante-et-interalliee
+      title: Une formation exigeante et interalliée
+      strate: maitriser
+      body: |
+        La formation ALAT est **technique** et **tactique** : piloter un
+        hélicoptère au ras du sol, de nuit, en coopération avec les troupes,
+        demande un haut niveau de **maîtrise**. Les **simulateurs** y tiennent
+        une place croissante.
+
+        Certaines formations sont **interalliées** : l'**École franco-allemande
+        du Tigre**, au Luc, forme ensemble les équipages français et allemands
+        de l'hélicoptère de combat **Tigre**, en grande partie sur
+        **simulateur** et dans la langue de l'aéronautique, l'**anglais**. Un
+        rappel utile pour le candidat : même à l'Armée de terre, l'**anglais**
+        et la **culture aéronautique** sont incontournables.
+  pieges:
+    - L'ALAT n'est pas l'Armée de l'air — c'est l'aviation d'hélicoptères de l'Armée de terre, au service des forces terrestres.
+    - Devenir pilote ALAT ne passe pas par un concours unique de type EOPN — on s'engage d'abord dans l'Armée de terre, puis on choisit l'arme ALAT.
+    - L'unité de l'ALAT est le régiment (RHC), pas la flottille (Marine) ni l'escadron (Air).

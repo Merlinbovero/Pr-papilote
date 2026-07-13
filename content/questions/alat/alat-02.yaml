@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.alat-02
+kind: qcm
+theme: presentation-alat
+statement: >-
+  Quel type d'aéronef caractérise l'ALAT ?
+choices:
+  - L'hélicoptère
+  - L'avion de chasse
+  - Le porte-avions
+  - Le drone stratosphérique
+correctChoices: [0]
+explanation: >-
+  L'ALAT est la composante hélicoptères de l'Armée de terre : Tigre, Caïman,
+  Gazelle, Cougar… au service des forces terrestres.
+evaluates: [alat.presentation.devenir-pilote-alat]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

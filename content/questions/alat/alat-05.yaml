@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.alat-05
+kind: qcm
+theme: presentation-alat
+statement: >-
+  Comment s'appelle l'unité de base de l'ALAT, où le pilote est affecté ?
+choices:
+  - Le régiment (régiment d'hélicoptères de combat)
+  - La flottille
+  - L'escadron
+  - La brigade blindée
+correctChoices: [0]
+explanation: >-
+  L'unité de l'ALAT est le régiment — le régiment d'hélicoptères de combat (RHC)
+  — là où la Marine parle de flottille et l'armée de l'air d'escadron.
+evaluates: [alat.presentation.devenir-pilote-alat]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
