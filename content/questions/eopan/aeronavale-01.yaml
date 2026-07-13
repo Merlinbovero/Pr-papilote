@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.aeronavale-01
+kind: qcm
+theme: organisation-aeronavale
+statement: >-
+  Qu'est-ce que l'aéronautique navale ?
+choices:
+  - La composante aérienne de la Marine nationale
+  - Une branche de l'Armée de l'Air et de l'Espace
+  - Une compagnie aérienne civile
+  - Le service météo de la Marine
+correctChoices: [0]
+explanation: >-
+  L'aéronautique navale (ou aéronavale) est la composante aérienne de la Marine
+  nationale : l'ensemble des avions, hélicoptères et drones mis en œuvre
+  au-dessus de la mer ou depuis la mer.
+evaluates: [eopan.organisation.aeronautique-navale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

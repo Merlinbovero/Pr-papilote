@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.aeronavale-05
+kind: qcm
+theme: organisation-aeronavale
+statement: >-
+  Sur combien de bases d'aéronautique navale (BAN) principales repose la force ?
+choices:
+  - Quatre — Landivisiau, Lann-Bihoué, Lanvéoc-Poulmic et Hyères
+  - Une seule, à Toulon
+  - Dix, réparties sur tout le littoral
+  - Deux, à Brest et Cherbourg
+correctChoices: [0]
+explanation: >-
+  L'aéronautique navale repose sur quatre bases : trois en Bretagne (Landivisiau,
+  Lann-Bihoué, Lanvéoc-Poulmic) et une dans le Sud (Hyères).
+evaluates: [eopan.organisation.aeronautique-navale]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

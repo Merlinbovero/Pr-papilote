@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.aeronavale-03
+kind: association
+theme: organisation-aeronavale
+statement: >-
+  Associez chaque composante de l'aéronautique navale à son appareil.
+pairs:
+  - left: Chasse embarquée
+    right: Rafale Marine
+  - left: Guet aérien
+    right: E-2C Hawkeye
+  - left: Patrouille maritime
+    right: Atlantique 2
+  - left: Hélicoptère embarqué
+    right: NH90 Caïman
+explanation: >-
+  Les grandes composantes se distinguent par leur appareil : Rafale M pour la
+  chasse, Hawkeye pour le guet aérien, Atlantique 2 pour la patrouille maritime,
+  Caïman pour les hélicoptères.
+evaluates: [eopan.organisation.aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie
