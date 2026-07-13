@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.profil-d-aile
+title: Profil d'aile
+definition: >-
+  Section transversale d'une aile. On y distingue le bord d'attaque, le bord de
+  fuite, l'extrados (dessus), l'intrados (dessous), la corde et la cambrure. Sa
+  forme conditionne la portance et la traînée.
+english: Airfoil
+synonyms: [profil]
+ficheId: fondamentaux.aerodynamique.profil-d-aile
+tags: []
+status: publie

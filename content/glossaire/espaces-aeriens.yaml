@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.espaces-aeriens
+title: Espaces aériens
+definition: >-
+  Découpage réglementaire du ciel en classes (A à G), du plus contrôlé au non
+  contrôlé, définissant les règles de vol (VFR/IFR), les services rendus et les
+  conditions d'accès. Des zones particulières (P, R, D) restreignent la
+  circulation.
+english: Airspace
+synonyms: []
+ficheId: fondamentaux.reglementation.espaces-aeriens
+tags: []
+status: publie

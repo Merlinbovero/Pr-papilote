@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.quatre-forces
+title: Les quatre forces du vol
+definition: >-
+  Les quatre forces qui s'exercent sur un aéronef en vol — le poids (vers le
+  bas), la portance (vers le haut), la traction du moteur (vers l'avant) et la
+  traînée (vers l'arrière). En vol rectiligne uniforme, elles s'équilibrent.
+english: The four forces of flight
+synonyms: []
+ficheId: fondamentaux.mecanique-du-vol.quatre-forces
+tags: []
+status: publie

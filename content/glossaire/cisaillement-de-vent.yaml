@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.cisaillement-de-vent
+title: Cisaillement de vent
+definition: >-
+  Variation brutale de la direction ou de la force du vent sur une courte
+  distance. Dangereux près du sol (décollage, atterrissage), il peut provoquer
+  une perte soudaine de portance ; la microrafale en est une forme redoutée.
+english: Wind shear
+synonyms: [wind shear]
+ficheId: fondamentaux.meteorologie.phenomenes-dangereux
+tags: []
+status: publie

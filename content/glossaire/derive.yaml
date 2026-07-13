@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.derive
+title: Dérive
+definition: >-
+  Angle entre le cap (axe de l'avion) et la route (trajectoire réelle par rapport
+  au sol), causé par le vent. Le pilote la corrige en « crabe » pour suivre la
+  route voulue.
+english: Drift
+synonyms: []
+ficheId: fondamentaux.navigation.cap-route-et-derive
+tags: []
+status: publie

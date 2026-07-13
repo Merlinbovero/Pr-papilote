@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.altimetre
+title: Altimètre
+definition: >-
+  Instrument mesurant l'altitude à partir de la pression atmosphérique (baromètre
+  à capsule anéroïde alimenté par la prise statique). Sa lecture dépend du calage
+  altimétrique affiché.
+english: Altimeter
+synonyms: []
+ficheId: fondamentaux.instruments.altimetre
+tags: []
+status: publie

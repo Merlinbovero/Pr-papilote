@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.trainee
+title: Traînée
+definition: >-
+  Force aérodynamique parallèle à l'écoulement de l'air, opposée à l'avancement
+  de l'aéronef. Elle combine une traînée de forme, de frottement et une traînée
+  induite liée à la portance. Le moteur doit la vaincre pour maintenir la vitesse.
+english: Drag
+synonyms: []
+ficheId: fondamentaux.aerodynamique.trainee
+tags: []
+status: publie

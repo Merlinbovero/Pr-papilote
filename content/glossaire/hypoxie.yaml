@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.hypoxie
+title: Hypoxie
+definition: >-
+  Manque d'oxygène des tissus, notamment en altitude où la pression partielle
+  d'oxygène diminue. Insidieuse, elle altère le jugement et la vision sans que le
+  pilote s'en rende compte ; d'où l'oxygène et la pressurisation en altitude.
+english: Hypoxia
+synonyms: []
+ficheId: fondamentaux.facteurs-humains.hypoxie-et-altitude
+tags: []
+status: publie

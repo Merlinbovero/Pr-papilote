@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.anemometre
+title: Anémomètre (badin)
+definition: >-
+  Instrument indiquant la vitesse de l'avion par rapport à l'air, à partir de la
+  pression dynamique (différence entre pression totale du Pitot et pression
+  statique). Ses arcs de couleur repèrent le domaine de vol.
+english: Airspeed indicator
+synonyms: [badin]
+ficheId: fondamentaux.instruments.anemometre
+tags: []
+status: publie

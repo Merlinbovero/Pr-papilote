@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.facteur-de-charge
+title: Facteur de charge
+definition: >-
+  Rapport entre la portance et le poids de l'aéronef, noté n et exprimé en « g ».
+  Il vaut 1 en palier et augmente en virage (n = 1/cos de l'inclinaison), ce qui
+  accroît la vitesse de décrochage.
+english: Load factor
+synonyms: [g]
+ficheId: fondamentaux.mecanique-du-vol.virage
+tags: []
+status: publie
