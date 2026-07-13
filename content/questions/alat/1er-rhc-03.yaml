@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.1er-rhc-03
+kind: vrai-faux
+theme: regiments-alat
+statement: >-
+  La devise du 1er RHC est « Primus primorum » — le premier des premiers.
+answer: true
+explanation: >-
+  Vrai. « Primus primorum » est la devise du 1er RHC de Phalsbourg, héritier
+  des groupes d'aviation d'observation d'artillerie (1945-1949) et de
+  l'Indochine.
+evaluates: [alat.unites.1er-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

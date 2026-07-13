@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: alat.unites.1er-rhc
+type: regiment
+title: 1er régiment d'hélicoptères de combat
+slug: 1er-rhc
+summary: >-
+  « Primus primorum » — le 1er RHC de Phalsbourg, héritier des groupes
+  d'observation d'artillerie et de l'Indochine, est le régiment « nouvelle
+  génération » de l'ALAT, armé de Caïman, de Tigre et de Gazelle.
+objectifs:
+  - Identifier le 1er RHC comme régiment d'hélicoptères de combat de la 4e BAC, stationné à Phalsbourg.
+  - Connaître son parc (Caïman, Tigre, Gazelle) et ses missions d'aérocombat.
+  - Situer sa filiation historique (groupes d'observation d'artillerie, Indochine).
+aliases: [1er RHC, 1er régiment d'hélicoptères de combat, Phalsbourg, Primus primorum]
+module: alat
+category: unites
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet régiment, le 1er RHC (campagne de recherche n°1, lot N2 ; source officielle defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "1er régiment d'hélicoptères de combat (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre/1er-regiment-dhelicopteres-combat
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Historique 1er RHC Phalsbourg — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/historique-unites-metropole-1-rhc-phalsbourg.html
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: alat.appareils.tigre
+    - predicate: dote-de
+      target: alat.appareils.gazelle
+  related:
+    - alat.missions.l-aerocombat
+    - alat.unites.5e-rhc
+    - alat.histoire.histoire-de-l-alat
+infobox:
+  appellation: 1er régiment d'hélicoptères de combat (1er RHC)
+  garnison: Camp La Horie, Phalsbourg (Moselle)
+  appareils: [NH90 Caïman, Tigre, Gazelle]
+  missions: [Aérocombat, Appui-feu, Reconnaissance, Héliportage, Évacuation]
+  devise: Primus primorum
+content:
+  essentiel:
+    body: |
+      Le **1er régiment d'hélicoptères de combat** est stationné au **camp
+      La Horie**, à **Phalsbourg** (Moselle). Sa devise — **« Primus
+      primorum »**, *le premier des premiers* — dit sa place : il est l'un
+      des trois RHC de la **4e brigade d'aérocombat**.
+
+      Régiment dit « **nouvelle génération** », il aligne un parc moderne :
+      **18 NH90 Caïman** (manœuvre et assaut), **12 Tigre** (attaque) et
+      **9 Gazelle** (reconnaissance) — environ **850 combattants de
+      l'aérocombat**, appuyés par quelque 200 réservistes.
+
+      Sa filiation remonte aux **groupes d'aviation d'observation
+      d'artillerie** (1945-1949) et à l'**Indochine** (1946-1954) — l'ADN
+      même de l'ALAT.
+    aRetenir:
+      - 1er RHC — Phalsbourg (camp La Horie), l'un des trois RHC de la 4e BAC.
+      - Parc « nouvelle génération » — 18 Caïman, 12 Tigre, 9 Gazelle ; ~850 personnels.
+      - Devise « Primus primorum » — le premier des premiers.
+      - Filiation — groupes d'observation d'artillerie (1945-1949) et Indochine.
+  sections:
+    - id: missions-et-organisation
+      title: Missions et organisation
+      body: |
+        Le 1er RHC déploie ses hélicoptères en France comme en opérations
+        extérieures pour tout le spectre de l'**aérocombat** : **appui-feu**,
+        **reconnaissance**, **poser d'assaut** de troupes, **évacuation
+        sanitaire** et **évacuation de ressortissants**.
+
+        Le régiment s'articule en une douzaine d'**escadrilles**
+        spécialisées — attaque, reconnaissance, manœuvre et assaut,
+        maintenance et soutien — la combinaison Tigre + Caïman + Gazelle
+        permettant de composer des **modules** adaptés à chaque mission.
+    - id: engagements-et-traditions
+      title: Engagements et traditions
+      strate: maitriser
+      body: |
+        Le palmarès récent du 1er RHC recouvre les grands engagements
+        français : **Pamir** (Afghanistan), **Harmattan** (Libye), **Serval**
+        (Mali), **Sangaris** (Centrafrique), **Barkhane** (Sahel), ainsi que
+        des missions intérieures (**Résilience**, secours après l'ouragan
+        **Irma** en 2017).
+
+        Héritier des unités d'**observation d'artillerie** de l'immédiat
+        après-guerre et engagé en **Indochine**, le régiment incarne la
+        continuité historique de l'ALAT — de l'avion léger d'observation à
+        l'hélicoptère de combat de nouvelle génération.
+  pieges:
+    - Ne pas confondre les trois RHC de la 4e BAC — 1er RHC à Phalsbourg, 3e RHC à Étain, 5e RHC à Pau.
+    - Le 1er RHC met en œuvre trois types d'hélicoptères complémentaires (Caïman, Tigre, Gazelle) — pas un seul modèle.
+    - Sa filiation remonte à l'observation d'artillerie (1945) — pas à l'aviation de chasse.

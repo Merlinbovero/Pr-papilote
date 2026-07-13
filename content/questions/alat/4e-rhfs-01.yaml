@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.4e-rhfs-01
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Quelle est la mission du 4e RHFS ?
+choices:
+  - Infiltrer, exfiltrer et appuyer les forces spéciales au profit du COS
+  - Former les jeunes pilotes de l'ALAT
+  - Assurer la défense aérienne du territoire
+  - Transporter le fret logistique de l'armée de Terre
+correctChoices: [0]
+explanation: >-
+  Le 4e RHFS de Pau est la composante hélicoptères des forces spéciales :
+  infiltrations, exfiltrations et appuis dans les environnements les plus
+  hostiles, employé par le commandement des opérations spéciales (COS).
+evaluates: [alat.unites.4e-rhfs]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

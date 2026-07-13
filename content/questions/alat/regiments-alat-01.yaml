@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.alat.regiments-alat-01
+kind: association
+theme: regiments-alat
+statement: >-
+  Associez chaque régiment d'hélicoptères à sa garnison.
+pairs:
+  - left: 1er RHC
+    right: Phalsbourg (Moselle)
+  - left: 3e RHC
+    right: Étain (Meuse)
+  - left: 5e RHC
+    right: Pau (Pyrénées-Atlantiques)
+  - left: 4e RHFS
+    right: Pau — quartier de Rose (forces spéciales)
+explanation: >-
+  Les trois RHC de la 4e BAC sont à Phalsbourg (1er), Étain (3e) et Pau (5e) ;
+  le 4e RHFS, régiment des forces spéciales, est également à Pau.
+evaluates: [alat.unites.4e-rhfs]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

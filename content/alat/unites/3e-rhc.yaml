@@ -1,0 +1,109 @@
+schemaVersion: 1
+id: alat.unites.3e-rhc
+type: regiment
+title: 3e régiment d'hélicoptères de combat
+slug: 3e-rhc
+summary: >-
+  Le « régiment de la nuit » — stationné à Étain, le 3e RHC s'est imposé
+  comme le spécialiste du combat aéromobile nocturne et mène la
+  transformation de l'ALAT vers le tout-Caïman (projet Horizon Guépard 2030).
+objectifs:
+  - Identifier le 3e RHC comme régiment d'hélicoptères de combat de la 4e BAC, stationné à Étain.
+  - Expliquer sa spécialité — le combat aéromobile de nuit.
+  - Situer sa place dans la modernisation de l'ALAT (Caïman, futur Guépard).
+aliases: [3e RHC, 3e régiment d'hélicoptères de combat, Étain, régiment de la nuit]
+module: alat
+category: unites
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet régiment, le 3e RHC (campagne de recherche n°1, lot N2 ; sources officielles, parc revérifié 2025 — transition Puma vers Caïman datée).
+    author: prepapilote
+sources:
+  - title: "3e régiment d'hélicoptères de combat — 4e BAC (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/nos-brigades/4e-brigade-daerocombat-4e-bac/3e-regiment-dhelicopteres-combat
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "La DGA livre le dernier hélicoptère NH90 Caïman TTH à l'armée de Terre (Ministère des Armées, février 2025)"
+    url: https://www.defense.gouv.fr/dga/actualites/dga-livre-dernier-helicoptere-nh90-caiman-tth-aux-forces-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Historique 3e RHC Étain — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/historique-unites-metropole-3-rhc-etain.html
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: alat.appareils.gazelle
+  related:
+    - alat.missions.l-aerocombat
+    - alat.unites.1er-rhc
+    - alat.unites.5e-rhc
+infobox:
+  appellation: 3e régiment d'hélicoptères de combat (3e RHC)
+  garnison: Étain (Meuse)
+  appareils: [NH90 Caïman, Gazelle]
+  missions: [Aérocombat de nuit, Reconnaissance, Héliportage, Appui, Évacuation]
+  devise: Semper ad alta
+content:
+  essentiel:
+    body: |
+      Le **3e régiment d'hélicoptères de combat** est stationné à **Étain**
+      (Meuse). Son surnom est un titre de gloire : le **« régiment de la
+      nuit »** — il s'est imposé comme le **spécialiste du combat aéromobile
+      nocturne**, l'un des savoir-faire les plus exigeants de l'aérocombat.
+
+      Sa devise, **« Semper ad alta »** (*toujours plus haut*), accompagne un
+      régiment en pleine **transformation** : longtemps armé de **Gazelle**
+      et de **Puma**, il a accueilli ses premiers **NH90 Caïman** fin 2021 et
+      mène la modernisation de l'ALAT — il doit être le premier RHC
+      entièrement transformé (Caïman puis **Guépard**) à l'horizon **2030**.
+
+      Comme ses régiments frères, il appuie les troupes au sol :
+      reconnaissance, appui-feu, poser d'assaut, transport, évacuation.
+    aRetenir:
+      - 3e RHC — Étain (Meuse), l'un des trois RHC de la 4e BAC.
+      - Le « régiment de la nuit » — spécialiste du combat aéromobile nocturne.
+      - Devise « Semper ad alta » — toujours plus haut.
+      - En transformation — premiers Caïman fin 2021, premier RHC « tout nouvelle génération » visé vers 2030.
+  sections:
+    - id: le-specialiste-de-la-nuit
+      title: Le spécialiste de la nuit
+      body: |
+        Voler **bas**, **de nuit**, en exploitant le relief : c'est la marque
+        du 3e RHC. Le combat nocturne démultiplie l'effet de surprise de
+        l'aérocombat — mais exige des équipages une maîtrise particulière
+        (jumelles de vision nocturne, coordination, navigation tactique).
+
+        Le régiment est aussi un pionnier de la **numérisation** et de la
+        **simulation** au sein de l'ALAT — préparer les missions et
+        entraîner les équipages dans des environnements synthétiques avant
+        de les exécuter en vol.
+    - id: transformation-et-engagements
+      title: Transformation et engagements
+      strate: maitriser
+      body: |
+        Le parc du régiment illustre la **modernisation** de l'ALAT : les
+        **Puma**, en service depuis des décennies, ont progressivement cédé
+        la place aux **NH90 Caïman** (premiers appareils reçus fin 2021 ;
+        le dernier des 63 Caïman TTH de l'armée de Terre a été livré en
+        février 2025). À terme, le **Guépard** (H160M) complétera la flotte
+        — projet « Horizon Guépard 2030 ».
+
+        Sur la dernière décennie, le 3e RHC s'est engagé sur tous les
+        théâtres majeurs — **Pamir**, **Harmattan**, **Serval**,
+        **Sangaris**, **Barkhane** — et sur le territoire national (lutte
+        contre les feux de forêt, contre-terrorisme).
+  pieges:
+    - Le surnom « régiment de la nuit » désigne le 3e RHC d'Étain — une spécialité, le combat aéromobile nocturne.
+    - Le parc évolue vite (Puma → Caïman, puis Guépard) — toujours dater l'état de la flotte qu'on cite.
+    - Étain est dans la Meuse — ne pas confondre avec Phalsbourg (1er RHC, Moselle) ni Pau (5e RHC).

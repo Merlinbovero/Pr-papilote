@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.alat.3e-rhc-03
+kind: vrai-faux
+theme: regiments-alat
+statement: >-
+  Le combat aéromobile de nuit est une spécialité facile qui ne demande aucune qualification particulière.
+answer: false
+explanation: >-
+  Faux. Voler bas, de nuit, en exploitant le relief est l'un des savoir-faire
+  les plus exigeants de l'aérocombat (jumelles de vision nocturne, navigation
+  tactique, coordination) — c'est la spécialité qui a fait la réputation du
+  3e RHC.
+evaluates: [alat.unites.3e-rhc]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

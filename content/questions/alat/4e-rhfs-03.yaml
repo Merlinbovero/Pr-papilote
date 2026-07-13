@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.4e-rhfs-03
+kind: vrai-faux
+theme: regiments-alat
+statement: >-
+  Deux régiments d'hélicoptères de l'armée de Terre sont stationnés à Pau.
+answer: true
+explanation: >-
+  Vrai. Pau accueille le 5e RHC (4e brigade d'aérocombat) et le 4e RHFS
+  (forces spéciales, employé par le COS) — deux régiments voisins aux chaînes
+  d'emploi différentes.
+evaluates: [alat.unites.4e-rhfs]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

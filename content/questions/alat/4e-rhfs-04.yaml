@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.4e-rhfs-04
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Quels hélicoptères composent le parc du 4e RHFS ?
+choices:
+  - Caracal, Cougar, Tigre et Gazelle
+  - Uniquement des NH90 Caïman
+  - Rafale et Mirage 2000
+  - Alouette II et H-21
+correctChoices: [0]
+explanation: >-
+  Le 4e RHFS met en œuvre un parc hétérogène et spécialisé — Caracal, Cougar,
+  Tigre, Gazelle — adapté aux missions spéciales ; 18 Caïman en version forces
+  spéciales sont attendus entre 2026 et 2029.
+evaluates: [alat.unites.4e-rhfs]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

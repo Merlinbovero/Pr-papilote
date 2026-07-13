@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.alat.1er-rhc-04
+kind: qcm
+theme: regiments-alat
+statement: >-
+  À quelles opérations récentes le 1er RHC a-t-il participé ?
+choices:
+  - Pamir, Harmattan, Serval, Sangaris, Barkhane
+  - Uniquement des exercices en métropole
+  - Overlord et Dragoon
+  - Apollo et Artemis
+correctChoices: [0]
+explanation: >-
+  Le 1er RHC a servi sur les grands théâtres de la dernière décennie —
+  Afghanistan (Pamir), Libye (Harmattan), Mali (Serval), Centrafrique
+  (Sangaris), Sahel (Barkhane) — plus des missions intérieures (Résilience,
+  Irma).
+evaluates: [alat.unites.1er-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

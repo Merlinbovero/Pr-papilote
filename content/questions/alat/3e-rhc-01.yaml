@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.3e-rhc-01
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Quel régiment de l'ALAT est surnommé le « régiment de la nuit » ?
+choices:
+  - Le 3e RHC d'Étain
+  - Le 1er RHC de Phalsbourg
+  - Le 5e RHC de Pau
+  - Le 4e RHFS de Pau
+correctChoices: [0]
+explanation: >-
+  Le 3e RHC d'Étain s'est imposé comme le spécialiste du combat aéromobile
+  nocturne — d'où son surnom de « régiment de la nuit ». Sa devise : « Semper
+  ad alta ».
+evaluates: [alat.unites.3e-rhc]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

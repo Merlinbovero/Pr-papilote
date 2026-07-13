@@ -20,11 +20,15 @@ level: 2
 createdAt: "2026-07-13"
 verifiedAt: "2026-07-13"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche-objet régiment, le 5e RHC (ancrage catégorie unités ALAT).
+    author: prepapilote
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — rattachement à la 4e BAC explicité, relations vers les fiches 1er RHC, 3e RHC, 4e RHFS et aérocombat (lot N2).
     author: prepapilote
 sources:
   - title: "5e régiment d'hélicoptères de combat — Wikipédia"
@@ -41,6 +45,10 @@ relations:
     - predicate: dote-de
       target: alat.appareils.tigre
   related:
+    - alat.missions.l-aerocombat
+    - alat.unites.1er-rhc
+    - alat.unites.3e-rhc
+    - alat.unites.4e-rhfs
     - alat.presentation.devenir-pilote-alat
     - alat.organisation.aviation-legere-armee-de-terre
 infobox:
@@ -58,6 +66,8 @@ content:
       l'**unité** de base — l'équivalent de la **flottille** (Marine) ou de
       l'**escadron** (armée de l'air). Le 5e RHC est stationné à **Pau**
       (Pyrénées-Atlantiques) ; on le surnomme le **« régiment du Béarn »**.
+      Avec les 1er RHC (Phalsbourg) et 3e RHC (Étain), il forme la **4e
+      brigade d'aérocombat**.
 
       Il met en œuvre toute la **palette** de l'aérocombat : l'hélicoptère de
       combat **Tigre**, l'hélicoptère de manœuvre **NH90 Caïman**, le **Cougar**
