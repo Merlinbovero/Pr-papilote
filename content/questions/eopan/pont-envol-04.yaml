@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.pont-envol-04
+kind: vrai-faux
+theme: operations-embarquees
+statement: >-
+  La piste oblique permet à un avion qui rate son appontage de remettre les gaz et de repartir.
+answer: true
+explanation: >-
+  Vrai. Un avion qui manque les brins d'arrêt file dans le prolongement de la
+  piste oblique, au-dessus de l'eau, remet pleine puissance et repart pour un
+  nouveau tour — c'est la remise de gaz, sécurisée par la piste oblique.
+evaluates: [eopan.concepts.pont-d-envol]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

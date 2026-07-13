@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.catapultage-05
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  Dans l'acronyme CATOBAR, que recouvre la partie « catapultage » ?
+choices:
+  - Le décollage assisté par catapulte (CATO)
+  - La récupération par brins d'arrêt (BAR)
+  - Le ravitaillement en vol
+  - Le tremplin de décollage
+correctChoices: [0]
+explanation: >-
+  CATOBAR signifie « Catapult Assisted Take-Off But Arrested Recovery » : le
+  catapultage est le décollage assisté par catapulte (CATO), l'appontage sur
+  brins d'arrêt en est la récupération (BAR).
+evaluates: [eopan.procedures.catapultage]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

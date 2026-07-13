@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: eopan.concepts.pont-d-envol
+type: concept
+title: Le pont d'envol
+slug: pont-d-envol
+summary: >-
+  L'aérodrome flottant du porte-avions. Grâce à sa piste oblique, il permet de
+  catapulter et d'apponter en même temps ; ses équipes, identifiées par des
+  chasubles de couleur, y orchestrent un ballet aérien millimétré.
+objectifs:
+  - Décrire le pont d'envol comme l'aérodrome du porte-avions et le rôle de la piste oblique.
+  - Expliquer comment la piste oblique permet de catapulter et d'apponter simultanément.
+  - Identifier les équipes du pont par leurs chasubles de couleur (jaune, rouge, bleu, violet) et le « chien jaune ».
+aliases: [pont d'envol, piste oblique, piste angulaire, chien jaune, chasubles]
+module: eopan
+category: concepts
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet concept, le pont d'envol (piste oblique, équipes de pont).
+    author: prepapilote
+sources:
+  - title: "Charles de Gaulle (porte-avions) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Charles_de_Gaulle_(porte-avions)
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Le saviez-vous ? Chien jaune — Cols Bleus (Marine nationale)"
+    url: https://www.colsbleus.defense.gouv.fr/fr/le-saviez-vous-chien-jaune
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.procedures.catapultage
+    - eopan.procedures.appontage
+    - eopan.bases.charles-de-gaulle
+content:
+  essentiel:
+    body: |
+      Le **pont d'envol** est l'**aérodrome** du porte-avions : la surface d'où
+      les avions **décollent** (catapultage) et où ils **atterrissent**
+      (appontage). Sur une emprise minuscule comparée à un aéroport, tout doit
+      être **optimisé**.
+
+      L'innovation majeure est la **piste oblique** (ou angulaire) : la piste
+      d'appontage est **désaxée** de quelques degrés par rapport à l'axe du
+      navire. Grâce à elle, on peut **apponter** à l'arrière **pendant** qu'on
+      **catapulte** à l'avant — les deux activités ne se gênent plus. Elle
+      permet aussi à un avion qui **rate** son appontage de **remettre les gaz**
+      et de repartir sans risque.
+
+      Sur ce pont s'active un **ballet** parfaitement réglé. Chaque équipe est
+      identifiée par une **chasuble de couleur** — un code visuel indispensable
+      dans le bruit et le vent. Au centre, le **« chien jaune »** dirige les
+      mouvements des avions.
+    aRetenir:
+      - Le pont d'envol est l'aérodrome du porte-avions — décollage (catapultage) et arrivée (appontage).
+      - La piste oblique, désaxée, permet de catapulter à l'avant et d'apponter à l'arrière en même temps.
+      - Elle permet aussi à un avion qui rate son appontage de remettre les gaz et repartir.
+      - Les équipes de pont sont identifiées par des chasubles de couleur ; le « chien jaune » dirige les avions.
+  sections:
+    - id: la-piste-oblique
+      title: La piste oblique
+      body: |
+        Sur les tout premiers porte-avions, une **seule** piste dans l'axe
+        servait à tout : décoller, apponter, stationner. C'était **dangereux**
+        — un avion qui ratait son arrivée risquait de percuter ceux garés à
+        l'avant.
+
+        La **piste oblique** a tout changé. En **désaxant** la piste
+        d'appontage vers le côté, on libère l'**avant** du pont pour le
+        **catapultage** et le **parking**. Deux avantages majeurs :
+
+        - on peut **catapulter et apponter en même temps** ;
+        - un avion qui **manque** les brins d'arrêt file dans le prolongement de
+          la piste oblique, **au-dessus de l'eau**, remet pleine puissance et
+          **repart** pour un nouveau tour — c'est la « remise de gaz ».
+      figures:
+        - schemaId: pont-envol-piste-oblique
+          alt: Vue de dessus d'un pont d'envol — catapultes à l'avant, piste oblique désaxée à l'arrière avec ses brins d'arrêt, et l'îlot sur le côté.
+          caption: La piste oblique désaxe l'appontage pour libérer l'avant du pont — on catapulte et on apponte simultanément.
+          width: 460
+          height: 300
+    - id: les-equipes-de-pont
+      title: Les équipes de pont
+      body: |
+        Un pont d'envol en activité est un environnement **extrême** : bruit,
+        souffle des réacteurs, câbles sous tension, avions en mouvement. Pour
+        s'y coordonner d'un coup d'œil, chaque **spécialité** porte une
+        **chasuble** (et un casque) d'une **couleur** précise :
+
+        - **jaune** — la **direction** des mouvements d'avions sur le pont ;
+        - **rouge** — les équipes de **sécurité** (incendie, sauvetage) ;
+        - **bleu** — les équipes de **manœuvre** (déplacement, arrimage) ;
+        - **violet** — le **ravitaillement** en carburant.
+
+        Le **« chien jaune »** est le **directeur de pont d'envol**, un
+        **officier** en chasuble jaune qui, sous l'autorité de l'officier de
+        quart aviation, **dirige** les manœuvres (catapultage, appontage,
+        déplacements). Il est assisté des **« chiots »**, en chasuble bleue.
+    - id: un-espace-precieux
+      title: Un espace précieux
+      strate: maitriser
+      body: |
+        Le pont d'envol n'est qu'une **partie** de la vie aéronautique du
+        navire : sous lui, le **hangar** abrite et entretient les avions, reliés
+        au pont par des **ascenseurs** (les élévateurs). Chaque mètre carré est
+        **compté** et son usage **planifié** heure par heure.
+
+        La **piste oblique** et l'organisation du pont expliquent pourquoi la
+        mise en œuvre embarquée est un **savoir-faire** rare : il ne suffit pas
+        d'avoir des avions et un navire, il faut **orchestrer** leur rencontre
+        sur quelques milliers de mètres carrés mouvants — ce que la Marine
+        apprend à ses équipages, dont les futurs pilotes issus de l'EOPAN.
+  pieges:
+    - La piste oblique ne sert pas à « tourner » — elle désaxe l'appontage pour le séparer du catapultage et sécuriser la remise de gaz.
+    - Les couleurs des chasubles ne sont pas décoratives — elles identifient les spécialités pour se coordonner en sécurité.
+    - Le « chien jaune » n'est pas un pilote — c'est le directeur de pont d'envol, qui orchestre les mouvements au sol.

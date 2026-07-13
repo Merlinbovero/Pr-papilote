@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.catapultage-03
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  En combien de temps environ un avion passe-t-il de 0 à près de 250 km/h au catapultage ?
+choices:
+  - Environ deux secondes
+  - Environ trente secondes
+  - Environ deux minutes
+  - Environ dix secondes
+correctChoices: [0]
+explanation: >-
+  Sur 75 mètres, la catapulte propulse l'avion de 0 à près de 250 km/h en environ
+  deux secondes, moteurs à pleine puissance.
+evaluates: [eopan.procedures.catapultage]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

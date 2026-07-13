@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.catapultage-01
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  À quoi sert le catapultage sur un porte-avions ?
+choices:
+  - À donner à l'avion sa vitesse d'envol sur une piste trop courte
+  - À freiner l'avion à l'appontage
+  - À ravitailler l'avion en carburant
+  - À faire tourner l'avion sur le pont
+correctChoices: [0]
+explanation: >-
+  La piste d'un porte-avions est trop courte pour un décollage classique : la
+  catapulte communique à l'avion, en quelques mètres, la vitesse d'envol qu'une
+  longue piste lui aurait donnée.
+evaluates: [eopan.procedures.catapultage]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.pont-envol-02
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  Sur le pont d'envol, qui est le « chien jaune » ?
+choices:
+  - Le directeur de pont d'envol, qui dirige les mouvements des avions
+  - Le pilote le plus expérimenté
+  - Le commandant du porte-avions
+  - Le mécanicien chef de la catapulte
+correctChoices: [0]
+explanation: >-
+  Le « chien jaune » est le directeur de pont d'envol, un officier en chasuble
+  jaune qui dirige les manœuvres (catapultage, appontage, déplacements) sous
+  l'autorité de l'officier de quart aviation.
+evaluates: [eopan.concepts.pont-d-envol]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
