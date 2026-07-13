@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.landivisiau-04
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quelles flottilles de Rafale Marine sont stationnées à Landivisiau ?
+choices:
+  - Les flottilles 11F, 12F et 17F
+  - Les flottilles 4F et 24F
+  - Les flottilles 31F et 33F
+  - Les flottilles 21F et 23F
+correctChoices: [0]
+explanation: >-
+  Les trois flottilles de chasse de l'aéronautique navale — 11F, 12F et 17F —
+  sont toutes stationnées à Landivisiau et équipées de Rafale Marine.
+evaluates: [eopan.ban.landivisiau]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

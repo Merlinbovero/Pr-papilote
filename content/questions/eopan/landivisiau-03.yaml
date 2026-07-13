@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.landivisiau-03
+kind: vrai-faux
+theme: bases-navales
+statement: >-
+  La BAN de Landivisiau est la seule base de chasse embarquée d'Europe.
+answer: true
+explanation: >-
+  Vrai. Inaugurée en 1965, Landivisiau a la particularité d'être la seule base
+  de chasse embarquée d'Europe — une singularité française.
+evaluates: [eopan.ban.landivisiau]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

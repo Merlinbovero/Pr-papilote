@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .land { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .sea { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .obj { stroke: currentColor; fill: none; stroke-width: 1.6; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le « porte-avions de granit »</text>
+  <!-- Base à terre (gauche) -->
+  <rect class="land" x="34" y="96" width="150" height="60" rx="4" />
+  <line class="land" x1="46" y1="140" x2="172" y2="140" />
+  <g class="obj" transform="translate(80,120)">
+    <line x1="-12" y1="0" x2="12" y2="0" />
+    <line x1="0" y1="-9" x2="0" y2="9" />
+    <line x1="-11" y1="-5" x2="-11" y2="5" />
+  </g>
+  <text class="lbl" x="109" y="176" text-anchor="middle">BAN Landivisiau</text>
+  <text class="sub" x="109" y="192" text-anchor="middle">préparation à terre</text>
+  <!-- Porte-avions (droite) -->
+  <path class="sea" d="M276,150 Q351,142 426,150" />
+  <g class="obj" transform="translate(351,132)">
+    <path d="M-40,10 L40,10 L32,20 L-32,20 Z" />
+    <line x1="-40" y1="10" x2="40" y2="10" />
+    <rect x="6" y="-4" width="12" height="14" />
+  </g>
+  <text class="lbl" x="351" y="176" text-anchor="middle">Charles de Gaulle</text>
+  <text class="sub" x="351" y="192" text-anchor="middle">déploiement en mer</text>
+  <!-- Cycle -->
+  <path class="flow" d="M188,112 C230,96 272,96 308,112" marker-end="url(#ac)" />
+  <text class="accent-t" x="248" y="88" text-anchor="middle">embarquement</text>
+  <path class="flow" d="M308,150 C272,166 230,166 192,150" marker-end="url(#ac)" />
+  <text class="sub" x="248" y="182" text-anchor="middle">retour, entraînement</text>
+</svg>
