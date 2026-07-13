@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: eopan.ban.lanveoc-poulmic
+type: ban
+title: BAN de Lanvéoc-Poulmic
+slug: lanveoc-poulmic
+summary: >-
+  Base d'aéronautique navale de la presqu'île de Crozon, rattachée à l'École
+  navale. Base d'hélicoptères et haut lieu de la formation des officiers de
+  marine, c'est là que se déroule la présélection en vol des futurs pilotes.
+objectifs:
+  - Identifier la BAN de Lanvéoc-Poulmic comme la base liée à l'École navale et à la formation.
+  - Retenir son rôle dans la présélection en vol des candidats pilotes (dont l'EOPAN).
+  - Situer la base dans le réseau des quatre BAN de l'aéronautique navale.
+aliases: [Lanvéoc, Lanvéoc-Poulmic, Poulmic, École navale, LFRL]
+module: eopan
+category: ban
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet BAN, Lanvéoc-Poulmic (École navale, présélection en vol).
+    author: prepapilote
+sources:
+  - title: "Base d'aéronautique navale de Lanvéoc-Poulmic — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_d'a%C3%A9ronautique_navale_de_Lanv%C3%A9oc-Poulmic
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Marine nationale — recrutement de l'aéronautique navale (etremarin.fr)"
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.presentation.le-concours-eopan
+    - eopan.appareils.nh90-caiman
+    - eopan.ban.landivisiau
+infobox:
+  nomComplet: Base d'aéronautique navale de Lanvéoc-Poulmic
+  code: LFRL
+  localisation: Lanvéoc, presqu'île de Crozon (Finistère)
+  rattachement: École navale (Marine nationale)
+  flottilles: [Flottille 32F, Flottille 33F, Flottille 34F, Escadrille 50S]
+  appareilsPresents: [NH90 Caïman Marine]
+content:
+  essentiel:
+    body: |
+      La **base d'aéronautique navale (BAN) de Lanvéoc-Poulmic**, sur la
+      **presqu'île de Crozon** (Finistère), face à la rade de **Brest**, occupe
+      une place à part : elle est étroitement liée à l'**École navale**, l'école
+      qui forme les **officiers** de la Marine nationale.
+
+      C'est à la fois une **base d'hélicoptères** — elle accueille plusieurs
+      flottilles (32F, 33F, 34F…) et l'escadrille 50S — et un grand centre de
+      **formation**. À ce titre, c'est notamment là que se déroule la
+      **présélection en vol** des candidats **pilotes**, étape décisive du
+      parcours de l'**EOPAN**.
+
+      Base ancienne (l'aviation maritime s'y installe dès les années **1920**),
+      Lanvéoc est l'une des **quatre** BAN de l'aéronautique navale — trois en
+      Bretagne, une dans le Sud.
+    aRetenir:
+      - La BAN de Lanvéoc-Poulmic (presqu'île de Crozon) est rattachée à l'École navale.
+      - C'est une base d'hélicoptères et un grand centre de formation de la Marine.
+      - La présélection en vol des futurs pilotes (dont l'EOPAN) s'y déroule.
+      - Elle est l'une des quatre bases d'aéronautique navale — trois en Bretagne, une dans le Var.
+  sections:
+    - id: ecole-navale-et-formation
+      title: École navale et formation
+      body: |
+        Lanvéoc-Poulmic est indissociable de l'**École navale**, installée sur
+        le site depuis **1945** (bâtiments définitifs inaugurés en **1965**).
+        C'est ici que les futurs **officiers** de marine apprennent leur métier.
+
+        Pour les **candidats pilotes**, la base joue un rôle-clé : c'est le lieu
+        de la **présélection en vol**. Aux commandes d'un avion léger, les
+        candidats sont évalués sur leur **capacité à apprendre** et à
+        **restituer** en vol, sous pression — une étape que la fiche du
+        **concours EOPAN** détaille. Réussir cette présélection ouvre la porte
+        de la longue formation de pilote militaire.
+      figures:
+        - schemaId: carte-ban-aeronavale
+          alt: Carte stylisée de la France (l'Hexagone) situant les quatre bases d'aéronautique navale — trois en Bretagne (Landivisiau, Lanvéoc-Poulmic, Lann-Bihoué) et une dans le Var (Hyères).
+          caption: Les quatre BAN de l'aéronautique navale — trois en Bretagne, une dans le Var.
+          width: 460
+          height: 300
+    - id: une-base-d-helicopteres
+      title: Une base d'hélicoptères
+      body: |
+        Outre la formation, Lanvéoc est une véritable **base opérationnelle
+        d'hélicoptères**. Elle abrite plusieurs **flottilles** — dont la
+        **33F**, sur **NH90 Caïman Marine** — et une escadrille de service.
+
+        De là, les hélicoptères assurent des missions de **secours en mer**, de
+        **surveillance** et de **service** au profit des bâtiments de la façade
+        **atlantique**. La proximité de la **rade de Brest**, grand port
+        militaire, en fait un point d'appui naturel.
+    - id: place-dans-le-reseau
+      title: Place dans le réseau des BAN
+      strate: maitriser
+      body: |
+        L'aéronautique navale s'appuie sur **quatre** bases d'aéronautique
+        navale : **Landivisiau** (chasse embarquée), **Lann-Bihoué** (patrouille
+        et guet), **Lanvéoc-Poulmic** (formation et hélicoptères) — toutes trois
+        en **Bretagne** — et **Hyères**, dans le **Var**.
+
+        Cette concentration en **Bretagne** n'est pas un hasard : c'est la
+        région historique de la Marine, avec **Brest** pour grand port. Lanvéoc
+        y ajoute la dimension **école** : c'est souvent là que commence, pour un
+        futur pilote de l'aéronavale, l'aventure aérienne.
+  pieges:
+    - Lanvéoc-Poulmic n'est pas qu'une base opérationnelle — c'est aussi le site de l'École navale et de la formation des officiers.
+    - La présélection en vol de l'EOPAN se déroule à Lanvéoc — un lien direct à retenir avec le parcours du concours.
+    - Ne pas confondre les BAN bretonnes — Landivisiau (chasse), Lann-Bihoué (patrouille/guet), Lanvéoc (formation/hélicoptères).

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.hyeres-03
+kind: qcm
+theme: bases-navales
+statement: >-
+  De quel grand port militaire la BAN de Hyères est-elle le point d'appui aérien ?
+choices:
+  - Toulon
+  - Brest
+  - Cherbourg
+  - Lorient
+correctChoices: [0]
+explanation: >-
+  Hyères est le pivot aéromaritime de la Méditerranée, au service de la Force
+  d'action navale basée à Toulon, premier port militaire français et port
+  d'attache du Charles de Gaulle.
+evaluates: [eopan.ban.hyeres]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

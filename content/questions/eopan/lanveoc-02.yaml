@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.lanveoc-02
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quelle étape du parcours EOPAN se déroule à Lanvéoc-Poulmic ?
+choices:
+  - La présélection en vol
+  - Les tests psychotechniques
+  - L'entretien au CIRFA
+  - L'évaluation d'anglais
+correctChoices: [0]
+explanation: >-
+  C'est à Lanvéoc-Poulmic, base rattachée à l'École navale, que se déroule la
+  présélection en vol des candidats pilotes de l'EOPAN.
+evaluates: [eopan.ban.lanveoc-poulmic]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

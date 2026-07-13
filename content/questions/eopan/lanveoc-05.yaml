@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.lanveoc-05
+kind: qcm
+theme: bases-navales
+statement: >-
+  Combien l'aéronautique navale compte-t-elle de bases (BAN) principales, et où sont-elles ?
+choices:
+  - Quatre — trois en Bretagne et une dans le Var
+  - Deux — une en Bretagne et une en Corse
+  - Six — réparties sur toutes les façades maritimes
+  - Une seule, à Toulon
+correctChoices: [0]
+explanation: >-
+  L'aéronautique navale s'appuie sur quatre BAN : Landivisiau, Lann-Bihoué et
+  Lanvéoc-Poulmic en Bretagne, et Hyères dans le Var.
+evaluates: [eopan.ban.lanveoc-poulmic]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

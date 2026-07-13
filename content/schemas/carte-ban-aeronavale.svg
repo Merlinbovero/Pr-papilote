@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lgd { font-size: 11px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .hex { stroke: #94a3b8; fill: none; stroke-width: 1.6; }
+    .dot { fill: #3b82f6; }
+    .num { fill: #ffffff; font-size: 10px; font-weight: 700; }
+    .numo { fill: currentColor; font-size: 10px; font-weight: 700; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">Les quatre bases de l'aéronautique navale</text>
+  <!-- Hexagone (France stylisée) avec pointe bretonne -->
+  <path class="hex" d="M236,58 L356,106 L330,228 L214,252 L152,206 L152,146 L112,126 L152,112 L152,106 Z" />
+  <!-- Bretagne (3 bases) -->
+  <circle class="dot" cx="132" cy="120" r="8" /><text class="num" x="132" y="124" text-anchor="middle">1</text>
+  <circle class="dot" cx="126" cy="135" r="8" /><text class="num" x="126" y="139" text-anchor="middle">2</text>
+  <circle class="dot" cx="156" cy="146" r="8" /><text class="num" x="156" y="150" text-anchor="middle">3</text>
+  <!-- Var (1 base) -->
+  <circle class="dot" cx="312" cy="214" r="8" /><text class="num" x="312" y="218" text-anchor="middle">4</text>
+  <text class="sub" x="300" y="200" text-anchor="middle">Méditerranée</text>
+  <text class="sub" x="96" y="104" text-anchor="middle">Bretagne</text>
+  <!-- Légende -->
+  <text class="lgd" x="40" y="276" text-anchor="start">1 Landivisiau · 2 Lanvéoc-Poulmic · 3 Lann-Bihoué (Bretagne)</text>
+  <text class="lgd" x="40" y="292" text-anchor="start">4 Hyères (Var)</text>
+</svg>

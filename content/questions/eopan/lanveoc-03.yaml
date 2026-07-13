@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.lanveoc-03
+kind: vrai-faux
+theme: bases-navales
+statement: >-
+  La BAN de Lanvéoc-Poulmic est uniquement une base opérationnelle, sans rôle de formation.
+answer: false
+explanation: >-
+  Faux. Lanvéoc est à la fois une base d'hélicoptères opérationnelle et un grand
+  centre de formation, lié à l'École navale et à la présélection en vol des
+  pilotes.
+evaluates: [eopan.ban.lanveoc-poulmic]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
