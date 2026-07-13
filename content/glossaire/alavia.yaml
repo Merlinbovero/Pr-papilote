@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.alavia
+title: ALAVIA
+definition: >-
+  Amiral commandant la force de l'aéronautique navale. Autorité organique qui
+  prépare l'ensemble des bases et des aéronefs de la Marine (état-major à
+  Toulon). C'est l'autorité de référence pour l'aéronautique navale.
+sigleExpansion: Amiral commandant la force de l'aéronautique navale
+english: Commander, French Naval Aviation
+synonyms: []
+ficheId: eopan.organisation.marine-nationale
+tags: []
+status: publie

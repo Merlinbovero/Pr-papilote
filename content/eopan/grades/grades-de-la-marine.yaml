@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: eopan.grades.grades-de-la-marine
+type: concept
+title: Les grades de la Marine nationale
+slug: grades-de-la-marine
+summary: >-
+  La Marine emploie des grades propres, différents de ceux de l'armée de terre
+  et de l'air. Des officiers généraux à l'équipage, chaque grade a son
+  équivalent interarmées — un repère de culture militaire attendu au concours.
+objectifs:
+  - Citer les principaux grades de la Marine nationale, des officiers généraux à l'équipage.
+  - Établir l'équivalence entre les grades de la Marine et ceux de l'armée de terre et de l'air.
+  - Situer le grade d'un officier pilote issu de l'EOPAN dans cette hiérarchie.
+aliases:
+  [grades, grades de la Marine, capitaine de vaisseau, enseigne de vaisseau, amiral, hiérarchie]
+module: eopan
+category: grades
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche grades de la Marine (Lot A, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Marine nationale — grades et appellations (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/mieux-nous-connaitre/notre-organisation
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1, p.9-10 — Organisation hiérarchique"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+relations:
+  related:
+    - eopan.organisation.marine-nationale
+    - eopan.presentation.le-concours-eopan
+status: publie
+content:
+  essentiel:
+    body: |
+      La Marine nationale a la particularité d'employer des **grades propres**,
+      hérités de sa longue histoire et **différents** de ceux de l'armée de
+      terre et de l'air. Là où l'armée de terre parle de « colonel » ou de
+      « capitaine », la Marine dit « **capitaine de vaisseau** » ou
+      « **lieutenant de vaisseau** ».
+
+      La hiérarchie se lit en grandes **catégories** : les **officiers généraux**
+      (amiraux), les **officiers supérieurs**, les **officiers subalternes**,
+      les **officiers mariniers** (sous-officiers) et l'**équipage**.
+
+      À chaque grade de la Marine correspond un **équivalent** dans les autres
+      armées. Connaître ces correspondances est un **repère de culture
+      militaire** utile pour l'entretien du concours.
+    aRetenir:
+      - La Marine emploie des grades propres, distincts de ceux de l'armée de terre et de l'air.
+      - Les catégories — officiers généraux, supérieurs, subalternes, officiers mariniers, équipage.
+      - Le capitaine de vaisseau équivaut au colonel ; le lieutenant de vaisseau, au capitaine.
+      - Un officier pilote issu de l'EOPAN atteint en général le grade de lieutenant de vaisseau ou de capitaine de corvette.
+  sections:
+    - id: les-officiers
+      title: Les officiers
+      body: |
+        Chez les **officiers**, la hiérarchie de la Marine se lit ainsi (du plus
+        élevé au plus bas), avec son équivalent dans l'armée de terre et de
+        l'air :
+
+        **Officiers généraux (amiraux)**
+        - **Amiral** — équivaut au général d'armée
+        - **Vice-amiral d'escadre** — général de corps d'armée
+        - **Vice-amiral** — général de division
+        - **Contre-amiral** — général de brigade
+
+        **Officiers supérieurs**
+        - **Capitaine de vaisseau** — colonel
+        - **Capitaine de frégate** — lieutenant-colonel
+        - **Capitaine de corvette** — commandant
+
+        **Officiers subalternes**
+        - **Lieutenant de vaisseau** — capitaine
+        - **Enseigne de vaisseau de 1re classe** — lieutenant
+        - **Enseigne de vaisseau de 2e classe** — sous-lieutenant
+        - **Aspirant** — aspirant
+
+        Astuce mémoire — le mot « **vaisseau** » marque le haut de chaque bloc
+        d'officiers, « **frégate** » et « **corvette** » descendent en taille de
+        navire comme on descend en grade.
+    - id: officiers-mariniers-et-equipage
+      title: Officiers mariniers et équipage
+      body: |
+        Sous les officiers, on trouve les **officiers mariniers**
+        (l'équivalent des **sous-officiers**) puis l'**équipage** (les
+        **militaires du rang**) :
+
+        **Officiers mariniers**
+        - **Major**
+        - **Maître principal** — équivaut à l'adjudant-chef
+        - **Premier maître** — adjudant
+        - **Maître** — sergent-chef
+        - **Second maître** — sergent
+
+        **Équipage**
+        - **Quartier-maître de 1re classe** — caporal-chef
+        - **Quartier-maître de 2e classe** — caporal
+        - **Matelot** — soldat de 1re classe
+
+        Le mot « **maître** » signe l'appartenance au corps des officiers
+        mariniers, celui de « **quartier-maître** » et « **matelot** »,
+        l'équipage.
+    - id: le-grade-du-pilote-eopan
+      title: Le grade du pilote EOPAN
+      strate: maitriser
+      body: |
+        Un candidat reçu à l'**EOPAN** entre dans la Marine comme **officier**.
+        Recruté comme officier **sous contrat**, un pilote issu de cette voie
+        déroule une carrière centrée sur le **pilotage** et atteint en général
+        le grade de **lieutenant de vaisseau**, voire de **capitaine de
+        corvette**.
+
+        Les officiers de **carrière** (voie de l'École navale) peuvent, eux,
+        gravir toute la hiérarchie jusqu'aux grades d'**amiral**. Savoir situer
+        son futur grade — et le vouvoiement/appellation qui l'accompagne — fait
+        partie de la **posture** attendue d'un candidat sérieux.
+  pieges:
+    - Un « capitaine de vaisseau » n'est pas un capitaine au sens de l'armée de terre — c'est l'équivalent d'un colonel ; attention au faux ami.
+    - « Lieutenant de vaisseau » (Marine) équivaut à « capitaine » (Terre/Air) — deux appellations pour un même niveau.
+    - Les officiers mariniers sont les sous-officiers de la Marine — ne pas les confondre avec les officiers.

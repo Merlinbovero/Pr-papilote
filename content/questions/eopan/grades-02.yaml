@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.grades-02
+kind: qcm
+theme: grades-marine
+statement: >-
+  Quel grade de la Marine équivaut au « capitaine » de l'armée de terre ?
+choices:
+  - Lieutenant de vaisseau
+  - Capitaine de vaisseau
+  - Capitaine de frégate
+  - Enseigne de vaisseau
+correctChoices: [0]
+explanation: >-
+  Le lieutenant de vaisseau (Marine) correspond au capitaine (Terre/Air). Le
+  capitaine de vaisseau, lui, équivaut au colonel.
+evaluates: [eopan.grades.grades-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

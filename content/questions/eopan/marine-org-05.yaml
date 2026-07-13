@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.marine-org-05
+kind: vrai-faux
+theme: organisation-marine
+statement: >-
+  Le chef d'état-major de la Marine (CEMM) commande directement les opérations militaires.
+answer: false
+explanation: >-
+  Faux. Le CEMM prépare une marine prête au combat et la met à disposition du
+  chef d'état-major des armées (CEMA), qui, lui, commande l'emploi des forces en
+  opérations.
+evaluates: [eopan.organisation.marine-nationale]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
