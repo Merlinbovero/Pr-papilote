@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .base { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="26" text-anchor="middle">Lann-Bihoué — base multi-missions</text>
+  <!-- Base -->
+  <rect class="base" x="30" y="104" width="118" height="52" rx="4" />
+  <text class="lbl" x="89" y="126" text-anchor="middle">BAN</text>
+  <text class="lbl" x="89" y="142" text-anchor="middle">Lann-Bihoué</text>
+  <!-- Liaisons -->
+  <path class="flow" d="M148,120 C196,104 236,84 286,78" marker-end="url(#ac)" />
+  <path class="flow" d="M148,130 C200,130 236,130 286,130" marker-end="url(#ac)" />
+  <path class="flow" d="M148,140 C196,156 236,176 286,182" marker-end="url(#ac)" />
+  <!-- Missions -->
+  <rect class="node" x="288" y="62" width="150" height="34" rx="4" />
+  <text class="lbl" x="298" y="78" text-anchor="start">Guet aérien</text>
+  <text class="sub" x="298" y="91" text-anchor="start">E-2C Hawkeye</text>
+  <rect class="node" x="288" y="113" width="150" height="34" rx="4" />
+  <text class="lbl" x="298" y="129" text-anchor="start">Patrouille maritime</text>
+  <text class="sub" x="298" y="142" text-anchor="start">Atlantique 2</text>
+  <rect class="node" x="288" y="164" width="150" height="34" rx="4" />
+  <text class="lbl" x="298" y="180" text-anchor="start">Surveillance, servitude</text>
+  <text class="sub" x="298" y="193" text-anchor="start">Falcon 50M, Xingu</text>
+</svg>

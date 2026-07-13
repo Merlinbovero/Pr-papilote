@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.lann-bihoue-02
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quelle différence essentielle sépare Lann-Bihoué de Landivisiau ?
+choices:
+  - Lann-Bihoué abrite la patrouille et la surveillance à terre, Landivisiau la chasse embarquée
+  - Lann-Bihoué est en mer, Landivisiau sur terre
+  - Lann-Bihoué accueille les Rafale M, Landivisiau les Hawkeye
+  - Il n'y a aucune différence, ce sont deux noms de la même base
+correctChoices: [0]
+explanation: >-
+  Les deux BAN atlantiques sont complémentaires : Landivisiau concentre la chasse
+  embarquée (Rafale M), tandis que Lann-Bihoué réunit patrouille maritime, guet
+  aérien et surveillance, opérant surtout depuis la terre.
+evaluates: [eopan.ban.lann-bihoue]
+difficulty: 2
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

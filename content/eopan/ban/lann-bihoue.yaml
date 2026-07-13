@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: eopan.ban.lann-bihoue
+type: ban
+title: BAN de Lann-Bihoué
+slug: lann-bihoue
+summary: >-
+  Base d'aéronautique navale du Morbihan, près de Lorient. Grande base
+  multi-missions de l'aéronavale, elle regroupe le guet aérien (Hawkeye), la
+  patrouille maritime (Atlantique 2) et la surveillance, tous basés à terre.
+objectifs:
+  - Identifier la BAN de Lann-Bihoué comme la grande base multi-missions de l'aéronautique navale basée à terre.
+  - Distinguer son rôle (guet aérien, patrouille maritime, surveillance) de celui de Landivisiau (chasse embarquée).
+  - Citer les principales flottilles et appareils qui y sont stationnés (Hawkeye, Atlantique 2, Falcon 50M).
+aliases: [Lann-Bihoué, BAN Lann-Bihoué, Lorient, LFRH]
+module: eopan
+category: ban
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet BAN, la base d'aéronautique navale de Lann-Bihoué (patrouille, guet, surveillance).
+    author: prepapilote
+sources:
+  - title: "Base d'aéronautique navale de Lann-Bihoué — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_d'a%C3%A9ronautique_navale_de_Lann-Bihou%C3%A9
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aéronautique navale — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.e-2c-hawkeye
+    - eopan.appareils.atlantique-2
+    - eopan.ban.landivisiau
+    - eopan.presentation.le-concours-eopan
+infobox:
+  nomComplet: Base d'aéronautique navale de Lann-Bihoué
+  code: LFRH
+  localisation: Lann-Bihoué, près de Lorient (Morbihan)
+  rattachement: Aéronautique navale (Marine nationale)
+  flottilles: [Flottille 4F, Flottille 21F, Flottille 23F, Flottille 24F, Flottille 28F]
+  appareilsPresents: [E-2C Hawkeye, Atlantique 2, Falcon 50M, Embraer Xingu]
+content:
+  essentiel:
+    body: |
+      La **base d'aéronautique navale (BAN) de Lann-Bihoué**, dans le
+      **Morbihan**, près de **Lorient**, est la grande base **multi-missions**
+      de l'aéronavale. Là où Landivisiau concentre la **chasse embarquée**,
+      Lann-Bihoué rassemble les avions qui **surveillent** et **protègent**
+      depuis la terre.
+
+      On y trouve trois grandes familles de missions : le **guet aérien** (avec
+      les **E-2C Hawkeye** de la flottille 4F), la **patrouille maritime** (avec
+      les **Atlantique 2** des flottilles 21F et 23F) et la **surveillance** et
+      la **servitude** (avec les **Falcon 50M** et les **Xingu**).
+
+      C'est une base **importante** : elle emploie de l'ordre de **2 000
+      personnes** et met en œuvre une **trentaine d'aéronefs**. Contrairement
+      aux chasseurs de Landivisiau, ses appareils opèrent principalement
+      **depuis la terre**, sur de longues distances.
+    aRetenir:
+      - Lann-Bihoué (Morbihan, près de Lorient) est la grande base multi-missions de l'aéronautique navale.
+      - Elle regroupe le guet aérien (Hawkeye), la patrouille maritime (Atlantique 2) et la surveillance/servitude.
+      - Ses appareils opèrent depuis la terre — à la différence de la chasse embarquée de Landivisiau.
+      - Grande base d'environ 2 000 personnes et une trentaine d'aéronefs.
+  sections:
+    - id: une-base-multi-missions
+      title: Une base multi-missions
+      body: |
+        Toute l'aéronautique navale ne se joue pas sur le porte-avions. Une
+        grande partie de son travail consiste à **surveiller** les espaces
+        maritimes, **détecter** les menaces et **coordonner** l'action — des
+        missions assurées par des avions **basés à terre**, à Lann-Bihoué.
+
+        La base abrite trois grandes **familles** :
+
+        - le **guet aérien** — les **E-2C Hawkeye** (flottille 4F), radars
+          volants du groupe aéronaval ;
+        - la **patrouille maritime** — les **Atlantique 2** (flottilles 21F et
+          23F), traqueurs de sous-marins à longue endurance ;
+        - la **surveillance** et la **servitude** — les **Falcon 50M** et les
+          **Xingu**, pour la surveillance maritime, le transport et
+          l'entraînement.
+      figures:
+        - schemaId: lann-bihoue-missions
+          alt: La BAN de Lann-Bihoué au centre, reliée à trois missions — guet aérien (Hawkeye), patrouille maritime (Atlantique 2), surveillance et servitude (Falcon 50M, Xingu).
+          caption: Lann-Bihoué rassemble plusieurs familles d'aéronefs basés à terre — guet aérien, patrouille maritime et surveillance.
+          width: 460
+          height: 260
+    - id: deux-bans-complementaires
+      title: Deux BAN complémentaires
+      body: |
+        Il est utile de comparer les deux grandes BAN de la façade **atlantique**
+        pour ne pas les confondre :
+
+        - **Landivisiau** (Finistère) est la base de la **chasse embarquée** :
+          les **Rafale M** qui embarquent sur le porte-avions ;
+        - **Lann-Bihoué** (Morbihan) est la base de la **patrouille**, du
+          **guet** et de la **surveillance** : des avions qui opèrent surtout
+          **depuis la terre**.
+
+        Les deux sont **complémentaires** : la première fournit le **glaive**
+        (la chasse embarquée), la seconde les **yeux et les oreilles** (guet,
+        patrouille, surveillance) de l'aéronautique navale.
+    - id: une-grande-emprise
+      title: Une grande emprise
+      strate: maitriser
+      body: |
+        Située sur les communes de **Ploemeur**, **Gestel** et **Quéven**, à
+        quelques kilomètres à l'ouest de **Lorient**, Lann-Bihoué est l'une des
+        plus **importantes** emprises de la Marine en Bretagne.
+
+        Le site accueille des activités aéronautiques depuis les années
+        **1930** ; il a connu une longue histoire militaire avant de devenir la
+        grande base **multi-missions** actuelle. Sa taille (environ **2 000
+        personnes**, une **trentaine d'aéronefs**) en fait un pôle majeur de
+        l'aéronautique navale, indispensable à la **surveillance** des approches
+        maritimes françaises.
+  pieges:
+    - Ne pas confondre les deux BAN atlantiques — Landivisiau pour la chasse embarquée, Lann-Bihoué pour la patrouille, le guet et la surveillance.
+    - Les appareils de Lann-Bihoué opèrent surtout depuis la terre — ce ne sont pas des avions embarqués sur le porte-avions.
+    - Lann-Bihoué est une base multi-missions — elle réunit plusieurs flottilles et plusieurs types d'appareils, pas un seul.
