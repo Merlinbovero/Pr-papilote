@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.groupe-aeronaval-01
+kind: qcm
+theme: groupe-aeronaval
+statement: >-
+  Que désigne le groupe aéronaval (GAN) ?
+choices:
+  - La force navale constituée autour du porte-avions (escorte, sous-marin, ravitailleur, aéronefs)
+  - Le seul porte-avions Charles de Gaulle
+  - L'ensemble des bases aéronavales à terre
+  - La flotte de sous-marins nucléaires lanceurs d'engins
+correctChoices: [0]
+explanation: >-
+  Le GAN est une force navale cohérente formée autour du porte-avions : son
+  escorte (frégates, SNA, ravitailleur), son groupe aérien embarqué et son
+  état-major. Le porte-avions n'en est que le cœur.
+evaluates: [eopan.concepts.groupe-aeronaval]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

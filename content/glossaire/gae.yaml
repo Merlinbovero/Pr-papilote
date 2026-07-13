@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: terme.gae
+title: GAé
+definition: >-
+  Groupe aérien embarqué — ensemble des aéronefs mis en œuvre depuis le
+  porte-avions (jusqu'à une trentaine) : Rafale Marine, E-2C Hawkeye et
+  hélicoptères. À distinguer du GAN (groupe aéronaval), qui désigne toute la
+  force navale et non les seuls aéronefs.
+sigleExpansion: Groupe aérien embarqué
+english: Carrier Air Wing
+synonyms: []
+ficheId: eopan.concepts.groupe-aeronaval
+tags: []
+status: publie

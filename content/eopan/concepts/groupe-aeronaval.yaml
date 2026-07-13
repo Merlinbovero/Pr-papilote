@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: eopan.concepts.groupe-aeronaval
+type: concept
+title: Le groupe aéronaval (GAN)
+slug: groupe-aeronaval
+summary: >-
+  Le porte-avions ne navigue jamais seul : autour du Charles de Gaulle,
+  le groupe aéronaval réunit des frégates, un sous-marin nucléaire d'attaque,
+  un ravitailleur et le groupe aérien embarqué — l'outil majeur de projection
+  de puissance de la France.
+objectifs:
+  - Décrire la composition du groupe aéronaval (cœur, escorte, groupe aérien embarqué).
+  - Expliquer pourquoi le porte-avions ne se déploie jamais seul.
+  - Distinguer le groupe aéronaval (GAN) du groupe aérien embarqué (GAé).
+aliases:
+  [groupe aéronaval, GAN, GAé, groupe aérien embarqué, escorte, task force 473, force aéronavale]
+module: eopan
+category: concepts
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche de synthèse sur le groupe aéronaval (Lot D, ingestion Guide EOPAN 2020, recoupée sources officielles à jour).
+    author: prepapilote
+sources:
+  - title: "Le groupe aéronaval — la colonne vertébrale du GAN (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/passion-marine/groupe-aeronaval-outil-combat-portee-strategique/colonne-vertebrale-du-gan
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Le GAN, un outil gradué (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/passion-marine/groupe-aeronaval-outil-combat-portee-strategique/gan-outil-gradue
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1 — Le groupe aéronaval"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.bases.charles-de-gaulle
+    - eopan.missions.missions-de-la-marine
+    - eopan.organisation.aeronautique-navale
+    - eopan.appareils.rafale-m
+    - eopan.appareils.e-2c-hawkeye
+content:
+  essentiel:
+    body: |
+      Un porte-avions est une **cible** de très grande valeur : il ne navigue
+      **jamais seul**. Autour du **Charles de Gaulle** se constitue un **groupe
+      aéronaval (GAN)** — une véritable **force navale** cohérente, capable de se
+      défendre dans les trois dimensions (air, surface, sous la mer) et de
+      frapper **loin** et **longtemps**.
+
+      Le GAN articule trois ensembles :
+
+      - le **cœur** — le porte-avions et son **état-major embarqué** ;
+      - l'**escorte** — des **frégates** de défense aérienne et de lutte
+        anti-sous-marine, un **sous-marin nucléaire d'attaque (SNA)** et un
+        **pétrolier-ravitailleur** ;
+      - le **groupe aérien embarqué (GAé)** — Rafale Marine, E-2C Hawkeye et
+        hélicoptères.
+
+      C'est l'outil **majeur** de la **projection de puissance** française, et
+      un sujet de culture fréquemment abordé à l'entretien EOPAN.
+    aRetenir:
+      - Le porte-avions ne navigue jamais seul — il est le cœur d'un groupe aéronaval.
+      - Le GAN réunit le porte-avions, son escorte (frégates, SNA, ravitailleur) et le groupe aérien embarqué.
+      - Le GAé (groupe aérien embarqué) désigne les aéronefs — Rafale M, Hawkeye, hélicoptères — pas le groupe naval entier.
+      - Le GAN est l'outil majeur de projection de puissance de la France.
+  sections:
+    - id: le-coeur-et-l-escorte
+      title: Le cœur et l'escorte
+      body: |
+        Au centre se trouve le **porte-avions Charles de Gaulle** et son
+        **état-major embarqué**, qui commande l'ensemble de la force. Mais un
+        porte-avions concentre une telle valeur qu'il doit être **protégé** en
+        permanence. C'est le rôle de l'**escorte** :
+
+        - des **frégates de défense aérienne** (classes **Horizon** ou **FREMM
+          DA**) assurent le « bouclier » antiaérien ;
+        - des **frégates anti-sous-marine** (**FREMM**, La Fayette) traquent la
+          menace sous la surface ;
+        - un **sous-marin nucléaire d'attaque (SNA)** accompagne discrètement le
+          dispositif ;
+        - un **pétrolier-ravitailleur** (bâtiment ravitailleur de forces / classe
+          **Jacques Chevallier**) donne au groupe son **autonomie** en carburant
+          et en vivres.
+
+        Selon la mission, des **bâtiments alliés** peuvent s'intégrer à
+        l'escorte : le GAN est un **outil gradué**, modulable en volume.
+      figures:
+        - schemaId: groupe-aeronaval
+          alt: Schéma en étoile du groupe aéronaval — le porte-avions Charles de Gaulle au centre, entouré des frégates de défense aérienne et anti-sous-marine, du sous-marin nucléaire d'attaque, du pétrolier-ravitailleur, du groupe aérien embarqué et de l'état-major.
+          caption: Le groupe aéronaval — le Charles de Gaulle au cœur d'une force navale complète.
+          width: 480
+          height: 360
+    - id: le-groupe-aerien-embarque
+      title: Le groupe aérien embarqué (GAé)
+      body: |
+        Le **groupe aérien embarqué (GAé)** rassemble les **aéronefs** mis en
+        œuvre depuis le porte-avions — jusqu'à une **trentaine** d'appareils :
+
+        - des **Rafale Marine**, unique avion de **combat** embarqué depuis le
+          « tout-Rafale » de 2016 (chasse, frappe, reconnaissance, dissuasion) ;
+        - des **E-2C Hawkeye**, avions de **guet aérien** (radar volant) qui
+          voient loin et coordonnent la bataille aérienne ;
+        - des **hélicoptères** (Dauphin, Caïman Marine) pour le sauvetage, la
+          lutte anti-sous-marine et le transport.
+
+        En appui depuis la terre, un **Atlantique 2 (ATL2)** peut renforcer la
+        surveillance et la lutte anti-sous-marine. Attention à ne pas confondre :
+        le **GAé** ne désigne que les **aéronefs**, tandis que le **GAN** englobe
+        **tout le groupe naval**.
+    - id: un-outil-strategique
+      title: Un outil stratégique
+      strate: maitriser
+      body: |
+        Avec près de **3 000 marins**, le GAN est une force **autonome** capable
+        d'opérer partout dans le monde, sans dépendre d'autorisations de survol
+        ou de bases à terre. Il incarne la **projection de puissance** : frapper
+        **dans la durée** depuis la mer, en toute **indépendance**.
+
+        C'est aussi un **outil politique** : déployer le GAN, c'est afficher une
+        **présence** et une **volonté**. Comprendre cette double dimension —
+        militaire et stratégique — fait partie de la **culture** attendue d'un
+        futur pilote de l'aéronautique navale.
+  pieges:
+    - GAN (groupe aéronaval, toute la force navale) et GAé (groupe aérien embarqué, les seuls aéronefs) ne sont pas synonymes.
+    - Le porte-avions ne se déploie jamais seul — l'escorte fait partie intégrante du groupe aéronaval.
+    - La composition exacte de l'escorte (nombre et types de frégates, bâtiments alliés) varie selon la mission — le GAN est un outil gradué.

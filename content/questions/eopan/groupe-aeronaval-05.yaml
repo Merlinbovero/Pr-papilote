@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.groupe-aeronaval-05
+kind: qcm
+theme: groupe-aeronaval
+statement: >-
+  Pourquoi dit-on que le groupe aéronaval est un « outil gradué » ?
+choices:
+  - Sa composition (nombre de frégates, bâtiments alliés) se module selon la mission
+  - Il ne peut être déployé que par étapes successives sur plusieurs années
+  - Il change de porte-avions à chaque mission
+  - Il est réservé aux seules opérations de dissuasion nucléaire
+correctChoices: [0]
+explanation: >-
+  Le GAN est modulable : son escorte peut être renforcée ou allégée, et des
+  bâtiments alliés peuvent s'y intégrer selon le niveau d'engagement recherché.
+  C'est ce qui en fait un outil « gradué ».
+evaluates: [eopan.concepts.groupe-aeronaval]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.groupe-aeronaval-03
+kind: qcm
+theme: groupe-aeronaval
+statement: >-
+  Quelle est la différence entre le GAN et le GAé ?
+choices:
+  - Le GAN désigne toute la force navale ; le GAé désigne seulement les aéronefs embarqués
+  - Le GAN désigne les aéronefs ; le GAé désigne les navires
+  - Ce sont deux noms pour le même groupe de sous-marins
+  - Le GAN est français, le GAé est allié
+correctChoices: [0]
+explanation: >-
+  Le GAN (groupe aéronaval) est l'ensemble de la force navale ; le GAé (groupe
+  aérien embarqué) ne désigne que les aéronefs mis en œuvre depuis le porte-avions
+  (Rafale M, Hawkeye, hélicoptères).
+evaluates: [eopan.concepts.groupe-aeronaval]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

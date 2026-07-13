@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: terme.gan
+title: GAN
+definition: >-
+  Groupe aéronaval — force navale constituée autour du porte-avions Charles de
+  Gaulle, réunissant son escorte (frégates de défense aérienne et anti-sous-marine,
+  sous-marin nucléaire d'attaque, pétrolier-ravitailleur), son groupe aérien
+  embarqué et un état-major. C'est l'outil majeur de projection de puissance de la France.
+sigleExpansion: Groupe aéronaval
+english: Carrier Strike Group
+synonyms: []
+ficheId: eopan.concepts.groupe-aeronaval
+tags: []
+status: publie
