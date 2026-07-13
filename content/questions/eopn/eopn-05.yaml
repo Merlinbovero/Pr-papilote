@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eopn-05
+kind: qcm
+theme: concours-eopn
+statement: >-
+  En quoi consiste la sélection EOPN dite « au sol » à Tours ?
+choices:
+  - Quatre jours de tests au Centre de sélection spécifique air (CSSA)
+  - Un vol de présélection sur avion léger
+  - Un simple entretien de motivation
+  - Un stage embarqué sur porte-avions
+correctChoices: [0]
+explanation: >-
+  Après la présélection, les tests EOPN dédiés durent quatre jours et se
+  déroulent « au sol » au Centre de sélection spécifique air (CSSA), sur la base
+  aérienne 705 de Tours.
+evaluates: [eopn.presentation.le-concours-eopn]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

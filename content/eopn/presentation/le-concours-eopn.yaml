@@ -1,0 +1,132 @@
+schemaVersion: 1
+id: eopn.presentation.le-concours-eopn
+type: concept
+title: Le concours EOPN — présentation et sélection
+slug: le-concours-eopn
+summary: >-
+  L'EOPN recrute le personnel navigant de l'Armée de l'air et de l'Espace —
+  pilotes et navigateurs. Ouvert sur dossier aux bacheliers français de 17 à 27
+  ans, il enchaîne présélection, sélection au sol à Tours, puis formation à
+  Salon-de-Provence.
+objectifs:
+  - Présenter le concours EOPN et le métier de personnel navigant de l'Armée de l'air et de l'Espace.
+  - Énoncer les principales conditions d'accès (nationalité, âge, baccalauréat, aptitude).
+  - Décrire les étapes de la sélection (CIRFA, présélection, sélection au sol à Tours, formation à Salon-de-Provence).
+aliases:
+  [
+    EOPN,
+    élève officier personnel navigant,
+    Armée de l'air et de l'Espace,
+    Salon-de-Provence,
+    CSSA,
+    Tours,
+  ]
+module: eopn
+category: presentation
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'ouverture de la famille EOPN, présentation du concours et de la sélection.
+    author: prepapilote
+sources:
+  - title: "Élève-officier du personnel navigant — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/%C3%89l%C3%A8ve-officier_du_personnel_navigant
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Armée de l'air et de l'Espace — devenir aviateur (tests EOPN)"
+    url: https://devenir-aviateur.fr/les-tests-devaluation-pour-les-pilotes-et-les-navigateurs-officiers-systemes-darmes
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.presentation.le-concours-eopan
+content:
+  essentiel:
+    body: |
+      L'**EOPN** — *Élève-officier du personnel navigant* — est la voie qui mène
+      au métier de **navigant** de l'**Armée de l'air et de l'Espace**. Elle
+      recrute aussi bien les futurs **pilotes** (chasse, transport, hélicoptère)
+      que les **navigateurs officiers systèmes d'armes (NOSA)**.
+
+      C'est un recrutement d'**officier**, ouvert sur **dossier** et
+      **sélection** aux jeunes titulaires du **baccalauréat**, de **17 à 27
+      ans**, de **nationalité française**. Comme pour la Marine, aucune
+      **expérience** de pilotage n'est demandée : c'est l'**armée** qui forme.
+
+      La **sélection** est progressive : dépôt de **dossier** au **CIRFA**,
+      **présélection** (tests psychotechniques, condition physique, anglais),
+      puis une **sélection** dédiée « au sol » de **quatre jours** à **Tours**.
+      Les candidats retenus rejoignent ensuite l'**École de l'air** à
+      **Salon-de-Provence** pour leur formation.
+    aRetenir:
+      - L'EOPN recrute le personnel navigant de l'Armée de l'air et de l'Espace — pilotes et navigateurs (NOSA).
+      - Le recrutement est ouvert sur dossier aux bacheliers français de 17 à 27 ans, sans expérience de vol requise.
+      - La sélection enchaîne dossier (CIRFA), présélection, puis une sélection au sol de quatre jours à Tours.
+      - La formation se déroule ensuite à Salon-de-Provence (base aérienne 701).
+  sections:
+    - id: devenir-navigant-de-l-armee-de-l-air
+      title: Devenir navigant de l'Armée de l'air et de l'Espace
+      body: |
+        L'**Armée de l'air et de l'Espace** met en œuvre des appareils comme le
+        **Rafale**, le **Mirage 2000** ou l'**A400M Atlas**, depuis des **bases
+        aériennes** réparties sur le territoire.
+
+        Le concours **EOPN** recrute ses futurs navigants comme **officiers**.
+        Point important : il n'exige **aucune expérience** de pilotage — la
+        formation est **entièrement assurée** par l'armée. On y recherche des
+        **aptitudes** (rigueur, sang-froid, vision dans l'espace, anglais) et
+        une forte **motivation**. Selon son dossier et son cursus, l'élève sera
+        **orienté** vers la **chasse**, le **transport** ou l'**hélicoptère**.
+    - id: conditions-et-parcours-de-selection
+      title: Conditions et parcours de sélection
+      body: |
+        Les **conditions générales** d'accès (à vérifier chaque année sur le
+        site officiel) tiennent en quelques points :
+
+        - avoir la **nationalité française** ;
+        - être **titulaire du baccalauréat** ;
+        - avoir de **17 à moins de 27 ans** (une dérogation est nécessaire au-delà) ;
+        - être reconnu **apte médicalement** au **personnel navigant**.
+
+        La **sélection** se déroule ensuite en plusieurs étapes : dépôt de
+        **dossier** au **CIRFA**, **présélection** (tests **psychotechniques**,
+        **condition physique**, **anglais**), puis les **tests EOPN** dédiés —
+        une **sélection « au sol »** de **quatre jours** au **Centre de
+        sélection spécifique air (CSSA)**, sur la **base aérienne 705 de
+        Tours**.
+      figures:
+        - schemaId: parcours-selection-eopn
+          alt: Les quatre étapes de la sélection EOPN — dossier au CIRFA, présélection, sélection au sol de quatre jours à Tours, puis formation à Salon-de-Provence.
+          caption: Les grandes étapes de la sélection EOPN, du dossier au CIRFA jusqu'à la formation à Salon-de-Provence.
+          width: 440
+          height: 300
+    - id: la-formation-a-salon-de-provence
+      title: La formation à Salon-de-Provence
+      strate: maitriser
+      body: |
+        Les candidats retenus rejoignent la **base aérienne 701 « Général
+        Pineau »** de **Salon-de-Provence**, siège de l'**École de l'air et de
+        l'espace**. Là débute la **formation** militaire et aéronautique du
+        futur navigant.
+
+        Au fil du cursus, et selon son **dossier**, l'élève sélectionné comme
+        candidat pilote est **orienté** vers l'une des trois grandes familles :
+        le **transport**, la **chasse** ou le **pilotage d'hélicoptère**. La
+        formation de pilote militaire est **longue** et **sélective**, jusqu'à
+        l'obtention des **ailes**.
+
+        Réussir l'EOPN, c'est donc franchir une **première marche** exigeante,
+        avant un long parcours de formation entièrement pris en charge par
+        l'armée.
+  pieges:
+    - L'EOPN ne recrute pas que des pilotes — elle recrute tout le personnel navigant, y compris les navigateurs officiers systèmes d'armes (NOSA).
+    - La sélection EOPN est dite « au sol » — elle se déroule à Tours, pas encore en vol ; le pilotage vient pendant la formation.
+    - Ne pas confondre EOPN (Armée de l'air et de l'Espace) et EOPAN (Marine nationale) — deux concours distincts pour deux armées différentes.

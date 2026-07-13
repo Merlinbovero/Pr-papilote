@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eopn-04
+kind: qcm
+theme: concours-eopn
+statement: >-
+  Où se déroule la formation initiale des élèves sélectionnés par l'EOPN ?
+choices:
+  - À Salon-de-Provence (base aérienne 701)
+  - À Lanvéoc-Poulmic
+  - À Landivisiau
+  - À Toulon
+correctChoices: [0]
+explanation: >-
+  Les élèves rejoignent la base aérienne 701 « Général Pineau » de
+  Salon-de-Provence, siège de l'École de l'air et de l'espace, où débute leur
+  formation.
+evaluates: [eopn.presentation.le-concours-eopn]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
