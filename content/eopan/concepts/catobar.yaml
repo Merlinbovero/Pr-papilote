@@ -30,7 +30,12 @@ sources:
     url: https://www.defense.gouv.fr/marine/forces-surface/porte-avions
     kind: officiel
     consultedAt: "2026-07-07"
-relations: {}
+relations:
+  related:
+    - eopan.bases.charles-de-gaulle
+    - eopan.procedures.appontage
+    - eopan.procedures.catapultage
+    - eopan.concepts.pont-d-envol
 content:
   essentiel:
     body: |

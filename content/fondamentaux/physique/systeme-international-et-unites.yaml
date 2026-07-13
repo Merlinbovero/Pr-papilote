@@ -43,6 +43,10 @@ sources:
   - title: Manuel du pilote d'avion (Cépaduès Éditions)
     kind: ouvrage
     consultedAt: "2026-07-09"
+relations:
+  related:
+    - fondamentaux.physique.pression-forces-unites
+    - fondamentaux.navigation.temps-vitesse-distance
 content:
   essentiel:
     body: |
