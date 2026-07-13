@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-11f-02
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Où la flottille 11F est-elle stationnée ?
+choices:
+  - À la BAN Landivisiau, dans le Finistère
+  - En permanence à bord du Charles de Gaulle
+  - À la BAN Hyères
+  - Sur la base aérienne de Mont-de-Marsan
+correctChoices: [0]
+explanation: >-
+  Comme les deux autres flottilles de chasse (12F, 17F), la 11F est stationnée
+  à la BAN Landivisiau et embarque sur le Charles de Gaulle lors des
+  déploiements — elle n'est pas basée en permanence à bord.
+evaluates: [eopan.bases.flottille-11f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

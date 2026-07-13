@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-11f-04
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  De quels moyens dispose la flottille 11F ?
+choices:
+  - Une douzaine de Rafale M et environ 150 marins
+  - Une trentaine de Super-Étendard et 500 marins
+  - Quatre E-2C Hawkeye et 80 marins
+  - Six Atlantique 2 et 200 marins
+correctChoices: [0]
+explanation: >-
+  La 11F aligne une douzaine de Rafale M, mis en œuvre par environ 150 marins,
+  des techniciens aux pilotes.
+evaluates: [eopan.bases.flottille-11f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
