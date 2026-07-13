@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .top { font-size: 12px; font-weight: 600; }
+    .comp { font-size: 11px; font-weight: 600; }
+    .ex { font-size: 10px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">L'Armée de l'air et de l'Espace</text>
+  <!-- Sommet -->
+  <rect class="box" x="150" y="44" width="160" height="40" rx="4" />
+  <text class="top" x="230" y="60" text-anchor="middle">Armée de l'air</text>
+  <text class="top" x="230" y="76" text-anchor="middle">et de l'Espace</text>
+  <!-- Liaisons -->
+  <path class="link" d="M230,84 C230,120 70,120 70,168" />
+  <path class="link" d="M230,84 C230,120 177,120 177,168" />
+  <path class="link" d="M230,84 C230,120 283,120 283,168" />
+  <path class="link" d="M230,84 C230,120 390,120 390,168" />
+  <!-- Composantes -->
+  <g>
+    <rect class="node" x="30" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="70" y="192" text-anchor="middle">Chasse</text>
+    <text class="ex" x="70" y="210" text-anchor="middle">Rafale, M2000</text>
+  </g>
+  <g>
+    <rect class="node" x="137" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="177" y="192" text-anchor="middle">Transport</text>
+    <text class="ex" x="177" y="210" text-anchor="middle">A400M</text>
+  </g>
+  <g>
+    <rect class="node" x="243" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="283" y="192" text-anchor="middle">Hélicoptères</text>
+    <text class="ex" x="283" y="210" text-anchor="middle">Caracal…</text>
+  </g>
+  <g>
+    <rect class="node" x="350" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="390" y="192" text-anchor="middle">Espace</text>
+    <text class="ex" x="390" y="210" text-anchor="middle">Cmdt de l'espace</text>
+  </g>
+  <text class="ex" x="230" y="256" text-anchor="middle">≈ 44 000 personnes · 334 aéronefs dont 209 avions de combat</text>
+</svg>

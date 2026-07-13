@@ -1,0 +1,110 @@
+schemaVersion: 1
+id: eopn.organisation.armee-de-l-air-et-de-l-espace
+type: organisation
+title: L'Armée de l'air et de l'Espace
+slug: armee-de-l-air-et-de-l-espace
+summary: >-
+  L'une des composantes des forces armées françaises. Forte d'environ 44 000
+  personnes et de plus de 300 aéronefs, elle protège l'espace aérien, assure la
+  dissuasion nucléaire aéroportée et, depuis 2020, la maîtrise de l'espace.
+objectifs:
+  - Définir l'Armée de l'air et de l'Espace comme la composante aérienne et spatiale des forces armées françaises.
+  - Décrire ses grandes missions (protection de l'espace aérien, dissuasion, projection, espace).
+  - Situer l'EOPN comme voie d'accès au personnel navigant de cette armée.
+aliases: [Armée de l'air, Armée de l'air et de l'espace, AAE, armée de l'air et de l'Espace]
+module: eopn
+category: organisation
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet organisation, l'Armée de l'air et de l'Espace (ancrage catégorie organisation).
+    author: prepapilote
+sources:
+  - title: "Armée de l'air et de l'espace (France) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Arm%C3%A9e_de_l'air_et_de_l'espace_(France)
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Armée de l'air et de l'Espace — site officiel"
+    url: https://air.defense.gouv.fr
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.presentation.le-concours-eopn
+    - eopn.appareils.rafale
+    - eopan.organisation.aeronautique-navale
+infobox:
+  nomComplet: Armée de l'air et de l'Espace
+  tutelle: Ministère des Armées
+  role: Composante aérienne et spatiale des forces armées françaises
+  effectifs: Environ 44 000 personnes (2023)
+content:
+  essentiel:
+    body: |
+      L'**Armée de l'air et de l'Espace** (AAE) est l'une des grandes
+      **composantes** des forces armées françaises, aux côtés de l'**Armée de
+      terre**, de la **Marine nationale** et de la **Gendarmerie**. Sa mission
+      première : **surveiller** et **protéger** l'**espace aérien** français.
+
+      Elle est puissante et concentrée : environ **44 000 personnes** et plus de
+      **330 aéronefs**, dont quelque **200 avions de combat** — Rafale et Mirage
+      2000 en tête. Elle assure aussi la part **aéroportée** de la **dissuasion
+      nucléaire**, la **projection** de forces à longue distance, le
+      **renseignement** et le transport.
+
+      Depuis **2020**, son nom intègre l'**Espace** : elle a pris en charge la
+      **maîtrise** du milieu spatial, avec un **Commandement de l'espace** basé
+      à Toulouse. C'est dans cette armée que l'**EOPN** recrute son personnel
+      navigant.
+    aRetenir:
+      - L'Armée de l'air et de l'Espace est la composante aérienne et spatiale des forces armées françaises.
+      - Elle compte environ 44 000 personnes et plus de 330 aéronefs, dont environ 200 avions de combat.
+      - Ses missions — protection de l'espace aérien, dissuasion nucléaire aéroportée, projection, renseignement, espace.
+      - Depuis 2020, elle intègre la maîtrise de l'espace (Commandement de l'espace, à Toulouse).
+  sections:
+    - id: missions-et-composantes
+      title: Missions et composantes
+      body: |
+        L'AAE organise son action autour de grandes **missions** permanentes :
+        **connaître** et **anticiper**, **prévenir**, **dissuader**,
+        **intervenir** et **protéger**. Concrètement, elle tient la **posture
+        permanente de sûreté aérienne** (surveiller et intercepter tout intrus
+        dans le ciel français), assure la **dissuasion** nucléaire aéroportée,
+        et **projette** ses forces sur les théâtres d'opérations.
+
+        Pour cela, elle aligne plusieurs **familles** d'aéronefs : la **chasse**
+        (Rafale, Mirage 2000), le **transport** (A400M Atlas), les
+        **hélicoptères**, le **ravitaillement** et le **renseignement** — sans
+        oublier désormais les moyens **spatiaux**.
+      figures:
+        - schemaId: structure-armee-air-espace
+          alt: L'Armée de l'air et de l'Espace au sommet, reliée à ses composantes — chasse (Rafale, Mirage 2000), transport (A400M), hélicoptères et espace (Commandement de l'espace).
+          caption: Les grandes composantes de l'Armée de l'air et de l'Espace, autour de plus de 330 aéronefs.
+          width: 460
+          height: 300
+    - id: une-armee-tournee-vers-le-ciel-et-l-espace
+      title: Une armée tournée vers le ciel et l'espace
+      strate: maitriser
+      body: |
+        Ce qui distingue l'AAE, c'est son **milieu** : le **ciel**, et
+        désormais l'**espace**. Là où la Marine opère depuis la mer, l'armée de
+        l'air agit depuis des **bases aériennes** réparties sur le territoire
+        (et parfois à l'étranger), d'où décollent ses avions sur **piste**.
+
+        L'ajout de l'**Espace** en **2020** marque un tournant : satellites,
+        surveillance et protection des moyens spatiaux deviennent un **domaine
+        stratégique** à part entière. Pour un candidat **EOPN**, comprendre
+        cette organisation, c'est saisir **où** et **pourquoi** il servira — le
+        cadre dans lequel s'inscrit le métier de navigant.
+  pieges:
+    - L'Armée de l'air et de l'Espace n'est pas la Marine — ses pilotes opèrent depuis des bases aériennes à terre, pas depuis un porte-avions.
+    - Le « et de l'Espace » n'est pas décoratif — depuis 2020, l'armée a la responsabilité de la maîtrise du milieu spatial.
+    - L'EOPN recrute le personnel navigant de cette armée — pilotes et navigateurs — mais elle emploie bien d'autres métiers (mécaniciens, contrôleurs, fusiliers…).

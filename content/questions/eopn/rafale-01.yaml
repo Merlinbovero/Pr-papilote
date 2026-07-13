@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.rafale-01
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Que signifie le terme « omnirôle » appliqué au Rafale ?
+choices:
+  - Un même avion peut enchaîner des missions différentes, parfois au cours d'une même sortie
+  - Il ne peut effectuer qu'une seule mission à la fois
+  - Il est piloté sans équipage
+  - Il vole uniquement de nuit
+correctChoices: [0]
+explanation: >-
+  Omnirôle signifie que le Rafale sait tout faire — défense aérienne, assaut,
+  anti-navire, reconnaissance, dissuasion — et peut enchaîner ces tâches au cours
+  d'une même sortie.
+evaluates: [eopn.appareils.rafale]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopn]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopn.rafale-03
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  Le Rafale participe à la dissuasion nucléaire aéroportée française.
+answer: true
+explanation: >-
+  Vrai. Le Rafale B emporte le missile ASMP/A au sein des Forces aériennes
+  stratégiques : il est l'un des vecteurs de la dissuasion nucléaire aéroportée.
+evaluates: [eopn.appareils.rafale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

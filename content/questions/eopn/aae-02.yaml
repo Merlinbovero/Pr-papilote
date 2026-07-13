@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.aae-02
+kind: qcm
+theme: organisation-aae
+statement: >-
+  Quelle est la mission première de l'Armée de l'air et de l'Espace ?
+choices:
+  - Surveiller et protéger l'espace aérien français
+  - Défendre les côtes depuis la mer
+  - Assurer la sécurité routière
+  - Former les marins
+correctChoices: [0]
+explanation: >-
+  La mission première de l'AAE est de surveiller et protéger l'espace aérien
+  français (posture permanente de sûreté aérienne), en plus de la dissuasion, de
+  la projection et des missions spatiales.
+evaluates: [eopn.organisation.armee-de-l-air-et-de-l-espace]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

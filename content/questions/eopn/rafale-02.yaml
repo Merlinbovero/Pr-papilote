@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.rafale-02
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quelle est la différence entre le Rafale B et le Rafale C ?
+choices:
+  - Le B est biplace, le C est monoplace
+  - Le B est embarqué, le C est terrestre
+  - Le B est un drone, le C est piloté
+  - Le B est plus ancien de trente ans
+correctChoices: [0]
+explanation: >-
+  Pour l'armée de l'air, le Rafale B est la version biplace (deux membres
+  d'équipage) et le Rafale C la version monoplace. La Marine, elle, met en œuvre
+  le Rafale M embarqué.
+evaluates: [eopn.appareils.rafale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

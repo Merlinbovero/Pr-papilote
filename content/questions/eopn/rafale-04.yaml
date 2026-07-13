@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.rafale-04
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quel constructeur produit le Rafale ?
+choices:
+  - Dassault Aviation
+  - Airbus
+  - Boeing
+  - Lockheed Martin
+correctChoices: [0]
+explanation: >-
+  Le Rafale est un biréacteur de combat conçu et produit par Dassault Aviation,
+  mis en service dans l'Armée de l'air en 2006.
+evaluates: [eopn.appareils.rafale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopn.aae-03
+kind: vrai-faux
+theme: organisation-aae
+statement: >-
+  L'Armée de l'air et de l'Espace est l'une des composantes des forces armées françaises.
+answer: true
+explanation: >-
+  Vrai. L'AAE est l'une des composantes des forces armées françaises, aux côtés
+  de l'Armée de terre, de la Marine nationale et de la Gendarmerie.
+evaluates: [eopn.organisation.armee-de-l-air-et-de-l-espace]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
