@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.cinq-rhc-03
+kind: vrai-faux
+theme: unites-alat
+statement: >-
+  Un régiment d'hélicoptères de combat ne met en œuvre qu'un seul type d'hélicoptère.
+answer: false
+explanation: >-
+  Faux. Un RHC combine plusieurs types d'hélicoptères — combat (Tigre), manœuvre
+  (Caïman, Cougar), reconnaissance (Gazelle) — pour couvrir toutes les missions
+  de l'aérocombat.
+evaluates: [alat.unites.5e-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

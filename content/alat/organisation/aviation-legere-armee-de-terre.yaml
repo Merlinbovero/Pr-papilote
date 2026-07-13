@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: alat.organisation.aviation-legere-armee-de-terre
+type: organisation
+title: L'Aviation légère de l'Armée de terre
+slug: aviation-legere-armee-de-terre
+summary: >-
+  La composante hélicoptères de l'Armée de terre. Forte d'environ 4 400 personnes
+  et de quelque 280 aéronefs, elle pratique l'aérocombat — combat, appui,
+  reconnaissance et transport — au sein de régiments d'hélicoptères de combat.
+objectifs:
+  - Définir l'ALAT comme la composante hélicoptères de l'Armée de terre.
+  - Décrire ses grandes missions (combat, appui-feu, reconnaissance, transport, évacuation sanitaire).
+  - Situer ses régiments (RHC) et son école (EALAT) dans l'organisation.
+aliases: [ALAT, aviation légère de l'armée de terre, aérocombat, RHC]
+module: alat
+category: organisation
+tags: []
+concours: [alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet organisation, l'ALAT (ancrage catégorie organisation).
+    author: prepapilote
+sources:
+  - title: "Aviation légère de l'Armée de terre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Aviation_l%C3%A9g%C3%A8re_de_l'Arm%C3%A9e_de_terre
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "L'aviation légère de l'Armée de terre — Ministère des Armées"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - alat.presentation.devenir-pilote-alat
+    - alat.appareils.tigre
+    - alat.unites.5e-rhc
+    - eopan.organisation.aeronautique-navale
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+infobox:
+  nomComplet: Aviation légère de l'Armée de terre
+  tutelle: Armée de terre
+  role: Composante hélicoptères de l'Armée de terre (aérocombat)
+  effectifs: Environ 4 400 personnes
+content:
+  essentiel:
+    body: |
+      L'**Aviation légère de l'Armée de terre** (ALAT) est la **composante
+      hélicoptères** de l'**Armée de terre**. Sa spécialité est l'**aérocombat**
+      : combiner le **renseignement**, les **feux** et le **mouvement** au
+      profit de la manœuvre **terrestre**.
+
+      Elle est **taillée** pour cela : environ **4 400 personnes** et quelque
+      **280 aéronefs** — des hélicoptères de **combat** (Tigre), de
+      **manœuvre** et de **transport** (Caïman, Cougar), de **reconnaissance**
+      (Gazelle). Ses grandes missions : **combattre** et **appuyer** par le feu,
+      **transporter** les troupes, **reconnaître** le terrain et **évacuer** les
+      blessés.
+
+      L'ALAT s'organise en **régiments d'hélicoptères de combat** (RHC),
+      répartis sur le territoire (Phalsbourg, Étain, Pau…), et forme ses pilotes
+      à l'**EALAT**. C'est dans cette composante que sert le pilote d'hélicoptère
+      de l'armée de terre.
+    aRetenir:
+      - L'ALAT est la composante hélicoptères de l'Armée de terre — elle pratique l'aérocombat.
+      - Environ 4 400 personnes et quelque 280 aéronefs — combat, manœuvre, transport, reconnaissance.
+      - Ses missions — combat et appui-feu, transport, reconnaissance, évacuation sanitaire.
+      - Elle s'organise en régiments d'hélicoptères de combat (RHC) et forme ses pilotes à l'EALAT.
+  sections:
+    - id: l-aerocombat
+      title: L'aérocombat
+      body: |
+        Le cœur de métier de l'ALAT est l'**aérocombat** : mettre l'**agilité**
+        de l'hélicoptère au service de la **bataille terrestre**. Là où l'armée
+        de l'air agit dans la **profondeur** et la Marine sur la **mer**, l'ALAT
+        agit **au contact**, en soutien direct des soldats.
+
+        Cela recouvre plusieurs missions : la **reconnaissance** et
+        l'**acquisition** d'objectifs, l'**appui-feu** contre les menaces au
+        sol (dont les blindés), le **transport** tactique de troupes,
+        l'**évacuation** sanitaire. Le tout souvent en vol **tactique**, très
+        bas, de jour comme de nuit.
+      figures:
+        - schemaId: structure-alat
+          alt: L'ALAT au sommet, reliée à ses composantes — combat (Tigre), manœuvre (Caïman, Cougar), reconnaissance (Gazelle) et formation (H120, EALAT).
+          caption: Les grandes composantes de l'ALAT, autour de quelque 280 aéronefs répartis en régiments.
+          width: 460
+          height: 300
+    - id: une-arme-de-l-armee-de-terre
+      title: Une arme de l'Armée de terre
+      strate: maitriser
+      body: |
+        L'ALAT est une **arme** de l'Armée de terre à part entière depuis
+        **2003**, avec son commandement, ses **régiments** et son **école**.
+        Ses pilotes ne sont pas d'abord des aviateurs, mais des **soldats** qui
+        pilotent : ils raisonnent en termes de **manœuvre terrestre**, au plus
+        près des unités qu'ils appuient.
+
+        C'est ce qui distingue l'ALAT des deux autres composantes aériennes.
+        Pour un candidat, comprendre cette **identité** — l'hélicoptère au
+        service de la terre — est la clé de la famille ALAT : le milieu n'est ni
+        la mer ni le ciel lointain, mais le **champ de bataille**.
+  pieges:
+    - L'ALAT est une composante de l'Armée de terre — pas de l'armée de l'air ; ses pilotes sont d'abord des soldats.
+    - L'aérocombat se joue au contact de la bataille terrestre, en vol tactique très bas — pas dans la haute altitude.
+    - L'unité de l'ALAT est le régiment (RHC) — un vocabulaire propre à l'Armée de terre.

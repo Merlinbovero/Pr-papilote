@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: alat.appareils.tigre
+type: helicoptere
+title: L'hélicoptère de combat Tigre
+slug: tigre
+summary: >-
+  L'hélicoptère de combat de l'ALAT. Biplace, armé d'un canon de 30 mm et de
+  missiles, il appuie les troupes au sol et détruit les blindés. Issu d'une
+  coopération franco-allemande, il se décline en versions HAP et HAD.
+objectifs:
+  - Identifier le Tigre comme l'hélicoptère de combat de l'Aviation légère de l'Armée de terre.
+  - Décrire son rôle (appui-protection, appui-destruction) et son armement.
+  - Distinguer les versions françaises HAP et HAD et situer son origine franco-allemande.
+aliases: [Tigre, EC665, Tigre HAP, Tigre HAD, hélicoptère de combat]
+module: alat
+category: appareils
+subcategory: helicopteres-de-combat
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet hélicoptère, le Tigre (ancrage catégorie appareils ALAT).
+    author: prepapilote
+sources:
+  - title: "Tigre — hélicoptère de combat (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/nos-materiels/nos-equipements-terre/nos-vehicules/nos-helicopteres/tigre-helicoptere-combat
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Eurocopter EC665 Tigre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Eurocopter_EC665_Tigre
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - alat.presentation.devenir-pilote-alat
+    - alat.unites.5e-rhc
+    - eopan.appareils.nh90-caiman
+infobox:
+  constructeur: Airbus Helicopters
+  role: Hélicoptère de combat (appui-protection, appui-destruction)
+  armees: [Armée de terre]
+  miseEnService: 2005
+  statut: En service
+  equipage: 2 (pilote et chef de bord)
+  armementPrincipal: Canon de 30 mm, roquettes, missiles antichar (Hellfire) et air-air (Mistral)
+content:
+  essentiel:
+    body: |
+      Le **Tigre** est l'**hélicoptère de combat** de l'ALAT — l'équivalent, pour
+      l'aérocombat, de ce qu'est le Rafale pour l'armée de l'air. **Biplace**
+      (un **pilote** et un **chef de bord**), il est conçu pour **appuyer** les
+      troupes au sol et **détruire** les cibles, y compris les **blindés**.
+
+      Il est bien **armé** : un **canon de 30 mm**, des **roquettes**, des
+      **missiles antichar** (Hellfire) et des **missiles air-air** (Mistral). De
+      quoi traiter une large gamme de menaces, du véhicule au char, voire un
+      autre hélicoptère.
+
+      Construit par **Airbus Helicopters**, le Tigre est né d'une **coopération
+      franco-allemande**. L'armée de terre française le met en œuvre en deux
+      versions : le **HAP** (Appui Protection) et le **HAD** (Appui
+      Destruction), plus lourdement armé.
+    aRetenir:
+      - Le Tigre est l'hélicoptère de combat de l'ALAT — biplace (pilote et chef de bord).
+      - Il appuie les troupes au sol et détruit les cibles, blindés compris.
+      - Il est armé d'un canon de 30 mm, de roquettes et de missiles (antichar Hellfire, air-air Mistral).
+      - Issu d'une coopération franco-allemande, il se décline en versions HAP et HAD.
+  sections:
+    - id: un-helicoptere-de-combat
+      title: Un hélicoptère de combat
+      body: |
+        Le rôle du Tigre est l'**appui** de la manœuvre terrestre. En vol
+        **tactique**, souvent à très basse hauteur, il **protège** les troupes,
+        **reconnaît** le terrain et **détruit** les cibles qui les menacent.
+        C'est un **appui-feu** volant, mobile et puissant.
+
+        Son équipage de **deux** se répartit les tâches : le **pilote** conduit
+        la machine au ras du sol, le **chef de bord** exploite les capteurs et
+        met en œuvre l'**armement**. Cette coopération à bord est au cœur du
+        métier — d'où l'importance, dès la formation, du travail en **équipage**.
+    - id: versions-et-armement
+      title: Versions et armement
+      body: |
+        L'armée de terre française met en œuvre deux versions :
+
+        - le **HAP** (*Hélicoptère Appui Protection*), première version, orientée
+          appui et autoprotection (canon, roquettes, missiles air-air) ;
+        - le **HAD** (*Hélicoptère Appui Destruction*), plus récent, doté d'une
+          vraie capacité **antichar** grâce aux missiles **Hellfire**.
+
+        Ensemble, ces armements permettent au Tigre de traiter aussi bien un
+        **véhicule** léger qu'un **char** lourdement blindé, de jour comme de
+        nuit. C'est cette polyvalence qui en fait la pièce maîtresse de
+        l'**aérocombat** français.
+    - id: un-programme-franco-allemand
+      title: Un programme franco-allemand
+      strate: maitriser
+      body: |
+        Le Tigre est un **programme européen** : la coopération
+        **franco-allemande** qui lui a donné naissance a été initiée dès les
+        années **1970**, l'Espagne rejoignant le programme plus tard. Les
+        premiers appareils français ont été livrés à partir de **2005**, à
+        l'**École franco-allemande** du Tigre, au Luc.
+
+        Cette dimension **interalliée** dépasse la seule machine : Français et
+        Allemands **forment ensemble** leurs équipages. C'est un bon exemple de
+        la **coopération** de défense en Europe, utile à connaître pour un
+        candidat qui s'intéresse au monde militaire.
+  pieges:
+    - Le Tigre est biplace — un pilote et un chef de bord ; le pilotage et la mise en œuvre de l'armement sont partagés.
+    - HAP et HAD ne sont pas deux appareils différents, mais deux versions du même Tigre — le HAD ajoute la capacité antichar.
+    - Le Tigre est un hélicoptère de l'Armée de terre (ALAT) — à ne pas confondre avec les hélicoptères de la Marine (Caïman) ou de l'armée de l'air.

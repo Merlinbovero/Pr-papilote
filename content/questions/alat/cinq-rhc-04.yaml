@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.cinq-rhc-04
+kind: qcm
+theme: unites-alat
+statement: >-
+  En quoi consiste l'aérocombat, mission du 5e RHC ?
+choices:
+  - Combiner renseignement, feux et mouvement au profit de la manœuvre terrestre
+  - Défendre l'espace aérien à haute altitude
+  - Lutter contre les sous-marins
+  - Assurer la dissuasion nucléaire aéroportée
+correctChoices: [0]
+explanation: >-
+  L'aérocombat consiste à combiner le renseignement, les feux et le mouvement,
+  intégrés à la manœuvre terrestre — au plus près des troupes au sol.
+evaluates: [alat.unites.5e-rhc]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.cinq-rhc-05
+kind: qcm
+theme: unites-alat
+statement: >-
+  Quelle est la devise du 5e régiment d'hélicoptères de combat ?
+choices:
+  - « Béarn sans peur »
+  - « La Glorieuse »
+  - « Honneur et Patrie »
+  - « Qui ose gagne »
+correctChoices: [0]
+explanation: >-
+  Le 5e RHC, « le régiment du Béarn », a pour devise « Béarn sans peur »,
+  ancrant l'unité dans sa région autour de Pau.
+evaluates: [alat.unites.5e-rhc]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

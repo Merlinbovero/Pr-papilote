@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.tigre-03
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Que distingue la version HAD du Tigre par rapport à la version HAP ?
+choices:
+  - Une véritable capacité antichar (missiles Hellfire)
+  - Une capacité d'appontage sur porte-avions
+  - Un troisième membre d'équipage
+  - Une motorisation à réaction
+correctChoices: [0]
+explanation: >-
+  Le HAD (Hélicoptère Appui Destruction) ajoute au HAP (Appui Protection) une
+  véritable capacité antichar, grâce notamment aux missiles Hellfire.
+evaluates: [alat.appareils.tigre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

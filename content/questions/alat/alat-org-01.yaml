@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.alat-org-01
+kind: qcm
+theme: organisation-alat
+statement: >-
+  De quelle armée l'ALAT est-elle la composante ?
+choices:
+  - L'Armée de terre
+  - L'Armée de l'air et de l'Espace
+  - La Marine nationale
+  - La Gendarmerie
+correctChoices: [0]
+explanation: >-
+  L'ALAT est la composante hélicoptères de l'Armée de terre : ses pilotes sont
+  d'abord des soldats qui pilotent, au service de la manœuvre terrestre.
+evaluates: [alat.organisation.aviation-legere-armee-de-terre]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
