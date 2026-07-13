@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.entretien-themes-02
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  Comment bien répondre à la question « Et si vous échouez ? »
+choices:
+  - Présenter un plan B construit, qui montre la maturité sans affaiblir la motivation
+  - Répondre « je n'ai pas de plan B, c'est la preuve de ma motivation »
+  - Refuser d'envisager l'échec
+  - Dire qu'on abandonnera l'aéronautique
+correctChoices: [0]
+explanation: >-
+  Un plan B construit (autre voie d'accès, réengagement, études) montre la
+  lucidité et la maturité. L'absence de plan B ne prouve pas la motivation —
+  seulement l'impréparation.
+evaluates: [eopan.selection.les-themes-recurrents-de-l-entretien]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.entretien-themes-03
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  Quel niveau est attendu du candidat sur l'actualité de défense ?
+choices:
+  - Celui d'un citoyen informé qui suit l'actualité en continu
+  - Celui d'un expert en stratégie militaire
+  - Aucun — l'actualité n'est jamais abordée
+  - Connaître par cœur les chiffres de tous les budgets militaires
+correctChoices: [0]
+explanation: >-
+  Le jury attend un citoyen informé et humble : situer les grandes zones de
+  tension et les opérations françaises en cours, sans jouer à l'expert ni
+  réciter des chiffres fragiles. Et suivre l'actualité en continu, pas la
+  veille.
+evaluates: [eopan.selection.les-themes-recurrents-de-l-entretien]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

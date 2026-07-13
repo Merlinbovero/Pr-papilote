@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: eopan.selection.les-themes-recurrents-de-l-entretien
+type: concept
+title: Les thèmes récurrents de l'entretien
+slug: les-themes-recurrents-de-l-entretien
+summary: >-
+  Les grandes familles de questions qui reviennent dans les entretiens EOPAN —
+  parcours, motivation, métier, Marine, actualité, projection — avec, pour
+  chacune, la bonne façon de s'y préparer. Sans réponses toutes faites.
+objectifs:
+  - Identifier les six familles de thèmes qui structurent la plupart des entretiens.
+  - Préparer chaque famille à partir de son parcours et des fiches culture du site.
+  - Savoir transformer une question piège en occasion de montrer sa maturité.
+aliases: [questions d'entretien, thèmes entretien EOPAN, questions du jury]
+module: eopan
+category: selection
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche des thèmes récurrents de l'entretien (Lot H, ingestion Guide EOPAN 2020).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les entretiens"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  prerequisites:
+    - eopan.selection.preparer-l-entretien-de-motivation
+  related:
+    - eopan.culture-militaire.culture-et-valeurs-de-la-marine
+    - eopan.missions.missions-de-la-marine
+    - eopan.organisation.marine-nationale
+    - eopan.histoire.histoire-de-l-aeronautique-navale
+content:
+  essentiel:
+    body: |
+      Chaque entretien est unique, mais les questions gravitent autour de
+      **six familles** stables :
+
+      1. **Votre parcours** — « Présentez-vous » ; études, sports, engagements,
+         échecs et rebonds ;
+      2. **Votre motivation** — pourquoi pilote, pourquoi la Marine, pourquoi
+         maintenant, et qu'avez-vous **fait** pour vous préparer ;
+      3. **Le métier** — ce qu'est réellement la vie d'un pilote de
+         l'aéronautique navale — et d'un marin ;
+      4. **La Marine et la Défense** — missions, organisation, valeurs,
+         moyens ; le socle des fiches culture ;
+      5. **L'actualité** — les grandes tensions du monde et les opérations en
+         cours, au niveau d'un citoyen informé ;
+      6. **La projection** — « Et si vous échouez ? », « Où vous voyez-vous
+         dans dix ans ? » ; votre plan B et votre lucidité.
+
+      Pour chaque famille, la préparation est la même : **du vécu, des faits,
+      des fiches** — jamais un texte appris.
+    aRetenir:
+      - Six familles — parcours, motivation, métier, Marine/Défense, actualité, projection.
+      - À chaque affirmation sa preuve ; à chaque connaissance sa source (fiches culture, actualité suivie).
+      - La question « Et si vous échouez ? » teste la solidité — un plan B assumé rassure, il ne dessert pas.
+      - Suivre l'actualité défense en continu, pas la veille de l'entretien.
+  sections:
+    - id: parcours-et-motivation
+      title: Parcours et motivation
+      body: |
+        « **Présentez-vous en quelques minutes** » ouvre la plupart des
+        entretiens. Préparez une trame de 2-3 minutes — pas un texte — qui
+        relie vos choix entre eux et débouche naturellement sur votre
+        candidature. Le jury doit entendre une **trajectoire**, pas un CV lu.
+
+        Sur la motivation, la question centrale est toujours la même, sous
+        mille formes : « **pourquoi vous, ici, maintenant ?** ». Les éléments
+        qui portent :
+
+        - des **actes** — brevet d'initiation aéronautique, vols découverte,
+          lectures, préparation physique, ce site travaillé sérieusement ;
+        - une **connaissance datée** de votre vocation (le moment déclencheur,
+          raconté simplement) ;
+        - la conscience de ce qu'on **quitte** (confort, liberté de
+          mouvement) et de ce qu'on **gagne** (sens, équipage, mission).
+    - id: metier-marine-defense
+      title: Métier, Marine et Défense
+      body: |
+        C'est ici que les fiches de PrépaPilote servent directement :
+
+        - **le métier** — la sélection (Cap 10, 50S), les trois filières
+          possibles (chasse, patrouille maritime, hélicoptères), la vie
+          embarquée, l'appontage ; montrer qu'on sait **où l'on met les
+          pieds** ;
+        - **la Marine** — ses quatre missions, son organisation (CEMM,
+          ALAVIA), ses moyens majeurs (GAN, SNLE, flottilles) et sa devise —
+          Honneur, Patrie, Valeur, Discipline ;
+        - **la Défense** — la dissuasion, les grands enjeux maritimes
+          (ZEE française, routes commerciales, câbles sous-marins).
+
+        Le niveau attendu n'est pas celui d'un officier d'état-major : c'est
+        celui d'un candidat **sérieux**, qui structure ce qu'il sait et
+        reconnaît ce qu'il ignore.
+    - id: actualite-et-projection
+      title: Actualité et projection
+      strate: maitriser
+      body: |
+        **L'actualité** — suivez-la en continu (presse de référence, sites du
+        ministère des Armées et de la Marine) et sachez en parler en
+        **citoyen informé** : situer les grandes zones de tension, les
+        opérations françaises en cours, sans jouer à l'expert ni réciter des
+        chiffres fragiles.
+
+        **La projection** — deux questions reviennent presque toujours :
+
+        - « **Et si vous échouez ?** » — un plan B construit (autre voie
+          d'accès, réengagement, études) montre la maturité ; « je n'ai pas de
+          plan B » ne prouve pas la motivation, seulement l'impréparation ;
+        - « **Dans dix ans ?** » — se projeter en officier et en marin, pas
+          seulement en pilote ; évoquer la progression (chef de patrouille,
+          instructeur…) sans plan de carrière irréaliste.
+
+        Enfin, préparez **vos** questions : l'entretien se termine souvent par
+        « avez-vous des questions ? » — en avoir une ou deux, précises et
+        sincères, laisse une bonne dernière impression.
+  pieges:
+    - Réciter l'actualité apprise la veille — les questions de relance démasquent immédiatement le vernis.
+    - Ne pas avoir de plan B — présenté comme une preuve de motivation, c'est perçu comme un manque de maturité.
+    - Jouer à l'expert militaire — le jury attend un citoyen informé et humble, pas un commentateur stratégique.
+    - Négliger la question finale « avez-vous des questions ? » — une non-réponse gâche la dernière impression.

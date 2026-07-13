@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.entretien-03
+kind: vrai-faux
+theme: entretien-eopan
+statement: >-
+  Répondre « je ne sais pas » à une question du jury est éliminatoire.
+answer: false
+explanation: >-
+  Faux. Reconnaître honnêtement une limite — idéalement en expliquant comment
+  on chercherait la réponse — vaut mieux qu'inventer. Un pilote doit savoir
+  reconnaître ses limites ; le jury le sait.
+evaluates: [eopan.selection.preparer-l-entretien-de-motivation]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

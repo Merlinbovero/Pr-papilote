@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.entretien-05
+kind: vrai-faux
+theme: entretien-eopan
+statement: >-
+  Un candidat EOPAN doit avant tout montrer qu'il veut devenir marin, le pilotage venant ensuite.
+answer: true
+explanation: >-
+  Vrai. La hiérarchie des engagements est marin d'abord, pilote ensuite : on
+  s'engage au service d'un équipage et d'une mission. Un candidat qui ne vise
+  que le pilotage, sans la dimension Marine, se dessert.
+evaluates: [eopan.selection.preparer-l-entretien-de-motivation]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

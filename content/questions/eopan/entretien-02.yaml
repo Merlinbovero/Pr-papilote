@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.entretien-02
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  En quoi consiste la « grille de preuves » pour préparer l'entretien ?
+choices:
+  - Relier chaque qualité à un fait vécu qui la démontre et au métier visé
+  - Apprendre par cœur une réponse pour chaque question possible
+  - Lister les qualités attendues par le jury et les réciter
+  - Mémoriser les caractéristiques de tous les aéronefs de la Marine
+correctChoices: [0]
+explanation: >-
+  La grille de preuves croise trois colonnes : la qualité à montrer, la preuve
+  vécue (un fait précis de son parcours) et le lien avec le métier. Le jour J,
+  on puise dans cette matière — on ne récite rien.
+evaluates: [eopan.selection.preparer-l-entretien-de-motivation]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

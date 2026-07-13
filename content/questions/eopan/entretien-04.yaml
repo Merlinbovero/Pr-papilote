@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.entretien-04
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  Pourquoi le jury pose-t-il des questions déstabilisantes (« Et si vous échouez ? ») ?
+choices:
+  - Pour tester la solidité et le calme du candidat, pas pour obtenir une réponse précise
+  - Parce que le candidat a mal répondu aux questions précédentes
+  - Pour vérifier ses connaissances sur les statistiques d'échec
+  - Pour raccourcir l'entretien
+correctChoices: [0]
+explanation: >-
+  La question qui fâche, la relance, le silence ou la contradiction sont des
+  mécanismes volontaires : ils testent la solidité, le calme et l'honnêteté du
+  candidat sous pression — des qualités du métier.
+evaluates: [eopan.selection.preparer-l-entretien-de-motivation]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
