@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eac-02
+kind: qcm
+theme: formation-chasse
+statement: >-
+  De quelle fusion l'actuelle École de l'aviation de chasse est-elle née en 2020 ?
+choices:
+  - De l'école de pilotage de l'armée de l'Air (Cognac) et de l'EAC historique (Tours)
+  - De l'École de l'air et de l'École navale
+  - De deux escadrons de Rafale
+  - De l'EALAT et du CIEH
+correctChoices: [0]
+explanation: >-
+  Le 12 septembre 2020, l'EPAA 00.315 (Cognac) et l'EAC 00.314 (Tours) ont
+  fusionné pour former l'EAC 00.315 « Christian Martell », regroupée à Cognac
+  autour du PC-21.
+evaluates: [eopn.organisation.ecole-de-l-aviation-de-chasse]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

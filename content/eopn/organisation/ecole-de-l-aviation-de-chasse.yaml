@@ -1,0 +1,109 @@
+schemaVersion: 1
+id: eopn.organisation.ecole-de-l-aviation-de-chasse
+type: organisation
+title: L'École de l'aviation de chasse
+slug: ecole-de-l-aviation-de-chasse
+summary: >-
+  Créée en 1943, l'École de l'aviation de chasse « Christian Martell » forme
+  les pilotes de chasse français. Installée à Cognac (BA 709) et rééquipée en
+  PC-21, elle est née en 2020 de la fusion de l'EAC de Tours et de l'école de
+  pilotage de Cognac.
+objectifs:
+  - Identifier l'EAC « Christian Martell » comme l'école des pilotes de chasse (Cognac, BA 709).
+  - Connaître sa refondation de 2020 (fusion EPAA 00.315 + EAC 00.314) et sa modernisation PC-21.
+  - Situer son rôle dans le cursus (après Salon-de-Provence, avant la transformation).
+aliases: [EAC, École de l'aviation de chasse, Christian Martell, Cognac, BA 709]
+module: eopn
+category: organisation
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche École de l'aviation de chasse (campagne de recherche n°1, lot N4 ; sources officielles defense.gouv.fr, plaquette 80 ans EAC).
+    author: prepapilote
+sources:
+  - title: "EAC — 80 ans d'excellence (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/tous-nos-dossiers/eac-80-ans-dexcellence
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Plaquette « Former et combattre — 80 ans de l'École de l'aviation de chasse, 1943-2023 » (armée de l'Air et de l'Espace, PDF)"
+    url: https://www.defense.gouv.fr/sites/default/files/air/Plaquette%2080%20ANS%20EAC_NOV24.pdf
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "École d'aviation de chasse — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/%C3%89cole_d'aviation_de_chasse
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  prerequisites:
+    - eopn.selection.la-formation-du-pilote-de-chasse
+  related:
+    - eopn.appareils.pc-21
+    - eopn.bases.salon-de-provence
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+infobox:
+  nomComplet: École de l'aviation de chasse 00.315 « Christian Martell »
+  tutelle: Armée de l'air et de l'espace
+  role: Formation et spécialisation des pilotes de chasse
+content:
+  essentiel:
+    body: |
+      L'**École de l'aviation de chasse (EAC)** est le passage obligé de tout
+      futur pilote de chasse français. Créée en **1943** — au sein des forces
+      françaises reconstituées en Afrique du Nord — elle a fêté ses
+      **80 ans** en 2023.
+
+      Sa forme actuelle date du **12 septembre 2020** : l'école de pilotage
+      de l'armée de l'Air (EPAA 00.315, Cognac) et l'école de l'aviation de
+      chasse historique (EAC 00.314, Tours) **fusionnent** pour donner
+      l'**EAC 00.315 « Christian Martell »**, installée à **Cognac**
+      (BA 709). Ce regroupement accompagne l'arrivée du **PC-21**, qui
+      remplace à la fois le TB-30 Epsilon et l'Alphajet dans la formation.
+
+      L'école porte le nom de **Christian Martell**, as des Forces
+      aériennes françaises libres.
+    aRetenir:
+      - L'EAC forme les pilotes de chasse — étape entre Salon-de-Provence et la transformation opérationnelle.
+      - Créée en 1943 ; refondée le 12 septembre 2020 par fusion (EPAA 00.315 + EAC 00.314) sous le nom « Christian Martell ».
+      - Installée à Cognac (BA 709), rééquipée en PC-21 (qui remplace Epsilon et Alphajet).
+      - Ses escadrons d'instruction en vol portent des traditions de chasse (1/13 « Artois », 2/12 « Picardie »).
+  sections:
+    - id: de-tours-a-cognac
+      title: De Tours à Cognac
+      body: |
+        Pendant des décennies, le cursus chasse s'est partagé entre
+        **Cognac** (début de formation, sur Epsilon) et **Tours** (École de
+        l'aviation de chasse, sur **Alphajet**). L'arrivée du **PC-21** — un
+        turbopropulseur moderne capable de simuler les systèmes d'un avion
+        d'armes — a permis de **regrouper** toute la spécialisation chasse
+        sur un **site unique**, Cognac.
+
+        La fusion du 12 septembre 2020 acte cette réorganisation : une seule
+        école, un seul site, une flotte homogène — d'abord 17 PC-21, puis
+        des exemplaires supplémentaires (Block 6) pour compléter la
+        modernisation.
+    - id: la-formation-a-l-eac
+      title: La formation à l'EAC
+      strate: maitriser
+      body: |
+        À Cognac, l'élève passe du **Grob 120** (transition) au **PC-21**
+        au sein des escadrons d'instruction en vol — dont le **1/13
+        « Artois »** et le **2/12 « Picardie »**, héritiers de traditions de
+        chasse. Le programme couvre voltige, vol aux instruments, navigation
+        tactique, vol en patrouille et initiation au combat.
+
+        L'enjeu est double : atteindre le niveau du **macaron** de pilote de
+        chasse, et **classer** les élèves — le classement pesant sur
+        l'affectation Rafale ou Mirage 2000. L'école incarne ainsi la
+        dernière marche avant l'avion d'armes.
+  pieges:
+    - Depuis 2020, l'École de l'aviation de chasse est à Cognac (BA 709) — Tours appartient à son histoire.
+    - L'EAC « Christian Martell » (00.315) est née d'une fusion — ne pas la confondre avec l'ancienne EAC 00.314 de Tours.
+    - Le PC-21 a remplacé à la fois le TB-30 Epsilon et l'Alphajet dans la formation — deux flottes en une.

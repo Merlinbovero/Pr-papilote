@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.formation-chasse-01
+kind: ordre
+theme: formation-chasse
+statement: >-
+  Remettez dans l'ordre les étapes du cursus du pilote de chasse de l'armée de l'Air et de l'Espace.
+items:
+  - "École de l'air à Salon-de-Provence (vol militaire — planeur, Cirrus)"
+  - "École de l'aviation de chasse à Cognac (Grob 120 puis PC-21)"
+  - "Transformation opérationnelle (Rafale ou Mirage 2000)"
+  - "Escadron de chasse (qualifications progressives)"
+explanation: >-
+  Le cursus : Salon-de-Provence (vol militaire initial) → Cognac
+  (spécialisation chasse) → transformation sur avion d'armes → escadron
+  (équipier, puis chef de patrouille).
+evaluates: [eopn.selection.la-formation-du-pilote-de-chasse]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

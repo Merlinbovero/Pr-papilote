@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.formation-chasse-03
+kind: vrai-faux
+theme: formation-chasse
+statement: >-
+  Une fois breveté à l'École de l'aviation de chasse, le pilote est immédiatement opérationnel en escadron.
+answer: false
+explanation: >-
+  Faux. Après le brevet viennent la transformation opérationnelle (~5 mois sur
+  Rafale ou Mirage 2000), puis près de trois ans de qualifications
+  progressives en escadron — équipier, sous-chef, chef de patrouille.
+evaluates: [eopn.selection.la-formation-du-pilote-de-chasse]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: eopn.appareils.pc-21
+type: appareil
+title: PC-21
+slug: pc-21
+summary: >-
+  Le turbopropulseur suisse qui forme les pilotes de chasse français à
+  Cognac — cockpit tout écran, siège éjectable, 1 600 ch : un avion-école
+  conçu pour se comporter comme un avion d'armes.
+objectifs:
+  - Identifier le PC-21 comme l'avion de formation des pilotes de chasse (EAC, Cognac).
+  - Connaître ses caractéristiques essentielles (turbopropulseur 1 600 ch, glass cockpit, siège éjectable).
+  - Comprendre pourquoi un turbopropulseur moderne peut remplacer un jet d'entraînement.
+aliases: [PC-21, Pilatus PC-21, avion de formation chasse]
+module: eopn
+category: appareils
+subcategory: avions-d-entrainement
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche PC-21 (campagne de recherche n°1, lot N4 ; constructeur Pilatus et defense.gouv.fr recoupés).
+    author: prepapilote
+sources:
+  - title: "PC-21 — la formation de pointe des pilotes de chasse (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/tous-nos-dossiers/eac-80-ans-dexcellence/pc-21-formation-pointe-pilotes-chasse
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Pilatus PC-21 — factsheet constructeur (Pilatus Aircraft)"
+    url: https://www.pilatus-aircraft.com/assets/files/Brochures/PC-21/Pilatus-Aircraft-Ltd-PC-21-Factsheet.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: eopn.organisation.ecole-de-l-aviation-de-chasse
+  related:
+    - eopn.selection.la-formation-du-pilote-de-chasse
+    - eopn.appareils.rafale
+    - eopan.appareils.cap-10
+infobox:
+  constructeur: Pilatus Aircraft (Suisse)
+  role: Avion d'entraînement avancé (formation des pilotes de chasse)
+  armees: [Armée de l'air et de l'espace]
+  miseEnService: 2018 (premiers exemplaires à Cognac)
+  statut: En service (BA 709 Cognac)
+  equipage: 2 en tandem (élève et instructeur)
+content:
+  essentiel:
+    body: |
+      Le **PC-21** du suisse **Pilatus** équipe l'École de l'aviation de
+      chasse à **Cognac** depuis **2018**. Il a réalisé un tour de force :
+      remplacer à lui seul **deux** avions — le TB-30 **Epsilon** (formation
+      de base) et l'**Alphajet** (jet d'entraînement).
+
+      Son secret n'est pas la vitesse — c'est un **turbopropulseur**
+      (1 600 ch, hélice à cinq pales) — mais l'**environnement** : cockpit
+      **tout écran** avec visualisation tête haute et commandes **HOTAS**,
+      cabine pressurisée, **siège éjectable** zéro-zéro, et surtout des
+      systèmes capables de **simuler** radar, armements et liaisons d'un
+      avion d'armes.
+
+      L'élève apprend ainsi, dès l'école, à **gérer un système de combat** —
+      pour un coût d'exploitation très inférieur à celui d'un jet.
+    aRetenir:
+      - PC-21 — avion d'entraînement avancé de l'EAC à Cognac depuis 2018.
+      - Il remplace à la fois le TB-30 Epsilon et l'Alphajet dans le cursus chasse.
+      - Turbopropulseur Pratt & Whitney de 1 600 ch, ~685 km/h, cockpit tout écran, siège éjectable zéro-zéro.
+      - Sa force — simuler les systèmes d'un avion d'armes (radar, armement) pour un coût réduit.
+  sections:
+    - id: caracteristiques
+      title: Caractéristiques
+      body: |
+        | Caractéristique | Valeur |
+        | --- | --- |
+        | Constructeur | Pilatus (Suisse) |
+        | Équipage | 2 en tandem |
+        | Moteur | turbopropulseur PT6A-68B, 1 600 ch |
+        | Hélice | 5 pales |
+        | Longueur / envergure | 11,22 m / 9,11 m |
+        | Masse maximale | 4 250 kg |
+        | Vitesse maximale | ~685 km/h |
+        | Sièges | éjectables zéro-zéro |
+
+        Sa gestion moteur numérique délivre la pleine puissance
+        progressivement — donnant des réponses « de jet » à un
+        turbopropulseur, sans ses coûts.
+    - id: un-choix-de-formation
+      title: Un choix de formation
+      strate: maitriser
+      body: |
+        Le PC-21 illustre une bascule mondiale de la formation des pilotes
+        de chasse : plutôt que de faire voler les élèves sur de coûteux
+        **jets**, on les forme sur un turbopropulseur **intelligent** dont
+        l'avionique **émule** l'avion d'armes — radar simulé, armements
+        virtuels, liaisons de données.
+
+        La France a d'abord reçu **17** PC-21 (escadrons d'instruction
+        1/13 « Artois » et 2/12 « Picardie »), complétés par une commande de
+        **9** exemplaires au standard **Block 6**. À la sortie de l'école,
+        l'élève passe directement à la **transformation** sur Rafale ou
+        Mirage 2000 — preuve que le turbopropulseur prépare bien au chasseur.
+  pieges:
+    - Le PC-21 est un turbopropulseur, pas un jet — c'est son avionique, pas sa motorisation, qui prépare à l'avion d'armes.
+    - Il a remplacé deux appareils à la fois — le TB-30 Epsilon ET l'Alphajet — dans le cursus chasse.
+    - Ne pas le confondre avec le PC-7 MKX du programme Mentor 2, destiné à la formation initiale à Salon-de-Provence.

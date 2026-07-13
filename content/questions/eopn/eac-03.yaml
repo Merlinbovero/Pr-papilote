@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.eac-03
+kind: vrai-faux
+theme: formation-chasse
+statement: >-
+  L'École de l'aviation de chasse a été créée en 1943.
+answer: true
+explanation: >-
+  Vrai. Créée en 1943 au sein des forces françaises reconstituées en Afrique
+  du Nord, l'EAC a fêté ses 80 ans en 2023. Elle porte le nom de Christian
+  Martell, as des Forces aériennes françaises libres.
+evaluates: [eopn.organisation.ecole-de-l-aviation-de-chasse]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

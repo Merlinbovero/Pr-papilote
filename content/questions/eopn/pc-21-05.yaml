@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopn.pc-21-05
+kind: vrai-faux
+theme: formation-chasse
+statement: >-
+  Le PC-21 (Cognac) et le PC-7 MKX (programme Mentor 2) sont le même avion pour la même étape de formation.
+answer: false
+explanation: >-
+  Faux. Le PC-21 assure la spécialisation chasse à Cognac depuis 2018 ; le
+  PC-7 MKX (marché Mentor 2 notifié fin 2024) est destiné à la formation
+  initiale à Salon-de-Provence — deux Pilatus, deux étapes différentes du
+  cursus.
+evaluates: [eopn.appareils.pc-21]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
