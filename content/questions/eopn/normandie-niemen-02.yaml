@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.normandie-niemen-02
+kind: qcm
+theme: unites-aae
+statement: >-
+  Dans l'armée de l'air, à quoi correspond un « escadron » ?
+choices:
+  - À l'unité qui met en œuvre les avions (équivalent de la flottille dans la Marine)
+  - À un type d'avion de combat
+  - À une base aérienne
+  - À un grade d'officier
+correctChoices: [0]
+explanation: >-
+  L'escadron est l'unité volante de l'armée de l'air — l'équivalent de la
+  flottille dans la Marine nationale.
+evaluates: [eopn.unites.normandie-niemen]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

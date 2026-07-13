@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.normandie-niemen-05
+kind: qcm
+theme: unites-aae
+statement: >-
+  Sur quelle base aérienne l'escadron Normandie-Niémen est-il stationné ?
+choices:
+  - La base aérienne 118 de Mont-de-Marsan
+  - La base aérienne 701 de Salon-de-Provence
+  - La base aérienne 705 de Tours
+  - La base d'aéronautique navale de Landivisiau
+correctChoices: [0]
+explanation: >-
+  Le Normandie-Niémen est stationné à la base aérienne 118 de Mont-de-Marsan, où
+  il met en œuvre ses Rafale.
+evaluates: [eopn.unites.normandie-niemen]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

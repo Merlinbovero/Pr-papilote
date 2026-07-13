@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.normandie-niemen-01
+kind: qcm
+theme: unites-aae
+statement: >-
+  Quelle particularité historique distingue l'escadron Normandie-Niémen ?
+choices:
+  - Il a combattu sur le front de l'Est aux côtés de l'Armée rouge
+  - Il fut la première unité sur porte-avions
+  - Il n'a jamais été engagé en opérations
+  - Il a été créé après la guerre froide
+correctChoices: [0]
+explanation: >-
+  Né dans la France libre en 1942, le Normandie-Niémen est la seule unité
+  occidentale à avoir combattu sur le sol soviétique, aux côtés de l'Armée rouge,
+  pendant la Seconde Guerre mondiale.
+evaluates: [eopn.unites.normandie-niemen]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
