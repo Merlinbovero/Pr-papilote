@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.missions-02
+kind: qcm
+theme: missions-marine
+statement: >-
+  Sur quoi repose la composante océanique de la dissuasion nucléaire française ?
+choices:
+  - Les sous-marins nucléaires lanceurs d'engins (SNLE)
+  - Les porte-avions
+  - Les frégates de défense aérienne
+  - Les avions de patrouille maritime
+correctChoices: [0]
+explanation: >-
+  La composante océanique repose sur les SNLE de la force océanique stratégique,
+  dont au moins un est en permanence à la mer. La composante aéroportée (FANu)
+  utilise le Rafale Marine et le missile ASMP-A depuis le porte-avions.
+evaluates: [eopan.missions.missions-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

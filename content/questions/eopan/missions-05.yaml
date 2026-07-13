@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.missions-05
+kind: qcm
+theme: missions-marine
+statement: >-
+  Que recouvre l'action de l'État en mer (AEM), relevant de la mission de protection ?
+choices:
+  - Sauvetage, lutte contre la pollution, contre les trafics et la piraterie
+  - La frappe nucléaire
+  - Le catapultage des Rafale
+  - La formation des pilotes
+correctChoices: [0]
+explanation: >-
+  Au titre de la protection et de la posture permanente de sauvegarde maritime,
+  l'action de l'État en mer regroupe le sauvetage, la lutte anti-pollution et la
+  lutte contre les trafics et la piraterie.
+evaluates: [eopan.missions.missions-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

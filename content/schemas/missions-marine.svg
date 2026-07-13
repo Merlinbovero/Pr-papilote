@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .ctr { font-size: 12px; font-weight: 600; }
+    .m { font-size: 12px; font-weight: 600; }
+    .sub { font-size: 10px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Les grandes missions de la Marine</text>
+  <!-- Centre -->
+  <circle class="box" cx="230" cy="150" r="40" />
+  <text class="ctr" x="230" y="147" text-anchor="middle">Marine</text>
+  <text class="ctr" x="230" y="162" text-anchor="middle">nationale</text>
+  <!-- Liens -->
+  <line class="link" x1="196" y1="128" x2="126" y2="92" />
+  <line class="link" x1="264" y1="128" x2="334" y2="92" />
+  <line class="link" x1="196" y1="172" x2="126" y2="208" />
+  <line class="link" x1="264" y1="172" x2="334" y2="208" />
+  <!-- Missions -->
+  <rect class="node" x="26" y="58" width="140" height="40" rx="4" />
+  <text class="m" x="96" y="76" text-anchor="middle">Dissuasion</text>
+  <text class="sub" x="96" y="90" text-anchor="middle">SNLE + Rafale (ASMP-A)</text>
+  <rect class="node" x="294" y="58" width="140" height="40" rx="4" />
+  <text class="m" x="364" y="76" text-anchor="middle">Protection</text>
+  <text class="sub" x="364" y="90" text-anchor="middle">approches, action de l'État en mer</text>
+  <rect class="node" x="26" y="202" width="140" height="40" rx="4" />
+  <text class="m" x="96" y="220" text-anchor="middle">Intervention</text>
+  <text class="sub" x="96" y="234" text-anchor="middle">projection de puissance / de force</text>
+  <rect class="node" x="294" y="202" width="140" height="40" rx="4" />
+  <text class="m" x="364" y="220" text-anchor="middle">Prévention</text>
+  <text class="sub" x="364" y="234" text-anchor="middle">connaissance et anticipation</text>
+</svg>

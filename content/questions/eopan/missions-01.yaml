@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.missions-01
+kind: qcm
+theme: missions-marine
+statement: >-
+  Quelles sont les quatre grandes missions de la Marine nationale ?
+choices:
+  - Dissuader, protéger, intervenir, prévenir
+  - Explorer, commercer, pêcher, transporter
+  - Attaquer, envahir, occuper, coloniser
+  - Former, réparer, ravitailler, communiquer
+correctChoices: [0]
+explanation: >-
+  Les quatre grandes missions de la Marine sont dissuader, protéger, intervenir
+  et prévenir (connaissance et anticipation).
+evaluates: [eopan.missions.missions-de-la-marine]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

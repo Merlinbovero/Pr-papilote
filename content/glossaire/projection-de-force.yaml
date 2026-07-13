@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.projection-de-force
+title: Projection de force
+definition: >-
+  Action militaire ciblée menée par de petites unités spécialisées (commandos
+  marine) : assauts, reconnaissance, libération d'otages, lutte contre la
+  piraterie. Elle agit avec discrétion et précision, à la différence de la
+  projection de puissance.
+english: Force projection
+synonyms: []
+ficheId: eopan.missions.missions-de-la-marine
+tags: []
+status: publie

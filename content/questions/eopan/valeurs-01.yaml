@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.valeurs-01
+kind: qcm
+theme: culture-marine
+statement: >-
+  Quelle est la devise de la Marine nationale ?
+choices:
+  - Honneur, Patrie, Valeur, Discipline
+  - Liberté, Égalité, Fraternité
+  - Honneur et Patrie
+  - Qui ose gagne
+correctChoices: [0]
+explanation: >-
+  La devise de la Marine est « Honneur, Patrie, Valeur, Discipline ». « Liberté,
+  Égalité, Fraternité » est la devise de la République.
+evaluates: [eopan.culture-militaire.culture-et-valeurs-de-la-marine]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
