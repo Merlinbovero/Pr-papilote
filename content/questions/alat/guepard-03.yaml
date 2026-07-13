@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.guepard-03
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel hélicoptère de l'ALAT le Guépard doit-il notamment remplacer ?
+choices:
+  - La Gazelle
+  - Le Tigre
+  - Le NH90 Caïman
+  - Le Chinook
+correctChoices: [0]
+explanation: >-
+  Le Guépard doit remplacer les flottes légères vieillissantes des trois
+  armées — pour l'ALAT, notamment la Gazelle, dans le cadre du projet
+  « Horizon Guépard 2030 ».
+evaluates: [alat.appareils.guepard]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

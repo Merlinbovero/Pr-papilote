@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: alat.appareils.nh90-caiman-tth
+type: helicoptere
+title: NH90 Caïman TTH
+slug: nh90-caiman-tth
+summary: >-
+  L'hélicoptère de manœuvre et d'assaut de l'ALAT — 63 Caïman TTH livrés à
+  l'armée de Terre, capables d'héliporter une vingtaine de combattants ou
+  2,5 tonnes de fret, de jour comme de nuit.
+objectifs:
+  - Identifier le Caïman TTH comme l'hélicoptère de manœuvre et d'assaut de l'ALAT.
+  - Connaître ses caractéristiques essentielles (2 turbines, ~20 combattants, 300 km/h).
+  - Distinguer la version TTH (Terre) de la version NFH (Marine).
+aliases: [NH90, Caïman, Caïman TTH, NH90 TTH, hélicoptère de manœuvre]
+module: alat
+category: appareils
+subcategory: helicopteres-de-manoeuvre
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche Caïman TTH version Terre (campagne de recherche n°1, lot N3 ; sources officielles DGA/armée de Terre).
+    author: prepapilote
+sources:
+  - title: "La DGA livre le dernier hélicoptère NH90 Caïman TTH à l'armée de Terre (Ministère des Armées, février 2025)"
+    url: https://www.defense.gouv.fr/dga/actualites/dga-livre-dernier-helicoptere-nh90-caiman-tth-aux-forces-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "L'hélicoptère NH90 « Caïman » (armée de Terre, archives defense.gouv.fr)"
+    url: https://www.archives.defense.gouv.fr/terre/equipements/vehicules/l-helicoptere-nh90-caiman.html
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Présentation de l'hélicoptère NH90 Caïman — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/aeronefs-alat-helicopteres-nh90-caiman-presentation.html
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.unites.1er-rhc
+    - alat.unites.3e-rhc
+    - alat.missions.l-aerocombat
+    - eopan.appareils.nh90-caiman
+infobox:
+  constructeur: NHIndustries (Airbus Helicopters)
+  role: Hélicoptère de manœuvre et d'assaut
+  armees: [Armée de terre]
+  miseEnService: 2011 (armée de Terre)
+  statut: En service (63 exemplaires, dernier livré en février 2025)
+  equipage: 2 pilotes + 1 ou 2 membres d'équipage
+  capaciteEmport: Une vingtaine de combattants ou 2,5 t de fret
+content:
+  essentiel:
+    body: |
+      Le **NH90 Caïman TTH** (*Tactical Transport Helicopter*) est
+      l'hélicoptère de **manœuvre et d'assaut** de l'ALAT — la version
+      **Terre** du NH90, dont la Marine met en œuvre la version **NFH** de
+      lutte anti-sous-marine.
+
+      Propulsé par **deux turbines** de plus de 2 000 ch, il héliporte une
+      **vingtaine de combattants** ou **2,5 tonnes** de fret à environ
+      **300 km/h**, de jour comme de nuit : poser d'assaut, infiltration de
+      commandos, largage de parachutistes, évacuation sanitaire, poste de
+      commandement déporté.
+
+      Avec le retrait progressif des **Puma**, les **63 Caïman TTH** livrés
+      (le dernier en **février 2025**) constituent désormais la **principale
+      flotte de manœuvre** de l'armée de Terre.
+    aRetenir:
+      - Caïman TTH — l'hélicoptère de manœuvre et d'assaut de l'ALAT (63 exemplaires, dernier livré en février 2025).
+      - Une vingtaine de combattants ou 2,5 t de fret, ~300 km/h, deux turbines.
+      - TTH = version Terre ; NFH = version Marine (lutte anti-sous-marine) — même famille NH90.
+      - Il remplace progressivement le Puma comme colonne vertébrale de l'héliportage.
+  sections:
+    - id: un-helicoptere-de-nouvelle-generation
+      title: Un hélicoptère de nouvelle génération
+      body: |
+        Le Caïman appartient à la **nouvelle génération** : commandes de vol
+        **électriques**, avionique numérique, systèmes d'autoprotection. Ses
+        caractéristiques principales :
+
+        | Caractéristique | Valeur |
+        | --- | --- |
+        | Longueur | 19,56 m (rotor tournant) |
+        | Masse maximale | 10 600 kg |
+        | Moteurs | 2 turbines (> 2 000 ch chacune) |
+        | Vitesse de croisière | ~300 km/h |
+        | Rayon d'action | ~880 km (1 600 km en convoyage) |
+        | Emport | ~20 combattants ou 2,5 t |
+
+        Sa cabine se reconfigure selon la mission : sièges commandos,
+        civières d'évacuation sanitaire, fret arrimé, treuil.
+    - id: emploi-et-perspectives
+      title: Emploi et perspectives
+      strate: maitriser
+      body: |
+        Le Caïman TTH équipe les régiments de la **4e brigade
+        d'aérocombat** — le 1er RHC en aligne 18, et le 3e RHC a reçu ses
+        premiers exemplaires fin 2021 dans le cadre de sa transformation.
+        En opérations, il assure le **poser d'assaut** et la mobilité des
+        groupes de combat au plus près.
+
+        Perspective (donnée à suivre) : **18 Caïman en version forces
+        spéciales** doivent rejoindre le 4e RHFS entre **2026 et 2029**, et
+        le Caïman formera avec le futur **Guépard** le couple
+        manœuvre-léger de l'ALAT de 2030.
+  pieges:
+    - TTH (Terre, manœuvre) et NFH (Marine, lutte anti-sous-marine) sont deux versions distinctes du même NH90.
+    - Le Caïman est un hélicoptère de manœuvre — l'attaque revient au Tigre, la reconnaissance à la Gazelle.
+    - L'état d'une flotte se date — 63 TTH livrés au total, le dernier en février 2025.

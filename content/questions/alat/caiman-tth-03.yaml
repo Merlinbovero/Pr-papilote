@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.caiman-tth-03
+kind: vrai-faux
+theme: appareils-alat
+statement: >-
+  Le Caïman TTH de l'armée de Terre et le Caïman NFH de la Marine sont deux versions du même hélicoptère NH90.
+answer: true
+explanation: >-
+  Vrai. Le NH90 se décline en TTH (Tactical Transport Helicopter, manœuvre —
+  armée de Terre) et NFH (NATO Frigate Helicopter, lutte anti-sous-marine et
+  secours en mer — Marine nationale).
+evaluates: [alat.appareils.nh90-caiman-tth]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,115 @@
+schemaVersion: 1
+id: alat.appareils.cougar
+type: helicoptere
+title: Cougar
+slug: cougar
+summary: >-
+  Héritier du Puma et cousin du Super Puma, le Cougar est l'hélicoptère de
+  transport tactique lourd de l'ALAT — 25 hommes équipés, rénové dans les
+  années 2010 avec avionique numérique et autoprotection.
+objectifs:
+  - Identifier le Cougar comme hélicoptère de transport tactique de l'ALAT.
+  - Connaître sa filiation (Puma → Super Puma → Cougar) et sa rénovation.
+  - Situer son emploi (transport tactique, opérations spéciales, liaisons).
+aliases: [Cougar, AS532, AS332, Super Puma militaire, hélicoptère de transport]
+module: alat
+category: appareils
+subcategory: helicopteres-de-manoeuvre
+tags: []
+concours: [alat]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche Cougar (campagne de recherche n°1, lot N3 ; ALAT.fr et presse spécialisée recoupées).
+    author: prepapilote
+sources:
+  - title: "Présentation de l'hélicoptère AS532UL Cougar — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/aeronefs-alat-helicopteres-as532ul-cougar-horizon-presentation.html
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "L'ALAT a reçu son dernier hélicoptère Cougar rénové (Opex360, avril 2020)"
+    url: https://www.opex360.com/2020/04/09/laviation-legere-de-larmee-de-terre-a-recu-son-dernier-helicoptere-cougar-renove/
+    kind: presse
+    consultedAt: "2026-07-13"
+  - title: "Aérospatiale AS532 Cougar — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9rospatiale_AS532_Cougar
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.appareils.nh90-caiman-tth
+    - alat.unites.5e-rhc
+    - alat.unites.4e-rhfs
+    - alat.histoire.histoire-de-l-alat
+infobox:
+  constructeur: Aérospatiale, puis Airbus Helicopters
+  role: Hélicoptère de transport tactique
+  armees: [Armée de terre]
+  miseEnService: 1988 (première livraison à l'armée de Terre)
+  statut: En service (parc rénové 2011-2015)
+  equipage: 3 à 4 (pilotes et mécanicien d'équipage)
+  capaciteEmport: Jusqu'à 25 hommes équipés
+content:
+  essentiel:
+    body: |
+      Le **Cougar** est l'hélicoptère de **transport tactique lourd** de
+      l'ALAT. Sa lignée est celle des grands biturbines français : le
+      **Puma** (années 1960) donne le **Super Puma** civil, dont la version
+      militaire prend en 1990 le nom de **Cougar** (AS532).
+
+      Livré à l'armée de Terre à partir de **décembre 1988** (24 appareils),
+      il emporte jusqu'à **25 hommes équipés** — ou 6 blessés couchés et
+      leurs soignants en évacuation sanitaire — grâce à ses **deux turbines
+      Makila**.
+
+      L'ensemble du parc a été **rénové** entre **2011 et 2015** : tableau
+      de bord numérique, caméra thermique, détecteurs de radars et de
+      départs missiles — de quoi durer aux côtés du Caïman.
+    aRetenir:
+      - Cougar — transport tactique lourd de l'ALAT, jusqu'à 25 hommes équipés.
+      - Filiation — Puma → Super Puma → Cougar (AS532, nom militaire depuis 1990).
+      - Première livraison en décembre 1988 ; parc entièrement rénové entre 2011 et 2015.
+      - Sert aussi les opérations spéciales (4e RHFS) et les liaisons longue distance.
+  sections:
+    - id: filiation-et-renovation
+      title: Filiation et rénovation
+      body: |
+        La famille se lit en trois générations :
+
+        1. le **Puma** (SA330), pilier de l'héliportage depuis les années
+           1960 — 38 Puma engagés lors de l'opération Daguet ;
+        2. le **Super Puma** (AS332), version allongée et remotorisée
+           apparue en 1980 ;
+        3. le **Cougar** (AS532), sa déclinaison militaire renommée en 1990.
+
+        La **rénovation** conduite de 2011 à 2015 a modernisé l'avionique
+        (tableau de bord numérique) et l'**autoprotection** (caméra
+        thermique, détecteurs de radars et de départs missiles), prolongeant
+        l'appareil dans un paysage dominé par le Caïman.
+    - id: emploi
+      title: Emploi
+      strate: maitriser
+      body: |
+        Le Cougar assure le **transport tactique** — jusqu'à 25 combattants
+        — le **fret**, les **liaisons** longue distance et l'**évacuation
+        sanitaire**. Une partie du parc sert au **4e RHFS** pour les
+        opérations spéciales.
+
+        Comme le Puma avant lui, il illustre une constante de l'aérocombat :
+        la manœuvre exige des **porteurs lourds** endurants, capables de
+        déplacer d'un bloc un groupe de combat. Cette fonction passe
+        progressivement au **Caïman TTH**, mais le Cougar rénové reste un
+        maillon du dispositif.
+  pieges:
+    - Puma, Super Puma et Cougar sont trois générations d'une même famille — AS532 « Cougar » est le nom militaire pris en 1990.
+    - Le Cougar est un hélicoptère de transport tactique — pas un hélicoptère d'attaque.
+    - Un parc « rénové » n'est pas un parc neuf — la rénovation (2011-2015) modernise avionique et autoprotection d'appareils livrés dès 1988.

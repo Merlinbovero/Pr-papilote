@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.caiman-tth-04
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Combien de Caïman TTH l'armée de Terre a-t-elle reçus au total ?
+choices:
+  - 63, le dernier livré en février 2025
+  - 12, tous au 5e RHC
+  - 169, répartis entre les trois armées
+  - 250, en remplacement des Gazelle
+correctChoices: [0]
+explanation: >-
+  63 Caïman TTH ont été livrés à l'armée de Terre, le dernier en février 2025.
+  Le chiffre de 169 correspond au programme Guépard (HIL), toutes armées
+  confondues.
+evaluates: [alat.appareils.nh90-caiman-tth]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

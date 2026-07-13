@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.guepard-01
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Qu'est-ce que le Guépard ?
+choices:
+  - Le futur hélicoptère interarmées léger (H160M), en développement — pas encore en service
+  - L'hélicoptère d'attaque actuellement en service dans l'ALAT
+  - Un avion de chasse embarqué
+  - Le drone de reconnaissance de l'armée de Terre
+correctChoices: [0]
+explanation: >-
+  Le Guépard (H160M) est l'appareil du programme HIL — hélicoptère interarmées
+  léger. Il est en développement : première livraison à l'armée de Terre
+  annoncée pour 2028. Le présenter comme en service serait une erreur factuelle.
+evaluates: [alat.appareils.guepard]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

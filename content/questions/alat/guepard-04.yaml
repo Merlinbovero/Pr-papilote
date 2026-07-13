@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.alat.guepard-04
+kind: vrai-faux
+theme: appareils-alat
+statement: >-
+  En 2026, un candidat peut affirmer en entretien que « l'ALAT vole sur Guépard ».
+answer: false
+explanation: >-
+  Faux. Le Guépard est en développement (première livraison à l'armée de Terre
+  annoncée pour 2028). Présenter un programme comme une capacité acquise est
+  une faute classique — il faut distinguer commandé, testé, livré et en
+  service, et dater ses affirmations.
+evaluates: [alat.appareils.guepard]
+difficulty: 2
+competencies: [culture-militaire, raisonnement-logique]
+concours: [alat]
+status: publie

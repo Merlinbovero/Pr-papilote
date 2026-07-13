@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.caiman-tth-05
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel hélicoptère le Caïman TTH remplace-t-il progressivement dans l'ALAT ?
+choices:
+  - Le Puma
+  - La Gazelle
+  - Le Tigre
+  - L'Alouette II
+correctChoices: [0]
+explanation: >-
+  Avec le retrait progressif des Puma, les Caïman TTH constituent désormais la
+  principale flotte de manœuvre et d'assaut. La Gazelle, elle, sera remplacée
+  par le Guépard.
+evaluates: [alat.appareils.nh90-caiman-tth]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
