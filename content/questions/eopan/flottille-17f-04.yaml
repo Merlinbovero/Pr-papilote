@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.flottille-17f-04
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  La flottille 17F est aujourd'hui équipée de Rafale Marine et stationnée à Landivisiau.
+answer: true
+explanation: >-
+  Vrai. Depuis 2016, la 17F vole sur Rafale M ; comme les 11F et 12F, elle est
+  stationnée à la BAN Landivisiau et embarque sur le Charles de Gaulle.
+evaluates: [eopan.unites.flottille-17f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

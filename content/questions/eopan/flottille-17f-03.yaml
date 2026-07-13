@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-17f-03
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  En quelle année la flottille 17F est-elle passée sur Rafale Marine ?
+choices:
+  - "2016"
+  - "2001"
+  - "2004"
+  - "1989"
+correctChoices: [0]
+explanation: >-
+  La 17F a abandonné le Super-Étendard modernisé pour le Rafale M en 2016. La 12F,
+  elle, avait reçu le Rafale dès 2001.
+evaluates: [eopan.unites.flottille-17f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

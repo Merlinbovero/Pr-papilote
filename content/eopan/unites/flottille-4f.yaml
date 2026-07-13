@@ -1,0 +1,104 @@
+schemaVersion: 1
+id: eopan.unites.flottille-4f
+type: flottille
+title: Flottille 4F
+slug: flottille-4f
+summary: >-
+  Flottille de guet aérien de l'aéronautique navale, unique en son genre :
+  équipée des E-2C Hawkeye, elle fournit les « yeux » radar du groupe aéronaval.
+  Stationnée à Lann-Bihoué, elle embarque sur le Charles de Gaulle.
+objectifs:
+  - Identifier la Flottille 4F comme l'unité de guet aérien de l'aéronautique navale (E-2C Hawkeye).
+  - Expliquer son rôle unique de détection, commandement et contrôle au profit du groupe aéronaval.
+  - Situer la 4F à la BAN Lann-Bihoué et son embarquement sur le porte-avions.
+aliases: [4F, flottille 4F, guet aérien]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet flottille, la 4F de guet aérien (E-2C Hawkeye).
+    author: prepapilote
+sources:
+  - title: "Flottille 4F — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Flottille_4F
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aéronautique navale — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: eopan.appareils.e-2c-hawkeye
+    - predicate: affecte-a
+      target: eopan.ban.lann-bihoue
+  related:
+    - eopan.presentation.le-concours-eopan
+infobox:
+  appellation: Flottille 4F
+  ban: BAN Lann-Bihoué
+  appareils: [E-2C Hawkeye]
+  missions: [Guet aérien, Détection, Commandement et contrôle]
+  insigne: Aigle de mer posé sur une tortue
+content:
+  essentiel:
+    body: |
+      La **flottille 4F** est une unité **unique** dans l'aéronautique navale :
+      c'est la flottille de **guet aérien**. Elle met en œuvre les **E-2C
+      Hawkeye**, ces avions radars reconnaissables à leur grande soucoupe
+      tournante, qui servent d'**yeux** et de **cerveau** au groupe aéronaval.
+
+      Sa mission n'est pas le combat mais la **détection**, le **commandement**
+      et le **contrôle** : repérer très loin les menaces aériennes, suivre les
+      pistes et **coordonner** l'action des chasseurs. Sans elle, le groupe
+      aérien embarqué serait aveugle au-delà de l'horizon.
+
+      Héritière de la **première** formation de l'aviation d'escadre, la 4F est
+      stationnée à la **BAN Lann-Bihoué** et embarque sur le porte-avions
+      **Charles de Gaulle** lors des déploiements.
+    aRetenir:
+      - La 4F est l'unique flottille de guet aérien de l'aéronautique navale, équipée des E-2C Hawkeye.
+      - Sa mission est la détection, le commandement et le contrôle — pas le combat.
+      - Elle est stationnée à la BAN Lann-Bihoué et embarque sur le Charles de Gaulle.
+      - Héritière de la première formation de l'aviation d'escadre, elle est la seule flottille aux trois fourragères.
+  sections:
+    - id: role-au-sein-du-groupe
+      title: Rôle au sein du groupe aéronaval
+      body: |
+        Au cœur du **groupe aérien embarqué**, la 4F joue le rôle de **vigie**
+        et de **tour de contrôle** volante. Ses Hawkeye, en patrouillant en
+        altitude, détectent les aéronefs bien au-delà de la portée des radars
+        des navires, puis **répartissent** et **guident** les chasseurs vers les
+        menaces.
+
+        C'est une capacité **rare** : peu de marines dans le monde disposent
+        d'un guet aérien embarqué. Elle démultiplie l'efficacité de tout le
+        groupe, en offrant une **vision** d'ensemble de la situation aérienne.
+    - id: une-flottille-decoree
+      title: Une flottille décorée
+      strate: maitriser
+      body: |
+        Descendante de la **première** formation de l'aviation d'escadre
+        (créée en **1918**), la 4F a traversé un siècle d'histoire navale :
+        Seconde Guerre mondiale, Indochine, Liban, Bosnie, Afghanistan et
+        opérations au Moyen-Orient.
+
+        Dissoute en **1997**, elle est **réactivée** le **10 mars 2000** pour
+        mettre en œuvre les Hawkeye. Son histoire lui vaut une distinction
+        unique : c'est la **seule flottille** de l'aéronavale autorisée à porter
+        **trois fourragères**. Son insigne — un **aigle de mer** posé sur une
+        **tortue** — symbolise l'union de l'air et de la mer.
+  pieges:
+    - La 4F ne combat pas — c'est une flottille de guet aérien (détection et coordination), à ne pas confondre avec les flottilles de chasse (11F, 12F, 17F).
+    - Ses Hawkeye sont basés à terre (Lann-Bihoué) et n'embarquent sur le porte-avions que lors des déploiements.
+    - Le guet aérien embarqué est une capacité rare — la 4F en est l'unique détentrice dans l'aéronautique navale.

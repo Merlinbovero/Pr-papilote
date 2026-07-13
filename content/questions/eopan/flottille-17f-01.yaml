@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-17f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quel est le surnom de la flottille 17F ?
+choices:
+  - « La Glorieuse »
+  - « La Douzeff »
+  - « Les Lascars »
+  - « La Royale »
+correctChoices: [0]
+explanation: >-
+  La 17F est surnommée « La Glorieuse » et porte pour insigne un balbuzard
+  pêcheur.
+evaluates: [eopan.unites.flottille-17f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

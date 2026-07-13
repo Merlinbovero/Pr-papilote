@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-12f-04
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Par quels surnoms la flottille 12F est-elle connue ?
+choices:
+  - « La Douzeff » et « Les Lascars »
+  - « La Glorieuse »
+  - « Les Cigognes »
+  - « Les Chevaliers du ciel »
+correctChoices: [0]
+explanation: >-
+  La 12F est surnommée « La Douzeff » et « Les Lascars », et arbore Donald Duck
+  pour mascotte. « La Glorieuse » est le surnom de la 17F.
+evaluates: [eopan.unites.flottille-12f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

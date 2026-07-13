@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.flottille-4f-02
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  La flottille 4F est une flottille de chasse équipée de Rafale Marine.
+answer: false
+explanation: >-
+  Faux. La 4F est la flottille de guet aérien (E-2C Hawkeye) — sa mission est la
+  détection et la coordination, pas le combat. Les flottilles de chasse sont les
+  11F, 12F et 17F.
+evaluates: [eopan.unites.flottille-4f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

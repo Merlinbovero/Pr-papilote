@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-4f-04
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle distinction rend la flottille 4F unique dans l'aéronautique navale ?
+choices:
+  - C'est la seule flottille autorisée à porter trois fourragères
+  - C'est la seule flottille embarquée sur le porte-avions
+  - C'est la seule flottille équipée de Rafale M
+  - C'est la seule flottille basée en outre-mer
+correctChoices: [0]
+explanation: >-
+  Héritière de la première formation de l'aviation d'escadre (1918), la 4F est la
+  seule flottille de l'aéronavale autorisée à porter trois fourragères.
+evaluates: [eopan.unites.flottille-4f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-12f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle particularité mondiale distingue la flottille 12F ?
+choices:
+  - Elle fut la première unité aérienne au monde mise en œuvre sur Rafale
+  - Elle fut la première à apponter de nuit
+  - Elle fut la première flottille d'hélicoptères
+  - Elle fut la première unité française en Indochine
+correctChoices: [0]
+explanation: >-
+  La 12F a reçu ses premiers Rafale M en mai 2001 : elle est la toute première
+  unité aérienne au monde à avoir mis en œuvre le Rafale, avant même les
+  escadrons de l'Armée de l'Air et de l'Espace.
+evaluates: [eopan.unites.flottille-12f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

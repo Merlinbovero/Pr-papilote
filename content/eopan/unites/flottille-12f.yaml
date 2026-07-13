@@ -1,0 +1,104 @@
+schemaVersion: 1
+id: eopan.unites.flottille-12f
+type: flottille
+title: Flottille 12F
+slug: flottille-12f
+summary: >-
+  Flottille de chasse de l'aéronautique navale, équipée de Rafale Marine et
+  stationnée à Landivisiau. Elle a la particularité d'avoir été la première
+  unité au monde mise en œuvre sur Rafale.
+objectifs:
+  - Identifier la Flottille 12F comme l'une des trois flottilles de chasse embarquée (Rafale M).
+  - Retenir sa particularité — première unité au monde équipée du Rafale.
+  - Situer la 12F à la BAN Landivisiau et son embarquement sur le Charles de Gaulle.
+aliases: [12F, flottille 12F, La Douzeff, Les Lascars]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet flottille, la 12F de chasse (première unité au monde sur Rafale).
+    author: prepapilote
+sources:
+  - title: "Flottille 12F — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Flottille_12F
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aéronautique navale — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: eopan.appareils.rafale-m
+    - predicate: affecte-a
+      target: eopan.ban.landivisiau
+  related:
+    - eopan.bases.flottille-11f
+    - eopan.presentation.le-concours-eopan
+infobox:
+  appellation: Flottille 12F
+  ban: BAN Landivisiau
+  appareils: [Rafale M]
+  missions: [Chasse, Interception, Assaut, Défense aérienne, Reconnaissance, Dissuasion nucléaire]
+  traditions: Surnoms « La Douzeff » et « Les Lascars », mascotte Donald Duck
+content:
+  essentiel:
+    body: |
+      La **flottille 12F** est l'une des **trois flottilles de chasse** de
+      l'aéronautique navale, avec les 11F et 17F. Équipée de **Rafale Marine**
+      et stationnée à la **BAN Landivisiau**, elle embarque sur le porte-avions
+      **Charles de Gaulle**.
+
+      Sa particularité est **historique et mondiale** : la 12F a été la **toute
+      première unité aérienne au monde** mise en œuvre sur **Rafale**, en
+      **mai 2001**. Elle a ainsi ouvert la voie à toute la carrière
+      opérationnelle de l'avion, dans la Marine comme dans l'Armée de l'Air.
+
+      Créée en **1948**, riche d'une longue histoire (Indochine, Algérie,
+      F-8 Crusader), elle est surnommée **« La Douzeff »** ou **« Les
+      Lascars »**, et arbore une mascotte bien connue : **Donald Duck**.
+    aRetenir:
+      - La 12F est l'une des trois flottilles de chasse de l'aéronavale (Rafale M), avec les 11F et 17F.
+      - Elle fut la première unité aérienne au monde mise en œuvre sur Rafale (mai 2001).
+      - Créée en 1948, stationnée à Landivisiau, elle embarque sur le Charles de Gaulle.
+      - Surnommée « La Douzeff » ou « Les Lascars », avec Donald Duck pour mascotte.
+  sections:
+    - id: missions
+      title: Missions
+      body: |
+        Comme ses sœurs de Landivisiau, la 12F couvre l'ensemble des missions
+        de la **chasse embarquée** : **interception** et **défense aérienne**,
+        **assaut** contre la terre et contre les navires, **appui**,
+        **reconnaissance**, **ravitaillement en vol** entre Rafale et volet
+        aéronaval de la **dissuasion nucléaire**.
+
+        Elle les conduit depuis la **terre** (à Landivisiau) comme depuis le
+        **porte-avions**, au sein du groupe aérien embarqué.
+    - id: pionniere-du-rafale
+      title: Pionnière du Rafale
+      strate: maitriser
+      body: |
+        En recevant ses premiers **Rafale M** en **mai 2001**, la 12F est
+        entrée dans l'histoire comme la **première unité au monde** à mettre en
+        œuvre cet appareil — avant même les escadrons de l'Armée de l'Air et de
+        l'Espace. Ce rôle de **pionnière** a fait d'elle le banc d'essai
+        opérationnel du Rafale Marine.
+
+        Auparavant dissoute puis réarmée à plusieurs reprises (notamment sur
+        **F-8 Crusader** à partir de 1964, pour trente-quatre ans de service),
+        la 12F illustre la façon dont une flottille traverse les générations
+        d'appareils tout en conservant son **identité** et ses **traditions**.
+  pieges:
+    - Une flottille est l'unité de l'aéronautique navale — l'équivalent de l'escadron dans l'Armée de l'Air et de l'Espace.
+    - La particularité de la 12F est d'avoir été la première unité au monde sur Rafale (2001) — pas la plus ancienne flottille de chasse (c'est la 11F).
+    - La 12F est stationnée à Landivisiau et embarque sur le porte-avions lors des déploiements — elle n'est pas basée en permanence à bord.
