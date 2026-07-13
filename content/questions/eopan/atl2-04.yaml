@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.atl2-04
+kind: qcm
+theme: patrouille-maritime
+statement: >-
+  Quelle est la mission historique première de l'Atlantique 2 ?
+choices:
+  - La lutte anti-sous-marine
+  - Le bombardement stratégique
+  - L'interception de chasseurs ennemis
+  - Le transport de fret lourd
+correctChoices: [0]
+explanation: >-
+  L'ATL2 est conçu pour la lutte anti-sous-marine (ASM) : détecter, suivre et
+  traiter les sous-marins, notamment pour protéger les forces navales et la
+  composante océanique de la dissuasion.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

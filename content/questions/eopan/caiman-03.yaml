@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.caiman-03
+kind: qcm
+theme: helicopteres-embarques
+statement: >-
+  Comment le Caïman Marine détecte-t-il un sous-marin en lutte anti-sous-marine ?
+choices:
+  - En immergeant un sonar trempé depuis un vol stationnaire
+  - En larguant des bouées de carburant
+  - En volant à très basse altitude à grande vitesse
+  - En utilisant uniquement son radar météo
+correctChoices: [0]
+explanation: >-
+  En vol stationnaire au-dessus de la mer, le Caïman descend au bout d'un câble
+  un sonar trempé (immergé) qui émet et écoute sous l'eau pour détecter et
+  localiser le sous-marin.
+evaluates: [eopan.appareils.nh90-caiman]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

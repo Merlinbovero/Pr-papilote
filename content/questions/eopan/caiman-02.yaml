@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.caiman-02
+kind: vrai-faux
+theme: helicopteres-embarques
+statement: >-
+  Le NH90 Caïman Marine est mis en œuvre principalement depuis les frégates.
+answer: true
+explanation: >-
+  Vrai. Le Caïman Marine est un hélicoptère de bâtiment — il embarque et opère
+  surtout depuis les frégates (notamment les FREMM), et non uniquement depuis le
+  porte-avions.
+evaluates: [eopan.appareils.nh90-caiman]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

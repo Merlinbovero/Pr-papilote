@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.atl2-05
+kind: qcm
+theme: patrouille-maritime
+statement: >-
+  En quoi consiste la rénovation de l'Atlantique 2 au « standard 6 » ?
+choices:
+  - Une modernisation de l'avionique, du système de mission et des capteurs (radar Searchmaster)
+  - Le remplacement des turbopropulseurs par des réacteurs
+  - L'ajout d'une capacité d'appontage sur porte-avions
+  - La transformation en avion ravitailleur
+correctChoices: [0]
+explanation: >-
+  Le standard 6 modernise l'avionique, le système de mission, les consoles et
+  les capteurs de l'ATL2 ; l'ancien radar cède la place à un radar Searchmaster
+  à antenne active, optimisé pour détecter les cibles maritimes.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

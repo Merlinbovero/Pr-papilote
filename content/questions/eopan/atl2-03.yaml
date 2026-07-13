@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.atl2-03
+kind: qcm
+theme: patrouille-maritime
+statement: >-
+  Quelle qualité fait la force de l'Atlantique 2 pour surveiller de vastes zones
+  maritimes ?
+choices:
+  - Sa très longue endurance (une douzaine d'heures de vol)
+  - Sa vitesse supersonique
+  - Sa capacité à décoller à la verticale
+  - Sa furtivité au radar
+correctChoices: [0]
+explanation: >-
+  La force de l'ATL2 est l'endurance : il patrouille une douzaine d'heures et
+  couvre plusieurs milliers de kilomètres, ce qui lui permet de balayer de très
+  vastes zones en un seul vol. Sa force est de durer, pas d'aller vite.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 2
+competencies: [connaissances-aeronautiques, raisonnement-logique]
+concours: [eopan]
+status: publie
