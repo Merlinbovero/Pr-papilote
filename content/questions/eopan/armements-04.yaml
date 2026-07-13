@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.armements-04
+kind: vrai-faux
+theme: armements-aeronavale
+statement: >-
+  L'Exocet AM39 vole à haute altitude et à vitesse supersonique vers sa cible.
+answer: false
+explanation: >-
+  Faux. L'Exocet est subsonique et vole au ras des flots (sea-skimming), ce
+  qui le rend difficile à détecter par les radars adverses. Il fonctionne en
+  « tire et oublie ».
+evaluates: [eopan.concepts.les-armements-de-l-aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

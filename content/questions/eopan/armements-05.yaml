@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.armements-05
+kind: qcm
+theme: armements-aeronavale
+statement: >-
+  Quels porteurs de l'aéronautique navale peuvent larguer la torpille MU90 ?
+choices:
+  - L'Atlantique 2 et le Caïman Marine
+  - Le Rafale Marine et le Hawkeye
+  - Uniquement les frégates
+  - Le Cap 10 et le PC-7
+correctChoices: [0]
+explanation: >-
+  La torpille légère MU90 (coopération franco-italienne) est l'arme
+  anti-sous-marine larguée par l'Atlantique 2 et l'hélicoptère NH90 Caïman
+  Marine.
+evaluates: [eopan.concepts.les-armements-de-l-aeronautique-navale]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
