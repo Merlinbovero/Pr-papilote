@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.grades-terre-02
+kind: ordre
+theme: grades-terre
+statement: >-
+  Remettez ces grades de sous-officiers de l'armée de Terre dans l'ordre croissant.
+items:
+  - "Sergent"
+  - "Sergent-chef"
+  - "Adjudant"
+  - "Adjudant-chef"
+  - "Major"
+explanation: >-
+  L'échelle des sous-officiers de l'armée de Terre, du bas vers le haut :
+  sergent, sergent-chef, adjudant, adjudant-chef, major.
+evaluates: [alat.grades.grades-de-l-armee-de-terre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.histoire-alat-04
+kind: ordre
+theme: histoire-alat
+statement: >-
+  Remettez ces jalons de l'histoire de l'ALAT dans l'ordre chronologique.
+items:
+  - "Création de l'ALOA (observation d'artillerie)"
+  - "Création de l'ALAT"
+  - "Guerre d'Algérie — naissance de la guerre aéromobile"
+  - "Création de la 4e division aéromobile"
+  - "Opération Daguet"
+  - "Création de la 4e brigade d'aérocombat"
+explanation: >-
+  ALOA (1952) → ALAT (22 novembre 1954) → Algérie (1954-1962) → 4e DAM (1985)
+  → Daguet (1991) → 4e BAC (juillet 2016).
+evaluates: [alat.histoire.histoire-de-l-alat]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

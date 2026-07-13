@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.alat.aerocombat-04
+kind: association
+theme: aerocombat
+statement: >-
+  Associez chaque mission de l'ALAT à sa description.
+pairs:
+  - left: Reconnaissance
+    right: Éclairer le terrain en avant des troupes
+  - left: Attaque
+    right: Traiter blindés et objectifs durcis
+  - left: Héliportage tactique
+    right: Poser troupes et matériel au plus près
+  - left: Opérations spéciales
+    right: Agir au profit du COS (4e RHFS)
+explanation: >-
+  Les grandes missions de l'aérocombat : reconnaître (éclairer), attaquer
+  (Tigre, Gazelle), héliporter (Caïman, Cougar) et servir les forces spéciales
+  (4e RHFS), plus l'appui-commandement et l'évacuation sanitaire.
+evaluates: [alat.missions.l-aerocombat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

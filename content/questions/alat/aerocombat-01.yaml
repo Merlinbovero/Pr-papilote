@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.aerocombat-01
+kind: qcm
+theme: aerocombat
+statement: >-
+  Qu'est-ce que l'aérocombat ?
+choices:
+  - Le combat mené par la troisième dimension au profit direct des troupes au sol
+  - Le combat aérien entre avions de chasse
+  - Le transport de fret militaire par avion
+  - La défense antiaérienne du territoire
+correctChoices: [0]
+explanation: >-
+  L'aérocombat est le combat mené par la troisième dimension, en intégration
+  totale avec la manœuvre terrestre : les hélicoptères de l'ALAT manœuvrent,
+  renseignent et frappent pour les troupes au sol.
+evaluates: [alat.missions.l-aerocombat]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

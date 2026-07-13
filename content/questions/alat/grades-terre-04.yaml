@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.grades-terre-04
+kind: qcm
+theme: grades-terre
+statement: >-
+  Combien d'étoiles porte un général de division ?
+choices:
+  - "3"
+  - "2"
+  - "4"
+  - "5"
+correctChoices: [0]
+explanation: >-
+  L'échelle des officiers généraux : général de brigade (2 étoiles), de
+  division (3), de corps d'armée (4) et général d'armée (5).
+evaluates: [alat.grades.grades-de-l-armee-de-terre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

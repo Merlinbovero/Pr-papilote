@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.aerocombat-02
+kind: qcm
+theme: aerocombat
+statement: >-
+  Quels régiments composent la 4e brigade d'aérocombat (4e BAC) ?
+choices:
+  - Les 1er RHC (Phalsbourg), 3e RHC (Étain) et 5e RHC (Pau)
+  - Le seul 4e RHFS de Pau
+  - Les flottilles 11F, 12F et 17F
+  - Les escadrons de chasse de Saint-Dizier
+correctChoices: [0]
+explanation: >-
+  La 4e BAC commande les trois régiments d'hélicoptères de combat : 1er RHC à
+  Phalsbourg, 3e RHC à Étain et 5e RHC à Pau. Le 4e RHFS, lui, sert les forces
+  spéciales.
+evaluates: [alat.missions.l-aerocombat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

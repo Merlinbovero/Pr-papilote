@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.histoire-alat-02
+kind: qcm
+theme: histoire-alat
+statement: >-
+  Où et quand naît la guerre aéromobile française ?
+choices:
+  - Pendant la guerre d'Algérie, avec les H-21 « Banane » et les Alouette II armées
+  - Pendant la Première Guerre mondiale, avec les ballons d'observation
+  - Pendant l'opération Daguet en 1991
+  - En Afghanistan dans les années 2000
+correctChoices: [0]
+explanation: >-
+  C'est en Algérie (1954-1962) que se combinent pour la première fois
+  héliportage (H-19, H-21, H-34), appui feu (Alouette II armées) et évacuation
+  sanitaire — les tactiques aéromobiles toujours en vigueur.
+evaluates: [alat.histoire.histoire-de-l-alat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

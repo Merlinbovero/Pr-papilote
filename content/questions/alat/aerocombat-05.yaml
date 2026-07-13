@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.aerocombat-05
+kind: qcm
+theme: aerocombat
+statement: >-
+  Pourquoi le 3e RHC d'Étain est-il surnommé le « régiment de la nuit » ?
+choices:
+  - Il s'est spécialisé dans le combat aéromobile nocturne
+  - Il ne vole que l'hiver
+  - Son insigne représente une chouette
+  - Il est basé au-delà du cercle polaire
+correctChoices: [0]
+explanation: >-
+  Le 3e RHC s'est imposé comme le spécialiste du combat de nuit — le vol
+  tactique nocturne étant l'un des savoir-faire les plus exigeants de
+  l'aérocombat.
+evaluates: [alat.missions.l-aerocombat]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

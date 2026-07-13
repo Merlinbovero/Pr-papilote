@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.aerocombat-03
+kind: vrai-faux
+theme: aerocombat
+statement: >-
+  Le 4e RHFS fait partie de la 4e brigade d'aérocombat.
+answer: false
+explanation: >-
+  Faux. Le 4e régiment d'hélicoptères des forces spéciales (Pau) opère au
+  profit du commandement des opérations spéciales (COS) — il ne fait pas
+  partie de la 4e BAC.
+evaluates: [alat.missions.l-aerocombat]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

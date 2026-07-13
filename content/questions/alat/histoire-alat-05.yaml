@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.histoire-alat-05
+kind: vrai-faux
+theme: histoire-alat
+statement: >-
+  L'ALAT est née de l'aviation de chasse de la Première Guerre mondiale.
+answer: false
+explanation: >-
+  Faux. L'ALAT est née de l'artillerie : l'ALOA (1952) regroupait les avions
+  légers chargés de régler les tirs. Sa culture est celle du combat au sol,
+  pas celle de la chasse.
+evaluates: [alat.histoire.histoire-de-l-alat]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
