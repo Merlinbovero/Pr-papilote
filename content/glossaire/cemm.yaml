@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.cemm
+title: CEMM
+definition: >-
+  Chef d'état-major de la Marine — l'amiral qui commande la Marine nationale.
+  Il est responsable de la préparation et de l'emploi des forces navales, sous
+  l'autorité du chef d'état-major des armées (CEMA).
+sigleExpansion: Chef d'état-major de la Marine
+synonyms: []
+ficheId: eopan.organisation.marine-nationale
+tags: []
+status: publie

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: terme.sna
+title: SNA
+definition: >-
+  Sous-marin nucléaire d'attaque — sous-marin à propulsion nucléaire armé de
+  torpilles et de missiles, chargé notamment d'escorter le groupe aéronaval et
+  de traquer les sous-marins adverses. À ne pas confondre avec le SNLE, porteur
+  de la dissuasion.
+sigleExpansion: Sous-marin nucléaire d'attaque
+english: Nuclear-powered attack submarine (SSN)
+synonyms: []
+ficheId: eopan.concepts.groupe-aeronaval
+tags: []
+status: publie

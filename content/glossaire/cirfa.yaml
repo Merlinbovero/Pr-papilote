@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.cirfa
+title: CIRFA
+definition: >-
+  Centre d'information et de recrutement des forces armées — le guichet
+  d'entrée de tout candidat : c'est au CIRFA (bureau Marine) que se déposent
+  le dossier EOPAN et que se déroulent les premiers entretiens.
+sigleExpansion: Centre d'information et de recrutement des forces armées
+synonyms: []
+ficheId: eopan.presentation.le-concours-eopan
+tags: []
+status: publie

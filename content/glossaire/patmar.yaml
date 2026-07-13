@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.patmar
+title: PATMAR
+definition: >-
+  Patrouille maritime — mission de surveillance armée des espaces maritimes
+  assurée par les avions à long rayon d'action de l'aéronautique navale,
+  l'Atlantique 2 en tête — lutte anti-sous-marine, antinavire et renseignement.
+sigleExpansion: Patrouille maritime
+english: Maritime patrol
+synonyms: [patrouille maritime]
+ficheId: eopan.appareils.atlantique-2
+tags: []
+status: publie
