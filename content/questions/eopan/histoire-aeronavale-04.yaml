@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.histoire-aeronavale-04
+kind: ordre
+theme: histoire-aeronavale
+statement: >-
+  Remettez ces jalons de l'aéronautique navale dans l'ordre chronologique.
+items:
+  - "Le Béarn, premier porte-avions français"
+  - "Indochine — bataille de Diên Biên Phu"
+  - "Mise en service du Clemenceau"
+  - "Admission au service actif du Charles de Gaulle"
+  - "Passage au « tout-Rafale »"
+explanation: >-
+  L'ordre chronologique est : Béarn (1927), Diên Biên Phu (1954), Clemenceau
+  (1961), Charles de Gaulle (2001), puis le tout-Rafale (2016, retrait du
+  Super-Étendard modernisé).
+evaluates: [eopan.histoire.histoire-de-l-aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

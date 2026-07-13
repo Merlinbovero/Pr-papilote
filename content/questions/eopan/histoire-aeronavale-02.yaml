@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.histoire-aeronavale-02
+kind: qcm
+theme: histoire-aeronavale
+statement: >-
+  Quel est le premier porte-avions français ?
+choices:
+  - Le Béarn (1927)
+  - Le Clemenceau (1961)
+  - Le Charles de Gaulle (2001)
+  - L'Arromanches (1946)
+correctChoices: [0]
+explanation: >-
+  Le Béarn, mis en service en 1927, est le premier porte-avions français. Le
+  Clemenceau (1961) et le Charles de Gaulle (2001) sont bien plus récents.
+evaluates: [eopan.histoire.histoire-de-l-aeronautique-navale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

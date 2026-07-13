@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 370" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .yr { font-size: 12px; font-weight: 700; fill: #3b82f6; }
+    .ev { font-size: 12px; }
+    .sub { font-size: 10px; fill: #94a3b8; }
+    .axis { stroke: #94a3b8; fill: none; stroke-width: 2; }
+    .dot { fill: #3b82f6; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">Un siècle d'aéronautique navale</text>
+  <!-- Axe -->
+  <line class="axis" x1="96" y1="52" x2="96" y2="352" />
+  <!-- 1912 -->
+  <circle class="dot" cx="96" cy="64" r="5" />
+  <text class="yr" x="86" y="60" text-anchor="end">1912</text>
+  <text class="ev" x="110" y="61" text-anchor="start">Création du service de l'aviation maritime</text>
+  <text class="sub" x="110" y="74" text-anchor="start">la Foudre, premier porte-hydravions</text>
+  <!-- 1927 -->
+  <circle class="dot" cx="96" cy="106" r="5" />
+  <text class="yr" x="86" y="102" text-anchor="end">1927</text>
+  <text class="ev" x="110" y="103" text-anchor="start">Le Béarn, premier porte-avions français</text>
+  <!-- 1940 -->
+  <circle class="dot" cx="96" cy="148" r="5" />
+  <text class="yr" x="86" y="144" text-anchor="end">1940</text>
+  <text class="ev" x="110" y="145" text-anchor="start">Campagne de France ; FNFL</text>
+  <text class="sub" x="110" y="158" text-anchor="start">escadron « Île-de-France » (RAF)</text>
+  <!-- 1954 -->
+  <circle class="dot" cx="96" cy="190" r="5" />
+  <text class="yr" x="86" y="186" text-anchor="end">1954</text>
+  <text class="ev" x="110" y="187" text-anchor="start">Indochine — Diên Biên Phu</text>
+  <!-- 1961 -->
+  <circle class="dot" cx="96" cy="232" r="5" />
+  <text class="yr" x="86" y="228" text-anchor="end">1961</text>
+  <text class="ev" x="110" y="229" text-anchor="start">Clemenceau (puis Foch, 1963)</text>
+  <text class="sub" x="110" y="242" text-anchor="start">porte-avions de conception française</text>
+  <!-- 2001 -->
+  <circle class="dot" cx="96" cy="274" r="5" />
+  <text class="yr" x="86" y="270" text-anchor="end">2001</text>
+  <text class="ev" x="110" y="271" text-anchor="start">Charles de Gaulle (propulsion nucléaire)</text>
+  <!-- 2016 -->
+  <circle class="dot" cx="96" cy="316" r="5" />
+  <text class="yr" x="86" y="312" text-anchor="end">2016</text>
+  <text class="ev" x="110" y="313" text-anchor="start">Tout-Rafale (retrait du Super-Étendard)</text>
+  <text class="sub" x="230" y="352" text-anchor="middle">Des hydravions de 1912 au groupe aéronaval du Charles de Gaulle.</text>
+</svg>

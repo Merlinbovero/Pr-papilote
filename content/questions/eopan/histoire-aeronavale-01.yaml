@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.histoire-aeronavale-01
+kind: qcm
+theme: histoire-aeronavale
+statement: >-
+  En quelle année naît l'aéronautique navale française ?
+choices:
+  - "1912"
+  - "1927"
+  - "1945"
+  - "2001"
+correctChoices: [0]
+explanation: >-
+  L'aéronautique navale naît en 1912 avec la création du service de l'aviation
+  maritime et l'armement du croiseur Foudre en porte-hydravions.
+evaluates: [eopan.histoire.histoire-de-l-aeronautique-navale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

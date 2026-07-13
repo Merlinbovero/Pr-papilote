@@ -1,0 +1,121 @@
+schemaVersion: 1
+id: eopan.histoire.histoire-de-l-aeronautique-navale
+type: concept
+title: Histoire de l'aéronautique navale
+slug: histoire-de-l-aeronautique-navale
+summary: >-
+  Des hydravions de 1912 au groupe aéronaval du Charles de Gaulle, plus d'un
+  siècle d'histoire : pionniers, porte-avions, guerres mondiales, Indochine et
+  Algérie, puis l'ère moderne du tout-Rafale.
+objectifs:
+  - Situer les grandes étapes de l'histoire de l'aéronautique navale française (1912 à nos jours).
+  - Identifier les porte-avions marquants (Béarn, Clemenceau, Foch, Charles de Gaulle).
+  - Mobiliser des repères historiques utiles à la culture aéronavale de l'entretien.
+aliases: [histoire de l'aéronavale, Béarn, Clemenceau, Foch, FNFL, chronologie aéronavale]
+module: eopan
+category: histoire
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche de synthèse et chronologie de l'histoire de l'aéronavale (Lot C, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Aéronautique navale — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9ronautique_navale
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Première Guerre mondiale — les pionniers de l'aéronautique navale (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/cols-bleus/cols-bleus-magazine/histoire/premiere-guerre-mondiale-lepopee-pionniers-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1, p.40-56 — Histoire de l'aéronavale"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.organisation.aeronautique-navale
+    - eopan.bases.charles-de-gaulle
+    - eopan.presentation.le-concours-eopan
+content:
+  essentiel:
+    body: |
+      L'aéronautique navale est **jeune** au regard de la Marine, mais riche
+      d'un **siècle** d'histoire. Elle naît en **1912** avec la création du
+      **service de l'aviation maritime** et l'armement du croiseur **Foudre** en
+      **porte-hydravions**. Dès **1918**, elle aligne près de **1 600 aéronefs**.
+
+      Le XXe siècle est celui des **porte-avions** : le **Béarn** (premier
+      porte-avions français, 1927), puis, après la Seconde Guerre mondiale, une
+      série de bâtiments (Dixmude, Arromanches…) et surtout les porte-avions
+      **français** **Clemenceau** (1961) et **Foch** (1963).
+
+      L'aéronavale s'illustre dans les grands conflits — les deux **guerres
+      mondiales**, l'**Indochine**, l'**Algérie** — avant d'entrer, en **2001**,
+      dans l'ère du **Charles de Gaulle**, premier navire de surface français à
+      **propulsion nucléaire**.
+    aRetenir:
+      - L'aéronautique navale naît en 1912 (service de l'aviation maritime, porte-hydravions Foudre).
+      - Le Béarn est le premier porte-avions français (1927) ; Clemenceau (1961) et Foch (1963) suivent.
+      - Elle s'illustre lors des deux guerres mondiales, en Indochine et en Algérie.
+      - L'ère moderne s'ouvre en 2001 avec le Charles de Gaulle (propulsion nucléaire).
+  sections:
+    - id: pionniers-et-porte-avions
+      title: Des pionniers aux porte-avions
+      body: |
+        Tout commence par les **hydravions** : en **1912**, le service de
+        l'aviation maritime rassemble le centre de **Fréjus-Saint-Raphaël**
+        (berceau de l'aéronavale) et la **Foudre**, premier **porte-hydravions**.
+        Pendant la **Première Guerre mondiale**, les hydravions servent à la
+        **reconnaissance** et à la lutte anti-sous-marine.
+
+        Entre les deux guerres, la France se dote de son premier **porte-avions**,
+        le **Béarn** (1927), et d'un porte-hydravions moderne, le **Commandant
+        Teste**. Mais en **1940**, faute de moyens utilisables, la France se
+        retrouve **sans porte-aéronefs**.
+      figures:
+        - schemaId: chronologie-aeronavale
+          alt: Frise chronologique verticale de l'aéronautique navale, de la création en 1912 au tout-Rafale de 2016, en passant par le Béarn, la FNFL, l'Indochine, Clemenceau/Foch et le Charles de Gaulle.
+          caption: Un siècle d'aéronautique navale, des hydravions de 1912 au groupe aéronaval du Charles de Gaulle.
+          width: 460
+          height: 370
+    - id: guerres-et-reconstruction
+      title: Guerres et reconstruction
+      body: |
+        Pendant la **Seconde Guerre mondiale**, des marins rejoignent les
+        **Forces navales françaises libres (FNFL)** : l'escadron **« Île-de-
+        France »**, au sein de la **RAF**, combat sur Spitfire, notamment lors du
+        raid de **Dieppe** (1942). Après-guerre, l'amiral **Nomy** relance une
+        aéronavale **moderne**.
+
+        De **1945 à 1962**, l'aéronavale est engagée outre-mer : en **Indochine**
+        (jusqu'à l'appui du camp retranché de **Diên Biên Phu** en 1954), puis en
+        **Algérie**. Elle passe alors à un matériel de **conception française** :
+        les porte-avions **Clemenceau** (1961) et **Foch** (1963), et des avions
+        comme l'**Étendard IV**, l'**Alizé** puis le **Super-Étendard**.
+    - id: l-ere-moderne
+      title: L'ère moderne
+      strate: maitriser
+      body: |
+        La fin de la **guerre froide** entraîne des restructurations et la
+        fermeture de plusieurs bases. Surtout, l'entrée en service du
+        **Charles de Gaulle** en **2001** — premier navire de surface français à
+        **propulsion nucléaire** — inaugure une nouvelle ère.
+
+        En **2016**, le retrait du **Super-Étendard Modernisé** marque le passage
+        au **« tout-Rafale »** : le **Rafale Marine** devient l'unique avion de
+        combat embarqué. Connaître ces grands repères — 1912, Béarn, FNFL,
+        Clemenceau/Foch, Charles de Gaulle, tout-Rafale — nourrit la **culture
+        aéronautique** attendue au concours, où l'histoire est régulièrement
+        évoquée.
+  pieges:
+    - Le premier porte-avions français est le Béarn (1927) — à ne pas confondre avec le Charles de Gaulle, bien plus récent (2001).
+    - Le Charles de Gaulle est le premier navire de surface français à propulsion nucléaire — pas le premier porte-avions français.
+    - Le passage au « tout-Rafale » date de 2016 (retrait du Super-Étendard modernisé), pas de la mise en service du Charles de Gaulle en 2001.
