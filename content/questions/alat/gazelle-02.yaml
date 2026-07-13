@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.gazelle-02
+kind: qcm
+theme: appareils-alat
+statement: >-
+  À quoi sert le rotor anticouple (dont le fenestron est une forme carénée) ?
+choices:
+  - À compenser le couple qui ferait tourner l'hélicoptère sur lui-même
+  - À fournir la portance principale
+  - À propulser l'appareil vers l'avant uniquement
+  - À freiner à l'atterrissage
+correctChoices: [0]
+explanation: >-
+  Le rotor anticouple, placé à la queue, compense le couple exercé par le rotor
+  principal, qui sinon ferait tourner l'hélicoptère sur lui-même. Le fenestron en
+  est une version carénée.
+evaluates: [alat.appareils.gazelle]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-04
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  Le Mirage 2000 est un avion omnirôle capable de toutes les missions dans une même version.
+answer: false
+explanation: >-
+  Faux. Le Mirage 2000 a été spécialisé par version (défense aérienne, attaque au
+  sol, nucléaire). C'est le Rafale, plus récent, qui apporte le concept omnirôle.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

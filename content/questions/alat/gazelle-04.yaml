@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.alat.gazelle-04
+kind: vrai-faux
+theme: appareils-alat
+statement: >-
+  Le fenestron de la Gazelle est son rotor principal.
+answer: false
+explanation: >-
+  Faux. Le fenestron est le rotor anticouple (de queue), simplement caréné dans
+  un anneau — pas le rotor principal qui assure la sustentation.
+evaluates: [alat.appareils.gazelle]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

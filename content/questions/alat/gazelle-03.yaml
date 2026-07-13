@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.gazelle-03
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel est le rôle principal de la Gazelle dans l'ALAT ?
+choices:
+  - Hélicoptère léger de reconnaissance, d'appui et de lutte antichar
+  - Transport de troupes lourdes
+  - Guet aérien embarqué
+  - Ravitaillement en vol
+correctChoices: [0]
+explanation: >-
+  La Gazelle est un hélicoptère léger et agile, employé en reconnaissance, appui
+  léger et lutte antichar (missiles HOT), moins lourdement armé que le Tigre.
+evaluates: [alat.appareils.gazelle]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

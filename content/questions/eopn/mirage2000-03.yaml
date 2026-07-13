@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-03
+kind: association
+theme: appareils-aae
+statement: >-
+  Associez chaque version du Mirage 2000 à sa mission principale.
+pairs:
+  - left: 2000C / 2000-5
+    right: Défense aérienne
+  - left: 2000D
+    right: Attaque au sol
+  - left: 2000N
+    right: Frappe nucléaire
+explanation: >-
+  Le Mirage 2000 a été décliné selon les missions : 2000C et 2000-5 pour la
+  défense aérienne, 2000D pour l'attaque au sol conventionnelle, 2000N pour la
+  frappe nucléaire.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

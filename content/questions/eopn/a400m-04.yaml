@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.a400m-04
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  L'A400M est un avion de combat armé de missiles.
+answer: false
+explanation: >-
+  Faux. L'A400M est un avion de transport militaire — il n'est pas armé, mais il
+  est essentiel à la projection des forces (transport, largage, ravitaillement en
+  vol, évacuation sanitaire).
+evaluates: [eopn.appareils.a400m]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

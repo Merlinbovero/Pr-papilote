@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-05
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quel constructeur produit le Mirage 2000 ?
+choices:
+  - Dassault Aviation
+  - Airbus Defence and Space
+  - Boeing
+  - Northrop Grumman
+correctChoices: [0]
+explanation: >-
+  Le Mirage 2000, comme le Rafale, est un avion de combat conçu et produit par
+  Dassault Aviation, mis en service en 1984.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

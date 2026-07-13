@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.gazelle-05
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel avantage apporte le carénage des pales du fenestron ?
+choices:
+  - Il protège les pales et réduit le bruit et le danger au sol
+  - Il augmente la vitesse maximale de l'appareil
+  - Il permet de voler sans rotor principal
+  - Il supprime le besoin de moteur
+correctChoices: [0]
+explanation: >-
+  Le carénage du fenestron protège les pales (et les personnes au sol), réduit le
+  bruit et diminue le risque d'accident — tout en assurant la même fonction
+  anticouple.
+evaluates: [alat.appareils.gazelle]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-01
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quelle est la caractéristique aérodynamique emblématique du Mirage 2000 ?
+choices:
+  - Son aile delta (triangulaire), sans empennage horizontal
+  - Ses ailes à géométrie variable
+  - Son absence d'ailes
+  - Son aile en flèche inversée
+correctChoices: [0]
+explanation: >-
+  Le Mirage 2000 se reconnaît à son aile delta triangulaire, sans plan
+  horizontal arrière — une formule chère à Dassault.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopn]
+status: publie
