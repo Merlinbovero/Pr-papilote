@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.pps-a
+title: PPS-A
+definition: >-
+  Posture permanente de sûreté aérienne — la « police du ciel » : mission
+  permanente de défense de l'espace aérien national, assurée 24h/24 sous les
+  ordres du CDAOA grâce à un réseau de radars, des centres de détection et de
+  contrôle et des aéronefs en alerte.
+sigleExpansion: Posture permanente de sûreté aérienne
+synonyms: [police du ciel, PPS]
+ficheId: eopn.missions.missions-de-l-armee-de-l-air
+tags: []
+status: publie

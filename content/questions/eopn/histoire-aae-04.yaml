@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.histoire-aae-04
+kind: ordre
+theme: histoire-aae
+statement: >-
+  Remettez ces jalons de l'histoire de l'armée de l'Air dans l'ordre chronologique.
+items:
+  - "Organisation de l'Aéronautique militaire (loi du 29 mars)"
+  - "L'armée de l'Air devient une armée indépendante"
+  - "Épopée des Forces aériennes françaises libres"
+  - "Première alerte nucléaire (Mirage IV + C 135)"
+  - "L'armée de l'Air devient armée de l'Air et de l'Espace"
+explanation: >-
+  1912 (Aéronautique militaire) → 2 juillet 1934 (indépendance) → 1940-1945
+  (FAFL) → 1964 (première alerte nucléaire) → 2020 (armée de l'Air et de
+  l'Espace).
+evaluates: [eopn.histoire.histoire-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

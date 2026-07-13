@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.grades-air-01
+kind: qcm
+theme: grades-air
+statement: >-
+  Quel est le premier grade des militaires du rang dans l'armée de l'Air et de l'Espace ?
+choices:
+  - Aviateur
+  - Soldat
+  - Matelot
+  - Sergent
+correctChoices: [0]
+explanation: >-
+  Le premier grade est « aviateur » — le marqueur d'identité de l'AAE, là où
+  l'armée de Terre dit « soldat » et la Marine « matelot ». Le sergent est
+  déjà un sous-officier.
+evaluates: [eopn.grades.grades-de-l-armee-de-l-air]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.missions-aae-05
+kind: qcm
+theme: missions-aae
+statement: >-
+  Sur quoi repose le dispositif de la police du ciel ?
+choices:
+  - Environ 70 radars et des centres de détection et de contrôle, avec des chasseurs en alerte
+  - Uniquement des observateurs au sol avec des jumelles
+  - Les satellites civils de navigation
+  - Les tours de contrôle des aéroports civils
+correctChoices: [0]
+explanation: >-
+  La PPS-A s'appuie sur un réseau d'environ 70 radars civils et militaires et
+  des centres de détection et de contrôle (Lyon, Tours, Mont-de-Marsan) ; des
+  chasseurs et hélicoptères en alerte décollent en quelques minutes.
+evaluates: [eopn.missions.missions-de-l-armee-de-l-air]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

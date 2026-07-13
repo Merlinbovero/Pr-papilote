@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.histoire-aae-01
+kind: qcm
+theme: histoire-aae
+statement: >-
+  Quand l'armée de l'Air est-elle devenue une armée indépendante ?
+choices:
+  - Le 2 juillet 1934
+  - En 1912
+  - En 1945
+  - En 2020
+correctChoices: [0]
+explanation: >-
+  La loi du 2 juillet 1934 érige l'armée de l'Air en armée indépendante.
+  L'Aéronautique militaire existait depuis 1912, mais au sein de l'armée de
+  Terre ; 2020 est l'année du nom « armée de l'Air et de l'Espace ».
+evaluates: [eopn.histoire.histoire-de-l-armee-de-l-air]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

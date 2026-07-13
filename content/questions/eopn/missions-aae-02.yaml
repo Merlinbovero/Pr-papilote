@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.missions-aae-02
+kind: qcm
+theme: missions-aae
+statement: >-
+  Qu'est-ce que la posture permanente de sûreté aérienne (PPS-A) ?
+choices:
+  - La « police du ciel » — surveiller, identifier et intercepter 24h/24 dans l'espace aérien national
+  - Un exercice annuel de défense aérienne
+  - La protection des bases aériennes au sol
+  - Le plan de vol des avions de ligne
+correctChoices: [0]
+explanation: >-
+  La PPS-A est la mission permanente et prioritaire de défense aérienne :
+  environ 70 radars et des centres de détection et de contrôle surveillent le
+  ciel 24h/24, et des chasseurs en alerte décollent en quelques minutes, sous
+  les ordres du CDAOA.
+evaluates: [eopn.missions.missions-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.histoire-aae-05
+kind: qcm
+theme: histoire-aae
+statement: >-
+  Qui sont Georges Guynemer et René Fonck ?
+choices:
+  - Des As français de la Première Guerre mondiale
+  - Les fondateurs de l'École de l'air
+  - Des pilotes d'essai du Rafale
+  - Les premiers astronautes français
+correctChoices: [0]
+explanation: >-
+  Guynemer et Fonck comptent parmi les grands As français de 14-18 — l'époque
+  où l'aviation militaire devient une arme majeure et où naissent les
+  traditions (escadrilles, insignes) toujours vivantes dans les escadrons.
+evaluates: [eopn.histoire.histoire-de-l-armee-de-l-air]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

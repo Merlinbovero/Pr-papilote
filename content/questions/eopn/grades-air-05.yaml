@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.grades-air-05
+kind: ordre
+theme: grades-air
+statement: >-
+  Remettez ces grades d'officiers de l'armée de l'Air et de l'Espace dans l'ordre croissant.
+items:
+  - "Sous-lieutenant"
+  - "Lieutenant"
+  - "Capitaine"
+  - "Commandant"
+  - "Lieutenant-colonel"
+  - "Colonel"
+explanation: >-
+  L'échelle des officiers : sous-lieutenant, lieutenant, capitaine,
+  commandant, lieutenant-colonel, colonel — identique à celle de l'armée de
+  Terre.
+evaluates: [eopn.grades.grades-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

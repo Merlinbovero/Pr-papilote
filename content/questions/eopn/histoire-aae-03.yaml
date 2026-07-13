@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.histoire-aae-03
+kind: vrai-faux
+theme: histoire-aae
+statement: >-
+  Le groupe « Normandie-Niémen » des FAFL a combattu au sein de la Royal Air Force britannique.
+answer: false
+explanation: >-
+  Faux. Le « Normandie-Niémen » a combattu sur le front de l'Est, aux côtés
+  des Soviétiques — c'est ce qui lui vaut son nom, complété du fleuve Niémen.
+  D'autres unités FAFL ont servi au sein de la RAF.
+evaluates: [eopn.histoire.histoire-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

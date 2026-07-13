@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.fas
+title: FAS
+definition: >-
+  Forces aériennes stratégiques — le commandement de l'armée de l'Air et de
+  l'Espace qui porte la composante aéroportée de la dissuasion nucléaire
+  (Rafale armés du missile ASMP-A et ravitailleurs), en alerte depuis 1964
+  (Mirage IV). Pilier de la dissuasion avec la FOST.
+sigleExpansion: Forces aériennes stratégiques
+synonyms: []
+ficheId: eopn.missions.missions-de-l-armee-de-l-air
+tags: []
+status: publie
