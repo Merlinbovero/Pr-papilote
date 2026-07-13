@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.piste-oblique
+title: Piste oblique
+definition: >-
+  Piste d'appontage désaxée par rapport à l'axe d'un porte-avions. Elle permet
+  de catapulter à l'avant et d'apponter à l'arrière en même temps, et à un avion
+  qui rate son appontage de remettre les gaz au-dessus de l'eau.
+english: Angled deck
+synonyms: [piste angulaire]
+ficheId: eopan.concepts.pont-d-envol
+tags: []
+status: publie

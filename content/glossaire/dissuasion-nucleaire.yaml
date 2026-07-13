@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.dissuasion-nucleaire
+title: Dissuasion nucléaire
+definition: >-
+  Stratégie visant à décourager toute agression majeure par la menace de
+  représailles nucléaires. Sa composante aéroportée est assurée par le Rafale B
+  (missile ASMP/A), au sein des Forces aériennes stratégiques ; la Marine y
+  participe aussi.
+english: Nuclear deterrence
+synonyms: []
+ficheId: eopn.appareils.rafale
+tags: []
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.escadron
+title: Escadron
+definition: >-
+  Unité volante de l'Armée de l'air et de l'Espace mettant en œuvre des aéronefs.
+  C'est l'équivalent, dans l'armée de l'air, de la flottille (Marine) et du
+  régiment (armée de terre).
+english: Squadron
+synonyms: []
+ficheId: eopn.unites.normandie-niemen
+tags: []
+status: publie

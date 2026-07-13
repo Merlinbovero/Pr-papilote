@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.guet-aerien
+title: Guet aérien
+definition: >-
+  Mission de détection et de surveillance aérienne à longue distance, assurée
+  par un avion radar (comme l'E-2C Hawkeye). En portant le radar en altitude,
+  on repousse l'horizon et l'on détecte les menaces bien plus tôt.
+sigleExpansion: Alerte avancée (AEW — Airborne Early Warning)
+english: Airborne early warning
+synonyms: [alerte avancée]
+ficheId: eopan.appareils.e-2c-hawkeye
+tags: []
+status: publie

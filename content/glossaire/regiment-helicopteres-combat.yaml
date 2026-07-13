@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.regiment-helicopteres-combat
+title: Régiment d'hélicoptères de combat
+definition: >-
+  Unité de base de l'Aviation légère de l'Armée de terre (ALAT), mettant en
+  œuvre plusieurs types d'hélicoptères (combat, manœuvre, reconnaissance). C'est
+  l'équivalent, pour l'armée de terre, de la flottille et de l'escadron.
+sigleExpansion: RHC
+english: Combat helicopter regiment
+synonyms: [RHC]
+ficheId: alat.unites.5e-rhc
+tags: []
+status: publie

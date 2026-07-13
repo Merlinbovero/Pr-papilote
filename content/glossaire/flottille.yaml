@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.flottille
+title: Flottille
+definition: >-
+  Unité volante de l'aéronautique navale (Marine nationale) mettant en œuvre un
+  type d'aéronef. C'est l'équivalent, dans la Marine, de l'escadron (armée de
+  l'air) et du régiment (armée de terre).
+english: Naval air squadron
+synonyms: []
+ficheId: eopan.organisation.aeronautique-navale
+tags: []
+status: publie

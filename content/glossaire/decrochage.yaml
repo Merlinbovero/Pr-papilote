@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.decrochage
+title: Décrochage
+definition: >-
+  Perte brutale de portance survenant lorsque l'incidence de l'aile dépasse une
+  valeur critique : l'écoulement de l'air décolle de l'extrados. Il se produit
+  toujours à la même incidence, quelle que soit la vitesse.
+english: Stall
+synonyms: []
+ficheId: fondamentaux.aerodynamique.decrochage
+tags: []
+status: publie

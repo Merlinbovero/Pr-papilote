@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.omnirole
+title: Omnirôle
+definition: >-
+  Qualité d'un avion de combat capable d'assurer toutes les missions et
+  d'enchaîner des tâches différentes au cours d'une même sortie (défense
+  aérienne, assaut, reconnaissance, dissuasion). C'est le concept clé du Rafale.
+english: Omnirole
+synonyms: [polyvalence]
+ficheId: eopn.appareils.rafale
+tags: []
+status: publie
