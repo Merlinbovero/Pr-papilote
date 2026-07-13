@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.cap-10-04
+kind: qcm
+theme: selection-en-vol
+statement: >-
+  Quelles sont les caractéristiques du Cap 10 ?
+choices:
+  - Biplace côte à côte de voltige, construction bois, moteur de 180 ch
+  - Monoplace à réaction, construction composite, 7,5 t de poussée
+  - Quadriplace de tourisme, train rentrant, turbopropulseur
+  - Biplace en tandem, supersonique
+correctChoices: [0]
+explanation: >-
+  Le Cap 10 est un biplace côte à côte de voltige, construit en bois et motorisé
+  par un Lycoming de 180 ch — certifié +6/−4,5 g dans sa version C.
+evaluates: [eopan.appareils.cap-10]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

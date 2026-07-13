@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.cap-10-02
+kind: qcm
+theme: selection-en-vol
+statement: >-
+  Quelle particularité du Cap 10 aide l'instructeur à évaluer le candidat EOPAN ?
+choices:
+  - Les deux places côte à côte, qui permettent d'observer directement le candidat
+  - Son pilotage entièrement automatique
+  - Sa cabine pressurisée
+  - Son radar de pointe
+correctChoices: [0]
+explanation: >-
+  Le Cap 10 est un biplace côte à côte : l'instructeur voit le regard, les
+  mains et la charge de travail du candidat — idéal pour évaluer sa capacité
+  d'apprentissage.
+evaluates: [eopan.appareils.cap-10]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

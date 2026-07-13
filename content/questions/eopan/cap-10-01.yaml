@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.cap-10-01
+kind: qcm
+theme: selection-en-vol
+statement: >-
+  Sur quel avion se déroule la sélection en vol des candidats EOPAN ?
+choices:
+  - Le Cap 10 (escadrille 50S, Lanvéoc-Poulmic)
+  - Le Rafale M (flottille 12F, Landivisiau)
+  - Le Pilatus PC-7 MKX (Salon-de-Provence)
+  - Le NH90 Caïman (flottille 33F)
+correctChoices: [0]
+explanation: >-
+  La sélection en vol EOPAN se déroule sur Cap 10, au sein de l'escadrille 50S
+  basée à Lanvéoc-Poulmic. Le PC-7 MKX concerne la formation initiale qui suit
+  la sélection.
+evaluates: [eopan.appareils.cap-10]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

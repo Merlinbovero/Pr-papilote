@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopan.cap-10-03
+kind: vrai-faux
+theme: selection-en-vol
+statement: >-
+  Lors de la sélection en vol sur Cap 10, les instructeurs évaluent avant tout le niveau de pilotage déjà acquis par le candidat.
+answer: false
+explanation: >-
+  Faux. Ce qui est évalué, c'est la pente de progression — la capacité à
+  intégrer une démonstration, à la restituer et à tenir les paramètres de
+  mieux en mieux au fil des vols. Aucune expérience aéronautique préalable
+  n'est exigée.
+evaluates: [eopan.appareils.cap-10]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
