@@ -19,25 +19,35 @@ tags: []
 concours: [eopan]
 level: 1
 createdAt: "2026-07-12"
-verifiedAt: "2026-07-12"
+verifiedAt: "2026-07-13"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-12"
     version: 1
     motif: Création — fiche d'ouverture de la famille EOPAN, présentation du concours et de la sélection.
     author: prepapilote
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — conditions confirmées sur la page officielle EOPAN de lamarinerecrute.gouv.fr (17-26 ans retenu contre le 17-25 de Wikipédia — l'officiel fait foi ; ajout de la règle des 3 refus), durée de la présélection (~7 mois), filières et lieux de formation, statut d'officier sous contrat (Lot I, revérification renforcée).
+    author: prepapilote
 status: publie
 sources:
+  - title: "Élève Officier Pilote de l'Aéronautique Navale (EOPAN) — lamarinerecrute.gouv.fr"
+    url: https://lamarinerecrute.gouv.fr/les-metiers/tous-les-metiers/eleve-officier-pilote-de-l-aeronautique-navale-eopan
+    kind: officiel
+    consultedAt: "2026-07-13"
   - title: "Élève-officier pilote de l'aéronautique navale — Wikipédia"
     url: https://fr.wikipedia.org/wiki/%C3%89l%C3%A8ve-officier_pilote_de_l'a%C3%A9ronautique_navale
     kind: institutionnel
-    consultedAt: "2026-07-12"
-  - title: "Marine nationale — recrutement de l'aéronautique navale (etremarin.fr)"
-    kind: officiel
-    consultedAt: "2026-07-12"
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Le parcours EOPAN"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
 relations:
   related:
+    - eopan.appareils.cap-10
+    - eopan.selection.preparer-l-entretien-de-motivation
     - eopan.appareils.rafale-m
     - eopan.bases.charles-de-gaulle
 content:
@@ -85,10 +95,11 @@ content:
 
         - avoir la **nationalité française** ;
         - être **titulaire du baccalauréat** (toutes filières) ;
-        - respecter les **limites d'âge** fixées par la Marine (de l'ordre de 17
-          à 26 ans) ;
-        - être reconnu **apte médicalement** au **personnel navigant**, savoir
-          **nager** et avoir accompli sa **Journée Défense et Citoyenneté** ;
+        - être âgé de **17 à 26 ans** ;
+        - être reconnu **apte médicalement** au **personnel navigant** (vue
+          excellente), savoir **nager** et avoir accompli sa **Journée Défense
+          et Citoyenneté** ;
+        - ne pas avoir essuyé **plus de 3 refus** d'admission à la sélection ;
         - disposer d'une **bonne maîtrise de l'anglais**.
 
         La **sélection** se déroule ensuite en **plusieurs étapes** : dépôt de
@@ -107,14 +118,18 @@ content:
       body: |
         Les candidats retenus rejoignent la **base d'aéronautique navale de
         Lanvéoc-Poulmic** (presqu'île de Crozon), rattachée à l'**École navale**.
-        Là, une **présélection en vol** de plusieurs mois les met aux commandes
-        de l'avion de voltige **CAP 10** : il s'agit d'évaluer leur **capacité à
-        apprendre** puis à **restituer** en vol, sous pression.
+        Là, au sein de l'**escadrille 50S**, une **présélection en vol**
+        d'environ **sept mois** les met aux commandes de l'avion de voltige
+        **Cap 10** : il s'agit d'évaluer leur **capacité à apprendre** puis à
+        **restituer** en vol, sous pression — pas leur niveau de départ.
 
-        Ceux qui réussissent poursuivent la **formation de pilote militaire**,
-        longue et sélective, jusqu'à l'obtention de leurs **ailes**. Ils se
-        spécialisent alors sur un type d'appareil — **chasse** embarquée, **guet
-        aérien**, **patrouille maritime** ou **hélicoptère**.
+        Ceux qui réussissent servent comme **officiers sous contrat** et
+        poursuivent la **formation de pilote militaire**, longue et sélective,
+        jusqu'à l'obtention de leurs **ailes**. Ils se spécialisent selon leur
+        classement et les besoins sur l'une des filières — **chasse** embarquée
+        et **guet aérien** (cursus passant notamment par les États-Unis),
+        **patrouille maritime** (avions multimoteurs), ou **hélicoptères**
+        (école de Dax).
 
         Réussir l'EOPAN, c'est donc franchir une **première marche** exigeante,
         avant un long parcours de formation entièrement pris en charge par la

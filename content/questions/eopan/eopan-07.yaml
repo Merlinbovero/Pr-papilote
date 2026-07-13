@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.eopan-07
+kind: vrai-faux
+theme: concours-eopan
+statement: >-
+  Un candidat peut se représenter indéfiniment à la sélection EOPAN.
+answer: false
+explanation: >-
+  Faux. Parmi les conditions officielles figure le fait de ne pas avoir essuyé
+  plus de 3 refus d'admission. Les conditions exactes se vérifient chaque
+  année sur le site officiel de recrutement de la Marine.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

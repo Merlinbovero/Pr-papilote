@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.eopan-06
+kind: qcm
+theme: concours-eopan
+statement: >-
+  Quelles sont les grandes filières possibles pour un EOPAN après sa formation de pilote ?
+choices:
+  - Chasse embarquée, guet aérien, patrouille maritime, hélicoptères
+  - Uniquement la chasse embarquée sur Rafale M
+  - Transport stratégique et ravitaillement en vol
+  - Drones et navigation spatiale
+correctChoices: [0]
+explanation: >-
+  Selon le classement et les besoins, l'EOPAN breveté rejoint la chasse
+  embarquée, le guet aérien (Hawkeye), la patrouille maritime (multimoteurs) ou
+  les hélicoptères (école de Dax).
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
