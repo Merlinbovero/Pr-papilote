@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-03
+kind: vrai-faux
+theme: rafale-marine
+statement: >-
+  Il existe une version biplace embarquée du Rafale dans la Marine nationale.
+answer: false
+explanation: >-
+  Faux. Tous les Rafale de la Marine sont des monoplaces (Rafale M). La version
+  biplace (Rafale B) n'existe que dans l'Armée de l'Air et de l'Espace.
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

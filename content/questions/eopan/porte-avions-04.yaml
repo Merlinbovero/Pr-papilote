@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.porte-avions-04
+kind: qcm
+theme: porte-avions
+statement: >-
+  Que permettent les catapultes C 13-3 du Charles de Gaulle ?
+choices:
+  - Lancer un appareil de 25 tonnes à 270 km/h en deux secondes
+  - Faire décoller un avion sans aucune accélération
+  - Freiner les avions à l'appontage
+  - Soulever les aéronefs vers le pont d'envol
+correctChoices: [0]
+explanation: >-
+  Les deux catapultes à vapeur C 13-3, longues de 75 m, peuvent lancer un
+  appareil de 25 tonnes à 270 km/h en deux secondes (4 à 5 g). Le freinage à
+  l'appontage est le rôle des brins d'arrêt, et la manutention celui des
+  ascenseurs.
+evaluates: [eopan.bases.charles-de-gaulle]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

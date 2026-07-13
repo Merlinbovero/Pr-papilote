@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-02
+kind: qcm
+theme: rafale-marine
+statement: >-
+  Quelles adaptations distinguent le Rafale M des versions de l'Armée de l'Air et de l'Espace ?
+choices:
+  - Crosse d'appontage et train d'atterrissage renforcé
+  - Une aile repliable et un second réacteur
+  - Un cockpit biplace et un radar différent
+  - Des flotteurs pour amerrir
+correctChoices: [0]
+explanation: >-
+  Le Rafale M est « navalisé » pour la mise en œuvre CATOBAR : crosse
+  d'appontage pour accrocher les brins et train renforcé pour encaisser
+  catapultages et appontages (plus des aménagements de vie embarquée).
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

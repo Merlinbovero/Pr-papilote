@@ -18,8 +18,14 @@ tags: []
 concours: [eopan]
 level: 2
 createdAt: "2026-07-07"
-verifiedAt: "2026-07-07"
+verifiedAt: "2026-07-13"
 author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — brins d'arrêt nommés (Athéna, Aphrodite, Andromède), performances des catapultes C 13-3, équipage, lien vers la fiche groupe aéronaval (Lot E, ingestion Guide EOPAN 2020, revérifié).
+    author: prepapilote
 status: publie
 sources:
   - title: Porte-avions — Marine nationale, Ministère des Armées
@@ -30,10 +36,19 @@ sources:
     url: https://www.colsbleus.defense.gouv.fr/sites/default/files/2021-05/CatpulteV12.pdf
     kind: officiel
     consultedAt: "2026-07-07"
+  - title: "Charles de Gaulle (porte-avions) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Charles_de_Gaulle_(porte-avions)
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1 — Le porte-avions Charles de Gaulle"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
 relations:
   factual:
     - predicate: applique
       target: eopan.procedures.catobar
+  related:
+    - eopan.concepts.groupe-aeronaval
 infobox:
   type: Porte-avions à propulsion nucléaire
   classe: Charles de Gaulle (bâtiment unique)
@@ -41,7 +56,7 @@ infobox:
   miseEnService: 2001
   statut: En service
   longueur: 261,5 m
-  deplacement: environ 42 000 t
+  deplacement: 42 500 t à pleine charge
   aeronefsEmbarques: [Rafale M, E-2 Hawkeye, hélicoptères]
 content:
   essentiel:
@@ -51,7 +66,7 @@ content:
       2001, basé à Toulon, il est le seul porte-avions à propulsion
       nucléaire construit hors des États-Unis.
 
-      Long de 261,5 mètres pour environ 42 000 tonnes, il met en œuvre le
+      Long de 261,5 mètres pour 42 500 tonnes à pleine charge, il met en œuvre le
       groupe aérien embarqué — une quarantaine d'aéronefs — grâce à deux
       catapultes à vapeur et trois brins d'arrêt : c'est un porte-avions
       CATOBAR, capable de lancer un avion toutes les 30 secondes.
@@ -60,7 +75,7 @@ content:
       puissance aérienne depuis la mer, sans dépendre de bases à l'étranger.
     aRetenir:
       - Unique porte-avions français, à propulsion nucléaire (2 réacteurs), basé à Toulon.
-      - Admis au service actif en 2001 ; 261,5 m ; environ 42 000 t.
+      - Admis au service actif en 2001 ; 261,5 m ; 42 500 t à pleine charge.
       - CATOBAR — 2 catapultes à vapeur, 3 brins d'arrêt ; un catapultage possible toutes les 30 s.
       - "Met en œuvre le groupe aérien embarqué (~40 aéronefs : Rafale M, E-2 Hawkeye, hélicoptères)."
   sections:
@@ -84,10 +99,13 @@ content:
         M pour le combat, E-2 Hawkeye pour le guet aérien avancé, et
         hélicoptères pour la sauvegarde et les liaisons.
 
-        La mise en œuvre suit le principe CATOBAR : au décollage, deux
-        catapultes à vapeur accélèrent l'avion de 0 à 250 km/h en 75 mètres ;
-        à l'appontage, l'avion accroche l'un des trois brins d'arrêt tendus
-        en travers du pont oblique.
+        La mise en œuvre suit le principe CATOBAR. Au décollage, deux
+        catapultes à vapeur **C 13-3** de **75 mètres** peuvent lancer un
+        appareil de 25 tonnes à **270 km/h en deux secondes** (4 à 5 g
+        d'accélération). À l'appontage, l'avion accroche l'un des **trois
+        brins d'arrêt** tendus en travers du pont oblique — baptisés
+        **Athéna**, **Aphrodite** et **Andromède**, un détail de culture
+        aéronavale apprécié en entretien.
     - id: caracteristiques
       title: Caractéristiques
       body: |
@@ -95,11 +113,12 @@ content:
         | --- | --- |
         | Longueur | 261,5 m |
         | Largeur | 65 m |
-        | Déplacement | ~42 000 t |
+        | Déplacement | 42 500 t à pleine charge |
         | Propulsion | nucléaire — 2 réacteurs |
-        | Catapultes | 2, à vapeur |
-        | Brins d'arrêt | 3 |
+        | Catapultes | 2 catapultes à vapeur C 13-3 (75 m) |
+        | Brins d'arrêt | 3 (Athéna, Aphrodite, Andromède) |
         | Aéronefs | ~40 |
+        | Équipage | ~2 000 personnes (dont ~600 pour le groupe aérien) |
 
         Ses soutes lui donnent une autonomie d'environ deux semaines
         d'opérations aériennes intensives.

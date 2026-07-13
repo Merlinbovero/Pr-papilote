@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.porte-avions-01
+kind: qcm
+theme: porte-avions
+statement: >-
+  Comment s'appellent les trois brins d'arrêt du porte-avions Charles de Gaulle ?
+choices:
+  - Athéna, Aphrodite, Andromède
+  - Alpha, Bravo, Charlie
+  - Clemenceau, Foch, Béarn
+  - Neptune, Poséidon, Triton
+correctChoices: [0]
+explanation: >-
+  Les trois brins d'arrêt du Charles de Gaulle sont baptisés Athéna, Aphrodite
+  et Andromède — un détail de culture aéronavale apprécié en entretien.
+evaluates: [eopan.bases.charles-de-gaulle]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

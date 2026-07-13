@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.porte-avions-03
+kind: qcm
+theme: porte-avions
+statement: >-
+  Quelles sont les caractéristiques principales du Charles de Gaulle ?
+choices:
+  - 261,5 m, 42 500 t à pleine charge, 2 catapultes à vapeur, 3 brins d'arrêt
+  - 330 m, 100 000 t, 4 catapultes électromagnétiques, 4 brins d'arrêt
+  - 180 m, 20 000 t, tremplin d'envol, sans brins d'arrêt
+  - 261,5 m, 42 500 t, pont d'envol réservé aux hélicoptères
+correctChoices: [0]
+explanation: >-
+  Le Charles de Gaulle mesure 261,5 m pour 42 500 t à pleine charge, avec deux
+  catapultes à vapeur C 13-3 de 75 m et trois brins d'arrêt — la configuration
+  CATOBAR.
+evaluates: [eopan.bases.charles-de-gaulle]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -18,14 +18,24 @@ tags: []
 concours: [eopan]
 level: 2
 createdAt: "2026-07-07"
-verifiedAt: "2026-07-07"
+verifiedAt: "2026-07-13"
 author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — caractéristiques et performances sourcées Dassault Aviation (Mach 1,8 retenu contre le 1,6 du Guide EOPAN 2020 — le constructeur fait foi), lien vers la fiche groupe aéronaval (Lot E).
+    author: prepapilote
 status: publie
 sources:
   - title: Rafale — Dassault Aviation
     url: https://www.dassault-aviation.com/fr/defense/rafale/
     kind: institutionnel
     consultedAt: "2026-07-07"
+  - title: "Rafale — caractéristiques et performances (Dassault Aviation)"
+    url: https://www.dassault-aviation.com/fr/defense/rafale/caracteristiques-et-performances/
+    kind: institutionnel
+    consultedAt: "2026-07-13"
   - title: Marine nationale — Ministère des Armées
     url: https://www.defense.gouv.fr/marine
     kind: officiel
@@ -36,6 +46,8 @@ relations:
       target: eopan.bases.charles-de-gaulle
     - predicate: applique
       target: eopan.procedures.catobar
+  related:
+    - eopan.concepts.groupe-aeronaval
 infobox:
   constructeur: Dassault Aviation
   role: Chasseur multirôle embarqué
@@ -101,6 +113,25 @@ content:
         Chaque année, deux flottilles sont tournées vers le porte-avions
         tandis que la troisième assure à terre la transformation des jeunes
         pilotes sur Rafale Marine.
+    - id: caracteristiques
+      title: Caractéristiques et performances
+      body: |
+        Valeurs publiées par Dassault Aviation (Rafale, toutes versions) :
+
+        | Caractéristique | Valeur |
+        | --- | --- |
+        | Envergure | 10,90 m |
+        | Longueur | 15,30 m |
+        | Hauteur | 5,30 m |
+        | Masse maximale | 24,5 t |
+        | Poussée maximale | 2 × 7,5 t |
+        | Vitesse maximale | Mach 1,8 (750 kt) |
+        | Plafond opérationnel | 50 000 ft |
+        | Points d'emport | 14 |
+        | Carburant interne | 4,7 t |
+
+        Un biréacteur compact, capable d'emporter jusqu'à 9,5 t de charges
+        externes sur ses 14 points d'emport.
     - id: reperes-historiques
       title: Repères historiques
       strate: maitriser

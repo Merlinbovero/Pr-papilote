@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.catobar-02
+kind: qcm
+theme: mise-en-oeuvre-embarquee
+statement: >-
+  Quel est l'avantage décisif du principe CATOBAR ?
+choices:
+  - L'avion décolle sans sacrifier de carburant ni d'armement — la catapulte fait le travail
+  - L'avion n'a pas besoin de crosse d'appontage
+  - Le porte-avions n'a pas besoin de pont d'envol
+  - Il supprime le besoin de pilotes qualifiés
+correctChoices: [0]
+explanation: >-
+  La catapulte fournit l'essentiel de l'accélération : l'avion peut donc
+  décoller à masse élevée, plein de carburant et d'armement. C'est aussi ce qui
+  permet de catapulter des avions lourds comme le E-2 Hawkeye.
+evaluates: [eopan.procedures.catobar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.appontage-03
+kind: qcm
+theme: appontage
+statement: >-
+  Qui guide et note chaque appontage depuis le pont du porte-avions ?
+choices:
+  - L'officier d'appontage, un pilote expérimenté
+  - Le commandant du porte-avions
+  - Le chef des machines
+  - Un contrôleur aérien à terre
+correctChoices: [0]
+explanation: >-
+  L'officier d'appontage — un pilote expérimenté posté sur une plateforme
+  dédiée — guide l'avion en finale et note chaque appontage, aux côtés du
+  dispositif optique qui matérialise le plan de descente.
+evaluates: [eopan.procedures.appontage]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.catobar-04
+kind: association
+theme: mise-en-oeuvre-embarquee
+statement: >-
+  Associez chaque principe de mise en œuvre embarquée à sa définition.
+pairs:
+  - left: CATOBAR
+    right: Catapulte au décollage, brins d'arrêt à la récupération
+  - left: STOBAR
+    right: Tremplin au décollage, brins d'arrêt à la récupération
+  - left: STOVL
+    right: Décollage court, atterrissage vertical
+explanation: >-
+  CATOBAR (catapulte + brins) équipe les porte-avions américains et français ;
+  STOBAR combine tremplin et brins ; STOVL désigne le décollage court avec
+  atterrissage vertical.
+evaluates: [eopan.procedures.catobar]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

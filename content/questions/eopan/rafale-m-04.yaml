@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-04
+kind: qcm
+theme: rafale-marine
+statement: >-
+  Quelle est la vitesse maximale du Rafale selon Dassault Aviation ?
+choices:
+  - Mach 1,8 (750 kt)
+  - Mach 1,2 (400 kt)
+  - Mach 2,5 (1 000 kt)
+  - Mach 0,9 (500 kt)
+correctChoices: [0]
+explanation: >-
+  Dassault Aviation annonce une vitesse maximale de Mach 1,8 (750 nœuds) et un
+  plafond opérationnel de 50 000 ft pour le Rafale.
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

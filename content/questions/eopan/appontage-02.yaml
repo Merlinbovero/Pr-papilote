@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.appontage-02
+kind: qcm
+theme: appontage
+statement: >-
+  Qu'appelle-t-on un « bolter » ?
+choices:
+  - Un appontage où la crosse n'accroche aucun brin — l'avion redécolle et se représente
+  - Un appontage parfaitement réussi sur le premier brin
+  - Une panne de catapulte au décollage
+  - Le surnom de l'officier d'appontage
+correctChoices: [0]
+explanation: >-
+  Le « bolter » est le brin manqué : l'avion, plein gaz au toucher, redécolle
+  immédiatement et se représente. Ce n'est pas une faute en soi — c'est une
+  éventualité prévue par la procédure.
+evaluates: [eopan.procedures.appontage]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

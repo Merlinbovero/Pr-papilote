@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.catobar-05
+kind: vrai-faux
+theme: mise-en-oeuvre-embarquee
+statement: >-
+  « CATOBAR » qualifie l'avion embarqué, pas le porte-avions.
+answer: false
+explanation: >-
+  Faux. CATOBAR qualifie le porte-avions et son système de mise en œuvre
+  (catapultes + brins). L'avion, lui, doit être « navalisé » (crosse, train
+  renforcé) pour pouvoir l'utiliser.
+evaluates: [eopan.procedures.catobar]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
