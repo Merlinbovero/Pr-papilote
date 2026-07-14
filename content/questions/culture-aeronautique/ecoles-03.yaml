@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-03
+kind: qcm
+theme: grandes-ecoles
+statement: >-
+  Quelle école forme les contrôleurs aériens civils français ?
+choices:
+  - "L'ENAC"
+  - "L'ISAE-SUPAERO"
+  - "L'EPNER"
+  - "L'École de l'air et de l'espace"
+correctChoices: [0]
+explanation: >-
+  L'École nationale de l'aviation civile (Toulouse), sous tutelle de la DGAC,
+  forme notamment les contrôleurs aériens, des pilotes de ligne et des
+  ingénieurs de l'aviation civile.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

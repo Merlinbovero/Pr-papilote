@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-02
+kind: qcm
+theme: grandes-ecoles
+statement: >-
+  De quelle fusion est né l'ISAE en 2007 ?
+choices:
+  - "SUPAERO et ENSICA"
+  - "SUPAERO et ENAC"
+  - "ENAC et ENSMA"
+  - "SUPAERO et Polytechnique"
+correctChoices: [0]
+explanation: >-
+  L'Institut supérieur de l'aéronautique et de l'espace naît le 1er octobre
+  2007 de la fusion de SUPAERO et de l'ENSICA, les deux écoles d'ingénieurs
+  aéronautiques toulousaines — renommé ISAE-SUPAERO en 2015.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

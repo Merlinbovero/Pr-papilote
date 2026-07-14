@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-04
+kind: vrai-faux
+theme: grandes-ecoles
+statement: >-
+  Sup'Aéro et l'ENAC ont toutes deux déménagé à Toulouse en 1968.
+answer: true
+explanation: >-
+  Les deux écoles s'installent la même année sur le campus toulousain de
+  Rangueil — Toulouse devient dès lors la capitale française de la formation
+  aéronautique.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

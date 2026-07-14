@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-05
+kind: association
+theme: grandes-ecoles
+statement: >-
+  Associez chaque école à sa vocation principale.
+pairs:
+  - left: "ISAE-SUPAERO"
+    right: "Ingénieurs aérospatiaux (tutelle Armées)"
+  - left: "ENAC"
+    right: "Aviation civile (contrôleurs, pilotes de ligne)"
+  - left: "EPNER"
+    right: "Équipages d'essais en vol"
+explanation: >-
+  Trois écoles, trois vocations — la conception (ISAE-SUPAERO), l'exploitation
+  civile (ENAC), les essais (EPNER). Un pilote militaire côtoie les trois
+  mondes au long de sa carrière.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

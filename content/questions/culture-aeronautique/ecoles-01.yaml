@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-01
+kind: qcm
+theme: grandes-ecoles
+statement: >-
+  Quelle est la première école d'ingénieurs aéronautiques fondée au monde ?
+choices:
+  - "Sup'Aéro (Paris, 1909)"
+  - "Le MIT (Boston)"
+  - "L'ENAC (Orly, 1949)"
+  - "L'ENSICA (Toulouse)"
+correctChoices: [0]
+explanation: >-
+  L'École supérieure d'aéronautique, fondée à Paris en 1909 par le colonel
+  Roche, est la première école d'ingénieurs aéronautiques au monde — devenue
+  aujourd'hui l'ISAE-SUPAERO.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
