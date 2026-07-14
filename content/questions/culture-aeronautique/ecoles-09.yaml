@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-09
+kind: vrai-faux
+theme: grandes-ecoles
+statement: >-
+  L'ENAC forme les pilotes de chasse de l'armée de l'Air.
+answer: false
+explanation: >-
+  L'ENAC est l'école de l'aviation CIVILE (contrôleurs, pilotes de ligne,
+  ingénieurs) — les pilotes de chasse se forment à Salon-de-Provence puis
+  Cognac, dans les écoles militaires.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-09
+kind: vrai-faux
+theme: essais-en-vol
+statement: >-
+  Un jeune bachelier peut intégrer directement l'EPNER pour devenir pilote
+  d'essais.
+answer: false
+explanation: >-
+  On entre à l'EPNER comme pilote militaire (ou ingénieur) déjà expérimenté
+  et sélectionné — c'est une école de deuxième partie de carrière, pas une
+  formation initiale.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

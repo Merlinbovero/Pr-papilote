@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.vent-06
+kind: vrai-faux
+theme: vent
+statement: >-
+  Le vent est toujours nommé par la direction D'OÙ il vient.
+answer: true
+explanation: >-
+  Un vent d'ouest vient de l'ouest et pousse vers l'est — la convention
+  vaut en météo comme en aéronautique (un vent du 270 vient de l'ouest).
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

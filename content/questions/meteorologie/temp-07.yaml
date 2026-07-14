@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.temp-07
+kind: qcm
+theme: temperature-humidite
+statement: >-
+  Que se passe-t-il quand la température de l'air atteint le point de
+  rosée ?
+choices:
+  - "La vapeur d'eau se condense (brume, brouillard, nuage)"
+  - "L'air devient parfaitement sec"
+  - "Le vent s'arrête"
+  - "La pression chute brutalement"
+correctChoices: [0]
+explanation: >-
+  Au point de rosée, l'air est saturé — l'excédent de vapeur se condense en
+  gouttelettes : c'est la naissance des brouillards et des nuages.
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

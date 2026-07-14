@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-08
+kind: qcm
+theme: fronts
+statement: >-
+  D'où viennent la plupart des perturbations qui traversent la France ?
+choices:
+  - "De l'ouest, par l'Atlantique"
+  - "De l'est, par la Russie"
+  - "Du sud, par le Sahara"
+  - "Elles naissent sur place"
+correctChoices: [0]
+explanation: >-
+  Aux latitudes tempérées, le défilé des perturbations suit le courant
+  d'ouest — l'affrontement air polaire/air tropical au-dessus de
+  l'Atlantique nourrit les dépressions qui balaient l'Europe.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

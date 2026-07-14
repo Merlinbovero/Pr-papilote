@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.culture-aeronautique.espace-10
+kind: vrai-faux
+theme: conquete-spatiale
+statement: >-
+  Le premier satellite artificiel de l'histoire était américain.
+answer: false
+explanation: >-
+  Spoutnik 1, lancé par l'URSS le 4 octobre 1957, ouvre l'ère spatiale — la
+  réponse américaine (Explorer 1) suivra en janvier 1958.
+evaluates: [fondamentaux.culture-aeronautique.la-conquete-de-l-espace]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

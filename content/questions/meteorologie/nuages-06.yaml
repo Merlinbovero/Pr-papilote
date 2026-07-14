@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.meteorologie.nuages-06
+kind: vrai-faux
+theme: nuages
+statement: >-
+  Le cumulonimbus est le nuage de l'orage.
+answer: true
+explanation: >-
+  Le cumulonimbus concentre tous les dangers — orage, grêle, givrage,
+  turbulence sévère, rafales : le seul nuage qu'un pilote évite
+  systématiquement.
+evaluates: [fondamentaux.meteorologie.les-nuages]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

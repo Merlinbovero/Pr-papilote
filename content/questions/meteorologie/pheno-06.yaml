@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.pheno-06
+kind: vrai-faux
+theme: phenomenes-dangereux
+statement: >-
+  Le givrage ne concerne que les vols en hiver.
+answer: false
+explanation: >-
+  Le givrage menace dès que l'on vole en air humide à température négative —
+  en altitude, cela arrive toute l'année, été compris.
+evaluates: [fondamentaux.meteorologie.phenomenes-dangereux]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

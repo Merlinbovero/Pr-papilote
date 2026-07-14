@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.meteorologie.nuages-08
+kind: vrai-faux
+theme: nuages
+statement: >-
+  Les nuages stratiformes donnent des averses brèves et violentes.
+answer: false
+explanation: >-
+  C'est l'inverse — les nuages en COUCHES (stratiformes) donnent des
+  précipitations continues et modérées ; les averses brèves et violentes
+  viennent des nuages à développement vertical (cumuliformes).
+evaluates: [fondamentaux.meteorologie.les-nuages]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

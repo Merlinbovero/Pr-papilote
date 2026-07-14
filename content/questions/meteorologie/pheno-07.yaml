@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.meteorologie.pheno-07
+kind: qcm
+theme: phenomenes-dangereux
+statement: >-
+  Pourquoi le brouillard est-il particulièrement dangereux pour un pilote
+  VFR ?
+choices:
+  - "Il supprime toute référence visuelle près du sol"
+  - "Il givre systématiquement la cellule"
+  - "Il rend le moteur moins puissant"
+  - "Il attire les oiseaux"
+correctChoices: [0]
+explanation: >-
+  Le vol à vue exige de voir — le brouillard prive le pilote VFR de toute
+  référence au moment le plus critique (près du sol), d'où les minima de
+  visibilité réglementaires.
+evaluates: [fondamentaux.meteorologie.phenomenes-dangereux]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

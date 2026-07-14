@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-08
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Que devient l'industrie aéronautique française à la fin de la Première
+  Guerre mondiale ?
+choices:
+  - "Elle s'effondre — de 90 000 salariés en 1918 à 3 700 en 1921"
+  - "Elle continue de croître grâce à l'aviation civile"
+  - "Elle est rachetée par les États-Unis"
+  - "Elle est immédiatement nationalisée"
+correctChoices: [0]
+explanation: >-
+  La paix provoque un arrêt brutal des commandes militaires — seules
+  survivent les sociétés qui se reconvertissent dans l'aviation civile,
+  comme les lignes Latécoère.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

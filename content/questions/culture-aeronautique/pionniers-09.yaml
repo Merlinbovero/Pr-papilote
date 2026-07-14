@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-09
+kind: vrai-faux
+theme: pionniers
+statement: >-
+  Jean Mermoz a disparu en mer en 1936 à bord de l'hydravion Croix-du-Sud.
+answer: true
+explanation: >-
+  Le 7 décembre 1936, après le message « coupons moteur arrière droit »,
+  la Croix-du-Sud disparaît dans l'Atlantique Sud avec son équipage.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

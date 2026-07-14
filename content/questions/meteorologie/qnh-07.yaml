@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.meteorologie.qnh-07
+kind: qcm
+theme: calage-altimetrique
+statement: >-
+  En vol vers une zone de basse pression sans recaler l'altimètre, l'avion
+  vole en réalité…
+choices:
+  - "Plus bas que ce qu'indique l'altimètre"
+  - "Plus haut que ce qu'indique l'altimètre"
+  - "Exactement à l'altitude indiquée"
+  - "L'altimètre s'ajuste automatiquement"
+correctChoices: [0]
+explanation: >-
+  « Des hautes vers les basses, gare à la casse » — l'altimètre surestime
+  l'altitude quand la pression baisse : le relief se rapproche sans que
+  l'aiguille le dise.
+evaluates: [fondamentaux.meteorologie.pression-et-calage]
+difficulty: 3
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

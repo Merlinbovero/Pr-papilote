@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-07
+kind: vrai-faux
+theme: pionniers
+statement: >-
+  Charles Lindbergh a traversé l'Atlantique Nord sans escale et en solitaire
+  en mai 1927.
+answer: true
+explanation: >-
+  New York-Paris à bord du Spirit of St. Louis, les 20-21 mai 1927 — la
+  traversée qui a électrisé l'aviation mondiale.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

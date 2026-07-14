@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.culture-aeronautique.espace-06
+kind: qcm
+theme: conquete-spatiale
+statement: >-
+  Qui fut le premier homme à voler dans l'espace, le 12 avril 1961 ?
+choices:
+  - "Youri Gagarine"
+  - "Neil Armstrong"
+  - "John Glenn"
+  - "Thomas Pesquet"
+correctChoices: [0]
+explanation: >-
+  Gagarine boucle une orbite complète à bord de Vostok 1 — Armstrong
+  marchera sur la Lune huit ans plus tard.
+evaluates: [fondamentaux.culture-aeronautique.la-conquete-de-l-espace]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

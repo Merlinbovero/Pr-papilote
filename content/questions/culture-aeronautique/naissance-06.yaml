@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-06
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Quel constructeur, dont les usines furent nationalisées en 1936, est
+  devenu après-guerre le grand nom des avions de chasse français ?
+choices:
+  - "Marcel Bloch, devenu Marcel Dassault"
+  - "Louis Blériot"
+  - "Henry Potez"
+  - "Gabriel Voisin"
+correctChoices: [0]
+explanation: >-
+  Marcel Bloch, dont les usines furent nationalisées en 1936, prit après la
+  guerre le nom de Dassault — Ouragan, Mystère, Mirage, Rafale suivront.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
