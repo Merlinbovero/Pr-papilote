@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-brevity-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  En brevity code, quelle est la différence entre « tally » et « visual » ?
+choices:
+  - Tally = ennemi en vue ; visual = équipier ami en vue
+  - Tally = ami en vue ; visual = ennemi en vue
+  - Les deux signifient « rien en vue »
+  - Tally s'emploie de nuit, visual de jour
+correctChoices: [0]
+explanation: >-
+  Tally annonce l'ennemi en vue, visual l'AMI en vue (et blind = équipier
+  perdu de vue, no joy = ennemi non repéré). Intervertir les deux inverse la
+  situation tactique.
+evaluates: [fondamentaux.anglais-aeronautique.le-brevity-code]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

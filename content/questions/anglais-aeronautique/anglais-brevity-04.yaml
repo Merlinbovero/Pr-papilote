@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-brevity-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « feet wet » ?
+choices:
+  - L'aéronef passe au-dessus de l'eau
+  - Le pilote a les pieds mouillés dans le cockpit
+  - L'avion amerrit
+  - La piste est inondée
+correctChoices: [0]
+explanation: >-
+  Feet wet = passage au-dessus de l'eau ; feet dry = au-dessus de la terre.
+  Deux codes essentiels pour l'aéronavale — un Rafale Marine quittant la côte
+  annonce « feet wet ».
+evaluates: [fondamentaux.anglais-aeronautique.le-brevity-code]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

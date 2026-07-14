@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-otan-04
+kind: association
+theme: anglais-vocabulaire
+statement: >-
+  Associez chaque sigle ou terme OTAN à son sens.
+pairs:
+  - left: CAS
+    right: Close air support — appui aérien rapproché
+  - left: ROE
+    right: Rules of engagement — règles d'engagement
+  - left: Air superiority
+    right: Supériorité aérienne
+  - left: Deterrence
+    right: Dissuasion
+explanation: >-
+  CAS (appui rapproché), ROE (règles d'engagement), air superiority
+  (supériorité aérienne) et deterrence (dissuasion) — le socle du vocabulaire
+  des textes stratégiques anglophones.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-militaire]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
