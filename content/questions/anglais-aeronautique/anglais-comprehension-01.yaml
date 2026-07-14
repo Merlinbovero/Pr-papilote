@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-comprehension-01
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  « The trainee pilot had planned to land at Cognac, but due to strong
+  crosswinds he eventually diverted to another airfield. » — Que s'est-il
+  passé ?
+choices:
+  - Il a finalement dérouté vers un autre terrain à cause du vent de travers
+  - Il s'est éventuellement posé à Cognac malgré le vent
+  - Il a atterri à Cognac comme prévu
+  - Il a annulé son vol avant le décollage
+correctChoices: [0]
+explanation: >-
+  Eventually = finalement (pas « éventuellement ») et to divert = dérouter.
+  Le texte dit clairement qu'il ne s'est pas posé à Cognac — répondre avec le
+  texte, pas avec l'intuition.
+evaluates: [fondamentaux.anglais-aeronautique.la-comprehension-ecrite]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

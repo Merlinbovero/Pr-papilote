@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-notam-05
+kind: vrai-faux
+theme: anglais-comprehension
+statement: >-
+  Les heures indiquées dans les NOTAM sont exprimées en heure locale.
+answer: false
+explanation: >-
+  Faux. Comme toute l'aéronautique, les NOTAM utilisent l'heure UTC (le
+  « Z » de zoulou). Confondre UTC et heure locale peut faire arriver sur une
+  piste fermée.
+evaluates: [fondamentaux.anglais-aeronautique.lire-un-notam]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

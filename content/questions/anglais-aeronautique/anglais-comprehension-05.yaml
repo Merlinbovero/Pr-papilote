@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-comprehension-05
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  Dans une épreuve de compréhension écrite, quelle proposition doit éveiller la méfiance ?
+choices:
+  - Celle qui reprend mot à mot des fragments du texte
+  - Celle qui reformule le texte avec d'autres mots
+  - Celle qui est la plus courte
+  - Celle qui contient un mot inconnu
+correctChoices: [0]
+explanation: >-
+  La bonne réponse paraphrase ; le distracteur classique recopie des mots du
+  texte hors contexte. Le réflexe « je reconnais ces mots » est précisément
+  celui que le concepteur exploite.
+evaluates: [fondamentaux.anglais-aeronautique.la-comprehension-ecrite]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-comprehension-02
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  « Although the weather was marginal, the instructor decided that the
+  flight could proceed, provided they remained below the clouds. » — Quelle
+  affirmation est vraie ?
+choices:
+  - Le vol a été autorisé à condition de rester sous les nuages
+  - Le vol a été annulé à cause de la météo
+  - L'instructeur a exigé de voler dans les nuages
+  - La météo était excellente
+correctChoices: [0]
+explanation: >-
+  Provided = à condition que ; although = bien que. La météo était limite
+  (marginal) mais le vol pouvait avoir lieu sous condition — les
+  connecteurs logiques portent tout le sens.
+evaluates: [fondamentaux.anglais-aeronautique.la-comprehension-ecrite]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

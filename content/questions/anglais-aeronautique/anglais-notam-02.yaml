@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-notam-02
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  Dans un NOTAM, que signifie « U/S » ?
+choices:
+  - Unserviceable — hors service
+  - United States — matériel américain
+  - Under supervision — sous surveillance
+  - Upper side — face supérieure
+correctChoices: [0]
+explanation: >-
+  U/S = unserviceable (hors service) — « ILS RWY 22 U/S » signifie que l'ILS
+  de la piste 22 est en panne. Rien à voir avec les États-Unis.
+evaluates: [fondamentaux.anglais-aeronautique.lire-un-notam]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

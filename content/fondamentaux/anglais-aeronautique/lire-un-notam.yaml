@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.lire-un-notam
+type: concept
+title: Lire un NOTAM et les abréviations
+slug: lire-un-notam
+summary: >-
+  RWY 22 CLSD, TWY U/S, OBST ERECTED — les NOTAM condensent l'information
+  aéronautique en abréviations anglaises normalisées. Savoir les décoder,
+  c'est lire le vrai anglais opérationnel des documents de vol.
+objectifs:
+  - Comprendre ce qu'est un NOTAM et à quoi il sert.
+  - Décoder les abréviations anglaises les plus fréquentes (RWY, TWY, CLSD, U/S, OBST).
+  - Lire un NOTAM simple de bout en bout.
+aliases: [NOTAM, abréviations aéronautiques, RWY CLSD, U/S, unserviceable]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lecture de NOTAM et abréviations (lot N15, phase P5 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "SIA — NOTAM et information aéronautique (DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.la-comprehension-ecrite
+  related:
+    - fondamentaux.anglais-aeronautique.la-meteo-en-anglais
+    - fondamentaux.cartographie.lire-une-carte-aeronautique
+content:
+  essentiel:
+    body: |
+      Le **NOTAM** (*Notice To Airmen*) diffuse toute information
+      **temporaire ou urgente** utile aux équipages : piste fermée, grue
+      érigée, balise en panne, zone activée. Sa langue : un anglais
+      **abrégé et normalisé**.
+
+      Les abréviations à connaître :
+
+      | Abréviation | Anglais complet | Sens |
+      | --- | --- | --- |
+      | **RWY** | runway | piste |
+      | **TWY** | taxiway | voie de circulation |
+      | **CLSD** | closed | fermé |
+      | **U/S** | unserviceable | hors service |
+      | **OBST** | obstacle | obstacle |
+      | **WIP** | work in progress | travaux en cours |
+      | **AVBL** | available | disponible |
+      | **EXP** | expect | prévoir |
+      | **ACFT** | aircraft | aéronef |
+      | **SR / SS** | sunrise / sunset | lever / coucher du soleil |
+
+      Exemple décodé : *« RWY 04/22 CLSD DUE WIP »* — piste 04/22 fermée
+      pour cause de travaux. Trois abréviations, un message complet.
+    aRetenir:
+      - "NOTAM = Notice To Airmen — l'information temporaire ou urgente (pistes, obstacles, pannes, zones)."
+      - "Le trio de base — RWY (piste), CLSD (fermée), U/S (hors service)."
+      - "« RWY 04/22 CLSD DUE WIP » = piste fermée pour travaux — décoder mot à mot."
+      - Les NOTAM se consultent avant TOUT vol — leur lecture fait partie de la préparation.
+  sections:
+    - id: anatomie-d-un-notam
+      title: Anatomie d'un NOTAM
+      body: |
+        Un NOTAM structuré comporte : l'**aérodrome** concerné (code OACI,
+        ex. LFBG), la **période de validité** (dates/heures UTC), et le
+        **texte** abrégé. Exemple complet :
+
+        *« LFBG — TWY B CLSD DUE WIP. ACFT EXP DELAY. FROM 14 JUL 0800 TO
+        18 JUL 1700. »*
+
+        Décodage : à Cognac, le taxiway B est fermé pour travaux ; les
+        aéronefs doivent prévoir des délais ; du 14 juillet 08h00 UTC au
+        18 juillet 17h00 UTC.
+
+        La logique des abréviations est presque toujours la même :
+        **consonnes conservées, voyelles supprimées** (RWY, TWY, CLSD,
+        AVBL) — au point qu'on devine la plupart des abréviations
+        inconnues en les prononçant.
+    - id: pourquoi-c-est-un-bon-entrainement
+      title: Un excellent entraînement d'anglais
+      strate: maitriser
+      body: |
+        Le NOTAM est le degré zéro de la grammaire — pas d'articles, pas
+        de conjugaison — mais le degré maximal de la **densité** : chaque
+        mot compte, et un contresens peut envoyer un équipage vers une
+        piste fermée.
+
+        C'est pourquoi les évaluations aiment ce format : il teste la
+        **précision** du vocabulaire sans secours du contexte grammatical.
+        S'entraîner à décoder trois NOTAM par jour (les NOTAM français
+        réels sont publics via le SIA) construit un réflexe qui servira
+        tel quel en unité — le brief avant vol commence toujours par la
+        météo et les NOTAM.
+  pieges:
+    - "U/S = unserviceable (hors service) — rien à voir avec les États-Unis (US)."
+    - "CLSD (closed) ≠ CLBS ni CLD — les abréviations se forment en supprimant les voyelles."
+    - Les heures des NOTAM sont en UTC — comme toute l'aéronautique.
+    - "DUE = due to (en raison de) — « CLSD DUE WIP » se lit « fermé pour travaux »."

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-comprehension-03
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  « The squadron has been based at Saint-Dizier since 2006. Its pilots
+  train daily, and most of them have already flown combat missions. » —
+  Que peut-on affirmer d'après le texte ?
+choices:
+  - La plupart des pilotes ont déjà effectué des missions de combat
+  - Tous les pilotes ont effectué des missions de combat
+  - L'escadron va bientôt quitter Saint-Dizier
+  - Les pilotes ne s'entraînent que rarement
+correctChoices: [0]
+explanation: >-
+  Le texte dit « most of them » (la plupart) — « tous » est le piège du mot
+  extrême. Rien n'est dit d'un départ de Saint-Dizier, et « daily » contredit
+  « rarement ».
+evaluates: [fondamentaux.anglais-aeronautique.la-comprehension-ecrite]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

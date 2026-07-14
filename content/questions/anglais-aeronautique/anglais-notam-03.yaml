@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-notam-03
+kind: association
+theme: anglais-comprehension
+statement: >-
+  Associez chaque abréviation NOTAM à son sens.
+pairs:
+  - left: TWY
+    right: Taxiway (voie de circulation)
+  - left: OBST
+    right: Obstacle
+  - left: AVBL
+    right: Available (disponible)
+  - left: ACFT
+    right: Aircraft (aéronef)
+explanation: >-
+  Les abréviations NOTAM suppriment les voyelles : TWY (taxiway), OBST
+  (obstacle), AVBL (available), ACFT (aircraft) — on devine la plupart en les
+  prononçant.
+evaluates: [fondamentaux.anglais-aeronautique.lire-un-notam]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie
