@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage-iv-01
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quel avion fut le premier vecteur de la dissuasion nucléaire française ?
+choices:
+  - "Le Mirage IV"
+  - "Le Mirage III"
+  - "Le Rafale"
+  - "Le Vautour"
+correctChoices: [0]
+explanation: >-
+  Le Mirage IV des Forces aériennes stratégiques prend la première alerte
+  nucléaire le 8 octobre 1964 — la permanence de la dissuasion n'a jamais été
+  interrompue depuis.
+evaluates: [eopn.appareils.mirage-iv]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

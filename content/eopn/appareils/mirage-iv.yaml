@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: eopn.appareils.mirage-iv
+type: appareil
+title: Mirage IV
+slug: mirage-iv
+summary: >-
+  Le premier vecteur nucléaire français — bombardier supersonique des Forces
+  aériennes stratégiques, en alerte du 8 octobre 1964 à 1996, éclaireur
+  stratégique jusqu'en 2005. L'avion qui a fondé la dissuasion aéroportée.
+objectifs:
+  - Situer le Mirage IV comme premier vecteur de la dissuasion française (FAS, 1964).
+  - Connaître les jalons (premier vol 1959, alerte 8/10/1964, fin du nucléaire 1996, retrait 2005).
+  - Comprendre le couple indissociable Mirage IV / ravitailleur C-135.
+aliases: [Mirage IV, Mirage IVA, Mirage IVP, bombardier stratégique, premier vecteur nucléaire]
+module: eopn
+category: appareils
+subcategory: avions-historiques
+tags: []
+concours: [eopn]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot AV2 de la campagne COMAERO (tomes « Avions militaires », ch. 8-9) ; dates de carrière recoupées (defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "COMAERO — Les avions militaires, tome I (EUROSAE), ch. 8-9 « Le Mirage IV des FAS »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — 60 ans de la première prise d'alerte nucléaire (8 octobre 1964)"
+    url: https://www.defense.gouv.fr/air/actualites/60-ans-premiere-prise-dalerte-nucleaire-hommage-aux-pionniers-dissuasion
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.unites.escadron-1-4-gascogne
+    - eopn.appareils.mirage-2000
+    - eopn.histoire.histoire-de-l-armee-de-l-air
+infobox:
+  constructeur: Dassault (GAMD)
+  role: Bombardier stratégique supersonique — premier vecteur de la dissuasion nucléaire
+  armees: [Armée de l'air (Forces aériennes stratégiques)]
+  miseEnService: "1964 (première prise d'alerte nucléaire le 8 octobre 1964)"
+  statut: Retiré du service (fin du rôle nucléaire en 1996, retrait définitif le 23 juin 2005)
+  equipage: 2 en tandem (pilote et navigateur)
+content:
+  essentiel:
+    body: |
+      Le **Mirage IV** est l'avion par lequel la dissuasion française est
+      devenue réalité. Le **8 octobre 1964**, un Mirage IV A armé de la
+      bombe **AN-11**, accompagné de son ravitailleur **C-135**, prend la
+      première **alerte nucléaire** — depuis ce jour, la permanence de la
+      dissuasion n'a jamais été interrompue.
+
+      Les jalons du programme (archives COMAERO) :
+
+      - **1956** — programme d'état-major pour un bombardier
+        stratégique supersonique ;
+      - **17 juin 1959** — premier vol du prototype Mirage IV-01 ;
+      - **1959** — l'État renonce au grand Mirage IV B (50 t) pour la
+        version de 35 tonnes, le **Mirage IV A** ;
+      - **1964-1968** — livraison des **62** appareils de série aux
+        escadrons des **FAS** ;
+      - **31 juillet 1996** — la mission nucléaire passe au Mirage
+        2000 N ; les Mirage IV P poursuivent la **reconnaissance
+        stratégique** ;
+      - **23 juin 2005** — retrait définitif à Mont-de-Marsan, après 41
+        ans de service.
+    aRetenir:
+      - "Mirage IV = premier vecteur nucléaire français — première alerte le 8 octobre 1964, jamais interrompue depuis."
+      - "62 exemplaires livrés aux FAS de 1964 à 1968 ; premier vol du prototype le 17 juin 1959."
+      - "Le couple Mirage IV + ravitailleur C-135 — sans ravitaillement en vol, pas de dissuasion aéroportée."
+      - "Fin du rôle nucléaire en 1996 (relève par le Mirage 2000 N), reconnaissance jusqu'au retrait de 2005."
+  sections:
+    - id: l-avion-de-la-dissuasion
+      title: L'avion qui a fondé la dissuasion
+      body: |
+        Quand la France décide de se doter d'une force de frappe
+        indépendante, les missiles n'existent pas encore — il faut un
+        **avion**. Le Mirage IV est développé dans une urgence assumée
+        (mise en service exigée dès l'origine pour 1963-1964) et devient
+        la **première composante** de la dissuasion, avant les missiles
+        du plateau d'Albion (1971) et les sous-marins lanceurs d'engins
+        (1972).
+
+        Sa mission dimensionne tout — voler **vite** (Mach 2 en pointe),
+        **loin** (grâce au ravitailleur C-135 acheté aux États-Unis), et
+        passer les défenses. L'évolution des menaces impose ensuite la
+        **pénétration à basse altitude**, qui exige de lourdes
+        modifications de l'avion et de son système de
+        navigation-bombardement — une chaîne de remise à niveau remplace
+        la chaîne de montage chez Dassault après 1968.
+    - id: un-programme-industriel-fondateur
+      title: Un programme industriel fondateur
+      strate: maitriser
+      body: |
+        Le COMAERO retient du Mirage IV une leçon industrielle — ce fut
+        « la plus vaste opération en coopération jamais entreprise en
+        France » et la première conduite sous la responsabilité presque
+        totale d'un **constructeur maître d'œuvre** (Dassault), l'État ne
+        fournissant que les réacteurs, l'armement et quelques
+        équipements. Toute l'industrie y participa — Sud-Aviation pour le
+        fuselage central et la voilure, Breguet pour la dérive, CSF pour
+        le radar…
+
+        Malgré l'intérêt de l'Australie, d'Israël et de la
+        Grande-Bretagne, le Mirage IV ne fut **jamais exporté** — on ne
+        vend pas l'avion de sa dissuasion. Il reste dans la mémoire des
+        équipages comme un avion rapide, sûr et étonnamment manœuvrant
+        pour ses 35 tonnes ; et dans l'histoire de l'armée de l'Air comme
+        le fondateur d'une mission qui continue aujourd'hui sur **Rafale
+        des FAS**.
+  pieges:
+    - "Première alerte nucléaire = 8 octobre 1964 — la date fondatrice de la permanence de la dissuasion aéroportée."
+    - Le Mirage IV n'opérait jamais seul — le ravitailleur C-135 faisait partie intégrante du système d'armes.
+    - "Deux fins de carrière — 1996 pour la mission nucléaire (relève Mirage 2000 N), 2005 pour la reconnaissance (Mirage IV P)."
+    - Jamais exporté malgré l'intérêt étranger — un vecteur de dissuasion nationale ne se vend pas.
