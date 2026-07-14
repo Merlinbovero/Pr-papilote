@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Question } from "@/lib/content/content-schemas";
-import { resolveBiaMatiere, type BiaConfig, type BiaFicheRef } from "./config";
+import { resolveBiaMatiere, type BiaConfig, type BiaFicheRef } from "./schema";
 import { buildBiaPools, composeBiaExam, difficultyBand, gradeBiaExam } from "./exam";
 
 /**
@@ -166,10 +166,8 @@ describe("composition de l'examen", () => {
   it("privilégie les questions jamais vues (renouvellement)", () => {
     const pools = buildBiaPools(makeBank(), fiches, config);
     // Toutes les questions météo « vues » sauf q.meteo-5.
-    const history = new Map(
-      [0, 1, 2, 3, 4].map((i) => [`q.meteo-${i}`, { lastAnsweredAt: "2026-07-01T00:00:00Z" }])
-    );
-    const exam = composeBiaExam({ pools, config, seed: 3, history });
+    const seenIds = new Set([0, 1, 2, 3, 4].map((i) => `q.meteo-${i}`));
+    const exam = composeBiaExam({ pools, config, seed: 3, seenIds });
     const meteoIds = exam.questions.filter((q) => q.matiere === "meteo").map((q) => q.question.id);
     expect(meteoIds).toContain("q.meteo-5");
   });
