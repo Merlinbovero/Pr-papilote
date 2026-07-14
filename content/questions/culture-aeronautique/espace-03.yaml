@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.espace-03
+kind: qcm
+theme: conquete-spatiale
+statement: >-
+  Pourquoi les fusées Ariane sont-elles lancées depuis Kourou, en Guyane ?
+choices:
+  - "La proximité de l'équateur maximise l'aide de la rotation terrestre"
+  - "La météo y est toujours parfaite"
+  - "C'est le seul territoire français assez grand"
+  - "Pour des raisons purement historiques"
+correctChoices: [0]
+explanation: >-
+  Près de l'équateur, la vitesse de rotation de la Terre est maximale — un
+  lanceur tirant vers l'est y gagne une impulsion gratuite précieuse,
+  surtout pour l'orbite géostationnaire.
+evaluates: [fondamentaux.culture-aeronautique.la-conquete-de-l-espace]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

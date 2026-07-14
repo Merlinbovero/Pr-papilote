@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.navigation.radionav-03
+kind: qcm
+theme: radionavigation
+statement: >-
+  Un avion passe à la verticale d'une balise DME à 6 000 ft (~1 NM
+  d'altitude). Qu'indique approximativement le DME ?
+choices:
+  - "1 NM"
+  - "0 NM"
+  - "6 NM"
+  - "60 NM"
+correctChoices: [0]
+explanation: >-
+  Le DME mesure la distance OBLIQUE avion-balise — à la verticale, cette
+  distance est simplement l'altitude de l'avion (~1 NM pour 6 000 ft),
+  jamais zéro.
+evaluates: [fondamentaux.navigation.la-radionavigation]
+difficulty: 3
+competencies: [connaissances-aeronautiques, navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

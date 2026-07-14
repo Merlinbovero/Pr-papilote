@@ -1,0 +1,109 @@
+schemaVersion: 1
+id: fondamentaux.navigation.la-radionavigation
+type: notion-navigation
+title: La radionavigation — VOR, DME, GPS
+slug: la-radionavigation
+summary: >-
+  Quand l'estime ne suffit plus, la radio prend le relais — le VOR donne une
+  direction, le DME une distance, le GPS une position. Les trois lettres qui
+  structurent la navigation moderne, au programme du BIA et des QCM.
+objectifs:
+  - Expliquer ce qu'apporte chaque moyen (VOR = radial, DME = distance, GPS = position).
+  - Comprendre le principe d'une balise au sol interrogée par l'avion.
+  - Situer la radionavigation par rapport à la navigation à l'estime.
+aliases: [radionavigation, VOR, DME, ADF, GPS, GNSS, balise, radial]
+module: fondamentaux
+category: navigation
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F2 du plan V1 (domaine 4 du BIA ; complète la navigation à l'estime existante).
+    author: prepapilote
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation, réglementation, sécurité des vols"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "SIA — Service de l'information aéronautique (moyens de radionavigation publiés)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.navigation.cap-route-et-derive
+  related:
+    - fondamentaux.navigation.declinaison-magnetique
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+    - fondamentaux.cartographie.lire-une-carte-aeronautique
+content:
+  essentiel:
+    body: |
+      La navigation à l'**estime** (cap + vitesse + temps) accumule les
+      erreurs — la **radionavigation** permet de se recaler sur des
+      références fixes. Les moyens à connaître :
+
+      | Moyen | Ce qu'il donne | Principe |
+      | --- | --- | --- |
+      | **VOR** (*VHF Omnidirectional Range*) | un **radial** — la direction magnétique par rapport à la balise | balise au sol émettant dans toutes les directions |
+      | **DME** (*Distance Measuring Equipment*) | la **distance** oblique à la balise (en NM) | interrogation-réponse ; l'avion mesure le temps aller-retour |
+      | **ADF/NDB** | la direction d'une balise (ancien) | radiocompas pointant vers l'émetteur |
+      | **GPS / GNSS** | la **position** complète (et la route, la vitesse sol) | satellites — mesure de distances à au moins 4 satellites |
+
+      La combinaison classique **VOR + DME** donne direction et
+      distance — donc une **position** sur la carte. Le GPS la donne
+      directement, mais on apprend d'abord VOR et estime : le moyen le
+      plus moderne est aussi le premier à savoir se passer de soi.
+    aRetenir:
+      - "VOR = un radial (direction magnétique par rapport à la balise) ; DME = une distance ; GPS = une position."
+      - "VOR + DME = position complète — le couple historique de la navigation aux instruments."
+      - "Le DME mesure une distance OBLIQUE (avion-balise), pas la distance sol — l'écart croît avec l'altitude."
+      - Le GPS n'exempte pas de savoir naviguer à l'estime — les sélections et l'école testent d'abord la méthode.
+  sections:
+    - id: le-vor-en-pratique
+      title: Le VOR en pratique
+      body: |
+        Une balise VOR émet un signal qui permet au récepteur de bord de
+        déterminer sur quel **radial** (droite magnétique issue de la
+        balise, de 001 à 360) l'avion se trouve. Deux usages :
+
+        - **se situer** — croiser les radiaux de deux VOR différents
+          donne une position ;
+        - **suivre une route** — afficher un radial et le tenir, en
+          corrigeant la dérive due au vent : l'aiguille du VOR devient
+          le fil conducteur du vol.
+
+        Attention au piège de vocabulaire — le radial se compte **depuis
+        la balise** : être « sur le radial 090 » signifie être à l'**est**
+        du VOR, quel que soit le cap de l'avion.
+    - id: du-sol-au-satellite
+      title: Du sol au satellite
+      strate: maitriser
+      body: |
+        Le **GPS** (famille des **GNSS**, avec Galileo l'européen) calcule
+        la position par mesure des distances à plusieurs satellites — il
+        en faut au moins **quatre** (trois pour la position, un pour
+        caler l'horloge du récepteur). Précis, mondial, continu — mais
+        vulnérable : le signal, très faible, peut être **brouillé ou
+        leurré**, ce qui est devenu un enjeu militaire majeur.
+
+        C'est pourquoi l'aviation — militaire en tête — conserve des
+        moyens **indépendants** : balises sol, centrales à inertie (qui
+        naviguent sans aucun signal extérieur — le Super-Étendard fut le
+        premier avion d'armes français à en recevoir une), et l'estime,
+        toujours enseignée en premier. La bonne navigation croise
+        toujours **plusieurs sources**.
+  pieges:
+    - "Un radial se compte DEPUIS la balise — « radial 090 » = à l'est du VOR, indépendamment du cap suivi."
+    - La distance DME est oblique (en ligne droite avion-balise) — à la verticale de la balise, elle indique l'altitude, pas zéro.
+    - "Il faut au moins 4 satellites pour une position GPS complète — pas 3."
+    - Le GPS peut être brouillé ou leurré — les moyens indépendants (inertie, balises, estime) restent indispensables.

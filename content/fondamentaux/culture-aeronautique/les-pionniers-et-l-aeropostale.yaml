@@ -1,0 +1,114 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale
+type: concept
+title: Les pionniers et l'Aéropostale
+slug: les-pionniers-et-l-aeropostale
+summary: >-
+  Blériot au-dessus de la Manche, Mermoz sur l'Atlantique Sud, Guillaumet
+  dans les Andes, Saint-Exupéry au clair de lune — les figures que tout jury
+  attend, et l'épopée de la Ligne qui a inventé l'esprit d'équipage.
+objectifs:
+  - Situer les grandes premières (Blériot 1909, Lindbergh 1927, Mermoz 1930).
+  - Raconter l'épopée de l'Aéropostale et ses figures (Mermoz, Guillaumet, Saint-Exupéry).
+  - Relier ces récits aux valeurs attendues d'un candidat pilote (courage, méthode, esprit d'équipage).
+aliases: [pionniers, Aéropostale, Blériot, Mermoz, Guillaumet, Saint-Exupéry, Lindbergh, la Ligne]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F2 du plan V1 (domaine 5 du BIA « histoire et culture » ; culture d'entretien universelle).
+    author: prepapilote
+sources:
+  - title: "Musée de l'Air et de l'Espace — collections et dossiers historiques (Le Bourget)"
+    url: https://www.museeairespace.fr/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — histoire et culture de l'aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+  related:
+    - fondamentaux.culture-aeronautique.la-conquete-de-l-espace
+    - eopan.selection.preparer-l-entretien-de-motivation
+content:
+  essentiel:
+    body: |
+      Quelques dates que tout candidat doit pouvoir situer sans hésiter :
+
+      | Date | Exploit | Qui |
+      | --- | --- | --- |
+      | **25 juillet 1909** | première traversée de la **Manche** en avion | **Louis Blériot** |
+      | 1913 | première traversée de la Méditerranée | Roland Garros |
+      | **20-21 mai 1927** | New York-Paris sans escale, en solitaire | **Charles Lindbergh** |
+      | **12-13 mai 1930** | première traversée aéropostale de l'**Atlantique Sud** | **Jean Mermoz** |
+
+      Et une aventure collective — l'**Aéropostale**, « la Ligne » :
+      née des lignes Latécoère lancées depuis **Toulouse** en 1918-1919,
+      elle pousse le courrier vers Casablanca, **Dakar**, puis l'Amérique
+      du Sud et la cordillère des **Andes**. Ses pilotes — **Mermoz**,
+      **Guillaumet**, **Saint-Exupéry** — deviennent les figures morales
+      de l'aviation française : le courrier doit passer, l'équipage
+      compte plus que l'exploit individuel.
+    aRetenir:
+      - "Blériot traverse la Manche le 25 juillet 1909 — l'avion cesse d'être un jouet, il devient un moyen de transport."
+      - "L'Aéropostale (lignes Latécoère depuis Toulouse) relie la France à Dakar puis à l'Amérique du Sud — « le courrier doit passer »."
+      - "Mermoz ouvre l'Atlantique Sud en mai 1930 et disparaît en mer en 1936 à bord de la Croix-du-Sud."
+      - "Guillaumet, tombé dans les Andes en 1930, marche cinq jours — « ce que j'ai fait, aucune bête ne l'aurait fait »."
+  sections:
+    - id: les-trois-visages-de-la-ligne
+      title: Mermoz, Guillaumet, Saint-Exupéry — trois visages
+      body: |
+        **Mermoz** est l'audace — pionnier des tronçons impossibles, de
+        la traversée de nuit, de l'Atlantique Sud (Saint-Louis du Sénégal
+        → Natal en 1930). Il disparaît en mer le 7 décembre 1936 à bord
+        de l'hydravion **Croix-du-Sud**, après un dernier message resté
+        célèbre — « coupons moteur arrière droit ».
+
+        **Guillaumet** est l'endurance — contraint de se poser dans les
+        **Andes** en juin 1930, il marche cinq jours et quatre nuits dans
+        la neige pour rejoindre la vallée. Sa phrase à Saint-Exupéry —
+        « ce que j'ai fait, je te le jure, aucune bête ne l'aurait
+        fait » — reste la définition du caractère chez les pilotes.
+
+        **Saint-Exupéry** est la conscience — pilote de la Ligne
+        (Cap Juby, l'Argentine) et écrivain (*Courrier Sud*, *Vol de
+        nuit*, *Terre des hommes*, *Le Petit Prince*). Redevenu pilote de
+        guerre, il disparaît en **mission de reconnaissance le 31 juillet
+        1944** en Méditerranée, aux commandes d'un Lightning P-38.
+    - id: pourquoi-le-jury-aime-ces-histoires
+      title: Ce que ces récits disent au jury
+      strate: maitriser
+      body: |
+        Ces histoires ne sont pas de la décoration — elles portent
+        exactement les **valeurs** que les sélections cherchent :
+
+        - la **mission avant soi** (le courrier passe — aujourd'hui, la
+          mission opérationnelle) ;
+        - le **courage lucide**, qui n'est pas la témérité — Mermoz
+          préparait méticuleusement ses traversées ;
+        - la **ténacité** de Guillaumet — l'échec n'est pas la chute,
+          c'est de rester au sol ;
+        - l'**équipage** — la Ligne est une aventure collective, comme
+          une flottille ou un escadron.
+
+        En entretien, citer une de ces figures **à bon escient** — en
+        expliquant ce qu'elle vous dit, à vous — vaut mieux que réciter
+        les quatre. Et connaître leurs livres (Saint-Exupéry, mais aussi
+        *Mes vols* de Mermoz) donne des réponses toutes prêtes à la
+        question « un livre qui vous a marqué ? ».
+  pieges:
+    - "Blériot traverse la Manche en 1909 — avant la Première Guerre mondiale ; Lindbergh traverse l'Atlantique Nord en 1927, Mermoz l'Atlantique SUD en 1930."
+    - L'Aéropostale n'est pas une compagnie militaire — c'est une aventure civile dont l'esprit a irrigué toute l'aviation française.
+    - "Saint-Exupéry disparaît en mission de guerre en 1944 — pas sur la Ligne : il était alors pilote de reconnaissance."
+    - "La phrase des Andes est de Guillaumet — pas de Mermoz ni de Saint-Exupéry (qui l'a rapportée dans Terre des hommes)."

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.navigation.radionav-01
+kind: association
+theme: radionavigation
+statement: >-
+  Associez chaque moyen de radionavigation à l'information qu'il fournit.
+pairs:
+  - left: "VOR"
+    right: "Un radial (direction magnétique depuis la balise)"
+  - left: "DME"
+    right: "Une distance oblique"
+  - left: "GPS"
+    right: "Une position complète"
+explanation: >-
+  Le VOR donne une direction, le DME une distance, le GPS une position — la
+  combinaison VOR + DME reconstitue une position sur carte.
+evaluates: [fondamentaux.navigation.la-radionavigation]
+difficulty: 1
+competencies: [connaissances-aeronautiques, navigation]
+concours: [eopan, eopn, alat]
+status: publie

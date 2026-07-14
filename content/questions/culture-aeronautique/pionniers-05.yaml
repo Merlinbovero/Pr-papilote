@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-05
+kind: ordre
+theme: pionniers
+statement: >-
+  Classez ces traversées de la plus ancienne à la plus récente.
+items:
+  - "La Manche par Blériot"
+  - "New York-Paris par Lindbergh"
+  - "L'Atlantique Sud par Mermoz"
+explanation: >-
+  Blériot en 1909, Lindbergh en 1927, Mermoz en 1930 — trois océans
+  d'audace en vingt ans.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

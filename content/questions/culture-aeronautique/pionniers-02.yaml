@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-02
+kind: association
+theme: pionniers
+statement: >-
+  Associez chaque figure de l'Aéropostale à ce qui la caractérise.
+pairs:
+  - left: "Jean Mermoz"
+    right: "Première traversée aéropostale de l'Atlantique Sud (1930)"
+  - left: "Henri Guillaumet"
+    right: "Cinq jours de marche dans les Andes après un crash"
+  - left: "Antoine de Saint-Exupéry"
+    right: "Pilote-écrivain (Vol de nuit, Terre des hommes)"
+explanation: >-
+  Trois visages de la Ligne — l'audace de Mermoz, l'endurance de Guillaumet,
+  la plume de Saint-Exupéry.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

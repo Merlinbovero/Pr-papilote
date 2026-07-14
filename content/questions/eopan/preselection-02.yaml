@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.preselection-02
+kind: qcm
+theme: preselection-en-vol
+statement: >-
+  Que mesure principalement la présélection en vol ?
+choices:
+  - "La capacité à apprendre et à restituer en vol"
+  - "Le niveau de pilotage acquis avant le concours"
+  - "La résistance physique en centrifugeuse"
+  - "Les connaissances en mécanique automobile"
+correctChoices: [0]
+explanation: >-
+  Aucune expérience préalable n'est exigée — la 50S évalue la pente de
+  progression : comprendre un briefing, préparer le vol, restituer en l'air,
+  progresser d'un vol à l'autre.
+evaluates: [eopan.selection.la-preselection-en-vol]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

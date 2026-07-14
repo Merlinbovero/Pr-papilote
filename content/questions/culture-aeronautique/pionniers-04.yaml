@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-04
+kind: qcm
+theme: pionniers
+statement: >-
+  D'où partaient les lignes Latécoère, à l'origine de l'Aéropostale ?
+choices:
+  - "De Toulouse"
+  - "De Paris"
+  - "De Marseille"
+  - "De Bordeaux"
+correctChoices: [0]
+explanation: >-
+  Les lignes Latécoère partent de Toulouse dès 1918-1919, vers Casablanca
+  puis Dakar et l'Amérique du Sud — d'où l'ancrage toulousain durable de
+  l'aéronautique française.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
