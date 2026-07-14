@@ -20,11 +20,15 @@ level: 2
 createdAt: "2026-07-07"
 verifiedAt: "2026-07-13"
 author: prepapilote
-version: 2
+version: 3
 revisions:
   - date: "2026-07-13"
     version: 2
     motif: Enrichissement — caractéristiques et performances sourcées Dassault Aviation (Mach 1,8 retenu contre le 1,6 du Guide EOPAN 2020 — le constructeur fait foi), lien vers la fiche groupe aéronaval (Lot E).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 3
+    motif: Enrichissement — origines de la version Marine (COMAERO, tomes « Avions militaires » ch. 22, lot AV5).
     author: prepapilote
 status: publie
 sources:
@@ -40,6 +44,10 @@ sources:
     url: https://www.defense.gouv.fr/marine
     kind: officiel
     consultedAt: "2026-07-07"
+  - title: "COMAERO — Les avions militaires, tome II (EUROSAE), ch. 22 « Le Rafale Marine »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
 relations:
   factual:
     - predicate: embarque-sur
@@ -136,10 +144,24 @@ content:
       title: Repères historiques
       strate: maitriser
       body: |
-        Le Rafale est « combat proven » depuis 2007 et compte parmi les
-        avions de combat les plus engagés en opérations. Dans la Marine, il
-        a progressivement remplacé l'ensemble des types précédents jusqu'à
-        devenir l'avion de combat unique de l'aéronautique navale.
+        La version Marine était prévue **dès les études préparatoires**
+        du programme (années 1970-80), pour remplacer le Crusader,
+        l'Étendard IVP puis le Super-Étendard. Le COMAERO rapporte un
+        épisode oublié — en 1985, l'urgence du remplacement des Crusader
+        était telle que la Marine avait demandé d'étudier l'achat ou la
+        location de **F-18 américains** ; l'option fut écartée au profit
+        de l'avion commun air-marine. L'aptitude du futur Rafale à
+        l'embarquement fut prouvée dès **avril 1987** par des approches
+        du démonstrateur Rafale A sur le **Clemenceau**.
+
+        Autre trace de cette histoire — le premier standard livré (F1,
+        purement air-air) équipa d'abord la **Marine** : d'où une mise en
+        service en flottille en **2004**, deux ans avant l'armée de
+        l'Air. Le Rafale est « combat proven » depuis 2007 et compte
+        parmi les avions de combat les plus engagés en opérations. Dans
+        la Marine, il a progressivement remplacé l'ensemble des types
+        précédents jusqu'à devenir l'avion de combat unique de
+        l'aéronautique navale.
   pieges:
     - Le Rafale M est toujours monoplace — il n'existe pas de version biplace embarquée, contrairement au Rafale B de l'Armée de l'Air et de l'Espace.
     - Les flottilles de Rafale M sont basées à terre (BAN Landivisiau) et embarquent sur le porte-avions lors des déploiements — l'avion n'est pas affecté en permanence à bord.

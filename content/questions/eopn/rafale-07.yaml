@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.rafale-07
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  Le démonstrateur Rafale A a d'abord volé avec des réacteurs américains.
+answer: true
+explanation: >-
+  Le Rafale A vole en 1986 avec deux General Electric F404 loués, en
+  attendant le M 88 français — qu'il testera ensuite comme banc d'essais
+  volant à partir de 1990.
+evaluates: [eopn.appareils.rafale]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie
