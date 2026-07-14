@@ -33,7 +33,9 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
 
   test("le hub de catégorie liste les fiches réelles", async ({ page }) => {
     await page.goto("/eopan/appareils");
-    await expect(page.getByRole("link", { name: /Rafale M/ })).toBeVisible();
+    // Ancré en début de nom accessible : d'autres cartes peuvent citer
+    // « Rafale M » dans leur résumé (ex. Super-Étendard).
+    await expect(page.getByRole("link", { name: /^Rafale M/ })).toBeVisible();
   });
 
   test("le dictionnaire renvoie vers la fiche complète", async ({ page }) => {

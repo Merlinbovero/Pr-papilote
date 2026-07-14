@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-21f-02
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Depuis quand la flottille 21F est-elle basée à Lann-Bihoué ?
+choices:
+  - "2011, après la fermeture de Nîmes-Garons"
+  - "1961, dès sa création"
+  - "1940"
+  - "2020"
+correctChoices: [0]
+explanation: >-
+  La 21F a passé près d'un demi-siècle à Nîmes-Garons (1963-2011) avant de
+  rejoindre Lann-Bihoué en 2011. C'est la 23F qui y est installée depuis 1961.
+evaluates: [eopan.unites.flottille-21f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

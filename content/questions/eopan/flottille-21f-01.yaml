@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-21f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle est la mission de la flottille 21F ?
+choices:
+  - La patrouille maritime sur Atlantique 2
+  - La chasse embarquée sur Rafale M
+  - Le guet aérien sur Hawkeye
+  - La formation initiale des pilotes
+correctChoices: [0]
+explanation: >-
+  La 21F est l'une des deux flottilles de patrouille maritime de
+  l'aéronautique navale, sur Atlantique 2, basée à Lann-Bihoué avec sa
+  jumelle la 23F.
+evaluates: [eopan.unites.flottille-21f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

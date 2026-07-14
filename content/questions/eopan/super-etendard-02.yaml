@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-02
+kind: vrai-faux
+theme: appareils-historiques
+statement: >-
+  Aux Malouines en 1982, ce sont des Super-Étendard français qui ont tiré des Exocet.
+answer: false
+explanation: >-
+  Faux. Les Super-Étendard engagés aux Malouines appartenaient à la marine
+  argentine. Leurs tirs d'Exocet AM39 ont marqué l'histoire navale — mais la
+  France n'était pas belligérante.
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

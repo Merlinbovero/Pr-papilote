@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-23f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Depuis quand la flottille 23F est-elle installée à Lann-Bihoué ?
+choices:
+  - "1961"
+  - "2011"
+  - "1993"
+  - "1940"
+correctChoices: [0]
+explanation: >-
+  La 23F, créée le 1er décembre 1940, est installée à Lann-Bihoué depuis
+  1961 — l'une des plus anciennes implantations continues de l'aéronavale.
+  1940 est sa création, 2011 l'arrivée de la 21F.
+evaluates: [eopan.unites.flottille-23f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

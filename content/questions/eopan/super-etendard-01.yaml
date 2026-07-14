@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-01
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Pendant quelles années le Super-Étendard a-t-il servi dans l'aéronautique navale française ?
+choices:
+  - De 1978 à 2016
+  - De 1945 à 1960
+  - De 2001 à aujourd'hui
+  - De 1990 à 2020
+correctChoices: [0]
+explanation: >-
+  Entré en service en 1978 (11F opérationnelle début 1979), le Super-Étendard
+  a été retiré en 2016 avec les adieux de la flottille 17F — près de quarante
+  ans de service.
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

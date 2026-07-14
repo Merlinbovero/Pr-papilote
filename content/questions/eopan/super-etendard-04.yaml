@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-04
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Que signifie « SEM » ?
+choices:
+  - Super-Étendard Modernisé — la rénovation des années 1990
+  - Système d'Emport de Missiles
+  - Section d'Entraînement Maritime
+  - Super-Étendard Marine — la version embarquée
+correctChoices: [0]
+explanation: >-
+  Le SEM est le Super-Étendard Modernisé : la rénovation des années 1990
+  (avionique, armements guidés) qui a prolongé l'avion — 400 missions au
+  Kosovo en 1999, puis l'Afghanistan et la Libye.
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

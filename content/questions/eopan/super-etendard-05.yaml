@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-05
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quelle flottille a été la dernière à mettre en œuvre le Super-Étendard Modernisé ?
+choices:
+  - La 17F, jusqu'en 2016
+  - La 11F, jusqu'en 2011
+  - La 12F, jusqu'en 2001
+  - La 4F, jusqu'en 2010
+correctChoices: [0]
+explanation: >-
+  La 11F est passée sur Rafale M en 2011 ; la 17F a été la dernière flottille
+  SEM, avec un dernier catapultage depuis le Charles de Gaulle en mars 2016 —
+  l'acte de naissance du « tout-Rafale ».
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

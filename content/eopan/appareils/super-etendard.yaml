@@ -1,0 +1,111 @@
+schemaVersion: 1
+id: eopan.appareils.super-etendard
+type: appareil
+title: Super-Étendard
+slug: super-etendard
+summary: >-
+  L'avion d'assaut embarqué qui a porté l'aéronavale pendant près de quarante
+  ans (1978-2016) — Exocet, frappe nucléaire ASMP, guerres des Malouines (sous
+  pavillon argentin) et du Kosovo, jusqu'au passage de témoin au Rafale M.
+objectifs:
+  - Situer le Super-Étendard dans l'histoire de l'aéronavale (service 1978-2016).
+  - Connaître ses capacités marquantes (Exocet AM39, frappe nucléaire ASMP, version SEM).
+  - Comprendre ce que son retrait (2016) a changé — le « tout-Rafale ».
+aliases: [Super-Étendard, SEM, Super-Étendard Modernisé, SUE]
+module: eopan
+category: appareils
+subcategory: avions-historiques
+tags: []
+concours: [eopan]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche historique Super-Étendard (campagne de recherche n°1, lot N6 ; Dassault et sources spécialisées recoupées).
+    author: prepapilote
+sources:
+  - title: "Super-Étendard — origines, caractéristiques et performances (Dassault Aviation)"
+    url: https://www.dassault-aviation.com/en/passion/aircraft/military-dassault-aircraft/super-etendard/
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Dassault-Breguet Super Étendard — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Dassault-Breguet_Super_%C3%89tendard
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.rafale-m
+    - eopan.histoire.histoire-de-l-aeronautique-navale
+    - eopan.concepts.les-armements-de-l-aeronautique-navale
+    - eopan.unites.flottille-17f
+infobox:
+  constructeur: Dassault-Breguet
+  role: Avion d'assaut embarqué (historique)
+  armees: [Marine nationale]
+  miseEnService: 1978
+  statut: Retiré du service (2016)
+  equipage: "1"
+content:
+  essentiel:
+    body: |
+      Le **Super-Étendard** a été l'épine dorsale de l'assaut embarqué
+      français pendant près de **quarante ans**. Premier vol en **1974**,
+      entrée en service dans la Marine en **1978** (la 11F opérationnelle
+      début 1979) : monoplace, monoréacteur (Atar 9K-50, sans
+      post-combustion), aile en flèche **repliable** — un pur avion de
+      porte-avions.
+
+      Trois capacités ont fait sa légende :
+
+      - le missile antinavire **Exocet AM39** — rendu tristement célèbre
+        aux **Malouines** (1982) par les Super-Étendard **argentins** ;
+      - la **frappe nucléaire** — porteur du missile **ASMP** dès les
+        années 1980 (FANu, premier tir opérationnel depuis le **Foch**) ;
+      - modernisé en **SEM** (Super-Étendard Modernisé) dans les années
+        1990, il frappe au **Kosovo** (1999), en Afghanistan, en Libye.
+
+      Son retrait en **2016** ouvre l'ère du **« tout-Rafale »**.
+    aRetenir:
+      - Avion d'assaut embarqué de Dassault — en service dans l'aéronavale de 1978 à 2016.
+      - Porteur de l'Exocet AM39 et du missile nucléaire ASMP (FANu) — les capacités reprises par le Rafale M.
+      - Modernisé en SEM dans les années 1990 — Kosovo 1999, Afghanistan, Libye.
+      - Son retrait (2016, flottille 17F) marque le passage au « tout-Rafale ».
+  sections:
+    - id: un-avion-de-porte-avions
+      title: Un avion de porte-avions
+      body: |
+        Dérivé de l'**Étendard IV**, le Super-Étendard est conçu **pour** le
+        pont d'envol : dimensions compactes, **ailes repliables** (flèche
+        d'environ 45°), crosse, structure endurcie aux catapultages. Son
+        réacteur **Atar 9K-50** (sans post-combustion) en fait un
+        subsonique — la vitesse n'était pas sa mission, la **frappe** l'était.
+
+        Aux **Malouines** (1982), les Super-Étendard de la marine
+        **argentine** et leurs Exocet marquent l'histoire navale — la
+        preuve, amère pour la Royal Navy, de la létalité du couple
+        avion-missile antinavire que la France avait créé.
+    - id: du-sem-au-tout-rafale
+      title: Du SEM au tout-Rafale
+      strate: maitriser
+      body: |
+        La modernisation **SEM** (années 1990) — avionique, capacités
+        air-sol guidées — prolonge l'avion pour quinze ans de guerres
+        réelles : **400 missions** au-dessus du Kosovo en 1999, puis
+        l'Afghanistan et la Libye depuis le Charles de Gaulle.
+
+        Le passage de témoin s'étale : la **11F** passe sur Rafale M en
+        **2011**, la **17F** — dernière flottille SEM — fait ses adieux en
+        **2016** (dernier catapultage depuis le Charles de Gaulle en mars).
+        Depuis, le **Rafale M** assume seul chasse, assaut et dissuasion :
+        connaître le Super-Étendard, c'est comprendre d'où vient ce
+        « tout-Rafale ».
+  pieges:
+    - Le Super-Étendard est retiré du service depuis 2016 — c'est un avion historique, pas un appareil du parc actuel.
+    - Aux Malouines, les Super-Étendard engagés étaient argentins — pas français.
+    - SEM = Super-Étendard Modernisé (rénovation des années 1990) — le même avion, modernisé, pas un nouvel appareil.
+    - C'est lui qui portait l'ASMP avant le Rafale — la continuité de la FANu passe par cet avion.

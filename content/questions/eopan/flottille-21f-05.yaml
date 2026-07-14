@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-21f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Que comprend un équipage d'Atlantique 2 en patrouille maritime ?
+choices:
+  - Une dizaine de spécialistes — pilotes, tacticiens, opérateurs de capteurs
+  - Un seul pilote
+  - Deux pilotes seulement
+  - Une centaine de marins
+correctChoices: [0]
+explanation: >-
+  La PATMAR est un métier d'équipage : une dizaine de spécialistes (pilotes,
+  tacticiens « TACCO », opérateurs de capteurs) coopèrent pendant des heures
+  de vol — pister un sous-marin est un travail d'équipe.
+evaluates: [eopan.unites.flottille-21f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

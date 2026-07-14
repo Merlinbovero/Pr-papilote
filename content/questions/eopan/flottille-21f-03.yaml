@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.flottille-21f-03
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  Les flottilles 21F et 23F partagent le même bâtiment à Lann-Bihoué.
+answer: true
+explanation: >-
+  Vrai. Les deux flottilles de patrouille maritime sont voisines — chacune
+  occupe une moitié d'un même bâtiment — et fonctionnent en pôle
+  inter-flottilles (moyens mutualisés, alertes partagées).
+evaluates: [eopan.unites.flottille-21f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
