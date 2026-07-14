@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.attention-03
+kind: vrai-faux
+theme: attention-multitache
+statement: >-
+  Au barrage, il faut démarrer à vitesse maximale pour prendre de l'avance.
+answer: false
+explanation: >-
+  Faux. La vitesse maximale des trente premières secondes n'est pas tenable :
+  la précipitation crée les omissions. Trouver son rythme de croisière et le
+  tenir — le rythme régulier bat les à-coups.
+evaluates: [psychotechnique.exercices.l-attention-et-le-multitache]
+difficulty: 1
+competencies: [attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.spatial-01
+kind: qcm
+theme: vision-spatiale
+statement: >-
+  Dans un test de rotations mentales, quel est le piège classique ?
+choices:
+  - L'image miroir — qui ressemble au modèle mais est inversée
+  - La couleur des figures
+  - La taille des figures
+  - Le nombre de propositions
+correctChoices: [0]
+explanation: >-
+  Une rotation conserve la figure ; un miroir l'inverse. Le filet de
+  sécurité : suivre un repère asymétrique et vérifier le sens de parcours du
+  contour — une rotation le conserve, un miroir l'inverse.
+evaluates: [psychotechnique.exercices.la-vision-spatiale]
+difficulty: 1
+competencies: [vision-spatiale]
+concours: [eopan, eopn, alat]
+status: publie

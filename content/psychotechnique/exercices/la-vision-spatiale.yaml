@@ -1,0 +1,127 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-vision-spatiale
+type: concept
+title: La vision spatiale
+slug: la-vision-spatiale
+summary: >-
+  Rotations mentales, patrons de cubes, caps et orientation — la vision
+  spatiale est l'aptitude reine du pilote : se représenter les objets et soi
+  dans l'espace, sans les voir.
+objectifs:
+  - Reconnaître les grands formats (rotations mentales, patrons de cubes, orientation/caps).
+  - Distinguer rotation (figure conservée) et miroir (figure inversée).
+  - Appliquer les techniques de repère et d'ancrage pour fiabiliser ses réponses.
+aliases: [vision spatiale, rotations mentales, patrons de cubes, orientation spatiale, caps]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche d'entraînement vision spatiale (campagne de recherche n°1, lot N7).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.les-dominos
+    - fondamentaux.navigation.cap-route-et-derive
+content:
+  essentiel:
+    body: |
+      La **vision spatiale** est l'aptitude à **manipuler mentalement** des
+      objets — les tourner, les plier, les situer — et à se situer soi-même
+      dans l'espace. Pour un futur pilote, c'est l'aptitude **reine** : voler,
+      c'est se représenter en permanence sa position en trois dimensions.
+
+      Les trois grands formats de tests :
+
+      - **rotations mentales** — retrouver la figure identique au modèle,
+        simplement **tournée** (le piège : l'image **miroir**) ;
+      - **patrons de cubes** — quel cube obtient-on en **pliant** ce patron ?
+        (raisonner sur les faces **adjacentes** et **opposées**) ;
+      - **orientation et caps** — après tel virage, quel est le nouveau
+        cap ? où est le nord ? (rose des caps, gauche/droite relatives).
+
+      La règle d'or : ne jamais « voir » toute la figure d'un coup —
+      s'accrocher à un **repère** (un détail asymétrique) et le suivre.
+    aRetenir:
+      - Une rotation conserve la figure ; un miroir l'inverse — c'est LE piège des rotations mentales.
+      - "Patrons de cubes — raisonner par paires de faces opposées : elles ne peuvent jamais se toucher."
+      - S'accrocher à un repère asymétrique de la figure et le suivre dans la rotation.
+      - "Caps — travailler en relatif (± degrés) puis convertir, sans refaire tout le tour de la rose."
+  sections:
+    - id: rotations-et-miroirs
+      title: Rotations et miroirs
+      body: |
+        Le format type : un **modèle**, quatre propositions — une seule est
+        le modèle **tourné** ; les autres sont des **miroirs** ou des figures
+        modifiées.
+
+        La méthode fiable :
+
+        1. choisir un **repère** asymétrique du modèle (une branche plus
+           courte, une marque) ;
+        2. noter le **sens de parcours** du contour (horaire ou antihoraire)
+           en partant de ce repère ;
+        3. vérifier ce sens sur chaque proposition — **une rotation conserve
+           le sens de parcours, un miroir l'inverse**.
+
+        Avec l'entraînement, la rotation devient perceptive — mais sous
+        stress, la vérification du sens de parcours reste le filet de
+        sécurité.
+      figures:
+        - schemaId: rotation-mentale-exemple
+          alt: Un modèle en forme de L avec un carré-repère, comparé à une proposition A identique tournée de 90 degrés et à une proposition B en miroir, différente.
+          caption: Rotation ou miroir ? Le repère (carré plein) et le sens de parcours tranchent.
+          width: 460
+          height: 280
+    - id: patrons-de-cubes
+      title: Les patrons de cubes
+      body: |
+        On donne un **patron** (le cube déplié, six faces marquées) et on
+        demande quel cube il forme une fois **plié**. Trois outils :
+
+        - **les faces opposées** — sur un patron en croix, les faces
+          séparées par une face sont **opposées** ; deux faces opposées ne
+          peuvent **jamais** apparaître ensemble sur une vue du cube — cela
+          élimine vite des propositions ;
+        - **les faces adjacentes** — vérifier qu'une paire de motifs
+          voisins sur la proposition l'est aussi sur le patron ;
+        - **l'orientation des motifs** — une flèche ou un détail orienté
+          doit pointer du bon côté après pliage (le piège le plus fin).
+
+        Méthode d'élimination toujours : chercher la **contradiction** dans
+        chaque proposition plutôt que reconstruire tout le cube.
+    - id: orientation-et-caps
+      title: Orientation et caps
+      strate: maitriser
+      body: |
+        Les tests d'orientation préfigurent la navigation : « vous suivez le
+        cap 090, vous virez de 90° à droite — quel est votre nouveau
+        cap ? » (réponse : 180). Les outils :
+
+        - la **rose des caps** — nord 360/000, est 090, sud 180, ouest 270 ;
+        - travailler en **relatif** : additionner ou soustraire les virages,
+          puis ramener dans 0-360 (ajouter ou retirer 360 si besoin) ;
+        - pour les énoncés « vu de dessus » (plans, cartes), toujours
+          s'imaginer **dans** le mobile — la gauche du pilote n'est pas
+          celle du lecteur si le mobile descend vers le bas de la page.
+
+        Ces réflexes serviront tels quels en **navigation** — la fiche
+        cap-route-dérive des Fondamentaux prend le relais.
+  pieges:
+    - Le miroir est LE piège des rotations mentales — vérifier le sens de parcours du contour, pas l'allure générale.
+    - Deux faces opposées d'un cube ne peuvent jamais se voir ensemble — l'outil d'élimination le plus rapide des patrons.
+    - Dans les problèmes de caps, la gauche et la droite sont celles du mobile — pas celles du lecteur.
+    - Reconstituer mentalement tout le cube est lent — chercher la contradiction dans chaque proposition.

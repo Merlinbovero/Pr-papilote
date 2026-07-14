@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.attention-04
+kind: qcm
+theme: attention-multitache
+statement: >-
+  Sur une épreuve de poursuite de cible, comment corriger sa trajectoire ?
+choices:
+  - Par petites retouches continues plutôt que par grands coups de correction
+  - Par un grand coup de correction dès que l'écart est visible
+  - En lâchant la commande pour observer
+  - En fermant un œil pour viser
+correctChoices: [0]
+explanation: >-
+  Les grandes corrections font osciller le curseur autour de la cible
+  (sur-correction). De petites retouches lissées maintiennent l'écart
+  minimal — exactement comme un pilotage fin.
+evaluates: [psychotechnique.exercices.l-attention-et-le-multitache]
+difficulty: 2
+competencies: [attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

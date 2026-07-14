@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.memoire-03
+kind: vrai-faux
+theme: memoire
+statement: >-
+  Pour progresser aux tests de mémoire, il faut surtout augmenter sa « mémoire brute ».
+answer: false
+explanation: >-
+  Faux. La mémoire brute progresse peu — ce sont les stratégies d'encodage
+  (regroupement, association, verbalisation, balayage structuré) qui
+  produisent les gros gains.
+evaluates: [psychotechnique.exercices.la-memoire]
+difficulty: 2
+competencies: [memoire]
+concours: [eopan, eopn, alat]
+status: publie

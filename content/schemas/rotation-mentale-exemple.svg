@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .shape { fill: none; stroke: #3b82f6; stroke-width: 2.5; }
+    .mark { fill: #3b82f6; }
+    .box { fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .lbl { font-size: 11px; fill: #94a3b8; }
+    .ok { font-size: 12px; font-weight: 700; fill: #3b82f6; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Rotation mentale — quelle figure est identique (juste tournée) ?</text>
+  <!-- Modèle : L en polyline, carré-repère sur la branche courte -->
+  <rect class="box" x="30" y="52" width="100" height="100" rx="6" />
+  <polyline class="shape" points="60,72 60,132 110,132" />
+  <rect class="mark" x="104" y="126" width="10" height="10" />
+  <text class="lbl" x="80" y="170" text-anchor="middle">Modèle</text>
+  <!-- A : rotation 90° horaire (identique) -->
+  <rect class="box" x="180" y="52" width="100" height="100" rx="6" />
+  <polyline class="shape" points="260,82 200,82 200,132" />
+  <rect class="mark" x="196" y="126" width="10" height="10" />
+  <text class="lbl" x="230" y="170" text-anchor="middle">A — rotation 90°</text>
+  <text class="ok" x="230" y="186" text-anchor="middle">identique ✓</text>
+  <!-- B : image miroir (différente) -->
+  <rect class="box" x="330" y="52" width="100" height="100" rx="6" />
+  <polyline class="shape" points="400,72 400,132 350,132" />
+  <rect class="mark" x="346" y="126" width="10" height="10" />
+  <text class="lbl" x="380" y="170" text-anchor="middle">B — miroir</text>
+  <text class="lbl" x="380" y="186" text-anchor="middle">différente ✗</text>
+  <text x="230" y="222" text-anchor="middle">Une rotation conserve la figure — un miroir l'inverse.</text>
+  <text class="lbl" x="230" y="244" text-anchor="middle">Astuce — suivre un repère (le carré plein) et le sens de parcours de la figure.</text>
+</svg>
