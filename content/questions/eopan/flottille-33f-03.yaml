@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.flottille-33f-03
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  Le Caïman marine de la 33F est un simple hélicoptère de transport.
+answer: false
+explanation: >-
+  Sonar trempé, torpilles MU90, mitrailleuse — le Caïman marine est un
+  hélicoptère de combat anti-sous-marin, qui assure aussi le secours en mer.
+evaluates: [eopan.unites.flottille-33f]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

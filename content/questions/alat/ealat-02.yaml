@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.ealat-02
+kind: qcm
+theme: formation-alat
+statement: >-
+  Sur quel hélicoptère se fait la formation initiale à Dax ?
+choices:
+  - "Le H120 Calliopé"
+  - "Le Tigre"
+  - "La Gazelle"
+  - "Le NH90 Caïman"
+correctChoices: [0]
+explanation: >-
+  Le H120 Calliopé, exploité en partenariat civil, est l'hélicoptère-école
+  sur lequel apprennent tous les pilotes d'hélicoptères de l'État.
+evaluates: [alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.bac-05
+kind: association
+theme: organisation-alat
+statement: >-
+  Associez chaque régiment de la 4e BAC à sa garnison.
+pairs:
+  - left: "1er RHC"
+    right: "Phalsbourg"
+  - left: "3e RHC"
+    right: "Étain"
+  - left: "5e RHC"
+    right: "Pau"
+explanation: >-
+  Phalsbourg (Moselle), Étain (Meuse), Pau (Pyrénées-Atlantiques) — les
+  trois garnisons de la brigade ; le 4e RHFS est aussi à Pau mais hors 4e BAC.
+evaluates: [alat.organisation.la-4e-brigade-d-aerocombat]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

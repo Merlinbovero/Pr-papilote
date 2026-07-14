@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.ealat-01
+kind: qcm
+theme: formation-alat
+statement: >-
+  Quelles sont les deux bases-écoles de l'EALAT ?
+choices:
+  - "Dax (formation initiale) et Le Cannet-des-Maures (formation tactique)"
+  - "Salon-de-Provence et Cognac"
+  - "Pau et Phalsbourg"
+  - "Lanvéoc et Hyères"
+correctChoices: [0]
+explanation: >-
+  Dax (Landes) apprend à voler — sur H120 Calliopé ; Le Cannet-des-Maures/
+  Le Luc (Var) apprend à combattre et héberge le commandement de l'école.
+evaluates: [alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

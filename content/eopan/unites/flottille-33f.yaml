@@ -1,0 +1,114 @@
+schemaVersion: 1
+id: eopan.unites.flottille-33f
+type: flottille
+title: Flottille 33F
+slug: flottille-33f
+summary: >-
+  Le Caïman marine à la pointe de la Bretagne — réactivée en 2011 à
+  Lanvéoc-Poulmic, la 33F traque les sous-marins, protège la force océanique
+  et sauve des vies en mer d'Iroise. L'hélicoptère de combat de la Marine.
+objectifs:
+  - Situer la 33F (BAN Lanvéoc-Poulmic, NH90 Caïman marine, réactivée en 2011).
+  - Connaître ses missions (lutte ASM, protection de la FOST, secours en mer).
+  - Comprendre la complémentarité hélicoptère embarqué / basé à terre.
+aliases: ["33F", flottille 33F, Caïman Lanvéoc, hélicoptères marine Bretagne]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F5 du plan V1 (rééquilibrage de la composante hélicoptères de l'aéronavale) ; faits vérifiés defense.gouv.fr et sources spécialisées.
+    author: prepapilote
+sources:
+  - title: "Marine nationale — la flottille 33F (defense.gouv.fr)"
+    url: https://www.defense.gouv.fr/marine/actualites/flottille-operationnelle-33f-change-commandant
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "ARDHAN — dossier « Le programme de l'hélicoptère NH90 Caïman » (aeronavale.org)"
+    url: https://aeronavale.org/wp-content/uploads/2019/08/DOSSIER-ARDHAN-1-part-2-prog.-NH-90-de%CC%81but-2018.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  factual:
+    - predicate: affecte-a
+      target: eopan.ban.lanveoc-poulmic
+    - predicate: dote-de
+      target: eopan.appareils.nh90-caiman
+  related:
+    - eopan.selection.la-preselection-en-vol
+    - eopan.concepts.groupe-aeronaval
+infobox:
+  appellation: Flottille 33F
+  ban: BAN Lanvéoc-Poulmic
+  appareils: [NH90 Caïman marine]
+  missions:
+    [Lutte anti-sous-marine, Protection de la FOST, Secours en mer, Contre-terrorisme maritime]
+content:
+  essentiel:
+    body: |
+      La **33F** est l'une des flottilles d'hélicoptères de combat de la
+      Marine — **réactivée le 8 décembre 2011** à **Lanvéoc-Poulmic**
+      avec l'arrivée du **NH90 Caïman marine**, dont elle fut la première
+      flottille équipée.
+
+      Depuis la presqu'île de Crozon, face à Brest, ses missions
+      épousent la géographie :
+
+      - la **lutte anti-sous-marine** — le Caïman, avec son sonar trempé
+        et ses torpilles **MU90**, est un chasseur de sous-marins ;
+      - la **protection de la FOST** — sécuriser les approches de l'île
+        Longue et les sorties des sous-marins lanceurs d'engins ;
+      - le **secours en mer** — alerte SAR au-dessus de l'Iroise et de
+        l'Atlantique, assistance aux navires, évacuations sanitaires ;
+      - le **contre-terrorisme maritime** — aérocordage des commandos.
+
+      La 33F partage la BAN de Lanvéoc avec l'école d'initiation au
+      pilotage (l'escadrille **50S**) — l'élève EOPAN croise chaque jour
+      les Caïman de sa possible future flottille.
+    aRetenir:
+      - "33F = Caïman marine à Lanvéoc-Poulmic — réactivée le 8 décembre 2011, première flottille NH90 de la Marine."
+      - "Ses missions collent à Brest — lutte ASM, protection de la FOST (île Longue), secours en mer en Iroise."
+      - "Le Caïman est un hélicoptère de COMBAT — sonar trempé, torpilles MU90, pas seulement du transport."
+      - Basée à terre mais embarquable — les détachements de la 33F opèrent aussi depuis les frégates.
+  sections:
+    - id: l-helicoptere-dans-l-aeronavale
+      title: La place de l'hélicoptère dans l'aéronavale
+      body: |
+        L'aéronautique navale ne se résume pas au Rafale et à l'ATL2 —
+        les **flottilles d'hélicoptères** en sont le troisième pilier.
+        Le Caïman marine prolonge les capteurs et les armes des frégates :
+        une frégate multi-missions et son hélicoptère forment un **couple
+        de chasse** anti-sous-marine, l'hélicoptère allant tremper son
+        sonar et larguer ses torpilles là où le navire ne peut pas être.
+
+        À terre, la même machine assure la **permanence de sauvetage** —
+        décoller en quelques dizaines de minutes, par tous les temps,
+        pour treuiller un marin blessé ou l'équipage d'un navire en
+        détresse : les mers bretonnes fournissent l'entraînement le plus
+        réaliste qui soit.
+    - id: pour-le-candidat-eopan
+      title: Ce que la 33F montre au candidat
+      strate: maitriser
+      body: |
+        Pour un candidat EOPAN, la 33F incarne la **filière
+        hélicoptères** — l'une des trois orientations possibles après la
+        présélection de la 50S, sur la même base. Elle rappelle deux
+        vérités utiles en entretien : voler sur hélicoptère dans la
+        Marine, c'est faire du **combat** (ASM, commandos) autant que du
+        **sauvetage** ; et la dissuasion n'est pas qu'une affaire de
+        sous-marins ou de Rafale — quelqu'un doit protéger les SNLE
+        quand ils sortent de l'île Longue, et ce quelqu'un vole souvent
+        en Caïman.
+  pieges:
+    - "La 33F a été RÉACTIVÉE en 2011 avec le Caïman — la flottille elle-même a une histoire bien plus ancienne."
+    - Le Caïman marine est un hélicoptère de combat (sonar, torpilles MU90) — pas un simple hélicoptère de transport.
+    - Basée à Lanvéoc mais embarquable — ses détachements opèrent depuis les frégates.
+    - "Protéger la FOST fait partie de la dissuasion — l'hélicoptère y contribue autant que le sous-marin qu'il escorte."
