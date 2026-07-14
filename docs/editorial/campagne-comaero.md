@@ -1,6 +1,6 @@
 # Campagne d'ingestion COMAERO
 
-Statut : tome 1 soldé (CM1→CM4 produits le 2026-07-14) · Ouverte le 2026-07-14 · Protocole : identique au Guide EOPAN
+Statut : tome 1 et tomes « Avions militaires » soldés (CM1→CM4 et AV1→AV6 produits le 2026-07-14) · Ouverte le 2026-07-14 · Protocole : identique au Guide EOPAN
 (téléchargement → audit complet → plan de lots → production → rapport par lot).
 
 ## Le corpus

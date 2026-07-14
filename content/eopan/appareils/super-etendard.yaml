@@ -21,11 +21,15 @@ level: 3
 createdAt: "2026-07-13"
 verifiedAt: "2026-07-13"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche historique Super-Étendard (campagne de recherche n°1, lot N6 ; Dassault et sources spécialisées recoupées).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 2
+    motif: Enrichissement — le choix de 1973 (COMAERO t. I ch. 11, lot AV6) ; correction du réacteur — Atar 8K50 (dérivé du 9K50, sans PC), et non 9K-50, conformément aux documents de programme cités par le COMAERO.
     author: prepapilote
 sources:
   - title: "Super-Étendard — origines, caractéristiques et performances (Dassault Aviation)"
@@ -36,6 +40,10 @@ sources:
     url: https://en.wikipedia.org/wiki/Dassault-Breguet_Super_%C3%89tendard
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "COMAERO — Les avions militaires, tome I (EUROSAE), ch. 11 (Super-Étendard 1973)"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
 status: publie
 relations:
   related:
@@ -82,13 +90,35 @@ content:
         Dérivé de l'**Étendard IV**, le Super-Étendard est conçu **pour** le
         pont d'envol : dimensions compactes, **ailes repliables** (flèche
         d'environ 45°), crosse, structure endurcie aux catapultages. Son
-        réacteur **Atar 9K-50** (sans post-combustion) en fait un
-        subsonique — la vitesse n'était pas sa mission, la **frappe** l'était.
+        réacteur **Atar 8K50** (dérivé de l'Atar 9K50, sans
+        post-combustion) en fait un subsonique — la vitesse n'était pas sa
+        mission, la **frappe** l'était.
 
         Aux **Malouines** (1982), les Super-Étendard de la marine
         **argentine** et leurs Exocet marquent l'histoire navale — la
         preuve, amère pour la Royal Navy, de la létalité du couple
         avion-missile antinavire que la France avait créé.
+    - id: le-choix-de-1973
+      title: Le choix de 1973 — la Marine impose son avion
+      strate: maitriser
+      body: |
+        Le Super-Étendard n'était pas le favori. Pour remplacer les
+        Étendard, la solution officielle était le **Jaguar M** navalisé —
+        qui apponta sur le **Clemenceau** dès juillet 1970. Mais l'avion
+        travaillait catapultes et brins d'arrêt à leur limite, et
+        l'état-major de la Marine finit par ne « plus vouloir en entendre
+        parler » (COMAERO). Face à un éventail allant du Corsair A-7
+        américain au Skyhawk, Dassault proposa en 1972 un dérivé
+        modernisé de l'Étendard — retenu par décision ministérielle du
+        **19 janvier 1973**.
+
+        Deux choix de souveraineté suivirent — le moteur **français**
+        Atar 8K50 préféré au J52 américain (décisions de mars-mai 1973,
+        contre l'avis initial de la Marine), et une **centrale à
+        inertie** : le Super-Étendard fut le **premier avion d'armes
+        français** à en recevoir une, choix qui engageait toute une
+        génération d'avions. Premier appontage en **1975**, premier des
+        **71** exemplaires livré en **1978** — la suite est légende.
     - id: du-sem-au-tout-rafale
       title: Du SEM au tout-Rafale
       strate: maitriser

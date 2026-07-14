@@ -21,11 +21,15 @@ level: 2
 createdAt: "2026-07-13"
 verifiedAt: "2026-07-13"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche-objet appareil, l'avion de patrouille maritime Atlantique 2 (ATL2).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 2
+    motif: Enrichissement — les origines OTAN de l'Atlantic (concours multinational 1958), COMAERO t. I ch. 12-14 (lot AV6).
     author: prepapilote
 sources:
   - title: "Atlantique 2 (ATL 2) — Ministère des Armées, Marine nationale"
@@ -36,6 +40,10 @@ sources:
     url: https://fr.wikipedia.org/wiki/Breguet_Atlantic
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "COMAERO — Les avions militaires, tome I (EUROSAE), ch. 12-14 (Breguet 1150 Atlantic, coopération multilatérale)"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
 status: publie
 relations:
   related:
@@ -113,6 +121,26 @@ content:
         Tout ce système est servi par un **équipage nombreux** — jusqu'à une
         **douzaine** d'opérateurs de mission travaillant aux consoles, en plus
         de l'équipage de conduite.
+    - id: les-origines-otan
+      title: Les origines — un avion né d'un concours OTAN
+      strate: maitriser
+      body: |
+        L'Atlantic originel (Breguet 1150) est né d'une procédure restée
+        exemplaire. Face à la menace sous-marine des années 1950, le
+        Conseil de l'**OTAN** lance un **concours multinational** — une
+        spécification unique, adressée en mars 1958 à plus de vingt
+        firmes de huit pays. Le projet **Breguet**, allié à Sud-Aviation,
+        Fokker et Dornier, est retenu **à l'unanimité** le 21 octobre
+        1958.
+
+        Le développement est financé en commun (France 43,4 %,
+        États-Unis 25 %, Allemagne, Pays-Bas, Belgique) et produit en
+        coopération européenne — une première. L'**Atlantique 2**,
+        commandé dans les années 1980 pour succéder à l'Atlantic 1, hérite
+        de cette cellule éprouvée mais reçoit un système de combat
+        entièrement nouveau. Retenir la filiation — **Alizé** (embarqué),
+        **Atlantic** (1965), **ATL2** (1989) : trois générations de
+        traque sous-marine française.
     - id: renovation-standard-6
       title: La rénovation au standard 6
       strate: maitriser

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-06
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quel avion le Super-Étendard a-t-il battu en 1973 pour équiper les
+  porte-avions français ?
+choices:
+  - "Le Jaguar M navalisé"
+  - "Le Mirage F1"
+  - "Le F-8 Crusader"
+  - "L'Alphajet"
+correctChoices: [0]
+explanation: >-
+  Le Jaguar M avait apponté sur le Clemenceau dès 1970, mais poussait
+  catapultes et brins à leurs limites — la Marine imposa le Super-Étendard,
+  retenu par décision ministérielle du 19 janvier 1973.
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie
