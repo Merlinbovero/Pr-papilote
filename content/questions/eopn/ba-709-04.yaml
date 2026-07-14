@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.ba-709-04
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Combien de PC-21 la flotte de Cognac doit-elle compter à terme ?
+choices:
+  - "26 (17 livrés en 2018-2019, puis 9 supplémentaires)"
+  - "5"
+  - "63"
+  - "169"
+correctChoices: [0]
+explanation: >-
+  17 PC-21 ont été livrés en 2018-2019, complétés par 9 exemplaires depuis
+  fin 2022 — 26 au total à terme. 63 est le nombre de Caïman TTH de l'armée
+  de Terre, 169 celui des Guépard commandés.
+evaluates: [eopn.bases.cognac]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

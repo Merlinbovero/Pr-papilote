@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.ba-709-01
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quelles unités principales la BA 709 de Cognac abrite-t-elle ?
+choices:
+  - L'École de l'aviation de chasse (PC-21) et l'escadron de drones 1/33 « Belfort » (Reaper)
+  - La Patrouille de France et l'Équipe de voltige
+  - Les escadrons Rafale de la 4e escadre
+  - Les flottilles 21F et 23F
+correctChoices: [0]
+explanation: >-
+  La BA 709 a deux visages : la formation (École de l'aviation de chasse et
+  ses PC-21) et la surveillance (escadron de drones 1/33 « Belfort » sur
+  MQ-9 Reaper).
+evaluates: [eopn.bases.cognac]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

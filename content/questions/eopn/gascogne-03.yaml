@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.gascogne-03
+kind: vrai-faux
+theme: unites-aae
+statement: >-
+  L'escadron 1/91 « Gascogne » et l'escadron 1/4 « Gascogne » sont deux unités différentes.
+answer: false
+explanation: >-
+  Faux. C'est le même escadron : le 1/91 « Gascogne » a été renuméroté 1/4 en
+  2016 lors de la recréation de la 4e escadre de chasse. Les numéros changent,
+  les traditions continuent.
+evaluates: [eopn.unites.escadron-1-4-gascogne]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

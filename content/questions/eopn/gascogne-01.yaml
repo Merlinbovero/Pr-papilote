@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.gascogne-01
+kind: qcm
+theme: unites-aae
+statement: >-
+  Quelle est la mission principale de l'escadron de chasse 1/4 « Gascogne » ?
+choices:
+  - L'alerte nucléaire des Forces aériennes stratégiques (Rafale B + ASMP-A)
+  - La formation initiale des pilotes
+  - La police du ciel au-dessus de Paris
+  - Le transport de personnalités
+correctChoices: [0]
+explanation: >-
+  Le « Gascogne » est l'escadron nucléaire des FAS : depuis Saint-Dizier, ses
+  Rafale B biplaces portent le missile ASMP-A — la composante aéroportée de
+  la dissuasion.
+evaluates: [eopn.unites.escadron-1-4-gascogne]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

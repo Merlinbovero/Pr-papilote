@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: eopn.bases.cognac
+type: base-aerienne
+title: Base aérienne 709 Cognac-Châteaubernard
+slug: cognac
+summary: >-
+  La base des ailes naissantes — la BA 709 de Cognac abrite l'École de
+  l'aviation de chasse et ses PC-21, mais aussi les drones Reaper de
+  l'escadron 1/33 « Belfort » : formation et surveillance sous le même ciel
+  charentais.
+objectifs:
+  - Situer la BA 709 (Cognac-Châteaubernard, Charente) et ses deux visages (formation, drones).
+  - Relier la base à l'École de l'aviation de chasse et à sa flotte de PC-21.
+  - Connaître ses repères historiques (terrain de 1938, BA 709 depuis 1961).
+aliases: [BA 709, Cognac, Châteaubernard, base de Cognac]
+module: eopn
+category: bases
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche BA 709 Cognac (lot N10, écosystème des bases EOPN ; Wikipédia et defense.gouv.fr recoupés).
+    author: prepapilote
+sources:
+  - title: "Base aérienne 709 Cognac-Châteaubernard — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_a%C3%A9rienne_709_Cognac-Ch%C3%A2teaubernard
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "EAC — 80 ans d'excellence (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/tous-nos-dossiers/eac-80-ans-dexcellence
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.organisation.ecole-de-l-aviation-de-chasse
+    - eopn.appareils.pc-21
+    - eopn.selection.la-formation-du-pilote-de-chasse
+    - eopn.bases.salon-de-provence
+infobox:
+  nomComplet: Base aérienne 709 Cognac-Châteaubernard
+  code: BA 709
+  localisation: Châteaubernard, près de Cognac (Charente)
+  armee: Armée de l'air et de l'Espace
+  unitesStationnees:
+    [École de l'aviation de chasse (PC-21), Escadron de drones 1/33 « Belfort » (MQ-9 Reaper)]
+content:
+  essentiel:
+    body: |
+      La **BA 709**, implantée à **Châteaubernard** près de Cognac
+      (Charente), est la base où **naissent les pilotes de chasse
+      français** : elle abrite l'**École de l'aviation de chasse
+      « Christian Martell »** et sa flotte de **PC-21** — 17 appareils
+      livrés en 2018-2019, complétés depuis fin 2022 par 9 exemplaires
+      supplémentaires, soit **26** au total à terme.
+
+      La base a un **second visage**, très différent : l'escadron de drones
+      **1/33 « Belfort »** y met en œuvre les **MQ-9 Reaper** — les drones
+      de surveillance et de frappe de l'armée de l'Air et de l'Espace.
+
+      L'histoire du site remonte à **1938** (création du terrain
+      d'aviation) ; la base devient **BA 709** en **1961**, en accueillant
+      une école de pilotage élémentaire venue de Marrakech — la vocation
+      « école » ne l'a plus quittée.
+    aRetenir:
+      - BA 709 — Châteaubernard/Cognac (Charente), la base de l'École de l'aviation de chasse.
+      - Flotte PC-21 — 17 livrés en 2018-2019, puis 9 de plus depuis fin 2022 (26 à terme).
+      - Second visage — l'escadron de drones 1/33 « Belfort » et ses MQ-9 Reaper.
+      - Terrain créé en 1938 ; BA 709 depuis 1961 — une vocation d'école ininterrompue.
+  sections:
+    - id: la-base-ecole
+      title: La base-école de la chasse
+      body: |
+        Depuis la fusion de 2020, **toute** la spécialisation chasse se
+        joue à Cognac : l'élève y arrive après Salon-de-Provence, vole sur
+        **Grob 120** puis **PC-21** au sein des escadrons d'instruction
+        (1/13 « Artois », 2/12 « Picardie »), et en repart — s'il
+        confirme — avec son **macaron** de pilote de chasse, direction la
+        transformation sur Rafale ou Mirage 2000.
+
+        Les **simulateurs** PC-21 complètent la flotte : une partie
+        croissante de la formation se joue au sol, à moindre coût et sans
+        risque — la même logique que dans les armées voisines.
+    - id: les-drones-du-belfort
+      title: Les drones du « Belfort »
+      strate: maitriser
+      body: |
+        L'escadron **1/33 « Belfort »** — héritier des traditions de la
+        reconnaissance aérienne — opère depuis Cognac les **MQ-9 Reaper** :
+        surveillance persistante, renseignement et frappe, avec des
+        équipages **au sol** (pilote et opérateur capteurs en cabine).
+
+        Cette cohabitation illustre une évolution du métier : à côté du
+        pilote « dans » l'avion émerge l'équipage de **drone**, autre
+        façon de servir dans la troisième dimension — un sujet d'actualité
+        apprécié en entretien EOPN.
+  pieges:
+    - La BA 709 n'est pas qu'une base-école — elle abrite aussi les drones Reaper du 1/33 « Belfort ».
+    - L'École de l'aviation de chasse est à Cognac depuis la fusion de 2020 — Tours appartient au passé.
+    - Le parc PC-21 a évolué (17 puis 26 appareils) — dater le chiffre qu'on cite.

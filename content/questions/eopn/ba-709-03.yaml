@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.ba-709-03
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Dans quel département se trouve la BA 709 de Cognac-Châteaubernard ?
+choices:
+  - La Charente
+  - La Haute-Marne
+  - Les Bouches-du-Rhône
+  - Le Finistère
+correctChoices: [0]
+explanation: >-
+  La BA 709 est implantée à Châteaubernard, près de Cognac, en Charente.
+  Saint-Dizier (BA 113) est en Haute-Marne, Salon-de-Provence (BA 701) dans
+  les Bouches-du-Rhône.
+evaluates: [eopn.bases.cognac]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

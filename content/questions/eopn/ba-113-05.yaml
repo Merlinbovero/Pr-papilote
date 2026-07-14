@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.ba-113-05
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Dans quel département se trouve la BA 113 de Saint-Dizier ?
+choices:
+  - La Haute-Marne
+  - La Charente
+  - La Moselle
+  - Les Landes
+correctChoices: [0]
+explanation: >-
+  Saint-Dizier-Robinson est en Haute-Marne. La Charente accueille Cognac
+  (BA 709), la Moselle le 1er RHC (Phalsbourg), les Landes l'école de Dax.
+evaluates: [eopn.bases.saint-dizier]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

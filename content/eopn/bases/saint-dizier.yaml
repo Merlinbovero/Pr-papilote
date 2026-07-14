@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: eopn.bases.saint-dizier
+type: base-aerienne
+title: Base aérienne 113 Saint-Dizier-Robinson
+slug: saint-dizier
+summary: >-
+  Première base Rafale de l'armée de l'Air (2006) et base stratégique de la
+  dissuasion, la BA 113 « Commandant Antoine de Saint-Exupéry » abrite la 4e
+  escadre de chasse — dont le « Gascogne » nucléaire et l'ETR « Aquitaine »
+  où se transforment les jeunes pilotes.
+objectifs:
+  - Situer la BA 113 (Saint-Dizier, Haute-Marne) et son rôle stratégique (FAS).
+  - Connaître la 4e escadre de chasse (1/4 Gascogne, 2/4 La Fayette, ETR 3/4 Aquitaine).
+  - Relier la base au parcours du jeune pilote (transformation Rafale à l'ETR).
+aliases: [BA 113, Saint-Dizier, Saint-Dizier-Robinson, base Saint-Exupéry, 4e escadre]
+module: eopn
+category: bases
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche BA 113 Saint-Dizier (lot N10, écosystème des bases EOPN ; sources officielles et Wikipédia recoupées).
+    author: prepapilote
+sources:
+  - title: "Historique de la BA 113 (armée de l'Air et de l'Espace)"
+    url: https://air.defense.gouv.fr/ba-113/fiche/historique-de-la-ba113
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Base aérienne 113 Saint-Dizier-Robinson — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_a%C3%A9rienne_113_Saint-Dizier-Robinson
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.unites.escadron-1-4-gascogne
+    - eopn.selection.la-formation-du-pilote-de-chasse
+    - eopn.appareils.rafale
+    - eopn.missions.missions-de-l-armee-de-l-air
+infobox:
+  nomComplet: Base aérienne 113 « Commandant Antoine de Saint-Exupéry »
+  code: BA 113
+  localisation: Saint-Dizier (Haute-Marne)
+  armee: Armée de l'air et de l'Espace
+  unitesStationnees:
+    [
+      Escadron de chasse 1/4 « Gascogne »,
+      Escadron de chasse 2/4 « La Fayette »,
+      Escadron de transformation Rafale 3/4 « Aquitaine »,
+    ]
+content:
+  essentiel:
+    body: |
+      La **BA 113 Saint-Dizier-Robinson** (Haute-Marne) porte depuis
+      **1956** le nom du **commandant Antoine de Saint-Exupéry** — un
+      parrainage voulu par un ancien compagnon d'armes de l'écrivain-pilote.
+
+      Elle est doublement stratégique :
+
+      - **première base Rafale** de l'armée de l'Air — l'escadron 1/7
+        « Provence » y a mis l'avion en service en **2006** ;
+      - **base de la dissuasion** — l'escadron **1/4 « Gascogne »** y tient
+        l'alerte nucléaire des **FAS** (Rafale + ASMP-A).
+
+      Elle abrite la **4e escadre de chasse** : le **1/4 « Gascogne »**
+      (nucléaire), le **2/4 « La Fayette »** et l'**ETR 3/4 « Aquitaine »**
+      — l'escadron où les jeunes pilotes brevetés à Cognac se
+      **transforment** sur Rafale. Pour un EOPN filière chasse, Saint-Dizier
+      est souvent la **première affectation opérationnelle**.
+    aRetenir:
+      - BA 113 Saint-Dizier — baptisée « Commandant Antoine de Saint-Exupéry » depuis 1956.
+      - Première base Rafale de l'armée de l'Air (2006, escadron « Provence »).
+      - "La 4e escadre de chasse — 1/4 « Gascogne » (FAS), 2/4 « La Fayette », ETR 3/4 « Aquitaine » (transformation)."
+      - Base stratégique — l'alerte nucléaire des FAS s'y tient avec le couple Rafale/ASMP-A.
+  sections:
+    - id: du-robinson-au-rafale
+      title: Du Robinson au Rafale
+      body: |
+        Le terrain du **Robinson** vole depuis 1913 ; la base moderne est
+        inaugurée en **1951**, au temps de la guerre froide. Elle
+        accueille ensuite des générations d'avions d'armes — jusqu'au
+        tournant de **2006** : Saint-Dizier devient la **première base
+        Rafale** de l'armée de l'Air, avec l'escadron **1/7 « Provence »**.
+
+        En **2015**, l'armée de l'Air fait renaître les **escadres** : la
+        **4e escadre de chasse** regroupe à Saint-Dizier les escadrons
+        Rafale — dont le **« Gascogne »**, renuméroté **1/4** en 2016
+        (ex-1/91).
+    - id: le-role-dans-le-parcours-du-pilote
+      title: Son rôle dans le parcours du pilote
+      strate: maitriser
+      body: |
+        Pour le jeune breveté de Cognac affecté chasse conventionnelle ou
+        nucléaire, tout passe par l'**ETR 3/4 « Aquitaine »** : environ
+        **cinq mois** de transformation — apprendre le **Rafale**, son
+        système d'armes, ses procédures — avant de rejoindre un escadron.
+
+        La présence simultanée, sur une même base, de la **formation**
+        (ETR), de la **chasse conventionnelle** (La Fayette) et de la
+        **dissuasion** (Gascogne) fait de la BA 113 un condensé du métier :
+        du premier vol sur Rafale à l'alerte nucléaire, tout l'éventail des
+        responsabilités du pilote de chasse s'y côtoie.
+  pieges:
+    - Saint-Dizier est la première base Rafale de l'armée de l'Air (2006) — le Rafale Marine, lui, volait depuis le porte-avions dès 2001.
+    - Le « Gascogne » est l'escadron nucléaire des FAS — ne pas le confondre avec l'ETR « Aquitaine » (transformation).
+    - La 4e escadre (2015) a renuméroté les escadrons — le 1/91 « Gascogne » est devenu 1/4 en 2016 ; les traditions continuent sous de nouveaux numéros.

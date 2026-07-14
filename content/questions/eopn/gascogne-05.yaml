@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.gascogne-05
+kind: vrai-faux
+theme: unites-aae
+statement: >-
+  La mission du « Gascogne » étant de ne jamais tirer son missile, l'escadron s'entraîne peu.
+answer: false
+explanation: >-
+  Faux. La crédibilité de la dissuasion repose sur un entraînement permanent
+  et évalué (exercices Poker). Le paradoxe assumé : s'entraîner sans relâche à
+  une mission dont la réussite est de n'être jamais exécutée.
+evaluates: [eopn.unites.escadron-1-4-gascogne]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.ba-113-02
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quel nom de baptême la BA 113 de Saint-Dizier porte-t-elle ?
+choices:
+  - Commandant Antoine de Saint-Exupéry
+  - Capitaine Georges Guynemer
+  - Christian Martell
+  - Général Pineau
+correctChoices: [0]
+explanation: >-
+  Depuis 1956, la BA 113 porte le nom du commandant Antoine de
+  Saint-Exupéry — un parrainage initié par un ancien compagnon d'armes de
+  l'écrivain-pilote.
+evaluates: [eopn.bases.saint-dizier]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
