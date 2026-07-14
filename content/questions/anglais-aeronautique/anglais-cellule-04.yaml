@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-cellule-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Comment dit-on « train sorti » en anglais ?
+choices:
+  - Gear down
+  - Gear up
+  - Wheel off
+  - Leg out
+correctChoices: [0]
+explanation: >-
+  Gear down = train sorti ; gear up = train rentré ; gear unsafe = indication
+  anormale. Le train d'atterrissage se dit landing gear.
+evaluates: [fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

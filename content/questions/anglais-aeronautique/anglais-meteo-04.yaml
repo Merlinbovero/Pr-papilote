@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-meteo-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Comment dit-on « givrage » en anglais ?
+choices:
+  - Icing
+  - Freezing rain
+  - Snowing
+  - Frosting
+correctChoices: [0]
+explanation: >-
+  Icing = givrage (l'accrétion de glace sur l'avion). Freezing rain (FZRA)
+  est la pluie verglaçante — une cause de givrage, pas le phénomène lui-même.
+evaluates: [fondamentaux.anglais-aeronautique.la-meteo-en-anglais]
+difficulty: 1
+competencies: [anglais-aeronautique, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

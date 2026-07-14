@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-instruments-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « master caution » et « master warning » ?
+choices:
+  - Caution = alarme ambre (attention requise) ; warning = alarme rouge (action immédiate)
+  - Caution = alarme rouge ; warning = alarme ambre
+  - Ce sont deux noms du même voyant
+  - Warning ne concerne que le train d'atterrissage
+correctChoices: [0]
+explanation: >-
+  Les alarmes se hiérarchisent : advisory (information), caution (ambre —
+  attention), warning (rouge — action immédiate). Les deux boutons master
+  trônent au sommet du tableau de bord.
+evaluates: [fondamentaux.anglais-aeronautique.les-instruments-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

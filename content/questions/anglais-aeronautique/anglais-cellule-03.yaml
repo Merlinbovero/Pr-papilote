@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-cellule-03
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « flaps » et « slats » ?
+choices:
+  - Flaps = volets au bord de fuite ; slats = becs au bord d'attaque
+  - Flaps = becs ; slats = volets
+  - Ce sont deux noms des aérofreins
+  - Flaps ne s'emploie qu'au singulier
+correctChoices: [0]
+explanation: >-
+  Les flaps (volets) se trouvent au bord de fuite, les slats (becs) au bord
+  d'attaque — deux dispositifs d'hypersustentation que les QCM adorent
+  intervertir.
+evaluates: [fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-instruments-01
+kind: association
+theme: anglais-vocabulaire
+statement: >-
+  Associez chaque instrument français à son nom anglais.
+pairs:
+  - left: Anémomètre (badin)
+    right: Airspeed indicator
+  - left: Horizon artificiel
+    right: Attitude indicator
+  - left: Variomètre
+    right: Vertical speed indicator
+  - left: Conservateur de cap
+    right: Heading indicator
+explanation: >-
+  Les six instruments de base ont leurs noms anglais canoniques : airspeed
+  indicator, altimeter, attitude indicator, heading indicator, VSI, turn
+  coordinator.
+evaluates: [fondamentaux.anglais-aeronautique.les-instruments-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

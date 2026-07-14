@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-cellule-05
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Comment se nomme la crosse d'appontage en anglais ?
+choices:
+  - Tailhook (ou arrestor hook)
+  - Fish hook
+  - Tail wheel
+  - Catch bar
+correctChoices: [0]
+explanation: >-
+  La crosse d'appontage se dit tailhook ou arrestor hook — un mot essentiel
+  pour les futurs pilotes de l'aéronavale, dont le cursus chasse passe par
+  les États-Unis.
+evaluates: [fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-cellule-01
+kind: association
+theme: anglais-vocabulaire
+statement: >-
+  Associez chaque gouverne anglaise à l'axe qu'elle commande.
+pairs:
+  - left: Ailerons
+    right: Roll (roulis)
+  - left: Elevator
+    right: Pitch (tangage)
+  - left: Rudder
+    right: Yaw (lacet)
+explanation: >-
+  Le trio à connaître dans les deux langues : ailerons → roll, elevator →
+  pitch, rudder → yaw. Roll, pitch, yaw reviennent dans toutes les
+  documentations.
+evaluates: [fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes]
+difficulty: 1
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

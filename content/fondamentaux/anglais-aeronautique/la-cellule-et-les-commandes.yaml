@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes
+type: concept
+title: La cellule et les commandes en anglais
+slug: la-cellule-et-les-commandes
+summary: >-
+  Wing, aileron, rudder, flaps, landing gear — l'anatomie de l'avion en
+  anglais, des surfaces de vol au train d'atterrissage, avec les pièges
+  favoris des QCM (rudder/elevator, flap/slat).
+objectifs:
+  - Nommer en anglais les éléments de la cellule (fuselage, wing, tail, canopy).
+  - Associer chaque commande de vol à sa surface (stick/aileron, pedals/rudder).
+  - Déjouer les confusions classiques (rudder vs elevator, flaps vs slats).
+aliases: [cellule en anglais, wing, aileron, rudder, elevator, flaps, landing gear]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — vocabulaire cellule et commandes (lot N13, phase P3 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.mecanique-du-vol.axes-et-gouvernes
+    - fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant
+content:
+  essentiel:
+    body: |
+      L'anatomie de l'avion, colonne par colonne :
+
+      | Français | Anglais |
+      | --- | --- |
+      | fuselage | **fuselage** |
+      | aile | **wing** |
+      | empennage | **tail** (unit) / **empennage** |
+      | verrière | **canopy** |
+      | aileron | **aileron** |
+      | gouverne de profondeur | **elevator** |
+      | gouverne de direction | **rudder** |
+      | volets | **flaps** |
+      | becs de bord d'attaque | **slats** |
+      | aérofreins | **airbrakes / speed brakes** |
+      | train d'atterrissage | **landing gear** |
+      | crosse d'appontage | **arrestor hook / tailhook** |
+
+      Côté **commandes** : le manche (**stick**) ou le volant (**yoke**)
+      agit sur ailerons et profondeur ; les palonniers (**rudder pedals**)
+      sur la direction ; la manette des gaz est le **throttle**.
+
+      Les pièges d'or des QCM : **elevator** n'est pas un ascenseur (c'est
+      la **profondeur**), et **rudder** commande le **lacet** — pas les
+      virages à lui seul.
+    aRetenir:
+      - "Les trois gouvernes — aileron (roulis), elevator (tangage), rudder (lacet)."
+      - "Flaps = volets (hypersustentation) ; slats = becs ; airbrakes = aérofreins — trois choses différentes."
+      - "Stick/yoke = manche/volant ; rudder pedals = palonniers ; throttle = manette des gaz."
+      - "Elevator = gouverne de profondeur — le faux ami « ascenseur » est le piège classique."
+  sections:
+    - id: gouvernes-et-axes
+      title: Gouvernes et axes en anglais
+      body: |
+        Chaque gouverne pilote un axe — le trio se récite dans les deux
+        langues :
+
+        | Gouverne (EN) | Axe (EN) | Mouvement |
+        | --- | --- | --- |
+        | ailerons | **roll** (axe de roulis) | incliner les ailes |
+        | elevator | **pitch** (axe de tangage) | lever/baisser le nez |
+        | rudder | **yaw** (axe de lacet) | déplacer le nez à gauche/droite |
+
+        *Roll, pitch, yaw* — trois monosyllabes à connaître par cœur : ils
+        reviennent dans toutes les documentations, tous les simulateurs et
+        bien des QCM. Le **trim** (compensateur) garde son nom dans les
+        deux langues.
+    - id: hypersustentation-et-train
+      title: Hypersustentation et train
+      strate: maitriser
+      body: |
+        La famille de l'**hypersustentation** se confond facilement :
+
+        - **flaps** (volets) — au bord de **fuite**, sortis pour décoller
+          et atterrir (*flaps down*, *retract the flaps*) ;
+        - **slats** (becs) — au bord d'**attaque** ;
+        - **spoilers / airbrakes** — détruisent la portance ou freinent.
+
+        Le **landing gear** se décline : *gear up* (train rentré), *gear
+        down* (train sorti), *gear unsafe* (indication anormale), *nose
+        wheel* (roulette de nez), *main gear* (train principal). Et sur un
+        avion embarqué s'ajoutent le **tailhook** (crosse) et le
+        **catapult launch bar** — l'anglais du porte-avions, omniprésent
+        dans les cursus américains des pilotes de l'aéronavale.
+  pieges:
+    - "Elevator = gouverne de profondeur, pas « ascenseur » — LE faux ami de l'anglais aéronautique."
+    - "Rudder commande le lacet — on ne vire pas « au palonnier » seul : les ailerons inclinent, le rudder coordonne."
+    - "Flaps (bord de fuite) ≠ slats (bord d'attaque) — les QCM adorent l'inversion."
+    - "Roll, pitch, yaw — roulis, tangage, lacet : l'ordre des trois axes se teste dans les deux sens."

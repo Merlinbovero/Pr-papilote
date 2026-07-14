@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant
+type: concept
+title: Le moteur et le carburant en anglais
+slug: le-moteur-et-le-carburant
+summary: >-
+  Thrust, throttle, propeller, afterburner — l'anglais de la propulsion, du
+  moteur à pistons au réacteur, et le vocabulaire du carburant (refuel, fuel
+  flow, endurance) indispensable aux QCM comme à la radio.
+objectifs:
+  - Nommer en anglais les types de moteurs (piston engine, turboprop, jet engine) et leurs éléments.
+  - Employer le vocabulaire du carburant (fuel, refuel, fuel flow, endurance).
+  - Distinguer thrust (poussée) et power (puissance) selon la motorisation.
+aliases: [moteur en anglais, thrust, throttle, propeller, afterburner, fuel, refuel]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — vocabulaire moteur et carburant (lot N13, phase P3 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes
+    - fondamentaux.anglais-aeronautique.l-anglais-des-urgences
+content:
+  essentiel:
+    body: |
+      La propulsion en deux colonnes :
+
+      | Français | Anglais |
+      | --- | --- |
+      | moteur à pistons | **piston engine** |
+      | turbopropulseur | **turboprop** |
+      | réacteur | **jet engine** |
+      | hélice | **propeller** (fam. *prop*) |
+      | poussée | **thrust** |
+      | puissance | **power** |
+      | manette des gaz | **throttle** |
+      | post-combustion | **afterburner** |
+      | démarrage | **start-up** |
+      | panne moteur | **engine failure** |
+
+      Et le **carburant** : *fuel* (carburant), *to refuel* (ravitailler),
+      *fuel tank* (réservoir), *fuel flow* (débit), *endurance* (autonomie),
+      *drop tank* (réservoir largable), *air-to-air refuelling* ou l'américain
+      *aerial refueling* (ravitaillement en vol).
+
+      Distinction utile : un moteur à hélice délivre de la **power**
+      (puissance, en ch/kW) ; un réacteur délivre du **thrust** (poussée, en
+      kN ou livres) — les QCM jouent sur les deux.
+    aRetenir:
+      - "Trois motorisations — piston engine, turboprop, jet engine ; l'hélice se dit propeller."
+      - "Thrust = poussée (réacteurs) ; power = puissance (moteurs à hélice)."
+      - "Carburant — fuel, to refuel, fuel flow, endurance ; le ravitaillement en vol = air-to-air refuelling."
+      - "Afterburner = post-combustion — le surcroît de poussée des avions de combat."
+  sections:
+    - id: du-piston-au-reacteur
+      title: Du piston au réacteur
+      body: |
+        Les phrases types que les textes de QCM affectionnent :
+
+        - *the engine drives the propeller* — le moteur entraîne l'hélice ;
+        - *the pilot advances the throttle* — le pilote pousse la manette ;
+        - *the jet produces 75 kN of thrust* — le réacteur délivre 75 kN
+          de poussée ;
+        - *engine start-up / engine shutdown* — mise en route / coupure ;
+        - *the engine flamed out* — le réacteur s'est éteint (*flameout* =
+          extinction réacteur) ;
+        - *to windmill* — tourner en moulinet (hélice ou réacteur éteint).
+
+        Le PC-21 des écoles françaises est un **turboprop** ; le Rafale un
+        **twin-engine jet** (biréacteur) ; le Caïman un **twin-turbine
+        helicopter** — décrire les appareils du site en anglais est un
+        excellent exercice.
+    - id: le-carburant-en-situation
+      title: Le carburant en situation
+      strate: maitriser
+      body: |
+        Le carburant parle à la radio comme dans les manuels :
+
+        - *fuel remaining : two hours* — autonomie restante (toujours en
+          **temps**) ;
+        - *fuel leak* — fuite de carburant ; *fuel starvation* — panne
+          d'alimentation ; *to run out of fuel* — tomber en panne sèche ;
+        - *tanker* — l'avion ravitailleur ; *boom* et *probe-and-drogue* —
+          les deux systèmes de ravitaillement en vol (perche rigide
+          américaine / panier souple, utilisé par les Rafale) ;
+        - *bingo fuel* — dans l'aviation militaire, le seuil de carburant
+          imposant le retour (un mot d'argot opérationnel passé dans
+          l'usage).
+
+        La chaîne carburant-autonomie-ravitaillement structure la moitié
+        des récits d'opérations aériennes en anglais — la maîtriser, c'est
+        comprendre les textes des épreuves de compréhension.
+  pieges:
+    - "Thrust (poussée, réacteur) et power (puissance, hélice) ne sont pas interchangeables."
+    - "Propeller = hélice ; ne pas le confondre avec propulsion ni avec rotor (hélicoptère)."
+    - "L'autonomie carburant s'exprime en temps (fuel remaining : two hours), jamais en litres à la radio."
+    - "Flameout = extinction réacteur en vol — un mot précis que les QCM aiment tester."

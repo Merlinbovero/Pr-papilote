@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-moteur-01
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « thrust » et « power » ?
+choices:
+  - Thrust = poussée (réacteurs) ; power = puissance (moteurs à hélice)
+  - Ce sont deux synonymes
+  - Thrust = puissance électrique ; power = poussée
+  - Thrust ne s'emploie que pour les fusées
+correctChoices: [0]
+explanation: >-
+  Un réacteur délivre du thrust (poussée, en kN) ; un moteur à hélice délivre
+  de la power (puissance, en ch/kW). Les QCM jouent régulièrement sur la
+  distinction.
+evaluates: [fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
