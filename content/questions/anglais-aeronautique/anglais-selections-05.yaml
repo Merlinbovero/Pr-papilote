@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-selections-05
+kind: qcm
+theme: anglais-methode
+statement: >-
+  Pourquoi l'anglais pèse-t-il particulièrement lourd pour un futur pilote de chasse de l'aéronavale ?
+choices:
+  - Une partie du cursus chasse de la Marine se déroule aux États-Unis
+  - Parce que le Rafale est un avion américain
+  - Parce que les instructeurs français refusent de parler français
+  - Il ne pèse pas plus que pour les autres
+correctChoices: [0]
+explanation: >-
+  Le cursus chasse et guet aérien de la Marine passe notamment par les
+  États-Unis : cours, vols et vie quotidienne en anglais — un niveau solide
+  est indispensable dès la sélection.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-selections]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

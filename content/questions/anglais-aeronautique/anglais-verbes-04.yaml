@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-verbes-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « altitude », « height » et « level » ?
+choices:
+  - Altitude = au-dessus de la mer ; height = au-dessus du sol ; level = référence 1013
+  - Ce sont trois synonymes
+  - Altitude = en montée ; height = en descente ; level = en palier
+  - Height ne s'emploie que pour les hélicoptères
+correctChoices: [0]
+explanation: >-
+  Comme en français : l'altitude se mesure au-dessus du niveau de la mer, la
+  hauteur (height) au-dessus du sol, et le niveau de vol (flight level) par
+  rapport à l'isobare 1013 hPa.
+evaluates: [fondamentaux.anglais-aeronautique.les-verbes-du-vol]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

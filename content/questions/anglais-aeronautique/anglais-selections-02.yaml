@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-selections-02
+kind: qcm
+theme: anglais-methode
+statement: >-
+  Quelle stratégie de préparation à l'épreuve d'anglais est la plus efficace ?
+choices:
+  - Une exposition quotidienne courte (vocabulaire, écoute, QCM) commencée des mois avant
+  - Deux semaines de bachotage intensif juste avant l'épreuve
+  - Apprendre uniquement le vocabulaire aéronautique
+  - Relire une grammaire complète la veille
+correctChoices: [0]
+explanation: >-
+  La langue progresse par exposition répétée : 10 minutes de vocabulaire par
+  jour, écoute active, séries de QCM — commencées tôt. Le bachotage tardif ne
+  fonctionne pas, et les tests évaluent d'abord l'anglais général.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-selections]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

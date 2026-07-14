@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-verbes-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « the aircraft is taxiing » ?
+choices:
+  - L'avion roule au sol
+  - L'avion transporte des passagers payants
+  - L'avion attend un taxi
+  - L'avion décolle
+correctChoices: [0]
+explanation: >-
+  To taxi = rouler au sol — le faux ami favori des QCM : rien à voir avec le
+  taxi automobile.
+evaluates: [fondamentaux.anglais-aeronautique.les-verbes-du-vol]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

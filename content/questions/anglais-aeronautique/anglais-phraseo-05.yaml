@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-phraseo-05
+kind: vrai-faux
+theme: anglais-phraseologie
+statement: >-
+  À la réception d'un « go around », on collationne d'abord, puis on remet les gaz.
+answer: false
+explanation: >-
+  Faux. « Go around » est un ordre immédiat : on remet les gaz d'abord, on
+  collationne ensuite. La manœuvre prime sur la radio — aviate, navigate,
+  communicate.
+evaluates: [fondamentaux.anglais-aeronautique.la-phraseologie-anglaise]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

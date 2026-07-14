@@ -1,0 +1,111 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.les-verbes-du-vol
+type: concept
+title: Les verbes du vol
+slug: les-verbes-du-vol
+summary: >-
+  Take off, climb, level off, descend, land, go around — la colonne
+  vertébrale de l'anglais aéronautique, ce sont ses verbes. Le vol complet en
+  verbes, du roulage à l'arrêt moteur, avec leurs pièges (faux amis,
+  particules).
+objectifs:
+  - Restituer les verbes de chaque phase du vol (taxi, take off, climb, cruise, descend, land).
+  - Employer les particules correctement (take off, level off, touch down, go around).
+  - Déjouer les faux amis et confusions classiques des QCM.
+aliases: [verbes du vol, take off, climb, descend, land, go around, anglais des phases de vol]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — les verbes du vol (lot N11, phase P1 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+    - fondamentaux.anglais-aeronautique.l-anglais-des-selections
+content:
+  essentiel:
+    body: |
+      Racontez un vol en anglais et vous tenez l'essentiel du vocabulaire
+      des QCM. Le **vol en douze verbes** :
+
+      | Phase | Verbe | Exemple |
+      | --- | --- | --- |
+      | Roulage | **to taxi** | *the aircraft taxis to the runway* |
+      | Alignement | **to line up** | *line up and wait* |
+      | Décollage | **to take off** | *we took off at noon* |
+      | Montée | **to climb** | *climb to 5,000 feet* |
+      | Mise en palier | **to level off** | *level off at cruise altitude* |
+      | Croisière | **to cruise** | *cruising at 250 knots* |
+      | Virage | **to turn** | *turn left heading 180* |
+      | Descente | **to descend** | *descend to 3,000 feet* |
+      | Approche | **to approach** | *on final approach* |
+      | Atterrissage | **to land** | *cleared to land* |
+      | Toucher | **to touch down** | *the wheels touched down* |
+      | Remise de gaz | **to go around** | *going around* |
+
+      Les noms suivent souvent : *takeoff*, *climb*, *descent*,
+      *landing*, *approach*, *go-around* — mais gare aux **irrégularités**
+      (*descend* → *descent*, avec un **t**).
+    aRetenir:
+      - "Le vol en verbes — taxi, line up, take off, climb, level off, cruise, descend, approach, land, touch down, go around."
+      - "Verbe et nom diffèrent parfois — to descend mais the descent ; to take off mais the takeoff."
+      - "To taxi = rouler au sol (rien à voir avec le taxi automobile) — faux ami favori des QCM."
+      - Les particules changent le sens — take off (décoller) ≠ take (prendre) ; level off (se mettre en palier) ≠ level (niveau).
+  sections:
+    - id: les-pieges-des-qcm
+      title: Les pièges favoris des QCM
+      body: |
+        Les tests reviennent sans cesse sur les mêmes chausse-trapes :
+
+        - **to taxi** — rouler au sol : *the aircraft is taxiing* n'a rien
+          d'un taxi jaune ;
+        - **descent** — le nom prend un **t** final (*a rapid descent*),
+          le verbe non (*we descend*) ;
+        - **to take off** vs **to take** — sans sa particule, le verbe
+          change complètement de sens ; même piège pour *level off* ;
+        - **altitude vs height vs level** — l'altitude (mer), la hauteur
+          (sol), le niveau de vol (isobare 1013) : trois mots, trois
+          références — comme en français ;
+        - les **prétérits irréguliers** : *take → took*, *fly → flew*,
+          *rise → rose* — du pain bénit pour les questions de grammaire.
+    - id: raconter-un-vol
+      title: Raconter un vol (exercice modèle)
+      strate: maitriser
+      body: |
+        L'exercice le plus rentable : **raconter un vol complet** en
+        anglais, à voix haute, en enchaînant les verbes dans l'ordre —
+
+        *We taxied to runway 22, lined up, and took off at 10:15. We
+        climbed to 5,000 feet and leveled off. After cruising for twenty
+        minutes, we started our descent, joined the final approach, and
+        landed smoothly. We vacated the runway and taxied back to the
+        apron.*
+
+        Huit phrases, quinze mots-clés, tous les temps du récit. Refaire
+        l'exercice en variant (un go around, un déroutement, une panne)
+        entraîne à la fois le **vocabulaire**, la **grammaire** et
+        l'**aisance orale** — les trois compétences des épreuves.
+  pieges:
+    - "To taxi = rouler au sol — le faux ami le plus fréquent des QCM d'anglais aéronautique."
+    - "Descent (nom) prend un t final ; descend (verbe) n'en prend pas."
+    - Sans leur particule, take off et level off changent de sens — les QCM jouent sur l'omission.
+    - "Altitude (mer), height (sol), level (1013) — trois références différentes, en anglais comme en français."
