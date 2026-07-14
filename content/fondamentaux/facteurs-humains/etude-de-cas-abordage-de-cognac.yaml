@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac
+type: concept
+title: Étude de cas — l'abordage de Cognac (2022)
+slug: etude-de-cas-abordage-de-cognac
+summary: >-
+  Deux Rafale s'abordent en meeting devant le public — pilotes indemnes,
+  avions gravement endommagés. Le rapport BEA-É A-2022-12-A décortique une
+  chaîne exemplaire de facteurs humains : migration des pratiques, sentiment
+  de simplicité, effet public, conscience de situation erronée.
+objectifs:
+  - Restituer les faits de l'abordage du 22 mai 2022 à Cognac (rapport BEA-É A-2022-12-A).
+  - Identifier dans un cas réel les grands facteurs humains et organisationnels.
+  - En tirer des enseignements transposables (préparation, communication, portes de sortie).
+aliases: [abordage de Cognac, Vautour Bravo, A-2022-12, étude de cas facteurs humains]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — première étude de cas REX du site, fondée sur le rapport public BEA-É A-2022-12-A (campagne de recherche n°1, lot N8).
+    author: prepapilote
+sources:
+  - title: "Rapport d'enquête de sécurité A-2022-12-A — abordage de deux Rafale C, Cognac, 22 mai 2022 (BEA-É, publié le 3 mai 2023)"
+    url: https://www.defense.gouv.fr/sites/default/files/bea-e/20230503-rapport-d-enquete-de-securite_A-2022-12.pdf
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.facteurs-humains.le-retour-d-experience
+  related:
+    - fondamentaux.facteurs-humains.desorientation-et-illusions
+    - eopn.appareils.rafale
+    - eopn.unites.normandie-niemen
+content:
+  essentiel:
+    body: |
+      **Les faits.** Le 22 mai 2022, au Meeting National Air de **Cognac**,
+      deux **Rafale C** du régiment de chasse 2/30 « Normandie-Niémen » — la
+      patrouille « Vautour Bravo » — exécutent une présentation tactique
+      basique. Après un « show of force », le leader dégage en **cabrant
+      plus fort qu'à l'habitude** ; l'équipier, qui arrive derrière et
+      dessous pour se rassembler, constate une vitesse de rapprochement
+      anormale, demande au leader d'accélérer — celui-ci **pique** au moment
+      où l'équipier surgit par-dessous. **Deux chocs** : dérive de
+      l'équipier amputée, plan canard du leader endommagé.
+
+      Les deux avions restent pilotables, se posent à Cognac ; les
+      **pilotes sont indemnes**, des débris endommagent une maison. Le
+      rapport **BEA-É A-2022-12-A** (public) conclut : causes du domaine
+      des **facteurs organisationnels et humains** — aucun facteur
+      technique.
+
+      Ce cas est un condensé de tout ce que les fiches facteurs humains
+      enseignent — en vrai, à quelques mètres près du drame.
+    aRetenir:
+      - "22 mai 2022, meeting de Cognac — abordage de deux Rafale C en présentation ; pilotes indemnes, causes 100 % facteurs humains et organisationnels (rapport BEA-É A-2022-12-A)."
+      - Cause racine — une « migration des pratiques » — l'équipe avait dévié des paramètres validés sans formaliser le changement.
+      - Facteurs aggravants — sentiment de simplicité, effet public (recherche d'esthétique), communication non standardisée, conscience de situation erronée du leader.
+      - Enseignement — les petites déviations non validées s'additionnent jusqu'à consommer toutes les marges.
+  sections:
+    - id: la-chaine-des-facteurs
+      title: La chaîne des facteurs
+      body: |
+        Le rapport identifie une accumulation exemplaire :
+
+        - **migration des pratiques** — dès l'entraînement, l'équipe
+          s'écarte des paramètres validés (1 500 ft/400 kt) pour un cabré
+          plus marqué (3 000-4 000 ft, ~250 kt), sans validation ni mise à
+          jour du point clé : chaque exécution peut alors différer ;
+        - **sentiment erroné de simplicité** — mission jugée facile,
+          attention aux risques diminuée ;
+        - **effet public** — familles et autorités dans le public, envie
+          d'une présentation esthétique et dynamique : le jour J, tout est
+          exécuté plus sèchement qu'à l'entraînement ;
+        - **communication non standardisée** — à l'instant critique,
+          l'échange sur la vitesse improvisé, faute de phraséologie prévue
+          au programme ;
+        - **conscience de situation erronée** — le leader, croyant son
+          équipier ailleurs, modifie sa trajectoire d'une façon que
+          l'équipier ne peut pas anticiper ; une **brève désorientation
+          spatiale** de l'équipier a pu retarder son analyse.
+    - id: les-facteurs-organisationnels
+      title: Les facteurs organisationnels
+      body: |
+        L'enquête remonte au-delà du cockpit :
+
+        - un **programme trop dense** (12 figures en 12 minutes) pour une
+          présentation « basique » censée rester simple, validé malgré
+          **peu de points clés** et de communications standardisées ;
+        - une **analyse des risques incomplète**, portée par la confiance
+          dans un programme reconduit d'année en année ;
+        - une **expérience collective érodée** — deux ans sans meetings,
+          tuilage réduit avec l'équipe précédente, arrivée le matin même
+          après le briefing de sécurité général ;
+        - des **contraintes opérationnelles** fortes sur les équipages
+          Rafale, la démonstration restant une activité secondaire.
+
+        Le BEA-É recommande notamment de faire relire les programmes par un
+        **pilote expert extérieur** à l'unité et de renforcer la
+        **sensibilisation à l'effet public** (recommandations R1 et R2 au
+        CEMAAE).
+    - id: ce-qu-un-candidat-en-retire
+      title: Ce qu'un candidat en retire
+      strate: maitriser
+      body: |
+        Cette étude de cas illustre, sur un événement réel et documenté,
+        les leçons transposables à toute activité aérienne — et au-delà :
+
+        1. une **procédure validée** ne protège que si l'on s'y tient — ou
+           si l'on fait **valider** les changements ;
+        2. plus une mission semble **simple**, plus elle mérite de
+           préparation — la vigilance suit la perception du risque, pas le
+           risque réel ;
+        3. la **communication standardisée** n'est pas de la bureaucratie —
+           c'est ce qui lève l'ambiguïté quand tout va vite ;
+        4. se méfier de l'**effet spectateur** — dès qu'on vole « pour être
+           vu », les priorités glissent.
+
+        En entretien, savoir raconter sobrement un cas comme celui-ci — les
+        faits, la chaîne des causes, les leçons — démontre une **culture
+        sécurité** rare chez un candidat. Sans jamais juger les pilotes :
+        c'est précisément l'esprit du REX.
+  pieges:
+    - Aucune défaillance technique — les deux avions étaient navigables ; les causes sont humaines et organisationnelles.
+    - Ne pas réduire le cas à une « erreur de pilotage » — le rapport remonte aux validations, à l'entraînement et à l'organisation.
+    - "Citer ce cas en entretien impose la posture REX — des causes, pas des coupables ; juger les pilotes serait un contresens."
+    - La migration des pratiques est le concept central — retenir son mécanisme (déviation progressive non formalisée), pas seulement le mot.

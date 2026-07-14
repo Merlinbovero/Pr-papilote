@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.rex-01
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Quel est le principe fondamental d'une enquête de sécurité aérienne (BEA, BEA-É) ?
+choices:
+  - Établir des causes, jamais des responsabilités
+  - Identifier et sanctionner les coupables
+  - Indemniser les victimes
+  - Réparer les aéronefs endommagés
+correctChoices: [0]
+explanation: >-
+  L'enquête de sécurité cherche des causes, pas des coupables — c'est la
+  « culture juste » qui garantit la transparence des témoignages et permet au
+  retour d'expérience de fonctionner.
+evaluates: [fondamentaux.facteurs-humains.le-retour-d-experience]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

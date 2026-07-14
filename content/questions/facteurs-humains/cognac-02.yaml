@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.facteurs-humains.cognac-02
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Quel mécanisme est la cause racine de l'abordage de Cognac ?
+choices:
+  - Une migration des pratiques — l'équipe avait dévié des paramètres validés sans formaliser le changement
+  - Le brouillard sur le terrain
+  - Une erreur du contrôle aérien
+  - La fatigue due à un vol de nuit précédent
+correctChoices: [0]
+explanation: >-
+  Dès l'entraînement, l'équipe avait remplacé les paramètres validés
+  (1 500 ft/400 kt) par un cabré plus marqué, sans validation ni mise à jour
+  du point clé — chaque exécution pouvait alors différer, jusqu'au jour où les
+  marges ont disparu.
+evaluates: [fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

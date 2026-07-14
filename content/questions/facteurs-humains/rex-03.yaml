@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.rex-03
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Qu'appelle-t-on « migration des pratiques » ?
+choices:
+  - L'écart progressif et non formalisé entre la procédure validée et la pratique réelle
+  - Le déménagement d'une unité vers une autre base
+  - Le passage d'un type d'avion à un autre
+  - La rotation des équipages entre théâtres d'opérations
+correctChoices: [0]
+explanation: >-
+  La migration des pratiques désigne la dérive progressive, souvent collective
+  et jamais validée, entre ce que prévoit la procédure et ce qui se fait
+  réellement — un mécanisme central dans de nombreux accidents.
+evaluates: [fondamentaux.facteurs-humains.le-retour-d-experience]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

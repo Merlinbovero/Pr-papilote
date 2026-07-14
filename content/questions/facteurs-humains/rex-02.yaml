@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.rex-02
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Quelle est la différence entre le BEA et le BEA-É ?
+choices:
+  - Le BEA enquête pour l'aviation civile, le BEA-É pour l'aéronautique d'État
+  - Le BEA-É est la version européenne du BEA
+  - Le BEA enquête en France, le BEA-É à l'étranger
+  - Aucune — ce sont deux noms du même organisme
+correctChoices: [0]
+explanation: >-
+  Le BEA couvre l'aviation civile ; le BEA-É (Bureau enquêtes accidents pour
+  la sécurité de l'aéronautique d'État) couvre les aéronefs des armées, de la
+  gendarmerie, de la sécurité civile et des douanes.
+evaluates: [fondamentaux.facteurs-humains.le-retour-d-experience]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

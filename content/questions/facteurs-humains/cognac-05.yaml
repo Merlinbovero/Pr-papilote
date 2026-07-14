@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.cognac-05
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Comment citer correctement l'abordage de Cognac lors d'un entretien de sélection ?
+choices:
+  - Les faits, la chaîne des causes, les leçons — sans jamais juger les pilotes
+  - En désignant le pilote fautif
+  - En critiquant l'armée de l'Air pour sa légèreté
+  - En expliquant que les meetings devraient être interdits
+correctChoices: [0]
+explanation: >-
+  L'esprit du REX : des causes, pas des coupables. Raconter sobrement les
+  faits, la chaîne des facteurs (migration des pratiques, effet public,
+  communication) et les enseignements démontre une vraie culture sécurité.
+evaluates: [fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
