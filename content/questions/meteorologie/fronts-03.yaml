@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-03
+kind: ordre
+theme: fronts
+statement: >-
+  Remettez dans l'ordre les zones traversées au passage d'une perturbation
+  classique venant de l'ouest.
+items:
+  - "Tête (cirrus puis voile qui s'épaissit)"
+  - "Pluies continues du front chaud"
+  - "Secteur chaud (ciel bâché, bruine)"
+  - "Front froid (cumulonimbus, averses)"
+  - "Traîne (cumulus, averses isolées, air limpide)"
+explanation: >-
+  La perturbation se lit comme un livre — annonce par les cirrus, pluie du
+  front chaud, répit humide du secteur chaud, violence brève du front froid,
+  puis la traîne.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 3
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

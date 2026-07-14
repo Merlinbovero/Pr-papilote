@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.la-propulsion
+type: notion-aerodynamique
+title: La propulsion — moteurs et hélices
+slug: la-propulsion
+summary: >-
+  Piston, turbopropulseur, turboréacteur — trois façons de produire la force
+  qui fait avancer un aéronef. Comprendre qui fait quoi, à quel régime et à
+  quelle vitesse, c'est décoder tout le parc aérien, du Cap 10 au Rafale.
+objectifs:
+  - Distinguer les trois grandes familles de propulsion (piston, turbopropulseur, turboréacteur).
+  - Expliquer le principe commun — accélérer de l'air vers l'arrière pour créer une force vers l'avant.
+  - Associer chaque famille à son domaine d'emploi et à des appareils connus.
+aliases:
+  [propulsion, moteur à piston, turbopropulseur, turboréacteur, hélice, poussée, postcombustion]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F1 du plan V1 (programme BIA, domaine « étude des aéronefs ») ; nœud propulsion manquant du graphe.
+    author: prepapilote
+sources:
+  - title: "NASA — Glenn Research Center, Propulsion (Beginner's Guide to Aeronautics)"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/propulsion/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — étude des aéronefs"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.mecanique-du-vol.quatre-forces
+  related:
+    - fondamentaux.aerodynamique.trainee
+    - fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant
+    - eopn.appareils.pc-21
+content:
+  essentiel:
+    body: |
+      Tous les propulseurs appliquent le même principe — la **troisième
+      loi de Newton** : accélérer une masse d'air (ou de gaz) vers
+      l'**arrière** crée une force égale et opposée vers l'**avant**. Ce
+      qui change, c'est **comment** on accélère cet air :
+
+      | Famille | Principe | Domaine | Exemples |
+      | --- | --- | --- | --- |
+      | **Moteur à piston** + hélice | combustion alternative entraînant une hélice | basses vitesses, aviation légère | Cap 10, avions d'aéro-club |
+      | **Turbopropulseur** | turbine à gaz entraînant une hélice via un réducteur | vitesses moyennes (~300-700 km/h), robustesse | PC-21, ATL2, A400M (turbopropulseurs) |
+      | **Turboréacteur** | turbine à gaz éjectant directement les gaz | hautes vitesses, hautes altitudes | Alphajet, Rafale, Mirage 2000 |
+
+      L'**hélice** est une aile qui tourne — chaque pale a un profil et
+      une incidence, et « visse » l'air vers l'arrière. Le **réacteur**
+      comprime l'air (compresseur), le chauffe (chambre de combustion),
+      et le détend (turbine puis tuyère) — la turbine ne sert qu'à faire
+      tourner le compresseur.
+    aRetenir:
+      - Toute propulsion accélère de l'air vers l'arrière — action-réaction (3e loi de Newton).
+      - "Piston = aviation légère ; turbopropulseur = vitesses moyennes et robustesse ; réacteur = vitesse et altitude."
+      - L'hélice est une aile qui tourne — profil, incidence, et les mêmes lois aérodynamiques.
+      - "Dans un réacteur, la turbine n'a qu'un rôle — entraîner le compresseur ; la poussée vient de l'éjection des gaz."
+  sections:
+    - id: le-turboreacteur-en-detail
+      title: Le turboréacteur en détail
+      body: |
+        La chaîne d'un turboréacteur se retient en quatre verbes —
+        **aspirer, comprimer, chauffer, détendre** :
+
+        1. l'**entrée d'air** alimente le moteur ;
+        2. le **compresseur** (étages de pales) élève la pression ;
+        3. la **chambre de combustion** injecte le carburant et enflamme
+           le mélange ;
+        4. les gaz détendus traversent la **turbine** (qui entraîne le
+           compresseur) puis s'échappent par la **tuyère** à grande
+           vitesse — c'est la poussée.
+
+        Deux raffinements à connaître : le **double flux** (une soufflante
+        fait contourner le cœur du moteur par un flux froid — plus
+        silencieux, plus économe : c'est le principe des moteurs de ligne
+        et du M88 du Rafale) et la **postcombustion** (réinjection de
+        carburant derrière la turbine — un surcroît brutal de poussée au
+        prix d'une consommation énorme, réservé aux avions d'armes).
+    - id: choisir-sa-propulsion
+      title: Pourquoi trois familles coexistent
+      strate: maitriser
+      body: |
+        Aucune famille n'est « meilleure » — chacune est **optimale dans
+        son domaine de vitesse**. L'hélice accélère **beaucoup d'air,
+        faiblement** : excellent rendement à basse vitesse, mais ses
+        pales deviennent transsoniques quand l'avion accélère. Le
+        réacteur accélère **peu d'air, fortement** : médiocre à basse
+        vitesse, imbattable en altitude et à haute vitesse.
+
+        C'est pourquoi le parc militaire français utilise les trois — le
+        **piston** pour la formation initiale (Cap 10), le
+        **turbopropulseur** quand il faut de l'endurance et de la
+        souplesse (PC-21 à l'école de chasse, ATL2 en patrouille
+        maritime, A400M au transport), le **réacteur** pour le combat
+        (Rafale, Mirage 2000). Les hélicoptères, eux, utilisent des
+        **turbomoteurs** — la même turbine à gaz, mais toute la puissance
+        passe dans le rotor.
+  pieges:
+    - "La poussée d'un réacteur vient de l'éjection des gaz — pas de la turbine, qui ne sert qu'à entraîner le compresseur."
+    - Un turbopropulseur N'est PAS un moteur à piston — c'est une turbine à gaz qui entraîne une hélice.
+    - La postcombustion multiplie la consommation — elle s'utilise par brefs instants (décollage, combat), jamais en croisière.
+    - "L'A400M et le PC-21 sont des turbopropulseurs modernes — hélice ne veut pas dire ancien."

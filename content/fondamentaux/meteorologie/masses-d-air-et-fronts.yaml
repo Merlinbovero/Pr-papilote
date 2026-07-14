@@ -1,0 +1,116 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.masses-d-air-et-fronts
+type: notion-meteo
+title: Masses d'air et fronts
+slug: masses-d-air-et-fronts
+summary: >-
+  La météo des latitudes tempérées est un combat de masses d'air — quand l'air
+  chaud et l'air froid se rencontrent, un front naît. Savoir lire fronts
+  chauds, fronts froids et occlusions, c'est prévoir le temps qui vient.
+objectifs:
+  - Définir une masse d'air et ses caractéristiques (température, humidité, origine).
+  - Distinguer front chaud et front froid (pente, nuages, phénomènes associés).
+  - Décrire le cycle d'une perturbation (naissance, occlusion, traîne).
+aliases: [masses d'air, front chaud, front froid, occlusion, perturbation, traîne, secteur chaud]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F1 du plan V1 (domaine 1 du BIA ; chaînon manquant entre nuages et phénomènes dangereux).
+    author: prepapilote
+sources:
+  - title: "Météo-France — comprendre les fronts et les perturbations (éducation)"
+    url: https://meteofrance.com/comprendre-la-meteo
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie et aérologie"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.temperature-et-humidite
+    - fondamentaux.meteorologie.les-nuages
+  related:
+    - fondamentaux.meteorologie.phenomenes-dangereux
+    - fondamentaux.meteorologie.le-vent
+content:
+  essentiel:
+    body: |
+      Une **masse d'air** est un grand volume d'atmosphère aux
+      caractéristiques homogènes — héritées de la région où elle a
+      séjourné : **polaire ou tropicale** (température), **maritime ou
+      continentale** (humidité). Quand deux masses d'air se rencontrent,
+      elles ne se mélangent pas — elles s'affrontent le long d'une
+      surface de séparation : le **front**.
+
+      | Front | Mécanisme | Nuages | Temps associé |
+      | --- | --- | --- | --- |
+      | **Front chaud** | l'air chaud glisse EN PENTE DOUCE au-dessus de l'air froid | cirrus → cirrostratus → altostratus → **nimbostratus** | pluies continues, plafond qui descend, dégradation lente et annoncée |
+      | **Front froid** | l'air froid, dense, SOULÈVE brutalement l'air chaud | **cumulonimbus**, cumulus congestus | averses, orages, rafales — violent mais bref |
+
+      Moyen mnémotechnique — le front **chaud** prévient (des heures de
+      cirrus l'annoncent), le front **froid** frappe (ça monte vite, ça
+      cogne, ça passe).
+    aRetenir:
+      - "Masse d'air = grand volume homogène, défini par son origine (polaire/tropicale, maritime/continentale)."
+      - "Front chaud = pente douce, nuages stratiformes, pluie continue ; front froid = soulèvement brutal, cumulonimbus, averses et orages."
+      - La séquence du front chaud se lit dans le ciel — cirrus, puis voile, puis couche, puis pluie.
+      - "Après le front froid vient la traîne — ciel de cumulus, averses isolées, air limpide entre deux grains."
+  sections:
+    - id: la-vie-d-une-perturbation
+      title: La vie d'une perturbation
+      body: |
+        Aux latitudes tempérées, l'affrontement permanent entre air
+        polaire et air tropical crée des **perturbations** qui défilent
+        d'ouest en est — le régime bien connu de l'Atlantique.
+
+        Une perturbation type se traverse dans cet ordre :
+
+        1. la **tête** — le front chaud approche : cirrus, voile qui
+           s'épaissit, pluie continue, plafond bas ;
+        2. le **secteur chaud** — entre les deux fronts : air doux,
+           humide, ciel bâché, bruine ;
+        3. le **front froid** — ligne active : cumulonimbus, averses,
+           orages, saute de vent ;
+        4. la **traîne** — air froid limpide, cumulus, averses isolées —
+           et souvent la meilleure visibilité de la semaine.
+
+        Le front froid avance plus vite que le front chaud — il finit par
+        le rattraper : c'est l'**occlusion**, qui marque le vieillissement
+        de la perturbation.
+    - id: ce-que-ca-change-pour-le-pilote
+      title: Ce que ça change pour le pilote
+      strate: maitriser
+      body: |
+        Lire les fronts, c'est anticiper les **conditions de vol** :
+
+        - un **front chaud** dégrade lentement mais durablement — plafonds
+          bas, pluie, givrage possible dans la couche : le vol VFR devient
+          marginal des heures durant ;
+        - un **front froid** est plus dangereux mais plus bref — les
+          cumulonimbus imposent l'évitement (orages, grêle, cisaillements),
+          puis la traîne offre de belles fenêtres entre les averses ;
+        - au passage de tout front, le **vent tourne** — une saute de
+          vent classique à anticiper pour l'atterrissage.
+
+        En QCM, les pièges tournent toujours autour de la même
+        confusion — associer les bons **nuages** au bon **front**
+        (stratiformes au chaud, cumuliformes au froid) et se souvenir
+        que l'occlusion est le front froid **rattrapant** le front chaud.
+  pieges:
+    - "Nuages stratiformes = front CHAUD ; cumulonimbus = front FROID — l'inversion est le piège n°1 des QCM."
+    - "L'occlusion n'est pas un troisième type d'affrontement — c'est le front froid qui a rattrapé le front chaud."
+    - Le front chaud n'est pas « moins dangereux » — plafonds bas, pluie et givrage durent des heures.
+    - Deux masses d'air ne se mélangent pas — elles se repoussent le long d'un front, et c'est là que naît le mauvais temps.

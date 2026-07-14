@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.aerostatique-04
+kind: qcm
+theme: aerostatique
+statement: >-
+  Pourquoi l'hydrogène n'est-il plus utilisé pour le vol habité en ballon ou
+  dirigeable ?
+choices:
+  - "Il est inflammable"
+  - "Il est plus lourd que l'air"
+  - "Il est introuvable"
+  - "Il traverse toutes les enveloppes en quelques minutes"
+correctChoices: [0]
+explanation: >-
+  L'hydrogène soulève mieux que l'hélium mais son inflammabilité — illustrée
+  par les catastrophes de dirigeables des années 1930 — l'a fait abandonner
+  au profit de l'hélium.
+evaluates: [fondamentaux.aerodynamique.l-aerostatique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

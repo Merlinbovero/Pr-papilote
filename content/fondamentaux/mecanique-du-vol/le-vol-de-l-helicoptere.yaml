@@ -1,0 +1,120 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere
+type: notion-aerodynamique
+title: Le vol de l'hélicoptère
+slug: le-vol-de-l-helicoptere
+summary: >-
+  Un rotor est une aile qui tourne — et tout découle de là : pas collectif
+  pour monter, pas cyclique pour se déplacer, rotor de queue pour contrer le
+  couple. Le socle pour comprendre Gazelle, Tigre, Caïman et le métier ALAT.
+objectifs:
+  - Expliquer comment un rotor crée la portance (pales = ailes tournantes).
+  - Distinguer les commandes (collectif, cyclique, palonniers) et leurs effets.
+  - Comprendre le rôle du rotor anticouple et la notion d'autorotation.
+aliases:
+  [
+    hélicoptère,
+    rotor,
+    pas collectif,
+    pas cyclique,
+    rotor anticouple,
+    autorotation,
+    voilure tournante,
+  ]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F1 du plan V1 (programme BIA + socle de la branche ALAT, jusqu'ici sans fiche de principe).
+    author: prepapilote
+sources:
+  - title: Manuel du pilote d'hélicoptère (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — étude des aéronefs"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.portance
+  related:
+    - alat.appareils.gazelle
+    - alat.appareils.tigre
+    - eopan.appareils.nh90-caiman
+    - alat.presentation.devenir-pilote-alat
+content:
+  essentiel:
+    body: |
+      L'hélicoptère ne triche pas avec l'aérodynamique — il l'applique
+      autrement. Chaque **pale** du rotor est une **aile** avec son
+      profil et son incidence ; en tournant, elle crée sa portance même
+      quand l'appareil est immobile. C'est la **voilure tournante** — le
+      vol stationnaire devient possible.
+
+      Trois commandes gouvernent tout :
+
+      | Commande | Action | Effet |
+      | --- | --- | --- |
+      | **pas collectif** (levier main gauche) | change l'incidence de TOUTES les pales à la fois | monter / descendre |
+      | **pas cyclique** (manche main droite) | change l'incidence de chaque pale selon sa position dans le tour | incliner le disque rotor → se déplacer |
+      | **palonniers** | pas du rotor de queue | orienter le nez (lacet) |
+
+      Le moteur qui fait tourner le rotor fait aussi tourner la cellule
+      en sens inverse (**couple de réaction**) — c'est le rôle du **rotor
+      anticouple** de queue de l'annuler. Fenestron, doubles rotors :
+      toutes les architectures répondent à ce même problème.
+    aRetenir:
+      - Une pale = une aile qui tourne — la portance existe même à vitesse nulle (vol stationnaire).
+      - "Collectif = monter/descendre ; cyclique = se déplacer ; palonniers = orienter le nez."
+      - Le rotor de queue contre le couple de réaction du rotor principal — sans lui, la cellule tournerait sur elle-même.
+      - "En panne moteur, le rotor continue de tourner en moulinet — l'autorotation permet un atterrissage contrôlé."
+  sections:
+    - id: le-disque-rotor
+      title: Le disque rotor et le déplacement
+      body: |
+        Vu de dessus, le rotor balaie un **disque** — et l'hélicoptère se
+        pilote en inclinant ce disque. Le **cyclique** augmente
+        l'incidence des pales d'un côté du tour et la diminue de l'autre :
+        le disque bascule, la portance s'incline, et sa composante
+        horizontale **tire** l'appareil dans la direction choisie —
+        avant, arrière, ou travers.
+
+        En translation, une dissymétrie apparaît — la **pale avançante**
+        (qui va dans le sens du vol) voit plus de vent que la **pale
+        reculante**. Non corrigée, cette dissymétrie ferait basculer
+        l'appareil ; le battement des pales et la commande cyclique la
+        compensent, mais elle finit par **limiter la vitesse maximale**
+        des hélicoptères — voilà pourquoi aucun hélicoptère classique
+        n'approche les vitesses d'un avion.
+    - id: l-autorotation
+      title: L'autorotation — le plané de l'hélicoptère
+      strate: maitriser
+      body: |
+        Idée reçue — « si le moteur lâche, l'hélicoptère tombe ». Faux :
+        en descente, le flux d'air qui traverse le disque fait tourner le
+        rotor **tout seul**, comme un moulin — c'est l'**autorotation**.
+        Le pilote baisse immédiatement le collectif pour conserver les
+        tours rotor, gère sa descente, puis **arrondit** près du sol en
+        utilisant l'énergie stockée dans le rotor pour se poser en
+        douceur.
+
+        L'autorotation est au pilote d'hélicoptère ce que le vol plané
+        est au pilote d'avion — une manœuvre de sécurité **entraînée en
+        permanence**, de l'école (EALAT à Dax) aux tests en unité. La
+        maîtriser fait partie du métier ; en parler avec justesse en
+        entretien montre qu'on a compris que l'hélicoptère est un
+        aéronef, pas un ascenseur.
+  pieges:
+    - Un hélicoptère en panne moteur ne tombe pas — l'autorotation permet un atterrissage contrôlé.
+    - "Le collectif change le pas de toutes les pales ensemble ; le cyclique le fait varier au cours du tour — deux commandes, deux effets."
+    - Le rotor de queue ne sert pas à avancer — il contre le couple du rotor principal et gère le lacet.
+    - La pale avançante et la pale reculante ne voient pas le même vent — cette dissymétrie limite la vitesse des hélicoptères.

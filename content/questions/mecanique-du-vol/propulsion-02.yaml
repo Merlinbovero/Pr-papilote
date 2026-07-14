@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.propulsion-02
+kind: qcm
+theme: propulsion
+statement: >-
+  Dans un turboréacteur, quel est le rôle de la turbine ?
+choices:
+  - "Entraîner le compresseur"
+  - "Produire directement la poussée"
+  - "Refroidir les gaz d'échappement"
+  - "Comprimer le carburant"
+correctChoices: [0]
+explanation: >-
+  La turbine prélève de l'énergie sur les gaz pour faire tourner le
+  compresseur — la poussée, elle, vient de l'éjection des gaz par la tuyère.
+evaluates: [fondamentaux.mecanique-du-vol.la-propulsion]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

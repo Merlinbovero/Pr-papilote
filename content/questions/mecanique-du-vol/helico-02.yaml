@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.helico-02
+kind: qcm
+theme: vol-helicoptere
+statement: >-
+  À quoi sert le rotor de queue d'un hélicoptère ?
+choices:
+  - "À contrer le couple de réaction du rotor principal"
+  - "À faire avancer l'appareil"
+  - "À créer la portance principale"
+  - "À refroidir le moteur"
+correctChoices: [0]
+explanation: >-
+  Le moteur qui fait tourner le rotor tend à faire tourner la cellule en
+  sens inverse — le rotor anticouple annule cette rotation et gère le lacet.
+evaluates: [fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

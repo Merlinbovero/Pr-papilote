@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.aerostatique-03
+kind: vrai-faux
+theme: aerostatique
+statement: >-
+  Un hélicoptère est un aérostat puisqu'il peut rester immobile en l'air.
+answer: false
+explanation: >-
+  Le vol stationnaire ne change rien à la classification — le rotor crée une
+  portance (voilure tournante) : l'hélicoptère est un aérodyne, plus lourd
+  que l'air.
+evaluates: [fondamentaux.aerodynamique.l-aerostatique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

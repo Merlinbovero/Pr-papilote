@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-04
+kind: vrai-faux
+theme: fronts
+statement: >-
+  Deux masses d'air de températures différentes se mélangent rapidement
+  quand elles se rencontrent.
+answer: false
+explanation: >-
+  Elles ne se mélangent pratiquement pas — elles s'affrontent le long d'une
+  surface frontale, et c'est précisément là que naissent nuages et
+  précipitations.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie
