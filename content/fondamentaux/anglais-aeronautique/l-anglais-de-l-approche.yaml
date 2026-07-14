@@ -1,0 +1,110 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.l-anglais-de-l-approche
+type: concept
+title: L'anglais de l'approche et de l'atterrissage
+slug: l-anglais-de-l-approche
+summary: >-
+  Downwind, base, final — le circuit d'aérodrome parle anglais. Les points de
+  report, les clairances d'atterrissage, le vent, le touch and go et le
+  dégagement de piste : l'anglais du retour au sol.
+objectifs:
+  - Nommer en anglais les branches du circuit d'aérodrome (downwind, base, final).
+  - Comprendre les clairances d'arrivée (report final, cleared to land, touch and go).
+  - Restituer l'échange type complet de l'arrivée au dégagement de piste.
+aliases: [downwind, base leg, final, cleared to land, touch and go, vacate, anglais de l'approche]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — anglais de l'approche et de l'atterrissage (lot N12, phase P2 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Guide de phraséologie du SIA (bilingue français-anglais, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+  related:
+    - fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage
+    - fondamentaux.anglais-aeronautique.les-verbes-du-vol
+content:
+  essentiel:
+    body: |
+      Le tour de piste a ses noms anglais, universels :
+
+      | Élément | Anglais | Sens |
+      | --- | --- | --- |
+      | Vent arrière | **downwind** | branche parallèle à la piste, vent dans le dos |
+      | Étape de base | **base** (leg) | branche perpendiculaire avant la finale |
+      | Finale | **final** | axe de piste, en descente |
+      | Longue finale | **long final** | finale au-delà de 4 NM |
+      | Point de report | *report downwind / report final* | rappelez vent arrière / finale |
+
+      Les clairances d'arrivée s'enchaînent : *report final* → *(number
+      one,) cleared to land runway 22, wind 240 degrees, 8 knots* — le
+      contrôleur donne le **vent** avec la clairance.
+
+      Pour l'entraînement : *cleared touch and go* (posé-décollé), *cleared
+      low approach* (approche basse sans toucher), et après l'atterrissage :
+      *vacate runway* (dégagez), *expedite vacating* (dégagez rapidement).
+    aRetenir:
+      - "Le circuit — downwind (vent arrière), base (étape de base), final (finale)."
+      - La clairance d'atterrissage arrive avec le vent — « cleared to land runway 22, wind 240 degrees 8 knots ».
+      - "Touch and go = posé-décollé ; low approach = approche sans toucher ; vacate = dégager la piste."
+      - "« Number one/two » = votre rang dans la séquence d'arrivée."
+  sections:
+    - id: l-arrivee-type
+      title: L'arrivée type
+      body: |
+        Le dialogue complet d'une arrivée, côté pilote :
+
+        1. *« Cognac Tower, F-BC, 10 miles north, 2,000 feet, for
+           landing. »* — position, altitude, intentions ;
+        2. *« F-BC, join right-hand downwind runway 22, QNH 1015,
+           report downwind. »* — read back complet ;
+        3. *« F-BC, downwind. »* — *« F-BC, number two, report final. »* —
+           *number two* : un avion vous précède ;
+        4. *« F-BC, final runway 22. »* — *« F-BC, cleared to land runway
+           22, wind 240 degrees, 8 knots. »* — read back : *« Cleared to
+           land runway 22, F-BC. »* (le vent ne se collationne pas) ;
+        5. après le roulage : *« F-BC, runway vacated. »*
+
+        Retenir la **hiérarchie du read back** : la clairance (cleared to
+        land + piste) se répète, l'**information** (le vent) non.
+    - id: cas-particuliers
+      title: Cas particuliers et entraînement
+      strate: maitriser
+      body: |
+        L'entraînement militaire vit de **posés-décollés** : *« F-BC,
+        cleared touch and go, runway 22 »* — l'avion touche et repart sans
+        s'arrêter. Variante sans contact : *cleared low approach* —
+        l'approche est interrompue à basse hauteur (utile pour les
+        démonstrations et l'entraînement aux pannes).
+
+        Si la séquence se complique : *« F-BC, go around, traffic on the
+        runway »* — remise de gaz immédiate ; ou *« F-BC, orbit right for
+        spacing »* — faites un 360 pour l'espacement. Et si l'on doit
+        s'annoncer sans clairance : *« unable »* (impossible) est le mot
+        qui dit non proprement à une instruction intenable.
+
+        Ces échanges, écoutés en boucle sur les fréquences réelles,
+        forment l'oreille plus vite que n'importe quel manuel.
+  pieges:
+    - "Downwind = vent ARRIÈRE (vent dans le dos), pas vent de face — le nom décrit le sens de vol, pas le vent ressenti."
+    - Le vent transmis avec la clairance d'atterrissage est une information — il ne se collationne pas ; la clairance, si.
+    - "« Number two » n'est pas une insulte ni un ordre de vitesse — c'est votre rang dans la séquence."
+    - "« Unable » est la réponse correcte à une instruction intenable — pas le silence, pas un vague « standby »."

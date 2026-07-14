@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-sol-01
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Comment annonce-t-on en anglais que l'on est prêt à décoller ?
+choices:
+  - "« Ready for departure »"
+  - "« Ready for takeoff »"
+  - "« Ready to fly »"
+  - "« Let's go »"
+correctChoices: [0]
+explanation: >-
+  On dit « ready for departure » — jamais « ready for takeoff » : le mot
+  takeoff est réservé à la clairance du contrôleur (héritage de Tenerife,
+  1977).
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

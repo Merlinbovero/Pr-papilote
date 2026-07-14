@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-sol-04
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Le contrôleur transmet « behind landing traffic, line up and wait, behind ». Quel est le read back correct ?
+choices:
+  - "« Behind landing traffic, line up and wait, behind, F-BC »"
+  - "« Line up and wait, F-BC »"
+  - "« Roger, F-BC »"
+  - "« Wilco »"
+correctChoices: [0]
+explanation: >-
+  Une clairance conditionnelle se collationne avec sa condition complète — y
+  compris le double « behind » qui encadre la clairance. Un read back
+  tronqué est une erreur.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

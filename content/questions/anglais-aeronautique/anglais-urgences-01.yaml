@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-urgences-01
+kind: ordre
+theme: anglais-phraseologie
+statement: >-
+  Remettez dans l'ordre les six éléments d'un message MAYDAY complet.
+items:
+  - "MAYDAY, MAYDAY, MAYDAY"
+  - "Station appelée"
+  - "Indicatif de l'aéronef"
+  - "Nature de la détresse"
+  - "Intentions"
+  - "Position et altitude"
+explanation: >-
+  Le format fixe : MAYDAY ×3, station, indicatif, nature (engine failure…),
+  intentions (forced landing…), position/altitude. À connaître par cœur pour
+  qu'il sorte seul le jour venu.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-urgences]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

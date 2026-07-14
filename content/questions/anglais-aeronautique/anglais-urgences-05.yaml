@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-urgences-05
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Le contrôleur demande « say souls on board and fuel remaining ». Que devez-vous transmettre ?
+choices:
+  - Le nombre de personnes à bord et l'autonomie restante en temps de vol
+  - Le poids de l'avion et le carburant en litres
+  - Votre état d'esprit et le niveau d'huile
+  - La liste nominative des passagers
+correctChoices: [0]
+explanation: >-
+  Souls on board = nombre de personnes à bord ; fuel remaining s'exprime en
+  temps de vol (« two hours fuel remaining »), pas en litres — deux
+  informations vitales pour organiser les secours.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-urgences]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie
