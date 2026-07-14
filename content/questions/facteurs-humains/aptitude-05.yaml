@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.facteurs-humains.aptitude-05
+kind: qcm
+theme: aptitude-medicale
+statement: >-
+  Quelle est la meilleure attitude vis-à-vis d'un antécédent médical
+  (fracture, opération, traitement ancien) avant la visite ?
+choices:
+  - "Apporter son dossier complet et jouer la transparence"
+  - "Le taire et espérer qu'il ne soit pas détecté"
+  - "Se déclarer inapte soi-même par prudence"
+  - "Prendre un traitement pour masquer les traces"
+correctChoices: [0]
+explanation: >-
+  L'omission volontaire découverte coûte l'aptitude, parfois en pleine
+  carrière — l'expert apprécie la transparence et beaucoup d'antécédents
+  sont compatibles avec une filière.
+evaluates: [fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

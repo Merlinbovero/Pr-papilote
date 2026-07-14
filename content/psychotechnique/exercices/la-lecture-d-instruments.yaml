@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-lecture-d-instruments
+type: concept
+title: La lecture d'instruments
+slug: la-lecture-d-instruments
+summary: >-
+  Six cadrans, dix secondes, une question — où est l'avion ? L'épreuve de
+  lecture d'instruments teste la capacité à extraire vite une situation de
+  vol de plusieurs sources : l'aptitude cockpit par excellence.
+objectifs:
+  - Comprendre le principe de l'épreuve (lire plusieurs cadrans, en déduire la situation).
+  - Mobiliser la lecture des instruments de base (altimètre, anémomètre, horizon, compas, variomètre, bille).
+  - Acquérir la méthode de balayage et éviter les pièges de lecture.
+aliases: [lecture d'instruments, cadrans, épreuve instruments, tableau de bord]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F3 du plan V1 (famille d'épreuve emblématique des sélections pilote ; pont vers les fiches instruments).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.instruments.altimetre
+    - fondamentaux.instruments.horizon-artificiel
+  related:
+    - fondamentaux.instruments.anemometre
+    - fondamentaux.instruments.compas-et-conservateur
+    - psychotechnique.exercices.l-attention-et-le-multitache
+content:
+  essentiel:
+    body: |
+      L'épreuve présente un **tableau de bord simplifié** — quelques
+      cadrans — et demande en un temps très court de déduire la
+      **situation de l'avion** : monte-t-il ou descend-il ? vire-t-il à
+      droite ou à gauche ? quel est son cap, son altitude ? Parfois, il
+      faut choisir parmi plusieurs silhouettes d'avion celle qui
+      correspond aux instruments.
+
+      Le bagage nécessaire tient en six instruments :
+
+      | Instrument | Ce qu'il dit | Réflexe de lecture |
+      | --- | --- | --- |
+      | **Horizon artificiel** | assiette et inclinaison | la maquette est l'avion, l'horizon bouge derrière |
+      | **Altimètre** | altitude | petite aiguille = milliers, grande = centaines de pieds |
+      | **Anémomètre** | vitesse | lue en nœuds (kt) |
+      | **Variomètre** | montée/descente | aiguille au-dessus de zéro = montée |
+      | **Compas / conservateur de cap** | cap | attention au sens de rotation de la rose |
+      | **Bille-aiguille** | symétrie du vol et sens du virage | l'aiguille donne le virage |
+
+      La difficulté n'est pas la connaissance — c'est la **vitesse** et
+      la **combinaison** : croiser trois cadrans en quelques secondes
+      sans en inverser un.
+    aRetenir:
+      - "L'épreuve teste la lecture CROISÉE — un instrument seul ne suffit jamais à décrire la situation."
+      - "Sur l'horizon artificiel, la maquette représente l'avion — horizon qui monte = avion qui descend (piqué)."
+      - "Altimètre — petite aiguille pour les milliers de pieds, grande pour les centaines : l'inversion est LE piège."
+      - "Balayage méthodique — assiette d'abord (horizon), puis tendance (variomètre), puis cap et vitesse."
+  sections:
+    - id: la-methode-de-balayage
+      title: La méthode de balayage
+      body: |
+        Les candidats rapides ne lisent pas plus vite — ils lisent dans
+        **le bon ordre** :
+
+        1. l'**horizon artificiel** — l'attitude générale (cabré/piqué,
+           incliné gauche/droite) : il résume déjà la moitié de la
+           situation ;
+        2. le **variomètre** — confirme la tendance verticale (un avion
+           cabré peut descendre !) ;
+        3. l'**altimètre** et l'**anémomètre** — les valeurs chiffrées ;
+        4. le **cap** — en dernier, car c'est la lecture la plus lente.
+
+        Ce balayage reproduit exactement le **circuit visuel** enseigné
+        aux élèves pilotes — l'épreuve mesure une aptitude qui servira
+        telle quelle en place avant.
+    - id: les-pieges-classiques
+      title: Les pièges classiques
+      strate: maitriser
+      body: |
+        Les concepteurs d'épreuves connaissent les inversions humaines et
+        les exploitent :
+
+        - **l'horizon inversé** — l'horizon descend derrière la maquette
+          quand l'avion **monte** : ceux qui lisent « la ligne » au lieu
+          de la maquette inversent tout ;
+        - **les aiguilles de l'altimètre** — 2 500 ft (petite entre 2 et
+          3, grande sur 5) se confond avec 5 200 ft pour un œil pressé ;
+        - **assiette ≠ trajectoire** — cabré ne veut pas dire en montée :
+          seul le variomètre tranche ;
+        - **le cap** — la rose du compas défile « à l'envers » de
+          l'intuition ; en cas de doute, raisonner « je tourne vers le
+          chiffre qui arrive ».
+
+        L'entraînement idéal — revoir les cinq fiches instruments de la
+        plateforme, puis s'exercer à décrire un tableau de bord complet
+        en une phrase, chrono en main : « il descend en virage à gauche,
+        cap sud, 120 kt, 3 000 ft ».
+  pieges:
+    - "Sur l'horizon artificiel, on lit la MAQUETTE, pas la ligne d'horizon — l'inversion est éliminatoire à grande vitesse."
+    - Un avion cabré ne monte pas forcément — croiser l'assiette (horizon) avec la tendance (variomètre).
+    - "Altimètre — ne pas intervertir petite aiguille (milliers) et grande aiguille (centaines)."
+    - Lire les cadrans dans un ordre fixe (horizon → vario → altimètre/badin → cap) — l'improvisation coûte des secondes et des erreurs.

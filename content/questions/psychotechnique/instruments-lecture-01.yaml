@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.psychotechnique.instruments-lecture-01
+kind: qcm
+theme: lecture-instruments
+statement: >-
+  Sur un horizon artificiel, la ligne d'horizon monte au-dessus de la
+  maquette. Que fait l'avion ?
+choices:
+  - "Il descend (assiette à piquer)"
+  - "Il monte (assiette à cabrer)"
+  - "Il vire à droite"
+  - "Il est en palier"
+correctChoices: [0]
+explanation: >-
+  On lit la MAQUETTE par rapport à l'horizon — si l'horizon monte, la
+  maquette passe dessous : l'avion est en assiette à piquer. L'inversion de
+  cette lecture est le piège classique de l'épreuve.
+evaluates: [psychotechnique.exercices.la-lecture-d-instruments]
+difficulty: 2
+competencies: [connaissances-aeronautiques, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

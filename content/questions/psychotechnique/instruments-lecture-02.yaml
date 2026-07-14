@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.psychotechnique.instruments-lecture-02
+kind: qcm
+theme: lecture-instruments
+statement: >-
+  Altimètre — petite aiguille entre 3 et 4, grande aiguille sur le 5.
+  Quelle est l'altitude ?
+choices:
+  - "3 500 ft"
+  - "5 300 ft"
+  - "350 ft"
+  - "5 030 ft"
+correctChoices: [0]
+explanation: >-
+  Petite aiguille = milliers (entre 3 000 et 4 000), grande aiguille =
+  centaines (500) — donc 3 500 ft. Intervertir les aiguilles donne 5 300 ft,
+  le distracteur type.
+evaluates: [psychotechnique.exercices.la-lecture-d-instruments]
+difficulty: 2
+competencies: [connaissances-aeronautiques, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

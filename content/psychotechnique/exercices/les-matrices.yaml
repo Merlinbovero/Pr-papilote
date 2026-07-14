@@ -1,0 +1,108 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-matrices
+type: concept
+title: Les matrices logiques
+slug: les-matrices
+summary: >-
+  Une grille de 3×3 figures, une case vide — trouver la figure manquante.
+  Les matrices testent le raisonnement pur, sans mots ni chiffres : la
+  méthode consiste à isoler les règles une par une (forme, nombre, rotation).
+objectifs:
+  - Reconnaître les règles usuelles des matrices (progression, rotation, addition, superposition).
+  - Appliquer la méthode ligne-par-ligne puis colonne-par-colonne.
+  - Gérer le temps et éliminer les distracteurs.
+aliases: [matrices, matrices logiques, raisonnement non verbal, figure manquante]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F3 du plan V1 (famille prioritaire de la phase psychotechnique sans fiche de méthode).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+  related:
+    - psychotechnique.exercices.les-suites-logiques
+    - psychotechnique.exercices.les-dominos
+content:
+  essentiel:
+    body: |
+      Une **matrice** présente une grille (souvent 3×3) de figures qui
+      évoluent selon des **règles cachées** — la dernière case est vide,
+      et il faut choisir parmi les propositions celle qui la complète.
+      Aucune culture requise : c'est du **raisonnement non verbal** pur.
+
+      Les règles reviennent toujours aux mêmes familles :
+
+      | Famille | Exemple |
+      | --- | --- |
+      | **Progression** | le nombre d'éléments augmente de 1 à chaque case |
+      | **Rotation** | la figure tourne de 45° ou 90° de case en case |
+      | **Addition / soustraction** | case 3 = éléments de la case 1 + ceux de la case 2 (ou communs supprimés) |
+      | **Superposition** | les traits se cumulent ; parfois deux traits identiques s'annulent |
+      | **Alternance** | noir/blanc, plein/vide, grand/petit en damier |
+
+      La méthode — **une règle à la fois** : analyser la **ligne** (que
+      change-t-il de gauche à droite ?), vérifier sur la ligne suivante,
+      puis croiser avec les **colonnes**. Une matrice difficile combine
+      simplement deux ou trois règles simples.
+    aRetenir:
+      - "Cinq familles de règles couvrent presque tout — progression, rotation, addition/soustraction, superposition, alternance."
+      - Analyser une dimension à la fois — d'abord les lignes, puis les colonnes, jamais tout en même temps.
+      - "La case manquante se PRÉDIT avant de regarder les propositions — puis on cherche sa prédiction parmi elles."
+      - Les distracteurs reprennent toujours une règle juste sur deux — vérifier TOUTES les règles avant de valider.
+  sections:
+    - id: la-methode-pas-a-pas
+      title: La méthode pas à pas
+      body: |
+        1. **Inventorier** ce qui varie — formes, nombre, taille,
+           orientation, couleur/remplissage, position ;
+        2. pour **chaque** propriété, chercher sa règle sur la première
+           ligne, la **vérifier** sur la deuxième ;
+        3. **prédire** la case vide (la dessiner mentalement, voire au
+           brouillon) ;
+        4. chercher la prédiction dans les propositions — si elle n'y est
+           pas, une règle a été manquée : recommencer par les colonnes ou
+           les diagonales ;
+        5. en dernier recours, **éliminer** — les propositions violant
+           une règle certaine tombent vite, il en reste rarement plus de
+           deux.
+
+        Erreur classique — se jeter sur les propositions avant d'avoir
+        analysé la grille : les distracteurs sont conçus pour « avoir
+        l'air bien » et capter l'œil pressé.
+    - id: s-entrainer
+      title: S'entraîner efficacement
+      strate: maitriser
+      body: |
+        La vitesse vient de la **reconnaissance** — après quelques
+        centaines de matrices, les cinq familles de règles se repèrent
+        d'un coup d'œil, et l'analyse formelle ne sert plus qu'aux cas
+        difficiles. Entraînement recommandé : des séries **chronométrées**
+        courtes (10 matrices en 10 minutes), en notant pour chaque erreur
+        la règle manquée — si la même famille revient (souvent les
+        superpositions avec annulation), la travailler isolément.
+
+        Aux sélections, les épreuves de ce type sont à **difficulté
+        croissante** — les premières se résolvent en secondes, les
+        dernières demandent de combiner trois règles. Ne pas s'enliser :
+        une matrice qui résiste après deux minutes se marque et se
+        retrouve à la fin.
+  pieges:
+    - Regarder les propositions avant d'avoir analysé la grille — les distracteurs sont faits pour l'œil pressé.
+    - Oublier une propriété (souvent l'orientation ou le remplissage) — inventorier TOUT ce qui varie avant de conclure.
+    - "Dans les superpositions, deux traits identiques s'annulent souvent — la règle la plus contre-intuitive des matrices."
+    - S'enliser sur une matrice difficile — marquer, passer, revenir — la suivante vaut autant de points.

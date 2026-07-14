@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.matrices-01
+kind: qcm
+theme: matrices
+statement: >-
+  Dans une matrice 3×3, quelle est la bonne méthode d'analyse ?
+choices:
+  - "Analyser une propriété à la fois, ligne par ligne puis colonne par colonne"
+  - "Regarder d'abord les propositions de réponse"
+  - "Comparer uniquement les cases diagonales"
+  - "Chercher la figure la plus esthétique"
+correctChoices: [0]
+explanation: >-
+  Une règle à la fois — chercher la règle sur la première ligne, la vérifier
+  sur la deuxième, croiser avec les colonnes, PRÉDIRE la case vide, puis
+  seulement regarder les propositions.
+evaluates: [psychotechnique.exercices.les-matrices]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

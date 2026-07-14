@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.psychotechnique.matrices-05
+kind: qcm
+theme: matrices
+statement: >-
+  Après deux minutes sans trouver la règle d'une matrice difficile, que
+  faire ?
+choices:
+  - "La marquer, passer à la suivante, y revenir à la fin"
+  - "Y rester jusqu'à la résoudre"
+  - "Répondre au hasard immédiatement sans la marquer"
+  - "Abandonner l'épreuve"
+correctChoices: [0]
+explanation: >-
+  Les épreuves sont à difficulté croissante mais chaque question vaut ses
+  points — s'enliser sacrifie plusieurs questions faciles pour une
+  difficile. Marquer, passer, revenir.
+evaluates: [psychotechnique.exercices.les-matrices]
+difficulty: 1
+competencies: [raisonnement-logique, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

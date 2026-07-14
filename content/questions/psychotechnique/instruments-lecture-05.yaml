@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.instruments-lecture-05
+kind: qcm
+theme: lecture-instruments
+statement: >-
+  Instruments — horizon incliné à gauche, variomètre sous zéro, badin
+  120 kt. Quelle est la situation ?
+choices:
+  - "Descente en virage à gauche à 120 kt"
+  - "Montée en virage à droite à 120 kt"
+  - "Palier rectiligne à 120 kt"
+  - "Décrochage imminent"
+correctChoices: [0]
+explanation: >-
+  Lecture croisée — inclinaison à gauche (horizon) + tendance négative
+  (variomètre) + 120 kt (badin) : l'avion descend en virage à gauche.
+evaluates: [psychotechnique.exercices.la-lecture-d-instruments]
+difficulty: 3
+competencies: [connaissances-aeronautiques, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

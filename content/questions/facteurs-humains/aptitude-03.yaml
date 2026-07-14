@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.facteurs-humains.aptitude-03
+kind: vrai-faux
+theme: aptitude-medicale
+statement: >-
+  Porter des lunettes rend automatiquement inapte à tous les métiers de
+  pilote militaire.
+answer: false
+explanation: >-
+  Les normes visuelles sont techniques, évolutives et différentes selon les
+  filières — seule l'expertise du CEMPN tranche. Ne jamais s'auto-éliminer
+  sur la foi d'un forum : le CIRFA et le médecin expert font foi.
+evaluates: [fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

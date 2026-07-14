@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.psychotechnique.matrices-02
+kind: qcm
+theme: matrices
+statement: >-
+  Ligne d'une matrice — case 1 : un cercle ; case 2 : deux cercles ;
+  case 3 : trois cercles. Ligne suivante — case 1 : deux carrés ;
+  case 2 : trois carrés. Que contient la case suivante ?
+choices:
+  - "Quatre carrés"
+  - "Trois carrés"
+  - "Deux cercles"
+  - "Un carré"
+correctChoices: [0]
+explanation: >-
+  Règle de progression — le nombre d'éléments augmente de 1 vers la droite ;
+  la forme est fixée par la ligne : après deux puis trois carrés viennent
+  quatre carrés.
+evaluates: [psychotechnique.exercices.les-matrices]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
