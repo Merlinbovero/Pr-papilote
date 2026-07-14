@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-04
+kind: ordre
+theme: naissance-aviation
+statement: >-
+  Classez ces événements du plus ancien au plus récent.
+items:
+  - "Bond motorisé de l'Éole de Clément Ader"
+  - "Première exposition de la locomotion aérienne au Grand Palais"
+  - "Création de l'armée de l'Air par décret"
+  - "Nationalisations en SNCA"
+explanation: >-
+  Éole en 1890, exposition du Grand Palais (ancêtre du Bourget) en 1909,
+  décret créant l'armée de l'Air le 1er avril 1933, nationalisations en 1936.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

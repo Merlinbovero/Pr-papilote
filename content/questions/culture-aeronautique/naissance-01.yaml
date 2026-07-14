@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-01
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Qui quitte le sol le 9 octobre 1890 aux commandes de l'Éole ?
+choices:
+  - "Clément Ader"
+  - "Louis Blériot"
+  - "Henri Farman"
+  - "Les frères Wright"
+correctChoices: [0]
+explanation: >-
+  L'Éole de Clément Ader réalise le premier bond motorisé d'un plus lourd que
+  l'air piloté en 1890 — treize ans avant le vol contrôlé des frères Wright.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

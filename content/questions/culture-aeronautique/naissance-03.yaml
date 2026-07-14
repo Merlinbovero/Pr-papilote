@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-03
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Que décide le gouvernement du Front populaire pour l'industrie aéronautique
+  en 1936 ?
+choices:
+  - "Sa nationalisation en sociétés nationales (SNCA)"
+  - "Sa privatisation complète"
+  - "Sa dissolution au profit d'achats à l'étranger"
+  - "Son transfert intégral à l'armée de l'Air"
+correctChoices: [0]
+explanation: >-
+  En 1936, l'industrie est nationalisée et concentrée en six SNCA de cellules
+  plus une société nationale de moteurs — un secteur privé de prototypes
+  subsiste (Bloch, futur Dassault).
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
