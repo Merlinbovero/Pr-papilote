@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopn.mont-de-marsan-04
+kind: vrai-faux
+theme: bases-aeriennes
+statement: >-
+  C'est à Mont-de-Marsan que le Mirage IV a effectué ses derniers vols avant
+  son retrait en 2005.
+answer: true
+explanation: >-
+  Les derniers Mirage IV P de reconnaissance stratégique volaient depuis
+  Mont-de-Marsan — retrait définitif le 23 juin 2005, après 41 ans de
+  service.
+evaluates: [eopn.bases.mont-de-marsan]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

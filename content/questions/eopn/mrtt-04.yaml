@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.mrtt-04
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  Le MRTT Phénix peut ravitailler deux chasseurs simultanément.
+answer: true
+explanation: >-
+  Avec 110 tonnes de carburant et ses points de ravitaillement multiples
+  (perche rigide et nacelles souples), le Phénix sert deux chasseurs à la
+  fois — français ou alliés.
+evaluates: [eopn.appareils.mrtt-phenix]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

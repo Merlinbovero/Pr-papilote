@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: eopn.organisation.les-forces-aeriennes-strategiques
+type: organisation
+title: Les Forces aériennes stratégiques (FAS)
+slug: les-forces-aeriennes-strategiques
+summary: >-
+  Depuis le 8 octobre 1964, la permanence de la dissuasion aéroportée n'a
+  jamais été interrompue — du Mirage IV au Rafale, du C-135 au MRTT Phénix.
+  Les FAS, c'est l'organisation qui tient cette promesse jour et nuit.
+objectifs:
+  - Situer les FAS (création 1964, mission de dissuasion aéroportée permanente).
+  - Connaître leur composition actuelle (Rafale, MRTT, trois bases à vocation nucléaire).
+  - Comprendre la filiation des vecteurs (Mirage IV → Mirage 2000N → Rafale/ASMP-A).
+aliases:
+  [FAS, Forces aériennes stratégiques, dissuasion aéroportée, composante nucléaire aéroportée]
+module: eopn
+category: organisation
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F4 du plan V1 (nœud central manquant du graphe dissuasion) ; état actuel vérifié sur defense.gouv.fr.
+    author: prepapilote
+sources:
+  - title: "Ministère des Armées — Les Forces aériennes stratégiques, piliers de la dissuasion nationale"
+    url: https://www.defense.gouv.fr/actualites/forces-aeriennes-strategiques-piliers-dissuasion-nationale
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — 60 ans de la première prise d'alerte nucléaire"
+    url: https://www.defense.gouv.fr/air/actualites/60-ans-premiere-prise-dalerte-nucleaire-hommage-aux-pionniers-dissuasion
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.appareils.rafale
+    - eopn.appareils.mrtt-phenix
+    - eopn.appareils.mirage-iv
+    - eopn.unites.escadron-1-4-gascogne
+    - eopn.missions.missions-de-l-armee-de-l-air
+infobox:
+  nomComplet: Forces aériennes stratégiques (FAS)
+  tutelle: Armée de l'air et de l'Espace (commandement dédié, état-major à Taverny)
+  role: Permanence de la composante aéroportée de la dissuasion nucléaire
+  effectifs: Environ 2 100 militaires et civils (état au 2026-07)
+content:
+  essentiel:
+    body: |
+      Les **FAS** naissent le **8 octobre 1964**, quand un Mirage IV armé
+      et son ravitailleur C-135 prennent la première **alerte nucléaire**.
+      Depuis ce jour, la **permanence** de la composante aéroportée de la
+      dissuasion n'a **jamais été interrompue** — c'est la définition
+      même de leur mission.
+
+      Aujourd'hui (état au 2026-07, defense.gouv.fr) :
+
+      - des **Rafale** biplaces porteurs du missile **ASMP-A**
+        (version rénovée en service), répartis sur des escadrons de
+        chasse dédiés — dont le 1/4 « Gascogne » ;
+      - des ravitailleurs **A330 MRTT Phénix**, sans lesquels le raid
+        nucléaire n'aurait pas l'allonge nécessaire ;
+      - **trois bases à vocation nucléaire** — **Saint-Dizier** (Rafale),
+        **Istres** (MRTT) et **Avord** ;
+      - environ **2 100 militaires et civils**, état-major à **Taverny**.
+
+      Le couple **chasseur + ravitailleur** est l'ADN des FAS depuis
+      1964 — l'avion change (Mirage IV → Mirage 2000N → Rafale), le
+      principe demeure.
+    aRetenir:
+      - "FAS = créées le 8 octobre 1964 — la permanence de la dissuasion aéroportée n'a jamais été interrompue depuis."
+      - "Composition actuelle — Rafale/ASMP-A + A330 MRTT Phénix, sur trois bases : Saint-Dizier, Istres, Avord."
+      - "La filiation des vecteurs — Mirage IV (1964), Mirage 2000N (1988), Rafale (depuis 2009-2010)."
+      - Le ravitailleur fait partie du système d'armes — sans MRTT, pas d'allonge stratégique.
+  sections:
+    - id: comment-vit-la-dissuasion
+      title: Comment vit la dissuasion aéroportée
+      body: |
+        La dissuasion française repose sur **deux composantes** — les
+        sous-marins lanceurs d'engins (océanique, la FOST) et l'aviation
+        (aéroportée, les FAS), complétée par la **FANu** de l'aéronautique
+        navale depuis le porte-avions. La composante aéroportée apporte
+        ce que les missiles balistiques n'offrent pas — la
+        **démonstration visible** et **réversible** : on peut faire
+        décoller un raid, le montrer, le rappeler.
+
+        Cette crédibilité s'entretient par des **exercices réguliers** de
+        type « Poker » — des raids complets, de nuit, avec ravitaillements
+        multiples et pénétration simulée. Et elle se modernise en
+        permanence — le missile **ASMP-A rénové** est en service, et
+        l'avenir est déjà commandé : le **Rafale F5** porteur du futur
+        missile hypersonique **ASN4G**.
+    - id: ce-que-ca-implique-pour-un-candidat
+      title: Ce que les FAS disent du métier
+      strate: maitriser
+      body: |
+        Pour un candidat EOPN, les FAS sont un sujet d'entretien
+        classique — et un révélateur de culture. Savoir dire que la
+        dissuasion est une **mission permanente** (pas un déploiement
+        ponctuel), que l'équipage d'un Rafale des FAS est **biplace**
+        (le navigateur officier système d'armes y est central), que le
+        **ravitailleur** est aussi stratégique que le chasseur, et que
+        cette mission structure des carrières entières — c'est montrer
+        qu'on a compris l'armée de l'Air en profondeur, pas seulement
+        ses avions.
+
+        Un repère d'actualité daté (2026-07) — le retour annoncé de la
+        vocation nucléaire sur la base de **Luxeuil** à l'horizon 2035,
+        signe que la dissuasion aéroportée se projette sur des décennies.
+  pieges:
+    - "Les FAS ne sont pas toute la dissuasion — deux composantes : océanique (sous-marins) et aéroportée (FAS + FANu de la Marine)."
+    - "La permanence date du 8 octobre 1964 — jamais interrompue : c'est LE chiffre à connaître."
+    - Le MRTT fait partie du système de dissuasion — réduire les FAS aux seuls Rafale est une erreur d'analyse.
+    - "Poker n'est pas un simple entraînement — c'est la démonstration régulière et visible de la crédibilité du raid nucléaire."

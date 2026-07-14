@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mont-de-marsan-05
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Qui était le colonel Rozanoff, parrain de la BA 118 ?
+choices:
+  - "Le premier pilote français à avoir dépassé 1 000 km/h"
+  - "Un As de la Première Guerre mondiale"
+  - "Le fondateur de l'Aéropostale"
+  - "Le premier commandant des FAS"
+correctChoices: [0]
+explanation: >-
+  Constantin Rozanoff, pilote d'essais légendaire des débuts de l'aviation à
+  réaction française, fut le premier Français à franchir les 1 000 km/h — un
+  parrain cohérent pour une base d'expérimentation.
+evaluates: [eopn.bases.mont-de-marsan]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

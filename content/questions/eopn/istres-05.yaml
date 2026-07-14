@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.istres-05
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Dans quel département se trouve la BA 125 d'Istres ?
+choices:
+  - "Les Bouches-du-Rhône"
+  - "Le Var"
+  - "Les Landes"
+  - "La Haute-Marne"
+correctChoices: [0]
+explanation: >-
+  Istres borde l'étang de Berre, dans les Bouches-du-Rhône — une position
+  méditerranéenne idéale pour les essais et les déploiements lointains.
+evaluates: [eopn.bases.istres]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

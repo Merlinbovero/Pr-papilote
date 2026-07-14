@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.fas-02
+kind: qcm
+theme: dissuasion
+statement: >-
+  Quelles sont les trois bases à vocation nucléaire des FAS ?
+choices:
+  - "Saint-Dizier, Istres et Avord"
+  - "Cognac, Tours et Salon-de-Provence"
+  - "Mont-de-Marsan, Orange et Luxeuil"
+  - "Villacoublay, Évreux et Orléans"
+correctChoices: [0]
+explanation: >-
+  Saint-Dizier (Rafale), Istres (ravitailleurs MRTT) et Avord — les trois
+  piliers géographiques de la dissuasion aéroportée.
+evaluates: [eopn.organisation.les-forces-aeriennes-strategiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

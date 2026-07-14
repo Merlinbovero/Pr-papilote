@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.istres-02
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quels aéronefs la 31e escadre met-elle en œuvre depuis Istres ?
+choices:
+  - "Les A330 MRTT Phénix"
+  - "Les Rafale des FAS"
+  - "Les PC-21 de formation"
+  - "Les A400M Atlas"
+correctChoices: [0]
+explanation: >-
+  Toute la flotte de ravitailleurs MRTT Phénix est concentrée à Istres au
+  sein de la 31e escadre — la moitié « allonge » du système de dissuasion
+  aéroportée.
+evaluates: [eopn.bases.istres]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

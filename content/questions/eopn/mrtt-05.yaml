@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mrtt-05
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quel appareil historique le MRTT remplace-t-il dans le rôle de ravitailleur
+  de la dissuasion ?
+choices:
+  - "Le C-135, en service depuis 1964"
+  - "Le Transall C-160"
+  - "L'A400M Atlas"
+  - "La Caravelle"
+correctChoices: [0]
+explanation: >-
+  Les C-135 accompagnaient les Mirage IV dès la première alerte de 1964 —
+  le Phénix leur succède après plus d'un demi-siècle de service.
+evaluates: [eopn.appareils.mrtt-phenix]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

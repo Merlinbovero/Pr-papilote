@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.eopn.fas-03
+kind: ordre
+theme: dissuasion
+statement: >-
+  Classez les vecteurs de la dissuasion aéroportée du plus ancien au plus
+  récent.
+items:
+  - "Mirage IV"
+  - "Mirage 2000 N"
+  - "Rafale"
+explanation: >-
+  Mirage IV (1964-1996), Mirage 2000 N (1988-2018), puis le Rafale — trois
+  générations pour une même permanence, jamais interrompue.
+evaluates: [eopn.organisation.les-forces-aeriennes-strategiques]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

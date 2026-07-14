@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.fas-05
+kind: qcm
+theme: dissuasion
+statement: >-
+  Que sont les exercices « Poker » ?
+choices:
+  - "Des raids nucléaires simulés complets, démonstration régulière de crédibilité"
+  - "Des tournois entre escadrons"
+  - "Des exercices de défense sol-air"
+  - "Des campagnes de tir air-air"
+correctChoices: [0]
+explanation: >-
+  Un « Poker » rejoue le raid complet — décollage, ravitaillements multiples,
+  pénétration simulée, de nuit — la crédibilité de la dissuasion se démontre
+  régulièrement.
+evaluates: [eopn.organisation.les-forces-aeriennes-strategiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

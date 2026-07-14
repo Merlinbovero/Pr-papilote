@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.istres-01
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quelle particularité distingue la BA 125 d'Istres ?
+choices:
+  - "C'est la plus grande base aérienne de France"
+  - "C'est la seule base avec un escadron Rafale"
+  - "C'est la base la plus au nord de la France"
+  - "C'est la base-école de la chasse"
+correctChoices: [0]
+explanation: >-
+  Immense emprise au bord de l'étang de Berre, piste parmi les plus longues
+  d'Europe — la BA 125 « Sous-lieutenant Charles Monier » est la plus grande
+  base aérienne de France, le « hub des armées ».
+evaluates: [eopn.bases.istres]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

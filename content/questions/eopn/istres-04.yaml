@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.istres-04
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Pourquoi Istres est-elle une « base à vocation nucléaire » sans abriter de
+  Rafale ?
+choices:
+  - "Ses ravitailleurs MRTT sont indispensables au raid de dissuasion"
+  - "Elle stocke les missiles balistiques"
+  - "Elle abrite l'état-major des armées"
+  - "C'est une erreur — Istres n'a aucun rôle nucléaire"
+correctChoices: [0]
+explanation: >-
+  La dissuasion aéroportée est un système à deux avions — les Rafale
+  partent de Saint-Dizier, mais sans les MRTT d'Istres, le raid s'arrête à
+  mi-chemin.
+evaluates: [eopn.bases.istres]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

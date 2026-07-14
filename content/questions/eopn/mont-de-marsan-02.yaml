@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mont-de-marsan-02
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quel escadron mythique vole sur Rafale à Mont-de-Marsan ?
+choices:
+  - "Le 2/30 Normandie-Niémen"
+  - "Le 1/4 Gascogne"
+  - "La Patrouille de France"
+  - "Le 1/33 Belfort"
+correctChoices: [0]
+explanation: >-
+  L'escadron des As du front de l'Est appartient à la 30e escadre de
+  Mont-de-Marsan — le Gascogne est à Saint-Dizier, la PAF à Salon, le
+  Belfort (drones) à Cognac.
+evaluates: [eopn.bases.mont-de-marsan]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

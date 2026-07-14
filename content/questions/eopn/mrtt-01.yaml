@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mrtt-01
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Que signifie MRTT ?
+choices:
+  - "Multi Role Tanker Transport"
+  - "Medium Range Tactical Transport"
+  - "Military Rapid Transit Tanker"
+  - "Multi Reactor Twin Turbine"
+correctChoices: [0]
+explanation: >-
+  Multi Role Tanker Transport — ravitailleur ET transporteur stratégique,
+  dérivé de l'Airbus A330-200, baptisé Phénix dans l'armée de l'Air et de
+  l'Espace.
+evaluates: [eopn.appareils.mrtt-phenix]
+difficulty: 1
+competencies: [connaissances-aeronautiques, anglais-aeronautique]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mont-de-marsan-03
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quel est le rôle du CEAM de Mont-de-Marsan ?
+choices:
+  - "Définir les emplois militaires futurs des matériels de l'armée de l'Air"
+  - "Former les pilotes de chasse débutants"
+  - "Conduire les essais techniques des prototypes"
+  - "Gérer la circulation aérienne militaire"
+correctChoices: [0]
+explanation: >-
+  Le CEAM répond au « comment s'en servir au combat » — entre DGA Essais en
+  vol (essais techniques, Istres) et les forces : procédures d'emploi,
+  premiers équipages des nouveaux standards.
+evaluates: [eopn.bases.mont-de-marsan]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie
