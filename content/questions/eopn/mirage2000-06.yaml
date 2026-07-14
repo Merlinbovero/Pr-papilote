@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-06
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quelle décision de décembre 1975 donne naissance au Mirage 2000 ?
+choices:
+  - "L'abandon de l'Avion de Combat Futur (biréacteur lourd) au profit d'un monoréacteur"
+  - "Le lancement d'une coopération avec les États-Unis"
+  - "La nationalisation de Dassault"
+  - "L'achat de F-15 américains"
+correctChoices: [0]
+explanation: >-
+  Le Conseil de défense du 18 décembre 1975 abandonne l'ACF, jugé trop cher
+  après le choc pétrolier, et lance le monoréacteur préparé sur fonds propres
+  par Dassault — le futur Mirage 2000.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

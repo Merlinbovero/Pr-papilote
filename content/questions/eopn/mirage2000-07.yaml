@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-07
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quand le Mirage 2000 a-t-il effectué son premier vol ?
+choices:
+  - "Le 10 mars 1978"
+  - "Le 17 novembre 1956"
+  - "Le 4 juillet 1986"
+  - "Le 26 octobre 1973"
+correctChoices: [0]
+explanation: >-
+  Premier vol le 10 mars 1978 aux mains de Jean Coureau — 27 mois seulement
+  après le lancement du programme. 1956, c'est le Mirage III ; 1973,
+  l'Alphajet.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie
