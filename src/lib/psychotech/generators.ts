@@ -1,0 +1,577 @@
+import { createRng, seededShuffle } from "@/features/quiz/engine";
+import type { PsyFamily, PsyFamilyInfo, PsyQuestion } from "./types";
+
+/**
+ * Générateurs des familles psychotechniques — règles propres, documentées
+ * dans docs/editorial/module-psychotechnique.md. Déterministes par graine
+ * (rejouables, testables), originaux (aucune batterie copiée).
+ *
+ * Convention : chaque générateur reçoit (seed, difficulty) et produit une
+ * PsyQuestion à 4 choix dont les distracteurs sont des erreurs PLAUSIBLES
+ * (erreur de retenue, ±1, chiffres transposés…), jamais du bruit aléatoire.
+ */
+
+export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
+  "calcul-mental": {
+    slug: "calcul-mental",
+    name: "Calcul mental",
+    consigne:
+      "Calculez de tête, sans brouillon. Les distracteurs reproduisent les erreurs classiques — vérifiez l'ordre de grandeur avant de valider.",
+    ficheHref: "/psychotechnique/exercices/le-calcul-mental",
+    timeLimits: [15, 20, 30],
+  },
+  "suites-numeriques": {
+    slug: "suites-numeriques",
+    name: "Suites numériques",
+    consigne:
+      "Trouvez le terme suivant. Cherchez d'abord la nature de la règle — différence constante, multiplication, alternance, entrelacement.",
+    ficheHref: "/psychotechnique/exercices/les-suites-logiques",
+    timeLimits: [20, 25, 35],
+  },
+  "series-logiques": {
+    slug: "series-logiques",
+    name: "Séries logiques",
+    consigne:
+      "Complétez la série de lettres. Convertissez mentalement en positions dans l'alphabet (A=1 … Z=26) pour révéler la règle.",
+    ficheHref: "/psychotechnique/exercices/les-suites-logiques",
+    timeLimits: [20, 25, 35],
+  },
+  memoire: {
+    slug: "memoire",
+    name: "Mémoire",
+    consigne:
+      "Une liste s'affiche quelques secondes, puis disparaît — mémorisez-la (regroupez, verbalisez). La question porte sur son contenu.",
+    ficheHref: "/psychotechnique/exercices/la-memoire",
+    timeLimits: [15, 15, 15],
+  },
+  attention: {
+    slug: "attention",
+    name: "Attention",
+    consigne:
+      "Comptez les occurrences EXACTES du caractère cible dans la grille. Balayez ligne par ligne, à rythme régulier — la précipitation fait rater.",
+    ficheHref: "/psychotechnique/exercices/l-attention-et-le-multitache",
+    timeLimits: [30, 40, 50],
+  },
+  orientation: {
+    slug: "orientation",
+    name: "Orientation",
+    consigne:
+      "Caps et virages — raisonnez sur la rose des caps (0-360°). Un virage à droite augmente le cap, à gauche le diminue, modulo 360.",
+    ficheHref: "/psychotechnique/exercices/la-vision-spatiale",
+    timeLimits: [20, 25, 30],
+  },
+  rapidite: {
+    slug: "rapidite",
+    name: "Rapidité et précision",
+    consigne:
+      "Les deux chaînes sont-elles STRICTEMENT identiques ? Comparez caractère par caractère — les différences se cachent au milieu.",
+    ficheHref: "/psychotechnique/exercices/l-attention-et-le-multitache",
+    timeLimits: [10, 12, 15],
+  },
+};
+
+type Rng = () => number;
+
+/** Entier uniforme dans [min, max]. */
+function int(rng: Rng, min: number, max: number): number {
+  return min + Math.floor(rng() * (max - min + 1));
+}
+
+function pickOne<T>(rng: Rng, items: readonly T[]): T {
+  return items[int(rng, 0, items.length - 1)];
+}
+
+/** Assemble 4 choix uniques (bonne réponse + distracteurs), ordre mélangé par graine. */
+function buildChoices(
+  rng: Rng,
+  seed: number,
+  correct: string,
+  distractors: string[]
+): { choices: string[]; correctIndex: number } {
+  const unique = [...new Set([correct, ...distractors])];
+  // Complète si des distracteurs se sont télescopés avec la bonne réponse.
+  let filler = 1;
+  while (unique.length < 4) {
+    const candidate = `${correct}${" ".repeat(filler)}`.trim() + `·${filler}`;
+    unique.push(candidate);
+    filler += 1;
+  }
+  const choices = seededShuffle(unique.slice(0, 4), seed);
+  return { choices, correctIndex: choices.indexOf(correct) };
+}
+
+// ---------------------------------------------------------------------------
+// calcul-mental
+// ---------------------------------------------------------------------------
+
+function genCalcul(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  let prompt: string;
+  let value: number;
+  let unit = "";
+  let method: string;
+
+  if (difficulty === 1) {
+    const a = int(rng, 17, 89);
+    const b = int(rng, 13, 78);
+    if (rng() < 0.5) {
+      prompt = `${a} + ${b} = ?`;
+      value = a + b;
+      method = `Additionnez les dizaines (${Math.floor(a / 10) * 10} + ${Math.floor(b / 10) * 10}) puis les unités — et vérifiez la retenue.`;
+    } else {
+      const [hi, lo] = a >= b ? [a, b] : [b, a];
+      prompt = `${hi} − ${lo} = ?`;
+      value = hi - lo;
+      method = `Passez par le complément — de ${lo} pour aller à ${hi}, comptez d'abord jusqu'à la dizaine supérieure.`;
+    }
+  } else if (difficulty === 2) {
+    if (rng() < 0.5) {
+      const a = int(rng, 12, 29);
+      const b = int(rng, 3, 9);
+      prompt = `${a} × ${b} = ?`;
+      value = a * b;
+      method = `Décomposez — ${a} × ${b} = ${Math.floor(a / 10) * 10} × ${b} + ${a % 10} × ${b}.`;
+    } else {
+      const b = int(rng, 3, 9);
+      const q = int(rng, 12, 25);
+      prompt = `${b * q} ÷ ${b} = ?`;
+      value = q;
+      method = `Cherchez le facteur — combien de fois ${b} dans ${b * q} ? Appuyez-vous sur la table de ${b}.`;
+    }
+  } else {
+    const kind = int(rng, 0, 2);
+    if (kind === 0) {
+      const minutes = pickOne(rng, [12, 15, 20, 24, 30, 36, 45]);
+      const speed = pickOne(rng, [120, 180, 240, 300, 360]);
+      prompt = `À ${speed} kt, quelle distance parcourt-on en ${minutes} minutes (en NM) ?`;
+      value = (speed / 60) * minutes;
+      unit = " NM";
+      method = `Le facteur de base — ${speed} kt = ${speed / 60} NM par minute, puis × ${minutes}.`;
+    } else if (kind === 1) {
+      const conso = pickOne(rng, [8, 10, 12, 15, 20]);
+      const heures = pickOne(rng, [1.5, 2, 2.5, 3]);
+      prompt = `Consommation ${conso} L/h — quel carburant pour ${heures} h de vol (en L) ?`;
+      value = conso * heures;
+      unit = " L";
+      method = `Multiplication directe — ${conso} × ${heures} ; pour les demi-heures, ajoutez la moitié de la consommation horaire.`;
+    } else {
+      const h = int(rng, 1, 3);
+      const m = pickOne(rng, [10, 20, 30, 40, 50]);
+      const add = pickOne(rng, [25, 35, 45, 50]);
+      const total = h * 60 + m + add;
+      prompt = `Il est ${h} h ${String(m).padStart(2, "0")}. Quelle heure sera-t-il dans ${add} minutes (format h min) ?`;
+      value = total;
+      unit = "";
+      const hh = Math.floor(total / 60);
+      const mm = total % 60;
+      const correct = `${hh} h ${String(mm).padStart(2, "0")}`;
+      const distractors = [
+        `${hh} h ${String((mm + 10) % 60).padStart(2, "0")}`,
+        `${hh - 1} h ${String(mm).padStart(2, "0")}`,
+        `${hh} h ${String(Math.abs(mm - 10)).padStart(2, "0")}`,
+      ];
+      const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+      return {
+        id: `psy.calcul.${seed}`,
+        family: "calcul-mental",
+        difficulty,
+        prompt,
+        choices,
+        correctIndex,
+        method:
+          "Ajoutez d'abord ce qui amène à l'heure ronde, puis le reste — les minutes au-delà de 60 basculent l'heure.",
+        timeLimitSeconds: FAMILY_INFO["calcul-mental"].timeLimits[difficulty - 1],
+      };
+    }
+  }
+
+  const correct = `${value}${unit}`;
+  const distractors = [
+    `${value + (difficulty === 3 ? 5 : 10)}${unit}`,
+    `${Math.max(1, value - (difficulty === 3 ? 5 : 10))}${unit}`,
+    `${value + 1}${unit}`,
+  ];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.calcul.${seed}`,
+    family: "calcul-mental",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["calcul-mental"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// suites-numeriques
+// ---------------------------------------------------------------------------
+
+function genSuite(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  let terms: number[] = [];
+  let next = 0;
+  let method: string;
+
+  if (difficulty === 1) {
+    const start = int(rng, 2, 20);
+    const r = pickOne(rng, [3, 4, 6, 7, 8, 9, 11]);
+    terms = [0, 1, 2, 3].map((i) => start + i * r);
+    next = start + 4 * r;
+    method = `Suite arithmétique — chaque terme augmente de ${r}.`;
+  } else if (difficulty === 2) {
+    if (rng() < 0.5) {
+      const start = int(rng, 2, 6);
+      const k = pickOne(rng, [2, 3]);
+      terms = [start, start * k, start * k * k, start * k * k * k];
+      next = start * k ** 4;
+      method = `Suite géométrique — chaque terme est multiplié par ${k}.`;
+    } else {
+      const start = int(rng, 10, 30);
+      const a = int(rng, 4, 9);
+      const b = int(rng, 1, 3);
+      terms = [start, start + a, start + a - b, start + 2 * a - b, start + 2 * a - 2 * b];
+      next = start + 3 * a - 2 * b;
+      method = `Alternance — on ajoute ${a}, puis on retire ${b}, en boucle.`;
+    }
+  } else {
+    // Deux suites entrelacées (positions paires et impaires indépendantes).
+    const s1 = int(rng, 3, 12);
+    const r1 = pickOne(rng, [4, 5, 6]);
+    const s2 = int(rng, 20, 40);
+    const r2 = pickOne(rng, [-3, -4, -5]);
+    terms = [s1, s2, s1 + r1, s2 + r2, s1 + 2 * r1, s2 + 2 * r2];
+    next = s1 + 3 * r1;
+    method = `Deux suites entrelacées — les positions impaires suivent +${r1}, les paires ${r2}. Le terme demandé appartient à la première.`;
+  }
+
+  const correct = String(next);
+  const distractors = [String(next + 1), String(next - 2), String(next + 5)];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.suite.${seed}`,
+    family: "suites-numeriques",
+    difficulty,
+    prompt: `${terms.join(" ; ")} ; … — quel est le terme suivant ?`,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["suites-numeriques"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// series-logiques (lettres)
+// ---------------------------------------------------------------------------
+
+const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function letterAt(position: number): string {
+  return ALPHABET[((position % 26) + 26) % 26];
+}
+
+function genSerieLogique(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const start = int(rng, 0, 12);
+  let terms: string[];
+  let next: string;
+  let method: string;
+
+  if (difficulty === 1) {
+    const step = pickOne(rng, [1, 2, 3]);
+    terms = [0, 1, 2, 3].map((i) => letterAt(start + i * step));
+    next = letterAt(start + 4 * step);
+    method = `Chaque lettre avance de ${step} rang${step > 1 ? "s" : ""} dans l'alphabet.`;
+  } else if (difficulty === 2) {
+    const a = pickOne(rng, [2, 3]);
+    const b = pickOne(rng, [1, 4]);
+    const positions = [start, start + a, start + a + b, start + 2 * a + b, start + 2 * a + 2 * b];
+    terms = positions.slice(0, 4).map(letterAt);
+    next = letterAt(positions[4]);
+    method = `Alternance de pas — +${a}, puis +${b}, en boucle.`;
+  } else {
+    const step1 = pickOne(rng, [1, 2]);
+    const step2 = pickOne(rng, [3, 4]);
+    terms = [0, 1, 2].map(
+      (i) => `${letterAt(start + i * step1)}${letterAt(start + 10 + i * step2)}`
+    );
+    next = `${letterAt(start + 3 * step1)}${letterAt(start + 10 + 3 * step2)}`;
+    method = `Deux règles en parallèle — la première lettre avance de ${step1}, la seconde de ${step2}.`;
+  }
+
+  const correct = next;
+  const shift = (s: string, d: number) =>
+    s
+      .split("")
+      .map((c) => letterAt(ALPHABET.indexOf(c) + d))
+      .join("");
+  const distractors = [shift(next, 1), shift(next, -1), shift(next, 2)];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.serie.${seed}`,
+    family: "series-logiques",
+    difficulty,
+    prompt: `${terms.join(" ; ")} ; … — que vient-il ensuite ?`,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["series-logiques"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// memoire
+// ---------------------------------------------------------------------------
+
+const MEMO_WORDS = [
+  "CAP",
+  "PISTE",
+  "VENT",
+  "AILE",
+  "ROTOR",
+  "RADAR",
+  "BALISE",
+  "PHARE",
+  "TOUR",
+  "VIRAGE",
+  "NUAGE",
+  "FLOTTE",
+];
+
+function genMemoire(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const count = difficulty === 1 ? 5 : difficulty === 2 ? 7 : 8;
+  const seconds = difficulty === 3 ? 3 : 4;
+  const items = seededShuffle(MEMO_WORDS, seed).slice(0, count);
+
+  const position = int(rng, 1, count);
+  const correct = items[position - 1];
+  const distractors = seededShuffle(
+    items.filter((w) => w !== correct),
+    seed + 3
+  ).slice(0, 3);
+
+  return {
+    id: `psy.memoire.${seed}`,
+    family: "memoire",
+    difficulty,
+    exposure: { lines: [items.join("   ")], seconds },
+    prompt: `Quel était le ${position}${position === 1 ? "er" : "e"} mot de la liste ?`,
+    choices: seededShuffle([correct, ...distractors], seed + 7),
+    correctIndex: -1, // recalculé ci-dessous
+    method:
+      "Regroupez les mots par paquets de 2-3 et verbalisez-les en une phrase absurde — la position se retrouve en « rejouant » la phrase.",
+    timeLimitSeconds: FAMILY_INFO.memoire.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// attention (comptage en grille)
+// ---------------------------------------------------------------------------
+
+const CONFUSABLE_SETS = [
+  { target: "b", fillers: ["d", "p", "q"] },
+  { target: "6", fillers: ["9", "8", "0"] },
+  { target: "O", fillers: ["0", "Q", "D"] },
+  { target: "n", fillers: ["m", "u", "h"] },
+];
+
+function genAttention(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const set = pickOne(rng, CONFUSABLE_SETS);
+  const [rows, cols] = difficulty === 1 ? [4, 8] : difficulty === 2 ? [5, 10] : [6, 12];
+  const cells = rows * cols;
+  const targetCount = int(rng, Math.floor(cells * 0.15), Math.floor(cells * 0.3));
+
+  const flat: string[] = [];
+  for (let i = 0; i < cells; i += 1) {
+    flat.push(i < targetCount ? set.target : pickOne(rng, set.fillers));
+  }
+  const mixed = seededShuffle(flat, seed + 1);
+  const gridLines: string[] = [];
+  for (let r = 0; r < rows; r += 1) {
+    gridLines.push(mixed.slice(r * cols, (r + 1) * cols).join(" "));
+  }
+
+  const correct = String(targetCount);
+  const distractors = [String(targetCount + 1), String(targetCount - 1), String(targetCount + 2)];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.attention.${seed}`,
+    family: "attention",
+    difficulty,
+    prompt: `Combien de fois le caractère « ${set.target} » apparaît-il dans la grille ?`,
+    gridLines,
+    choices,
+    correctIndex,
+    method:
+      "Balayez ligne par ligne en comptant par paquets — ne revenez jamais en arrière, la relecture crée les doubles comptes.",
+    timeLimitSeconds: FAMILY_INFO.attention.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// orientation (caps et virages)
+// ---------------------------------------------------------------------------
+
+function fmtCap(cap: number): string {
+  const c = ((cap % 360) + 360) % 360;
+  return String(c === 0 ? 360 : c).padStart(3, "0");
+}
+
+function genOrientation(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const cap = int(rng, 1, 36) * 10;
+  let prompt: string;
+  let correctValue: string;
+  let method: string;
+  let distractors: string[];
+
+  if (difficulty === 1) {
+    const droite = rng() < 0.5;
+    const angle = pickOne(rng, [90, 180]);
+    const result = droite ? cap + angle : cap - angle;
+    prompt = `Vous êtes au cap ${fmtCap(cap)}. Vous virez de ${angle}° à ${droite ? "droite" : "gauche"}. Quel est votre nouveau cap ?`;
+    correctValue = fmtCap(result);
+    method = `Droite = on ajoute, gauche = on retire — ${fmtCap(cap)} ${droite ? "+" : "−"} ${angle}, modulo 360.`;
+    distractors = [
+      fmtCap(droite ? cap - angle : cap + angle),
+      fmtCap(result + 10),
+      fmtCap(result - 10),
+    ];
+  } else if (difficulty === 2) {
+    const droite = rng() < 0.5;
+    const angle = pickOne(rng, [40, 70, 110, 140, 160]);
+    const result = droite ? cap + angle : cap - angle;
+    prompt = `Cap actuel ${fmtCap(cap)} — virage de ${angle}° par la ${droite ? "droite" : "gauche"}. Nouveau cap ?`;
+    correctValue = fmtCap(result);
+    method = `${fmtCap(cap)} ${droite ? "+" : "−"} ${angle} = ${fmtCap(result)} — pensez au passage du nord (au-delà de 360, retranchez 360 ; en dessous de 0, ajoutez 360).`;
+    distractors = [
+      fmtCap(droite ? cap - angle : cap + angle),
+      fmtCap(result + 20),
+      fmtCap(result + 180),
+    ];
+  } else {
+    if (rng() < 0.5) {
+      prompt = `Quel est le cap réciproque (opposé) du cap ${fmtCap(cap)} ?`;
+      correctValue = fmtCap(cap + 180);
+      method = `Réciproque = ±180. Astuce sans dépasser 360 — ajoutez 200 puis retirez 20 (ou l'inverse).`;
+      distractors = [fmtCap(cap + 90), fmtCap(cap - 90), fmtCap(cap + 160)];
+    } else {
+      const target = ((cap + pickOne(rng, [140, 150, 200, 220])) % 360) + (0 as number);
+      const diff = ((target - cap + 540) % 360) - 180;
+      const side = diff >= 0 ? "droite" : "gauche";
+      prompt = `Du cap ${fmtCap(cap)} vers le cap ${fmtCap(target)} — de quel côté vire-t-on au plus court ?`;
+      correctValue = `Par la ${side} (${Math.abs(diff)}°)`;
+      method =
+        "Calculez l'écart signé — (cible − actuel) ramené entre −180 et +180 : positif = droite, négatif = gauche.";
+      distractors = [
+        `Par la ${side === "droite" ? "gauche" : "droite"} (${Math.abs(diff)}°)`,
+        `Par la ${side} (${360 - Math.abs(diff)}°)`,
+        `Par la ${side === "droite" ? "gauche" : "droite"} (${360 - Math.abs(diff)}°)`,
+      ];
+    }
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correctValue, distractors);
+  return {
+    id: `psy.orientation.${seed}`,
+    family: "orientation",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO.orientation.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// rapidite (comparaison de chaînes)
+// ---------------------------------------------------------------------------
+
+const CALLSIGN_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+
+function genRapidite(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const length = difficulty === 1 ? 6 : difficulty === 2 ? 9 : 12;
+  const chars: string[] = [];
+  for (let i = 0; i < length; i += 1) {
+    chars.push(CALLSIGN_CHARS[int(rng, 0, CALLSIGN_CHARS.length - 1)]);
+  }
+  const original = `F-${chars.join("")}`;
+
+  const identiques = rng() < 0.5;
+  let variant = original;
+  if (!identiques) {
+    // Substitution par un caractère visuellement proche, au milieu.
+    const pairs: Record<string, string> = {
+      O: "0",
+      "0": "O",
+      "1": "L",
+      L: "1",
+      B: "8",
+      "8": "B",
+      S: "5",
+      "5": "S",
+      Z: "2",
+      "2": "Z",
+    };
+    const idx = int(rng, 2, original.length - 2);
+    const original_char = original[idx];
+    const replacement =
+      pairs[original_char] ??
+      CALLSIGN_CHARS[(CALLSIGN_CHARS.indexOf(original_char) + 1) % CALLSIGN_CHARS.length];
+    variant = original.slice(0, idx) + replacement + original.slice(idx + 1);
+  }
+
+  const correct = identiques ? "Identiques" : "Différentes";
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, [
+    identiques ? "Différentes" : "Identiques",
+    "Impossible à déterminer",
+    "Les deux sont vides",
+  ]);
+  return {
+    id: `psy.rapidite.${seed}`,
+    family: "rapidite",
+    difficulty,
+    prompt: `Ces deux chaînes sont-elles identiques ?\n${original}\n${variant}`,
+    choices,
+    correctIndex,
+    method:
+      "Comparez par tranches de 3 caractères — les substitutions pièges (O/0, B/8, S/5) se logent au milieu, jamais aux extrémités.",
+    timeLimitSeconds: FAMILY_INFO.rapidite.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Point d'entrée
+// ---------------------------------------------------------------------------
+
+const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion> = {
+  "calcul-mental": genCalcul,
+  "suites-numeriques": genSuite,
+  "series-logiques": genSerieLogique,
+  memoire: genMemoire,
+  attention: genAttention,
+  orientation: genOrientation,
+  rapidite: genRapidite,
+};
+
+/** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */
+export function generateQuestion(
+  family: PsyFamily,
+  seed: number,
+  difficulty: 1 | 2 | 3
+): PsyQuestion {
+  const question = GENERATORS[family](seed, difficulty);
+  // Cas mémoire : l'index correct est recalculé après le mélange des choix.
+  if (question.correctIndex === -1 && question.exposure) {
+    const position = Number(question.prompt.match(/(\d+)/)?.[1] ?? 1);
+    const items = question.exposure.lines[0].split(/\s+/);
+    const correct = items[position - 1];
+    question.correctIndex = question.choices.indexOf(correct);
+  }
+  return question;
+}

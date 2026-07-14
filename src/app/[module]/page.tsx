@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChartLineIcon } from "lucide-react";
+import { ChartLineIcon, TimerIcon } from "lucide-react";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getCategories, getModule } from "@/lib/content/referentials";
@@ -63,6 +63,26 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
               </Link>
             </li>
           ))}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/entrainement"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <TimerIcon aria-hidden className="text-primary size-4" />
+                      Entraînement chronométré
+                    </CardTitle>
+                    <CardDescription>
+                      Sessions générées — calcul, suites, mémoire, attention, orientation…
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
           <li>
             <Link
               href={`/progression/${mod.slug}`}
