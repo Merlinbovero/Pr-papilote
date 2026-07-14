@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.l-epner
+type: concept
+title: L'EPNER — l'école des pilotes d'essais
+slug: l-epner
+summary: >-
+  À Istres, au sein de DGA Essais en vol, l'EPNER forme depuis 1946 les
+  équipages d'essais français et étrangers — l'une des rares écoles de pilotes
+  d'essais au monde, et un horizon de carrière que tout candidat pilote
+  devrait connaître.
+objectifs:
+  - Situer l'EPNER (Istres, DGA Essais en vol) et sa mission.
+  - Connaître les grandes dates (1946 Brétigny, 1962 Istres) et les spécialités formées.
+  - Comprendre la place des essais en vol dans une carrière de pilote militaire.
+aliases: [EPNER, pilote d'essais, essais en vol, école des pilotes d'essais, CEV]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot CM1 de la campagne COMAERO (tome 1 « La Formation », §2.3) ; état actuel re-vérifié sur defense.gouv.fr.
+    author: prepapilote
+sources:
+  - title: "COMAERO — La Formation, tome 1 (EUROSAE), chap. 4 §2.3 « La formation des ingénieurs navigants : l'EPNER »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/La-Formation_Tome_1.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — Découvrir l'école du personnel navigant d'essais et de réception (DGA)"
+    url: https://www.defense.gouv.fr/dga/lepner-ecole-du-personnel-navigant-dessais-reception/decouvrir-lecole-du-personnel-navigant-dessais-reception
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.selection.la-formation-du-pilote-de-chasse
+    - fondamentaux.facteurs-humains.le-retour-d-experience
+content:
+  essentiel:
+    body: |
+      L'**EPNER** (École du personnel navigant d'essais et de réception)
+      est l'école française des **équipages d'essais en vol**. Installée à
+      **Istres** au sein de **DGA Essais en vol**, elle forme cinq
+      spécialités (état au 2026-07) :
+
+      - les **pilotes d'essais** ;
+      - les **ingénieurs navigants d'essais** ;
+      - les mécaniciens et techniciens navigants d'essais ;
+      - les **contrôleurs aériens d'essais** ;
+      - les pilotes d'essais d'avions légers.
+
+      La formation principale aux essais **expérimentaux** dure **un an** ;
+      des stages courts (environ quatre mois) couvrent les essais non
+      expérimentaux. L'école accueille 25 à 35 stagiaires par an et a formé
+      depuis sa création **plus de 2 000 stagiaires venus de 24 pays** —
+      une réputation mondiale, aux côtés de ses homologues britannique
+      (ETPS) et américaines (USAF TPS et US Naval TPS).
+    aRetenir:
+      - "EPNER = École du personnel navigant d'essais et de réception — à Istres, au sein de DGA Essais en vol."
+      - "Fondée en 1946 par le Centre d'essais en vol (CEV) à Brétigny-sur-Orge, installée à Istres depuis 1962."
+      - Cinq spécialités formées — pilotes, ingénieurs navigants, mécaniciens/techniciens, contrôleurs d'essais, pilotes avions légers.
+      - "Plus de 2 000 stagiaires de 24 pays formés — l'une des grandes écoles d'essais en vol du monde avec l'ETPS et les TPS américaines."
+  sections:
+    - id: histoire
+      title: De Brétigny à Istres — l'histoire
+      body: |
+        L'école naît en **1946** à **Brétigny-sur-Orge**, créée par le
+        **Centre d'essais en vol** (CEV) fondé l'année précédente. L'enjeu
+        d'origine — remplacer les méthodes empiriques des essais en vol
+        d'avant-guerre (ficelles mesurant le débattement des commandes,
+        peson sur le manche, lecture directe des instruments) par une
+        **méthodologie rigoureuse et quantitative**. Les premiers manuels
+        d'essais publiés « sous le timbre de l'EPNER » fondent une école de
+        pensée toujours vivante.
+
+        Grandes dates :
+
+        - **1953** — premiers stagiaires étrangers (une équipe espagnole) ;
+        - **1955** — le décret du 26 juin institue officiellement l'école
+          et donne un statut à ses personnels ;
+        - **1958** — formation des deux premiers pilotes d'essais
+          d'hélicoptères ;
+        - **1962** — déménagement à **Istres**, sur le grand centre
+          d'essais du sud-est ;
+        - **1966** — arrivée des Mirage IIIB, qui resteront jusqu'en 2002
+          les avions supersoniques de démonstration de l'école ;
+        - **1983** — installation dans un bâtiment neuf, toujours occupé.
+    - id: le-metier-d-essais
+      title: Le métier des essais en vol
+      strate: maitriser
+      body: |
+        Le pilote d'essais n'est pas un casse-cou — c'est un **méthodique**.
+        Sa mission consiste à évaluer en vol les qualités d'un aéronef ou
+        d'un équipement nouveau, selon un protocole précis, en notant des
+        paramètres exploités ensuite au sol (télémesure, salle d'écoute,
+        trajectographie). L'école dispose de son propre simulateur et
+        enseigne autant la **rigueur de la mesure** que le pilotage.
+
+        Pour un candidat EOPAN, EOPN ou ALAT, l'EPNER illustre deux choses
+        utiles à l'entretien :
+
+        - les essais en vol sont un **débouché d'excellence** en seconde
+          partie de carrière — on y entre comme pilote militaire
+          expérimenté, sélectionné, jamais directement après l'école de
+          pilotage ;
+        - la culture des essais (mesurer, documenter, ne rien affirmer
+          sans données) irrigue toute l'aviation militaire — c'est la même
+          exigence que le retour d'expérience.
+  pieges:
+    - L'EPNER forme des équipages déjà expérimentés — ce n'est pas une école de pilotage initial.
+    - "EPNER ≠ CEV — le CEV (devenu DGA Essais en vol) est le centre d'essais ; l'EPNER est l'école installée en son sein."
+    - "Pilote d'essais et pilote de chasse sont deux métiers — le premier évalue des machines selon un protocole, le second remplit des missions opérationnelles."
+    - L'école forme aussi des non-pilotes — ingénieurs navigants, mécaniciens, contrôleurs aériens d'essais.

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: terme.cev
+title: CEV
+definition: >-
+  Centre d'essais en vol — organisme d'État créé en 1945 pour conduire les
+  essais en vol des aéronefs, historiquement implanté à Brétigny-sur-Orge puis
+  à Istres, Cazaux et Toulouse. Ses activités sont aujourd'hui reprises par
+  DGA Essais en vol ; l'EPNER fonctionne en son sein.
+sigleExpansion: Centre d'essais en vol
+english: French flight test centre
+synonyms: [DGA Essais en vol]
+ficheId: fondamentaux.culture-aeronautique.l-epner
+tags: []
+status: publie
