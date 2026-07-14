@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.cartographie.carte-oaci-03
+kind: vrai-faux
+theme: lecture-de-carte
+statement: >-
+  Sur la carte OACI, les altitudes des sommets et obstacles sont indiquées en mètres.
+answer: false
+explanation: >-
+  Faux. Les altitudes portées sur la carte OACI (sommets, obstacles) sont en
+  pieds — la confusion mètres/pieds est un piège classique de préparation de
+  navigation.
+evaluates: [fondamentaux.cartographie.lire-une-carte-aeronautique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

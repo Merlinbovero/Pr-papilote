@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.reglementation.regles-air-03
+kind: qcm
+theme: regles-de-l-air
+statement: >-
+  En VFR, sur une route magnétique de 090°, quels niveaux de croisière la règle semi-circulaire impose-t-elle ?
+choices:
+  - Des niveaux impairs + 500 ft (FL 55, 75, 95…)
+  - Des niveaux pairs + 500 ft (FL 45, 65, 85…)
+  - N'importe quel niveau
+  - Uniquement des niveaux pairs (FL 40, 60…)
+correctChoices: [0]
+explanation: >-
+  Route magnétique de 000 à 179° : niveaux impairs (+ 500 ft en VFR). Vers
+  l'Est = impair. De 180 à 359°, ce sont les pairs + 500 ft.
+evaluates: [fondamentaux.reglementation.les-regles-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.reglementation.regles-air-04
+kind: qcm
+theme: regles-de-l-air
+statement: >-
+  Quelle est la hauteur minimale de survol d'une agglomération en VFR ?
+choices:
+  - 300 m (1 000 ft) au-dessus de l'obstacle le plus élevé dans un rayon de 600 m
+  - 150 m (500 ft) au-dessus des toits
+  - 50 m au-dessus des toits
+  - Aucune règle particulière
+correctChoices: [0]
+explanation: >-
+  Au-dessus des agglomérations et rassemblements de personnes : 300 m
+  (1 000 ft) au-dessus de l'obstacle le plus élevé dans un rayon de 600 m.
+  En campagne, le minimum est de 150 m (500 ft).
+evaluates: [fondamentaux.reglementation.les-regles-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

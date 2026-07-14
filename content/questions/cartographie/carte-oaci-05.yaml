@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.cartographie.carte-oaci-05
+kind: qcm
+theme: lecture-de-carte
+statement: >-
+  Pourquoi la carte OACI utilise-t-elle une projection conforme ?
+choices:
+  - Parce qu'elle conserve les angles — indispensable pour tracer des routes
+  - Parce qu'elle conserve les surfaces
+  - Parce qu'elle est moins chère à imprimer
+  - Parce qu'elle agrandit les zones montagneuses
+correctChoices: [0]
+explanation: >-
+  Une projection conforme conserve les angles (pas les surfaces) : les routes
+  tracées sur la carte correspondent aux angles réellement suivis — la
+  condition de toute navigation à la règle et au rapporteur.
+evaluates: [fondamentaux.cartographie.lire-une-carte-aeronautique]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
