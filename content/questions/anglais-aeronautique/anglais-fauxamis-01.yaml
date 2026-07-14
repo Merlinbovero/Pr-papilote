@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-fauxamis-01
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Que signifie « actually » ?
+choices:
+  - En réalité
+  - Actuellement
+  - Activement
+  - Automatiquement
+correctChoices: [0]
+explanation: >-
+  Actually = en réalité — le faux ami n°1. « Actuellement » se dit currently
+  (ou at the moment).
+evaluates: [fondamentaux.anglais-aeronautique.les-faux-amis]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

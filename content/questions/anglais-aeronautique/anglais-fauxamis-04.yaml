@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-fauxamis-04
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Complétez — « We flew … Paris at 30,000 feet, then levelled off … the clouds. »
+choices:
+  - over / above
+  - above / over
+  - on / in
+  - through / at
+correctChoices: [0]
+explanation: >-
+  Over = survol en mouvement (« we flew over Paris ») ; above = position
+  statique (« levelled off above the clouds »). La nuance classique des
+  prépositions de mouvement.
+evaluates: [fondamentaux.anglais-aeronautique.les-faux-amis]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

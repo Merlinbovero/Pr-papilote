@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-modaux-05
+kind: association
+theme: anglais-grammaire
+statement: >-
+  Associez chaque modal à son sens.
+pairs:
+  - left: must
+    right: Obligation forte
+  - left: should
+    right: Conseil, recommandation
+  - left: may
+    right: Permission ou éventualité
+  - left: can
+    right: Capacité
+explanation: >-
+  Must (obligation), should (conseil), may (permission/éventualité — « icing
+  may occur »), can (capacité). Et les négations divergent : must not =
+  interdiction, don't have to = pas obligé.
+evaluates: [fondamentaux.anglais-aeronautique.les-modaux]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-temps-02
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Complétez — « The Rafale … in service since 2006. »
+choices:
+  - has been
+  - was
+  - is being
+  - had be
+correctChoices: [0]
+explanation: >-
+  « Since 2006 » et une situation qui continue aujourd'hui appellent le
+  present perfect : has been in service since 2006. Le prétérit (was)
+  fermerait la période.
+evaluates: [fondamentaux.anglais-aeronautique.les-temps-du-recit]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

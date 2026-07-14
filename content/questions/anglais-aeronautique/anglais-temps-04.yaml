@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-temps-04
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Quel est le prétérit du verbe « to fly » ?
+choices:
+  - flew
+  - flied
+  - flyed
+  - flown
+correctChoices: [0]
+explanation: >-
+  Fly / flew / flown — « flied » n'existe pas, et « flown » est le participe
+  passé (has flown). Les QCM régularisent volontiers les irréguliers en
+  distracteur.
+evaluates: [fondamentaux.anglais-aeronautique.les-temps-du-recit]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

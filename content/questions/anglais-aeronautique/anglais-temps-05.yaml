@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-temps-05
+kind: vrai-faux
+theme: anglais-grammaire
+statement: >-
+  La phrase « We have landed at 10:15 » est grammaticalement correcte.
+answer: false
+explanation: >-
+  Faux. Une heure précise impose le prétérit : « We landed at 10:15 ». Le
+  present perfect ne se combine jamais avec une date ou une heure — LA faute
+  type des QCM.
+evaluates: [fondamentaux.anglais-aeronautique.les-temps-du-recit]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

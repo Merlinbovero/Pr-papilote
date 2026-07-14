@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-fauxamis-03
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Que signifie « the aircraft stalled » ?
+choices:
+  - L'avion a décroché
+  - L'avion s'est garé dans un box
+  - L'avion a calé au parking
+  - L'avion a été arrêté par la police
+correctChoices: [0]
+explanation: >-
+  A stall = un décrochage (perte de portance) : « the aircraft stalled » =
+  l'avion a décroché. Un faux ami purement aéronautique, central pour la
+  sécurité.
+evaluates: [fondamentaux.anglais-aeronautique.les-faux-amis]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
