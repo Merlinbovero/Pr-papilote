@@ -1,0 +1,122 @@
+schemaVersion: 1
+id: eopn.appareils.mirage-iii
+type: appareil
+title: Mirage III
+slug: mirage-iii
+summary: >-
+  Le premier avion de la classe Mach 2 construit en série en Europe — le delta
+  de Dassault qui a donné son nom à toute une lignée et s'est vendu à plus de
+  1 400 exemplaires dans le monde. L'ancêtre direct du Mirage 2000.
+objectifs:
+  - Situer le Mirage III (intercepteur delta, premier Mach 2 européen de série).
+  - Connaître les jalons (Mirage I 1955, prototype 17/11/1956, Mirage III C 1960).
+  - Comprendre le succès mondial de la famille Mirage III/5 (plus de 1 400 exemplaires).
+aliases: [Mirage III, Mirage IIIC, Mirage IIIE, Mirage 5, delta, premier Mach 2 européen]
+module: eopn
+category: appareils
+subcategory: avions-historiques
+tags: []
+concours: [eopn]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot AV3 de la campagne COMAERO (tomes « Avions militaires », ch. 15, 17 et 23) ; chiffres d'export recoupés (Dassault Aviation).
+    author: prepapilote
+sources:
+  - title: "COMAERO — Les avions militaires, tome II (EUROSAE), ch. 15, 17 et 23 (Mirage III)"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Dassault Aviation — Mirage III, origines et caractéristiques (site patrimoine)"
+    url: https://www.dassault-aviation.com/en/passion/aircraft/military-dassault-aircraft/mirage-iii/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.appareils.mirage-iv
+    - eopn.appareils.mirage-2000
+    - eopn.histoire.histoire-de-l-armee-de-l-air
+infobox:
+  constructeur: Dassault (GAMD)
+  role: Intercepteur puis chasseur polyvalent à aile delta
+  armees: [Armée de l'air, une vingtaine de forces aériennes étrangères]
+  miseEnService: "1961 (Mirage III C — premier vol de série le 9 octobre 1960)"
+  statut: Retiré du service en France (dernières unités opérationnelles en 1994)
+  equipage: 1 (2 pour les versions biplaces B/BE)
+content:
+  essentiel:
+    body: |
+      Le **Mirage III C** est le **premier avion de la classe Mach 2
+      construit en série en Europe** (COMAERO). Derrière ce titre, une
+      lignée — celle du **delta** de Dassault :
+
+      - **25 juin 1955** — premier vol du petit **Mirage I** (Mystère
+        Delta), bimoteur sous-motorisé mais probatoire ;
+      - le Mirage II est abandonné en fabrication — Dassault réutilise sa
+        voilure pour construire, sur fonds propres, le **Mirage III-001**,
+        monoréacteur Atar, qui vole le **17 novembre 1956** et
+        impressionne au point d'être acheté par l'État en avril 1957 ;
+      - été 1957 — commande de dix **Mirage III A** de présérie, qui
+        élimine les concurrents Trident et Durandal ;
+      - septembre 1958 — commande de **100 Mirage III C** de série,
+        radar **Cyrano**, missile Matra R 530, canons de 30 mm ; le
+        premier vole le **9 octobre 1960**.
+
+      La famille Mirage III/5/50 dépassera **1 400 exemplaires** pour une
+      **vingtaine de forces aériennes**, avec production sous licence en
+      Suisse et en Australie — le plus grand succès d'exportation de
+      l'aviation de combat française.
+    aRetenir:
+      - "Mirage III C = premier avion de la classe Mach 2 construit en série en Europe — en service français à partir de 1961."
+      - "Prototype Mirage III-001 — premier vol le 17 novembre 1956, lancé sur initiative de Dassault."
+      - "Famille Mirage III/5 — plus de 1 400 exemplaires, une vingtaine de pays, licences en Suisse et en Australie."
+      - "L'aile delta du Mirage III fonde une lignée — jusqu'au Mirage 2000, delta lui aussi."
+  sections:
+    - id: pourquoi-le-delta
+      title: Pourquoi l'aile delta ?
+      body: |
+        Dans les années 1950, tous les grands avionneurs regardent le
+        **delta** — traînée réduite en supersonique, et une aile
+        structurellement épaisse à la racine même pour une très faible
+        **épaisseur relative**, donc plus facile à construire et plus
+        rapide à poussée donnée.
+
+        Le delta a aussi ses revers, que les pilotes apprendront — pas de
+        volets (l'aile fait tout), **vitesse d'approche élevée**, perte
+        d'énergie dans les virages serrés à basse vitesse. Le Mirage
+        2000 corrigera plus tard ces défauts par les **commandes de vol
+        électriques** et l'instabilité artificielle — même aile, autre
+        époque.
+    - id: la-selection-darwinienne-de-1957
+      title: 1956-1958 — la sélection darwinienne
+      strate: maitriser
+      body: |
+        Le Mirage III n'était pas seul — la France des années 1950
+        essayait **en vol** ses idées concurrentes : intercepteurs légers
+        bimoteurs avec fusée d'appoint (Mirage I), avions à moteur-fusée
+        (Trident II), monoréacteurs (Durandal). Le COMAERO raconte cette
+        compétition réelle, tranchée par les performances — et par les
+        contraintes budgétaires de 1957, qui interdisaient de financer
+        deux programmes.
+
+        La leçon retenue — plutôt qu'un intercepteur ultra-spécialisé et
+        un avion d'attaque distincts, un **seul avion polyvalent** couvrant
+        « le plus grand ensemble de missions ». Ce choix fonde la doctrine
+        française de l'avion de combat unique et polyvalent — du Mirage
+        III E au **Rafale omnirôle**, c'est la même idée.
+
+        Sa réputation mondiale, forgée notamment lors des combats de
+        1967 au Proche-Orient, fera du delta français un best-seller —
+        retiré des unités françaises en 1994, il volait encore ailleurs
+        bien après.
+  pieges:
+    - "Premier Mach 2 européen DE SÉRIE — des prototypes européens avaient déjà passé Mach 2, mais le III C est le premier construit en série."
+    - Le Mirage III-001 est né sur initiative et fonds propres de Dassault — l'État l'a acheté après ses premiers vols (avril 1957).
+    - "Ne pas confondre Mirage III (chasseur, ~1 400 exemplaires exportés) et Mirage IV (bombardier stratégique, 62 exemplaires, jamais exporté)."
+    - "L'aile delta impose une vitesse d'approche élevée — un défaut corrigé sur Mirage 2000 par les commandes électriques, pas par l'aile."

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage-iii-04
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Comment le prototype Mirage III-001 est-il né en 1956 ?
+choices:
+  - "Sur initiative et fonds propres de Dassault, en réutilisant la voilure du Mirage II"
+  - "Sur commande d'État après appel d'offres international"
+  - "En coopération franco-britannique"
+  - "Par modification d'un avion américain sous licence"
+correctChoices: [0]
+explanation: >-
+  Dassault a construit le III-001 de sa propre initiative en réutilisant la
+  voilure du Mirage II abandonné — ses performances au premier vol du
+  17 novembre 1956 ont convaincu l'État, qui l'a acheté en avril 1957.
+evaluates: [eopn.appareils.mirage-iii]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

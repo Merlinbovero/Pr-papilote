@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopn.mirage-iii-03
+kind: vrai-faux
+theme: appareils-historiques
+statement: >-
+  La famille Mirage III/5 a dépassé 1 400 exemplaires produits pour une
+  vingtaine de forces aériennes.
+answer: true
+explanation: >-
+  Avec plus de 1 400 exemplaires et des productions sous licence en Suisse et
+  en Australie, le Mirage III est le plus grand succès d'exportation de
+  l'aviation de combat française.
+evaluates: [eopn.appareils.mirage-iii]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie
