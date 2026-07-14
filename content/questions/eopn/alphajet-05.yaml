@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.alphajet-05
+kind: ordre
+theme: appareils-aae
+statement: >-
+  Classez ces avions de la formation chasse française du plus ancien au plus
+  récent dans ce rôle.
+items:
+  - "Fouga Magister"
+  - "Alphajet"
+  - "PC-21"
+explanation: >-
+  Le Fouga Magister forme les pilotes dans les années 1950-1970, l'Alphajet
+  prend le relais à la fin des années 1970, et le PC-21 le remplace à Cognac
+  à partir de 2018.
+evaluates: [eopn.appareils.alphajet]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

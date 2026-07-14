@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopn.alphajet-03
+kind: vrai-faux
+theme: appareils-aae
+statement: >-
+  L'Alphajet est un avion supersonique.
+answer: false
+explanation: >-
+  L'Alphajet est volontairement subsonique (Mach 0,84 en palier) — un
+  avion-école privilégie la sécurité et le coût, pas la vitesse de pointe.
+evaluates: [eopn.appareils.alphajet]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

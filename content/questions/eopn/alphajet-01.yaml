@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.alphajet-01
+kind: qcm
+theme: appareils-aae
+statement: >-
+  De quelle coopération est né l'Alphajet ?
+choices:
+  - "Franco-allemande (Dassault-Breguet et Dornier)"
+  - "Franco-britannique"
+  - "Franco-italienne"
+  - "Franco-espagnole"
+correctChoices: [0]
+explanation: >-
+  L'Alphajet est né de la coopération France-RFA (accord de 1969) entre
+  Dassault-Breguet et Dornier — la coopération franco-britannique de la même
+  époque, c'est le Jaguar.
+evaluates: [eopn.appareils.alphajet]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie
