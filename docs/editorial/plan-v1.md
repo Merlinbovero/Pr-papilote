@@ -98,3 +98,34 @@ Lots de 3-4 fiches avec le protocole habituel complet (sources vérifiées,
 ≥5 questions, relations, portes qualité, CHANGELOG). Ordre de production :
 F1 (BIA-fondamentaux 1-4), F2 (BIA-culture 5-7 + 11), F3 (psychotechnique
 8-9 + 10), F4 (EOPN 12-15), F5 (ALAT 16-17 + EOPAN 18).
+
+## État des lieux consolidé au gel (2026-07-14, lots 69-73)
+
+**Le seuil des 150 fiches est atteint — la production éditoriale générale
+est gelée.** Les 18 fiches du plan ont été produites en 5 lots (F1→F5),
+chacune avec sources vérifiées (re-vérification web systématique des
+données actuelles), ≥5 questions, relations de graphe et portes qualité
+complètes (139 tests unitaires, build, rendu vérifié, 46 e2e).
+
+État final de la bibliothèque :
+
+| Indicateur          | Valeur                                                                       |
+| ------------------- | ---------------------------------------------------------------------------- |
+| Fiches publiées     | **150** (EOPAN 34 · EOPN 23 · ALAT 16 · Fondamentaux 68 · Psychotechnique 9) |
+| Questions           | **759** (toutes les fiches ≥ 5 questions)                                    |
+| Termes de glossaire | 62                                                                           |
+| Pages générées      | 314                                                                          |
+| Lots éditoriaux     | 73 (CHANGELOG exhaustif)                                                     |
+
+Acquis structurels de la dernière ligne droite : les 5 domaines du
+programme BIA sont couverts par les Fondamentaux ; le graphe dissuasion
+est complet (Mirage IV→2000→Rafale→FAS→MRTT→bases) ; chaque armée a son
+école dans le graphe (EAC, 50S/écoles Marine, EALAT) ; les familles
+psychotechniques prioritaires ont leur fiche de méthode.
+
+**Règle en vigueur** : au-delà de 150, une fiche n'est créée que si elle
+est indispensable au BIA, aux psychotechniques ou aux cartes — nécessité
+explicitement justifiée, enrichissement d'une fiche existante privilégié.
+
+→ Phase 2 : module BIA (parcours, quiz thématiques, examens blancs de
+100 questions, erreurs, progression par matière).
