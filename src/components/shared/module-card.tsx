@@ -21,6 +21,8 @@ interface ModuleCardProps {
   /** Photographie réelle, licence vérifiée (src/lib/photos.ts). */
   imageSrc?: string;
   imageAlt?: string;
+  /** Point focal CSS (object-position) pour garder le sujet cadré. */
+  imageFocal?: string;
   /** Ligne secondaire courte (armée, vocation) affichée sous le nom. */
   subtitle?: string;
 }
@@ -36,6 +38,7 @@ export function ModuleCard({
   orientation,
   imageSrc,
   imageAlt,
+  imageFocal,
   subtitle,
 }: ModuleCardProps) {
   return (
@@ -58,6 +61,7 @@ export function ModuleCard({
           alt={imageAlt ?? ""}
           fill
           sizes={orientation === "vertical" ? "(min-width: 768px) 33vw, 100vw" : "100vw"}
+          style={imageFocal ? { objectPosition: imageFocal } : undefined}
           className="object-cover transition-transform duration-300 motion-safe:group-hover:scale-105"
         />
       ) : (

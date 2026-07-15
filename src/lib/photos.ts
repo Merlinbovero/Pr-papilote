@@ -21,6 +21,11 @@ export interface SitePhoto {
   licenseUrl?: string;
   /** Page de description du fichier sur Wikimedia Commons. */
   sourceUrl: string;
+  /**
+   * Point focal CSS (`object-position`) pour garder le sujet cadré quand la
+   * photo est recadrée (carte verticale, bannière large). Défaut : "center".
+   */
+  focal?: string;
 }
 
 export const SITE_PHOTOS = {
@@ -40,6 +45,7 @@ export const SITE_PHOTOS = {
     author: "U.S. Navy — MCS3 Ron Reeves",
     license: "Domaine public",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=8203930",
+    focal: "50% 42%",
   },
   eopn: {
     src: "/images/module-eopn.jpg",
@@ -48,6 +54,7 @@ export const SITE_PHOTOS = {
     author: "U.S. Air Force — SSgt Hannah Strobel",
     license: "Domaine public",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=134018270",
+    focal: "62% 58%",
   },
   alat: {
     src: "/images/module-alat.jpg",
@@ -75,6 +82,7 @@ export const SITE_PHOTOS = {
     license: "CC BY-SA 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=142187142",
+    focal: "50% 62%",
   },
   meteo: {
     src: "/images/theme-meteo.jpg",

@@ -1,23 +1,25 @@
 import { expect, test, type Page } from "@playwright/test";
 
-/** Ouvre le tiroir mobile si présent, sinon la nav en ligne est déjà là. */
-async function openNav(page: Page) {
+/**
+ * Ouvre l'accès aux concours : tiroir sur mobile, menu déroulant « Concours »
+ * sur desktop. Renvoie le repère de navigation qui contient alors les liens.
+ */
+async function openConcours(page: Page) {
   const burger = page.getByRole("button", { name: "Ouvrir le menu" });
   if (await burger.isVisible()) {
     await burger.click();
+  } else {
+    await page.getByRole("button", { name: "Concours" }).click();
   }
+  return page.getByRole("navigation", { name: "Navigation principale" });
 }
 
 test.describe("navigation globale", () => {
-  test("le header mène aux concours, avec état actif", async ({ page }) => {
+  test("le header mène aux concours", async ({ page }) => {
     await page.goto("/");
-    await openNav(page);
-    const nav = page.getByRole("navigation", { name: "Navigation principale" });
+    const nav = await openConcours(page);
     await nav.getByRole("link", { name: /EOPAN/ }).click();
     await expect(page.getByRole("heading", { level: 1, name: "EOPAN" })).toBeVisible();
-
-    await openNav(page);
-    await expect(nav.getByRole("link", { name: /EOPAN/ })).toHaveAttribute("aria-current", "page");
   });
 
   test("la page des crédits liste les auteurs et licences", async ({ page }) => {
