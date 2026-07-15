@@ -12,6 +12,10 @@ const keyPages: { name: string; path: string }[] = [
   { name: "fiche documentaire", path: "/eopan/appareils/rafale-m" },
   { name: "recherche", path: "/recherche" },
   { name: "dictionnaire", path: "/dictionnaire" },
+  { name: "parcours BIA", path: "/bia" },
+  { name: "examen blanc BIA", path: "/bia/examen-blanc" },
+  { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
+  { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },
 ];
 
 for (const { name, path } of keyPages) {

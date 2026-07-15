@@ -43,7 +43,7 @@ test.describe("cartes des bases", () => {
 
   test("la carte SVG rend les marqueurs accessibles", async ({ page }) => {
     await page.goto("/cartes/alat");
-    const svg = page.getByRole("img", { name: /Carte des implantations/ });
+    const svg = page.getByRole("group", { name: /Carte des implantations/ });
     await expect(svg).toBeVisible();
     await expect(
       svg.getByRole("button", { name: /1er RHC — Phalsbourg — Phalsbourg/ })

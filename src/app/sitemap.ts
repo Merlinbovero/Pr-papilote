@@ -7,6 +7,7 @@ import {
   getTermes,
 } from "@/lib/content/fiches";
 import { getCategories, getModules } from "@/lib/content/referentials";
+import { getBiaConfig } from "@/lib/bia/config";
 import { absoluteUrl } from "@/lib/site";
 
 /**
@@ -19,7 +20,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/recherche"), changeFrequency: "monthly", priority: 0.3 },
     { url: absoluteUrl("/dictionnaire"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/bia"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/bia/examen-blanc"), changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: absoluteUrl("/psychotechnique/entrainement"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    { url: absoluteUrl("/cartes"), changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/cartes/aeronavale"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/cartes/armee-de-l-air"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/cartes/alat"), changeFrequency: "monthly", priority: 0.5 },
   ];
+
+  const bia = getBiaConfig();
+  for (const matiere of [...bia.matieres, bia.epreuveFacultative]) {
+    entries.push({
+      url: absoluteUrl(`/bia/${matiere.slug}`),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
 
   for (const mod of getModules()) {
     entries.push({ url: absoluteUrl(`/${mod.slug}`), changeFrequency: "monthly", priority: 0.8 });

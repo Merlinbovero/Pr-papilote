@@ -121,7 +121,7 @@ export function BaseMap({ implantations, armeeLabel }: BaseMapProps) {
                 <TransformComponent wrapperClass="!w-full" contentClass="!w-full">
                   <svg
                     viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
-                    role="img"
+                    role="group"
                     aria-label={`Carte des implantations — ${armeeLabel}`}
                     className="h-auto w-full select-none"
                   >
