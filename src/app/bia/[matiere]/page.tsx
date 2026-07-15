@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FicheCard } from "@/components/shared/fiche-card";
 import { MatiereQuiz } from "@/features/bia/matiere-quiz";
 import { getBiaConfig, getBiaMatiere } from "@/lib/bia/config";
 import { getBiaExamPools, getBiaFichesByMatiere, toBiaPlayerQuestion } from "@/lib/bia/data";
@@ -97,22 +95,12 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {list.map((fiche) => (
                   <li key={fiche.id}>
-                    <Link
+                    <FicheCard
                       href={getFicheHref(fiche)}
-                      className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
-                    >
-                      <Card className="hover:border-primary/40 h-full transition-colors">
-                        <CardHeader>
-                          <CardTitle className="text-base">{fiche.title}</CardTitle>
-                          <CardDescription className="line-clamp-3">
-                            {fiche.summary}
-                          </CardDescription>
-                          <Badge variant="outline" className="w-fit font-normal">
-                            Niveau {fiche.level}
-                          </Badge>
-                        </CardHeader>
-                      </Card>
-                    </Link>
+                      title={fiche.title}
+                      summary={fiche.summary}
+                      badge={`Niveau ${fiche.level}`}
+                    />
                   </li>
                 ))}
               </ul>

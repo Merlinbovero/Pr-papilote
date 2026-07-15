@@ -66,7 +66,23 @@ DA 181 Mayotte, BA 186 Nouvelle-Calédonie, DA 190 Polynésie) et 4 bases navale
 (Fort-de-France, Port des Galets, Nouméa, Papeete). Limite assumée : l'ALAT
 outre-mer (détachements hélicoptères) n'est pas encore couverte.
 
-## Lot suivant (prévu)
+## Lot D4 — Harmonisation
 
-- **D4** — harmonisation globale (bannières, cartes, rayons, boutons, overlays,
-  densité) et vérification de l'homogénéité perçue.
+Système de cartes unifié : composant **`FicheCard`** (titre, résumé tronqué,
+badge optionnel, relief au survol) appliqué aux listes de fiches (pages de
+catégorie, matières BIA), cohérent avec `CategoryCard`. Rayons harmonisés
+(`rounded-2xl` bannières, `rounded-xl` cartes), même hover (ombre + montée),
+même densité. Résultat : les pages internes partagent un langage visuel unique
+au lieu d'une juxtaposition de styles.
+
+## Bilan de la passe design
+
+- **Header** : menus déroulants sobres, fin de l'empilement de libellés.
+- **Bannières** : `PageHeader` illustré + taille hero, cadrage par point focal,
+  code couleur par armée sur toutes les pages intérieures.
+- **Sous-pages** : cartes de catégories/fiches premium (icône de famille,
+  relief), hero renforcés, BIA plus éditorial.
+- **Cartes** : vraie géographie de France (régions IGN), marqueurs alignés,
+  outre-mer en cartouches, panneau et filtres premium.
+- **Cohérence** : composants partagés (`PageHeader`, `CategoryCard`,
+  `FicheCard`), tokens couleur, rayons et survols unifiés.
