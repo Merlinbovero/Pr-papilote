@@ -259,6 +259,22 @@ export const ficheRelationsSchema = z
 
 const infoboxValueSchema = z.union([z.string().min(1), z.number(), z.array(z.string().min(1))]);
 
+/** Photographie d'illustration d'une fiche — libre de droits, créditée. */
+export const fichePhotoSchema = z.object({
+  /** Chemin public de l'image optimisée (public/images). */
+  src: z.string().regex(/^\/images\/.+\.(jpg|png|webp)$/),
+  /** Description en français (attribut alt). */
+  alt: z.string().min(1),
+  author: z.string().min(1),
+  license: z.string().min(1),
+  licenseUrl: z.url().optional(),
+  sourceUrl: z.url(),
+  /** Point focal CSS (object-position) pour le cadrage — défaut « center ». */
+  focal: z.string().optional(),
+});
+
+export type FichePhoto = z.infer<typeof fichePhotoSchema>;
+
 // ---------------------------------------------------------------------------
 // Fiche
 // ---------------------------------------------------------------------------
@@ -310,6 +326,13 @@ export const ficheMetadataBaseSchema = z.object({
   relations: ficheRelationsSchema.default({}),
   /** Données structurées des fiches-objet (exigences par type). */
   infobox: z.record(z.string(), infoboxValueSchema).optional(),
+  /**
+   * Photographie d'illustration (design pass P1) : une vraie photo libre de
+   * droits vérifiée qui montre le sujet de la fiche (appareil, base, instrument).
+   * Fichier optimisé dans public/images ; auteur/licence/source obligatoires
+   * (attribution honorée en pied de fiche et sur /credits-photos).
+   */
+  image: fichePhotoSchema.optional(),
 });
 
 type FicheLike = z.infer<typeof ficheMetadataBaseSchema>;

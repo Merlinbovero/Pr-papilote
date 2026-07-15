@@ -170,6 +170,21 @@ export function getFiches(): FicheFile[] {
   return getIndex().fiches.filter((fiche) => isVisible(fiche.status));
 }
 
+/** Photos d'illustration des fiches (pour la page des crédits). */
+export function getFichePhotos(): {
+  ficheTitle: string;
+  ficheHref: string;
+  photo: NonNullable<FicheFile["image"]>;
+}[] {
+  return getFiches()
+    .filter((fiche) => fiche.image)
+    .map((fiche) => ({
+      ficheTitle: fiche.title,
+      ficheHref: getFicheHref(fiche),
+      photo: fiche.image!,
+    }));
+}
+
 /**
  * Contenu BRUT, tous statuts confondus — réservé au contrôle qualité
  * éditorial (`content-check`), qui juge y compris les brouillons.

@@ -3,6 +3,12 @@ id: eopan.appareils.e-2c-hawkeye
 type: appareil
 title: E-2C Hawkeye
 slug: e-2c-hawkeye
+image:
+  src: /images/fiche-e-2c-hawkeye.jpg
+  alt: E-2C Hawkeye de la Flottille 4F à l'appontage sur un porte-avions
+  author: U.S. Navy — MC2 Joseph E. Montemarano
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=69006903
 summary: >-
   Avion de guet aérien embarqué de l'aéronautique navale — les « yeux » du groupe
   aéronaval. Mis en œuvre par la flottille 4F depuis le porte-avions Charles de
