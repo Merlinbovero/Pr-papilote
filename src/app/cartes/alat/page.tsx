@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
+import { getFranceMap } from "@/lib/cartes/geo";
 import { getModuleAccentVar } from "@/lib/module-accent";
 import { SITE_PHOTOS } from "@/lib/photos";
 
@@ -32,7 +33,12 @@ export default function CartePage() {
         photo={SITE_PHOTOS.alat}
         accentVar={getModuleAccentVar("alat")}
       />
-      <BaseMap implantations={implantations} armeeLabel="aviation légère de l'armée de Terre" />
+      <BaseMap
+        implantations={implantations}
+        armeeLabel="aviation légère de l'armée de Terre"
+        map={getFranceMap()}
+        accentVar={getModuleAccentVar("alat")}
+      />
     </main>
   );
 }

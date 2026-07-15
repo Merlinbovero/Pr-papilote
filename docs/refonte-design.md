@@ -41,9 +41,22 @@ photo par catégorie (évite la répétition d'une même image).
 relief au survol, **en-tête photo par matière** (`MATIERE_PHOTOS` : météo,
 aérodynamique, espace, cockpit, histoire…).
 
+## Lot D3a — Refonte des cartes : géographie réaliste
+
+Le fond « blob » de ~45 points est remplacé par une **vraie géographie de France
+métropolitaine** : régions IGN (données publiques `france-geojson`) projetées en
+Mercator au build (`scripts/generate-france-map.mjs` → `content/_referentiels/
+france-map.json`, autonome, sans réseau au build). Côtes, Bretagne, Cotentin,
+frontières de régions et Corse sont réalistes. La **même projection** place les
+marqueurs (`src/lib/cartes/geo.ts`) : ils tombent exactement sur le fond ;
+positions pré-calculées au serveur et passées au composant client (le JSON du
+fond ne part pas dans le bundle). **Panneau et filtres premium** : marqueurs à la
+couleur de l'armée, halo de sélection, labels à liseré blanc lisibles, panneau de
+détail avec code d'implantation, liens du graphe, filtres pastille colorés.
+
 ## Lots suivants (prévus)
 
-- **D3** — refonte du module cartes : géographie plus réaliste (fond France +
-  Corse propre), outre-mer (inset maps), panneau latéral et filtres premium.
+- **D3b** — outre-mer (inset maps DOM-TOM) + enrichissement des implantations
+  (écoles, régiments, BAN, bases aériennes par armée).
 - **D4** — harmonisation globale (bannières, cartes, rayons, boutons, overlays,
   densité) et vérification de l'homogénéité perçue.
