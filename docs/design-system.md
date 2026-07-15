@@ -10,23 +10,23 @@ Tous les tokens vivent dans `src/app/globals.css` (`:root` clair, `.dark` sombre
 
 ### Couleurs
 
-| Token                             | Signification                               | Notes                             |
-| --------------------------------- | ------------------------------------------- | --------------------------------- |
-| `primary`                         | Navigation, action principale, lien         | Bleu institutionnel               |
-| `secondary`                       | Fonds d'action secondaire                   | Neutre                            |
-| `accent`                          | Survols, sélection                          | Neutre                            |
-| `success`                         | Validation, réponse juste, vérifié          | Vert                              |
-| `warning`                         | Attention, à re-vérifier                    | Orange                            |
-| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                             |
-| `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary` |
-| `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface              |
-| `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                   |
-| `foreground`                      | Texte principal                             |                                   |
-| `muted-foreground`                | Texte secondaire                            |                                   |
-| `muted`                           | Fonds discrets, texte tertiaire via opacité |                                   |
-| `concours-eopan/eopn/alat`        | Identité concours                           | Badge/liseré uniquement           |
-| `chart-1…5`                       | Séries de graphiques                        |                                   |
-| `sidebar-*`                       | Navigation latérale                         |                                   |
+| Token                             | Signification                               | Notes                                 |
+| --------------------------------- | ------------------------------------------- | ------------------------------------- |
+| `primary`                         | Navigation, action principale, lien         | **Bleu drapeau français** (≈ #0055A4) |
+| `secondary`                       | Fonds d'action secondaire                   | Neutre                                |
+| `accent`                          | Survols, sélection, état actif de nav       | Bleu très pâle (teinte de `primary`)  |
+| `success`                         | Validation, réponse juste, vérifié          | Vert                                  |
+| `warning`                         | Attention, à re-vérifier                    | Orange                                |
+| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                                 |
+| `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary`     |
+| `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface                  |
+| `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                       |
+| `foreground`                      | Texte principal                             |                                       |
+| `muted-foreground`                | Texte secondaire                            |                                       |
+| `muted`                           | Fonds discrets, texte tertiaire via opacité |                                       |
+| `concours-eopan/eopn/alat`        | Identité concours                           | Badge/liseré uniquement               |
+| `chart-1…5`                       | Séries de graphiques                        |                                       |
+| `sidebar-*`                       | Navigation latérale                         |                                       |
 
 **Variantes d'état — règle unique** : les états dérivent du token par les utilitaires standard, jamais par de nouveaux tokens : survol `hover:bg-primary/90`, actif `active:bg-primary/80`, désactivé `disabled:opacity-50 disabled:pointer-events-none`, focus `focus-visible:ring-2 ring-ring`. C'est ce qui garantit qu'un état se comporte pareil partout. Contraste : WCAG AA (4,5:1 texte, 3:1 UI) dans les deux thèmes.
 
