@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,17 @@ import { getBiaConfig, getBiaMatiere } from "@/lib/bia/config";
 import { getBiaExamPools, getBiaFichesByMatiere, toBiaPlayerQuestion } from "@/lib/bia/data";
 import { getCategory } from "@/lib/content/referentials";
 import { getFicheHref } from "@/lib/content/fiches";
+import { SITE_PHOTOS, type SitePhoto } from "@/lib/photos";
+
+/** Photo d'en-tête par matière du BIA (design pass D2). */
+const MATIERE_PHOTOS: Record<string, SitePhoto> = {
+  "meteorologie-aerologie": SITE_PHOTOS.meteo,
+  "aerodynamique-et-principes-du-vol": SITE_PHOTOS.fondamentaux,
+  "etude-des-aeronefs-et-engins-spatiaux": SITE_PHOTOS.espace,
+  "navigation-reglementation-securite": SITE_PHOTOS.psychotechnique,
+  "histoire-et-culture": SITE_PHOTOS.histoire,
+  anglais: SITE_PHOTOS.eopn,
+};
 
 interface MatierePageProps {
   params: Promise<{ matiere: string }>;
@@ -64,13 +76,15 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
           { label: matiere.name },
         ]}
       />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{matiere.name}</h1>
-        <p className="max-w-prose">{matiere.description}</p>
-        <p className="text-muted-foreground text-sm">
-          {fiches.length} fiches · {pool.length} questions d&apos;entraînement
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Parcours BIA"
+        title={matiere.name}
+        description={matiere.description}
+        photo={MATIERE_PHOTOS[slug]}
+      />
+      <p className="text-muted-foreground text-sm">
+        {fiches.length} fiches · {pool.length} questions d&apos;entraînement
+      </p>
 
       <section aria-label="Fiches de la matière" className="space-y-6">
         {[...byCategory.entries()].map(([categorySlug, list]) => {
