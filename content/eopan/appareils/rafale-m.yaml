@@ -3,6 +3,12 @@ id: eopan.appareils.rafale-m
 type: appareil
 title: Rafale M
 slug: rafale-m
+image:
+  src: /images/fiche-rafale-m.jpg
+  alt: Rafale Marine en touch-and-go sur un porte-avions
+  author: US Navy
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54165584
 summary: >-
   Chasseur multirôle embarqué de l'aéronautique navale, version marine du
   Rafale, mis en œuvre depuis le porte-avions Charles de Gaulle.

@@ -3,6 +3,13 @@ id: eopan.appareils.cap-10
 type: appareil
 title: Cap 10
 slug: cap-10
+image:
+  src: /images/fiche-cap-10.jpg
+  alt: Mudry CAP 10B, biplace de voltige et de sélection, en vol
+  author: Alan Wilson
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=26901894
 summary: >-
   Le petit biplace de voltige sur lequel tout commence — c'est sur Cap 10, à
   l'escadrille 50S de Lanvéoc-Poulmic, que les candidats EOPAN passent leur

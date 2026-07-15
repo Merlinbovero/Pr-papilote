@@ -6,6 +6,7 @@ import { DocumentList } from "@/components/content/document-list";
 import { EssentialBlock } from "@/components/content/essential-block";
 import { FicheFigure } from "@/components/content/fiche-figure";
 import { FicheHeader } from "@/components/content/fiche-header";
+import { FichePhotoBanner } from "@/components/content/fiche-photo";
 import { FicheNav } from "@/components/content/fiche-nav";
 import { FicheSection } from "@/components/content/fiche-section";
 import { Infobox } from "@/components/content/infobox";
@@ -196,6 +197,12 @@ export default async function FichePage({ params }: FichePageProps) {
         verifiedAt={fiche.verifiedAt}
         overdue={state === "a-verifier"}
       />
+
+      {fiche.image ? (
+        <div className="mt-6">
+          <FichePhotoBanner photo={fiche.image} />
+        </div>
+      ) : null}
 
       <div className="mt-8 gap-10 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-10">

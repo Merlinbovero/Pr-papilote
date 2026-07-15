@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { getFichePhotos } from "@/lib/content/fiches";
 import { getAllSitePhotos } from "@/lib/photos";
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
  */
 export default function CreditsPhotosPage() {
   const photos = getAllSitePhotos();
+  const fichePhotos = getFichePhotos();
   return (
     <main className="mx-auto w-full max-w-4xl space-y-8 px-4 py-8 sm:px-6 md:py-12 lg:px-8">
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Crédits photos" }]} />
@@ -68,6 +71,59 @@ export default function CreditsPhotosPage() {
           </li>
         ))}
       </ul>
+
+      {fichePhotos.length > 0 ? (
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold tracking-tight">Photos des fiches</h2>
+          <ul className="space-y-4">
+            {fichePhotos.map(({ photo, ficheTitle, ficheHref }) => (
+              <li
+                key={photo.src}
+                className="bg-card flex flex-col gap-4 rounded-xl border p-4 sm:flex-row sm:items-center"
+              >
+                <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-lg sm:w-48">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 640px) 12rem, 100vw"
+                    style={photo.focal ? { objectPosition: photo.focal } : undefined}
+                    className="object-cover"
+                  />
+                </div>
+                <div className="space-y-1 text-sm">
+                  <Link
+                    href={ficheHref}
+                    className="text-base font-semibold underline-offset-4 hover:underline"
+                  >
+                    {ficheTitle}
+                  </Link>
+                  <p className="text-muted-foreground">Auteur : {photo.author}</p>
+                  <p className="text-muted-foreground">
+                    Licence :{" "}
+                    {photo.licenseUrl ? (
+                      <a
+                        href={photo.licenseUrl}
+                        className="text-primary underline-offset-4 hover:underline"
+                      >
+                        {photo.license}
+                      </a>
+                    ) : (
+                      photo.license
+                    )}
+                  </p>
+                  <a
+                    href={photo.sourceUrl}
+                    className="text-primary inline-block underline-offset-4 hover:underline"
+                  >
+                    Voir la source →
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </main>
   );
 }

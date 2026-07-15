@@ -3,6 +3,13 @@ id: eopan.appareils.atlantique-2
 type: appareil
 title: Atlantique 2 (ATL2)
 slug: atlantique-2
+image:
+  src: /images/fiche-atlantique-2.jpg
+  alt: Atlantique 2 (ATL2) de la Marine nationale en vol
+  author: Jonathan Payne
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=178291388
 summary: >-
   Avion de patrouille maritime de l'aéronautique navale, basé à terre. À très
   longue endurance, il surveille de vastes zones maritimes et traque les
