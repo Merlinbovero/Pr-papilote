@@ -3,6 +3,12 @@ id: alat.organisation.la-4e-brigade-d-aerocombat
 type: organisation
 title: La 4e brigade d'aérocombat (4e BAC)
 slug: la-4e-brigade-d-aerocombat
+image:
+  src: /images/fiche-tigre.jpg
+  alt: Hélicoptère Tigre — la 4e brigade d'aérocombat
+  author: Sgt. Rick Frost, U.S. Army (114th PAD)
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=16675830
 summary: >-
   Créée en 2016 à Clermont-Ferrand, la 4e BAC commande les régiments
   d'hélicoptères de combat — environ 2 650 aérocombattants et 150

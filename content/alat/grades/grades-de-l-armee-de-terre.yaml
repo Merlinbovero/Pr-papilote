@@ -3,6 +3,13 @@ id: alat.grades.grades-de-l-armee-de-terre
 type: concept
 title: Les grades de l'armée de Terre
 slug: grades-de-l-armee-de-terre
+image:
+  src: /images/module-alat.jpg
+  alt: Hélicoptère Tigre — les grades de l'armée de Terre
+  author: Ibex73
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=169032432
 summary: >-
   Du soldat au général d'armée, la hiérarchie de l'armée de Terre en quatre
   catégories — militaires du rang, sous-officiers, officiers, officiers

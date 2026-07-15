@@ -3,6 +3,13 @@ id: fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage
 type: concept
 title: L'anglais du sol et du décollage
 slug: l-anglais-du-sol-et-du-decollage
+image:
+  src: /images/theme-tour.jpg
+  alt: Tour de contrôle — l'anglais du sol et du décollage
+  author: Calistemon
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=135405242
 summary: >-
   Radio check, request taxi, backtrack, conditional clearances — tout
   l'anglais des phases sol, du premier contact radio jusqu'au lâcher des

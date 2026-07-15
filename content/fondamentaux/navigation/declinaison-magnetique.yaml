@@ -3,6 +3,12 @@ id: fondamentaux.navigation.declinaison-magnetique
 type: notion-navigation
 title: La déclinaison magnétique
 slug: declinaison-magnetique
+image:
+  src: /images/theme-carte.jpg
+  alt: Carte aéronautique — la déclinaison magnétique
+  author: U.S. Department of Defense
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=101309445
 summary: >-
   La déclinaison magnétique est l'angle entre le nord vrai (carte) et le nord
   magnétique (boussole) ; elle dépend du lieu et du temps. Elle convertit le cap

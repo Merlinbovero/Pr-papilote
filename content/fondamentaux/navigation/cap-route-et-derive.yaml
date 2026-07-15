@@ -3,6 +3,12 @@ id: fondamentaux.navigation.cap-route-et-derive
 type: notion-navigation
 title: Cap, route et dérive
 slug: cap-route-et-derive
+image:
+  src: /images/theme-carte.jpg
+  alt: Carte aéronautique — cap, route et dérive
+  author: U.S. Department of Defense
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=101309445
 summary: >-
   Le cap est la direction du nez de l'avion (en degrés depuis le nord), la route
   sa trajectoire réelle au sol. Le vent de travers crée un écart entre les deux,

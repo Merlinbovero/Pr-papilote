@@ -3,6 +3,13 @@ id: alat.organisation.aviation-legere-armee-de-terre
 type: organisation
 title: L'Aviation légère de l'Armée de terre
 slug: aviation-legere-armee-de-terre
+image:
+  src: /images/module-alat.jpg
+  alt: Hélicoptère Tigre — l'Aviation légère de l'Armée de Terre
+  author: Ibex73
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=169032432
 summary: >-
   La composante hélicoptères de l'Armée de terre. Forte d'environ 4 400 personnes
   et de quelque 280 aéronefs, elle pratique l'aérocombat — combat, appui,

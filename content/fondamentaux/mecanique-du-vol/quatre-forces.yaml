@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.quatre-forces
 type: notion-aerodynamique
 title: Les quatre forces du vol
 slug: quatre-forces
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — les quatre forces du vol
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Quatre forces s'exercent en permanence sur un avion en vol — le poids, la
   portance, la poussée et la traînée. En vol en palier stabilisé, elles

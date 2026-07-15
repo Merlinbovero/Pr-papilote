@@ -3,6 +3,13 @@ id: fondamentaux.anglais-aeronautique.la-meteo-en-anglais
 type: concept
 title: La météo en anglais
 slug: la-meteo-en-anglais
+image:
+  src: /images/theme-meteo.jpg
+  alt: Nuages — la météo en anglais
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   Gusts, overcast, CAVOK — la météo aéronautique parle anglais, du bulletin
   parlé au METAR codé. Le vocabulaire du ciel (nuages, vent, visibilité,

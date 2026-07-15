@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.atmosphere-standard
 type: notion-meteo
 title: L'atmosphère standard (ISA)
 slug: atmosphere-standard
+image:
+  src: /images/theme-meteo.jpg
+  alt: Ciel et nuages — l'atmosphère standard (ISA)
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   L'atmosphère standard (ISA) est le modèle de référence de l'aéronautique —
   15 °C, 1013,25 hPa et 1,225 kg/m³ au niveau moyen de la mer, puis −2 °C par

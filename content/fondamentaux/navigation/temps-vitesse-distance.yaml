@@ -3,6 +3,14 @@ id: fondamentaux.navigation.temps-vitesse-distance
 type: notion-navigation
 title: Temps, vitesse et distance
 slug: temps-vitesse-distance
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — temps, vitesse et distance
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Toute la navigation repose sur distance = vitesse × temps. Avec des unités
   cohérentes (milles marins, nœuds, heures), on en tire le temps, la distance ou

@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.l-aerostatique
 type: notion-aerodynamique
 title: L'aérostatique — ballons et dirigeables
 slug: l-aerostatique
+image:
+  src: /images/theme-ballon.jpg
+  alt: Montgolfière en vol — l'aérostatique
+  author: Cjp24
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=121147818
 summary: >-
   Avant l'aile, il y a eu la bulle — les aérostats volent parce qu'ils sont
   plus légers que l'air (poussée d'Archimède). Montgolfières, ballons à gaz,

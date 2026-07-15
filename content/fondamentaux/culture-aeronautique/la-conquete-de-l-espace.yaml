@@ -3,6 +3,12 @@ id: fondamentaux.culture-aeronautique.la-conquete-de-l-espace
 type: concept
 title: La conquête de l'espace
 slug: la-conquete-de-l-espace
+image:
+  src: /images/theme-espace.jpg
+  alt: Lanceur Ariane 5 — la conquête de l'espace
+  author: NASA — Bill Ingalls
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=113683096
 summary: >-
   De Spoutnik à la Station spatiale internationale, d'Ariane à Thomas
   Pesquet — les jalons spatiaux au programme du BIA, et la place singulière

@@ -3,6 +3,12 @@ id: eopan.organisation.marine-nationale
 type: organisation
 title: L'organisation de la Marine nationale
 slug: marine-nationale
+image:
+  src: /images/theme-marine.jpg
+  alt: Porte-avions Charles de Gaulle — l'organisation de la Marine
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
 summary: >-
   La Marine nationale est l'une des composantes des forces armées françaises.
   Ses unités relèvent de deux chaînes de commandement — organique (préparer) et

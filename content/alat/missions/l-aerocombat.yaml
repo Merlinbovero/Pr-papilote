@@ -3,6 +3,12 @@ id: alat.missions.l-aerocombat
 type: concept
 title: L'aérocombat et les missions de l'ALAT
 slug: l-aerocombat
+image:
+  src: /images/fiche-tigre.jpg
+  alt: Hélicoptère Tigre — l'aérocombat et les missions de l'ALAT
+  author: Sgt. Rick Frost, U.S. Army (114th PAD)
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=16675830
 summary: >-
   L'aérocombat, c'est combattre par la troisième dimension au profit des
   troupes au sol — reconnaissance, attaque, transport tactique, appui et

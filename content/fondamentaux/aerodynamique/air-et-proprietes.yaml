@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.air-et-proprietes
 type: notion-aerodynamique
 title: L'air et ses propriétés
 slug: air-et-proprietes
+image:
+  src: /images/theme-meteo.jpg
+  alt: Le ciel — l'air et ses propriétés
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   L'air est un fluide pesant, compressible et visqueux. Sa densité — qui dépend
   de la pression, de la température, de l'altitude et de l'humidité — gouverne la

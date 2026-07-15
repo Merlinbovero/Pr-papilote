@@ -3,6 +3,14 @@ id: fondamentaux.instruments.compas-et-conservateur
 type: concept
 title: Le compas et le conservateur de cap
 slug: compas-et-conservateur
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le compas et le conservateur de cap
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Le compas magnétique indique le cap magnétique via une rose aimantée : toujours
   disponible, mais instable (erreurs de virage et d'accélération). Le conservateur

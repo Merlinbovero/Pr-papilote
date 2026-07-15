@@ -3,6 +3,13 @@ id: fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
 type: concept
 title: La naissance de l'aviation française (1890-1940)
 slug: naissance-de-l-aviation-francaise
+image:
+  src: /images/theme-bleriot.jpg
+  alt: Avion Blériot XI — la naissance de l'aviation française
+  author: Julian Herzog
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=28277043
 summary: >-
   De l'Éole de Clément Ader aux nationalisations de 1936 — un demi-siècle qui
   fait de la France une grande nation aéronautique, forge les noms que l'on

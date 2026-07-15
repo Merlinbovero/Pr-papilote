@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.la-propulsion
 type: notion-aerodynamique
 title: La propulsion — moteurs et hélices
 slug: la-propulsion
+image:
+  src: /images/theme-histoire.jpg
+  alt: Hélices d'un avion — la propulsion
+  author: Rob Schleiffert
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=46893603
 summary: >-
   Piston, turbopropulseur, turboréacteur — trois façons de produire la force
   qui fait avancer un aéronef. Comprendre qui fait quoi, à quel régime et à

@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.phenomenes-dangereux
 type: notion-meteo
 title: Les phénomènes météorologiques dangereux
 slug: phenomenes-dangereux
+image:
+  src: /images/theme-orage.jpg
+  alt: Cumulonimbus orageux — les phénomènes dangereux
+  author: Arnold Paul
+  license: CC BY-SA 2.5
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.5/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=447913
 summary: >-
   Les principaux dangers météo sont la turbulence, le givrage, le cisaillement de
   vent, la visibilité réduite et l'orage. Le cumulonimbus les concentre presque

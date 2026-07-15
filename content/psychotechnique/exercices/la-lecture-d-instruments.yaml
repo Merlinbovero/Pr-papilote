@@ -3,6 +3,14 @@ id: psychotechnique.exercices.la-lecture-d-instruments
 type: concept
 title: La lecture d'instruments
 slug: la-lecture-d-instruments
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — la lecture d'instruments
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Six cadrans, dix secondes, une question — où est l'avion ? L'épreuve de
   lecture d'instruments teste la capacité à extraire vite une situation de

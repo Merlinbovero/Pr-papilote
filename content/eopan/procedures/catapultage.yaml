@@ -3,6 +3,12 @@ id: eopan.procedures.catapultage
 type: procedure
 title: Le catapultage
 slug: catapultage
+image:
+  src: /images/theme-marine.jpg
+  alt: Pont d'envol du Charles de Gaulle — le catapultage
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
 summary: >-
   Procédure de décollage embarqué : la catapulte à vapeur lance l'avion de 0 à
   près de 250 km/h en environ deux secondes sur 75 mètres, pour lui donner sa

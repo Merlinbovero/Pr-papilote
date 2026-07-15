@@ -3,6 +3,13 @@ id: eopn.histoire.histoire-de-l-armee-de-l-air
 type: concept
 title: Histoire de l'armée de l'Air et de l'Espace
 slug: histoire-de-l-armee-de-l-air
+image:
+  src: /images/theme-bleriot.jpg
+  alt: Aviation d'époque — histoire de l'armée de l'Air
+  author: Julian Herzog
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=28277043
 summary: >-
   De l'Aéronautique militaire de 1912 à l'armée de l'Air et de l'Espace de
   2020 — l'indépendance de 1934, les As de 14-18, les FAFL, l'entrée dans la

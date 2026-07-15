@@ -3,6 +3,13 @@ id: fondamentaux.radio-communications.alphabet-oaci
 type: concept
 title: L'alphabet aéronautique OACI
 slug: alphabet-oaci
+image:
+  src: /images/theme-tour.jpg
+  alt: Tour de contrôle — l'alphabet aéronautique OACI
+  author: Calistemon
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=135405242
 summary: >-
   L'alphabet phonétique OACI épelle chaque lettre par un mot-code clair (Alfa,
   Bravo… Zulu) pour éviter les confusions à la radio. Les orthographes officielles

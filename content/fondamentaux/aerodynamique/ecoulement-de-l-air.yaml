@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.ecoulement-de-l-air
 type: notion-aerodynamique
 title: L'écoulement de l'air
 slug: ecoulement-de-l-air
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — l'écoulement de l'air
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   L'air s'écoule autour de l'aile en filets d'air. Le débit se conserve, donc
   l'air accélère dans un rétrécissement ; et là où il accélère, sa pression

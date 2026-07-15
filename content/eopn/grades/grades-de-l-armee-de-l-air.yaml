@@ -3,6 +3,13 @@ id: eopn.grades.grades-de-l-armee-de-l-air
 type: concept
 title: Les grades de l'armée de l'Air et de l'Espace
 slug: grades-de-l-armee-de-l-air
+image:
+  src: /images/module-eopn.jpg
+  alt: Armée de l'Air et de l'Espace — les grades
+  author: U.S. Air Force — SSgt Hannah Strobel
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=134018270
+  focal: 62% 58%
 summary: >-
   De l'aviateur au général d'armée aérienne — la hiérarchie de l'armée de
   l'Air et de l'Espace, quasi identique à celle de l'armée de Terre, avec ses

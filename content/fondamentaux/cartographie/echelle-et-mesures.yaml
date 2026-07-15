@@ -3,6 +3,12 @@ id: fondamentaux.cartographie.echelle-et-mesures
 type: concept
 title: L'échelle et les mesures sur la carte
 slug: echelle-et-mesures
+image:
+  src: /images/theme-carte.jpg
+  alt: Carte aéronautique — l'échelle et les mesures
+  author: U.S. Department of Defense
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=101309445
 summary: >-
   L'échelle d'une carte est le rapport entre une distance sur la carte et la
   distance réelle. Au 1/500 000 (carte OACI/VFR), 1 cm vaut 5 km. On mesure une

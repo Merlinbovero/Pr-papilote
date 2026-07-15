@@ -3,6 +3,14 @@ id: psychotechnique.exercices.les-matrices
 type: concept
 title: Les matrices logiques
 slug: les-matrices
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — les matrices logiques
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Une grille de 3×3 figures, une case vide — trouver la figure manquante.
   Les matrices testent le raisonnement pur, sans mots ni chiffres : la

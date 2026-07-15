@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.decrochage
 type: notion-aerodynamique
 title: Le décrochage aérodynamique
 slug: decrochage
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger en vol — le décrochage
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Le décrochage est la perte brutale de portance qui survient quand l'angle
   d'incidence dépasse l'angle critique — l'écoulement décolle de l'extrados. Il

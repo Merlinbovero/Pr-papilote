@@ -3,6 +3,13 @@ id: fondamentaux.anglais-aeronautique.les-verbes-du-vol
 type: concept
 title: Les verbes du vol
 slug: les-verbes-du-vol
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — les verbes du vol
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Take off, climb, level off, descend, land, go around — la colonne
   vertébrale de l'anglais aéronautique, ce sont ses verbes. Le vol complet en

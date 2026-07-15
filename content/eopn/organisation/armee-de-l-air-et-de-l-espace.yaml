@@ -3,6 +3,13 @@ id: eopn.organisation.armee-de-l-air-et-de-l-espace
 type: organisation
 title: L'Armée de l'air et de l'Espace
 slug: armee-de-l-air-et-de-l-espace
+image:
+  src: /images/module-eopn.jpg
+  alt: Rafale — l'Armée de l'Air et de l'Espace
+  author: U.S. Air Force — SSgt Hannah Strobel
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=134018270
+  focal: 62% 58%
 summary: >-
   L'une des composantes des forces armées françaises. Forte d'environ 44 000
   personnes et de plus de 300 aéronefs, elle protège l'espace aérien, assure la

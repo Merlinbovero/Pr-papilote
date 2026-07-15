@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.profil-d-aile
 type: notion-aerodynamique
 title: Le profil d'aile
 slug: profil-d-aile
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger — le profil d'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Un profil d'aile se décrit par son bord d'attaque, son bord de fuite, son
   extrados, son intrados et sa corde. Le vent relatif est l'air qui vient à la
