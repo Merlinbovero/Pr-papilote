@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.la-conquete-de-l-espace
+type: concept
+title: La conquête de l'espace
+slug: la-conquete-de-l-espace
+summary: >-
+  De Spoutnik à la Station spatiale internationale, d'Ariane à Thomas
+  Pesquet — les jalons spatiaux au programme du BIA, et la place singulière
+  de la France, troisième puissance à avoir lancé son propre satellite.
+objectifs:
+  - Situer les jalons majeurs (Spoutnik 1957, Gagarine 1961, Apollo 11 1969, Ariane 1979, ISS).
+  - Connaître la place de la France (3e puissance spatiale en 1965, CNES, Kourou) et de l'Europe (ESA, Ariane).
+  - Comprendre pourquoi l'espace concerne aussi les armées (satellites, Espace dans l'AAE).
+aliases: [conquête spatiale, Spoutnik, Gagarine, Apollo, Ariane, ISS, CNES, Kourou, Thomas Pesquet]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F2 du plan V1 (domaine « engins spatiaux » du BIA, absent du site).
+    author: prepapilote
+sources:
+  - title: "CNES — histoire du programme spatial français (cnes.fr)"
+    url: https://cnes.fr/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "ESA — l'Agence spatiale européenne, histoire et lanceurs (esa.int)"
+    url: https://www.esa.int/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — étude des aéronefs et engins spatiaux"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+  related:
+    - fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+content:
+  essentiel:
+    body: |
+      Les jalons que les QCM adorent :
+
+      | Date | Événement |
+      | --- | --- |
+      | **4 octobre 1957** | **Spoutnik 1** (URSS) — premier satellite artificiel |
+      | **12 avril 1961** | **Youri Gagarine** (URSS) — premier homme dans l'espace |
+      | 1963 | Valentina Terechkova — première femme dans l'espace |
+      | **26 novembre 1965** | la France lance **Astérix** avec sa fusée **Diamant** — **3e puissance spatiale** |
+      | **21 juillet 1969** | **Apollo 11** — Armstrong et Aldrin marchent sur la Lune |
+      | **24 décembre 1979** | premier vol d'**Ariane 1** depuis **Kourou** (Guyane) |
+      | depuis 1998 | assemblage de l'**ISS**, habitée en permanence depuis 2000 |
+
+      La France occupe une place singulière — troisième pays à avoir mis
+      en orbite son propre satellite avec son propre lanceur, fondatrice
+      du **CNES** (1961) et moteur de l'**ESA** et du programme
+      **Ariane**, lancé depuis le Centre spatial guyanais de **Kourou**.
+    aRetenir:
+      - "Spoutnik 1957, Gagarine 1961, Apollo 11 en 1969 — le triptyque soviéto-américain de la course à l'espace."
+      - "26 novembre 1965 — la France lance Astérix avec Diamant : 3e puissance spatiale, après l'URSS et les États-Unis."
+      - "Ariane vole depuis 1979, depuis Kourou (Guyane) — l'accès européen indépendant à l'espace."
+      - "L'ISS est habitée en permanence depuis 2000 — Thomas Pesquet y a volé deux fois (2016-2017 et 2021)."
+  sections:
+    - id: la-course-a-l-espace
+      title: La course à l'espace (1957-1969)
+      body: |
+        Le **bip-bip de Spoutnik**, le 4 octobre 1957, sidère le monde —
+        l'URSS prouve qu'elle peut placer une charge en orbite, donc
+        atteindre n'importe quel point du globe. La course est lancée :
+        Laïka (première créature vivante en orbite, 1957), **Gagarine**
+        et son unique orbite du 12 avril 1961, la réplique américaine
+        annoncée par Kennedy — « nous irons sur la Lune dans cette
+        décennie ».
+
+        Le programme **Apollo** tient la promesse : le **21 juillet 1969**
+        (heure française), Neil **Armstrong** puis Buzz **Aldrin**
+        marchent sur la Lune, Michael Collins les attendant en orbite.
+        Six missions se poseront jusqu'en 1972 — personne n'y est
+        retourné depuis, ce qui nourrit les programmes lunaires actuels.
+    - id: la-france-et-l-europe-spatiales
+      title: La France et l'Europe spatiales
+      body: |
+        La France spatiale naît avec le **CNES** (1961) et les fusées
+        **Diamant** tirées d'Hammaguir (Sahara) — **Astérix** en orbite
+        le 26 novembre 1965. Premier astronaute français — **Jean-Loup
+        Chrétien**, en 1982 (mission franco-soviétique) ; première
+        Française — **Claudie Haigneré**.
+
+        L'Europe mutualise ensuite ses moyens dans l'**ESA** (1975), avec
+        un choix stratégique — l'**accès indépendant à l'espace** : la
+        famille **Ariane**, lancée depuis **Kourou**, dont la position
+        proche de l'équateur maximise l'aide de la rotation terrestre.
+        Aujourd'hui **Ariane 6** assure la relève, et **Thomas Pesquet**
+        (missions Proxima 2016-2017 et Alpha 2021) incarne la présence
+        française dans l'ISS.
+    - id: l-espace-militaire
+      title: Pourquoi l'espace concerne un candidat pilote
+      strate: maitriser
+      body: |
+        L'espace n'est plus un décor — c'est un **milieu de
+        confrontation**. Satellites d'observation, de communication,
+        d'écoute et de navigation (GPS, **Galileo**) conditionnent toutes
+        les opérations aériennes ; les brouiller ou les aveugler est
+        devenu un mode d'action.
+
+        La France en a tiré les conséquences — un **Commandement de
+        l'Espace** et une armée de l'Air devenue **armée de l'Air et de
+        l'Espace** (2020). En entretien, savoir relier « pourquoi
+        l'armée de l'Air s'appelle-t-elle ainsi ? » à Spoutnik, Galileo
+        et aux satellites militaires montre une culture qui dépasse la
+        fiche technique.
+  pieges:
+    - "Gagarine (1961) est le premier HOMME dans l'espace — Spoutnik (1957) était un satellite, Laïka une chienne."
+    - "La France est la 3e puissance spatiale (Astérix, 1965) — avant la Chine et le Japon."
+    - "Ariane décolle de Kourou en Guyane — pas de métropole : la proximité de l'équateur est un avantage physique."
+    - "Apollo 11 (1969) n'est pas la fin de l'histoire — six missions se sont posées jusqu'en 1972, aucune depuis."

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eac-01
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Où se trouve l'École de l'aviation de chasse depuis 2020 ?
+choices:
+  - À Cognac (BA 709)
+  - À Tours (BA 705)
+  - À Salon-de-Provence (BA 701)
+  - À Saint-Dizier (BA 113)
+correctChoices: [0]
+explanation: >-
+  Depuis la fusion du 12 septembre 2020, l'École de l'aviation de chasse
+  00.315 « Christian Martell » est installée à Cognac (BA 709). Tours
+  appartient à son histoire.
+evaluates: [eopn.organisation.ecole-de-l-aviation-de-chasse]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

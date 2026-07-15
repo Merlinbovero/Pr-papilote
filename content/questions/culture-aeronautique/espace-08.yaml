@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.espace-08
+kind: qcm
+theme: conquete-spatiale
+statement: >-
+  Quel organisme pilote le programme spatial français depuis 1961 ?
+choices:
+  - "Le CNES"
+  - "L'ESA"
+  - "La NASA"
+  - "L'ONERA"
+correctChoices: [0]
+explanation: >-
+  Le Centre national d'études spatiales, créé en 1961, a conduit la France
+  au rang de 3e puissance spatiale (Diamant/Astérix, 1965) avant de devenir
+  le moteur de l'Europe spatiale (ESA, Ariane).
+evaluates: [fondamentaux.culture-aeronautique.la-conquete-de-l-espace]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

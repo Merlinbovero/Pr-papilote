@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-12f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Où est stationnée la flottille 12F et sur quel bâtiment embarque-t-elle ?
+choices:
+  - À Landivisiau, elle embarque sur le Charles de Gaulle
+  - À Lann-Bihoué, elle embarque sur une frégate
+  - À Hyères, elle embarque sur un porte-hélicoptères
+  - À Toulon, elle reste à quai en permanence
+correctChoices: [0]
+explanation: >-
+  Comme les autres flottilles de chasse, la 12F est stationnée à la BAN
+  Landivisiau et embarque sur le porte-avions Charles de Gaulle lors des
+  déploiements.
+evaluates: [eopan.unites.flottille-12f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

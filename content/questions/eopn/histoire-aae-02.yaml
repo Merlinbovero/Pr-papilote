@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.histoire-aae-02
+kind: qcm
+theme: histoire-aae
+statement: >-
+  Quel couple d'appareils a pris la première alerte de la dissuasion nucléaire française en 1964 ?
+choices:
+  - Le Mirage IV et le ravitailleur C 135
+  - Le Rafale et l'A330 MRTT
+  - Le Mirage 2000 et le KC-130
+  - La Caravelle et le Noratlas
+correctChoices: [0]
+explanation: >-
+  En 1964, les Forces aériennes stratégiques prennent leur première alerte
+  avec le bombardier Mirage IV ravitaillé par le C 135 — la France entre dans
+  la dissuasion aéroportée.
+evaluates: [eopn.histoire.histoire-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

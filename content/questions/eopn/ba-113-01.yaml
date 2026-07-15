@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.ba-113-01
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quelle base a été la première de l'armée de l'Air équipée du Rafale ?
+choices:
+  - La BA 113 de Saint-Dizier (2006)
+  - La BA 709 de Cognac
+  - La BA 701 de Salon-de-Provence
+  - La BAN de Landivisiau
+correctChoices: [0]
+explanation: >-
+  Le Rafale est entré en service dans l'armée de l'Air en 2006 à Saint-Dizier
+  (escadron 1/7 « Provence »). Landivisiau accueille les Rafale Marine, en
+  service depuis le porte-avions dès 2001.
+evaluates: [eopn.bases.saint-dizier]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

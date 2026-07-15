@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.navigation.coord-05
+kind: vrai-faux
+theme: terre-coordonnees
+statement: >-
+  Une minute d'arc de latitude vaut environ un mille marin (1852 m).
+answer: true
+explanation: >-
+  Par convention, une minute d'arc de latitude, mesurée le long d'un méridien,
+  correspond à un mille marin, soit 1852 m — l'unité de distance de la navigation.
+evaluates: [fondamentaux.navigation.terre-et-coordonnees]
+difficulty: 3
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

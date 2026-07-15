@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopn.missions-aae-04
+kind: association
+theme: missions-aae
+statement: >-
+  Associez chaque fonction stratégique de l'AAE à sa concrétisation.
+pairs:
+  - left: Protéger
+    right: La police du ciel (PPS-A), 24h/24
+  - left: Dissuader
+    right: Les FAS — Rafale et ASMP-A
+  - left: Intervenir
+    right: Projeter la puissance aérienne sur les théâtres extérieurs
+  - left: Espace (depuis 2020)
+    right: Surveiller l'espace et protéger les satellites
+explanation: >-
+  Protéger = PPS-A sous le CDAOA ; dissuader = FAS ; intervenir = projection
+  (frappe, transport, renseignement) ; et depuis 2020 la dimension spatiale
+  complète l'ensemble.
+evaluates: [eopn.missions.missions-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

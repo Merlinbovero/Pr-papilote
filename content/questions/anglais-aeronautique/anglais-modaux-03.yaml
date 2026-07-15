@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-modaux-03
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Quelle phrase est grammaticalement correcte ?
+choices:
+  - The pilot must comply with the instructions
+  - The pilot must to comply with the instructions
+  - The pilot musts comply with the instructions
+  - The pilot must complying with the instructions
+correctChoices: [0]
+explanation: >-
+  Un modal se construit avec la base verbale, sans to ni -s : must comply.
+  « Must to » et « musts » sont les distracteurs classiques.
+evaluates: [fondamentaux.anglais-aeronautique.les-modaux]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

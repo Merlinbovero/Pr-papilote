@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.profil-01
+kind: qcm
+theme: profil-aile
+statement: >-
+  Comment appelle-t-on l'avant arrondi d'un profil d'aile ?
+choices:
+  - "Le bord d'attaque"
+  - "Le bord de fuite"
+  - "L'extrados"
+  - "L'intrados"
+correctChoices: [0]
+explanation: >-
+  Le bord d'attaque est l'avant arrondi qui « fend » l'air ; le bord de fuite est
+  l'arrière effilé où l'air se rejoint.
+evaluates: [fondamentaux.aerodynamique.profil-d-aile]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

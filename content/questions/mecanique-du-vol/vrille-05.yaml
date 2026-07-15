@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.vrille-05
+kind: vrai-faux
+theme: decrochage-vrille
+statement: >-
+  La meilleure protection contre la vrille est de ne pas décrocher, surtout en
+  vol dissymétrique à basse vitesse.
+answer: true
+explanation: >-
+  Une vrille naît presque toujours d'un décrochage en vol dissymétrique à basse
+  vitesse. La prévention — voler coordonné, surveiller vitesse et incidence,
+  éviter les virages lents à basse hauteur — est la parade la plus sûre.
+evaluates: [fondamentaux.mecanique-du-vol.decrochage-et-vrille]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

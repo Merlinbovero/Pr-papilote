@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.alat-org-05
+kind: qcm
+theme: organisation-alat
+statement: >-
+  Qu'est-ce qui distingue l'identité de l'ALAT des deux autres composantes aériennes ?
+choices:
+  - Ses pilotes sont d'abord des soldats, au service de la manœuvre terrestre
+  - Elle opère uniquement depuis des porte-avions
+  - Elle ne met en œuvre que des avions à réaction
+  - Elle n'a pas de mission de combat
+correctChoices: [0]
+explanation: >-
+  L'ALAT met l'hélicoptère au service de la bataille terrestre : ses pilotes
+  raisonnent en termes de manœuvre terrestre, au plus près des unités qu'ils
+  appuient — ni la mer, ni le ciel lointain, mais le champ de bataille.
+evaluates: [alat.organisation.aviation-legere-armee-de-terre]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

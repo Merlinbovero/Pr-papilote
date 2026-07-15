@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-suites-logiques
+type: concept
+title: Les suites logiques
+slug: les-suites-logiques
+summary: >-
+  Compléter une suite de nombres ou de lettres en découvrant sa règle —
+  progression arithmétique ou géométrique, écarts croissants, suites
+  entrelacées, rangs alphabétiques. Un répertoire de règles + une méthode.
+objectifs:
+  - Reconnaître les grands types de suites (arithmétiques, géométriques, à écarts variables, entrelacées).
+  - Traiter les suites de lettres en raisonnant sur les rangs alphabétiques.
+  - Appliquer la méthode des différences pour découvrir une règle cachée.
+aliases: [suites logiques, suites numériques, suites de lettres, séries logiques]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'entraînement suites logiques, ouverture du module Psychotechnique (Lot G).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.les-dominos
+    - psychotechnique.exercices.le-calcul-mental
+content:
+  essentiel:
+    body: |
+      Une **suite logique** cache une **règle** qu'il faut découvrir pour
+      donner le terme suivant. Le réflexe fondamental — calculer les
+      **différences** entre termes consécutifs :
+
+      - différences **constantes** — suite arithmétique (2, 5, 8, 11 → +3) ;
+      - différences **elles-mêmes en progression** — écarts croissants
+        (1, 2, 4, 7, 11 → +1, +2, +3, +4) ;
+      - différences sans motif — tester les **rapports** (multiplication) :
+        3, 6, 12, 24 → ×2, suite géométrique.
+
+      Si rien n'apparaît, penser aux suites **entrelacées** — deux suites
+      indépendantes alternées (1, 10, 2, 20, 3, 30…) — et aux règles portant
+      sur les **chiffres** eux-mêmes (somme des chiffres, miroir).
+
+      Pour les **lettres**, tout se joue sur le **rang alphabétique** —
+      A=1 … Z=26. La suite B, D, G, K cache +2, +3, +4 sur les rangs.
+    aRetenir:
+      - Premier réflexe — calculer les différences entre termes consécutifs.
+      - Différences constantes = arithmétique ; rapports constants = géométrique ; différences en progression = écarts croissants.
+      - Rien ne marche — tester l'entrelacement (un terme sur deux).
+      - Lettres = rangs alphabétiques (A=1 … Z=26) ; mémoriser quelques jalons (E=5, J=10, O=15, T=20).
+  sections:
+    - id: le-repertoire-des-regles
+      title: Le répertoire des règles
+      body: |
+        Les règles les plus fréquentes, par ordre de probabilité :
+
+        - **Arithmétique** — pas constant, positif ou négatif (17, 13, 9, 5 →
+          −4).
+        - **Géométrique** — rapport constant (5, 15, 45 → ×3 ; 64, 32, 16 →
+          ÷2).
+        - **Écarts en progression** — +1, +2, +3… ou +2, +4, +6… ; la suite
+          des différences est elle-même une suite.
+        - **Entrelacée** — deux suites alternées, chacune avec sa règle ;
+          repérable quand les termes « sautent » sans logique apparente.
+        - **Combinée** — chaque terme dérive des précédents (somme des deux
+          derniers, comme 1, 1, 2, 3, 5, 8 — la suite de Fibonacci).
+        - **Sur les chiffres** — le terme suivant dépend des chiffres du
+          précédent (somme, produit, renversement).
+    - id: les-suites-de-lettres
+      title: Les suites de lettres
+      body: |
+        Convertir mentalement en **rangs** et retomber sur une suite
+        numérique :
+
+        - C, F, I, L → rangs 3, 6, 9, 12 → +3 → **O** (rang 15) ;
+        - A, B, D, H → rangs 1, 2, 4, 8 → ×2 → **P** (rang 16) ;
+        - Z, X, V, T → rangs 26, 24, 22, 20 → −2 → **R** (rang 18).
+
+        Comme les dominos, l'alphabet peut être **cyclique** — après Z, on
+        repart à A. Gagner du temps en mémorisant des **jalons** : E=5, J=10,
+        O=15, T=20, et son prénom en rangs pour l'entraînement.
+
+        Certaines suites mêlent **lettres et nombres** (A1, C3, E5…) — traiter
+        chaque composant séparément.
+    - id: methode-sous-chrono
+      title: Méthode sous chrono
+      strate: maitriser
+      body: |
+        L'algorithme à dérouler, toujours dans le même ordre :
+
+        1. **Différences** entre termes consécutifs — constantes ? en
+           progression ?
+        2. **Rapports** — la suite est-elle multiplicative ?
+        3. **Entrelacement** — isoler les rangs pairs et impairs ;
+        4. **Combinaisons** — chaque terme dépend-il des deux précédents ?
+        5. **Chiffres** — la règle porte-t-elle sur les chiffres du terme ?
+
+        Toujours **valider** la règle sur l'intégralité de la suite avant de
+        répondre — une règle qui n'explique que les deux derniers termes est
+        presque toujours fausse. Et si deux règles semblent possibles, choisir
+        la plus **simple** : c'est la convention de ces tests.
+  pieges:
+    - Une suite qui semble incohérente est souvent deux suites entrelacées — isoler un terme sur deux avant de conclure.
+    - Ne pas confondre écarts croissants (+1, +2, +3…) et suite géométrique — les différences des deux augmentent, mais seuls les rapports de la géométrique sont constants.
+    - Pour les lettres, oublier que l'alphabet peut être cyclique (après Z revient A).
+    - Répondre sur une règle vérifiée seulement sur la fin de la suite — la règle doit expliquer tous les termes.

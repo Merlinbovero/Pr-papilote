@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-meteo-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que garantit le code CAVOK dans un METAR ?
+choices:
+  - Visibilité ≥ 10 km, pas de nuage significatif, pas de phénomène dangereux
+  - Un ciel totalement sans nuage
+  - Un vent calme
+  - Une piste sèche
+correctChoices: [0]
+explanation: >-
+  CAVOK (ceiling and visibility OK) = visibilité d'au moins 10 km, aucun
+  nuage significatif et aucun phénomène météo dangereux — pas nécessairement
+  un ciel bleu ni un vent nul.
+evaluates: [fondamentaux.anglais-aeronautique.la-meteo-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

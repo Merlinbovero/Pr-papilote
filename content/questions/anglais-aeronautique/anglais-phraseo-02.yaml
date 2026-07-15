@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-phraseo-02
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Que signifie la clairance « line up and wait, runway 22 » ?
+choices:
+  - Alignez-vous sur la piste 22 et attendez — sans décoller
+  - Autorisé décollage piste 22
+  - Dégagez la piste 22
+  - Remettez les gaz
+correctChoices: [0]
+explanation: >-
+  Line up and wait = s'aligner SANS décoller. La confondre avec « cleared for
+  takeoff » est l'erreur la plus dangereuse de la radio — le décollage exige
+  sa propre clairance.
+evaluates: [fondamentaux.anglais-aeronautique.la-phraseologie-anglaise]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

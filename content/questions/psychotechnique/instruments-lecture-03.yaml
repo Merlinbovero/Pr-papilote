@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.instruments-lecture-03
+kind: vrai-faux
+theme: lecture-instruments
+statement: >-
+  Un avion en assiette cabrée est nécessairement en train de monter.
+answer: false
+explanation: >-
+  Assiette et trajectoire sont deux choses différentes — un avion cabré à
+  basse vitesse peut parfaitement descendre. Seul le variomètre donne la
+  tendance verticale réelle.
+evaluates: [psychotechnique.exercices.la-lecture-d-instruments]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

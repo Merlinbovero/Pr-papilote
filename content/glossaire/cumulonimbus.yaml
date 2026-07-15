@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.cumulonimbus
+title: Cumulonimbus
+definition: >-
+  Nuage d'orage à fort développement vertical, concentrant les principaux dangers
+  météorologiques du vol : turbulence sévère, givrage, cisaillement de vent,
+  grêle et foudre. Il est à éviter absolument.
+sigleExpansion: Cb
+english: Cumulonimbus
+synonyms: [Cb]
+ficheId: fondamentaux.meteorologie.phenomenes-dangereux
+tags: []
+status: publie

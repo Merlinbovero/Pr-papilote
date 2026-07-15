@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.navigation.tvd-04
+kind: vrai-faux
+theme: temps-vitesse-distance
+statement: >-
+  Pour calculer un temps de trajet, on utilise la vitesse sol, pas la vitesse
+  propre.
+answer: true
+explanation: >-
+  La progression réelle au-dessus du sol dépend de la vitesse sol, qui tient
+  compte du vent. Un vent de face allonge le temps de vol, un vent arrière le raccourcit.
+evaluates: [fondamentaux.navigation.temps-vitesse-distance]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

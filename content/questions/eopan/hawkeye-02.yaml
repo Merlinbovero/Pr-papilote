@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.hawkeye-02
+kind: vrai-faux
+theme: guet-aerien
+statement: >-
+  Le E-2C Hawkeye est un avion de combat armé de missiles air-air.
+answer: false
+explanation: >-
+  Faux. Le Hawkeye n'est pas armé — c'est un avion radar (guet aérien). Son rôle
+  est de voir loin et de coordonner, pas de combattre. À ne pas confondre avec le
+  Rafale M, l'avion de combat embarqué.
+evaluates: [eopan.appareils.e-2c-hawkeye]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.appontage
+title: Appontage
+definition: >-
+  Atterrissage d'un aéronef sur le pont d'un porte-avions ou d'un navire.
+  Pour un avion, il s'effectue crosse sortie, par accrochage d'un brin
+  d'arrêt tendu en travers de la piste oblique.
+english: Carrier landing
+synonyms: []
+ficheId: eopan.procedures.appontage
+tags: []
+status: publie

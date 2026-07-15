@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.eopan-03
+kind: vrai-faux
+theme: concours-eopan
+statement: >-
+  Il faut déjà savoir piloter pour se présenter au concours EOPAN.
+answer: false
+explanation: >-
+  Non : l'EOPAN n'exige aucune expérience de pilotage à l'entrée. La formation de
+  pilote est entièrement assurée par la Marine.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

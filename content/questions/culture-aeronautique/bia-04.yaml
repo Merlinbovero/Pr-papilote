@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.culture-aeronautique.bia-04
+kind: vrai-faux
+theme: bia
+statement: >-
+  Le BIA est obligatoire pour se présenter aux concours EOPAN, EOPN ou ALAT.
+answer: false
+explanation: >-
+  Aucun concours de pilote militaire n'exige le BIA — c'est un atout de
+  dossier et une preuve datée de motivation, pas une condition d'accès.
+evaluates: [fondamentaux.culture-aeronautique.le-bia]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

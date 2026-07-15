@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.instruments.pito-04
+kind: vrai-faux
+theme: pitot-statique
+statement: >-
+  L'altimètre et le variomètre n'utilisent que la pression statique.
+answer: true
+explanation: >-
+  L'altimètre et le variomètre n'exploitent que la pression statique. Seul
+  l'anémomètre utilise en plus la pression totale du tube de Pitot.
+evaluates: [fondamentaux.instruments.chaine-pitot-statique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

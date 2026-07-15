@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.mille-marin
+title: Mille marin
+definition: >-
+  Unité de distance de la navigation aérienne et maritime, égale à une minute
+  d'arc de méridien, soit environ 1852 mètres. La vitesse s'exprime en nœuds
+  (milles marins par heure).
+sigleExpansion: NM
+english: Nautical mile
+synonyms: [NM, nautique]
+ficheId: fondamentaux.navigation.terre-et-coordonnees
+tags: []
+status: publie

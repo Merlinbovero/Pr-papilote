@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.alat.alat-org-03
+kind: vrai-faux
+theme: organisation-alat
+statement: >-
+  L'ALAT agit surtout à haute altitude, loin du champ de bataille terrestre.
+answer: false
+explanation: >-
+  Faux. L'ALAT agit au contact de la bataille terrestre, souvent en vol tactique
+  très bas, pour appuyer et soutenir directement les troupes au sol.
+evaluates: [alat.organisation.aviation-legere-armee-de-terre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

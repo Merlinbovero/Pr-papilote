@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.alat-03
+kind: vrai-faux
+theme: presentation-alat
+statement: >-
+  On devient pilote de l'ALAT par un concours unique, comparable à l'EOPN de l'armée de l'air.
+answer: false
+explanation: >-
+  Faux. On rejoint d'abord l'Armée de terre (comme officier, via Saint-Cyr, ou
+  comme sous-officier), puis on choisit l'arme ALAT et l'on suit la formation à
+  l'EALAT — il n'y a pas de concours unique de type EOPN.
+evaluates: [alat.presentation.devenir-pilote-alat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.grades-05
+kind: qcm
+theme: grades-marine
+statement: >-
+  Quel grade atteint en général un pilote officier sous contrat issu de l'EOPAN ?
+choices:
+  - Lieutenant de vaisseau (voire capitaine de corvette)
+  - Amiral
+  - Matelot
+  - Second maître
+correctChoices: [0]
+explanation: >-
+  Recruté comme officier sous contrat sur une carrière centrée sur le pilotage, un
+  pilote EOPAN atteint en général le grade de lieutenant de vaisseau, voire de
+  capitaine de corvette.
+evaluates: [eopan.grades.grades-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

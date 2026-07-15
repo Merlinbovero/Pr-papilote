@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.aae-05
+kind: association
+theme: organisation-aae
+statement: >-
+  Associez chaque composante de l'Armée de l'air et de l'Espace à un appareil ou moyen représentatif.
+pairs:
+  - left: Chasse
+    right: Rafale
+  - left: Transport
+    right: A400M Atlas
+  - left: Espace
+    right: Commandement de l'espace
+explanation: >-
+  Les grandes composantes se distinguent par leurs moyens : le Rafale pour la
+  chasse, l'A400M Atlas pour le transport, le Commandement de l'espace pour le
+  domaine spatial.
+evaluates: [eopn.organisation.armee-de-l-air-et-de-l-espace]
+difficulty: 2
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopn]
+status: publie

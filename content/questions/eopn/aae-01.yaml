@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.aae-01
+kind: qcm
+theme: organisation-aae
+statement: >-
+  Que recouvre le « et de l'Espace » ajouté au nom de l'Armée de l'air en 2020 ?
+choices:
+  - La responsabilité de la maîtrise du milieu spatial
+  - L'espace aérien uniquement
+  - Les vols suborbitaux touristiques
+  - Un simple changement de logo
+correctChoices: [0]
+explanation: >-
+  Depuis 2020, l'armée a pris en charge la maîtrise du milieu spatial, avec un
+  Commandement de l'espace basé à Toulouse — d'où le « et de l'Espace ».
+evaluates: [eopn.organisation.armee-de-l-air-et-de-l-espace]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

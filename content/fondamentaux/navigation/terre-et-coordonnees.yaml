@@ -1,0 +1,139 @@
+schemaVersion: 1
+id: fondamentaux.navigation.terre-et-coordonnees
+type: notion-navigation
+title: La Terre et les coordonnées
+slug: terre-et-coordonnees
+summary: >-
+  On repère un point de la Terre par sa latitude (nord-sud, depuis l'équateur) et
+  sa longitude (est-ouest, depuis Greenwich), en degrés. Une minute d'arc de
+  latitude vaut un mille marin (1852 m), base des distances en navigation.
+objectifs:
+  - Décrire les repères de la Terre (axe, pôles, équateur, parallèles, méridiens).
+  - Définir la latitude et la longitude et leurs références (équateur, méridien de Greenwich).
+  - Relier la minute d'arc de latitude au mille marin (1852 m) pour les distances de navigation.
+aliases: [latitude, longitude, coordonnées, parallèles, méridiens, équateur, Greenwich, mille marin]
+module: fondamentaux
+category: navigation
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingtième fiche du socle, la Terre et les coordonnées géographiques (ouvre le bloc navigation).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Coordonnées géographiques — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Coordonn%C3%A9es_g%C3%A9ographiques
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Mille marin — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Mille_marin
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.physique.systeme-international-et-unites
+content:
+  essentiel:
+    body: |
+      Naviguer, c'est d'abord savoir **où l'on est**. Pour cela, on repère tout
+      point de la Terre par deux **coordonnées géographiques** : la **latitude**
+      et la **longitude**.
+
+      La **latitude** mesure la position **nord-sud** par rapport à l'**équateur**
+      (de 0° à l'équateur à 90° aux pôles). La **longitude** mesure la position
+      **est-ouest** par rapport au **méridien de Greenwich** (de 0° à 180°). On
+      les exprime en **degrés**, subdivisés en **minutes** et **secondes**.
+
+      Un lien précieux pour le calcul : **une minute d'arc de latitude vaut un
+      mille marin** (1852 m), l'unité de distance de la navigation.
+    aRetenir:
+      - On repère un point sur la Terre par sa latitude (nord-sud) et sa longitude (est-ouest).
+      - La latitude se mesure depuis l'équateur (0° à 90° N ou S), le long des parallèles.
+      - La longitude se mesure depuis le méridien de Greenwich (0° à 180° E ou O), le long des méridiens.
+      - Une minute d'arc de latitude vaut un mille marin (1852 m) — la base des distances en navigation.
+  sections:
+    - id: la-terre-et-ses-reperes
+      title: La Terre et ses repères
+      body: |
+        La Terre est une **sphère** (presque : elle est très légèrement aplatie
+        aux pôles). Elle tourne autour d'un **axe** qui la traverse du **pôle
+        Nord** au **pôle Sud**.
+
+        À mi-chemin des pôles, un grand cercle perpendiculaire à l'axe partage la
+        Terre en deux hémisphères : l'**équateur**. C'est la référence naturelle
+        du repérage nord-sud.
+
+        Sur ce quadrillage, deux familles de lignes imaginaires :
+
+        - les **parallèles**, cercles **parallèles à l'équateur**, de plus en
+          plus petits vers les pôles ;
+        - les **méridiens**, demi-cercles qui **joignent les deux pôles**.
+
+        Le **méridien de Greenwich** (qui passe par l'observatoire de Londres)
+        sert de référence est-ouest.
+    - id: latitude-et-longitude
+      title: Latitude et longitude
+      body: |
+        Tout point de la Terre se repère par **deux angles**, mesurés depuis le
+        centre.
+
+        - La **latitude** est l'angle qui sépare le point de l'**équateur**, vers
+          le **nord (N)** ou le **sud (S)**. Elle va de **0°** (équateur) à
+          **90°** (pôles). Tous les points d'un même **parallèle** ont la même
+          latitude.
+        - La **longitude** est l'angle qui sépare le **méridien** du point de
+          celui de **Greenwich**, vers l'**est (E)** ou l'**ouest (O)**. Elle va
+          de **0°** à **180°**. Tous les points d'un même **méridien** ont la
+          même longitude.
+
+        On écrit une position sous la forme **latitude puis longitude**, en
+        degrés, minutes et secondes — par exemple 48° 51′ N, 002° 21′ E pour
+        Paris.
+      figures:
+        - schemaId: coordonnees-geographiques
+          alt: Un globe avec l'équateur, le méridien de Greenwich, un parallèle et un méridien localisant un point par sa latitude et sa longitude.
+          caption: La latitude se mesure depuis l'équateur (parallèles), la longitude depuis le méridien de Greenwich (méridiens).
+          width: 460
+          height: 300
+    - id: les-distances-le-mille-marin
+      title: Les distances — le mille marin
+      strate: maitriser
+      body: |
+        Le repérage angulaire a une **conséquence pratique** remarquable pour la
+        distance.
+
+        Puisque la latitude se mesure le long des **méridiens**, on peut relier
+        un **angle** à une **longueur**. Par convention, **une minute d'arc de
+        latitude** (1/60 de degré) correspond à **un mille marin** — soit
+        **1852 mètres**.
+
+        Il en découle deux repères de calcul mental :
+
+        - **1° de latitude ≈ 60 milles marins** ;
+        - une distance en milles marins parcourue en une heure donne directement
+          une vitesse en **nœuds**.
+
+        Le mille marin et le nœud, déjà rencontrés, prennent ici tout leur sens.
+        La **direction** — le **cap** et la **route** — fera l'objet de la fiche
+        suivante, avec la distinction entre **nord vrai** (géographique) et
+        **nord magnétique**.
+      figures:
+        - schemaId: mille-marin
+          alt: Un arc de méridien avec une minute d'arc de latitude correspondant à un mille marin, soit environ 1852 mètres.
+          caption: Une minute d'arc de latitude le long d'un méridien vaut un mille marin (≈ 1852 m) ; 1° en vaut donc 60.
+          width: 420
+          height: 240
+  pieges:
+    - La latitude se compte depuis l'équateur, la longitude depuis Greenwich — ne pas les intervertir.
+    - Une position se note latitude puis longitude, chacune avec son hémisphère (N/S, puis E/O).
+    - Une minute d'arc vaut un mille marin pour la latitude (le long des méridiens), mais pas pour la longitude, dont les méridiens se resserrent vers les pôles.

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.cartographie.carte-oaci-04
+kind: qcm
+theme: lecture-de-carte
+statement: >-
+  Que signifient des courbes de niveau très serrées sur une carte ?
+choices:
+  - Une pente forte
+  - Un terrain plat
+  - Une zone interdite
+  - Une rivière
+correctChoices: [0]
+explanation: >-
+  Les courbes de niveau relient les points d'égale altitude : plus elles sont
+  serrées, plus la pente est forte — un indice essentiel pour lire le relief
+  et choisir son altitude de sécurité.
+evaluates: [fondamentaux.cartographie.lire-une-carte-aeronautique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

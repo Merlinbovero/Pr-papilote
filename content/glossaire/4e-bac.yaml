@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.4e-bac
+title: 4e BAC
+definition: >-
+  4e brigade d'aérocombat — créée en juillet 2016, elle commande les trois
+  régiments d'hélicoptères de combat de l'armée de Terre (1er RHC à
+  Phalsbourg, 3e RHC à Étain, 5e RHC à Pau) et incarne le concept
+  d'aérocombat.
+sigleExpansion: 4e brigade d'aérocombat
+synonyms: [brigade d'aérocombat]
+ficheId: alat.missions.l-aerocombat
+tags: []
+status: publie

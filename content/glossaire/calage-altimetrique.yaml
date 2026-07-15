@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.calage-altimetrique
+title: Calage altimétrique
+definition: >-
+  Réglage de la pression de référence de l'altimètre. Le QNH donne l'altitude par
+  rapport à la mer, le QFE la hauteur par rapport à un terrain, et le calage
+  standard (1013 hPa) le niveau de vol au-dessus de l'altitude de transition.
+sigleExpansion: QNH / QFE / Standard (1013 hPa)
+english: Altimeter setting
+synonyms: [QNH, QFE]
+ficheId: fondamentaux.meteorologie.pression-et-calage
+tags: []
+status: publie

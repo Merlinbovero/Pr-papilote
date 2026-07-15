@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.a400m-05
+kind: qcm
+theme: appareils-aae
+statement: >-
+  L'A400M Atlas est le fruit d'un programme :
+choices:
+  - Européen, entre plusieurs nations
+  - Uniquement français
+  - Américain
+  - Russe
+correctChoices: [0]
+explanation: >-
+  L'A400M est un grand programme européen (Allemagne, France, Royaume-Uni,
+  Espagne, Belgique…), symbole de la coopération de défense en Europe.
+evaluates: [eopn.appareils.a400m]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

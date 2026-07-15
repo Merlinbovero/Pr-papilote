@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.navigation.decl-02
+kind: vrai-faux
+theme: declinaison
+statement: >-
+  La déclinaison magnétique dépend du lieu et évolue lentement dans le temps.
+answer: true
+explanation: >-
+  La déclinaison varie d'un endroit à l'autre (les cartes la publient par des
+  lignes isogones) et change lentement au fil des années, car le pôle Nord
+  magnétique se déplace.
+evaluates: [fondamentaux.navigation.declinaison-magnetique]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

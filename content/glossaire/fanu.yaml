@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.fanu
+title: FANu
+definition: >-
+  Force aéronavale nucléaire — contribution de la Marine à la composante
+  aéroportée de la dissuasion. Elle met en œuvre des Rafale Marine emportant le
+  missile ASMP-A depuis le porte-avions.
+sigleExpansion: Force aéronavale nucléaire
+english: Naval nuclear air force
+synonyms: []
+ficheId: eopan.missions.missions-de-la-marine
+tags: []
+status: publie

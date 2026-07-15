@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.cougar-01
+kind: qcm
+theme: appareils-alat
+statement: >-
+  De quel hélicoptère le Cougar est-il l'héritier militaire ?
+choices:
+  - Du Puma, via le Super Puma (AS532, renommé Cougar en 1990)
+  - Du Tigre
+  - De l'Alouette II
+  - Du Chinook américain
+correctChoices: [0]
+explanation: >-
+  La lignée est Puma (SA330) → Super Puma (AS332, 1980) → Cougar (AS532, nom
+  militaire pris en 1990). L'armée de Terre a reçu ses premiers exemplaires en
+  décembre 1988.
+evaluates: [alat.appareils.cougar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

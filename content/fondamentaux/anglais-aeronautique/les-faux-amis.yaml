@@ -1,0 +1,115 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.les-faux-amis
+type: concept
+title: Les faux amis de l'aéronautique
+slug: les-faux-amis
+summary: >-
+  Actually ne veut pas dire actuellement, a journey n'est pas une journée et
+  to control n'est pas toujours contrôler — le bêtisier des faux amis, garni
+  de ceux propres à l'aviation, avec les prépositions de mouvement en bonus.
+objectifs:
+  - Déjouer les faux amis généraux les plus testés (actually, journey, to assist, library).
+  - Maîtriser les faux amis propres à l'aéronautique (elevator, cabin, to arrest).
+  - Employer les prépositions de mouvement (to, into, over, above, through, on board).
+aliases: [faux amis, false friends, actually, journey, prépositions anglaises]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — les faux amis et prépositions (lot N14, phase P4 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.anglais-aeronautique.les-temps-du-recit
+    - fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes
+content:
+  essentiel:
+    body: |
+      Le faux ami ressemble au français — et dit autre chose. Le noyau dur
+      des QCM :
+
+      | Anglais | Sens réel | Piège (≠) |
+      | --- | --- | --- |
+      | **actually** | en réalité | ≠ actuellement (*currently*) |
+      | **a journey** | un voyage | ≠ une journée (*a day*) |
+      | **to attend** | assister à | ≠ attendre (*to wait*) |
+      | **to assist** | aider | ≠ assister à (*to attend*) |
+      | **a library** | une bibliothèque | ≠ librairie (*bookshop*) |
+      | **to pass an exam** | réussir un examen | ≠ passer (*to take*) |
+      | **sensible** | raisonnable | ≠ sensible (*sensitive*) |
+      | **eventually** | finalement | ≠ éventuellement (*possibly*) |
+
+      Et les faux amis **aéronautiques** : **elevator** (profondeur, pas
+      ascenseur), **cabin** (cabine des passagers ou du pilote — mais
+      *cockpit* pour le poste de pilotage), **to arrest** (arrêter au sens
+      mécanique — *arrestor hook* — pas interpeller), **a stall** (un
+      décrochage — pas une étable).
+    aRetenir:
+      - "Actually = en réalité (actuellement = currently) ; eventually = finalement (éventuellement = possibly)."
+      - "To pass an exam = le RÉUSSIR ; le passer = to take an exam — le faux ami le plus cruel des candidats."
+      - "Journey = voyage ; day = journée. Attend = assister à ; wait = attendre."
+      - "En aéro — elevator (profondeur), stall (décrochage), to arrest (arrêter mécaniquement)."
+  sections:
+    - id: le-betisier-en-contexte
+      title: Le bêtisier en contexte
+      body: |
+        Les faux amis se retiennent en situation :
+
+        - *« I **actually** failed the test »* — en réalité, je l'ai raté
+          (aucun rapport avec le présent) ;
+        - *« He **eventually** passed »* — il a **fini par** réussir
+          (à force d'essayer) ;
+        - *« She **attended** the briefing »* — elle a **assisté** au
+          briefing ;
+        - *« The mechanic **assisted** the pilot »* — il l'a **aidé** ;
+        - *« A **sensible** pilot checks the weather »* — un pilote
+          **raisonnable** (le pilote « sensible » serait *sensitive*).
+
+        La paire reine des concours : *to take an exam* (le passer) vs
+        *to pass an exam* (le réussir) — répondre « I hope to pass » est
+        correct ; croire que *pass* = « se présenter » fait rater la
+        question.
+    - id: les-prepositions-de-mouvement
+      title: Les prépositions de mouvement
+      strate: maitriser
+      body: |
+        Le mouvement anglais se joue dans la préposition :
+
+        | Préposition | Sens | Exemple |
+        | --- | --- | --- |
+        | **to** | vers (destination) | *fly to Cognac* |
+        | **into** | dans (avec entrée) | *taxi into position* |
+        | **over** | au-dessus (en passant) | *fly over the field* |
+        | **above / below** | au-dessus/dessous (statique) | *above the clouds* |
+        | **through** | à travers | *through the clouds* |
+        | **towards** | en direction de | *heading towards the coast* |
+        | **on board** | à bord | *souls on board* |
+
+        Nuance classique : *over* implique le survol (mouvement), *above*
+        la position (statique) — *« we flew over Paris »* mais *« we
+        levelled off above the clouds »*. Les QCM aiment aussi *in the
+        aircraft* vs *on board* et *at the airport* (ponctuel) vs *in the
+        airport* (à l'intérieur du bâtiment).
+  pieges:
+    - "Actually = en réalité — le faux ami n°1 de tous les QCM d'anglais."
+    - "To pass an exam = le réussir ; s'y présenter = to take an exam."
+    - "Over (survol, mouvement) ≠ above (position statique) — « fly over », « level off above »."
+    - "Stall = décrochage : « the aircraft stalled » n'a rien à voir avec une étable ni un étal."

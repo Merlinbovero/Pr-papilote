@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.air-02
+kind: qcm
+theme: proprietes-air
+statement: >-
+  Que vaut environ la masse volumique de l'air en atmosphère standard, au niveau moyen de la mer ?
+choices:
+  - "1,225 kg/m³"
+  - "1 kg/m³"
+  - "0,5 kg/m³"
+  - "10 kg/m³"
+correctChoices: [0]
+explanation: >-
+  En atmosphère standard (ISA), au niveau moyen de la mer, la masse volumique de
+  l'air vaut environ 1,225 kg/m³.
+evaluates: [fondamentaux.aerodynamique.air-et-proprietes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

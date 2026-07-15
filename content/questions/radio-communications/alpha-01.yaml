@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.radio-communications.alpha-01
+kind: qcm
+theme: alphabet-oaci
+statement: >-
+  À quoi sert l'alphabet phonétique de l'OACI ?
+choices:
+  - "À éviter les confusions entre lettres à la radio"
+  - "À traduire les messages en anglais"
+  - "À coder des messages secrets"
+  - "À mesurer la vitesse de l'avion"
+correctChoices: [0]
+explanation: >-
+  L'alphabet phonétique remplace chaque lettre par un mot-code distinct, pour que
+  l'épellation reste comprise malgré le bruit, la vitesse et les accents.
+evaluates: [fondamentaux.radio-communications.alphabet-oaci]
+difficulty: 1
+competencies: [anglais-aeronautique, memoire]
+concours: [eopan, eopn, alat]
+status: publie

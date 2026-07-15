@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-notam-04
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  Décodez — « LFBG TWY B CLSD DUE WIP. ACFT EXP DELAY. » Que doivent prévoir les équipages à Cognac ?
+choices:
+  - Des délais, car le taxiway B est fermé pour travaux
+  - Un déroutement obligatoire vers un autre terrain
+  - Une fermeture complète de l'aérodrome
+  - Un exercice militaire en cours
+correctChoices: [0]
+explanation: >-
+  TWY B CLSD DUE WIP = taxiway B fermé pour travaux ; ACFT EXP DELAY = les
+  aéronefs doivent prévoir (expect) des délais. L'aérodrome reste ouvert.
+evaluates: [fondamentaux.anglais-aeronautique.lire-un-notam]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

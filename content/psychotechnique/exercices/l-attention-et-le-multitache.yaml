@@ -1,0 +1,107 @@
+schemaVersion: 1
+id: psychotechnique.exercices.l-attention-et-le-multitache
+type: concept
+title: L'attention et le multitâche
+slug: l-attention-et-le-multitache
+summary: >-
+  Barrages, détection de cibles, double tâche — ces tests mesurent la
+  vigilance, la précision sous cadence et la capacité à mener deux activités
+  de front sans s'effondrer : le quotidien d'un cockpit.
+objectifs:
+  - Reconnaître les formats (barrages, détection, poursuite de cible, double tâche).
+  - Comprendre ce qui est mesuré (vigilance soutenue, partage attentionnel, résistance à la saturation).
+  - Adopter les bonnes stratégies (rythme régulier, priorisation, balayage systématique).
+aliases: [attention, multitâche, double tâche, barrage, vigilance, partage attentionnel]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche d'entraînement attention et multitâche (campagne de recherche n°1, lot N7).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.la-memoire
+    - psychotechnique.exercices.le-calcul-mental
+content:
+  essentiel:
+    body: |
+      Piloter, naviguer, communiquer — **en même temps**. Le métier de
+      pilote est un exercice permanent de **partage attentionnel**, et les
+      sélections le testent sans détour :
+
+      - **barrages** — barrer tous les « d » barrés d'une page de signes
+        proches : vigilance et précision sous **cadence** ;
+      - **détection de cibles** — repérer un symbole rare dans un flux ;
+      - **poursuite** — maintenir un curseur sur une cible mobile
+        (coordination œil-main) ;
+      - **double tâche** — poursuivre la cible **tout en** répondant à des
+        calculs ou en retenant des paramètres : la reine des épreuves.
+
+      Ce qui est mesuré n'est pas la perfection sur une tâche, mais la
+      **stabilité de l'ensemble** : mieux vaut deux tâches à 80 % qu'une à
+      100 % et l'autre effondrée.
+    aRetenir:
+      - Le rythme régulier bat les à-coups — la précipitation crée les omissions.
+      - "En double tâche, l'examinateur mesure l'ensemble : mieux vaut 80/80 que 100/40."
+      - "Balayage systématique — toujours le même sens de lecture, jamais au hasard."
+      - La vigilance est une ressource physiologique — sommeil et hydratation la conditionnent le jour J.
+  sections:
+    - id: barrages-et-detection
+      title: Barrages et détection
+      body: |
+        Le **barrage** semble bête — il ne l'est pas. Sur des centaines de
+        signes quasi identiques, il mesure la **vigilance soutenue** : la
+        performance des premières lignes ne vaut rien si elle s'effondre à
+        la vingtième.
+
+        Stratégies :
+
+        - **balayer** toujours dans le même sens (gauche-droite, ligne par
+          ligne) — le hasard fait rater ;
+        - trouver **son** rythme de croisière et le tenir — la vitesse
+          maximale des trente premières secondes n'est pas tenable ;
+        - accepter de ne pas revenir en arrière — le doute rétrospectif
+          coûte plus qu'il ne rapporte.
+    - id: la-double-tache
+      title: La double tâche
+      strate: maitriser
+      body: |
+        La **double tâche** simule le cockpit : une tâche **continue**
+        (suivre une cible) plus une tâche **discrète** (calculs, mémoire,
+        signaux sonores). La tentation fatale : se vouer à une tâche et
+        oublier l'autre.
+
+        Les bonnes pratiques :
+
+        - **prioriser explicitement** — la consigne dit parfois quelle
+          tâche prime ; sinon, viser l'équilibre ;
+        - travailler par **micro-cycles** — quelques secondes sur la
+          poursuite, un saut bref sur la tâche secondaire, retour ; c'est le
+          « scan » du pilote, transposé ;
+        - **lisser** ses corrections — sur une poursuite, les grands coups
+          de correction dégradent plus que de petites retouches continues ;
+        - accepter la **dégradation contrôlée** — sous saturation, réduire
+          proprement ses ambitions sur la tâche secondaire vaut mieux que
+          l'effondrement des deux.
+
+        Ces réflexes sont exactement ceux des **facteurs humains** en vol —
+        gestion de la charge mentale et circuits visuels.
+  pieges:
+    - Partir trop vite au barrage — la performance qui compte est celle de la dernière ligne, pas de la première.
+    - En double tâche, sacrifier totalement une tâche pour briller sur l'autre — l'examinateur mesure l'ensemble.
+    - Revenir sans cesse en arrière par doute — le balayage systématique sans retour est plus fiable.
+    - Négliger le sommeil avant les tests — la vigilance testée est physiologique autant que mentale.

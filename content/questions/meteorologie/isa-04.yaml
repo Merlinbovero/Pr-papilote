@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.isa-04
+kind: vrai-faux
+theme: atmosphere-standard
+statement: >-
+  L'atmosphère standard (ISA) décrit la météo réelle du jour.
+answer: false
+explanation: >-
+  L'ISA est un modèle de référence, pas la météo réelle : l'atmosphère du jour
+  s'en écarte presque toujours (on parle par exemple d'ISA+10 ou ISA−5).
+evaluates: [fondamentaux.meteorologie.atmosphere-standard]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

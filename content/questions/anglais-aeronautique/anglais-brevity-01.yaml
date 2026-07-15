@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-brevity-01
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « bogey » et « bandit » ?
+choices:
+  - Bogey = contact non identifié ; bandit = appareil identifié hostile
+  - Bogey = ami ; bandit = ennemi confirmé
+  - Ce sont deux mots pour le même contact
+  - Bogey = avion ; bandit = hélicoptère
+correctChoices: [0]
+explanation: >-
+  Un bogey est un contact non identifié ; il ne devient bandit qu'une fois
+  identifié hostile. La distinction commande les règles d'engagement — la
+  confusion la plus grave du combat aérien.
+evaluates: [fondamentaux.anglais-aeronautique.le-brevity-code]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

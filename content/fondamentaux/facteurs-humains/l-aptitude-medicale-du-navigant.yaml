@@ -1,0 +1,122 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant
+type: concept
+title: L'aptitude médicale du personnel navigant
+slug: l-aptitude-medicale-du-navigant
+summary: >-
+  Avant tout vol militaire, il y a une visite — l'expertise médicale en
+  CEMPN. Où elle se passe, ce qu'on y examine, ce que signifie le profil
+  SIGYCOP, et comment aborder sereinement l'étape la plus redoutée des
+  candidats des trois concours.
+objectifs:
+  - Savoir où se passe l'expertise initiale (CPEMPN de Percy pour EOPN/ALAT, CEMPN de Toulon pour EOPAN).
+  - Connaître le contenu type de la visite (examens, trois consultations spécialisées).
+  - Comprendre le principe du profil médical SIGYCOP et qui décide de l'aptitude.
+aliases: [aptitude médicale, CEMPN, CPEMPN, SIGYCOP, visite médicale, expertise médicale navigant]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F3 du plan V1 (étape commune aux trois concours, sans fiche) ; lieux et contenu vérifiés sur les sites officiels des HIA.
+    author: prepapilote
+sources:
+  - title: "HIA Percy — Centre principal d'expertise médicale du personnel navigant (CPEMPN)"
+    url: https://www.hiapercy.sante.defense.gouv.fr/nos-services-et-specialites/centre-principal-dexpertise-medicale-du-personnel-navigant-cpempn/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "HIA Sainte-Anne (Toulon) — Centre d'expertise médicale du personnel navigant (CEMPN)"
+    url: https://hiasainteanne.sante.defense.gouv.fr/nos-services/centre-dexpertises-medicales-du-personnel-navigant/
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.facteurs-humains.hypoxie-et-altitude
+    - eopan.presentation.le-concours-eopan
+    - eopn.presentation.le-concours-eopn
+    - alat.presentation.devenir-pilote-alat
+content:
+  essentiel:
+    body: |
+      L'aptitude médicale du personnel navigant militaire est prononcée
+      après une **expertise** dans un centre spécialisé du Service de
+      santé des armées :
+
+      - candidats **EOPN** (air) et **ALAT** — au **CPEMPN** de l'hôpital
+        d'instruction des armées **Percy** (Clamart) ;
+      - candidats **EOPAN** (marine) — au **CEMPN** de l'HIA
+        **Sainte-Anne** à **Toulon** ;
+      - d'autres CEMPN (Bordeaux, Toulouse…) suivent ensuite le personnel
+        en activité, civil et militaire.
+
+      La visite initiale dure une journée dense — **prises de sang et
+      d'urine, électrocardiogramme, biométrie complète, audiogramme,
+      tests visuels approfondis**, et **trois consultations** distinctes :
+      médecine interne, **ORL** et **ophtalmologie**. La vue et l'audition
+      concentrent les exigences les plus élevées pour les pilotes.
+
+      Le résultat s'exprime dans le **profil SIGYCOP** — sept rubriques
+      notées (S membres supérieurs, I membres inférieurs, G état général,
+      Y yeux et vision, C sens chromatique, O oreilles et audition,
+      P psychisme). Chaque emploi exige un profil minimal — celui de
+      pilote est parmi les plus stricts, en particulier sur le **Y**.
+    aRetenir:
+      - "EOPN et ALAT passent au CPEMPN de Percy (Clamart) ; EOPAN au CEMPN de Toulon — l'expertise initiale est centralisée."
+      - "Une journée d'examens — sang/urines, ECG, biométrie, audiogramme, tests visuels — et trois consultations (médecine interne, ORL, ophtalmologie)."
+      - "SIGYCOP = 7 rubriques (dont Y = vision, C = couleurs, P = psychisme) — chaque emploi exige un profil minimal."
+      - Seuls les médecins des armées prononcent l'aptitude — aucun site, aucun forum ne peut le faire à leur place.
+  sections:
+    - id: l-esprit-de-la-visite
+      title: L'esprit de la visite
+      body: |
+        L'expertise ne cherche pas des surhommes — elle vérifie qu'un
+        organisme supportera **durablement** les contraintes du vol
+        militaire : accélérations, hypoxie, vibrations, horaires
+        décalés, port d'équipements. C'est le prolongement médical des
+        **facteurs humains** — les mêmes raisons qui font étudier
+        l'hypoxie ou les illusions sensorielles font examiner les
+        oreilles et les yeux.
+
+        Les normes précises (valeurs d'acuité, corrections admises,
+        chirurgie réfractive…) sont **techniques, évolutives et
+        différentes selon les filières** — c'est précisément pourquoi il
+        ne faut ni s'auto-déclarer inapte, ni se fier aux forums. Deux
+        seules sources font foi : le **CIRFA** (qui connaît les normes en
+        vigueur de chaque filière) et le **médecin expert** le jour de la
+        visite.
+    - id: bien-aborder-l-etape
+      title: Bien aborder l'étape
+      strate: maitriser
+      body: |
+        Conseils de bon sens, valables pour les trois concours :
+
+        - **ne pas s'éliminer soi-même** — porter des lunettes, avoir eu
+          une fracture ou un traitement ancien n'est pas automatiquement
+          disqualifiant : seule l'expertise tranche, filière par
+          filière ;
+        - **arriver reposé** — fatigue et déshydratation dégradent la
+          tension, l'audition fine et les tests visuels ;
+        - **apporter son dossier** — carnet de santé, comptes rendus
+          d'opérations, ordonnances de lunettes : l'expert apprécie la
+          transparence, et l'omission volontaire d'un antécédent peut
+          coûter bien plus tard ;
+        - **ne rien « préparer » artificiellement** — pas
+          d'automédication, pas de produit « miracle » pour la vue ou
+          l'audition : les experts les connaissent tous ;
+        - en cas d'inaptitude sur une filière, **demander ce qui reste
+          ouvert** — les profils exigés diffèrent entre chasse,
+          transport, hélicoptères et les autres métiers du personnel
+          navigant.
+  pieges:
+    - Ne jamais s'auto-déclarer inapte sur la foi d'un forum — les normes sont techniques, évolutives et propres à chaque filière.
+    - "Le SIGYCOP n'est pas une note globale — sept rubriques, et c'est le profil EXIGÉ par l'emploi visé qui sert de référence."
+    - Cacher un antécédent médical est la pire stratégie — l'omission découverte coûte l'aptitude, parfois en pleine carrière.
+    - "L'expertise initiale EOPN/ALAT se fait à Percy, l'EOPAN à Toulon — pas dans n'importe quel CEMPN."

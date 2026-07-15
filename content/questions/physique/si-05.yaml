@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: q.physique.si-05
+kind: vrai-faux
+theme: unites-si
+statement: >-
+  Le kelvin s'écrit sans le mot « degré » ni le symbole « ° » : on note 288 K.
+answer: true
+explanation: >-
+  Le kelvin s'écrit sans « degré » ni « ° » : on note 288 K, jamais 288 °K.
+evaluates: [fondamentaux.physique.systeme-international-et-unites]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

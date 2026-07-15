@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-fauxamis-05
+kind: association
+theme: anglais-grammaire
+statement: >-
+  Associez chaque faux ami à son vrai sens.
+pairs:
+  - left: a journey
+    right: Un voyage
+  - left: to attend
+    right: Assister à
+  - left: eventually
+    right: Finalement
+  - left: sensible
+    right: Raisonnable
+explanation: >-
+  Journey = voyage (journée = day), attend = assister à (attendre = wait),
+  eventually = finalement (éventuellement = possibly), sensible = raisonnable
+  (sensible = sensitive).
+evaluates: [fondamentaux.anglais-aeronautique.les-faux-amis]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

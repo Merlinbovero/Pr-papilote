@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-10
+kind: qcm
+theme: pionniers
+statement: >-
+  Vers quelles destinations la ligne de l'Aéropostale s'étendait-elle depuis
+  Toulouse ?
+choices:
+  - "Casablanca, Dakar, puis l'Amérique du Sud"
+  - "Londres, New York, puis le Canada"
+  - "Alger, Le Caire, puis l'Indochine"
+  - "Madrid, Rome, puis la Grèce"
+correctChoices: [0]
+explanation: >-
+  La Ligne descend l'Afrique de l'Ouest (Casablanca, Dakar) puis franchit
+  l'Atlantique Sud vers le Brésil, l'Argentine et, par-dessus les Andes,
+  le Chili.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

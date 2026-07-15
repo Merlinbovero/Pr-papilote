@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-meteo-03
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Dans le groupe vent « 24012G20KT » d'un METAR, que signifie le « G » ?
+choices:
+  - Gusts — des rafales (12 kt avec rafales à 20 kt)
+  - Ground — le vent au sol
+  - Gradient — le vent en altitude
+  - Green — des conditions favorables
+correctChoices: [0]
+explanation: >-
+  G = gusts (rafales) : vent du 240° pour 12 nœuds, rafales à 20 nœuds. Les
+  rafales comptent pour le choix de la piste et les limitations.
+evaluates: [fondamentaux.anglais-aeronautique.la-meteo-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

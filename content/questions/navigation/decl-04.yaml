@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.navigation.decl-04
+kind: calcul
+theme: declinaison
+statement: >-
+  Un cap vrai de 090° avec une déclinaison de 2° Ouest donne quel cap magnétique
+  (en degrés) ?
+answerValue: 92
+tolerance: 0
+unit: "°"
+explanation: >-
+  Déclinaison Ouest, on ajoute : Cm = Cv + D = 90 + 2 = 92°.
+evaluates: [fondamentaux.navigation.declinaison-magnetique]
+difficulty: 2
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

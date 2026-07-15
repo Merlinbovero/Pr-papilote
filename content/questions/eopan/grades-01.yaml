@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.grades-01
+kind: qcm
+theme: grades-marine
+statement: >-
+  À quel grade de l'armée de terre correspond le capitaine de vaisseau de la Marine ?
+choices:
+  - Colonel
+  - Capitaine
+  - Général
+  - Commandant
+correctChoices: [0]
+explanation: >-
+  Le capitaine de vaisseau (Marine) équivaut au colonel (Terre/Air) — un faux ami
+  classique : ce n'est pas un « capitaine » au sens de l'armée de terre.
+evaluates: [eopan.grades.grades-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

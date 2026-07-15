@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: fondamentaux.cartographie.lire-une-carte-aeronautique
+type: concept
+title: Lire une carte aéronautique
+slug: lire-une-carte-aeronautique
+summary: >-
+  La carte OACI au 1/500 000 est l'outil du vol à vue — projection conforme,
+  relief et altitudes, espaces aériens, obstacles : savoir la lire, c'est déjà
+  préparer sa navigation.
+objectifs:
+  - Connaître la carte OACI 1/500 000 et sa règle de conversion (1 cm = 5 km).
+  - Lire le relief (courbes de niveau, teintes, altitudes) et les obstacles.
+  - Repérer les informations de navigation (espaces, zones, déclinaison, aérodromes).
+aliases: [carte OACI, carte aéronautique, 1/500 000, lecture de carte, courbes de niveau]
+module: fondamentaux
+category: cartographie
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche lecture de carte aéronautique (lot N9, renforcement du socle cartographie).
+    author: prepapilote
+sources:
+  - title: "Cartes aéronautiques — SIA (Service de l'information aéronautique, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.cartographie.echelle-et-mesures
+  related:
+    - fondamentaux.navigation.terre-et-coordonnees
+    - fondamentaux.navigation.declinaison-magnetique
+    - fondamentaux.reglementation.espaces-aeriens
+content:
+  essentiel:
+    body: |
+      La carte de référence du vol à vue en France est la **carte OACI au
+      1/500 000** : **1 cm sur la carte = 5 km sur le terrain**. Établie sur
+      une **projection conforme** (les angles y sont conservés — condition
+      indispensable pour tracer des routes), elle superpose trois couches
+      d'information :
+
+      - **le terrain** — relief en **courbes de niveau** et teintes
+        étagées, altitudes des sommets, obstacles artificiels (pylônes,
+        éoliennes) avec leur altitude en pieds ;
+      - **les espaces aériens** — classes, plafonds et planchers, zones
+        réglementées (R), dangereuses (D) et interdites (P) ;
+      - **la navigation** — aérodromes, moyens radio, et l'indispensable
+        **déclinaison magnétique** portée par des lignes d'égale
+        déclinaison.
+
+      Savoir lire cette carte, c'est répondre vite aux trois questions du
+      navigateur : **où suis-je, qu'y a-t-il autour, qu'y a-t-il devant ?**
+    aRetenir:
+      - "Carte OACI 1/500 000 — 1 cm = 5 km ; projection conforme (angles conservés)."
+      - Les altitudes portées (sommets, obstacles) sont en pieds — repérer le point culminant de sa région de vol.
+      - "Zones à statut particulier — P (interdite), R (réglementée), D (dangereuse)."
+      - La déclinaison magnétique figure sur la carte — indispensable pour passer du vrai au magnétique.
+  sections:
+    - id: le-relief-et-les-obstacles
+      title: Le relief et les obstacles
+      body: |
+        Le relief se lit à trois indices :
+
+        - les **courbes de niveau**, qui relient les points d'égale
+          altitude — serrées = pente forte ;
+        - les **teintes hypsométriques** — du blanc/vert des plaines aux
+          bruns des montagnes, par paliers ;
+        - les **cotes d'altitude** des sommets, en **pieds**.
+
+        Les **obstacles artificiels** (pylônes, antennes, éoliennes) portent
+        leur altitude sommitale ; au-delà d'une certaine hauteur, ils sont
+        balisés. Avant tout vol, on repère l'**altitude de sécurité** de
+        chaque tronçon — l'obstacle le plus haut plus une marge.
+    - id: espaces-et-zones
+      title: Espaces et zones sur la carte
+      body: |
+        La carte matérialise les **espaces aériens** avec leurs limites
+        verticales (plancher/plafond) : les classes d'espace, les **TMA**
+        et **CTR** autour des aérodromes, et les zones à statut
+        particulier :
+
+        - **P** (prohibited) — pénétration **interdite** ;
+        - **R** (restricted) — **réglementée**, soumise à conditions ;
+        - **D** (dangerous) — **dangereuse**, pénétration possible mais
+          activité risquée (tirs, voltige…).
+
+        Les zones militaires (entraînement très basse altitude, tirs)
+        parsèment la carte française — les connaître fait partie de la
+        préparation de **tout** vol, civil comme militaire. La fiche
+        espaces aériens détaille les classes.
+    - id: preparer-sa-navigation
+      title: De la carte à la navigation
+      strate: maitriser
+      body: |
+        Lire la carte n'est que la première marche — la préparation
+        enchaîne :
+
+        1. **tracer** la route et mesurer route vraie et distance
+           (rapporteur, règle — ou l'échelle 1 cm = 5 km) ;
+        2. convertir en **route magnétique** grâce à la déclinaison lue
+           sur la carte ;
+        3. relever les **altitudes de sécurité**, espaces traversés et
+           points de report ;
+        4. préparer le **cheminement** — les repères sol caractéristiques
+           (rivières, voies ferrées, villes) qui confirmeront la position.
+
+        Ces gestes sont ceux des épreuves de préparation de navigation des
+        sélections — et du métier ensuite : les fiches navigation prennent
+        le relais (cap, route et dérive ; temps-vitesse-distance).
+  pieges:
+    - "1/500 000 signifie 1 cm = 5 km — se tromper d'un facteur 10 ruine toute l'estimation de distance."
+    - Les altitudes de la carte sont en pieds, pas en mètres.
+    - "P, R, D ne sont pas équivalentes — interdite, réglementée, dangereuse : trois statuts différents."
+    - Une projection conforme conserve les angles, pas les surfaces — c'est ce qui permet d'y tracer des routes.

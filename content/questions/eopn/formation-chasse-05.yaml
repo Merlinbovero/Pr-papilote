@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.formation-chasse-05
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Pourquoi dit-on que la formation du pilote de chasse est une « sélection continue » ?
+choices:
+  - Chaque étape exige de confirmer — un élève peut être réorienté à tout moment du cursus
+  - Parce qu'un seul concours suffit pour toute la carrière
+  - Parce que la sélection ne dure qu'une semaine
+  - Parce que les élèves se sélectionnent entre eux
+correctChoices: [0]
+explanation: >-
+  Du vol initial à l'escadron, chaque phase isole une aptitude (restitution,
+  charge mentale, système d'armes, décision tactique) et écarte ceux qui ne
+  confirment pas — voler ne suffit pas.
+evaluates: [eopn.selection.la-formation-du-pilote-de-chasse]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

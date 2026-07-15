@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.exocet
+title: Exocet
+definition: >-
+  Famille française de missiles antinavires subsoniques volant au ras des flots
+  (sea-skimming), en mode « tire et oublie ». La version aéroportée AM39
+  (portée d'environ 70 km) arme le Rafale Marine et l'Atlantique 2 ; les
+  versions MM40 et SM39 se tirent depuis les navires et les sous-marins.
+english: Exocet anti-ship missile
+synonyms: [AM39, Exocet AM39]
+ficheId: eopan.concepts.les-armements-de-l-aeronautique-navale
+tags: []
+status: publie

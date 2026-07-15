@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.comalat
+title: COMALAT
+definition: >-
+  Commandement de l'aviation légère de l'Armée de terre — installé à Metz
+  depuis le 1er août 2025, il regroupe les organismes de formation de l'ALAT
+  et garantit la cohérence de la fonction hélicoptère ; son général est le
+  conseiller du chef d'état-major de l'armée de Terre pour la 3e dimension.
+sigleExpansion: Commandement de l'aviation légère de l'Armée de terre
+synonyms: []
+ficheId: alat.missions.l-aerocombat
+tags: []
+status: publie

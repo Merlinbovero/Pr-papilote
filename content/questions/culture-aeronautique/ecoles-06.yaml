@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-06
+kind: vrai-faux
+theme: grandes-ecoles
+statement: >-
+  L'ISAE-SUPAERO est placé sous la tutelle du ministère des Armées.
+answer: true
+explanation: >-
+  Héritier de l'école des ingénieurs de l'armement aéronautique,
+  l'ISAE-SUPAERO relève du ministère des Armées — l'ENAC, civile, relève de
+  la DGAC.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

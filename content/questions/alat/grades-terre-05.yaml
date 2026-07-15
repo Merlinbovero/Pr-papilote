@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.grades-terre-05
+kind: qcm
+theme: grades-terre
+statement: >-
+  « Chef de bataillon » et « chef d'escadrons » correspondent à quel grade ?
+choices:
+  - Commandant
+  - Colonel
+  - Capitaine
+  - Adjudant-chef
+correctChoices: [0]
+explanation: >-
+  Ce sont les appellations du grade de commandant dans certaines armes —
+  chef de bataillon (infanterie), chef d'escadrons (cavalerie). Le grade est
+  identique.
+evaluates: [alat.grades.grades-de-l-armee-de-terre]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

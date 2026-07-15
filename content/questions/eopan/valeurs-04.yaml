@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.valeurs-04
+kind: qcm
+theme: culture-marine
+statement: >-
+  En entretien EOPAN, quelle est la meilleure façon de mobiliser les valeurs de la Marine ?
+choices:
+  - Les illustrer par des exemples concrets tirés de son parcours
+  - Réciter leur définition apprise par cœur
+  - Éviter d'en parler
+  - Les critiquer pour montrer son esprit d'analyse
+correctChoices: [0]
+explanation: >-
+  Le jury cherche à voir si le candidat a compris et incarné les valeurs :
+  mieux vaut les illustrer par des exemples personnels (sport collectif,
+  engagement, vie en groupe) que réciter une définition.
+evaluates: [eopan.culture-militaire.culture-et-valeurs-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

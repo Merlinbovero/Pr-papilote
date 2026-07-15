@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.salon-05
+kind: qcm
+theme: bases-aae
+statement: >-
+  Dans quel département se trouve la base aérienne 701 de Salon-de-Provence ?
+choices:
+  - Les Bouches-du-Rhône
+  - Le Finistère
+  - L'Indre-et-Loire
+  - Le Var
+correctChoices: [0]
+explanation: >-
+  La BA 701 « Général Pineau » se situe à Salon-de-Provence, dans les
+  Bouches-du-Rhône.
+evaluates: [eopn.bases.salon-de-provence]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

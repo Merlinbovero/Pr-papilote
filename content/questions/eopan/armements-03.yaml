@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.armements-03
+kind: association
+theme: armements-aeronavale
+statement: >-
+  Associez chaque armement à sa mission.
+pairs:
+  - left: Exocet AM39
+    right: Antinavire
+  - left: ASMP-A
+    right: Dissuasion nucléaire
+  - left: MU90
+    right: Lutte anti-sous-marine
+  - left: Meteor
+    right: Interception air-air longue portée
+explanation: >-
+  L'Exocet AM39 frappe les navires, l'ASMP-A porte la dissuasion aéroportée,
+  la torpille MU90 traque les sous-marins et le Meteor intercepte à plus de
+  100 km grâce à son statoréacteur.
+evaluates: [eopan.concepts.les-armements-de-l-aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

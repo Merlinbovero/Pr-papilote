@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.lann-bihoue-05
+kind: association
+theme: bases-navales
+statement: >-
+  Associez chaque appareil de Lann-Bihoué à sa mission.
+pairs:
+  - left: E-2C Hawkeye
+    right: Guet aérien
+  - left: Atlantique 2
+    right: Patrouille maritime
+  - left: Falcon 50M
+    right: Surveillance maritime
+explanation: >-
+  Lann-Bihoué réunit plusieurs familles : le Hawkeye assure le guet aérien,
+  l'Atlantique 2 la patrouille maritime (lutte anti-sous-marine), et le Falcon
+  50M la surveillance maritime.
+evaluates: [eopan.ban.lann-bihoue]
+difficulty: 3
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

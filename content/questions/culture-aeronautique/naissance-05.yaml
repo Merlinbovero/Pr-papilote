@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-05
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Pourquoi parle-t-on de « trop peu, trop tard » pour l'aviation française
+  de 1940 ?
+choices:
+  - "La production d'avions modernes n'a vraiment démarré qu'en 1939"
+  - "La France n'avait aucun bureau d'études compétent"
+  - "L'industrie était restée première mondiale mais manquait de pilotes"
+  - "Les avions français étaient techniquement inférieurs par nature"
+correctChoices: [0]
+explanation: >-
+  Après le sommeil industriel de 1918-1936, le réarmement lancé avec les
+  nationalisations produit ses appareils modernes à partir de 1939 seulement —
+  trop tard pour la campagne de France, malgré des bureaux d'études de valeur.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

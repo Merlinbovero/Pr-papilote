@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.cougar-03
+kind: vrai-faux
+theme: appareils-alat
+statement: >-
+  Le parc Cougar de l'armée de Terre a été entièrement rénové entre 2011 et 2015.
+answer: true
+explanation: >-
+  Vrai. La rénovation (2011-2015) a apporté un tableau de bord numérique, une
+  caméra thermique et des détecteurs de radars et de départs missiles — sans
+  faire du Cougar un appareil neuf (livré dès 1988).
+evaluates: [alat.appareils.cougar]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

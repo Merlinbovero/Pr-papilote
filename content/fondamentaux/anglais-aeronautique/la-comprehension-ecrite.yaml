@@ -1,0 +1,115 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.la-comprehension-ecrite
+type: concept
+title: La compréhension écrite — méthode
+slug: la-comprehension-ecrite
+summary: >-
+  Lire vite, répondre juste — l'épreuve de compréhension écrite se gagne par
+  la méthode : lecture en deux passes, repérage des paraphrases, et la chasse
+  aux pièges (not stated, mots extrêmes, distracteurs littéraux).
+objectifs:
+  - Appliquer la lecture en deux passes (skimming global, scanning ciblé).
+  - Reconnaître les pièges des questions (paraphrase, not stated, mots extrêmes).
+  - Gérer le temps d'une épreuve de compréhension (texte + questions).
+aliases: [compréhension écrite, reading comprehension, skimming, scanning, not stated]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — méthode de compréhension écrite (lot N15, phase P5 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — L'évaluation d'anglais"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.l-anglais-des-selections
+  related:
+    - fondamentaux.anglais-aeronautique.lire-un-notam
+    - fondamentaux.anglais-aeronautique.les-temps-du-recit
+content:
+  essentiel:
+    body: |
+      L'épreuve type : un **texte court** (souvent aéronautique) suivi de
+      questions à choix multiple. La méthode en **deux passes** :
+
+      1. **Skimming** (30-45 s) — lire le texte en survol : de quoi
+         parle-t-il, qui, quand, quel ton ? Ne rien mémoriser, cartographier ;
+      2. **Scanning** (par question) — lire la question, **localiser** le
+         passage concerné, relire ce passage précisément, répondre.
+
+      Les trois pièges universels des questions :
+
+      - **la paraphrase** — la bonne réponse reformule le texte ; la
+        mauvaise en **recopie des mots** hors contexte : se méfier des
+        réponses « mot à mot » ;
+      - **le not stated** — plausible dans la vraie vie, mais **absent du
+        texte** : on répond avec le texte, pas avec sa culture ;
+      - **les mots extrêmes** — *always, never, all, only* rendent une
+        affirmation presque toujours fausse ; le texte dit rarement des
+        absolus.
+    aRetenir:
+      - "Deux passes — skimming (cartographier le texte) puis scanning (localiser, relire, répondre)."
+      - La bonne réponse paraphrase le texte ; le distracteur en recopie les mots — inverser son réflexe.
+      - On répond avec le texte, jamais avec sa culture personnelle (piège du « not stated »).
+      - "Les mots extrêmes (always, never, only) signalent presque toujours un distracteur."
+  sections:
+    - id: la-methode-en-detail
+      title: La méthode en détail
+      body: |
+        Pourquoi deux passes ? Parce que lire tout le texte à fond
+        **avant** les questions gaspille du temps : la moitié des détails
+        ne sera pas interrogée. Le survol donne la **carte** ; chaque
+        question dit ensuite **où creuser**.
+
+        Réflexes complémentaires :
+
+        - lire d'abord la **question**, pas les propositions — se faire
+          sa propre réponse, puis chercher celle qui s'en approche ;
+        - traiter les questions **dans l'ordre du texte** (elles le
+          suivent presque toujours) ;
+        - un mot inconnu ne bloque pas : le **contexte** et la
+          **morphologie** (préfixes, suffixes, racines communes au
+          français) suffisent le plus souvent ;
+        - garder 30 secondes pour les questions laissées en attente — et
+          toujours répondre (pas de point négatif dans la plupart des
+          formats, vérifier la consigne).
+    - id: s-entrainer-efficacement
+      title: S'entraîner efficacement
+      strate: maitriser
+      body: |
+        Le matériau d'entraînement idéal est **court et aéronautique** :
+        articles de presse aviation en anglais, notices simplifiées,
+        récits d'incidents (les rapports de sécurité anglophones sont une
+        mine). La routine :
+
+        1. un texte de 150-250 mots, **chronométré** (5-6 minutes,
+           questions comprises) ;
+        2. correction **analysée** — pour chaque erreur, retrouver le
+           passage qui donnait la réponse et nommer le piège
+           (paraphrase ? extrême ? not stated ?) ;
+        3. relever 3-5 **mots nouveaux** en contexte — pas des listes
+           isolées.
+
+        Les questions de la banque PrépaPilote (thème
+        `anglais-comprehension`) reproduisent ce format en miniature :
+        un mini-texte, une question, quatre propositions dont un piège
+        nommé.
+  pieges:
+    - Lire tout le texte à fond avant les questions gaspille le temps — survol d'abord, précision ensuite.
+    - La réponse qui recopie les mots du texte est suspecte — la bonne réponse paraphrase.
+    - Répondre avec ses connaissances personnelles au lieu du texte — l'erreur « not stated » type.
+    - "Always, never, only, all — les absolus sont des drapeaux rouges dans les propositions."

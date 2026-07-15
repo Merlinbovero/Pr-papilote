@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.helico-05
+kind: association
+theme: vol-helicoptere
+statement: >-
+  Associez chaque commande d'hélicoptère à son effet.
+pairs:
+  - left: "Pas collectif"
+    right: "Monter ou descendre"
+  - left: "Pas cyclique"
+    right: "Incliner le disque et se déplacer"
+  - left: "Palonniers"
+    right: "Orienter le nez (lacet)"
+explanation: >-
+  Trois commandes, trois effets — le collectif joue sur toutes les pales à
+  la fois, le cyclique sur chaque pale selon sa position, les palonniers sur
+  le pas du rotor de queue.
+evaluates: [fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

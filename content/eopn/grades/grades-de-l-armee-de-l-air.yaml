@@ -1,0 +1,103 @@
+schemaVersion: 1
+id: eopn.grades.grades-de-l-armee-de-l-air
+type: concept
+title: Les grades de l'armée de l'Air et de l'Espace
+slug: grades-de-l-armee-de-l-air
+summary: >-
+  De l'aviateur au général d'armée aérienne — la hiérarchie de l'armée de
+  l'Air et de l'Espace, quasi identique à celle de l'armée de Terre, avec ses
+  particularités (aviateur, appellations des généraux).
+objectifs:
+  - Restituer la hiérarchie des grades de l'armée de l'Air et de l'Espace.
+  - Identifier les particularités Air (aviateur, généraux « aériens »).
+  - Situer le parcours de l'EOPN dans cette hiérarchie (aspirant puis officier).
+aliases: [grades armée de l'air, aviateur, hiérarchie AAE, galons, sous-officier air]
+module: eopn
+category: grades
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche grades de l'AAE (campagne de recherche n°1, lot N5 ; source officielle devenir-aviateur.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Les grades dans l'armée de l'Air et de l'Espace (devenir-aviateur.gouv.fr)"
+    url: https://devenir-aviateur.gouv.fr/les-grades
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Grades de l'Armée de l'air et de l'espace française — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Grades_de_l'Arm%C3%A9e_de_l'air_et_de_l'espace_fran%C3%A7aise
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.presentation.le-concours-eopn
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - alat.grades.grades-de-l-armee-de-terre
+    - eopan.grades.grades-de-la-marine
+content:
+  essentiel:
+    body: |
+      La hiérarchie de l'armée de l'Air et de l'Espace est **quasi
+      identique** à celle de l'armée de Terre — seules changent quelques
+      appellations :
+
+      1. **Militaires du rang** — **aviateur** (et non soldat), aviateur de
+         première classe, caporal, caporal-chef ;
+      2. **Sous-officiers** — sergent, sergent-chef, adjudant,
+         adjudant-chef, major ;
+      3. **Officiers** — sous-lieutenant, lieutenant, capitaine,
+         commandant, lieutenant-colonel, colonel ;
+      4. **Officiers généraux** — général de brigade **aérienne**, de
+         division **aérienne**, de corps **aérien**, général d'armée
+         **aérienne**.
+
+      L'**EOPN**, lui, entre comme élève officier : il sert d'abord comme
+      **aspirant** pendant sa formation, avant d'être nommé
+      **sous-lieutenant** puis de gravir les échelons d'officier.
+    aRetenir:
+      - Même échelle que l'armée de Terre, mais le premier grade est « aviateur ».
+      - "Sous-officiers — sergent, sergent-chef, adjudant, adjudant-chef, major."
+      - Les généraux prennent le qualificatif aérien — général de brigade aérienne, d'armée aérienne…
+      - L'EOPN sert comme aspirant en formation, puis est nommé sous-lieutenant.
+  sections:
+    - id: l-echelle-des-grades
+      title: L'échelle des grades
+      body: |
+        | Catégorie | Grades (croissant) |
+        | --- | --- |
+        | Militaires du rang | aviateur · aviateur de 1re classe · caporal · caporal-chef |
+        | Sous-officiers | sergent · sergent-chef · adjudant · adjudant-chef · major |
+        | Officiers | sous-lieutenant · lieutenant · capitaine · commandant · lieutenant-colonel · colonel |
+        | Officiers généraux | général de brigade aérienne (2★) · de division aérienne (3★) · de corps aérien (4★) · d'armée aérienne (5★) |
+
+        Comme dans l'armée de Terre, on s'adresse aux officiers avec
+        « **mon** » (« mon capitaine ») — et sans « mon » à une femme
+        officier.
+    - id: le-parcours-de-l-eopn
+      title: Le parcours de l'EOPN dans la hiérarchie
+      strate: maitriser
+      body: |
+        Le candidat EOPN retenu signe un contrat d'**élève officier** : il
+        porte d'abord le galon d'**aspirant** — statut intermédiaire entre
+        sous-officier et officier — pendant sa formation à l'École de l'air
+        et en écoles de spécialisation.
+
+        Breveté et confirmé, il est nommé **sous-lieutenant**, puis
+        **lieutenant** et **capitaine** au fil de sa carrière de pilote ;
+        les grades supérieurs (commandant et au-delà) ouvrent les
+        responsabilités de commandement d'escadron et d'état-major.
+        Connaître cette progression — et l'échelle complète — est un
+        prérequis de l'entretien.
+  pieges:
+    - Le premier grade est « aviateur » — pas « soldat » — c'est le marqueur d'identité de l'AAE.
+    - Les généraux de l'AAE portent le qualificatif « aérien(ne) » — général de brigade aérienne, etc.
+    - L'aspirant n'est pas encore officier — c'est le statut de l'élève officier en formation, avant sous-lieutenant.
+    - Le major reste le sommet des sous-officiers — pas un officier, dans l'Air comme dans les autres armées.

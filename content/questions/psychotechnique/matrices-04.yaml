@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.psychotechnique.matrices-04
+kind: vrai-faux
+theme: matrices
+statement: >-
+  Dans les matrices par superposition, deux traits identiques qui se
+  superposent s'annulent souvent.
+answer: true
+explanation: >-
+  C'est la règle la plus contre-intuitive des matrices — la case 3 combine
+  les cases 1 et 2, mais les éléments COMMUNS disparaissent (logique du
+  « ou exclusif »).
+evaluates: [psychotechnique.exercices.les-matrices]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

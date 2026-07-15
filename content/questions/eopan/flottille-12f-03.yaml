@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.flottille-12f-03
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  La flottille 12F est la plus ancienne flottille de chasse de l'aéronautique navale.
+answer: false
+explanation: >-
+  Faux. La plus ancienne flottille de chasse est la 11F (héritière de l'escadrille
+  AC1, 1919). La particularité de la 12F est d'avoir été la première unité au
+  monde sur Rafale (2001).
+evaluates: [eopan.unites.flottille-12f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: eopan.culture-militaire.culture-et-valeurs-de-la-marine
+type: concept
+title: La culture et les valeurs de la Marine
+slug: culture-et-valeurs-de-la-marine
+summary: >-
+  Être marin, c'est un mode de vie, un métier et l'appartenance à un équipage.
+  La Marine se reconnaît dans sa devise — Honneur, Patrie, Valeur, Discipline —
+  un socle de culture essentiel pour l'entretien EOPAN.
+objectifs:
+  - Comprendre ce que signifie « être marin » (mode de vie, professionnalisme, esprit d'équipage).
+  - Connaître la devise de la Marine — Honneur, Patrie, Valeur, Discipline — et le sens de chaque terme.
+  - Mobiliser ces valeurs pour préparer l'entretien de motivation du concours.
+aliases:
+  [culture de la Marine, valeurs, Honneur Patrie Valeur Discipline, esprit d'équipage, être marin]
+module: eopan
+category: culture-militaire
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche culture et valeurs de la Marine (Lot B, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Marine nationale — nos valeurs (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1, p.13-16 — Culture de la Marine"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.organisation.marine-nationale
+    - eopan.presentation.le-concours-eopan
+content:
+  essentiel:
+    body: |
+      Devenir pilote de l'aéronautique navale, c'est d'abord devenir **marin**.
+      Or, être marin ne se résume pas à un métier : c'est un **mode de vie**, un
+      **professionnalisme** exigeant et l'appartenance à un **équipage**.
+
+      Le marin est lié à la **mer** : l'ancre de son uniforme symbolise ce lien.
+      Il fait preuve d'**ouverture d'esprit** et d'**adaptation**, accepte
+      l'incertitude et le danger. Professionnel **rigoureux** et **polyvalent**,
+      il sait que son action **engage tout l'équipage**.
+
+      La Marine se reconnaît dans une **devise** en quatre mots : **Honneur,
+      Patrie, Valeur, Discipline**. Ces valeurs, héritées de plus de deux siècles
+      d'histoire, guident chaque marin — et sont un **socle** attendu à
+      l'entretien EOPAN.
+    aRetenir:
+      - Être marin, c'est un mode de vie, un métier rigoureux et l'appartenance à un équipage.
+      - La devise de la Marine est Honneur, Patrie, Valeur, Discipline.
+      - L'esprit d'équipage — cohésion, solidarité, don de soi — est au cœur de la culture Marine.
+      - Ces valeurs sont un socle indispensable pour préparer l'entretien de motivation.
+  sections:
+    - id: etre-marin
+      title: Être marin
+      body: |
+        La culture de la Marine tient en trois idées :
+
+        - **Être marin, c'est un mode de vie.** Le marin est attaché à la
+          **mer**, souvent confronté à des conditions **difficiles**, et puise
+          sa force dans l'**esprit d'équipage**.
+        - **Être marin, c'est être un professionnel.** Rigoureux et
+          **polyvalent** (« cuisinier le jour, pompier le soir, barreur de
+          combat la nuit »), il tient son **quart** quoi qu'il arrive et vise
+          l'**excellence**.
+        - **Être marin, c'est faire partie d'un équipage.** On grandit au sein
+          de l'équipage ; la **cohésion** et la **solidarité** y rendent
+          « possible l'impossible ».
+
+        Cette identité explique pourquoi, en entretien, on cherche à savoir si
+        le candidat est prêt à la **vie militaire** et à la **vie en
+        communauté** — bien au-delà du seul pilotage.
+      figures:
+        - schemaId: valeurs-marine
+          alt: Quatre colonnes portant un linteau « Marin d'État » — Honneur, Patrie, Valeur, Discipline — chacune résumée par ses idées clés.
+          caption: La devise Honneur-Patrie-Valeur-Discipline, quatre valeurs qui portent l'engagement du marin.
+          width: 460
+          height: 280
+    - id: honneur-patrie-valeur-discipline
+      title: Honneur, Patrie, Valeur, Discipline
+      body: |
+        La devise de la Marine se lit en quatre valeurs complémentaires :
+
+        - **Honneur** — agir avec **courage**, **dignité** et **loyauté** ; être
+          droit, honnête, exemplaire, et fier d'appartenir à la Marine ;
+        - **Patrie** — servir la **nation**, s'engager « jusqu'au sacrifice de
+          sa vie » ; le navire de guerre est « une partie du sol français »
+          partout dans le monde ;
+        - **Valeur** — allier **qualités personnelles** (courage, audace,
+          respect d'autrui) et **aptitudes professionnelles**, sans cesse
+          entretenues par l'entraînement ;
+        - **Discipline** — respecter un ensemble de **règles librement
+          acceptées**, clé du **succès collectif**, portées par une autorité qui
+          « donne du sens à l'action ».
+    - id: mobiliser-ces-valeurs-en-entretien
+      title: Mobiliser ces valeurs en entretien
+      strate: maitriser
+      body: |
+        Ces valeurs ne sont pas de simples mots à réciter : en **entretien**, le
+        jury cherche à voir si le candidat les a **comprises** et **incarnées**.
+        La bonne approche est d'**illustrer** chaque valeur par des **exemples
+        concrets** tirés de son parcours (sport collectif, engagement associatif,
+        expérience de vie en groupe…).
+
+        Se réapproprier « Honneur-Patrie-Valeur-Discipline » avec ses **propres
+        mots** et ses **preuves** vaut infiniment mieux qu'une définition apprise
+        par cœur. C'est là tout l'enjeu de la préparation à l'entretien, que
+        d'autres fiches détaillent.
+  pieges:
+    - La devise n'est pas « Liberté, Égalité, Fraternité » (devise nationale) mais Honneur, Patrie, Valeur, Discipline (Marine).
+    - En entretien, réciter les valeurs ne suffit pas — il faut les illustrer par des exemples personnels.
+    - « Être marin » précède « être pilote » — un candidat qui ne vise que le pilotage, sans la dimension Marine, se dessert.

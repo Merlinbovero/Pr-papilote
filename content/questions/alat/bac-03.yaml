@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.bac-03
+kind: vrai-faux
+theme: organisation-alat
+statement: >-
+  La 4e BAC aligne environ 150 hélicoptères et 2 650 aérocombattants.
+answer: true
+explanation: >-
+  Ce sont les ordres de grandeur officiels — la plus grande force
+  d'aérocombat d'Europe occidentale, répartie entre Tigre, Gazelle, Caïman
+  et Cougar.
+evaluates: [alat.organisation.la-4e-brigade-d-aerocombat]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

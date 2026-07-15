@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.caiman-tth-01
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel est le rôle du NH90 Caïman TTH dans l'ALAT ?
+choices:
+  - Hélicoptère de manœuvre et d'assaut (héliportage des combattants)
+  - Hélicoptère d'attaque antichar
+  - Hélicoptère de lutte anti-sous-marine
+  - Avion de patrouille maritime
+correctChoices: [0]
+explanation: >-
+  Le Caïman TTH est l'hélicoptère de manœuvre et d'assaut de l'ALAT : poser
+  d'assaut, infiltration, évacuation sanitaire. L'attaque revient au Tigre, et
+  la lutte anti-sous-marine à la version NFH de la Marine.
+evaluates: [alat.appareils.nh90-caiman-tth]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

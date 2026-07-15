@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .dom { fill: none; stroke: #94a3b8; stroke-width: 2; }
+    .mid { stroke: #94a3b8; stroke-width: 1.5; }
+    .pip { fill: currentColor; }
+    .ans { stroke: #3b82f6; stroke-dasharray: 5 4; }
+    .q { fill: #3b82f6; font-size: 20px; font-weight: 700; }
+    .lbl { font-size: 11px; fill: #94a3b8; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">Dominos — une suite qui progresse de +1</text>
+  <!-- Domino 1 : 1/2 -->
+  <rect class="dom" x="40" y="60" width="56" height="112" rx="8" />
+  <line class="mid" x1="40" y1="116" x2="96" y2="116" />
+  <circle class="pip" cx="68" cy="88" r="5" />
+  <circle class="pip" cx="58" cy="132" r="5" />
+  <circle class="pip" cx="78" cy="156" r="5" />
+  <!-- Domino 2 : 2/3 -->
+  <rect class="dom" x="136" y="60" width="56" height="112" rx="8" />
+  <line class="mid" x1="136" y1="116" x2="192" y2="116" />
+  <circle class="pip" cx="154" cy="76" r="5" />
+  <circle class="pip" cx="174" cy="100" r="5" />
+  <circle class="pip" cx="154" cy="130" r="5" />
+  <circle class="pip" cx="164" cy="144" r="5" />
+  <circle class="pip" cx="174" cy="158" r="5" />
+  <!-- Domino 3 : 3/4 -->
+  <rect class="dom" x="232" y="60" width="56" height="112" rx="8" />
+  <line class="mid" x1="232" y1="116" x2="288" y2="116" />
+  <circle class="pip" cx="250" cy="76" r="5" />
+  <circle class="pip" cx="260" cy="90" r="5" />
+  <circle class="pip" cx="270" cy="104" r="5" />
+  <circle class="pip" cx="250" cy="130" r="5" />
+  <circle class="pip" cx="270" cy="130" r="5" />
+  <circle class="pip" cx="250" cy="158" r="5" />
+  <circle class="pip" cx="270" cy="158" r="5" />
+  <!-- Domino 4 : ? -->
+  <rect class="dom ans" x="328" y="60" width="56" height="112" rx="8" />
+  <line class="mid" x1="328" y1="116" x2="384" y2="116" />
+  <text class="q" x="356" y="95" text-anchor="middle">?</text>
+  <text class="q" x="356" y="152" text-anchor="middle">?</text>
+  <!-- légende -->
+  <text x="230" y="212" text-anchor="middle">Haut — 1, 2, 3, … · Bas — 2, 3, 4, …</text>
+  <text x="230" y="234" text-anchor="middle">Réponse — 4 en haut, 5 en bas.</text>
+  <text class="lbl" x="230" y="272" text-anchor="middle">Au-delà de 6, on repart à 0 — la suite des dominos est cyclique (…5, 6, 0, 1…).</text>
+</svg>

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.facteurs-humains.cognac-04
+kind: vrai-faux
+theme: retour-d-experience
+statement: >-
+  Lors de l'abordage de Cognac, les deux pilotes se sont éjectés.
+answer: false
+explanation: >-
+  Faux. Malgré deux chocs et des dégâts importants (dérive amputée, plan
+  canard endommagé), les deux Rafale sont restés pilotables et se sont posés à
+  Cognac — les pilotes sont indemnes.
+evaluates: [fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

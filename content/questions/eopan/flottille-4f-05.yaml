@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-4f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quel rôle la flottille 4F joue-t-elle au sein du groupe aéronaval ?
+choices:
+  - Vigie et coordination — détecter loin et guider les chasseurs
+  - Frappe contre les navires ennemis
+  - Ravitaillement en vol des Rafale
+  - Transport logistique entre la terre et le porte-avions
+correctChoices: [0]
+explanation: >-
+  Les Hawkeye de la 4F détectent les menaces bien au-delà de l'horizon des
+  navires, suivent les pistes et coordonnent l'action des chasseurs : la 4F est
+  la vigie et la tour de contrôle volante du groupe aéronaval.
+evaluates: [eopan.unites.flottille-4f]
+difficulty: 3
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

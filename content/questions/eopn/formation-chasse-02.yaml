@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.formation-chasse-02
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Où se déroule la transformation opérationnelle sur Rafale ?
+choices:
+  - À l'ETR 3/4 « Aquitaine », à Saint-Dizier
+  - À l'EC 2/3 « Champagne », à Nancy-Ochey
+  - À l'EAC de Cognac
+  - À Salon-de-Provence
+correctChoices: [0]
+explanation: >-
+  La transformation Rafale se fait à l'ETR 3/4 « Aquitaine » de Saint-Dizier
+  (environ cinq mois) ; l'EC 2/3 « Champagne » de Nancy assure celle sur
+  Mirage 2000.
+evaluates: [eopn.selection.la-formation-du-pilote-de-chasse]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

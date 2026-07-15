@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.cougar-04
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quelles missions le Cougar remplit-il ?
+choices:
+  - Transport tactique, opérations spéciales, fret, liaisons longue distance et évacuation sanitaire
+  - Appui-destruction antichar uniquement
+  - Guet aérien et contrôle de l'espace aérien
+  - Lutte anti-sous-marine depuis les frégates
+correctChoices: [0]
+explanation: >-
+  Le Cougar est le porteur lourd polyvalent de l'ALAT : transport tactique,
+  fret, liaisons, évacuation sanitaire — et une partie du parc sert au 4e RHFS
+  pour les opérations spéciales.
+evaluates: [alat.appareils.cougar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

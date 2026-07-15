@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-33f-02
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle mission de la 33F contribue directement à la dissuasion nucléaire ?
+choices:
+  - "La protection de la FOST aux abords de l'île Longue"
+  - "Le ravitaillement en vol des Rafale"
+  - "La patrouille de France"
+  - "Le transport du président de la République"
+correctChoices: [0]
+explanation: >-
+  Sécuriser les sorties des sous-marins lanceurs d'engins — la lutte ASM du
+  Caïman protège la composante océanique de la dissuasion.
+evaluates: [eopan.unites.flottille-33f]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

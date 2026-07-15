@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.catapultage
+title: Catapultage
+definition: >-
+  Procédure de décollage embarqué : une catapulte communique à l'avion sa
+  vitesse d'envol sur la piste trop courte d'un porte-avions. Sur le Charles de
+  Gaulle, la catapulte à vapeur lance l'avion de 0 à près de 250 km/h en deux
+  secondes.
+english: Catapult launch
+synonyms: []
+ficheId: eopan.procedures.catapultage
+tags: []
+status: publie

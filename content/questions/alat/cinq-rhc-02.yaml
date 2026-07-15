@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.cinq-rhc-02
+kind: qcm
+theme: unites-alat
+statement: >-
+  Où est stationné le 5e régiment d'hélicoptères de combat ?
+choices:
+  - À Pau (Pyrénées-Atlantiques)
+  - À Phalsbourg
+  - À Salon-de-Provence
+  - À Landivisiau
+correctChoices: [0]
+explanation: >-
+  Le 5e RHC, surnommé « le régiment du Béarn », est stationné à Pau
+  (Pyrénées-Atlantiques).
+evaluates: [alat.unites.5e-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.ecoulement-03
+kind: vrai-faux
+theme: ecoulement-air
+statement: >-
+  Là où l'air va plus vite, sa pression est plus forte.
+answer: false
+explanation: >-
+  C'est l'inverse (effet Venturi, théorème de Bernoulli) : là où la vitesse de
+  l'air augmente, sa pression diminue.
+evaluates: [fondamentaux.aerodynamique.ecoulement-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

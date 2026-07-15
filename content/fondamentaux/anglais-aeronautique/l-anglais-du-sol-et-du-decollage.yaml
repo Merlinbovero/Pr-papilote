@@ -1,0 +1,111 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage
+type: concept
+title: L'anglais du sol et du décollage
+slug: l-anglais-du-sol-et-du-decollage
+summary: >-
+  Radio check, request taxi, backtrack, conditional clearances — tout
+  l'anglais des phases sol, du premier contact radio jusqu'au lâcher des
+  freins, avec les échanges types et leurs pièges.
+objectifs:
+  - Conduire en anglais les échanges des phases sol (contact initial, roulage, point d'attente).
+  - Comprendre les clairances conditionnelles (behind landing traffic, line up behind).
+  - Restituer l'échange type complet du parking au décollage.
+aliases:
+  [radio check, request taxi, backtrack, hold short, conditional clearance, anglais du roulage]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — anglais des phases sol (lot N12, phase P2 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Guide de phraséologie du SIA (bilingue français-anglais, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+  related:
+    - fondamentaux.anglais-aeronautique.l-anglais-de-l-approche
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+content:
+  essentiel:
+    body: |
+      Avant même de voler, tout se joue à la radio. Les échanges types des
+      **phases sol** :
+
+      | Situation | Phrase type | Sens |
+      | --- | --- | --- |
+      | Essai radio | *radio check* — *read you five* | essai radio — je vous reçois 5/5 |
+      | Mise en route | *request start-up* | demande mise en route |
+      | Roulage | *request taxi* | demande roulage |
+      | Instruction | *taxi to holding point A1, runway 22* | roulez au point d'attente A1 |
+      | Remontée de piste | *backtrack runway 22* | remontez la piste 22 |
+      | Attente | *hold short of runway 22* | maintenez avant piste |
+      | Prêt | *ready for departure* | prêt au départ |
+
+      La **lisibilité radio** se note de 1 à 5 : *read you five* = parfaitement
+      lisible, *read you one* = illisible.
+
+      Attention au piège de vocabulaire : on annonce *ready for
+      **departure*** — jamais *ready for takeoff* : le mot **takeoff** reste
+      réservé à la clairance du contrôleur.
+    aRetenir:
+      - "Échange type sol — radio check → start-up → taxi → holding point → hold short → ready for departure."
+      - La lisibilité radio se note de 1 (illisible) à 5 (parfaitement lisible) — « read you five ».
+      - "On dit « ready for departure » — jamais « ready for takeoff »."
+      - "Backtrack = remonter la piste en sens inverse pour s'aligner."
+  sections:
+    - id: du-parking-au-point-d-attente
+      title: Du parking au point d'attente
+      body: |
+        Le dialogue type, côté pilote (indicatif F-GABC, abrégé F-BC après
+        le premier contact) :
+
+        1. *« Cognac Tower, F-GABC, radio check. »* — le contrôleur répond
+           *« F-GABC, read you five. »* ;
+        2. *« F-BC, PC-21, request start-up. »* — *« F-BC, start-up
+           approved. »* ;
+        3. *« F-BC, request taxi. »* — *« F-BC, taxi to holding point A1,
+           runway 22, QNH 1015. »* — le pilote **collationne** : *« Taxi
+           holding point A1, runway 22, QNH 1015, F-BC. »*
+
+        Noter la structure invariable : instruction → **read back** →
+        indicatif en dernier. Les éléments critiques (point d'attente,
+        piste, QNH) se répètent **tous**.
+    - id: clairances-conditionnelles
+      title: Les clairances conditionnelles
+      strate: maitriser
+      body: |
+        Pour fluidifier le trafic, le contrôleur peut délivrer une clairance
+        **conditionnelle** : *« F-BC, behind landing traffic, line up and
+        wait runway 22, behind. »* — alignez-vous **derrière** l'avion à
+        l'atterrissage.
+
+        Le read back doit reprendre la **condition entière** : *« Behind
+        landing traffic, line up and wait runway 22, behind, F-BC. »* — le
+        double *behind* n'est pas une coquetterie : il encadre la clairance
+        pour qu'aucune oreille ne puisse manquer la condition.
+
+        C'est le degré de rigueur attendu d'un équipage militaire — et un
+        format d'échange que les évaluations orales aiment tester :
+        comprendre une condition, la restituer intégralement, l'exécuter.
+  pieges:
+    - "« Ready for departure », jamais « ready for takeoff » — le mot takeoff appartient au seul contrôleur."
+    - Une clairance conditionnelle se collationne avec sa condition complète — y compris le double « behind ».
+    - "« Backtrack » signifie remonter la piste en service — une phase critique : la piste est occupée."
+    - L'indicatif se place à la fin du read back — pas au début.

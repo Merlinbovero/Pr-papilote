@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.calcul-02
+kind: calcul
+theme: calcul-mental
+statement: >-
+  Calculez de tête : 15 % de 260.
+answerValue: 39
+tolerance: 0
+explanation: >-
+  15 % = 10 % + 5 %. 10 % de 260 = 26 ; 5 % en est la moitié, soit 13.
+  Total : 26 + 13 = 39.
+evaluates: [psychotechnique.exercices.le-calcul-mental]
+difficulty: 2
+competencies: [calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

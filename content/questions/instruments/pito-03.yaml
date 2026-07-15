@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.pito-03
+kind: qcm
+theme: pitot-statique
+statement: >-
+  Que donne la différence entre la pression totale et la pression statique ?
+choices:
+  - "La pression dynamique, liée à la vitesse"
+  - "Le poids de l'avion"
+  - "L'altitude"
+  - "La température"
+correctChoices: [0]
+explanation: >-
+  Pt = Ps + pression dynamique. La différence Pt − Ps isole donc la pression
+  dynamique, directement liée à la vitesse : c'est ce qu'exploite l'anémomètre.
+evaluates: [fondamentaux.instruments.chaine-pitot-statique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

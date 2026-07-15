@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.landivisiau-01
+kind: qcm
+theme: bases-navales
+statement: >-
+  Que trouve-t-on à la base d'aéronautique navale (BAN) de Landivisiau ?
+choices:
+  - Toute la chasse embarquée française (les flottilles de Rafale Marine)
+  - Les sous-marins nucléaires lanceurs d'engins
+  - Les avions de patrouille maritime Atlantique 2
+  - Le porte-avions Charles de Gaulle à quai
+correctChoices: [0]
+explanation: >-
+  Landivisiau est la base à terre de toute la chasse embarquée française : elle
+  abrite les trois flottilles de Rafale Marine (11F, 12F, 17F).
+evaluates: [eopan.ban.landivisiau]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

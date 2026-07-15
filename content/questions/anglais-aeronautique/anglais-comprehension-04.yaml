@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-comprehension-04
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  « Shortly after takeoff, the crew noticed an unusual vibration. They
+  reduced power, ran the checklist, and elected to return to the field as a
+  precaution. » — Pourquoi l'équipage est-il revenu au terrain ?
+choices:
+  - Par précaution, après une vibration inhabituelle
+  - Parce que le moteur avait pris feu
+  - Sur ordre du contrôle aérien
+  - Parce qu'il manquait de carburant
+correctChoices: [0]
+explanation: >-
+  Le texte donne la cause (unusual vibration) et la nature de la décision
+  (as a precaution, elected to return = a choisi de revenir). Feu, ordre ATC
+  et carburant sont plausibles mais absents du texte — piège du not stated.
+evaluates: [fondamentaux.anglais-aeronautique.la-comprehension-ecrite]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

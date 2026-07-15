@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-meteo-05
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Dans un METAR, que signifie « TS » ?
+choices:
+  - Thunderstorm — orage
+  - Très stable
+  - Turbulence sévère
+  - Test du système
+correctChoices: [0]
+explanation: >-
+  TS = thunderstorm (orage), souvent associé au CB (cumulonimbus) — le nuage
+  à éviter absolument. FG = fog, BR = mist, RA = rain, SN = snow.
+evaluates: [fondamentaux.anglais-aeronautique.la-meteo-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

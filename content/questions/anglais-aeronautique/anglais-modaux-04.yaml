@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-modaux-04
+kind: qcm
+theme: anglais-grammaire
+statement: >-
+  Dans un règlement OACI, que signifie « the pilot shall maintain a listening watch » ?
+choices:
+  - Le pilote a l'obligation de maintenir une veille radio
+  - Le pilote maintiendra peut-être une veille radio
+  - Le pilote est invité à écouter la radio s'il le souhaite
+  - Le pilote maintenait une veille radio autrefois
+correctChoices: [0]
+explanation: >-
+  Dans les textes réglementaires, shall = obligation juridique (équivalent de
+  must) — pas un simple futur. La hiérarchie des textes : shall (imposé),
+  should (conseillé), may (permis).
+evaluates: [fondamentaux.anglais-aeronautique.les-modaux]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

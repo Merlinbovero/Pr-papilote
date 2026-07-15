@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-4f-03
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Sur quelle base est stationnée la flottille 4F ?
+choices:
+  - BAN Lann-Bihoué
+  - BAN Landivisiau
+  - BAN Hyères
+  - BAN Lanvéoc-Poulmic
+correctChoices: [0]
+explanation: >-
+  La 4F et ses Hawkeye sont stationnés à la BAN Lann-Bihoué (près de Lorient) et
+  embarquent sur le Charles de Gaulle lors des déploiements.
+evaluates: [eopan.unites.flottille-4f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

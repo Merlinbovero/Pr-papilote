@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.istres-03
+kind: vrai-faux
+theme: bases-aeriennes
+statement: >-
+  L'EPNER et DGA Essais en vol sont installés sur la base d'Istres.
+answer: true
+explanation: >-
+  Istres est la capitale française des essais en vol — le grand centre du
+  CEV s'y est développé et l'EPNER y est installée depuis 1962. Ces
+  organismes relèvent de la DGA, pas de l'armée de l'Air.
+evaluates: [eopn.bases.istres]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

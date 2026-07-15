@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-10
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Quelles écoles étrangères sont les homologues historiques de l'EPNER ?
+choices:
+  - "L'ETPS britannique et les Test Pilot Schools américaines"
+  - "L'ENAC et l'ISAE"
+  - "Les écoles de l'OTAN à Bruxelles"
+  - "L'école de Top Gun uniquement"
+correctChoices: [0]
+explanation: >-
+  L'Empire Test Pilots' School (Royaume-Uni), l'USAF TPS et l'US Naval TPS
+  échangent des stagiaires avec l'EPNER depuis les années 1960 — le club
+  très fermé des écoles d'essais occidentales.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

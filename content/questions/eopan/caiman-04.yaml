@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.caiman-04
+kind: qcm
+theme: helicopteres-embarques
+statement: >-
+  Quelle version du NH90 désigne le « Caïman Marine » ?
+choices:
+  - La version navale NFH
+  - La version terrestre TTH
+  - La version civile HH
+  - La version d'entraînement TH
+correctChoices: [0]
+explanation: >-
+  Le NH90 existe en deux versions : terrestre (TTH, armée de Terre) et navale
+  (NFH). Le Caïman Marine est la version NFH, adaptée à la mise en œuvre depuis
+  les bâtiments.
+evaluates: [eopan.appareils.nh90-caiman]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

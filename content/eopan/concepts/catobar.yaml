@@ -1,0 +1,95 @@
+schemaVersion: 1
+id: eopan.procedures.catobar
+type: concept
+title: CATOBAR
+slug: catobar
+summary: >-
+  Principe de mise en œuvre des avions sur porte-avions combinant décollage
+  assisté par catapulte et récupération par brins d'arrêt — celui du
+  Charles de Gaulle.
+objectifs:
+  - Définir le principe CATOBAR (catapultage au décollage, brins d'arrêt à la récupération).
+  - Expliquer l'avantage du CATOBAR (avions plus lourds en carburant et en armement).
+  - Distinguer le CATOBAR des autres principes de mise en œuvre embarquée.
+aliases: [Catapult Assisted Take-Off But Arrested Recovery]
+module: eopan
+category: concepts
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-07"
+verifiedAt: "2026-07-07"
+author: prepapilote
+status: publie
+sources:
+  - title: Les catapultes du porte-avions Charles de Gaulle — Cols bleus
+    url: https://www.colsbleus.defense.gouv.fr/sites/default/files/2021-05/CatpulteV12.pdf
+    kind: officiel
+    consultedAt: "2026-07-07"
+  - title: Porte-avions — Marine nationale, Ministère des Armées
+    url: https://www.defense.gouv.fr/marine/forces-surface/porte-avions
+    kind: officiel
+    consultedAt: "2026-07-07"
+relations:
+  related:
+    - eopan.bases.charles-de-gaulle
+    - eopan.procedures.appontage
+    - eopan.procedures.catapultage
+    - eopan.concepts.pont-d-envol
+content:
+  essentiel:
+    body: |
+      CATOBAR — *Catapult Assisted Take-Off But Arrested Recovery* — désigne
+      le principe de mise en œuvre des avions sur porte-avions combinant un
+      **décollage assisté par catapulte** et une **récupération par brins
+      d'arrêt**.
+
+      Sur le Charles de Gaulle, deux catapultes à vapeur accélèrent l'avion
+      de 0 à 250 km/h en 75 mètres ; au retour, la crosse d'appontage
+      accroche l'un des trois brins tendus en travers du pont.
+
+      Ce principe autorise les avions les plus lourds et les plus armés,
+      au prix d'une grande complexité technique : seuls les États-Unis et
+      la France mettent aujourd'hui en œuvre des porte-avions CATOBAR.
+    aRetenir:
+      - "CATOBAR = décollage par catapulte + récupération par brins d'arrêt."
+      - Sur le Charles de Gaulle — 0 à 250 km/h en 75 m à la catapulte ; 3 brins d'arrêt à l'appontage.
+      - Autorise des avions plus lourds en carburant et en armement que les autres principes.
+      - Seuls les États-Unis et la France opèrent des porte-avions CATOBAR.
+  sections:
+    - id: principe
+      title: Le principe
+      body: |
+        Un pont de porte-avions est trop court pour qu'un avion de combat
+        accélère ou freine seul. Le CATOBAR résout les deux problèmes :
+
+        - **au décollage**, la catapulte fournit l'essentiel de
+          l'accélération et amène l'avion à sa vitesse de vol en quelques
+          dizaines de mètres ;
+        - **à l'atterrissage**, les brins d'arrêt absorbent l'énergie de
+          l'avion, qui s'immobilise en quelques dizaines de mètres.
+    - id: comparaison
+      title: CATOBAR, STOBAR, STOVL
+      body: |
+        | Principe | Décollage | Récupération | Exemples |
+        | --- | --- | --- | --- |
+        | CATOBAR | catapulte | brins d'arrêt | États-Unis, France |
+        | STOBAR | tremplin (avion autonome) | brins d'arrêt | autres marines dotées de tremplins |
+        | STOVL | décollage court | atterrissage vertical | porte-aéronefs mettant en œuvre des avions à décollage court |
+
+        L'avantage décisif du CATOBAR : l'avion n'a pas à sacrifier de
+        carburant ni d'armement pour décoller — la catapulte fait le
+        travail. C'est ce qui permet aussi de catapulter des avions de guet
+        aérien lourds comme le E-2 Hawkeye.
+    - id: mise-en-oeuvre
+      title: Mise en œuvre sur le Charles de Gaulle
+      strate: maitriser
+      body: |
+        Le Charles de Gaulle dispose de deux catapultes à vapeur et de
+        trois brins d'arrêt, et peut catapulter un avion toutes les
+        30 secondes. La vapeur est produite grâce à l'énergie des deux
+        réacteurs nucléaires du bord.
+  pieges:
+    - CATOBAR qualifie le porte-avions et son système de mise en œuvre — pas l'avion ; l'avion doit être « navalisé » (crosse, train renforcé) pour l'utiliser.
+    - Ne pas confondre CATOBAR (catapulte + brins) et STOBAR (tremplin + brins) — le tremplin n'assiste pas l'avion, il ne fait qu'orienter sa trajectoire.
+    - Le sigle se développe en anglais — Catapult Assisted Take-Off But Arrested Recovery — et il est attendu de savoir l'expliciter.

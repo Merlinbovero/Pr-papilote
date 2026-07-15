@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.guepard-02
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Comment les 169 Guépard annoncés doivent-ils être répartis entre les armées ?
+choices:
+  - 80 pour l'ALAT, 49 pour la Marine, 40 pour l'armée de l'Air et de l'Espace
+  - 169 pour la seule armée de Terre
+  - 100 pour la Marine, 69 pour l'armée de l'Air
+  - 56 pour chaque armée et 1 pour les essais
+correctChoices: [0]
+explanation: >-
+  Le programme HIL prévoit 169 Guépard : 80 pour l'ALAT, 49 pour la Marine et
+  40 pour l'armée de l'Air et de l'Espace — une flotte légère unique pour les
+  trois armées.
+evaluates: [alat.appareils.guepard]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-urgences-02
+kind: association
+theme: anglais-phraseologie
+statement: >-
+  Associez chaque code transpondeur d'urgence à sa signification.
+pairs:
+  - left: "7700"
+    right: Détresse
+  - left: "7600"
+    right: Panne radio
+  - left: "7500"
+    right: Intervention illicite
+explanation: >-
+  7700 = détresse générale, 7600 = panne de communications, 7500 =
+  intervention illicite (détournement). « Squawk seven seven zero zero » =
+  affichez 7700.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-urgences]
+difficulty: 2
+competencies: [anglais-aeronautique, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.temp-03
+kind: vrai-faux
+theme: temperature-humidite
+statement: >-
+  L'air froid peut contenir plus de vapeur d'eau que l'air chaud.
+answer: false
+explanation: >-
+  C'est l'inverse : le maximum de vapeur d'eau augmente avec la température.
+  L'air chaud peut donc contenir beaucoup plus de vapeur que l'air froid.
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

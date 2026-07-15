@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-phraseo-03
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Pourquoi le mot « takeoff » n'est-il prononcé que dans la clairance de décollage elle-même ?
+choices:
+  - Pour éviter toute ambiguïté — un garde-fou né de l'accident de Tenerife (1977)
+  - Parce que le mot est difficile à prononcer
+  - Par tradition britannique
+  - Pour gagner du temps à la radio
+correctChoices: [0]
+explanation: >-
+  Après la collision de Tenerife (1977), la phraséologie a réservé « takeoff »
+  à la seule clairance de décollage — partout ailleurs on dit « departure »,
+  pour qu'aucun équipage ne puisse croire qu'il est autorisé à décoller.
+evaluates: [fondamentaux.anglais-aeronautique.la-phraseologie-anglaise]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.pc-21-01
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Quels avions le PC-21 a-t-il remplacés dans la formation des pilotes de chasse français ?
+choices:
+  - Le TB-30 Epsilon et l'Alphajet
+  - Le Rafale et le Mirage 2000
+  - Le Fouga Magister et le Mystère IV
+  - Le Cirrus SR20 et le planeur
+correctChoices: [0]
+explanation: >-
+  Le PC-21 a remplacé à lui seul deux appareils du cursus chasse : le TB-30
+  Epsilon (formation de base) et l'Alphajet (jet d'entraînement) — deux
+  flottes en une.
+evaluates: [eopn.appareils.pc-21]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

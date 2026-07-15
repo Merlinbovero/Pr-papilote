@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage-iii-01
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quel titre historique revient au Mirage III C ?
+choices:
+  - "Premier avion de la classe Mach 2 construit en série en Europe"
+  - "Premier avion à réaction français"
+  - "Premier avion à dépasser Mach 2 au monde"
+  - "Premier avion embarqué français"
+correctChoices: [0]
+explanation: >-
+  Le Mirage III C est le premier avion de la classe Mach 2 construit en SÉRIE
+  en Europe — des prototypes avaient déjà atteint Mach 2, mais pas en
+  production de série.
+evaluates: [eopn.appareils.mirage-iii]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-selections-01
+kind: qcm
+theme: anglais-methode
+statement: >-
+  Quel niveau d'anglais l'OACI exige-t-elle au minimum pour les communications internationales ?
+choices:
+  - Le niveau 4 (sur une échelle de 1 à 6)
+  - Le niveau 2
+  - Le niveau 6 obligatoire
+  - Aucun niveau minimal
+correctChoices: [0]
+explanation: >-
+  Depuis 2008, le niveau 4 OACI (échelle de 1 à 6) est le minimum requis
+  pour voler à l'international — et les évaluations se renouvellent tout au
+  long de la carrière.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-selections]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

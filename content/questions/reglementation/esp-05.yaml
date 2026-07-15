@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.reglementation.esp-05
+kind: vrai-faux
+theme: espaces-aeriens
+statement: >-
+  Le vol à vue (VFR) est autorisé dans un espace de classe A.
+answer: false
+explanation: >-
+  Non : la classe A est réservée aux vols aux instruments (IFR). Le vol à vue
+  (VFR) n'y est pas admis. Il devient possible à partir de la classe B.
+evaluates: [fondamentaux.reglementation.espaces-aeriens]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

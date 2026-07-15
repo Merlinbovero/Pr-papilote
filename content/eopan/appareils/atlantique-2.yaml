@@ -1,0 +1,163 @@
+schemaVersion: 1
+id: eopan.appareils.atlantique-2
+type: appareil
+title: Atlantique 2 (ATL2)
+slug: atlantique-2
+summary: >-
+  Avion de patrouille maritime de l'aéronautique navale, basé à terre. À très
+  longue endurance, il surveille de vastes zones maritimes et traque les
+  sous-marins, au sein des flottilles 21F et 23F.
+objectifs:
+  - Identifier l'Atlantique 2 comme l'avion de patrouille maritime, basé à terre, de l'aéronautique navale.
+  - Expliquer sa mission — surveiller de vastes zones maritimes à très longue endurance et traquer les sous-marins.
+  - Situer l'appareil au sein des flottilles 21F et 23F (Lann-Bihoué) et évoquer sa rénovation au standard 6.
+aliases: [ATL2, Atlantique, Atlantique 2, Breguet Atlantique, patrouille maritime, patmar]
+module: eopan
+category: appareils
+subcategory: patrouille-maritime
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet appareil, l'avion de patrouille maritime Atlantique 2 (ATL2).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 2
+    motif: Enrichissement — les origines OTAN de l'Atlantic (concours multinational 1958), COMAERO t. I ch. 12-14 (lot AV6).
+    author: prepapilote
+sources:
+  - title: "Atlantique 2 (ATL 2) — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/atlantique-2-atl-2
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Breguet Atlantic — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Breguet_Atlantic
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "COMAERO — Les avions militaires, tome I (EUROSAE), ch. 12-14 (Breguet 1150 Atlantic, coopération multilatérale)"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopan.appareils.nh90-caiman
+    - eopan.appareils.e-2c-hawkeye
+    - eopan.presentation.le-concours-eopan
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de patrouille maritime
+  armees: [Marine nationale]
+  miseEnService: 1989
+  statut: En service
+  equipage: Jusqu'à une douzaine d'opérateurs de mission
+  vitesseMax: Près de 600 km/h
+  plafond: 30 000 ft
+  rayonDAction: Environ 5 500 km
+content:
+  essentiel:
+    body: |
+      L'**Atlantique 2** (ATL2) est l'avion de **patrouille maritime**
+      (« patmar ») de l'aéronautique navale. Contrairement au Rafale M ou au
+      Hawkeye, il **ne décolle pas d'un porte-avions** : c'est un grand avion
+      **basé à terre**, à **Lann-Bihoué** (Morbihan).
+
+      Sa force est l'**endurance** : il peut voler une **douzaine d'heures** et
+      couvrir plusieurs milliers de kilomètres, ce qui lui permet de
+      **surveiller** de très **vastes zones** maritimes en un seul vol.
+
+      C'est un véritable **avion de combat maritime** : conçu pour la **lutte
+      anti-sous-marine**, il détecte, suit et peut **traiter** les sous-marins,
+      mais aussi surveiller le trafic de surface. Il est mis en œuvre par les
+      **flottilles 21F et 23F**. Modernisé au **standard 6**, il reste l'une des
+      patrouilleurs maritimes les plus performants d'Europe.
+    aRetenir:
+      - L'Atlantique 2 est l'avion de patrouille maritime, basé à terre, de l'aéronautique navale.
+      - Sa force est l'endurance — une douzaine d'heures de vol pour surveiller de vastes zones maritimes.
+      - Il est armé et conçu pour la lutte anti-sous-marine, mais surveille aussi le trafic de surface.
+      - Mis en œuvre par les flottilles 21F et 23F depuis Lann-Bihoué, modernisé au standard 6.
+  sections:
+    - id: la-patrouille-maritime
+      title: La patrouille maritime
+      body: |
+        La mission de l'ATL2 est la **patrouille maritime** : partir d'une base
+        à terre, rejoindre une **zone** en mer parfois très éloignée, et la
+        **surveiller** longuement. Pour couvrir une grande surface de façon
+        méthodique, l'équipage suit une **trajectoire de ratissage** — de longs
+        segments parallèles qui « balaient » la zone.
+
+        Ce qui rend cela possible, c'est l'**endurance** : là où un chasseur
+        tient l'air une à deux heures, l'Atlantique 2 patrouille une **douzaine
+        d'heures**. Il devient ainsi les **yeux et les oreilles** de la Marine
+        au large, capable de repérer un sous-marin, un navire suspect ou des
+        naufragés bien au-delà de la portée des bâtiments.
+      figures:
+        - schemaId: patrouille-maritime-atl2
+          alt: Un avion partant d'une base à terre suit une trajectoire de ratissage en segments parallèles qui balaient une vaste zone maritime surveillée.
+          caption: Depuis sa base à terre, l'ATL2 balaie une vaste zone maritime par une trajectoire de ratissage, grâce à sa longue endurance.
+          width: 460
+          height: 300
+    - id: un-avion-de-combat-maritime
+      title: Un avion de combat maritime
+      body: |
+        L'Atlantique 2 n'est pas qu'un observateur : c'est un **système de
+        combat** volant. Il embarque de nombreux **capteurs** — radar de
+        détection maritime, moyens acoustiques (bouées), détecteurs — et un
+        **armement** lui permettant de **traiter** une menace sous-marine ou de
+        surface.
+
+        Sa mission première, historiquement, est la **lutte anti-sous-marine**
+        (ASM) : détecter les sous-marins, notamment pour **protéger** les forces
+        navales et la composante océanique de la **dissuasion**. Il contribue
+        aussi à la **surveillance** des espaces maritimes et à la lutte contre
+        les trafics.
+
+        Tout ce système est servi par un **équipage nombreux** — jusqu'à une
+        **douzaine** d'opérateurs de mission travaillant aux consoles, en plus
+        de l'équipage de conduite.
+    - id: les-origines-otan
+      title: Les origines — un avion né d'un concours OTAN
+      strate: maitriser
+      body: |
+        L'Atlantic originel (Breguet 1150) est né d'une procédure restée
+        exemplaire. Face à la menace sous-marine des années 1950, le
+        Conseil de l'**OTAN** lance un **concours multinational** — une
+        spécification unique, adressée en mars 1958 à plus de vingt
+        firmes de huit pays. Le projet **Breguet**, allié à Sud-Aviation,
+        Fokker et Dornier, est retenu **à l'unanimité** le 21 octobre
+        1958.
+
+        Le développement est financé en commun (France 43,4 %,
+        États-Unis 25 %, Allemagne, Pays-Bas, Belgique) et produit en
+        coopération européenne — une première. L'**Atlantique 2**,
+        commandé dans les années 1980 pour succéder à l'Atlantic 1, hérite
+        de cette cellule éprouvée mais reçoit un système de combat
+        entièrement nouveau. Retenir la filiation — **Alizé** (embarqué),
+        **Atlantic** (1965), **ATL2** (1989) : trois générations de
+        traque sous-marine française.
+    - id: renovation-standard-6
+      title: La rénovation au standard 6
+      strate: maitriser
+      body: |
+        Mis en service à la fin des années **1980** (l'aéronautique navale
+        réceptionne l'ATL2 en **1989**), l'appareil a été profondément
+        **modernisé** pour rester à la pointe. La rénovation au **standard 6**
+        remet à niveau l'**avionique**, le **système de mission**, les
+        **consoles** et les **capteurs**.
+
+        Changement majeur : l'ancien radar est remplacé par un **radar
+        Searchmaster** à antenne active, optimisé pour détecter les cibles
+        maritimes — jusqu'aux **mâts** de sous-marins affleurant la surface.
+        Cette modernisation prolonge la vie de l'ATL2 en attendant son futur
+        successeur, dans le cadre du renouvellement des moyens de patrouille
+        maritime.
+  pieges:
+    - L'Atlantique 2 est basé à terre — il n'est pas embarqué sur le porte-avions, à la différence du Rafale M, du Hawkeye ou du Caïman.
+    - Ce n'est pas un simple avion d'observation — c'est un avion de combat maritime armé, spécialisé dans la lutte anti-sous-marine.
+    - Ne pas confondre l'atout de l'ATL2 (l'endurance, pour surveiller loin et longtemps) avec la vitesse — sa force est de durer, pas d'aller vite.

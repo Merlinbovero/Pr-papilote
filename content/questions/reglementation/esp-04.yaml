@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.reglementation.esp-04
+kind: association
+theme: espaces-aeriens
+statement: >-
+  Associez chaque zone à statut particulier à sa signification.
+pairs:
+  - left: "Zone P"
+    right: "Survol interdit"
+  - left: "Zone R"
+    right: "Accès réglementé, sous conditions"
+  - left: "Zone D"
+    right: "Zone dangereuse (activités à risque)"
+explanation: >-
+  La zone P est interdite (Prohibited), la zone R réglementée (Restricted, accès
+  sous conditions) et la zone D dangereuse (Danger, activités à risque).
+evaluates: [fondamentaux.reglementation.espaces-aeriens]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

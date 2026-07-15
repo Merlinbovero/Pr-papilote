@@ -1,0 +1,114 @@
+schemaVersion: 1
+id: alat.appareils.guepard
+type: helicoptere
+title: Guépard (H160M)
+slug: guepard
+summary: >-
+  Le futur hélicoptère interarmées léger (HIL) — 169 Guépard commandés pour
+  les trois armées, dont 80 pour l'ALAT, avec une première livraison à
+  l'armée de Terre attendue en 2028. Un programme à suivre, pas encore un
+  appareil en service.
+objectifs:
+  - Identifier le Guépard comme le futur hélicoptère interarmées léger (programme HIL).
+  - Connaître la répartition prévue (80 ALAT, 49 Marine, 40 armée de l'Air) et le calendrier annoncé.
+  - Savoir distinguer un programme en développement d'une capacité opérationnelle acquise.
+aliases: [Guépard, H160M, HIL, hélicoptère interarmées léger]
+module: alat
+category: appareils
+subcategory: helicopteres-legers
+tags: []
+concours: [alat]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche programme Guépard/HIL (campagne de recherche n°1, lot N3 ; données datées, statut de développement explicité).
+    author: prepapilote
+sources:
+  - title: "Le pré-développement du Guépard, futur hélicoptère interarmées léger, a été lancé (Opex360, février 2020)"
+    url: https://www.opex360.com/2020/02/06/le-pre-developpement-du-guepard-futur-helicoptere-interarmees-leger-a-ete-lance/
+    kind: presse
+    consultedAt: "2026-07-13"
+  - title: "Le H160M Guépard a effectué ses premières approches avec un navire de la Marine (Opex360, janvier 2026)"
+    url: https://www.opex360.com/2026/01/29/lhelicoptere-h160m-guepard-a-effectue-ses-premieres-approches-avec-un-navire-de-la-marine-nationale/
+    kind: presse
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - alat.appareils.nh90-caiman-tth
+    - alat.appareils.gazelle
+    - alat.unites.3e-rhc
+    - alat.missions.l-aerocombat
+infobox:
+  constructeur: Airbus Helicopters
+  role: Futur hélicoptère interarmées léger (programme HIL)
+  armees: [Armée de terre, Marine nationale, Armée de l'air et de l'espace]
+  miseEnService: Prévue — première livraison armée de Terre annoncée pour 2028
+  statut: En développement et en commande (non encore en service, état au 2026-07)
+  equipage: "2"
+content:
+  essentiel:
+    body: |
+      Le **Guépard** est la version militarisée (**H160M**) du H160
+      d'Airbus Helicopters, choisie pour le programme **HIL** —
+      *hélicoptère interarmées léger*. Son ambition : remplacer par une
+      **flotte unique** les hélicoptères légers vieillissants des trois
+      armées — dont la **Gazelle** de l'ALAT.
+
+      Les chiffres annoncés : **169 Guépard** au total, répartis entre
+      l'**ALAT (80)**, la **Marine (49)** et l'**armée de l'Air et de
+      l'Espace (40)**. La **première livraison à l'armée de Terre** est
+      attendue en **2028**.
+
+      **Attention** — le Guépard est un **programme en développement** :
+      les essais progressent (premières approches sur un navire de la
+      Marine début 2026), mais aucun appareil n'est **en service**. En
+      entretien, présenter un programme comme une capacité acquise est une
+      faute classique.
+    aRetenir:
+      - Guépard = H160M, le futur hélicoptère interarmées léger (programme HIL).
+      - 169 exemplaires annoncés — 80 ALAT, 49 Marine, 40 armée de l'Air et de l'Espace.
+      - Première livraison à l'armée de Terre annoncée pour 2028 ; il remplacera notamment la Gazelle.
+      - Statut au 2026-07 — en développement/commande, pas en service — toujours dater ce qu'on affirme.
+  sections:
+    - id: pourquoi-un-hil
+      title: Pourquoi un hélicoptère interarmées ?
+      body: |
+        Les trois armées exploitent aujourd'hui plusieurs **flottes
+        légères** anciennes et hétérogènes (Gazelle, Fennec, Alouette III
+        avant son retrait, Dauphin/Panther côté Marine). Chaque flotte
+        exige ses filières de formation, de maintenance et de pièces.
+
+        Le pari du **HIL** : une **plateforme unique**, déclinée par
+        milieux, pour réduire les coûts de soutien et simplifier la
+        formation — sur le modèle de ce que le NH90 a fait pour la
+        manœuvre. Pour l'ALAT, le Guépard prendra notamment la relève de
+        la **Gazelle**, dans le cadre du projet « Horizon Guépard 2030 »
+        dont le 3e RHC est le premier jalon.
+    - id: ou-en-est-le-programme
+      title: Où en est le programme ? (état daté)
+      strate: maitriser
+      body: |
+        Jalons publics du programme (à revérifier régulièrement) :
+
+        - **février 2020** — lancement du pré-développement ;
+        - **2021-2022** — commandes des premières tranches annoncées ;
+        - **janvier 2026** — premières **approches sur navire** de la
+          Marine réussies par le H160M d'essais ;
+        - **2028** — première livraison à l'armée de Terre annoncée.
+
+        La règle éditoriale de PrépaPilote s'applique pleinement ici :
+        **distinguer** commandé / testé / livré / en service, et **dater**
+        chaque affirmation. Un candidat qui dit « l'ALAT vole sur Guépard »
+        en 2026 commet une erreur factuelle ; un candidat qui dit « le
+        Guépard doit remplacer la Gazelle à partir de 2028 » montre qu'il
+        suit les programmes avec rigueur.
+  pieges:
+    - Le Guépard n'est PAS en service — c'est un programme en développement (première livraison Terre annoncée pour 2028).
+    - Ne pas confondre HIL (le programme) et H160M Guépard (l'appareil qui le réalise).
+    - Les calendriers de programmes glissent souvent — toujours dater l'information et la revérifier avant un entretien.

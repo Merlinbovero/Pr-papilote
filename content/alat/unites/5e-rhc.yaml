@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: alat.unites.5e-rhc
+type: regiment
+title: 5e régiment d'hélicoptères de combat
+slug: 5e-rhc
+summary: >-
+  Régiment d'hélicoptères de combat de l'ALAT, stationné à Pau. Le « régiment du
+  Béarn » met en œuvre Tigre, Caïman, Cougar et Gazelle, et a servi sur presque
+  tous les théâtres d'opérations récents.
+objectifs:
+  - Identifier le 5e RHC comme un régiment d'hélicoptères de combat de l'ALAT, stationné à Pau.
+  - Illustrer la notion de régiment (RHC) comme unité de l'ALAT, avec sa palette d'hélicoptères.
+  - Situer le régiment par ses engagements et ses traditions (« Béarn sans peur »).
+aliases: [5e RHC, 5e régiment d'hélicoptères de combat, régiment du Béarn]
+module: alat
+category: unites
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet régiment, le 5e RHC (ancrage catégorie unités ALAT).
+    author: prepapilote
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — rattachement à la 4e BAC explicité, relations vers les fiches 1er RHC, 3e RHC, 4e RHFS et aérocombat (lot N2).
+    author: prepapilote
+sources:
+  - title: "5e régiment d'hélicoptères de combat — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/5e_r%C3%A9giment_d'h%C3%A9licopt%C3%A8res_de_combat
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aviation légère de l'Armée de terre — Ministère des Armées"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: alat.appareils.tigre
+  related:
+    - alat.missions.l-aerocombat
+    - alat.unites.1er-rhc
+    - alat.unites.3e-rhc
+    - alat.unites.4e-rhfs
+    - alat.presentation.devenir-pilote-alat
+    - alat.organisation.aviation-legere-armee-de-terre
+infobox:
+  appellation: 5e régiment d'hélicoptères de combat (5e RHC)
+  garnison: Pau (Pyrénées-Atlantiques)
+  appareils: [Tigre, NH90 Caïman, Cougar, Gazelle]
+  missions: [Aérocombat, Appui-feu, Reconnaissance, Transport tactique]
+  insigne: Choucas des parachutistes entouré des ailes de l'ALAT
+  devise: Béarn sans peur
+content:
+  essentiel:
+    body: |
+      Le **5e régiment d'hélicoptères de combat** (5e RHC) est l'un des
+      **régiments** de l'ALAT. Un **régiment** est, dans l'Armée de terre,
+      l'**unité** de base — l'équivalent de la **flottille** (Marine) ou de
+      l'**escadron** (armée de l'air). Le 5e RHC est stationné à **Pau**
+      (Pyrénées-Atlantiques) ; on le surnomme le **« régiment du Béarn »**.
+      Avec les 1er RHC (Phalsbourg) et 3e RHC (Étain), il forme la **4e
+      brigade d'aérocombat**.
+
+      Il met en œuvre toute la **palette** de l'aérocombat : l'hélicoptère de
+      combat **Tigre**, l'hélicoptère de manœuvre **NH90 Caïman**, le **Cougar**
+      et la **Gazelle** de reconnaissance. Avec eux, il conduit
+      l'**aérocombat** : renseigner, appuyer par le feu, transporter, au profit
+      des forces terrestres.
+
+      Créé en **1977**, le régiment a servi sur presque tous les **théâtres**
+      récents — du Tchad à l'Afghanistan, de la Libye au Mali. Sa devise
+      résume son esprit : **« Béarn sans peur »**.
+    aRetenir:
+      - Le 5e RHC est un régiment d'hélicoptères de combat de l'ALAT, stationné à Pau.
+      - Le régiment est l'unité de l'Armée de terre — équivalent de la flottille (Marine) ou de l'escadron (Air).
+      - Il met en œuvre Tigre, Caïman, Cougar et Gazelle pour l'aérocombat.
+      - Surnommé « le régiment du Béarn », il a servi sur de nombreux théâtres (Afghanistan, Libye, Mali…).
+  sections:
+    - id: un-regiment-d-aerocombat
+      title: Un régiment d'aérocombat
+      body: |
+        La mission du 5e RHC est l'**aérocombat** : l'emploi combiné du
+        **renseignement**, des **feux** et du **mouvement** au profit de la
+        manœuvre terrestre. Concrètement, ses équipages **reconnaissent** le
+        terrain, **appuient** les troupes par le feu (avec le Tigre),
+        **transportent** hommes et matériel (avec le Caïman ou le Cougar) et
+        **évacuent** les blessés.
+
+        Cette variété de missions explique la **diversité** de son parc :
+        chaque type d'hélicoptère a sa spécialité, et le régiment les combine
+        selon le besoin de la bataille.
+    - id: histoire-et-traditions
+      title: Histoire et traditions
+      strate: maitriser
+      body: |
+        Créé le **1er juillet 1977**, le 5e RHC hérite des traditions d'une
+        unité d'**aviation légère parachutiste** : il arbore le **choucas des
+        parachutistes** entouré des **ailes de l'ALAT**. Son surnom, le
+        **« régiment du Béarn »**, et sa devise, **« Béarn sans peur »**,
+        ancrent le régiment dans sa région, autour de **Pau**.
+
+        Son **palmarès** opérationnel est dense : Tchad, Balkans, golfe
+        Persique, Somalie, Rwanda, puis Afghanistan (opération **Pamir**),
+        Libye (**Harmattan**) et Mali (**Serval**). Connaître un tel régiment,
+        c'est comprendre comment l'ALAT s'**engage** concrètement — une culture
+        utile au candidat.
+  pieges:
+    - Le régiment est l'unité de l'Armée de terre — ne pas le confondre avec la flottille (Marine) ou l'escadron (armée de l'air).
+    - Un RHC met en œuvre plusieurs types d'hélicoptères (combat, manœuvre, reconnaissance) — pas un seul modèle.
+    - « RHC » signifie régiment d'hélicoptères de combat — l'unité de base de l'aérocombat de l'ALAT.

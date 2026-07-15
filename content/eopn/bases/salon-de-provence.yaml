@@ -1,0 +1,101 @@
+schemaVersion: 1
+id: eopn.bases.salon-de-provence
+type: base-aerienne
+title: Base aérienne 701 de Salon-de-Provence
+slug: salon-de-provence
+summary: >-
+  Le berceau des officiers de l'Armée de l'air et de l'Espace. Base aérienne 701
+  « Général Pineau », elle abrite l'École de l'air et de l'espace et la
+  Patrouille de France ; c'est là que débute la formation des élèves de l'EOPN.
+objectifs:
+  - Identifier la BA 701 de Salon-de-Provence comme la base-école des officiers de l'Armée de l'air et de l'Espace.
+  - Associer la base à l'École de l'air et de l'espace et à la Patrouille de France.
+  - Situer la base dans le parcours EOPN, comme lieu de la formation initiale.
+aliases: [Salon-de-Provence, BA 701, Base aérienne 701, École de l'air, Général Pineau]
+module: eopn
+category: bases
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet base aérienne, la BA 701 de Salon-de-Provence (ancrage catégorie bases).
+    author: prepapilote
+sources:
+  - title: "Base aérienne 701 Salon-de-Provence — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_a%C3%A9rienne_701_Salon-de-Provence
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "École de l'air et de l'espace — Armée de l'air et de l'Espace"
+    url: https://air.defense.gouv.fr
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.presentation.le-concours-eopn
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+infobox:
+  nomComplet: Base aérienne 701 « Général Pineau »
+  code: BA 701 (LFMY)
+  localisation: Salon-de-Provence (Bouches-du-Rhône)
+  armee: Armée de l'air et de l'Espace
+  unitesStationnees: [École de l'air et de l'espace, Patrouille de France, Équipe de voltige]
+content:
+  essentiel:
+    body: |
+      La **base aérienne 701 « Général Pineau »**, à **Salon-de-Provence**
+      (Bouches-du-Rhône), est le **berceau des officiers** de l'**Armée de l'air
+      et de l'Espace**. C'est ici que se trouve l'**École de l'air et de
+      l'espace**, l'école qui forme les futurs cadres de l'armée.
+
+      Pour un candidat **EOPN**, la BA 701 est une étape **majeure** : c'est là
+      que débute la **formation** initiale, une fois la sélection réussie. On y
+      apprend le métier d'**officier** avant de poursuivre vers le **pilotage**.
+
+      La base est aussi célèbre pour héberger, depuis **1964**, la **Patrouille
+      de France** — l'ambassadrice acrobatique de l'armée de l'air — et l'équipe
+      de voltige. Salon est ainsi un haut lieu de la **formation** et de la
+      **tradition** aériennes françaises.
+    aRetenir:
+      - La BA 701 de Salon-de-Provence est la base-école des officiers de l'Armée de l'air et de l'Espace.
+      - Elle abrite l'École de l'air et de l'espace, où débute la formation des élèves de l'EOPN.
+      - Elle héberge aussi la Patrouille de France (depuis 1964) et l'équipe de voltige.
+      - Sa tradition est « Général Pineau » ; elle se situe dans les Bouches-du-Rhône.
+  sections:
+    - id: la-base-ecole
+      title: La base-école
+      body: |
+        Salon-de-Provence est avant tout une **base de formation**. L'**École de
+        l'air et de l'espace** y forme les **officiers** de l'armée, qu'ils
+        soient issus du recrutement direct ou d'autres voies. Pour les futurs
+        **navigants** de l'EOPN, c'est le point de départ du parcours : on y
+        acquiert les **fondamentaux** du métier d'officier avant la formation au
+        pilotage proprement dite.
+
+        Plusieurs autres organismes de **formation** y sont installés (école des
+        commissaires, centres d'enseignement militaire), ce qui fait de Salon un
+        véritable **campus** militaire aéronautique.
+    - id: patrouille-de-france-et-traditions
+      title: Patrouille de France et traditions
+      strate: maitriser
+      body: |
+        Depuis **1964**, la BA 701 est le **port d'attache** de la **Patrouille
+        de France**, la formation acrobatique officielle de l'armée de l'air.
+        Ses démonstrations, en France et à l'étranger, en font une
+        **ambassadrice** de l'excellence aéronautique française. L'**équipe de
+        voltige** y est également basée.
+
+        Cette présence n'est pas anecdotique : elle ancre Salon dans une
+        **culture** d'exigence, de précision et d'esprit d'équipe — les mêmes
+        valeurs que l'on attend d'un candidat **EOPN**. Connaître ce lieu et son
+        rôle fait partie de la culture aéronautique utile au concours.
+  pieges:
+    - Salon-de-Provence est une base-école — sa vocation première est la formation, pas la mise en œuvre d'avions de combat.
+    - La Patrouille de France est basée à Salon, mais ce n'est pas une unité de combat — c'est la formation acrobatique officielle.
+    - Ne pas confondre la sélection EOPN (au sol, à Tours) avec la formation qui la suit (à Salon-de-Provence).

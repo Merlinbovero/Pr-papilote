@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: alat.missions.l-aerocombat
+type: concept
+title: L'aérocombat et les missions de l'ALAT
+slug: l-aerocombat
+summary: >-
+  L'aérocombat, c'est combattre par la troisième dimension au profit des
+  troupes au sol — reconnaissance, attaque, transport tactique, appui et
+  évacuation, sous le commandement du COMALAT et de la 4e brigade d'aérocombat.
+objectifs:
+  - Définir l'aérocombat et le rôle de l'ALAT au sein de l'armée de Terre.
+  - Citer les grandes missions (reconnaissance, attaque, héliportage, appui, évacuation, forces spéciales).
+  - Situer le COMALAT et la 4e brigade d'aérocombat dans l'organisation actuelle.
+aliases: [aérocombat, missions ALAT, COMALAT, 4e BAC, 4e brigade d'aérocombat, héliportage]
+module: alat
+category: missions
+tags: []
+concours: [alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche aérocombat et missions de l'ALAT (campagne de recherche n°1, lot N1 ; sources officielles defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "L'aviation légère de l'armée de Terre (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "3e régiment d'hélicoptères de combat — 4e BAC (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/nos-brigades/4e-brigade-daerocombat-4e-bac/3e-regiment-dhelicopteres-combat
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  prerequisites:
+    - alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.histoire.histoire-de-l-alat
+    - alat.appareils.tigre
+    - alat.appareils.gazelle
+    - alat.unites.5e-rhc
+content:
+  essentiel:
+    body: |
+      L'**aérocombat**, c'est le combat mené **par la troisième dimension** au
+      profit direct des troupes au sol : les hélicoptères de l'ALAT ne font pas
+      que transporter — ils **manœuvrent**, **renseignent** et **frappent**,
+      intégrés à la manœuvre terrestre.
+
+      Les grandes missions :
+
+      - **reconnaissance et renseignement** — éclairer le terrain en avant ;
+      - **attaque et appui-destruction** — traiter blindés et objectifs
+        durcis (Tigre, Gazelle) ;
+      - **héliportage tactique** — poser troupes et matériel au plus près
+        (NH90 Caïman, Cougar) ;
+      - **appui-commandement** et **évacuation sanitaire** ;
+      - **opérations spéciales** — au profit du COS (4e RHFS).
+
+      L'ensemble est commandé par le **COMALAT** (commandement de l'ALAT,
+      installé à **Metz** depuis le 1er août 2025), la masse de combat étant
+      regroupée dans la **4e brigade d'aérocombat (4e BAC)**.
+    aRetenir:
+      - L'aérocombat — combattre par la 3e dimension, en intégration totale avec les troupes au sol.
+      - "Cinq familles de missions — reconnaissance, attaque, héliportage, appui/évacuation, opérations spéciales."
+      - Le COMALAT (à Metz depuis août 2025) conseille le CEMAT pour la fonction hélicoptère.
+      - La 4e BAC regroupe les 1er RHC (Phalsbourg), 3e RHC (Étain) et 5e RHC (Pau).
+  sections:
+    - id: la-force-de-la-3e-dimension
+      title: La force de la troisième dimension
+      body: |
+        Ce qui distingue l'hélicoptère de combat, c'est la combinaison
+        **vitesse + précision + affranchissement du terrain** : là où une
+        colonne blindée met des heures, un sous-groupement aéromobile porte un
+        **coup d'arrêt** à des dizaines de kilomètres en quelques minutes,
+        puis se dérobe.
+
+        Le pilote ALAT vole donc **bas** (vol tactique), souvent de **nuit**
+        (le 3e RHC d'Étain est surnommé le « **régiment de la nuit** »), en
+        exploitant le relief pour surprendre. Cette culture du **vol tactique**
+        est au cœur de la formation à l'EALAT.
+    - id: organisation-du-commandement
+      title: L'organisation du commandement
+      body: |
+        - le **COMALAT** — commandement de l'aviation légère de l'Armée de
+          terre — regroupe les organismes de formation et garantit la
+          cohérence de la fonction hélicoptère ; son général est le
+          **conseiller du chef d'état-major de l'armée de Terre** pour la
+          troisième dimension ;
+        - la **4e brigade d'aérocombat (4e BAC)**, créée en juillet 2016,
+          commande les trois **régiments d'hélicoptères de combat** —
+          **1er RHC** (Phalsbourg), **3e RHC** (Étain), **5e RHC** (Pau) ;
+        - le **4e RHFS** (Pau), régiment d'hélicoptères des **forces
+          spéciales**, opère au profit du commandement des opérations
+          spéciales.
+    - id: l-integration-interarmes
+      title: L'intégration interarmes
+      strate: maitriser
+      body: |
+        L'aérocombat n'est pas une fin en soi : il n'a de sens qu'**intégré**
+        à la manœuvre **interarmes** — infanterie, blindés, artillerie,
+        renseignement. Un raid d'hélicoptères prépare ou prolonge l'action
+        des troupes au sol ; un Tigre en appui travaille **pour** le chef
+        interarmes au sol.
+
+        C'est la grande différence culturelle avec les autres aviations
+        militaires : le pilote de l'ALAT est un **soldat de l'armée de
+        Terre** qui combat **depuis** les airs — un argument central à
+        maîtriser pour l'entretien de motivation.
+  pieges:
+    - L'ALAT ne « transporte » pas seulement — l'aérocombat est une manœuvre de combat à part entière (reconnaissance, attaque, appui).
+    - Le 4e RHFS n'appartient pas à la 4e BAC — il sert les forces spéciales (COS).
+    - Le pilote ALAT est d'abord un soldat de l'armée de Terre — la culture est celle du combat interarmes, pas celle de la chasse.

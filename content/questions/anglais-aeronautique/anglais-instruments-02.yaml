@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-instruments-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « attitude » dans « attitude indicator » ?
+choices:
+  - L'assiette de l'avion
+  - L'humeur du pilote
+  - L'altitude de l'avion
+  - La vitesse verticale
+correctChoices: [0]
+explanation: >-
+  Attitude = assiette (la position de l'avion par rapport à l'horizon).
+  L'attitude indicator est l'horizon artificiel — et attitude/altitude est
+  un piège d'inattention classique.
+evaluates: [fondamentaux.anglais-aeronautique.les-instruments-en-anglais]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

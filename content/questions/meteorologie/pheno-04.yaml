@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.pheno-04
+kind: qcm
+theme: phenomenes-dangereux
+statement: >-
+  Qu'est-ce qu'un avion en approche subit en traversant une microrafale ?
+choices:
+  - "Un vent de face qui devient un vent arrière, avec une chute de portance"
+  - "Un vent arrière constant et sans risque"
+  - "Une montée régulière sans danger"
+  - "Aucun effet notable"
+correctChoices: [0]
+explanation: >-
+  La microrafale plonge et s'étale au sol : l'avion rencontre d'abord un vent de
+  face, puis un vent arrière en quelques secondes, et sa portance chute brutalement.
+evaluates: [fondamentaux.meteorologie.phenomenes-dangereux]
+difficulty: 3
+competencies: [meteorologie, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

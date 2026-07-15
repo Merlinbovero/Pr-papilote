@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.attention-05
+kind: qcm
+theme: attention-multitache
+statement: >-
+  Que faire quand la double tâche sature complètement vos capacités ?
+choices:
+  - Réduire proprement ses ambitions sur la tâche secondaire — dégradation contrôlée
+  - Abandonner les deux tâches
+  - Fermer les yeux quelques secondes
+  - Accélérer sur les deux tâches en même temps
+correctChoices: [0]
+explanation: >-
+  Sous saturation, une dégradation contrôlée (réduire la cadence sur la
+  tâche secondaire en maintenant la tâche prioritaire) vaut mieux que
+  l'effondrement des deux — le réflexe des facteurs humains en vol.
+evaluates: [psychotechnique.exercices.l-attention-et-le-multitache]
+difficulty: 3
+competencies: [attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

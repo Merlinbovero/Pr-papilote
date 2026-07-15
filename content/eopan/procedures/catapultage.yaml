@@ -1,0 +1,120 @@
+schemaVersion: 1
+id: eopan.procedures.catapultage
+type: procedure
+title: Le catapultage
+slug: catapultage
+summary: >-
+  Procédure de décollage embarqué : la catapulte à vapeur lance l'avion de 0 à
+  près de 250 km/h en environ deux secondes sur 75 mètres, pour lui donner sa
+  vitesse d'envol sur la piste courte du porte-avions.
+objectifs:
+  - Expliquer le principe du catapultage — donner à l'avion sa vitesse d'envol sur une piste trop courte.
+  - Décrire la catapulte à vapeur du Charles de Gaulle et ses performances (75 m, ~2 s, jusqu'à plus de 20 t).
+  - Situer le catapultage dans la mise en œuvre CATOBAR, en vis-à-vis de l'appontage.
+aliases: [catapultage, catapulte, décollage catapulté, tir de catapulte]
+module: eopan
+category: procedures
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet procédure, le catapultage (décollage embarqué).
+    author: prepapilote
+sources:
+  - title: "Catapultes : de 0 à 250 km/h en 75 mètres (Mer et Marine)"
+    url: https://www.meretmarine.com/fr/defense/catapultes-de-0-a-250-kmh-en-75-metres
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Les catapultes du porte-avions Charles de Gaulle — Cols Bleus (Marine nationale)"
+    url: https://www.colsbleus.defense.gouv.fr/sites/default/files/2021-05/CatpulteV12.pdf
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: applique
+      target: eopan.procedures.catobar
+  related:
+    - eopan.procedures.appontage
+    - eopan.appareils.rafale-m
+    - eopan.bases.charles-de-gaulle
+content:
+  essentiel:
+    body: |
+      Le **catapultage** est la manière dont un avion **décolle** d'un
+      porte-avions. Le problème est simple : la piste d'un porte-avions est
+      bien trop **courte** (quelques dizaines de mètres) pour qu'un avion
+      atteigne seul sa **vitesse d'envol**. Il faut donc l'**aider** — c'est le
+      rôle de la **catapulte**.
+
+      Sur le **Charles de Gaulle**, deux **catapultes à vapeur** (de type
+      américain, adaptées au navire) longues de **75 mètres** propulsent l'avion
+      de **0 à près de 250 km/h en environ deux secondes**. L'avion, moteurs à
+      **pleine puissance**, est **accroché** à un chariot tiré par un piston que
+      la vapeur lance violemment.
+
+      En quelques secondes, l'avion passe du **repos** à la **vitesse d'envol**
+      et quitte l'étrave. Le catapultage est le pendant, au décollage, de
+      l'**appontage** à l'arrivée : ensemble, ils forment la mise en œuvre
+      **CATOBAR**.
+    aRetenir:
+      - Le catapultage donne à l'avion sa vitesse d'envol sur une piste trop courte pour un décollage classique.
+      - Le Charles de Gaulle dispose de deux catapultes à vapeur de 75 mètres.
+      - L'avion passe de 0 à près de 250 km/h en environ deux secondes, moteurs à pleine puissance.
+      - Catapultage (décollage) et appontage (arrivée) forment ensemble la mise en œuvre CATOBAR.
+  sections:
+    - id: pourquoi-catapulter
+      title: Pourquoi catapulter ?
+      body: |
+        Un avion décolle lorsqu'il atteint une **vitesse** suffisante pour que
+        ses ailes le **portent**. À terre, il l'obtient en roulant sur une
+        longue piste. Sur un porte-avions, cette distance **n'existe pas** : le
+        pont ne fait que quelques centaines de mètres, partagés entre décollage,
+        appontage et stationnement.
+
+        La **catapulte** résout le problème en **communiquant** à l'avion, en
+        très peu de mètres, l'énergie qu'une longue piste lui aurait donnée.
+        C'est indispensable pour lancer des avions **lourds** — un Rafale M ou
+        un Hawkeye peuvent dépasser **20 tonnes**.
+      figures:
+        - schemaId: catapultage-principe
+          alt: Un avion accroché à la piste de catapulte accélère le long du pont grâce à un cylindre à vapeur, passant de 0 à environ 250 km/h en deux secondes avant de quitter l'étrave.
+          caption: La catapulte à vapeur lance l'avion de 0 à près de 250 km/h en environ deux secondes, sur 75 mètres.
+          width: 460
+          height: 260
+    - id: le-deroule
+      title: Le déroulé d'un tir
+      body: |
+        Le catapultage se prépare avec **minutie**. L'avion est amené sur la
+        catapulte et **arrimé** au chariot de lancement. Le pilote affiche la
+        **pleine puissance** ; l'appareil, retenu, « tire » sur son attache.
+
+        Sur un **signal** de l'officier catapulte, la **vapeur** est libérée :
+        le piston lance le chariot, qui entraîne l'avion. En **deux secondes**,
+        celui-ci atteint sa vitesse d'envol et **décolle**. Le rythme peut être
+        très soutenu — en alternant les deux catapultes, le Charles de Gaulle
+        peut lancer un avion **toutes les 30 secondes** environ.
+    - id: place-dans-catobar
+      title: Place dans la mise en œuvre CATOBAR
+      strate: maitriser
+      body: |
+        Le catapultage est le **C** et le **TO** de l'acronyme **CATOBAR**
+        (*Catapult Assisted Take-Off But Arrested Recovery*) : décollage
+        **assisté par catapulte**. L'appontage, avec ses **brins d'arrêt**, en
+        est le **BAR** (*arrested recovery*).
+
+        Cette combinaison catapulte + brins d'arrêt est ce qui permet au Charles
+        de Gaulle de mettre en œuvre des avions **lourds** et **performants**
+        comme le Rafale M — là où d'autres porte-avions, sans catapulte,
+        recourent au **tremplin** (STOBAR) et sont limités en emport. C'est un
+        savoir-faire que **peu de marines** possèdent.
+  pieges:
+    - Le catapultage ne « propulse » pas l'avion en vol — il lui donne seulement sa vitesse d'envol ; ce sont ensuite ses moteurs et ses ailes qui le maintiennent.
+    - La catapulte du Charles de Gaulle est à vapeur — à ne pas confondre avec les catapultes électromagnétiques (EMALS) de porte-avions plus récents.
+    - Catapultage et appontage sont deux procédures distinctes — l'une au décollage, l'autre à l'arrivée.

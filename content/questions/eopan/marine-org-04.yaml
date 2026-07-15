@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.marine-org-04
+kind: qcm
+theme: organisation-marine
+statement: >-
+  Quels sont les trois grands ports militaires de la Marine en métropole ?
+choices:
+  - Brest, Cherbourg et Toulon
+  - Le Havre, Marseille et Bordeaux
+  - Lorient, Nantes et Nice
+  - Calais, La Rochelle et Sète
+correctChoices: [0]
+explanation: >-
+  La Marine s'organise en métropole autour de trois ports militaires : Brest
+  (Atlantique), Cherbourg (Manche) et Toulon (Méditerranée).
+evaluates: [eopan.organisation.marine-nationale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

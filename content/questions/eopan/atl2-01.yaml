@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.atl2-01
+kind: qcm
+theme: patrouille-maritime
+statement: >-
+  Quel est le rôle de l'Atlantique 2 (ATL2) dans l'aéronautique navale ?
+choices:
+  - La patrouille maritime — surveiller de vastes zones et traquer les sous-marins
+  - La chasse embarquée depuis le porte-avions
+  - Le guet aérien au-dessus du groupe aéronaval
+  - Le secours en mer par hélitreuillage
+correctChoices: [0]
+explanation: >-
+  L'ATL2 est l'avion de patrouille maritime : basé à terre, il surveille de
+  vastes zones maritimes à très longue endurance et est spécialisé dans la lutte
+  anti-sous-marine.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

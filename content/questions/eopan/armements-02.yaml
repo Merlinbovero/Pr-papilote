@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.armements-02
+kind: qcm
+theme: armements-aeronavale
+statement: >-
+  Quel est le rôle du missile ASMP-A ?
+choices:
+  - Porter la composante aéroportée de la dissuasion nucléaire (Rafale de la FANu)
+  - Détruire les navires de surface
+  - Intercepter les avions ennemis à longue portée
+  - Couler les sous-marins en plongée
+correctChoices: [0]
+explanation: >-
+  L'ASMP-A est le missile supersonique à charge nucléaire de la composante
+  aéroportée de la dissuasion. Il arme les Rafale, dont ceux de la FANu — sa
+  vocation est de ne jamais servir.
+evaluates: [eopan.concepts.les-armements-de-l-aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

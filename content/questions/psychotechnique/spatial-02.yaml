@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.spatial-02
+kind: qcm
+theme: vision-spatiale
+statement: >-
+  Sur un patron de cube, que peut-on dire de deux faces opposées ?
+choices:
+  - Elles ne peuvent jamais apparaître ensemble sur une même vue du cube
+  - Elles sont toujours visibles ensemble
+  - Elles portent toujours le même motif
+  - Elles sont toujours adjacentes
+correctChoices: [0]
+explanation: >-
+  Deux faces opposées ne se voient jamais ensemble sur une vue du cube —
+  c'est l'outil d'élimination le plus rapide : toute proposition qui les
+  montre côte à côte est fausse.
+evaluates: [psychotechnique.exercices.la-vision-spatiale]
+difficulty: 2
+competencies: [vision-spatiale]
+concours: [eopan, eopn, alat]
+status: publie

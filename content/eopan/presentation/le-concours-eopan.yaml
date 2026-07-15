@@ -1,0 +1,140 @@
+schemaVersion: 1
+id: eopan.presentation.le-concours-eopan
+type: concept
+title: Le concours EOPAN — présentation et sélection
+slug: le-concours-eopan
+summary: >-
+  L'EOPAN forme les pilotes de l'aéronautique navale. Ouvert sur dossier aux
+  bacheliers de nationalité française, sans expérience de vol requise, il enchaîne
+  tests psychotechniques, anglais, tests psychologiques et culture aéro, puis une présélection en vol.
+objectifs:
+  - Présenter le concours EOPAN et le métier de pilote de l'aéronautique navale (Marine nationale).
+  - Énoncer les principales conditions d'accès (nationalité, baccalauréat, aptitude au personnel navigant, anglais).
+  - Décrire les étapes de la sélection et de la présélection en vol (CAP 10, Lanvéoc-Poulmic).
+aliases:
+  [EOPAN, pilote aéronautique navale, Marine nationale, sélection, CIRFA, Lanvéoc-Poulmic, CAP 10]
+module: eopan
+category: presentation
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — fiche d'ouverture de la famille EOPAN, présentation du concours et de la sélection.
+    author: prepapilote
+  - date: "2026-07-13"
+    version: 2
+    motif: Enrichissement — conditions confirmées sur la page officielle EOPAN de lamarinerecrute.gouv.fr (17-26 ans retenu contre le 17-25 de Wikipédia — l'officiel fait foi ; ajout de la règle des 3 refus), durée de la présélection (~7 mois), filières et lieux de formation, statut d'officier sous contrat (Lot I, revérification renforcée).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Élève Officier Pilote de l'Aéronautique Navale (EOPAN) — lamarinerecrute.gouv.fr"
+    url: https://lamarinerecrute.gouv.fr/les-metiers/tous-les-metiers/eleve-officier-pilote-de-l-aeronautique-navale-eopan
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Élève-officier pilote de l'aéronautique navale — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/%C3%89l%C3%A8ve-officier_pilote_de_l'a%C3%A9ronautique_navale
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Le parcours EOPAN"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+relations:
+  related:
+    - eopan.appareils.cap-10
+    - eopan.selection.preparer-l-entretien-de-motivation
+    - eopan.appareils.rafale-m
+    - eopan.bases.charles-de-gaulle
+content:
+  essentiel:
+    body: |
+      L'**EOPAN** — *Élève Officier Pilote de l'Aéronautique Navale* — est la
+      voie qui mène au métier de **pilote de la Marine nationale**. Un pilote de
+      l'aéronavale décolle et apponte depuis un **porte-avions** ou opère depuis
+      les **bases d'aéronautique navale (BAN)**.
+
+      C'est un recrutement d'**officier** ouvert, sur dossier et sélection, aux
+      jeunes titulaires du **baccalauréat**. Il ne demande **pas** d'expérience
+      du pilotage : c'est la **Marine** qui forme.
+
+      La **sélection** est exigeante et progressive : dossier et entretien,
+      **tests psychotechniques**, évaluation d'**anglais**, tests
+      **psychologiques** et de **culture aéronautique**, puis une **présélection
+      en vol**. Les conditions exactes évoluant chaque année, elles se vérifient
+      sur le site officiel de recrutement de la Marine.
+    aRetenir:
+      - L'EOPAN forme les pilotes de l'aéronautique navale (Marine nationale), comme officiers, sans expérience de vol requise à l'entrée.
+      - Le recrutement est ouvert sur dossier et sélection aux titulaires du baccalauréat, de nationalité française.
+      - La sélection enchaîne dossier et entretien, tests psychotechniques, anglais, tests psychologiques et culture aéro, puis une présélection en vol.
+      - Les conditions exactes évoluent chaque année — se référer au site officiel de recrutement de la Marine.
+  sections:
+    - id: devenir-pilote-de-l-aeronautique-navale
+      title: Devenir pilote de l'aéronautique navale
+      body: |
+        L'**aéronautique navale** est la composante aérienne de la **Marine
+        nationale**. Ses pilotes mettent en œuvre des appareils comme le **Rafale
+        Marine**, le **E-2C Hawkeye** ou l'hélicoptère **NH90 Caïman**, depuis le
+        **porte-avions Charles de Gaulle** ou les **bases d'aéronautique
+        navale**.
+
+        Le concours **EOPAN** recrute les futurs pilotes comme **officiers**.
+        Point important : il n'exige **aucune expérience** de pilotage — la
+        formation est **entièrement assurée** par la Marine. Ce que l'on
+        recherche, ce sont des **aptitudes** (rigueur, sang-froid, vision dans
+        l'espace, anglais) et une forte **motivation**.
+    - id: conditions-et-parcours-de-selection
+      title: Conditions et parcours de sélection
+      body: |
+        Les **conditions générales** d'accès (à vérifier chaque année sur le site
+        officiel) tiennent en quelques points :
+
+        - avoir la **nationalité française** ;
+        - être **titulaire du baccalauréat** (toutes filières) ;
+        - être âgé de **17 à 26 ans** ;
+        - être reconnu **apte médicalement** au **personnel navigant** (vue
+          excellente), savoir **nager** et avoir accompli sa **Journée Défense
+          et Citoyenneté** ;
+        - ne pas avoir essuyé **plus de 3 refus** d'admission à la sélection ;
+        - disposer d'une **bonne maîtrise de l'anglais**.
+
+        La **sélection** se déroule ensuite en **plusieurs étapes** : dépôt de
+        **dossier** et **entretien** au **CIRFA**, **tests psychotechniques**,
+        **évaluation d'anglais**, **tests psychologiques** et de **culture
+        aéronautique**, puis une **présélection en vol**.
+      figures:
+        - schemaId: parcours-selection-eopan
+          alt: Les cinq étapes de la sélection EOPAN — dossier et entretien, tests psychotechniques, anglais, tests psychologiques et culture aéro, présélection en vol.
+          caption: Les grandes étapes de la sélection EOPAN, du dossier au CIRFA jusqu'à la présélection en vol.
+          width: 420
+          height: 300
+    - id: la-preselection-en-vol-et-la-formation
+      title: La présélection en vol et la formation
+      strate: maitriser
+      body: |
+        Les candidats retenus rejoignent la **base d'aéronautique navale de
+        Lanvéoc-Poulmic** (presqu'île de Crozon), rattachée à l'**École navale**.
+        Là, au sein de l'**escadrille 50S**, une **présélection en vol**
+        d'environ **sept mois** les met aux commandes de l'avion de voltige
+        **Cap 10** : il s'agit d'évaluer leur **capacité à apprendre** puis à
+        **restituer** en vol, sous pression — pas leur niveau de départ.
+
+        Ceux qui réussissent servent comme **officiers sous contrat** et
+        poursuivent la **formation de pilote militaire**, longue et sélective,
+        jusqu'à l'obtention de leurs **ailes**. Ils se spécialisent selon leur
+        classement et les besoins sur l'une des filières — **chasse** embarquée
+        et **guet aérien** (cursus passant notamment par les États-Unis),
+        **patrouille maritime** (avions multimoteurs), ou **hélicoptères**
+        (école de Dax).
+
+        Réussir l'EOPAN, c'est donc franchir une **première marche** exigeante,
+        avant un long parcours de formation entièrement pris en charge par la
+        Marine.
+  pieges:
+    - L'EOPAN ne demande aucune expérience de pilotage à l'entrée — c'est la Marine qui forme les pilotes.
+    - Les conditions chiffrées (âge, scores) évoluent chaque année — toujours vérifier la source officielle avant de s'y fier.
+    - L'aptitude médicale requise est celle du personnel navigant (PN), plus stricte qu'une simple aptitude générale.

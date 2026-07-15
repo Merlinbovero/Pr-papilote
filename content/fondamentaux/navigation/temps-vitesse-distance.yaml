@@ -1,0 +1,142 @@
+schemaVersion: 1
+id: fondamentaux.navigation.temps-vitesse-distance
+type: notion-navigation
+title: Temps, vitesse et distance
+slug: temps-vitesse-distance
+summary: >-
+  Toute la navigation repose sur distance = vitesse × temps. Avec des unités
+  cohérentes (milles marins, nœuds, heures), on en tire le temps, la distance ou
+  la vitesse par une règle de trois. La vitesse sol, corrigée du vent, donne la progression réelle.
+objectifs:
+  - Énoncer la relation distance = vitesse × temps et ses trois formes (D, V, t).
+  - Appliquer cette relation en navigation avec des unités cohérentes (milles marins, nœuds, heures) par une règle de trois.
+  - Estimer un temps de vol de tête (règle des 6 minutes) en utilisant la vitesse sol.
+aliases:
+  [
+    temps vitesse distance,
+    TVD,
+    règle de trois,
+    vitesse sol,
+    ETA,
+    calcul mental,
+    règle des 6 minutes,
+  ]
+module: fondamentaux
+category: navigation
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-deuxième fiche du socle, le calcul temps-vitesse-distance (bloc navigation).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Mille marin — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Mille_marin
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — navigation"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.navigation.terre-et-coordonnees
+    - fondamentaux.physique.systeme-international-et-unites
+  related:
+    - fondamentaux.navigation.cap-route-et-derive
+content:
+  essentiel:
+    body: |
+      Toute la navigation repose sur une relation simple, apprise à l'école :
+      **distance = vitesse × temps**.
+
+      En aéronautique, on la manie avec des unités **cohérentes** : la
+      **distance** en **milles marins (NM)**, la **vitesse** en **nœuds (kt)** —
+      c'est-à-dire des milles marins **par heure** — et le **temps** en
+      **heures**. De cette seule relation on tire tout : le temps de vol
+      (t = D / V), la distance parcourue (D = V × t) ou la vitesse nécessaire
+      (V = D / t).
+
+      En vol, la vitesse qui compte pour progresser au-dessus du sol est la
+      **vitesse sol**, celle qui tient compte du **vent**.
+    aRetenir:
+      - La relation fondamentale de la navigation est distance = vitesse × temps.
+      - Avec des unités cohérentes — distance en milles marins, vitesse en nœuds, temps en heures.
+      - On en déduit le temps (t = D / V), la distance (D = V × t) ou la vitesse (V = D / t).
+      - C'est la vitesse sol (corrigée du vent) qui détermine la progression réelle au-dessus du sol.
+  sections:
+    - id: distance-vitesse-temps
+      title: Distance, vitesse, temps
+      body: |
+        Une relation gouverne toute la navigation :
+
+        **distance = vitesse × temps**
+
+        Elle se décline de trois façons, selon ce que l'on cherche :
+
+        - la **distance** : D = V × t ;
+        - le **temps** : t = D / V ;
+        - la **vitesse** : V = D / t.
+
+        Ces trois formules ne sont que **la même relation** réécrite. Un moyen
+        mnémotechnique — le **triangle D-V-t** — permet de retrouver
+        instantanément la bonne : on masque la grandeur cherchée, et la
+        disposition des deux autres donne la formule.
+      figures:
+        - schemaId: triangle-dvt
+          alt: Un triangle avec la distance en haut, la vitesse et le temps en bas, donnant les trois formules D = V fois t, t = D sur V et V = D sur t.
+          caption: Le triangle D-V-t — on masque la grandeur cherchée pour lire directement sa formule.
+          width: 380
+          height: 260
+    - id: calculer-en-navigation
+      title: Calculer en navigation
+      body: |
+        La force du système aéronautique est la **cohérence des unités** : le
+        **nœud** est un **mille marin par heure**. Un avion à 120 kt parcourt
+        donc 120 NM en une heure.
+
+        Il suffit alors d'une **règle de trois** :
+
+        - à 120 kt, quelle distance en **30 min** (½ h) ? → 120 × 0,5 = **60 NM** ;
+        - combien de temps pour **90 NM** à 180 kt ? → 90 / 180 = 0,5 h =
+          **30 min** ;
+        - quelle vitesse pour couvrir **200 NM en 1 h 20** ? → 200 / 1,33 ≈
+          **150 kt**.
+
+        Le seul piège est la conversion **minutes / heures** : 30 min = 0,5 h,
+        20 min = 1/3 h, 6 min = 1/10 h.
+    - id: calcul-mental-et-vitesse-sol
+      title: Calcul mental et vitesse sol
+      strate: maitriser
+      body: |
+        En vol, on estime **de tête**. Une règle précieuse : la **règle des 6
+        minutes**. Six minutes valent **1/10 d'heure** ; en 6 minutes, on
+        parcourt donc **V / 10** milles marins. À 120 kt, cela fait **12 NM**
+        toutes les 6 minutes — de quoi suivre sa progression et estimer son
+        **heure d'arrivée (ETA)**.
+
+        Un dernier point capital : la vitesse à utiliser pour ces calculs de
+        trajet est la **vitesse sol**, non la vitesse propre. Le **vent** modifie
+        la progression réelle — un vent de face **allonge** le temps de vol, un
+        vent arrière le **raccourcit**. On retrouve ainsi la **dérive** et le
+        **vent** vus précédemment : la navigation combine toujours **distance,
+        vitesse, temps et vent**.
+      figures:
+        - schemaId: regle-6-minutes
+          alt: Un cadran d'horloge avec un secteur de 6 minutes égal à un dixième d'heure, illustrant qu'on parcourt la vitesse divisée par dix en milles marins.
+          caption: La règle des 6 minutes — en 6 min (1/10 h), on parcourt V/10 milles marins.
+          width: 400
+          height: 240
+  pieges:
+    - Les unités doivent être cohérentes — milles marins, nœuds et heures ; convertir les minutes en heures avant de calculer.
+    - Pour un temps de trajet, on utilise la vitesse sol, pas la vitesse propre — le vent change tout.
+    - Le nœud est déjà une vitesse (un mille marin par heure) — inutile de « diviser encore par le temps ».

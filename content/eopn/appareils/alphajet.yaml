@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: eopn.appareils.alphajet
+type: appareil
+title: Alphajet
+slug: alphajet
+summary: >-
+  Le biréacteur franco-allemand qui a formé quarante ans de pilotes de chasse
+  — et qui reste l'avion de la Patrouille de France. Un programme en
+  coopération exemplaire, raconté par ceux qui l'ont conduit.
+objectifs:
+  - Identifier l'Alphajet (biréacteur d'entraînement franco-allemand, avion de la PAF).
+  - Connaître les jalons du programme (fiche programme 1968, premier vol 1973, série 1977).
+  - Comprendre ce qu'il a remplacé et qui l'a remplacé dans la formation.
+aliases: [Alphajet, Alpha Jet, Patrouille de France, avion de la PAF]
+module: eopn
+category: appareils
+subcategory: avions-d-entrainement
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot AV1 de la campagne COMAERO (tomes « Avions militaires », ch. 6-7) ; emploi actuel re-vérifié sur defense.gouv.fr.
+    author: prepapilote
+sources:
+  - title: "COMAERO — Les avions militaires, tome I (EUROSAE), ch. 6-7 « Programme Alphajet » et annexes"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — La Patrouille de France au défilé du 14 juillet 2026"
+    url: https://www.defense.gouv.fr/unites-du-defile-du-14-juillet-2026/14-juillet-2026-defile-avions/defile-avions-patrouille-france
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.appareils.pc-21
+    - eopn.selection.la-formation-du-pilote-de-chasse
+    - eopn.histoire.histoire-de-l-armee-de-l-air
+infobox:
+  constructeur: Dassault-Breguet / Dornier (coopération France-RFA)
+  role: Avion d'entraînement et d'appui léger — aujourd'hui monture de la Patrouille de France
+  armees: [Armée de l'air et de l'espace]
+  miseEnService: Fin des années 1970 (premier avion de série en vol le 4 novembre 1977)
+  statut: En service à la Patrouille de France (BA 701 Salon-de-Provence) — état au 2026-07
+  equipage: 2 en tandem
+content:
+  essentiel:
+    body: |
+      L'**Alphajet** est le biréacteur d'entraînement né de la coopération
+      **franco-allemande** — conçu par **Dassault-Breguet et Dornier**
+      pour remplacer d'un coup, côté français, les trois avions du cursus
+      chasse des années 1960 : le Fouga Magister de Salon, le T-33 de
+      Tours et le Mystère IV de Cazaux.
+
+      Repères du programme (archives COMAERO) :
+
+      - **1968** — fiche programme de l'armée de l'Air ;
+      - **mai 1969** — accord intergouvernemental France-RFA, la France
+        développant la version **école**, l'Allemagne la version
+        **appui** ;
+      - **26 octobre 1973** — premier vol du prototype ;
+      - **4 novembre 1977** — premier vol du premier avion de série.
+
+      Retiré de la formation (le **PC-21** l'a remplacé à Cognac),
+      l'Alphajet reste l'avion d'un symbole national — la **Patrouille de
+      France**, qui le met en œuvre depuis 1981 et défile toujours à
+      **neuf appareils** depuis la BA 701 de Salon-de-Provence (état au
+      2026-07).
+    aRetenir:
+      - "Alphajet = biréacteur d'entraînement franco-allemand (Dassault-Breguet/Dornier) — premier vol du prototype le 26 octobre 1973."
+      - Il remplaçait trois avions-écoles (Fouga Magister, T-33, Mystère IV) ; le PC-21 l'a remplacé à son tour dans la formation.
+      - "Deux versions dès l'origine — école (France) et appui léger (Allemagne)."
+      - "C'est l'avion de la Patrouille de France depuis 1981 — neuf appareils, BA 701 Salon-de-Provence."
+  sections:
+    - id: caracteristiques
+      title: Caractéristiques (version école)
+      body: |
+        | Caractéristique | Valeur (ordres de grandeur COMAERO) |
+        | --- | --- |
+        | Équipage | 2 en tandem |
+        | Moteurs | 2 réacteurs Larzac |
+        | Masse à vide / au décollage | 3 280 kg / ~4 500 kg |
+        | Plafond | 45 000 ft |
+        | Mach maximal en palier | 0,84 |
+        | Vitesse d'approche | 120 kt |
+        | Autonomie (mission école) | ~1 h 30 |
+        | Voilure | en flèche à 28°, haute |
+
+        Un choix assumé dès la fiche programme — **subsonique**, simple,
+        biplace tandem, deux moteurs pour la sécurité de l'élève : tout
+        l'inverse d'un prototype ambitieux, et c'est pour cela qu'il a
+        duré un demi-siècle.
+    - id: un-programme-en-cooperation
+      title: Un programme de coopération exemplaire
+      strate: maitriser
+      body: |
+        L'histoire de l'Alphajet est un cas d'école de **coopération
+        internationale** — et les ingénieurs du COMAERO la racontent sans
+        fard. Le premier projet d'avion-école français de 1963 avait
+        grossi, au contact des Britanniques, jusqu'à devenir... le
+        **Jaguar**, avion d'appui supersonique — laissant le besoin école
+        entier. La France est repartie d'une feuille blanche en 1968 et a
+        trouvé en la **Luftwaffe** un partenaire au besoin voisin mais pas
+        identique : l'Allemagne, qui formait ses pilotes aux États-Unis,
+        voulait surtout un avion d'**appui léger** pour remplacer ses
+        G-91.
+
+        D'où la leçon que retient l'ouvrage : une coopération réussit
+        quand chacun accepte **deux versions d'un même avion** plutôt que
+        d'imposer un compromis unique. L'Alphajet fut un **succès
+        technique et industriel** — production en série dans les deux
+        pays et export — malgré des besoins initiaux divergents.
+
+        Son remplacement est aujourd'hui à l'étude ; en attendant, chaque
+        14 Juillet commence par ses fumées tricolores.
+  pieges:
+    - "L'Alphajet est subsonique (Mach 0,84) — un avion-école n'a pas besoin de supersonique, c'était un choix délibéré."
+    - Il ne forme plus les pilotes de chasse français — le PC-21 a repris ce rôle à Cognac ; l'Alphajet vole à la Patrouille de France.
+    - "Coopération franco-ALLEMANDE (Dassault-Breguet/Dornier) — pas franco-britannique : ça, c'est le Jaguar."
+    - "Deux versions dès l'origine — école pour la France, appui pour l'Allemagne — et non une version unique."

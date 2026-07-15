@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.dominos-05
+kind: qcm
+theme: dominos
+statement: >-
+  Sur le cycle des dominos (0 à 6), avancer de +4 revient au même que…
+choices:
+  - reculer de 3
+  - reculer de 4
+  - avancer de 3
+  - rester sur place
+correctChoices: [0]
+explanation: >-
+  Le cycle compte 7 valeurs (0 à 6) : avancer de 4 ou reculer de 3 aboutit à
+  la même valeur (4 + 3 = 7, un tour complet). Si un « +4 » ne saute pas aux
+  yeux, chercher le « −3 » équivalent.
+evaluates: [psychotechnique.exercices.les-dominos]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

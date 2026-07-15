@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.1er-rhc-01
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Où le 1er régiment d'hélicoptères de combat est-il stationné ?
+choices:
+  - À Phalsbourg (Moselle), au camp La Horie
+  - À Pau (Pyrénées-Atlantiques)
+  - À Étain (Meuse)
+  - À Dax (Landes)
+correctChoices: [0]
+explanation: >-
+  Le 1er RHC est stationné au camp La Horie à Phalsbourg, en Moselle. Pau
+  accueille le 5e RHC et le 4e RHFS, Étain le 3e RHC, Dax l'école (EALAT).
+evaluates: [alat.unites.1er-rhc]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

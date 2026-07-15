@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.escadrille-50s
+title: Escadrille 50S
+definition: >-
+  Unité d'instruction de l'aéronautique navale créée en 1946, basée à
+  Lanvéoc-Poulmic. Elle assure sur Cap 10 la présélection et la sélection en
+  vol des candidats EOPAN ainsi que l'initiation au pilotage des officiers de
+  l'École navale.
+synonyms: [50S]
+ficheId: eopan.appareils.cap-10
+tags: []
+status: publie

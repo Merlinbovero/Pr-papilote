@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.ban
+title: BAN
+definition: >-
+  Base d'aéronautique navale — aérodrome militaire de la Marine nationale
+  accueillant les flottilles et escadrilles à terre. Les principales sont
+  Landivisiau (chasse), Lann-Bihoué (patrouille et surveillance maritimes),
+  Hyères (hélicoptères) et Lanvéoc-Poulmic (école et sélection).
+sigleExpansion: Base d'aéronautique navale
+synonyms: [base d'aéronautique navale]
+ficheId: eopan.organisation.aeronautique-navale
+tags: []
+status: publie

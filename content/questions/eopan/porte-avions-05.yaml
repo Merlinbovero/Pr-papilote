@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.porte-avions-05
+kind: vrai-faux
+theme: porte-avions
+statement: >-
+  La France possède deux porte-avions en service, basés à Toulon et à Brest.
+answer: false
+explanation: >-
+  Faux. La France ne possède qu'un seul porte-avions en service, le Charles de
+  Gaulle, basé à Toulon. C'est l'unique porte-avions français depuis le retrait
+  du Foch.
+evaluates: [eopan.bases.charles-de-gaulle]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.reglementation.regles-air-02
+kind: qcm
+theme: regles-de-l-air
+statement: >-
+  Deux avions convergent à altitude comparable. Qui a la priorité ?
+choices:
+  - Celui qui vient de la droite
+  - Celui qui vient de la gauche
+  - Le plus rapide
+  - Le plus haut
+correctChoices: [0]
+explanation: >-
+  En routes convergentes, la priorité revient à l'aéronef venant de la
+  droite — l'autre manœuvre pour s'écarter.
+evaluates: [fondamentaux.reglementation.les-regles-de-l-air]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

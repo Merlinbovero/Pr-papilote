@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.facteurs-humains.deso-05
+kind: vrai-faux
+theme: desorientation
+statement: >-
+  Seuls les pilotes débutants sont sensibles aux illusions sensorielles.
+answer: false
+explanation: >-
+  Non : même un pilote expérimenté et conscient du risque peut succomber à une
+  illusion, tant elle peut être puissante. D'où l'importance de l'entraînement.
+evaluates: [fondamentaux.facteurs-humains.desorientation-et-illusions]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

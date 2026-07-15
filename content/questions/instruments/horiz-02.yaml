@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.horiz-02
+kind: qcm
+theme: horizon-artificiel
+statement: >-
+  Sur quel principe repose l'horizon artificiel ?
+choices:
+  - "Un gyroscope dont l'axe garde une direction fixe"
+  - "Une capsule anéroïde"
+  - "Un tube de Pitot"
+  - "Un thermomètre"
+correctChoices: [0]
+explanation: >-
+  L'horizon artificiel repose sur un gyroscope : un rotor tournant vite garde la
+  direction de son axe fixe dans l'espace, servant de référence stable.
+evaluates: [fondamentaux.instruments.horizon-artificiel]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

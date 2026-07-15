@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.cartographie.carte-oaci-02
+kind: association
+theme: lecture-de-carte
+statement: >-
+  Associez chaque type de zone à statut particulier à sa signification.
+pairs:
+  - left: Zone P
+    right: Interdite — pénétration prohibée
+  - left: Zone R
+    right: Réglementée — pénétration soumise à conditions
+  - left: Zone D
+    right: Dangereuse — activité risquée, pénétration possible
+explanation: >-
+  P (prohibited) = interdite ; R (restricted) = réglementée ; D (dangerous) =
+  dangereuse. Trois statuts différents à ne pas confondre lors de la
+  préparation d'un vol.
+evaluates: [fondamentaux.cartographie.lire-une-carte-aeronautique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

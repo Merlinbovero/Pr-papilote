@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.eopan-01
+kind: qcm
+theme: concours-eopan
+statement: >-
+  Que signifie l'acronyme EOPAN ?
+choices:
+  - "Élève Officier Pilote de l'Aéronautique Navale"
+  - "École des Officiers Pilotes de l'Armée Navale"
+  - "Élève Officier de la Patrouille Aérienne Nationale"
+  - "Escadron Opérationnel de Pilotage de l'Aéronavale"
+correctChoices: [0]
+explanation: >-
+  EOPAN signifie Élève Officier Pilote de l'Aéronautique Navale : c'est la voie
+  de recrutement des pilotes de la Marine nationale.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.aptitude-02
+kind: qcm
+theme: aptitude-medicale
+statement: >-
+  Que désigne le sigle SIGYCOP ?
+choices:
+  - "Les sept rubriques du profil médical militaire"
+  - "Un test psychotechnique de la Marine"
+  - "Le règlement de la circulation aérienne militaire"
+  - "Un simulateur de vol des écoles"
+correctChoices: [0]
+explanation: >-
+  S, I, G, Y, C, O, P — membres supérieurs, membres inférieurs, état
+  général, yeux, sens chromatique, oreilles, psychisme : sept rubriques
+  notées, comparées au profil minimal exigé par chaque emploi.
+evaluates: [fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

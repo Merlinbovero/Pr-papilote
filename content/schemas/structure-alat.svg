@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .top { font-size: 12px; font-weight: 600; }
+    .comp { font-size: 11px; font-weight: 600; }
+    .ex { font-size: 10px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">L'Aviation légère de l'Armée de terre</text>
+  <!-- Sommet -->
+  <rect class="box" x="176" y="44" width="108" height="40" rx="4" />
+  <text class="top" x="230" y="60" text-anchor="middle">ALAT</text>
+  <text class="top" x="230" y="76" text-anchor="middle">(Armée de terre)</text>
+  <!-- Liaisons -->
+  <path class="link" d="M230,84 C230,120 70,120 70,168" />
+  <path class="link" d="M230,84 C230,120 177,120 177,168" />
+  <path class="link" d="M230,84 C230,120 283,120 283,168" />
+  <path class="link" d="M230,84 C230,120 390,120 390,168" />
+  <!-- Composantes -->
+  <g>
+    <rect class="node" x="30" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="70" y="192" text-anchor="middle">Combat</text>
+    <text class="ex" x="70" y="210" text-anchor="middle">Tigre</text>
+  </g>
+  <g>
+    <rect class="node" x="137" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="177" y="188" text-anchor="middle">Manœuvre</text>
+    <text class="ex" x="177" y="210" text-anchor="middle">Caïman, Cougar</text>
+  </g>
+  <g>
+    <rect class="node" x="243" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="283" y="188" text-anchor="middle">Reconnais-</text>
+    <text class="comp" x="283" y="200" text-anchor="middle">sance</text>
+    <text class="ex" x="283" y="216" text-anchor="middle">Gazelle</text>
+  </g>
+  <g>
+    <rect class="node" x="350" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="390" y="192" text-anchor="middle">Formation</text>
+    <text class="ex" x="390" y="210" text-anchor="middle">H120 (EALAT)</text>
+  </g>
+  <text class="ex" x="230" y="256" text-anchor="middle">≈ 4 400 personnes · ~280 aéronefs · régiments d'hélicoptères de combat</text>
+</svg>

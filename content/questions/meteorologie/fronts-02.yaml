@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-02
+kind: qcm
+theme: fronts
+statement: >-
+  Qu'est-ce qu'une occlusion ?
+choices:
+  - "Le front froid qui a rattrapé le front chaud"
+  - "Un front stationnaire sur les côtes"
+  - "La zone de beau temps derrière la perturbation"
+  - "Un front chaud qui accélère"
+correctChoices: [0]
+explanation: >-
+  Le front froid avance plus vite que le front chaud — quand il le rattrape,
+  la perturbation s'occlut : c'est le signe de son vieillissement.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

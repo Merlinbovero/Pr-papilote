@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.lann-bihoue-04
+kind: qcm
+theme: bases-navales
+statement: >-
+  Près de quelle ville se trouve la BAN de Lann-Bihoué ?
+choices:
+  - Lorient (Morbihan)
+  - Brest (Finistère)
+  - Toulon (Var)
+  - Cherbourg (Manche)
+correctChoices: [0]
+explanation: >-
+  La BAN de Lann-Bihoué est située dans le Morbihan, à quelques kilomètres à
+  l'ouest de Lorient, sur les communes de Ploemeur, Gestel et Quéven.
+evaluates: [eopan.ban.lann-bihoue]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

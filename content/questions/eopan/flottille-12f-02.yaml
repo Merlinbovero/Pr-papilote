@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-12f-02
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  De quel appareil la flottille 12F est-elle aujourd'hui équipée ?
+choices:
+  - Rafale Marine
+  - E-2C Hawkeye
+  - Super-Étendard modernisé
+  - F-8 Crusader
+correctChoices: [0]
+explanation: >-
+  La 12F est l'une des trois flottilles de chasse équipées de Rafale Marine,
+  stationnées à Landivisiau. Le F-8 Crusader et le Super-Étendard appartiennent à
+  son passé.
+evaluates: [eopan.unites.flottille-12f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.nuages-02
+kind: qcm
+theme: les-nuages
+statement: >-
+  Comment se forme généralement un nuage ?
+choices:
+  - "De l'air humide s'élève, se refroidit et se condense au point de rosée"
+  - "De l'air sec descend et se réchauffe"
+  - "La pression augmente au niveau du sol"
+  - "Le vent forcit près de la surface"
+correctChoices: [0]
+explanation: >-
+  Quand de l'air humide s'élève, il se détend et se refroidit ; en atteignant son
+  point de rosée, la vapeur se condense et forme le nuage.
+evaluates: [fondamentaux.meteorologie.les-nuages]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

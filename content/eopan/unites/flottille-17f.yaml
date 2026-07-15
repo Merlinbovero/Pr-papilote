@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: eopan.unites.flottille-17f
+type: flottille
+title: Flottille 17F
+slug: flottille-17f
+summary: >-
+  Flottille de chasse de l'aéronautique navale, équipée de Rafale Marine et
+  stationnée à Landivisiau. Surnommée « La Glorieuse », elle fut la dernière
+  unité française sur Super-Étendard modernisé avant son passage au Rafale.
+objectifs:
+  - Identifier la Flottille 17F comme l'une des trois flottilles de chasse embarquée (Rafale M).
+  - Retenir son histoire — dernière unité française sur Super-Étendard modernisé avant le Rafale (2016).
+  - Situer la 17F à la BAN Landivisiau et son embarquement sur le Charles de Gaulle.
+aliases: [17F, flottille 17F, La Glorieuse]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet flottille, la 17F de chasse (« La Glorieuse »).
+    author: prepapilote
+sources:
+  - title: "Flottille 17F — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Flottille_17F
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aéronautique navale — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: eopan.appareils.rafale-m
+    - predicate: affecte-a
+      target: eopan.ban.landivisiau
+  related:
+    - eopan.bases.flottille-11f
+    - eopan.presentation.le-concours-eopan
+infobox:
+  appellation: Flottille 17F
+  ban: BAN Landivisiau
+  appareils: [Rafale M]
+  missions: [Chasse, Appui, Bombardement, Défense aérienne, Reconnaissance, Dissuasion nucléaire]
+  insigne: Balbuzard pêcheur
+  traditions: Surnommée « La Glorieuse »
+content:
+  essentiel:
+    body: |
+      La **flottille 17F** est l'une des **trois flottilles de chasse** de
+      l'aéronautique navale, avec les 11F et 12F. Équipée de **Rafale Marine**
+      et stationnée à la **BAN Landivisiau**, elle embarque sur le porte-avions
+      **Charles de Gaulle**.
+
+      Surnommée **« La Glorieuse »**, elle porte pour insigne un **balbuzard
+      pêcheur**. Créée en **1958**, elle a une place particulière dans
+      l'histoire récente de l'aéronavale : elle fut la **dernière** unité
+      française à mettre en œuvre le **Super-Étendard modernisé**, avant de
+      passer au **Rafale M** en **2016**.
+
+      Elle a ainsi accompagné la **transition** entre deux générations d'avions
+      de combat embarqués, refermant l'ère du Super-Étendard.
+    aRetenir:
+      - La 17F est l'une des trois flottilles de chasse de l'aéronavale (Rafale M), avec les 11F et 12F.
+      - Surnommée « La Glorieuse », insigne au balbuzard pêcheur, créée en 1958.
+      - Elle fut la dernière unité française sur Super-Étendard modernisé avant son passage au Rafale (2016).
+      - Stationnée à Landivisiau, elle embarque sur le Charles de Gaulle.
+  sections:
+    - id: missions
+      title: Missions
+      body: |
+        La 17F conduit l'ensemble des missions de la **chasse embarquée** :
+        **appui aérien**, **bombardement**, **défense aérienne**,
+        **reconnaissance**, **ravitaillement en vol** et volet aéronaval de la
+        **dissuasion nucléaire** — depuis la terre comme depuis le
+        porte-avions.
+
+        Engagée sur de nombreux théâtres (Algérie, ex-Yougoslavie, Afghanistan,
+        Libye), elle a vu son **fanion** décoré de la **croix de la valeur
+        militaire** avec palme et reçu la **fourragère** correspondante.
+    - id: la-derniere-du-super-etendard
+      title: La dernière du Super-Étendard
+      strate: maitriser
+      body: |
+        La 17F occupe une place singulière : elle a été la **dernière**
+        flottille française à voler sur **Super-Étendard modernisé** (SEM),
+        l'avion d'assaut embarqué qui a précédé le Rafale. En **2016**, en
+        passant au **Rafale M**, elle a **tourné la page** du Super-Étendard
+        dans l'aéronautique navale.
+
+        Ce rôle de **dernière gardienne** d'un appareil emblématique, puis de
+        **passeuse** vers le Rafale, illustre la continuité des flottilles à
+        travers les générations d'avions — un trait de culture attendu d'un
+        candidat EOPAN.
+  pieges:
+    - Une flottille est l'unité de l'aéronautique navale — l'équivalent de l'escadron dans l'Armée de l'Air et de l'Espace.
+    - La 17F fut la dernière unité française sur Super-Étendard modernisé, passée au Rafale en 2016 — un repère de transition à connaître.
+    - Elle est stationnée à Landivisiau et embarque sur le porte-avions lors des déploiements — pas en permanence à bord.

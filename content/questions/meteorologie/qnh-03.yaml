@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.qnh-03
+kind: association
+theme: calage-altimetrique
+statement: >-
+  Associez chaque calage à ce que l'altimètre affiche.
+pairs:
+  - left: "QNH"
+    right: "L'altitude par rapport au niveau de la mer"
+  - left: "QFE"
+    right: "La hauteur par rapport à l'aérodrome"
+  - left: "1013,25 hPa"
+    right: "Le niveau de vol (référence commune)"
+explanation: >-
+  Le QNH donne l'altitude (référence mer), le QFE la hauteur (référence
+  aérodrome), et le calage standard 1013,25 hPa le niveau de vol.
+evaluates: [fondamentaux.meteorologie.pression-et-calage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

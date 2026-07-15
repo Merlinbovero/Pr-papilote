@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.decrochage-04
+kind: qcm
+theme: decrochage
+statement: >-
+  Que devient l'écoulement sur l'extrados lors d'un décrochage ?
+choices:
+  - "Il décolle et se désorganise en tourbillons"
+  - "Il accélère et reste parfaitement collé"
+  - "Il s'inverse et repart vers l'avant"
+  - "Il disparaît totalement"
+correctChoices: [0]
+explanation: >-
+  Au-delà de l'angle critique, l'air ne peut plus suivre l'extrados : l'écoulement
+  décolle et tourbillonne, la portance chute et la traînée augmente.
+evaluates: [fondamentaux.aerodynamique.decrochage]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

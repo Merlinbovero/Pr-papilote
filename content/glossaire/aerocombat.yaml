@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.aerocombat
+title: Aérocombat
+definition: >-
+  Emploi de l'hélicoptère au profit de la manœuvre terrestre, combinant
+  renseignement, feux et mouvement au contact de la bataille. C'est le cœur de
+  métier de l'Aviation légère de l'Armée de terre (ALAT).
+english: Air-land combat
+synonyms: []
+ficheId: alat.organisation.aviation-legere-armee-de-terre
+tags: []
+status: publie

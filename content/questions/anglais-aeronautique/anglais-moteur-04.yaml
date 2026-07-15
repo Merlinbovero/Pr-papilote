@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-moteur-04
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « afterburner » ?
+choices:
+  - La post-combustion des avions de combat
+  - Le réchauffage de la cabine
+  - Un moteur de secours
+  - Le frein de parking
+correctChoices: [0]
+explanation: >-
+  L'afterburner (post-combustion) injecte du carburant derrière la turbine
+  pour un surcroît de poussée — au prix d'une consommation énorme.
+evaluates: [fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

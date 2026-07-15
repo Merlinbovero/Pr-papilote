@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.grades-air-03
+kind: qcm
+theme: grades-air
+statement: >-
+  Quel statut porte l'EOPN pendant sa formation, avant d'être nommé sous-lieutenant ?
+choices:
+  - Aspirant
+  - Major
+  - Caporal-chef
+  - Capitaine
+correctChoices: [0]
+explanation: >-
+  L'EOPN sert comme aspirant — statut d'élève officier, intermédiaire entre
+  sous-officier et officier — pendant sa formation, avant sa nomination comme
+  sous-lieutenant.
+evaluates: [eopn.grades.grades-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

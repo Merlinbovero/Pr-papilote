@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.alat.regiments-alat-02
+kind: association
+theme: regiments-alat
+statement: >-
+  Associez chaque régiment à sa devise ou à son surnom.
+pairs:
+  - left: 1er RHC
+    right: Primus primorum
+  - left: 3e RHC
+    right: Régiment de la nuit
+  - left: 5e RHC
+    right: Béarn sans peur
+  - left: 4e RHFS
+    right: Nulle part sans nous
+explanation: >-
+  « Primus primorum » (1er RHC), le « régiment de la nuit » (3e RHC), « Béarn
+  sans peur » (5e RHC) et « Nulle part sans nous » (4e RHFS) — des traditions
+  qui identifient chaque régiment.
+evaluates: [alat.unites.1er-rhc]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

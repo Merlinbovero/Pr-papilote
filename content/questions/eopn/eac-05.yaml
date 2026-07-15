@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eac-05
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Quels escadrons d'instruction en vol de l'EAC portent des traditions de chasse ?
+choices:
+  - Le 1/13 « Artois » et le 2/12 « Picardie »
+  - Le « Normandie-Niémen » et le « Cigognes »
+  - L'ETR 3/4 « Aquitaine » et l'EC 2/3 « Champagne »
+  - La 11F et la 12F
+correctChoices: [0]
+explanation: >-
+  Les PC-21 de Cognac sont mis en œuvre par les escadrons d'instruction en vol
+  1/13 « Artois » et 2/12 « Picardie », héritiers de traditions de chasse.
+  L'ETR « Aquitaine » et l'EC « Champagne » assurent, eux, la transformation.
+evaluates: [eopn.organisation.ecole-de-l-aviation-de-chasse]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

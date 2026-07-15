@@ -1,0 +1,116 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.l-anglais-des-urgences
+type: concept
+title: L'anglais des urgences
+slug: l-anglais-des-urgences
+summary: >-
+  MAYDAY, PAN PAN, squawk 7700 — quand tout va mal, l'anglais doit sortir
+  seul. Le format complet du message de détresse, les mots des pannes et le
+  vocabulaire qui sauve.
+objectifs:
+  - Construire un message MAYDAY ou PAN PAN complet en anglais (format en 6 éléments).
+  - Connaître le vocabulaire des pannes et situations anormales (engine failure, bird strike, fuel).
+  - Employer les codes transpondeur d'urgence (7700, 7600, 7500).
+aliases: [MAYDAY, PAN PAN, urgences en anglais, squawk 7700, engine failure, minimum fuel]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — anglais des urgences (lot N12, phase P2 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Guide de phraséologie du SIA (bilingue français-anglais, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+  related:
+    - fondamentaux.anglais-aeronautique.l-anglais-de-l-approche
+    - fondamentaux.facteurs-humains.le-retour-d-experience
+content:
+  essentiel:
+    body: |
+      En situation d'urgence, l'anglais doit venir **sans réfléchir**. Le
+      message de détresse suit un **format fixe**, à connaître par cœur :
+
+      1. **MAYDAY, MAYDAY, MAYDAY** (ou PAN PAN × 3 pour l'urgence) ;
+      2. **station appelée** (*Cognac Tower*) ;
+      3. **indicatif** (*F-GABC*) ;
+      4. **nature de la détresse** (*engine failure*) ;
+      5. **intentions** (*forced landing*) ;
+      6. **position, altitude** (*5 miles north of the field, 2,000
+         feet*).
+
+      Exemple complet : *« MAYDAY, MAYDAY, MAYDAY, Cognac Tower, F-GABC,
+      engine failure, forced landing, 5 miles north of the field, 2,000
+      feet. »*
+
+      En parallèle, le **transpondeur** parle aussi : **7700** (détresse),
+      **7600** (panne radio), **7500** (intervention illicite) — *squawk
+      seven seven zero zero*.
+    aRetenir:
+      - "Format du MAYDAY — 3 × MAYDAY, station, indicatif, nature, intentions, position/altitude."
+      - "Transpondeur — 7700 détresse, 7600 panne radio, 7500 intervention illicite."
+      - "Vocabulaire des pannes — engine failure, bird strike, gear problem, smoke in the cockpit."
+      - "« Minimum fuel » signale une réserve tendue — « MAYDAY fuel » une détresse carburant."
+  sections:
+    - id: le-vocabulaire-des-pannes
+      title: Le vocabulaire des pannes
+      body: |
+        Les mots qui décrivent le problème :
+
+        | Anglais | Français |
+        | --- | --- |
+        | *engine failure* | panne moteur |
+        | *engine on fire* | moteur en feu |
+        | *smoke in the cockpit* | fumée dans le cockpit |
+        | *bird strike* | collision aviaire |
+        | *gear problem / gear unsafe* | problème de train |
+        | *hydraulic failure* | panne hydraulique |
+        | *electrical failure* | panne électrique |
+        | *lost / unsure of position* | perdu / position incertaine |
+        | *souls on board* | personnes à bord |
+
+        Le contrôleur demandera souvent : *« say souls on board and fuel
+        remaining »* — le nombre de personnes et l'autonomie restante (en
+        **temps** : *two hours fuel remaining*).
+    - id: carburant-et-degrades
+      title: Carburant et situations dégradées
+      strate: maitriser
+      body: |
+        Le carburant a sa gradation propre :
+
+        - *« minimum fuel »* — information : la réserve devient tendue,
+          tout retard supplémentaire posera problème ; ce n'est **pas**
+          une détresse ;
+        - *« MAYDAY, MAYDAY, MAYDAY, fuel »* — détresse carburant :
+          l'atterrissage ne peut plus attendre.
+
+        Autres formules utiles en situation dégradée : *request priority
+        landing* (demande priorité), *request vectors* (demande de caps
+        vers le terrain), *unable* (impossible d'exécuter), *request
+        immediate landing* — et pour clore l'événement : *cancel MAYDAY*.
+
+        S'entraîner à **dire ces messages à voix haute**, chrono en main,
+        est le meilleur exercice : le jour où l'anglais devra sortir seul,
+        il sortira comme il a été répété.
+  pieges:
+    - "MAYDAY et PAN PAN se prononcent trois fois — c'est le format, pas une emphase facultative."
+    - "« Minimum fuel » n'est pas une détresse — la détresse carburant se déclare « MAYDAY fuel »."
+    - "Les codes transpondeur — 7700 (détresse), 7600 (panne radio), 7500 (intervention illicite) : ne pas les intervertir."
+    - L'autonomie restante s'annonce en temps de vol (« two hours fuel remaining »), pas en litres.

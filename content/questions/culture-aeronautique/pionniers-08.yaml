@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-08
+kind: qcm
+theme: pionniers
+statement: >-
+  Quel écrivain-pilote de l'Aéropostale est l'auteur de « Vol de nuit » et
+  de « Terre des hommes » ?
+choices:
+  - "Antoine de Saint-Exupéry"
+  - "Jean Mermoz"
+  - "Henri Guillaumet"
+  - "Didier Daurat"
+correctChoices: [0]
+explanation: >-
+  Saint-Exupéry, pilote de la Ligne à Cap Juby puis en Argentine, en fut
+  aussi la conscience littéraire — jusqu'au Petit Prince.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

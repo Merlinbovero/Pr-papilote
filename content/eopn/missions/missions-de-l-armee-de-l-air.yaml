@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: eopn.missions.missions-de-l-armee-de-l-air
+type: concept
+title: Les missions de l'armée de l'Air et de l'Espace
+slug: missions-de-l-armee-de-l-air
+summary: >-
+  Protéger, dissuader, intervenir — les trois fonctions stratégiques de
+  l'armée de l'Air et de l'Espace, de la police du ciel assurée 24h/24 (PPS-A)
+  à la dissuasion nucléaire des Forces aériennes stratégiques.
+objectifs:
+  - Citer les trois fonctions stratégiques de l'AAE (protéger, dissuader, intervenir).
+  - Expliquer la posture permanente de sûreté aérienne (PPS-A) et son dispositif.
+  - Situer les Forces aériennes stratégiques (FAS) dans la dissuasion nucléaire.
+aliases: [missions armée de l'air, PPS-A, police du ciel, FAS, dissuasion aéroportée, CDAOA]
+module: eopn
+category: missions
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche missions de l'AAE (campagne de recherche n°1, lot N5 ; sources officielles defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Nos missions — armée de l'Air et de l'Espace (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/nos-missions
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Les Forces aériennes stratégiques, piliers de la dissuasion nationale (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/actualites/forces-aeriennes-strategiques-piliers-dissuasion-nationale
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.presentation.le-concours-eopn
+    - eopan.missions.missions-de-la-marine
+    - eopn.appareils.rafale
+content:
+  essentiel:
+    body: |
+      L'armée de l'Air et de l'Espace articule son action autour de **trois
+      fonctions stratégiques** :
+
+      - **Protéger** — défendre en permanence l'espace aérien national : la
+        **posture permanente de sûreté aérienne (PPS-A)**, la « **police du
+        ciel** », assurée **24h/24** sous les ordres du **CDAOA**
+        (commandement de la défense aérienne et des opérations aériennes) ;
+      - **Dissuader** — les **Forces aériennes stratégiques (FAS)** portent,
+        avec la FOST de la Marine, la **dissuasion nucléaire** : Rafale et
+        missile ASMP-A, appuyés par les ravitailleurs ;
+      - **Intervenir** — projeter la puissance aérienne sur les théâtres
+        extérieurs, en quelques heures si nécessaire : frappe, transport,
+        renseignement, ravitaillement en vol.
+
+      Depuis 2020, s'y ajoute la dimension **spatiale** — surveiller
+      l'espace exo-atmosphérique et protéger nos satellites.
+    aRetenir:
+      - Trois fonctions stratégiques — protéger, dissuader, intervenir.
+      - La PPS-A (police du ciel) est assurée 24h/24 sous les ordres du CDAOA — détecter, identifier, intercepter.
+      - Les FAS portent la composante aéroportée de la dissuasion (Rafale + ASMP-A), aux côtés de la FOST.
+      - Depuis 2020, l'AAE a aussi la charge du domaine spatial militaire.
+  sections:
+    - id: proteger-la-police-du-ciel
+      title: Protéger — la police du ciel
+      body: |
+        À chaque instant, l'AAE doit **connaître** la situation aérienne
+        au-dessus du territoire : le dispositif s'appuie sur un réseau
+        d'environ **70 radars** civils et militaires et des **centres de
+        détection et de contrôle** (Lyon, Tours, Mont-de-Marsan).
+
+        En cas de doute — avion qui ne répond plus, trajectoire anormale,
+        aéronef suspect — des chasseurs et des hélicoptères en **alerte**
+        décollent en quelques minutes pour **détecter, identifier** et, si
+        nécessaire, **intercepter**. C'est la mission permanente et
+        prioritaire de la défense aérienne, dirigée par le **CDAOA**.
+    - id: dissuader-les-fas
+      title: Dissuader — les Forces aériennes stratégiques
+      body: |
+        Créées au début des années 1960, les **FAS** ont pris l'alerte
+        nucléaire en **1964** avec le couple **Mirage IV-C 135**. Elles
+        arment aujourd'hui la composante **aéroportée** de la dissuasion :
+        des **Rafale** porteurs du missile **ASMP-A**, soutenus par les
+        **ravitailleurs** qui leur donnent l'allonge stratégique.
+
+        Avec la **FANu** de la Marine (mise en œuvre depuis le porte-avions)
+        et la **FOST** (SNLE), elles garantissent la **permanence** et la
+        **crédibilité** de la dissuasion française — une culture à relier
+        entre les trois concours.
+    - id: intervenir-et-l-espace
+      title: Intervenir — et l'espace
+      strate: maitriser
+      body: |
+        L'**intervention** exploite la vertu cardinale de l'arme aérienne :
+        la **vitesse**. En quelques heures, l'AAE peut frapper à des
+        milliers de kilomètres, déployer des forces (A400M), ravitailler en
+        vol, renseigner — seule ou en coalition.
+
+        Depuis **2020**, l'armée de l'Air est devenue armée de l'Air **et de
+        l'Espace** : surveillance de l'espace, protection des satellites,
+        opérations spatiales militaires. Le ciel ne s'arrête plus à la
+        stratosphère — un point d'actualité apprécié en entretien.
+  pieges:
+    - La PPS-A est permanente — la police du ciel ne s'interrompt jamais, même en temps de paix profonde.
+    - La dissuasion aéroportée est partagée — FAS (armée de l'Air) et FANu (Marine) mettent en œuvre le même missile ASMP-A.
+    - Depuis 2020, dire « armée de l'Air » est incomplet — c'est l'armée de l'Air et de l'Espace, avec une vraie mission spatiale.

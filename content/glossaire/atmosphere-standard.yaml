@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.atmosphere-standard
+title: Atmosphère standard (ISA)
+definition: >-
+  Modèle d'atmosphère de référence utilisé en aéronautique : 15 °C et 1013 hPa au
+  niveau de la mer, avec une décroissance régulière de la température et de la
+  pression avec l'altitude. Il sert d'étalon pour les calculs et les instruments.
+sigleExpansion: International Standard Atmosphere
+english: International Standard Atmosphere
+synonyms: [ISA]
+ficheId: fondamentaux.meteorologie.atmosphere-standard
+tags: []
+status: publie

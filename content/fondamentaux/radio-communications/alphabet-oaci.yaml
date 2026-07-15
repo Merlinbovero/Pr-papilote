@@ -1,0 +1,130 @@
+schemaVersion: 1
+id: fondamentaux.radio-communications.alphabet-oaci
+type: concept
+title: L'alphabet aéronautique OACI
+slug: alphabet-oaci
+summary: >-
+  L'alphabet phonétique OACI épelle chaque lettre par un mot-code clair (Alfa,
+  Bravo… Zulu) pour éviter les confusions à la radio. Les orthographes officielles
+  sont Alfa et Juliett ; les chiffres se disent un par un (« niner » pour 9).
+objectifs:
+  - Expliquer le rôle de l'alphabet phonétique OACI (éviter les confusions à la radio).
+  - Restituer les mots-codes des lettres (Alfa à Zulu), avec les orthographes officielles Alfa et Juliett.
+  - Épeler une immatriculation ou un indicatif et connaître la prononciation des chiffres (« niner »).
+aliases:
+  [alphabet OACI, alphabet phonétique, Alfa Bravo Charlie, épellation, indicatif, phraséologie]
+module: fondamentaux
+category: radio-communications
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-neuvième fiche du socle, l'alphabet phonétique OACI (bloc radio et communications).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Alphabet phonétique de l'OTAN — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Alphabet_phon%C3%A9tique_de_l'OTAN
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — radio et communications"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  related:
+    - fondamentaux.reglementation.espaces-aeriens
+content:
+  essentiel:
+    body: |
+      À la **radio**, une lettre mal comprise peut avoir de graves conséquences :
+      « B », « D », « P » et « T » se ressemblent, surtout dans le bruit ou avec
+      un accent. Pour éviter toute confusion, l'aéronautique épelle avec un
+      **alphabet phonétique** normalisé par l'**OACI**.
+
+      À chaque lettre correspond un **mot-code** unique et facile à distinguer :
+      **Alfa** pour A, **Bravo** pour B, **Charlie** pour C… jusqu'à **Zulu**
+      pour Z. Les **chiffres** ont aussi une prononciation particulière
+      (« niner » pour 9).
+
+      Cet alphabet sert partout : **immatriculations**, **indicatifs**, **points
+      de report**, messages. Le connaître par cœur est un **réflexe** de base.
+    aRetenir:
+      - L'alphabet phonétique OACI épelle chaque lettre par un mot-code clair (Alfa, Bravo, Charlie… Zulu).
+      - Il évite les confusions entre les lettres qui se ressemblent à la radio (B, D, P, T).
+      - Les chiffres ont une prononciation propre — par exemple « niner » pour 9.
+      - Il sert aux immatriculations, indicatifs et messages radio, à connaître par cœur.
+  sections:
+    - id: pourquoi-un-alphabet-phonetique
+      title: Pourquoi un alphabet phonétique
+      body: |
+        La radio aéronautique est souvent **bruitée**, rapide, et utilisée par
+        des locuteurs de **langues** différentes. Dans ces conditions, épeler
+        « B-D-T » à voix nue mène droit à l'**erreur** : ces sons se confondent.
+
+        La solution est d'attribuer à chaque lettre un **mot entier**, choisi
+        pour rester **reconnaissable** même dégradé : « **Bravo** », « **Delta** »,
+        « **Tango** » ne se confondent pas. C'est l'**alphabet phonétique
+        international**, normalisé par l'**OACI** et repris par l'OTAN.
+
+        Deux orthographes officielles surprennent : **Alfa** (sans « ph », pour
+        les non-anglophones) et **Juliett** (avec deux « t », pour que les
+        francophones en prononcent bien la finale).
+      figures:
+        - schemaId: epellation-principe
+          alt: Des lettres qui se confondent à la radio (B, D, P, T) remplacées par des mots-codes distincts (Bravo, Delta, Papa, Tango).
+          caption: Des lettres au son proche (B, D, P, T) deviennent des mots-codes distincts, compris du premier coup.
+          width: 460
+          height: 220
+    - id: l-alphabet-complet
+      title: L'alphabet complet
+      body: |
+        Voici les 26 mots-codes.
+
+        | Lettre | Code | Lettre | Code |
+        | --- | --- | --- | --- |
+        | A | Alfa | N | November |
+        | B | Bravo | O | Oscar |
+        | C | Charlie | P | Papa |
+        | D | Delta | Q | Quebec |
+        | E | Echo | R | Romeo |
+        | F | Foxtrot | S | Sierra |
+        | G | Golf | T | Tango |
+        | H | Hotel | U | Uniform |
+        | I | India | V | Victor |
+        | J | Juliett | W | Whiskey |
+        | K | Kilo | X | X-ray |
+        | L | Lima | Y | Yankee |
+        | M | Mike | Z | Zulu |
+
+        Par exemple, l'immatriculation **F-GBQR** s'épelle
+        « **Foxtrot – Golf – Bravo – Quebec – Romeo** ».
+    - id: les-chiffres-et-l-usage
+      title: Les chiffres et l'usage
+      strate: maitriser
+      body: |
+        Les **chiffres** aussi ont une prononciation normalisée, pour les
+        distinguer nettement :
+
+        - **9** se dit « **niner** » (pour ne pas le confondre avec l'allemand
+          *nein*) ;
+        - **5** se dit « **fife** », **3** se dit « **tree** » ;
+        - les autres se prononcent clairement, **chiffre par chiffre** : on ne
+          dit pas « vingt-trois » mais « **two – three** ».
+
+        En pratique, cet alphabet est **partout** : le pilote épelle son
+        **indicatif**, lit une **fréquence**, confirme une **piste** ou un
+        **point de report**. Une lettre bien épelée, c'est un message **compris
+        du premier coup** — donc un vol plus **sûr**.
+  pieges:
+    - L'orthographe officielle est « Alfa » (pas « Alpha ») et « Juliett » (avec deux « t »).
+    - Les chiffres se disent un par un (« two – three »), jamais en nombre entier (« vingt-trois »).
+    - Cet alphabet n'est pas « militaire » par nature — c'est l'alphabet civil normalisé par l'OACI, aussi utilisé par l'OTAN.

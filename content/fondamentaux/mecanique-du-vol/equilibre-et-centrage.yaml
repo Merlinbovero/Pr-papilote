@@ -1,0 +1,139 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.equilibre-et-centrage
+type: notion-aerodynamique
+title: L'équilibre et le centrage
+slug: equilibre-et-centrage
+summary: >-
+  Un avion est en équilibre longitudinal quand les moments autour de son centre
+  de gravité s'annulent — la portance de l'aile étant compensée par la déportance
+  de l'empennage. Le centrage doit rester entre une limite avant et une arrière.
+objectifs:
+  - Définir le centre de gravité comme le point autour duquel l'avion pivote et où s'applique le poids.
+  - Expliquer l'équilibre longitudinal (la portance de l'aile crée un moment piqueur compensé par la déportance de l'empennage).
+  - Définir le centrage et énoncer les effets d'un centrage trop avant ou trop arrière.
+aliases: [équilibre, centrage, centre de gravité, moment, empennage, déportance, masse et centrage]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — onzième fiche du socle, l'équilibre longitudinal et le centrage (mécanique du vol).
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — mécanique du vol"
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Stabilité longitudinale d'un avion — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Stabilit%C3%A9_longitudinale_d'un_avion
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.mecanique-du-vol.quatre-forces
+    - fondamentaux.aerodynamique.portance
+  related:
+    - fondamentaux.aerodynamique.decrochage
+content:
+  essentiel:
+    body: |
+      Un avion n'est pas seulement soumis à des forces : il peut aussi
+      **tourner** sur lui-même. Pour voler droit, il doit être en **équilibre**,
+      et cet équilibre dépend de la position de son **centre de gravité**.
+
+      L'avion pivote autour de son **centre de gravité (G)**. La portance de
+      l'aile, appliquée un peu en arrière de G, tend à faire **piquer** l'avion ;
+      l'**empennage horizontal** produit une **déportance** (une force vers le
+      bas) qui compense ce mouvement. Quand les rotations s'annulent, l'avion est
+      en **équilibre longitudinal**.
+
+      Pour que cet équilibre soit **stable**, G doit rester dans une **plage de
+      centrage** définie par le constructeur — ni trop en avant, ni trop en
+      arrière.
+    aRetenir:
+      - L'avion pivote autour de son centre de gravité (G) ; l'équilibre est atteint quand les moments autour de G s'annulent.
+      - La portance de l'aile tend à faire piquer l'avion ; la déportance de l'empennage horizontal compense ce moment.
+      - Le centrage est la position de G, qui doit rester entre une limite avant et une limite arrière.
+      - Un centrage trop avant rend l'avion lourd et le fait décrocher plus tôt ; trop arrière, il devient instable et dangereux.
+  sections:
+    - id: l-avion-pivote-autour-de-son-centre-de-gravite
+      title: L'avion pivote autour de son centre de gravité
+      body: |
+        On a vu que quatre forces s'exercent sur l'avion. Mais une force ne fait
+        pas que **pousser** ou **tirer** : selon l'endroit où elle s'applique,
+        elle peut aussi le faire **tourner**. Ce pouvoir de rotation s'appelle un
+        **moment**.
+
+        Toutes ces rotations se font autour d'un point unique, le **centre de
+        gravité (G)** — le point d'équilibre de la masse de l'avion. C'est autour
+        de lui que l'avion lève ou baisse le nez, s'incline et pivote.
+
+        Le **poids** s'applique exactement en G : il ne crée donc **aucune
+        rotation**. Ce sont les **autres forces** — portance, déportance de
+        l'empennage — qui, appliquées à distance de G, font tourner l'avion.
+    - id: l-equilibre-longitudinal
+      title: L'équilibre longitudinal
+      body: |
+        Concentrons-nous sur le **tangage**, le mouvement qui lève ou baisse le
+        nez.
+
+        La **portance de l'aile** ne s'applique pas exactement en G, mais un peu
+        en **arrière** : elle tend donc à faire **basculer le nez vers le bas** —
+        un moment **piqueur**.
+
+        Pour compenser, l'**empennage horizontal**, à l'arrière, produit une
+        **déportance** : une petite force dirigée **vers le bas**. Comme elle
+        agit loin de G (grand **bras de levier**), elle suffit à **relever le
+        nez** et à équilibrer le moment piqueur de l'aile.
+
+        Quand les deux moments s'**annulent**, l'avion vole à assiette
+        constante : c'est l'**équilibre longitudinal**. Le pilote l'ajuste avec
+        la gouverne de **profondeur** et le **compensateur** (trim), étudiés dans
+        la fiche sur les axes et les gouvernes.
+      figures:
+        - schemaId: equilibre-longitudinal
+          alt: Un avion de profil avec la portance de l'aile vers le haut, la déportance de l'empennage vers le bas, et le centre de gravité entre les deux.
+          caption: La portance de l'aile crée un moment piqueur autour de G, équilibré par la déportance de l'empennage horizontal.
+          width: 460
+          height: 260
+    - id: le-centrage
+      title: Le centrage
+      strate: maitriser
+      body: |
+        La position du centre de gravité — le **centrage** — n'est pas figée :
+        elle dépend du **chargement** (passagers, carburant, bagages). Or elle
+        change tout.
+
+        Le constructeur définit une **plage de centrage**, entre une **limite
+        avant** et une **limite arrière**. G doit toujours y rester.
+
+        - **Trop en avant** : l'avion est très **stable**, mais **lourd** aux
+          commandes, moins manœuvrable, et il **décroche à une vitesse plus
+          élevée** (l'empennage doit déporter davantage).
+        - **Trop en arrière** : l'avion devient **instable** et difficile à
+          contrôler — une situation **dangereuse**, en particulier au
+          décrochage.
+
+        Vérifier la **masse et le centrage** avant chaque vol fait donc partie
+        des contrôles de sécurité essentiels ; le calcul sera détaillé dans une
+        fiche dédiée aux performances.
+      figures:
+        - schemaId: plage-de-centrage
+          alt: Un fuselage vu de profil avec une plage de centrage autorisée entre une limite avant et une limite arrière, le centre de gravité à l'intérieur.
+          caption: Le centre de gravité doit rester dans la plage définie par le constructeur, entre la limite avant et la limite arrière.
+          width: 460
+          height: 200
+  pieges:
+    - Le poids s'applique au centre de gravité — il ne crée aucun moment de rotation, contrairement aux autres forces.
+    - L'empennage horizontal produit le plus souvent une déportance (force vers le bas), et non une portance vers le haut.
+    - Un centrage trop arrière n'allège pas l'avion — il le rend instable et dangereux, surtout au décrochage.

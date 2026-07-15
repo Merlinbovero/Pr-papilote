@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.aerostatique-01
+kind: qcm
+theme: aerostatique
+statement: >-
+  Qu'est-ce qui distingue un aérostat d'un aérodyne ?
+choices:
+  - "L'aérostat est plus léger que l'air, l'aérodyne plus lourd"
+  - "L'aérostat a un moteur, pas l'aérodyne"
+  - "L'aérostat vole plus haut"
+  - "L'aérodyne ne transporte pas de passagers"
+correctChoices: [0]
+explanation: >-
+  L'aérostat (ballon, dirigeable) tient en l'air par la poussée d'Archimède ;
+  l'aérodyne (avion, planeur, hélicoptère) par la portance créée par le
+  mouvement.
+evaluates: [fondamentaux.aerodynamique.l-aerostatique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

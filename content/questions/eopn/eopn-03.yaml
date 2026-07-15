@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.eopn-03
+kind: vrai-faux
+theme: concours-eopn
+statement: >-
+  L'EOPN recrute uniquement des pilotes.
+answer: false
+explanation: >-
+  Faux. L'EOPN recrute l'ensemble du personnel navigant : les pilotes (chasse,
+  transport, hélicoptère) mais aussi les navigateurs officiers systèmes d'armes
+  (NOSA).
+evaluates: [eopn.presentation.le-concours-eopn]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-otan-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « the squadron flew 120 sorties » ?
+choices:
+  - L'escadron a effectué 120 sorties aériennes (missions)
+  - L'escadron est sorti 120 fois de sa base en véhicule
+  - L'escadron a raté 120 décollages
+  - L'escadron compte 120 pilotes
+correctChoices: [0]
+explanation: >-
+  A sortie = une sortie aérienne, la mission d'un aéronef — un mot français
+  passé tel quel dans l'anglais militaire. « 120 sorties » mesure l'activité
+  aérienne.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-militaire]
+difficulty: 1
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

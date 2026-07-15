@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-approche-01
+kind: association
+theme: anglais-phraseologie
+statement: >-
+  Associez chaque branche du circuit d'aérodrome à son nom anglais.
+pairs:
+  - left: Vent arrière
+    right: Downwind
+  - left: Étape de base
+    right: Base (leg)
+  - left: Finale
+    right: Final
+  - left: Longue finale
+    right: Long final
+explanation: >-
+  Le circuit se dit downwind (vent arrière), base (étape de base), final
+  (finale) — et long final au-delà de 4 NM. Des noms universels à connaître
+  par cœur.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-de-l-approche]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

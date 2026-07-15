@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.temp-01
+kind: qcm
+theme: temperature-humidite
+statement: >-
+  Que traduit la température de l'air ?
+choices:
+  - "L'agitation des molécules de l'air"
+  - "La quantité de vapeur d'eau"
+  - "La pression atmosphérique"
+  - "La vitesse du vent"
+correctChoices: [0]
+explanation: >-
+  La température traduit l'agitation des molécules : plus elles s'agitent, plus
+  il fait chaud. On la mesure en degrés Celsius (usage) ou en kelvins (SI).
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 1
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

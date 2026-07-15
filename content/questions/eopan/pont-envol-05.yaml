@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.pont-envol-05
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  Pourquoi les équipes du pont d'envol portent-elles des chasubles de couleur ?
+choices:
+  - Pour identifier chaque spécialité d'un coup d'œil et se coordonner en sécurité
+  - Pour indiquer leur grade dans la hiérarchie
+  - Uniquement pour la tradition
+  - Pour être vues des avions ennemis
+correctChoices: [0]
+explanation: >-
+  Sur un pont bruyant et venté, les couleurs des chasubles permettent d'identifier
+  chaque spécialité (direction, sécurité, manœuvre, carburant) d'un coup d'œil —
+  un code visuel indispensable à la sécurité.
+evaluates: [eopan.concepts.pont-d-envol]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.vrille-02
+kind: vrai-faux
+theme: decrochage-vrille
+statement: >-
+  En vrille, l'avion vole vite avec les ailes non décrochées, comme dans une
+  spirale.
+answer: false
+explanation: >-
+  En vrille, les ailes restent décrochées et la vitesse reste faible : c'est ce
+  qui la distingue de la spirale, où l'avion vole vite, ailes non décrochées.
+evaluates: [fondamentaux.mecanique-du-vol.decrochage-et-vrille]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

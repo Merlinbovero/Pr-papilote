@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.portance-05
+kind: vrai-faux
+theme: portance
+statement: >-
+  Quand la densité de l'air diminue (altitude, chaleur), l'aile porte moins.
+answer: true
+explanation: >-
+  La portance est proportionnelle à la densité de l'air : moins l'air est dense,
+  moins l'aile porte, et plus il faut voler vite pour la même portance.
+evaluates: [fondamentaux.aerodynamique.portance]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

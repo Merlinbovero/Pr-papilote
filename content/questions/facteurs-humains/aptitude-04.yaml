@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.facteurs-humains.aptitude-04
+kind: qcm
+theme: aptitude-medicale
+statement: >-
+  Quelles sont les trois consultations spécialisées de la visite initiale
+  en CEMPN ?
+choices:
+  - "Médecine interne, ORL, ophtalmologie"
+  - "Cardiologie, dermatologie, dentaire"
+  - "Psychiatrie, radiologie, chirurgie"
+  - "Médecine du sport, nutrition, kinésithérapie"
+correctChoices: [0]
+explanation: >-
+  Aux examens (sang, urines, ECG, biométrie, audiogramme, tests visuels)
+  s'ajoutent trois consultations distinctes — médecine interne, ORL et
+  ophtalmologie : la vue et l'audition concentrent les exigences pilote.
+evaluates: [fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

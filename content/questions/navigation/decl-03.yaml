@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.navigation.decl-03
+kind: qcm
+theme: declinaison
+statement: >-
+  Avec une déclinaison Ouest, comment obtient-on le cap magnétique à partir du
+  cap vrai ?
+choices:
+  - "On ajoute la déclinaison"
+  - "On retranche la déclinaison"
+  - "On multiplie par la déclinaison"
+  - "Le cap ne change pas"
+correctChoices: [0]
+explanation: >-
+  Déclinaison Ouest, on ajoute (west is best) : Cm = Cv + D. Pour une déclinaison
+  Est, on retrancherait.
+evaluates: [fondamentaux.navigation.declinaison-magnetique]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

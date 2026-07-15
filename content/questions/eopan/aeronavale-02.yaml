@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.aeronavale-02
+kind: qcm
+theme: organisation-aeronavale
+statement: >-
+  Combien l'aéronautique navale aligne-t-elle d'aéronefs environ ?
+choices:
+  - Environ 200
+  - Environ 20
+  - Environ 2 000
+  - Environ 50
+correctChoices: [0]
+explanation: >-
+  La Force de l'aéronautique navale met en œuvre quelque 200 aéronefs, organisés
+  en flottilles et escadrilles, répartis sur quatre bases d'aéronautique navale.
+evaluates: [eopan.organisation.aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

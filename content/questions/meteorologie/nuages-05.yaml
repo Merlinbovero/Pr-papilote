@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.nuages-05
+kind: qcm
+theme: les-nuages
+statement: >-
+  Quel nuage est le plus dangereux pour le vol ?
+choices:
+  - "Le cumulonimbus"
+  - "Le cirrus"
+  - "Le stratus"
+  - "L'altocumulus"
+correctChoices: [0]
+explanation: >-
+  Le cumulonimbus (Cb), nuage d'orage à grand développement vertical, concentre
+  turbulence sévère, givrage, grêle, foudre et cisaillement de vent. On l'évite toujours.
+evaluates: [fondamentaux.meteorologie.les-nuages]
+difficulty: 3
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.3e-rhc-05
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Outre le combat de nuit, dans quel domaine le 3e RHC fait-il figure de pionnier au sein de l'ALAT ?
+choices:
+  - La numérisation et la simulation
+  - La voltige aérienne
+  - La patrouille maritime
+  - Le ravitaillement en vol
+correctChoices: [0]
+explanation: >-
+  Le 3e RHC est pionnier de la numérisation et de la simulation dans l'ALAT :
+  préparer les missions et entraîner les équipages en environnement
+  synthétique avant l'exécution en vol.
+evaluates: [alat.unites.3e-rhc]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

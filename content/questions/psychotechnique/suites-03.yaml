@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.psychotechnique.suites-03
+kind: qcm
+theme: suites-logiques
+statement: >-
+  Quelle lettre vient après C, F, I, L, … ?
+choices:
+  - O
+  - M
+  - N
+  - P
+correctChoices: [0]
+explanation: >-
+  En rangs alphabétiques, C, F, I, L donnent 3, 6, 9, 12 : la suite avance de
+  +3. Le terme suivant est le rang 15, c'est-à-dire O.
+evaluates: [psychotechnique.exercices.les-suites-logiques]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

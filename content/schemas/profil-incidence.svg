@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .profile { stroke: currentColor; fill: none; stroke-width: 2; }
+    .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .arc { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="220" y="24" text-anchor="middle">L'angle d'incidence</text>
+  <!-- Profil incliné -->
+  <path class="profile" d="M150,150 C190,130 280,120 350,122 C285,140 200,160 150,150 Z" />
+  <!-- Corde -->
+  <line class="muted" x1="150" y1="150" x2="350" y2="122" stroke-dasharray="5 4" />
+  <text class="lbl" x="322" y="118">corde</text>
+  <!-- Référence horizontale (direction du vent relatif) -->
+  <line class="muted" x1="150" y1="150" x2="300" y2="150" stroke-dasharray="3 4" />
+  <!-- Vent relatif -->
+  <line class="flow" x1="40" y1="150" x2="146" y2="150" marker-end="url(#ac)" />
+  <text class="lbl" x="52" y="142">vent relatif</text>
+  <!-- Angle d'incidence -->
+  <path class="arc" d="M212,150 A62,62 0 0,0 211,141" />
+  <text class="lbl" x="224" y="146">α (incidence)</text>
+</svg>

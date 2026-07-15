@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.portance
+title: Portance
+definition: >-
+  Force aérodynamique perpendiculaire à l'écoulement de l'air, qui soutient
+  l'aéronef en vol. Elle naît de la différence de pression entre l'extrados et
+  l'intrados de l'aile et croît avec la vitesse et l'incidence.
+english: Lift
+synonyms: []
+ficheId: fondamentaux.aerodynamique.portance
+tags: []
+status: publie

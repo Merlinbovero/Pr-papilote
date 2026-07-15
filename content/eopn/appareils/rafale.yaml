@@ -1,0 +1,157 @@
+schemaVersion: 1
+id: eopn.appareils.rafale
+type: appareil
+title: Rafale (Armée de l'air et de l'Espace)
+slug: rafale
+summary: >-
+  Avion de combat omnirôle de Dassault Aviation, épine dorsale de la chasse de
+  l'Armée de l'air et de l'Espace. Décliné en Rafale B (biplace) et Rafale C
+  (monoplace), il couvre toutes les missions, dissuasion nucléaire comprise.
+objectifs:
+  - Identifier le Rafale comme l'avion de combat omnirôle de l'Armée de l'air et de l'Espace.
+  - Distinguer les versions Rafale B (biplace) et Rafale C (monoplace) de la version Marine (Rafale M).
+  - Citer ses missions (défense aérienne, assaut, reconnaissance, dissuasion nucléaire) et ses bases.
+aliases: [Rafale, Rafale B, Rafale C, Rafale Air, omnirôle]
+module: eopn
+category: appareils
+subcategory: avions-de-chasse
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet appareil, le Rafale de l'Armée de l'air et de l'Espace (ancrage catégorie appareils).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 2
+    motif: Enrichissement — genèse du programme (CPE 1975, démonstrateur Rafale A, M 88) depuis le COMAERO, tomes « Avions militaires » ch. 22 (lot AV5).
+    author: prepapilote
+sources:
+  - title: "Le Rafale dans l'Armée de l'air et de l'espace — Dassault Aviation"
+    url: https://www.dassault-aviation.com/fr/defense/rafale/
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Le Rafale — Ministère des Armées (DGA)"
+    url: https://www.defense.gouv.fr/dga/rafale
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "COMAERO — Les avions militaires, tome II (EUROSAE), ch. 22 « Le Rafale »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopan.appareils.rafale-m
+    - eopn.presentation.le-concours-eopn
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de combat omnirôle
+  armees: [Armée de l'air et de l'Espace]
+  miseEnService: 2006
+  statut: En service
+  equipage: 1 (Rafale C) ou 2 (Rafale B)
+content:
+  essentiel:
+    body: |
+      Le **Rafale** est l'**avion de combat** de référence de l'**Armée de l'air
+      et de l'Espace**. Biréacteur de **Dassault Aviation**, mis en service en
+      **2006**, il forme, avec le **Mirage 2000**, l'**épine dorsale** de la
+      chasse française.
+
+      Sa signature est d'être **omnirôle** : un même appareil, dans une même
+      mission, peut enchaîner des tâches très différentes — **défense
+      aérienne**, **assaut** au sol, action **anti-navire**, **reconnaissance**,
+      et **dissuasion nucléaire** (missile ASMP/A porté par le Rafale B).
+
+      Il existe en deux versions pour l'armée de l'air : le **Rafale B**,
+      **biplace**, et le **Rafale C**, **monoplace**. La Marine, elle, met en
+      œuvre le **Rafale M**, sa version embarquée — même famille, adaptée au
+      porte-avions.
+    aRetenir:
+      - Le Rafale est l'avion de combat omnirôle de l'Armée de l'air et de l'Espace, mis en service en 2006.
+      - Il existe en Rafale B (biplace) et Rafale C (monoplace) ; la version embarquée de la Marine est le Rafale M.
+      - Omnirôle, il couvre toutes les missions — défense aérienne, assaut, anti-navire, reconnaissance, dissuasion.
+      - Il porte, avec le Rafale B, le volet aéroporté de la dissuasion nucléaire (missile ASMP/A).
+  sections:
+    - id: un-avion-omnirole
+      title: Un avion omnirôle
+      body: |
+        Le concept clé du Rafale est l'**omnirôle** : là où des générations
+        précédentes spécialisaient chaque avion (un pour la chasse, un pour le
+        bombardement, un pour la reconnaissance), le Rafale sait **tout faire**,
+        et parfois **au cours d'une même sortie**.
+
+        Il assure ainsi la **supériorité** et la **défense aériennes**,
+        l'**assaut** et la **pénétration** au sol par tout temps, l'action
+        **anti-navire**, la **reconnaissance** tactique et stratégique, et
+        l'**intervention** à longue distance grâce au **ravitaillement en vol**.
+        Cette polyvalence est un atout majeur pour une armée qui doit faire
+        **beaucoup avec un parc concentré**.
+    - id: versions-et-bases
+      title: Versions et bases
+      body: |
+        Pour l'**Armée de l'air et de l'Espace**, le Rafale existe en deux
+        versions :
+
+        - le **Rafale B**, **biplace** (deux membres d'équipage) ;
+        - le **Rafale C**, **monoplace**.
+
+        La **Marine nationale** met en œuvre la version embarquée, le **Rafale
+        M**, toujours monoplace — c'est le même appareil de base, adapté au
+        catapultage et à l'appontage.
+
+        Le Rafale est entré en service en **2006** au sein de l'escadron de
+        chasse **« Provence »**, à **Saint-Dizier**. Plusieurs **bases
+        aériennes** de chasse en sont aujourd'hui équipées (Saint-Dizier,
+        Mont-de-Marsan, Orange…).
+    - id: la-genese-du-programme
+      title: La genèse — treize ans de préparation (1975-1988)
+      strate: maitriser
+      body: |
+        Le Rafale se prépare dès **1975** — avant même le lancement du
+        Mirage 2000. Le Centre de prospective et d'évaluations du
+        ministère lance des études d'un genre nouveau : au lieu
+        d'améliorer l'avion précédent par étapes, on part d'une **feuille
+        blanche** et on mûrit chaque innovation avant de lancer le
+        programme. Dès **1978**, la formule est arrêtée — **bimoteur à
+        aile delta et plans canard**, et un moteur nouveau, le **M 88**.
+
+        La démonstration passe par un avion expérimental — le **Rafale A**
+        (ACX), qui vole le **4 juillet 1986** avec des réacteurs
+        américains F404 loués en attendant le M 88. Ses 867 vols valident
+        tout : composites à grande échelle, **commandes de vol
+        numériques**, siège incliné à 32° contre les facteurs de charge —
+        et même l'aptitude à l'**embarquement**, prouvée par des approches
+        sur le porte-avions Clemenceau en avril 1987.
+
+        Après l'échec des discussions de coopération européenne (les
+        partenaires suivront la voie de l'Eurofighter), le **lancement
+        industriel** est décidé en **janvier 1988** ; le prototype
+        Rafale C01 vole le **19 mai 1991**. Le COMAERO en tire une leçon
+        de conduite de programme — ne lancer la réalisation qu'après
+        avoir **maîtrisé les innovations** : c'est pourquoi le Rafale a
+        connu si peu d'aléas techniques.
+    - id: le-rafale-et-la-dissuasion
+      title: Le Rafale et la dissuasion
+      strate: maitriser
+      body: |
+        Au-delà de ses missions conventionnelles, le Rafale porte une
+        responsabilité **stratégique** : il est l'un des vecteurs de la
+        **dissuasion nucléaire** française. Le **Rafale B** emporte le missile
+        **ASMP/A**, au sein des **Forces aériennes stratégiques**.
+
+        Cette mission, permanente et discrète, illustre le **niveau
+        d'exigence** attendu des équipages. Elle rappelle aussi que, derrière le
+        concours **EOPN**, se profile un métier où l'on peut être appelé à
+        servir les intérêts les plus **vitaux** de la Nation — une dimension que
+        le candidat doit comprendre.
+  pieges:
+    - Le Rafale de l'armée de l'air (B/C) et le Rafale M de la Marine sont de la même famille, mais adaptés à des milieux différents (terre / porte-avions).
+    - « Omnirôle » ne veut pas dire « polyvalent entre deux missions » — le Rafale peut enchaîner des tâches différentes au cours d'une même sortie.
+    - Le Rafale B est biplace ; c'est notamment lui qui porte le missile de la dissuasion nucléaire aéroportée (ASMP/A).

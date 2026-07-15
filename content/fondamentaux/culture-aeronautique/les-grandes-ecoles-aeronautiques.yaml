@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques
+type: concept
+title: Les grandes écoles de l'aéronautique
+slug: les-grandes-ecoles-aeronautiques
+summary: >-
+  Sup'Aéro, première école aérospatiale au monde (1909), l'ENAC de l'aviation
+  civile, l'ISAE né de la fusion de 2007 — les écoles qui forment ceux qui
+  conçoivent, certifient et exploitent les aéronefs que pilotent les militaires.
+objectifs:
+  - Situer les grandes écoles (ISAE-SUPAERO, ENAC) et leur héritage.
+  - Retenir les jalons (1909, 1949, 1968 Toulouse, fusion 2007).
+  - Distinguer les écoles d'ingénieurs des écoles de pilotage militaires.
+aliases: [ISAE-SUPAERO, Sup'Aéro, ENAC, ENSICA, grandes écoles, ingénieur aéronautique]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot CM3 de la campagne COMAERO (tome 1 §2.1 et §2.4) ; statuts actuels re-vérifiés en ligne.
+    author: prepapilote
+sources:
+  - title: "COMAERO — La Formation, tome 1 (EUROSAE), chap. 4 §2.1 (SUPAERO) et §2.4 (ENAC et autres écoles)"
+    url: https://eurosae.com/wp-content/uploads/2025/05/La-Formation_Tome_1.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "ISAE-SUPAERO — communiqués et brochures institutionnels (fusion 2007, groupe ISAE, TSAAE 2025)"
+    url: https://www.isae-supaero.fr/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.culture-aeronautique.l-epner
+    - fondamentaux.culture-aeronautique.le-bia
+    - fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+content:
+  essentiel:
+    body: |
+      Trois repères suffisent pour briller sur ce sujet en entretien :
+
+      - **Sup'Aéro** — fondée à Paris en **1909** par le colonel Roche,
+        c'est la **première école d'ingénieurs aéronautiques au monde**.
+        Nationalisée en 1930 (ENSA), installée à **Toulouse en 1968**,
+        elle fusionne en **2007** avec l'ENSICA pour former l'**ISAE**
+        (Institut supérieur de l'aéronautique et de l'espace), devenu
+        **ISAE-SUPAERO** — sous tutelle du **ministère des Armées** ;
+      - l'**ENAC** — École nationale de l'aviation civile, créée en
+        **1949** à Orly, à Toulouse depuis 1968 elle aussi. Elle forme les
+        **contrôleurs aériens**, des pilotes de ligne et des ingénieurs,
+        sous tutelle de l'aviation civile (DGAC) ;
+      - le tissu des autres écoles — l'**ISAE-ENSMA** à Poitiers,
+        l'ESTACA, et l'**EPNER** pour les essais en vol, qui forment
+        ensemble l'écosystème français de formation aérospatiale.
+
+      Toulouse concentre depuis 1968 l'enseignement supérieur
+      aéronautique français, au contact de l'industrie — un rapprochement
+      encore renforcé en 2025 par l'alliance ISAE-SUPAERO/ENAC (TSAAE).
+    aRetenir:
+      - "Sup'Aéro (1909) = première école d'ingénieurs aéronautiques au monde — fondée par le colonel Roche."
+      - "ISAE = fusion SUPAERO + ENSICA en 2007, à Toulouse, sous tutelle du ministère des Armées."
+      - "ENAC (1949) = l'école de l'aviation civile — contrôleurs, pilotes de ligne, ingénieurs, tutelle DGAC."
+      - "Toulouse est la capitale de la formation aéronautique française depuis 1968 (Sup'Aéro et ENAC y déménagent la même année)."
+  sections:
+    - id: de-1909-a-l-isae
+      title: De la rue Falguière à l'ISAE — l'épopée Sup'Aéro
+      body: |
+        En 1909, un officier du génie polytechnicien, le **colonel
+        Roche**, ouvre à Paris l'École supérieure d'aéronautique — les
+        cours de mécanique du vol y sont donnés par **Paul Painlevé**,
+        et l'inauguration présidée par Paul Doumer. L'école privée
+        prospère, forme les ingénieurs de l'essor de l'entre-deux-guerres,
+        puis est **remise à l'État par son fondateur** en 1930 et devient
+        l'École nationale supérieure de l'aéronautique (ENSA), installée
+        boulevard Victor à Paris, près du ministère de l'Air.
+
+        Après-guerre, l'école suit l'explosion des techniques (réacteurs,
+        électronique, calculateurs) et déménage en **1968** sur le campus
+        toulousain de Rangueil — près de l'ENAC, du CNES et des
+        laboratoires. Devenue ENSAE puis « SUPAERO », elle fusionne le
+        **1er octobre 2007** avec l'**ENSICA** (l'autre école
+        d'ingénieurs aéronautiques toulousaine) pour créer l'ISAE,
+        renommé **ISAE-SUPAERO** en 2015.
+    - id: enac-et-les-autres
+      title: L'ENAC et les autres écoles
+      body: |
+        L'**ENAC** naît en **1949** sur l'aéroport d'Orly pour unifier les
+        formations de l'aviation civile — contrôleurs, techniciens,
+        électroniciens de la sécurité aérienne, puis pilotes de ligne et
+        ingénieurs. Décentralisée à **Toulouse en 1968**, elle absorbe en
+        **2011** le SEFA (le service de formation aéronautique héritier du
+        SALS de 1946, qui fournissait avions et instructeurs aux
+        aéro-clubs) — d'où son réseau actuel de centres de formation au
+        pilotage.
+
+        Autour de ces deux pôles gravitent l'**ISAE-ENSMA** (Poitiers,
+        mécanique et aérotechnique), l'**ESTACA**, et les formations
+        d'ingénieurs militaires de l'armement — Polytechnique en amont,
+        les corps de la **DGA** en aval. Pour les essais en vol, une école
+        à part — l'**EPNER** d'Istres.
+    - id: pourquoi-c-est-utile
+      title: Ce que ça éclaire pour un candidat pilote
+      strate: maitriser
+      body: |
+        Un pilote militaire n'est pas un ingénieur — mais il travaille
+        toute sa carrière **avec** eux : l'avion qu'il perçoit a été conçu
+        par des ingénieurs souvent formés à l'ISAE-SUPAERO, essayé par des
+        équipages passés par l'EPNER, et évolue dans un ciel géré par des
+        contrôleurs formés à l'ENAC. Connaître cette chaîne situe le
+        candidat dans **l'écosystème complet** de l'aéronautique
+        française.
+
+        Deux confusions à éviter en entretien — les écoles de **pilotage
+        militaire** (Salon-de-Provence, Cognac, Dax, Lanvéoc) ne sont pas
+        des écoles d'ingénieurs ; et l'ENAC, école **civile**, ne forme
+        pas les pilotes militaires, même si des passerelles de carrière
+        existent dans les deux sens.
+  pieges:
+    - "Sup'Aéro date de 1909 — avant même la Première Guerre mondiale, et c'est une création privée remise à l'État en 1930."
+    - "ISAE-SUPAERO = fusion de SUPAERO et de l'ENSICA (2007) — l'ENSICA n'existe plus comme école indépendante."
+    - "L'ENAC est civile (tutelle DGAC) ; l'ISAE-SUPAERO relève du ministère des Armées — deux tutelles différentes à Toulouse."
+    - Les écoles de pilotage militaires (Salon, Cognac, Dax) ne sont pas des écoles d'ingénieurs — deux filières distinctes.

@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.alat.ealat-05
+kind: ordre
+theme: formation-alat
+statement: >-
+  Remettez dans l'ordre le parcours d'un élève pilote d'hélicoptères.
+items:
+  - "Formation initiale à Dax (H120 Calliopé)"
+  - "Formation tactique au Cannet-des-Maures"
+  - "Spécialisation sur le type de la future unité"
+  - "Affectation en régiment ou flottille"
+explanation: >-
+  D'abord voler (Dax), ensuite combattre (Le Luc), puis se spécialiser
+  (Gazelle, Tigre, Caïman…) avant de rejoindre son unité.
+evaluates: [alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

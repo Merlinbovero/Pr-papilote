@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-05
+kind: association
+theme: essais-en-vol
+statement: >-
+  Associez chaque école d'essais en vol à son pays.
+pairs:
+  - left: "EPNER"
+    right: "France"
+  - left: "ETPS"
+    right: "Royaume-Uni"
+  - left: "USNTPS"
+    right: "États-Unis (US Navy)"
+explanation: >-
+  L'EPNER (Istres) travaille de longue date avec ses homologues — l'Empire
+  Test Pilots' School britannique et les Test Pilot Schools américaines de
+  l'US Air Force et de l'US Navy, avec échanges croisés de stagiaires.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

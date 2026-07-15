@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.cognac-01
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Quelles ont été les causes de l'abordage des deux Rafale au meeting de Cognac (2022), selon le BEA-É ?
+choices:
+  - Des facteurs exclusivement humains et organisationnels — aucune défaillance technique
+  - Une panne moteur du leader
+  - Une rupture structurelle de la dérive
+  - Un foudroiement en vol
+correctChoices: [0]
+explanation: >-
+  Le rapport A-2022-12-A conclut que les causes relèvent du domaine des
+  facteurs organisationnels et humains : les deux avions étaient navigables et
+  entretenus conformément au programme.
+evaluates: [fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

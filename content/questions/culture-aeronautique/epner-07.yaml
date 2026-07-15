@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-07
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Où l'EPNER a-t-elle été fondée en 1946, avant son installation à Istres ?
+choices:
+  - "À Brétigny-sur-Orge, au Centre d'essais en vol"
+  - "À Toulouse, chez Sup'Aéro"
+  - "À Salon-de-Provence"
+  - "À Villacoublay, au ministère de l'Air"
+correctChoices: [0]
+explanation: >-
+  L'école naît en 1946 sur le site du CEV de Brétigny-sur-Orge, et rejoint
+  Istres en 1962 — où elle se trouve toujours.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.guepard-05
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Que signifie le sigle HIL, le programme dont le Guépard est issu ?
+choices:
+  - Hélicoptère interarmées léger
+  - Hélicoptère d'intervention lourde
+  - Haute intensité de largage
+  - Hélicoptère d'instruction et de liaison
+correctChoices: [0]
+explanation: >-
+  HIL — hélicoptère interarmées léger : une plateforme unique (le H160M
+  Guépard) pour remplacer les flottes légères des trois armées et réduire les
+  coûts de formation et de soutien.
+evaluates: [alat.appareils.guepard]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

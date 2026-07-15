@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-dominos
+type: concept
+title: Les dominos
+slug: les-dominos
+summary: >-
+  L'épreuve reine du raisonnement logique — compléter le dernier domino d'une
+  série. Tout repose sur une règle à découvrir (progression, symétrie,
+  alternance) et sur une convention clé — après 6, on repart à 0.
+objectifs:
+  - Connaître la convention cyclique des dominos (0 à 6, puis retour à 0).
+  - Reconnaître les grands types de règles (progression, répétition, symétrie, lecture en lignes/colonnes).
+  - Appliquer une méthode systématique pour trouver la règle sous contrainte de temps.
+aliases: [dominos, test des dominos, D2000, suites de dominos]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'entraînement dominos, ouverture du module Psychotechnique (Lot G).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.les-suites-logiques
+content:
+  essentiel:
+    body: |
+      Le test des **dominos** présente une série de dominos dont il faut
+      compléter le **dernier** (les deux moitiés). Chaque moitié porte de
+      **0 à 6 points** — et c'est la convention essentielle :
+
+      > **Après 6, on repart à 0.** La suite des valeurs est **cyclique** —
+      > … 4, 5, 6, 0, 1, 2 …
+
+      Un domino n'est donc pas un nombre mais un **couple de valeurs**, et la
+      règle à découvrir peut porter sur le haut, sur le bas, sur les deux, ou
+      sur la **disposition** des dominos (ligne, colonne, spirale, étoile).
+
+      La méthode — d'abord chercher une **progression simple** (+1, −1, +2…)
+      sur les hauts puis sur les bas ; ensuite tester **répétitions** et
+      **symétries** ; enfin, si la figure est en deux dimensions, lire en
+      **lignes**, en **colonnes** puis en **diagonales**.
+    aRetenir:
+      - Valeurs de 0 à 6, cycliques — après 6 on repart à 0 (6 + 1 = 0).
+      - Traiter le haut et le bas comme deux suites indépendantes avant de chercher un lien entre eux.
+      - "Règles fréquentes — progression constante, répétition, alternance, symétrie miroir, somme constante."
+      - Dans les figures 2D, lire lignes, colonnes puis diagonales.
+  sections:
+    - id: la-convention-cyclique
+      title: La convention cyclique
+      body: |
+        Toute l'épreuve repose sur l'arithmétique **modulo 7** — sans le dire.
+        Les valeurs tournent sur un cercle à sept positions (0, 1, 2, 3, 4, 5,
+        6) : ajouter 1 à 6 donne **0**, retrancher 1 à 0 donne **6**.
+
+        Exemples de progressions cycliques :
+
+        - +2 — la suite 3, 5, 0, 2, 4… (après 5 vient 0, car 5 + 2 = 7 → 0) ;
+        - −3 — la suite 1, 5, 2, 6, 3… (1 − 3 = −2 → 5) ;
+        - +4 équivaut à −3 — sur un cycle de 7, avancer de 4 ou reculer de 3
+          revient au même. Si « +4 » ne saute pas aux yeux, « −3 » le fera.
+      figures:
+        - schemaId: dominos-exemple
+          alt: Série de quatre dominos — le haut progresse de 1, 2, 3 vers un point d'interrogation, le bas de 2, 3, 4 vers un point d'interrogation ; la réponse est 4 en haut et 5 en bas.
+          caption: Une série à progression +1 — haut 1, 2, 3, 4 et bas 2, 3, 4, 5. La consigne clé — après 6, on repart à 0.
+          width: 460
+          height: 300
+    - id: les-familles-de-regles
+      title: Les familles de règles
+      body: |
+        La quasi-totalité des items relèvent de quelques familles :
+
+        - **Progression constante** — le haut et/ou le bas évoluent d'un pas
+          fixe (+1, −2…), chacun pouvant avoir le sien.
+        - **Répétition périodique** — un motif de 2 ou 3 dominos se répète à
+          l'identique.
+        - **Alternance** — deux suites entrelacées ; ne regarder que les
+          dominos de rang pair, puis de rang impair.
+        - **Symétrie miroir** — la seconde moitié de la série reflète la
+          première (parfois haut et bas s'échangent).
+        - **Somme constante** — haut + bas vaut toujours la même valeur
+          (modulo 7 le cas échéant).
+        - **Lecture spatiale** — dans une disposition en carré, en croix ou en
+          étoile, la règle se lit ligne par ligne, colonne par colonne, ou le
+          long du parcours de la figure.
+    - id: methode-et-chrono
+      title: Méthode sous chrono
+      strate: maitriser
+      body: |
+        Sous contrainte de temps, appliquer toujours le même **algorithme** :
+
+        1. suites **haut** et **bas** séparément — progression simple ?
+        2. rien trouvé — tester l'**alternance** (un domino sur deux) ;
+        3. figure en 2D — lignes, colonnes, diagonales, sens de parcours ;
+        4. toujours rien — sommes, différences haut/bas, symétries ;
+        5. item toujours résistant — **passer**, et y revenir à la fin.
+
+        Vérifier systématiquement sa réponse en la **réinjectant** dans la
+        règle trouvée : la règle doit fonctionner sur **toute** la série, pas
+        seulement sur les deux derniers dominos.
+  pieges:
+    - Oublier le cycle — après 6 vient 0, pas 7 ; une suite qui « casse » à 6 est presque toujours cyclique.
+    - Chercher une règle unique — le haut et le bas suivent souvent deux règles différentes et indépendantes.
+    - Valider une règle sur les deux derniers dominos seulement — elle doit tenir sur toute la série.
+    - Le blanc (0 point) est une valeur comme les autres, pas une absence.

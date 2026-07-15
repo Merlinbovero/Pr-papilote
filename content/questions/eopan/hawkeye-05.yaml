@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.hawkeye-05
+kind: qcm
+theme: guet-aerien
+statement: >-
+  Par quel appareil le E-2C Hawkeye de la Marine nationale doit-il être remplacé ?
+choices:
+  - Le E-2D Advanced Hawkeye
+  - Le Rafale M
+  - Le NH90 Caïman
+  - L'Atlantique 2
+correctChoices: [0]
+explanation: >-
+  Le E-2C doit être remplacé par le E-2D Advanced Hawkeye (Northrop Grumman),
+  version plus récente attendue à partir de 2027, pour une entrée en service
+  progressive à la fin de la décennie.
+evaluates: [eopan.appareils.e-2c-hawkeye]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

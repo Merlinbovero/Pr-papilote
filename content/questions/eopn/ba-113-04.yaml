@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.ba-113-04
+kind: vrai-faux
+theme: bases-aeriennes
+statement: >-
+  Pour un jeune pilote breveté à Cognac et affecté sur Rafale, la première étape est l'ETR 3/4 « Aquitaine » à Saint-Dizier.
+answer: true
+explanation: >-
+  Vrai. La transformation opérationnelle Rafale (~5 mois) se fait à l'ETR 3/4
+  « Aquitaine » de la BA 113 — souvent la première affectation du jeune
+  chasseur avant son escadron.
+evaluates: [eopn.bases.saint-dizier]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

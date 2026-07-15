@@ -1,0 +1,146 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.atmosphere-standard
+type: notion-meteo
+title: L'atmosphère standard (ISA)
+slug: atmosphere-standard
+summary: >-
+  L'atmosphère standard (ISA) est le modèle de référence de l'aéronautique —
+  15 °C, 1013,25 hPa et 1,225 kg/m³ au niveau moyen de la mer, puis −2 °C par
+  1000 ft. Elle sert à comparer, calibrer et standardiser.
+objectifs:
+  - Énoncer les conditions ISA au niveau moyen de la mer (15 °C, 1013,25 hPa, 1,225 kg/m³).
+  - Décrire la variation de la température avec l'altitude (−2 °C par 1000 ft jusqu'à la tropopause).
+  - Calculer la température ISA à une altitude donnée.
+  - Expliquer pourquoi l'ISA sert de référence (comparer, calibrer, standardiser).
+aliases: [ISA, atmosphère type, atmosphère standard internationale]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — quatrième fiche du socle, référence de l'atmosphère.
+    author: prepapilote
+status: publie
+sources:
+  - title: "OACI — Atmosphère type internationale (Doc 7488)"
+    kind: officiel
+    consultedAt: "2026-07-09"
+  - title: "SKYbrary — International Standard Atmosphere (ISA)"
+    url: https://skybrary.aero/articles/international-standard-atmosphere-isa
+    kind: institutionnel
+    consultedAt: "2026-07-09"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.air-et-proprietes
+    - fondamentaux.physique.pression-forces-unites
+content:
+  essentiel:
+    body: |
+      L'atmosphère réelle change sans cesse. Pour pouvoir **comparer**,
+      **calculer** et **régler les instruments**, l'aéronautique s'appuie sur un
+      modèle commun : l'**atmosphère type internationale**, ou **ISA**
+      (*International Standard Atmosphere*), définie par l'OACI.
+
+      Au **niveau moyen de la mer**, l'ISA fixe une température de **15 °C**, une
+      pression de **1013,25 hPa** et une masse volumique de **1,225 kg/m³**. En
+      montant, la **température** diminue d'environ **2 °C par 1000 ft**, tandis
+      que **pression** et **densité** décroissent également.
+
+      Ce modèle n'est pas la météo du jour : c'est une **référence** partagée,
+      qui rend les performances comparables et les altimètres cohérents.
+    aRetenir:
+      - L'ISA est un modèle de référence — 15 °C, 1013,25 hPa et 1,225 kg/m³ au niveau moyen de la mer.
+      - La température baisse d'environ 2 °C par 1000 ft jusqu'à la tropopause (~11 km, ~36 000 ft), où elle atteint −56,5 °C.
+      - Pression et densité diminuent, elles aussi, avec l'altitude.
+      - L'ISA sert de référence commune pour les performances, l'altimétrie et les instruments.
+  sections:
+    - id: qu-est-ce-que-l-atmosphere-standard
+      title: Qu'est-ce que l'atmosphère standard ?
+      body: |
+        L'air réel varie d'un jour à l'autre et d'un lieu à l'autre. Impossible,
+        dans ces conditions, de comparer les performances de deux avions ou de
+        régler un altimètre sur une base commune. D'où l'idée d'un **modèle** :
+        une atmosphère « moyenne » conventionnelle.
+
+        L'**atmosphère type internationale (ISA)**, définie par l'OACI, fixe des
+        **conditions de référence au niveau moyen de la mer** :
+
+        - température : **15 °C** (soit 288,15 K) ;
+        - pression : **1013,25 hPa** ;
+        - masse volumique : **1,225 kg/m³**.
+
+        Ces valeurs ne décrivent pas un lieu précis un jour donné : elles
+        définissent un **repère** universel.
+    - id: la-variation-avec-l-altitude
+      title: La variation avec l'altitude
+      body: |
+        Dans le modèle ISA, la **température** décroît régulièrement : d'environ
+        **2 °C par tranche de 1000 ft** (précisément 6,5 °C par 1000 m). Cette
+        décroissance se poursuit jusqu'à la **tropopause**, vers **11 km
+        (~36 000 ft)**, où la température atteint **−56,5 °C** ; au-dessus, elle
+        reste constante.
+
+        La **pression** et la **densité**, elles aussi, diminuent avec
+        l'altitude — mais plus vite que linéairement.
+
+        | Altitude               | Température ISA | Pression ISA |
+        | ---------------------- | --------------- | ------------ |
+        | 0 ft (niveau de la mer) | 15 °C           | 1013 hPa     |
+        | 5 000 ft               | 5 °C            | 843 hPa      |
+        | 10 000 ft (FL100)      | −5 °C           | 697 hPa      |
+        | 18 000 ft (FL180)      | −21 °C          | 506 hPa      |
+        | 36 000 ft (tropopause) | −56,5 °C        | 227 hPa      |
+      figures:
+        - schemaId: profil-isa
+          alt: Le profil de température de l'atmosphère standard, décroissant de 15 °C au sol à −56,5 °C à la tropopause.
+          caption: Le profil ISA — la température chute de 2 °C par 1000 ft jusqu'à la tropopause, puis reste constante.
+          width: 400
+          height: 280
+        - schemaId: pression-altitude
+          alt: Des barres de pression décroissantes avec l'altitude, de 1013 hPa au sol à 227 hPa à la tropopause.
+          caption: La pression décroît avec l'altitude, de 1013 hPa au niveau de la mer à environ 227 hPa à la tropopause.
+          width: 380
+          height: 260
+    - id: a-quoi-sert-l-isa
+      title: À quoi sert l'ISA ?
+      body: |
+        L'atmosphère standard est un **outil de travail** quotidien.
+
+        > **Pourquoi un pilote utilise-t-il l'ISA ?** Parce que les **manuels de
+        > performances** de son avion sont établis en conditions ISA ; parce que
+        > l'**altimètre** se règle et se lit par rapport à la pression standard
+        > (1013 hPa) ; parce qu'elle permet de **comparer** deux avions ou deux
+        > jours dans les mêmes conditions ; et parce que les **instruments**
+        > barométriques sont calibrés sur ce modèle.
+
+        **Application — la température ISA à une altitude.** On part de 15 °C au
+        niveau de la mer et on retranche 2 °C par tranche de 1000 ft. À 5000 ft :
+        15 − (2 × 5) = **5 °C**. À 10 000 ft : 15 − 20 = **−5 °C**. La règle
+        s'arrête à la tropopause (~36 000 ft), au-delà de laquelle la température
+        ISA reste constante.
+    - id: les-ecarts-a-l-isa
+      title: Les écarts à l'ISA
+      strate: maitriser
+      body: |
+        L'atmosphère réelle s'écarte presque toujours du modèle. On exprime cet
+        écart par rapport à l'ISA — par exemple **ISA+10** (10 °C de plus que la
+        valeur standard) ou **ISA−5**.
+
+        Quand l'air est plus chaud que l'ISA, il est moins dense, et les
+        performances s'en ressentent. Cette conséquence — l'**altitude-densité**
+        — est simplement introduite ici ; elle sera développée dans une **fiche
+        dédiée aux performances**.
+  pieges:
+    - L'ISA est un modèle, pas la météo réelle — l'atmosphère du jour s'en écarte presque toujours.
+    - Le gradient de −2 °C par 1000 ft ne vaut que jusqu'à la tropopause — au-dessus, la température ISA reste constante.
+    - Ne pas confondre l'altitude (hauteur réelle) et le niveau de vol (altitude-pression au calage standard 1013 hPa).

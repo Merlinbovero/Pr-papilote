@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.hyeres-01
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quelle est la particularité géographique de la BAN de Hyères ?
+choices:
+  - C'est la seule base d'aéronautique navale de Méditerranée
+  - C'est la seule base située à l'étranger
+  - C'est la seule base sans piste
+  - C'est la seule base réservée à la chasse
+correctChoices: [0]
+explanation: >-
+  Hyères (Var), près de Toulon, est la seule base d'aéronautique navale de
+  Méditerranée ; les trois autres sont en Bretagne.
+evaluates: [eopan.ban.hyeres]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.catobar-01
+kind: qcm
+theme: mise-en-oeuvre-embarquee
+statement: >-
+  Que signifie le sigle CATOBAR ?
+choices:
+  - Catapult Assisted Take-Off But Arrested Recovery
+  - Carrier Air Take-Off By Assisted Rockets
+  - Catapult And Tremplin On Board At Runway
+  - Combat Air Training On Board And Recovery
+correctChoices: [0]
+explanation: >-
+  CATOBAR se développe en anglais — Catapult Assisted Take-Off But Arrested
+  Recovery : décollage assisté par catapulte et récupération par brins d'arrêt.
+  Il est attendu de savoir l'expliciter.
+evaluates: [eopan.procedures.catobar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

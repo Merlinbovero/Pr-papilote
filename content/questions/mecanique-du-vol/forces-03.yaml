@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.forces-03
+kind: qcm
+theme: quatre-forces
+statement: >-
+  En vol en palier stabilisé, quelle égalité entre les forces est vérifiée ?
+choices:
+  - "Portance = poids et poussée = traînée"
+  - "Portance = poussée"
+  - "Poids = traînée"
+  - "Portance = 0"
+correctChoices: [0]
+explanation: >-
+  En palier stabilisé, les forces s'équilibrent deux à deux : la portance égale
+  le poids et la poussée égale la traînée. La résultante est nulle.
+evaluates: [fondamentaux.mecanique-du-vol.quatre-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

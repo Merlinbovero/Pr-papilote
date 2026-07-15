@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.missions-04
+kind: vrai-faux
+theme: missions-marine
+statement: >-
+  Au moins un SNLE est en permanence à la mer.
+answer: true
+explanation: >-
+  Vrai. La crédibilité de la dissuasion océanique repose sur la présence
+  permanente d'au moins un sous-marin nucléaire lanceur d'engins à la mer,
+  invisible et prêt.
+evaluates: [eopan.missions.missions-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

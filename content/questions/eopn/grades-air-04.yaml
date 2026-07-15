@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.grades-air-04
+kind: vrai-faux
+theme: grades-air
+statement: >-
+  Les grades de sous-officiers de l'armée de l'Air sont identiques à ceux de l'armée de Terre.
+answer: true
+explanation: >-
+  Vrai. Sergent, sergent-chef, adjudant, adjudant-chef et major — l'échelle
+  des sous-officiers est la même dans l'Air et la Terre. La Marine, elle,
+  utilise des appellations différentes.
+evaluates: [eopn.grades.grades-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

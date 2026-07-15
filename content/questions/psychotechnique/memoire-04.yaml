@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.memoire-04
+kind: qcm
+theme: memoire
+statement: >-
+  Pourquoi les sélections testent-elles la mémoire pendant une autre activité (double tâche) ?
+choices:
+  - C'est la mémoire de travail du pilote qui est visée — retenir une clairance tout en pilotant
+  - Pour gagner du temps sur la journée de tests
+  - Parce que la mémoire simple est impossible à tester
+  - Pour décourager les candidats
+correctChoices: [0]
+explanation: >-
+  Le pilote garde des paramètres en tête pendant qu'il pilote, navigue et
+  communique. Tester la mémoire sous charge simule cette réalité : encoder
+  vite et bien, regrouper, rafraîchir la boucle mentale.
+evaluates: [psychotechnique.exercices.la-memoire]
+difficulty: 2
+competencies: [memoire, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.espace-02
+kind: qcm
+theme: conquete-spatiale
+statement: >-
+  Comment la France est-elle devenue la 3e puissance spatiale en 1965 ?
+choices:
+  - "En lançant le satellite Astérix avec sa fusée Diamant"
+  - "En participant au programme Apollo"
+  - "En achetant un lanceur soviétique"
+  - "En créant l'ESA"
+correctChoices: [0]
+explanation: >-
+  Le 26 novembre 1965, la fusée française Diamant place Astérix en orbite —
+  seuls l'URSS et les États-Unis avaient réussi avant, avec leurs propres
+  lanceurs.
+evaluates: [fondamentaux.culture-aeronautique.la-conquete-de-l-espace]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

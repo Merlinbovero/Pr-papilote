@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: terme.epner
+title: EPNER
+definition: >-
+  École du personnel navigant d'essais et de réception — l'école française des
+  équipages d'essais en vol, fondée en 1946 et installée à Istres au sein de
+  DGA Essais en vol. Elle forme pilotes d'essais, ingénieurs navigants,
+  mécaniciens, contrôleurs d'essais et pilotes d'avions légers.
+sigleExpansion: École du personnel navigant d'essais et de réception
+english: French test pilot school
+synonyms: []
+ficheId: fondamentaux.culture-aeronautique.l-epner
+tags: []
+status: publie

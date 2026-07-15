@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.physique.si-03
+kind: vrai-faux
+theme: unites-si
+statement: >-
+  L'expression « nœuds par heure » est correcte pour désigner une vitesse.
+answer: false
+explanation: >-
+  Le nœud est déjà une vitesse (un mille marin par heure). Dire « nœuds par
+  heure » revient à diviser deux fois par le temps : c'est fautif.
+evaluates: [fondamentaux.physique.systeme-international-et-unites]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

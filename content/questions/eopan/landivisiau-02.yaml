@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.landivisiau-02
+kind: qcm
+theme: bases-navales
+statement: >-
+  Pourquoi la BAN de Landivisiau est-elle surnommée le « porte-avions de granit » ?
+choices:
+  - C'est une base à terre qui prépare toute la chasse embarquée, comme un porte-avions immobile
+  - Parce qu'elle est construite sur un ancien porte-avions
+  - Parce que sa piste flotte sur l'eau
+  - Parce qu'elle est réservée aux hélicoptères
+correctChoices: [0]
+explanation: >-
+  Le surnom vient de son rôle : comme un porte-avions qui ne bouge pas, la base
+  arme et prépare à terre la force aérienne navale avant ses déploiements en mer.
+evaluates: [eopan.ban.landivisiau]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

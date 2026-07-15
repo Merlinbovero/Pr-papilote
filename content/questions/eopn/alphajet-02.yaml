@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.alphajet-02
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quelle unité met aujourd'hui en œuvre l'Alphajet ?
+choices:
+  - "La Patrouille de France"
+  - "L'École de l'aviation de chasse de Cognac"
+  - "L'escadron 1/4 Gascogne"
+  - "La flottille 17F"
+correctChoices: [0]
+explanation: >-
+  Depuis 1981, l'Alphajet est l'avion de la Patrouille de France (BA 701
+  Salon-de-Provence) — dans la formation des pilotes de chasse, il a été
+  remplacé par le PC-21 à Cognac.
+evaluates: [eopn.appareils.alphajet]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

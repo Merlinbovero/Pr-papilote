@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.bia-03
+kind: qcm
+theme: bia
+statement: >-
+  Lequel de ces domaines ne fait PAS partie du programme du BIA ?
+choices:
+  - "Le combat aérien et l'armement"
+  - "Météorologie et aérologie"
+  - "Navigation, réglementation, sécurité des vols"
+  - "Histoire et culture de l'aéronautique et du spatial"
+correctChoices: [0]
+explanation: >-
+  Les cinq domaines du BIA sont civils — météo/aérologie, aérodynamique et
+  principes du vol, étude des aéronefs et engins spatiaux,
+  navigation/réglementation/sécurité, histoire et culture.
+evaluates: [fondamentaux.culture-aeronautique.le-bia]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

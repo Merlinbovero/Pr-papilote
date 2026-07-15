@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-04
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Parmi ces spécialités, laquelle n'est PAS formée par l'EPNER ?
+choices:
+  - "Pilote de chasse opérationnel"
+  - "Pilote d'essais"
+  - "Ingénieur navigant d'essais"
+  - "Contrôleur aérien d'essais"
+correctChoices: [0]
+explanation: >-
+  L'EPNER forme les équipages d'essais (pilotes, ingénieurs navigants,
+  mécaniciens, contrôleurs d'essais, pilotes avions légers) — pas les pilotes
+  opérationnels, formés dans les écoles des armées.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

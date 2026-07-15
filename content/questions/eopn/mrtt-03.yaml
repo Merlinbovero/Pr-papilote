@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mrtt-03
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Qu'est-ce que le module « Morphée » du MRTT Phénix ?
+choices:
+  - "Un module d'évacuation sanitaire de patients en réanimation"
+  - "Un système de brouillage électronique"
+  - "Une soute à munitions"
+  - "Un simulateur de vol embarqué"
+correctChoices: [0]
+explanation: >-
+  Morphée transforme le Phénix en hôpital volant capable de rapatrier des
+  blessés graves — une des quatre missions de l'avion avec le ravitaillement,
+  le transport et le soutien de la dissuasion.
+evaluates: [eopn.appareils.mrtt-phenix]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

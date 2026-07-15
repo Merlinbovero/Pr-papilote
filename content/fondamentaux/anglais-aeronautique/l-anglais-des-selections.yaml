@@ -1,0 +1,128 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.l-anglais-des-selections
+type: concept
+title: L'anglais des sélections
+slug: l-anglais-des-selections
+summary: >-
+  L'anglais est évalué dans les trois sélections de pilote — et il pèse lourd.
+  Ce que mesurent les épreuves (vocabulaire, grammaire, compréhension), le
+  niveau visé, et la méthode pour progresser vite et durablement.
+objectifs:
+  - Comprendre la place de l'anglais dans les sélections EOPAN, EOPN et ALAT et dans le métier (OACI niveau 4).
+  - Identifier ce que mesurent les épreuves (vocabulaire, grammaire, compréhension écrite et orale).
+  - Construire un plan d'entraînement quotidien efficace.
+aliases: [anglais des sélections, épreuve d'anglais, test d'anglais, niveau OACI]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche de tête de la catégorie anglais (lot N11, phase P1 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Élève Officier Pilote de l'Aéronautique Navale (EOPAN) — lamarinerecrute.gouv.fr"
+    url: https://lamarinerecrute.gouv.fr/les-metiers/tous-les-metiers/eleve-officier-pilote-de-l-aeronautique-navale-eopan
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Devenir pilote de chasse — armée de l'Air et de l'Espace (devenir-aviateur.gouv.fr)"
+    url: https://devenir-aviateur.gouv.fr/choisir-votre-metier/tous-nos-domaines-et-metiers/pilote-et-navigateur/pilote-de-chasse
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — L'évaluation d'anglais"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+    - fondamentaux.anglais-aeronautique.les-verbes-du-vol
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      Pourquoi tant d'importance ? Parce que l'anglais n'est pas une matière
+      scolaire pour un pilote militaire — c'est un **outil de survie
+      professionnelle** : radio internationale, documentation technique,
+      formations à l'étranger (le cursus chasse de la Marine passe par les
+      **États-Unis**), opérations en **coalition**. L'OACI exige le **niveau
+      4** minimum ; les armées visent au-delà.
+
+      Les sélections évaluent donc l'anglais **tôt et sérieusement** —
+      généralement sous forme de **QCM** (vocabulaire, grammaire,
+      compréhension de textes courts) et, selon les voies, d'évaluations
+      **orales**. Un anglais faible peut coûter la sélection à un candidat
+      par ailleurs brillant.
+
+      La bonne nouvelle : l'anglais des tests est **prévisible** — un noyau
+      de vocabulaire, une grammaire ciblée, des formats récurrents. Il se
+      prépare exactement comme les psychotechniques : **peu à la fois, tous
+      les jours**.
+    aRetenir:
+      - L'anglais est évalué dans les trois sélections — et conditionne la suite (formations à l'étranger, radio, coalition).
+      - "Formats typiques — QCM de vocabulaire, de grammaire, compréhension écrite ; oral selon les voies."
+      - Le métier exige le niveau OACI 4 minimum — l'effort d'anglais ne s'arrête jamais à la sélection.
+      - "Méthode gagnante — exposition quotidienne courte : vocabulaire ciblé + écoute active + questions type concours."
+  sections:
+    - id: ce-que-mesurent-les-epreuves
+      title: Ce que mesurent les épreuves
+      body: |
+        Trois compétences reviennent dans les évaluations :
+
+        - **le vocabulaire** — courant d'abord, aéronautique ensuite ; les
+          QCM adorent les **faux amis** et les verbes précis ;
+        - **la grammaire** — temps (prétérit vs present perfect), modaux
+          (*must*, *should*, *may*), prépositions, comparatifs : des points
+          finis, qui se travaillent par séries ;
+        - **la compréhension** — textes courts (parfois aéronautiques) avec
+          questions, et selon les voies une **écoute** ou un **entretien**
+          en anglais.
+
+        Le niveau attendu n'est pas celui d'un traducteur : c'est un anglais
+        **fonctionnel et solide** — comprendre vite, répondre juste.
+    - id: la-methode
+      title: La méthode pour progresser
+      body: |
+        L'anglais se construit par **exposition répétée**, pas par bachotage :
+
+        1. **10 minutes de vocabulaire par jour** — par thème (les fiches de
+           cette catégorie sont conçues pour ça), avec auto-test ;
+        2. **écoute active** — communications ATC réelles en ligne, chaînes
+           aéronautiques, films en VO sous-titrée anglais : l'oreille se
+           fait vite aux accents de la radio ;
+        3. **séries de QCM** — les questions de cette catégorie imitent les
+           formats des tests ; l'erreur analysée vaut dix réponses justes ;
+        4. **parler** — décrire à voix haute, en anglais, ce qu'on vient
+           d'apprendre (une fiche avion, un trajet) : la production fixe ce
+           que la lecture effleure.
+
+        Commencer **des mois avant** la sélection : la courbe de l'anglais
+        est lente mais n'oublie rien.
+    - id: l-anglais-apres-la-selection
+      title: L'anglais après la sélection
+      strate: maitriser
+      body: |
+        Réussir le test n'est que le début. En école puis en unité,
+        l'anglais devient quotidien : la **phraséologie** internationale, la
+        **documentation** des appareils (souvent en anglais), les exercices
+        **OTAN**, les détachements à l'étranger — et pour les EOPAN filière
+        chasse, une partie du cursus **aux États-Unis**, en immersion
+        totale.
+
+        Les évaluations continuent d'ailleurs en carrière (niveaux OACI et
+        profils linguistiques militaires à renouveler). Investir dans
+        l'anglais avant la sélection, c'est donc investir dans toute la
+        carrière — c'est la matière au meilleur rendement de toute la
+        préparation.
+  pieges:
+    - L'anglais peut être éliminatoire ou fortement discriminant — le négliger au profit des seules maths est une erreur stratégique classique.
+    - Le niveau OACI 4 concerne la carrière, pas seulement la sélection — les évaluations continuent ensuite.
+    - Bachoter l'anglais deux semaines avant ne fonctionne pas — la langue exige des mois d'exposition régulière.
+    - Ne pas préparer QUE le vocabulaire aéronautique — les tests évaluent d'abord l'anglais général.

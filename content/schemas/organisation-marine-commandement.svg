@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .top { font-size: 12px; font-weight: 600; }
+    .hd { font-size: 11px; font-weight: 600; }
+    .auth { font-size: 12px; font-weight: 600; }
+    .sub { font-size: 10px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .acc { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+    .acct { fill: #3b82f6; font-size: 12px; font-weight: 600; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Les deux chaînes de commandement de la Marine</text>
+  <!-- CEMM -->
+  <rect class="box" x="182" y="38" width="96" height="30" rx="4" />
+  <text class="top" x="230" y="57" text-anchor="middle">CEMM</text>
+  <!-- liens -->
+  <path class="link" d="M205,68 C170,84 118,84 118,96" />
+  <path class="link" d="M255,68 C330,84 350,84 350,96" />
+  <!-- Colonne organique -->
+  <text class="hd" x="118" y="90" text-anchor="middle">Organique — préparer</text>
+  <rect class="node" x="22" y="100" width="92" height="42" rx="4" />
+  <text class="auth" x="68" y="120" text-anchor="middle">ALFAN</text>
+  <text class="sub" x="68" y="134" text-anchor="middle">action navale</text>
+  <rect class="acc" x="122" y="100" width="92" height="42" rx="4" />
+  <text class="acct" x="168" y="120" text-anchor="middle">ALAVIA</text>
+  <text class="sub" x="168" y="134" text-anchor="middle">aéronautique navale</text>
+  <rect class="node" x="22" y="150" width="92" height="42" rx="4" />
+  <text class="auth" x="68" y="170" text-anchor="middle">ALFOST</text>
+  <text class="sub" x="68" y="184" text-anchor="middle">sous-marins / FOST</text>
+  <rect class="node" x="122" y="150" width="92" height="42" rx="4" />
+  <text class="auth" x="168" y="170" text-anchor="middle">ALFUSCO</text>
+  <text class="sub" x="168" y="184" text-anchor="middle">fusiliers / commandos</text>
+  <!-- Colonne opérationnelle -->
+  <text class="hd" x="350" y="90" text-anchor="middle">Opérationnel — employer</text>
+  <rect class="node" x="292" y="100" width="120" height="42" rx="4" />
+  <text class="auth" x="352" y="120" text-anchor="middle">CEMA</text>
+  <text class="sub" x="352" y="134" text-anchor="middle">emploi en opérations</text>
+  <path class="link" d="M352,142 L352,168" marker-end="url(#ao)" />
+  <rect class="node" x="292" y="172" width="120" height="34" rx="4" />
+  <text class="sub" x="352" y="193" text-anchor="middle">unités déployées</text>
+  <defs>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="sub" x="230" y="238" text-anchor="middle">Les mêmes unités relèvent de deux chaînes : l'une prépare, l'autre emploie.</text>
+  <text class="sub" x="230" y="256" text-anchor="middle">L'aéronautique navale est préparée par ALAVIA (état-major à Toulon).</text>
+</svg>

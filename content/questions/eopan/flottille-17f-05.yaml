@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-17f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quel appareil emblématique la flottille 17F a-t-elle mis en œuvre juste avant le Rafale ?
+choices:
+  - Le Super-Étendard modernisé
+  - Le F-8 Crusader
+  - L'Étendard IV
+  - Le Rafale B
+correctChoices: [0]
+explanation: >-
+  La 17F fut la dernière flottille française sur Super-Étendard modernisé (SEM),
+  l'avion d'assaut embarqué qui a précédé le Rafale, avant sa transition en 2016.
+evaluates: [eopan.unites.flottille-17f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

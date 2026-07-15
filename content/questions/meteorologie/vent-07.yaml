@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.vent-07
+kind: qcm
+theme: vent
+statement: >-
+  Qu'est-ce qui met l'air en mouvement et crée le vent ?
+choices:
+  - "Les différences de pression entre anticyclones et dépressions"
+  - "La rotation des hélices d'avions"
+  - "L'attraction de la Lune"
+  - "Le champ magnétique terrestre"
+correctChoices: [0]
+explanation: >-
+  L'air s'écoule des hautes pressions vers les basses pressions — dévié
+  par la rotation terrestre (force de Coriolis), d'où la circulation autour
+  des centres d'action.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

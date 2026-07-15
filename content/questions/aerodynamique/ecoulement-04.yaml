@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.ecoulement-04
+kind: qcm
+theme: ecoulement-air
+statement: >-
+  Qu'est-ce qui crée la couche limite le long d'une aile ?
+choices:
+  - "La viscosité de l'air"
+  - "Le poids de l'air"
+  - "La compressibilité de l'air"
+  - "La température de l'air"
+correctChoices: [0]
+explanation: >-
+  La viscosité fait adhérer l'air à la surface, créant tout contre la paroi une
+  très fine couche limite.
+evaluates: [fondamentaux.aerodynamique.ecoulement-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

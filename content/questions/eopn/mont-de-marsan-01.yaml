@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mont-de-marsan-01
+kind: qcm
+theme: bases-aeriennes
+statement: >-
+  Quelles sont les deux vocations de la BA 118 de Mont-de-Marsan ?
+choices:
+  - "La chasse (30e escadre Rafale) et l'expérimentation (CEAM)"
+  - "Le transport et le ravitaillement"
+  - "La formation initiale et la voltige"
+  - "Les drones et les hélicoptères"
+correctChoices: [0]
+explanation: >-
+  La 30e escadre de chasse (Rafale) et le Centre d'expertise aérienne
+  militaire cohabitent sur la base landaise — la chasse opérationnelle et
+  l'invention de ses emplois futurs.
+evaluates: [eopn.bases.mont-de-marsan]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

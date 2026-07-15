@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .rot { stroke: currentColor; fill: none; stroke-width: 2; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le décrochage asymétrique</text>
+  <!-- Avion vu de face, incliné vers l'aile qui s'enfonce (droite) -->
+  <line class="plane" x1="150" y1="120" x2="310" y2="168" />
+  <circle class="plane" cx="230" cy="144" r="7" />
+  <!-- Aile gauche : encore portante (écoulement collé) -->
+  <path class="flow" d="M132,108 C160,96 190,100 214,116" marker-end="url(#ac)" />
+  <text class="lbl" x="118" y="104" text-anchor="middle">encore</text>
+  <text class="lbl" x="118" y="118" text-anchor="middle">portante</text>
+  <text class="sub" x="118" y="132" text-anchor="middle">(monte)</text>
+  <!-- Aile droite : décrochée (écoulement décollé, tourbillons) -->
+  <path class="flow" d="M300,150 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
+  <path class="flow" d="M326,158 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
+  <text class="lbl" x="342" y="132" text-anchor="middle">plus décrochée</text>
+  <text class="sub" x="342" y="146" text-anchor="middle">(incidence forte, s'enfonce)</text>
+  <!-- Autorotation -->
+  <path class="rot" d="M150,214 A120,44 0 0,0 316,206" marker-end="url(#a)" />
+  <text class="accent-t" x="230" y="244" text-anchor="middle">autorotation — l'avion part en rotation</text>
+</svg>

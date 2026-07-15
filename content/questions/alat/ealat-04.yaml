@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.ealat-04
+kind: qcm
+theme: formation-alat
+statement: >-
+  Quelle école binationale est installée au Cannet-des-Maures ?
+choices:
+  - "L'école franco-allemande Tigre"
+  - "L'école franco-britannique Jaguar"
+  - "L'école franco-espagnole NH90"
+  - "L'école franco-italienne Mangusta"
+correctChoices: [0]
+explanation: >-
+  L'école franco-allemande forme les équipages Tigre des deux pays au Luc —
+  la coopération européenne commence dès la formation.
+evaluates: [alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

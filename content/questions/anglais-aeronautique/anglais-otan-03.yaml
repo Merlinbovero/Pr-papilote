@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-otan-03
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Dans la Royal Air Force, à quel grade français correspond un « flight lieutenant » ?
+choices:
+  - Capitaine
+  - Lieutenant
+  - Commandant
+  - Colonel
+correctChoices: [0]
+explanation: >-
+  Le flight lieutenant de la RAF équivaut au capitaine français — et le
+  squadron leader au commandant : les titres britanniques « décalent » d'un
+  cran par rapport à l'intuition.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-militaire]
+difficulty: 3
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

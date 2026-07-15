@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.mirage-iv-05
+kind: ordre
+theme: appareils-historiques
+statement: >-
+  Classez ces étapes de la dissuasion française de la plus ancienne à la plus
+  récente.
+items:
+  - "Première alerte nucléaire d'un Mirage IV"
+  - "Missiles du plateau d'Albion"
+  - "Transfert de la mission nucléaire aérienne au Mirage 2000 N"
+  - "Retrait définitif du Mirage IV"
+explanation: >-
+  Alerte Mirage IV en 1964, missiles sol-sol d'Albion en 1971, relève par le
+  Mirage 2000 N en 1996, retrait définitif du Mirage IV en 2005.
+evaluates: [eopn.appareils.mirage-iv]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

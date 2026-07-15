@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: eopn.appareils.a400m
+type: appareil
+title: L'A400M Atlas
+slug: a400m
+summary: >-
+  Avion de transport militaire d'Airbus, tactique et stratégique à la fois.
+  Propulsé par quatre turbopropulseurs, il emporte jusqu'à 37 tonnes de fret sur
+  de longues distances et peut se poser sur des terrains sommaires.
+objectifs:
+  - Identifier l'A400M Atlas comme l'avion de transport militaire de l'Armée de l'air et de l'Espace.
+  - Expliquer sa double vocation — transport tactique (terrains sommaires) et stratégique (longue distance).
+  - Situer ses caractéristiques (quatre turbopropulseurs, forte charge utile) et son programme européen.
+aliases: [A400M, Atlas, A400M Atlas, avion de transport]
+module: eopn
+category: appareils
+subcategory: transport
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet appareil, l'A400M Atlas (transport EOPN).
+    author: prepapilote
+sources:
+  - title: "Airbus A400M Atlas — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Airbus_A400M_Atlas
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "A400M — Ministère des Armées (Armée de l'air et de l'Espace)"
+    url: https://air.defense.gouv.fr
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.appareils.rafale
+    - eopn.presentation.le-concours-eopn
+infobox:
+  constructeur: Airbus Defence and Space
+  role: Avion de transport militaire (tactique et stratégique)
+  armees: [Armée de l'air et de l'Espace]
+  miseEnService: 2013
+  statut: En service
+  equipage: 3 à 4 (2 pilotes et 1 chef de soute)
+  motorisation: 4 turbopropulseurs EuroProp TP400-D6
+  rayonDAction: Environ 4 800 km avec 30 tonnes de charge
+content:
+  essentiel:
+    body: |
+      L'**A400M Atlas** est l'**avion de transport** militaire de l'Armée de
+      l'air et de l'Espace. Construit par **Airbus Defence and Space** et mis en
+      service français en **2013**, il a une particularité : il est à la fois
+      **tactique** et **stratégique**.
+
+      **Stratégique**, car il emporte de **lourdes charges** — jusqu'à **37
+      tonnes** de fret — sur de **longues distances**. **Tactique**, car il sait
+      se poser sur des **terrains sommaires** et **courts**, au plus près des
+      opérations, et **larguer** hommes et matériel par sa **rampe arrière** ou
+      ses portes latérales.
+
+      Reconnaissable à ses **quatre turbopropulseurs** (hélices), il peut aussi
+      servir de **ravitailleur** en vol. C'est le **cheval de trait** de l'armée
+      de l'air, indispensable à la **projection** des forces.
+    aRetenir:
+      - L'A400M Atlas est l'avion de transport militaire de l'Armée de l'air et de l'Espace, en service depuis 2013.
+      - Il est à la fois tactique (terrains sommaires et courts) et stratégique (lourdes charges, longue distance).
+      - Il emporte jusqu'à 37 tonnes de fret et se reconnaît à ses quatre turbopropulseurs.
+      - Il peut larguer par la rampe arrière et servir de ravitailleur en vol.
+  sections:
+    - id: tactique-et-strategique
+      title: Tactique et stratégique
+      body: |
+        Traditionnellement, on opposait deux familles d'avions de transport :
+        les **stratégiques** (gros porteurs, longue distance, mais exigeant de
+        grandes pistes) et les **tactiques** (plus petits, capables de se poser
+        sur des terrains courts et sommaires, mais à faible rayon d'action).
+
+        L'A400M **réunit** les deux qualités : il transporte **beaucoup**,
+        **loin**, tout en pouvant se poser **près** du terrain d'opérations, sur
+        des pistes non préparées. Cette polyvalence est précieuse pour une armée
+        qui doit **projeter** ses forces rapidement à travers le monde.
+    - id: un-cheval-de-trait-europeen
+      title: Un cheval de trait européen
+      strate: maitriser
+      body: |
+        L'A400M est un grand **programme européen** : plusieurs nations
+        (Allemagne, France, Royaume-Uni, Espagne, Belgique…) l'ont développé et
+        l'emploient ensemble. C'est un symbole de la **coopération** de défense
+        en Europe, comme le Tigre pour les hélicoptères.
+
+        Ses **quatre turbopropulseurs** de forte puissance lui donnent à la fois
+        l'**endurance** pour les longues étapes et la capacité de décoller
+        **court** et **lourd**. En complément du transport, il assure aussi le
+        **largage** de parachutistes, l'**évacuation** sanitaire et le
+        **ravitaillement** en vol — un véritable couteau suisse logistique.
+  pieges:
+    - L'A400M n'est pas un avion de combat — c'est un avion de transport, mais essentiel à la projection des forces.
+    - Sa force est d'être à la fois tactique et stratégique — il ne faut pas le ranger dans une seule de ces catégories.
+    - Ses quatre moteurs sont des turbopropulseurs (à hélices), pas des réacteurs — un détail de reconnaissance utile.

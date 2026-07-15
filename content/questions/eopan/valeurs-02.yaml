@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.valeurs-02
+kind: association
+theme: culture-marine
+statement: >-
+  Associez chaque valeur de la devise de la Marine à son idée clé.
+pairs:
+  - left: Honneur
+    right: Courage, dignité, loyauté
+  - left: Patrie
+    right: Servir la nation
+  - left: Valeur
+    right: Qualités personnelles et aptitudes professionnelles
+  - left: Discipline
+    right: Règles librement acceptées
+explanation: >-
+  Honneur (courage/dignité/loyauté), Patrie (servir la nation), Valeur (qualités
+  et aptitudes), Discipline (règles librement acceptées) forment la devise de la
+  Marine.
+evaluates: [eopan.culture-militaire.culture-et-valeurs-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

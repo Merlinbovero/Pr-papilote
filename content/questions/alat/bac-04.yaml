@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.bac-04
+kind: qcm
+theme: organisation-alat
+statement: >-
+  Pourquoi avoir créé une brigade d'aérocombat en 2016 ?
+choices:
+  - "Les engagements avaient montré que l'aérocombat est une manœuvre à part entière"
+  - "Pour dissoudre les régiments d'hélicoptères"
+  - "Pour transférer les hélicoptères à l'armée de l'Air"
+  - "Pour des raisons purement budgétaires"
+correctChoices: [0]
+explanation: >-
+  Libye 2011, Sahel — frapper loin, vite, de nuit, en profondeur : la 4e BAC
+  institutionnalise l'aérocombat comme manœuvre à part entière, sous un
+  commandement unique.
+evaluates: [alat.organisation.la-4e-brigade-d-aerocombat]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

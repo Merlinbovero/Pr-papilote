@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.marine-org-03
+kind: association
+theme: organisation-marine
+statement: >-
+  Associez chaque autorité organique de la Marine à son domaine.
+pairs:
+  - left: ALFAN
+    right: Force d'action navale (bâtiments de surface)
+  - left: ALAVIA
+    right: Force de l'aéronautique navale
+  - left: ALFOST
+    right: Forces sous-marines et force océanique stratégique
+  - left: ALFUSCO
+    right: Fusiliers marins et commandos
+explanation: >-
+  Les quatre autorités organiques sont organisées par milieu : ALFAN (surface),
+  ALAVIA (aéronautique navale), ALFOST (sous-marins/FOST), ALFUSCO (fusiliers et
+  commandos).
+evaluates: [eopan.organisation.marine-nationale]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

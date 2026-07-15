@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.instruments.anemo-05
+kind: vrai-faux
+theme: anemometre
+statement: >-
+  En altitude, la vitesse propre est supérieure à la vitesse indiquée.
+answer: true
+explanation: >-
+  La densité de l'air diminuant avec l'altitude, la vitesse propre (réelle dans
+  l'air) devient supérieure à la vitesse indiquée lue au badin.
+evaluates: [fondamentaux.instruments.anemometre]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

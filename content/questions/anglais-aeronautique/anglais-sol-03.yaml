@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-sol-03
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Que signifie la réponse « read you five » à un essai radio ?
+choices:
+  - Je vous reçois parfaitement (lisibilité 5 sur 5)
+  - Rappelez dans cinq minutes
+  - Passez sur la fréquence 5
+  - Cinq aéronefs sont à l'écoute
+correctChoices: [0]
+explanation: >-
+  La lisibilité radio se note de 1 (illisible) à 5 (parfaitement lisible) :
+  « read you five » répond à un « radio check » et signifie une réception
+  parfaite.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

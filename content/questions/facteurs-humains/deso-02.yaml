@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.deso-02
+kind: qcm
+theme: desorientation
+statement: >-
+  Quel organe est à l'origine des illusions sensorielles en vol ?
+choices:
+  - "L'oreille interne (système vestibulaire)"
+  - "Le cœur"
+  - "Les poumons"
+  - "L'estomac"
+correctChoices: [0]
+explanation: >-
+  L'oreille interne (système vestibulaire) renseigne le cerveau sur l'équilibre et
+  les accélérations. En vol sans repères visuels, elle envoie des informations trompeuses.
+evaluates: [fondamentaux.facteurs-humains.desorientation-et-illusions]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

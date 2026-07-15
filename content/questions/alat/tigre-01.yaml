@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.tigre-01
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel est le rôle de l'hélicoptère Tigre dans l'ALAT ?
+choices:
+  - Hélicoptère de combat — appuyer les troupes et détruire les cibles
+  - Transport de passagers civils
+  - Guet aérien au-dessus de la mer
+  - Ravitaillement en vol des avions de chasse
+correctChoices: [0]
+explanation: >-
+  Le Tigre est l'hélicoptère de combat de l'ALAT : il appuie les troupes au sol
+  et détruit les cibles, y compris les blindés.
+evaluates: [alat.appareils.tigre]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [alat]
+status: publie

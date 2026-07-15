@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.reglementation.esp-03
+kind: qcm
+theme: espaces-aeriens
+statement: >-
+  Quelle est la classe d'espace la plus restrictive, réservée aux vols IFR ?
+choices:
+  - "La classe A"
+  - "La classe G"
+  - "La classe E"
+  - "La classe D"
+correctChoices: [0]
+explanation: >-
+  La classe A est la plus restrictive : elle n'autorise que les vols aux
+  instruments (IFR) et assure la séparation de tous les vols.
+evaluates: [fondamentaux.reglementation.espaces-aeriens]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.navigation.cap-02
+kind: qcm
+theme: cap-route-derive
+statement: >-
+  Qu'est-ce que la route d'un avion ?
+choices:
+  - "La trajectoire réellement suivie par rapport au sol"
+  - "La direction du nez de l'avion"
+  - "La vitesse propre de l'avion"
+  - "Le cap corrigé de la déclinaison"
+correctChoices: [0]
+explanation: >-
+  La route est la trace au sol de l'avion : le chemin qu'il parcourt réellement
+  au-dessus de la Terre, qui diffère du cap dès qu'il y a du vent.
+evaluates: [fondamentaux.navigation.cap-route-et-derive]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

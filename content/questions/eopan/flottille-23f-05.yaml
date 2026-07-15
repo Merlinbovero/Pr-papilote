@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-23f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Pour un candidat EOPAN attiré par la patrouille maritime, quelles flottilles représentent le débouché type ?
+choices:
+  - Les flottilles 21F et 23F, sur Atlantique 2 à Lann-Bihoué
+  - Les flottilles 11F, 12F et 17F, sur Rafale M
+  - La flottille 4F, sur Hawkeye
+  - L'escadrille 50S, sur Cap 10
+correctChoices: [0]
+explanation: >-
+  La filière patrouille maritime mène aux flottilles 21F et 23F de
+  Lann-Bihoué : long rayon d'action, équipage nombreux, missions
+  stratégiques et tactiques — le métier d'équipage par excellence.
+evaluates: [eopan.unites.flottille-23f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-02
+kind: vrai-faux
+theme: naissance-aviation
+statement: >-
+  En 1918, l'industrie aéronautique française est la première au monde.
+answer: true
+explanation: >-
+  Avec 12 000 avions, une capacité de 45 000 moteurs et 90 000 salariés en
+  1918, l'industrie française domine alors le monde aéronautique.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

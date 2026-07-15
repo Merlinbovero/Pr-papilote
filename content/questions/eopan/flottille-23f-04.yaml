@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.eopan.flottille-23f-04
+kind: ordre
+theme: unites-aeronavales
+statement: >-
+  Remettez dans l'ordre chronologique ces jalons de la flottille 23F.
+items:
+  - "Création de la flottille"
+  - "Installation à Lann-Bihoué"
+  - "Passage sur Atlantic"
+  - "Passage sur Atlantique 2"
+explanation: >-
+  Création le 1er décembre 1940 → installation à Lann-Bihoué en 1961 →
+  Atlantic en 1972 → Atlantique 2 en 1991.
+evaluates: [eopan.unites.flottille-23f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

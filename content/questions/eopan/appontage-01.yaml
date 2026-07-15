@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.appontage-01
+kind: qcm
+theme: appontage
+statement: >-
+  Que fait le pilote au moment où son avion touche le pont lors d'un appontage ?
+choices:
+  - Il remet plein gaz
+  - Il coupe les moteurs
+  - Il freine au maximum
+  - Il sort les aérofreins
+correctChoices: [0]
+explanation: >-
+  Au toucher, le pilote remet systématiquement plein gaz — à l'inverse d'un
+  atterrissage classique. Si aucun brin n'est accroché (« bolter »), l'avion
+  redécolle immédiatement grâce à la poussée déjà affichée.
+evaluates: [eopan.procedures.appontage]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.eopn-02
+kind: qcm
+theme: concours-eopn
+statement: >-
+  À quelle armée le concours EOPN donne-t-il accès ?
+choices:
+  - L'Armée de l'air et de l'Espace
+  - La Marine nationale
+  - L'Armée de terre
+  - La Gendarmerie nationale
+correctChoices: [0]
+explanation: >-
+  L'EOPN recrute le personnel navigant de l'Armée de l'air et de l'Espace. La
+  Marine recrute ses pilotes par l'EOPAN, à ne pas confondre.
+evaluates: [eopn.presentation.le-concours-eopn]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

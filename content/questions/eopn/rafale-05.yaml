@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.rafale-05
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Aux côtés de quel autre avion le Rafale forme-t-il l'épine dorsale de la chasse française ?
+choices:
+  - Le Mirage 2000
+  - Le Super-Étendard
+  - L'A400M Atlas
+  - Le Hawkeye
+correctChoices: [0]
+explanation: >-
+  Le Rafale et le Mirage 2000 constituent l'épine dorsale opérationnelle de la
+  chasse de l'Armée de l'air et de l'Espace.
+evaluates: [eopn.appareils.rafale]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

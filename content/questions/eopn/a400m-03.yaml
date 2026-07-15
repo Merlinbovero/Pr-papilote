@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.a400m-03
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quelle motorisation équipe l'A400M Atlas ?
+choices:
+  - Quatre turbopropulseurs (hélices)
+  - Deux réacteurs
+  - Un seul turbopropulseur
+  - Quatre réacteurs
+correctChoices: [0]
+explanation: >-
+  L'A400M est propulsé par quatre turbopropulseurs de forte puissance
+  (EuroProp TP400-D6), qui lui donnent endurance et capacité de décollage court.
+evaluates: [eopn.appareils.a400m]
+difficulty: 2
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopn]
+status: publie

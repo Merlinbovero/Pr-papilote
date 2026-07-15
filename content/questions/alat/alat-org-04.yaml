@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.alat-org-04
+kind: qcm
+theme: organisation-alat
+statement: >-
+  Parmi ces missions, laquelle ne relève pas de l'ALAT ?
+choices:
+  - La dissuasion nucléaire aéroportée
+  - L'appui-feu des troupes au sol
+  - Le transport tactique de troupes
+  - L'évacuation sanitaire
+correctChoices: [0]
+explanation: >-
+  La dissuasion nucléaire aéroportée relève de l'armée de l'air (Rafale B). L'ALAT
+  assure l'appui-feu, le transport tactique, la reconnaissance et l'évacuation
+  sanitaire.
+evaluates: [alat.organisation.aviation-legere-armee-de-terre]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [alat]
+status: publie

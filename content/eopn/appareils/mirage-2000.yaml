@@ -1,0 +1,162 @@
+schemaVersion: 1
+id: eopn.appareils.mirage-2000
+type: appareil
+title: Le Mirage 2000
+slug: mirage-2000
+summary: >-
+  Avion de combat à aile delta de Dassault, deuxième pilier de la chasse
+  française avec le Rafale. Décliné en versions de défense aérienne, d'attaque au
+  sol et nucléaire, il est progressivement remplacé par le Rafale.
+objectifs:
+  - Identifier le Mirage 2000 comme l'avion de combat à aile delta de l'Armée de l'air et de l'Espace.
+  - Distinguer ses grandes versions (2000C/2000-5 défense aérienne, 2000D attaque au sol, 2000N nucléaire).
+  - Situer le Mirage 2000 par rapport au Rafale (épine dorsale partagée, remplacement progressif).
+aliases: [Mirage 2000, Mirage 2000C, Mirage 2000D, Mirage 2000-5, aile delta]
+module: eopn
+category: appareils
+subcategory: avions-de-chasse
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 2
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet appareil, le Mirage 2000 (chasse EOPN).
+    author: prepapilote
+  - date: "2026-07-14"
+    version: 2
+    motif: Enrichissement — genèse du programme (1975-1982) depuis le COMAERO, tomes « Avions militaires » ch. 21 (lot AV4).
+    author: prepapilote
+sources:
+  - title: "Dassault Mirage 2000 — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Dassault_Mirage_2000
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Mirage 2000 — Dassault Aviation"
+    url: https://www.dassault-aviation.com/fr/defense/mirage-2000/
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "COMAERO — Les avions militaires, tome II (EUROSAE), ch. 21 « Le Mirage 2000, 1975-2006 »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.appareils.rafale
+    - eopn.appareils.mirage-iii
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.presentation.le-concours-eopn
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de chasse (défense aérienne, pénétration tout temps)
+  armees: [Armée de l'air et de l'Espace]
+  miseEnService: 1984
+  statut: En service (retrait progressif au profit du Rafale)
+  equipage: 1 (2000C, 2000-5) ou 2 (2000D, 2000N)
+  armementPrincipal: Canon de 30 mm (monoplaces), missiles air-air (Magic II, MICA), armement air-sol
+content:
+  essentiel:
+    body: |
+      Le **Mirage 2000** est, avec le **Rafale**, l'un des deux piliers de la
+      **chasse** de l'Armée de l'air et de l'Espace. Ce chasseur de **Dassault
+      Aviation**, mis en service en **1984**, se reconnaît à son **aile delta**
+      (triangulaire), sans empennage horizontal.
+
+      C'est un appareil qui a été **décliné** en plusieurs versions très
+      différentes : défense aérienne (**2000C**, puis **2000-5** modernisé),
+      attaque au sol conventionnelle (**2000D**, biplace) et frappe **nucléaire**
+      (**2000N**, biplace). Selon la version, il vole à **un** ou **deux**
+      membres d'équipage.
+
+      Aujourd'hui **plus ancien** que le Rafale, le Mirage 2000 est
+      **progressivement remplacé** par lui — mais il reste en service et
+      important à connaître pour comprendre la chasse française.
+    aRetenir:
+      - Le Mirage 2000 est un avion de combat à aile delta de Dassault, mis en service en 1984.
+      - Il forme avec le Rafale l'épine dorsale de la chasse française.
+      - Ses versions couvrent la défense aérienne (2000C/2000-5), l'attaque au sol (2000D) et le nucléaire (2000N).
+      - Il est progressivement remplacé par le Rafale, plus récent et omnirôle.
+  sections:
+    - id: la-genese-du-programme
+      title: La genèse — l'avion né d'un abandon (1975-1982)
+      body: |
+        Le Mirage 2000 naît d'un renoncement. Au début des années 1970,
+        l'armée de l'Air veut un « **Avion de Combat Futur** » — un
+        biréacteur lourd à Mach 2,5, comparé au F-15 américain. Trop
+        cher après le premier choc pétrolier : le **18 décembre 1975**,
+        le Conseil de défense abandonne l'ACF et lance à la place un
+        **monoréacteur** plus léger — que Dassault avait préparé sur
+        **fonds propres**, en pensant à l'export. L'armée de l'Air le
+        baptise « Mirage 2000 », l'avion qui devait la faire entrer dans
+        le XXIe siècle.
+
+        Le développement est fulgurant — premier prototype assemblé en
+        **27 mois**, **premier vol le 10 mars 1978** (Jean Coureau,
+        1 h 05 de vol jusqu'à Mach 1,3). Les essais révèlent une traînée
+        supersonique excessive : sept mois de chantier redessinent
+        fuselage, entrées d'air et dérive. Le réacteur **M53** de Snecma
+        grimpe de version en version (M53-2, M53-5, puis **M53-P2**), le
+        radar Doppler à impulsions **RDI** se fait attendre — les 45
+        premiers avions reçoivent le radar **RDM** d'exportation. Le
+        premier avion de série est livré le **3 décembre 1982** ;
+        **153 Mirage 2000** de défense aérienne équiperont finalement la
+        France, les 15 derniers commandés étant transformés en 2000 D
+        (1993).
+
+        Détail d'avance sur son temps — le Mirage 2000 est le **premier
+        avion de combat conçu dès l'origine avec un système
+        d'autoprotection interne** (détecteur Serval, brouilleur Sabre).
+    - id: l-aile-delta
+      title: L'aile delta
+      body: |
+        La signature du Mirage 2000 est son **aile delta**, en forme de
+        **triangle**, sans plan horizontal arrière. Cette formule, chère à
+        Dassault (déjà les Mirage III et IV), offre de bonnes performances à
+        **haute vitesse** et en **altitude**, et une structure simple et
+        robuste.
+
+        Comme le Rafale, le Mirage 2000 est un avion **naturellement instable**
+        piloté par des **commandes de vol électriques** : l'instabilité, gérée
+        par les calculateurs, le rend très **manœuvrant**. C'est un lien direct
+        avec les notions d'**aérodynamique** et de **mécanique du vol** des
+        Fondamentaux.
+    - id: une-famille-de-versions
+      title: Une famille de versions
+      body: |
+        Un même avion, plusieurs **métiers** :
+
+        - **2000C** et **2000-5** — la **défense aérienne** : intercepter et
+          abattre les avions ennemis (radar et missiles air-air Magic II puis
+          MICA) ;
+        - **2000D** — l'**attaque au sol** conventionnelle, biplace, capable
+          d'emporter des armements guidés et des missiles de croisière ;
+        - **2000N** — la version **nucléaire**, biplace, qui a longtemps porté
+          le missile ASMP de la dissuasion aéroportée.
+
+        Cette diversité rappelle qu'avant l'**omnirôle** du Rafale, on
+        **spécialisait** souvent chaque version d'avion pour une mission.
+    - id: place-face-au-rafale
+      title: Place face au Rafale
+      strate: maitriser
+      body: |
+        Le Mirage 2000 et le Rafale coexistent aujourd'hui dans l'armée de
+        l'air. Le **Rafale**, plus récent et **omnirôle**, prend
+        progressivement le relais ; le **Mirage 2000**, encore en service sur
+        plusieurs bases, continue d'assurer des missions, notamment de
+        **défense aérienne**.
+
+        Pour un candidat, retenir le duo **Mirage 2000 / Rafale**, c'est
+        comprendre l'**évolution** de la chasse française : d'avions
+        spécialisés vers un avion capable de tout faire. Le Mirage 2000 est
+        aussi un grand **succès à l'export**, employé par de nombreuses armées
+        de l'air étrangères.
+  pieges:
+    - Le Mirage 2000 a une aile delta sans empennage horizontal — à ne pas confondre avec la silhouette du Rafale (qui a des plans canards à l'avant).
+    - « Mirage 2000 » désigne une famille de versions très différentes (défense aérienne, attaque au sol, nucléaire), pas un seul appareil uniforme.
+    - Le Mirage 2000 n'est pas « dépassé » — il reste en service, même s'il est progressivement remplacé par le Rafale.
+    - "Le Mirage 2000 est né de l'ABANDON d'un biréacteur lourd (l'ACF, décembre 1975) — préparé sur fonds propres par Dassault, comme le Mirage III avant lui."

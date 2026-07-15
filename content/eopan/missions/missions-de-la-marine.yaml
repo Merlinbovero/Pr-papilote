@@ -1,0 +1,130 @@
+schemaVersion: 1
+id: eopan.missions.missions-de-la-marine
+type: concept
+title: Les missions de la Marine nationale
+slug: missions-de-la-marine
+summary: >-
+  La Marine remplit quatre grandes missions — dissuasion, protection,
+  intervention et prévention. Elle assure la composante océanique de la
+  dissuasion, protège les approches et projette la puissance depuis la mer.
+objectifs:
+  - Citer les grandes missions de la Marine nationale (dissuasion, protection, intervention, prévention).
+  - Expliquer la contribution de la Marine à la dissuasion nucléaire (océanique et aéroportée).
+  - Distinguer la projection de puissance (groupe aéronaval) de la projection de force (commandos).
+aliases:
+  [
+    missions de la Marine,
+    dissuasion,
+    protection,
+    intervention,
+    projection de puissance,
+    projection de force,
+    PPSM,
+    AEM,
+  ]
+module: eopan
+category: missions
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche missions de la Marine (Lot B, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Marine nationale — nos missions (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1, p.11-12 — Les missions de la Marine"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.organisation.marine-nationale
+    - eopan.organisation.aeronautique-navale
+    - eopan.presentation.le-concours-eopan
+content:
+  essentiel:
+    body: |
+      Des eaux territoriales à la haute mer, la Marine conduit ses opérations
+      autour de **quatre grandes missions** :
+
+      - **Dissuader** — assurer la crédibilité de la dissuasion nucléaire ;
+      - **Protéger** — surveiller et défendre les approches maritimes ;
+      - **Intervenir** — se déployer loin et longtemps dans les zones de crise ;
+      - **Prévenir** — connaître et anticiper les tensions (renseignement).
+
+      La **dissuasion** est sa mission la plus stratégique : elle repose sur une
+      composante **océanique** (les **SNLE**, dont un au moins est toujours à la
+      mer) et sur une composante **aéroportée** (la **FANu** — des **Rafale
+      Marine** emportant le missile **ASMP-A** depuis le porte-avions).
+    aRetenir:
+      - Les quatre grandes missions — dissuader, protéger, intervenir, prévenir (connaissance et anticipation).
+      - La Marine assure la composante océanique de la dissuasion (SNLE) et y contribue par l'air (FANu, Rafale ASMP-A).
+      - Protéger recouvre la posture permanente de sauvegarde maritime et l'action de l'État en mer.
+      - Intervenir se décline en projection de puissance (groupe aéronaval) et projection de force (commandos).
+  sections:
+    - id: dissuasion-et-protection
+      title: Dissuasion et protection
+      body: |
+        La **dissuasion** est la mission la plus **exigeante**. Sa composante
+        **océanique** — la **force océanique stratégique (FOST)** — compte
+        quatre **sous-marins nucléaires lanceurs d'engins (SNLE)**, dont **au
+        moins un** est en **permanence à la mer**, invisible et prêt. Sa
+        composante **aéroportée** — la **Force aéronavale nucléaire (FANu)** —
+        met en œuvre des **Rafale Marine** et le missile **ASMP-A** depuis le
+        porte-avions.
+
+        La **protection** s'exerce au quotidien à travers la **posture
+        permanente de sauvegarde maritime (PPSM)** : surveiller les approches,
+        assurer l'**action de l'État en mer (AEM)** — sauvetage, lutte contre la
+        pollution, contre les trafics et la piraterie.
+      figures:
+        - schemaId: missions-marine
+          alt: La Marine nationale au centre, reliée à ses quatre missions — dissuasion, protection, intervention et prévention (connaissance et anticipation).
+          caption: Les quatre grandes missions de la Marine, de la dissuasion à la prévention.
+          width: 460
+          height: 300
+    - id: intervention-puissance-et-force
+      title: Intervention — puissance et force
+      body: |
+        La mer offre un **accès** privilégié aux zones de crise, sans dépendre
+        d'autorisations de survol ou de bases à terre. La Marine **intervient**
+        donc « loin et longtemps ». Son intervention prend **deux formes** :
+
+        - la **projection de puissance** — le **groupe aéronaval (GAN)**, centré
+          sur le porte-avions **Charles de Gaulle**, frappe dans la durée et
+          affirme une présence indépendante ;
+        - la **projection de force** — les **commandos marine** (« forces
+          spéciales mer ») mènent des actions **ciblées** : assauts, libération
+          d'otages, lutte contre la piraterie.
+
+        C'est une distinction classique, souvent demandée en **entretien** :
+        la puissance frappe **dans la masse et la durée**, la force agit **par
+        petites équipes, avec précision**.
+    - id: prevenir-connaitre-anticiper
+      title: Prévenir — connaître et anticiper
+      strate: maitriser
+      body: |
+        Enfin, la Marine **prévient** les crises grâce à la **connaissance** et
+        à l'**anticipation**. Déployée en permanence sur toutes les mers, elle
+        **recueille du renseignement**, surveille les zones sensibles et
+        **détecte** au plus tôt les tensions naissantes. Dans les régions
+        fragilisées, elle **forme** et **entraîne** les marines locales pour
+        contribuer à la sécurité maritime.
+
+        Ces quatre missions se rejoignent dans une même finalité : **défendre
+        les intérêts** de la France et de ses ressortissants, partout et en tout
+        temps. Les comprendre, c'est saisir **pourquoi** un pilote de
+        l'aéronautique navale sert — un socle indispensable pour l'entretien.
+  pieges:
+    - La Marine ne détient pas toute la dissuasion — elle en assure la composante océanique (SNLE) et contribue à l'aéroportée (FANu), partagée avec l'armée de l'air.
+    - Projection de puissance (groupe aéronaval) et projection de force (commandos) sont deux choses différentes — un piège fréquent en entretien.
+    - « Prévenir » au sens des missions de la Marine signifie connaître et anticiper (renseignement) — pas seulement « éviter ».

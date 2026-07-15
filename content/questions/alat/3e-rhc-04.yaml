@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.3e-rhc-04
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Dans quel département le 3e RHC est-il stationné ?
+choices:
+  - La Meuse (Étain)
+  - La Moselle (Phalsbourg)
+  - Les Pyrénées-Atlantiques (Pau)
+  - Les Landes (Dax)
+correctChoices: [0]
+explanation: >-
+  Le 3e RHC est stationné à Étain, dans la Meuse. Phalsbourg (Moselle)
+  accueille le 1er RHC, Pau le 5e RHC et le 4e RHFS, Dax l'école de l'ALAT.
+evaluates: [alat.unites.3e-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

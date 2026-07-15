@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.centrage
+title: Centrage
+definition: >-
+  Position du centre de gravité de l'aéronef le long de l'axe longitudinal. Il
+  doit rester dans une plage définie : un centrage trop avant ou trop arrière
+  compromet la stabilité et le contrôle de l'appareil.
+english: Balance (center of gravity)
+synonyms: [centre de gravité]
+ficheId: fondamentaux.mecanique-du-vol.equilibre-et-centrage
+tags: []
+status: publie

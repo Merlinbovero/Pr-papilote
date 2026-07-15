@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.meteorologie.temp-06
+kind: vrai-faux
+theme: temperature-humidite
+statement: >-
+  Plus l'air est chaud, plus il peut contenir de vapeur d'eau.
+answer: true
+explanation: >-
+  La capacité de l'air en vapeur d'eau croît avec la température — d'où la
+  condensation (rosée, brouillard, nuages) quand l'air se refroidit jusqu'au
+  point de rosée.
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

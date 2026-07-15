@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: eopan.concepts.les-armements-de-l-aeronautique-navale
+type: concept
+title: Les armements de l'aéronautique navale
+slug: les-armements-de-l-aeronautique-navale
+summary: >-
+  De l'Exocet antinavire au missile nucléaire ASMP-A, en passant par la
+  torpille MU90 et les missiles air-air MICA et Meteor — le panorama des
+  armements qui donnent son sens au groupe aérien embarqué.
+objectifs:
+  - Associer chaque grande famille d'armement à sa mission (antinavire, dissuasion, lutte ASM, air-air).
+  - Connaître les armements emblématiques — Exocet AM39, ASMP-A, MU90, MICA, Meteor.
+  - Relier les armements aux porteurs (Rafale M, Atlantique 2, Caïman Marine).
+aliases: [Exocet, AM39, ASMP-A, MU90, MICA, Meteor, armements, missiles de la Marine]
+module: eopan
+category: concepts
+tags: []
+concours: [eopan]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche de synthèse des armements de l'aéronavale (Lot J, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Le missile air-sol moyenne portée amélioré (ASMPA) — DGA, Ministère des Armées"
+    url: https://www.defense.gouv.fr/dga/missile-air-sol-moyenne-portee-ameliore-asmpa
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Exocet (missile) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Exocet_(missile)
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "OCEANIS — tirs coordonnés d'Atlantique 2 et de Rafale Marine (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/actualites/oceanis-tirs-coordonnes-datlantique-2-rafale-marine-lors-dun-entrainement-au-combat-0
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1 — Les armements"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.rafale-m
+    - eopan.appareils.atlantique-2
+    - eopan.appareils.nh90-caiman
+    - eopan.missions.missions-de-la-marine
+    - eopan.concepts.groupe-aeronaval
+content:
+  essentiel:
+    body: |
+      Un aéronef de combat ne vaut que par ce qu'il **emporte**. Les armements
+      de l'aéronautique navale se lisent par **mission** :
+
+      - **antinavire** — le missile **Exocet AM39**, tiré par le Rafale M et
+        l'Atlantique 2 ;
+      - **dissuasion nucléaire** — le missile **ASMP-A** des Rafale Marine de
+        la **FANu** ;
+      - **lutte anti-sous-marine** — la torpille légère **MU90**, larguée par
+        l'Atlantique 2 et le Caïman Marine ;
+      - **combat air-air** — les missiles **MICA** et **Meteor** du Rafale ;
+      - **frappe au sol** — bombes guidées et missiles de croisière selon les
+        missions.
+
+      Retenir les **couples porteur-armement** suffit pour l'entretien : un
+      candidat qui sait qu'un ATL2 peut tirer un Exocet et larguer une MU90 a
+      compris ce qu'est la **patrouille maritime armée**.
+    aRetenir:
+      - Exocet AM39 — missile antinavire (portée ~70 km), tiré par Rafale M et Atlantique 2.
+      - ASMP-A — missile nucléaire supersonique de la FANu (Rafale), pilier aéroporté de la dissuasion.
+      - MU90 — torpille légère anti-sous-marine (Atlantique 2, Caïman Marine).
+      - MICA et Meteor — missiles air-air du Rafale (autodéfense et interception longue portée).
+  sections:
+    - id: antinavire-l-exocet
+      title: L'antinavire — Exocet AM39
+      body: |
+        L'**Exocet** est la famille française de missiles **antinavires** —
+        célèbre depuis les années 1980. Sa version **AM39** est **aéroportée** :
+        tirée par le **Rafale Marine** ou l'**Atlantique 2**, elle vole en
+        **subsonique** au **ras des flots** (vol dit *sea-skimming*, difficile
+        à détecter) sur environ **70 km**, en « **tire et oublie** » — le
+        missile rejoint seul sa cible après le tir.
+
+        La famille compte d'autres versions — **MM40** depuis les navires,
+        **SM39** depuis les sous-marins — d'où des **tirs coordonnés**
+        multi-porteurs régulièrement exercés par la Marine.
+    - id: dissuasion-l-asmp-a
+      title: La dissuasion — ASMP-A
+      body: |
+        L'**ASMP-A** (*air-sol moyenne portée amélioré*) est le missile de la
+        composante **aéroportée** de la dissuasion. **Supersonique** et doté
+        d'une **charge nucléaire**, il arme les **Rafale** — dont les Rafale
+        Marine de la **FANu**, capables d'opérer depuis le porte-avions.
+
+        C'est l'armement au **statut le plus singulier** : il n'existe que
+        pour ne pas servir. Sa simple existence, jointe aux SNLE de la FOST,
+        garantit la **crédibilité** de la dissuasion française — à relier à
+        la fiche missions.
+    - id: asm-air-air-et-frappe
+      title: Lutte ASM, air-air et frappe
+      strate: maitriser
+      body: |
+        **Lutte anti-sous-marine** — la torpille légère **MU90**
+        (coopération franco-italienne) est l'arme des chasseurs de
+        sous-marins : larguée par l'**Atlantique 2** ou le **Caïman Marine**,
+        elle poursuit seule sa cible en plongée.
+
+        **Air-air** — le Rafale emporte le **MICA** (missile polyvalent
+        d'autodéfense et de combat) et le **Meteor**, missile à
+        **statoréacteur** d'interception à **longue portée** (plus de 100 km),
+        qui conserve son énergie jusqu'à l'impact.
+
+        **Frappe** — bombes **guidées laser** (notamment depuis l'ATL2 en
+        appui des forces au sol) et armements air-sol du Rafale complètent la
+        panoplie. Inutile de mémoriser chaque référence : ce que le jury
+        apprécie, c'est la **cohérence** — quelle arme, pour quelle mission,
+        depuis quel porteur.
+  pieges:
+    - L'Exocet n'est pas un armement unique mais une famille — AM39 aéroportée, MM40 depuis les navires, SM39 depuis les sous-marins.
+    - L'ASMP-A n'est pas une arme d'emploi — c'est l'instrument de la dissuasion, dont la vocation est de ne jamais servir.
+    - La MU90 est une torpille (autopropulsée, guidée) — pas une bombe ni une grenade sous-marine.
+    - Ne pas confondre MICA (polyvalent, courte-moyenne portée) et Meteor (interception longue portée, statoréacteur).

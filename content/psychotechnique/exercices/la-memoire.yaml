@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-memoire
+type: concept
+title: La mémoire
+slug: la-memoire
+summary: >-
+  Chiffres, formes, paramètres, cartes — les tests de mémoire mesurent la
+  capacité à encoder vite et à restituer juste. Trois leviers font la
+  différence : le regroupement, les associations et la répétition mentale.
+objectifs:
+  - Reconnaître les formats classiques (empans de chiffres, formes, tableaux de paramètres, cartes).
+  - Appliquer les techniques d'encodage (regroupement, association, verbalisation).
+  - Gérer la mémoire sous double tâche — retenir pendant qu'on fait autre chose.
+aliases: [mémoire, tests de mémoire, empan, mémorisation, mémoire de travail]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche d'entraînement mémoire (campagne de recherche n°1, lot N7).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.l-attention-et-le-multitache
+content:
+  essentiel:
+    body: |
+      Pourquoi tester la **mémoire** ? Parce qu'un pilote vit de paramètres
+      retenus **à la volée** : une clairance radio, un cap, une fréquence,
+      une check-list — mal retenus, mal restitués, c'est l'erreur.
+
+      Les formats classiques :
+
+      - **empans de chiffres ou de lettres** — restituer une série de plus
+        en plus longue (à l'endroit, parfois à l'envers) ;
+      - **formes et symboles** — reconnaître les figures déjà vues ;
+      - **tableaux de paramètres** — mémoriser en temps limité des couples
+        (indicatif-fréquence, ville-code) puis répondre à des questions ;
+      - **cartes et trajets** — retenir un itinéraire, des positions.
+
+      Trois leviers universels : **regrouper** (« chunker ») les éléments,
+      **associer** (donner du sens, créer une image), **répéter
+      mentalement** en boucle courte. La mémoire brute s'améliore peu — la
+      **stratégie d'encodage**, énormément.
+    aRetenir:
+      - "Regrouper — 8 chiffres se retiennent mal, 4 paires se retiennent bien (06 12 48 93)."
+      - Associer — donner du sens (dates, âges, images mentales) fixe l'information.
+      - Répéter mentalement en boucle courte pendant l'encodage, sans se laisser distraire.
+      - La mémoire se teste souvent SOUS charge — retenir pendant qu'on fait autre chose.
+  sections:
+    - id: les-techniques-d-encodage
+      title: Les techniques d'encodage
+      body: |
+        - **Le regroupement (chunking)** — la mémoire de travail retient
+          environ 7 éléments ; en regroupant « 1 9 4 5 2 0 2 6 » en
+          « 1945 · 2026 », huit chiffres deviennent deux dates.
+        - **L'association** — relier l'information à du connu : un code
+          « 62 » devient un département, une paire « BREST-118.2 » devient
+          une mini-histoire. Plus l'association est imagée, mieux elle
+          tient.
+        - **La verbalisation** — se dire la série à voix intérieure, sur un
+          rythme régulier ; pour les formes, les **nommer** (« triangle
+          pointe en bas, cercle barré ») transforme du visuel en verbal,
+          doublant les canaux.
+        - **Le balayage structuré** — pour un tableau, lire dans un ordre
+          fixe (ligne par ligne) et non au hasard : l'ordre de lecture
+          devient lui-même un indice de rappel.
+    - id: memoire-et-double-tache
+      title: La mémoire sous double tâche
+      strate: maitriser
+      body: |
+        Les sélections aiment tester la mémoire **pendant** une autre
+        activité : retenir des paramètres tout en suivant une cible, ou
+        répondre à des calculs entre l'encodage et le rappel. C'est la
+        **mémoire de travail** qui est visée — celle du pilote qui garde sa
+        clairance en tête pendant qu'il pilote.
+
+        Stratégies : encoder **vite et bien** dès la présentation (ne pas
+        compter sur une relecture), **regrouper** au maximum pour réduire la
+        charge, et **rafraîchir** la boucle mentale dès qu'une micro-pause
+        le permet. L'entraînement quotidien est simple : retenir des
+        plaques, des numéros, des listes de courses — sans les noter.
+  pieges:
+    - Réciter passivement n'est pas encoder — sans regroupement ni association, la série s'efface au premier calcul intercalé.
+    - Lire un tableau au hasard prive d'un indice de rappel — toujours balayer dans un ordre fixe.
+    - "La mémoire brute progresse peu — ce sont les stratégies d'encodage qui font les gros gains."
+    - Sous double tâche, vouloir tout retenir fait tout perdre — prioriser les paramètres demandés.

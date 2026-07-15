@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.trainee-05
+kind: vrai-faux
+theme: trainee
+statement: >-
+  La finesse est un nombre sans unité.
+answer: true
+explanation: >-
+  La finesse (portance / traînée) est un nombre sans unité : une finesse de 40
+  est excellente (planeur), une finesse de 10 est modeste.
+evaluates: [fondamentaux.aerodynamique.trainee]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

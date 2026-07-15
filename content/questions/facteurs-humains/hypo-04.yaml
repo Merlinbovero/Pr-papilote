@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.facteurs-humains.hypo-04
+kind: vrai-faux
+theme: hypoxie
+statement: >-
+  L'hypoxie prévient clairement la victime, qui ressent aussitôt le danger.
+answer: false
+explanation: >-
+  Au contraire, l'hypoxie est insidieuse : elle altère le jugement et donne une
+  euphorie et un faux sentiment de sécurité. La victime perd son autocritique.
+evaluates: [fondamentaux.facteurs-humains.hypoxie-et-altitude]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

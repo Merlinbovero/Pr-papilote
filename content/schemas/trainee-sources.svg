@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .thin { stroke: currentColor; fill: none; stroke-width: 1; }
+    .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Les sources de traînée</text>
+  <!-- Sens du déplacement -->
+  <line class="flow" x1="150" y1="66" x2="270" y2="66" marker-end="url(#ac)" />
+  <text class="lbl" x="150" y="58">sens du déplacement</text>
+  <!-- Aile (vue de dessus) -->
+  <rect class="ink" x="128" y="112" width="216" height="26" rx="4" />
+  <!-- Tourbillon de bout d'aile (droite) -->
+  <path class="flow" d="M344,125 C362,120 362,142 344,138 C332,135 335,122 346,126" marker-end="url(#ac)" />
+  <!-- Sillage (traînée de forme) -->
+  <path class="muted" d="M344,120 q12,-5 24,0 t24,0" />
+  <!-- Étiquettes -->
+  <line class="thin" x1="210" y1="138" x2="180" y2="180" />
+  <text class="lbl" x="176" y="192" text-anchor="end">frottement (surface)</text>
+  <line class="thin" x1="380" y1="120" x2="392" y2="98" />
+  <text class="lbl" x="396" y="94" text-anchor="start">traînée de forme (sillage)</text>
+  <line class="thin" x1="355" y1="135" x2="360" y2="182" />
+  <text class="lbl" x="356" y="196" text-anchor="middle">traînée induite (bout d'aile)</text>
+</svg>

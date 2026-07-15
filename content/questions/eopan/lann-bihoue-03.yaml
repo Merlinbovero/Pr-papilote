@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.lann-bihoue-03
+kind: vrai-faux
+theme: bases-navales
+statement: >-
+  Les avions de la BAN de Lann-Bihoué embarquent en permanence sur le porte-avions.
+answer: false
+explanation: >-
+  Faux. Les appareils de Lann-Bihoué (Hawkeye, Atlantique 2, Falcon 50M) opèrent
+  principalement depuis la terre. Seul le Hawkeye embarque ponctuellement sur le
+  porte-avions lors des déploiements.
+evaluates: [eopan.ban.lann-bihoue]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

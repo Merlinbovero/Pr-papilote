@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.cougar-05
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Combien de Puma l'ALAT a-t-elle engagés lors de l'opération Daguet (1991) ?
+choices:
+  - "38"
+  - "132"
+  - "88"
+  - "10"
+correctChoices: [0]
+explanation: >-
+  Daguet a mobilisé 132 hélicoptères de l'ALAT au total : 88 Gazelle et
+  38 Puma — l'ancêtre direct du Cougar dans la famille des porteurs lourds.
+evaluates: [alat.appareils.cougar]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .cloud { stroke: currentColor; fill: none; stroke-width: 2; }
+    .wisp { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .ground { stroke: currentColor; fill: none; stroke-width: 2; }
+    .axis { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .sep { stroke: #94a3b8; fill: none; stroke-width: 1; stroke-dasharray: 5 4; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Les étages des nuages</text>
+  <!-- Axe altitude -->
+  <line class="axis" x1="54" y1="272" x2="54" y2="44" marker-end="url(#ac)" />
+  <text class="lbl" x="54" y="38" text-anchor="middle">altitude</text>
+  <!-- Séparations d'étages -->
+  <line class="sep" x1="54" y1="118" x2="430" y2="118" />
+  <line class="sep" x1="54" y1="206" x2="430" y2="206" />
+  <!-- Sol -->
+  <line class="ground" x1="54" y1="272" x2="430" y2="272" />
+  <!-- Étage supérieur : cirro- (cristaux de glace) -->
+  <path class="wisp" d="M120,80 q18,-8 34,-2 M126,92 q20,-8 38,-2 M136,104 q16,-6 30,-2" />
+  <text class="lbl" x="200" y="78" text-anchor="start">étage supérieur (&gt; 6 km)</text>
+  <text class="accent-t" x="200" y="96" text-anchor="start">cirro- — cristaux de glace</text>
+  <!-- Étage moyen : alto- -->
+  <path class="cloud" d="M120,168 C112,156 128,148 140,154 C146,144 164,144 170,154 C182,150 190,162 180,168 Z" />
+  <text class="lbl" x="210" y="158" text-anchor="start">étage moyen (2–6 km)</text>
+  <text class="accent-t" x="210" y="176" text-anchor="start">alto-</text>
+  <!-- Étage inférieur : strato- -->
+  <path class="cloud" d="M118,246 C112,236 130,232 150,236 C176,230 200,238 196,248 C150,252 130,252 118,246 Z" />
+  <text class="lbl" x="220" y="240" text-anchor="start">étage inférieur (0–2 km)</text>
+  <text class="accent-t" x="220" y="258" text-anchor="start">strato-</text>
+  <!-- Cumulonimbus : développement vertical -->
+  <path class="cloud" d="M348,268 C336,250 344,232 360,232 C356,208 372,196 388,204 C392,180 372,150 356,150 C388,138 420,150 414,176 C420,196 410,214 396,214 C404,236 392,256 372,254 C368,266 358,270 348,268 Z" />
+  <text class="sub" x="382" y="288" text-anchor="middle">cumulonimbus</text>
+</svg>

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.aerostatique-05
+kind: qcm
+theme: aerostatique
+statement: >-
+  En quelle année et par quel moyen l'homme a-t-il volé pour la première
+  fois ?
+choices:
+  - "En 1783, en montgolfière"
+  - "En 1903, en avion"
+  - "En 1890, avec l'Éole de Clément Ader"
+  - "En 1852, en dirigeable"
+correctChoices: [0]
+explanation: >-
+  Le premier vol humain de l'histoire est un vol en ballon des frères
+  Montgolfier à Paris en 1783 — cent vingt ans avant l'avion des frères
+  Wright.
+evaluates: [fondamentaux.aerodynamique.l-aerostatique]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

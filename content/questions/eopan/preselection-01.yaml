@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.preselection-01
+kind: qcm
+theme: preselection-en-vol
+statement: >-
+  Où se déroule la présélection en vol des EOPAN ?
+choices:
+  - "À l'escadrille 50S, BAN Lanvéoc-Poulmic"
+  - "À Salon-de-Provence"
+  - "À Dax"
+  - "Sur le porte-avions Charles de Gaulle"
+correctChoices: [0]
+explanation: >-
+  L'École d'initiation au pilotage (escadrille 50S) est basée à
+  Lanvéoc-Poulmic, sur la presqu'île de Crozon — c'est là que les EOPAN sont
+  évalués en vol sur Cap 10.
+evaluates: [eopan.selection.la-preselection-en-vol]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

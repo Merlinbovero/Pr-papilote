@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.point-de-rosee
+title: Point de rosée
+definition: >-
+  Température à laquelle l'air, refroidi à pression constante, atteint la
+  saturation et voit sa vapeur d'eau se condenser. L'écart entre température et
+  point de rosée renseigne sur l'humidité et le risque de formation de nuages ou
+  de brouillard.
+english: Dew point
+synonyms: []
+ficheId: fondamentaux.meteorologie.temperature-et-humidite
+tags: []
+status: publie

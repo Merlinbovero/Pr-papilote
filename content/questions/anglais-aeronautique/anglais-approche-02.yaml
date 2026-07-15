@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-approche-02
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Que signifie « cleared touch and go » ?
+choices:
+  - Autorisé posé-décollé — toucher la piste et repartir sans s'arrêter
+  - Autorisé à toucher les commandes
+  - Autorisé atterrissage complet
+  - Autorisé à quitter la fréquence
+correctChoices: [0]
+explanation: >-
+  Le touch and go (posé-décollé) est l'exercice roi de l'entraînement :
+  l'avion touche la piste et redécolle dans la foulée. La variante sans
+  contact est la « low approach ».
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-de-l-approche]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

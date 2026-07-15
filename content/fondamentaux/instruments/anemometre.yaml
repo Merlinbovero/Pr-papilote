@@ -1,0 +1,140 @@
+schemaVersion: 1
+id: fondamentaux.instruments.anemometre
+type: concept
+title: L'anémomètre
+slug: anemometre
+summary: >-
+  L'anémomètre (badin) indique la vitesse par rapport à l'air à partir de la
+  pression dynamique. La valeur lue est la vitesse indiquée (Vi/IAS) ; on en
+  déduit la vitesse propre (Vp/TAS, densité) et la vitesse sol (Vs/GS, vent). Les arcs bornent le domaine de vol.
+objectifs:
+  - Expliquer le fonctionnement de l'anémomètre (mesure de la pression dynamique, proportionnelle au carré de la vitesse).
+  - Distinguer les trois vitesses — indiquée (Vi/IAS), propre (Vp/TAS) et sol (Vs/GS).
+  - Interpréter le code couleur du badin (arcs blanc, vert, jaune ; trait rouge VNE).
+aliases:
+  [anémomètre, badin, vitesse indiquée, vitesse propre, vitesse sol, IAS, TAS, VNE, arcs du badin]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-sixième fiche du socle, l'anémomètre (badin) et les vitesses (bloc instruments).
+    author: prepapilote
+status: publie
+sources:
+  - title: "L'anémomètre — lavionnaire.fr"
+    url: https://www.lavionnaire.fr/InstVolAnemo.php
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — instruments"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.instruments.chaine-pitot-statique
+  related:
+    - fondamentaux.aerodynamique.air-et-proprietes
+    - fondamentaux.meteorologie.le-vent
+content:
+  essentiel:
+    body: |
+      L'**anémomètre** — le **badin**, du nom de son inventeur — indique la
+      **vitesse de l'avion par rapport à l'air**. Il exploite la **pression
+      dynamique** fournie par la chaîne Pitot-statique (pression totale moins
+      pression statique), qui est proportionnelle au **carré de la vitesse**.
+
+      La valeur lue s'appelle la **vitesse indiquée (Vi, ou IAS)**. C'est la plus
+      utile au pilotage : la **portance** dépendant de la même pression
+      dynamique, à une Vi donnée correspond toujours le même comportement de
+      l'aile, quelle que soit l'altitude.
+
+      On en déduit deux autres vitesses : la **vitesse propre (Vp / TAS)**,
+      vitesse réelle dans l'air corrigée de la **densité**, et la **vitesse sol
+      (Vs / GS)**, corrigée du **vent**. Le cadran porte enfin un **code
+      couleur** qui borne les vitesses d'utilisation.
+    aRetenir:
+      - L'anémomètre (badin) mesure la vitesse par rapport à l'air à partir de la pression dynamique.
+      - La valeur lue est la vitesse indiquée (Vi / IAS) — la plus utile, car la portance dépend de la même pression dynamique.
+      - La vitesse propre (Vp / TAS) corrige la Vi de la densité ; la vitesse sol (Vs / GS) corrige la Vp du vent.
+      - Les arcs du badin bornent les vitesses — blanc (volets), vert (normal), jaune (prudence), trait rouge à ne jamais dépasser (VNE).
+  sections:
+    - id: mesurer-la-vitesse-par-la-pression
+      title: Mesurer la vitesse par la pression
+      body: |
+        L'anémomètre mesure la **pression dynamique**, c'est-à-dire la différence
+        entre la **pression totale** (tube de Pitot) et la **pression statique**
+        (prise statique). Cette pression dynamique est **proportionnelle au carré
+        de la vitesse** : plus l'avion va vite, plus l'air « appuie » fort dans
+        le Pitot.
+
+        Une **capsule** sensible à cette différence de pression se déforme et
+        entraîne l'**aiguille** du cadran. La graduation est faite pour afficher
+        directement une **vitesse** : la **vitesse indiquée (Vi)**, ou **IAS**.
+
+        C'est la vitesse la plus importante à piloter, car la **portance** dépend
+        elle aussi de la pression dynamique. À une même Vi, l'aile porte et
+        décroche de la même façon **quelle que soit l'altitude** — d'où l'usage
+        universel de la Vi comme référence de pilotage.
+    - id: les-trois-vitesses
+      title: Les trois vitesses
+      body: |
+        Il faut distinguer trois vitesses.
+
+        - La **vitesse indiquée (Vi / IAS)** : celle **lue** sur le badin. Elle
+          dépend de la **densité** de l'air.
+        - La **vitesse propre (Vp / TAS)** : la vitesse **réelle** de l'avion
+          **par rapport à l'air**. Comme la densité **diminue** avec l'altitude,
+          la Vp devient **supérieure** à la Vi en altitude — à Vi égale, on va
+          « vraiment » plus vite en montant.
+        - La **vitesse sol (Vs / GS)** : la vitesse **par rapport au sol**,
+          c'est-à-dire la vitesse propre **corrigée du vent** (de face ou
+          arrière).
+
+        En résumé : on **lit** la Vi, on **calcule** la Vp (densité), on
+        **obtient** la Vs (vent). C'est la Vs qui donne le temps de trajet réel.
+      figures:
+        - schemaId: anemometre-vitesses
+          alt: Un enchaînement des trois vitesses — la vitesse indiquée corrigée de la densité donne la vitesse propre, puis corrigée du vent donne la vitesse sol.
+          caption: On lit la vitesse indiquée ; corrigée de la densité elle donne la vitesse propre, puis corrigée du vent la vitesse sol.
+          width: 460
+          height: 200
+    - id: les-arcs-du-badin
+      title: Les arcs du badin
+      strate: maitriser
+      body: |
+        Le cadran du badin porte un **code couleur** normalisé, à connaître par
+        cœur.
+
+        - L'**arc blanc** est la plage d'utilisation des **volets** (et du
+          train) : de la vitesse de décrochage **volets sortis (Vso)** à la
+          vitesse maximale **volets sortis (Vfe)**.
+        - L'**arc vert** est la plage d'**utilisation normale**, en configuration
+          lisse : de la vitesse de décrochage **lisse (Vs1)** à la vitesse
+          maximale en air agité **(Vno)**.
+        - L'**arc jaune** est une plage de **prudence** : ces vitesses ne
+          s'emploient qu'en **air calme**, de Vno à Vne.
+        - Le **trait rouge** marque la **Vne**, la **vitesse à ne jamais
+          dépasser**, sous peine d'excéder les limites de résistance de l'avion.
+
+        Un coup d'œil au badin situe donc immédiatement l'avion dans son
+        **domaine de vol**.
+      figures:
+        - schemaId: badin-arcs
+          alt: Un cadran d'anémomètre à face sombre avec l'arc blanc des volets, l'arc vert d'utilisation normale, l'arc jaune de prudence et le trait rouge de la VNE.
+          caption: Les arcs du badin — blanc (volets), vert (utilisation normale), jaune (prudence) et trait rouge (VNE, à ne jamais dépasser).
+          width: 340
+          height: 340
+  pieges:
+    - Le badin affiche la vitesse indiquée (Vi), pas la vitesse réelle dans l'air (Vp) ni la vitesse sol (Vs).
+    - En altitude, la vitesse propre est supérieure à la vitesse indiquée, car l'air est moins dense.
+    - Le trait rouge (VNE) est une limite absolue — l'arc jaune ne s'utilise qu'en air calme, jamais en turbulence.

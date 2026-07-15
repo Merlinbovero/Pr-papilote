@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.flottille-23f-02
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  La patrouille maritime contribue à la protection des SNLE de la dissuasion.
+answer: true
+explanation: >-
+  Vrai. La sûreté des sous-marins lanceurs d'engins passe aussi par les
+  Atlantique 2, qui s'assurent qu'aucune menace ne rôde dans leurs zones de
+  patrouille — un lien direct entre PATMAR et dissuasion.
+evaluates: [eopan.unites.flottille-23f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

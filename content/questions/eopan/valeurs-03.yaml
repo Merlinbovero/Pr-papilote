@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.valeurs-03
+kind: vrai-faux
+theme: culture-marine
+statement: >-
+  Dans la culture de la Marine, l'esprit d'équipage est une valeur secondaire.
+answer: false
+explanation: >-
+  Faux. L'esprit d'équipage — cohésion, solidarité, don de soi — est au cœur de
+  la culture Marine : « être marin, c'est faire partie d'un équipage ».
+evaluates: [eopan.culture-militaire.culture-et-valeurs-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

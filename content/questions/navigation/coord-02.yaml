@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.navigation.coord-02
+kind: qcm
+theme: terre-coordonnees
+statement: >-
+  Par rapport à quoi mesure-t-on la longitude d'un point ?
+choices:
+  - "Le méridien de Greenwich"
+  - "L'équateur"
+  - "Le pôle Sud"
+  - "Le parallèle local"
+correctChoices: [0]
+explanation: >-
+  La longitude mesure la position est-ouest par rapport au méridien de Greenwich
+  (de 0° à 180° E ou O), le long des méridiens.
+evaluates: [fondamentaux.navigation.terre-et-coordonnees]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

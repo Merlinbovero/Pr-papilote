@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.facteurs-humains.rex-04
+kind: ordre
+theme: retour-d-experience
+statement: >-
+  Remettez dans l'ordre les quatre parties d'un rapport d'enquête de sécurité.
+items:
+  - "Les faits établis"
+  - "L'analyse (recherche des causes)"
+  - "La conclusion (causes retenues)"
+  - "Les recommandations de sécurité"
+explanation: >-
+  Un rapport suit toujours cette architecture : faits établis → analyse →
+  conclusion (causes retenues) → recommandations numérotées avec destinataire.
+evaluates: [fondamentaux.facteurs-humains.le-retour-d-experience]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

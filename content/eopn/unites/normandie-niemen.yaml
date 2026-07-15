@@ -1,0 +1,109 @@
+schemaVersion: 1
+id: eopn.unites.normandie-niemen
+type: escadron
+title: Escadron de chasse Normandie-Niémen
+slug: normandie-niemen
+summary: >-
+  L'escadron de chasse le plus chargé d'histoire de l'Armée de l'air et de
+  l'Espace. Né dans la France libre, il a combattu sur le front de l'Est aux
+  côtés de l'Armée rouge ; il vole aujourd'hui sur Rafale à Mont-de-Marsan.
+objectifs:
+  - Identifier l'escadron Normandie-Niémen comme une unité de chasse emblématique de l'Armée de l'air et de l'Espace.
+  - Retenir son histoire — né dans la France libre, engagé sur le front de l'Est pendant la Seconde Guerre mondiale.
+  - Situer l'escadron sur Rafale à la base aérienne 118 de Mont-de-Marsan.
+aliases: [Normandie-Niémen, Neu-Neu, EC 2/30, Groupe de chasse Normandie]
+module: eopn
+category: unites
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet escadron, le Normandie-Niémen (ancrage catégorie unités).
+    author: prepapilote
+sources:
+  - title: "Escadron de chasse 2/30 Normandie-Niémen — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Escadron_de_chasse_2/30_Normandie-Niemen
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Armée de l'air et de l'Espace — site officiel"
+    url: https://air.defense.gouv.fr
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: eopn.appareils.rafale
+  related:
+    - eopn.presentation.le-concours-eopn
+    - eopn.appareils.rafale
+infobox:
+  appellation: Escadron de chasse 2/30 « Normandie-Niémen »
+  base: BA 118 Mont-de-Marsan
+  appareils: [Rafale B, Rafale C]
+  missions: [Défense aérienne, Assaut, Reconnaissance, Dissuasion nucléaire]
+  insigne: Deux léopards d'or (armes de la Normandie)
+  traditions: Héritier du groupe de chasse Normandie-Niémen (France libre, front de l'Est)
+content:
+  essentiel:
+    body: |
+      Le **Normandie-Niémen** est sans doute l'**escadron** le plus **chargé
+      d'histoire** de l'Armée de l'air et de l'Espace. Un escadron est, dans
+      l'armée de l'air, l'**unité** qui met en œuvre les avions — l'équivalent
+      de la **flottille** dans la Marine.
+
+      Son histoire commence dans la **France libre** : créé en **1942**, il part
+      combattre sur le **front de l'Est**, aux côtés de l'**Armée rouge**, en
+      **Union soviétique**. C'est la **seule** unité occidentale à s'être
+      battue sur le **sol soviétique** pendant la Seconde Guerre mondiale. Son
+      nom associe la **Normandie** (dont il porte les deux léopards d'or) et le
+      fleuve **Niémen**, dont le nom lui fut donné en récompense de ses combats.
+
+      Aujourd'hui, l'escadron **2/30 « Normandie-Niémen »** vole sur **Rafale**,
+      depuis la **base aérienne 118 de Mont-de-Marsan**. Il perpétue une
+      tradition d'exception, entre mémoire et missions modernes.
+    aRetenir:
+      - Le Normandie-Niémen est un escadron de chasse emblématique de l'Armée de l'air et de l'Espace.
+      - Né dans la France libre en 1942, il a combattu sur le front de l'Est aux côtés de l'Armée rouge.
+      - Un escadron est l'unité volante de l'armée de l'air — l'équivalent de la flottille dans la Marine.
+      - Il vole aujourd'hui sur Rafale, à la base aérienne 118 de Mont-de-Marsan.
+  sections:
+    - id: une-legende-de-la-france-libre
+      title: Une légende de la France libre
+      body: |
+        Formé en **1942**, le groupe de chasse **« Normandie »** rejoint le
+        **front de l'Est** pour combattre l'Allemagne nazie aux côtés des
+        **Soviétiques** — un engagement **unique** parmi les forces
+        occidentales. Ses pilotes y accomplissent des milliers de **missions**
+        et y remportent de nombreuses **victoires** aériennes.
+
+        En récompense, l'unité reçoit le nom du fleuve **Niémen**, théâtre de
+        durs combats. Elle compte dans ses rangs plusieurs **Compagnons de la
+        Libération** et reçoit de hautes **décorations**, françaises comme
+        soviétiques. À la fin de la guerre, ses pilotes rentrent en France aux
+        commandes de leurs chasseurs **Yak** — dont un exemplaire est conservé
+        au **musée de l'Air et de l'Espace** du Bourget.
+    - id: l-escadron-aujourd-hui
+      title: L'escadron aujourd'hui
+      strate: maitriser
+      body: |
+        Le Normandie-Niémen a traversé les époques et les appareils. Depuis
+        **2011**, il vole sur **Rafale** (B et C), à la **base aérienne 118 de
+        Mont-de-Marsan**. Il assure les missions de la chasse moderne : défense
+        aérienne, assaut, reconnaissance, participation à la dissuasion.
+
+        Cet héritage illustre une notion importante pour le candidat **EOPN** :
+        les **traditions** des unités. Un escadron n'est pas qu'un ensemble
+        d'avions et de pilotes — c'est une **histoire vivante**, un **insigne**,
+        des **noms** hérités des anciens. Connaître le Normandie-Niémen, c'est
+        toucher du doigt la **culture** de l'armée de l'air.
+  pieges:
+    - Un escadron est l'unité volante de l'armée de l'air — l'équivalent de la flottille dans la Marine ; ne pas mélanger les deux termes.
+    - Le Normandie-Niémen a combattu aux côtés de l'Armée rouge sur le front de l'Est — un fait historique unique parmi les forces occidentales.
+    - L'escadron vole aujourd'hui sur Rafale — son histoire est ancienne, mais l'unité est bien active et moderne.

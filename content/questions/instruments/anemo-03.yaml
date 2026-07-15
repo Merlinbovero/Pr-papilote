@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.instruments.anemo-03
+kind: association
+theme: anemometre
+statement: >-
+  Associez chaque vitesse à sa définition.
+pairs:
+  - left: "Vitesse indiquée (Vi)"
+    right: "La vitesse lue sur le badin"
+  - left: "Vitesse propre (Vp)"
+    right: "La vitesse réelle par rapport à l'air (densité)"
+  - left: "Vitesse sol (Vs)"
+    right: "La vitesse par rapport au sol (vent)"
+explanation: >-
+  La vitesse indiquée est lue au badin ; corrigée de la densité, elle donne la
+  vitesse propre (réelle dans l'air) ; corrigée du vent, la vitesse sol.
+evaluates: [fondamentaux.instruments.anemometre]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .cloud { stroke: currentColor; fill: none; stroke-width: 2; }
+    .lead { stroke: #94a3b8; fill: none; stroke-width: 1; }
+    .bolt { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Le cumulonimbus concentre les dangers</text>
+  <!-- Enclume (anvil) -->
+  <path class="cloud" d="M150,116 C150,96 184,88 224,90 C266,88 316,96 312,116 C296,128 244,124 224,124 C192,124 164,128 150,116 Z" />
+  <!-- Corps (tour) -->
+  <path class="cloud" d="M190,252 C174,236 182,214 198,216 C190,188 210,172 228,182 C236,150 220,132 232,124 L214,124 C202,140 206,196 202,216 C210,214 214,236 200,252 Z" />
+  <path class="cloud" d="M232,124 C258,120 292,132 290,164 C290,196 282,214 292,216 C306,218 312,238 298,252 L214,252" />
+  <!-- Foudre -->
+  <path class="bolt" d="M244,128 L234,160 L248,160 L236,196" />
+  <!-- Étiquettes des dangers -->
+  <line class="lead" x1="196" y1="150" x2="120" y2="140" />
+  <text class="lbl" x="116" y="136" text-anchor="end">turbulence</text>
+  <line class="lead" x1="200" y1="200" x2="120" y2="210" />
+  <text class="lbl" x="116" y="206" text-anchor="end">givrage</text>
+  <line class="lead" x1="214" y1="250" x2="150" y2="276" />
+  <text class="lbl" x="146" y="280" text-anchor="end">grêle</text>
+  <line class="lead" x1="240" y1="180" x2="336" y2="150" />
+  <text class="accent-t" x="340" y="146" text-anchor="start">foudre</text>
+  <line class="lead" x1="288" y1="200" x2="352" y2="212" />
+  <text class="lbl" x="356" y="208" text-anchor="start">cisaillement</text>
+  <line class="lead" x1="280" y1="248" x2="342" y2="276" />
+  <text class="lbl" x="346" y="280" text-anchor="start">visibilité réduite</text>
+</svg>

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.a400m-01
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quel est le rôle de l'A400M Atlas ?
+choices:
+  - Le transport militaire (tactique et stratégique)
+  - La chasse et la défense aérienne
+  - Le guet aérien
+  - La lutte anti-sous-marine
+correctChoices: [0]
+explanation: >-
+  L'A400M Atlas est l'avion de transport militaire de l'Armée de l'air et de
+  l'Espace, capable de missions à la fois tactiques et stratégiques.
+evaluates: [eopn.appareils.a400m]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

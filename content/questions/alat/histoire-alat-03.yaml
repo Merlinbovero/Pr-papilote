@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.histoire-alat-03
+kind: qcm
+theme: histoire-alat
+statement: >-
+  Que représente l'opération Daguet (1991) pour l'ALAT ?
+choices:
+  - 132 hélicoptères déployés — deuxième force aéromobile de la coalition
+  - Sa première opération avec des avions de chasse
+  - La création de l'aviation d'observation d'artillerie
+  - Son retrait définitif des opérations extérieures
+correctChoices: [0]
+explanation: >-
+  Lors de la guerre du Golfe, l'ALAT déploie 132 hélicoptères (88 Gazelle et
+  38 Puma) — la deuxième force aéromobile de la coalition, validation en vraie
+  grandeur du modèle aéromobile français.
+evaluates: [alat.histoire.histoire-de-l-alat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.histoire-aeronavale-05
+kind: qcm
+theme: histoire-aeronavale
+statement: >-
+  Que désigne le passage au « tout-Rafale » de 2016 dans l'aéronautique navale ?
+choices:
+  - Le retrait du Super-Étendard modernisé, laissant le Rafale Marine seul avion de combat embarqué
+  - La mise en service du premier Rafale Marine
+  - Le remplacement du Charles de Gaulle par un nouveau porte-avions
+  - L'abandon du porte-avions au profit d'avions terrestres
+correctChoices: [0]
+explanation: >-
+  En 2016, le retrait du Super-Étendard modernisé fait du Rafale Marine l'unique
+  avion de combat embarqué du groupe aérien : c'est le « tout-Rafale ».
+evaluates: [eopan.histoire.histoire-de-l-aeronautique-navale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

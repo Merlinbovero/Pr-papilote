@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: alat.grades.grades-de-l-armee-de-terre
+type: concept
+title: Les grades de l'armée de Terre
+slug: grades-de-l-armee-de-terre
+summary: >-
+  Du soldat au général d'armée, la hiérarchie de l'armée de Terre en quatre
+  catégories — militaires du rang, sous-officiers, officiers, officiers
+  généraux — un socle indispensable pour tout candidat pilote ALAT.
+objectifs:
+  - Restituer la hiérarchie complète des grades de l'armée de Terre.
+  - Distinguer les quatre catégories (militaires du rang, sous-officiers, officiers, officiers généraux).
+  - Connaître les appellations particulières (chef de bataillon/d'escadron, mon capitaine…).
+aliases: [grades armée de Terre, hiérarchie militaire, galons, sous-officier, officier]
+module: alat
+category: grades
+tags: []
+concours: [alat]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche grades de l'armée de Terre (campagne de recherche n°1, lot N1 ; source officielle defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Les grades dans l'armée de Terre (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/grades-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - alat.presentation.devenir-pilote-alat
+    - alat.organisation.aviation-legere-armee-de-terre
+    - eopan.grades.grades-de-la-marine
+content:
+  essentiel:
+    body: |
+      L'armée de Terre distingue **quatre catégories** :
+
+      1. **Militaires du rang** — soldat, soldat de première classe,
+         **caporal**, **caporal-chef** ;
+      2. **Sous-officiers** — **sergent**, sergent-chef, **adjudant**,
+         adjudant-chef, **major** ;
+      3. **Officiers** — **sous-lieutenant**, **lieutenant**, **capitaine**,
+         **commandant**, **lieutenant-colonel**, **colonel** ;
+      4. **Officiers généraux** — général de **brigade** (2 étoiles), de
+         **division** (3), de **corps d'armée** (4), général d'**armée** (5).
+
+      Particularité de l'ALAT : elle recrute ses pilotes comme **officiers**
+      mais aussi comme **sous-officiers pilotes** — connaître cette échelle,
+      et savoir s'adresser correctement à chacun, est un **prérequis absolu**
+      de la vie militaire.
+    aRetenir:
+      - "Quatre catégories — militaires du rang, sous-officiers, officiers, officiers généraux."
+      - "Sous-officiers, du bas vers le haut — sergent, sergent-chef, adjudant, adjudant-chef, major."
+      - "Officiers — sous-lieutenant, lieutenant, capitaine, commandant, lieutenant-colonel, colonel."
+      - Généraux — brigade (2 étoiles), division (3), corps d'armée (4), armée (5).
+  sections:
+    - id: lire-l-echelle
+      title: Lire l'échelle des grades
+      body: |
+        | Catégorie | Grades (croissant) |
+        | --- | --- |
+        | Militaires du rang | soldat · 1re classe · caporal · caporal-chef |
+        | Sous-officiers | sergent · sergent-chef · adjudant · adjudant-chef · major |
+        | Officiers | sous-lieutenant · lieutenant · capitaine · commandant · lieutenant-colonel · colonel |
+        | Officiers généraux | général de brigade (2★) · de division (3★) · de corps d'armée (4★) · d'armée (5★) |
+
+        Particularité d'appellation : dans certaines armes, le commandant
+        s'appelle **chef de bataillon** (infanterie) ou **chef d'escadrons**
+        (cavalerie) — le grade reste le même.
+    - id: usages-et-appellations
+      title: Usages et appellations
+      body: |
+        Quelques usages à connaître avant tout entretien ou immersion :
+
+        - on s'adresse à un officier en disant « **mon** capitaine », « mon
+          colonel » (« mon » venant de « monsieur ») ;
+        - on dit en revanche **« sergent », « adjudant »** — sans « mon » —
+          aux sous-officiers dans l'armée de Terre, sauf à l'adjudant et
+          l'adjudant-chef auxquels on dit « **mon adjudant** », « mon
+          adjudant-chef » ;
+        - une **femme** officier s'entend dire « capitaine », sans « mon ».
+
+        Spécificité de l'ALAT : elle recrute des **sous-officiers pilotes**
+        (sergent à major), aux côtés des pilotes **officiers** — alors que
+        dans la Marine et l'armée de l'Air, le pilote est recruté comme
+        officier.
+    - id: comparaison-interarmees
+      title: Comparaison interarmées
+      strate: maitriser
+      body: |
+        Les grades de l'armée de Terre et de l'armée de l'Air sont
+        **identiques** dans leurs appellations. La **Marine** utilise une
+        échelle différente : le capitaine de l'armée de Terre correspond au
+        **lieutenant de vaisseau**, le colonel au **capitaine de vaisseau**
+        (voir la fiche des grades de la Marine).
+
+        Pour un candidat ALAT, l'essentiel est de restituer **sans hésiter**
+        l'échelle Terre et de comprendre où il se situera — élève
+        sous-officier pilote, puis sergent dès la sortie de formation
+        initiale.
+  pieges:
+    - Le major est le sommet des sous-officiers — ce n'est pas un officier, malgré la consonance.
+    - Commandant, chef de bataillon et chef d'escadrons désignent le même grade selon l'arme.
+    - On dit « mon capitaine » (officiers) mais « sergent » (sous-officiers, sans « mon ») — et pas de « mon » pour s'adresser à une femme officier.
+    - L'ALAT recrute aussi des sous-officiers pilotes — une spécificité par rapport à la Marine et à l'armée de l'Air, où le pilote est officier.

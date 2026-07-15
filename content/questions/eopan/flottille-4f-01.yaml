@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-4f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle est la spécialité de la flottille 4F ?
+choices:
+  - Le guet aérien (E-2C Hawkeye)
+  - La chasse embarquée (Rafale M)
+  - La patrouille maritime (Atlantique 2)
+  - Le secours en mer (NH90 Caïman)
+correctChoices: [0]
+explanation: >-
+  La 4F est l'unique flottille de guet aérien de l'aéronautique navale : elle met
+  en œuvre les E-2C Hawkeye, avions radars du groupe aéronaval.
+evaluates: [eopan.unites.flottille-4f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

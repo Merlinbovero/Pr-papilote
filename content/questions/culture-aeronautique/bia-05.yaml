@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.bia-05
+kind: qcm
+theme: bia
+statement: >-
+  Quelle est la différence entre le BIA et le CAEA ?
+choices:
+  - "Le BIA est le diplôme de l'élève, le CAEA celui de l'enseignant"
+  - "Le BIA est civil, le CAEA est militaire"
+  - "Le CAEA est l'ancienne appellation du BIA"
+  - "Le BIA concerne les avions, le CAEA les hélicoptères"
+correctChoices: [0]
+explanation: >-
+  Le CAEA (certificat d'aptitude à l'enseignement aéronautique) atteste
+  l'aptitude à enseigner l'aéronautique et à préparer les élèves au BIA —
+  deux diplômes de l'Éducation nationale, deux publics.
+evaluates: [fondamentaux.culture-aeronautique.le-bia]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

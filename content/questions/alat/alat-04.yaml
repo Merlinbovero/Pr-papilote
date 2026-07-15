@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.alat-04
+kind: qcm
+theme: presentation-alat
+statement: >-
+  Où se déroule la formation initiale de pilotage des futurs pilotes de l'ALAT ?
+choices:
+  - À Dax (base école Général Navelet)
+  - À Salon-de-Provence
+  - À Landivisiau
+  - À Toulon
+correctChoices: [0]
+explanation: >-
+  La formation initiale de pilotage de l'ALAT se déroule à Dax, à la base école
+  Général Navelet (EALAT), avant la formation tactique au Cannet-des-Maures.
+evaluates: [alat.presentation.devenir-pilote-alat]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

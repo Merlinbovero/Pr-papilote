@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.horiz-04
+kind: qcm
+theme: horizon-artificiel
+statement: >-
+  Que représentent le bleu et le marron sur le cadran de l'horizon artificiel ?
+choices:
+  - "Le ciel (bleu) et la terre (marron)"
+  - "Le froid et le chaud"
+  - "L'eau et le sable"
+  - "Le jour et la nuit"
+correctChoices: [0]
+explanation: >-
+  L'hémisphère supérieur bleu représente le ciel, l'hémisphère inférieur marron
+  la terre, séparés par la ligne d'horizon.
+evaluates: [fondamentaux.instruments.horizon-artificiel]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

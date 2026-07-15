@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.anemo-02
+kind: qcm
+theme: anemometre
+statement: >-
+  Quelle grandeur physique l'anémomètre exploite-t-il pour indiquer la vitesse ?
+choices:
+  - "La pression dynamique"
+  - "Le poids de l'avion"
+  - "La déclinaison magnétique"
+  - "L'humidité de l'air"
+correctChoices: [0]
+explanation: >-
+  L'anémomètre exploite la pression dynamique (pression totale moins pression
+  statique), qui est proportionnelle au carré de la vitesse.
+evaluates: [fondamentaux.instruments.anemometre]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

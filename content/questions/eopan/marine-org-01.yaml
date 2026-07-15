@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.marine-org-01
+kind: qcm
+theme: organisation-marine
+statement: >-
+  Quelle autorité organique prépare l'aéronautique navale (bases, aéronefs, pilotes) ?
+choices:
+  - ALAVIA
+  - ALFAN
+  - ALFOST
+  - ALFUSCO
+correctChoices: [0]
+explanation: >-
+  ALAVIA — l'amiral commandant la force de l'aéronautique navale — prépare
+  l'ensemble des bases et aéronefs de la Marine ; c'est l'autorité-clé pour un
+  candidat EOPAN.
+evaluates: [eopan.organisation.marine-nationale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

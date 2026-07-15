@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-verbes-05
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quel est le prétérit du verbe « to take off » ?
+choices:
+  - took off
+  - taked off
+  - taken off
+  - takes off
+correctChoices: [0]
+explanation: >-
+  Take est irrégulier : take / took / taken. « We took off at noon » — les
+  prétérits irréguliers (take→took, fly→flew, rise→rose) sont un classique
+  des questions de grammaire.
+evaluates: [fondamentaux.anglais-aeronautique.les-verbes-du-vol]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

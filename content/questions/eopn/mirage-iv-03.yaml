@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.mirage-iv-03
+kind: vrai-faux
+theme: appareils-historiques
+statement: >-
+  Le Mirage IV a été largement exporté, notamment en Australie et en Israël.
+answer: false
+explanation: >-
+  Malgré l'intérêt de l'Australie, d'Israël et de la Grande-Bretagne, le
+  Mirage IV ne fut jamais exporté — on ne vend pas le vecteur de sa
+  dissuasion nationale.
+evaluates: [eopn.appareils.mirage-iv]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

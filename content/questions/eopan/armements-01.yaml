@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.armements-01
+kind: qcm
+theme: armements-aeronavale
+statement: >-
+  Quel missile antinavire arme le Rafale Marine et l'Atlantique 2 ?
+choices:
+  - L'Exocet AM39
+  - L'ASMP-A
+  - Le Meteor
+  - La MU90
+correctChoices: [0]
+explanation: >-
+  L'Exocet AM39 est la version aéroportée de la famille Exocet : un missile
+  antinavire subsonique volant au ras des flots, d'une portée d'environ 70 km,
+  tiré par le Rafale M et l'ATL2.
+evaluates: [eopan.concepts.les-armements-de-l-aeronautique-navale]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

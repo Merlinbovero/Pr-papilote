@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .deck { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 1.6; }
+    .sea { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .cat { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le catapultage</text>
+  <!-- Pont -->
+  <path class="deck" d="M28,150 L360,150 L360,206" />
+  <!-- Mer sous l'étrave -->
+  <path class="sea" d="M360,206 Q400,198 448,206" />
+  <text class="sub" x="410" y="222" text-anchor="middle">mer</text>
+  <!-- Piste de catapulte (rail) -->
+  <line class="deck" x1="60" y1="150" x2="352" y2="150" stroke-dasharray="4 5" />
+  <!-- Cylindre à vapeur sous le pont -->
+  <rect class="cat" x="60" y="158" width="292" height="10" rx="3" />
+  <text class="accent-t" x="206" y="186" text-anchor="middle">cylindre à vapeur (piston + chariot)</text>
+  <text class="sub" x="206" y="200" text-anchor="middle">deux catapultes de 75 m sur le Charles de Gaulle</text>
+  <!-- Avion au départ -->
+  <g class="plane" transform="translate(96,138)">
+    <line x1="-16" y1="0" x2="16" y2="0" />
+    <line x1="-4" y1="-9" x2="-4" y2="9" />
+    <line x1="-15" y1="-6" x2="-15" y2="6" />
+  </g>
+  <!-- Flèche d'accélération -->
+  <line class="cat" x1="120" y1="140" x2="336" y2="140" marker-end="url(#ac)" />
+  <text class="accent-t" x="228" y="132" text-anchor="middle">0 → ~250 km/h en ~2 s</text>
+  <!-- Avion qui décolle -->
+  <g class="plane" transform="translate(408,96) rotate(-18)">
+    <line x1="-18" y1="0" x2="18" y2="0" />
+    <line x1="-5" y1="-10" x2="-5" y2="10" />
+    <line x1="-17" y1="-6" x2="-17" y2="6" />
+  </g>
+  <text class="lbl" x="410" y="78" text-anchor="middle">envol</text>
+</svg>

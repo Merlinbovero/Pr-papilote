@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.la-meteo-en-anglais
+type: concept
+title: La météo en anglais
+slug: la-meteo-en-anglais
+summary: >-
+  Gusts, overcast, CAVOK — la météo aéronautique parle anglais, du bulletin
+  parlé au METAR codé. Le vocabulaire du ciel (nuages, vent, visibilité,
+  givrage) et les clés de lecture d'un METAR.
+objectifs:
+  - Employer le vocabulaire météo anglais (wind, gusts, visibility, fog, icing, thunderstorm).
+  - Connaître les quantités de nuages (few, scattered, broken, overcast) et CAVOK.
+  - Décoder les éléments essentiels d'un METAR simple.
+aliases: [météo en anglais, METAR, CAVOK, overcast, gusts, icing, thunderstorm]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — vocabulaire météo et METAR (lot N13, phase P3 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Météo-France Aviation — codes et messages d'observation (METAR)"
+    url: https://aviation.meteo.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.meteorologie.les-nuages
+    - fondamentaux.anglais-aeronautique.l-anglais-des-urgences
+content:
+  essentiel:
+    body: |
+      La météo du pilote, en deux colonnes :
+
+      | Français | Anglais |
+      | --- | --- |
+      | vent / rafales | **wind / gusts** |
+      | visibilité | **visibility** |
+      | brouillard / brume | **fog / mist** |
+      | nuage / plafond | **cloud / ceiling** |
+      | averse / pluie | **shower / rain** |
+      | orage | **thunderstorm** |
+      | givrage | **icing** |
+      | turbulence | **turbulence** |
+      | cisaillement de vent | **wind shear** |
+
+      Les **quantités de nuages** s'expriment en octas, avec quatre mots
+      clés : **FEW** (1-2/8), **SCT** — *scattered* (3-4/8), **BKN** —
+      *broken* (5-7/8), **OVC** — *overcast* (8/8, couvert).
+
+      Et le mot magique : **CAVOK** (*ceiling and visibility OK*) —
+      visibilité ≥ 10 km, pas de nuage significatif, pas de phénomène
+      dangereux. Le temps idéal, en cinq lettres.
+    aRetenir:
+      - "Nuages en octas — FEW (1-2), SCT scattered (3-4), BKN broken (5-7), OVC overcast (8)."
+      - "CAVOK = ceiling and visibility OK — visibilité ≥ 10 km, pas de nuage significatif."
+      - "Gusts = rafales ; icing = givrage ; wind shear = cisaillement — les trois mots du danger."
+      - Un METAR se lit toujours dans le même ordre — station, heure, vent, visibilité, temps, nuages, température, QNH.
+  sections:
+    - id: lire-un-metar-simple
+      title: Lire un METAR simple
+      body: |
+        Le **METAR** est l'observation météo codée d'un aérodrome. Exemple
+        décodé, élément par élément :
+
+        *LFBG 141100Z 24012G20KT 9999 SCT030 18/12 Q1015*
+
+        | Élément | Sens |
+        | --- | --- |
+        | LFBG | l'aérodrome (Cognac) |
+        | 141100Z | le 14 du mois, 11 h 00 UTC (Z = zoulou) |
+        | 24012G20KT | vent du 240°, 12 kt, rafales (G = gusts) 20 kt |
+        | 9999 | visibilité ≥ 10 km |
+        | SCT030 | nuages épars (3-4/8) à 3 000 ft |
+        | 18/12 | température 18 °C, point de rosée 12 °C |
+        | Q1015 | QNH 1015 hPa |
+
+        L'ordre est **invariable** — c'est ce qui rend le METAR lisible en
+        quelques secondes une fois la grille acquise.
+    - id: les-phenomenes-dangereux
+      title: Les phénomènes dangereux
+      strate: maitriser
+      body: |
+        Les abréviations des phénomènes se retrouvent du METAR aux
+        bulletins parlés :
+
+        - **TS** (*thunderstorm*) — orage ; **CB** (*cumulonimbus*) — le
+          nuage à éviter absolument ;
+        - **FG** (*fog*) — brouillard ; **BR** (*mist*) — brume ;
+        - **RA / SN / GR** — pluie / neige / grêle (+ **SH** *showers*,
+          averses ; **FZ** *freezing*, se congelant : FZRA = pluie
+          verglaçante) ;
+        - **icing** (givrage) et **wind shear** (cisaillement) — rarement
+          codés, toujours dans les bulletins.
+
+        Un candidat qui sait dire en anglais « *broken clouds at 1,200
+        feet, visibility 3 kilometres in rain, risk of icing* » — et
+        comprendre la réponse — possède le niveau météo attendu des
+        évaluations orales.
+  pieges:
+    - "BKN (broken, 5-7 octas) n'est pas OVC (overcast, 8/8) — le plafond « couvert » exige la totalité du ciel."
+    - "CAVOK impose visibilité ≥ 10 km ET absence de nuage significatif — pas seulement un ciel bleu."
+    - "G dans un groupe vent = gusts (rafales) : 24012G20KT = 12 kt avec rafales à 20 kt."
+    - "Mist (BR) = brume ; fog (FG) = brouillard — la frontière est la visibilité (1 000 m)."

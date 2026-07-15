@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage-iv-02
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quel appareil était indissociable du Mirage IV dans sa mission nucléaire ?
+choices:
+  - "Le ravitailleur C-135"
+  - "L'AWACS E-3F"
+  - "Le Transall C-160"
+  - "Le Jaguar"
+correctChoices: [0]
+explanation: >-
+  Le rayon d'action de la mission exigeait le ravitaillement en vol — le
+  couple Mirage IV + C-135 formait le système d'armes complet de la
+  dissuasion aéroportée.
+evaluates: [eopn.appareils.mirage-iv]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

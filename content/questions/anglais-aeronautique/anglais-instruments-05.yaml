@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-instruments-05
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « HOTAS » ?
+choices:
+  - Hands On Throttle And Stick — toutes les commandes clés sous les mains
+  - Head Over Tail Attack System
+  - High Order Tactical Air Support
+  - Hold On To All Switches
+correctChoices: [0]
+explanation: >-
+  HOTAS = hands on throttle and stick : les commandes essentielles sont sur
+  la manette et le manche, pour ne jamais quitter les yeux de la mission —
+  l'ergonomie du PC-21 comme du Rafale.
+evaluates: [fondamentaux.anglais-aeronautique.les-instruments-en-anglais]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

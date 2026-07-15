@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .globe { stroke: currentColor; fill: none; stroke-width: 2; }
+    .ref { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .loc { stroke: #3b82f6; fill: none; stroke-width: 2; stroke-dasharray: 5 4; }
+    .dot { fill: #3b82f6; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Latitude et longitude</text>
+  <!-- Globe -->
+  <circle class="globe" cx="190" cy="164" r="108" />
+  <!-- Axe et pôles -->
+  <line class="ref" x1="190" y1="56" x2="190" y2="272" stroke-dasharray="3 3" />
+  <text class="lbl" x="190" y="50" text-anchor="middle">N</text>
+  <text class="lbl" x="190" y="288" text-anchor="middle">S</text>
+  <!-- Équateur -->
+  <ellipse class="globe" cx="190" cy="164" rx="108" ry="30" />
+  <text class="lbl" x="304" y="192" text-anchor="start">équateur (0° lat.)</text>
+  <!-- Méridien de Greenwich -->
+  <ellipse class="globe" cx="190" cy="164" rx="32" ry="108" />
+  <text class="lbl" x="190" y="300" text-anchor="middle">méridien de Greenwich (0° long.)</text>
+  <!-- Parallèle du point (latitude) -->
+  <ellipse class="loc" cx="190" cy="118" rx="92" ry="22" />
+  <!-- Méridien du point (longitude) -->
+  <path class="loc" d="M190,56 C238,90 256,232 190,272" />
+  <!-- Point localisé -->
+  <circle class="dot" cx="252" cy="112" r="4" />
+  <text class="accent-t" x="262" y="108" text-anchor="start">point</text>
+  <text class="accent-t" x="86" y="106" text-anchor="end">latitude</text>
+  <text class="accent-t" x="250" y="238" text-anchor="start">longitude</text>
+</svg>

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-23f-03
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Sur quels théâtres terrestres les ATL2 des flottilles 21F et 23F ont-ils opéré depuis les années 2010 ?
+choices:
+  - Au Levant et au Sahel (renseignement, désignation d'objectifs, bombes guidées)
+  - Uniquement au-dessus de l'Atlantique
+  - En Antarctique
+  - Sur aucun théâtre terrestre
+correctChoices: [0]
+explanation: >-
+  L'ATL2 opère aussi au-dessus de la terre : au Levant et au Sahel, les
+  équipages ont fourni du renseignement, désigné des objectifs et largué des
+  bombes guidées — la polyvalence de la PATMAR moderne.
+evaluates: [eopan.unites.flottille-23f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

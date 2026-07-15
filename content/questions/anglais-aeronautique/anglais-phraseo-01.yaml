@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-phraseo-01
+kind: association
+theme: anglais-phraseologie
+statement: >-
+  Associez chaque chiffre à sa prononciation OACI.
+pairs:
+  - left: "3"
+    right: TREE
+  - left: "4"
+    right: FOW-er
+  - left: "5"
+    right: FIFE
+  - left: "9"
+    right: NIN-er
+explanation: >-
+  L'OACI a durci la prononciation des chiffres ambigus : TREE (3), FOWer (4),
+  FIFE (5), NINer (9) — pour percer le souffle radio et éviter les confusions
+  (five/fire, nine/nein).
+evaluates: [fondamentaux.anglais-aeronautique.la-phraseologie-anglaise]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

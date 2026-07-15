@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.salon-03
+kind: qcm
+theme: bases-aae
+statement: >-
+  Dans le parcours EOPN, quel est le rôle de la base de Salon-de-Provence ?
+choices:
+  - C'est là que débute la formation, après la sélection
+  - C'est là que se déroule la sélection au sol
+  - C'est le lieu de dépôt du dossier
+  - C'est une base de dissuasion nucléaire
+correctChoices: [0]
+explanation: >-
+  Une fois la sélection réussie (au sol, à Tours), les élèves rejoignent
+  Salon-de-Provence, où débute leur formation d'officier puis de navigant.
+evaluates: [eopn.bases.salon-de-provence]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.air-01
+kind: qcm
+theme: proprietes-air
+statement: >-
+  Quelle propriété de l'air est la plus importante pour le vol ?
+choices:
+  - "Sa masse volumique (densité)"
+  - "Sa couleur"
+  - "Son odeur"
+  - "Sa transparence"
+correctChoices: [0]
+explanation: >-
+  La masse volumique (densité ρ) est la propriété clé : portance et traînée lui
+  sont proportionnelles.
+evaluates: [fondamentaux.aerodynamique.air-et-proprietes]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

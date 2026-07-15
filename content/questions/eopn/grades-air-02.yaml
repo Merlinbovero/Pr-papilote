@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.grades-air-02
+kind: qcm
+theme: grades-air
+statement: >-
+  Comment s'appellent les officiers généraux de l'armée de l'Air et de l'Espace ?
+choices:
+  - Général de brigade aérienne, de division aérienne, de corps aérien, d'armée aérienne
+  - Contre-amiral, vice-amiral, amiral
+  - Général de brigade, de division, de corps d'armée, d'armée (sans qualificatif)
+  - Maréchal de l'air
+correctChoices: [0]
+explanation: >-
+  Les généraux de l'AAE portent le qualificatif « aérien(ne) » : général de
+  brigade aérienne (2 étoiles) jusqu'à général d'armée aérienne (5 étoiles).
+  Les amiraux appartiennent à la Marine.
+evaluates: [eopn.grades.grades-de-l-armee-de-l-air]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

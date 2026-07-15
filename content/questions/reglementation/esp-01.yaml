@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.reglementation.esp-01
+kind: qcm
+theme: espaces-aeriens
+statement: >-
+  Combien de classes d'espace aérien l'OACI définit-elle ?
+choices:
+  - "Sept (de A à G)"
+  - "Trois"
+  - "Cinq"
+  - "Dix"
+correctChoices: [0]
+explanation: >-
+  L'OACI définit sept classes d'espace aérien, de A à G, du plus contrôlé au plus
+  libre.
+evaluates: [fondamentaux.reglementation.espaces-aeriens]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

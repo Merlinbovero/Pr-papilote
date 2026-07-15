@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.pc-21-03
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Quel est l'atout principal du PC-21 pour former les pilotes de chasse ?
+choices:
+  - Son avionique simule les systèmes d'un avion d'armes pour un coût très inférieur à un jet
+  - Sa vitesse supersonique
+  - Sa capacité d'emport d'armement réel
+  - Son rayon d'action intercontinental
+correctChoices: [0]
+explanation: >-
+  Cockpit tout écran, HOTAS, radar et armements simulés : le PC-21 apprend à
+  gérer un système de combat dès l'école, pour un coût d'exploitation bien
+  moindre que celui d'un jet.
+evaluates: [eopn.appareils.pc-21]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

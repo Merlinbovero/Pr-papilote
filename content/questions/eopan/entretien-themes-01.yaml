@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.entretien-themes-01
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  Quelles sont les six familles de thèmes qui structurent la plupart des entretiens EOPAN ?
+choices:
+  - Parcours, motivation, métier, Marine/Défense, actualité, projection
+  - Mathématiques, physique, anglais, sport, histoire, géographie
+  - Aérodynamique, navigation, météo, réglementation, radio, instruments
+  - Famille, loisirs, vacances, musique, cinéma, lecture
+correctChoices: [0]
+explanation: >-
+  Les questions gravitent autour de six familles stables : le parcours du
+  candidat, sa motivation, le métier, la Marine et la Défense, l'actualité et
+  la projection dans l'avenir (plan B, dix ans).
+evaluates: [eopan.selection.les-themes-recurrents-de-l-entretien]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

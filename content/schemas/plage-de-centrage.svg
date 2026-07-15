@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 2; }
+    .band { fill: #3b82f6; fill-opacity: 0.14; stroke: #3b82f6; stroke-width: 1.5; }
+    .limit { stroke: #3b82f6; fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .cg-fill { fill: currentColor; }
+    .cg-line { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">La plage de centrage</text>
+  <!-- Fuselage (profil, nez à droite) -->
+  <path class="plane" d="M410,96 C388,88 320,84 250,85 L96,87 C82,88 74,92 74,96 C74,100 82,104 96,105 L250,107 C320,108 388,104 410,96 Z" />
+  <path class="plane" d="M90,87 L80,66 L106,86 Z" />
+  <!-- Plage de centrage autorisée -->
+  <rect class="band" x="196" y="70" width="94" height="52" rx="3" />
+  <text class="accent-t" x="243" y="64" text-anchor="middle">plage autorisée</text>
+  <!-- Limites -->
+  <line class="limit" x1="196" y1="70" x2="196" y2="146" />
+  <text class="sub" x="196" y="160" text-anchor="middle">limite avant</text>
+  <line class="limit" x1="290" y1="70" x2="290" y2="146" />
+  <text class="sub" x="290" y="160" text-anchor="middle">limite arrière</text>
+  <!-- Centre de gravité dans la plage -->
+  <circle class="cg-line" cx="243" cy="96" r="7" />
+  <path class="cg-fill" d="M243,89 A7,7 0 0,1 250,96 L243,96 Z" />
+  <path class="cg-fill" d="M243,103 A7,7 0 0,1 236,96 L243,96 Z" />
+  <text class="lbl" x="243" y="140" text-anchor="middle">G</text>
+  <!-- Zones dangereuses -->
+  <text class="sub" x="140" y="180" text-anchor="middle">trop avant — lourd, décrochage plus tôt</text>
+  <text class="sub" x="350" y="180" text-anchor="middle">trop arrière — instable</text>
+</svg>

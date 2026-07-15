@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .hub { fill: #3b82f6; }
+    .hub-t { fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .node { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+    .lbl { font-size: 11px; }
+    .sub { font-size: 9px; fill: #94a3b8; }
+    .spoke { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <text class="title" x="240" y="24" text-anchor="middle">Le groupe aéronaval (GAN)</text>
+  <!-- spokes -->
+  <line class="spoke" x1="240" y1="180" x2="120" y2="96" />
+  <line class="spoke" x1="240" y1="180" x2="360" y2="96" />
+  <line class="spoke" x1="240" y1="180" x2="96" y2="200" />
+  <line class="spoke" x1="240" y1="180" x2="384" y2="200" />
+  <line class="spoke" x1="240" y1="180" x2="150" y2="292" />
+  <line class="spoke" x1="240" y1="180" x2="330" y2="292" />
+  <!-- hub -->
+  <circle class="hub" cx="240" cy="180" r="52" />
+  <text class="hub-t" x="240" y="176" text-anchor="middle">Porte-avions</text>
+  <text class="hub-t" x="240" y="192" text-anchor="middle">Charles de Gaulle</text>
+  <!-- top-left: FDA -->
+  <rect class="node" x="42" y="72" width="150" height="40" rx="6" />
+  <text class="lbl" x="117" y="90" text-anchor="middle">Frégate(s) de défense</text>
+  <text class="lbl" x="117" y="104" text-anchor="middle">aérienne (Horizon, FREMM DA)</text>
+  <!-- top-right: FREMM ASM -->
+  <rect class="node" x="288" y="72" width="150" height="40" rx="6" />
+  <text class="lbl" x="363" y="90" text-anchor="middle">Frégate(s) anti-sous-marine</text>
+  <text class="lbl" x="363" y="104" text-anchor="middle">(FREMM, La Fayette)</text>
+  <!-- mid-left: SNA -->
+  <rect class="node" x="6" y="180" width="130" height="40" rx="6" />
+  <text class="lbl" x="71" y="198" text-anchor="middle">Sous-marin nucléaire</text>
+  <text class="lbl" x="71" y="212" text-anchor="middle">d'attaque (SNA)</text>
+  <!-- mid-right: ravitailleur -->
+  <rect class="node" x="344" y="180" width="132" height="40" rx="6" />
+  <text class="lbl" x="410" y="198" text-anchor="middle">Pétrolier-ravitailleur</text>
+  <text class="lbl" x="410" y="212" text-anchor="middle">(BCR / Jacques Chevallier)</text>
+  <!-- bottom-left: GAé -->
+  <rect class="node" x="52" y="288" width="150" height="52" rx="6" />
+  <text class="lbl" x="127" y="304" text-anchor="middle">Groupe aérien embarqué</text>
+  <text class="sub" x="127" y="318" text-anchor="middle">Rafale M · E-2C Hawkeye</text>
+  <text class="sub" x="127" y="330" text-anchor="middle">hélicoptères (Dauphin, Caïman)</text>
+  <!-- bottom-right: état-major -->
+  <rect class="node" x="278" y="288" width="150" height="52" rx="6" />
+  <text class="lbl" x="353" y="304" text-anchor="middle">État-major embarqué</text>
+  <text class="sub" x="353" y="318" text-anchor="middle">soutien ATL2 depuis la terre</text>
+  <text class="sub" x="353" y="330" text-anchor="middle">~3 000 marins au total</text>
+</svg>

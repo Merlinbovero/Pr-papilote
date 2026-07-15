@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.helico-01
+kind: qcm
+theme: vol-helicoptere
+statement: >-
+  Quelle commande le pilote d'hélicoptère utilise-t-il pour monter ou
+  descendre ?
+choices:
+  - "Le pas collectif"
+  - "Le pas cyclique"
+  - "Les palonniers"
+  - "La manette des gaz seule"
+correctChoices: [0]
+explanation: >-
+  Le collectif augmente l'incidence de toutes les pales à la fois — plus de
+  portance sur tout le disque, l'appareil monte.
+evaluates: [fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

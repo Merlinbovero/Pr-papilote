@@ -1,0 +1,154 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.portance
+type: notion-aerodynamique
+title: La portance
+slug: portance
+summary: >-
+  La portance est la force qui soutient l'avion. Elle naît de l'air dévié vers
+  le bas (Newton) et d'une différence de pression extrados-intrados (Bernoulli).
+  Elle croît avec le carré de la vitesse, l'incidence, la surface et la densité.
+objectifs:
+  - Expliquer l'origine de la portance (l'aile dévie l'air et crée une différence de pression), sans le mythe du temps de transit égal.
+  - Identifier les facteurs de la portance (vitesse, angle d'incidence, surface, densité de l'air).
+  - Énoncer l'influence de chaque facteur (la portance croît avec le carré de la vitesse, l'incidence, la surface et la densité).
+aliases: [portance, lift, Cz, coefficient de portance]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — septième fiche du socle, cœur de l'aérodynamique.
+    author: prepapilote
+status: publie
+sources:
+  - title: "NASA — Glenn Research Center, Bernoulli and Newton"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoulli-and-newton/
+    kind: institutionnel
+    consultedAt: "2026-07-09"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.profil-d-aile
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      La **portance** est la force qui **soutient** l'avion. En vol, c'est elle
+      qui s'oppose au poids et permet de tenir en l'air.
+
+      Elle naît de l'action de l'aile sur l'air : en le traversant, l'aile
+      **dévie l'air vers le bas**, et l'air, en réaction, la pousse **vers le
+      haut** (principe de Newton). Ce même phénomène se traduit par une
+      **différence de pression** — une dépression sur l'extrados, une surpression
+      sur l'intrados. Les deux descriptions sont deux facettes du **même**
+      phénomène.
+
+      La portance est perpendiculaire au **vent relatif** et croît avec la
+      **vitesse**, l'**angle d'incidence**, la **surface** de l'aile et la
+      **densité** de l'air.
+    aRetenir:
+      - La portance est la force qui soutient l'avion, perpendiculaire au vent relatif.
+      - Elle naît de la déviation de l'air vers le bas (Newton) et d'une différence de pression extrados-intrados.
+      - Elle croît avec le carré de la vitesse, l'angle d'incidence, la surface et la densité de l'air.
+      - Le « mythe du temps de transit égal » est faux et n'explique pas la portance.
+  sections:
+    - id: d-ou-vient-la-portance
+      title: D'où vient la portance ?
+      body: |
+        Quand une aile avance dans l'air avec une certaine incidence, elle
+        **dévie** le flux d'air vers le bas. D'après le **principe de Newton**
+        (action-réaction), si l'aile pousse l'air vers le bas, l'air pousse l'aile
+        **vers le haut** : c'est la portance.
+
+        Le même phénomène se lit sur la **pression** : l'air accélère sur
+        l'**extrados**, où la pression **diminue** (dépression), tandis qu'il est
+        ralenti sous l'**intrados**, où la pression est plus forte (surpression).
+        La différence de pression, intégrée sur toute l'aile, donne une force
+        **vers le haut**.
+
+        **Deux descriptions, un seul phénomène.** Déviation de l'air (Newton) et
+        différence de pression (Bernoulli) ne s'opposent pas : ce sont deux
+        manières correctes de calculer la même force. En revanche, l'explication
+        répandue selon laquelle « l'air du dessus doit rejoindre celui du dessous
+        en même temps » est **fausse** — les mesures montrent que l'air de
+        l'extrados arrive **en avance**.
+      figures:
+        - schemaId: portance-origine
+          alt: Un profil en incidence déviant l'air vers le bas, avec une résultante de portance dirigée vers le haut.
+          caption: L'aile dévie l'air vers le bas ; en réaction, la portance s'exerce vers le haut, perpendiculaire au vent relatif.
+          width: 460
+          height: 260
+    - id: les-facteurs-de-la-portance
+      title: Les facteurs de la portance
+      body: |
+        La portance n'est pas fixe : le pilote la fait varier. Quatre facteurs
+        principaux la gouvernent.
+
+        - La **vitesse** : la portance croît avec le **carré** de la vitesse.
+          Doubler la vitesse (à incidence constante) **quadruple** la portance.
+        - L'**angle d'incidence** : plus l'incidence augmente, plus la portance
+          augmente — mais seulement **jusqu'à une limite**, au-delà de laquelle
+          l'aile décroche (étudié dans une fiche dédiée).
+        - La **surface** de l'aile : une plus grande surface porte davantage.
+        - La **densité de l'air** : moins l'air est dense (altitude, chaleur),
+          moins l'aile porte — d'où le lien avec l'atmosphère standard.
+
+        C'est en jouant sur la vitesse et l'incidence que le pilote ajuste la
+        portance à chaque instant du vol.
+      figures:
+        - schemaId: portance-incidence
+          alt: Une courbe montrant la portance qui augmente avec l'angle d'incidence jusqu'à une limite.
+          caption: La portance augmente avec l'incidence, jusqu'à la limite du décrochage (étudiée dans une fiche dédiée).
+          width: 420
+          height: 260
+    - id: la-formule-de-la-portance
+      title: La formule de la portance
+      strate: maitriser
+      body: |
+        Tous ces facteurs se retrouvent dans une seule relation, la **formule de
+        la portance** :
+
+        **P = ½ · ρ · S · V² · Cz**
+
+        où ρ est la densité de l'air, S la surface de l'aile, V la vitesse et Cz
+        le **coefficient de portance** (qui résume la forme du profil et l'angle
+        d'incidence).
+
+        Cette formule est présentée ici **pour comprendre quels paramètres
+        influencent la portance** — et non pour en démontrer l'origine
+        mathématique. Elle montre d'un coup d'œil l'essentiel : la portance dépend
+        du **carré** de la vitesse, et proportionnellement de la densité, de la
+        surface et du coefficient Cz.
+    - id: pourquoi-le-pilote-s-interesse-a-la-portance
+      title: Pourquoi un pilote s'intéresse-t-il à la portance ?
+      body: |
+        À chaque phase du vol, le pilote **manie** la portance :
+
+        - au **décollage** : atteindre la vitesse qui crée assez de portance pour
+          quitter le sol ;
+        - à l'**atterrissage** : garder de la portance à basse vitesse, en jouant
+          sur l'incidence et les volets ;
+        - en **vol lent** : voler à forte incidence, près de la limite de
+          décrochage ;
+        - en **montée** : disposer d'un surplus de portance et de puissance ;
+        - en **virage** : l'inclinaison réduit la part de portance qui soutient
+          l'avion, il faut donc en produire davantage.
+
+        Comprendre la portance, c'est comprendre ce que fait l'avion à chaque
+        instant.
+  pieges:
+    - La portance est perpendiculaire au vent relatif, pas nécessairement « verticale » — en virage, elle est inclinée.
+    - Le mythe du « chemin plus long sur l'extrados, parcouru dans le même temps » est faux et ne prouve rien.
+    - La portance varie avec le carré de la vitesse — la moindre variation de vitesse a un effet important.

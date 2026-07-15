@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.marine-org-02
+kind: qcm
+theme: organisation-marine
+statement: >-
+  Quelle est la différence entre commandement organique et commandement opérationnel ?
+choices:
+  - L'organique prépare les forces, l'opérationnel les emploie
+  - L'organique emploie les forces, l'opérationnel les prépare
+  - Ce sont deux noms pour la même chose
+  - L'un concerne la mer, l'autre l'air
+correctChoices: [0]
+explanation: >-
+  Une même unité relève de deux chaînes : le commandement organique la prépare
+  (entraînement, entretien, qualification), le commandement opérationnel l'emploie
+  en opérations sous l'autorité du CEMA.
+evaluates: [eopan.organisation.marine-nationale]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

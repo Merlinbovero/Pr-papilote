@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+type: concept
+title: La naissance de l'aviation française (1890-1940)
+slug: naissance-de-l-aviation-francaise
+summary: >-
+  De l'Éole de Clément Ader aux nationalisations de 1936 — un demi-siècle qui
+  fait de la France une grande nation aéronautique, forge les noms que l'on
+  croise encore (Blériot, Breguet, Dassault) et explique le drame de 1940.
+objectifs:
+  - Situer les jalons fondateurs (Ader 1890, pionniers-industriels, essor de 14-18).
+  - Comprendre le creux de l'entre-deux-guerres et les nationalisations de 1936.
+  - Relier les noms des pionniers aux traditions et à l'industrie d'aujourd'hui.
+aliases:
+  [
+    Clément Ader,
+    Éole,
+    pionniers de l'aviation,
+    nationalisations de "1936",
+    SNCA,
+    industrie aéronautique,
+  ]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot CM4 de la campagne COMAERO (tome 1, chap. 2 « Le contexte, 50 ans d'évolutions »).
+    author: prepapilote
+sources:
+  - title: "COMAERO — La Formation, tome 1 (EUROSAE), chap. 2 « Le contexte, 50 ans d'évolutions »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/La-Formation_Tome_1.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.histoire.histoire-de-l-armee-de-l-air
+    - eopan.histoire.histoire-de-l-aeronautique-navale
+content:
+  essentiel:
+    body: |
+      Le **9 octobre 1890**, l'**Éole** de **Clément Ader** quitte le sol —
+      premier bond motorisé d'un « plus lourd que l'air » piloté. Dans les
+      vingt ans qui suivent, des pionniers-ingénieurs créent les sociétés
+      qui inventent l'avion — **Farman, Voisin, Blériot, Breguet,
+      Latécoère, Dewoitine**, et les motoristes **Gnome et Rhône**,
+      Renault, **Hispano-Suiza**. La plupart figurent dans l'arbre
+      généalogique des grands groupes français actuels.
+
+      Dès **1908**, les constructeurs fondent une chambre syndicale —
+      l'ancêtre du GIFAS ; en **1909**, la première exposition
+      internationale de la locomotion aérienne au Grand Palais préfigure le
+      **salon du Bourget**, et le colonel Roche crée la première école
+      d'ingénieurs aéronautiques au monde (la future Sup'Aéro).
+
+      La **Première Guerre mondiale** change l'échelle — d'une dizaine
+      d'avions construits en 1909 à des dizaines de milliers en 1918.
+      L'industrie française est alors **la première au monde** — 12 000
+      avions, capacité de 45 000 moteurs en 1918, 90 000 salariés.
+    aRetenir:
+      - "1890 — l'Éole de Clément Ader quitte le sol ; 1909 — Blériot, Farman, Breguet et les autres bâtissent une industrie."
+      - "1918 — l'industrie aéronautique française est la première au monde (12 000 avions, 90 000 salariés)."
+      - "1936 — le Front populaire nationalise l'industrie aéronautique en six SNCA de cellules plus une société de moteurs."
+      - "1940 — « trop peu, trop tard » : le réarmement tardif ne produit ses avions modernes qu'à partir de 1939."
+  sections:
+    - id: le-creux-de-l-entre-deux-guerres
+      title: Le creux de l'entre-deux-guerres
+      body: |
+        La paix provoque un **arrêt brutal** — les effectifs de l'industrie
+        s'effondrent de **90 000 salariés en 1918 à 3 700 en 1921**. Seules
+        survivent les sociétés qui se reconvertissent dans l'aviation
+        civile. De 1918 à 1936, les industries d'armement restent en
+        sommeil ; les outillages demeurent artisanaux, incapables de
+        produire en série les nouveaux avions **métalliques**.
+
+        Côté militaire, dix ans de **querelles de doctrine** (observation ?
+        chasse ? bombardement ?) retardent l'émergence d'une aviation
+        autonome — le **décret du 1er avril 1933** crée enfin l'armée de
+        l'Air, que la loi du 2 juillet 1934 organise en armée indépendante.
+    - id: les-nationalisations-de-1936
+      title: Le réarmement et les nationalisations de 1936
+      body: |
+        Face à la menace allemande, la France se réarme. En **1936**, le
+        gouvernement du Front populaire **nationalise** l'industrie
+        aéronautique — autant pour des raisons politiques que pour
+        **concentrer** des entreprises trop dispersées et produire en
+        grande série. Sont créées **six Sociétés nationales de
+        constructions aéronautiques** (SNCA — Nord, Centre, Ouest,
+        Sud-Est, Sud-Ouest, Midi) et une société nationale de moteurs.
+
+        Un secteur privé subsiste — il peut proposer des **prototypes**
+        réalisés par les sociétés nationales (c'est le cas de Marcel Bloch,
+        le futur **Marcel Dassault**). Ces regroupements successifs sont
+        l'origine lointaine des grands ensembles industriels français
+        d'aujourd'hui.
+    - id: trop-peu-trop-tard
+      title: 1939-1940 — « trop peu, trop tard »
+      strate: maitriser
+      body: |
+        La guerre déclarée, l'aéronautique reçoit la **priorité** sur tous
+        les armements — un plan vise 1 600 appareils par mois, les
+        effectifs bondissent à 250 000 personnes en juin 1940. Mais la
+        production d'appareils **modernes** n'a vraiment démarré qu'en
+        1939 — trop tard pour peser sur la campagne de France.
+
+        La leçon que retiennent les ingénieurs de l'après-guerre — une
+        industrie aéronautique ne s'improvise pas, elle se construit dans
+        la durée (bureaux d'études, outillages, **formation des hommes**).
+        C'est ce constat qui nourrira l'effort de reconstruction de 1945,
+        d'où sortiront la Caravelle, les Mirage et l'aventure spatiale.
+  pieges:
+    - "L'Éole d'Ader (1890) précède les frères Wright (1903) — mais un bond motorisé n'est pas encore un vol contrôlé et soutenu."
+    - "L'armée de l'Air naît par décret en 1933 et devient indépendante par la loi de 1934 — pas en 1918."
+    - Les nationalisations de 1936 n'ont pas tout absorbé — un secteur privé de prototypes subsiste (Bloch, futur Dassault).
+    - "En 1918 la France est la première industrie aéronautique du monde — le déclassement de 1940 vient de l'entre-deux-guerres, pas de 14-18."

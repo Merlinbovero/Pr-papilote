@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.pionniers-03
+kind: qcm
+theme: pionniers
+statement: >-
+  Dans quelles circonstances Saint-Exupéry a-t-il disparu le 31 juillet 1944 ?
+choices:
+  - "En mission de reconnaissance de guerre, en Méditerranée"
+  - "Sur la ligne de l'Aéropostale vers Dakar"
+  - "En tentant la traversée de l'Atlantique Nord"
+  - "Lors d'un meeting aérien"
+correctChoices: [0]
+explanation: >-
+  Redevenu pilote militaire, Saint-Exupéry disparaît aux commandes d'un
+  Lightning P-38 de reconnaissance — pas sur la Ligne, qu'il avait quittée
+  bien avant.
+evaluates: [fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

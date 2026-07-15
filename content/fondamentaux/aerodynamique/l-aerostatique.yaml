@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.l-aerostatique
+type: notion-aerodynamique
+title: L'aérostatique — ballons et dirigeables
+slug: l-aerostatique
+summary: >-
+  Avant l'aile, il y a eu la bulle — les aérostats volent parce qu'ils sont
+  plus légers que l'air (poussée d'Archimède). Montgolfières, ballons à gaz,
+  dirigeables : une notion au programme du BIA et un pan d'histoire française.
+objectifs:
+  - Énoncer le principe de l'aérostation (poussée d'Archimède dans l'air).
+  - Distinguer aérostats (plus légers que l'air) et aérodynes (plus lourds).
+  - Différencier montgolfière (air chaud) et ballon à gaz (hélium, hydrogène).
+aliases: [aérostatique, aérostat, montgolfière, ballon, dirigeable, poussée d'Archimède, aérodyne]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F1 du plan V1 (l'aérostatique figure au programme officiel du BIA, domaine 2).
+    author: prepapilote
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique, aérostatique et principes du vol"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.air-et-proprietes
+  related:
+    - fondamentaux.physique.pression-forces-unites
+    - fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+content:
+  essentiel:
+    body: |
+      Un corps plongé dans l'air reçoit — comme dans l'eau — une **poussée
+      d'Archimède** égale au poids de l'air déplacé. Si l'appareil pèse
+      **moins** que l'air qu'il déplace, il monte : c'est le principe de
+      l'**aérostat**, le « plus léger que l'air ».
+
+      La grande famille des aéronefs se divise ainsi en deux :
+
+      - **aérostats** — la sustentation vient d'Archimède : montgolfières,
+        ballons à gaz, dirigeables ;
+      - **aérodynes** — la sustentation vient du mouvement (portance) :
+        avions, planeurs, hélicoptères.
+
+      Deux façons d'être plus léger que l'air :
+
+      | Type | Principe | Pilotage vertical |
+      | --- | --- | --- |
+      | **Montgolfière** | air chauffé au brûleur — l'air chaud est moins dense | chauffer pour monter, laisser refroidir pour descendre |
+      | **Ballon à gaz** | gaz plus léger que l'air (hélium aujourd'hui, hydrogène jadis) | lâcher du lest pour monter, purger du gaz pour descendre |
+
+      Le **dirigeable** est un ballon à gaz motorisé et profilé — le seul
+      aérostat qui se dirige vraiment, d'où son nom.
+    aRetenir:
+      - "Aérostat = plus léger que l'air (Archimède) ; aérodyne = plus lourd que l'air (portance)."
+      - "Montgolfière = air chaud ; ballon à gaz = hélium (l'hydrogène, inflammable, a été abandonné)."
+      - Une montgolfière se pilote au brûleur — on ne dirige pas sa route, on choisit son altitude et son vent.
+      - "Premier vol humain de l'histoire — 1783, en montgolfière, à Paris : une invention française."
+  sections:
+    - id: pourquoi-ca-vole
+      title: Le calcul qui fait voler
+      body: |
+        Tout se joue sur la **masse volumique**. Un mètre cube d'air au
+        niveau de la mer pèse environ **1,2 kg**. Chauffé à une centaine
+        de degrés, il ne pèse plus que ~0,9 kg — chaque mètre cube
+        d'enveloppe « gagne » donc environ 300 grammes de force
+        ascensionnelle. D'où les dimensions des montgolfières : il faut
+        **des milliers de mètres cubes** pour soulever nacelle, brûleur
+        et passagers.
+
+        L'hélium fait mieux (~0,17 kg/m³ — près d'un kilo de gain par
+        mètre cube), l'hydrogène mieux encore — mais son inflammabilité
+        l'a fait abandonner pour le vol habité après les catastrophes de
+        dirigeables des années 1930.
+
+        On retrouve ici la loi des gaz déjà croisée en météorologie —
+        chauffer un gaz à pression constante le dilate et le rend moins
+        dense. L'aérostation, c'est de la **météo appliquée**.
+    - id: et-aujourd-hui
+      title: L'aérostation aujourd'hui
+      strate: maitriser
+      body: |
+        L'aérostation n'est pas qu'un souvenir — ballons de loisir et de
+        compétition, **ballons-sondes** de Météo-France lâchés chaque
+        jour pour sonder l'atmosphère, ballons stratosphériques
+        scientifiques (le CNES est l'un des grands opérateurs mondiaux),
+        et projets de dirigeables de transport de charges lourdes.
+
+        Pour les concours, l'essentiel tient en trois points — le
+        **principe d'Archimède** appliqué à l'air, la **classification**
+        aérostat/aérodyne (premier réflexe de toute question « qu'est-ce
+        qu'un aéronef ? »), et le repère historique — les frères
+        **Montgolfier** et le premier vol humain de **1783**, avant même
+        la Révolution.
+  pieges:
+    - "Un hélicoptère n'est PAS un aérostat — son rotor crée une portance : c'est un aérodyne, comme l'avion."
+    - Une montgolfière ne se dirige pas — le pilote choisit son altitude pour trouver un vent favorable.
+    - "L'hydrogène soulève mieux que l'hélium mais il est inflammable — abandonné pour le vol habité depuis les années 1930."
+    - "Le premier vol humain (1783) est un vol en ballon — cent vingt ans avant l'avion des frères Wright."

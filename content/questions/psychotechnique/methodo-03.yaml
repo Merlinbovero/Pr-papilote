@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.methodo-03
+kind: qcm
+theme: methodologie-psychotechnique
+statement: >-
+  Le jour de la sélection, un item vous résiste depuis une minute. Que faire ?
+choices:
+  - Le passer et y revenir s'il reste du temps
+  - S'acharner jusqu'à trouver la réponse
+  - Répondre au hasard immédiatement sans réfléchir
+  - Abandonner l'épreuve
+correctChoices: [0]
+explanation: >-
+  S'enliser fait perdre les points des items faciles qui suivent. Savoir
+  passer un item et y revenir à la fin est une compétence à part entière de
+  la gestion du temps.
+evaluates: [psychotechnique.methodologie.reussir-les-tests-psychotechniques]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

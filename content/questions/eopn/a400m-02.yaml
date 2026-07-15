@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.a400m-02
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Qu'est-ce qui rend l'A400M à la fois tactique et stratégique ?
+choices:
+  - Il emporte de lourdes charges sur longue distance et se pose sur terrains sommaires
+  - Il vole plus vite que le son
+  - Il décolle à la verticale
+  - Il est furtif au radar
+correctChoices: [0]
+explanation: >-
+  L'A400M réunit les deux qualités : transporter beaucoup et loin (stratégique)
+  tout en se posant sur des terrains courts et sommaires près des opérations
+  (tactique).
+evaluates: [eopn.appareils.a400m]
+difficulty: 2
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopn]
+status: publie

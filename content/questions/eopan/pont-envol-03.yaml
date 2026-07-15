@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.pont-envol-03
+kind: association
+theme: operations-embarquees
+statement: >-
+  Associez chaque chasuble de couleur du pont d'envol à sa spécialité.
+pairs:
+  - left: Jaune
+    right: Direction des mouvements d'avions
+  - left: Rouge
+    right: Sécurité (incendie, sauvetage)
+  - left: Bleu
+    right: Manœuvre (déplacement, arrimage)
+  - left: Violet
+    right: Ravitaillement en carburant
+explanation: >-
+  Sur le pont, chaque spécialité porte une chasuble de couleur : jaune pour la
+  direction des avions, rouge pour la sécurité, bleu pour la manœuvre, violet
+  pour le carburant.
+evaluates: [eopan.concepts.pont-d-envol]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

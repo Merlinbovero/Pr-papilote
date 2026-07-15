@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.navigation.tvd-02
+kind: calcul
+theme: temps-vitesse-distance
+statement: >-
+  À 120 nœuds, quelle distance parcourt-on en 30 minutes (en milles marins) ?
+answerValue: 60
+tolerance: 0
+unit: "milles marins"
+explanation: >-
+  30 minutes valent 0,5 heure. D = V × t = 120 × 0,5 = 60 milles marins.
+evaluates: [fondamentaux.navigation.temps-vitesse-distance]
+difficulty: 2
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

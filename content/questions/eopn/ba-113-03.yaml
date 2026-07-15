@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.ba-113-03
+kind: association
+theme: bases-aeriennes
+statement: >-
+  Associez chaque escadron de la 4e escadre de chasse à son rôle.
+pairs:
+  - left: 1/4 « Gascogne »
+    right: Alerte nucléaire des FAS
+  - left: 2/4 « La Fayette »
+    right: Chasse conventionnelle
+  - left: ETR 3/4 « Aquitaine »
+    right: Transformation des jeunes pilotes sur Rafale
+explanation: >-
+  À Saint-Dizier, la 4e escadre réunit le « Gascogne » (dissuasion), le
+  « La Fayette » (chasse) et l'ETR « Aquitaine » (transformation Rafale) —
+  tout l'éventail du métier sur une même base.
+evaluates: [eopn.bases.saint-dizier]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

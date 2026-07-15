@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.meteorologie.qnh-05
+kind: vrai-faux
+theme: calage-altimetrique
+statement: >-
+  En volant vers une zone de pression plus basse sans recaler l'altimètre,
+  celui-ci indique une altitude inférieure à la réalité.
+answer: false
+explanation: >-
+  C'est l'inverse : l'altimètre sur-lit (il indique plus haut que la réalité) et
+  l'avion est en fait plus bas que prévu. C'est la règle « du fort vers le faible,
+  attention danger ».
+evaluates: [fondamentaux.meteorologie.pression-et-calage]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

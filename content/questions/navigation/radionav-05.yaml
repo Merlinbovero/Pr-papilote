@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.navigation.radionav-05
+kind: vrai-faux
+theme: radionavigation
+statement: >-
+  Le GPS rend inutiles la navigation à l'estime et les centrales à inertie.
+answer: false
+explanation: >-
+  Le signal GPS, très faible, peut être brouillé ou leurré — l'aviation
+  militaire conserve des moyens indépendants (inertie, balises, estime) et
+  croise toujours plusieurs sources.
+evaluates: [fondamentaux.navigation.la-radionavigation]
+difficulty: 2
+competencies: [connaissances-aeronautiques, navigation]
+concours: [eopan, eopn, alat]
+status: publie

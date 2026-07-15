@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.psychotechnique.methodo-04
+kind: association
+theme: methodologie-psychotechnique
+statement: >-
+  Associez chaque famille de tests psychotechniques à ce qu'elle évalue.
+pairs:
+  - left: Dominos et suites
+    right: Raisonnement logique
+  - left: Rotations mentales et patrons de cubes
+    right: Vision spatiale
+  - left: Opérations rapides et proportions
+    right: Calcul mental
+  - left: Double tâche sous contrainte de temps
+    right: Attention et multitâche
+explanation: >-
+  Chaque famille cible une aptitude du métier de pilote : la logique
+  (dominos, suites), le spatial (rotations, patrons), le calcul mental
+  (opérations, proportions) et l'attention partagée (double tâche).
+evaluates: [psychotechnique.methodologie.reussir-les-tests-psychotechniques]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

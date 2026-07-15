@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.memoire-01
+kind: qcm
+theme: memoire
+statement: >-
+  Qu'est-ce que le « chunking » (regroupement) en mémorisation ?
+choices:
+  - Regrouper les éléments en blocs porteurs de sens pour réduire la charge
+  - Répéter chaque chiffre dix fois
+  - Écrire les éléments sur sa main
+  - Mémoriser uniquement le premier et le dernier élément
+correctChoices: [0]
+explanation: >-
+  La mémoire de travail retient environ 7 éléments : regrouper
+  « 1 9 4 5 2 0 2 6 » en « 1945 · 2026 » transforme huit chiffres en deux
+  dates — la charge s'effondre, la rétention grimpe.
+evaluates: [psychotechnique.exercices.la-memoire]
+difficulty: 1
+competencies: [memoire]
+concours: [eopan, eopn, alat]
+status: publie

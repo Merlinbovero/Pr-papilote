@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.gascogne-02
+kind: qcm
+theme: unites-aae
+statement: >-
+  Pourquoi le « Gascogne » vole-t-il sur Rafale B (biplace) ?
+choices:
+  - Le second membre d'équipage gère le système d'armes sur les très longues missions nucléaires
+  - Pour transporter des passagers
+  - Parce que le Rafale C n'existe plus
+  - Pour former deux pilotes à la fois
+correctChoices: [0]
+explanation: >-
+  Les missions de dissuasion durent des milliers de kilomètres avec plusieurs
+  ravitaillements : le pilote et l'officier système d'armes se partagent une
+  charge de travail énorme — d'où le biplace.
+evaluates: [eopn.unites.escadron-1-4-gascogne]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage2000-02
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Avec quel autre appareil le Mirage 2000 forme-t-il l'épine dorsale de la chasse française ?
+choices:
+  - Le Rafale
+  - L'A400M Atlas
+  - Le Tigre
+  - L'Atlantique 2
+correctChoices: [0]
+explanation: >-
+  Le Mirage 2000 et le Rafale constituent ensemble l'épine dorsale de la chasse
+  de l'Armée de l'air et de l'Espace, le Rafale remplaçant progressivement le
+  Mirage 2000.
+evaluates: [eopn.appareils.mirage-2000]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

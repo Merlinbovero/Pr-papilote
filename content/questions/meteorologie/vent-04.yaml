@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.vent-04
+kind: qcm
+theme: le-vent
+statement: >-
+  Pourquoi décolle-t-on et atterrit-on généralement face au vent ?
+choices:
+  - "Le vent de face réduit la vitesse sol et raccourcit la distance nécessaire"
+  - "Cela fait moins de bruit au sol"
+  - "Le vent arrière est formellement interdit"
+  - "Cela économise du carburant en croisière"
+correctChoices: [0]
+explanation: >-
+  Face au vent, l'avion atteint sa portance à une vitesse sol plus faible : la
+  distance de décollage et d'atterrissage est raccourcie.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 2
+competencies: [meteorologie, connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

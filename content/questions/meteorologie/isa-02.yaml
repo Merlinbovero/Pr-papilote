@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.meteorologie.isa-02
+kind: qcm
+theme: atmosphere-standard
+statement: >-
+  Dans le modèle ISA, de combien la température baisse-t-elle par tranche de 1000 ft ?
+choices:
+  - "Environ 2 °C"
+  - "Environ 10 °C"
+  - "Environ 0,5 °C"
+  - "Elle ne baisse pas"
+correctChoices: [0]
+explanation: >-
+  La température ISA décroît d'environ 2 °C par 1000 ft (6,5 °C par 1000 m)
+  jusqu'à la tropopause, où elle atteint −56,5 °C.
+evaluates: [fondamentaux.meteorologie.atmosphere-standard]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

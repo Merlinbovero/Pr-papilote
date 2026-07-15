@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.flottille-11f-05
+kind: vrai-faux
+theme: unites-aeronavales
+statement: >-
+  Dans l'aéronautique navale, l'unité équivalente à l'escadron de l'Armée de l'Air s'appelle la flottille.
+answer: true
+explanation: >-
+  Vrai. La flottille est l'unité opérationnelle de l'aéronautique navale —
+  l'équivalent de l'escadron dans l'Armée de l'Air et de l'Espace. Un piège de
+  vocabulaire classique entre les deux armées.
+evaluates: [eopan.bases.flottille-11f]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

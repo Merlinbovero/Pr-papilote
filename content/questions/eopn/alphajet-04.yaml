@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.alphajet-04
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quels avions l'Alphajet devait-il remplacer dans la formation des pilotes
+  de chasse français ?
+choices:
+  - "Fouga Magister, T-33 et Mystère IV"
+  - "Mirage III et Jaguar"
+  - "Epsilon et Tucano"
+  - "Vampire et Ouragan"
+correctChoices: [0]
+explanation: >-
+  La fiche programme de 1968 visait les trois avions du cursus chasse —
+  Fouga Magister (Salon), T-33 (Tours) et Mystère IV (Cazaux). Un seul
+  appareil pour trois missions d'école.
+evaluates: [eopn.appareils.alphajet]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

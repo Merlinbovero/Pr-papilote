@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.gazelle-01
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel dispositif caractéristique équipe la queue de l'hélicoptère Gazelle ?
+choices:
+  - Le fenestron (rotor anticouple caréné)
+  - Un second rotor principal
+  - Une turbine à réaction
+  - Des ailes fixes
+correctChoices: [0]
+explanation: >-
+  La Gazelle est reconnaissable à son fenestron : un rotor anticouple caréné,
+  logé dans un anneau intégré à la dérive, typique de l'école française de
+  l'hélicoptère.
+evaluates: [alat.appareils.gazelle]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [alat]
+status: publie

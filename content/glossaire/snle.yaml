@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.snle
+title: SNLE
+definition: >-
+  Sous-marin nucléaire lanceur d'engins — sous-marin à propulsion nucléaire
+  porteur des missiles balistiques de la dissuasion. La France en arme quatre,
+  au sein de la FOST, dont au moins un est en permanence à la mer.
+sigleExpansion: Sous-marin nucléaire lanceur d'engins
+english: Ballistic missile submarine (SSBN)
+synonyms: []
+ficheId: eopan.missions.missions-de-la-marine
+tags: []
+status: publie

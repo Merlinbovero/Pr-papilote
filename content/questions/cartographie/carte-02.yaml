@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.cartographie.carte-02
+kind: calcul
+theme: echelle-carte
+statement: >-
+  À l'échelle 1/500 000, à quelle distance réelle (en km) correspond 1 cm mesuré
+  sur la carte ?
+answerValue: 5
+tolerance: 0
+unit: "km"
+explanation: >-
+  1/500 000 signifie que 1 cm sur la carte vaut 500 000 cm réels, soit 5 000 m,
+  c'est-à-dire 5 km.
+evaluates: [fondamentaux.cartographie.echelle-et-mesures]
+difficulty: 2
+competencies: [navigation, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

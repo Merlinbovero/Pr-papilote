@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.anemo-04
+kind: qcm
+theme: anemometre
+statement: >-
+  Que représente le trait rouge sur le cadran du badin ?
+choices:
+  - "La vitesse à ne jamais dépasser (VNE)"
+  - "La vitesse de décrochage"
+  - "La plage d'utilisation des volets"
+  - "La vitesse de croisière recommandée"
+correctChoices: [0]
+explanation: >-
+  Le trait rouge marque la VNE (vitesse à ne jamais dépasser), au-delà de
+  laquelle on excède les limites de résistance de l'avion.
+evaluates: [fondamentaux.instruments.anemometre]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mirage-iii-02
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quelle forme d'aile caractérise le Mirage III ?
+choices:
+  - "L'aile delta"
+  - "L'aile à géométrie variable"
+  - "L'aile droite"
+  - "L'aile en flèche inversée"
+correctChoices: [0]
+explanation: >-
+  Le Mirage III est LE delta français — traînée réduite en supersonique et
+  structure d'aile favorable, au prix d'une vitesse d'approche élevée. Le
+  Mirage 2000 reprendra cette aile avec des commandes électriques.
+evaluates: [eopn.appareils.mirage-iii]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

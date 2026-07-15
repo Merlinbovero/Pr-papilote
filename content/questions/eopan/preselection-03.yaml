@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopan.preselection-03
+kind: vrai-faux
+theme: preselection-en-vol
+statement: >-
+  Il faut être titulaire d'une licence de pilote privé pour réussir la
+  présélection en vol.
+answer: false
+explanation: >-
+  Aucune licence n'est requise — beaucoup d'élèves n'ont jamais piloté. Les
+  instructeurs évaluent l'aptitude à apprendre, pas les acquis, et corrigent
+  au besoin les habitudes importées.
+evaluates: [eopan.selection.la-preselection-en-vol]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

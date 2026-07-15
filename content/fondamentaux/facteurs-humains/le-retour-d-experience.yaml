@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.le-retour-d-experience
+type: concept
+title: Le retour d'expérience (REX)
+slug: le-retour-d-experience
+summary: >-
+  Chaque incident analysé rend l'aviation plus sûre — le retour d'expérience
+  transforme l'erreur en savoir collectif. Comprendre le rôle du BEA et du
+  BEA-É, et savoir lire un rapport d'enquête : causes, jamais coupables.
+objectifs:
+  - Expliquer le principe du retour d'expérience et de la culture juste (causes, pas coupables).
+  - Distinguer BEA (aviation civile) et BEA-É (aéronautique d'État).
+  - Savoir lire un rapport d'enquête de sécurité (faits, analyse, causes, recommandations).
+aliases: [REX, retour d'expérience, BEA, BEA-É, enquête de sécurité, culture juste]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche retour d'expérience et enquêtes de sécurité (campagne de recherche n°1, lot N8 ; sources BEA-É).
+    author: prepapilote
+sources:
+  - title: "BEA-É — Bureau enquêtes accidents pour la sécurité de l'aéronautique d'État (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/bea-e
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Rapport d'enquête de sécurité A-2022-12-A (BEA-É, 3 mai 2023)"
+    url: https://www.defense.gouv.fr/sites/default/files/bea-e/20230503-rapport-d-enquete-de-securite_A-2022-12.pdf
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac
+    - fondamentaux.facteurs-humains.desorientation-et-illusions
+    - fondamentaux.facteurs-humains.hypoxie-et-altitude
+content:
+  essentiel:
+    body: |
+      La sécurité aérienne moderne repose sur une idée simple et
+      contre-intuitive : quand un accident survient, on ne cherche **pas des
+      coupables** — on cherche des **causes**. C'est le principe du **retour
+      d'expérience (REX)** : chaque événement analysé honnêtement rend tous
+      les autres vols plus sûrs.
+
+      Deux organismes incarnent ce principe en France :
+
+      - le **BEA** — pour l'**aviation civile** ;
+      - le **BEA-É** — pour l'**aéronautique d'État** (armées, gendarmerie,
+        sécurité civile, douanes).
+
+      Leurs rapports, **publics**, le disent en toutes lettres :
+      l'établissement des causes n'implique **aucune détermination de
+      responsabilité**. Sans cette garantie — la « **culture juste** » —
+      personne ne témoignerait, et les mêmes accidents se répéteraient.
+    aRetenir:
+      - Le REX cherche des causes, jamais des coupables — c'est la condition de la transparence.
+      - BEA = aviation civile ; BEA-É = aéronautique d'État (armées, gendarmerie, sécurité civile).
+      - "Un rapport se lit dans l'ordre — faits établis, analyse, causes retenues, recommandations."
+      - Les causes sont presque toujours multiples — facteurs humains ET organisationnels s'additionnent.
+  sections:
+    - id: lire-un-rapport
+      title: Lire un rapport d'enquête
+      body: |
+        Un rapport d'enquête de sécurité suit toujours la même architecture :
+
+        1. **les faits établis** — chronologie, contexte, conditions,
+           qualifications des équipages : ce qui est certain ;
+        2. **l'analyse** — la recherche des causes, souvent dans le domaine
+           des **facteurs humains et organisationnels** ;
+        3. **la conclusion** — les causes retenues, hiérarchisées ;
+        4. **les recommandations de sécurité** — numérotées, avec un
+           destinataire précis (un état-major, une autorité).
+
+        Le lecteur pressé saute à la conclusion — le futur pilote, lui,
+        gagne à lire l'**analyse** : c'est là qu'on apprend comment une
+        chaîne de petites déviations, anodines une à une, construit un
+        accident.
+    - id: les-notions-cles-du-rex
+      title: Les notions clés du REX
+      strate: maitriser
+      body: |
+        Quelques concepts reviennent dans presque tous les rapports — les
+        connaître, c'est parler la langue de la sécurité des vols :
+
+        - la **migration des pratiques** — l'écart progressif, souvent
+          collectif et non formalisé, entre la procédure validée et la
+          pratique réelle ;
+        - l'**excès de confiance** et le **sentiment de simplicité** — plus
+          la mission paraît facile, moins on la prépare ;
+        - la **conscience de la situation** — la représentation mentale que
+          chacun a de la position et des intentions des autres ; erronée,
+          elle fait prendre de mauvaises décisions « logiques » ;
+        - les **communications standardisées** — des mots convenus, au
+          moment convenu ; leur absence laisse l'ambiguïté s'installer ;
+        - les **portes de sortie** — les critères prédéfinis d'interruption
+          d'une manœuvre ; sans eux, on continue trop longtemps.
+
+        Ces notions sont exactement celles que le jury apprécie d'entendre
+        lorsqu'il demande « qu'est-ce qu'un bon pilote ? » — quelqu'un qui
+        connaît ses limites et celles du système.
+  pieges:
+    - Un rapport d'enquête de sécurité n'établit aucune responsabilité — le confondre avec une enquête judiciaire est un contresens.
+    - Chercher « LA » cause d'un accident — les rapports retiennent presque toujours une combinaison de facteurs humains et organisationnels.
+    - Croire que le REX ne concerne que les accidents graves — les incidents mineurs analysés évitent les accidents majeurs.

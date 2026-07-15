@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.catapultage-02
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  Quelle technologie utilisent les catapultes du porte-avions Charles de Gaulle ?
+choices:
+  - La vapeur
+  - L'électromagnétisme (EMALS)
+  - Un tremplin (ski-jump)
+  - Un élastique géant
+correctChoices: [0]
+explanation: >-
+  Le Charles de Gaulle dispose de deux catapultes à vapeur de 75 mètres. Les
+  catapultes électromagnétiques (EMALS) équipent des porte-avions plus récents.
+evaluates: [eopan.procedures.catapultage]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

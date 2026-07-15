@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.cap-10-05
+kind: qcm
+theme: selection-en-vol
+statement: >-
+  Quelle unité met en œuvre les Cap 10 de la Marine nationale ?
+choices:
+  - L'escadrille 50S, à Lanvéoc-Poulmic
+  - La flottille 12F, à Landivisiau
+  - La flottille 4F, à Lann-Bihoué
+  - L'escadrille 22S, à Hyères
+correctChoices: [0]
+explanation: >-
+  Les Cap 10 sont mis en œuvre par l'escadrille 50S, unité d'instruction créée
+  en 1946 et basée à Lanvéoc-Poulmic — là où se joue la sélection en vol des
+  EOPAN.
+evaluates: [eopan.appareils.cap-10]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

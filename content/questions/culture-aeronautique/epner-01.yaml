@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-01
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Que signifie le sigle EPNER ?
+choices:
+  - "École du personnel navigant d'essais et de réception"
+  - "École de pilotage de la nouvelle escadrille de réserve"
+  - "École du personnel non embarqué et de réserve"
+  - "Établissement public national d'études et de recherche"
+correctChoices: [0]
+explanation: >-
+  L'EPNER est l'École du personnel navigant d'essais et de réception —
+  l'école française des équipages d'essais en vol, à Istres.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

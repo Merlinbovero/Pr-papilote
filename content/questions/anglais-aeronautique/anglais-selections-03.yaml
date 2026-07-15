@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-selections-03
+kind: vrai-faux
+theme: anglais-methode
+statement: >-
+  Une fois la sélection réussie, le pilote militaire n'a plus besoin de l'anglais.
+answer: false
+explanation: >-
+  Faux. La documentation des appareils, la radio internationale, les exercices
+  OTAN et certaines formations (cursus chasse Marine aux États-Unis) sont en
+  anglais — et les niveaux OACI se renouvellent en carrière.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-selections]
+difficulty: 1
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

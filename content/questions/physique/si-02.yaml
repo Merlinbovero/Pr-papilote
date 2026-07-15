@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.physique.si-02
+kind: calcul
+theme: unites-si
+statement: >-
+  Convertissez 100 nœuds en kilomètres par heure (arrondi au km/h).
+answerValue: 185
+tolerance: 1
+unit: "km/h"
+explanation: >-
+  1 nœud = 1,852 km/h. Donc 100 kt = 185,2 km/h, soit environ 185 km/h.
+evaluates: [fondamentaux.physique.systeme-international-et-unites]
+difficulty: 2
+competencies: [connaissances-aeronautiques, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

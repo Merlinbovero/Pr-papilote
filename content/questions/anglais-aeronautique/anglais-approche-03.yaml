@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-approche-03
+kind: vrai-faux
+theme: anglais-phraseologie
+statement: >-
+  Dans « cleared to land runway 22, wind 240 degrees 8 knots », le vent doit être collationné.
+answer: false
+explanation: >-
+  Faux. La clairance (cleared to land + piste) se collationne ; le vent est
+  une information, il ne se répète pas. Hiérarchie du read back : clairances
+  oui, informations non.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-de-l-approche]
+difficulty: 3
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

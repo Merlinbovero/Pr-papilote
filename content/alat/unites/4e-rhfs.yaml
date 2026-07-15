@@ -1,0 +1,116 @@
+schemaVersion: 1
+id: alat.unites.4e-rhfs
+type: regiment
+title: 4e régiment d'hélicoptères des forces spéciales
+slug: 4e-rhfs
+summary: >-
+  « Nulle part sans nous » — le 4e RHFS de Pau est la composante hélicoptères
+  des forces spéciales : infiltrations, exfiltrations et appuis dans les
+  environnements les plus hostiles, au profit du COS.
+objectifs:
+  - Identifier le 4e RHFS comme le régiment d'hélicoptères des forces spéciales, stationné à Pau.
+  - Connaître sa filiation (EOS 1993, DAOS 1997, régiment en 2009) et sa subordination (emploi par le COS).
+  - Distinguer le 4e RHFS des RHC de la 4e brigade d'aérocombat.
+aliases: [4e RHFS, régiment d'hélicoptères des forces spéciales, DAOS, forces spéciales, Pau]
+module: alat
+category: unites
+tags: []
+concours: [alat]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet régiment, le 4e RHFS (campagne de recherche n°1, lot N2 ; sources officielles et Wikipédia recoupées).
+    author: prepapilote
+sources:
+  - title: "4e régiment d'hélicoptères des forces spéciales (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/nos-brigades/commandement-actions-speciales-terre/4e-regiment-dhelicopteres-forces
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "4e régiment d'hélicoptères des forces spéciales — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/4e_r%C3%A9giment_d'h%C3%A9licopt%C3%A8res_des_forces_sp%C3%A9ciales
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Historique 4e RHFS Pau — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/historique-unites-metropole-4-rhfs-pau.html
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: dote-de
+      target: alat.appareils.tigre
+    - predicate: dote-de
+      target: alat.appareils.gazelle
+  related:
+    - alat.missions.l-aerocombat
+    - alat.unites.5e-rhc
+    - alat.histoire.histoire-de-l-alat
+infobox:
+  appellation: 4e régiment d'hélicoptères des forces spéciales (4e RHFS)
+  garnison: Quartier de Rose, Pau (Pyrénées-Atlantiques)
+  appareils: [Caracal, Cougar, Tigre, Gazelle]
+  missions: [Infiltration, Exfiltration, Appui des forces spéciales, Contre-terrorisme]
+  devise: Nulle part sans nous
+content:
+  essentiel:
+    body: |
+      Le **4e régiment d'hélicoptères des forces spéciales** est stationné à
+      **Pau**, au quartier de Rose — voisin du 5e RHC, mais dans un monde à
+      part : il est la **composante hélicoptères des forces spéciales**
+      françaises.
+
+      Rattaché organiquement au commandement des actions spéciales de
+      l'armée de Terre, il est **employé par le COS** (commandement des
+      opérations spéciales). Ses équipages — environ **500 personnels** —
+      assurent **infiltrations**, **exfiltrations** et **appuis** dans les
+      environnements les plus **hostiles**, de jour comme de nuit.
+
+      Sa devise résume l'esprit : **« Nulle part sans nous »** — aucune
+      opération spéciale d'ampleur ne se conçoit sans sa composante
+      aéromobile.
+    aRetenir:
+      - 4e RHFS — Pau, la composante hélicoptères des forces spéciales, employée par le COS.
+      - Filiation — EOS (1993) → DAOS (1er juillet 1997) → 4e RHFS (1er août 2009).
+      - Missions — infiltration, exfiltration, appui des forces spéciales, contre-terrorisme.
+      - Devise « Nulle part sans nous » ; il ne fait pas partie de la 4e BAC.
+  sections:
+    - id: filiation-et-statut
+      title: Filiation et statut
+      body: |
+        L'aviation spéciale française s'est construite par étapes :
+
+        1. **1993** — création à Pau de l'**escadrille des opérations
+           spéciales (EOS)** au sein du 4e régiment d'hélicoptères de
+           commandement et de manœuvre ;
+        2. **1er juillet 1997** — le **détachement ALAT des opérations
+           spéciales (DAOS)** prend le relais ;
+        3. **1er août 2009** — le DAOS devient **régiment** : le 4e RHFS.
+
+        Cette montée en puissance suit celle du **COS**, créé après la
+        guerre du Golfe (1992) pour fédérer les forces spéciales des trois
+        armées.
+    - id: moyens-et-missions
+      title: Moyens et missions
+      strate: maitriser
+      body: |
+        Le 4e RHFS met en œuvre un parc **hétérogène et spécialisé** —
+        **Caracal**, **Cougar**, **Tigre**, **Gazelle** — adapté aux poser
+        d'assaut discrets, à l'appui rapproché et aux longues élongations ;
+        18 **NH90 Caïman en version forces spéciales** sont attendus entre
+        2026 et 2029 pour moderniser cette flotte (donnée à suivre).
+
+        Ses missions : **infiltrer** et **exfiltrer** les commandos (dont
+        ceux du COS), **appuyer** leurs actions, participer au
+        **contre-terrorisme** et à la **libération d'otages**. La sélection
+        et la qualification de ses équipages comptent parmi les plus
+        exigeantes de l'ALAT — un objectif de carrière fréquent chez les
+        pilotes confirmés.
+  pieges:
+    - Le 4e RHFS n'appartient pas à la 4e BAC — il relève des actions spéciales et il est employé par le COS.
+    - RHFS ≠ RHC — régiment d'hélicoptères des forces spéciales, pas « de combat ».
+    - Deux régiments d'hélicoptères cohabitent à Pau — le 5e RHC (4e BAC) et le 4e RHFS (forces spéciales).

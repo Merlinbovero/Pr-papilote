@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopn.ba-709-05
+kind: vrai-faux
+theme: bases-aeriennes
+statement: >-
+  La vocation d'école de la base de Cognac remonte aux années 1960.
+answer: true
+explanation: >-
+  Vrai. Le terrain date de 1938, et la base devient BA 709 en 1961 en
+  accueillant une école de pilotage élémentaire venue de Marrakech — la
+  vocation école ne l'a plus quittée.
+evaluates: [eopn.bases.cognac]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

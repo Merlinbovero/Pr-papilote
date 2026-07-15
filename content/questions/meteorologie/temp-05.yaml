@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.meteorologie.temp-05
+kind: vrai-faux
+theme: temperature-humidite
+statement: >-
+  Un faible écart entre la température et le point de rosée indique un air proche
+  de la saturation, propice au brouillard.
+answer: true
+explanation: >-
+  Plus l'écart entre la température et le point de rosée est petit, plus l'air est
+  proche de la saturation : brouillard et nuages bas deviennent probables.
+evaluates: [fondamentaux.meteorologie.temperature-et-humidite]
+difficulty: 3
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

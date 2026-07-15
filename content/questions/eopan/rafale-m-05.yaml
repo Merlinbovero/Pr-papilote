@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-05
+kind: qcm
+theme: rafale-marine
+statement: >-
+  Où sont stationnées les flottilles de Rafale Marine ?
+choices:
+  - À la BAN Landivisiau (flottilles 11F, 12F et 17F)
+  - À la BAN Lann-Bihoué
+  - En permanence à bord du Charles de Gaulle
+  - Sur la base aérienne de Saint-Dizier
+correctChoices: [0]
+explanation: >-
+  Les trois flottilles de chasse (11F, 12F, 17F) sont basées à la BAN
+  Landivisiau (Finistère) et embarquent sur le porte-avions lors des
+  déploiements — l'avion n'est pas affecté en permanence à bord.
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-moteur-02
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Que signifie « flameout » ?
+choices:
+  - L'extinction d'un réacteur en vol
+  - Un incendie moteur
+  - La post-combustion
+  - Un feu d'artifice de meeting
+correctChoices: [0]
+explanation: >-
+  Flameout = extinction réacteur (la flamme s'éteint dans la chambre de
+  combustion). L'incendie moteur se dit engine fire — deux urgences très
+  différentes.
+evaluates: [fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

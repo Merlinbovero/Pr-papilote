@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.groupe-aeronaval-02
+kind: vrai-faux
+theme: groupe-aeronaval
+statement: >-
+  Le porte-avions Charles de Gaulle se déploie généralement seul, sans escorte.
+answer: false
+explanation: >-
+  Faux. Un porte-avions est une cible de très grande valeur : il ne navigue
+  jamais seul. Il est toujours le cœur d'un groupe aéronaval qui le protège dans
+  les trois dimensions (air, surface, sous la mer).
+evaluates: [eopan.concepts.groupe-aeronaval]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

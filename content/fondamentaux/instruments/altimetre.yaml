@@ -1,0 +1,137 @@
+schemaVersion: 1
+id: fondamentaux.instruments.altimetre
+type: concept
+title: L'altimètre
+slug: altimetre
+summary: >-
+  L'altimètre est un baromètre : une capsule anéroïde mesure la pression,
+  convertie en altitude via l'ISA, et entraîne les aiguilles. Il se cale (QNH,
+  QFE ou 1013 hPa) dans la fenêtre de Kollsman ; un air plus froid que l'ISA le fait sur-lire.
+objectifs:
+  - Expliquer le principe de l'altimètre (baromètre à capsule anéroïde relié à la prise statique, conversion via l'ISA).
+  - Lire un altimètre (aiguilles des centaines et des milliers de pieds) et le caler dans la fenêtre de Kollsman.
+  - Citer les principales erreurs de l'altimètre (calage, température, retard).
+aliases: [altimètre, capsule anéroïde, prise statique, fenêtre de Kollsman, calage, aiguilles]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — vingt-quatrième fiche du socle, l'altimètre (ouvre le bloc instruments de vol).
+    author: prepapilote
+status: publie
+sources:
+  - title: "L'altimètre — lavionnaire.fr"
+    url: https://www.lavionnaire.fr/InstVolAltim.php
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — instruments"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.pression-et-calage
+    - fondamentaux.physique.pression-forces-unites
+  related:
+    - fondamentaux.meteorologie.atmosphere-standard
+content:
+  essentiel:
+    body: |
+      L'**altimètre** est l'instrument qui indique l'**altitude**. En réalité, il
+      ne « voit » pas l'altitude : c'est un **baromètre** — il mesure la
+      **pression** de l'air, qui diminue avec la hauteur, et la traduit en
+      altitude grâce au modèle **ISA**.
+
+      Son cœur est une **capsule anéroïde** : une capsule métallique fermée,
+      presque vide d'air, qui se **dilate** quand la pression extérieure baisse
+      (en montant) et se **contracte** quand elle augmente. Ses déformations,
+      amplifiées par un jeu de leviers, font tourner les **aiguilles**.
+
+      Comme la pression au sol varie, l'altimètre doit être **calé** : on affiche
+      une pression de référence (QNH, QFE ou 1013 hPa) dans la **fenêtre de
+      Kollsman**.
+    aRetenir:
+      - L'altimètre est un baromètre — il mesure la pression et la convertit en altitude via l'ISA.
+      - Son capteur est une capsule anéroïde qui se dilate quand la pression baisse (altitude qui monte).
+      - Il doit être calé (QNH, QFE ou 1013 hPa) dans la fenêtre de Kollsman.
+      - Un air plus froid que l'ISA fait sur-lire l'altimètre — l'avion est plus bas que l'altitude indiquée.
+  sections:
+    - id: un-barometre-qui-indique-l-altitude
+      title: Un baromètre qui indique l'altitude
+      body: |
+        L'altimètre repose sur un fait simple : la **pression** atmosphérique
+        **diminue** avec l'altitude, de façon connue (le modèle **ISA**). Mesurer
+        la pression, c'est donc mesurer une altitude.
+
+        Concrètement, l'instrument est relié à la **prise statique** de l'avion,
+        qui capte la pression de l'air **au repos**, non perturbée par la
+        vitesse. À l'intérieur, une **capsule anéroïde** — une petite capsule
+        métallique scellée, quasiment vidée d'air — réagit à cette pression :
+
+        - en **montant**, la pression baisse, la capsule se **dilate** ;
+        - en **descendant**, la pression augmente, la capsule se **comprime**.
+
+        Ces déformations, minuscules, sont **amplifiées** par des leviers et des
+        engrenages qui entraînent les **aiguilles** du cadran.
+      figures:
+        - schemaId: altimetre-principe
+          alt: Le principe de l'altimètre — la prise statique alimente une capsule anéroïde dont les déformations entraînent l'aiguille par des leviers.
+          caption: La prise statique alimente la capsule anéroïde ; ses déformations, amplifiées par des leviers, font tourner l'aiguille.
+          width: 460
+          height: 260
+    - id: lire-et-caler-l-altimetre
+      title: Lire et caler l'altimètre
+      body: |
+        Le cadran classique porte deux **aiguilles** : une **longue et fine**
+        pour les **centaines de pieds** (un tour = 1000 ft) et une **courte et
+        large** pour les **milliers de pieds**. On lit d'abord les milliers, puis
+        les centaines.
+
+        Mais un altimètre ne donne la bonne valeur que s'il sait **à partir de
+        quelle pression** compter. C'est le **calage**, affiché dans la **fenêtre
+        de Kollsman** :
+
+        - **QNH** → l'altimètre indique l'**altitude** (par rapport à la mer) ;
+        - **QFE** → il indique la **hauteur** (par rapport à l'aérodrome) ;
+        - **1013,25 hPa** → il indique un **niveau de vol**.
+
+        Ces calages sont détaillés dans la fiche « La pression et le calage
+        altimétrique ».
+      figures:
+        - schemaId: altimetre-cadran
+          alt: Un cadran d'altimètre avec l'aiguille des centaines de pieds sur 5 et celle des milliers sur 2,5, indiquant 2500 pieds, et la fenêtre de Kollsman affichant 1013.
+          caption: On lit d'abord les milliers puis les centaines de pieds ; la fenêtre de Kollsman porte le calage (ici 1013).
+          width: 340
+          height: 320
+    - id: les-erreurs-de-l-altimetre
+      title: Les erreurs de l'altimètre
+      strate: maitriser
+      body: |
+        L'altimètre a ses **limites**, qu'un pilote doit connaître.
+
+        - **Erreur de calage** : un mauvais réglage décale toute la lecture
+          (1 hPa ≈ 28 ft).
+        - **Erreur de température** : le modèle ISA suppose une atmosphère
+          « moyenne ». Quand l'air réel est **plus froid** que l'ISA, l'altimètre
+          **sur-lit** — il indique une altitude **supérieure** à la réalité, donc
+          l'avion est en fait **plus bas**. C'est un piège en montagne par grand
+          froid.
+        - **Erreur de retard** : lors de variations rapides, l'aiguille peut
+          réagir avec un léger décalage.
+
+        On retrouve ici la règle de sécurité déjà vue : **« du fort vers le
+        faible (pression ou température), attention danger »**.
+  pieges:
+    - L'altimètre ne mesure pas une hauteur, mais une pression — il la traduit en altitude via l'ISA.
+    - Sans calage correct, l'altitude affichée est fausse — toujours vérifier la fenêtre de Kollsman.
+    - Par air plus froid que l'ISA, l'altimètre sur-lit — l'avion est plus bas que l'altitude indiquée.

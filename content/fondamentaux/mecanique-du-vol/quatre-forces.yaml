@@ -1,0 +1,145 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.quatre-forces
+type: notion-aerodynamique
+title: Les quatre forces du vol
+slug: quatre-forces
+summary: >-
+  Quatre forces s'exercent en permanence sur un avion en vol — le poids, la
+  portance, la poussée et la traînée. En vol en palier stabilisé, elles
+  s'équilibrent deux à deux — portance égale poids, poussée égale traînée.
+objectifs:
+  - Nommer les quatre forces qui s'exercent sur un avion en vol (poids, portance, poussée, traînée).
+  - Indiquer, pour chaque force, son origine, sa direction et son rôle principal.
+  - Énoncer la condition d'équilibre du vol en palier (portance égale poids, poussée égale traînée).
+aliases: [quatre forces, forces du vol, poids, poussée, portance, traînée, équilibre, palier]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — neuvième fiche du socle, synthèse du bilan des forces et de l'équilibre du vol.
+    author: prepapilote
+status: publie
+sources:
+  - title: "NASA — Glenn Research Center, Airplane Cruise (Balanced Forces)"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/airplane-cruise-balanced-forces/
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — mécanique du vol"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.portance
+    - fondamentaux.aerodynamique.trainee
+content:
+  essentiel:
+    body: |
+      Pour comprendre comment un avion vole, on ramène tout à un **bilan de
+      forces**. À tout instant en vol, un avion est soumis à **quatre forces** :
+      le **poids**, la **portance**, la **poussée** et la **traînée**.
+
+      Deux sont d'origine « mécanique » — le **poids** (l'attraction de la Terre)
+      et la **poussée** (le moteur). Deux sont **aérodynamiques** — la
+      **portance** et la **traînée**, nées de l'action de l'air sur l'avion.
+
+      Quand ces forces **s'équilibrent** deux à deux — portance contre poids,
+      poussée contre traînée —, l'avion vole **stabilisé**. Quand l'équilibre est
+      rompu, il monte, descend, accélère ou ralentit.
+    aRetenir:
+      - Quatre forces s'exercent sur un avion en vol — le poids, la portance, la poussée et la traînée.
+      - Le poids et la poussée sont d'origine « mécanique » (gravité, moteur) ; la portance et la traînée sont aérodynamiques.
+      - En vol en palier stabilisé, ces forces s'équilibrent deux à deux — portance égale poids, poussée égale traînée.
+      - Si l'équilibre est rompu, l'avion monte, descend, accélère ou ralentit.
+  sections:
+    - id: les-quatre-forces
+      title: Les quatre forces
+      body: |
+        À chaque instant du vol, quatre forces agissent sur l'avion. On peut les
+        représenter comme **quatre flèches** partant de l'appareil — deux
+        verticales, deux horizontales.
+
+        - Le **poids** — c'est l'**attraction de la Terre** (la gravité). Il
+          s'exerce **vers le bas**, vers le centre de la Terre, et tire l'avion
+          vers le sol.
+        - La **poussée** — fournie par le **moteur** (hélice ou réacteur). Elle
+          s'exerce **vers l'avant**, dans l'axe du vol, et fait **avancer**
+          l'avion.
+        - La **portance** — l'**action de l'aile sur l'air**. Perpendiculaire au
+          vent relatif (globalement **vers le haut**), elle **soutient** l'avion.
+        - La **traînée** — la **résistance de l'air**. Parallèle au vent relatif
+          et dirigée **vers l'arrière**, elle **freine** l'avion.
+
+        Le tableau ci-dessous récapitule, pour chaque force, son origine, sa
+        direction et son rôle.
+
+        | Force | Origine | Direction | Rôle principal |
+        | --- | --- | --- | --- |
+        | **Poids** | l'attraction de la Terre (gravité) | vers le bas | tire l'avion vers le sol |
+        | **Poussée** | le moteur (hélice ou réacteur) | vers l'avant, dans l'axe du vol | fait avancer l'avion |
+        | **Portance** | l'action de l'aile sur l'air | perpendiculaire au vent relatif (vers le haut) | soutient l'avion |
+        | **Traînée** | la résistance de l'air | parallèle au vent relatif, vers l'arrière | freine l'avion |
+      figures:
+        - schemaId: quatre-forces-avion
+          alt: Une silhouette d'avion vue de profil avec quatre flèches — portance vers le haut, poids vers le bas, poussée vers l'avant, traînée vers l'arrière.
+          caption: Les quatre forces du vol — deux verticales (portance, poids) et deux horizontales (poussée, traînée).
+          width: 460
+          height: 260
+    - id: l-equilibre-en-vol-stabilise
+      title: L'équilibre en vol stabilisé
+      body: |
+        Un avion vole en **palier stabilisé** lorsqu'il se déplace en **ligne
+        droite, à altitude et vitesse constantes**. Dans cette situation, les
+        quatre forces **s'équilibrent deux à deux** :
+
+        - la **portance égale le poids** — l'avion ne monte ni ne descend ;
+        - la **poussée égale la traînée** — l'avion n'accélère ni ne ralentit.
+
+        Aucune force ne l'emporte : la **résultante** de toutes les forces est
+        **nulle**. C'est l'**équilibre**.
+
+        Attention — **équilibre ne signifie pas immobilité**. Un avion en palier
+        peut filer à plusieurs centaines de kilomètres par heure ; il est
+        simplement en **équilibre des forces**, sans accélérer ni changer
+        d'altitude.
+      figures:
+        - schemaId: equilibre-en-palier
+          alt: Une silhouette d'avion avec les quatre forces de longueurs égales deux à deux, illustrant l'équilibre en palier.
+          caption: En palier stabilisé, portance et poids se compensent, poussée et traînée se compensent — la résultante est nulle.
+          width: 460
+          height: 240
+    - id: montee-et-descente
+      title: Montée et descente
+      strate: maitriser
+      body: |
+        Dès que l'équilibre est **rompu**, l'avion réagit.
+
+        - Si la **poussée l'emporte** sur la traînée, l'avion **accélère** ; dans
+          le cas contraire, il **ralentit**.
+        - Si la **portance l'emporte** sur le poids, l'avion **monte** ; si elle
+          devient insuffisante, il **descend**.
+
+        En **montée** comme en **descente**, la répartition des forces se
+        modifie — le poids se décompose en partie le long de la trajectoire, et
+        l'égalité stricte poussée-traînée du palier n'est plus vérifiée. Ces
+        situations seront détaillées dans les fiches consacrées aux
+        **performances** et à la **mécanique du vol**.
+
+        L'essentiel ici — c'est en **agissant sur ces quatre forces** (la
+        poussée par la manette des gaz, la portance par la vitesse et
+        l'incidence) que le pilote fait monter, descendre, accélérer ou ralentir
+        l'avion.
+  pieges:
+    - Les quatre forces ne s'appliquent pas exactement au même point, mais on les représente au centre de gravité pour raisonner sur l'équilibre.
+    - « Équilibre » ne veut pas dire « immobile » — un avion en palier à vitesse constante est en équilibre tout en avançant vite.
+    - L'égalité poussée égale traînée et portance égale poids ne vaut strictement qu'en palier stabilisé, pas en montée ni en descente.

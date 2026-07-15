@@ -1,0 +1,142 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.trainee
+type: notion-aerodynamique
+title: La traînée
+slug: trainee
+summary: >-
+  La traînée est la résistance de l'air, parallèle au vent relatif et opposée au
+  mouvement. Elle vient du frottement, de la forme et de la portance (traînée
+  induite). Toute l'aérodynamique cherche le meilleur compromis portance/traînée.
+objectifs:
+  - Définir la traînée comme la résistance de l'air, opposée au mouvement et parallèle au vent relatif.
+  - Distinguer les principales sources de traînée (frottement, forme, traînée induite).
+  - Définir la finesse (rapport portance/traînée) et expliquer le compromis permanent entre portance et traînée.
+aliases: [traînée, drag, finesse, traînée induite, traînée parasite]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — huitième fiche du socle, la traînée et le compromis aérodynamique.
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.portance
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      Se déplacer dans l'air a un coût : l'air **résiste**. Cette résistance,
+      c'est la **traînée**.
+
+      La traînée est une force **parallèle au vent relatif** et dirigée **vers
+      l'arrière**, opposée au mouvement de l'avion. Elle a plusieurs origines : le
+      **frottement** de l'air sur la surface, la **forme** de l'avion (son
+      sillage) et la **traînée induite**, prix à payer de la portance.
+
+      Tout l'art de l'aérodynamique consiste à produire assez de **portance** tout
+      en **limitant** la traînée. Le rapport entre les deux, la **finesse**,
+      mesure cette efficacité.
+    aRetenir:
+      - La traînée est la résistance de l'air, parallèle au vent relatif et opposée au mouvement.
+      - Elle vient du frottement, de la forme (sillage) et de la portance (traînée induite).
+      - La traînée induite est forte à basse vitesse ; la traînée parasite augmente avec la vitesse.
+      - La finesse est le rapport portance/traînée — elle mesure l'efficacité aérodynamique.
+  sections:
+    - id: qu-est-ce-que-la-trainee
+      title: Qu'est-ce que la traînée ?
+      body: |
+        Dès qu'un objet se déplace dans l'air, l'air s'oppose à son avancement.
+        Cette force de résistance, la **traînée**, est **parallèle au vent
+        relatif** et pointe **vers l'arrière** — elle freine l'avion.
+
+        Contrairement à la portance (perpendiculaire au vent relatif), la traînée
+        agit **dans l'axe** de l'écoulement. Portance et traînée sont les deux
+        composantes de la **résultante aérodynamique**, la force totale exercée
+        par l'air sur l'aile.
+
+        La traînée est **inévitable** : on ne peut pas l'annuler, seulement la
+        réduire. C'est un adversaire permanent, car il faut de la puissance pour
+        la vaincre.
+      figures:
+        - schemaId: trainee-forces
+          alt: Un profil avec la portance perpendiculaire au vent relatif et la traînée parallèle, dirigée vers l'arrière.
+          caption: La traînée est parallèle au vent relatif et s'oppose au mouvement ; la portance lui est perpendiculaire.
+          width: 460
+          height: 240
+    - id: les-sources-de-trainee
+      title: Les sources de traînée
+      body: |
+        La traînée totale se décompose en plusieurs contributions.
+
+        - La **traînée de frottement** : l'air, visqueux, « accroche » à la
+          surface (couche limite). Plus la surface est grande ou rugueuse, plus
+          elle freine.
+        - La **traînée de forme** : derrière l'avion se forme un **sillage** de
+          tourbillons ; une forme épaisse ou mal profilée en crée davantage.
+          Frottement et forme constituent la **traînée parasite**, qui
+          **augmente avec la vitesse**.
+        - La **traînée induite** : c'est le **prix de la portance**. En portant,
+          l'aile crée des **tourbillons de bout d'aile** (l'air de l'intrados,
+          plus haut en pression, contourne l'extrémité). Elle est **d'autant plus
+          forte que la vitesse est faible** (forte incidence).
+      figures:
+        - schemaId: trainee-sources
+          alt: Une aile vue de dessus avec les trois sources de traînée — frottement, forme et traînée induite au bout d'aile.
+          caption: Les trois sources de traînée — le frottement, la forme (sillage) et la traînée induite (tourbillons de bout d'aile).
+          width: 460
+          height: 240
+    - id: la-finesse
+      title: La finesse
+      strate: maitriser
+      body: |
+        Le rapport entre la portance et la traînée s'appelle la **finesse** (notée
+        f, ou L/D en anglais) :
+
+        **finesse = portance / traînée**
+
+        C'est un nombre **sans unité**. Une finesse de 10 signifie que l'aile
+        produit 10 fois plus de portance que de traînée — et, pour un planeur,
+        qu'il parcourt 10 km en perdant 1 km d'altitude.
+
+        La traînée totale passe par un **minimum** à une certaine vitesse : celle
+        où la traînée induite (forte à basse vitesse) **égale** la traînée
+        parasite (forte à haute vitesse). C'est la vitesse de **finesse
+        maximale**.
+    - id: le-compromis-portance-trainee
+      title: Le compromis portance / traînée
+      body: |
+        Toute l'aérodynamique est une affaire de **compromis** : il faut produire
+        **assez de portance** pour voler, tout en **limitant la traînée** pour ne
+        pas gaspiller d'énergie.
+
+        Ce compromis gouverne une grande partie du vol :
+
+        - les **performances** (vitesse, plafond, distance de décollage) ;
+        - la **consommation** de carburant et l'**autonomie** ;
+        - le **vol plané** (un avion sans moteur descend d'autant moins vite que
+          sa finesse est grande) ;
+        - l'**optimisation** de chaque phase, du décollage à la croisière.
+
+        Ces applications seront détaillées dans les fiches consacrées aux
+        performances et au vol. Retenez l'idée maîtresse : **un bon avion est
+        celui qui porte beaucoup en traînant peu.**
+  pieges:
+    - La traînée est parallèle au vent relatif, pas « horizontale » — comme la portance, elle suit l'écoulement.
+    - La traînée induite est la plus forte à basse vitesse (forte incidence), et non à haute vitesse — c'est contre-intuitif.
+    - La finesse est un nombre sans unité — une finesse de 40 est excellente (planeur), 10 est modeste.

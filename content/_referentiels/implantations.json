@@ -1,0 +1,275 @@
+{
+  "implantations": [
+    {
+      "slug": "landivisiau",
+      "name": "BAN Landivisiau",
+      "code": "BAN",
+      "ville": "Landivisiau",
+      "departement": "Finistère (29)",
+      "armee": "marine",
+      "statut": "active",
+      "roles": ["chasse"],
+      "lat": 48.53,
+      "lon": -4.17,
+      "ficheId": "eopan.ban.landivisiau",
+      "liens": [
+        "eopan.appareils.rafale-m",
+        "eopan.unites.flottille-12f",
+        "eopan.unites.flottille-17f"
+      ]
+    },
+    {
+      "slug": "lann-bihoue",
+      "name": "BAN Lann-Bihoué",
+      "code": "BAN",
+      "ville": "Lorient",
+      "departement": "Morbihan (56)",
+      "armee": "marine",
+      "statut": "active",
+      "roles": ["patrouille-maritime"],
+      "lat": 47.76,
+      "lon": -3.44,
+      "ficheId": "eopan.ban.lann-bihoue",
+      "liens": [
+        "eopan.appareils.atlantique-2",
+        "eopan.unites.flottille-21f",
+        "eopan.unites.flottille-23f",
+        "eopan.appareils.e-2c-hawkeye"
+      ]
+    },
+    {
+      "slug": "lanveoc-poulmic",
+      "name": "BAN Lanvéoc-Poulmic",
+      "code": "BAN",
+      "ville": "Lanvéoc",
+      "departement": "Finistère (29)",
+      "armee": "marine",
+      "statut": "active",
+      "roles": ["ecole", "helicopteres"],
+      "lat": 48.28,
+      "lon": -4.44,
+      "ficheId": "eopan.ban.lanveoc-poulmic",
+      "liens": [
+        "eopan.selection.la-preselection-en-vol",
+        "eopan.appareils.cap-10",
+        "eopan.unites.flottille-33f",
+        "eopan.appareils.nh90-caiman"
+      ]
+    },
+    {
+      "slug": "hyeres",
+      "name": "BAN Hyères",
+      "code": "BAN",
+      "ville": "Hyères",
+      "departement": "Var (83)",
+      "armee": "marine",
+      "statut": "active",
+      "roles": ["helicopteres"],
+      "lat": 43.1,
+      "lon": 6.15,
+      "ficheId": "eopan.ban.hyeres",
+      "liens": ["eopan.appareils.nh90-caiman", "eopan.concepts.groupe-aeronaval"]
+    },
+    {
+      "slug": "salon-de-provence",
+      "name": "BA 701 Salon-de-Provence",
+      "code": "BA 701",
+      "ville": "Salon-de-Provence",
+      "departement": "Bouches-du-Rhône (13)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["ecole"],
+      "lat": 43.64,
+      "lon": 5.1,
+      "ficheId": "eopn.bases.salon-de-provence",
+      "liens": ["eopn.selection.la-formation-du-pilote-de-chasse", "eopn.appareils.alphajet"]
+    },
+    {
+      "slug": "cognac",
+      "name": "BA 709 Cognac-Châteaubernard",
+      "code": "BA 709",
+      "ville": "Cognac",
+      "departement": "Charente (16)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["ecole"],
+      "lat": 45.66,
+      "lon": -0.31,
+      "ficheId": "eopn.bases.cognac",
+      "liens": ["eopn.organisation.ecole-de-l-aviation-de-chasse", "eopn.appareils.pc-21"]
+    },
+    {
+      "slug": "saint-dizier",
+      "name": "BA 113 Saint-Dizier-Robinson",
+      "code": "BA 113",
+      "ville": "Saint-Dizier",
+      "departement": "Haute-Marne (52)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["chasse"],
+      "lat": 48.63,
+      "lon": 4.9,
+      "ficheId": "eopn.bases.saint-dizier",
+      "liens": [
+        "eopn.appareils.rafale",
+        "eopn.unites.escadron-1-4-gascogne",
+        "eopn.organisation.les-forces-aeriennes-strategiques"
+      ]
+    },
+    {
+      "slug": "istres",
+      "name": "BA 125 Istres-Le Tubé",
+      "code": "BA 125",
+      "ville": "Istres",
+      "departement": "Bouches-du-Rhône (13)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["ravitaillement", "essais"],
+      "lat": 43.52,
+      "lon": 4.92,
+      "ficheId": "eopn.bases.istres",
+      "liens": [
+        "eopn.appareils.mrtt-phenix",
+        "eopn.organisation.les-forces-aeriennes-strategiques",
+        "fondamentaux.culture-aeronautique.l-epner"
+      ]
+    },
+    {
+      "slug": "mont-de-marsan",
+      "name": "BA 118 Mont-de-Marsan",
+      "code": "BA 118",
+      "ville": "Mont-de-Marsan",
+      "departement": "Landes (40)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["chasse", "essais"],
+      "lat": 43.91,
+      "lon": -0.5,
+      "ficheId": "eopn.bases.mont-de-marsan",
+      "liens": ["eopn.unites.normandie-niemen", "eopn.appareils.rafale", "eopn.appareils.mirage-iv"]
+    },
+    {
+      "slug": "avord",
+      "name": "BA 702 Avord",
+      "code": "BA 702",
+      "ville": "Avord",
+      "departement": "Cher (18)",
+      "armee": "air",
+      "statut": "active",
+      "roles": ["soutien"],
+      "lat": 47.05,
+      "lon": 2.65,
+      "liens": ["eopn.organisation.les-forces-aeriennes-strategiques"]
+    },
+    {
+      "slug": "dax",
+      "name": "EALAT — base-école de Dax",
+      "code": "EALAT",
+      "ville": "Dax",
+      "departement": "Landes (40)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["ecole", "helicopteres"],
+      "lat": 43.71,
+      "lon": -1.05,
+      "ficheId": "alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre",
+      "liens": [
+        "alat.presentation.devenir-pilote-alat",
+        "fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere"
+      ]
+    },
+    {
+      "slug": "le-cannet-des-maures",
+      "name": "EALAT — base-école du Cannet-des-Maures",
+      "code": "EALAT",
+      "ville": "Le Cannet-des-Maures",
+      "departement": "Var (83)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["ecole", "helicopteres"],
+      "lat": 43.39,
+      "lon": 6.24,
+      "ficheId": "alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre",
+      "liens": ["alat.appareils.tigre", "alat.presentation.devenir-pilote-alat"]
+    },
+    {
+      "slug": "phalsbourg",
+      "name": "1er RHC — Phalsbourg",
+      "code": "1er RHC",
+      "ville": "Phalsbourg",
+      "departement": "Moselle (57)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["helicopteres"],
+      "lat": 48.77,
+      "lon": 7.26,
+      "ficheId": "alat.unites.1er-rhc",
+      "liens": [
+        "alat.appareils.tigre",
+        "alat.appareils.nh90-caiman-tth",
+        "alat.organisation.la-4e-brigade-d-aerocombat"
+      ]
+    },
+    {
+      "slug": "etain",
+      "name": "3e RHC — Étain",
+      "code": "3e RHC",
+      "ville": "Étain",
+      "departement": "Meuse (55)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["helicopteres"],
+      "lat": 49.21,
+      "lon": 5.64,
+      "ficheId": "alat.unites.3e-rhc",
+      "liens": ["alat.appareils.nh90-caiman-tth", "alat.organisation.la-4e-brigade-d-aerocombat"]
+    },
+    {
+      "slug": "pau",
+      "name": "5e RHC et 4e RHFS — Pau",
+      "code": "5e RHC · 4e RHFS",
+      "ville": "Pau",
+      "departement": "Pyrénées-Atlantiques (64)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["helicopteres"],
+      "lat": 43.3,
+      "lon": -0.37,
+      "ficheId": "alat.unites.5e-rhc",
+      "liens": [
+        "alat.unites.4e-rhfs",
+        "alat.appareils.tigre",
+        "alat.appareils.cougar",
+        "alat.organisation.la-4e-brigade-d-aerocombat"
+      ]
+    },
+    {
+      "slug": "clermont-ferrand",
+      "name": "État-major de la 4e BAC — Clermont-Ferrand",
+      "code": "4e BAC",
+      "ville": "Clermont-Ferrand",
+      "departement": "Puy-de-Dôme (63)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["etat-major"],
+      "lat": 45.78,
+      "lon": 3.08,
+      "ficheId": "alat.organisation.la-4e-brigade-d-aerocombat",
+      "liens": ["alat.missions.l-aerocombat"]
+    },
+    {
+      "slug": "metz",
+      "name": "COMALAT — Metz",
+      "code": "COMALAT",
+      "ville": "Metz",
+      "departement": "Moselle (57)",
+      "armee": "terre",
+      "statut": "active",
+      "roles": ["etat-major"],
+      "lat": 49.12,
+      "lon": 6.18,
+      "ficheId": "alat.organisation.aviation-legere-armee-de-terre",
+      "liens": ["alat.missions.l-aerocombat"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.declinaison-magnetique
+title: Déclinaison magnétique
+definition: >-
+  Angle entre le nord vrai (géographique) et le nord magnétique en un lieu donné.
+  On l'applique pour convertir un cap vrai en cap magnétique : à l'Est on
+  retranche, à l'Ouest on ajoute.
+english: Magnetic declination
+synonyms: [déclinaison]
+ficheId: fondamentaux.navigation.declinaison-magnetique
+tags: []
+status: publie

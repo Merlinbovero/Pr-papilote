@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.salon-01
+kind: qcm
+theme: bases-aae
+statement: >-
+  Quelle grande école l'Armée de l'air et de l'Espace abrite-t-elle à Salon-de-Provence ?
+choices:
+  - L'École de l'air et de l'espace
+  - L'École navale
+  - L'École de Saint-Cyr
+  - L'École polytechnique
+correctChoices: [0]
+explanation: >-
+  La base aérienne 701 de Salon-de-Provence abrite l'École de l'air et de
+  l'espace, qui forme les officiers de l'Armée de l'air et de l'Espace.
+evaluates: [eopn.bases.salon-de-provence]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

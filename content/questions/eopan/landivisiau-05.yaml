@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.landivisiau-05
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quel est le lien entre la BAN de Landivisiau et le porte-avions Charles de Gaulle ?
+choices:
+  - Les flottilles s'entraînent à Landivisiau puis embarquent sur le Charles de Gaulle
+  - Le porte-avions est amarré en permanence à Landivisiau
+  - Landivisiau ravitaille le porte-avions en carburant
+  - Les deux sont situés sur le même site géographique
+correctChoices: [0]
+explanation: >-
+  Le cycle des flottilles alterne entraînement et préparation à terre à
+  Landivisiau, puis déploiements à bord du Charles de Gaulle — c'est le sens du
+  surnom « porte-avions de granit ».
+evaluates: [eopan.ban.landivisiau]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

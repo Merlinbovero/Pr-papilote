@@ -1,0 +1,133 @@
+schemaVersion: 1
+id: eopn.selection.la-formation-du-pilote-de-chasse
+type: concept
+title: La formation du pilote de chasse
+slug: la-formation-du-pilote-de-chasse
+summary: >-
+  De Salon-de-Provence au premier escadron — le cursus du pilote de chasse de
+  l'armée de l'Air et de l'Espace : vol militaire sur planeur et Cirrus,
+  spécialisation chasse à Cognac sur Grob 120 et PC-21, puis transformation
+  sur Rafale ou Mirage 2000.
+objectifs:
+  - Restituer les grandes étapes du cursus du pilote de chasse (Salon, Cognac, transformation, escadron).
+  - Associer chaque étape à ses appareils (planeur/Cirrus, Grob 120, PC-21, Rafale/Mirage 2000).
+  - Comprendre la logique de sélection continue tout au long de la formation.
+aliases:
+  [
+    formation pilote de chasse,
+    cursus chasse,
+    Salon-de-Provence,
+    Cognac,
+    PC-21,
+    transformation Rafale,
+  ]
+module: eopn
+category: selection
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche cursus pilote de chasse AAE (campagne de recherche n°1, lot N4 ; sources officielles devenir-aviateur.gouv.fr et defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Devenir pilote de chasse — armée de l'Air et de l'Espace (devenir-aviateur.gouv.fr)"
+    url: https://devenir-aviateur.gouv.fr/choisir-votre-metier/tous-nos-domaines-et-metiers/pilote-et-navigateur/pilote-de-chasse
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "La formation de l'aviation de chasse — défilé du 14 juillet 2025 (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/unites-du-defile-du-14-juillet-2025/14-juillet-2025-defile-avions/14-juillet-2025-formation-laviation-chasse
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.presentation.le-concours-eopn
+    - eopn.organisation.ecole-de-l-aviation-de-chasse
+    - eopn.appareils.pc-21
+    - eopn.bases.salon-de-provence
+    - eopn.appareils.rafale
+content:
+  essentiel:
+    body: |
+      La formation du pilote de chasse est **longue** et fonctionne comme une
+      **sélection continue** — à chaque étape, il faut confirmer. Le cursus
+      type :
+
+      1. **École de l'air, Salon-de-Provence** — formation militaire
+         initiale, puis apprentissage du **vol militaire** sur **planeur** et
+         **Cirrus SR20/22** (environ deux ans pour les EOPN, formation
+         académique comprise selon le statut) ;
+      2. **École de l'aviation de chasse, Cognac** — environ **18 mois** de
+         spécialisation chasse sur **Grob 120** puis **PC-21** ;
+      3. **Transformation opérationnelle** — environ cinq mois sur
+         **Rafale** (ETR 3/4 « Aquitaine », Saint-Dizier) ou **Mirage 2000**
+         (EC 2/3 « Champagne », Nancy-Ochey) ;
+      4. **Escadron de chasse** — qualifications progressives sur près de
+         trois ans (équipier, puis chef de patrouille).
+
+      Du premier vol au statut opérationnel, il faut compter plusieurs
+      années d'efforts — et chaque étape écarte ceux qui ne confirment pas.
+    aRetenir:
+      - "Le cursus — Salon (vol militaire, planeur/Cirrus) → Cognac (chasse, Grob 120/PC-21) → transformation (Rafale ou Mirage 2000) → escadron."
+      - La spécialisation chasse dure environ 18 mois à Cognac, sur Grob 120 puis PC-21.
+      - La transformation Rafale se fait à l'ETR 3/4 « Aquitaine » (Saint-Dizier), la transformation Mirage 2000 à l'EC 2/3 « Champagne » (Nancy).
+      - La formation est une sélection continue — voler ne suffit pas, il faut confirmer à chaque étape.
+  sections:
+    - id: de-salon-a-cognac
+      title: De Salon-de-Provence à Cognac
+      body: |
+        Tout commence à l'**École de l'air et de l'espace** de
+        **Salon-de-Provence** (BA 701) : formation **militaire** d'abord —
+        l'EOPN devient aviateur avant de devenir pilote — puis découverte du
+        **vol militaire** sur **planeur** et sur **Cirrus SR20/22**, où se
+        confirment les aptitudes détectées à la sélection.
+
+        Vient ensuite l'orientation. Ceux qui rejoignent la **chasse**
+        partent pour **Cognac** (BA 709) : le **Grob 120** assure la
+        transition, puis le **PC-21** porte l'élève jusqu'au niveau requis
+        pour un avion d'armes. C'est là que se joue l'attribution du
+        **macaron** de pilote de chasse.
+      figures:
+        - schemaId: cursus-pilote-chasse-aae
+          alt: Les quatre étapes du cursus pilote de chasse — École de l'air à Salon-de-Provence (planeur, Cirrus), École de l'aviation de chasse à Cognac (Grob 120, PC-21), transformation opérationnelle sur Rafale à Saint-Dizier ou Mirage 2000 à Nancy, puis escadron de chasse.
+          caption: Le cursus du pilote de chasse, de Salon-de-Provence à l'escadron.
+          width: 460
+          height: 360
+    - id: la-transformation-et-l-escadron
+      title: La transformation et l'escadron
+      body: |
+        Breveté à Cognac, le jeune pilote n'est pas encore un combattant :
+        la **transformation opérationnelle** l'amène sur son avion d'armes —
+        environ **cinq mois** à l'**ETR 3/4 « Aquitaine »** de Saint-Dizier
+        pour le **Rafale**, ou à l'**EC 2/3 « Champagne »** de Nancy-Ochey
+        pour le **Mirage 2000**.
+
+        En **escadron**, les qualifications s'enchaînent sur près de
+        **trois ans** : équipier opérationnel, sous-chef puis **chef de
+        patrouille** — chaque niveau ajoutant des responsabilités tactiques.
+        La formation ne s'arrête en réalité jamais : exercices, campagnes de
+        tir, qualifications nouvelles rythment toute la carrière.
+    - id: la-logique-du-cursus
+      title: La logique du cursus
+      strate: maitriser
+      body: |
+        Pourquoi tant d'étapes ? Parce que chaque phase **isole** une
+        aptitude : le vol de base démontre la **restitution**, la phase
+        chasse ajoute la **charge mentale** (vitesse, voltige, navigation
+        tactique, patrouille), la transformation ajoute le **système
+        d'armes**, l'escadron ajoute la **décision tactique**.
+
+        Le programme **Mentor 2** (PC-7 MKX et simulateurs à
+        Salon-de-Provence, marché notifié fin 2024) doit rationaliser la
+        phase initiale dans les années à venir — donnée à suivre : le
+        cursus détaillé évolue, ses grandes étapes demeurent.
+  pieges:
+    - Le brevet de pilote de chasse (Cognac) ne fait pas un pilote opérationnel — il reste la transformation puis les qualifications en escadron.
+    - Ne pas confondre les écoles — Salon-de-Provence (École de l'air, vol militaire initial) et Cognac (École de l'aviation de chasse).
+    - Le détail du cursus (durées, appareils) évolue régulièrement (programme Mentor 2) — dater ses informations avant un entretien.

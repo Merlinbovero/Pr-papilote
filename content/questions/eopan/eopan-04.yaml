@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.eopan-04
+kind: qcm
+theme: concours-eopan
+statement: >-
+  Quel diplôme faut-il posséder pour candidater à l'EOPAN ?
+choices:
+  - "Le baccalauréat"
+  - "Un master"
+  - "Un brevet de pilote privé"
+  - "Aucun diplôme"
+correctChoices: [0]
+explanation: >-
+  Le concours est ouvert aux titulaires du baccalauréat (toutes filières), de
+  nationalité française et aptes médicalement au personnel navigant.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

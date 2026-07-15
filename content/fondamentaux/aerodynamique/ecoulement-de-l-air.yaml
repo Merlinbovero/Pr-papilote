@@ -1,0 +1,116 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.ecoulement-de-l-air
+type: notion-aerodynamique
+title: L'écoulement de l'air
+slug: ecoulement-de-l-air
+summary: >-
+  L'air s'écoule autour de l'aile en filets d'air. Le débit se conserve, donc
+  l'air accélère dans un rétrécissement ; et là où il accélère, sa pression
+  diminue (Venturi). La viscosité crée une fine couche limite.
+objectifs:
+  - Décrire un écoulement d'air par ses filets d'air et la conservation du débit.
+  - Énoncer le lien entre vitesse et pression (quand la vitesse augmente, la pression diminue).
+  - Définir la couche limite et expliquer son origine (la viscosité de l'air).
+aliases: [écoulement, filets d'air, Venturi, couche limite]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — cinquième fiche du socle, entrée de l'aérodynamique active.
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.air-et-proprietes
+    - fondamentaux.physique.pression-forces-unites
+content:
+  essentiel:
+    body: |
+      Pour comprendre comment une aile agit sur l'air, il faut d'abord observer
+      comment l'air **s'écoule** autour d'elle.
+
+      On visualise cet écoulement par des **filets d'air** : les trajectoires que
+      suit l'air en contournant un objet. Lorsque l'écoulement se resserre, l'air
+      **accélère** ; là où il accélère, sa **pression diminue** (effet Venturi).
+      Enfin, à cause de la **viscosité**, une très fine **couche limite** d'air
+      adhère à la surface.
+
+      Ces trois idées — filets d'air, lien vitesse–pression, couche limite — sont
+      les briques de la portance et de la traînée, étudiées dans les fiches
+      suivantes.
+    aRetenir:
+      - L'écoulement de l'air se visualise par des filets d'air.
+      - Le débit se conserve — dans un rétrécissement, l'air accélère.
+      - Là où la vitesse de l'air augmente, sa pression diminue (effet Venturi).
+      - La viscosité crée une fine couche limite d'air qui adhère à la surface.
+  sections:
+    - id: les-filets-d-air
+      title: Les filets d'air
+      body: |
+        On représente le mouvement de l'air par des **filets d'air** (ou lignes de
+        courant) : chaque filet est la trajectoire suivie par une petite portion
+        d'air. En écoulement « propre », ces filets **épousent** la surface de
+        l'aile.
+
+        Une règle simple les gouverne : la **conservation du débit**. Le débit,
+        c'est la quantité d'air qui traverse une section pendant un temps donné
+        (débit = vitesse × surface). Comme il se conserve, **si la section se
+        resserre, la vitesse augmente** — comme l'eau d'une rivière accélère dans
+        un passage étroit.
+      figures:
+        - schemaId: filets-air
+          alt: Des filets d'air épousant un profil d'aile, l'écoulement contournant la surface.
+          caption: Les filets d'air épousent le profil — l'écoulement se resserre et accélère au-dessus de l'aile.
+          width: 420
+          height: 240
+    - id: vitesse-et-pression
+      title: Vitesse et pression
+      body: |
+        Dans un écoulement, **vitesse et pression sont liées** : là où l'air va
+        plus vite, sa pression est plus faible. C'est l'**effet Venturi**,
+        conséquence de la conservation de l'énergie (théorème de **Bernoulli**)
+        pour un fluide idéal.
+
+        **À manier avec prudence.** Ce principe explique bien des phénomènes, mais
+        il ne suffit **pas**, à lui seul, à expliquer la portance d'une aile — une
+        idée répandue mais trompeuse. La création de la portance met en jeu
+        d'autres effets et sera étudiée en détail dans la fiche **« La
+        portance »**. Retenez ici seulement le lien : **vitesse ↑ → pression ↓**.
+      figures:
+        - schemaId: venturi
+          alt: Un conduit qui se resserre, l'air y accélérant et sa pression y diminuant.
+          caption: Dans un rétrécissement, l'air accélère et sa pression diminue (effet Venturi).
+          width: 420
+          height: 220
+    - id: la-couche-limite
+      title: La couche limite
+      strate: maitriser
+      body: |
+        L'air n'est pas parfaitement fluide : il est légèrement **visqueux**. À
+        cause de cette viscosité, l'air **adhère** à la surface de l'aile. Il en
+        résulte, tout contre la paroi, une **très fine couche** dans laquelle la
+        vitesse de l'air passe de zéro (à la surface) à celle de l'écoulement :
+        c'est la **couche limite**.
+
+        Retenez ici son **existence** et son **origine** — la viscosité de l'air.
+        Son comportement plus fin, et ce qui se passe lorsqu'elle « décolle »,
+        seront développés dans des fiches ultérieures.
+  pieges:
+    - « L'air va plus vite au-dessus de l'aile, donc la pression y est plus forte » — c'est l'inverse, plus vite signifie pression plus faible.
+    - Ne pas confondre le débit (vitesse × surface, qui se conserve) et la vitesse (qui, elle, change).
+    - La couche limite est extrêmement fine — quelques millimètres — mais son rôle est majeur.

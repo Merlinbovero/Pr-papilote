@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.facteurs-humains.cognac-03
+kind: qcm
+theme: retour-d-experience
+statement: >-
+  Qu'est-ce que « l'effet public » identifié dans le rapport de Cognac ?
+choices:
+  - La recherche d'une présentation esthétique devant les familles et autorités, au détriment des marges
+  - Les applaudissements qui couvrent la radio
+  - L'envahissement de la piste par les spectateurs
+  - La pression médiatique après l'accident
+correctChoices: [0]
+explanation: >-
+  Devant un public nombreux (familles, autorités), l'attention portée à
+  l'esthétique a conduit à une exécution plus dynamique qu'à l'entraînement —
+  un facteur identifié par le BEA-É, qui recommande d'y sensibiliser les
+  équipes.
+evaluates: [fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

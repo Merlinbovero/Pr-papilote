@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: eopan.unites.flottille-21f
+type: flottille
+title: Flottille 21F
+slug: flottille-21f
+summary: >-
+  Flottille de patrouille maritime sur Atlantique 2, héritière de l'escadrille
+  2B de 1940 — de Lartigue à Nîmes-Garons puis Lann-Bihoué (2011), elle traque
+  les sous-marins et surveille les approches depuis plus de 80 ans.
+objectifs:
+  - Identifier la 21F comme flottille de patrouille maritime sur Atlantique 2, basée à Lann-Bihoué.
+  - Connaître sa filiation (escadrille 2B, 1940) et ses implantations successives.
+  - Relier la 21F aux missions de la patrouille maritime (ASM, antinavire, renseignement).
+aliases: [21F, flottille 21F, patrouille maritime, Lann-Bihoué]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche flottille 21F (campagne de recherche n°1, lot N6 ; Wikipédia et reportages spécialisés recoupés).
+    author: prepapilote
+sources:
+  - title: "Flottille 21F — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Flottille_21F
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Flottille 21F, Lann-Bihoué — Escadrilles.org"
+    url: https://www.escadrilles.org/reportages/flottille-21f-lann-bihoue/
+    kind: presse
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: affecte-a
+      target: eopan.ban.lann-bihoue
+    - predicate: dote-de
+      target: eopan.appareils.atlantique-2
+  related:
+    - eopan.unites.flottille-4f
+    - eopan.organisation.aeronautique-navale
+infobox:
+  appellation: Flottille 21F
+  ban: BAN Lann-Bihoué
+  appareils: [Atlantique 2]
+  missions: [Patrouille maritime, Lutte anti-sous-marine, Lutte antinavire, Renseignement]
+content:
+  essentiel:
+    body: |
+      La **flottille 21F** est l'une des deux flottilles de **patrouille
+      maritime** de l'aéronautique navale, sur **Atlantique 2**, basée à
+      **Lann-Bihoué** — mur mitoyen avec sa jumelle, la 23F, dans le même
+      bâtiment.
+
+      Son histoire traverse la Méditerranée : héritière de l'**escadrille
+      2B** créée en **1940** au Maroc (bombardiers Martin 167), elle prend le
+      nom de **21F** en **1953** à **Lartigue** (Algérie), sur Lancaster puis
+      **Neptune**. En **1963**, elle s'installe à **Nîmes-Garons** et passe
+      sur **Atlantic**, puis sur **Atlantique 2** en **1993**. La fermeture
+      de Nîmes-Garons l'amène à **Lann-Bihoué** en **2011**.
+
+      Ses équipages traquent les **sous-marins**, surveillent les
+      **approches** et renseignent — jusqu'au cœur des théâtres terrestres.
+    aRetenir:
+      - 21F — flottille de patrouille maritime sur Atlantique 2, basée à Lann-Bihoué (depuis 2011).
+      - Filiation — escadrille 2B (1940, Maroc) → 21F (1953, Lartigue) → Nîmes-Garons (1963) → Lann-Bihoué.
+      - Sur Atlantic dès 1963-1965, puis Atlantique 2 à partir de 1993.
+      - Avec la 23F, elle forme le pôle patrouille maritime de Lann-Bihoué.
+  sections:
+    - id: missions-patmar
+      title: Les missions d'une flottille PATMAR
+      body: |
+        La patrouille maritime, c'est **voler longtemps, loin, bas au-dessus
+        de la mer** : pister un sous-marin des heures durant (bouées
+        acoustiques, détecteur d'anomalies magnétiques), identifier les
+        navires suspects, tirer si nécessaire l'**Exocet AM39** ou larguer la
+        torpille **MU90** — et, de plus en plus, appuyer les opérations
+        **terrestres** par le renseignement et le guidage.
+
+        Un équipage d'ATL2 compte une dizaine de spécialistes : pilotes,
+        tacticiens (« TACCO »), opérateurs de capteurs — un travail
+        d'équipe permanent qui fait la culture propre de la « PATMAR ».
+    - id: une-histoire-mediterraneenne
+      title: Une histoire méditerranéenne
+      strate: maitriser
+      body: |
+        Créée dans la tourmente de 1940, l'unité illustre les migrations de
+        l'aéronavale : **Maroc**, **Algérie** (Lartigue), **Nîmes-Garons**
+        pendant près d'un demi-siècle, et enfin la **Bretagne**. Chaque
+        déménagement suit la géographie stratégique — Méditerranée d'abord,
+        Atlantique ensuite.
+
+        Depuis Lann-Bihoué, la 21F opère aujourd'hui avec la 23F au sein
+        d'un **pôle inter-flottilles** : mutualisation des moyens, alternance
+        des alertes et des déploiements — l'organisation moderne de la
+        patrouille maritime française.
+  pieges:
+    - La 21F est à Lann-Bihoué depuis 2011 seulement — un demi-siècle à Nîmes-Garons a précédé.
+    - Deux flottilles PATMAR se partagent les ATL2 — 21F et 23F, voisines dans le même bâtiment à Lann-Bihoué.
+    - La patrouille maritime ne fait pas que l'anti-sous-marin — antinavire, renseignement et appui aux opérations terrestres en font partie.

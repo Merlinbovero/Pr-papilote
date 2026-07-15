@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.virage-05
+kind: vrai-faux
+theme: virage
+statement: >-
+  En vol en palier rectiligne, le facteur de charge subi par l'avion est nul.
+answer: false
+explanation: >-
+  En palier, la portance compense exactement le poids : le facteur de charge
+  vaut 1, et non 0. Un facteur de charge nul correspondrait à l'impesanteur,
+  l'avion ne portant plus son poids.
+evaluates: [fondamentaux.mecanique-du-vol.virage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

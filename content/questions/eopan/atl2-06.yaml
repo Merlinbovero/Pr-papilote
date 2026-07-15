@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.atl2-06
+kind: qcm
+theme: patrouille-maritime
+statement: >-
+  Comment est né le Breguet Atlantic, ancêtre de l'Atlantique 2 ?
+choices:
+  - "D'un concours multinational lancé par l'OTAN (spécification unique de 1958)"
+  - "D'un programme purement national français"
+  - "D'un achat d'avions américains sous licence"
+  - "D'une commande de la seule Allemagne"
+correctChoices: [0]
+explanation: >-
+  L'OTAN adressa en 1958 une spécification unique à plus de vingt firmes de
+  huit pays — le projet Breguet fut retenu à l'unanimité et financé en
+  coopération (France 43,4 %, États-Unis 25 %…), une première européenne.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

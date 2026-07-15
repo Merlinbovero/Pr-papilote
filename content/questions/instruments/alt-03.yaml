@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.instruments.alt-03
+kind: vrai-faux
+theme: altimetre
+statement: >-
+  En montant, la pression baisse et la capsule anéroïde de l'altimètre se dilate.
+answer: true
+explanation: >-
+  En montant, la pression extérieure diminue : la capsule scellée se dilate. En
+  descendant, la pression augmente et elle se comprime.
+evaluates: [fondamentaux.instruments.altimetre]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

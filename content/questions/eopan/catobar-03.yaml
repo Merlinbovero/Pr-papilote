@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.catobar-03
+kind: vrai-faux
+theme: mise-en-oeuvre-embarquee
+statement: >-
+  Seuls les États-Unis et la France opèrent aujourd'hui des porte-avions CATOBAR.
+answer: true
+explanation: >-
+  Vrai. Le CATOBAR (catapultes + brins d'arrêt) est d'une grande complexité
+  technique : seuls les États-Unis et la France le mettent en œuvre sur leurs
+  porte-avions.
+evaluates: [eopan.procedures.catobar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

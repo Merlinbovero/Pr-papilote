@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: eopan.organisation.marine-nationale
+type: organisation
+title: L'organisation de la Marine nationale
+slug: marine-nationale
+summary: >-
+  La Marine nationale est l'une des composantes des forces armées françaises.
+  Ses unités relèvent de deux chaînes de commandement — organique (préparer) et
+  opérationnel (employer) — et de quatre grandes autorités organiques.
+objectifs:
+  - Situer la Marine nationale parmi les composantes des forces armées françaises.
+  - Distinguer le commandement organique (préparer les forces) du commandement opérationnel (les employer).
+  - Identifier les quatre autorités organiques ALFAN, ALAVIA, ALFOST et ALFUSCO.
+aliases: [Marine nationale, organisation de la Marine, ALFAN, ALAVIA, ALFOST, ALFUSCO, commandement]
+module: eopan
+category: organisation
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche organisation de la Marine nationale (Lot A, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+sources:
+  - title: "Marine nationale — Notre organisation (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/mieux-nous-connaitre/notre-organisation
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 1, p.6-8 — Organisation du commandement"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.organisation.aeronautique-navale
+    - eopan.presentation.le-concours-eopan
+infobox:
+  nomComplet: Marine nationale
+  tutelle: Ministère des Armées
+  role: Composante navale des forces armées françaises
+content:
+  essentiel:
+    body: |
+      La **Marine nationale** est la marine de guerre française : l'une des
+      quatre grandes **composantes** des forces armées, avec l'**Armée de
+      terre**, l'**Armée de l'air et de l'Espace** et la **Gendarmerie
+      nationale**. Elle agit **en mer**, **sous** la mer et **dans les airs**
+      grâce à sa force **aéronavale**.
+
+      Pour fonctionner, ses unités dépendent de **deux chaînes de commandement**
+      distinctes et complémentaires :
+
+      - le **commandement organique**, qui **prépare** les forces (entraînement,
+        entretien, qualification) ;
+      - le **commandement opérationnel**, qui les **emploie** en opérations.
+
+      Le **chef d'état-major de la Marine (CEMM)** tient à disposition du **chef
+      d'état-major des armées (CEMA)** une marine prête au combat.
+    aRetenir:
+      - La Marine nationale est l'une des quatre composantes des forces armées françaises.
+      - Ses unités relèvent de deux chaînes — le commandement organique (préparer) et opérationnel (employer).
+      - Quatre autorités organiques la structurent — ALFAN, ALAVIA, ALFOST, ALFUSCO.
+      - Le CEMM prépare une marine prête au combat, mise à disposition du CEMA pour les opérations.
+  sections:
+    - id: organique-et-operationnel
+      title: Organique et opérationnel
+      body: |
+        Une même unité — un bâtiment, une flottille, un sous-marin — relève de
+        **deux autorités** à la fois, selon le moment de sa vie :
+
+        - en **préparation**, elle dépend du **commandement organique**, chargé
+          de l'**entraîner**, de l'**entretenir** et de la **qualifier** ;
+        - en **opération**, elle passe sous **commandement opérationnel**, qui
+          l'**emploie** pour une mission, sous l'autorité du **CEMA**.
+
+        Cette double chaîne garantit que les forces engagées sont toujours
+        **prêtes** et correctement **employées**.
+      figures:
+        - schemaId: organisation-marine-commandement
+          alt: Organigramme montrant le CEMM au sommet, se divisant en une chaîne organique (ALFAN, ALAVIA, ALFOST, ALFUSCO) qui prépare les forces et une chaîne opérationnelle (CEMA) qui les emploie.
+          caption: Les unités de la Marine relèvent de deux chaînes — l'une prépare (organique), l'autre emploie (opérationnel).
+          width: 460
+          height: 300
+    - id: les-quatre-autorites-organiques
+      title: Les quatre autorités organiques
+      body: |
+        La préparation des forces est répartie entre **quatre grandes
+        autorités**, organisées par **milieu** :
+
+        - **ALFAN** — la **force d'action navale** : l'essentiel des bâtiments de
+          surface (état-major à **Toulon**, antennes à Brest et Cherbourg) ;
+        - **ALAVIA** — la **force de l'aéronautique navale** : toutes les bases
+          et tous les aéronefs de la Marine (état-major à **Toulon**) ;
+        - **ALFOST** — les **forces sous-marines** et la **force océanique
+          stratégique** (SNLE de l'Île-Longue, SNA) ;
+        - **ALFUSCO** — la **force maritime des fusiliers marins et commandos**
+          (état-major à **Lorient**).
+
+        Pour un candidat **EOPAN**, l'autorité-clé est **ALAVIA** : c'est elle
+        qui prépare l'aéronautique navale — donc les flottilles, les bases et les
+        pilotes.
+    - id: trois-grands-ports
+      title: Trois grands ports
+      strate: maitriser
+      body: |
+        En métropole, la Marine s'organise autour de **trois ports militaires**
+        majeurs : **Brest** (Atlantique), **Cherbourg** (Manche) et **Toulon**
+        (Méditerranée), complétés par des forces **prépositionnées** outre-mer
+        et à l'étranger.
+
+        Cette implantation permet à la Marine de **déployer** ses unités « en
+        tout temps et en tous lieux ». Connaître cette architecture — deux
+        chaînes de commandement, quatre autorités organiques, trois grands ports
+        — fait partie de la **culture Marine** attendue au concours.
+  pieges:
+    - Organique et opérationnel ne sont pas deux « niveaux » hiérarchiques, mais deux chaînes parallèles — l'une prépare, l'autre emploie.
+    - ALAVIA n'est pas le nom d'une base ni d'un grade — c'est l'amiral (et l'autorité) commandant la force de l'aéronautique navale.
+    - Le CEMM ne commande pas les opérations — il prépare les forces et les met à disposition du CEMA, qui les emploie.

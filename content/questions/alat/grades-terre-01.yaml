@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.grades-terre-01
+kind: qcm
+theme: grades-terre
+statement: >-
+  Quelles sont les quatre catégories de la hiérarchie de l'armée de Terre ?
+choices:
+  - Militaires du rang, sous-officiers, officiers, officiers généraux
+  - Soldats, caporaux, sergents, colonels
+  - Équipage, maistrance, état-major, amirauté
+  - Élèves, instructeurs, commandants, généraux
+correctChoices: [0]
+explanation: >-
+  L'armée de Terre distingue les militaires du rang (soldat à caporal-chef),
+  les sous-officiers (sergent à major), les officiers (sous-lieutenant à
+  colonel) et les officiers généraux (2 à 5 étoiles).
+evaluates: [alat.grades.grades-de-l-armee-de-terre]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

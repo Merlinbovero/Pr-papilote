@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .dial { stroke: currentColor; fill: none; stroke-width: 2; }
+    .num { font-size: 14px; font-weight: 600; }
+    .needle { stroke: currentColor; fill: none; }
+    .lead { stroke: #94a3b8; fill: none; stroke-width: 1; }
+    .win { stroke: #3b82f6; fill: none; stroke-width: 1.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="150" y="24" text-anchor="middle">Lire l'altimètre (ici 2500 ft)</text>
+  <!-- Cadran -->
+  <circle class="dial" cx="150" cy="170" r="112" />
+  <!-- Chiffres 0 à 9 -->
+  <text class="num" x="150" y="94" text-anchor="middle">0</text>
+  <text class="num" x="200" y="105" text-anchor="middle">1</text>
+  <text class="num" x="231" y="148" text-anchor="middle">2</text>
+  <text class="num" x="231" y="200" text-anchor="middle">3</text>
+  <text class="num" x="200" y="243" text-anchor="middle">4</text>
+  <text class="num" x="150" y="256" text-anchor="middle">5</text>
+  <text class="num" x="100" y="243" text-anchor="middle">6</text>
+  <text class="num" x="69" y="200" text-anchor="middle">7</text>
+  <text class="num" x="69" y="148" text-anchor="middle">8</text>
+  <text class="num" x="100" y="105" text-anchor="middle">9</text>
+  <!-- Aiguille 1000 ft (courte, large) vers 2,5 -->
+  <line class="needle" x1="150" y1="170" x2="208" y2="170" stroke-width="5" />
+  <!-- Aiguille 100 ft (longue, fine) vers 5 -->
+  <line class="needle" x1="150" y1="170" x2="150" y2="262" stroke-width="2" />
+  <circle cx="150" cy="170" r="5" fill="currentColor" />
+  <!-- Fenêtre de Kollsman -->
+  <line class="lead" x1="235" y1="170" x2="286" y2="170" />
+  <rect class="win" x="286" y="158" width="46" height="24" rx="3" />
+  <text class="accent-t" x="309" y="175" text-anchor="middle">1013</text>
+  <text class="sub" x="309" y="150" text-anchor="middle">fenêtre de</text>
+  <text class="sub" x="309" y="198" text-anchor="middle">Kollsman</text>
+  <!-- Légendes des aiguilles -->
+  <text class="sub" x="150" y="300" text-anchor="middle">aiguille fine = 100 ft · aiguille large = 1000 ft</text>
+</svg>

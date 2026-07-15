@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.mirage-iv-04
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Que devient le Mirage IV après le transfert de la mission nucléaire au
+  Mirage 2000 N en 1996 ?
+choices:
+  - "Il poursuit la reconnaissance stratégique jusqu'en 2005"
+  - "Il est immédiatement retiré du service"
+  - "Il devient avion d'entraînement"
+  - "Il est vendu à l'export"
+correctChoices: [0]
+explanation: >-
+  Les Mirage IV P de l'escadron ERS 1/91 assurent la reconnaissance
+  stratégique depuis Mont-de-Marsan jusqu'au retrait définitif du
+  23 juin 2005 — 41 ans de service.
+evaluates: [eopn.appareils.mirage-iv]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

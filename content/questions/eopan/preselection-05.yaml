@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.eopan.preselection-05
+kind: ordre
+theme: preselection-en-vol
+statement: >-
+  Remettez dans l'ordre les étapes du début de parcours d'un EOPAN.
+items:
+  - "Sélection initiale (dossier, tests, entretien, visite médicale)"
+  - "Présélection en vol à la 50S (Lanvéoc, Cap 10)"
+  - "Orientation vers une filière (chasse, PATMAR, hélicoptères)"
+  - "Écoles de formation de la filière"
+explanation: >-
+  Le concours ouvre la porte de la 50S ; la présélection en vol (~7 mois)
+  décide de la suite ; l'orientation précède les écoles de formation.
+evaluates: [eopan.selection.la-preselection-en-vol]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

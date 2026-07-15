@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: eopn.appareils.mrtt-phenix
+type: appareil
+title: A330 MRTT Phénix
+slug: mrtt-phenix
+summary: >-
+  Ravitailleur, transporteur stratégique, hôpital volant et maillon de la
+  dissuasion — le Phénix fait tout cela avec la même cellule d'A330. L'avion
+  qui donne son allonge à l'armée de l'Air et de l'Espace.
+objectifs:
+  - Identifier le MRTT Phénix (A330 multirôle — ravitaillement, transport, évacuation médicale).
+  - Connaître ses chiffres clés (110 t de carburant, 272 passagers, flotte de 15 à l'horizon 2028).
+  - Comprendre sa place dans la dissuasion et la projection (31e escadre, Istres).
+aliases: [MRTT, Phénix, A330 MRTT, ravitailleur, ravitaillement en vol, Morphée]
+module: eopn
+category: appareils
+subcategory: avions-de-soutien
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F4 du plan V1 (ravitailleur absent du catalogue) ; données officielles defense.gouv.fr et livraisons recoupées.
+    author: prepapilote
+sources:
+  - title: "Ministère des Armées — Airbus A330 Phénix (fiche aéronef officielle)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-avions/airbus-a330-phenix
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "GIFAS — L'armée de l'Air et de l'Espace réceptionne son 12e A330 MRTT (septembre 2023)"
+    url: https://www.gifas.fr/press-summary/l-armee-de-l-air-et-de-l-espace-receptionne-son-12eme-a330-mrtt
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: eopn.organisation.les-forces-aeriennes-strategiques
+  related:
+    - eopn.bases.istres
+    - eopn.appareils.rafale
+    - eopn.appareils.a400m
+infobox:
+  constructeur: Airbus (dérivé de l'A330-200)
+  role: Ravitaillement en vol, transport stratégique, évacuation médicale, soutien de la dissuasion
+  armees: [Armée de l'air et de l'Espace]
+  miseEnService: "2018 (premier exemplaire) — flotte de 15 visée à l'horizon 2028"
+  statut: En service (31e escadre, BA 125 Istres) — état au 2026-07
+  equipage: 2 pilotes + personnel de mission selon configuration
+content:
+  essentiel:
+    body: |
+      Le **Phénix** est la version militaire multirôle de l'Airbus
+      **A330-200** — *Multi Role Tanker Transport*. Un seul avion, quatre
+      métiers :
+
+      - **ravitailler en vol** — jusqu'à **110 tonnes** de carburant dans
+        les ailes, deux chasseurs servis simultanément ;
+      - **transporter loin** — jusqu'à **272 passagers** ou du fret, à
+        Mach 0,82 ;
+      - **évacuer des blessés** — avec le module de réanimation
+        **Morphée**, il devient un hôpital volant ;
+      - **soutenir la dissuasion** — sa **première mission** : donner son
+        allonge au raid nucléaire des FAS.
+
+      La flotte (état au 2026-07) — **12 exemplaires neufs livrés**
+      (le dernier en septembre 2023) à la **31e escadre** d'**Istres**,
+      complétés par 3 A330 convertis pour atteindre **15 Phénix à
+      l'horizon 2028**. Il remplace à lui seul les C-135 ravitailleurs
+      (en service depuis... 1964) et les A310/A340 de transport.
+    aRetenir:
+      - "MRTT = Multi Role Tanker Transport — ravitaillement, transport stratégique, évacuation Morphée, dissuasion."
+      - "110 tonnes de carburant, 272 passagers, deux chasseurs ravitaillés simultanément — les chiffres clés."
+      - "Flotte — 12 neufs livrés (2018-2023), 15 au total à l'horizon 2028, tous à la 31e escadre d'Istres."
+      - Il remplace les C-135 de 1964 — le ravitailleur de la dissuasion a sauté deux générations d'un coup.
+  sections:
+    - id: pourquoi-le-ravitaillement-change-tout
+      title: Pourquoi le ravitaillement change tout
+      body: |
+        Sans ravitaillement en vol, un chasseur est un avion **régional** ;
+        avec, c'est un outil **mondial**. Le MRTT permet de projeter une
+        patrouille de Rafale à l'autre bout du monde en un vol (missions
+        de démonstration à très longue distance), de tenir des heures en
+        alerte au-dessus d'un théâtre, et surtout de donner au **raid
+        nucléaire** son allonge — le couple chasseur-ravitailleur est
+        l'ADN des FAS depuis 1964.
+
+        Techniquement, le Phénix ravitaille par **perche rigide** (boom,
+        piloté depuis une console vidéo à l'avant) ou par **nacelles
+        souples** sous voilure — de quoi servir les Rafale français comme
+        les avions alliés : l'interopérabilité OTAN passe aussi par là.
+    - id: la-filiere-transport
+      title: Une filière pour les pilotes
+      strate: maitriser
+      body: |
+        Le Phénix incarne la filière **transport/ravitaillement** du
+        métier de pilote — moins médiatisée que la chasse, mais
+        stratégique au sens propre : ses équipages participent à la
+        dissuasion, aux évacuations sanitaires nationales (Morphée), aux
+        ponts aériens. Le pilote de MRTT vole sur un biréacteur de
+        233 tonnes aux standards des compagnies aériennes, avec des
+        missions qu'aucune compagnie ne connaît.
+
+        Pour un candidat EOPN, savoir parler du MRTT — et pas seulement
+        du Rafale — montre une compréhension d'ensemble : l'armée de
+        l'Air est un **système**, où le chasseur n'est que la pointe
+        visible.
+  pieges:
+    - "La première mission du Phénix est la DISSUASION — le transport de passagers n'en est qu'une facette."
+    - "MRTT ne veut pas dire avion de ligne repeint — perche de ravitaillement, Morphée, autoprotection : c'est un avion de combat logistique."
+    - "Il ravitaille par perche rigide ET nacelles souples — compatible Rafale comme avions alliés."
+    - "Ne pas confondre MRTT (ravitailleur stratégique, Istres) et A400M Atlas (transport tactique, Orléans)."

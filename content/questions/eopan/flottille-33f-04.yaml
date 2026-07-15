@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.flottille-33f-04
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Avec quelle unité-école la 33F partage-t-elle la BAN de Lanvéoc-Poulmic ?
+choices:
+  - "L'escadrille 50S (présélection en vol des EOPAN)"
+  - "L'École de l'aviation de chasse"
+  - "L'EPNER"
+  - "L'École navale uniquement"
+correctChoices: [0]
+explanation: >-
+  L'élève EOPAN en présélection à la 50S croise chaque jour les Caïman de la
+  33F — sa possible future flottille s'il est orienté hélicoptères.
+evaluates: [eopan.unites.flottille-33f]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

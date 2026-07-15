@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.1er-rhc-02
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Quel est le parc d'hélicoptères du 1er RHC ?
+choices:
+  - 18 NH90 Caïman, 12 Tigre et 9 Gazelle
+  - 30 Puma et 10 Alouette III
+  - 12 Rafale et 4 Mirage 2000
+  - Uniquement des Guépard
+correctChoices: [0]
+explanation: >-
+  Régiment « nouvelle génération », le 1er RHC aligne 18 Caïman (manœuvre),
+  12 Tigre (attaque) et 9 Gazelle (reconnaissance), mis en œuvre par environ
+  850 personnels.
+evaluates: [alat.unites.1er-rhc]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

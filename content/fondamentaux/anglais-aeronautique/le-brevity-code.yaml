@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.le-brevity-code
+type: concept
+title: Le brevity code — l'anglais tactique
+slug: le-brevity-code
+summary: >-
+  Tally, bogey, feet wet, winchester — en combat, chaque seconde de radio
+  compte : le brevity code condense une situation en un mot. Les termes
+  publics les plus célèbres, pour comprendre récits d'opérations et films
+  sans sous-titres.
+objectifs:
+  - Comprendre le principe du brevity code (un mot = une situation tactique).
+  - Connaître les termes publics les plus répandus (bogey/bandit, tally/visual, feet wet/dry).
+  - Relier ce vocabulaire à la culture aéronautique militaire (récits, documentaires).
+aliases: [brevity code, bogey, bandit, tally, feet wet, winchester, anglais tactique]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — brevity code public (lot N16, phase P6 du plan anglais ; termes publics uniquement).
+    author: prepapilote
+sources:
+  - title: "OTAN — publications et terminologie publiques (nato.int)"
+    url: https://www.nato.int/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Multi-Service Brevity Codes — publication interarmées américaine (document public)"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.l-anglais-militaire
+  related:
+    - fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+    - fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant
+content:
+  essentiel:
+    body: |
+      En combat aérien, une phrase entière coûte trop cher : le **brevity
+      code** remplace des situations complètes par **un mot convenu**. Les
+      termes publics les plus célèbres :
+
+      | Terme | Sens |
+      | --- | --- |
+      | **bogey** | contact radar non identifié |
+      | **bandit** | appareil identifié **hostile** |
+      | **tally** | ennemi en vue |
+      | **visual** | équipier (ami) en vue |
+      | **blind** | équipier perdu de vue |
+      | **no joy** | ennemi non repéré |
+      | **feet wet / feet dry** | passage au-dessus de l'eau / de la terre |
+      | **winchester** | plus de munitions |
+      | **bingo** | carburant au seuil du retour |
+      | **splash** | cible détruite |
+
+      La paire structurante : **bogey** (inconnu) n'est pas **bandit**
+      (hostile confirmé) — et **tally** (je vois l'ennemi) n'est pas
+      **visual** (je vois mon équipier). Deux confusions qui, en vrai,
+      coûtent des vies — et en QCM, des points.
+    aRetenir:
+      - "Bogey = contact non identifié ; bandit = hostile confirmé — l'identification change tout."
+      - "Tally = ennemi en vue ; visual = AMI en vue ; blind = équipier perdu de vue ; no joy = ennemi non trouvé."
+      - "Feet wet/dry = passage mer/terre ; winchester = plus de munitions ; bingo = carburant du retour."
+      - Le brevity code répond au même besoin que la phraséologie civile — dire beaucoup en peu de mots, sans ambiguïté.
+  sections:
+    - id: pourquoi-un-code
+      title: Pourquoi un code de brièveté ?
+      body: |
+        Une interception se joue en secondes, sur des fréquences saturées
+        où parlent plusieurs patrouilles. Dire *« I can see an unknown
+        aircraft ahead of me »* prend trois secondes de trop — **tally**
+        (ou **contact**, au radar) dit la même chose en une syllabe,
+        **sans ambiguïté possible**.
+
+        C'est la même logique que la phraséologie civile (« wilco »,
+        « unable ») poussée à l'extrême du combat. Les codes sont
+        **normalisés à l'OTAN** pour que patrouilles françaises,
+        britanniques et américaines se comprennent instantanément en
+        exercice comme en opération — l'interopérabilité passe par le
+        vocabulaire.
+    - id: culture-et-limites
+      title: Culture — et limites de la fiche
+      strate: maitriser
+      body: |
+        Ces termes publics irriguent les récits d'opérations, les
+        documentaires et le cinéma (« *Splash one!* ») — les connaître,
+        c'est comprendre ce que raconte un pilote quand il débriefe une
+        mission devant une caméra, et suivre les publications défense
+        anglophones.
+
+        Deux limites honnêtes : le brevity code complet compte des
+        **centaines** de termes, dont l'emploi précis s'apprend en
+        **unité**, pas dans les livres ; et certains usages restent
+        naturellement **non publics**. Cette fiche s'en tient aux termes
+        largement documentés en source ouverte — l'objectif est la
+        **culture**, pas la procédure : aucun jury n'attend d'un candidat
+        qu'il « parle brevity », mais comprendre *bingo*, *tally* ou
+        *feet wet* dans un récit situe immédiatement le candidat parmi
+        ceux qui vivent déjà dans cet univers.
+  pieges:
+    - "Bogey (non identifié) ≠ bandit (hostile confirmé) — la confusion la plus grave du combat aérien."
+    - "Tally concerne l'ENNEMI, visual concerne l'AMI — les intervertir inverse la situation tactique."
+    - "No joy = « je ne vois pas l'ennemi » — pas une expression de tristesse."
+    - Le brevity code s'apprend réellement en unité — cette fiche donne la culture, pas la procédure.

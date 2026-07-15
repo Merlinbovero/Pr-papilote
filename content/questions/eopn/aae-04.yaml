@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.aae-04
+kind: qcm
+theme: organisation-aae
+statement: >-
+  Où est basé le Commandement de l'espace de l'Armée de l'air et de l'Espace ?
+choices:
+  - À Toulouse
+  - À Salon-de-Provence
+  - À Brest
+  - À Paris
+correctChoices: [0]
+explanation: >-
+  Le Commandement de l'espace, créé en 2019, est basé à Toulouse — cœur de la
+  filière spatiale française.
+evaluates: [eopn.organisation.armee-de-l-air-et-de-l-espace]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

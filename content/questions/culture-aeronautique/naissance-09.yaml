@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-09
+kind: qcm
+theme: naissance-aviation
+statement: >-
+  Qu'est-ce que le salon du Bourget doit à l'année 1909 ?
+choices:
+  - "Sa première édition — l'exposition de la locomotion aérienne au Grand Palais"
+  - "Son terrain d'aviation actuel"
+  - "La création de son musée"
+  - "Rien — il date de 1945"
+correctChoices: [0]
+explanation: >-
+  La première exposition internationale de la locomotion aérienne se tient
+  au Grand Palais en 1909 — l'ancêtre direct du salon du Bourget, toujours
+  le premier salon aéronautique mondial.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .top { font-size: 12px; font-weight: 600; }
+    .comp { font-size: 11px; font-weight: 600; }
+    .ex { font-size: 10px; fill: #94a3b8; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .node { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">La Force de l'aéronautique navale</text>
+  <!-- Sommet -->
+  <rect class="box" x="146" y="44" width="168" height="40" rx="4" />
+  <text class="top" x="230" y="60" text-anchor="middle">Force de</text>
+  <text class="top" x="230" y="76" text-anchor="middle">l'aéronautique navale</text>
+  <!-- Liaisons -->
+  <path class="link" d="M230,84 C230,120 58,120 58,168" />
+  <path class="link" d="M230,84 C230,120 144,120 144,168" />
+  <path class="link" d="M230,84 L230,168" />
+  <path class="link" d="M230,84 C230,120 316,120 316,168" />
+  <path class="link" d="M230,84 C230,120 402,120 402,168" />
+  <!-- Composantes -->
+  <g>
+    <rect class="node" x="18" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="58" y="192" text-anchor="middle">Chasse</text>
+    <text class="ex" x="58" y="210" text-anchor="middle">Rafale M</text>
+  </g>
+  <g>
+    <rect class="node" x="104" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="144" y="192" text-anchor="middle">Guet aérien</text>
+    <text class="ex" x="144" y="210" text-anchor="middle">Hawkeye</text>
+  </g>
+  <g>
+    <rect class="node" x="190" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="230" y="192" text-anchor="middle">Patrouille</text>
+    <text class="ex" x="230" y="210" text-anchor="middle">Atlantique 2</text>
+  </g>
+  <g>
+    <rect class="node" x="276" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="316" y="192" text-anchor="middle">Hélicoptères</text>
+    <text class="ex" x="316" y="210" text-anchor="middle">Caïman</text>
+  </g>
+  <g>
+    <rect class="node" x="362" y="168" width="80" height="56" rx="4" />
+    <text class="comp" x="402" y="192" text-anchor="middle">Drones</text>
+    <text class="ex" x="402" y="210" text-anchor="middle">S-100</text>
+  </g>
+  <text class="ex" x="230" y="256" text-anchor="middle">200 aéronefs · 15 flottilles et 3 escadrilles · 4 bases (BAN)</text>
+</svg>

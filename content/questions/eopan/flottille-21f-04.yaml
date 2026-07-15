@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-21f-04
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  De quelle unité la flottille 21F est-elle l'héritière ?
+choices:
+  - De l'escadrille 2B, créée en 1940 au Maroc
+  - De l'escadrille AC1 de 1919
+  - De la flottille 12F
+  - Du Normandie-Niémen
+correctChoices: [0]
+explanation: >-
+  La 21F descend de l'escadrille 2B créée en 1940 au Maroc (bombardiers
+  Martin 167) ; elle prend le nom de 21F en 1953 à Lartigue. L'AC1 est
+  l'ancêtre de la 11F (chasse).
+evaluates: [eopan.unites.flottille-21f]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,116 @@
+schemaVersion: 1
+id: eopan.selection.la-preselection-en-vol
+type: concept
+title: La présélection en vol (escadrille 50S)
+slug: la-preselection-en-vol
+summary: >-
+  Sept mois à Lanvéoc-Poulmic, une quinzaine de vols notés sur Cap 10 — la
+  présélection en vol ne cherche pas des pilotes déjà formés, elle mesure une
+  seule chose : la capacité à apprendre vite et à restituer en vol.
+objectifs:
+  - Situer la présélection en vol dans le parcours EOPAN (après la sélection initiale).
+  - Décrire son déroulement (EIP/50S, Lanvéoc-Poulmic, Cap 10, ~7 mois, vols notés).
+  - Comprendre ce qui est évalué — la pente de progression, pas le niveau de départ.
+aliases: [présélection en vol, sélection en vol, "50S", EIP, Lanvéoc, Cap 10 EOPAN]
+module: eopan
+category: selection
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F2 du plan V1 (étape réelle du parcours EOPAN jusqu'ici résumée dans la fiche concours) ; faits recoupés presse spécialisée + officiel.
+    author: prepapilote
+sources:
+  - title: "Marine nationale — devenir pilote de l'aéronautique navale (lamarinerecrute.gouv.fr)"
+    url: https://lamarinerecrute.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Mer et Marine — De la sélection à la spécialisation, le long parcours des pilotes de l'aéronautique navale"
+    url: https://www.meretmarine.com/fr/defense/de-la-selection-a-la-specialisation-le-long-parcours-des-pilotes-de-l-aeronautique-navale
+    kind: presse
+    consultedAt: "2026-07-14"
+  - title: "Guide EOPAN 2020 (eopan.fr) — la présélection en vol"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - eopan.presentation.le-concours-eopan
+  related:
+    - eopan.appareils.cap-10
+    - eopan.ban.lanveoc-poulmic
+    - eopan.selection.preparer-l-entretien-de-motivation
+content:
+  essentiel:
+    body: |
+      Une fois la sélection initiale franchie (dossier, tests, entretien,
+      aptitude médicale), l'EOPAN rejoint l'**École d'initiation au
+      pilotage — l'escadrille 50S**, sur la BAN de **Lanvéoc-Poulmic**
+      (presqu'île de Crozon). Pendant environ **sept mois**, il alterne
+      cours au sol et **vols notés sur Cap 10** — une quinzaine de vols
+      d'évaluation.
+
+      Ce que la 50S mesure n'est **pas** un niveau de pilotage — beaucoup
+      d'élèves n'ont jamais touché un manche. Elle mesure la **capacité
+      d'apprentissage** : comprendre un briefing, préparer son vol,
+      **restituer en l'air** ce qui a été enseigné, encaisser la charge
+      de travail, progresser d'un vol à l'autre. Environ **un candidat
+      sur deux** franchit cette étape.
+
+      Les élèves retenus sont ensuite **orientés** — chasse, patrouille
+      maritime ou hélicoptères — selon les résultats, les aptitudes et
+      les besoins de la Marine, avant de rejoindre les écoles de
+      formation proprement dites.
+    aRetenir:
+      - "Présélection en vol = escadrille 50S (EIP), BAN Lanvéoc-Poulmic, environ 7 mois, vols notés sur Cap 10."
+      - Elle évalue la capacité à apprendre et à restituer en vol — pas un niveau de pilotage préalable.
+      - Environ un candidat sur deux est retenu, puis orienté (chasse, patrouille maritime, hélicoptères).
+      - Aucune expérience aéronautique n'est exigée — la pente de progression compte plus que le point de départ.
+  sections:
+    - id: le-quotidien-a-la-50s
+      title: Le quotidien à la 50S
+      body: |
+        Le rythme est celui d'une école militaire — cours théoriques
+        (mécanique du vol, procédures, phraséologie), **briefings**
+        minutieux avant chaque vol, vol avec instructeur, **débriefing**
+        sans complaisance. Chaque vol suit un programme précis et chaque
+        exercice est noté : la moyenne, mais aussi la **tendance**,
+        comptent.
+
+        Le **Cap 10**, biplace côte à côte de voltige, est l'outil idéal
+        de cette évaluation — assez simple pour un débutant, assez vif
+        pour révéler le sens de l'air, et sa capacité à la **voltige**
+        permet de tester l'aisance dans toutes les attitudes.
+    - id: comment-s-y-preparer
+      title: Comment s'y préparer honnêtement
+      strate: maitriser
+      body: |
+        Il ne s'agit pas d'arriver « déjà pilote » — les instructeurs
+        détectent (et corrigent) les habitudes importées. La vraie
+        préparation est en amont :
+
+        - **les connaissances** de cette plateforme — mécanique du vol,
+          navigation, phraséologie : tout ce qui allège la charge
+          théorique sur place ;
+        - la **condition physique** et le sommeil — la fatigue est le
+          premier ennemi de la restitution en vol ;
+        - la **méthode** — savoir apprendre une procédure par cœur, se
+          l'expliquer, la « voler dans sa tête » (préparation mentale,
+          comme les pilotes confirmés) ;
+        - l'**humilité** — un vol raté ne condamne pas ; c'est la
+          réaction au vol raté qui est observée.
+
+        Un échec à la présélection n'interdit pas de retenter le
+        concours, dans la limite des règles de candidature — mais chaque
+        présentation doit montrer un candidat transformé.
+  pieges:
+    - La présélection ne forme pas des pilotes — elle sélectionne des aptitudes ; la formation vient après, dans les écoles.
+    - Aucune licence de pilotage n'est requise — arriver « déjà formé » n'est ni nécessaire ni forcément un avantage.
+    - "La 50S est à Lanvéoc-Poulmic (Bretagne) — pas à Salon-de-Provence ni à Dax."
+    - "L'orientation chasse/patrouille maritime/hélicoptères se fait APRÈS la présélection — on ne choisit pas sa filière au concours."

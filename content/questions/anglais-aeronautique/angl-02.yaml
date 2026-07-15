@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.angl-02
+kind: association
+theme: vocabulaire-vol
+statement: >-
+  Associez chaque mot anglais à sa traduction.
+pairs:
+  - left: "runway"
+    right: "piste"
+  - left: "landing gear"
+    right: "train d'atterrissage"
+  - left: "heading"
+    right: "cap"
+explanation: >-
+  runway = piste, landing gear = train d'atterrissage, heading = cap. Ce sont des
+  termes de base à connaître pour le vol.
+evaluates: [fondamentaux.anglais-aeronautique.vocabulaire-de-base]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

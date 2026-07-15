@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.ealat-03
+kind: vrai-faux
+theme: formation-alat
+statement: >-
+  L'EALAT ne forme que les pilotes de l'armée de Terre.
+answer: false
+explanation: >-
+  Elle forme les pilotes d'hélicoptères de tout l'État — Terre, mais aussi
+  Marine, armée de l'Air, Gendarmerie, Sécurité civile, Douanes, et même des
+  partenaires étrangers.
+evaluates: [alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

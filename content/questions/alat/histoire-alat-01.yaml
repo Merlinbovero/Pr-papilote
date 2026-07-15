@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.histoire-alat-01
+kind: qcm
+theme: histoire-alat
+statement: >-
+  Quand l'ALAT a-t-elle été créée ?
+choices:
+  - Le 22 novembre 1954
+  - En 1912
+  - En 1985
+  - En 2016
+correctChoices: [0]
+explanation: >-
+  L'ALAT est créée le 22 novembre 1954, en héritière de l'ALOA (aviation
+  légère d'observation d'artillerie, 1952). 1985 est l'année de la 4e DAM et
+  2016 celle de la 4e BAC.
+evaluates: [alat.histoire.histoire-de-l-alat]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

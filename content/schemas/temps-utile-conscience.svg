@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .bar { fill: #3b82f6; }
+    .axis { stroke: currentColor; fill: none; stroke-width: 1.5; }
+  </style>
+  <text class="title" x="220" y="26" text-anchor="middle">Le temps utile de conscience</text>
+  <!-- Axe vertical -->
+  <line class="axis" x1="118" y1="52" x2="118" y2="206" />
+  <!-- FL180 -->
+  <text class="lbl" x="108" y="74" text-anchor="end">FL180</text>
+  <rect class="bar" x="120" y="62" width="200" height="20" rx="3" />
+  <text class="sub" x="328" y="77" text-anchor="start">≈ 30 min</text>
+  <!-- FL250 -->
+  <text class="lbl" x="108" y="114" text-anchor="end">FL250</text>
+  <rect class="bar" x="120" y="102" width="96" height="20" rx="3" />
+  <text class="sub" x="224" y="117" text-anchor="start">≈ 5 min</text>
+  <!-- FL300 -->
+  <text class="lbl" x="108" y="154" text-anchor="end">FL300</text>
+  <rect class="bar" x="120" y="142" width="52" height="20" rx="3" />
+  <text class="sub" x="180" y="157" text-anchor="start">≈ 1 à 2 min</text>
+  <!-- FL350 -->
+  <text class="lbl" x="108" y="194" text-anchor="end">FL350</text>
+  <rect class="bar" x="120" y="182" width="28" height="20" rx="3" />
+  <text class="sub" x="156" y="197" text-anchor="start">≈ 1 min</text>
+  <text class="sub" x="220" y="228" text-anchor="middle">plus on monte, plus le temps pour réagir est court</text>
+</svg>

@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: eopan.appareils.nh90-caiman
+type: helicoptere
+title: NH90 Caïman Marine
+slug: nh90-caiman
+summary: >-
+  Hélicoptère embarqué polyvalent de l'aéronautique navale. Mis en œuvre depuis
+  les frégates, il excelle dans la lutte anti-sous-marine et le secours en mer,
+  au sein des flottilles 31F et 33F.
+objectifs:
+  - Identifier le NH90 Caïman Marine comme l'hélicoptère embarqué polyvalent de l'aéronautique navale.
+  - Décrire ses deux missions phares — la lutte anti-sous-marine (sonar trempé) et le secours en mer.
+  - Situer l'appareil au sein des flottilles 31F et 33F et de ses bases (Hyères, Lanvéoc-Poulmic).
+aliases: [Caïman, Caïman Marine, NH90, NH90 NFH, hélicoptère embarqué]
+module: eopan
+category: appareils
+subcategory: helicopteres
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet hélicoptère, le NH90 Caïman Marine de l'aéronautique navale.
+    author: prepapilote
+sources:
+  - title: "Caïman Marine — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/caiman-marine
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "NHIndustries NH90 Caïman marine — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/NHIndustries_NH90_Ca%C3%AFman_marine
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.e-2c-hawkeye
+    - eopan.appareils.rafale-m
+    - eopan.presentation.le-concours-eopan
+infobox:
+  constructeur: NHIndustries
+  role: Hélicoptère embarqué (lutte anti-sous-marine, secours en mer)
+  armees: [Marine nationale]
+  miseEnService: 2011
+  statut: En service
+  equipage: "3"
+  capaciteEmport: Jusqu'à 14 passagers
+content:
+  essentiel:
+    body: |
+      Le **NH90 Caïman Marine** (version _NFH_) est l'**hélicoptère embarqué**
+      polyvalent de l'aéronautique navale. Construit par le consortium européen
+      **NHIndustries** (Airbus Helicopters, Leonardo, Fokker), il a été déclaré
+      opérationnel dans la Marine en **2011**.
+
+      C'est un appareil **multi-missions**, mis en œuvre principalement depuis
+      les **frégates** (notamment les FREMM). Ses deux missions phares sont la
+      **lutte anti-sous-marine** — il plonge un **sonar** dans la mer pour
+      détecter les sous-marins — et le **secours en mer** (_SAR_), grâce à son
+      **treuil** de sauvetage.
+
+      Il assure aussi la **lutte antisurface**, le **contre-terrorisme
+      maritime** et le **transport** (jusqu'à quatorze passagers). Il est mis en
+      œuvre par les **flottilles 31F et 33F**, basées à **Hyères** (Var) et
+      **Lanvéoc-Poulmic** (Finistère).
+    aRetenir:
+      - Le NH90 Caïman Marine est l'hélicoptère embarqué polyvalent de l'aéronautique navale, opérationnel depuis 2011.
+      - Ses deux missions phares sont la lutte anti-sous-marine (sonar trempé) et le secours en mer (treuil).
+      - Construit par NHIndustries, il est mis en œuvre depuis les frégates par les flottilles 31F et 33F.
+      - Son équipage type est de trois — pilote, coordinateur tactique (Tacco) et opérateur capteurs (Senso).
+  sections:
+    - id: deux-missions-phares
+      title: Deux missions phares
+      body: |
+        Le Caïman Marine est un **couteau suisse** volant, mais deux missions
+        résument son intérêt.
+
+        La **lutte anti-sous-marine** (ASM) est sa spécialité. En vol
+        **stationnaire** au-dessus de la mer, il descend au bout d'un câble un
+        **sonar trempé** (immergé) qui émet et écoute sous l'eau pour
+        **détecter** et **localiser** un sous-marin. Repéré, celui-ci peut être
+        traité par la **torpille** emportée. Associé aux frégates, le Caïman
+        forme avec elles un **duo** très efficace contre la menace sous-marine.
+
+        Le **secours en mer** (SAR) est l'autre grande mission : grâce à son
+        **treuil**, il hélitreuille les naufragés et évacue les blessés, de jour
+        comme de nuit, loin des côtes.
+      figures:
+        - schemaId: caiman-lutte-asm
+          alt: Un hélicoptère en vol stationnaire au-dessus de la mer descend un sonar immergé dont les ondes acoustiques détectent un sous-marin en profondeur.
+          caption: En vol stationnaire, le Caïman immerge son sonar trempé — les ondes acoustiques détectent le sous-marin sous la surface.
+          width: 460
+          height: 300
+    - id: caracteristiques-et-equipage
+      title: Caractéristiques et équipage
+      body: |
+        Le Caïman Marine est un hélicoptère **moderne** : il fut l'un des
+        premiers hélicoptères dotés de **commandes de vol électriques** (_fly by
+        wire_), qui allègent le travail du pilote et stabilisent l'appareil —
+        un vrai atout pour le vol stationnaire au-dessus d'une mer agitée.
+
+        Son **équipage** type comprend **trois** membres : le **pilote**, un
+        **coordinateur tactique** (Tacco, _tactical coordinator_) qui conduit la
+        mission et exploite les capteurs, et un **opérateur** de capteurs et
+        treuilliste (Senso). Particularité : le Caïman est le seul hélicoptère
+        de la Marine capable d'être mis en œuvre avec un **seul pilote**.
+
+        Il peut par ailleurs **transporter** jusqu'à **quatorze passagers**,
+        ce qui en fait aussi un moyen de **transport** et de **logistique**
+        entre la terre et les bâtiments.
+    - id: unites-et-programme
+      title: Unités et programme
+      strate: maitriser
+      body: |
+        Les Caïman Marine sont regroupés dans les **flottilles 31F** (Hyères)
+        et **33F** (Lanvéoc-Poulmic). Ils sont **détachés** à bord des frégates
+        lors des missions, embarquant depuis leur **plateforme hélicoptère**.
+
+        Le programme **NH90** est un programme **européen** : le même appareil
+        existe en version **terrestre** (_TTH_, « Caïman » de l'armée de Terre)
+        et en version **navale** (_NFH_, « Caïman Marine »). La Marine a
+        commandé **27** exemplaires, dont le dernier a été livré en **2021**.
+  pieges:
+    - Le NH90 existe en deux versions bien distinctes — terrestre (TTH, armée de Terre) et navale (NFH, Marine) — à ne pas confondre.
+    - Le Caïman Marine opère surtout depuis les frégates, pas seulement depuis le porte-avions — c'est un hélicoptère de bâtiment.
+    - Sa mission emblématique est la lutte anti-sous-marine avec sonar trempé — pas seulement le secours en mer, plus connu du grand public.

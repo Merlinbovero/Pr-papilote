@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-01
+kind: qcm
+theme: fronts
+statement: >-
+  Quels nuages caractérisent le passage d'un front froid ?
+choices:
+  - "Cumulonimbus et cumulus congestus"
+  - "Cirrus puis nimbostratus"
+  - "Stratus uniquement"
+  - "Cirrocumulus en bancs"
+correctChoices: [0]
+explanation: >-
+  L'air froid soulève brutalement l'air chaud — développements verticaux,
+  cumulonimbus, averses et orages. Les nuages stratiformes en couches, c'est
+  le front chaud.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

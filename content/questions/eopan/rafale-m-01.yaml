@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-01
+kind: qcm
+theme: rafale-marine
+statement: >-
+  Quel est l'unique avion de combat embarqué de l'aéronautique navale française ?
+choices:
+  - Le Rafale M
+  - Le Super-Étendard Modernisé
+  - Le Mirage 2000
+  - Le F/A-18 Hornet
+correctChoices: [0]
+explanation: >-
+  Depuis le retrait du Super-Étendard Modernisé en 2016 (« tout-Rafale »), le
+  Rafale M est l'unique avion de combat embarqué de l'aéronautique navale.
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

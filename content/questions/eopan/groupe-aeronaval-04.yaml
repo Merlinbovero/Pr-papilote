@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.groupe-aeronaval-04
+kind: association
+theme: groupe-aeronaval
+statement: >-
+  Associez chaque élément du groupe aéronaval à son rôle.
+pairs:
+  - left: Frégate de défense aérienne
+    right: Bouclier antiaérien de la force
+  - left: Frégate anti-sous-marine
+    right: Traque la menace sous la surface
+  - left: Pétrolier-ravitailleur
+    right: Autonomie en carburant et en vivres
+  - left: E-2C Hawkeye
+    right: Guet aérien (radar volant)
+explanation: >-
+  Chaque élément du GAN a une fonction : la frégate de défense aérienne protège
+  du ciel, la frégate ASM traque les sous-marins, le ravitailleur donne
+  l'autonomie, et le Hawkeye assure le guet aérien.
+evaluates: [eopan.concepts.groupe-aeronaval]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

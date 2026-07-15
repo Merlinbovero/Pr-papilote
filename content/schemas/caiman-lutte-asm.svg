@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .heli { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .sea { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .cable { stroke: currentColor; fill: none; stroke-width: 1.4; }
+    .wave { stroke: #3b82f6; fill: none; stroke-width: 1.6; }
+    .sub { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">La lutte anti-sous-marine (sonar trempé)</text>
+  <!-- Hélicoptère en vol stationnaire -->
+  <g class="heli" transform="translate(150,70)">
+    <ellipse cx="0" cy="0" rx="30" ry="11" />
+    <line x1="-40" y1="-14" x2="40" y2="-14" />
+    <line x1="0" y1="-14" x2="0" y2="-11" />
+    <line x1="30" y1="0" x2="66" y2="-4" />
+    <line x1="66" y1="-10" x2="66" y2="2" />
+  </g>
+  <text class="lbl" x="150" y="44" text-anchor="middle">vol stationnaire</text>
+  <!-- Mer -->
+  <path class="sea" d="M20,168 Q230,158 440,168" />
+  <text class="sub" x="404" y="160" text-anchor="middle">surface</text>
+  <!-- Câble + sonar trempé -->
+  <line class="cable" x1="150" y1="81" x2="150" y2="205" />
+  <rect class="heli" x="143" y="205" width="14" height="18" rx="2" />
+  <text class="accent-t" x="150" y="243" text-anchor="middle">sonar trempé</text>
+  <!-- Ondes acoustiques vers le sous-marin -->
+  <path class="wave" d="M168,220 A34 34 0 0 1 196,248" />
+  <path class="wave" d="M178,214 A52 52 0 0 1 214,256" />
+  <path class="wave" d="M188,208 A70 70 0 0 1 232,264" />
+  <!-- Sous-marin détecté -->
+  <g class="sub" transform="translate(300,262)">
+    <ellipse cx="0" cy="0" rx="46" ry="12" />
+    <path d="M-8,-12 L-8,-22 L6,-22 L6,-12" />
+    <line x1="0" y1="-22" x2="0" y2="-28" />
+  </g>
+  <text class="sub" x="300" y="292" text-anchor="middle">sous-marin détecté</text>
+</svg>

@@ -1,0 +1,139 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.virage
+type: notion-aerodynamique
+title: Le virage
+slug: virage
+summary: >-
+  Un avion tourne en s'inclinant : la portance penche et fournit une composante
+  horizontale qui fait tourner. Pour tenir l'altitude, la portance doit
+  augmenter, d'où un facteur de charge supérieur à 1 (2 g à 60° d'inclinaison).
+objectifs:
+  - Expliquer pourquoi un avion tourne en s'inclinant (la portance inclinée fournit une composante horizontale centripète).
+  - Décomposer la portance en virage (une part verticale qui compense le poids, une part horizontale qui fait tourner).
+  - Définir le facteur de charge (n = 1 / cos de l'inclinaison) et énoncer son lien avec la vitesse de décrochage.
+aliases: [virage, inclinaison, facteur de charge, force centripète, coordination, g]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — treizième fiche du socle, le virage et le facteur de charge (mécanique du vol).
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — mécanique du vol"
+    kind: officiel
+    consultedAt: "2026-07-12"
+  - title: "Facteur de charge (aérodynamique) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Facteur_de_charge_(a%C3%A9rodynamique)
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.portance
+    - fondamentaux.mecanique-du-vol.axes-et-gouvernes
+  related:
+    - fondamentaux.aerodynamique.decrochage
+content:
+  essentiel:
+    body: |
+      Pour tourner, un avion ne « braque » pas comme une voiture : il
+      **s'incline**. En inclinant l'avion (au moyen des ailerons), le pilote
+      **incline aussi la portance**.
+
+      La portance penchée se partage alors en deux : une part **verticale**, qui
+      continue de compenser le **poids**, et une part **horizontale**, dirigée
+      vers l'intérieur du virage — c'est elle qui **fait tourner** l'avion (force
+      centripète).
+
+      Comme la part verticale doit rester égale au poids, il faut **augmenter la
+      portance totale** : l'avion et ses occupants subissent alors un **facteur
+      de charge** supérieur à 1. Plus l'inclinaison est forte, plus ce facteur —
+      et la vitesse de décrochage — augmentent.
+    aRetenir:
+      - Un avion tourne en s'inclinant — la portance penche et se partage en une part verticale (compense le poids) et une part horizontale (fait tourner).
+      - Pour garder l'altitude en virage, il faut augmenter la portance ; l'avion subit alors un facteur de charge supérieur à 1.
+      - Le facteur de charge vaut n = 1 / cos de l'inclinaison — égal à 1 en palier et à 2 à 60° d'inclinaison.
+      - Plus l'inclinaison augmente, plus le facteur de charge et la vitesse de décrochage augmentent.
+  sections:
+    - id: tourner-c-est-incliner
+      title: Tourner, c'est incliner
+      body: |
+        Un avion ne tourne pas en « braquant » comme une voiture. Pour changer de
+        direction, il **s'incline** sur le côté — c'est le **roulis**, commandé
+        par les **ailerons**.
+
+        Pourquoi l'inclinaison fait-elle tourner ? Parce qu'elle **incline la
+        portance** avec l'avion. Tant que les ailes sont horizontales, la
+        portance est **verticale** et ne fait que soutenir l'avion. Dès qu'il
+        s'incline, la portance **penche** et acquiert une composante
+        **horizontale**, dirigée vers l'intérieur du virage : c'est la **force
+        centripète** qui **courbe la trajectoire**.
+
+        Le virage se fait donc d'abord aux **ailerons** ; la gouverne de
+        **direction** ne sert qu'à **coordonner** le virage (garder un vol
+        symétrique), pas à tourner.
+    - id: la-portance-se-partage
+      title: La portance se partage
+      body: |
+        Quand la portance penche, on peut la **décomposer** en deux parts.
+
+        - La composante **verticale** doit continuer de **compenser le poids** ;
+          sinon, l'avion descend.
+        - La composante **horizontale** est la force qui **fait tourner**.
+
+        Mais si une partie de la portance part à l'horizontale, la part verticale
+        **diminue** et ne suffit plus à tenir le poids. Pour compenser, le pilote
+        doit **augmenter la portance totale**, en tirant sur le manche (donc en
+        augmentant l'incidence). En virage, l'aile travaille **plus** qu'en ligne
+        droite.
+      figures:
+        - schemaId: virage-decomposition
+          alt: Un avion vu de face incliné, avec la portance penchée décomposée en une part verticale égale au poids et une part horizontale centripète.
+          caption: La portance inclinée se partage — sa composante verticale compense le poids, sa composante horizontale fait tourner l'avion.
+          width: 460
+          height: 280
+    - id: le-facteur-de-charge
+      title: Le facteur de charge
+      strate: maitriser
+      body: |
+        Cette portance supplémentaire a un prix : le **facteur de charge**.
+
+        Le facteur de charge (noté **n**) est le rapport entre la portance et le
+        poids. En palier, portance = poids, donc **n = 1**. En virage, la
+        portance augmente, donc **n > 1**. Il ne dépend que de l'**inclinaison** :
+
+        **n = 1 / cos(inclinaison)**
+
+        | Inclinaison | Facteur de charge | Ce que l'on ressent |
+        | --- | --- | --- |
+        | 0° (palier) | 1 | son poids normal |
+        | 30° | 1,15 | légèrement alourdi |
+        | 45° | 1,41 | nettement alourdi |
+        | 60° | 2 | deux fois son poids (2 g) |
+
+        À 60° d'inclinaison, la structure et les occupants supportent **deux
+        fois** le poids de l'avion. Et comme le facteur de charge augmente, la
+        **vitesse de décrochage augmente** aussi : à 60°, elle croît d'environ
+        **40 %**. Un virage trop serré et trop lent peut donc conduire au
+        **décrochage**, étudié dans la fiche suivante.
+      figures:
+        - schemaId: facteur-de-charge
+          alt: Une courbe du facteur de charge en fonction de l'inclinaison, valant 1 en palier et 2 à 60 degrés d'inclinaison.
+          caption: Le facteur de charge n = 1 / cos(inclinaison) croît avec l'inclinaison — 1 en palier, 2 à 60°.
+          width: 420
+          height: 260
+  pieges:
+    - Un avion ne tourne pas avec la gouverne de direction — il tourne en s'inclinant (ailerons) ; la direction ne sert qu'à coordonner.
+    - En virage, la vitesse de décrochage augmente — un avion peut décrocher à grande vitesse si l'inclinaison est forte.
+    - Le facteur de charge n'est pas nul en palier — il vaut 1, car l'aile porte déjà tout le poids de l'avion.

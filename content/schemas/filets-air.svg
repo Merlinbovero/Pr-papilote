@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .profile { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="22" text-anchor="middle">Les filets d'air épousent le profil</text>
+  <!-- Profil d'aile -->
+  <path class="profile" d="M150,140 C190,118 270,120 330,140 C270,150 190,150 150,140 Z" />
+  <!-- Filets d'air (écoulement = lignes fléchées accent) -->
+  <path class="flow" d="M40,84 Q210,70 392,84" marker-end="url(#ac)" />
+  <path class="flow" d="M40,116 Q150,110 210,98 Q290,86 392,120" marker-end="url(#ac)" />
+  <path class="flow" d="M40,182 Q210,192 392,180" marker-end="url(#ac)" />
+  <text class="lbl" x="300" y="62">filets d'air</text>
+</svg>

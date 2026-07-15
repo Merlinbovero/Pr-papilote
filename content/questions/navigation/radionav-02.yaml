@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.navigation.radionav-02
+kind: qcm
+theme: radionavigation
+statement: >-
+  Un avion est établi « sur le radial 090 » d'un VOR. Où se trouve-t-il ?
+choices:
+  - "À l'est de la balise"
+  - "À l'ouest de la balise"
+  - "Au nord de la balise"
+  - "Cela dépend de son cap"
+correctChoices: [0]
+explanation: >-
+  Le radial se compte DEPUIS la balise — le radial 090 est la demi-droite
+  partant du VOR vers l'est, quel que soit le cap de l'avion.
+evaluates: [fondamentaux.navigation.la-radionavigation]
+difficulty: 2
+competencies: [connaissances-aeronautiques, navigation]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,127 @@
+schemaVersion: 1
+id: fondamentaux.reglementation.les-regles-de-l-air
+type: concept
+title: Les règles de l'air
+slug: les-regles-de-l-air
+summary: >-
+  Qui a priorité ? À quelle hauteur survoler ? À quel niveau croiser ? Les
+  règles de l'air (SERA) organisent la cohabitation de tous les aéronefs —
+  priorités, règle semi-circulaire et hauteurs minimales.
+objectifs:
+  - Appliquer les règles de priorité entre aéronefs (face à face, convergence, dépassement, atterrissage).
+  - Utiliser la règle semi-circulaire pour choisir un niveau de croisière selon la route magnétique.
+  - Connaître les hauteurs minimales de survol en VFR.
+aliases: [règles de l'air, SERA, priorités, règle semi-circulaire, hauteurs de survol]
+module: fondamentaux
+category: reglementation
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche règles de l'air (lot N9, renforcement du socle réglementation).
+    author: prepapilote
+sources:
+  - title: "Règlement d'exécution (UE) n° 923/2012 « SERA » — règles de l'air communes"
+    url: https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32012R0923
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.reglementation.espaces-aeriens
+    - fondamentaux.navigation.cap-route-et-derive
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+content:
+  essentiel:
+    body: |
+      Les **règles de l'air** — codifiées en Europe par le règlement
+      **SERA** — sont le « code de la route » du ciel. Trois blocs à
+      maîtriser :
+
+      **Les priorités.** En cas de rapprochement :
+
+      - **face à face** — chacun s'écarte **à droite** ;
+      - **routes convergentes** — priorité à l'aéronef venant de **droite** ;
+      - **dépassement** — le dépassant s'écarte **par la droite** ;
+      - **atterrissage** — priorité à l'aéronef **le plus bas** en approche ;
+      - les moins manœuvrants (ballons, planeurs, dirigeables) ont priorité
+        sur les avions.
+
+      **La règle semi-circulaire** — en croisière, le niveau de vol dépend
+      de la **route magnétique** : de **000 à 179°**, niveaux **impairs**
+      (+ 500 ft en VFR) ; de **180 à 359°**, niveaux **pairs** (+ 500 ft en
+      VFR).
+
+      **Les hauteurs minimales** en VFR — **150 m (500 ft)** au-dessus du
+      sol ou de l'eau, **300 m (1 000 ft)** au-dessus des agglomérations et
+      rassemblements, au-dessus de l'obstacle le plus élevé dans un rayon
+      de 600 m.
+    aRetenir:
+      - "Priorités — face à face : à droite ; convergence : priorité à droite ; dépassement : par la droite ; atterrissage : au plus bas."
+      - "Semi-circulaire — route magnétique 000-179° = niveaux impairs ; 180-359° = pairs (+ 500 ft en VFR)."
+      - "Hauteurs VFR — 150 m (500 ft) en campagne, 300 m (1 000 ft) au-dessus des agglomérations."
+      - Les moins manœuvrants (ballons, planeurs) ont priorité sur les plus manœuvrants.
+  sections:
+    - id: les-priorites
+      title: Les priorités en détail
+      body: |
+        La logique générale : le plus **manœuvrant** s'écarte, et l'on
+        s'écarte **par la droite** — comme sur la route. L'ordre de
+        priorité décroissant entre familles : **ballons**, **planeurs**,
+        **dirigeables**, **avions** (et un aéronef qui **remorque** est
+        prioritaire sur un avion seul).
+
+        Deux cas particuliers à connaître :
+
+        - l'aéronef **dépassé** a toujours priorité — le dépassant s'écarte
+          par la droite et reste écarté jusqu'à dégagement complet ;
+        - en approche, la priorité va au plus **bas** — mais il est interdit
+          d'en abuser pour « couper » la finale d'un autre.
+
+        Ces règles s'appliquent **sans radio** : elles supposent le
+        principe premier du VFR — **voir et éviter**.
+    - id: la-regle-semi-circulaire
+      title: La règle semi-circulaire
+      body: |
+        Pour séparer les flux en croisière, les niveaux se répartissent
+        selon la **route magnétique** :
+
+        | Route magnétique | IFR | VFR |
+        | --- | --- | --- |
+        | 000° à 179° (vers l'est) | niveaux impairs (FL 50, 70, 90…) | impairs + 500 ft (FL 55, 75, 95…) |
+        | 180° à 359° (vers l'ouest) | niveaux pairs (FL 40, 60, 80…) | pairs + 500 ft (FL 45, 65, 85…) |
+
+        Moyen mnémotechnique : vers l'**E**st, **impair** — « **E**st,
+        **i**mpair » se retiennent ensemble. Et le VFR vole toujours
+        **500 ft au-dessus** du niveau IFR correspondant — pour séparer
+        les deux populations.
+    - id: hauteurs-et-bon-sens
+      title: Hauteurs minimales et esprit des règles
+      strate: maitriser
+      body: |
+        Les hauteurs minimales VFR protègent les tiers au sol : **500 ft**
+        (150 m) au-dessus du sol ou de l'eau en campagne — **1 000 ft**
+        (300 m) au-dessus de l'obstacle le plus élevé dans un rayon de
+        600 m pour les **agglomérations** et rassemblements de personnes.
+        S'y ajoute une règle de bon sens : toujours pouvoir atterrir en
+        sécurité en cas de panne, sans mettre en danger les tiers.
+
+        Les aéronefs **militaires** connaissent des régimes particuliers
+        (vol tactique très basse altitude, zones réservées) — mais les
+        pilotes militaires apprennent d'abord ces règles communes : en
+        transit hors zones, un avion d'armes suit les mêmes règles de
+        l'air que tout le monde.
+  pieges:
+    - En face à face, les DEUX aéronefs s'écartent à droite — pas seulement l'un des deux.
+    - La règle semi-circulaire s'applique à la route magnétique, pas au cap — par vent de travers, les deux diffèrent.
+    - Les 500 ft/1 000 ft sont des hauteurs (au-dessus du sol/obstacles), pas des altitudes.
+    - La priorité du plus bas à l'atterrissage ne permet pas de couper la finale d'un autre aéronef.

@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.alfost
+title: ALFOST
+definition: >-
+  Amiral commandant les forces sous-marines et la force océanique stratégique.
+  Autorité organique responsable des sous-marins (SNLE de l'Île-Longue, SNA) et
+  de la composante océanique de la dissuasion.
+sigleExpansion: Amiral commandant les forces sous-marines et la force océanique stratégique
+english: Commander, French Submarine Forces
+synonyms: []
+ficheId: eopan.organisation.marine-nationale
+tags: []
+status: publie

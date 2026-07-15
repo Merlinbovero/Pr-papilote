@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.incidence
+title: Incidence
+definition: >-
+  Angle entre la corde du profil et la direction de l'écoulement de l'air (le
+  vent relatif). La portance croît avec l'incidence jusqu'à l'incidence critique,
+  au-delà de laquelle survient le décrochage.
+english: Angle of attack
+synonyms: [angle d'incidence]
+ficheId: fondamentaux.aerodynamique.portance
+tags: []
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.eopan-02
+kind: qcm
+theme: concours-eopan
+statement: >-
+  De quelle armée relève le concours EOPAN ?
+choices:
+  - "La Marine nationale"
+  - "L'Armée de l'Air et de l'Espace"
+  - "L'Armée de Terre"
+  - "La Gendarmerie nationale"
+correctChoices: [0]
+explanation: >-
+  L'EOPAN forme les pilotes de l'aéronautique navale, composante aérienne de la
+  Marine nationale.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

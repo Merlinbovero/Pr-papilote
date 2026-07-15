@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.fas-01
+kind: qcm
+theme: dissuasion
+statement: >-
+  Quelle est la mission première des Forces aériennes stratégiques ?
+choices:
+  - "Assurer en permanence la composante aéroportée de la dissuasion nucléaire"
+  - "La police du ciel"
+  - "Le transport de troupes"
+  - "La formation des pilotes de chasse"
+correctChoices: [0]
+explanation: >-
+  Depuis le 8 octobre 1964, les FAS tiennent sans interruption la permanence
+  de la dissuasion aéroportée — Rafale/ASMP-A soutenus par les MRTT.
+evaluates: [eopn.organisation.les-forces-aeriennes-strategiques]
+difficulty: 1
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.hypo-05
+kind: qcm
+theme: hypoxie
+statement: >-
+  En cas de dépressurisation en vol, que fait-on en premier ?
+choices:
+  - "Mettre son propre masque à oxygène"
+  - "Aider d'abord ses voisins à mettre le leur"
+  - "Ouvrir une aération"
+  - "Accélérer pour sortir de la zone"
+correctChoices: [0]
+explanation: >-
+  On met immédiatement son propre masque à oxygène avant d'aider les autres :
+  sans oxygène, le temps utile de conscience est très court en altitude.
+evaluates: [fondamentaux.facteurs-humains.hypoxie-et-altitude]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

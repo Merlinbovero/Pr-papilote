@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopn.normandie-niemen-04
+kind: vrai-faux
+theme: unites-aae
+statement: >-
+  Le nom « Niémen » de l'escadron vient d'un fleuve, théâtre de ses combats.
+answer: true
+explanation: >-
+  Vrai. Le nom « Niémen » — celui d'un fleuve d'Europe de l'Est — fut donné à
+  l'unité en récompense de ses combats, s'ajoutant à « Normandie ».
+evaluates: [eopn.unites.normandie-niemen]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

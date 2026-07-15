@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eopn-01
+kind: qcm
+theme: concours-eopn
+statement: >-
+  Que signifie l'acronyme EOPN ?
+choices:
+  - Élève-officier du personnel navigant
+  - École des officiers pilotes nationaux
+  - Élève-officier pilote de la Navy
+  - Escadron opérationnel de pilotage et de navigation
+correctChoices: [0]
+explanation: >-
+  EOPN signifie Élève-officier du personnel navigant : c'est la voie de
+  recrutement des navigants (pilotes et navigateurs) de l'Armée de l'air et de
+  l'Espace.
+evaluates: [eopn.presentation.le-concours-eopn]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

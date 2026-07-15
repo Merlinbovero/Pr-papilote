@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .case { stroke: currentColor; fill: none; stroke-width: 2; }
+    .part { stroke: currentColor; fill: none; stroke-width: 2; }
+    .link { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le principe de l'altimètre</text>
+  <!-- Prise statique -->
+  <line class="flow" x1="16" y1="150" x2="60" y2="150" marker-end="url(#ac)" />
+  <text class="accent-t" x="16" y="140" text-anchor="start">prise statique</text>
+  <text class="sub" x="16" y="170" text-anchor="start">(pression statique)</text>
+  <!-- Boîtier -->
+  <rect class="case" x="60" y="70" width="230" height="150" rx="6" />
+  <!-- Capsule anéroïde -->
+  <ellipse class="part" cx="135" cy="150" rx="42" ry="16" />
+  <line class="part" x1="99" y1="146" x2="171" y2="146" />
+  <line class="part" x1="99" y1="154" x2="171" y2="154" />
+  <text class="lbl" x="135" y="196" text-anchor="middle">capsule anéroïde</text>
+  <text class="sub" x="135" y="212" text-anchor="middle">(scellée, presque vide)</text>
+  <!-- Tringlerie -->
+  <path class="link" d="M135,134 L200,104 L272,140" />
+  <circle class="link" cx="200" cy="104" r="5" />
+  <text class="sub" x="205" y="98" text-anchor="start">leviers</text>
+  <!-- Cadran + aiguille -->
+  <circle class="part" cx="372" cy="150" r="46" />
+  <line class="part" x1="372" y1="150" x2="372" y2="110" stroke-width="2.5" />
+  <circle cx="372" cy="150" r="3" fill="currentColor" />
+  <text class="lbl" x="372" y="214" text-anchor="middle">aiguille</text>
+</svg>

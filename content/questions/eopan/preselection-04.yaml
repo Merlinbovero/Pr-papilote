@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.preselection-04
+kind: qcm
+theme: preselection-en-vol
+statement: >-
+  Que se passe-t-il pour les élèves retenus à l'issue de la présélection ?
+choices:
+  - "Ils sont orientés vers une filière (chasse, patrouille maritime, hélicoptères)"
+  - "Ils choisissent librement leur filière"
+  - "Ils partent directement en flottille opérationnelle"
+  - "Ils repassent le concours d'entrée"
+correctChoices: [0]
+explanation: >-
+  L'orientation se fait après la présélection, selon les résultats, les
+  aptitudes et les besoins de la Marine — puis commencent les écoles de
+  formation proprement dites.
+evaluates: [eopan.selection.la-preselection-en-vol]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

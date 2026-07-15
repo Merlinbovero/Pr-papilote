@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.caiman-tth-02
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Que peut emporter un Caïman TTH ?
+choices:
+  - Une vingtaine de combattants ou 2,5 tonnes de fret
+  - 2 pilotes seulement, sans passagers
+  - 80 passagers comme un avion de transport
+  - Uniquement des missiles antichar
+correctChoices: [0]
+explanation: >-
+  Le Caïman TTH héliporte une vingtaine de combattants ou 2,5 t de fret à
+  environ 300 km/h — sa cabine se reconfigure selon la mission (commandos,
+  civières, fret, treuil).
+evaluates: [alat.appareils.nh90-caiman-tth]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

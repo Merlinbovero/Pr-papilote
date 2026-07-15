@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.radio-communications.phraseo-03
+kind: qcm
+theme: phraseologie
+statement: >-
+  Qu'est-ce que le collationnement ?
+choices:
+  - Répéter les éléments essentiels d'une clairance pour que le contrôleur vérifie la compréhension
+  - Noter la clairance sur son carnet de vol
+  - Remercier le contrôleur
+  - Changer de fréquence sans prévenir
+correctChoices: [0]
+explanation: >-
+  Le collationnement fait répéter cap, niveau, fréquence, piste ou QNH reçus :
+  le contrôleur vérifie que la clairance a été comprise. Répondre « roger » à
+  une clairance est insuffisant.
+evaluates: [fondamentaux.radio-communications.la-phraseologie-de-base]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

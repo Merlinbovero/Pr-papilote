@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.formation-chasse-04
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Sur quels appareils l'élève-pilote apprend-il le vol militaire à Salon-de-Provence ?
+choices:
+  - Planeur et Cirrus SR20/22
+  - Rafale et Mirage 2000
+  - PC-21 et Alphajet
+  - Cap 10 et H120
+correctChoices: [0]
+explanation: >-
+  À l'École de l'air (Salon-de-Provence), le vol militaire s'apprend sur
+  planeur puis sur Cirrus SR20/22. Le PC-21 vient ensuite à Cognac ; le Cap 10
+  est l'avion de la sélection EOPAN (Marine).
+evaluates: [eopn.selection.la-formation-du-pilote-de-chasse]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

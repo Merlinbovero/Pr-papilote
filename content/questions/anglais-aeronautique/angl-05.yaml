@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.angl-05
+kind: vrai-faux
+theme: vocabulaire-vol
+statement: >-
+  En phraséologie radio, on peut dire « OK » pour confirmer.
+answer: false
+explanation: >-
+  « OK » est proscrit à la radio, tout comme « yes » et « no ». On emploie la
+  phraséologie standard : Affirm, Negative, Roger, Wilco.
+evaluates: [fondamentaux.anglais-aeronautique.vocabulaire-de-base]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

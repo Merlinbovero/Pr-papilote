@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.entretien-themes-04
+kind: association
+theme: entretien-eopan
+statement: >-
+  Associez chaque question du jury à la famille de thèmes qu'elle explore.
+pairs:
+  - left: « Présentez-vous en quelques minutes »
+    right: Le parcours
+  - left: « Pourquoi la Marine et pas l'armée de l'Air ? »
+    right: La motivation
+  - left: « Citez les missions de la Marine »
+    right: Marine et Défense
+  - left: « Où vous voyez-vous dans dix ans ? »
+    right: La projection
+explanation: >-
+  La présentation ouvre sur le parcours ; le choix de la Marine relève de la
+  motivation ; les missions relèvent du socle Marine/Défense ; la question des
+  dix ans teste la projection et la lucidité.
+evaluates: [eopan.selection.les-themes-recurrents-de-l-entretien]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

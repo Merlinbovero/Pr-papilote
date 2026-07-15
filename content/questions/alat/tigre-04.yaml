@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.alat.tigre-04
+kind: vrai-faux
+theme: appareils-alat
+statement: >-
+  Le Tigre est issu d'une coopération franco-allemande.
+answer: true
+explanation: >-
+  Vrai. Le Tigre est né d'une coopération franco-allemande initiée dès les
+  années 1970 ; Français et Allemands forment même ensemble leurs équipages à
+  l'École franco-allemande du Tigre.
+evaluates: [alat.appareils.tigre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

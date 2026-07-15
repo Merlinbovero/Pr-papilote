@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.lann-bihoue-01
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quelle est la vocation principale de la BAN de Lann-Bihoué ?
+choices:
+  - Une base multi-missions — guet aérien, patrouille maritime et surveillance
+  - La base unique de la chasse embarquée (Rafale Marine)
+  - Le port d'attache du porte-avions Charles de Gaulle
+  - La base des sous-marins nucléaires
+correctChoices: [0]
+explanation: >-
+  Lann-Bihoué est la grande base multi-missions de l'aéronavale : elle regroupe
+  le guet aérien (Hawkeye), la patrouille maritime (Atlantique 2) et la
+  surveillance/servitude — le tout basé à terre.
+evaluates: [eopan.ban.lann-bihoue]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

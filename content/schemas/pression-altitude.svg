@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .accent-axis { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .bar { fill: #3b82f6; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="190" y="24" text-anchor="middle">La pression diminue avec l'altitude</text>
+  <!-- Axe altitude (accent, fléché) -->
+  <line class="accent-axis" x1="92" y1="222" x2="92" y2="46" marker-end="url(#ac)" />
+  <text class="lbl" x="92" y="40" text-anchor="middle">altitude</text>
+  <!-- Barres de pression (proportionnelles) -->
+  <g>
+    <rect class="bar" x="94" y="197" width="220" height="16" />
+    <text class="lbl" x="86" y="209" text-anchor="end">0 ft</text>
+    <text class="lbl" x="320" y="209">1013 hPa</text>
+
+    <rect class="bar" x="94" y="152" width="151" height="16" />
+    <text class="lbl" x="86" y="164" text-anchor="end">FL100</text>
+    <text class="lbl" x="251" y="164">697 hPa</text>
+
+    <rect class="bar" x="94" y="107" width="110" height="16" />
+    <text class="lbl" x="86" y="119" text-anchor="end">FL180</text>
+    <text class="lbl" x="210" y="119">506 hPa</text>
+
+    <rect class="bar" x="94" y="62" width="49" height="16" />
+    <text class="lbl" x="86" y="74" text-anchor="end">tropo.</text>
+    <text class="lbl" x="149" y="74">227 hPa</text>
+  </g>
+</svg>

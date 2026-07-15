@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.grades-04
+kind: ordre
+theme: grades-marine
+statement: >-
+  Classez ces grades d'officiers de la Marine du plus élevé au plus bas.
+items:
+  - Amiral
+  - Capitaine de vaisseau
+  - Capitaine de corvette
+  - Lieutenant de vaisseau
+  - Enseigne de vaisseau de 2e classe
+explanation: >-
+  Du plus élevé au plus bas : amiral (officier général), capitaine de vaisseau et
+  capitaine de corvette (officiers supérieurs), lieutenant de vaisseau puis
+  enseigne de vaisseau de 2e classe (officiers subalternes).
+evaluates: [eopan.grades.grades-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

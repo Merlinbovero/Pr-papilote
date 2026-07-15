@@ -1,0 +1,99 @@
+schemaVersion: 1
+id: eopn.bases.mont-de-marsan
+type: base-aerienne
+title: BA 118 Mont-de-Marsan
+slug: mont-de-marsan
+summary: >-
+  La base des Landes où la chasse rencontre l'expérimentation — la 30e
+  escadre de Rafale (dont le mythique Normandie-Niémen) et le CEAM, qui
+  invente les emplois futurs des matériels de l'armée de l'Air.
+objectifs:
+  - Situer la BA 118 « Colonel Rozanoff » (Mont-de-Marsan, Landes).
+  - Connaître ses deux visages (30e escadre de chasse Rafale, CEAM d'expérimentation).
+  - Relier la base à l'histoire (Mirage IV, dernier vol en 2005) et aux unités connues (Normandie-Niémen).
+aliases: [Mont-de-Marsan, BA 118, Rozanoff, CEAM, 30e escadre]
+module: eopn
+category: bases
+tags: []
+concours: [eopn]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F4 du plan V1 (grande base pour la carte AAE) ; unités vérifiées en ligne.
+    author: prepapilote
+sources:
+  - title: "Armée de l'air et de l'Espace — BA 118 Mont-de-Marsan (air.defense.gouv.fr)"
+    url: https://air.defense.gouv.fr/ba-118
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — passations de commandement BA 118 (unités de la base)"
+    url: https://www.defense.gouv.fr/air/tous-nos-dossiers/nos-passations-commandement-2024/nouveaux-chefs-unites-base-aerienne-118-mont-marsan
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.unites.normandie-niemen
+    - eopn.appareils.rafale
+    - eopn.appareils.mirage-iv
+infobox:
+  nomComplet: Base aérienne 118 « Colonel Rozanoff »
+  code: BA 118
+  localisation: Mont-de-Marsan (Landes)
+  armee: Armée de l'air et de l'Espace
+  unitesStationnees:
+    - "30e escadre de chasse sur Rafale — ECE 1/30 « Côte d'Argent », EC 2/30 « Normandie-Niémen », EC 3/30 « Lorraine »"
+    - Centre d'expertise aérienne militaire (CEAM)
+content:
+  essentiel:
+    body: |
+      La **BA 118 « Colonel Rozanoff »** — du nom du premier pilote
+      français à avoir dépassé 1 000 km/h — cumule deux vocations rares
+      sur une même plateforme landaise :
+
+      - la **chasse opérationnelle** — la **30e escadre**, montée en
+        puissance à partir de 2015, aligne des **Rafale** au sein de
+        trois escadrons : l'ECE **1/30 « Côte d'Argent »**
+        (expérimentation), l'EC **2/30 « Normandie-Niémen »** (l'escadron
+        des As du front de l'Est) et l'EC **3/30 « Lorraine »** ;
+      - l'**expérimentation** — le **CEAM** (Centre d'expertise aérienne
+        militaire) y étudie, teste et définit les **emplois futurs** des
+        matériels de l'armée de l'Air : nouveaux standards du Rafale,
+        drones, systèmes.
+
+      Mont-de-Marsan est aussi un lieu de mémoire de la dissuasion —
+      c'est de cette base que le **Mirage IV** a fait ses derniers vols,
+      jusqu'au retrait définitif de juin **2005**.
+    aRetenir:
+      - "BA 118 « Colonel Rozanoff » à Mont-de-Marsan (Landes) — chasse ET expérimentation sur la même base."
+      - "30e escadre de chasse sur Rafale — dont le Normandie-Niémen (2/30) et l'escadron d'expérimentation 1/30 Côte d'Argent."
+      - "Le CEAM y définit les emplois futurs des matériels — tout nouveau standard du Rafale passe par Mont-de-Marsan."
+      - "Lieu du dernier vol du Mirage IV (retrait définitif, juin 2005)."
+  sections:
+    - id: la-boucle-experimentation-operations
+      title: La boucle expérimentation-opérations
+      body: |
+        L'originalité de Mont-de-Marsan est la **boucle courte** entre
+        essais et emploi — le CEAM et l'escadron d'expérimentation 1/30
+        reçoivent les nouveaux standards (Rafale F4 hier, F5 demain), en
+        écrivent les **procédures d'emploi**, forment les premiers
+        équipages, et les escadrons opérationnels de la base les mettent
+        en œuvre aussitôt. Entre DGA Essais en vol (qui vérifie que « ça
+        marche ») et les forces (qui s'en servent), le CEAM répond à la
+        question du **comment s'en servir au combat**.
+
+        Pour un futur pilote de chasse, la base incarne une trajectoire
+        possible — après quelques années en escadron, les meilleurs
+        peuvent rejoindre l'expérimentation, voire l'EPNER pour les
+        essais : trois métiers de pilote, trois niveaux de la même
+        passion.
+  pieges:
+    - "CEAM = expertise et EMPLOI des matériels — à ne pas confondre avec DGA Essais en vol (Istres), qui conduit les essais techniques."
+    - "Le Normandie-Niémen vole aujourd'hui sur Rafale à Mont-de-Marsan — pas à Saint-Dizier."
+    - "« Colonel Rozanoff » — premier pilote français à plus de 1 000 km/h, et non un As de 14-18."
+    - "Le Mirage IV a fini sa carrière ici en 2005 — en mission de reconnaissance stratégique, pas nucléaire (transférée dès 1996)."

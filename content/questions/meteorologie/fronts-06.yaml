@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-06
+kind: qcm
+theme: fronts
+statement: >-
+  Quel temps trouve-t-on typiquement dans la traîne, derrière un front
+  froid ?
+choices:
+  - "Ciel de cumulus, averses isolées, excellente visibilité entre les grains"
+  - "Pluie continue et plafond bas"
+  - "Brouillard persistant"
+  - "Ciel uniformément voilé de cirrostratus"
+correctChoices: [0]
+explanation: >-
+  L'air froid limpide de la traîne donne la meilleure visibilité de la
+  semaine — entrecoupée d'averses sous les cumulus.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

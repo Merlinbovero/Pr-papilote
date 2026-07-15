@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.caiman-01
+kind: qcm
+theme: helicopteres-embarques
+statement: >-
+  Quelles sont les deux missions phares du NH90 Caïman Marine ?
+choices:
+  - La lutte anti-sous-marine et le secours en mer
+  - La chasse embarquée et la reconnaissance
+  - Le guet aérien et le ravitaillement
+  - La dissuasion nucléaire et le transport de troupes
+correctChoices: [0]
+explanation: >-
+  Le Caïman Marine est un hélicoptère polyvalent, mais ses deux missions phares
+  sont la lutte anti-sous-marine (sonar trempé) et le secours en mer (treuil).
+evaluates: [eopan.appareils.nh90-caiman]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

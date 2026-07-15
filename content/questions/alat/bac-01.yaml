@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.bac-01
+kind: qcm
+theme: organisation-alat
+statement: >-
+  Quand et où la 4e brigade d'aérocombat a-t-elle été créée ?
+choices:
+  - "Le 1er juillet 2016, à Clermont-Ferrand"
+  - "En 1954, à Metz"
+  - "En 1977, à Pau"
+  - "En 2020, à Paris"
+correctChoices: [0]
+explanation: >-
+  La 4e BAC naît le 1er juillet 2016 avec son état-major à
+  Clermont-Ferrand — les régiments d'hélicoptères de combat reçoivent leur
+  brigade dédiée.
+evaluates: [alat.organisation.la-4e-brigade-d-aerocombat]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

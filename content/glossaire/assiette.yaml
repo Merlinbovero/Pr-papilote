@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.assiette
+title: Assiette
+definition: >-
+  Orientation de l'aéronef par rapport à l'horizon, en tangage (nez haut / nez
+  bas) et en roulis (inclinaison). Elle se lit sur l'horizon artificiel et
+  constitue une référence essentielle du pilotage, surtout sans visibilité.
+english: Attitude
+synonyms: []
+ficheId: fondamentaux.instruments.horizon-artificiel
+tags: []
+status: publie

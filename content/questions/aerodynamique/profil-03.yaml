@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.profil-03
+kind: qcm
+theme: profil-aile
+statement: >-
+  Qu'est-ce que l'angle d'incidence ?
+choices:
+  - "L'angle entre la corde et le vent relatif"
+  - "L'angle entre l'aile et l'horizon"
+  - "L'angle de la trajectoire de l'avion"
+  - "L'inclinaison latérale des ailes"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est l'assiette de l'avion, pas l'angle d'incidence."
+explanation: >-
+  L'angle d'incidence (α) est l'angle entre la corde du profil et la direction du
+  vent relatif — et non l'assiette de l'avion par rapport à l'horizon.
+evaluates: [fondamentaux.aerodynamique.profil-d-aile]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.psychotechnique.suites-04
+kind: calcul
+theme: suites-logiques
+statement: >-
+  Quel est le terme suivant de la suite 3, 6, 12, 24, … ?
+answerValue: 48
+tolerance: 0
+explanation: >-
+  Chaque terme est le double du précédent (×2) : c'est une suite géométrique.
+  Le terme suivant est 24 × 2 = 48.
+evaluates: [psychotechnique.exercices.les-suites-logiques]
+difficulty: 1
+competencies: [raisonnement-logique, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

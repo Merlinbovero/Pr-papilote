@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: eopan.organisation.aeronautique-navale
+type: organisation
+title: La Force de l'aéronautique navale
+slug: aeronautique-navale
+summary: >-
+  Composante aérienne de la Marine nationale. Forte de quelque 200 aéronefs
+  répartis en flottilles et escadrilles, elle met en œuvre la chasse embarquée,
+  le guet aérien, la patrouille maritime, les hélicoptères et les drones.
+objectifs:
+  - Définir l'aéronautique navale comme la composante aérienne de la Marine nationale.
+  - Décrire ses grandes composantes (chasse embarquée, guet aérien, patrouille maritime, hélicoptères, drones).
+  - Situer ses bases (BAN) et l'articulation entre appareils, flottilles et missions.
+aliases: [aéronautique navale, aéronavale, aviation navale, force de l'aéronautique navale]
+module: eopan
+category: organisation
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet organisation, vue d'ensemble de la Force de l'aéronautique navale.
+    author: prepapilote
+sources:
+  - title: "Force de l'aéronautique navale — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Aéronautique navale — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9ronautique_navale
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.rafale-m
+    - eopan.appareils.e-2c-hawkeye
+    - eopan.appareils.atlantique-2
+    - eopan.appareils.nh90-caiman
+    - eopan.presentation.le-concours-eopan
+infobox:
+  nomComplet: Force de l'aéronautique navale
+  tutelle: Marine nationale
+  role: Composante aérienne de la Marine nationale
+content:
+  essentiel:
+    body: |
+      L'**aéronautique navale** (ou **aéronavale**) est la **composante
+      aérienne** de la **Marine nationale** : l'ensemble des avions,
+      hélicoptères et drones que la Marine met en œuvre au-dessus de la mer, ou
+      depuis la mer.
+
+      Sa mission générale est double : **projeter la puissance** depuis la mer
+      et **maîtriser l'espace aérien** au-dessus des océans. Cela recouvre la
+      **dissuasion nucléaire**, la **surveillance maritime**, la **supériorité
+      aérienne**, la **reconnaissance**, la **lutte anti-navire** et
+      **anti-sous-marine**, le **sauvetage en mer** et la lutte contre les
+      **trafics**.
+
+      Concrètement, elle aligne quelque **200 aéronefs**, organisés en
+      **flottilles** et **escadrilles**, répartis sur **quatre bases**
+      d'aéronautique navale (**BAN**) — trois en Bretagne (**Landivisiau**,
+      **Lann-Bihoué**, **Lanvéoc-Poulmic**) et une dans le Sud (**Hyères**).
+    aRetenir:
+      - L'aéronautique navale est la composante aérienne de la Marine nationale.
+      - Elle projette la puissance depuis la mer et maîtrise l'espace aérien au-dessus des océans.
+      - Environ 200 aéronefs, organisés en flottilles et escadrilles, sur quatre BAN.
+      - Ses grandes composantes — chasse embarquée, guet aérien, patrouille maritime, hélicoptères et drones.
+  sections:
+    - id: les-grandes-composantes
+      title: Les grandes composantes
+      body: |
+        L'aéronautique navale se comprend par ses **grandes familles**
+        d'aéronefs, chacune avec sa mission :
+
+        - la **chasse embarquée** — les **Rafale Marine**, seuls avions de
+          combat, qui opèrent depuis le porte-avions ;
+        - le **guet aérien** — les **E-2C Hawkeye**, radars volants du groupe
+          aéronaval ;
+        - la **patrouille maritime** — les **Atlantique 2** (et des Falcon),
+          basés à terre, pour la surveillance et la lutte anti-sous-marine ;
+        - les **hélicoptères** — le **Caïman Marine** et d'autres, pour la lutte
+          anti-sous-marine, le secours et le service depuis les bâtiments ;
+        - les **drones**, moyens de surveillance en plein essor.
+      figures:
+        - schemaId: structure-aeronautique-navale
+          alt: La Force de l'aéronautique navale au sommet, reliée à ses cinq composantes — chasse (Rafale M), guet aérien (Hawkeye), patrouille (Atlantique 2), hélicoptères (Caïman), drones (S-100).
+          caption: Les cinq grandes composantes de l'aéronautique navale, autour de quelque 200 aéronefs répartis en flottilles et escadrilles.
+          width: 460
+          height: 300
+    - id: appareils-flottilles-bases
+      title: Appareils, flottilles et bases
+      body: |
+        Trois notions s'articulent pour organiser cette force :
+
+        - l'**appareil** est la machine (un Rafale M, un Hawkeye…) ;
+        - la **flottille** est l'**unité** qui met en œuvre un type d'appareil
+          (la 11F sur Rafale M, la 4F sur Hawkeye…) — l'équivalent de
+          l'escadron dans l'Armée de l'Air et de l'Espace ;
+        - la **BAN** (base d'aéronautique navale) est le **lieu** où stationnent
+          les flottilles à terre.
+
+        Ainsi, une flottille **est dotée** d'un appareil et **est affectée** à
+        une base, d'où elle **embarque** sur un bâtiment. C'est cette
+        articulation que le candidat EOPAN doit savoir relier.
+    - id: une-force-a-la-mer
+      title: Une force tournée vers la mer
+      strate: maitriser
+      body: |
+        Ce qui distingue l'aéronautique navale de l'aviation de l'Armée de l'Air
+        et de l'Espace, c'est son **milieu** : la **mer**. Ses équipages
+        décollent d'un **pont** qui bouge, apponte sur une piste **courte** et
+        mouvante, patrouillent des **heures** au-dessus de l'océan, ou plongent
+        un **sonar** pour traquer un sous-marin.
+
+        C'est une composante **complète** et **autonome** : elle sait détecter
+        (guet, patrouille), combattre (chasse), protéger (lutte
+        anti-sous-marine) et secourir (sauvetage en mer). Rejoindre l'EOPAN,
+        c'est viser une place de pilote au sein de cette force — d'où
+        l'importance d'en connaître l'**organisation** d'ensemble.
+  pieges:
+    - L'aéronautique navale n'est pas l'Armée de l'Air et de l'Espace — c'est la composante aérienne de la Marine nationale, tournée vers la mer.
+    - Ne pas confondre appareil (la machine), flottille (l'unité) et BAN (la base) — trois notions distinctes qui s'articulent.
+    - Toute l'aéronavale ne vole pas depuis le porte-avions — patrouille maritime, guet et hélicoptères opèrent largement depuis la terre ou les bâtiments.

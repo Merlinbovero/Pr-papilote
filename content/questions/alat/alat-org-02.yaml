@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.alat.alat-org-02
+kind: association
+theme: organisation-alat
+statement: >-
+  Associez chaque type de mission de l'ALAT à un hélicoptère représentatif.
+pairs:
+  - left: Combat / appui-feu
+    right: Tigre
+  - left: Manœuvre et transport
+    right: NH90 Caïman
+  - left: Reconnaissance
+    right: Gazelle
+explanation: >-
+  Chaque famille d'hélicoptères a sa spécialité : le Tigre pour le combat et
+  l'appui-feu, le Caïman pour la manœuvre et le transport, la Gazelle pour la
+  reconnaissance.
+evaluates: [alat.organisation.aviation-legere-armee-de-terre]
+difficulty: 2
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [alat]
+status: publie

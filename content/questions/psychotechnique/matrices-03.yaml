@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.matrices-03
+kind: qcm
+theme: matrices
+statement: >-
+  Une flèche pointe vers le haut en case 1, vers la droite en case 2, vers
+  le bas en case 3. Quelle règle est à l'œuvre et que vaut la case 4 ?
+choices:
+  - "Rotation de 90° horaire — la flèche pointe vers la gauche"
+  - "Rotation de 45° — la flèche pointe en diagonale"
+  - "Symétrie miroir — la flèche pointe vers le haut"
+  - "Alternance — la flèche disparaît"
+correctChoices: [0]
+explanation: >-
+  Haut → droite → bas — un quart de tour horaire à chaque case ; la
+  quatrième position est donc vers la gauche.
+evaluates: [psychotechnique.exercices.les-matrices]
+difficulty: 2
+competencies: [raisonnement-logique, vision-spatiale]
+concours: [eopan, eopn, alat]
+status: publie

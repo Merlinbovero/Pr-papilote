@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.air-05
+kind: vrai-faux
+theme: proprietes-air
+statement: >-
+  Par forte chaleur, la distance de décollage d'un avion s'allonge.
+answer: true
+explanation: >-
+  Par forte chaleur, l'air est moins dense : l'aile produit moins de portance et
+  le moteur moins de poussée. La distance de décollage s'allonge.
+evaluates: [fondamentaux.aerodynamique.air-et-proprietes]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

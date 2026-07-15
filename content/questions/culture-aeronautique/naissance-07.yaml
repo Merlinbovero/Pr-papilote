@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.culture-aeronautique.naissance-07
+kind: vrai-faux
+theme: naissance-aviation
+statement: >-
+  L'armée de l'Air française est née comme armée indépendante dès la
+  Première Guerre mondiale.
+answer: false
+explanation: >-
+  L'aviation militaire de 14-18 dépendait de l'armée de Terre — l'armée de
+  l'Air naît par décret en 1933 et devient indépendante par la loi du
+  2 juillet 1934.
+evaluates: [fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-sol-02
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Que signifie « backtrack runway 22 » ?
+choices:
+  - Remontez la piste 22 en sens inverse pour vous aligner
+  - Quittez la piste 22 immédiatement
+  - Faites demi-tour et retournez au parking
+  - Attendez avant la piste 22
+correctChoices: [0]
+explanation: >-
+  Backtrack = remonter la piste en service en sens inverse, généralement pour
+  s'aligner au seuil — une phase critique puisque la piste est occupée.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.desorientation-spatiale
+title: Désorientation spatiale
+definition: >-
+  Perte de la perception correcte de sa position ou de son mouvement, due à des
+  illusions sensorielles, surtout sans visibilité extérieure. La règle est de
+  croire ses instruments plutôt que ses sensations.
+english: Spatial disorientation
+synonyms: []
+ficheId: fondamentaux.facteurs-humains.desorientation-et-illusions
+tags: []
+status: publie

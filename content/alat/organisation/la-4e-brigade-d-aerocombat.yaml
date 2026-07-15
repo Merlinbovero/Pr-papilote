@@ -1,0 +1,91 @@
+schemaVersion: 1
+id: alat.organisation.la-4e-brigade-d-aerocombat
+type: organisation
+title: La 4e brigade d'aérocombat (4e BAC)
+slug: la-4e-brigade-d-aerocombat
+summary: >-
+  Créée en 2016 à Clermont-Ferrand, la 4e BAC commande les régiments
+  d'hélicoptères de combat — environ 2 650 aérocombattants et 150
+  hélicoptères : la plus grande force d'aérocombat d'Europe occidentale.
+objectifs:
+  - Situer la 4e BAC (création 2016, état-major à Clermont-Ferrand).
+  - Connaître ses régiments (1er RHC, 3e RHC, 5e RHC) et ses moyens.
+  - Comprendre sa place dans l'armée de Terre (la brigade de l'aérocombat).
+aliases: [4e BAC, brigade d'aérocombat, Clermont-Ferrand, aérocombat]
+module: alat
+category: organisation
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F5 du plan V1 (nœud cible référencé par les quatre fiches régiments) ; données vérifiées sur defense.gouv.fr.
+    author: prepapilote
+sources:
+  - title: "Ministère des Armées — la 4e brigade d'aérocombat (4e BAC)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/nos-brigades/4e-brigade-daerocombat-4e-bac/4e-brigade-daerocombat
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - alat.unites.1er-rhc
+    - alat.unites.3e-rhc
+    - alat.unites.5e-rhc
+    - alat.missions.l-aerocombat
+infobox:
+  nomComplet: 4e brigade d'aérocombat (4e BAC)
+  tutelle: Armée de Terre
+  role: Commandement des régiments d'hélicoptères de combat — l'aérocombat
+  effectifs: ~2 650 aérocombattants, ~770 réservistes, ~150 hélicoptères (état au 2026-07)
+content:
+  essentiel:
+    body: |
+      La **4e brigade d'aérocombat** est née le **1er juillet 2016** à
+      **Clermont-Ferrand** — pour la première fois, les régiments
+      d'hélicoptères de combat de l'armée de Terre sont réunis sous une
+      **brigade dédiée**, comme les blindés ou les parachutistes ont la
+      leur.
+
+      Ses moyens (état au 2026-07, defense.gouv.fr) :
+
+      - trois régiments — le **1er RHC** (Phalsbourg), le **3e RHC**
+        (Étain) et le **5e RHC** (Pau) ;
+      - environ **2 650 aérocombattants** et 770 réservistes ;
+      - environ **150 hélicoptères** — Tigre, Gazelle, Caïman, Puma/Cougar.
+
+      Le **4e RHFS** (forces spéciales, Pau) reste hors 4e BAC — il est
+      subordonné au commandement des forces spéciales Terre au profit
+      du COS.
+    aRetenir:
+      - "4e BAC — créée le 1er juillet 2016, état-major à Clermont-Ferrand."
+      - "Trois régiments : 1er RHC (Phalsbourg), 3e RHC (Étain), 5e RHC (Pau) — le 4e RHFS (forces spéciales) est hors brigade."
+      - "~2 650 aérocombattants et ~150 hélicoptères — la grande force d'aérocombat française."
+      - La brigade donne à l'aérocombat le même rang que les autres fonctions majeures de l'armée de Terre.
+  sections:
+    - id: pourquoi-une-brigade
+      title: Pourquoi une brigade d'aérocombat ?
+      body: |
+        Avant 2016, les RHC étaient rattachés à des structures diverses ;
+        les engagements (Libye 2011, Sahel) ont démontré que
+        l'hélicoptère de combat n'est pas un simple « moyen d'appui »
+        mais une **manœuvre à part entière** — frapper loin, vite, de
+        nuit, en profondeur. La 4e BAC institutionnalise cette leçon :
+        un commandement unique qui **prépare, entraîne et engage** les
+        régiments d'hélicoptères comme un tout cohérent.
+
+        C'est le pendant terrestre de ce que sont les escadres pour
+        l'armée de l'Air — mutualiser l'entraînement, standardiser les
+        procédures, générer des modules projetables. Quand une opération
+        a besoin d'un sous-groupement aéromobile, c'est la 4e BAC qui le
+        fournit.
+  pieges:
+    - "La 4e BAC ne commande que trois des quatre RHC — le 4e RHFS (forces spéciales) relève du COS."
+    - "Son état-major est à Clermont-Ferrand — mais ses régiments sont à Phalsbourg, Étain et Pau."
+    - "2016, pas 1954 — la brigade est récente, même si l'ALAT et l'aérocombat sont bien plus anciens."
+    - Aérocombat = manœuvre à part entière (frapper en profondeur), pas un simple appui aux troupes au sol.

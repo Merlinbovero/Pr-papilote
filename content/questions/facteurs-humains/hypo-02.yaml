@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.facteurs-humains.hypo-02
+kind: qcm
+theme: hypoxie
+statement: >-
+  Pourquoi manque-t-on d'oxygène en altitude ?
+choices:
+  - "La pression baisse : il y a moins de molécules d'oxygène disponibles"
+  - "La proportion d'oxygène tombe sous 21 %"
+  - "L'air devient toxique en altitude"
+  - "Le froid empêche de respirer"
+correctChoices: [0]
+explanation: >-
+  La proportion d'oxygène reste 21 %, mais la pression baisse : l'air se raréfie,
+  il y a moins de molécules, donc une pression partielle d'oxygène plus faible.
+evaluates: [fondamentaux.facteurs-humains.hypoxie-et-altitude]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

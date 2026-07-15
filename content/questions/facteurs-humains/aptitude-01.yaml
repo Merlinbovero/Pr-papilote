@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.facteurs-humains.aptitude-01
+kind: qcm
+theme: aptitude-medicale
+statement: >-
+  Où les candidats EOPN et ALAT passent-ils leur expertise médicale
+  initiale ?
+choices:
+  - "Au CPEMPN de l'hôpital Percy (Clamart)"
+  - "Au CEMPN de Toulon"
+  - "Dans n'importe quel cabinet médical agréé"
+  - "À l'infirmerie de leur base"
+correctChoices: [0]
+explanation: >-
+  L'expertise initiale est centralisée — CPEMPN de Percy pour l'air et
+  l'ALAT, CEMPN de l'HIA Sainte-Anne à Toulon pour les EOPAN de la Marine.
+evaluates: [fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.atl2-02
+kind: vrai-faux
+theme: patrouille-maritime
+statement: >-
+  L'Atlantique 2 décolle et apponte depuis le porte-avions Charles de Gaulle.
+answer: false
+explanation: >-
+  Faux. L'Atlantique 2 est un grand avion basé à terre (Lann-Bihoué) — il n'est
+  pas embarqué sur le porte-avions, contrairement au Rafale M, au Hawkeye ou au
+  Caïman.
+evaluates: [eopan.appareils.atlantique-2]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

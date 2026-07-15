@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-33f-05
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Comment le couple frégate-hélicoptère traque-t-il un sous-marin ?
+choices:
+  - "L'hélicoptère trempe son sonar et largue ses torpilles là où le navire ne peut pas être"
+  - "La frégate catapulte l'hélicoptère vers le sous-marin"
+  - "L'hélicoptère remorque la frégate"
+  - "Ils ne peuvent pas coopérer"
+correctChoices: [0]
+explanation: >-
+  L'hélicoptère prolonge les capteurs et les armes du navire — sonar trempé
+  au bout de l'élingue, torpille MU90 : le couple frégate-Caïman forme une
+  équipe de chasse ASM.
+evaluates: [eopan.unites.flottille-33f]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

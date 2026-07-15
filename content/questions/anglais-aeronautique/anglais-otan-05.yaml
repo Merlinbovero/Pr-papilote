@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-otan-05
+kind: qcm
+theme: anglais-comprehension
+statement: >-
+  « The carrier strike group was deployed to the Eastern Mediterranean in
+  support of the operation. » — Que s'est-il passé ?
+choices:
+  - Le groupe aéronaval a été déployé en Méditerranée orientale à l'appui de l'opération
+  - Le porte-avions a été retiré du service en Méditerranée
+  - Une grève a éclaté sur le porte-avions
+  - Le groupe a annulé son déploiement
+correctChoices: [0]
+explanation: >-
+  Carrier strike group = groupe aéronaval ; to deploy = déployer ; in support
+  of = à l'appui de. « Strike » signifie ici frappe (groupe de frappe), pas
+  grève — le contexte militaire tranche.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-militaire]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

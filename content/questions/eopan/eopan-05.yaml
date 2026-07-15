@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.eopan-05
+kind: qcm
+theme: concours-eopan
+statement: >-
+  Sur quel avion se déroule la présélection en vol de l'EOPAN ?
+choices:
+  - "Le CAP 10 (avion de voltige)"
+  - "Le Rafale Marine"
+  - "Le E-2C Hawkeye"
+  - "Le NH90 Caïman"
+correctChoices: [0]
+explanation: >-
+  La présélection en vol, à Lanvéoc-Poulmic, se fait sur l'avion de voltige
+  CAP 10 : elle évalue la capacité du candidat à apprendre puis à restituer en vol.
+evaluates: [eopan.presentation.le-concours-eopan]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

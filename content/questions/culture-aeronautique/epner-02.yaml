@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-02
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Où l'EPNER est-elle installée depuis 1962 ?
+choices:
+  - "Istres"
+  - "Brétigny-sur-Orge"
+  - "Salon-de-Provence"
+  - "Mont-de-Marsan"
+correctChoices: [0]
+explanation: >-
+  Fondée en 1946 à Brétigny-sur-Orge par le Centre d'essais en vol, l'école a
+  déménagé à Istres en 1962, où elle se trouve toujours au sein de
+  DGA Essais en vol.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

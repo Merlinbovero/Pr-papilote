@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.rafale-06
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Quel démonstrateur a validé la formule du Rafale avant le lancement du
+  programme ?
+choices:
+  - "Le Rafale A (ACX), premier vol le 4 juillet 1986"
+  - "Le Mirage 4000"
+  - "Le Mirage G8 à géométrie variable"
+  - "Le Super Mirage ACF"
+correctChoices: [0]
+explanation: >-
+  L'avion expérimental ACX, baptisé Rafale A, vole le 4 juillet 1986 et
+  valide en 867 vols les composites, les commandes de vol numériques et même
+  l'aptitude à l'embarquement — le lancement industriel suit en janvier 1988.
+evaluates: [eopn.appareils.rafale]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

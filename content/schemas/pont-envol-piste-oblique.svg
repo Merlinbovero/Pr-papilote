@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .deck { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .oblique { stroke: #94a3b8; fill: none; stroke-width: 1.4; stroke-dasharray: 5 4; }
+    .island { stroke: currentColor; fill: none; stroke-width: 1.6; }
+    .acc { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 11px; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le pont d'envol et la piste oblique</text>
+  <!-- Contour du pont (vue de dessus, étrave en haut) -->
+  <path class="deck" d="M150,84 Q210,52 270,84 L270,272 L150,272 Z" />
+  <text class="sub" x="210" y="46" text-anchor="middle">avant (étrave)</text>
+  <!-- Piste oblique (appontage) -->
+  <path class="oblique" d="M232,150 L262,150 L176,266 L146,266 Z" />
+  <text class="accent-t" x="300" y="196" text-anchor="start">piste oblique</text>
+  <text class="sub" x="300" y="210" text-anchor="start">(appontage)</text>
+  <!-- Brins d'arrêt -->
+  <line class="acc" x1="166" y1="238" x2="204" y2="228" />
+  <line class="acc" x1="158" y1="252" x2="196" y2="242" />
+  <line class="acc" x1="150" y1="266" x2="188" y2="256" />
+  <text class="accent-t" x="120" y="250" text-anchor="end">brins</text>
+  <text class="accent-t" x="120" y="264" text-anchor="end">d'arrêt</text>
+  <!-- Catapultes (décollage) -->
+  <line class="acc" x1="196" y1="120" x2="196" y2="80" marker-end="url(#ac)" />
+  <line class="acc" x1="232" y1="120" x2="232" y2="80" marker-end="url(#ac)" />
+  <text class="accent-t" x="214" y="138" text-anchor="middle">catapultes (décollage)</text>
+  <!-- Îlot -->
+  <rect class="island" x="270" y="150" width="16" height="44" rx="2" />
+  <text class="sub" x="296" y="170" text-anchor="start">îlot</text>
+  <!-- Parking avant -->
+  <text class="sub" x="210" y="108" text-anchor="middle">parking / avant</text>
+</svg>

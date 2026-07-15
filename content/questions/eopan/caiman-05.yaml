@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.caiman-05
+kind: qcm
+theme: helicopteres-embarques
+statement: >-
+  Quelle innovation technique caractérise le NH90 Caïman parmi les hélicoptères ?
+choices:
+  - Il fut l'un des premiers hélicoptères à commandes de vol électriques
+  - Il est le premier hélicoptère supersonique
+  - Il décolle et se pose verticalement sans rotor
+  - Il est dépourvu de pilote à bord
+correctChoices: [0]
+explanation: >-
+  Le NH90 fut l'un des premiers hélicoptères dotés de commandes de vol
+  électriques (fly by wire), qui allègent le travail du pilote et stabilisent
+  l'appareil — un atout pour le vol stationnaire au-dessus d'une mer agitée.
+evaluates: [eopan.appareils.nh90-caiman]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

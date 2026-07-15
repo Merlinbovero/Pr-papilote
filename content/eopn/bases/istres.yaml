@@ -1,0 +1,114 @@
+schemaVersion: 1
+id: eopn.bases.istres
+type: base-aerienne
+title: BA 125 Istres-Le Tubé
+slug: istres
+summary: >-
+  La plus grande base aérienne de France — les ravitailleurs MRTT de la
+  dissuasion, les essais en vol de la DGA et l'école des pilotes d'essais
+  sur un même site des Bouches-du-Rhône. Le « hub des armées ».
+objectifs:
+  - Situer la BA 125 (Istres, Bouches-du-Rhône) et son surnom de plus grande base de France.
+  - Connaître ses occupants majeurs (31e escadre MRTT, DGA Essais en vol, EPNER).
+  - Comprendre son rôle dans la dissuasion (base à vocation nucléaire, ravitailleurs des FAS).
+aliases: [Istres, BA 125, Le Tubé, base d'Istres, hub des armées]
+module: eopn
+category: bases
+tags: []
+concours: [eopn]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F4 du plan V1 (base indispensable à la carte AAE) ; unités vérifiées en ligne.
+    author: prepapilote
+sources:
+  - title: "Armée de l'air et de l'Espace — actualités de la BA 125 (air.defense.gouv.fr)"
+    url: https://air.defense.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — Les Forces aériennes stratégiques (bases à vocation nucléaire)"
+    url: https://www.defense.gouv.fr/actualites/forces-aeriennes-strategiques-piliers-dissuasion-nationale
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - eopn.appareils.mrtt-phenix
+    - eopn.organisation.les-forces-aeriennes-strategiques
+    - fondamentaux.culture-aeronautique.l-epner
+infobox:
+  nomComplet: Base aérienne 125 Istres-Le Tubé « Sous-lieutenant Charles Monier »
+  code: BA 125
+  localisation: Istres (Bouches-du-Rhône)
+  armee: Armée de l'air et de l'Espace
+  unitesStationnees:
+    - 31e escadre aérienne de ravitaillement et de transport stratégiques (A330 MRTT Phénix)
+    - DGA Essais en vol
+    - EPNER (école du personnel navigant d'essais et de réception)
+content:
+  essentiel:
+    body: |
+      La **BA 125** d'Istres est la **plus grande base aérienne de
+      France** — une emprise immense au bord de l'étang de Berre, avec
+      l'une des plus longues pistes d'Europe, héritage de sa vocation
+      d'essais. Trois mondes y cohabitent :
+
+      - la **dissuasion** — Istres est l'une des **trois bases à vocation
+        nucléaire** des FAS : la **31e escadre** y met en œuvre tous les
+        **A330 MRTT Phénix**, les ravitailleurs sans lesquels le raid
+        nucléaire n'a pas d'allonge ;
+      - les **essais en vol** — **DGA Essais en vol** y conduit les
+        campagnes d'essais des programmes d'armement (le site historique
+        du CEV, où furent essayés Mirage, Rafale et tant d'autres) ;
+      - la **formation d'élite** — l'**EPNER**, l'école française des
+        équipages d'essais, installée sur la base depuis 1962.
+
+      D'où son surnom officiel de « **hub des armées** » — porte d'entrée
+      des déploiements lointains, escale des chasseurs, base des
+      ravitailleurs.
+    aRetenir:
+      - "BA 125 Istres « Sous-lieutenant Charles Monier » — la plus grande base aérienne de France (Bouches-du-Rhône)."
+      - "Toute la flotte de MRTT Phénix y est basée (31e escadre) — Istres est une des trois bases à vocation nucléaire."
+      - "DGA Essais en vol et l'EPNER y sont installés — Istres est la capitale française des essais en vol depuis 1962."
+      - Sa piste géante et sa position méditerranéenne en font le « hub des armées » pour les déploiements lointains.
+  sections:
+    - id: la-base-de-la-dissuasion-logistique
+      title: Le versant stratégique
+      body: |
+        Quand un exercice « Poker » fait décoller un raid nucléaire
+        simulé, les Rafale partent de Saint-Dizier — mais les
+        **ravitailleurs** partent d'Istres, et sans eux le raid s'arrête
+        à mi-chemin. C'est le sens profond de la « vocation nucléaire »
+        de la base : la dissuasion aéroportée est un **système à deux
+        avions**, et Istres en détient la moitié.
+
+        La même flotte MRTT assure au quotidien les évacuations
+        sanitaires stratégiques (module **Morphée**), les liaisons vers
+        les théâtres d'opérations et le soutien des déploiements de
+        chasseurs à l'autre bout du monde — un pilote de la 31e escadre
+        peut toucher à tout cela dans le même mois.
+    - id: le-versant-essais
+      title: Le versant essais en vol
+      strate: maitriser
+      body: |
+        L'autre visage d'Istres est celui des **prototypes** — le grand
+        centre du CEV s'y est développé à partir des années 1960 (l'EPNER
+        y déménage dès **1962**), et **DGA Essais en vol** y teste
+        aujourd'hui avions, systèmes et armements. La proximité des
+        champs de tir méditerranéens et l'immense piste en font un site
+        d'essais irremplaçable.
+
+        Pour un candidat, Istres illustre la **diversité des carrières**
+        au sein d'une même base — pilote de ravitailleur stratégique,
+        mécanicien MRTT, et à quelques hangars de là, pilote d'essais
+        diplômé de l'EPNER. Trois métiers, une base.
+  pieges:
+    - "Istres n'a pas d'escadron de chasse permanent — sa force, ce sont les ravitailleurs, les essais et sa piste géante."
+    - "Trois bases à vocation nucléaire — Saint-Dizier (Rafale), Istres (MRTT), Avord : Istres porte la partie ravitaillement."
+    - "L'EPNER et DGA Essais en vol sont sur la base mais ne dépendent pas de l'armée de l'Air — ce sont des organismes DGA."
+    - La plus grande base de France en superficie — mais sa mission première est logistique et stratégique, pas la chasse.

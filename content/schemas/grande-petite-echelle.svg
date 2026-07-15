@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .card { stroke: currentColor; fill: none; stroke-width: 2; }
+    .feat { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">Grande et petite échelle</text>
+  <!-- Grande échelle : petite zone, détaillée -->
+  <rect class="card" x="28" y="46" width="176" height="112" rx="4" />
+  <path class="feat" d="M40,120 L120,72" />
+  <rect class="feat" x="70" y="96" width="18" height="14" />
+  <rect class="feat" x="120" y="110" width="16" height="12" />
+  <path class="feat" d="M150,60 q10,30 -8,50 q-14,16 4,36" />
+  <text class="accent-t" x="116" y="182" text-anchor="middle">grande échelle (1/25 000)</text>
+  <text class="sub" x="116" y="198" text-anchor="middle">petite zone, très détaillée</text>
+  <!-- Petite échelle : grande zone, peu détaillée -->
+  <rect class="card" x="256" y="46" width="176" height="112" rx="4" />
+  <path class="feat" d="M266,150 q40,-70 100,-40 q40,20 58,-14" />
+  <circle class="feat" cx="330" cy="104" r="3" fill="currentColor" />
+  <text class="accent-t" x="344" y="182" text-anchor="middle">petite échelle (1/1 000 000)</text>
+  <text class="sub" x="344" y="198" text-anchor="middle">grande zone, peu détaillée</text>
+</svg>

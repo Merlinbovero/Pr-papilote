@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.grades-03
+kind: qcm
+theme: grades-marine
+statement: >-
+  Comment appelle-t-on les sous-officiers dans la Marine nationale ?
+choices:
+  - Les officiers mariniers
+  - Les quartiers-maîtres
+  - Les aspirants
+  - Les enseignes de vaisseau
+correctChoices: [0]
+explanation: >-
+  Les sous-officiers de la Marine sont les officiers mariniers (major, maître
+  principal, premier maître, maître, second maître).
+evaluates: [eopan.grades.grades-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

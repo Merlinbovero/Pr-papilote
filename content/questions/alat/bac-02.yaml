@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.bac-02
+kind: qcm
+theme: organisation-alat
+statement: >-
+  Quels régiments la 4e BAC commande-t-elle ?
+choices:
+  - "Le 1er RHC, le 3e RHC et le 5e RHC"
+  - "Les quatre RHC, dont le 4e RHFS"
+  - "Uniquement le 5e RHC de Pau"
+  - "Les régiments de la Légion étrangère"
+correctChoices: [0]
+explanation: >-
+  Trois régiments — Phalsbourg, Étain, Pau. Le 4e RHFS (forces spéciales)
+  reste hors brigade, au profit du COS.
+evaluates: [alat.organisation.la-4e-brigade-d-aerocombat]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [alat]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-urgences-03
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Que signifie « bird strike » ?
+choices:
+  - Une collision avec un oiseau
+  - Une grève des contrôleurs
+  - Un exercice de tir
+  - Un type de virage serré
+correctChoices: [0]
+explanation: >-
+  Bird strike = collision aviaire — l'un des mots de panne à connaître, avec
+  engine failure, smoke in the cockpit, gear problem, hydraulic failure…
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-urgences]
+difficulty: 1
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

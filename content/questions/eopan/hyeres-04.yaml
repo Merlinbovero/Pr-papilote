@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.hyeres-04
+kind: vrai-faux
+theme: bases-navales
+statement: >-
+  Les hélicoptères de la BAN de Hyères assurent notamment des missions de secours en mer.
+answer: true
+explanation: >-
+  Vrai. Depuis Hyères, les hélicoptères assurent surveillance, lutte
+  anti-sous-marine, action de surface et de nombreuses missions de secours en mer
+  en Méditerranée.
+evaluates: [eopan.ban.hyeres]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.3e-rhc-02
+kind: qcm
+theme: regiments-alat
+statement: >-
+  Quelle transformation le 3e RHC illustre-t-il au sein de l'ALAT ?
+choices:
+  - Le remplacement des Puma par les NH90 Caïman (premiers reçus fin 2021)
+  - Le passage de l'hélicoptère à l'avion de chasse
+  - L'abandon du vol de nuit
+  - Le transfert de l'ALAT vers la Marine
+correctChoices: [0]
+explanation: >-
+  Longtemps armé de Gazelle et de Puma, le 3e RHC a reçu ses premiers Caïman
+  fin 2021 ; il doit être le premier RHC entièrement transformé (Caïman puis
+  Guépard) vers 2030 — projet « Horizon Guépard ».
+evaluates: [alat.unites.3e-rhc]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

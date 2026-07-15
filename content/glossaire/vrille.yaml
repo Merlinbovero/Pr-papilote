@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.vrille
+title: Vrille
+definition: >-
+  Autorotation d'un aéronef décroché et déséquilibré autour de son axe vertical :
+  il descend en tournant, ailes décrochées de façon asymétrique. La sortie exige
+  une action précise sur les commandes pour casser l'autorotation.
+english: Spin
+synonyms: []
+ficheId: fondamentaux.mecanique-du-vol.decrochage-et-vrille
+tags: []
+status: publie

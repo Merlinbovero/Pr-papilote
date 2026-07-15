@@ -1,0 +1,124 @@
+schemaVersion: 1
+id: eopn.histoire.histoire-de-l-armee-de-l-air
+type: concept
+title: Histoire de l'armée de l'Air et de l'Espace
+slug: histoire-de-l-armee-de-l-air
+summary: >-
+  De l'Aéronautique militaire de 1912 à l'armée de l'Air et de l'Espace de
+  2020 — l'indépendance de 1934, les As de 14-18, les FAFL, l'entrée dans la
+  dissuasion avec le Mirage IV : un siècle de puissance aérienne française.
+objectifs:
+  - Situer les grandes étapes (1912, 1934, 1940-1945, 1964, 2020).
+  - Expliquer ce que change l'indépendance de 1934.
+  - Mobiliser ces repères pour la culture d'entretien EOPN.
+aliases:
+  [
+    histoire armée de l'air,
+    "1934",
+    aéronautique militaire,
+    FAFL,
+    Mirage IV,
+    armée de l'air et de l'espace,
+  ]
+module: eopn
+category: histoire
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche histoire de l'AAE (campagne de recherche n°1, lot N5 ; sources officielles defense.gouv.fr recoupées).
+    author: prepapilote
+sources:
+  - title: "L'histoire de l'armée de l'Air et de l'Espace (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/mieux-nous-connaitre/lhistoire-larmee-lair-lespace
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Histoire de l'Armée de l'air française — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Histoire_de_l'Arm%C3%A9e_de_l'air_fran%C3%A7aise
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.unites.normandie-niemen
+    - eopan.histoire.histoire-de-l-aeronautique-navale
+content:
+  essentiel:
+    body: |
+      L'aviation militaire française naît **avant** l'armée de l'Air : dès
+      **1909**, la France acquiert ses premiers avions, et la loi du
+      **29 mars 1912** organise l'**Aéronautique militaire** — alors partie
+      de l'armée de Terre. La Grande Guerre en fait une arme majeure, portée
+      par ses **As** (Guynemer, Fonck, Nungesser).
+
+      La date clé est le **2 juillet 1934** : la loi érige l'armée de l'Air
+      en **armée indépendante** — la troisième armée française.
+
+      Suivent l'épreuve de **1940**, l'épopée des **Forces aériennes
+      françaises libres (FAFL)** — dont le « Normandie-Niémen » —, la
+      reconstruction, puis l'entrée dans l'ère **nucléaire** : en **1964**,
+      le couple **Mirage IV-C 135** prend la première alerte de la
+      dissuasion. En **2020**, l'armée de l'Air devient armée de l'Air **et
+      de l'Espace**.
+    aRetenir:
+      - 1912 — l'Aéronautique militaire est organisée (loi du 29 mars), au sein de l'armée de Terre.
+      - 2 juillet 1934 — l'armée de l'Air devient une armée indépendante.
+      - 1940-1945 — les FAFL portent l'honneur de l'aviation française (Normandie-Niémen).
+      - 1964 — première alerte nucléaire (Mirage IV + C 135) ; 2020 — armée de l'Air et de l'Espace.
+  sections:
+    - id: des-pionniers-a-l-independance
+      title: Des pionniers à l'indépendance
+      body: |
+        Entre 1909 et 1914, l'aviation militaire passe du statut de
+        curiosité à celui d'**outil de guerre** : observation, réglage
+        d'artillerie, puis chasse et bombardement. La **Première Guerre
+        mondiale** consacre les **As** — Georges **Guynemer**, René
+        **Fonck** — et fixe les **traditions** (escadrilles, insignes) qui
+        vivent encore dans les escadrons d'aujourd'hui.
+
+        L'entre-deux-guerres pose la question de l'**autonomie** : l'arme
+        aérienne doit-elle rester au service exclusif des armées de surface ?
+        Le décret de 1933 puis la **loi du 2 juillet 1934** tranchent —
+        l'armée de l'Air devient **indépendante**, avec sa doctrine, ses
+        écoles et son état-major.
+    - id: la-guerre-et-la-reconstruction
+      title: La guerre et la reconstruction
+      body: |
+        La campagne de **1940** est une épreuve terrible malgré le courage
+        des équipages. L'honneur passe alors aux **FAFL** : de 1940 à 1945,
+        les aviateurs français libres combattent sur tous les fronts, au
+        sein de la RAF ou aux côtés des Soviétiques — l'épopée du
+        **« Normandie-Niémen »** en est le symbole.
+
+        Après-guerre, l'armée de l'Air se **reconstruit** et entre dans
+        l'ère du **réacteur**, s'engage en **Indochine** puis en
+        **Algérie**, et bascule dans la modernité stratégique : en **1964**,
+        les **Forces aériennes stratégiques** prennent l'alerte avec le
+        **Mirage IV**, ravitaillé par le **C 135** — la France se dote d'une
+        dissuasion aéroportée.
+    - id: vers-l-espace
+      title: Vers l'espace
+      strate: maitriser
+      body: |
+        Les décennies suivantes déclinent la puissance aérienne sur tous
+        les théâtres — de la guerre du Golfe aux opérations récentes — avec
+        les Mirage 2000 puis le **Rafale**.
+
+        Le **11 septembre 2020**, l'armée de l'Air prend officiellement le
+        nom d'**armée de l'Air et de l'Espace** : l'espace devient un
+        **milieu de confrontation** à part entière, et la France s'organise
+        pour y surveiller, protéger et agir. Un siècle après Guynemer, le
+        champ de bataille s'étend au-delà de l'atmosphère.
+  pieges:
+    - L'aviation militaire (1912) précède l'armée de l'Air indépendante (2 juillet 1934) — vingt-deux ans d'écart.
+    - Le « Normandie-Niémen » a combattu sur le front de l'Est aux côtés des Soviétiques — pas au sein de la RAF.
+    - La dissuasion aéroportée date de 1964 (Mirage IV) — avant les premières patrouilles de SNLE (Le Redoutable, début des années 1970).
+    - Depuis 2020, le nom officiel est « armée de l'Air et de l'Espace ».

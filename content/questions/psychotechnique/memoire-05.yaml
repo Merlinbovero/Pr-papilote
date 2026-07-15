@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.memoire-05
+kind: qcm
+theme: memoire
+statement: >-
+  Comment mémoriser efficacement une série de formes abstraites ?
+choices:
+  - Les nommer (« triangle pointe en bas, cercle barré ») pour doubler le canal visuel d'un canal verbal
+  - Les fixer longtemps sans rien faire d'autre
+  - Fermer les yeux entre chaque forme
+  - Les dessiner de mémoire pendant la présentation
+correctChoices: [0]
+explanation: >-
+  Verbaliser les formes transforme du visuel en verbal : deux canaux valent
+  mieux qu'un. C'est l'association et la verbalisation qui fixent
+  l'information, pas la fixation passive.
+evaluates: [psychotechnique.exercices.la-memoire]
+difficulty: 2
+competencies: [memoire]
+concours: [eopan, eopn, alat]
+status: publie

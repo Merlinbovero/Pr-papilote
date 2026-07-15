@@ -1,0 +1,47 @@
+{
+  "concours": [
+    { "slug": "presentation", "name": "Présentation du concours", "order": 1 },
+    { "slug": "conditions", "name": "Conditions générales", "order": 2 },
+    { "slug": "selection", "name": "Parcours de sélection", "order": 3 },
+    { "slug": "organisation", "name": "Organisation", "order": 4 },
+    { "slug": "culture-militaire", "name": "Culture militaire", "order": 5 },
+    { "slug": "appareils", "name": "Appareils", "order": 6 },
+    { "slug": "navires", "name": "Navires", "order": 7 },
+    { "slug": "bases", "name": "Bases aériennes", "order": 8 },
+    { "slug": "ban", "name": "Bases d'aéronautique navale (BAN)", "order": 9 },
+    { "slug": "unites", "name": "Unités", "order": 10 },
+    { "slug": "procedures", "name": "Procédures", "order": 11 },
+    { "slug": "concepts", "name": "Concepts aéronautiques", "order": 12 },
+    { "slug": "grades", "name": "Grades", "order": 13 },
+    { "slug": "missions", "name": "Missions", "order": 14 },
+    { "slug": "histoire", "name": "Histoire", "order": 15 },
+    { "slug": "personnalites", "name": "Personnalités", "order": 16 },
+    { "slug": "geopolitique", "name": "Géopolitique", "order": 17 },
+    { "slug": "retex", "name": "RETEX", "order": 18 },
+    { "slug": "documents", "name": "Documents publics", "order": 19 },
+    { "slug": "quiz", "name": "Quiz", "order": 20 }
+  ],
+  "fondamentaux": [
+    { "slug": "physique", "name": "Physique utile", "order": 1 },
+    { "slug": "mathematiques", "name": "Mathématiques utiles", "order": 2 },
+    { "slug": "aerodynamique", "name": "Aérodynamique", "order": 3 },
+    { "slug": "mecanique-du-vol", "name": "Mécanique du vol", "order": 4 },
+    { "slug": "meteorologie", "name": "Météorologie", "order": 5 },
+    { "slug": "navigation", "name": "Navigation", "order": 6 },
+    { "slug": "instruments", "name": "Instruments de vol", "order": 7 },
+    { "slug": "cartographie", "name": "Cartographie", "order": 8 },
+    { "slug": "reglementation", "name": "Réglementation publique", "order": 9 },
+    { "slug": "facteurs-humains", "name": "Facteurs humains", "order": 10 },
+    { "slug": "radio-communications", "name": "Radio et communications", "order": 11 },
+    { "slug": "anglais-aeronautique", "name": "Anglais aéronautique", "order": 12 },
+    { "slug": "performances", "name": "Performances aéronautiques", "order": 13 },
+    { "slug": "histoire", "name": "Histoire de l'aviation", "order": 14 },
+    { "slug": "culture-aeronautique", "name": "Culture aéronautique", "order": 15 },
+    { "slug": "dictionnaire", "name": "Dictionnaire aéronautique", "order": 16 }
+  ],
+  "psychotechnique": [
+    { "slug": "methodologie", "name": "Méthodologie", "order": 1 },
+    { "slug": "epreuves", "name": "Épreuves par concours", "order": 2 },
+    { "slug": "exercices", "name": "Exercices d'entraînement", "order": 3 }
+  ]
+}

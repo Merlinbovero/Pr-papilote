@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.facteurs-humains.rex-05
+kind: vrai-faux
+theme: retour-d-experience
+statement: >-
+  Un accident aérien a généralement une cause unique qu'il suffit d'identifier.
+answer: false
+explanation: >-
+  Faux. Les rapports retiennent presque toujours une combinaison de facteurs
+  humains et organisationnels — une chaîne de petites déviations, anodines une
+  à une, qui s'additionnent jusqu'à l'accident.
+evaluates: [fondamentaux.facteurs-humains.le-retour-d-experience]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

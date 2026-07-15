@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.psychotechnique.calcul-03
+kind: calcul
+theme: calcul-mental
+statement: >-
+  Un avion vole à 420 kt. Combien de minutes lui faut-il pour parcourir 35 NM ?
+answerValue: 5
+tolerance: 0
+unit: "min"
+explanation: >-
+  420 kt = 420 ÷ 60 = 7 NM par minute. Il faut donc 35 ÷ 7 = 5 minutes.
+  Le réflexe : toujours convertir la vitesse en unités par minute.
+evaluates: [psychotechnique.exercices.le-calcul-mental]
+difficulty: 2
+competencies: [calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

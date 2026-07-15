@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.gascogne-04
+kind: qcm
+theme: unites-aae
+statement: >-
+  Comment s'appellent les grands exercices d'évaluation de la dissuasion aéroportée ?
+choices:
+  - Les exercices « Poker »
+  - Les exercices « Belote »
+  - Les opérations « Harmattan »
+  - Les campagnes « Daguet »
+correctChoices: [0]
+explanation: >-
+  Les exercices « Poker » évaluent régulièrement, au niveau national, la
+  capacité des FAS à exécuter le raid nucléaire — vols de longue durée,
+  ravitaillements multiples, pénétration des défenses.
+evaluates: [eopn.unites.escadron-1-4-gascogne]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

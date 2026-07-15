@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.instruments.alt-02
+kind: qcm
+theme: altimetre
+statement: >-
+  Quel est le capteur au cœur de l'altimètre ?
+choices:
+  - "Une capsule anéroïde"
+  - "Un thermomètre"
+  - "Un gyroscope"
+  - "Un tube de Pitot"
+correctChoices: [0]
+explanation: >-
+  Une capsule anéroïde — capsule métallique scellée, presque vide d'air — se
+  dilate ou se contracte selon la pression, et ses déformations entraînent les aiguilles.
+evaluates: [fondamentaux.instruments.altimetre]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

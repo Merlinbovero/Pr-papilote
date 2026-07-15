@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.meteorologie.vent-05
+kind: vrai-faux
+theme: le-vent
+statement: >-
+  Un vent de travers fait dériver l'avion, dont la route s'écarte de son cap.
+answer: true
+explanation: >-
+  Le vent de travers pousse l'avion sur le côté : sa route (par rapport au sol)
+  s'écarte de son cap. L'angle entre le cap et la route est la dérive.
+evaluates: [fondamentaux.meteorologie.le-vent]
+difficulty: 3
+competencies: [meteorologie, navigation]
+concours: [eopan, eopn, alat]
+status: publie

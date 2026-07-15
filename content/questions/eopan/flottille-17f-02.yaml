@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-17f-02
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle place historique la flottille 17F occupe-t-elle dans l'aéronautique navale ?
+choices:
+  - Dernière unité française sur Super-Étendard modernisé avant le Rafale
+  - Première unité au monde sur Rafale
+  - Première flottille de guet aérien
+  - Première flottille d'hélicoptères embarqués
+correctChoices: [0]
+explanation: >-
+  La 17F fut la dernière unité française à mettre en œuvre le Super-Étendard
+  modernisé, avant de passer au Rafale M en 2016 — refermant l'ère du
+  Super-Étendard dans l'aéronavale.
+evaluates: [eopan.unites.flottille-17f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

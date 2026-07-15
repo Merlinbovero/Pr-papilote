@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.mrtt-02
+kind: qcm
+theme: appareils-aae
+statement: >-
+  Où sont basés les A330 MRTT Phénix français ?
+choices:
+  - "BA 125 Istres (31e escadre)"
+  - "BA 113 Saint-Dizier"
+  - "BA 709 Cognac"
+  - "BA 118 Mont-de-Marsan"
+correctChoices: [0]
+explanation: >-
+  Toute la flotte Phénix est mise en œuvre par la 31e escadre de
+  ravitaillement et de transport stratégiques, à Istres — l'une des trois
+  bases à vocation nucléaire.
+evaluates: [eopn.appareils.mrtt-phenix]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

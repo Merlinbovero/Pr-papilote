@@ -1,0 +1,130 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.la-phraseologie-anglaise
+type: concept
+title: La phraséologie anglaise
+slug: la-phraseologie-anglaise
+summary: >-
+  TREE, FIFE, NINer — l'anglais de la radio a sa prononciation, ses clairances
+  et ses mots interdits. Les nombres OACI, les clairances essentielles
+  (cleared for takeoff, line up and wait, go around) et le collationnement en
+  anglais.
+objectifs:
+  - Prononcer les chiffres et nombres selon la convention OACI (TREE, FOWer, FIFE, NINer).
+  - Comprendre les clairances anglaises essentielles (roulage, décollage, atterrissage, remise de gaz).
+  - Collationner correctement en anglais (read-back des éléments critiques).
+aliases: [phraséologie anglaise, cleared for takeoff, go around, line up and wait, NINer]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — phraséologie anglaise (lot N11, phase P1 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Guide de phraséologie du SIA (bilingue français-anglais, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+    - fondamentaux.radio-communications.alphabet-oaci
+  related:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+    - fondamentaux.anglais-aeronautique.les-verbes-du-vol
+content:
+  essentiel:
+    body: |
+      La phraséologie française a son double **anglais** — la langue de la
+      radio internationale. Trois blocs à maîtriser :
+
+      **Les nombres OACI** — certains chiffres se prononcent de façon
+      modifiée pour percer les brouillages :
+
+      | Chiffre | Prononciation |
+      | --- | --- |
+      | 3 | **TREE** |
+      | 4 | **FOW-er** |
+      | 5 | **FIFE** |
+      | 9 | **NIN-er** |
+      | 1 000 | **TOU-sand** |
+      | virgule | **DAY-SEE-MAL** (decimal) |
+
+      **Les clairances clés** — *cleared for takeoff* (autorisé décollage),
+      *cleared to land* (autorisé atterrissage), *line up and wait*
+      (alignez-vous et attendez), *hold short* (maintenez avant), *go
+      around* (remettez les gaz).
+
+      **Le collationnement** (*read back*) fonctionne comme en français :
+      les éléments critiques — piste, QNH, cap, niveau, fréquence — se
+      **répètent** systématiquement.
+    aRetenir:
+      - "Prononciation OACI — 3 = TREE, 4 = FOWer, 5 = FIFE, 9 = NINer ; les nombres s'énoncent chiffre par chiffre."
+      - "Clairances clés — cleared for takeoff / cleared to land / line up and wait / hold short / go around."
+      - Read back — on collationne en anglais les mêmes éléments critiques qu'en français.
+      - "« Takeoff » ne s'emploie que dans la clairance de décollage — sinon on dit « departure »."
+  sections:
+    - id: les-nombres-a-la-radio
+      title: Les nombres à la radio
+      body: |
+        Les nombres s'énoncent **chiffre par chiffre** : le cap 340 se dit
+        *heading TREE FOWer ZE-RO*, la fréquence 118,2 *ONE ONE EIGHT
+        DAY-SEE-MAL TWO*. Les altitudes et niveaux utilisent *TOUsand* et
+        *HUN-dred* : 2 500 ft = *TWO TOUsand FIFE HUNdred feet*.
+
+        Pourquoi ces déformations ? Parce que *three* et *tree* se
+        distinguent mal dans le souffle radio, que *five* peut se confondre
+        avec *fire*, et que *nine* ressemble au *nein* allemand — l'OACI a
+        donc **durci** la prononciation de chaque chiffre ambigu.
+    - id: les-clairances-du-vol
+      title: Les clairances d'un vol type
+      body: |
+        Du parking à l'arrêt moteur, les clairances anglaises d'un tour de
+        piste type :
+
+        | Phase | Clairance | Sens |
+        | --- | --- | --- |
+        | Roulage | *taxi to holding point runway 22* | roulez au point d'attente |
+        | Attente | *hold short of runway 22* | maintenez avant la piste |
+        | Alignement | *line up and wait runway 22* | alignez-vous et attendez |
+        | Décollage | *cleared for takeoff runway 22* | autorisé décollage |
+        | Approche | *report final runway 22* | rappelez en finale |
+        | Atterrissage | *cleared to land runway 22* | autorisé atterrissage |
+        | Remise de gaz | *go around* | remettez les gaz |
+        | Dégagement | *vacate runway* | dégagez la piste |
+
+        Règle célèbre : le mot **takeoff** n'est prononcé que dans la
+        clairance elle-même — partout ailleurs on dit **departure** — un
+        garde-fou né de l'accident de Tenerife (1977).
+    - id: read-back-et-urgences
+      title: Read back et urgences
+      strate: maitriser
+      body: |
+        Le **read back** anglais reprend les éléments critiques et se
+        termine par l'indicatif : *« Cleared to land runway 22, F-BC »*.
+        Les mots normalisés vus côté français gardent leur forme anglaise :
+        *affirm*, *negative*, *roger*, *wilco*, *standby*, *say again*
+        (répétez), *correction*.
+
+        Les urgences sont identiques à l'international : **MAYDAY** (× 3)
+        pour la détresse, **PAN PAN** (× 3) pour l'urgence — suivis, en
+        anglais, de l'indicatif, de la nature du problème, des intentions
+        et de la position. S'entraîner à formuler un MAYDAY en anglais est
+        un excellent exercice de synthèse — et un classique des évaluations
+        orales.
+  pieges:
+    - "« Takeoff » ne s'emploie que dans la clairance de décollage — ailleurs, « departure » (héritage de Tenerife, 1977)."
+    - "« Line up and wait » = s'aligner SANS décoller — la confondre avec la clairance de décollage est l'erreur la plus dangereuse."
+    - Les chiffres gardent leur prononciation OACI même dans les mots composés — piste 29 = « runway TWO NINer ».
+    - "« Go around » est un ordre immédiat — remettre les gaz d'abord, collationner ensuite."

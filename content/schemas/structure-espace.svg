@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .ground { stroke: currentColor; fill: none; stroke-width: 2; }
+    .ctrl { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+    .upper { stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .zone { stroke: #94a3b8; fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 11px; }
+  </style>
+  <text class="title" x="230" y="24" text-anchor="middle">La structure de l'espace aérien</text>
+  <!-- Espace supérieur -->
+  <rect class="upper" x="40" y="44" width="380" height="34" rx="3" />
+  <text class="sub" x="230" y="66" text-anchor="middle">espace supérieur (souvent classe A)</text>
+  <!-- TMA -->
+  <rect class="ctrl" x="120" y="92" width="240" height="52" rx="3" />
+  <text class="accent-t" x="240" y="122" text-anchor="middle">TMA (région terminale)</text>
+  <!-- CTR -->
+  <rect class="ctrl" x="180" y="150" width="110" height="78" rx="3" />
+  <text class="accent-t" x="235" y="196" text-anchor="middle">CTR</text>
+  <text class="sub" x="235" y="210" text-anchor="middle">(zone de contrôle)</text>
+  <!-- Zone P/R/D -->
+  <rect class="zone" x="356" y="150" width="80" height="78" rx="3" />
+  <line class="zone" x1="360" y1="200" x2="380" y2="180" />
+  <line class="zone" x1="380" y1="222" x2="412" y2="190" />
+  <text class="sub" x="396" y="196" text-anchor="middle">zone</text>
+  <text class="sub" x="396" y="210" text-anchor="middle">P / R / D</text>
+  <!-- Sol + aérodrome -->
+  <line class="ground" x1="20" y1="228" x2="440" y2="228" />
+  <line class="ground" x1="200" y1="228" x2="270" y2="228" stroke-width="4" />
+  <text class="sub" x="235" y="246" text-anchor="middle">aérodrome</text>
+</svg>

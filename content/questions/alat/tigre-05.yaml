@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.tigre-05
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Quel armement principal équipe le Tigre ?
+choices:
+  - Un canon de 30 mm, des roquettes et des missiles (antichar et air-air)
+  - Une seule mitrailleuse légère
+  - Des torpilles anti-sous-marines
+  - Aucun armement, c'est un observateur
+correctChoices: [0]
+explanation: >-
+  Le Tigre est armé d'un canon de 30 mm, de roquettes, de missiles antichar
+  (Hellfire) et de missiles air-air (Mistral) — de quoi traiter du véhicule au
+  char.
+evaluates: [alat.appareils.tigre]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

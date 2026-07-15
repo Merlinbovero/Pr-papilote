@@ -1,0 +1,130 @@
+schemaVersion: 1
+id: eopan.ban.landivisiau
+type: ban
+title: BAN de Landivisiau
+slug: landivisiau
+summary: >-
+  Base d'aéronautique navale du Finistère, surnommée le « porte-avions de
+  granit » : seule base de chasse embarquée d'Europe, elle abrite et prépare
+  toutes les flottilles de Rafale Marine avant leur déploiement sur le
+  Charles de Gaulle.
+objectifs:
+  - Identifier la BAN de Landivisiau comme la base à terre de la chasse embarquée de l'aéronautique navale.
+  - Expliquer son surnom de « porte-avions de granit » et son rôle de préparation avant le déploiement en mer.
+  - Situer les flottilles de Rafale Marine (11F, 12F, 17F) qui y sont stationnées.
+aliases: [Landivisiau, BAN Landivisiau, porte-avions de granit, LFRJ]
+module: eopan
+category: ban
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet BAN, la base d'aéronautique navale de Landivisiau (chasse embarquée).
+    author: prepapilote
+sources:
+  - title: "Base d'aéronautique navale de Landivisiau — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_d'a%C3%A9ronautique_navale_de_Landivisiau
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "La BAN de Landivisiau fête ses 60 ans — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/actualites/base-daeronautique-navale-landivisiau-fete-ses-60-ans
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.rafale-m
+    - eopan.bases.charles-de-gaulle
+    - eopan.presentation.le-concours-eopan
+infobox:
+  nomComplet: Base d'aéronautique navale de Landivisiau
+  code: LFRJ
+  localisation: Landivisiau (Finistère)
+  rattachement: Aéronautique navale (Marine nationale)
+  flottilles: [Flottille 11F, Flottille 12F, Flottille 17F]
+  appareilsPresents: [Rafale M, Falcon 10 Mer]
+content:
+  essentiel:
+    body: |
+      La **base d'aéronautique navale (BAN) de Landivisiau**, dans le
+      **Finistère**, est la **maison à terre** de la **chasse embarquée**
+      française. C'est ici que vivent, s'entraînent et se préparent toutes les
+      flottilles de **Rafale Marine** entre leurs déploiements en mer.
+
+      Inaugurée le **1er février 1965**, elle a la particularité d'être la
+      **seule base de chasse embarquée d'Europe**. D'où son surnom : le
+      **« porte-avions de granit »** — un porte-avions qui ne bouge pas, mais
+      qui forme et entretient ceux qui iront naviguer.
+
+      Trois flottilles de chasse y sont stationnées — la **11F**, la **12F** et
+      la **17F** — toutes sur **Rafale M**. Leur cycle de vie alterne entre
+      l'**entraînement à terre**, à Landivisiau, et les **déploiements** à bord
+      du porte-avions **Charles de Gaulle**.
+    aRetenir:
+      - La BAN de Landivisiau (Finistère) est la base à terre de toute la chasse embarquée française.
+      - Inaugurée en 1965, c'est la seule base de chasse embarquée d'Europe — surnommée le « porte-avions de granit ».
+      - Elle abrite les trois flottilles de Rafale M — 11F, 12F et 17F.
+      - Les flottilles y préparent leurs déploiements avant d'embarquer sur le Charles de Gaulle.
+  sections:
+    - id: le-porte-avions-de-granit
+      title: Le « porte-avions de granit »
+      body: |
+        Un porte-avions ne peut pas tout faire : à bord, la place est comptée et
+        le temps en mer est précieux. Il faut donc une **base à terre** où les
+        pilotes et les mécaniciens **s'entraînent**, où les avions sont
+        **entretenus** et **réparés**, et où les jeunes équipages sont
+        **formés** avant d'être lâchés sur le pont d'envol.
+
+        C'est le rôle de Landivisiau. Toute la **chasse embarquée** y est
+        préparée en permanence, afin d'être **opérationnelle** dès qu'elle
+        embarque sur le **Charles de Gaulle**. Comme un porte-avions immobile
+        planté dans le granit breton, la base **arme** la force aérienne
+        navale — d'où son surnom.
+      figures:
+        - schemaId: ban-porte-avions-granit
+          alt: À gauche, la base à terre de Landivisiau avec un Rafale ; à droite, le porte-avions en mer ; deux flèches montrent le cycle embarquement puis retour pour l'entraînement.
+          caption: Les flottilles alternent entraînement à terre à Landivisiau et déploiements en mer sur le Charles de Gaulle.
+          width: 460
+          height: 260
+    - id: les-flottilles-de-chasse
+      title: Les flottilles de chasse
+      body: |
+        Landivisiau abrite les **trois flottilles de chasse** de l'aéronautique
+        navale, toutes équipées de **Rafale Marine** :
+
+        - la **11F**, la **plus ancienne** flottille de chasse embarquée ;
+        - la **12F** ;
+        - la **17F**.
+
+        Chaque flottille regroupe de l'ordre de **170 personnes**, dont une
+        **vingtaine de pilotes**. Selon un principe de **rotation**, une partie
+        des flottilles est engagée sur le porte-avions pendant qu'une autre
+        assure à terre l'**entraînement** et la **transformation** des jeunes
+        pilotes sur Rafale M.
+
+        La base accueille aussi l'**escadrille 57S**, sur **Falcon 10 Mer**,
+        utilisée notamment pour des missions de servitude et d'entraînement.
+    - id: une-base-chargee-d-histoire
+      title: Une base chargée d'histoire
+      strate: maitriser
+      body: |
+        Depuis son inauguration en **1965**, Landivisiau a vu défiler des
+        générations d'avions de combat embarqués : **Étendard IV**, **F-8
+        Crusader**, **Super-Étendard** puis **Super-Étendard Modernisé**, avant
+        l'arrivée du **Rafale Marine**, aujourd'hui l'unique chasseur de
+        l'aéronavale.
+
+        Étendue sur plusieurs communes du Finistère, à une trentaine de
+        kilomètres de **Brest**, la base est un **pôle** majeur pour la région
+        et pour la Marine. En soixante ans, elle est restée le **cœur à terre**
+        de la chasse embarquée française — un rôle unique en Europe.
+  pieges:
+    - Landivisiau est une base à terre, pas un navire — le « porte-avions de granit » est une image, la base ne navigue pas.
+    - C'est la seule base de chasse embarquée d'Europe — une singularité française à connaître.
+    - Les flottilles de Rafale M sont basées à Landivisiau et embarquent sur le Charles de Gaulle lors des déploiements — elles ne sont pas affectées en permanence à bord.

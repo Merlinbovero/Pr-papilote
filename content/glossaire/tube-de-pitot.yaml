@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.tube-de-pitot
+title: Tube de Pitot
+definition: >-
+  Sonde captant la pression totale de l'air (pression statique + pression
+  dynamique) face au vent relatif. Associée à la prise statique, elle alimente la
+  chaîne anémobarométrique (anémomètre, altimètre, variomètre). Elle est chauffée
+  contre le givrage.
+english: Pitot tube
+synonyms: [Pitot]
+ficheId: fondamentaux.instruments.chaine-pitot-statique
+tags: []
+status: publie

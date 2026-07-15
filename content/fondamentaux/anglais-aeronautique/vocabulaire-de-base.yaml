@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.vocabulaire-de-base
+type: concept
+title: Le vocabulaire de base du vol
+slug: vocabulaire-de-base
+summary: >-
+  L'anglais est la langue internationale de l'aviation (OACI, niveau 4 minimum
+  requis). Il faut connaître un vocabulaire de base (phases du vol, parties de
+  l'avion) et une phraséologie standard — Affirm, Negative, Roger, Wilco, Standby.
+objectifs:
+  - Expliquer pourquoi l'anglais est la langue internationale de l'aviation (OACI, niveau 4 minimum).
+  - Connaître le vocabulaire de base (phases du vol, parties de l'avion, instructions courantes).
+  - Employer la phraséologie standard (Affirm, Negative, Roger, Wilco, Standby).
+aliases: [anglais aéronautique, vocabulaire, phraséologie, Roger, Wilco, Affirm, Negative, runway]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — trente-troisième fiche du socle, le vocabulaire de base du vol (bloc anglais aéronautique).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Lexique anglais-français du contrôle de la circulation aérienne"
+    url: https://www.aero-hesbaye.be/pdf_doc/lexique_FR-UK.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  related:
+    - fondamentaux.radio-communications.alphabet-oaci
+content:
+  essentiel:
+    body: |
+      L'**anglais** est la **langue internationale** de l'aviation : l'OACI l'a
+      adopté pour que pilotes et contrôleurs du monde entier se **comprennent**.
+      Depuis 2008, un **niveau minimal** d'anglais (niveau **4** sur l'échelle
+      OACI) est exigé pour voler à l'international.
+
+      Il faut donc connaître un **vocabulaire de base** : les **phases** du vol
+      (*takeoff*, *landing*…), les **parties** de l'avion (*wing*, *landing
+      gear*…) et les **instructions** courantes.
+
+      La radio suit en plus une **phraséologie** stricte, avec des mots
+      normalisés : *Affirm* (oui), *Negative* (non), *Roger* (bien reçu), *Wilco*
+      (je m'exécute), *Standby* (attendez). Les mots du quotidien comme « yes »,
+      « no » ou « OK » y sont **proscrits**.
+    aRetenir:
+      - L'anglais est la langue internationale de l'aviation (OACI) ; un niveau 4 minimum est requis pour voler à l'international.
+      - Le vocabulaire de base couvre les phases du vol, les parties de l'avion et les instructions courantes.
+      - La phraséologie standard remplace le langage courant — Affirm (oui), Negative (non), Roger (reçu), Wilco (je m'exécute), Standby (attendez).
+      - « Yes », « no » et « OK » sont proscrits à la radio, car trop ambigus.
+  sections:
+    - id: pourquoi-l-anglais
+      title: Pourquoi l'anglais
+      body: |
+        Un pilote français peut se poser à Francfort, un pilote japonais à
+        Paris : pour que tous se comprennent, l'aviation a besoin d'une **langue
+        commune**. C'est le rôle de l'**anglais**, adopté par l'**OACI** comme
+        langue internationale de l'aviation.
+
+        Depuis 2008, la sécurité impose un **niveau de compétence** minimal : le
+        **niveau 4** sur l'échelle OACI (graduée de 1 à 6) est requis pour les
+        communications radio en vol international. L'anglais aéronautique n'est
+        donc pas un « plus », c'est une **exigence** réglementaire.
+
+        Bonne nouvelle : il s'agit d'un anglais **limité** et **codifié**, centré
+        sur le vol — pas d'une maîtrise littéraire.
+    - id: le-vocabulaire-essentiel
+      title: Le vocabulaire essentiel
+      body: |
+        Quelques mots reviennent sans cesse — les **phases du vol** et les
+        **parties de l'avion** d'abord.
+
+        | Anglais | Français | Anglais | Français |
+        | --- | --- | --- | --- |
+        | runway | piste | wing | aile |
+        | taxiway | voie de circulation | fuselage | fuselage |
+        | takeoff | décollage | tail / fin | empennage |
+        | landing | atterrissage | landing gear | train d'atterrissage |
+        | climb | montée | flaps | volets |
+        | descent | descente | cockpit | poste de pilotage |
+        | heading | cap | propeller | hélice |
+        | altitude / level | altitude / niveau | airspeed | vitesse |
+
+        Un schéma vaut mieux qu'une liste — voici l'avion et ses parties.
+      figures:
+        - schemaId: avion-anglais
+          alt: Un avion de profil dont les parties sont légendées en anglais et en français (cockpit, wing, tail, landing gear, propeller).
+          caption: Les principales parties de l'avion, en anglais et en français.
+          width: 460
+          height: 260
+    - id: la-phraseologie-standard
+      title: La phraséologie standard
+      strate: maitriser
+      body: |
+        À la radio, on n'emploie **pas l'anglais courant** mais une
+        **phraséologie** normalisée, brève et sans ambiguïté. Quelques mots-clés.
+
+        | Terme | Sens |
+        | --- | --- |
+        | Affirm | oui |
+        | Negative | non |
+        | Roger | bien reçu (message compris) |
+        | Wilco | *will comply* — je m'exécute |
+        | Standby | attendez |
+        | Say again | répétez |
+        | Read back | collationnez (répétez pour confirmation) |
+
+        Des instructions types complètent le tout : *cleared for takeoff*
+        (autorisé au décollage), *taxi to…* (roulez vers…), *go around* (remise
+        de gaz). Les mots « yes », « no » et « OK » sont **bannis** — trop
+        ambigus à la radio.
+  pieges:
+    - À la radio, on dit « Affirm » et « Negative », jamais « yes » ou « no ».
+    - « Roger » signifie « bien reçu », pas « oui » — pour dire qu'on va exécuter, on dit « Wilco ».
+    - Le niveau d'anglais OACI 4 est un minimum réglementaire pour le vol international, pas une simple recommandation.

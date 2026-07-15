@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.cougar-02
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Combien d'hommes équipés un Cougar peut-il transporter ?
+choices:
+  - Jusqu'à 25
+  - 4 ou 5
+  - Une centaine
+  - Aucun — c'est un hélicoptère d'attaque
+correctChoices: [0]
+explanation: >-
+  Le Cougar transporte jusqu'à 25 hommes équipés — ou 6 blessés couchés avec
+  leurs soignants en évacuation sanitaire. C'est le transport tactique lourd
+  de l'ALAT.
+evaluates: [alat.appareils.cougar]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

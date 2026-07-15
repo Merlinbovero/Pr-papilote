@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.alat.4e-rhfs-02
+kind: ordre
+theme: regiments-alat
+statement: >-
+  Remettez dans l'ordre chronologique les étapes de la filiation du 4e RHFS.
+items:
+  - "Création de l'escadrille des opérations spéciales (EOS) à Pau"
+  - "Création du détachement ALAT des opérations spéciales (DAOS)"
+  - "Transformation du DAOS en 4e RHFS"
+explanation: >-
+  EOS (1993) → DAOS (1er juillet 1997) → 4e RHFS (1er août 2009). Cette montée
+  en puissance suit celle du COS, créé après la guerre du Golfe.
+evaluates: [alat.unites.4e-rhfs]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

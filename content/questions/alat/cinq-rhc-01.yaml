@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.cinq-rhc-01
+kind: qcm
+theme: unites-alat
+statement: >-
+  Dans l'Armée de terre, comment s'appelle l'unité de base de l'ALAT ?
+choices:
+  - Le régiment (régiment d'hélicoptères de combat)
+  - La flottille
+  - L'escadron
+  - La compagnie de chars
+correctChoices: [0]
+explanation: >-
+  L'unité de l'ALAT est le régiment — le régiment d'hélicoptères de combat (RHC)
+  — équivalent de la flottille dans la Marine et de l'escadron dans l'armée de
+  l'air.
+evaluates: [alat.unites.5e-rhc]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

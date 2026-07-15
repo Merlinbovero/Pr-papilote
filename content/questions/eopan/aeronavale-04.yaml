@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.aeronavale-04
+kind: qcm
+theme: organisation-aeronavale
+statement: >-
+  Comment s'articulent appareil, flottille et BAN ?
+choices:
+  - L'appareil est la machine, la flottille l'unité qui met en œuvre, la BAN la base à terre
+  - Ce sont trois mots pour désigner la même chose
+  - L'appareil est la base, la flottille le pilote, la BAN l'avion
+  - La flottille est un navire, la BAN un grade
+correctChoices: [0]
+explanation: >-
+  Trois notions distinctes : l'appareil est la machine (un Rafale M), la
+  flottille est l'unité qui le met en œuvre (la 11F), et la BAN est la base à
+  terre où elle stationne. Une flottille est dotée d'un appareil et affectée à
+  une base.
+evaluates: [eopan.organisation.aeronautique-navale]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

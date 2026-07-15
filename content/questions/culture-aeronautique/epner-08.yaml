@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.epner-08
+kind: qcm
+theme: essais-en-vol
+statement: >-
+  Combien de temps dure la formation principale de l'EPNER aux essais
+  expérimentaux ?
+choices:
+  - "Un an"
+  - "Trois mois"
+  - "Cinq ans"
+  - "Six semaines"
+correctChoices: [0]
+explanation: >-
+  La formation d'un an aux essais expérimentaux est le cursus phare de
+  l'école ; des stages plus courts couvrent les essais non expérimentaux.
+evaluates: [fondamentaux.culture-aeronautique.l-epner]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

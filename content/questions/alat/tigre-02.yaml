@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.alat.tigre-02
+kind: qcm
+theme: appareils-alat
+statement: >-
+  Combien de membres composent l'équipage d'un Tigre ?
+choices:
+  - Deux — un pilote et un chef de bord
+  - Un seul pilote
+  - Quatre
+  - Aucun, il est télépiloté
+correctChoices: [0]
+explanation: >-
+  Le Tigre est biplace : le pilote conduit la machine au ras du sol, le chef de
+  bord exploite les capteurs et met en œuvre l'armement.
+evaluates: [alat.appareils.tigre]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

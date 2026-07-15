@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .val { font-size: 13px; font-weight: 700; }
+    .sub { font-size: 10px; fill: #94a3b8; }
+    .lintel { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .col { stroke: currentColor; fill: none; stroke-width: 1.6; }
+    .acc { fill: #3b82f6; font-weight: 600; }
+  </style>
+  <text class="title" x="230" y="26" text-anchor="middle">La devise de la Marine</text>
+  <!-- Linteau -->
+  <rect class="lintel" x="40" y="52" width="380" height="30" rx="3" />
+  <text class="val" x="230" y="72" text-anchor="middle">Marin d'État</text>
+  <!-- 4 colonnes -->
+  <g>
+    <rect class="col" x="58" y="92" width="70" height="150" rx="3" />
+    <text class="val" x="93" y="130" text-anchor="middle">Honneur</text>
+    <text class="sub" x="93" y="150" text-anchor="middle">courage,</text>
+    <text class="sub" x="93" y="163" text-anchor="middle">dignité,</text>
+    <text class="sub" x="93" y="176" text-anchor="middle">loyauté</text>
+  </g>
+  <g>
+    <rect class="col" x="150" y="92" width="70" height="150" rx="3" />
+    <text class="val" x="185" y="130" text-anchor="middle">Patrie</text>
+    <text class="sub" x="185" y="150" text-anchor="middle">servir</text>
+    <text class="sub" x="185" y="163" text-anchor="middle">la nation</text>
+  </g>
+  <g>
+    <rect class="col" x="242" y="92" width="70" height="150" rx="3" />
+    <text class="val" x="277" y="130" text-anchor="middle">Valeur</text>
+    <text class="sub" x="277" y="150" text-anchor="middle">qualités +</text>
+    <text class="sub" x="277" y="163" text-anchor="middle">aptitudes</text>
+    <text class="sub" x="277" y="176" text-anchor="middle">pro</text>
+  </g>
+  <g>
+    <rect class="col" x="334" y="92" width="70" height="150" rx="3" />
+    <text class="val" x="369" y="130" text-anchor="middle">Discipline</text>
+    <text class="sub" x="369" y="150" text-anchor="middle">règles</text>
+    <text class="sub" x="369" y="163" text-anchor="middle">librement</text>
+    <text class="sub" x="369" y="176" text-anchor="middle">acceptées</text>
+  </g>
+  <!-- Sol -->
+  <line class="lintel" x1="40" y1="242" x2="420" y2="242" />
+  <text class="sub" x="230" y="262" text-anchor="middle">Quatre valeurs qui portent l'engagement du marin.</text>
+</svg>

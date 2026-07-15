@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.portance-04
+kind: qcm
+theme: portance
+statement: >-
+  Parmi ces éléments, lequel ne fait PAS varier la portance ?
+choices:
+  - "La couleur de l'aile"
+  - "La vitesse"
+  - "L'angle d'incidence"
+  - "La densité de l'air"
+correctChoices: [0]
+explanation: >-
+  La portance dépend de la vitesse, de l'angle d'incidence, de la surface et de
+  la densité de l'air — jamais de la couleur de l'aile.
+evaluates: [fondamentaux.aerodynamique.portance]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

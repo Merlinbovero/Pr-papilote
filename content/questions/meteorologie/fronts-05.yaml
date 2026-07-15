@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.fronts-05
+kind: qcm
+theme: fronts
+statement: >-
+  Qu'est-ce qui définit une masse d'air dite « polaire maritime » ?
+choices:
+  - "Un air froid et humide, venu des océans des hautes latitudes"
+  - "Un air froid et sec, venu des continents"
+  - "Un air chaud et humide, venu des tropiques"
+  - "Un air chaud et sec, venu du Sahara"
+correctChoices: [0]
+explanation: >-
+  Une masse d'air hérite de sa région d'origine — polaire (froide) ou
+  tropicale (chaude), maritime (humide) ou continentale (sèche). Polaire
+  maritime = froid + humide, le grand classique de l'Atlantique nord.
+evaluates: [fondamentaux.meteorologie.masses-d-air-et-fronts]
+difficulty: 2
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

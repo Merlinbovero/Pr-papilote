@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.instruments-lecture-04
+kind: ordre
+theme: lecture-instruments
+statement: >-
+  Remettez dans l'ordre le balayage efficace d'un tableau de bord pour
+  décrire la situation de l'avion.
+items:
+  - "Horizon artificiel (attitude générale)"
+  - "Variomètre (tendance verticale)"
+  - "Altimètre et anémomètre (valeurs chiffrées)"
+  - "Cap (lecture la plus lente)"
+explanation: >-
+  L'horizon résume la moitié de la situation, le variomètre confirme la
+  tendance, puis viennent les chiffres et enfin le cap — c'est le circuit
+  visuel enseigné aux élèves pilotes.
+evaluates: [psychotechnique.exercices.la-lecture-d-instruments]
+difficulty: 2
+competencies: [connaissances-aeronautiques, attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

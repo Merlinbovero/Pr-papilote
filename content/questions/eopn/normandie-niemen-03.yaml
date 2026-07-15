@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.normandie-niemen-03
+kind: qcm
+theme: unites-aae
+statement: >-
+  Sur quel appareil vole aujourd'hui l'escadron Normandie-Niémen ?
+choices:
+  - Le Rafale
+  - Le Mirage 2000
+  - Le Yak-3
+  - Le Super-Étendard
+correctChoices: [0]
+explanation: >-
+  Depuis 2011, le Normandie-Niémen vole sur Rafale (B et C), à la base aérienne
+  118 de Mont-de-Marsan. Le Yak-3 appartient à son histoire (Seconde Guerre
+  mondiale).
+evaluates: [eopn.unites.normandie-niemen]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

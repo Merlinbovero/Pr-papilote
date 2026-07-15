@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.profil-05
+kind: vrai-faux
+theme: profil-aile
+statement: >-
+  Un profil symétrique a une cambrure nulle, sa ligne moyenne se confondant avec la corde.
+answer: true
+explanation: >-
+  Un profil symétrique a un extrados et un intrados identiques : sa cambrure est
+  nulle et sa ligne moyenne se confond avec la corde.
+evaluates: [fondamentaux.aerodynamique.profil-d-aile]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

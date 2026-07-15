@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.lanveoc-04
+kind: qcm
+theme: bases-navales
+statement: >-
+  Sur quelle presqu'île se trouve la BAN de Lanvéoc-Poulmic ?
+choices:
+  - La presqu'île de Crozon (Finistère)
+  - La presqu'île de Quiberon (Morbihan)
+  - La presqu'île de Giens (Var)
+  - La presqu'île du Cotentin (Manche)
+correctChoices: [0]
+explanation: >-
+  Lanvéoc-Poulmic est située sur la presqu'île de Crozon, dans le Finistère,
+  face à la rade de Brest.
+evaluates: [eopan.ban.lanveoc-poulmic]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

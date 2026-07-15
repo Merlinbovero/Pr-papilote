@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.propulsion-03
+kind: association
+theme: propulsion
+statement: >-
+  Associez chaque appareil à sa famille de propulsion.
+pairs:
+  - left: "Cap 10"
+    right: "Moteur à piston"
+  - left: "PC-21"
+    right: "Turbopropulseur"
+  - left: "Rafale"
+    right: "Turboréacteur"
+explanation: >-
+  Le piston règne sur l'aviation légère, le turbopropulseur sur les vitesses
+  moyennes (école, patrouille maritime, transport), le réacteur sur le combat.
+evaluates: [fondamentaux.mecanique-du-vol.la-propulsion]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

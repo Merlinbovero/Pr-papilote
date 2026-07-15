@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.culture-aeronautique.ecoles-08
+kind: qcm
+theme: grandes-ecoles
+statement: >-
+  Qui a fondé la première école d'ingénieurs aéronautiques au monde, à
+  Paris en 1909 ?
+choices:
+  - "Le colonel Roche"
+  - "Clément Ader"
+  - "Marcel Dassault"
+  - "Paul Painlevé"
+correctChoices: [0]
+explanation: >-
+  Le colonel Roche, officier du génie polytechnicien, crée l'École
+  supérieure d'aéronautique en 1909 — Painlevé y enseignait la mécanique du
+  vol. Roche remettra son école à l'État en 1930.
+evaluates: [fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

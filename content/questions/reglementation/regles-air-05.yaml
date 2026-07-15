@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.reglementation.regles-air-05
+kind: vrai-faux
+theme: regles-de-l-air
+statement: >-
+  Un avion a priorité sur un planeur en cas de routes convergentes.
+answer: false
+explanation: >-
+  Faux. Les moins manœuvrants ont priorité : ballons, puis planeurs, puis
+  dirigeables, puis avions. Un avion s'écarte donc d'un planeur.
+evaluates: [fondamentaux.reglementation.les-regles-de-l-air]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

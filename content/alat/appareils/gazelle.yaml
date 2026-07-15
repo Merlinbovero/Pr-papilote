@@ -1,0 +1,115 @@
+schemaVersion: 1
+id: alat.appareils.gazelle
+type: helicoptere
+title: L'hélicoptère Gazelle
+slug: gazelle
+summary: >-
+  Hélicoptère léger et agile de l'ALAT, reconnaissable à son fenestron. Employé
+  en reconnaissance, appui léger et lutte antichar, il rend de longs services
+  depuis les années 1970 et cède peu à peu la place aux appareils plus récents.
+objectifs:
+  - Identifier la Gazelle comme l'hélicoptère léger de reconnaissance et d'appui de l'ALAT.
+  - Décrire son fenestron (rotor anticouple caréné) et ses versions armées (canon, HOT, Mistral).
+  - Situer la Gazelle dans le temps (service depuis 1973, retrait progressif).
+aliases: [Gazelle, SA 342, SA 341, fenestron]
+module: alat
+category: appareils
+subcategory: helicopteres-legers
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet hélicoptère, la Gazelle (reconnaissance/appui léger ALAT).
+    author: prepapilote
+sources:
+  - title: "Aérospatiale Gazelle — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9rospatiale_Gazelle
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Aviation légère de l'Armée de terre — Ministère des Armées"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.unites.5e-rhc
+  related:
+    - alat.appareils.tigre
+    - alat.presentation.devenir-pilote-alat
+infobox:
+  constructeur: Aérospatiale (Airbus Helicopters)
+  role: Hélicoptère léger (reconnaissance, appui, antichar)
+  armees: [Armée de terre]
+  miseEnService: 1973
+  statut: En service (retrait progressif)
+  equipage: Pilote et tireur (selon la version)
+  armementPrincipal: Selon version — canon, missiles antichar HOT ou air-air Mistral
+content:
+  essentiel:
+    body: |
+      La **Gazelle** est l'**hélicoptère léger** de l'ALAT : petit, **rapide** et
+      très **agile**. Depuis les années **1970**, elle rend de multiples
+      services — **reconnaissance**, **liaison**, **appui léger** et **lutte
+      antichar**.
+
+      On la reconnaît à son **fenestron** : au lieu d'un rotor de queue classique
+      exposé, ses pales sont **carénées** (intégrées dans un anneau à l'arrière de
+      la dérive). Ce dispositif, emblématique des hélicoptères français, protège
+      les pales, réduit le **bruit** et le **danger** au sol.
+
+      Selon la version, elle emporte un **canon**, des **missiles antichar HOT**
+      ou des **missiles air-air Mistral**. Aujourd'hui **ancienne**, la Gazelle
+      cède peu à peu la place à des appareils plus récents, mais elle reste en
+      service.
+    aRetenir:
+      - La Gazelle est l'hélicoptère léger de l'ALAT — reconnaissance, appui léger et lutte antichar.
+      - Elle se reconnaît à son fenestron (rotor anticouple caréné), typique des hélicoptères français.
+      - Selon la version, elle emporte un canon, des missiles antichar HOT ou air-air Mistral.
+      - En service depuis 1973, elle est progressivement retirée au profit d'appareils plus récents.
+  sections:
+    - id: le-fenestron
+      title: Le fenestron
+      body: |
+        Tout hélicoptère à rotor unique doit **compenser** le couple qui tend à
+        le faire tourner sur lui-même : c'est le rôle du **rotor anticouple**,
+        placé à la queue. Sur la plupart des hélicoptères, ce rotor est
+        **exposé** ; sur la Gazelle, il est **caréné** — c'est le **fenestron**,
+        un rotor logé dans un **anneau** intégré à la dérive.
+
+        Ce carénage a plusieurs avantages : il **protège** les pales (et les
+        personnes au sol), il **réduit le bruit** et il diminue le risque
+        d'accident. Le fenestron est une **signature** de l'école française de
+        l'hélicoptère, que l'on retrouve sur d'autres appareils.
+      figures:
+        - schemaId: fenestron-rotor-anticouple
+          alt: Comparaison de deux queues d'hélicoptère — à gauche un rotor anticouple classique aux pales exposées, à droite un fenestron dont les pales sont carénées dans un anneau intégré à la dérive.
+          caption: Le fenestron caréné remplace le rotor de queue classique exposé — mêmes fonctions, mais pales protégées et bruit réduit.
+          width: 460
+          height: 260
+    - id: une-longue-carriere
+      title: Une longue carrière
+      strate: maitriser
+      body: |
+        Entrée en service dans l'armée de terre en **1973**, la Gazelle a
+        traversé **un demi-siècle** d'opérations. Déclinée en de nombreuses
+        versions — canon, **antichar HOT** (avec le viseur **Viviane** pour le
+        tir de nuit), **air-air Mistral** — elle a longtemps constitué le **gros**
+        des hélicoptères de combat légers de l'ALAT.
+
+        Sa **longévité** illustre une réalité militaire : un bon appareil peut
+        servir très longtemps, modernisé au fil du temps. La Gazelle est
+        aujourd'hui en fin de carrière, appelée à être remplacée par des
+        hélicoptères plus modernes — un renouvellement que le candidat curieux
+        peut suivre dans l'actualité de la défense.
+  pieges:
+    - Le fenestron n'est pas un rotor principal — c'est le rotor anticouple (de queue), simplement caréné.
+    - La Gazelle est un hélicoptère léger — moins lourdement armé et blindé que le Tigre, l'hélicoptère de combat.
+    - Malgré son âge, la Gazelle reste en service ; elle est en cours de remplacement, pas encore totalement retirée.

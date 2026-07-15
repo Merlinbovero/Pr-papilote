@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.valeurs-05
+kind: qcm
+theme: culture-marine
+statement: >-
+  Que symbolise l'ancre qui orne l'uniforme du marin ?
+choices:
+  - Le lien du marin à la mer
+  - Son grade
+  - Sa spécialité de pilote
+  - Le port où il est affecté
+correctChoices: [0]
+explanation: >-
+  L'ancre de l'uniforme symbolise le lien étroit qui unit le marin à la mer,
+  au-delà des mots — un élément de l'« âme » du marin.
+evaluates: [eopan.culture-militaire.culture-et-valeurs-de-la-marine]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

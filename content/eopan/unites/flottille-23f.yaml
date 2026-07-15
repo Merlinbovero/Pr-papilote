@@ -1,0 +1,106 @@
+schemaVersion: 1
+id: eopan.unites.flottille-23f
+type: flottille
+title: Flottille 23F
+slug: flottille-23f
+summary: >-
+  Créée le 1er décembre 1940 et installée à Lann-Bihoué depuis 1961, la
+  flottille 23F patrouille sur Atlantique 2 — lutte anti-sous-marine,
+  surveillance et renseignement sur tous les théâtres.
+objectifs:
+  - Identifier la 23F comme flottille de patrouille maritime sur Atlantique 2, basée à Lann-Bihoué.
+  - Connaître ses jalons (création 1940, Lann-Bihoué 1961, Atlantic 1972, Atlantique 2 1991).
+  - Comprendre le fonctionnement en pôle avec la flottille jumelle 21F.
+aliases: [23F, flottille 23F, patrouille maritime, Lann-Bihoué]
+module: eopan
+category: unites
+tags: []
+concours: [eopan]
+level: 3
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche flottille 23F (campagne de recherche n°1, lot N6 ; Wikipédia et reportages spécialisés recoupés).
+    author: prepapilote
+sources:
+  - title: "Flottille 23F — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Flottille_23F
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Flottille 23F, Lann-Bihoué — Escadrilles.org"
+    url: https://www.escadrilles.org/reportages/flottille-23f-lann-bihoue/
+    kind: presse
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  factual:
+    - predicate: affecte-a
+      target: eopan.ban.lann-bihoue
+    - predicate: dote-de
+      target: eopan.appareils.atlantique-2
+  related:
+    - eopan.unites.flottille-21f
+    - eopan.unites.flottille-4f
+    - eopan.organisation.aeronautique-navale
+infobox:
+  appellation: Flottille 23F
+  ban: BAN Lann-Bihoué
+  appareils: [Atlantique 2]
+  missions: [Patrouille maritime, Lutte anti-sous-marine, Surveillance maritime, Renseignement]
+content:
+  essentiel:
+    body: |
+      La **flottille 23F** est la seconde flottille de **patrouille
+      maritime** de l'aéronautique navale — la jumelle de la 21F, avec
+      laquelle elle partage un même bâtiment à **Lann-Bihoué**.
+
+      Créée le **1er décembre 1940**, elle est installée en **Bretagne**
+      depuis **1961** — l'une des plus anciennes implantations continues de
+      l'aéronavale. Elle passe sur **Atlantic** en **1972**, puis sur
+      **Atlantique 2** dès **1991**, et enchaîne depuis les déploiements sur
+      tous les théâtres : Atlantique Nord, Méditerranée, golfe
+      arabo-persique, Sahel.
+
+      Comme la 21F, elle vit au rythme des **alertes** — un ATL2 prêt à
+      décoller pour un sauvetage en mer, un sous-marin à pister ou une
+      mission de renseignement.
+    aRetenir:
+      - 23F — flottille de patrouille maritime sur Atlantique 2, à Lann-Bihoué depuis 1961.
+      - Créée le 1er décembre 1940 ; Atlantic en 1972, Atlantique 2 en 1991.
+      - Jumelle de la 21F — les deux flottilles partagent un même bâtiment et forment le pôle PATMAR.
+      - Déploiements permanents — de l'Atlantique Nord au Sahel.
+  sections:
+    - id: la-doyenne-de-lann-bihoue
+      title: Une doyenne de Lann-Bihoué
+      body: |
+        Installée à **Lann-Bihoué en 1961**, la 23F incarne la continuité de
+        la patrouille maritime bretonne : soixante ans de veille sur
+        l'**Atlantique**, aux avant-postes de la protection des **SNLE** —
+        car la sûreté des sous-marins de la dissuasion passe aussi par les
+        avions qui **nettoient** leurs zones de patrouille de toute menace.
+
+        L'arrivée de la 21F en 2011 a réuni les deux flottilles en un
+        **pôle inter-flottilles** : moyens mutualisés, alertes partagées,
+        déploiements alternés.
+    - id: sur-tous-les-theatres
+      title: Sur tous les théâtres
+      strate: maitriser
+      body: |
+        L'Atlantique 2 de la 23F ne survole pas que l'océan : depuis les
+        années 2010, les ATL2 ont appuyé les opérations au **Levant** et au
+        **Sahel** — renseignement, désignation d'objectifs, largage de
+        bombes guidées — illustrant la polyvalence de la patrouille
+        maritime moderne.
+
+        Pour un candidat EOPAN attiré par la **PATMAR**, la 23F et la 21F
+        représentent le débouché type : long rayon d'action, équipage
+        nombreux, missions stratégiques (protection de la FOST) comme
+        tactiques — un métier d'équipage par excellence.
+  pieges:
+    - La 23F est à Lann-Bihoué depuis 1961 — bien avant la 21F (2011) ; ne pas confondre leurs parcours.
+    - La patrouille maritime protège aussi la dissuasion — sûreté des zones de patrouille des SNLE.
+    - L'ATL2 opère aussi au-dessus de la terre (Sahel, Levant) — renseignement et bombes guidées.

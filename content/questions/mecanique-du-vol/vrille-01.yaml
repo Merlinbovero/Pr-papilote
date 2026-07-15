@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.vrille-01
+kind: qcm
+theme: decrochage-vrille
+statement: >-
+  Qu'est-ce qu'une vrille ?
+choices:
+  - "Un décrochage asymétrique auto-entretenu"
+  - "Un virage engagé à grande vitesse"
+  - "Une descente rapide, ailes à plat et non décrochées"
+  - "Une montée en spirale"
+correctChoices: [0]
+explanation: >-
+  La vrille est un décrochage asymétrique auto-entretenu : une aile décroche
+  plus que l'autre, l'avion part en autorotation et descend en tire-bouchon, nez
+  bas, à vitesse faible.
+evaluates: [fondamentaux.mecanique-du-vol.decrochage-et-vrille]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

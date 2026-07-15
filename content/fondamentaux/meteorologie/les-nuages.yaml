@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.les-nuages
+type: notion-meteo
+title: Les nuages
+slug: les-nuages
+summary: >-
+  Un nuage est fait de gouttelettes d'eau ou de cristaux de glace issus de la
+  condensation de la vapeur, quand de l'air humide s'élève et se refroidit. On les
+  classe par forme (cumuliformes, stratiformes) et par étage ; le cumulonimbus est le plus dangereux.
+objectifs:
+  - Décrire la formation d'un nuage (ascendance d'air humide, refroidissement, condensation au point de rosée).
+  - Distinguer les nuages cumuliformes et stratiformes et nommer les trois étages avec leurs préfixes.
+  - Identifier le cumulonimbus comme le nuage le plus dangereux pour le vol.
+aliases: [nuage, nuages, cumulus, cumulonimbus, stratus, cirrus, cumuliforme, stratiforme, étages]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-12"
+verifiedAt: "2026-07-12"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-12"
+    version: 1
+    motif: Création — dix-huitième fiche du socle, les nuages (bloc météorologie).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Comment se forme un nuage — Météo-France"
+    url: https://meteofrance.com/comprendre-la-meteo/nuages/comment-se-forme-un-nuage
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Les différents types de nuages — Météo-France"
+    url: https://meteofrance.com/comprendre-la-meteo/nuages/les-differents-types-de-nuages
+    kind: institutionnel
+    consultedAt: "2026-07-12"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — météorologie"
+    kind: officiel
+    consultedAt: "2026-07-12"
+relations:
+  prerequisites:
+    - fondamentaux.meteorologie.temperature-et-humidite
+content:
+  essentiel:
+    body: |
+      Un **nuage** est un ensemble de minuscules **gouttelettes d'eau** ou de
+      **cristaux de glace** en suspension, nés de la **condensation** de la
+      vapeur d'eau.
+
+      Sa formation suit toujours le même scénario : de l'air **humide s'élève**,
+      se **détend** et se **refroidit** ; lorsqu'il atteint son **point de
+      rosée**, la vapeur se condense et le nuage apparaît. Sa **base** marque le
+      niveau où débute la condensation.
+
+      On classe les nuages selon deux critères : leur **forme** —
+      **cumuliformes** (bourgeonnants) ou **stratiformes** (en couches) — et
+      leur **étage** (inférieur, moyen, supérieur). Certains, comme le
+      **cumulonimbus**, sont dangereux pour le vol.
+    aRetenir:
+      - Un nuage est fait de gouttelettes d'eau ou de cristaux de glace issus de la condensation de la vapeur d'eau.
+      - Il se forme quand de l'air humide s'élève, se refroidit et atteint son point de rosée.
+      - On distingue les nuages cumuliformes (bourgeonnants) et stratiformes (en couches), répartis en trois étages.
+      - Le cumulonimbus, nuage d'orage à grand développement vertical, est le plus dangereux pour le vol.
+  sections:
+    - id: comment-se-forme-un-nuage
+      title: Comment se forme un nuage
+      body: |
+        Un nuage naît d'un principe déjà vu : la **condensation**. Il suffit que
+        de l'air **humide** soit **refroidi** jusqu'à son **point de rosée**.
+
+        Le plus souvent, ce refroidissement vient d'une **ascendance** : quand
+        une masse d'air **s'élève**, la pression diminue, l'air se **détend** et
+        se **refroidit**. Dès qu'il atteint la saturation, la vapeur se condense
+        autour de microscopiques poussières, et un nuage se forme. Sa **base**
+        correspond au **niveau de condensation**.
+
+        L'air peut s'élever de plusieurs façons : chauffé par le sol
+        (**convection**), soulevé par un **relief**, ou soulevé au contact d'une
+        autre masse d'air (**front**). Toutes mènent au même résultat.
+      figures:
+        - schemaId: formation-nuage
+          alt: De l'air humide qui monte, se refroidit et se condense au niveau de condensation pour former un nuage.
+          caption: L'air humide s'élève, se refroidit et se condense au point de rosée ; la base du nuage marque le niveau de condensation.
+          width: 420
+          height: 280
+    - id: reconnaitre-les-nuages
+      title: Reconnaître les nuages
+      body: |
+        On range les nuages selon leur **forme** et leur **étage**.
+
+        Deux grandes formes :
+
+        - les **cumuliformes**, **bourgeonnants**, à développement vertical,
+          signes d'air instable (convection) ;
+        - les **stratiformes**, étalés **en couches** ou en nappes, signes d'air
+          stable.
+
+        Trois **étages**, désignés par des **préfixes** :
+
+        - **étage supérieur** (au-dessus de ~6 km), préfixe **cirro-** : nuages
+          de **cristaux de glace** (cirrus) ;
+        - **étage moyen** (2 à 6 km), préfixe **alto-** (altocumulus,
+          altostratus) ;
+        - **étage inférieur** (du sol à ~2 km) : stratus et stratocumulus.
+
+        D'autres préfixes complètent la nomenclature : **cumulo-** (en amas) et
+        **nimbo-** ou **-nimbus** (qui donne de la **pluie**).
+      figures:
+        - schemaId: etages-nuages
+          alt: Les trois étages des nuages sur une échelle d'altitude — cirro au-dessus de 6 km, alto de 2 à 6 km, strato près du sol, avec un cumulonimbus à développement vertical.
+          caption: Les nuages se répartissent en trois étages (préfixes cirro-, alto-, strato-) ; le cumulonimbus traverse plusieurs étages.
+          width: 460
+          height: 300
+    - id: les-nuages-et-la-securite
+      title: Les nuages et la sécurité
+      strate: maitriser
+      body: |
+        Pour le pilote, les nuages renseignent sur l'état de l'atmosphère — et
+        certains sont à **éviter**.
+
+        - Ils déterminent le **plafond** (hauteur de la base des nuages) et la
+          **visibilité**, essentiels au vol à vue.
+        - Les nuages **stratiformes** bas peuvent masquer le relief et donner du
+          **brouillard**.
+        - Le **cumulonimbus (Cb)** est le plus **dangereux** : énorme nuage
+          d'**orage** à grand développement vertical, il concentre une
+          **turbulence** sévère, du **givrage**, de la **grêle**, la **foudre**
+          et du **cisaillement** de vent. On l'évite **toujours**.
+
+        Ces phénomènes dangereux sont détaillés dans la fiche suivante.
+  pieges:
+    - Un nuage n'est pas de la « vapeur » — la vapeur d'eau est invisible ; le nuage est fait de gouttelettes ou de cristaux déjà condensés.
+    - Les préfixes indiquent l'étage ou la nature — cirro- (élevé, glace), alto- (moyen), nimbo- ou -nimbus (pluie), cumulo- (en amas).
+    - Le cumulonimbus n'est pas un gros cumulus anodin — c'est un nuage d'orage dangereux, à éviter absolument.

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.culture-aeronautique.bia-02
+kind: qcm
+theme: bia
+statement: >-
+  À partir de quel âge peut-on passer le BIA ?
+choices:
+  - "13 ans"
+  - "16 ans"
+  - "18 ans"
+  - "Aucune condition d'âge"
+correctChoices: [0]
+explanation: >-
+  Le BIA est ouvert aux jeunes d'au moins 13 ans à la date des épreuves,
+  sans aucun prérequis.
+evaluates: [fondamentaux.culture-aeronautique.le-bia]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.rafale-m-06
+kind: qcm
+theme: rafale-marine
+statement: >-
+  Pourquoi le Rafale est-il entré en service dans la Marine (2004) avant
+  l'armée de l'Air (2006) ?
+choices:
+  - "Le premier standard livré (F1, air-air) est allé aux flottilles pour remplacer d'urgence les Crusader"
+  - "La Marine avait financé seule le programme"
+  - "L'armée de l'Air avait refusé l'avion"
+  - "Le porte-avions imposait un calendrier réglementaire"
+correctChoices: [0]
+explanation: >-
+  Le remplacement des vieux Crusader était si urgent que la Marine avait même
+  étudié l'achat de F-18 en 1985 — le premier standard du Rafale (F1,
+  purement air-air) lui fut donc livré en priorité, d'où 2004 avant 2006.
+evaluates: [eopan.appareils.rafale-m]
+difficulty: 3
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopan]
+status: publie

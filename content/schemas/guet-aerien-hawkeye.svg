@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .sub { font-size: 11px; fill: #94a3b8; }
+    .sea { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .ship { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .plane { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .cover { stroke: #3b82f6; fill: none; stroke-width: 1.8; stroke-dasharray: 5 4; }
+    .rng { stroke: #3b82f6; fill: none; stroke-width: 2; }
+    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
+    .tgt { fill: currentColor; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="230" y="24" text-anchor="middle">Le guet aérien embarqué (E-2C)</text>
+  <!-- Mer (courbure) -->
+  <path class="sea" d="M20,250 Q230,232 440,250" />
+  <!-- Porte-avions -->
+  <g class="ship">
+    <path d="M150,244 L182,244 L176,254 L156,254 Z" />
+    <line x1="166" y1="244" x2="166" y2="230" />
+    <rect x="162" y="228" width="8" height="6" />
+  </g>
+  <text class="sub" x="166" y="270" text-anchor="middle">porte-avions</text>
+  <!-- Portée radar du navire (limitée par l'horizon) -->
+  <path class="ship" d="M120,244 A46 46 0 0 1 212,244" stroke-dasharray="3 3" />
+  <text class="sub" x="166" y="212" text-anchor="middle">portée du navire</text>
+  <!-- Hawkeye en altitude -->
+  <g class="plane" transform="translate(300,86)">
+    <ellipse cx="0" cy="0" rx="22" ry="6" />
+    <line x1="-30" y1="0" x2="30" y2="0" />
+    <ellipse cx="0" cy="-9" rx="12" ry="4" />
+    <line x1="0" y1="-5" x2="0" y2="0" />
+  </g>
+  <text class="lbl" x="300" y="66" text-anchor="middle">E-2C Hawkeye</text>
+  <!-- Grande couverture radar depuis l'altitude -->
+  <path class="cover" d="M96,186 A230 230 0 0 1 456,208" />
+  <line class="rng" x1="300" y1="92" x2="300" y2="150" marker-end="url(#ac)" />
+  <text class="accent-t" x="300" y="170" text-anchor="middle">radar tournant, ~250 NM</text>
+  <!-- Cible basse détectée au loin -->
+  <path class="tgt" d="M424,196 l14,-5 -6,9 z" />
+  <text class="sub" x="418" y="214" text-anchor="middle">cible basse détectée au loin</text>
+</svg>

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-selections-04
+kind: qcm
+theme: anglais-methode
+statement: >-
+  Quelles compétences les épreuves d'anglais des sélections mesurent-elles typiquement ?
+choices:
+  - Vocabulaire, grammaire et compréhension (écrite, parfois orale)
+  - Uniquement la traduction littéraire
+  - Uniquement l'accent
+  - La connaissance des capitales anglophones
+correctChoices: [0]
+explanation: >-
+  Les formats typiques : QCM de vocabulaire (avec faux amis), QCM de
+  grammaire (temps, modaux, prépositions) et compréhension de textes courts —
+  plus un oral selon les voies.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-des-selections]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

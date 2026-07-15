@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.super-etendard-03
+kind: qcm
+theme: appareils-historiques
+statement: >-
+  Quel rôle nucléaire le Super-Étendard a-t-il tenu ?
+choices:
+  - Porteur du missile ASMP au sein de la FANu, avant le Rafale M
+  - Aucun — il n'était pas apte au nucléaire
+  - Porteur de bombes à gravitation uniquement
+  - Lanceur de missiles balistiques
+correctChoices: [0]
+explanation: >-
+  Dès les années 1980, le Super-Étendard porte le missile ASMP au sein de la
+  Force aéronavale nucléaire — premier tir opérationnel depuis le Foch. Le
+  Rafale M a repris ce rôle avec l'ASMP-A.
+evaluates: [eopan.appareils.super-etendard]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

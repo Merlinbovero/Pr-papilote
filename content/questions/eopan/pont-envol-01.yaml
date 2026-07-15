@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.pont-envol-01
+kind: qcm
+theme: operations-embarquees
+statement: >-
+  Quel est le principal avantage de la piste oblique d'un porte-avions ?
+choices:
+  - Catapulter à l'avant et apponter à l'arrière en même temps
+  - Permettre à l'avion de tourner sur place
+  - Augmenter la vitesse du navire
+  - Stocker davantage de carburant
+correctChoices: [0]
+explanation: >-
+  En désaxant la piste d'appontage, la piste oblique libère l'avant du pont : on
+  peut catapulter et apponter simultanément, et un avion qui rate son appontage
+  peut remettre les gaz au-dessus de l'eau.
+evaluates: [eopan.concepts.pont-d-envol]
+difficulty: 1
+competencies: [culture-militaire, connaissances-aeronautiques]
+concours: [eopan]
+status: publie

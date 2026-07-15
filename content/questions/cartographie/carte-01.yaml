@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.cartographie.carte-01
+kind: qcm
+theme: echelle-carte
+statement: >-
+  Qu'est-ce que l'échelle d'une carte ?
+choices:
+  - "Le rapport entre une distance sur la carte et la distance réelle"
+  - "La taille physique de la carte"
+  - "Le nombre de couleurs utilisées"
+  - "L'altitude du terrain représenté"
+correctChoices: [0]
+explanation: >-
+  L'échelle est le rapport entre une distance mesurée sur la carte et la distance
+  réelle correspondante. C'est un rapport sans unité.
+evaluates: [fondamentaux.cartographie.echelle-et-mesures]
+difficulty: 1
+competencies: [navigation, vision-spatiale]
+concours: [eopan, eopn, alat]
+status: publie

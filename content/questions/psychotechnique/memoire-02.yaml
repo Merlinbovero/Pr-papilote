@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.memoire-02
+kind: qcm
+theme: memoire
+statement: >-
+  Pourquoi lire un tableau à mémoriser dans un ordre fixe plutôt qu'au hasard ?
+choices:
+  - L'ordre de lecture devient lui-même un indice de rappel
+  - Parce que c'est plus rapide
+  - Pour impressionner l'examinateur
+  - Cela n'a aucune importance
+correctChoices: [0]
+explanation: >-
+  Le balayage structuré (ligne par ligne) inscrit l'information dans une
+  séquence : au rappel, la position dans la séquence aide à retrouver
+  l'élément. La lecture au hasard prive de cet indice.
+evaluates: [psychotechnique.exercices.la-memoire]
+difficulty: 2
+competencies: [memoire]
+concours: [eopan, eopn, alat]
+status: publie

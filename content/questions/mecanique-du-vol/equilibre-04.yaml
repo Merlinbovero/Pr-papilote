@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.equilibre-04
+kind: qcm
+theme: equilibre-centrage
+statement: >-
+  Quel est l'effet d'un centre de gravité situé trop en avant ?
+choices:
+  - "L'avion est plus stable, plus lourd aux commandes et décroche à une vitesse plus élevée"
+  - "L'avion devient instable et difficile à contrôler"
+  - "L'avion ne peut plus décoller"
+  - "La poussée du moteur diminue"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est l'effet d'un centrage trop arrière, pas trop avant."
+explanation: >-
+  Un centrage trop avant rend l'avion très stable mais lourd aux commandes et
+  moins manœuvrable. L'empennage devant déporter davantage, l'aile doit produire
+  plus de portance, si bien que l'avion décroche à une vitesse plus élevée.
+evaluates: [fondamentaux.mecanique-du-vol.equilibre-et-centrage]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

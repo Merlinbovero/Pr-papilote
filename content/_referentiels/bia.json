@@ -1,0 +1,78 @@
+{
+  "matieres": [
+    {
+      "slug": "meteorologie-aerologie",
+      "name": "Météorologie et aérologie",
+      "order": 1,
+      "description": "L'atmosphère, les nuages, le vent, les masses d'air et les fronts — comprendre le temps qu'il fera pour voler.",
+      "categories": ["meteorologie"]
+    },
+    {
+      "slug": "aerodynamique-et-principes-du-vol",
+      "name": "Aérodynamique, aérostatique et principes du vol",
+      "order": 2,
+      "description": "Pourquoi un avion vole — portance, traînée, équilibre, virage, décrochage, et le plus léger que l'air.",
+      "categories": ["aerodynamique", "mecanique-du-vol", "physique"]
+    },
+    {
+      "slug": "etude-des-aeronefs-et-engins-spatiaux",
+      "name": "Étude des aéronefs et des engins spatiaux",
+      "order": 3,
+      "description": "Comment c'est construit et comment ça marche — instruments, propulsion, hélicoptère, fusées et satellites.",
+      "categories": ["instruments"]
+    },
+    {
+      "slug": "navigation-reglementation-securite",
+      "name": "Navigation, réglementation, sécurité des vols",
+      "order": 4,
+      "description": "Se repérer, suivre les règles, rester en vie — cap et route, cartes, espaces aériens, radio, facteurs humains.",
+      "categories": [
+        "navigation",
+        "cartographie",
+        "reglementation",
+        "radio-communications",
+        "facteurs-humains"
+      ]
+    },
+    {
+      "slug": "histoire-et-culture",
+      "name": "Histoire et culture de l'aéronautique et du spatial",
+      "order": 5,
+      "description": "De Clément Ader à Ariane — les pionniers, les grandes écoles, l'industrie et la conquête de l'espace.",
+      "categories": ["culture-aeronautique"]
+    }
+  ],
+  "epreuveFacultative": {
+    "slug": "anglais",
+    "name": "Anglais aéronautique (épreuve facultative)",
+    "description": "Le vocabulaire et la phraséologie de base en anglais — l'épreuve facultative de 30 minutes du BIA.",
+    "categories": ["anglais-aeronautique"]
+  },
+  "ficheOverrides": {
+    "fondamentaux.mecanique-du-vol.la-propulsion": "etude-des-aeronefs-et-engins-spatiaux",
+    "fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere": "etude-des-aeronefs-et-engins-spatiaux",
+    "fondamentaux.culture-aeronautique.la-conquete-de-l-espace": "etude-des-aeronefs-et-engins-spatiaux"
+  },
+  "horsParcours": [
+    "fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant",
+    "fondamentaux.anglais-aeronautique.l-anglais-des-selections",
+    "fondamentaux.anglais-aeronautique.l-anglais-militaire",
+    "fondamentaux.anglais-aeronautique.le-brevity-code"
+  ],
+  "horsExamen": [
+    "fondamentaux.culture-aeronautique.le-bia",
+    "fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac",
+    "fondamentaux.anglais-aeronautique.la-comprehension-ecrite"
+  ],
+  "examen": {
+    "questionsParMatiere": 20,
+    "dureeSecondes": 9000,
+    "seuilAdmission": 10,
+    "mentions": [
+      { "label": "Assez bien", "min": 12 },
+      { "label": "Bien", "min": 14 },
+      { "label": "Très bien", "min": 16 }
+    ],
+    "repartitionDifficulte": { "facile": 0.4, "moyen": 0.4, "difficile": 0.2 }
+  }
+}

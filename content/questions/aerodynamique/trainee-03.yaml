@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.trainee-03
+kind: vrai-faux
+theme: trainee
+statement: >-
+  La traînée induite est la plus forte à basse vitesse.
+answer: true
+explanation: >-
+  La traînée induite est forte à basse vitesse (forte incidence). La traînée
+  parasite (frottement et forme), elle, augmente avec la vitesse.
+evaluates: [fondamentaux.aerodynamique.trainee]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

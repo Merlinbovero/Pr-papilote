@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.eopn.fas-04
+kind: vrai-faux
+theme: dissuasion
+statement: >-
+  Les FAS constituent l'unique composante de la dissuasion nucléaire
+  française.
+answer: false
+explanation: >-
+  La dissuasion repose sur deux composantes — océanique (sous-marins
+  lanceurs d'engins) et aéroportée (FAS, complétées par la FANu de
+  l'aéronautique navale depuis le porte-avions).
+evaluates: [eopn.organisation.les-forces-aeriennes-strategiques]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

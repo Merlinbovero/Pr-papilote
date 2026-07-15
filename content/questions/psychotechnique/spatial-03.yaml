@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.psychotechnique.spatial-03
+kind: calcul
+theme: vision-spatiale
+statement: >-
+  Vous suivez le cap 090. Vous virez de 90° à droite, puis de 180°. Quel est votre nouveau cap (en degrés) ?
+answerValue: 360
+tolerance: 0
+unit: "°"
+explanation: >-
+  090 + 90 = 180 ; 180 + 180 = 360 (le nord, aussi noté 000). Travailler en
+  relatif — additionner les virages puis ramener dans 0-360.
+evaluates: [psychotechnique.exercices.la-vision-spatiale]
+difficulty: 2
+competencies: [vision-spatiale, calcul-mental]
+concours: [eopan, eopn, alat]
+status: publie

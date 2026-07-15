@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.flottille-11f-01
+kind: qcm
+theme: unites-aeronavales
+statement: >-
+  Quelle est la particularité historique de la flottille 11F ?
+choices:
+  - Héritière de l'escadrille AC1 (1919), c'est la plus ancienne formation de chasse de l'aéronavale
+  - Première unité au monde équipée de Rafale
+  - Première flottille d'hélicoptères de la Marine
+  - Dernière flottille créée par la Marine nationale
+correctChoices: [0]
+explanation: >-
+  La 11F est l'héritière de l'escadrille AC1, première escadrille de chasse de
+  l'aéronautique navale créée le 1er mars 1919 — la plus ancienne formation de
+  chasse de l'aéronavale. (La première unité sur Rafale est la 12F.)
+evaluates: [eopan.bases.flottille-11f]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

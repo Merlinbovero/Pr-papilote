@@ -1,0 +1,120 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.profil-d-aile
+type: notion-aerodynamique
+title: Le profil d'aile
+slug: profil-d-aile
+summary: >-
+  Un profil d'aile se décrit par son bord d'attaque, son bord de fuite, son
+  extrados, son intrados et sa corde. Le vent relatif est l'air qui vient à la
+  rencontre de l'aile ; l'angle d'incidence sépare la corde de ce vent relatif.
+objectifs:
+  - Nommer les éléments d'un profil d'aile (bord d'attaque, bord de fuite, extrados, intrados, corde, épaisseur, cambrure).
+  - Définir le vent relatif et l'angle d'incidence (l'angle entre la corde et le vent relatif).
+  - Distinguer un profil symétrique d'un profil cambré.
+aliases: [profil, corde, incidence, vent relatif, extrados, intrados]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-09"
+verifiedAt: "2026-07-09"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-09"
+    version: 1
+    motif: Création — sixième fiche du socle, vocabulaire du profil d'aile.
+    author: prepapilote
+status: publie
+sources:
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-09"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-09"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      Avant d'expliquer comment une aile crée de la portance, il faut savoir
+      **nommer** les parties d'un profil et décrire sa position dans l'air.
+
+      Un **profil** est la forme de la coupe d'une aile. On y distingue le **bord
+      d'attaque** (l'avant), le **bord de fuite** (l'arrière), l'**extrados** (le
+      dessus) et l'**intrados** (le dessous). La **corde** est la ligne droite qui
+      joint le bord d'attaque au bord de fuite.
+
+      L'aile se déplace dans l'air : elle rencontre un **vent relatif**. L'angle
+      entre la **corde** et ce vent relatif est l'**angle d'incidence** — le
+      paramètre qui gouvernera la portance.
+    aRetenir:
+      - Un profil se décrit par son bord d'attaque, son bord de fuite, son extrados et son intrados.
+      - La corde est la ligne droite reliant le bord d'attaque au bord de fuite.
+      - Le vent relatif est le déplacement de l'air par rapport à l'aile.
+      - L'angle d'incidence est l'angle entre la corde et le vent relatif.
+  sections:
+    - id: l-anatomie-d-un-profil
+      title: L'anatomie d'un profil
+      body: |
+        La coupe d'une aile s'appelle un **profil**. On en nomme les parties :
+
+        - le **bord d'attaque** : l'avant arrondi, qui « fend » l'air ;
+        - le **bord de fuite** : l'arrière effilé, où l'air se rejoint ;
+        - l'**extrados** : la surface supérieure (le dessus) ;
+        - l'**intrados** : la surface inférieure (le dessous).
+
+        Deux lignes le caractérisent : la **corde**, ligne droite reliant le bord
+        d'attaque au bord de fuite, et la **ligne moyenne** (à mi-chemin entre
+        extrados et intrados), dont l'écart à la corde définit la **cambrure**.
+        L'**épaisseur** est la distance maximale entre extrados et intrados.
+      figures:
+        - schemaId: profil-anatomie
+          alt: Un profil d'aile légendé, avec bord d'attaque, bord de fuite, extrados, intrados, corde et épaisseur.
+          caption: L'anatomie d'un profil — bord d'attaque, bord de fuite, extrados, intrados, corde et épaisseur.
+          width: 460
+          height: 260
+    - id: vent-relatif-et-incidence
+      title: Le vent relatif et l'angle d'incidence
+      body: |
+        Une aile ne travaille jamais dans l'air immobile : elle **avance**. Du
+        point de vue de l'aile, tout se passe comme si l'air venait à sa
+        rencontre. Ce courant d'air, c'est le **vent relatif**.
+
+        > **Le vent relatif** est le déplacement de l'air **par rapport à
+        > l'aile**. Par vent nul, il est exactement **opposé à la trajectoire** de
+        > l'avion et de même vitesse : un avion qui avance à 200 km/h rencontre un
+        > vent relatif de 200 km/h venant de l'avant.
+
+        L'**angle d'incidence** (souvent noté α) est l'angle formé entre la
+        **corde** du profil et la **direction du vent relatif**. C'est lui — et
+        non l'assiette de l'avion — qui détermine le comportement aérodynamique de
+        l'aile.
+      figures:
+        - schemaId: profil-incidence
+          alt: Un profil incliné par rapport au vent relatif, l'angle d'incidence séparant la corde de la direction du vent relatif.
+          caption: L'angle d'incidence (α) sépare la corde du profil de la direction du vent relatif.
+          width: 440
+          height: 240
+    - id: profils-symetriques-et-cambres
+      title: Profils symétriques et cambrés
+      strate: maitriser
+      body: |
+        Selon leur forme, on distingue deux grandes familles de profils.
+
+        - Un profil **symétrique** a un extrados et un intrados identiques : sa
+          ligne moyenne se confond avec la corde (cambrure nulle). On le rencontre
+          par exemple sur des gouvernes ou des avions de voltige.
+        - Un profil **cambré** a un extrados plus courbé que l'intrados : il est
+          conçu pour porter dès une faible incidence, d'où son usage sur la
+          plupart des ailes.
+
+        Le choix d'un profil est toujours un compromis entre portance, traînée et
+        comportement au décrochage — les sujets des fiches suivantes.
+  pieges:
+    - L'angle d'incidence n'est pas l'assiette de l'avion — c'est l'angle entre la corde et le vent relatif, pas l'inclinaison par rapport à l'horizon.
+    - Ne pas confondre la cambrure (courbure du profil) et l'épaisseur (distance entre extrados et intrados).
+    - La corde est une ligne droite, même si le profil, lui, est courbe.

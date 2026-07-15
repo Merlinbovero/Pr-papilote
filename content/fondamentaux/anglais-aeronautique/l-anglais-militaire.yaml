@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.l-anglais-militaire
+type: concept
+title: L'anglais militaire et l'OTAN
+slug: l-anglais-militaire
+summary: >-
+  Sortie, air superiority, joint task force — l'anglais des opérations est
+  celui de l'OTAN. Le vocabulaire interallié, les grades anglophones en
+  regard des grades français, et les mots des communiqués militaires.
+objectifs:
+  - Employer le vocabulaire militaire interallié (sortie, air superiority, joint, task force).
+  - Mettre en regard les grades français et leurs équivalents anglophones.
+  - Comprendre un communiqué militaire simple en anglais.
+aliases: [anglais militaire, OTAN, NATO, sortie, air superiority, grades en anglais]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — anglais militaire et OTAN (lot N16, phase P6 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "OTAN — glossaires et terminologie publics (nato.int)"
+    url: https://www.nato.int/
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+  related:
+    - fondamentaux.anglais-aeronautique.le-brevity-code
+    - eopn.grades.grades-de-l-armee-de-l-air
+    - eopn.missions.missions-de-l-armee-de-l-air
+content:
+  essentiel:
+    body: |
+      Les opérations se mènent en **coalition**, et la coalition parle
+      l'anglais de l'**OTAN** (*NATO — North Atlantic Treaty
+      Organization*). Le vocabulaire de base :
+
+      | Anglais | Sens |
+      | --- | --- |
+      | **a sortie** | une sortie aérienne (mission d'un aéronef) |
+      | **air superiority** | supériorité aérienne |
+      | **close air support (CAS)** | appui aérien rapproché |
+      | **air-to-air / air-to-ground** | air-air / air-sol |
+      | **joint** | interarmées |
+      | **combined** | interallié (multinational) |
+      | **task force** | force opérationnelle |
+      | **rules of engagement (ROE)** | règles d'engagement |
+      | **theater / theatre (of operations)** | théâtre d'opérations |
+      | **deterrence** | dissuasion |
+
+      Nuance d'or : **joint** = entre armées d'un même pays
+      (interarmées) ; **combined** = entre nations (interallié) — les
+      deux mots structurent tous les noms d'états-majors et d'exercices.
+    aRetenir:
+      - "A sortie = une sortie aérienne — le français est passé dans l'anglais militaire."
+      - "Joint = interarmées (un pays) ; combined = interallié (plusieurs nations)."
+      - "CAS = close air support (appui aérien rapproché) ; ROE = rules of engagement."
+      - "Deterrence = dissuasion — le mot clé des textes stratégiques."
+  sections:
+    - id: les-grades-en-anglais
+      title: Les grades en regard
+      body: |
+        Correspondances usuelles avec les armées de l'air anglophones
+        (équivalences indicatives — les systèmes diffèrent) :
+
+        | France (Air) | États-Unis (USAF) | Royaume-Uni (RAF) |
+        | --- | --- | --- |
+        | aviateur | airman | aircraftman |
+        | sergent | staff sergeant | sergeant |
+        | sous-lieutenant | second lieutenant | pilot officer |
+        | lieutenant | first lieutenant | flying officer |
+        | capitaine | captain | flight lieutenant |
+        | commandant | major | squadron leader |
+        | lieutenant-colonel | lieutenant colonel | wing commander |
+        | colonel | colonel | group captain |
+        | général | general (1-4 étoiles) | air commodore et au-delà |
+
+        Piège célèbre : dans la RAF, le **flight lieutenant** est
+        l'équivalent du **capitaine** — et le **squadron leader** du
+        commandant ; les titres britanniques « descendent » d'un cran par
+        rapport à l'intuition française.
+    - id: lire-un-communique
+      title: Lire un communiqué militaire
+      strate: maitriser
+      body: |
+        Les communiqués et articles de défense anglophones reviennent aux
+        mêmes tournures :
+
+        - *« French Rafales conducted strikes against… »* — ont mené des
+          frappes ;
+        - *« the carrier strike group was deployed to… »* — le groupe
+          aéronaval a été déployé ;
+        - *« aircraft flew 120 sorties »* — 120 sorties aériennes ;
+        - *« in support of Operation… »* — à l'appui de l'opération ;
+        - *« the exercise involved joint and combined forces »* — des
+          forces interarmées et interalliées.
+
+        Savoir lire ces phrases relie l'anglais à la **culture défense**
+        de l'entretien : un candidat qui suit l'actualité militaire en
+        anglais nourrit les deux épreuves d'un même effort.
+  pieges:
+    - "Joint (interarmées) ≠ combined (interallié) — la distinction structure tout le vocabulaire OTAN."
+    - "A sortie = une mission aérienne — un emprunt au français, faux ami inversé."
+    - "RAF : flight lieutenant = capitaine, squadron leader = commandant — les titres britanniques décalent d'un cran."
+    - Les équivalences de grades sont indicatives — les systèmes nationaux ne se superposent jamais parfaitement.

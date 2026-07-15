@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.appontage-05
+kind: vrai-faux
+theme: appontage
+statement: >-
+  À l'appontage, l'avion se présente dans l'axe du navire, sur la piste axiale.
+answer: false
+explanation: >-
+  Faux. L'avion se présente sur la piste oblique, tendue en travers de laquelle
+  se trouvent les brins d'arrêt. Cette disposition permet de redécoller droit
+  devant en cas de bolter, sans percuter les aéronefs garés à l'avant.
+evaluates: [eopan.procedures.appontage]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

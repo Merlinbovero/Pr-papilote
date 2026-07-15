@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-approche-04
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Le contrôleur vous annonce « number two ». Que comprenez-vous ?
+choices:
+  - Un avion me précède dans la séquence d'arrivée
+  - Je dois passer sur la fréquence n°2
+  - Je dois voler à 2 000 pieds
+  - Mon transpondeur doit afficher 2
+correctChoices: [0]
+explanation: >-
+  « Number one/two/three » indique le rang dans la séquence d'arrivée :
+  number two = un avion vous précède ; ouvrez l'œil et régulez votre
+  espacement.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-de-l-approche]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

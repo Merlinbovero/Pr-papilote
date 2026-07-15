@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.appontage-04
+kind: ordre
+theme: appontage
+statement: >-
+  Remettez dans l'ordre les étapes d'un appontage sur le Charles de Gaulle.
+items:
+  - "Présentation — l'avion rejoint le circuit et s'aligne sur la piste oblique"
+  - "Finale — pente et vitesse précises, aidé par le dispositif optique et l'officier d'appontage"
+  - "Toucher — crosse sortie, plein gaz remis au même instant"
+  - "Arrêt par le brin — ou bolter et nouvelle présentation"
+explanation: >-
+  L'appontage s'enchaîne ainsi : présentation sur la piste oblique, finale
+  guidée (optique + officier d'appontage), toucher crosse sortie avec remise
+  des gaz, puis arrêt par le brin — ou bolter si aucun brin n'est accroché.
+evaluates: [eopan.procedures.appontage]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

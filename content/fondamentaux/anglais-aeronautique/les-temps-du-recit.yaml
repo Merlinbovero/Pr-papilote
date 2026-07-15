@@ -1,0 +1,107 @@
+schemaVersion: 1
+id: fondamentaux.anglais-aeronautique.les-temps-du-recit
+type: concept
+title: Les temps du récit en anglais
+slug: les-temps-du-recit
+summary: >-
+  Took off, has landed, was climbing when — les QCM d'anglais vivent des
+  temps. Le prétérit du récit, le present perfect du bilan, le past
+  continuous de l'action interrompue, et les irréguliers du vol.
+objectifs:
+  - Choisir entre prétérit (récit daté) et present perfect (bilan sans date).
+  - Employer le past continuous pour l'action en cours interrompue.
+  - Mémoriser les verbes irréguliers du vol (take/took, fly/flew, rise/rose).
+aliases: [temps anglais, prétérit, present perfect, past continuous, verbes irréguliers]
+module: fondamentaux
+category: anglais-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — les temps du récit (lot N14, phase P4 du plan anglais).
+    author: prepapilote
+sources:
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — anglais aéronautique"
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.anglais-aeronautique.les-verbes-du-vol
+  related:
+    - fondamentaux.anglais-aeronautique.les-modaux
+    - fondamentaux.anglais-aeronautique.l-anglais-des-selections
+content:
+  essentiel:
+    body: |
+      Trois temps couvrent l'essentiel des questions de grammaire :
+
+      - **le prétérit** — l'action **datée et finie** : *« The aircraft
+        **took off** at 10:15. »* Dès qu'une date, une heure ou *ago*
+        apparaît → prétérit ;
+      - **le present perfect** — le **bilan sans date**, le lien avec le
+        présent : *« The aircraft **has landed**. »* (il est au sol
+        maintenant) ; déclencheurs : *just, already, yet, never, since,
+        for* ;
+      - **le past continuous** — l'action **en cours** interrompue :
+        *« We **were climbing** when the engine failed. »*
+
+      La règle d'or des QCM : **une date = prétérit, jamais present
+      perfect**. *« We have landed at 10:15 »* est faux ; *« We landed at
+      10:15 »* est juste.
+    aRetenir:
+      - "Date/heure précisée → prétérit : « we took off at noon » — jamais present perfect avec une date."
+      - "Present perfect = bilan lié au présent : just, already, yet, never, since, for."
+      - "Past continuous + when : « we were climbing when the engine failed » — l'action longue en continu, l'événement bref au prétérit."
+      - "Irréguliers du vol — take/took/taken, fly/flew/flown, rise/rose/risen."
+  sections:
+    - id: preterit-vs-present-perfect
+      title: Prétérit vs present perfect
+      body: |
+        Le duel favori des QCM. Les indices qui tranchent :
+
+        | Indice dans la phrase | Temps attendu |
+        | --- | --- |
+        | *yesterday, in 2016, at 10:15, two hours ago* | prétérit |
+        | *just, already, yet* | present perfect |
+        | *since 2016, for two hours* (et ça continue) | present perfect |
+        | *when + événement passé* | prétérit |
+
+        Exemples : *« The Rafale **entered** service in 2006 »* (daté) —
+        *« The Rafale **has been** in service **since** 2006 »* (ça
+        continue). Même fait, deux temps : c'est l'indice temporel qui
+        décide, pas le sens général.
+    - id: le-recit-d-un-vol
+      title: Le récit d'un vol et les irréguliers
+      strate: maitriser
+      body: |
+        Le trio en situation, dans un récit type d'épreuve :
+
+        *« We **took off** at dawn. While we **were cruising** at 20,000
+        feet, the controller **called** us. We **have never seen** such
+        weather before. »*
+
+        — décollage daté (prétérit), action longue (past continuous)
+        interrompue par un événement bref (prétérit), bilan d'expérience
+        (present perfect avec *never*).
+
+        Les **irréguliers** à connaître absolument, tous fréquents en
+        contexte aéronautique : *take/took/taken, fly/flew/flown,
+        rise/rose/risen, fall/fell/fallen, leave/left/left, see/saw/seen,
+        begin/began/begun, break/broke/broken* — les QCM proposent
+        systématiquement la forme régulière fautive (*flied*, *taked*) en
+        distracteur.
+  pieges:
+    - "Une date interdit le present perfect — « we have landed at 10:15 » est LA faute type des QCM."
+    - "« Since » (point de départ) + present perfect ; « for » (durée) + present perfect aussi — mais « ago » exige le prétérit."
+    - "Flied n'existe pas — fly/flew/flown ; les distracteurs des QCM régularisent les irréguliers."
+    - "Past continuous pour l'action de fond, prétérit pour l'événement qui l'interrompt — pas l'inverse."

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.navigation.coord-03
+kind: association
+theme: terre-coordonnees
+statement: >-
+  Associez chaque ligne de la Terre à sa définition.
+pairs:
+  - left: "Parallèle"
+    right: "Ligne reliant les points de même latitude"
+  - left: "Méridien"
+    right: "Ligne reliant les points de même longitude"
+  - left: "Équateur"
+    right: "Référence de latitude (0°)"
+explanation: >-
+  Les parallèles relient les points de même latitude, les méridiens ceux de même
+  longitude ; l'équateur est la référence de latitude (0°).
+evaluates: [fondamentaux.navigation.terre-et-coordonnees]
+difficulty: 2
+competencies: [navigation]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,105 @@
+schemaVersion: 1
+id: eopan.ban.hyeres
+type: ban
+title: BAN de Hyères
+slug: hyeres
+summary: >-
+  Seule base d'aéronautique navale de Méditerranée, à Hyères (Var), près de
+  Toulon. Base d'hélicoptères par excellence, elle arme les flottilles qui
+  servent la Force d'action navale et assurent le secours en mer.
+objectifs:
+  - Identifier la BAN de Hyères comme la base d'aéronautique navale de Méditerranée (hélicoptères).
+  - Associer Hyères aux flottilles d'hélicoptères de combat (31F, 35F, 36F) et à leurs missions.
+  - Situer la base près de Toulon, au service de la Force d'action navale.
+aliases: [Hyères, BAN Hyères, Le Palyvestre, LFTH]
+module: eopan
+category: ban
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche-objet BAN, Hyères Le Palyvestre (base hélicoptères de Méditerranée).
+    author: prepapilote
+sources:
+  - title: "Base d'aéronautique navale d'Hyères Le Palyvestre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Base_d'a%C3%A9ronautique_navale_d'Hy%C3%A8res_Le_Palyvestre
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "Base d'aéronautique navale de Hyères — Ministère des Armées, Marine nationale"
+    url: https://www.defense.gouv.fr/marine/cols-bleus/cols-bleus-magazine/histoire/base-daeronautique-navale-hyeres
+    kind: officiel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.appareils.nh90-caiman
+    - eopan.ban.lann-bihoue
+    - eopan.organisation.aeronautique-navale
+infobox:
+  nomComplet: Base d'aéronautique navale de Hyères — Le Palyvestre
+  code: LFTH
+  localisation: Hyères (Var), près de Toulon
+  rattachement: Aéronautique navale (Marine nationale)
+  flottilles: [Flottille 31F, Flottille 35F, Flottille 36F]
+  appareilsPresents: [NH90 Caïman Marine, Panther, Dauphin, H160]
+content:
+  essentiel:
+    body: |
+      La **base d'aéronautique navale (BAN) de Hyères**, au lieu-dit **Le
+      Palyvestre** (Var), près de **Toulon**, est la **seule** BAN de
+      **Méditerranée**. C'est la grande **base d'hélicoptères** de la façade
+      **sud**.
+
+      Elle abrite **trois flottilles** d'hélicoptères de combat — la **31F**,
+      la **35F** et la **36F** — mettant en œuvre le **Caïman Marine**, le
+      **Panther**, le **Dauphin** et le **H160**. De là, les hélicoptères
+      **surveillent**, luttent contre les **sous-marins** et les menaces de
+      **surface**, et assurent le **secours en mer**.
+
+      Créée en **1925**, active **24 h/24**, Hyères est le **pivot** des
+      opérations aéromaritimes de la région, au service de la **Force d'action
+      navale** basée à Toulon.
+    aRetenir:
+      - La BAN de Hyères (Var, près de Toulon) est la seule base d'aéronautique navale de Méditerranée.
+      - C'est la grande base d'hélicoptères — flottilles 31F, 35F et 36F.
+      - Ses hélicoptères assurent surveillance, lutte anti-sous-marine, action de surface et secours en mer.
+      - Elle sert la Force d'action navale de Toulon et fonctionne 24 h/24.
+  sections:
+    - id: la-base-des-helicopteres
+      title: La base des hélicoptères
+      body: |
+        Là où Landivisiau incarne la chasse et Lann-Bihoué la patrouille,
+        **Hyères** est le royaume des **hélicoptères**. Ses trois flottilles de
+        combat mettent en œuvre une **gamme** d'appareils : le **Caïman Marine**
+        pour la lutte anti-sous-marine et le secours, mais aussi le **Panther**,
+        le **Dauphin** et le nouveau **H160**, pour la surveillance, l'action de
+        surface ou le service depuis les bâtiments.
+
+        Ces hélicoptères **embarquent** sur les **frégates** et bâtiments de la
+        **Force d'action navale** de **Toulon**, dont Hyères est le point
+        d'appui aérien. La base réalise chaque année de nombreuses missions de
+        **sauvetage en mer** au profit des usagers de la Méditerranée.
+    - id: une-position-strategique
+      title: Une position stratégique
+      strate: maitriser
+      body: |
+        Implantée sur les anciens marais du **Palyvestre**, asséchés pour y
+        installer l'aviation maritime dès les années **1920**, la base de Hyères
+        a **un siècle d'histoire**. Fermée sous l'Occupation, elle a repris son
+        essor pour devenir la **grande base hélicoptères** du Sud.
+
+        Sa position en **Méditerranée**, proche de **Toulon** — premier port
+        militaire français et port d'attache du **porte-avions Charles de
+        Gaulle** — en fait un **pivot** des opérations aéromaritimes régionales.
+        Elle accueille aussi des aéronefs alliés et d'autres armées lors des
+        exercices internationaux.
+  pieges:
+    - Hyères est la seule BAN de Méditerranée — les trois autres sont en Bretagne.
+    - C'est une base d'hélicoptères — pas de chasse embarquée ni de patrouille maritime à demeure.
+    - Ne pas confondre la BAN de Hyères avec le port de Toulon — la base aéronavale arme les hélicoptères, le port abrite les navires.

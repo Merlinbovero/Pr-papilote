@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopan.lanveoc-01
+kind: qcm
+theme: bases-navales
+statement: >-
+  À quelle grande institution la BAN de Lanvéoc-Poulmic est-elle rattachée ?
+choices:
+  - L'École navale
+  - L'École de l'air
+  - L'École polytechnique
+  - L'École de guerre
+correctChoices: [0]
+explanation: >-
+  Lanvéoc-Poulmic, sur la presqu'île de Crozon, est étroitement liée à l'École
+  navale, qui forme les officiers de la Marine nationale.
+evaluates: [eopan.ban.lanveoc-poulmic]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

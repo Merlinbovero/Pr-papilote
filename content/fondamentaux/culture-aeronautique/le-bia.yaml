@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: fondamentaux.culture-aeronautique.le-bia
+type: concept
+title: Le BIA — brevet d'initiation aéronautique
+slug: le-bia
+summary: >-
+  Dès 13 ans, le BIA valide une vraie culture aéronautique — cinq domaines, une
+  épreuve nationale, un diplôme de l'Éducation nationale. Pour un futur
+  candidat EOPAN, EOPN ou ALAT, c'est la première preuve datée d'une passion.
+objectifs:
+  - Savoir ce qu'est le BIA (diplôme, public, programme en cinq domaines).
+  - Connaître le format de l'épreuve (écrit de 2 h 30, anglais facultatif).
+  - Situer l'intérêt du BIA dans un parcours vers les concours de pilote militaire.
+aliases: [BIA, brevet d'initiation aéronautique, CAEA, diplôme aéronautique]
+module: fondamentaux
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot CM2 de la campagne COMAERO (tome 1 §4.3.3) ; réglementation actuelle re-vérifiée (éduscol, Légifrance).
+    author: prepapilote
+sources:
+  - title: "Éduscol STI — Brevet d'initiation aéronautique (BIA), cadre en vigueur (arrêté du 5 janvier 2024)"
+    url: https://sti.eduscol.education.fr/formations/tout-niveau/brevet-dinitiation-aeronautique-bia
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Légifrance — Arrêté du 19 février 2015 modifié relatif au brevet d'initiation aéronautique"
+    url: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000030262180
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Ministère des Armées — Le BIA (rubrique EPAE)"
+    url: https://www.defense.gouv.fr/epae/brevet-dinitiation-laeronautique-0
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "COMAERO — La Formation, tome 1 (EUROSAE), §4.3.3 « Le BIA et le CAEA »"
+    url: https://eurosae.com/wp-content/uploads/2025/05/La-Formation_Tome_1.pdf
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise
+    - fondamentaux.anglais-aeronautique.l-anglais-des-selections
+content:
+  essentiel:
+    body: |
+      Le **BIA** (brevet d'initiation aéronautique) est un **diplôme de
+      l'Éducation nationale**, développé avec le ministère chargé des
+      Transports (DGAC), qui valide une **culture générale aéronautique et
+      spatiale**. Il est ouvert aux jeunes d'**au moins 13 ans** à la date
+      des épreuves, sans aucun prérequis, et se prépare sur une année
+      scolaire — en collège, en lycée ou en aéro-club.
+
+      Le programme couvre **cinq domaines** (cadre en vigueur — arrêté du
+      19 février 2015 modifié en dernier lieu le 5 janvier 2024) :
+
+      1. météorologie et aérologie ;
+      2. aérodynamique, aérostatique et principes du vol ;
+      3. étude des aéronefs et engins spatiaux ;
+      4. navigation, réglementation, sécurité des vols ;
+      5. histoire et culture de l'aéronautique et du spatial.
+
+      L'examen — une **épreuve écrite obligatoire de 2 h 30** notée sur
+      20 (admis à partir de **10/20**, mentions AB/B/TB), plus une
+      **épreuve facultative d'anglais de 30 minutes**. Le diplôme est
+      délivré par les recteurs d'académie.
+    aRetenir:
+      - "BIA = diplôme de l'Éducation nationale, dès 13 ans, sans prérequis — la culture aéronautique validée officiellement."
+      - Cinq domaines — météo, aérodynamique et vol, aéronefs, navigation-réglementation-sécurité, histoire et culture.
+      - "Épreuve écrite de 2 h 30, admis à 10/20 — plus une épreuve facultative d'anglais de 30 minutes."
+      - Les cinq domaines du BIA recouvrent presque exactement le module Fondamentaux de PrépaPilote.
+  sections:
+    - id: pourquoi-le-passer
+      title: Pourquoi le passer quand on vise un concours de pilote
+      body: |
+        Aucun concours EOPAN, EOPN ou ALAT n'exige le BIA. Mais pour un
+        candidat, il apporte trois choses :
+
+        - une **preuve datée** — en entretien, « passionné d'aviation
+          depuis toujours » ne vaut rien sans preuve ; un BIA passé à 14
+          ou 15 ans en est une, vérifiable ;
+        - un **socle réel** — les cinq domaines sont exactement les
+          fondamentaux que testent les sélections (météo, mécanique du
+          vol, navigation…) ; le travail n'est jamais perdu ;
+        - un **réseau** — la préparation se fait souvent en aéro-club ou
+          avec des enseignants titulaires du **CAEA** (certificat
+          d'aptitude à l'enseignement aéronautique), premiers contacts
+          avec le monde aéronautique réel.
+
+        Le ministère des Armées le met d'ailleurs en avant dans ses
+        dispositifs jeunesse (Escadrilles air jeunesse, EPAE) — le BIA est
+        reconnu comme la première marche des vocations aéronautiques.
+    - id: bia-et-caea
+      title: BIA et CAEA — ne pas confondre
+      strate: maitriser
+      body: |
+        Le **CAEA** est le diplôme **de l'enseignant** — il atteste
+        l'aptitude à enseigner l'aéronautique en milieu scolaire, et il
+        est exigé pour encadrer la préparation au BIA. Le **BIA** est le
+        diplôme **de l'élève**. Les deux sont délivrés par l'Éducation
+        nationale en partenariat avec l'aviation civile.
+
+        Historiquement, le tandem BIA/CAEA prolonge une longue tradition
+        de diffusion de la culture aéronautique vers la jeunesse — le
+        COMAERO le décrit comme un « trait d'union » entre l'école et les
+        pratiques aéronautiques, dont la préparation mobilise
+        mathématiques, physique, météorologie, cartographie et histoire.
+  pieges:
+    - Le BIA n'est exigé par aucun concours militaire — c'est un atout de dossier et d'entretien, pas une condition.
+    - "BIA = diplôme de l'élève ; CAEA = diplôme de l'enseignant qui prépare au BIA."
+    - "L'épreuve d'anglais du BIA est facultative — 30 minutes, en plus de l'écrit obligatoire de 2 h 30."
+    - Le BIA se passe dès 13 ans — attendre la terminale pour s'y intéresser fait perdre l'essentiel de sa valeur de preuve.

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.navigation.radionav-04
+kind: qcm
+theme: radionavigation
+statement: >-
+  Combien de satellites au minimum faut-il pour obtenir une position GPS
+  complète ?
+choices:
+  - "4"
+  - "3"
+  - "2"
+  - "12"
+correctChoices: [0]
+explanation: >-
+  Trois satellites pour la position dans l'espace, un quatrième pour caler
+  l'horloge du récepteur — il en faut donc au moins quatre.
+evaluates: [fondamentaux.navigation.la-radionavigation]
+difficulty: 2
+competencies: [connaissances-aeronautiques, navigation]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.suites-02
+kind: qcm
+theme: suites-logiques
+statement: >-
+  Quel est le terme suivant de la suite 2, 20, 4, 18, 6, 16, … ?
+choices:
+  - "8"
+  - "14"
+  - "10"
+  - "24"
+correctChoices: [0]
+explanation: >-
+  Deux suites sont entrelacées : les rangs impairs donnent 2, 4, 6 (+2) et les
+  rangs pairs 20, 18, 16 (−2). Le 7e terme appartient à la première suite :
+  6 + 2 = 8.
+evaluates: [psychotechnique.exercices.les-suites-logiques]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

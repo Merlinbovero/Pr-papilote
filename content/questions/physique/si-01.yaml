@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.physique.si-01
+kind: qcm
+theme: unites-si
+statement: >-
+  Quelle est l'unité SI de base de la longueur ?
+choices:
+  - "Le mètre"
+  - "Le pied"
+  - "Le mille marin"
+  - "Le kilomètre"
+correctChoices: [0]
+explanation: >-
+  L'unité SI de base de la longueur est le mètre (m). Le pied et le mille marin
+  sont des unités aéronautiques ou historiques, tolérées à côté du SI.
+evaluates: [fondamentaux.physique.systeme-international-et-unites]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

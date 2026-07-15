@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.eopan.porte-avions-02
+kind: vrai-faux
+theme: porte-avions
+statement: >-
+  « Porte-avions nucléaire » signifie que le Charles de Gaulle emporte des armes nucléaires en permanence.
+answer: false
+explanation: >-
+  Faux. « Nucléaire » désigne ici la propulsion (2 réacteurs), pas l'armement.
+  Le navire peut contribuer à la dissuasion via les Rafale de la FANu, mais le
+  qualificatif porte sur son mode de propulsion.
+evaluates: [eopan.bases.charles-de-gaulle]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

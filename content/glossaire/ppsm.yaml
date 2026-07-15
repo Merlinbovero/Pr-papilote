@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.ppsm
+title: PPSM
+definition: >-
+  Posture permanente de sauvegarde maritime — dispositif de la Marine assurant
+  au quotidien la surveillance et la défense des approches maritimes
+  françaises, cœur de la mission de protection.
+sigleExpansion: Posture permanente de sauvegarde maritime
+synonyms: []
+ficheId: eopan.missions.missions-de-la-marine
+tags: []
+status: publie

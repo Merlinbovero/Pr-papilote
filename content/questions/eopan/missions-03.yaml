@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.missions-03
+kind: qcm
+theme: missions-marine
+statement: >-
+  Quelle est la différence entre projection de puissance et projection de force ?
+choices:
+  - La puissance = le groupe aéronaval (frappe dans la durée) ; la force = les commandos (actions ciblées)
+  - Ce sont deux noms pour le porte-avions
+  - La puissance concerne l'air, la force concerne la mer
+  - La force est plus lourde que la puissance
+correctChoices: [0]
+explanation: >-
+  La projection de puissance s'appuie sur le groupe aéronaval (Charles de Gaulle)
+  pour frapper dans la masse et la durée ; la projection de force désigne les
+  commandos marine, qui mènent des actions ciblées et précises.
+evaluates: [eopan.missions.missions-de-la-marine]
+difficulty: 3
+competencies: [culture-militaire, raisonnement-logique]
+concours: [eopan]
+status: publie

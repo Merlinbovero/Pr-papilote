@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-approche-05
+kind: qcm
+theme: anglais-phraseologie
+statement: >-
+  Quelle est la bonne réponse radio à une instruction que vous ne pouvez pas exécuter ?
+choices:
+  - "« Unable »"
+  - Ne rien répondre
+  - "« Standby »"
+  - "« Negative, sorry »"
+correctChoices: [0]
+explanation: >-
+  « Unable » est le mot normalisé pour refuser proprement une instruction
+  intenable — le silence est dangereux et « standby » signifie seulement
+  « attendez ».
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-de-l-approche]
+difficulty: 2
+competencies: [anglais-aeronautique]
+concours: [eopan, eopn, alat]
+status: publie

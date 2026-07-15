@@ -1,0 +1,130 @@
+schemaVersion: 1
+id: fondamentaux.radio-communications.la-phraseologie-de-base
+type: concept
+title: La phraséologie de base
+slug: la-phraseologie-de-base
+summary: >-
+  À la radio, chaque mot compte — la phraséologie normalise qui parle, à qui,
+  et avec quels mots : structure d'un message, collationnement, expressions
+  conventionnelles et prononciation des nombres.
+objectifs:
+  - Structurer un message radio (qui j'appelle, qui je suis, où je suis, ce que je demande).
+  - Employer les expressions conventionnelles à bon escient (roger, wilco, affirme, négatif…).
+  - Comprendre le rôle du collationnement et de la fréquence de détresse 121,5 MHz.
+aliases: [phraséologie, message radio, collationnement, roger, wilco, "121,5 MHz"]
+module: fondamentaux
+category: radio-communications
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche phraséologie de base (lot N9, renforcement du socle radio).
+    author: prepapilote
+sources:
+  - title: "Guide de phraséologie du SIA (Service de l'information aéronautique, DGAC)"
+    url: https://www.sia.aviation-civile.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Manuel du pilote d'avion (Cépaduès Éditions)"
+    kind: ouvrage
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  prerequisites:
+    - fondamentaux.radio-communications.alphabet-oaci
+  related:
+    - fondamentaux.reglementation.les-regles-de-l-air
+    - fondamentaux.anglais-aeronautique.vocabulaire-de-base
+content:
+  essentiel:
+    body: |
+      La radio aéronautique n'est pas une conversation : c'est un canal
+      **partagé**, saturé, où l'ambiguïté tue. La **phraséologie** répond à
+      ce problème par la **normalisation**.
+
+      **La structure d'un premier message** suit toujours le même ordre :
+
+      1. **qui j'appelle** (« Marseille Info ») ;
+      2. **qui je suis** (indicatif, épelé en alphabet OACI) ;
+      3. **où je suis** / mes intentions ;
+      4. **ce que je demande**.
+
+      **Le collationnement** : répéter les éléments essentiels d'une
+      clairance (cap, niveau, fréquence, piste, QNH…) pour que le
+      contrôleur **vérifie** qu'ils ont été bien compris. Une clairance
+      collationnée faux et non corrigée, c'est une erreur qui vole.
+
+      **Les mots conventionnels** — chacun a un sens précis : « **roger** »
+      (message reçu), « **wilco** » (compris, j'exécute), « **affirme** »
+      (oui), « **négatif** » (non), « **stand-by** » (attendez). Et une
+      fréquence à connaître par cœur : **121,5 MHz**, la fréquence
+      internationale de **détresse**.
+    aRetenir:
+      - "Structure d'un message — qui j'appelle, qui je suis, où je suis, ce que je demande."
+      - Le collationnement fait répéter les éléments essentiels d'une clairance pour vérification.
+      - "Roger = reçu ; wilco = compris et j'exécute ; affirme = oui ; négatif = non."
+      - 121,5 MHz — la fréquence internationale de détresse.
+  sections:
+    - id: pourquoi-normaliser
+      title: Pourquoi normaliser ?
+      body: |
+        Deux raisons rendent la phraséologie vitale :
+
+        - la **brièveté** — un canal radio est unique pour tous ; chaque
+          seconde de bavardage prive les autres d'accès, y compris en
+          urgence ;
+        - la **non-ambiguïté** — « oui » s'entend mal, « affirme » ne se
+          confond avec rien ; les nombres s'énoncent **chiffre par
+          chiffre** (le cap 340 se dit « trois quatre zéro ») pour éviter
+          les confusions entre nombres proches.
+
+        L'histoire de l'aviation compte des accidents majeurs nés d'un
+        malentendu radio — c'est pourquoi les mots, l'ordre des mots et
+        même la prononciation sont codifiés.
+    - id: roger-wilco-et-les-autres
+      title: Roger, wilco et les autres
+      body: |
+        Le trio le plus piégeux :
+
+        - « **roger** » — « j'ai reçu votre message » — ne dit ni oui, ni
+          non, ni que l'on va faire quoi que ce soit ;
+        - « **wilco** » (*will comply*) — « compris, **j'exécuterai** » —
+          l'engagement en plus ;
+        - « **affirme** » / « **négatif** » — le oui et le non.
+
+        S'y ajoutent « **stand-by** » (attendez, je rappelle), « **répétez** »
+        (je n'ai pas compris), « **correction** » (annule et remplace ce que
+        je viens de dire). Employer « roger » quand il fallait
+        collationner une clairance est l'erreur type du débutant — un
+        contrôleur exigera le collationnement complet.
+    - id: urgence-et-detresse
+      title: Urgence et détresse
+      strate: maitriser
+      body: |
+        Deux préfixes internationaux hiérarchisent les situations :
+
+        - « **PAN PAN** » (× 3) — situation d'**urgence** : sécurité
+          dégradée, sans danger immédiat de mort ;
+        - « **MAYDAY** » (× 3) — **détresse** : danger grave et imminent,
+          assistance immédiate requise.
+
+        Le message de détresse se transmet sur la fréquence en cours ou
+        sur **121,5 MHz**, veillée en permanence. Un message MAYDAY
+        impose le **silence radio** aux autres stations.
+
+        Pour le futur pilote militaire, cette rigueur radio préfigure les
+        **communications standardisées** des opérations — le lien avec les
+        facteurs humains (l'abordage de Cognac l'illustre) est direct : une
+        communication improvisée à l'instant critique, c'est une ambiguïté
+        de plus.
+  pieges:
+    - « Roger » signifie seulement « reçu » — il ne vaut ni oui, ni engagement d'exécuter (c'est wilco).
+    - Une clairance se collationne — répondre « roger » à une clairance est insuffisant.
+    - Les nombres s'énoncent chiffre par chiffre — « trois quatre zéro », jamais « trois cent quarante ».
+    - PAN PAN = urgence ; MAYDAY = détresse — deux niveaux différents, à ne pas mélanger.

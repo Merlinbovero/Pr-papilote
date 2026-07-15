@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.psychotechnique.attention-02
+kind: qcm
+theme: attention-multitache
+statement: >-
+  En double tâche, quelle stratégie est la bonne ?
+choices:
+  - Viser l'équilibre — deux tâches à 80 % valent mieux qu'une à 100 % et l'autre effondrée
+  - Se consacrer entièrement à la tâche la plus facile
+  - Ignorer la tâche secondaire
+  - Alterner toutes les deux minutes
+correctChoices: [0]
+explanation: >-
+  L'examinateur mesure la stabilité de l'ensemble. Travailler par
+  micro-cycles (quelques secondes sur la poursuite, un saut bref sur la
+  tâche secondaire) — c'est le « scan » du pilote transposé.
+evaluates: [psychotechnique.exercices.l-attention-et-le-multitache]
+difficulty: 2
+competencies: [attention-concentration]
+concours: [eopan, eopn, alat]
+status: publie

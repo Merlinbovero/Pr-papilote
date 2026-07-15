@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: eopan.selection.preparer-l-entretien-de-motivation
+type: concept
+title: Préparer l'entretien de motivation
+slug: preparer-l-entretien-de-motivation
+summary: >-
+  L'entretien ne se récite pas — il se construit. Ce que le jury cherche à
+  évaluer, comment bâtir sa préparation sur des preuves personnelles, et les
+  erreurs qui disqualifient.
+objectifs:
+  - Comprendre ce que le jury évalue réellement lors de l'entretien EOPAN.
+  - Construire sa préparation à partir de son propre parcours (méthode de la grille de preuves).
+  - Éviter les erreurs classiques — réponses apprises, motivation floue, méconnaissance du métier.
+aliases: [entretien de motivation, entretien EOPAN, jury, oral de motivation]
+module: eopan
+category: selection
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche de préparation à l'entretien de motivation (Lot H, ingestion Guide EOPAN 2020).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les entretiens"
+    kind: ouvrage
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - eopan.presentation.le-concours-eopan
+    - eopan.culture-militaire.culture-et-valeurs-de-la-marine
+    - eopan.missions.missions-de-la-marine
+    - eopan.selection.les-themes-recurrents-de-l-entretien
+content:
+  essentiel:
+    body: |
+      L'entretien de motivation est l'épreuve où se joue une grande partie de
+      la sélection — et celle qu'on prépare le plus mal quand on la prépare
+      comme un examen. Le jury n'attend pas des **réponses parfaites** : il
+      cherche à savoir **qui vous êtes** et si votre engagement tiendra.
+
+      Ce qu'il évalue, en pratique :
+
+      - la **motivation** — précise, personnelle, construite dans la durée ;
+      - la **connaissance du métier** et de la Marine — réaliste, pas rêvée ;
+      - la **maturité** — lucidité sur ses forces, ses limites, le prix de
+        l'engagement (mobilité, absences, danger) ;
+      - la **cohérence** du parcours — ce que vos choix passés disent de vous.
+
+      La règle d'or de PrépaPilote : **jamais de réponses toutes faites**. Une
+      réponse apprise par cœur se détecte en quelques secondes et dessert plus
+      qu'un silence. Ce qui convainc, ce sont **vos preuves** — des faits
+      tirés de votre vie.
+    aRetenir:
+      - Le jury évalue la personne (motivation, maturité, cohérence), pas la récitation.
+      - Toute affirmation sur soi doit être adossée à une preuve vécue (méthode de la grille de preuves).
+      - Connaître le métier de façon réaliste — missions, contraintes, vie embarquée — pas seulement le pilotage.
+      - Les réponses apprises par cœur se détectent et desservent.
+  sections:
+    - id: la-grille-de-preuves
+      title: La méthode de la grille de preuves
+      body: |
+        Plutôt que d'apprendre des réponses, construisez une **grille en
+        trois colonnes** :
+
+        1. **Qualité ou valeur** — ce que vous voulez montrer (persévérance,
+           esprit d'équipe, sang-froid, discipline…) ;
+        2. **Preuve vécue** — un fait précis de votre parcours qui le
+           démontre (une saison de sport collectif, un échec surmonté, un
+           engagement associatif, un travail d'été difficile) ;
+        3. **Lien avec le métier** — en quoi cette qualité servira au pilote
+           et au marin que vous voulez devenir.
+
+        Remplissez-la sur plusieurs semaines. Le jour J, vous ne réciterez
+        rien : vous **puiserez** dans cette matière selon les questions. C'est
+        la différence entre un candidat qui « répond bien » et un candidat
+        **crédible**.
+    - id: ce-que-le-jury-teste
+      title: Ce que le jury teste vraiment
+      body: |
+        Attendez-vous à être **bousculé** — c'est voulu. Quelques mécanismes
+        classiques :
+
+        - la **question qui fâche** (« Et si vous échouez ? », « Pourquoi pas
+          l'armée de l'Air ? ») — elle teste la solidité, pas la réponse ;
+        - la **relance en profondeur** (« Donnez-moi un exemple ») — elle
+          vérifie que vos affirmations reposent sur du vécu ;
+        - le **silence** — il teste votre calme ; ne le comblez pas par du
+          remplissage ;
+        - la **contradiction** — assumer un désaccord argumenté vaut mieux
+          que changer d'avis pour plaire.
+
+        Répondre « je ne sais pas, mais voici comment je le découvrirais »
+        est une **bonne** réponse — un pilote reconnaît ses limites.
+    - id: les-erreurs-qui-disqualifient
+      title: Les erreurs qui disqualifient
+      strate: maitriser
+      body: |
+        Les jurys convergent sur les mêmes signaux d'alerte :
+
+        - **ne viser que le pilotage** — oublier qu'on s'engage d'abord comme
+          **marin**, au service d'un équipage et d'une mission ;
+        - la **motivation floue** (« depuis tout petit je rêve de voler »)
+          sans rien qui la concrétise — brevets, préparation, lectures,
+          démarches ;
+        - l'**ignorance du parcours** qui attend le candidat — sélection,
+          formation, affectations possibles (chasse, patrouille maritime,
+          hélicoptère) ;
+        - le **dénigrement** des autres armées ou des autres métiers ;
+        - la **posture** — arrogance ou fausse modestie ; le jury a vu des
+          centaines de candidats, il calibre vite.
+
+        Aucune de ces erreurs n'est une fatalité : toutes se corrigent par une
+        préparation **honnête**, appuyée sur les fiches culture (missions,
+        valeurs, organisation) et sur votre propre histoire.
+  pieges:
+    - Apprendre des réponses par cœur — le jury le détecte et cela ruine la crédibilité ; on prépare une matière, pas un texte.
+    - Croire que l'entretien évalue des connaissances — il évalue une personne ; les connaissances se montrent ailleurs (tests, culture aéro).
+    - Vouloir être pilote sans vouloir être marin — la hiérarchie des engagements est l'inverse — marin d'abord, pilote ensuite.
+    - Combler les silences par du remplissage — le calme sous pression fait partie de l'évaluation.

@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: alat.organisation.ecole-de-l-aviation-legere-de-l-armee-de-terre
+type: organisation
+title: L'EALAT — l'école des pilotes d'hélicoptères
+slug: ecole-de-l-aviation-legere-de-l-armee-de-terre
+summary: >-
+  Dax pour apprendre à voler, Le Cannet-des-Maures pour apprendre à
+  combattre — l'EALAT forme une centaine de pilotes d'hélicoptères par an,
+  pour l'armée de Terre mais aussi la Marine, l'Air et la Gendarmerie.
+objectifs:
+  - Situer l'EALAT et ses deux bases-écoles (Dax, Le Cannet-des-Maures/Le Luc).
+  - Distinguer formation initiale (Dax, H120 Calliopé) et formation tactique (Le Luc).
+  - Comprendre son rôle interarmées (elle forme les pilotes d'hélicoptères de l'État).
+aliases: [EALAT, école de l'ALAT, Dax, Le Luc, Cannet-des-Maures, Calliopé]
+module: alat
+category: organisation
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — lot F5 du plan V1 (cœur du cursus ALAT et de la future carte des écoles) ; données vérifiées sur les portails officiels de l'armée de Terre.
+    author: prepapilote
+sources:
+  - title: "Ministère des Armées — École de l'aviation légère de l'armée de Terre"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre/ecole-laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-14"
+  - title: "Portail de l'armée de Terre — présentation de l'EALAT et de ses formations"
+    url: https://www.terre.defense.gouv.fr/ealat/presentation-lealat
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  related:
+    - alat.presentation.devenir-pilote-alat
+    - fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere
+    - alat.organisation.aviation-legere-armee-de-terre
+infobox:
+  nomComplet: École de l'aviation légère de l'armée de Terre (EALAT)
+  tutelle: Armée de Terre (commandement de l'ALAT)
+  role: Formation des pilotes d'hélicoptères de l'État et des spécialistes aéronautiques
+  effectifs: ~1 150 personnels, ~1 000 stagiaires par an, ~100 pilotes formés par an (état au 2026-07)
+content:
+  essentiel:
+    body: |
+      L'**EALAT** est l'école qui transforme un jeune engagé en **pilote
+      d'hélicoptères militaire**. Elle s'articule en deux bases-écoles
+      (état au 2026-07, portails officiels de l'armée de Terre) :
+
+      - **Dax** (Landes, base « Navelet ») — la **formation initiale** :
+        apprendre à voler, sur l'**H120 Calliopé** (36 appareils exploités
+        avec un partenaire civil), l'hélicoptère-école sur lequel passent
+        **tous les pilotes d'hélicoptères de l'État** ;
+      - **Le Cannet-des-Maures / Le Luc** (Var, base « Lejay », siège du
+        commandement) — la **formation tactique** : apprendre à
+        combattre, voler en patrouille, de nuit sous jumelles, et se
+        spécialiser sur les systèmes d'armes ; le site héberge aussi
+        l'école **franco-allemande** Tigre.
+
+      Environ **100 pilotes** sortent chaque année — pour l'armée de
+      Terre, mais aussi la **Marine**, l'**armée de l'Air**, la
+      **Gendarmerie**, la Sécurité civile et les Douanes : l'EALAT est
+      l'école des hélicoptéristes de l'État.
+    aRetenir:
+      - "EALAT = deux bases-écoles : Dax (formation initiale, H120 Calliopé) et Le Cannet-des-Maures (formation tactique)."
+      - Tous les pilotes d'hélicoptères de l'État passent par Dax — Terre, Marine, Air, Gendarmerie, Sécurité civile.
+      - "Une centaine de pilotes formés par an, ~1 000 stagiaires — et l'école franco-allemande Tigre au Luc."
+      - "La logique du cursus — d'abord VOLER (Dax), ensuite COMBATTRE (Le Luc), enfin se spécialiser en régiment."
+  sections:
+    - id: le-parcours-de-l-eleve
+      title: Le parcours de l'élève pilote
+      body: |
+        Pour un EOPAN hélico, un élève ALAT ou un futur pilote de
+        Caracal de l'armée de l'Air, le chemin passe par les mêmes
+        étapes :
+
+        1. **Dax** — pilotage de base sur Calliopé : mécanique du vol
+           appliquée, autorotations, navigation, vol aux instruments ;
+        2. **Le Luc** — le « métier » : vol tactique, très basse
+           altitude, patrouille, jumelles de vision nocturne, treuillage ;
+        3. la **spécialisation** — sur le type de la future unité
+           (Gazelle, Tigre, Caïman, Cougar…), à l'école ou au régiment.
+
+        Les instructeurs sont des opérationnels aguerris — la grande
+        majorité compte plusieurs déploiements en opérations : l'école
+        enseigne ce qu'elle a pratiqué.
+    - id: pourquoi-c-est-un-noeud-strategique
+      title: Un nœud interarmées
+      strate: maitriser
+      body: |
+        L'EALAT illustre une idée que les jurys aiment entendre — la
+        **mutualisation** : plutôt que trois écoles d'hélicoptères
+        concurrentes, la France en a une, opérée par l'armée de Terre
+        (premier utilisateur d'hélicoptères des armées), au profit de
+        tous. Le partenariat de Dax avec un opérateur civil pour la
+        flotte Calliopé est de la même veine — l'État achète des heures
+        de vol, pas des hélicoptères d'école.
+
+        Pour un candidat ALAT, connaître le couple **Dax-Le Luc** est
+        indispensable ; pour un candidat EOPAN orienté hélico ou un
+        futur « hélico » de l'Air, savoir qu'on y passera aussi montre
+        une vraie compréhension du paysage.
+  pieges:
+    - "L'EALAT forme les pilotes d'hélicoptères de TOUT l'État — pas seulement ceux de l'armée de Terre."
+    - "Deux sites, deux métiers — Dax = apprendre à voler ; Le Cannet-des-Maures = apprendre à combattre."
+    - "Le Calliopé (H120) de Dax est exploité en partenariat civil — l'État achète des heures de vol."
+    - L'école franco-allemande Tigre est au Luc — la coopération européenne commence dès la formation.

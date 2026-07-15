@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.isa-06
+kind: qcm
+theme: atmosphere-standard
+statement: >-
+  De combien la température décroît-elle en moyenne par 1 000 ft en
+  atmosphère standard ?
+choices:
+  - "2 °C"
+  - "6,5 °C"
+  - "0,5 °C"
+  - "10 °C"
+correctChoices: [0]
+explanation: >-
+  2 °C par 1 000 ft (6,5 °C par 1 000 m) — le gradient standard, à
+  connaître par cœur pour tous les calculs d'altitude.
+evaluates: [fondamentaux.meteorologie.atmosphere-standard]
+difficulty: 1
+competencies: [connaissances-aeronautiques, meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

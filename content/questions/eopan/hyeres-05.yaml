@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.hyeres-05
+kind: association
+theme: bases-navales
+statement: >-
+  Associez chaque base d'aéronautique navale à sa dominante.
+pairs:
+  - left: Landivisiau
+    right: Chasse embarquée
+  - left: Lann-Bihoué
+    right: Patrouille maritime et guet aérien
+  - left: Lanvéoc-Poulmic
+    right: Formation et hélicoptères
+  - left: Hyères
+    right: Hélicoptères en Méditerranée
+explanation: >-
+  Chaque BAN a une dominante : Landivisiau la chasse, Lann-Bihoué la patrouille
+  et le guet, Lanvéoc la formation et les hélicoptères, Hyères les hélicoptères
+  de Méditerranée.
+evaluates: [eopan.ban.hyeres]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

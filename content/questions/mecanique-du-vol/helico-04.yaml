@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.helico-04
+kind: qcm
+theme: vol-helicoptere
+statement: >-
+  Pourquoi la vitesse maximale d'un hélicoptère classique est-elle limitée ?
+choices:
+  - "La dissymétrie entre pale avançante et pale reculante"
+  - "Le poids du rotor de queue"
+  - "La consommation du turbomoteur"
+  - "La résistance du train d'atterrissage"
+correctChoices: [0]
+explanation: >-
+  En translation, la pale avançante voit beaucoup plus de vent que la pale
+  reculante — cette dissymétrie de portance, compensée jusqu'à un certain
+  point, finit par limiter la vitesse.
+evaluates: [fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

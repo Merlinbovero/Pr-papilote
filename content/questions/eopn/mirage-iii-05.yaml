@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.eopn.mirage-iii-05
+kind: ordre
+theme: appareils-historiques
+statement: >-
+  Classez ces avions Dassault du premier vol le plus ancien au plus récent.
+items:
+  - "Mirage I (Mystère Delta)"
+  - "Mirage III-001"
+  - "Mirage IV-01"
+  - "Mirage 2000"
+explanation: >-
+  Mirage I en juin 1955, Mirage III-001 en novembre 1956, Mirage IV-01 en
+  juin 1959, et le Mirage 2000 vole en 1978 — trois générations de delta.
+evaluates: [eopn.appareils.mirage-iii]
+difficulty: 2
+competencies: [connaissances-aeronautiques, culture-militaire]
+concours: [eopn]
+status: publie

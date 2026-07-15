@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.eac-04
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Quel est l'enjeu du classement à l'École de l'aviation de chasse ?
+choices:
+  - Il pèse sur l'affectation — Rafale ou Mirage 2000
+  - Il détermine la solde du pilote pour toute sa carrière
+  - Il n'a aucune conséquence
+  - Il décide du grade de sortie
+correctChoices: [0]
+explanation: >-
+  À Cognac se jouent l'attribution du macaron de pilote de chasse et le
+  classement, qui pèse sur l'affectation vers la transformation Rafale
+  (Saint-Dizier) ou Mirage 2000 (Nancy).
+evaluates: [eopn.organisation.ecole-de-l-aviation-de-chasse]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

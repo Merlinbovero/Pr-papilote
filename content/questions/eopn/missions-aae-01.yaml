@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.missions-aae-01
+kind: qcm
+theme: missions-aae
+statement: >-
+  Quelles sont les trois fonctions stratégiques de l'armée de l'Air et de l'Espace ?
+choices:
+  - Protéger, dissuader, intervenir
+  - Explorer, transporter, commercer
+  - Observer, bombarder, occuper
+  - Former, réparer, ravitailler
+correctChoices: [0]
+explanation: >-
+  L'AAE articule son action autour de trois fonctions stratégiques : protéger
+  (PPS-A, police du ciel), dissuader (FAS) et intervenir (projection de
+  puissance) — auxquelles s'ajoute depuis 2020 la dimension spatiale.
+evaluates: [eopn.missions.missions-de-l-armee-de-l-air]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

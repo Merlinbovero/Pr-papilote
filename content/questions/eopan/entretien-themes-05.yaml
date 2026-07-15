@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.eopan.entretien-themes-05
+kind: vrai-faux
+theme: entretien-eopan
+statement: >-
+  Quand le jury demande « Avez-vous des questions ? », il est préférable de répondre « non » pour ne pas allonger l'entretien.
+answer: false
+explanation: >-
+  Faux. Avoir préparé une ou deux questions précises et sincères laisse une
+  bonne dernière impression — une non-réponse gâche la fin de l'entretien.
+evaluates: [eopan.selection.les-themes-recurrents-de-l-entretien]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.anglais-aeronautique.anglais-otan-01
+kind: qcm
+theme: anglais-vocabulaire
+statement: >-
+  Quelle est la différence entre « joint » et « combined » dans le vocabulaire OTAN ?
+choices:
+  - Joint = interarmées (un même pays) ; combined = interallié (plusieurs nations)
+  - Joint = interallié ; combined = interarmées
+  - Ce sont deux synonymes
+  - Joint ne s'emploie que pour les hélicoptères
+correctChoices: [0]
+explanation: >-
+  Joint désigne la coopération entre armées d'un même pays (interarmées) ;
+  combined la coopération entre nations (interallié). La distinction
+  structure tous les noms d'états-majors et d'exercices.
+evaluates: [fondamentaux.anglais-aeronautique.l-anglais-militaire]
+difficulty: 2
+competencies: [anglais-aeronautique, culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

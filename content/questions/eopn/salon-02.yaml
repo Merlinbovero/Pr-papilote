@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.eopn.salon-02
+kind: qcm
+theme: bases-aae
+statement: >-
+  Quelle formation acrobatique célèbre est basée à Salon-de-Provence ?
+choices:
+  - La Patrouille de France
+  - La Patrouille de Chine
+  - Les Red Arrows
+  - La Patrouille Cartouche Doré
+correctChoices: [0]
+explanation: >-
+  La Patrouille de France, formation acrobatique officielle de l'armée de l'air,
+  est stationnée à la BA 701 de Salon-de-Provence depuis 1964.
+evaluates: [eopn.bases.salon-de-provence]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

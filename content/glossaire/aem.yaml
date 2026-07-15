@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.aem
+title: AEM
+definition: >-
+  Action de l'État en mer — ensemble des missions de service public assurées
+  par la Marine et les administrations maritimes : sauvetage, lutte contre les
+  pollutions, contre les trafics et la piraterie, police des pêches.
+sigleExpansion: Action de l'État en mer
+synonyms: []
+ficheId: eopan.missions.missions-de-la-marine
+tags: []
+status: publie

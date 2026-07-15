@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.hawkeye-04
+kind: qcm
+theme: guet-aerien
+statement: >-
+  De combien de personnes se compose l'équipage d'un E-2C Hawkeye de la Marine
+  nationale ?
+choices:
+  - Cinq — deux pilotes et trois opérateurs
+  - Un seul pilote
+  - Deux pilotes uniquement
+  - Dix membres d'équipage
+correctChoices: [0]
+explanation: >-
+  L'équipage compte cinq marins : deux pilotes à l'avant conduisent l'avion, et
+  trois opérateurs à l'arrière, dans le poste tactique, exploitent le radar sur
+  360°.
+evaluates: [eopan.appareils.e-2c-hawkeye]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

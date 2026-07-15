@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .step { font-size: 12px; }
+    .box { stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .num { stroke: #3b82f6; fill: none; stroke-width: 1.8; }
+    .numt { fill: #3b82f6; font-size: 13px; font-weight: 700; }
+    .link { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="26" text-anchor="middle">Le parcours de sélection EOPAN</text>
+  <!-- Liaisons -->
+  <line class="link" x1="52" y1="75" x2="52" y2="91" marker-end="url(#ac)" />
+  <line class="link" x1="52" y1="123" x2="52" y2="139" marker-end="url(#ac)" />
+  <line class="link" x1="52" y1="171" x2="52" y2="187" marker-end="url(#ac)" />
+  <line class="link" x1="52" y1="219" x2="52" y2="235" marker-end="url(#ac)" />
+  <!-- Étape 1 -->
+  <circle class="num" cx="52" cy="62" r="13" /><text class="numt" x="52" y="66" text-anchor="middle">1</text>
+  <rect class="box" x="74" y="46" width="322" height="32" rx="4" />
+  <text class="step" x="86" y="66" text-anchor="start">Dossier + entretien (CIRFA)</text>
+  <!-- Étape 2 -->
+  <circle class="num" cx="52" cy="110" r="13" /><text class="numt" x="52" y="114" text-anchor="middle">2</text>
+  <rect class="box" x="74" y="94" width="322" height="32" rx="4" />
+  <text class="step" x="86" y="114" text-anchor="start">Tests psychotechniques</text>
+  <!-- Étape 3 -->
+  <circle class="num" cx="52" cy="158" r="13" /><text class="numt" x="52" y="162" text-anchor="middle">3</text>
+  <rect class="box" x="74" y="142" width="322" height="32" rx="4" />
+  <text class="step" x="86" y="162" text-anchor="start">Évaluation d'anglais</text>
+  <!-- Étape 4 -->
+  <circle class="num" cx="52" cy="206" r="13" /><text class="numt" x="52" y="210" text-anchor="middle">4</text>
+  <rect class="box" x="74" y="190" width="322" height="32" rx="4" />
+  <text class="step" x="86" y="210" text-anchor="start">Tests psychologiques + culture aéro</text>
+  <!-- Étape 5 -->
+  <circle class="num" cx="52" cy="254" r="13" /><text class="numt" x="52" y="258" text-anchor="middle">5</text>
+  <rect class="box" x="74" y="238" width="322" height="32" rx="4" />
+  <text class="step" x="86" y="258" text-anchor="start">Présélection en vol (CAP 10, Lanvéoc)</text>
+</svg>

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.hyeres-02
+kind: qcm
+theme: bases-navales
+statement: >-
+  Quel type d'aéronefs la BAN de Hyères met-elle principalement en œuvre ?
+choices:
+  - Des hélicoptères
+  - Des avions de chasse
+  - Des avions de patrouille maritime
+  - Des drones uniquement
+correctChoices: [0]
+explanation: >-
+  Hyères est la grande base d'hélicoptères de la Marine : elle abrite trois
+  flottilles d'hélicoptères de combat (31F, 35F, 36F) sur Caïman, Panther,
+  Dauphin et H160.
+evaluates: [eopan.ban.hyeres]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

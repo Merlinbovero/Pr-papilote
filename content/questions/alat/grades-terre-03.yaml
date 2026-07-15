@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.alat.grades-terre-03
+kind: vrai-faux
+theme: grades-terre
+statement: >-
+  Le major est un grade d'officier de l'armée de Terre.
+answer: false
+explanation: >-
+  Faux. Le major est le grade le plus élevé des sous-officiers, malgré la
+  consonance. Le premier grade d'officier est le sous-lieutenant.
+evaluates: [alat.grades.grades-de-l-armee-de-terre]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [alat]
+status: publie

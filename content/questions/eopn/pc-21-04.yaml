@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.pc-21-04
+kind: qcm
+theme: formation-chasse
+statement: >-
+  Quelle est la motorisation du PC-21 ?
+choices:
+  - Un turbopropulseur de 1 600 ch avec hélice à cinq pales
+  - Deux réacteurs de 7,5 t de poussée
+  - Un moteur à pistons de 180 ch
+  - Un statoréacteur
+correctChoices: [0]
+explanation: >-
+  Le PC-21 est motorisé par un turbopropulseur Pratt & Whitney PT6A-68B de
+  1 600 ch entraînant une hélice à cinq pales — vitesse maximale d'environ
+  685 km/h.
+evaluates: [eopn.appareils.pc-21]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

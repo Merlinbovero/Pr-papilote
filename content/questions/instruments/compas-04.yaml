@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.instruments.compas-04
+kind: vrai-faux
+theme: compas-conservateur
+statement: >-
+  Le conservateur de cap dérive avec le temps et doit être recalé sur le compas.
+answer: true
+explanation: >-
+  Comme tout gyroscope, le conservateur de cap dérive lentement (précession). On
+  le recale régulièrement sur le compas magnétique, en vol stabilisé.
+evaluates: [fondamentaux.instruments.compas-et-conservateur]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

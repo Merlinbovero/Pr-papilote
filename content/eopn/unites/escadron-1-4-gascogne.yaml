@@ -1,0 +1,109 @@
+schemaVersion: 1
+id: eopn.unites.escadron-1-4-gascogne
+type: escadron
+title: Escadron de chasse 1/4 « Gascogne »
+slug: escadron-1-4-gascogne
+summary: >-
+  L'escadron de l'alerte nucléaire — sur Rafale B à Saint-Dizier, le
+  « Gascogne » porte la mission la plus stratégique de l'armée de l'Air et de
+  l'Espace : la composante aéroportée de la dissuasion, avec le missile
+  ASMP-A.
+objectifs:
+  - Identifier le 1/4 « Gascogne » comme escadron nucléaire des FAS, sur Rafale B à Saint-Dizier.
+  - Connaître sa place dans la 4e escadre de chasse et sa renumérotation (ex-1/91).
+  - Comprendre ce qu'implique la mission de dissuasion pour un escadron de chasse.
+aliases: [Gascogne, 1/4 Gascogne, EC 1/4, escadron nucléaire, ex-1/91]
+module: eopn
+category: unites
+tags: []
+concours: [eopn]
+level: 3
+createdAt: "2026-07-14"
+verifiedAt: "2026-07-14"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-14"
+    version: 1
+    motif: Création — fiche escadron 1/4 Gascogne (lot N10 ; Wikipédia et sources FAS recoupées).
+    author: prepapilote
+sources:
+  - title: "Escadron de chasse 1/4 Gascogne — Wikipédia"
+    url: https://en.wikipedia.org/wiki/Escadron_de_Chasse_1/4_Gascogne
+    kind: institutionnel
+    consultedAt: "2026-07-14"
+  - title: "Les Forces aériennes stratégiques, piliers de la dissuasion nationale (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/actualites/forces-aeriennes-strategiques-piliers-dissuasion-nationale
+    kind: officiel
+    consultedAt: "2026-07-14"
+status: publie
+relations:
+  factual:
+    - predicate: affecte-a
+      target: eopn.bases.saint-dizier
+    - predicate: dote-de
+      target: eopn.appareils.rafale
+  related:
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.unites.normandie-niemen
+    - eopan.concepts.les-armements-de-l-aeronautique-navale
+infobox:
+  appellation: Escadron de chasse 1/4 « Gascogne »
+  base: BA 113 Saint-Dizier-Robinson
+  appareils: [Rafale B]
+  missions: [Dissuasion nucléaire (FAS), Frappe dans la profondeur, Chasse]
+content:
+  essentiel:
+    body: |
+      L'**escadron de chasse 1/4 « Gascogne »** est l'unité de l'**alerte
+      nucléaire** de l'armée de l'Air et de l'Espace : au sein des **Forces
+      aériennes stratégiques**, il met en œuvre depuis **Saint-Dizier** des
+      **Rafale B** (biplaces) armés du missile **ASMP-A** — la composante
+      aéroportée de la dissuasion.
+
+      L'unité a repris cette mission sur Rafale en **2010** sous le nom de
+      **1/91 « Gascogne »**, avant d'être renumérotée **1/4** en **2016**
+      lors de la recréation de la **4e escadre de chasse**. Ses traditions
+      remontent aux groupes de bombardement de la Seconde Guerre mondiale.
+
+      Servir au « Gascogne », c'est le paradoxe assumé de la dissuasion :
+      s'entraîner sans relâche à une mission dont la **réussite** est de
+      n'être **jamais exécutée**.
+    aRetenir:
+      - Le 1/4 « Gascogne » — escadron nucléaire des FAS, Rafale B, BA 113 Saint-Dizier.
+      - Mission — la composante aéroportée de la dissuasion, avec le missile ASMP-A.
+      - Ex-1/91 « Gascogne » (mission nucléaire Rafale depuis 2010), renuméroté 1/4 en 2016 (4e escadre).
+      - Le Rafale B biplace — le second membre d'équipage gère le système d'armes dans la mission nucléaire.
+  sections:
+    - id: la-mission-nucleaire
+      title: La mission nucléaire au quotidien
+      body: |
+        La dissuasion n'est pas une mission « dormante » : elle exige un
+        **entraînement permanent** — vols de longue durée avec
+        **ravitaillements en vol** multiples, pénétration des défenses,
+        procédures d'engagement au cordeau — régulièrement évalué par des
+        exercices de niveau national (les « **Poker** »).
+
+        Le **Rafale B** biplace s'y prête : le pilote et l'**officier
+        système d'armes** se partagent une charge de travail énorme sur des
+        missions de plusieurs milliers de kilomètres. La rigueur
+        d'exécution attendue est absolue — c'est l'aboutissement de la
+        sélection continue commencée à Salon-de-Provence.
+    - id: traditions-et-heritage
+      title: Traditions et héritage
+      strate: maitriser
+      body: |
+        Le « Gascogne » descend des groupes de **bombardement** — une
+        filiation cohérente : de la frappe dans la profondeur d'hier à la
+        dissuasion d'aujourd'hui. La renumérotation de 2016 (1/91 → 1/4)
+        illustre la renaissance des **escadres** : les numéros changent,
+        les **traditions** (insignes, appellations) continuent.
+
+        Avec la **FANu** de la Marine (les Rafale M du porte-avions), le
+        « Gascogne » complète le volet aéroporté de la dissuasion — les
+        deux armées partagent le même missile ASMP-A : un pont de plus
+        entre les cultures des concours EOPN et EOPAN.
+  pieges:
+    - Le « Gascogne » vole sur Rafale B (biplace) — le second membre d'équipage est essentiel à la mission nucléaire.
+    - Ex-1/91 devenu 1/4 en 2016 — deux numéros, un même escadron ; ne pas les croire distincts.
+    - La mission de dissuasion s'entraîne en permanence (exercices Poker) — « ne jamais servir » ne signifie pas « ne rien faire ».

@@ -1,0 +1,122 @@
+schemaVersion: 1
+id: alat.histoire.histoire-de-l-alat
+type: concept
+title: Histoire de l'ALAT
+slug: histoire-de-l-alat
+summary: >-
+  Des avions d'observation d'artillerie de 1952 aux hélicoptères Tigre, l'ALAT
+  a inventé en Algérie la guerre aéromobile, structuré l'aéromobilité avec la
+  4e division aéromobile, puis prouvé sa puissance lors de l'opération Daguet.
+objectifs:
+  - Situer les grandes étapes de l'histoire de l'ALAT (1952-1954, Algérie, 1985, 1991, 2016).
+  - Expliquer la naissance de l'aérocombat pendant la guerre d'Algérie.
+  - Mobiliser ces repères pour l'entretien de motivation ALAT.
+aliases: [histoire de l'ALAT, ALOA, 4e DAM, division aéromobile, opération Daguet, aéromobilité]
+module: alat
+category: histoire
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-13"
+verifiedAt: "2026-07-13"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-13"
+    version: 1
+    motif: Création — fiche d'histoire de l'ALAT (campagne de recherche n°1, lot N1 ; sources officielles et ALAT.fr recoupées).
+    author: prepapilote
+sources:
+  - title: "ALAT — 70 ans de maîtrise des airs et d'innovation tactique (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/actualites/alat-70-ans-maitrise-airs-dinnovation-tactique
+    kind: officiel
+    consultedAt: "2026-07-13"
+  - title: "Aviation légère de l'Armée de terre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Aviation_l%C3%A9g%C3%A8re_de_l'Arm%C3%A9e_de_terre
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+  - title: "ALAT.fr — historiques des unités et des écoles (UNA-ALAT)"
+    url: https://www.alat.fr/
+    kind: institutionnel
+    consultedAt: "2026-07-13"
+status: publie
+relations:
+  related:
+    - alat.organisation.aviation-legere-armee-de-terre
+    - alat.presentation.devenir-pilote-alat
+    - alat.appareils.gazelle
+    - alat.appareils.tigre
+content:
+  essentiel:
+    body: |
+      L'ALAT est née de l'**artillerie** : en **1952**, l'**ALOA** (aviation
+      légère d'observation d'artillerie) regroupe les avions légers chargés de
+      **régler les tirs**. Le **22 novembre 1954**, elle devient l'**ALAT** —
+      Aviation légère de l'Armée de terre.
+
+      C'est la **guerre d'Algérie** qui forge son identité : hélicoptères de
+      transport (**H-21 « Banane »**, H-19, H-34) et **Alouette II** armées y
+      inventent la **guerre aéromobile** — poser des troupes au contact,
+      appuyer par le feu, évacuer les blessés. Ces tactiques fondent
+      l'**aérocombat** d'aujourd'hui.
+
+      Deux jalons structurent ensuite l'arme : la **4e division aéromobile
+      (4e DAM)** en **1985**, et l'opération **Daguet** (1991) où **132
+      hélicoptères** (88 Gazelle, 38 Puma) font de l'ALAT la **deuxième force
+      aéromobile** de la coalition. En **2016**, la **4e brigade
+      d'aérocombat** reprend le flambeau.
+    aRetenir:
+      - 1952 — ALOA (observation d'artillerie) ; 22 novembre 1954 — création de l'ALAT.
+      - La guerre d'Algérie invente la guerre aéromobile (H-21, H-34, Alouette II armées).
+      - 1985 — 4e division aéromobile ; 1991 — Daguet (132 hélicoptères, 88 Gazelle et 38 Puma).
+      - 2016 — création de la 4e brigade d'aérocombat (4e BAC), héritière de cette lignée.
+  sections:
+    - id: de-l-observation-a-l-helicoptere
+      title: De l'observation à l'hélicoptère
+      body: |
+        Les premiers appareils de l'ALOA puis de l'ALAT sont des **avions
+        légers d'observation** — Piper L-18, Cessna L-19 — chargés d'être les
+        **yeux de l'artillerie**. L'arme naît donc avec une culture précise :
+        voler **bas**, **près** des troupes, **pour** les troupes.
+
+        L'**hélicoptère** change tout. En **Algérie** (1954-1962), l'ALAT et
+        les autres armées déploient massivement H-19, **H-21 « Banane »** et
+        H-34 pour l'**héliportage** des commandos, tandis que l'**Alouette II**
+        — première mondiale — reçoit des **armes** : la combinaison
+        transport + appui feu + évacuation sanitaire donne naissance aux
+        **tactiques aéromobiles** toujours en vigueur.
+    - id: l-aeromobilite-structuree
+      title: L'aéromobilité structurée
+      body: |
+        Après l'Algérie, l'ALAT bascule vers le **tout-hélicoptère** face à la
+        menace des blindés du pacte de Varsovie : la **Gazelle** armée de
+        missiles antichars devient le fer de lance de la lutte antichar.
+
+        En **1985**, la création de la **4e division aéromobile (4e DAM)** —
+        avec ses régiments d'hélicoptères de combat, de commandement et de
+        soutien — consacre l'**aéromobilité** comme mode d'action majeur : une
+        grande unité capable de porter un coup d'arrêt à des centaines de
+        kilomètres en quelques heures.
+
+        L'opération **Daguet** (guerre du Golfe, 1991) valide ce modèle en
+        vraie grandeur : **132 hélicoptères** engagés — deuxième force
+        aéromobile de la coalition derrière les États-Unis.
+    - id: l-ere-de-l-aerocombat
+      title: L'ère de l'aérocombat
+      strate: maitriser
+      body: |
+        Les décennies suivantes voient l'ALAT s'engager sur tous les théâtres
+        (Balkans, Afghanistan, Sahel) et moderniser sa flotte — arrivée du
+        **Tigre** (appui-destruction) et du **NH90 Caïman** (manœuvre).
+
+        En **juillet 2016**, la **4e brigade d'aérocombat (4e BAC)** est créée :
+        elle regroupe les régiments d'hélicoptères de combat et incarne le
+        concept d'**aérocombat** — combattre **par** la troisième dimension,
+        en intégration totale avec les troupes au sol. Connaître cette
+        filiation ALOA → ALAT → 4e DAM → 4e BAC, c'est comprendre **pourquoi**
+        le pilote ALAT se définit d'abord comme un **soldat**.
+  pieges:
+    - L'ALAT naît de l'artillerie (observation des tirs) — pas de l'aviation de chasse ; sa culture est celle du combat au sol.
+    - La guerre aéromobile naît en Algérie (années 1950), bien avant la 4e DAM de 1985.
+    - Daguet (1991) — 132 hélicoptères, deuxième force aéromobile de la coalition ; un repère chiffré apprécié en entretien.
+    - Ne pas confondre 4e DAM (division aéromobile, 1985) et 4e BAC (brigade d'aérocombat, 2016).

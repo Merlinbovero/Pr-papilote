@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.entretien-01
+kind: qcm
+theme: entretien-eopan
+statement: >-
+  Qu'évalue avant tout le jury lors de l'entretien de motivation EOPAN ?
+choices:
+  - La personne — motivation, maturité, cohérence du parcours
+  - Les connaissances techniques en aéronautique
+  - La qualité de la récitation des valeurs de la Marine
+  - Le niveau de pilotage déjà acquis
+correctChoices: [0]
+explanation: >-
+  L'entretien évalue une personne, pas des connaissances : la motivation
+  construite, la maturité (lucidité sur soi et sur l'engagement) et la
+  cohérence du parcours. Les connaissances se montrent dans les autres épreuves.
+evaluates: [eopan.selection.preparer-l-entretien-de-motivation]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
