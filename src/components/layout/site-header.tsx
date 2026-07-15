@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { UserIcon } from "lucide-react";
 import { MainNav } from "@/components/layout/main-nav";
@@ -19,9 +20,20 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="focus-visible:ring-ring rounded-sm text-lg font-bold tracking-tight focus-visible:ring-2 focus-visible:outline-none"
+          aria-label="PrépaPilote — accueil"
+          className="focus-visible:ring-ring flex items-center gap-2 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
         >
-          Prépa<span className="text-primary">Pilote</span>
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            width={30}
+            height={30}
+            className="rounded-md"
+            priority
+          />
+          <span className="text-lg font-bold tracking-tight">
+            Prépa<span className="text-primary">Pilote</span>
+          </span>
         </Link>
         <MainNav />
         <div className="ml-auto flex items-center gap-2">

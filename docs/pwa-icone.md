@@ -18,11 +18,17 @@ barre d'adresse, et reflète toujours la dernière version en ligne.
     système applique lui-même le masque ; garder le motif dans les 80 %
     centraux (zone de sécurité).
   - `apple-touch-icon.png` — 180×180, plein cadre : iOS arrondit lui-même.
+  - `logo-mark.png` — 128×128, écu sur **tuile blanche arrondie**, affiché
+    dans l'en-tête du site à côté du nom.
 
-## Remplacer l'icône provisoire par le logo définitif
+L'icône est le **logo officiel** : l'écu tricolore à trois quartiers
+(ancre + vagues = aéronavale ; oiseau tricolore = Air & Espace ;
+hélicoptère + montagnes = ALAT), centré sur fond blanc. La pastille
+`logo-mark.png` (écu sur tuile blanche arrondie) sert aussi dans l'en-tête.
 
-L'icône actuelle (avion en papier blanc sur bleu drapeau) est provisoire.
-Pour poser le logo définitif, il suffit de **régénérer ces quatre PNG**.
+## Remplacer l'icône par une nouvelle version
+
+Pour poser une nouvelle version du logo, il suffit de **régénérer ces PNG**.
 
 1. Fournir le logo en carré, idéalement un **SVG** ou un PNG ≥ 512×512.
 2. Décliner aux quatre tailles ci-dessus (fond plein pour les versions
