@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
+import { getFranceMap } from "@/lib/cartes/geo";
 import { getModuleAccentVar } from "@/lib/module-accent";
 import { SITE_PHOTOS } from "@/lib/photos";
 
@@ -32,7 +33,12 @@ export default function CartePage() {
         photo={SITE_PHOTOS.eopn}
         accentVar={getModuleAccentVar("eopn")}
       />
-      <BaseMap implantations={implantations} armeeLabel="armée de l'Air et de l'Espace" />
+      <BaseMap
+        implantations={implantations}
+        armeeLabel="armée de l'Air et de l'Espace"
+        map={getFranceMap()}
+        accentVar={getModuleAccentVar("eopn")}
+      />
     </main>
   );
 }

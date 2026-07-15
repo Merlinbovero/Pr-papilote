@@ -21,7 +21,7 @@ test.describe("cartes des bases", () => {
     const panel = page.getByRole("complementary", { name: "Détail de l'implantation" });
     await expect(panel.getByRole("heading", { name: "BAN Lanvéoc-Poulmic" })).toBeVisible();
     await expect(panel.getByText(/Finistère/)).toBeVisible();
-    await expect(panel.getByRole("link", { name: "Lire la fiche complète →" })).toBeVisible();
+    await expect(panel.getByRole("link", { name: /Lire la fiche complète/ })).toBeVisible();
     // Lien de graphe : la présélection en vol se trouve sur la même base.
     await panel.getByRole("link", { name: /présélection en vol/i }).click();
     await expect(

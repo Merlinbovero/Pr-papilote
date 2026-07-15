@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getFicheById, getFicheHref } from "@/lib/content/fiches";
+import { project } from "./geo";
 import { implantationsFileSchema, type Implantation, type ImplantationView } from "./schema";
 
 /**
@@ -42,6 +43,7 @@ export function getImplantationViews(armee: Implantation["armee"]): Implantation
     .filter((implantation) => implantation.armee === armee)
     .map((implantation) => {
       const fiche = implantation.ficheId ? getFicheById(implantation.ficheId) : undefined;
+      const { x, y } = project(implantation.lat, implantation.lon);
       return {
         ...implantation,
         ficheHref: fiche ? getFicheHref(fiche) : undefined,
@@ -49,6 +51,8 @@ export function getImplantationViews(armee: Implantation["armee"]): Implantation
           const linked = getFicheById(id);
           return linked ? [{ label: linked.title, href: getFicheHref(linked) }] : [];
         }),
+        x,
+        y,
       };
     });
 }
