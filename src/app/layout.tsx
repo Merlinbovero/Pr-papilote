@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -33,6 +33,23 @@ export const metadata: Metadata = {
     description:
       "La référence francophone pour préparer les concours de pilote militaire français.",
   },
+  // Installation en application (PWA) — icône d'écran d'accueil sur iPhone.
+  appleWebApp: {
+    capable: true,
+    title: "PrépaPilote",
+    statusBarStyle: "default",
+  },
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0d55ad",
 };
 
 export default function RootLayout({
