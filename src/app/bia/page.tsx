@@ -32,6 +32,7 @@ export default function BiaHubPage() {
         title="Parcours BIA"
         description="Cinq matières, une épreuve écrite de 2 h 30, l'admission à 10/20 — le programme officiel du BIA recoupe presque exactement le socle des sélections pilote. Étudiez matière par matière, puis mesurez-vous à l'examen blanc."
         photo={SITE_PHOTOS.fondamentaux}
+        size="hero"
       />
 
       <section aria-label="Les matières du BIA" className="space-y-4">
@@ -41,20 +42,27 @@ export default function BiaHubPage() {
             <li key={matiere.slug}>
               <Link
                 href={`/bia/${matiere.slug}`}
-                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+                className="focus-visible:ring-ring group block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
               >
-                <Card className="hover:border-primary/40 h-full transition-colors">
-                  <CardHeader>
-                    <CardTitle className="flex items-start gap-2 text-base">
-                      <span className="text-primary font-semibold">{index + 1}.</span>
-                      {matiere.name}
-                    </CardTitle>
-                    <CardDescription>{matiere.description}</CardDescription>
-                    <p className="text-muted-foreground pt-1 text-sm">
-                      {matiere.ficheCount} fiches · {matiere.questionCount} questions
-                    </p>
-                  </CardHeader>
-                </Card>
+                <div className="bg-card h-full rounded-xl border p-5 transition-[transform,box-shadow] duration-200 group-hover:-translate-y-0.5 group-hover:shadow-md">
+                  <div className="flex items-start gap-3">
+                    <span
+                      aria-hidden
+                      className="bg-primary/10 text-primary flex size-9 shrink-0 items-center justify-center rounded-lg text-sm font-bold"
+                    >
+                      {index + 1}
+                    </span>
+                    <div className="min-w-0 space-y-1.5">
+                      <h3 className="text-base leading-tight font-semibold">{matiere.name}</h3>
+                      <p className="text-muted-foreground text-sm leading-snug">
+                        {matiere.description}
+                      </p>
+                      <p className="text-muted-foreground pt-0.5 text-xs">
+                        {matiere.ficheCount} fiches · {matiere.questionCount} questions
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

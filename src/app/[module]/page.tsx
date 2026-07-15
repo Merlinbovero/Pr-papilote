@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ChartLineIcon, TimerIcon } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
-import { Badge } from "@/components/ui/badge";
+import { CategoryCard } from "@/components/shared/category-card";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getFichesByCategory } from "@/lib/content/fiches";
 import { getCategories, getModule } from "@/lib/content/referentials";
@@ -56,6 +56,7 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
         description={mod.description}
         photo={photo}
         accentVar={accentVar}
+        size="hero"
       />
       {/* Outils du module : les actions, mises en avant et peu nombreuses */}
       <section aria-label="Outils du module">
@@ -105,27 +106,17 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
           <h2 id="categories-titre" className="text-xl font-semibold tracking-tight">
             À réviser
           </h2>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {populated.map((category) => (
               <li key={category.slug}>
-                <Link
+                <CategoryCard
                   href={`/${mod.slug}/${category.slug}`}
-                  className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
-                >
-                  <Card className="hover:border-primary/40 h-full transition-colors">
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between gap-2 text-base">
-                        {category.name}
-                        <Badge variant="secondary" className="shrink-0 font-normal">
-                          {category.count} {category.count > 1 ? "fiches" : "fiche"}
-                        </Badge>
-                      </CardTitle>
-                      {category.description ? (
-                        <CardDescription>{category.description}</CardDescription>
-                      ) : null}
-                    </CardHeader>
-                  </Card>
-                </Link>
+                  name={category.name}
+                  categorySlug={category.slug}
+                  count={category.count}
+                  description={category.description}
+                  accentVar={accentVar}
+                />
               </li>
             ))}
           </ul>

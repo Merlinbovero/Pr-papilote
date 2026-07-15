@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { SitePhoto } from "@/lib/photos";
+import { cn } from "@/lib/utils";
 
 /**
  * En-tête de page illustré, réutilisé sur toutes les pages intérieures
@@ -17,6 +18,8 @@ interface PageHeaderProps {
   photo?: SitePhoto;
   /** Variable CSS de la couleur d'accent (voir getModuleAccentVar). */
   accentVar?: string;
+  /** "hero" : bannière plus haute pour les portes d'entrée (concours, BIA). */
+  size?: "default" | "hero";
   /** Actions optionnelles (boutons) affichées sous la description. */
   children?: React.ReactNode;
 }
@@ -27,6 +30,7 @@ export function PageHeader({
   description,
   photo,
   accentVar = "var(--primary)",
+  size = "default",
   children,
 }: PageHeaderProps) {
   if (!photo) {
@@ -70,7 +74,12 @@ export function PageHeader({
         className="absolute inset-y-0 left-0 w-1.5"
         style={{ backgroundColor: accentVar }}
       />
-      <div className="space-y-2 px-6 py-10 pl-8 md:px-10 md:py-14 md:pl-12">
+      <div
+        className={cn(
+          "flex flex-col justify-end space-y-2 px-6 pl-8 md:px-10 md:pl-12",
+          size === "hero" ? "min-h-[16rem] py-12 md:min-h-[22rem] md:py-16" : "py-10 md:py-14"
+        )}
+      >
         {eyebrow ? (
           <p className="text-xs font-semibold tracking-[0.14em] text-white/90 uppercase">
             {eyebrow}
