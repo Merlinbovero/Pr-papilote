@@ -6,7 +6,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Ajouté
 
-- 2026-07-15 — **Application installable (PWA)** (retour V1 : « une icône d'application, je clique et ça m'envoie sur le site »). `src/app/manifest.ts` (manifeste web — nom, couleurs, écran de démarrage, icônes), balises Apple (`appleWebApp`) et couleur de thème dans le layout. **Icône provisoire** générée (avion en papier blanc sur bleu drapeau) déclinée en `icon-192`, `icon-512`, `icon-maskable-512` et `apple-touch-icon` dans `public/`. Le site s'installe sur l'écran d'accueil (iPhone/Android/desktop) et s'ouvre en plein écran ; il reflète toujours la dernière version en ligne. Procédure de remplacement par le logo définitif dans `docs/pwa-icone.md`.
+- 2026-07-15 — **Logo officiel : icône d'application + en-tête**. L'écu tricolore à trois quartiers (ancre/vagues = aéronavale, oiseau tricolore = Air & Espace, hélicoptère/montagnes = ALAT) devient l'**icône de l'application** (remplace l'icône provisoire) — décliné en `icon-192`, `icon-512`, `icon-maskable-512`, `apple-touch-icon`, et `logo-mark.png` (écu sur tuile blanche arrondie) **affiché dans l'en-tête** à côté du nom.
+- 2026-07-15 — **Application installable (PWA)** (retour V1 : « une icône d'application, je clique et ça m'envoie sur le site »). `src/app/manifest.ts` (manifeste web — nom, couleurs, écran de démarrage, icônes), balises Apple (`appleWebApp`) et couleur de thème dans le layout. Icône déclinée en `icon-192`, `icon-512`, `icon-maskable-512` et `apple-touch-icon` dans `public/`. Le site s'installe sur l'écran d'accueil (iPhone/Android/desktop) et s'ouvre en plein écran ; il reflète toujours la dernière version en ligne. Procédure de remplacement de l'icône dans `docs/pwa-icone.md`.
 
 ### Modifié
 
