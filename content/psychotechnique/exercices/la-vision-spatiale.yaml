@@ -3,6 +3,13 @@ id: psychotechnique.exercices.la-vision-spatiale
 type: concept
 title: La vision spatiale
 slug: la-vision-spatiale
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en manœuvre — la vision spatiale
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
 summary: >-
   Rotations mentales, patrons de cubes, caps et orientation — la vision
   spatiale est l'aptitude reine du pilote : se représenter les objets et soi

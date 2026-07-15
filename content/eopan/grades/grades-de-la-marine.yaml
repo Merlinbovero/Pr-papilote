@@ -3,6 +3,12 @@ id: eopan.grades.grades-de-la-marine
 type: concept
 title: Les grades de la Marine nationale
 slug: grades-de-la-marine
+image:
+  src: /images/theme-marine.jpg
+  alt: Marine nationale — les grades
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
 summary: >-
   La Marine emploie des grades propres, différents de ceux de l'armée de terre
   et de l'air. Des officiers généraux à l'équipage, chaque grade a son

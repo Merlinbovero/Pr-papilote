@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.pression-et-calage
 type: notion-meteo
 title: La pression et le calage altimétrique
 slug: pression-et-calage
+image:
+  src: /images/theme-meteo.jpg
+  alt: Ciel — la pression et le calage altimétrique
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   L'altimètre mesure une pression et la traduit en altitude selon l'ISA ; il faut
   lui donner un calage. Le QNH donne l'altitude (mer), le QFE la hauteur

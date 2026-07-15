@@ -3,6 +3,13 @@ id: eopan.procedures.appontage
 type: procedure
 title: Appontage
 slug: appontage
+image:
+  src: /images/module-eopan.jpg
+  alt: Rafale Marine à l'appontage
+  author: U.S. Navy — MCS3 Ron Reeves
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=8203930
+  focal: 50% 42%
 summary: >-
   Manœuvre d'atterrissage d'un aéronef sur le pont d'un porte-avions :
   l'avion accroche avec sa crosse l'un des brins d'arrêt tendus en travers

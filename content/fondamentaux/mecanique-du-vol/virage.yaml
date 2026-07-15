@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.virage
 type: notion-aerodynamique
 title: Le virage
 slug: virage
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en virage — le virage
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
 summary: >-
   Un avion tourne en s'inclinant : la portance penche et fournit une composante
   horizontale qui fait tourner. Pour tenir l'altitude, la portance doit

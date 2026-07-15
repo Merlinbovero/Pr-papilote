@@ -3,6 +3,12 @@ id: alat.unites.1er-rhc
 type: regiment
 title: 1er régiment d'hélicoptères de combat
 slug: 1er-rhc
+image:
+  src: /images/fiche-tigre.jpg
+  alt: Hélicoptère Tigre — appareil de combat du 1er régiment d'hélicoptères de combat
+  author: Sgt. Rick Frost, U.S. Army (114th PAD)
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=16675830
 summary: >-
   « Primus primorum » — le 1er RHC de Phalsbourg, héritier des groupes
   d'observation d'artillerie et de l'Indochine, est le régiment « nouvelle

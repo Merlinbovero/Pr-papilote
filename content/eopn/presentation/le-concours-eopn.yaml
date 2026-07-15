@@ -3,6 +3,13 @@ id: eopn.presentation.le-concours-eopn
 type: concept
 title: Le concours EOPN — présentation et sélection
 slug: le-concours-eopn
+image:
+  src: /images/accueil-hero.jpg
+  alt: Rafale Solo Display — le concours EOPN
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
 summary: >-
   L'EOPN recrute le personnel navigant de l'Armée de l'air et de l'Espace —
   pilotes et navigateurs. Ouvert sur dossier aux bacheliers français de 17 à 27

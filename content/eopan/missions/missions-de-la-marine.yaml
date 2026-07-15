@@ -3,6 +3,12 @@ id: eopan.missions.missions-de-la-marine
 type: concept
 title: Les missions de la Marine nationale
 slug: missions-de-la-marine
+image:
+  src: /images/theme-marine.jpg
+  alt: Porte-avions Charles de Gaulle — les missions de la Marine
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
 summary: >-
   La Marine remplit quatre grandes missions — dissuasion, protection,
   intervention et prévention. Elle assure la composante océanique de la

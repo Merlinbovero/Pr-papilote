@@ -3,6 +3,14 @@ id: fondamentaux.anglais-aeronautique.l-anglais-des-urgences
 type: concept
 title: L'anglais des urgences
 slug: l-anglais-des-urgences
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — l'anglais des urgences
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   MAYDAY, PAN PAN, squawk 7700 — quand tout va mal, l'anglais doit sortir
   seul. Le format complet du message de détresse, les mots des pannes et le

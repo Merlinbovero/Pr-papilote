@@ -3,6 +3,13 @@ id: fondamentaux.reglementation.les-regles-de-l-air
 type: concept
 title: Les règles de l'air
 slug: les-regles-de-l-air
+image:
+  src: /images/theme-tour.jpg
+  alt: Tour de contrôle — les règles de l'air
+  author: Calistemon
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=135405242
 summary: >-
   Qui a priorité ? À quelle hauteur survoler ? À quel niveau croiser ? Les
   règles de l'air (SERA) organisent la cohabitation de tous les aéronefs —

@@ -3,6 +3,13 @@ id: fondamentaux.anglais-aeronautique.le-brevity-code
 type: concept
 title: Le brevity code — l'anglais tactique
 slug: le-brevity-code
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en vol — le brevity code, l'anglais tactique
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
 summary: >-
   Tally, bogey, feet wet, winchester — en combat, chaque seconde de radio
   compte : le brevity code condense une situation en un mot. Les termes

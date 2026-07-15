@@ -3,6 +3,13 @@ id: fondamentaux.reglementation.espaces-aeriens
 type: concept
 title: Les espaces aériens
 slug: espaces-aeriens
+image:
+  src: /images/theme-tour.jpg
+  alt: Tour de contrôle — les espaces aériens
+  author: Calistemon
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=135405242
 summary: >-
   L'espace aérien est découpé en sept classes (A à G) pour la sécurité et la
   séparation. Les classes A à E sont contrôlées, F et G non contrôlées ; A (IFR

@@ -3,6 +3,13 @@ id: fondamentaux.culture-aeronautique.l-epner
 type: concept
 title: L'EPNER — l'école des pilotes d'essais
 slug: l-epner
+image:
+  src: /images/accueil-hero.jpg
+  alt: Avion de chasse — l'EPNER, école des pilotes d'essais
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
 summary: >-
   À Istres, au sein de DGA Essais en vol, l'EPNER forme depuis 1946 les
   équipages d'essais français et étrangers — l'une des rares écoles de pilotes

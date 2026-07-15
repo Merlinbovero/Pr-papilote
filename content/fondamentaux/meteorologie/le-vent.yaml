@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.le-vent
 type: notion-meteo
 title: Le vent
 slug: le-vent
+image:
+  src: /images/theme-meteo.jpg
+  alt: Nuages et ciel — le vent
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   Le vent est le déplacement horizontal de l'air, des hautes vers les basses
   pressions. On le décrit par sa direction (d'où il vient, en degrés) et sa

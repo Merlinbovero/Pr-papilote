@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.decrochage-et-vrille
 type: notion-aerodynamique
 title: Le décrochage et la vrille
 slug: decrochage-et-vrille
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — le décrochage et la vrille
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   La vrille est un décrochage asymétrique auto-entretenu — une aile décroche plus
   que l'autre et l'avion part en autorotation, descendant en tire-bouchon nez bas.

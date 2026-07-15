@@ -3,6 +3,13 @@ id: fondamentaux.culture-aeronautique.le-bia
 type: concept
 title: Le BIA — brevet d'initiation aéronautique
 slug: le-bia
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger — le BIA, brevet d'initiation aéronautique
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Dès 13 ans, le BIA valide une vraie culture aéronautique — cinq domaines, une
   épreuve nationale, un diplôme de l'Éducation nationale. Pour un futur

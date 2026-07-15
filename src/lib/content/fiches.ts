@@ -170,19 +170,36 @@ export function getFiches(): FicheFile[] {
   return getIndex().fiches.filter((fiche) => isVisible(fiche.status));
 }
 
-/** Photos d'illustration des fiches (pour la page des crédits). */
+/**
+ * Photos d'illustration des fiches (pour la page des crédits), dédoublonnées
+ * par fichier : une même image réutilisée sur plusieurs fiches n'apparaît
+ * qu'une fois, avec une fiche représentative et le nombre de fiches concernées.
+ */
 export function getFichePhotos(): {
   ficheTitle: string;
   ficheHref: string;
+  count: number;
   photo: NonNullable<FicheFile["image"]>;
 }[] {
-  return getFiches()
-    .filter((fiche) => fiche.image)
-    .map((fiche) => ({
-      ficheTitle: fiche.title,
-      ficheHref: getFicheHref(fiche),
-      photo: fiche.image!,
-    }));
+  const bySrc = new Map<
+    string,
+    { ficheTitle: string; ficheHref: string; count: number; photo: NonNullable<FicheFile["image"]> }
+  >();
+  for (const fiche of getFiches()) {
+    if (!fiche.image) continue;
+    const existing = bySrc.get(fiche.image.src);
+    if (existing) {
+      existing.count += 1;
+    } else {
+      bySrc.set(fiche.image.src, {
+        ficheTitle: fiche.title,
+        ficheHref: getFicheHref(fiche),
+        count: 1,
+        photo: fiche.image,
+      });
+    }
+  }
+  return [...bySrc.values()].sort((a, b) => a.photo.alt.localeCompare(b.photo.alt, "fr"));
 }
 
 /**

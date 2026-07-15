@@ -3,6 +3,14 @@ id: fondamentaux.anglais-aeronautique.vocabulaire-de-base
 type: concept
 title: Le vocabulaire de base du vol
 slug: vocabulaire-de-base
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le vocabulaire de base du vol
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   L'anglais est la langue internationale de l'aviation (OACI, niveau 4 minimum
   requis). Il faut connaître un vocabulaire de base (phases du vol, parties de

@@ -3,6 +3,14 @@ id: fondamentaux.facteurs-humains.desorientation-et-illusions
 type: concept
 title: La désorientation et les illusions sensorielles
 slug: desorientation-et-illusions
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — la désorientation et les illusions
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Sans références visuelles, le corps perçoit mal l'attitude de l'avion : c'est la
   désorientation spatiale, due à une oreille interne trompeuse. Des illusions

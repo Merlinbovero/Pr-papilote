@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.trainee
 type: notion-aerodynamique
 title: La traînée
 slug: trainee
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la traînée
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   La traînée est la résistance de l'air, parallèle au vent relatif et opposée au
   mouvement. Elle vient du frottement, de la forme et de la portance (traînée

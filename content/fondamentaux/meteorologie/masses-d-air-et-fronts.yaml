@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.masses-d-air-et-fronts
 type: notion-meteo
 title: Masses d'air et fronts
 slug: masses-d-air-et-fronts
+image:
+  src: /images/theme-meteo.jpg
+  alt: Ciel nuageux — masses d'air et fronts
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   La météo des latitudes tempérées est un combat de masses d'air — quand l'air
   chaud et l'air froid se rencontrent, un front naît. Savoir lire fronts

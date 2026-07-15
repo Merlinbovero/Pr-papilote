@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.temperature-et-humidite
 type: notion-meteo
 title: La température et l'humidité
 slug: temperature-et-humidite
+image:
+  src: /images/theme-meteo.jpg
+  alt: Nuages — la température et l'humidité
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   La température mesure l'agitation des molécules ; l'air chaud est moins dense.
   L'humidité relative est le rapport entre la vapeur présente et le maximum

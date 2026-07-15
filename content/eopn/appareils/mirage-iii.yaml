@@ -3,6 +3,13 @@ id: eopn.appareils.mirage-iii
 type: appareil
 title: Mirage III
 slug: mirage-iii
+image:
+  src: /images/fiche-mirage-iii.jpg
+  alt: Dassault Mirage IIIC de l'armée de l'Air
+  author: Jerry Gunner from Lincoln, UK
+  license: CC BY 2.0
+  licenseUrl: https://creativecommons.org/licenses/by/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=24980229
 summary: >-
   Le premier avion de la classe Mach 2 construit en série en Europe — le delta
   de Dassault qui a donné son nom à toute une lignée et s'est vendu à plus de

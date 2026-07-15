@@ -3,6 +3,12 @@ id: eopan.ban.landivisiau
 type: ban
 title: BAN de Landivisiau
 slug: landivisiau
+image:
+  src: /images/fiche-rafale-m.jpg
+  alt: Rafale M — la BAN de Landivisiau est la base de la chasse embarquée
+  author: US Navy
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54165584
 summary: >-
   Base d'aéronautique navale du Finistère, surnommée le « porte-avions de
   granit » : seule base de chasse embarquée d'Europe, elle abrite et prépare

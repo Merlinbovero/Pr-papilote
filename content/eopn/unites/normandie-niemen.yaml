@@ -3,6 +3,13 @@ id: eopn.unites.normandie-niemen
 type: escadron
 title: Escadron de chasse Normandie-Niémen
 slug: normandie-niemen
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale — appareil de l'escadron de chasse Normandie-Niémen
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   L'escadron de chasse le plus chargé d'histoire de l'Armée de l'air et de
   l'Espace. Né dans la France libre, il a combattu sur le front de l'Est aux

@@ -3,6 +3,13 @@ id: eopn.appareils.mirage-iv
 type: appareil
 title: Mirage IV
 slug: mirage-iv
+image:
+  src: /images/fiche-mirage-iv.jpg
+  alt: Dassault Mirage IV, bombardier de la dissuasion
+  author: Barbaracgeorge
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=99542553
 summary: >-
   Le premier vecteur nucléaire français — bombardier supersonique des Forces
   aériennes stratégiques, en alerte du 8 octobre 1964 à 1996, éclaireur

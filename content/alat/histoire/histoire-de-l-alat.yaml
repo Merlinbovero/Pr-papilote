@@ -3,6 +3,13 @@ id: alat.histoire.histoire-de-l-alat
 type: concept
 title: Histoire de l'ALAT
 slug: histoire-de-l-alat
+image:
+  src: /images/fiche-gazelle.jpg
+  alt: Hélicoptère Gazelle — histoire de l'ALAT
+  author: MilborneOne
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=11232882
 summary: >-
   Des avions d'observation d'artillerie de 1952 aux hélicoptères Tigre, l'ALAT
   a inventé en Algérie la guerre aéromobile, structuré l'aéromobilité avec la

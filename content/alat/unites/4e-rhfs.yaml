@@ -3,6 +3,13 @@ id: alat.unites.4e-rhfs
 type: regiment
 title: 4e régiment d'hélicoptères des forces spéciales
 slug: 4e-rhfs
+image:
+  src: /images/fiche-cougar.jpg
+  alt: Hélicoptère Cougar — appareil du 4e régiment d'hélicoptères des forces spéciales
+  author: Mike Freer
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=69382204
 summary: >-
   « Nulle part sans nous » — le 4e RHFS de Pau est la composante hélicoptères
   des forces spéciales : infiltrations, exfiltrations et appuis dans les

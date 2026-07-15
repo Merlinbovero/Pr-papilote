@@ -3,6 +3,12 @@ id: alat.appareils.tigre
 type: helicoptere
 title: L'hélicoptère de combat Tigre
 slug: tigre
+image:
+  src: /images/fiche-tigre.jpg
+  alt: Hélicoptère de combat Tigre en vol
+  author: Sgt. Rick Frost, U.S. Army (114th PAD)
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=16675830
 summary: >-
   L'hélicoptère de combat de l'ALAT. Biplace, armé d'un canon de 30 mm et de
   missiles, il appuie les troupes au sol et détruit les blindés. Issu d'une

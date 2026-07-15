@@ -3,6 +3,13 @@ id: eopn.appareils.alphajet
 type: appareil
 title: Alphajet
 slug: alphajet
+image:
+  src: /images/fiche-alphajet.jpg
+  alt: Alphajet de l'armée de l'Air et de l'Espace
+  author: happy days photos and art
+  license: CC BY 2.0
+  licenseUrl: https://creativecommons.org/licenses/by/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=30943387
 summary: >-
   Le biréacteur franco-allemand qui a formé quarante ans de pilotes de chasse
   — et qui reste l'avion de la Patrouille de France. Un programme en

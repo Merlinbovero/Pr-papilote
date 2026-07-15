@@ -3,6 +3,13 @@ id: eopn.bases.saint-dizier
 type: base-aerienne
 title: Base aérienne 113 Saint-Dizier-Robinson
 slug: saint-dizier
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale de l'armée de l'Air — la BA 113 de Saint-Dizier fut la première base Rafale
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   Première base Rafale de l'armée de l'Air (2006) et base stratégique de la
   dissuasion, la BA 113 « Commandant Antoine de Saint-Exupéry » abrite la 4e

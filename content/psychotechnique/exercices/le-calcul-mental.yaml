@@ -3,6 +3,14 @@ id: psychotechnique.exercices.le-calcul-mental
 type: concept
 title: Le calcul mental
 slug: le-calcul-mental
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le calcul mental
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Calculer vite et juste sans calculatrice — décompositions, multiplications
   astucieuses, pourcentages, proportions et le grand classique aéronautique,

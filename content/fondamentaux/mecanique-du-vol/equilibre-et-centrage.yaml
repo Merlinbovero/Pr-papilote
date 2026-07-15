@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.equilibre-et-centrage
 type: notion-aerodynamique
 title: L'équilibre et le centrage
 slug: equilibre-et-centrage
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger — l'équilibre et le centrage
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   Un avion est en équilibre longitudinal quand les moments autour de son centre
   de gravité s'annulent — la portance de l'aile étant compensée par la déportance

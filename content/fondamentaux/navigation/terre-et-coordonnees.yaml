@@ -3,6 +3,12 @@ id: fondamentaux.navigation.terre-et-coordonnees
 type: notion-navigation
 title: La Terre et les coordonnées
 slug: terre-et-coordonnees
+image:
+  src: /images/theme-carte.jpg
+  alt: Carte aéronautique — la Terre et les coordonnées
+  author: U.S. Department of Defense
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=101309445
 summary: >-
   On repère un point de la Terre par sa latitude (nord-sud, depuis l'équateur) et
   sa longitude (est-ouest, depuis Greenwich), en degrés. Une minute d'arc de

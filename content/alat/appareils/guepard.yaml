@@ -3,6 +3,13 @@ id: alat.appareils.guepard
 type: helicoptere
 title: Guépard (H160M)
 slug: guepard
+image:
+  src: /images/fiche-guepard.jpg
+  alt: Hélicoptère Guépard (H160M) au salon du Bourget
+  author: Artvill
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=176473812
 summary: >-
   Le futur hélicoptère interarmées léger (HIL) — 169 Guépard commandés pour
   les trois armées, dont 80 pour l'ALAT, avec une première livraison à

@@ -3,6 +3,13 @@ id: eopn.unites.escadron-1-4-gascogne
 type: escadron
 title: Escadron de chasse 1/4 « Gascogne »
 slug: escadron-1-4-gascogne
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale — appareil de l'escadron de chasse 1/4 Gascogne (forces aériennes stratégiques)
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   L'escadron de l'alerte nucléaire — sur Rafale B à Saint-Dizier, le
   « Gascogne » porte la mission la plus stratégique de l'armée de l'Air et de

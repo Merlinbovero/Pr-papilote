@@ -3,6 +3,14 @@ id: fondamentaux.instruments.horizon-artificiel
 type: concept
 title: L'horizon artificiel
 slug: horizon-artificiel
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — l'horizon artificiel
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   L'horizon artificiel indique l'assiette de l'avion (tangage et roulis) par
   rapport à l'horizon, indispensable au vol sans visibilité. Il repose sur un

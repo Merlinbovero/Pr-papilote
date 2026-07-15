@@ -3,6 +3,12 @@ id: eopn.appareils.mirage-2000
 type: appareil
 title: Le Mirage 2000
 slug: mirage-2000
+image:
+  src: /images/fiche-mirage-2000.jpg
+  alt: Mirage 2000 de l'armée de l'Air et de l'Espace en vol
+  author: SRA Bethann Hunt, U.S. Air Force
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=4707724
 summary: >-
   Avion de combat à aile delta de Dassault, deuxième pilier de la chasse
   française avec le Rafale. Décliné en versions de défense aérienne, d'attaque au

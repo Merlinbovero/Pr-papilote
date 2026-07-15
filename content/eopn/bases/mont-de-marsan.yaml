@@ -3,6 +3,13 @@ id: eopn.bases.mont-de-marsan
 type: base-aerienne
 title: BA 118 Mont-de-Marsan
 slug: mont-de-marsan
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale — la BA 118 de Mont-de-Marsan accueille l'expérimentation (CEAM)
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   La base des Landes où la chasse rencontre l'expérimentation — la 30e
   escadre de Rafale (dont le mythique Normandie-Niémen) et le CEAM, qui

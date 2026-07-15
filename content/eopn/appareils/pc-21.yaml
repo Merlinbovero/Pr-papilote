@@ -3,6 +3,13 @@ id: eopn.appareils.pc-21
 type: appareil
 title: PC-21
 slug: pc-21
+image:
+  src: /images/fiche-pc-21.jpg
+  alt: Pilatus PC-21 de l'école de chasse
+  author: Colin Cooke Photo
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=125216405
 summary: >-
   Le turbopropulseur suisse qui forme les pilotes de chasse français à
   Cognac — cockpit tout écran, siège éjectable, 1 600 ch : un avion-école

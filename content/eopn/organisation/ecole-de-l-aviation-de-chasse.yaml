@@ -3,6 +3,13 @@ id: eopn.organisation.ecole-de-l-aviation-de-chasse
 type: organisation
 title: L'École de l'aviation de chasse
 slug: ecole-de-l-aviation-de-chasse
+image:
+  src: /images/fiche-pc-21.jpg
+  alt: PC-21 — l'École de l'aviation de chasse
+  author: Colin Cooke Photo
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=125216405
 summary: >-
   Créée en 1943, l'École de l'aviation de chasse « Christian Martell » forme
   les pilotes de chasse français. Installée à Cognac (BA 709) et rééquipée en

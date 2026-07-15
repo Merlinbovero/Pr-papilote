@@ -75,8 +75,11 @@ export default function CreditsPhotosPage() {
       {fichePhotos.length > 0 ? (
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">Photos des fiches</h2>
+          <p className="text-muted-foreground max-w-prose text-sm">
+            Chaque image illustre une ou plusieurs fiches ; elle n&apos;est listée qu&apos;une fois.
+          </p>
           <ul className="space-y-4">
-            {fichePhotos.map(({ photo, ficheTitle, ficheHref }) => (
+            {fichePhotos.map(({ photo, ficheTitle, ficheHref, count }) => (
               <li
                 key={photo.src}
                 className="bg-card flex flex-col gap-4 rounded-xl border p-4 sm:flex-row sm:items-center"
@@ -97,6 +100,12 @@ export default function CreditsPhotosPage() {
                     className="text-base font-semibold underline-offset-4 hover:underline"
                   >
                     {ficheTitle}
+                    {count > 1 ? (
+                      <span className="text-muted-foreground font-normal">
+                        {" "}
+                        et {count - 1} autre{count - 1 > 1 ? "s" : ""}
+                      </span>
+                    ) : null}
                   </Link>
                   <p className="text-muted-foreground">Auteur : {photo.author}</p>
                   <p className="text-muted-foreground">

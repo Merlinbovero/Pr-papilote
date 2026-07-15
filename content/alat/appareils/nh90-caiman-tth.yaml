@@ -3,6 +3,13 @@ id: alat.appareils.nh90-caiman-tth
 type: helicoptere
 title: NH90 Caïman TTH
 slug: nh90-caiman-tth
+image:
+  src: /images/fiche-nh90-caiman-tth.jpg
+  alt: Hélicoptère de manœuvre NH90 Caïman
+  author: Ibex73
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=80266618
 summary: >-
   L'hélicoptère de manœuvre et d'assaut de l'ALAT — 63 Caïman TTH livrés à
   l'armée de Terre, capables d'héliporter une vingtaine de combattants ou

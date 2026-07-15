@@ -3,6 +3,14 @@ id: psychotechnique.exercices.la-memoire
 type: concept
 title: La mémoire
 slug: la-memoire
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — la mémoire
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Chiffres, formes, paramètres, cartes — les tests de mémoire mesurent la
   capacité à encoder vite et à restituer juste. Trois leviers font la

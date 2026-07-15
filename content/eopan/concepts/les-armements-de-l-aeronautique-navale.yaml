@@ -3,6 +3,12 @@ id: eopan.concepts.les-armements-de-l-aeronautique-navale
 type: concept
 title: Les armements de l'aéronautique navale
 slug: les-armements-de-l-aeronautique-navale
+image:
+  src: /images/fiche-rafale-m.jpg
+  alt: Rafale Marine — les armements de l'aéronautique navale
+  author: US Navy
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54165584
 summary: >-
   De l'Exocet antinavire au missile nucléaire ASMP-A, en passant par la
   torpille MU90 et les missiles air-air MICA et Meteor — le panorama des

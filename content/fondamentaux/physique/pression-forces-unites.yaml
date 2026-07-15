@@ -3,6 +3,14 @@ id: fondamentaux.physique.pression-forces-unites
 type: concept
 title: Pression, forces et unités
 slug: pression-forces-unites
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — pression, forces et unités
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   La force (un vecteur, en newtons) et la pression (une force répartie sur une
   surface, en pascals) sont les deux grandeurs qui gouvernent le vol. Cette

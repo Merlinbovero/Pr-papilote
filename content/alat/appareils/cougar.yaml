@@ -3,6 +3,13 @@ id: alat.appareils.cougar
 type: helicoptere
 title: Cougar
 slug: cougar
+image:
+  src: /images/fiche-cougar.jpg
+  alt: Hélicoptère de manœuvre AS532 Cougar de l'armée de Terre
+  author: Mike Freer
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=69382204
 summary: >-
   Héritier du Puma et cousin du Super Puma, le Cougar est l'hélicoptère de
   transport tactique lourd de l'ALAT — 25 hommes équipés, rénové dans les

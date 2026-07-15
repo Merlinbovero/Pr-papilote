@@ -3,6 +3,13 @@ id: eopan.ban.lann-bihoue
 type: ban
 title: BAN de Lann-Bihoué
 slug: lann-bihoue
+image:
+  src: /images/fiche-atlantique-2.jpg
+  alt: Atlantique 2 — la BAN de Lann-Bihoué abrite la patrouille maritime
+  author: Jonathan Payne
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=178291388
 summary: >-
   Base d'aéronautique navale du Morbihan, près de Lorient. Grande base
   multi-missions de l'aéronavale, elle regroupe le guet aérien (Hawkeye), la

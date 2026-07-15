@@ -3,6 +3,12 @@ id: eopn.appareils.a400m
 type: appareil
 title: L'A400M Atlas
 slug: a400m
+image:
+  src: /images/fiche-a400m.jpg
+  alt: A400M Atlas de l'armée de l'Air et de l'Espace
+  author: U.S. Air Force photo by Tech. Sgt. Alexandre Montes
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=180422838
 summary: >-
   Avion de transport militaire d'Airbus, tactique et stratégique à la fois.
   Propulsé par quatre turbopropulseurs, il emporte jusqu'à 37 tonnes de fret sur

@@ -3,6 +3,13 @@ id: fondamentaux.meteorologie.les-nuages
 type: notion-meteo
 title: Les nuages
 slug: les-nuages
+image:
+  src: /images/theme-meteo.jpg
+  alt: Cumulus — les nuages
+  author: Famartin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54622627
 summary: >-
   Un nuage est fait de gouttelettes d'eau ou de cristaux de glace issus de la
   condensation de la vapeur, quand de l'air humide s'élève et se refroidit. On les

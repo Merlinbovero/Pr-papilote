@@ -3,6 +3,13 @@ id: fondamentaux.mecanique-du-vol.axes-et-gouvernes
 type: notion-aerodynamique
 title: Les axes et les gouvernes
 slug: axes-et-gouvernes
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger — les axes et les gouvernes
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   L'avion tourne autour de trois axes passant par son centre de gravité — roulis,
   tangage et lacet. À chaque axe correspond une gouverne (ailerons, profondeur,

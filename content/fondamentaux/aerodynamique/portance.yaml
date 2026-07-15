@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.portance
 type: notion-aerodynamique
 title: La portance
 slug: portance
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion léger en vol — la portance
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
 summary: >-
   La portance est la force qui soutient l'avion. Elle naît de l'air dévié vers
   le bas (Newton) et d'une différence de pression extrados-intrados (Bernoulli).

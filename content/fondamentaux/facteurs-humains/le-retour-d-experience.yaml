@@ -3,6 +3,14 @@ id: fondamentaux.facteurs-humains.le-retour-d-experience
 type: concept
 title: Le retour d'expérience (REX)
 slug: le-retour-d-experience
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le retour d'expérience (REX)
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Chaque incident analysé rend l'aviation plus sûre — le retour d'expérience
   transforme l'erreur en savoir collectif. Comprendre le rôle du BEA et du

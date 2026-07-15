@@ -3,6 +3,14 @@ id: fondamentaux.physique.systeme-international-et-unites
 type: concept
 title: Le Système international d'unités (SI) et les unités aéronautiques
 slug: systeme-international-et-unites
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le Système international d'unités
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
 summary: >-
   Le Système international (SI) fixe les grandeurs et unités de référence ;
   l'aéronautique y ajoute des unités historiques (pied, nœud, hectopascal).

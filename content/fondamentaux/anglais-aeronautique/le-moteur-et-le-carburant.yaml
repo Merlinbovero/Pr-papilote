@@ -3,6 +3,13 @@ id: fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant
 type: concept
 title: Le moteur et le carburant en anglais
 slug: le-moteur-et-le-carburant
+image:
+  src: /images/theme-histoire.jpg
+  alt: Moteurs et hélices — le moteur et le carburant en anglais
+  author: Rob Schleiffert
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=46893603
 summary: >-
   Thrust, throttle, propeller, afterburner — l'anglais de la propulsion, du
   moteur à pistons au réacteur, et le vocabulaire du carburant (refuel, fuel

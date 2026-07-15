@@ -3,6 +3,13 @@ id: fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale
 type: concept
 title: Les pionniers et l'Aéropostale
 slug: les-pionniers-et-l-aeropostale
+image:
+  src: /images/theme-bleriot.jpg
+  alt: Avion Blériot XI — les pionniers et l'Aéropostale
+  author: Julian Herzog
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=28277043
 summary: >-
   Blériot au-dessus de la Manche, Mermoz sur l'Atlantique Sud, Guillaumet
   dans les Andes, Saint-Exupéry au clair de lune — les figures que tout jury

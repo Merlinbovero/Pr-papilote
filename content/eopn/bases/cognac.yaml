@@ -3,6 +3,13 @@ id: eopn.bases.cognac
 type: base-aerienne
 title: Base aérienne 709 Cognac-Châteaubernard
 slug: cognac
+image:
+  src: /images/fiche-pc-21.jpg
+  alt: Pilatus PC-21 de l'école de pilotage de la BA 709 de Cognac
+  author: Colin Cooke Photo
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=125216405
 summary: >-
   La base des ailes naissantes — la BA 709 de Cognac abrite l'École de
   l'aviation de chasse et ses PC-21, mais aussi les drones Reaper de

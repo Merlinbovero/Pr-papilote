@@ -3,6 +3,13 @@ id: eopn.organisation.les-forces-aeriennes-strategiques
 type: organisation
 title: Les Forces aériennes stratégiques (FAS)
 slug: les-forces-aeriennes-strategiques
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale — les Forces aériennes stratégiques (FAS)
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   Depuis le 8 octobre 1964, la permanence de la dissuasion aéroportée n'a
   jamais été interrompue — du Mirage IV au Rafale, du C-135 au MRTT Phénix.

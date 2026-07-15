@@ -3,6 +3,12 @@ id: eopn.bases.istres
 type: base-aerienne
 title: BA 125 Istres-Le Tubé
 slug: istres
+image:
+  src: /images/fiche-mrtt-phenix.jpg
+  alt: A330 MRTT Phénix — la BA 125 d'Istres abrite les ravitailleurs
+  author: U.S. Air Force photo by Senior Airman Blake Wiles
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=117763467
 summary: >-
   La plus grande base aérienne de France — les ravitailleurs MRTT de la
   dissuasion, les essais en vol de la DGA et l'école des pilotes d'essais
