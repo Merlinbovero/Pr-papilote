@@ -3,37 +3,87 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MenuIcon } from "lucide-react";
+import {
+  BookOpenIcon,
+  GraduationCapIcon,
+  MapIcon,
+  MenuIcon,
+  TimerIcon,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { getModuleAccentVar } from "@/lib/module-accent";
 import { cn } from "@/lib/utils";
 
 /**
- * Navigation principale (retour V1 n°2 — « navigation confuse »). Deux
- * groupes explicites : les concours, puis les outils d'entraînement. Liens
- * en ligne sur desktop, tiroir sur mobile ; état actif visible partout.
+ * Navigation principale. Sur desktop, deux menus déroulants sobres (Concours,
+ * S'entraîner) pour éviter l'empilement de libellés longs ; sur mobile, un
+ * tiroir. État actif visible partout (retours V1 : header « brouillon »).
  */
 
-interface NavLink {
+interface NavEntry {
   href: string;
   label: string;
+  description: string;
+  /** slug de module pour la pastille de couleur (concours). */
+  accentSlug?: string;
+  /** icône (outils d'entraînement). */
+  icon?: LucideIcon;
 }
 
-const CONCOURS: NavLink[] = [
-  { href: "/eopan", label: "EOPAN — Marine" },
-  { href: "/eopn", label: "EOPN — Air" },
-  { href: "/alat", label: "ALAT — Terre" },
-  { href: "/fondamentaux", label: "Fondamentaux" },
+const CONCOURS: NavEntry[] = [
+  {
+    href: "/eopan",
+    label: "EOPAN",
+    description: "Marine nationale · aéronautique navale",
+    accentSlug: "eopan",
+  },
+  {
+    href: "/eopn",
+    label: "EOPN",
+    description: "Armée de l'Air et de l'Espace",
+    accentSlug: "eopn",
+  },
+  {
+    href: "/alat",
+    label: "ALAT",
+    description: "Armée de Terre · hélicoptères",
+    accentSlug: "alat",
+  },
+  {
+    href: "/fondamentaux",
+    label: "Fondamentaux",
+    description: "Le socle théorique commun",
+    accentSlug: "fondamentaux",
+  },
 ];
 
-const ENTRAINEMENT: NavLink[] = [
-  { href: "/bia", label: "BIA" },
-  { href: "/psychotechnique/entrainement", label: "Psychotechnique" },
-  { href: "/cartes", label: "Cartes" },
-  { href: "/dictionnaire", label: "Dictionnaire" },
+const ENTRAINEMENT: NavEntry[] = [
+  { href: "/bia", label: "BIA", description: "Cours et examen blanc", icon: GraduationCapIcon },
+  {
+    href: "/psychotechnique/entrainement",
+    label: "Psychotechnique",
+    description: "Entraînement chronométré",
+    icon: TimerIcon,
+  },
+  { href: "/cartes", label: "Cartes des bases", description: "Les trois armées", icon: MapIcon },
+  {
+    href: "/dictionnaire",
+    label: "Dictionnaire",
+    description: "Sigles et termes",
+    icon: BookOpenIcon,
+  },
 ];
 
-/** Vrai si le lien correspond à la route courante (ou une de ses sous-pages). */
 function isActive(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -41,33 +91,55 @@ function isActive(pathname: string, href: string): boolean {
 export function MainNav() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const concoursActive = CONCOURS.some((e) => isActive(pathname, e.href));
+  const entrainementActive = ENTRAINEMENT.some((e) => isActive(pathname, e.href));
 
   return (
     <>
-      {/* Desktop : liens en ligne */}
-      <nav aria-label="Navigation principale" className="hidden md:block">
-        <ul className="flex items-center gap-1">
-          {[...CONCOURS, ...ENTRAINEMENT].map((link) => {
-            const active = isActive(pathname, link.href);
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "focus-visible:ring-ring rounded-md px-2.5 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                    active
-                      ? "bg-accent text-accent-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      {/* Desktop : deux menus déroulants */}
+      <NavigationMenu
+        viewport={false}
+        aria-label="Navigation principale"
+        className="hidden md:flex"
+      >
+        <NavigationMenuList className="gap-1">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className={cn(concoursActive && "text-foreground bg-muted/60")}>
+              Concours
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[440px] grid-cols-2 gap-1 p-2">
+                {CONCOURS.map((entry) => (
+                  <MenuLink
+                    key={entry.href}
+                    entry={entry}
+                    active={isActive(pathname, entry.href)}
+                  />
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuTrigger
+              className={cn(entrainementActive && "text-foreground bg-muted/60")}
+            >
+              S&apos;entraîner
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[440px] grid-cols-2 gap-1 p-2">
+                {ENTRAINEMENT.map((entry) => (
+                  <MenuLink
+                    key={entry.href}
+                    entry={entry}
+                    active={isActive(pathname, entry.href)}
+                  />
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
       {/* Mobile : tiroir */}
       <div className="md:hidden">
@@ -77,20 +149,20 @@ export function MainNav() {
               <MenuIcon aria-hidden className="size-4" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-72">
+          <SheetContent side="left" className="w-80">
             <SheetHeader>
               <SheetTitle>Navigation</SheetTitle>
             </SheetHeader>
             <nav aria-label="Navigation principale" className="space-y-6 px-4 pb-6">
               <MobileGroup
                 title="Concours"
-                links={CONCOURS}
+                entries={CONCOURS}
                 pathname={pathname}
                 onNavigate={() => setOpen(false)}
               />
               <MobileGroup
                 title="S'entraîner"
-                links={ENTRAINEMENT}
+                entries={ENTRAINEMENT}
                 pathname={pathname}
                 onNavigate={() => setOpen(false)}
               />
@@ -102,14 +174,42 @@ export function MainNav() {
   );
 }
 
+/** Entrée d'un menu déroulant desktop : pastille/icône + libellé + description. */
+function MenuLink({ entry, active }: { entry: NavEntry; active: boolean }) {
+  const Icon = entry.icon;
+  return (
+    <li>
+      <NavigationMenuLink asChild active={active}>
+        <Link href={entry.href} className="flex flex-col gap-1 rounded-md p-2.5">
+          <span className="flex items-center gap-2 text-sm font-semibold">
+            {entry.accentSlug ? (
+              <span
+                aria-hidden
+                className="size-2.5 shrink-0 rounded-full"
+                style={{ backgroundColor: getModuleAccentVar(entry.accentSlug) }}
+              />
+            ) : Icon ? (
+              <Icon aria-hidden className="text-primary size-4 shrink-0" />
+            ) : null}
+            {entry.label}
+          </span>
+          <span className="text-muted-foreground pl-4.5 text-xs leading-snug">
+            {entry.description}
+          </span>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
+
 function MobileGroup({
   title,
-  links,
+  entries,
   pathname,
   onNavigate,
 }: {
   title: string;
-  links: NavLink[];
+  entries: NavEntry[];
   pathname: string;
   onNavigate: () => void;
 }) {
@@ -119,20 +219,30 @@ function MobileGroup({
         {title}
       </p>
       <ul>
-        {links.map((link) => {
-          const active = isActive(pathname, link.href);
+        {entries.map((entry) => {
+          const active = isActive(pathname, entry.href);
+          const Icon = entry.icon;
           return (
-            <li key={link.href}>
+            <li key={entry.href}>
               <Link
-                href={link.href}
+                href={entry.href}
                 onClick={onNavigate}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "focus-visible:ring-ring block rounded-md px-2 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                  "focus-visible:ring-ring flex items-center gap-2.5 rounded-md px-2 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none",
                   active ? "bg-accent text-accent-foreground" : "hover:bg-accent/50"
                 )}
               >
-                {link.label}
+                {entry.accentSlug ? (
+                  <span
+                    aria-hidden
+                    className="size-2.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: getModuleAccentVar(entry.accentSlug) }}
+                  />
+                ) : Icon ? (
+                  <Icon aria-hidden className="text-primary size-4 shrink-0" />
+                ) : null}
+                {entry.label}
               </Link>
             </li>
           );
