@@ -61,7 +61,11 @@ export function PageHeader({
         fill
         priority
         sizes="(min-width: 1280px) 1200px, 100vw"
-        style={photo.focal ? { objectPosition: photo.focal } : undefined}
+        style={
+          (photo.focalHero ?? photo.focal)
+            ? { objectPosition: photo.focalHero ?? photo.focal }
+            : undefined
+        }
         className="-z-10 object-cover"
       />
       <div

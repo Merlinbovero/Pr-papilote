@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BookOpenIcon, GraduationCapIcon, ListChecksIcon } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getBiaMatiereSummaries } from "@/lib/bia/data";
@@ -25,7 +26,7 @@ export default function BiaHubPage() {
   const facultative = matieres.find((m) => m.facultative);
 
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Parcours BIA" }]} />
       <PageHeader
         eyebrow="Brevet d'initiation aéronautique"
@@ -140,6 +141,6 @@ export default function BiaHubPage() {
           deviennent votre programme de travail.
         </p>
       </section>
-    </main>
+    </StandalonePageShell>
   );
 }

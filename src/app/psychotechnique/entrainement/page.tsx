@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { TrainingSession } from "@/features/psychotech/training-session";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
  */
 export default function EntrainementPage() {
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb
         items={[
           { label: "Accueil", href: "/" },
@@ -32,6 +33,6 @@ export default function EntrainementPage() {
         </p>
       </header>
       <TrainingSession />
-    </main>
+    </StandalonePageShell>
   );
 }

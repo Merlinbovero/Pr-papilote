@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Callout } from "@/components/content/callout";
+import { DataGrid } from "@/components/content/data-grid";
+import { Timeline } from "@/components/content/timeline";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -217,6 +220,78 @@ export default function DesignSystemPage() {
               <AlertTitle>Une erreur est survenue</AlertTitle>
               <AlertDescription>Réessayez ou revenez à l&apos;accueil.</AlertDescription>
             </Alert>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      <section aria-labelledby="ds-blocks" className="space-y-4">
+        <h2 id="ds-blocks" className="text-xl font-semibold tracking-tight">
+          Blocs éditoriaux par nature d&apos;information
+        </h2>
+        <p className="text-muted-foreground max-w-prose text-sm">
+          L&apos;œil doit identifier la nature d&apos;un bloc avant de le lire : chaque variante
+          porte une couleur porteuse de sens, une icône et un intitulé.
+        </p>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Callout variant="definition" title="Portance">
+            Force aérodynamique perpendiculaire à l&apos;écoulement, qui soutient l&apos;aéronef.
+          </Callout>
+          <Callout variant="a-retenir">
+            Le calage altimétrique QNH donne l&apos;altitude par rapport au niveau de la mer.
+          </Callout>
+          <Callout variant="technique">
+            Vitesse de décrochage en configuration lisse : à connaître pour chaque appareil.
+          </Callout>
+          <Callout variant="piege">
+            Ne pas confondre <strong>assiette</strong> (attitude) et <strong>trajectoire</strong> :
+            l&apos;une n&apos;implique pas l&apos;autre.
+          </Callout>
+          <Callout variant="actuel">
+            Le Rafale est l&apos;unique avion de combat de la Marine nationale depuis le retrait du
+            Super-Étendard (2016).
+          </Callout>
+          <Callout variant="historique">
+            Le Super-Étendard Modernisé a servi de 1978 à 2016, notamment sur le porte-avions.
+          </Callout>
+          <Callout variant="citation">
+            « L&apos;aviation est une maîtresse exigeante. » — un instructeur, cité en sélection.
+          </Callout>
+          <Callout variant="a-verifier">
+            Format de l&apos;épreuve d&apos;entretien susceptible d&apos;évoluer selon les années —
+            à confirmer sur le portail officiel.
+          </Callout>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="space-y-2">
+            <p className="text-muted-foreground text-sm font-semibold">Chronologie</p>
+            <Timeline
+              entries={[
+                {
+                  date: "1909",
+                  title: "Blériot traverse la Manche",
+                  highlight: true,
+                  body: "Première traversée maritime en aéroplane.",
+                },
+                { date: "1934", title: "Création de l'Armée de l'Air" },
+                { date: "1963", title: "Premier vol du Mirage IV" },
+              ]}
+            />
+          </div>
+          <div className="space-y-2">
+            <p className="text-muted-foreground text-sm font-semibold">Données techniques</p>
+            <DataGrid
+              items={[
+                { label: "Constructeur", value: "Dassault Aviation" },
+                { label: "Premier vol", value: "1986" },
+                { label: "Vitesse max", value: "Mach 1,8" },
+                { label: "Plafond", value: "15 240 m" },
+                { label: "Rayon d'action", value: "1 850 km" },
+                { label: "Équipage", value: "1 à 2" },
+              ]}
+            />
           </div>
         </div>
       </section>

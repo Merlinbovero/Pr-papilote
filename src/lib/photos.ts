@@ -22,10 +22,18 @@ export interface SitePhoto {
   /** Page de description du fichier sur Wikimedia Commons. */
   sourceUrl: string;
   /**
-   * Point focal CSS (`object-position`) pour garder le sujet cadré quand la
-   * photo est recadrée (carte verticale, bannière large). Défaut : "center".
+   * Point focal CSS (`object-position`) par défaut. Défaut effectif : "center".
    */
   focal?: string;
+  /**
+   * Point focal pour un recadrage **vertical** (carte de module, portrait) —
+   * le sujet peut être ailleurs qu'en recadrage large. Défaut : `focal`.
+   */
+  focalCard?: string;
+  /**
+   * Point focal pour une **bannière large** (hero paysage). Défaut : `focal`.
+   */
+  focalHero?: string;
 }
 
 export const SITE_PHOTOS = {
@@ -45,7 +53,10 @@ export const SITE_PHOTOS = {
     author: "U.S. Navy — MCS3 Ron Reeves",
     license: "Domaine public",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=8203930",
-    focal: "50% 42%",
+    // Le Rafale Marine à l'appontage est en haut à gauche du cadre.
+    focal: "50% 40%",
+    focalCard: "26% 40%",
+    focalHero: "44% 38%",
   },
   eopn: {
     src: "/images/module-eopn.jpg",
@@ -54,7 +65,10 @@ export const SITE_PHOTOS = {
     author: "U.S. Air Force — SSgt Hannah Strobel",
     license: "Domaine public",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=134018270",
-    focal: "62% 58%",
+    // Le Rafale de l'AAE occupe le centre-droit ; cockpit vers x≈50 %.
+    focal: "55% 52%",
+    focalCard: "52% 50%",
+    focalHero: "56% 50%",
   },
   alat: {
     src: "/images/module-alat.jpg",

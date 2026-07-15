@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { Skeleton } from "@/components/ui/skeleton";
 import { buildSearchEntries } from "@/features/search/entries";
 import { getModules } from "@/lib/content/referentials";
@@ -15,11 +16,11 @@ export default function SearchPage() {
   const modules = getModules().map((mod) => ({ slug: mod.slug, name: mod.name }));
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="mb-6 text-3xl font-bold tracking-tight">Recherche</h1>
+    <StandalonePageShell className="space-y-6">
+      <h1 className="text-3xl font-bold tracking-tight">Recherche</h1>
       <Suspense fallback={<Skeleton className="h-10 w-full max-w-xl" />}>
         <SearchPageClient entries={entries} modules={modules} />
       </Suspense>
-    </main>
+    </StandalonePageShell>
   );
 }

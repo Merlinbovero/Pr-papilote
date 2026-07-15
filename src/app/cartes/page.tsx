@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AnchorIcon, MountainIcon, PlaneIcon } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getImplantations } from "@/lib/cartes/data";
 import { SITE_PHOTOS } from "@/lib/photos";
@@ -43,7 +44,7 @@ const CARTES = [
 export default function CartesHubPage() {
   const implantations = getImplantations();
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Cartes des bases" }]} />
       <PageHeader
         eyebrow="Les trois armées sur la carte"
@@ -75,6 +76,6 @@ export default function CartesHubPage() {
           );
         })}
       </ul>
-    </main>
+    </StandalonePageShell>
   );
 }

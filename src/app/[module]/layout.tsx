@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
+import { ModuleCategoryBar } from "@/components/layout/module-category-bar";
 import { ModuleSidebarNav } from "@/components/layout/module-sidebar-nav";
 import { getFichesByCategory } from "@/lib/content/fiches";
 import { getCategories, getModule, getModules } from "@/lib/content/referentials";
+import { getModuleAccentVar } from "@/lib/module-accent";
 
 export const dynamicParams = false;
 
@@ -31,11 +33,25 @@ export default async function ModuleLayout({
     name: category.name,
     count: getFichesByCategory(mod.slug, category.slug).length,
   }));
+  const accentVar = getModuleAccentVar(mod.slug);
 
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-1 gap-8 px-4 py-8 sm:px-6 lg:px-8">
-      <ModuleSidebarNav moduleSlug={mod.slug} moduleName={mod.name} categories={categories} />
-      <div className="min-w-0 flex-1">{children}</div>
+      <ModuleSidebarNav
+        moduleSlug={mod.slug}
+        moduleName={mod.name}
+        categories={categories}
+        accentVar={accentVar}
+      />
+      <div className="min-w-0 flex-1">
+        <ModuleCategoryBar
+          moduleSlug={mod.slug}
+          moduleName={mod.name}
+          categories={categories}
+          accentVar={accentVar}
+        />
+        {children}
+      </div>
     </div>
   );
 }

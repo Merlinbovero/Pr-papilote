@@ -116,7 +116,7 @@ export default function HomePage() {
                 orientation="vertical"
                 imageSrc={photo?.src}
                 imageAlt={photo?.alt}
-                imageFocal={photo?.focal}
+                imageFocal={photo?.focalCard ?? photo?.focal}
                 subtitle={mod.organization}
               />
             );
@@ -181,7 +181,7 @@ export default function HomePage() {
                 orientation="horizontal"
                 imageSrc={photo?.src}
                 imageAlt={photo?.alt}
-                imageFocal={photo?.focal}
+                imageFocal={photo?.focalHero ?? photo?.focal}
                 subtitle={TRANSVERSE_SUBTITLES[mod.slug]}
               />
             );
