@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChartLineIcon, TimerIcon } from "lucide-react";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getFichesByCategory } from "@/lib/content/fiches";
 import { getCategories, getModule } from "@/lib/content/referentials";
+import { getModuleAccentVar } from "@/lib/module-accent";
 import { getModulePhoto } from "@/lib/photos";
 
 interface ModuleHubProps {
@@ -40,49 +41,22 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
   const populated = categories.filter((category) => category.count > 0);
   const empty = categories.filter((category) => category.count === 0);
   const photo = getModulePhoto(mod.slug);
+  const accentVar = getModuleAccentVar(mod.slug);
 
   return (
     <main className="space-y-8">
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: mod.name }]} />
-      {photo ? (
-        <header className="relative isolate overflow-hidden rounded-2xl border">
-          <Image
-            src={photo.src}
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1280px) 1200px, 100vw"
-            className="-z-10 object-cover"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/50 to-black/25"
-          />
-          <div className="space-y-2 px-6 py-10 md:px-10 md:py-14">
-            <h1 className="text-3xl font-bold tracking-tight text-white drop-shadow-sm md:text-4xl">
-              {mod.name}
-            </h1>
-            {mod.fullName ? (
-              <p className="text-lg text-white/90">
-                {mod.fullName}
-                {mod.organization ? ` · ${mod.organization}` : null}
-              </p>
-            ) : null}
-            <p className="max-w-prose text-white/85">{mod.description}</p>
-          </div>
-        </header>
-      ) : (
-        <header className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{mod.name}</h1>
-          {mod.fullName ? (
-            <p className="text-muted-foreground text-lg">
-              {mod.fullName}
-              {mod.organization ? ` · ${mod.organization}` : null}
-            </p>
-          ) : null}
-          <p className="max-w-prose">{mod.description}</p>
-        </header>
-      )}
+      <PageHeader
+        eyebrow={
+          mod.fullName
+            ? `${mod.fullName}${mod.organization ? ` · ${mod.organization}` : ""}`
+            : undefined
+        }
+        title={mod.name}
+        description={mod.description}
+        photo={photo}
+        accentVar={accentVar}
+      />
       {/* Outils du module : les actions, mises en avant et peu nombreuses */}
       <section aria-label="Outils du module">
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">

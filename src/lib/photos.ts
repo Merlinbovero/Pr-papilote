@@ -76,7 +76,77 @@ export const SITE_PHOTOS = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
     sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=142187142",
   },
+  meteo: {
+    src: "/images/theme-meteo.jpg",
+    alt: "Cumulus bourgeonnants photographiés depuis un avion en vol",
+    title: "Cumulus en développement",
+    author: "Famartin",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
+    sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=54622627",
+  },
+  histoire: {
+    src: "/images/theme-histoire.jpg",
+    alt: "Nord Noratlas, avion de transport militaire français historique, sur un tarmac",
+    title: "Nord Noratlas",
+    author: "Rob Schleiffert",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/deed.fr",
+    sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=46893603",
+  },
+  marine: {
+    src: "/images/theme-marine.jpg",
+    alt: "Porte-avions Charles de Gaulle en mer, Rafale Marine sur le pont d'envol",
+    title: "Porte-avions Charles de Gaulle",
+    author: "U.S. Marine Corps — Maj. Joshua Smith",
+    license: "Domaine public",
+    sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=78656298",
+  },
+  espace: {
+    src: "/images/theme-espace.jpg",
+    alt: "Lanceur Ariane 5 sur son pas de tir",
+    title: "Ariane 5 sur le pas de tir",
+    author: "NASA — Bill Ingalls",
+    license: "Domaine public",
+    sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=113683096",
+  },
 } as const satisfies Record<string, SitePhoto>;
+
+/**
+ * Photo d'illustration par famille de catégorie. Les catégories partageant un
+ * thème (appareils, bases, météo…) réutilisent la même photographie ; à
+ * défaut de correspondance, l'appelant retombe sur la photo du module. Les
+ * clés sont des slugs de catégorie tels qu'ils apparaissent dans plusieurs
+ * modules (content/_referentiels/categories.json).
+ */
+const CATEGORY_THEME_PHOTOS: Record<string, keyof typeof SITE_PHOTOS> = {
+  // Appareils et matériels
+  appareils: "eopn",
+  helicopteres: "alat",
+  navires: "marine",
+  ban: "marine",
+  // Bases et implantations
+  bases: "eopn",
+  // Sélection et pilotage
+  selection: "psychotechnique",
+  instruments: "psychotechnique",
+  "radio-communications": "psychotechnique",
+  navigation: "psychotechnique",
+  cartographie: "psychotechnique",
+  // Sciences du vol
+  aerodynamique: "fondamentaux",
+  "mecanique-du-vol": "fondamentaux",
+  performances: "fondamentaux",
+  physique: "fondamentaux",
+  // Météo
+  meteorologie: "meteo",
+  // Histoire et culture
+  histoire: "histoire",
+  "culture-aeronautique": "histoire",
+  personnalites: "histoire",
+  // Espace (fondamentaux)
+  // (rattaché via catégories spécifiques si présentes)
+};
 
 /** Photo d'illustration d'un module, par slug (accueil et hubs). */
 export function getModulePhoto(slug: string): SitePhoto | undefined {
@@ -88,6 +158,19 @@ export function getModulePhoto(slug: string): SitePhoto | undefined {
     psychotechnique: SITE_PHOTOS.psychotechnique,
   };
   return bySlug[slug];
+}
+
+/**
+ * Photo d'en-tête d'une catégorie : la photo thématique de la famille si elle
+ * existe, sinon la photo du module. Garantit qu'aucune page de catégorie n'est
+ * sans visuel (retour V1 : « photos partout »).
+ */
+export function getCategoryPhoto(moduleSlug: string, categorySlug: string): SitePhoto | undefined {
+  const themeKey = CATEGORY_THEME_PHOTOS[categorySlug];
+  if (themeKey) {
+    return SITE_PHOTOS[themeKey];
+  }
+  return getModulePhoto(moduleSlug);
 }
 
 /** Toutes les photos, pour la page des crédits. */

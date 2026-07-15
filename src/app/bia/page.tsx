@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpenIcon, GraduationCapIcon, ListChecksIcon } from "lucide-react";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getBiaMatiereSummaries } from "@/lib/bia/data";
+import { SITE_PHOTOS } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Parcours BIA — brevet d'initiation aéronautique",
@@ -25,17 +27,12 @@ export default function BiaHubPage() {
   return (
     <main className="space-y-8">
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Parcours BIA" }]} />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Parcours BIA</h1>
-        <p className="text-muted-foreground text-lg">
-          Le brevet d&apos;initiation aéronautique, préparé avec les fiches des Fondamentaux.
-        </p>
-        <p className="max-w-prose">
-          Cinq matières, une épreuve écrite de 2 h 30, l&apos;admission à 10/20 — le programme
-          officiel du BIA recoupe presque exactement le socle de connaissances des sélections
-          pilote. Étudiez matière par matière, puis mesurez-vous à l&apos;examen blanc.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Brevet d'initiation aéronautique"
+        title="Parcours BIA"
+        description="Cinq matières, une épreuve écrite de 2 h 30, l'admission à 10/20 — le programme officiel du BIA recoupe presque exactement le socle des sélections pilote. Étudiez matière par matière, puis mesurez-vous à l'examen blanc."
+        photo={SITE_PHOTOS.fondamentaux}
+      />
 
       <section aria-label="Les matières du BIA" className="space-y-4">
         <h2 className="text-xl font-semibold tracking-tight">Les cinq matières</h2>

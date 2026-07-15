@@ -161,9 +161,11 @@ Rôle (une phrase) · Quand l'utiliser · Quand ne pas l'utiliser (et quoi utili
 
 Bibliothèque commune : `src/lib/motion.ts` (`DURATIONS` 150/200/300 ms, `TRANSITIONS` enter/exit, `fadeInUp`, `fadeIn`, `staggerContainer`) + transitions CSS simples (`transition-colors duration-150`) pour les survols. Interdits : rebond, rotation, zoom > 1.05, effets d'attention. `motion-safe:` en CSS, `<MotionConfig reducedMotion="user">` dans le provider dès la première animation Framer Motion montée. Une animation hors bibliothèque est un défaut de revue.
 
-## 6bis. Photographies
+## 6bis. Photographies et en-têtes de page
 
 Règle éditoriale : **uniquement de vraies photographies, jamais d'images générées**. Chaque photo provient d'une source à licence de libre réutilisation vérifiée (domaine public, CC0, CC BY, CC BY-SA — Wikimedia Commons pour la V1) et n'est que redimensionnée/compressée. Le registre unique `src/lib/photos.ts` porte, pour chaque cliché, l'`alt` français, l'auteur, la licence et la page source ; la page `/credits-photos` les affiche et honore l'obligation d'attribution des licences CC. Les fichiers optimisés vivent dans `public/images/`. Toute nouvelle image passe par le registre — aucune balise `<img>`/`<Image>` décorative ne référence une URL externe.
+
+**En-tête de page unique** : toutes les pages intérieures utilisent `PageHeader` (`src/components/layout/page-header.tsx`) — bandeau photo réelle créditée, **filet d'accent à la couleur du concours** (`getModuleAccentVar` : EOPAN bleu Marine, EOPN bleu Air, ALAT vert Terre, transverses en `primary`), libellé de section en capitales (eyebrow), titre et description. Les catégories tirent leur photo de `getCategoryPhoto` (photo thématique de la famille, sinon photo du module) : aucune page sans visuel. Sans photo, `PageHeader` se réduit à un en-tête typographique à filet d'accent.
 
 ## 7. Risques identifiés
 
