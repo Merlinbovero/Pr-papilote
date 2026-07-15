@@ -119,6 +119,31 @@ Couverture immédiate de la liste officielle : navigation (menu, onglets, pagina
 
 `SiteHeader` · `SiteFooter` · `SiteBreadcrumb` · `ModuleCard` (carte concours) · `SearchCommand` (barre + palette de recherche) — détail : `docs/components.md`.
 
+### Blocs éditoriaux par nature d'information (vitrine `/design-system`)
+
+Objectif : **l'œil identifie la nature d'un bloc avant de l'avoir lu.** Chaque
+variante porte une couleur porteuse de sens (§ tokens), une icône Lucide et un
+intitulé par défaut. Aucune couleur brute : uniquement des tokens.
+
+| Composant  | Variante(s)                                 | Couleur porteuse               | Emploi                                    |
+| ---------- | ------------------------------------------- | ------------------------------ | ----------------------------------------- |
+| `Callout`  | `definition`                                | `info` (bleu)                  | Définition d'un terme ou d'une notion     |
+| `Callout`  | `a-retenir`                                 | `primary` (bleu drapeau)       | Point clé condensé                        |
+| `Callout`  | `technique`                                 | `muted` (gris)                 | Donnée chiffrée à connaître               |
+| `Callout`  | `citation`                                  | `muted` (gris)                 | Citation courte sourcée                   |
+| `Callout`  | `source`                                    | `info` (bleu)                  | Renvoi de source                          |
+| `Callout`  | `piege`                                     | `warning` (orange)             | Erreur fréquente / confusion              |
+| `Callout`  | `a-verifier`                                | `warning` (orange, pointillés) | Information datée / susceptible d'évoluer |
+| `Callout`  | `actuel`                                    | `success` (vert)               | Fait opérationnel du moment               |
+| `Callout`  | `historique`                                | `muted` (gris)                 | Repère du passé                           |
+| `Timeline` | jalons `{ date, title, body?, highlight? }` | `primary` sur jalon majeur     | Chronologie verticale (gabarit Histoire)  |
+| `DataGrid` | paires `{ label, value }`                   | neutre                         | Caractéristiques techniques (clé/valeur)  |
+
+`Callout` est rendu en `<aside>` étiqueté (nature annoncée aux lecteurs
+d'écran) ; `DataGrid` en liste de définitions ; `Timeline` en liste ordonnée.
+Ces trois blocs sont la brique de base des gabarits spécialisés (Appareil,
+Histoire, Géopolitique, RETEX) et de l'enrichissement des fiches.
+
 ### Composants métier spécifiés — à construire avec leur gabarit consommateur
 
 | Composant                                                                                      | Gabarit consommateur        | Rôle                                   |
