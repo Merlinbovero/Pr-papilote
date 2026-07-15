@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Ajouté
+
+- 2026-07-15 — **Application installable (PWA)** (retour V1 : « une icône d'application, je clique et ça m'envoie sur le site »). `src/app/manifest.ts` (manifeste web — nom, couleurs, écran de démarrage, icônes), balises Apple (`appleWebApp`) et couleur de thème dans le layout. **Icône provisoire** générée (avion en papier blanc sur bleu drapeau) déclinée en `icon-192`, `icon-512`, `icon-maskable-512` et `apple-touch-icon` dans `public/`. Le site s'installe sur l'écran d'accueil (iPhone/Android/desktop) et s'ouvre en plein écran ; il reflète toujours la dernière version en ligne. Procédure de remplacement par le logo définitif dans `docs/pwa-icone.md`.
+
 ### Modifié
 
 - 2026-07-15 — **Lot R3 — direction artistique : photos partout + code couleur par armée** (retours V1 : « améliorer la DA de chaque page et sous-catégorie »). **Composant d'en-tête unique `PageHeader`** appliqué à toutes les pages intérieures — bandeau photo réelle créditée, **filet d'accent à la couleur du concours** (EOPAN bleu Marine, EOPN bleu Air, ALAT vert Terre via `getModuleAccentVar` ; transverses en bleu drapeau), libellé de section, titre, description. **Bibliothèque de photos thématiques** par famille de catégorie (`getCategoryPhoto` : appareils, bases, météo, histoire, marine, espace… avec **repli sur la photo du module** — aucune page de catégorie sans visuel) ; **4 nouvelles photos** libres vérifiées (cumulus, Nord Noratlas, porte-avions Charles de Gaulle, Ariane 5). En-têtes photo posés sur : hubs de modules, **pages de catégorie**, hub + parcours BIA, hub + trois cartes des bases. 162 tests unitaires, 82 e2e (18 axe à zéro violation), build 328 pages.
