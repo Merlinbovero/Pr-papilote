@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
 import { getFranceMap } from "@/lib/cartes/geo";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function CartePage() {
   const implantations = getImplantationViews("air");
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb
         items={[
           { label: "Accueil", href: "/" },
@@ -39,6 +40,6 @@ export default function CartePage() {
         map={getFranceMap()}
         accentVar={getModuleAccentVar("eopn")}
       />
-    </main>
+    </StandalonePageShell>
   );
 }

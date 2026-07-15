@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { BiaExamPlayer } from "@/features/bia/exam-player";
 import { getBiaConfig } from "@/lib/bia/config";
 import { getBiaExamPools, toBiaPlayerQuestion, type BiaPlayerQuestion } from "@/lib/bia/data";
@@ -28,7 +29,7 @@ export default function BiaExamenBlancPage() {
   const matiereNames = Object.fromEntries(config.matieres.map((m) => [m.slug, m.name]));
 
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb
         items={[
           { label: "Accueil", href: "/" },
@@ -44,6 +45,6 @@ export default function BiaExamenBlancPage() {
         </p>
       </header>
       <BiaExamPlayer pools={serialized} config={config} matiereNames={matiereNames} />
-    </main>
+    </StandalonePageShell>
   );
 }

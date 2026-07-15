@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { FicheCard } from "@/components/shared/fiche-card";
 import { MatiereQuiz } from "@/features/bia/matiere-quiz";
 import { getBiaConfig, getBiaMatiere } from "@/lib/bia/config";
@@ -66,7 +67,7 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
   }
 
   return (
-    <main className="space-y-8">
+    <StandalonePageShell>
       <SiteBreadcrumb
         items={[
           { label: "Accueil", href: "/" },
@@ -112,6 +113,6 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
       <section aria-label="Quiz de la matière">
         <MatiereQuiz matiereName={matiere.name} pool={pool} />
       </section>
-    </main>
+    </StandalonePageShell>
   );
 }

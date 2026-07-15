@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
+import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
 import { getTermes } from "@/lib/content/fiches";
 
@@ -15,8 +15,7 @@ export default function DictionnairePage() {
   const termes = getTermes();
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 space-y-8 px-4 py-8 sm:px-6 lg:px-8">
-      <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Dictionnaire" }]} />
+    <StandalonePageShell breadcrumb={[{ label: "Accueil", href: "/" }, { label: "Dictionnaire" }]}>
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Dictionnaire aéronautique</h1>
         <p className="text-muted-foreground max-w-prose">
@@ -46,6 +45,6 @@ export default function DictionnairePage() {
           ))}
         </ul>
       )}
-    </main>
+    </StandalonePageShell>
   );
 }
