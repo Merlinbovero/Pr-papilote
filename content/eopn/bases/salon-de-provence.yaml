@@ -3,6 +3,13 @@ id: eopn.bases.salon-de-provence
 type: base-aerienne
 title: Base aérienne 701 de Salon-de-Provence
 slug: salon-de-provence
+image:
+  src: /images/fiche-salon-de-provence.jpg
+  alt: Alpha Jets de la Patrouille de France, basée à Salon-de-Provence
+  author: Falcon® Photography from France
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=82080765
 summary: >-
   Le berceau des officiers de l'Armée de l'air et de l'Espace. Base aérienne 701
   « Général Pineau », elle abrite l'École de l'air et de l'espace et la

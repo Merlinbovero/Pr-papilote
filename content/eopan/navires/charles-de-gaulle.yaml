@@ -3,6 +3,12 @@ id: eopan.bases.charles-de-gaulle
 type: navire
 title: Porte-avions Charles de Gaulle
 slug: charles-de-gaulle
+image:
+  src: /images/theme-marine.jpg
+  alt: Porte-avions Charles de Gaulle en mer, Rafale Marine sur le pont d'envol
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
 summary: >-
   Unique porte-avions français, à propulsion nucléaire, mis en œuvre par la
   Marine nationale ; il catapulte et récupère le groupe aérien embarqué

@@ -3,6 +3,12 @@ id: eopan.ban.hyeres
 type: ban
 title: BAN de Hyères
 slug: hyeres
+image:
+  src: /images/fiche-nh90-caiman.jpg
+  alt: NH90 Caïman — la BAN de Hyères regroupe les hélicoptères de l'aéronautique navale
+  author: U.S. Navy — MC3 David Flewellyn
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=46924167
 summary: >-
   Seule base d'aéronautique navale de Méditerranée, à Hyères (Var), près de
   Toulon. Base d'hélicoptères par excellence, elle arme les flottilles qui

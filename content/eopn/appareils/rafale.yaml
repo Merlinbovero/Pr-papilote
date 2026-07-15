@@ -3,6 +3,13 @@ id: eopn.appareils.rafale
 type: appareil
 title: Rafale (Armée de l'air et de l'Espace)
 slug: rafale
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale de l'armée de l'Air et de l'Espace en démonstration
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
 summary: >-
   Avion de combat omnirôle de Dassault Aviation, épine dorsale de la chasse de
   l'Armée de l'air et de l'Espace. Décliné en Rafale B (biplace) et Rafale C

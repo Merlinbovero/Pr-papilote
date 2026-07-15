@@ -3,6 +3,12 @@ id: eopan.bases.flottille-11f
 type: flottille
 title: Flottille 11F
 slug: flottille-11f
+image:
+  src: /images/fiche-rafale-m.jpg
+  alt: Rafale M — appareil mis en œuvre par la flottille 11F
+  author: US Navy
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=54165584
 summary: >-
   La plus ancienne formation de chasse de l'aéronautique navale, équipée de
   Rafale M et stationnée à la BAN Landivisiau ; elle embarque sur le

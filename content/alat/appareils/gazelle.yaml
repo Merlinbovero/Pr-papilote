@@ -3,6 +3,13 @@ id: alat.appareils.gazelle
 type: helicoptere
 title: L'hélicoptère Gazelle
 slug: gazelle
+image:
+  src: /images/fiche-gazelle.jpg
+  alt: Hélicoptère Gazelle de l'aviation légère de l'armée de Terre
+  author: MilborneOne
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=11232882
 summary: >-
   Hélicoptère léger et agile de l'ALAT, reconnaissable à son fenestron. Employé
   en reconnaissance, appui léger et lutte antichar, il rend de longs services

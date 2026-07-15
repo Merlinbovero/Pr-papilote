@@ -3,6 +3,12 @@ id: eopn.appareils.mrtt-phenix
 type: appareil
 title: A330 MRTT Phénix
 slug: mrtt-phenix
+image:
+  src: /images/fiche-mrtt-phenix.jpg
+  alt: A330 MRTT Phénix, avion ravitailleur et de transport
+  author: U.S. Air Force photo by Senior Airman Blake Wiles
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=117763467
 summary: >-
   Ravitailleur, transporteur stratégique, hôpital volant et maillon de la
   dissuasion — le Phénix fait tout cela avec la même cellule d'A330. L'avion
