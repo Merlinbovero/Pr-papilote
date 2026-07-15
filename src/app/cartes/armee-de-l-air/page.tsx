@@ -29,7 +29,7 @@ export default function CartePage() {
       <PageHeader
         eyebrow="Cartes des bases · Armée de l'Air et de l'Espace"
         title="Bases de l'armée de l'Air et de l'Espace"
-        description="Le parcours EOPN sur la carte — Salon, Cognac, Saint-Dizier, Istres, Mont-de-Marsan, Avord."
+        description="Le parcours EOPN sur la carte — Salon, Cognac, Saint-Dizier, Istres, Mont-de-Marsan, Avord — et les bases aériennes outre-mer."
         photo={SITE_PHOTOS.eopn}
         accentVar={getModuleAccentVar("eopn")}
       />

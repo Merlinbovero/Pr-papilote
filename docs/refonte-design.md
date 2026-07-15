@@ -54,9 +54,19 @@ fond ne part pas dans le bundle). **Panneau et filtres premium** : marqueurs à 
 couleur de l'armée, halo de sélection, labels à liseré blanc lisibles, panneau de
 détail avec code d'implantation, liens du graphe, filtres pastille colorés.
 
-## Lots suivants (prévus)
+## Lot D3b — Outre-mer
 
-- **D3b** — outre-mer (inset maps DOM-TOM) + enrichissement des implantations
-  (écoles, régiments, BAN, bases aériennes par armée).
+Support des **zones** (`zone` : métropole + 6 territoires) et d'un rôle
+**Souveraineté**. Les implantations métropolitaines restent sur le fond SVG ;
+les implantations d'outre-mer s'affichent en **cartouches (inset)** groupés par
+territoire sous la carte — approche honnête, sans fausse géographie. Neuf bases
+outre-mer **vérifiées** (sources officielles defense.gouv.fr / Wikipédia,
+localisation communale) : 5 bases aériennes (BA 367 Guyane, BA 181 La Réunion,
+DA 181 Mayotte, BA 186 Nouvelle-Calédonie, DA 190 Polynésie) et 4 bases navales
+(Fort-de-France, Port des Galets, Nouméa, Papeete). Limite assumée : l'ALAT
+outre-mer (détachements hélicoptères) n'est pas encore couverte.
+
+## Lot suivant (prévu)
+
 - **D4** — harmonisation globale (bannières, cartes, rayons, boutons, overlays,
   densité) et vérification de l'homogénéité perçue.
