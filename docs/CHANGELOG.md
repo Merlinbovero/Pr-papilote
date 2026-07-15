@@ -6,6 +6,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Modifié
 
+- 2026-07-15 — **Lot E2 — carte de fiche « média »** (Phase 4). `FicheCard` gagne une composition **média** (dès qu'une vignette est fournie) : **photo de la fiche** à gauche, **type de fiche** en surtitre, titre, résumé et **temps de lecture** — les listes de catégorie donnent enfin envie d'explorer au lieu d'aligner des cartes textuelles identiques. Les 150 fiches étant illustrées, toutes les pages de catégorie en bénéficient. Le lien porte un `aria-label` = titre (le lecteur d'écran annonce la fiche, pas un texte à rallonge). Nouveau helper présentiel `getFicheTypeLabel` (libellés lisibles des 24 types). La composition sobre d'origine reste disponible pour les listes denses.
 - 2026-07-15 — **Lot E — cadrage responsive des visuels EOPAN/EOPN** (Phase 5, retours « mieux cadrer les images concours, priorité EOPAN/EOPN »). Un point focal unique ne pouvait servir à la fois une carte verticale et une bannière large. Deux nouveaux points focaux facultatifs sur `SitePhoto` — **`focalCard`** (recadrage portrait) et **`focalHero`** (bannière paysage) — avec repli sur `focal`. Réglés sur les deux clichés dont le sujet est décentré : **EOPAN** (Rafale Marine à l'appontage en haut à gauche → carte cadrée à `26% 40%`) et **EOPN** (Rafale de l'AAE au centre-droit → carte à `52% 50%`). `PageHeader` consomme `focalHero`, les cartes de module verticales `focalCard`. Le sujet reste lisible en carte comme en bannière, sur mobile comme sur desktop.
 
 ### Ajouté

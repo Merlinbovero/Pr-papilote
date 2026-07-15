@@ -4,8 +4,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { FicheCard } from "@/components/shared/fiche-card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
-import { getFichesByCategory, getFicheHref } from "@/lib/content/fiches";
+import { getFichesByCategory, getFicheHref, getReadingMinutes } from "@/lib/content/fiches";
 import { getCategories, getCategory, getModule } from "@/lib/content/referentials";
+import { getFicheTypeLabel } from "@/lib/fiche-type-label";
 import { getModuleAccentVar } from "@/lib/module-accent";
 import { getCategoryPhoto } from "@/lib/photos";
 
@@ -77,7 +78,18 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label="Fiches de la catégorie">
           {fiches.map((fiche) => (
             <li key={fiche.id}>
-              <FicheCard href={getFicheHref(fiche)} title={fiche.title} summary={fiche.summary} />
+              <FicheCard
+                href={getFicheHref(fiche)}
+                title={fiche.title}
+                summary={fiche.summary}
+                image={
+                  fiche.image
+                    ? { src: fiche.image.src, alt: fiche.image.alt, focal: fiche.image.focal }
+                    : undefined
+                }
+                typeLabel={getFicheTypeLabel(fiche.type)}
+                readingMinutes={getReadingMinutes(fiche)}
+              />
             </li>
           ))}
         </ul>
