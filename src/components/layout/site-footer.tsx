@@ -19,7 +19,12 @@ export function SiteFooter() {
             ))}
           </ul>
         </nav>
-        <p>PrépaPilote — préparation aux concours EOPAN, EOPN et ALAT.</p>
+        <div className="flex flex-col gap-2 sm:items-end">
+          <Link href="/credits-photos" className="hover:text-foreground transition-colors">
+            Crédits photographiques
+          </Link>
+          <p>PrépaPilote — préparation aux concours EOPAN, EOPN et ALAT.</p>
+        </div>
       </div>
     </footer>
   );

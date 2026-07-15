@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
+import { getModuleAccentVar } from "@/lib/module-accent";
+import { SITE_PHOTOS } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Bases de l'armée de l'Air et de l'Espace — carte des implantations",
@@ -22,15 +25,13 @@ export default function CartePage() {
           { label: "Bases de l'armée de l'Air et de l'Espace" },
         ]}
       />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Bases de l&apos;armée de l&apos;Air et de l&apos;Espace
-        </h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
-          Le parcours EOPN sur la carte — Salon, Cognac, Saint-Dizier, Istres, Mont-de-Marsan,
-          Avord.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Cartes des bases · Armée de l'Air et de l'Espace"
+        title="Bases de l'armée de l'Air et de l'Espace"
+        description="Le parcours EOPN sur la carte — Salon, Cognac, Saint-Dizier, Istres, Mont-de-Marsan, Avord."
+        photo={SITE_PHOTOS.eopn}
+        accentVar={getModuleAccentVar("eopn")}
+      />
       <BaseMap implantations={implantations} armeeLabel="armée de l'Air et de l'Espace" />
     </main>
   );

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
 import { getFichesByCategory, getFicheHref } from "@/lib/content/fiches";
 import { getCategories, getCategory, getModule } from "@/lib/content/referentials";
+import { getModuleAccentVar } from "@/lib/module-accent";
+import { getCategoryPhoto } from "@/lib/photos";
 
 export const dynamicParams = false;
 
@@ -42,6 +45,8 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
     notFound();
   }
   const fiches = getFichesByCategory(mod.slug, category.slug);
+  const accentVar = getModuleAccentVar(mod.slug);
+  const photo = getCategoryPhoto(mod.slug, category.slug);
 
   return (
     <main className="space-y-8">
@@ -52,10 +57,13 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
           { label: category.name },
         ]}
       />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">{category.name}</h1>
-        <p className="text-muted-foreground">{mod.name}</p>
-      </header>
+      <PageHeader
+        eyebrow={mod.name}
+        title={category.name}
+        description={category.description}
+        photo={photo}
+        accentVar={accentVar}
+      />
       {fiches.length === 0 ? (
         <Empty className="border">
           <EmptyHeader>

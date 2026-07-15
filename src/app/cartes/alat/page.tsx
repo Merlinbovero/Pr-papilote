@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
+import { getModuleAccentVar } from "@/lib/module-accent";
+import { SITE_PHOTOS } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Implantations de l'ALAT — carte des implantations",
@@ -22,15 +25,13 @@ export default function CartePage() {
           { label: "Implantations de l'ALAT" },
         ]}
       />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Implantations de l&apos;ALAT
-        </h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
-          Écoles (Dax, Le Cannet-des-Maures), régiments d&apos;hélicoptères de combat et
-          états-majors.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Cartes des bases · Armée de Terre"
+        title="Implantations de l'ALAT"
+        description="Écoles (Dax, Le Cannet-des-Maures), régiments d'hélicoptères de combat et états-majors."
+        photo={SITE_PHOTOS.alat}
+        accentVar={getModuleAccentVar("alat")}
+      />
       <BaseMap implantations={implantations} armeeLabel="aviation légère de l'armée de Terre" />
     </main>
   );

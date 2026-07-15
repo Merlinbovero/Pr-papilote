@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AnchorIcon, MountainIcon, PlaneIcon } from "lucide-react";
+import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getImplantations } from "@/lib/cartes/data";
+import { SITE_PHOTOS } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Cartes des bases — aéronavale, armée de l'Air, ALAT",
@@ -43,12 +45,12 @@ export default function CartesHubPage() {
   return (
     <main className="space-y-8">
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Cartes des bases" }]} />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Cartes des bases</h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
-          Où tout se passe — les implantations des trois armées, reliées aux fiches du site.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Les trois armées sur la carte"
+        title="Cartes des bases"
+        description="Où tout se passe — les implantations des trois armées, reliées aux fiches du site."
+        photo={SITE_PHOTOS.marine}
+      />
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {CARTES.map((carte) => {
           const count = implantations.filter((i) => i.armee === carte.armee).length;

@@ -10,23 +10,23 @@ Tous les tokens vivent dans `src/app/globals.css` (`:root` clair, `.dark` sombre
 
 ### Couleurs
 
-| Token                             | Signification                               | Notes                             |
-| --------------------------------- | ------------------------------------------- | --------------------------------- |
-| `primary`                         | Navigation, action principale, lien         | Bleu institutionnel               |
-| `secondary`                       | Fonds d'action secondaire                   | Neutre                            |
-| `accent`                          | Survols, sélection                          | Neutre                            |
-| `success`                         | Validation, réponse juste, vérifié          | Vert                              |
-| `warning`                         | Attention, à re-vérifier                    | Orange                            |
-| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                             |
-| `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary` |
-| `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface              |
-| `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                   |
-| `foreground`                      | Texte principal                             |                                   |
-| `muted-foreground`                | Texte secondaire                            |                                   |
-| `muted`                           | Fonds discrets, texte tertiaire via opacité |                                   |
-| `concours-eopan/eopn/alat`        | Identité concours                           | Badge/liseré uniquement           |
-| `chart-1…5`                       | Séries de graphiques                        |                                   |
-| `sidebar-*`                       | Navigation latérale                         |                                   |
+| Token                             | Signification                               | Notes                                 |
+| --------------------------------- | ------------------------------------------- | ------------------------------------- |
+| `primary`                         | Navigation, action principale, lien         | **Bleu drapeau français** (≈ #0055A4) |
+| `secondary`                       | Fonds d'action secondaire                   | Neutre                                |
+| `accent`                          | Survols, sélection, état actif de nav       | Bleu très pâle (teinte de `primary`)  |
+| `success`                         | Validation, réponse juste, vérifié          | Vert                                  |
+| `warning`                         | Attention, à re-vérifier                    | Orange                                |
+| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                                 |
+| `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary`     |
+| `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface                  |
+| `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                       |
+| `foreground`                      | Texte principal                             |                                       |
+| `muted-foreground`                | Texte secondaire                            |                                       |
+| `muted`                           | Fonds discrets, texte tertiaire via opacité |                                       |
+| `concours-eopan/eopn/alat`        | Identité concours                           | Badge/liseré uniquement               |
+| `chart-1…5`                       | Séries de graphiques                        |                                       |
+| `sidebar-*`                       | Navigation latérale                         |                                       |
 
 **Variantes d'état — règle unique** : les états dérivent du token par les utilitaires standard, jamais par de nouveaux tokens : survol `hover:bg-primary/90`, actif `active:bg-primary/80`, désactivé `disabled:opacity-50 disabled:pointer-events-none`, focus `focus-visible:ring-2 ring-ring`. C'est ce qui garantit qu'un état se comporte pareil partout. Contraste : WCAG AA (4,5:1 texte, 3:1 UI) dans les deux thèmes.
 
@@ -160,6 +160,12 @@ Rôle (une phrase) · Quand l'utiliser · Quand ne pas l'utiliser (et quoi utili
 ## 6. Animations
 
 Bibliothèque commune : `src/lib/motion.ts` (`DURATIONS` 150/200/300 ms, `TRANSITIONS` enter/exit, `fadeInUp`, `fadeIn`, `staggerContainer`) + transitions CSS simples (`transition-colors duration-150`) pour les survols. Interdits : rebond, rotation, zoom > 1.05, effets d'attention. `motion-safe:` en CSS, `<MotionConfig reducedMotion="user">` dans le provider dès la première animation Framer Motion montée. Une animation hors bibliothèque est un défaut de revue.
+
+## 6bis. Photographies et en-têtes de page
+
+Règle éditoriale : **uniquement de vraies photographies, jamais d'images générées**. Chaque photo provient d'une source à licence de libre réutilisation vérifiée (domaine public, CC0, CC BY, CC BY-SA — Wikimedia Commons pour la V1) et n'est que redimensionnée/compressée. Le registre unique `src/lib/photos.ts` porte, pour chaque cliché, l'`alt` français, l'auteur, la licence et la page source ; la page `/credits-photos` les affiche et honore l'obligation d'attribution des licences CC. Les fichiers optimisés vivent dans `public/images/`. Toute nouvelle image passe par le registre — aucune balise `<img>`/`<Image>` décorative ne référence une URL externe.
+
+**En-tête de page unique** : toutes les pages intérieures utilisent `PageHeader` (`src/components/layout/page-header.tsx`) — bandeau photo réelle créditée, **filet d'accent à la couleur du concours** (`getModuleAccentVar` : EOPAN bleu Marine, EOPN bleu Air, ALAT vert Terre, transverses en `primary`), libellé de section en capitales (eyebrow), titre et description. Les catégories tirent leur photo de `getCategoryPhoto` (photo thématique de la famille, sinon photo du module) : aucune page sans visuel. Sans photo, `PageHeader` se réduit à un en-tête typographique à filet d'accent.
 
 ## 7. Risques identifiés
 
