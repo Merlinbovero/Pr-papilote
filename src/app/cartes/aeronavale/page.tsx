@@ -29,7 +29,7 @@ export default function CartePage() {
       <PageHeader
         eyebrow="Cartes des bases · Marine nationale"
         title="Bases de l'aéronautique navale"
-        description="Les quatre BAN métropolitaines — chasse embarquée en Bretagne, patrouille maritime à Lann-Bihoué, hélicoptères à Hyères et Lanvéoc."
+        description="Les BAN métropolitaines — chasse embarquée en Bretagne, patrouille maritime à Lann-Bihoué, hélicoptères à Hyères et Lanvéoc — et les bases navales outre-mer."
         photo={SITE_PHOTOS.marine}
         accentVar={getModuleAccentVar("eopan")}
       />

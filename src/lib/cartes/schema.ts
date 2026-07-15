@@ -18,6 +18,7 @@ export const IMPLANTATION_ROLES = [
   "ravitaillement",
   "essais",
   "soutien",
+  "souverainete",
   "etat-major",
 ] as const;
 
@@ -30,7 +31,29 @@ export const ROLE_LABELS: Record<(typeof IMPLANTATION_ROLES)[number], string> = 
   ravitaillement: "Ravitaillement",
   essais: "Essais et expérimentation",
   soutien: "Soutien",
+  souverainete: "Souveraineté",
   "etat-major": "État-major",
+};
+
+/** Zones géographiques (métropole + outre-mer) — pilotent le rendu en inset. */
+export const IMPLANTATION_ZONES = [
+  "metropole",
+  "antilles",
+  "guyane",
+  "reunion",
+  "mayotte",
+  "nouvelle-caledonie",
+  "polynesie",
+] as const;
+
+export const ZONE_LABELS: Record<(typeof IMPLANTATION_ZONES)[number], string> = {
+  metropole: "Métropole",
+  antilles: "Antilles",
+  guyane: "Guyane",
+  reunion: "La Réunion",
+  mayotte: "Mayotte",
+  "nouvelle-caledonie": "Nouvelle-Calédonie",
+  polynesie: "Polynésie française",
 };
 
 export const implantationSchema = z.object({
@@ -42,9 +65,11 @@ export const implantationSchema = z.object({
   armee: z.enum(["marine", "air", "terre"]),
   statut: z.enum(["active", "historique"]),
   roles: z.array(z.enum(IMPLANTATION_ROLES)).min(1),
+  /** Zone géographique — « metropole » par défaut, sinon outre-mer (inset). */
+  zone: z.enum(IMPLANTATION_ZONES).default("metropole"),
   /** Coordonnées de la COMMUNE (2 décimales) — jamais d'emprise précise. */
-  lat: z.number().min(41).max(52),
-  lon: z.number().min(-6).max(10),
+  lat: z.number().min(-25).max(52),
+  lon: z.number().min(-180).max(180),
   ficheId: contentIdSchema.optional(),
   liens: z.array(contentIdSchema).default([]),
 });
