@@ -161,6 +161,10 @@ Rôle (une phrase) · Quand l'utiliser · Quand ne pas l'utiliser (et quoi utili
 
 Bibliothèque commune : `src/lib/motion.ts` (`DURATIONS` 150/200/300 ms, `TRANSITIONS` enter/exit, `fadeInUp`, `fadeIn`, `staggerContainer`) + transitions CSS simples (`transition-colors duration-150`) pour les survols. Interdits : rebond, rotation, zoom > 1.05, effets d'attention. `motion-safe:` en CSS, `<MotionConfig reducedMotion="user">` dans le provider dès la première animation Framer Motion montée. Une animation hors bibliothèque est un défaut de revue.
 
+## 6bis. Photographies
+
+Règle éditoriale : **uniquement de vraies photographies, jamais d'images générées**. Chaque photo provient d'une source à licence de libre réutilisation vérifiée (domaine public, CC0, CC BY, CC BY-SA — Wikimedia Commons pour la V1) et n'est que redimensionnée/compressée. Le registre unique `src/lib/photos.ts` porte, pour chaque cliché, l'`alt` français, l'auteur, la licence et la page source ; la page `/credits-photos` les affiche et honore l'obligation d'attribution des licences CC. Les fichiers optimisés vivent dans `public/images/`. Toute nouvelle image passe par le registre — aucune balise `<img>`/`<Image>` décorative ne référence une URL externe.
+
 ## 7. Risques identifiés
 
 1. **Dérive des variantes** (« encore une taille, encore un variant ») → cva borné à `variant` + `size` (≤ 3 tailles), toute variante nouvelle justifiée en PR.

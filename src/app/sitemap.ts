@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/cartes/aeronavale"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/cartes/armee-de-l-air"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/cartes/alat"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/credits-photos"), changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const bia = getBiaConfig();

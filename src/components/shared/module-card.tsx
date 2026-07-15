@@ -4,9 +4,8 @@ import { cn } from "@/lib/utils";
 import type { Module } from "@/lib/content/schemas";
 
 /**
- * Fond de remplacement par module tant que les photographies définitives
- * (droits vérifiés) ne sont pas fournies — voir VISION.md, arbitrage 12.
- * Les paires bg/texte restent contrastées dans les deux thèmes.
+ * Fond de remplacement par module quand aucune photographie n'est fournie —
+ * les paires bg/texte restent contrastées dans les deux thèmes.
  */
 const PLACEHOLDER_STYLES: Record<string, string> = {
   eopan: "bg-concours-eopan text-primary-foreground",
@@ -19,20 +18,30 @@ const PLACEHOLDER_STYLES: Record<string, string> = {
 interface ModuleCardProps {
   module: Module;
   orientation: "vertical" | "horizontal";
-  /** Photographie officielle, branchée plus tard sans changer le composant. */
+  /** Photographie réelle, licence vérifiée (src/lib/photos.ts). */
   imageSrc?: string;
   imageAlt?: string;
+  /** Ligne secondaire courte (armée, vocation) affichée sous le nom. */
+  subtitle?: string;
 }
 
 /**
- * Carte d'accès à un module sur la page d'accueil : visuel plein cadre,
- * nom en très gros, aucun texte secondaire. Survol discret (zoom léger,
- * ombre), désactivé si l'utilisateur préfère réduire les animations.
+ * Carte d'accès à un module : photographie plein cadre, nom en très gros,
+ * sous-titre court facultatif. Survol discret (zoom léger, ombre),
+ * désactivé si l'utilisateur préfère réduire les animations. L'aria-label
+ * reste le nom seul pour des liens stables au clavier et dans les tests.
  */
-export function ModuleCard({ module: mod, orientation, imageSrc, imageAlt }: ModuleCardProps) {
+export function ModuleCard({
+  module: mod,
+  orientation,
+  imageSrc,
+  imageAlt,
+  subtitle,
+}: ModuleCardProps) {
   return (
     <Link
       href={`/${mod.slug}`}
+      aria-label={mod.name}
       className={cn(
         "group focus-visible:ring-ring relative block overflow-hidden rounded-xl border shadow-sm",
         "transition-[transform,box-shadow] duration-200 hover:shadow-lg focus-visible:ring-2 focus-visible:outline-none",
@@ -57,14 +66,19 @@ export function ModuleCard({ module: mod, orientation, imageSrc, imageAlt }: Mod
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.14),transparent_55%)] transition-transform duration-300 motion-safe:group-hover:scale-105"
         />
       )}
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-      <span
-        className={cn(
-          "absolute right-4 bottom-4 left-4 font-bold tracking-tight text-white drop-shadow-sm",
-          orientation === "vertical" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
-        )}
-      >
-        {mod.name}
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+      <span className="absolute right-4 bottom-4 left-4 space-y-0.5">
+        <span
+          className={cn(
+            "block font-bold tracking-tight text-white drop-shadow-sm",
+            orientation === "vertical" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
+          )}
+        >
+          {mod.name}
+        </span>
+        {subtitle ? (
+          <span className="block text-sm font-medium text-white/85 drop-shadow-sm">{subtitle}</span>
+        ) : null}
       </span>
     </Link>
   );

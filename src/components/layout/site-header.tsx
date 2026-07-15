@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { UserIcon } from "lucide-react";
+import { MainNav } from "@/components/layout/main-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { SearchCommand } from "@/features/search/search-command";
 import { buildSearchEntries } from "@/features/search/entries";
 
 /**
- * Header global, présent sur toutes les pages : logo, recherche sobre,
- * connexion. L'index de la palette est construit au build depuis les
- * référentiels.
+ * Header global, présent sur toutes les pages : logo, navigation principale,
+ * recherche, connexion. L'index de la palette est construit au build depuis
+ * les référentiels.
  */
 export function SiteHeader() {
   const entries = buildSearchEntries();
@@ -22,6 +23,7 @@ export function SiteHeader() {
         >
           Prépa<span className="text-primary">Pilote</span>
         </Link>
+        <MainNav />
         <div className="ml-auto flex items-center gap-2">
           <SearchCommand entries={entries} />
           <ThemeToggle />
