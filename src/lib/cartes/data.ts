@@ -47,6 +47,9 @@ export function getImplantationViews(armee: Implantation["armee"]): Implantation
       return {
         ...implantation,
         ficheHref: fiche ? getFicheHref(fiche) : undefined,
+        image: fiche?.image
+          ? { src: fiche.image.src, alt: fiche.image.alt, focal: fiche.image.focal }
+          : undefined,
         liensResolus: implantation.liens.flatMap((id) => {
           const linked = getFicheById(id);
           return linked ? [{ label: linked.title, href: getFicheHref(linked) }] : [];

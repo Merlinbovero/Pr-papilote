@@ -5,6 +5,7 @@ import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { BaseMap } from "@/features/cartes/base-map";
 import { getImplantationViews } from "@/lib/cartes/data";
 import { getFranceMap } from "@/lib/cartes/geo";
+import { getFranceLandmarks } from "@/lib/cartes/landmarks";
 import { getModuleAccentVar } from "@/lib/module-accent";
 import { SITE_PHOTOS } from "@/lib/photos";
 
@@ -38,6 +39,7 @@ export default function CartePage() {
         implantations={implantations}
         armeeLabel="armée de l'Air et de l'Espace"
         map={getFranceMap()}
+        landmarks={getFranceLandmarks()}
         accentVar={getModuleAccentVar("eopn")}
       />
     </StandalonePageShell>
