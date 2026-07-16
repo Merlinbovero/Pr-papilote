@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.eopn.pps-a-01
+kind: qcm
+theme: police-du-ciel
+statement: >-
+  Sous l'autorité de quel commandement la posture permanente de sûreté
+  aérienne (police du ciel) est-elle assurée ?
+choices:
+  - "Le CDAOA (commandement de la défense aérienne et des opérations aériennes)"
+  - "Les Forces aériennes stratégiques (FAS)"
+  - "Le commandement de l'espace"
+  - "La préfecture maritime"
+correctChoices: [0]
+distractorNotes:
+  "1": "Les FAS portent la dissuasion nucléaire aéroportée, pas la police du ciel."
+explanation: >-
+  La PPS-A est assurée 24h/24 et 7j/7 sous l'autorité du CDAOA, qui commande la
+  défense aérienne du territoire (détecter, identifier, intercepter).
+evaluates: [eopn.missions.la-posture-permanente-de-surete-aerienne]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

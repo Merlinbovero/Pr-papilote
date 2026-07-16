@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopan.aem-01
+kind: qcm
+theme: action-etat-en-mer
+statement: >-
+  Dans l'action de l'État en mer, quelle autorité coordonne, en métropole,
+  l'ensemble des administrations de la mer ?
+choices:
+  - "Le préfet maritime"
+  - "Le maire de la commune littorale"
+  - "Le directeur des douanes"
+  - "Le commandant du porte-avions"
+correctChoices: [0]
+distractorNotes:
+  "1": "Les pouvoirs du maire s'arrêtent à la limite des eaux ; en mer, c'est le préfet maritime."
+explanation: >-
+  L'action de l'État en mer place toutes les administrations (Marine, douanes,
+  affaires maritimes, gendarmerie maritime…) sous l'autorité d'un chef unique :
+  le préfet maritime, représentant de l'État en mer.
+evaluates: [eopan.missions.l-action-de-l-etat-en-mer]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
