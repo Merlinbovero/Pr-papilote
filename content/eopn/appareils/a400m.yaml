@@ -3,6 +3,9 @@ id: eopn.appareils.a400m
 type: appareil
 title: L'A400M Atlas
 slug: a400m
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-a400m.jpg
   alt: A400M Atlas de l'armée de l'Air et de l'Espace

@@ -3,6 +3,9 @@ id: eopn.appareils.rafale
 type: appareil
 title: Rafale (Armée de l'air et de l'Espace)
 slug: rafale
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-rafale.jpg
   alt: Rafale de l'armée de l'Air et de l'Espace en démonstration

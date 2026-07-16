@@ -3,6 +3,9 @@ id: alat.appareils.cougar
 type: helicoptere
 title: Cougar
 slug: cougar
+service:
+  status: actif
+  operator: Aviation légère de l'armée de Terre
 image:
   src: /images/fiche-cougar.jpg
   alt: Hélicoptère de manœuvre AS532 Cougar de l'armée de Terre

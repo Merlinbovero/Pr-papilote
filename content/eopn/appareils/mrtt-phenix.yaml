@@ -3,6 +3,9 @@ id: eopn.appareils.mrtt-phenix
 type: appareil
 title: A330 MRTT Phénix
 slug: mrtt-phenix
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-mrtt-phenix.jpg
   alt: A330 MRTT Phénix, avion ravitailleur et de transport

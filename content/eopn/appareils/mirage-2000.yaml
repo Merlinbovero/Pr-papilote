@@ -3,6 +3,9 @@ id: eopn.appareils.mirage-2000
 type: appareil
 title: Le Mirage 2000
 slug: mirage-2000
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-mirage-2000.jpg
   alt: Mirage 2000 de l'armée de l'Air et de l'Espace en vol

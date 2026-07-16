@@ -3,6 +3,9 @@ id: eopan.appareils.super-etendard
 type: appareil
 title: Super-Étendard
 slug: super-etendard
+service:
+  status: retire
+  operator: Marine nationale
 image:
   src: /images/fiche-super-etendard.jpg
   alt: Super-Étendard de l'aéronautique navale en vol (1988)

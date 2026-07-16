@@ -3,6 +3,9 @@ id: eopan.appareils.rafale-m
 type: appareil
 title: Rafale M
 slug: rafale-m
+service:
+  status: actif
+  operator: Marine nationale
 image:
   src: /images/fiche-rafale-m.jpg
   alt: Rafale Marine en touch-and-go sur un porte-avions

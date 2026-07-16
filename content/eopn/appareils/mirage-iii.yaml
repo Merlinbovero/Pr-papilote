@@ -3,6 +3,9 @@ id: eopn.appareils.mirage-iii
 type: appareil
 title: Mirage III
 slug: mirage-iii
+service:
+  status: retire
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-mirage-iii.jpg
   alt: Dassault Mirage IIIC de l'armée de l'Air

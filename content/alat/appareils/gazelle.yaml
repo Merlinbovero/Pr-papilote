@@ -3,6 +3,9 @@ id: alat.appareils.gazelle
 type: helicoptere
 title: L'hélicoptère Gazelle
 slug: gazelle
+service:
+  status: actif
+  operator: Aviation légère de l'armée de Terre
 image:
   src: /images/fiche-gazelle.jpg
   alt: Hélicoptère Gazelle de l'aviation légère de l'armée de Terre

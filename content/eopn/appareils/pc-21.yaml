@@ -3,6 +3,9 @@ id: eopn.appareils.pc-21
 type: appareil
 title: PC-21
 slug: pc-21
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-pc-21.jpg
   alt: Pilatus PC-21 de l'école de chasse

@@ -3,6 +3,9 @@ id: eopan.appareils.atlantique-2
 type: appareil
 title: Atlantique 2 (ATL2)
 slug: atlantique-2
+service:
+  status: actif
+  operator: Marine nationale
 image:
   src: /images/fiche-atlantique-2.jpg
   alt: Atlantique 2 (ATL2) de la Marine nationale en vol

@@ -7,6 +7,7 @@ import { EssentialBlock } from "@/components/content/essential-block";
 import { FicheFigure } from "@/components/content/fiche-figure";
 import { FicheHeader } from "@/components/content/fiche-header";
 import { FichePhotoBanner } from "@/components/content/fiche-photo";
+import { ServiceStatusBadge } from "@/components/content/service-badge";
 import { FicheNav } from "@/components/content/fiche-nav";
 import { FicheSection } from "@/components/content/fiche-section";
 import { Infobox } from "@/components/content/infobox";
@@ -205,6 +206,8 @@ export default async function FichePage({ params }: FichePageProps) {
           <FichePhotoBanner photo={fiche.image} />
         </div>
       ) : null}
+
+      {fiche.service ? <ServiceStatusBadge service={fiche.service} className="mt-4" /> : null}
 
       <div className="mt-8 gap-10 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-10">
