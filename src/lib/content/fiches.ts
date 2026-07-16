@@ -220,6 +220,11 @@ export function getQuestions(): Question[] {
   return getIndex().questions.filter((question) => isVisible(question.status));
 }
 
+/** Questions visibles qui évaluent une fiche donnée (relation « évalue »). */
+export function getQuestionsForFiche(ficheId: string): Question[] {
+  return getQuestions().filter((question) => question.evaluates.includes(ficheId));
+}
+
 export function getFichesByCategory(moduleSlug: string, categorySlug: string): FicheFile[] {
   return getFiches()
     .filter((fiche) => fiche.module === moduleSlug && fiche.category === categorySlug)

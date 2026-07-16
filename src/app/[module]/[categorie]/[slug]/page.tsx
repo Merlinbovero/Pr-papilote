@@ -16,7 +16,8 @@ import { RelationBlock } from "@/components/content/relation-block";
 import { RevisionHistory } from "@/components/content/revision-history";
 import { SourceList } from "@/components/content/source-list";
 import { TableOfContents } from "@/components/content/table-of-contents";
-import { TrainingBlock } from "@/components/content/training-block";
+import { NotionQuiz } from "@/features/quiz/notion-quiz";
+import { buildNotionPool } from "@/features/quiz/notion-pool";
 import type { DocumentItem, InfoboxEntry, RelationItem, TocItem } from "@/components/content/types";
 import type { DocumentNotice, FicheFile } from "@/lib/content/content-schemas";
 import {
@@ -98,6 +99,7 @@ export default async function FichePage({ params }: FichePageProps) {
     notFound();
   }
 
+  const quizPool = buildNotionPool(fiche.id);
   const links = getFicheLinks(fiche.id);
   const strongLinks = links.filter((link) => link.weight === "forte");
   const mediumLinks = links.filter((link) => link.weight === "moyenne");
@@ -255,7 +257,7 @@ export default async function FichePage({ params }: FichePageProps) {
             </div>
           ) : null}
 
-          <TrainingBlock questionCount={0} />
+          <NotionQuiz ficheTitle={fiche.title} pool={quizPool} />
 
           <RevisionHistory revisions={fiche.revisions} />
 

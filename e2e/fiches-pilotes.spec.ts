@@ -38,6 +38,16 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
     await expect(page.getByRole("link", { name: /^Rafale M/ })).toBeVisible();
   });
 
+  test("la fiche propose un mini-quiz jouable de la notion", async ({ page }) => {
+    await page.goto("/eopan/appareils/rafale-m");
+    const section = page.getByRole("region", { name: "Tester cette notion" });
+    await expect(section).toBeVisible();
+    await section.getByRole("button", { name: "Tester cette notion" }).click();
+    // Le player affiche une première question à répondre.
+    await expect(page.getByText(/Question 1 \//)).toBeVisible();
+    await expect(page.getByRole("button", { name: "Valider" })).toBeVisible();
+  });
+
   test("le dictionnaire renvoie vers la fiche complète", async ({ page }) => {
     await page.goto("/dictionnaire/catobar");
     await expect(page.getByRole("heading", { level: 1, name: "CATOBAR" })).toBeVisible();
