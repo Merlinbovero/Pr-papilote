@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.physique.newton-13
+kind: vrai-faux
+theme: forces
+statement: >-
+  Soumis à une même résultante des forces, un corps plus lourd subit une
+  accélération plus faible.
+answer: true
+explanation: >-
+  Vrai : d'après a = ΣF / m, pour une même force plus la masse est grande plus
+  l'accélération est petite. C'est la traduction de l'inertie.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

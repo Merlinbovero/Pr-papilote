@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .lbl { font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .body { stroke: currentColor; fill: none; stroke-width: 2; }
+    .accent { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+    <marker id="arc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <!-- simplified fuselage -->
+  <path class="body" d="M170,120 q60,-26 150,0 q-60,26 -150,0 z" />
+  <line class="body" x1="320" y1="112" x2="352" y2="96" />
+  <line class="body" x1="320" y1="128" x2="352" y2="144" />
+  <!-- propeller disc at nose (left) -->
+  <line class="ink" x1="168" y1="92" x2="168" y2="148" stroke-width="3" />
+  <!-- action: propeller pushes air backward (to the right/rear) -->
+  <line class="ink" x1="120" y1="120" x2="60" y2="120" marker-end="url(#ar)" />
+  <text class="lbl" x="58" y="112" text-anchor="start">action : l'hélice pousse l'air vers l'arrière</text>
+  <!-- reaction: air pushes plane forward (to the left/front) -->
+  <line class="accent" x1="250" y1="120" x2="360" y2="120" marker-end="url(#arc)" />
+  <text class="lbl" x="250" y="146">réaction : l'air pousse l'avion vers l'avant</text>
+  <text x="230" y="40" text-anchor="middle">Troisième loi de Newton (action – réaction)</text>
+</svg>

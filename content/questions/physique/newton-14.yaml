@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.physique.newton-14
+kind: qcm
+theme: forces
+statement: >-
+  Que désigne le sigle MRU ?
+choices:
+  - "Mouvement rectiligne uniforme (ligne droite, vitesse constante)"
+  - "Mouvement à résultante unique"
+  - "Manœuvre de remise des gaz d'urgence"
+  - "Module de régulation de la vitesse"
+correctChoices: [0]
+explanation: >-
+  MRU = mouvement rectiligne uniforme : déplacement en ligne droite à vitesse
+  constante. Un avion en MRU est soumis à une résultante nulle.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

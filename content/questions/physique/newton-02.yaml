@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.physique.newton-02
+kind: vrai-faux
+theme: forces
+statement: >-
+  En vol stabilisé (palier à vitesse constante), la résultante des forces qui
+  s'exercent sur l'avion est nulle.
+answer: true
+explanation: >-
+  Vol stabilisé = mouvement rectiligne uniforme. D'après la première loi de
+  Newton, cela équivaut à une résultante des forces nulle : les quatre forces
+  s'équilibrent deux à deux.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

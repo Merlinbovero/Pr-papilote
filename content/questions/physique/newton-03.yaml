@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-03
+kind: qcm
+theme: forces
+statement: >-
+  La relation ΣF = m·a correspond à quelle loi de Newton ?
+choices:
+  - "La deuxième loi"
+  - "La première loi"
+  - "La troisième loi"
+  - "Aucune, c'est le théorème de Bernoulli"
+correctChoices: [0]
+explanation: >-
+  La deuxième loi (relation fondamentale de la dynamique) énonce que la
+  résultante des forces est égale au produit de la masse par l'accélération :
+  ΣF = m·a.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

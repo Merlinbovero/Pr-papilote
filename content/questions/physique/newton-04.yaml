@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-04
+kind: qcm
+theme: forces
+statement: >-
+  L'hélice d'un avion pousse l'air vers l'arrière. Que se passe-t-il en retour ?
+choices:
+  - "L'air pousse l'avion vers l'avant"
+  - "L'air freine l'avion vers l'arrière"
+  - "Rien, l'air n'exerce aucune force"
+  - "L'avion perd de la portance"
+correctChoices: [0]
+explanation: >-
+  C'est la troisième loi (action-réaction) : l'hélice exerce une force sur l'air
+  vers l'arrière, l'air exerce sur l'avion une force égale et opposée vers
+  l'avant. C'est le principe de la propulsion.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

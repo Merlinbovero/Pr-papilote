@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.physique.newton-20
+kind: vrai-faux
+theme: forces
+statement: >-
+  Un avion peut voler en ligne droite à vitesse constante alors que plusieurs
+  forces non nulles s'exercent sur lui.
+answer: true
+explanation: >-
+  Vrai : ce qui compte est la résultante. Des forces non nulles mais équilibrées
+  (poids/portance, traction/traînée) donnent une résultante nulle, donc une
+  vitesse constante.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

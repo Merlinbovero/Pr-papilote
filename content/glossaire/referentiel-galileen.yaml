@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.referentiel-galileen
+title: Référentiel galiléen
+definition: >-
+  Repère non accéléré dans lequel les lois de Newton s'appliquent. Pour l'étude
+  du vol à notre échelle, on assimile le sol (ou l'air au repos) à un
+  référentiel galiléen — une approximation suffisante au niveau BIA.
+english: inertial frame of reference
+synonyms: [référentiel inertiel]
+ficheId: fondamentaux.physique.les-trois-lois-de-newton
+tags: []
+status: publie

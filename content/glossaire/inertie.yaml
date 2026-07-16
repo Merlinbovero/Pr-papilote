@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.inertie
+title: Inertie
+definition: >-
+  Tendance d'un corps à conserver son état de mouvement (ou de repos) tant
+  qu'aucune force résultante ne s'exerce sur lui. C'est l'objet de la première
+  loi de Newton : résultante nulle équivaut à vitesse constante.
+english: inertia
+synonyms: [principe d'inertie]
+ficheId: fondamentaux.physique.les-trois-lois-de-newton
+tags: []
+status: publie
