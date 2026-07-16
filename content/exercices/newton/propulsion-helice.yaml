@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.newton-propulsion-helice
+title: Expliquer la propulsion d'une hélice
+consigne: >-
+  Expliquez comment une hélice fait avancer un avion, en précisant bien les deux
+  forces d'interaction et en évitant de les confondre.
+methode: >-
+  Identifier l'action (hélice sur air) et la réaction (air sur avion), et
+  vérifier qu'elles s'exercent sur deux corps différents.
+correction: >-
+  L'hélice exerce une force sur l'air en le projetant vers l'arrière (action).
+  En retour, l'air exerce sur l'avion une force égale et opposée, dirigée vers
+  l'avant (réaction) : c'est elle qui propulse l'appareil. Ce sont deux forces
+  distinctes, sur deux corps différents (l'air et l'avion).
+interpretation: >-
+  C'est la troisième loi de Newton appliquée à la propulsion : on ne « pousse »
+  pas l'avion directement, on projette de l'air en sens inverse.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.newton-appliquer-fma
+title: Appliquer F = m·a
+consigne: >-
+  Calculez l'accélération d'un planeur soumis à une résultante des forces
+  donnée.
+donnees: >-
+  Masse du planeur : 400 kg. Résultante des forces : 1200 N.
+methode: >-
+  Partir de ΣF = m·a et isoler l'accélération : a = ΣF / m. Vérifier les unités
+  (N, kg, m/s²).
+correction: >-
+  a = ΣF / m = 1200 / 400 = 3 m/s².
+interpretation: >-
+  Pour une même force, un aéronef plus lourd accélère moins : c'est la
+  traduction concrète de l'inertie.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

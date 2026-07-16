@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.newton-action-reaction
+title: Distinguer action et réaction
+consigne: >-
+  Un tireur épaule un fusil et fait feu. Identifiez le couple action-réaction et
+  indiquez sur quels corps s'exercent les deux forces.
+methode: >-
+  Appliquer la troisième loi : les deux forces sont égales, opposées, et
+  s'exercent sur deux corps différents.
+correction: >-
+  Action : le fusil pousse la balle vers l'avant. Réaction : la balle pousse le
+  fusil vers l'arrière (le recul), avec une force de même intensité. Les deux
+  forces s'exercent sur deux corps distincts (la balle et le fusil).
+interpretation: >-
+  Comme les deux forces s'appliquent sur des corps différents, elles ne
+  s'annulent pas : c'est ce qui permet au recul (et à la propulsion) d'exister.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

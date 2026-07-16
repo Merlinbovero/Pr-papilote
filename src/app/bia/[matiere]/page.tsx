@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
@@ -8,6 +9,7 @@ import { MatiereQuiz } from "@/features/bia/matiere-quiz";
 import { getBiaConfig, getBiaMatiere } from "@/lib/bia/config";
 import { getBiaExamPools, getBiaFichesByMatiere, toBiaPlayerQuestion } from "@/lib/bia/data";
 import { getCategory } from "@/lib/content/referentials";
+import { getCoursesByMatiere } from "@/lib/content/cours";
 import { getFicheHref } from "@/lib/content/fiches";
 import { SITE_PHOTOS, type SitePhoto } from "@/lib/photos";
 
@@ -53,6 +55,7 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
   }
 
   const fiches = getBiaFichesByMatiere().get(slug) ?? [];
+  const cours = getCoursesByMatiere(slug);
   const pools = getBiaExamPools();
   const pool = (pools.byMatiere.get(slug) ?? []).map((q) => toBiaPlayerQuestion(q, slug));
 
@@ -84,6 +87,35 @@ export default async function BiaMatierePage({ params }: MatierePageProps) {
       <p className="text-muted-foreground text-sm">
         {fiches.length} fiches · {pool.length} questions d&apos;entraînement
       </p>
+
+      {cours.length > 0 ? (
+        <section aria-labelledby="cours-parcours" className="space-y-3">
+          <h2 id="cours-parcours" className="text-lg font-semibold tracking-tight">
+            Cours du parcours
+          </h2>
+          <ol className="space-y-3">
+            {cours.map((c) => (
+              <li key={c.id}>
+                <Link
+                  href={`/cours/${c.slug}`}
+                  className="bg-card hover:border-primary/50 flex items-baseline gap-3 rounded-lg border p-4 transition-colors"
+                >
+                  <span className="text-muted-foreground text-sm font-semibold">{c.ordre}.</span>
+                  <span>
+                    <span className="font-medium">{c.title}</span>
+                    <span className="text-muted-foreground mt-1 block text-sm">
+                      {c.description}
+                    </span>
+                    <span className="text-muted-foreground mt-1 block text-xs">
+                      ≈ {c.dureeEstimeeMin} min
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
 
       <section aria-label="Fiches de la matière" className="space-y-6">
         {[...byCategory.entries()].map(([categorySlug, list]) => {

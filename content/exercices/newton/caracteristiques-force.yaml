@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: exercice.newton-caracteristiques-force
+title: Identifier les caractéristiques d'une force
+consigne: >-
+  Un avion au sol est retenu par un câble tendu horizontalement vers l'arrière.
+  Décrivez la force exercée par le câble sur l'avion en donnant ses quatre
+  caractéristiques.
+donnees: >-
+  Force de traction du câble : 800 N, câble horizontal orienté vers l'arrière,
+  fixé au train avant.
+methode: >-
+  Une force se décrit toujours par quatre éléments : point d'application,
+  direction, sens, intensité.
+correction: >-
+  Point d'application : le point d'attache (train avant). Direction :
+  horizontale (celle du câble). Sens : vers l'arrière. Intensité : 800 N.
+interpretation: >-
+  Savoir nommer ces quatre caractéristiques est indispensable pour représenter
+  correctement le poids, la portance, la traction et la traînée sur un schéma de
+  vol.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+status: publie

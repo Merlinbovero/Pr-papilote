@@ -41,6 +41,8 @@ interface QuizPlayerProps {
   timePerQuestionSeconds?: number;
   /** Rien n'est enregistré tant que ce n'est pas branché (sans compte). */
   persisted?: boolean;
+  /** Appelé une fois la série terminée, avec le score en pourcentage (0–100). */
+  onFinished?: (ratePercent: number) => void;
 }
 
 type Phase = "answering" | "correction" | "finished";
@@ -50,12 +52,25 @@ export function QuizPlayer({
   questions,
   timePerQuestionSeconds,
   persisted = false,
+  onFinished,
 }: QuizPlayerProps) {
   const [index, setIndex] = React.useState(0);
   const [phase, setPhase] = React.useState<Phase>("answering");
   const [selected, setSelected] = React.useState<number[]>([]);
   const [results, setResults] = React.useState<boolean[]>([]);
   const [remaining, setRemaining] = React.useState(timePerQuestionSeconds ?? 0);
+  const finishedNotified = React.useRef(false);
+
+  // Notifie la fin de série une seule fois (progression de cours, etc.).
+  React.useEffect(() => {
+    if (phase === "finished" && onFinished && !finishedNotified.current) {
+      finishedNotified.current = true;
+      const rate = questions.length
+        ? Math.round((results.filter(Boolean).length / questions.length) * 100)
+        : 0;
+      onFinished(rate);
+    }
+  }, [phase, onFinished, questions.length, results]);
 
   const question = questions[index];
   const isMultiple = question ? question.correctChoices.length > 1 : false;
@@ -175,7 +190,10 @@ export function QuizPlayer({
             ) : null}
           </span>
         </div>
-        <Progress value={((index + (phase === "correction" ? 1 : 0)) / questions.length) * 100} />
+        <Progress
+          aria-label="Progression dans le quiz"
+          value={((index + (phase === "correction" ? 1 : 0)) / questions.length) * 100}
+        />
       </div>
 
       <h2 className="text-xl font-semibold">{question.statement}</h2>
