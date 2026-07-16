@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopn.espace-02
+kind: qcm
+theme: espace
+statement: >-
+  Où est implanté le Commandement de l'espace (CDE) ?
+choices:
+  - "À Toulouse, à proximité du CNES"
+  - "À Kourou, en Guyane"
+  - "À Paris, à l'École militaire"
+  - "À Istres, sur la base aérienne 125"
+correctChoices: [0]
+distractorNotes:
+  "1": "Kourou abrite le Centre spatial guyanais (lancements), pas le CDE."
+explanation: >-
+  Le CDE, créé en 2019, s'installe à Toulouse, au cœur du plus grand écosystème
+  spatial d'Europe et à proximité du Centre spatial du CNES.
+evaluates: [eopn.missions.le-domaine-spatial-militaire]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

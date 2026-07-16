@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopn.espace-01
+kind: qcm
+theme: espace
+statement: >-
+  En quelle année l'armée de l'Air est-elle devenue « armée de l'Air et de
+  l'Espace » ?
+choices:
+  - "2020"
+  - "1934"
+  - "2009"
+  - "2025"
+correctChoices: [0]
+distractorNotes:
+  "1": "1934 est l'année de création de l'armée de l'Air."
+explanation: >-
+  L'armée de l'Air est devenue armée de l'Air et de l'Espace en 2020, un an
+  après la création du Commandement de l'espace (2019), signe que l'espace est
+  devenu un domaine militaire à part entière.
+evaluates: [eopn.missions.le-domaine-spatial-militaire]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

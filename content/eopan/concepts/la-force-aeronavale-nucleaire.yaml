@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: eopan.concepts.la-force-aeronavale-nucleaire
+type: concept
+title: La Force aéronavale nucléaire (FANu)
+slug: la-force-aeronavale-nucleaire
+image:
+  src: /images/theme-marine.jpg
+  alt: Porte-avions Charles de Gaulle — vecteur de la Force aéronavale nucléaire
+  author: U.S. Marine Corps — Maj. Joshua Smith
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=78656298
+summary: >-
+  La composante nucléaire de la Marine mise en œuvre depuis le porte-avions :
+  des Rafale M porteurs du missile ASMP-A, tirés depuis la mer. Une spécificité
+  française, troisième force de la dissuasion avec les FAS et la FOST.
+objectifs:
+  - Définir la FANu comme la composante aéroportée de la dissuasion mise en œuvre depuis le porte-avions.
+  - Situer la FANu parmi les trois forces nucléaires françaises (FANu, FAS, FOST).
+  - Expliquer en quoi la capacité nucléaire embarquée est une spécificité française.
+aliases: [FANu, force aéronavale nucléaire, ASMP-A embarqué, dissuasion aéronavale, ALFAN]
+module: eopan
+category: concepts
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche Force aéronavale nucléaire (production éditoriale, lot O3 ; sources officielles Marine nationale / defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Force aéronavale nucléaire, une exception française nécessaire (Marine nationale, Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/passion-marine/groupe-aeronaval-outil-combat-portee-strategique/force-aeronavale-nucleaire-exception
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Dissuader — nos missions (Armée de l'Air et de l'Espace, Ministère des Armées)"
+    url: https://air.defense.gouv.fr/missions/dissuader
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopan.concepts.groupe-aeronaval
+    - eopan.appareils.rafale-m
+    - eopan.organisation.marine-nationale
+    - eopn.organisation.les-forces-aeriennes-strategiques
+content:
+  essentiel:
+    body: |
+      La **Force aéronavale nucléaire (FANu)** est la capacité, pour les
+      **Rafale M** de l'aéronautique navale embarqués sur le porte-avions
+      **Charles de Gaulle**, de mettre en œuvre le **missile ASMP-A**
+      (air-sol moyenne portée amélioré) **depuis la mer**.
+
+      Elle est l'une des **trois forces** de la dissuasion nucléaire française,
+      aux côtés des **Forces aériennes stratégiques (FAS)** de l'armée de l'Air
+      et de la **Force océanique stratégique (FOST)** — les SNLE de la Marine.
+      Conçue à l'origine en **1978** comme une force tactique, elle est devenue
+      **stratégique** dans les années 2000, sous un commandement unique
+      (l'amiral commandant la force d'action navale, **ALFAN**).
+
+      La capacité nucléaire **embarquée** est une **spécificité française** :
+      les États-Unis y ont renoncé à la fin de la guerre froide.
+    aRetenir:
+      - La FANu = des Rafale M porteurs de l'ASMP-A, mis en œuvre depuis le porte-avions Charles de Gaulle.
+      - Troisième force de la dissuasion française, avec les FAS (armée de l'Air) et la FOST (SNLE).
+      - La dissuasion aéroportée (ASMP-A) est partagée entre FAS et FANu — même missile, deux composantes.
+      - La capacité nucléaire embarquée sur porte-avions est une exception française.
+  sections:
+    - id: mettre-en-oeuvre-depuis-la-mer
+      title: Frapper depuis la mer
+      body: |
+        La FANu repose sur un enchaînement exigeant : catapulter un **Rafale M**
+        armé de l'**ASMP-A** depuis le pont du **Charles de Gaulle**, le
+        ravitailler, le guider vers son objectif à des centaines de kilomètres,
+        puis le récupérer à l'appontage. Tout le **groupe aéronaval** — avions,
+        ravitaillement, guet, escorte — concourt à la mission.
+
+        Cette mobilité est l'atout de la composante embarquée : le porte-avions
+        déplace la menace nucléaire là où la situation l'exige, sans base fixe.
+    - id: trois-forces-une-dissuasion
+      title: Trois forces, une seule dissuasion
+      body: |
+        La dissuasion française repose sur **deux composantes** — océanique et
+        aéroportée — servies par **trois forces** :
+
+        - la **FOST** : les **SNLE** (sous-marins nucléaires lanceurs
+          d'engins), cœur de la permanence ;
+        - les **FAS** : les **Rafale** de l'armée de l'Air porteurs de
+          l'ASMP-A, appuyés par les ravitailleurs ;
+        - la **FANu** : les **Rafale M** de la Marine, même missile, mis en
+          œuvre depuis le porte-avions.
+
+        FAS et FANu partagent ainsi la composante aéroportée et le **même
+        missile ASMP-A** — un point de culture apprécié en entretien.
+    - id: une-exception-francaise
+      title: Une exception française
+      strate: maitriser
+      body: |
+        Peu de marines au monde conservent une **capacité nucléaire
+        aéronavale**. Les États-Unis l'ont abandonnée après la guerre froide,
+        en signe d'apaisement dans le cadre des traités de maîtrise des
+        armements. La France l'a maintenue : c'est une **singularité** qui dit
+        beaucoup de l'autonomie stratégique attachée au porte-avions et à son
+        groupe aérien embarqué.
+  pieges:
+    - Ne pas confondre les trois forces — FOST (SNLE), FAS (Rafale de l'Air), FANu (Rafale M de la Marine).
+    - FAS et FANu emploient le même missile (ASMP-A) — la composante aéroportée est partagée entre l'Air et la Marine.
+    - La FANu se met en œuvre depuis le porte-avions — sans porte-avions disponible, la composante embarquée n'est pas à la mer.
