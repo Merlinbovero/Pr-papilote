@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: eopan.missions.l-action-de-l-etat-en-mer
+type: concept
+title: L'action de l'État en mer (AEM)
+slug: l-action-de-l-etat-en-mer
+image:
+  src: /images/fiche-atlantique-2.jpg
+  alt: Atlantique 2 de la Marine nationale en vol de surveillance maritime
+  author: Jonathan Payne
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=178291388
+summary: >-
+  L'architecture française unique qui place, sous l'autorité du préfet
+  maritime, toutes les administrations de la mer : sauvegarde des personnes,
+  sauvetage, lutte contre les trafics et les pollutions, police des pêches.
+objectifs:
+  - Définir l'action de l'État en mer et le rôle central du préfet maritime.
+  - Citer les grandes missions de service public assurées par la Marine (sauvetage, pêches, pollutions, trafics).
+  - Situer les CROSS et les sémaphores dans le dispositif de surveillance et de sauvetage.
+aliases: [AEM, action de l'État en mer, préfet maritime, CROSS, sémaphores, sauvegarde maritime]
+module: eopan
+category: missions
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche action de l'État en mer (production éditoriale, lot O1 ; sources officielles Marine nationale et mer.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Nos missions — Marine nationale (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/nos-missions
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Sauvetage et surveillance en mer (Ministère de la Transition écologique / secrétariat d'État à la Mer)"
+    url: https://www.mer.gouv.fr/sauvetage-et-surveillance-en-mer
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopan.missions.missions-de-la-marine
+    - eopan.organisation.marine-nationale
+    - eopan.appareils.atlantique-2
+content:
+  essentiel:
+    body: |
+      L'**action de l'État en mer (AEM)** est une **architecture française
+      unique** : elle réunit **toutes les administrations** ayant des
+      responsabilités en mer — Marine nationale, gendarmerie maritime,
+      affaires maritimes, douanes, sécurité civile, police nationale… — sous
+      **l'autorité d'un seul chef, le préfet maritime**.
+
+      Le **préfet maritime** est le **représentant de l'État en mer** (en
+      métropole). Dans les eaux intérieures et territoriales — sous
+      souveraineté française — il détient des pouvoirs de **police
+      administrative générale**. L'AEM couvre la sauvegarde des personnes et
+      des biens, la protection de l'environnement et la sûreté des approches
+      maritimes.
+    aRetenir:
+      - L'AEM place toutes les administrations de la mer sous l'autorité d'un chef unique, le préfet maritime.
+      - Le préfet maritime est le représentant de l'État en mer et détient la police administrative générale.
+      - La Marine sauve plus de 300 vies par an, sous la coordination des CROSS.
+      - 57 sémaphores surveillent les approches le long des côtes.
+  sections:
+    - id: le-prefet-maritime
+      title: Le préfet maritime, chef unique
+      body: |
+        La France a fait un choix original : plutôt que de laisser chaque
+        administration agir séparément, elle place l'ensemble des acteurs
+        publics de la mer sous **une seule autorité**. En métropole, c'est le
+        **préfet maritime** (un amiral) ; outre-mer, le **délégué du
+        Gouvernement** exerce un rôle équivalent.
+
+        Il coordonne des moyens **navals, aériens et terrestres** pour les
+        missions de service public et de police en mer : **police des
+        pêches**, **lutte contre les pollutions marines**, **lutte contre les
+        trafics illicites**, **recherche et sauvetage**, neutralisation des
+        engins explosifs historiques.
+    - id: sauvetage-et-surveillance
+      title: Sauver et surveiller
+      body: |
+        La Marine **sauve plus de 300 vies par an** en participant aux
+        opérations de secours aux navires et aux personnes en détresse. Ces
+        opérations sont coordonnées par les **CROSS** (centres régionaux
+        opérationnels de surveillance et de sauvetage) : des centres
+        multi-missions qui dirigent la recherche et le sauvetage (SAR) et
+        surveillent la navigation et les pollutions.
+
+        La surveillance des approches s'appuie aussi sur les **57 sémaphores**
+        répartis le long des côtes — de véritables « guetteurs de la mer »,
+        qui constituent une ligne de défense importante du territoire.
+    - id: une-mission-de-tous-les-jours
+      title: Une mission de tous les jours
+      strate: maitriser
+      body: |
+        L'AEM illustre une facette souvent méconnue de la Marine : au-delà du
+        combat, elle assure un **service public permanent** au profit des
+        usagers de la mer et de l'environnement. Pour un candidat, c'est un
+        argument fort en entretien — la Marine protège la souveraineté, mais
+        elle **secourt et régule** aussi, chaque jour, sur le premier espace
+        maritime mondial (avec l'outre-mer).
+  pieges:
+    - Le préfet maritime n'est pas un préfet « de département » — c'est un amiral, représentant de l'État en mer.
+    - Les CROSS coordonnent le sauvetage ; ils ne le réalisent pas seuls — ils dirigent des moyens (Marine, SNSM, hélicoptères…).
+    - L'AEM n'est pas qu'une affaire militaire — douanes, affaires maritimes, sécurité civile y participent sous la même autorité.

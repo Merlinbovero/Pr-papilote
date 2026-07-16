@@ -1,0 +1,113 @@
+schemaVersion: 1
+id: eopn.missions.la-posture-permanente-de-surete-aerienne
+type: concept
+title: La posture permanente de sûreté aérienne (PPS-A)
+slug: la-posture-permanente-de-surete-aerienne
+image:
+  src: /images/fiche-rafale.jpg
+  alt: Rafale de l'armée de l'Air et de l'Espace, acteur de la police du ciel
+  author: Contando Estrelas from Vigo, España / Spain
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=34202195
+summary: >-
+  La « police du ciel » : la mission permanente et prioritaire de l'armée de
+  l'Air et de l'Espace, qui surveille l'espace aérien national 24h/24 pour
+  détecter, identifier et, si nécessaire, intercepter tout intrus.
+objectifs:
+  - Définir la PPS-A comme la mission permanente et prioritaire de défense aérienne du territoire.
+  - Citer ses trois actes opérationnels — détecter, identifier, intercepter.
+  - Situer le CDAOA, les centres de détection et de contrôle et les dispositifs particuliers (DPSA).
+aliases: [PPS-A, police du ciel, sûreté aérienne, CDAOA, DPSA, défense aérienne du territoire]
+module: eopn
+category: missions
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche PPS-A (production éditoriale, lot O1 ; sources officielles armée de l'Air et de l'Espace).
+    author: prepapilote
+sources:
+  - title: "Protéger — nos missions (Armée de l'Air et de l'Espace, Ministère des Armées)"
+    url: https://air.defense.gouv.fr/missions/proteger
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Brigade aérienne de la posture permanente de sûreté (BAPPS) — CDAOA (Armée de l'Air et de l'Espace)"
+    url: https://air.defense.gouv.fr/cdaoa/article-de-dossier/brigade-aerienne-de-la-posture-permanente-de-surete-air-bapps
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.appareils.rafale
+content:
+  essentiel:
+    body: |
+      La **posture permanente de sûreté aérienne (PPS-A)** — la « **police du
+      ciel** » — est la mission **permanente et prioritaire** de défense du
+      territoire assurée par l'armée de l'Air et de l'Espace. Elle est active
+      **24h/24 et 7j/7**, sous l'autorité du **CDAOA** (commandement de la
+      défense aérienne et des opérations aériennes).
+
+      Elle repose sur trois actes opérationnels, à mener en un temps très
+      court : **détecter**, **identifier**, puis, si nécessaire,
+      **intercepter** tout aéronef suspect dans l'espace aérien national. La
+      permanence d'un dispositif d'alerte pré-positionné se combine à la
+      réactivité de la chaîne de commandement.
+    aRetenir:
+      - La PPS-A est la mission permanente et prioritaire de la défense aérienne, assurée 24h/24 et 7j/7.
+      - Trois actes — détecter, identifier, intercepter — sous l'autorité du CDAOA.
+      - Le dispositif s'appuie sur un réseau d'environ 70 radars et trois centres de détection et de contrôle.
+      - Lors des grands événements, des dispositifs particuliers de sûreté aérienne (DPSA) renforcent la posture.
+  sections:
+    - id: detecter-et-identifier
+      title: Détecter et identifier
+      body: |
+        À chaque instant, l'armée de l'Air et de l'Espace doit **connaître**
+        la situation aérienne au-dessus du territoire. Grâce à la mise en
+        réseau de près de **70 radars** civils et militaires, **trois centres
+        de détection et de contrôle (CDC)** — **Lyon Mont-Verdun** (Rhône),
+        **Cinq-Mars-la-Pile** (Indre-et-Loire) et **Mont-de-Marsan** (Landes)
+        — suivent les aéronefs qui transitent dans leurs secteurs.
+
+        Cette mission quotidienne mobilise environ **450 aviateurs**. Tout
+        écart — avion qui ne répond plus, trajectoire anormale, aéronef non
+        identifié — déclenche l'alerte.
+    - id: intercepter
+      title: Intercepter
+      body: |
+        Quand le doute persiste, des **chasseurs** et des **hélicoptères**
+        maintenus en **alerte** décollent en quelques minutes pour aller au
+        contact : reconnaître visuellement l'appareil, le guider, le
+        contraindre à se dérouter — voire, en dernier recours et sur décision
+        politique, employer la force.
+
+        Ce dispositif est porté par la **brigade aérienne de la posture
+        permanente de sûreté (BAPPS)**, subordonnée au CDAOA. C'est
+        l'expression concrète de la souveraineté sur l'espace aérien.
+    - id: les-dispositifs-particuliers
+      title: Les dispositifs particuliers (DPSA)
+      strate: maitriser
+      body: |
+        Lors d'un **événement sensible** — sommet international, grande
+        compétition, cérémonie — un **dispositif particulier de sûreté
+        aérienne (DPSA)** vient renforcer le socle de la PPS-A. Il densifie la
+        surveillance et les moyens d'interception sur une zone et une période
+        données pour **prévenir tout acte de malveillance venu des airs**,
+        qu'il soit d'origine terroriste, militaire ou revendicative.
+
+        C'est un point d'actualité apprécié en entretien : la police du ciel
+        n'est pas qu'une posture de guerre froide, elle protège aussi les
+        grands rendez-vous de la vie nationale.
+  pieges:
+    - La PPS-A est permanente — elle ne s'interrompt jamais, même en temps de paix profonde.
+    - Ne pas confondre le CDAOA (qui commande la défense aérienne) et les CDC (qui détectent et contrôlent).
+    - L'interception ne signifie pas « tir » — c'est d'abord aller reconnaître et contraindre ; l'emploi de la force relève d'une décision politique.

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.eopan.aem-02
+kind: qcm
+theme: action-etat-en-mer
+statement: >-
+  Quels centres coordonnent les opérations de recherche et de sauvetage en mer ?
+choices:
+  - "Les CROSS (centres régionaux opérationnels de surveillance et de sauvetage)"
+  - "Les CDC (centres de détection et de contrôle)"
+  - "Les CIRFA"
+  - "Les BAN (bases d'aéronautique navale)"
+correctChoices: [0]
+distractorNotes:
+  "1": "Les CDC relèvent de la défense aérienne (police du ciel), pas du sauvetage en mer."
+explanation: >-
+  Les CROSS sont des centres multi-missions qui coordonnent la recherche et le
+  sauvetage (SAR), et surveillent la navigation et les pollutions. La Marine
+  sauve ainsi plus de 300 vies par an.
+evaluates: [eopan.missions.l-action-de-l-etat-en-mer]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

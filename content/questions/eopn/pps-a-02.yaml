@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.pps-a-02
+kind: qcm
+theme: police-du-ciel
+statement: >-
+  Quels sont les trois actes opérationnels de la posture permanente de sûreté
+  aérienne ?
+choices:
+  - "Détecter, identifier, intercepter"
+  - "Décoller, patrouiller, atterrir"
+  - "Dissuader, projeter, ravitailler"
+  - "Surveiller, bombarder, se replier"
+correctChoices: [0]
+explanation: >-
+  Face à un aéronef suspect, la chaîne de défense aérienne doit, en un temps
+  très court, le détecter, l'identifier puis, si nécessaire, l'intercepter.
+evaluates: [eopn.missions.la-posture-permanente-de-surete-aerienne]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
