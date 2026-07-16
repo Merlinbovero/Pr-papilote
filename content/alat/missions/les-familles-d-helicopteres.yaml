@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: alat.missions.les-familles-d-helicopteres
+type: concept
+title: Les deux familles d'hélicoptères de l'ALAT
+slug: les-familles-d-helicopteres
+image:
+  src: /images/fiche-nh90-caiman-tth.jpg
+  alt: NH90 Caïman, hélicoptère de manœuvre et d'assaut de l'ALAT
+  author: Ibex73
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=80266618
+summary: >-
+  Toute la flotte de l'ALAT se lit en deux familles : les hélicoptères de
+  reconnaissance et d'attaque, qui renseignent et détruisent, et les
+  hélicoptères de manœuvre et d'assaut, qui transportent et posent les troupes.
+objectifs:
+  - Distinguer les deux grandes familles d'hélicoptères de l'ALAT (reconnaissance-attaque et manœuvre-assaut).
+  - Associer les appareils à leur famille (Gazelle, Tigre / Puma, Cougar, Caracal, Caïman).
+  - Situer l'ALAT comme premier ensemble d'hélicoptères de l'armée de Terre.
+aliases:
+  [
+    familles d'hélicoptères,
+    HRA,
+    HMA,
+    hélicoptères de reconnaissance et d'attaque,
+    hélicoptères de manœuvre et d'assaut,
+  ]
+module: alat
+category: missions
+tags: []
+concours: [alat]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche familles d'hélicoptères de l'ALAT (production éditoriale, lot O5 ; source officielle defense.gouv.fr + Wikipédia sourcée pour la classification HRA/HMA).
+    author: prepapilote
+sources:
+  - title: "L'aviation légère de l'armée de Terre (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Aviation légère de l'armée de terre — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Aviation_l%C3%A9g%C3%A8re_de_l%27arm%C3%A9e_de_terre
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  prerequisites:
+    - alat.missions.l-aerocombat
+  related:
+    - alat.appareils.tigre
+    - alat.appareils.gazelle
+    - alat.appareils.nh90-caiman-tth
+    - alat.organisation.aviation-legere-armee-de-terre
+content:
+  essentiel:
+    body: |
+      Pour lire la flotte de l'**ALAT**, il faut la ranger en **deux
+      familles**, selon ce que l'hélicoptère est fait pour faire.
+
+      Les **hélicoptères de reconnaissance et d'attaque (HRA)** — la **Gazelle**
+      (en retrait) et le **Tigre** — **renseignent** et **détruisent** :
+      éclairer les forces au sol, repérer des objectifs, traiter blindés et
+      cibles durcies.
+
+      Les **hélicoptères de manœuvre et d'assaut (HMA)** — **Puma**, **Cougar**,
+      **Caracal** et **Caïman (NH90)** — **transportent** et **posent** les
+      troupes : héliportage tactique, dépose et récupération de soldats,
+      évacuations logistiques ou sanitaires.
+
+      L'ALAT est le **premier ensemble d'hélicoptères** de l'armée française :
+      l'armée de Terre exploite à elle seule **les deux tiers des appareils à
+      voilure tournante des armées**.
+    aRetenir:
+      - Deux familles — hélicoptères de reconnaissance et d'attaque (HRA) ; hélicoptères de manœuvre et d'assaut (HMA).
+      - HRA — Gazelle, Tigre — renseigner et détruire.
+      - HMA — Puma, Cougar, Caracal, Caïman — transporter et poser les troupes.
+      - L'ALAT exploite les deux tiers des voilures tournantes des armées ; créée en 1954, arme à part entière depuis 2003.
+  sections:
+    - id: reconnaitre-et-frapper
+      title: Reconnaître et frapper — les HRA
+      body: |
+        Les **hélicoptères de reconnaissance et d'attaque** sont les yeux et le
+        poing de la manœuvre aéroterrestre. La **Gazelle**, légère et discrète,
+        a longtemps servi à **éclairer** et à repérer des cibles pour
+        l'artillerie ; le **Tigre**, hélicoptère de combat moderne, ajoute la
+        puissance de feu — canon, roquettes et missiles — pour **détruire**
+        blindés et objectifs durcis en appui des troupes au sol.
+
+        C'est la famille de l'**agression maîtrisée** : voir avant d'être vu,
+        frapper vite, puis se dérober derrière le relief.
+    - id: transporter-et-poser
+      title: Transporter et poser — les HMA
+      body: |
+        Les **hélicoptères de manœuvre et d'assaut** donnent aux troupes la
+        **mobilité par la troisième dimension**. **Puma** et **Cougar**,
+        éprouvés, restent des chevaux de trait ; le **Caracal** appuie
+        notamment les opérations spéciales et la recherche-sauvetage ; le
+        **Caïman (NH90)**, appareil de nouvelle génération, assure le transport
+        tactique de combattants et de matériel.
+
+        Leur métier : **déposer** et **récupérer** des soldats, y compris en
+        zone ennemie, ravitailler, et **évacuer** — logistique comme sanitaire.
+    - id: une-flotte-lisible
+      title: Une flotte qui se lit d'un coup d'œil
+      strate: maitriser
+      body: |
+        Cette grille à deux familles est un **réflexe** attendu en entretien :
+        devant un appareil, savoir dire s'il **renseigne et frappe** (HRA) ou
+        s'il **transporte et pose** (HMA) montre qu'on a compris la logique
+        d'emploi de l'ALAT — et pas seulement mémorisé des noms.
+
+        Elle éclaire aussi la modernisation : le **Guépard** (hélicoptère
+        interarmées léger) viendra remplacer les plus anciens appareils des
+        deux familles, unifiant une flotte aujourd'hui variée.
+  pieges:
+    - Ne pas ranger le Tigre parmi les hélicoptères de transport — c'est un hélicoptère de reconnaissance et d'attaque (HRA).
+    - Le Caïman (NH90) est un hélicoptère de manœuvre et d'assaut — il transporte et pose, il n'est pas un hélicoptère d'attaque.
+    - « Premier opérateur » ne veut pas dire « seul » — la Marine et l'armée de l'Air ont aussi des hélicoptères ; l'armée de Terre en exploite les deux tiers.

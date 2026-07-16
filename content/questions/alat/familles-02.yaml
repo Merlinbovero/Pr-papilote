@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: q.alat.familles-02
+kind: qcm
+theme: appareils
+statement: >-
+  Quelle est la mission principale des hélicoptères de manœuvre et d'assaut
+  (HMA) de l'ALAT ?
+choices:
+  - "Transporter et poser les troupes (héliportage, dépose, évacuation)"
+  - "Détruire les blindés ennemis par le feu"
+  - "Assurer la police du ciel au-dessus du territoire"
+  - "Ravitailler les avions de chasse en vol"
+correctChoices: [0]
+distractorNotes:
+  "1": "Détruire les blindés est la mission des HRA (Tigre, Gazelle)."
+  "2": "La police du ciel (PPS-A) relève de l'armée de l'Air."
+  "3": "Le ravitaillement en vol est une mission de l'armée de l'Air, pas de l'ALAT."
+explanation: >-
+  Les HMA — Puma, Cougar, Caracal, Caïman — transportent et posent les
+  troupes : héliportage tactique, dépose et récupération de soldats,
+  évacuations logistiques ou sanitaires.
+evaluates: [alat.missions.les-familles-d-helicopteres]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
