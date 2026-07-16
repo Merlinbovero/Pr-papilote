@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.newton-resultante-non-nulle
+title: Interpréter une résultante non nulle
+consigne: >-
+  Pendant un virage, la résultante des forces sur l'avion n'est pas nulle. Que
+  peut-on en déduire sur son mouvement ?
+methode: >-
+  Utiliser la deuxième loi : une résultante non nulle produit une accélération
+  (modification du vecteur vitesse).
+correction: >-
+  Une résultante non nulle implique une accélération (ΣF = m·a avec a ≠ 0). En
+  virage, c'est la direction du vecteur vitesse qui change : l'avion est donc
+  accéléré, même si sa vitesse (en valeur) reste constante.
+interpretation: >-
+  Accélérer, au sens de la mécanique, ce n'est pas seulement aller plus vite :
+  virer ou monter modifie aussi le vecteur vitesse.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.newton-situation-equilibre
+title: Reconnaître une situation d'équilibre
+consigne: >-
+  Un avion vole en palier, en ligne droite, à vitesse constante. Que peut-on
+  affirmer sur la résultante des forces qui s'exercent sur lui ? Justifiez.
+methode: >-
+  Comparer la situation au principe d'inertie : vitesse constante en ligne
+  droite (MRU) équivaut à une résultante nulle.
+correction: >-
+  La résultante des forces est nulle. En effet, le mouvement est rectiligne
+  uniforme ; d'après la première loi de Newton, cela équivaut à ΣF = 0. Portance
+  et poids se compensent, traction et traînée aussi.
+interpretation: >-
+  « Vol stabilisé » ne veut pas dire « aucune force » : quatre forces agissent,
+  mais elles s'équilibrent deux à deux.
+notionLiee: fondamentaux.physique.les-trois-lois-de-newton
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+status: publie
