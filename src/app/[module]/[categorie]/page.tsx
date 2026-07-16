@@ -4,7 +4,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { FicheCard } from "@/components/shared/fiche-card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
+import Link from "next/link";
 import { getFichesByCategory, getFicheHref, getReadingMinutes } from "@/lib/content/fiches";
+import { getCoursesByFondamentauxCategory } from "@/lib/content/cours";
 import { getCategories, getCategory, getModule } from "@/lib/content/referentials";
 import { getFicheTypeLabel } from "@/lib/fiche-type-label";
 import { getModuleAccentVar } from "@/lib/module-accent";
@@ -46,6 +48,7 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
     notFound();
   }
   const fiches = getFichesByCategory(mod.slug, category.slug);
+  const cours = getCoursesByFondamentauxCategory(mod.slug, category.slug);
   const accentVar = getModuleAccentVar(mod.slug);
   const photo = getCategoryPhoto(mod.slug, category.slug);
   // Regroupement par statut de service dès qu'une fiche d'aéronef le porte.
@@ -82,6 +85,30 @@ export default async function CategoryHubPage({ params }: CategoryHubProps) {
         photo={photo}
         accentVar={accentVar}
       />
+      {cours.length > 0 ? (
+        <section aria-labelledby="cours-categorie" className="space-y-3">
+          <h2 id="cours-categorie" className="text-lg font-semibold tracking-tight">
+            Cours{" "}
+            <span className="text-muted-foreground text-sm font-normal">({cours.length})</span>
+          </h2>
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {cours.map((c) => (
+              <li key={c.id}>
+                <Link
+                  href={`/cours/${c.slug}`}
+                  className="bg-card hover:border-primary/50 block h-full rounded-lg border p-4 transition-colors"
+                >
+                  <span className="font-medium">{c.title}</span>
+                  <span className="text-muted-foreground mt-1 block text-sm">{c.description}</span>
+                  <span className="text-muted-foreground mt-2 block text-xs">
+                    ≈ {c.dureeEstimeeMin} min · cours n°{c.ordre}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       {fiches.length === 0 ? (
         <Empty className="border">
           <EmptyHeader>

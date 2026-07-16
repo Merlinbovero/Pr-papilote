@@ -1,5 +1,10 @@
 import type { Question } from "@/lib/content/content-schemas";
-import { getFicheById, getFicheHref, getQuestionsForFiche } from "@/lib/content/fiches";
+import {
+  getFicheById,
+  getFicheHref,
+  getQuestions,
+  getQuestionsForFiche,
+} from "@/lib/content/fiches";
 import type { PlayerQuestion } from "./quiz-player";
 
 /**
@@ -49,6 +54,15 @@ function toPlayerQuestion(question: Question): PlayerQuestion | null {
 /** Vivier de mini-quiz d'une fiche (formats jouables uniquement). */
 export function buildNotionPool(ficheId: string): PlayerQuestion[] {
   return getQuestionsForFiche(ficheId)
+    .map(toPlayerQuestion)
+    .filter((question): question is PlayerQuestion => question !== null);
+}
+
+/** Vivier de quiz d'un cours, à partir de la liste de ses questions référencées. */
+export function buildCoursePool(questionIds: readonly string[]): PlayerQuestion[] {
+  const wanted = new Set(questionIds);
+  return getQuestions()
+    .filter((q) => wanted.has(q.id))
     .map(toPlayerQuestion)
     .filter((question): question is PlayerQuestion => question !== null);
 }
