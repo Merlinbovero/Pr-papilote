@@ -35,5 +35,5 @@ test("l'interaction forces/vecteurs est utilisable au clavier et décrite", asyn
 
 test("la progression démarre (découverte) au chargement", async ({ page }) => {
   await page.goto(COURSE);
-  await expect(page.getByText("Ma progression")).toBeVisible();
+  await expect(page.getByText("Ma progression", { exact: true })).toBeVisible();
 });

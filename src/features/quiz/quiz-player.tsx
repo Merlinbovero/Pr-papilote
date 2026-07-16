@@ -190,7 +190,10 @@ export function QuizPlayer({
             ) : null}
           </span>
         </div>
-        <Progress value={((index + (phase === "correction" ? 1 : 0)) / questions.length) * 100} />
+        <Progress
+          aria-label="Progression dans le quiz"
+          value={((index + (phase === "correction" ? 1 : 0)) / questions.length) * 100}
+        />
       </div>
 
       <h2 className="text-xl font-semibold">{question.statement}</h2>
