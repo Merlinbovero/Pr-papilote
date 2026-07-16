@@ -13,7 +13,7 @@ attention sélective, repérage spatial). Les énoncés sont produits par un
 générateur **déterministe par graine** (PRNG mulberry32 du moteur quiz) —
 rejouable, testable, et infini.
 
-## Les familles de la V1 (7)
+## Les familles (10)
 
 | Famille             | Règle de génération                                                                                                                                                   | Difficulté 1 → 3                                                                                     |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -24,10 +24,14 @@ rejouable, testable, et infini.
 | `attention`         | grille de caractères visuellement proches (b/d/p/q, 6/9, O/0) ; compter les occurrences de la cible, temps serré                                                      | grille 4×8 → 5×10 → 6×12                                                                             |
 | `orientation`       | caps et virages (cap initial + virage gauche/droite de N° → nouveau cap ; sens du virage le plus court ; cap réciproque) — arithmétique modulo 360                    | virages de 90° → virages quelconques → réciproques et cumuls                                         |
 | `rapidite`          | deux chaînes type immatriculation/indicatif — identiques ou différentes ? temps très court                                                                            | chaînes courtes, différence franche → chaînes longues, différence d'un caractère ambigu              |
+| `dominos`           | série de dominos `[haut\|bas]` ; chaque moitié suit sa propre progression arithmétique modulo 7 (le blanc vaut 0 et suit le 6) ; question = domino manquant           | deux progressions positives → une descendante avec bouclage → haut entrelacé (deux pas alternés)     |
+| `rotation-mentale`  | motif de flèches (8 directions) à faire pivoter de 90°/180° ; distracteurs = mauvais sens, mauvais angle, motif non tourné                                            | une flèche, 90°/180° → deux flèches, 90° → trois flèches, 90°/180°/270°                              |
+| `double-tache`      | attention partagée : retenir la nature d'une lettre (voyelle/consonne) puis appliquer le calcul de cap qu'elle commande (réciproque ou +angle)                        | angle de 90° → angles quelconques → (idem, indices plus longs)                                       |
 
-La famille « lecture d'instruments » (cadrans graphiques) est **reportée**
-après la V1 — la fiche de méthode existe, le générateur graphique viendra
-avec les SVG dédiés. De même pour le traitement simultané multi-sources.
+La famille « lecture d'instruments » (cadrans graphiques) est **reportée** — la
+fiche de méthode existe, le générateur graphique viendra avec les SVG dédiés.
+Un **4ᵉ niveau de difficulté** homogène est également à l'étude (le contrat
+reste à 3 niveaux pour l'instant).
 
 ## Le moteur (`src/lib/psychotech/`)
 
