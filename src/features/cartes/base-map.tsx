@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import { ArrowRightIcon, MinusIcon, PlusIcon, RotateCcwIcon } from "lucide-react";
@@ -8,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { FranceMap } from "@/lib/cartes/geo";
+import type { MapLandmark } from "@/lib/cartes/landmarks";
 import {
   IMPLANTATION_ZONES,
   ROLE_LABELS,
@@ -28,11 +30,19 @@ interface BaseMapProps {
   armeeLabel: string;
   /** Fond de carte (dimensions + tracés des régions), calculé au serveur. */
   map: FranceMap;
+  /** Villes repères (contexte géographique), projetées au serveur. */
+  landmarks?: MapLandmark[];
   /** Variable CSS de la couleur d'accent de l'armée. */
   accentVar: string;
 }
 
-export function BaseMap({ implantations, armeeLabel, map, accentVar }: BaseMapProps) {
+export function BaseMap({
+  implantations,
+  armeeLabel,
+  map,
+  landmarks = [],
+  accentVar,
+}: BaseMapProps) {
   const roles = React.useMemo(
     () => [...new Set(implantations.flatMap((i) => i.roles))].sort(),
     [implantations]
@@ -148,6 +158,28 @@ export function BaseMap({ implantations, armeeLabel, map, accentVar }: BaseMapPr
                       />
                     ))}
 
+                    {/* Villes repères — contexte géographique, non interactif */}
+                    <g aria-hidden>
+                      {landmarks.map((landmark) => (
+                        <g key={landmark.name}>
+                          <circle
+                            cx={landmark.x}
+                            cy={landmark.y}
+                            r={1.6}
+                            className="fill-muted-foreground/50"
+                          />
+                          <text
+                            x={landmark.x + 4}
+                            y={landmark.y + 3}
+                            style={{ paintOrder: "stroke" }}
+                            className="fill-muted-foreground/70 stroke-background pointer-events-none [stroke-width:2.5px] text-[9px]"
+                          >
+                            {landmark.name}
+                          </text>
+                        </g>
+                      ))}
+                    </g>
+
                     {/* Marqueurs (métropole) */}
                     {metropole.map((implantation) => {
                       const isSelected = selectedSlug === implantation.slug;
@@ -251,61 +283,77 @@ export function BaseMap({ implantations, armeeLabel, map, accentVar }: BaseMapPr
 
       <aside aria-label="Détail de l'implantation" className="space-y-4">
         {selected ? (
-          <div className="bg-card space-y-4 rounded-2xl border p-6 shadow-sm">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <span
-                  aria-hidden
-                  className="size-2.5 rounded-full"
-                  style={{ backgroundColor: accentVar }}
+          <div className="bg-card space-y-4 overflow-hidden rounded-2xl border shadow-sm">
+            {selected.image ? (
+              <figure className="relative -mb-2 aspect-[16/9] w-full">
+                <Image
+                  src={selected.image.src}
+                  alt={selected.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  style={
+                    selected.image.focal ? { objectPosition: selected.image.focal } : undefined
+                  }
+                  className="object-cover"
                 />
-                <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-                  {selected.code}
-                </span>
-              </div>
-              <h2 className="text-lg font-semibold">{selected.name}</h2>
-              <p className="text-muted-foreground text-sm">
-                {selected.ville} · {selected.departement}
-              </p>
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                <Badge variant={selected.statut === "active" ? "default" : "outline"}>
-                  {selected.statut === "active" ? "En activité" : "Historique"}
-                </Badge>
-                {selected.roles.map((role) => (
-                  <Badge key={role} variant="outline" className="font-normal">
-                    {ROLE_LABELS[role]}
+              </figure>
+            ) : null}
+            <div className={cn("space-y-4 p-6", selected.image ? "pt-2" : "")}>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="size-2.5 rounded-full"
+                    style={{ backgroundColor: accentVar }}
+                  />
+                  <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                    {selected.code}
+                  </span>
+                </div>
+                <h2 className="text-lg font-semibold">{selected.name}</h2>
+                <p className="text-muted-foreground text-sm">
+                  {selected.ville} · {selected.departement}
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  <Badge variant={selected.statut === "active" ? "default" : "outline"}>
+                    {selected.statut === "active" ? "En activité" : "Historique"}
                   </Badge>
-                ))}
-              </div>
-            </div>
-
-            {selected.ficheHref ? (
-              <Link
-                href={selected.ficheHref}
-                className="text-primary inline-flex items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
-              >
-                Lire la fiche complète
-                <ArrowRightIcon aria-hidden className="size-4" />
-              </Link>
-            ) : null}
-
-            {selected.liensResolus.length > 0 ? (
-              <div className="space-y-2 border-t pt-4">
-                <h3 className="text-sm font-medium">Dans le graphe</h3>
-                <ul className="space-y-1 text-sm">
-                  {selected.liensResolus.map((lien) => (
-                    <li key={lien.href}>
-                      <Link
-                        href={lien.href}
-                        className="text-primary underline-offset-4 hover:underline"
-                      >
-                        {lien.label}
-                      </Link>
-                    </li>
+                  {selected.roles.map((role) => (
+                    <Badge key={role} variant="outline" className="font-normal">
+                      {ROLE_LABELS[role]}
+                    </Badge>
                   ))}
-                </ul>
+                </div>
               </div>
-            ) : null}
+
+              {selected.ficheHref ? (
+                <Link
+                  href={selected.ficheHref}
+                  className="text-primary inline-flex items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
+                >
+                  Lire la fiche complète
+                  <ArrowRightIcon aria-hidden className="size-4" />
+                </Link>
+              ) : null}
+
+              {selected.liensResolus.length > 0 ? (
+                <div className="space-y-2 border-t pt-4">
+                  <h3 className="text-sm font-medium">Dans le graphe</h3>
+                  <ul className="space-y-1 text-sm">
+                    {selected.liensResolus.map((lien) => (
+                      <li key={lien.href}>
+                        <Link
+                          href={lien.href}
+                          className="text-primary underline-offset-4 hover:underline"
+                        >
+                          {lien.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         ) : (
           <div className="bg-card text-muted-foreground rounded-2xl border p-6 text-sm leading-6">

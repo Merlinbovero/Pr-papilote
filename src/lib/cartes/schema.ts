@@ -86,6 +86,8 @@ export type Implantation = z.infer<typeof implantationSchema>;
  */
 export interface ImplantationView extends Implantation {
   ficheHref?: string;
+  /** Photo de la fiche liée, affichée dans le panneau de détail. */
+  image?: { src: string; alt: string; focal?: string };
   liensResolus: { label: string; href: string }[];
   x: number;
   y: number;
