@@ -16,6 +16,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },
+  { name: "mentions légales", path: "/mentions-legales" },
 ];
 
 for (const { name, path } of keyPages) {

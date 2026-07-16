@@ -20,10 +20,38 @@ export function SiteFooter() {
           </ul>
         </nav>
         <div className="flex flex-col gap-2 sm:items-end">
-          <Link href="/credits-photos" className="hover:text-foreground transition-colors">
-            Crédits photographiques
-          </Link>
-          <p>PrépaPilote — préparation aux concours EOPAN, EOPN et ALAT.</p>
+          <nav aria-label="Informations légales">
+            <ul className="flex flex-wrap gap-x-4 gap-y-1 sm:justify-end">
+              <li>
+                <Link href="/credits-photos" className="hover:text-foreground transition-colors">
+                  Crédits photos
+                </Link>
+              </li>
+              <li>
+                <Link href="/mentions-legales" className="hover:text-foreground transition-colors">
+                  Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link href="/confidentialite" className="hover:text-foreground transition-colors">
+                  Confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link href="/cgu" className="hover:text-foreground transition-colors">
+                  CGU
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-foreground transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <p className="sm:text-right">
+            Projet indépendant, non officiel — préparation aux concours EOPAN, EOPN et ALAT.
+          </p>
         </div>
       </div>
     </footer>
