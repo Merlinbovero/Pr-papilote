@@ -68,6 +68,30 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/l-attention-et-le-multitache",
     timeLimits: [10, 12, 15],
   },
+  dominos: {
+    slug: "dominos",
+    name: "Dominos",
+    consigne:
+      "Trouvez le domino qui complète la série. Traitez le haut et le bas séparément : chaque moitié suit sa propre règle (le blanc vaut 0 et suit le 6).",
+    ficheHref: "/psychotechnique/exercices/les-dominos",
+    timeLimits: [25, 30, 40],
+  },
+  "rotation-mentale": {
+    slug: "rotation-mentale",
+    name: "Rotation mentale",
+    consigne:
+      "Faites pivoter mentalement le motif de flèches de l'angle indiqué, dans le bon sens. Un quart de tour à droite = un cran horaire par flèche.",
+    ficheHref: "/psychotechnique/exercices/la-vision-spatiale",
+    timeLimits: [20, 25, 30],
+  },
+  "double-tache": {
+    slug: "double-tache",
+    name: "Double tâche",
+    consigne:
+      "Deux consignes en même temps : retenez le premier indice (la lettre) et appliquez le calcul qu'il commande sur le second (le cap). L'attention partagée est ce que l'on évalue.",
+    ficheHref: "/psychotechnique/exercices/l-attention-et-le-multitache",
+    timeLimits: [20, 25, 30],
+  },
 };
 
 type Rng = () => number;
@@ -546,6 +570,161 @@ function genRapidite(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// dominos (progressions sur les deux moitiés, arithmétique modulo 7)
+// ---------------------------------------------------------------------------
+
+/** Valeur de moitié de domino ramenée dans [0 ; 6] (le blanc vaut 0). */
+function half(value: number): number {
+  return ((value % 7) + 7) % 7;
+}
+
+function domino(top: number, bottom: number): string {
+  return `[${half(top)}|${half(bottom)}]`;
+}
+
+function genDominos(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const t0 = int(rng, 0, 6);
+  const b0 = int(rng, 0, 6);
+  let terms: string[];
+  let nextTop: number;
+  let nextBottom: number;
+  let method: string;
+
+  if (difficulty === 1) {
+    const st = pickOne(rng, [1, 2]);
+    const sb = pickOne(rng, [1, 2]);
+    terms = [0, 1, 2].map((i) => domino(t0 + i * st, b0 + i * sb));
+    nextTop = t0 + 3 * st;
+    nextBottom = b0 + 3 * sb;
+    method = `Chaque moitié suit sa propre progression — le haut avance de ${st}, le bas de ${sb} (le blanc suit le 6).`;
+  } else if (difficulty === 2) {
+    const st = pickOne(rng, [1, 2, 3]);
+    const sb = pickOne(rng, [-1, -2, -3]);
+    terms = [0, 1, 2, 3].map((i) => domino(t0 + i * st, b0 + i * sb));
+    nextTop = t0 + 4 * st;
+    nextBottom = b0 + 4 * sb;
+    method = `Le haut monte de ${st}, le bas descend de ${Math.abs(sb)} — au-delà de 6 on repart à 0, en dessous de 0 on repart à 6.`;
+  } else {
+    // Haut entrelacé (+a puis +b en alternance), bas à pas constant.
+    const a = pickOne(rng, [1, 2]);
+    const b = pickOne(rng, [3, 4]);
+    const sb = pickOne(rng, [1, 2]);
+    const tops = [t0, t0 + a, t0 + a + b, t0 + 2 * a + b];
+    terms = tops.map((t, i) => domino(t, b0 + i * sb));
+    nextTop = t0 + 2 * a + 2 * b;
+    nextBottom = b0 + 4 * sb;
+    method = `Deux règles à mener de front — le haut alterne +${a} puis +${b}, pendant que le bas avance de ${sb}.`;
+  }
+
+  const correct = domino(nextTop, nextBottom);
+  const distractors = [
+    domino(nextBottom, nextTop),
+    domino(nextTop + 1, nextBottom),
+    domino(nextTop, nextBottom - 1),
+  ];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.dominos.${seed}`,
+    family: "dominos",
+    difficulty,
+    prompt: `${terms.join("  ")}  [ ? ] — quel domino complète la série ?`,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO.dominos.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// rotation-mentale (rotation de flèches, 8 directions)
+// ---------------------------------------------------------------------------
+
+/** Huit directions dans le sens horaire — un cran = 45°. */
+const DIRS8 = ["↑", "↗", "→", "↘", "↓", "↙", "←", "↖"];
+
+function rotateArrows(pattern: string, steps: number): string {
+  return [...pattern]
+    .map((ch) => {
+      const index = DIRS8.indexOf(ch);
+      return index === -1 ? ch : DIRS8[(index + steps + 8) % 8];
+    })
+    .join("");
+}
+
+function genRotation(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const length = difficulty === 1 ? 1 : difficulty === 2 ? 2 : 3;
+  const pattern = Array.from({ length }, () => pickOne(rng, DIRS8)).join("");
+  // 90° droite = +2 crans ; 180° = +4 ; 90° gauche (270° droite) = +6.
+  const rotations =
+    difficulty === 1
+      ? [
+          { label: "90° vers la droite", steps: 2 },
+          { label: "180°", steps: 4 },
+        ]
+      : [
+          { label: "90° vers la droite", steps: 2 },
+          { label: "180°", steps: 4 },
+          { label: "90° vers la gauche", steps: 6 },
+        ];
+  const rotation = pickOne(rng, rotations);
+  const correct = rotateArrows(pattern, rotation.steps);
+  const distractors = [
+    rotateArrows(pattern, (rotation.steps + 4) % 8),
+    rotateArrows(pattern, (rotation.steps + 2) % 8),
+    pattern,
+  ];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.rotation.${seed}`,
+    family: "rotation-mentale",
+    difficulty,
+    prompt: `Motif : ${pattern} — après une rotation de ${rotation.label}, qu'obtient-on ?`,
+    choices,
+    correctIndex,
+    method:
+      "Faites tourner CHAQUE flèche du même angle : un quart de tour à droite = deux crans dans le sens horaire (↑→→→↓→←→↑). Tournez toujours dans le bon sens.",
+    timeLimitSeconds: FAMILY_INFO["rotation-mentale"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// double-tache (attention partagée : retenir un indice, calculer sur un autre)
+// ---------------------------------------------------------------------------
+
+// Y volontairement exclu (ambigu) : la consigne reste sans équivoque.
+const VOWELS = "AEIOU";
+
+function genDoubleTache(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const letter = ALPHABET[int(rng, 0, 25)];
+  const cap = int(rng, 1, 36) * 10;
+  const isVowel = VOWELS.includes(letter);
+  const angle = difficulty === 1 ? 90 : pickOne(rng, [30, 40, 60, 110, 150]);
+
+  // Règle : voyelle → cap réciproque ; consonne → cap + angle.
+  const branchVowel = fmtCap(cap + 180);
+  const branchConsonant = fmtCap(cap + angle);
+  const correctValue = isVowel ? branchVowel : branchConsonant;
+  const other = isVowel ? branchConsonant : branchVowel;
+
+  const distractors = [other, fmtCap(cap - angle), fmtCap(cap + 180 + 10)];
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correctValue, distractors);
+  return {
+    id: `psy.double.${seed}`,
+    family: "double-tache",
+    difficulty,
+    prompt: `Indicatif « ${letter} », cap ${fmtCap(cap)}.\nSi la lettre est une VOYELLE, répondez le cap réciproque ; sinon, le cap + ${angle}°.`,
+    choices,
+    correctIndex,
+    method:
+      "Deux tâches à tenir ensemble : identifiez d'abord la nature de la lettre (voyelle/consonne), gardez-la en tête, puis appliquez le bon calcul de cap — ne lâchez jamais le premier indice.",
+    timeLimitSeconds: FAMILY_INFO["double-tache"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -557,6 +736,9 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   attention: genAttention,
   orientation: genOrientation,
   rapidite: genRapidite,
+  dominos: genDominos,
+  "rotation-mentale": genRotation,
+  "double-tache": genDoubleTache,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */
