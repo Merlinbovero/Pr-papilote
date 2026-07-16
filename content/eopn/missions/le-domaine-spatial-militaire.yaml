@@ -1,0 +1,107 @@
+schemaVersion: 1
+id: eopn.missions.le-domaine-spatial-militaire
+type: concept
+title: Le domaine spatial militaire
+slug: le-domaine-spatial-militaire
+image:
+  src: /images/theme-espace.jpg
+  alt: Lanceur Ariane 5 — le domaine spatial militaire
+  author: NASA — Bill Ingalls
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=113683096
+summary: >-
+  Depuis 2020, l'armée de l'Air est aussi armée de l'Espace. Le Commandement
+  de l'espace (créé en 2019, installé à Toulouse) surveille l'espace, appuie
+  les opérations et prépare l'action dans un milieu devenu stratégique.
+objectifs:
+  - Expliquer pourquoi l'armée de l'Air est devenue armée de l'Air et de l'Espace (2020).
+  - Situer le Commandement de l'espace (CDE) — création 2019, implantation à Toulouse, dimension interarmées.
+  - Citer les grandes fonctions spatiales militaires (surveillance, appui, action).
+aliases: [CDE, commandement de l'espace, spatial militaire, armée de l'Espace, AsterX]
+module: eopn
+category: missions
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche domaine spatial militaire / Commandement de l'espace (production éditoriale, lot O3 ; sources officielles armée de l'Air et de l'Espace).
+    author: prepapilote
+sources:
+  - title: "Le Commandement de l'espace (Armée de l'Air et de l'Espace, Ministère des Armées)"
+    url: https://air.defense.gouv.fr/cde/fiche/le-commandement-de-lespace
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Commandement de l'espace : 5 ans au service du spatial militaire (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/actualites/commandement-lespace-5-ans-au-service-du-spatial-militaire
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+content:
+  essentiel:
+    body: |
+      Depuis **2020**, l'armée de l'Air est devenue l'armée de l'Air **et de
+      l'Espace (AAE)** : l'espace, devenu un milieu **stratégique** et
+      **encombré** (satellites, débris, menaces), est désormais un domaine
+      militaire à part entière.
+
+      Le **Commandement de l'espace (CDE)**, créé le **3 septembre 2019**, en
+      est le pilier. Rattaché à l'AAE mais **interarmées** (personnels de
+      l'Air, de la Terre, de la Marine, de la DGA…), il est installé à
+      **Toulouse**, au cœur du plus grand écosystème spatial d'Europe, à
+      proximité du **CNES**. Il organise chaque année un grand exercice spatial
+      militaire (**AsterX**).
+    aRetenir:
+      - Depuis 2020, l'armée de l'Air est l'armée de l'Air et de l'Espace.
+      - Le Commandement de l'espace (CDE) a été créé en 2019 et s'installe à Toulouse, près du CNES.
+      - Le CDE est rattaché à l'AAE mais interarmées (Air, Terre, Marine, DGA).
+      - Ses fonctions — surveillance de la situation spatiale, appui aux opérations, action dans l'espace.
+  sections:
+    - id: pourquoi-l-espace
+      title: Pourquoi l'espace est devenu stratégique
+      body: |
+        Les armées **dépendent** de l'espace : positionnement et navigation
+        (GPS/Galileo), communications, observation, alerte, renseignement.
+        Or ce milieu est de plus en plus **encombré** (multiplication des
+        satellites et des débris) et **disputé** (capacités d'écoute, de
+        brouillage, d'approche de satellites par des puissances rivales).
+
+        Protéger nos satellites et **connaître** ce qui se passe en orbite est
+        devenu une condition de l'autonomie stratégique — d'où la bascule de
+        2020 : l'armée de l'Air devient armée de l'Air **et de l'Espace**.
+    - id: le-commandement-de-l-espace
+      title: Le Commandement de l'espace
+      body: |
+        Créé en **2019**, le **CDE** rassemble les moyens spatiaux militaires
+        sur un site unique à **Toulouse**. Son action s'organise autour de
+        quatre fonctions : le **soutien aux capacités spatiales**, l'**appui
+        spatial aux opérations interarmées**, la **connaissance de la situation
+        spatiale** (surveiller ce qui gravite autour de la Terre) et l'**action
+        dans l'espace**.
+
+        Le choix de Toulouse n'est pas un hasard : la ville abrite le **Centre
+        spatial** du CNES et le plus grand pôle spatial européen — le militaire
+        s'appuie sur l'écosystème civil et industriel.
+    - id: s-entrainer-dans-l-espace
+      title: S'entraîner dans l'espace
+      strate: maitriser
+      body: |
+        Chaque année, le CDE conduit **AsterX**, un exercice de **wargame**
+        spatial : simuler des crises en orbite (satellite menacé, manœuvre
+        hostile, panne) pour entraîner les opérateurs et éprouver les
+        procédures. C'est un point d'actualité très apprécié en entretien —
+        montrer qu'on a compris que le « ciel » militaire ne s'arrête plus à
+        la stratosphère.
+  pieges:
+    - Depuis 2020, dire « armée de l'Air » est incomplet — c'est l'armée de l'Air et de l'Espace.
+    - Le Commandement de l'espace est rattaché à l'AAE mais il est interarmées — pas réservé aux seuls aviateurs.
+    - Le rôle militaire dans l'espace est surtout de surveiller, appuyer et protéger — pas de « faire la guerre des étoiles ».

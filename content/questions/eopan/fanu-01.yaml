@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: q.eopan.fanu-01
+kind: qcm
+theme: dissuasion
+statement: >-
+  La Force aéronavale nucléaire (FANu) met en œuvre l'arme nucléaire depuis
+  quel vecteur ?
+choices:
+  - "Le Rafale M embarqué sur le porte-avions, avec le missile ASMP-A"
+  - "Le sous-marin nucléaire lanceur d'engins (SNLE)"
+  - "Le Rafale de l'armée de l'Air depuis une base terrestre"
+  - "Une batterie de missiles sol-sol"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est la FOST (Force océanique stratégique), pas la FANu."
+  "2": "Ce sont les Forces aériennes stratégiques (FAS), la composante terrestre de l'Air."
+explanation: >-
+  La FANu, c'est la capacité des Rafale M de l'aéronautique navale, embarqués
+  sur le porte-avions Charles de Gaulle, de tirer le missile ASMP-A depuis la
+  mer. FAS et FANu partagent le même missile aéroporté.
+evaluates: [eopan.concepts.la-force-aeronavale-nucleaire]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

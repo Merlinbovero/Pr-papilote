@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.fanu-02
+kind: qcm
+theme: dissuasion
+statement: >-
+  Quelles sont les trois forces de la dissuasion nucléaire française ?
+choices:
+  - "FOST (SNLE), FAS (Rafale Air) et FANu (Rafale Marine)"
+  - "Armée de Terre, Marine et Armée de l'Air"
+  - "FAS, gendarmerie et douanes"
+  - "Légion, marine et aviation légère"
+correctChoices: [0]
+explanation: >-
+  La dissuasion repose sur deux composantes (océanique et aéroportée) servies
+  par trois forces : la FOST (sous-marins), les FAS (Rafale de l'armée de l'Air)
+  et la FANu (Rafale Marine sur porte-avions).
+evaluates: [eopan.concepts.la-force-aeronavale-nucleaire]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie
