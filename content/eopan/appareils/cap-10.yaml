@@ -6,6 +6,7 @@ slug: cap-10
 service:
   status: actif
   operator: Marine nationale
+  firstFlight: 1968
 image:
   src: /images/fiche-cap-10.jpg
   alt: Mudry CAP 10B, biplace de voltige et de sélection, en vol
@@ -16,11 +17,12 @@ image:
 summary: >-
   Le petit biplace de voltige sur lequel tout commence — c'est sur Cap 10, à
   l'escadrille 50S de Lanvéoc-Poulmic, que les candidats EOPAN passent leur
-  sélection en vol.
+  sélection en vol. Un vrai voltigeur certifié, en bois, à +6/−4,5 g.
 objectifs:
   - Identifier le Cap 10 comme l'avion de la sélection en vol EOPAN (escadrille 50S, Lanvéoc-Poulmic).
-  - Connaître ses caractéristiques essentielles (biplace côte à côte, voltige, 180 ch).
-  - Comprendre pourquoi un avion léger de voltige sert à sélectionner de futurs pilotes de chasse.
+  - Connaître ses caractéristiques essentielles (biplace côte à côte de voltige en bois, Lycoming 180 ch).
+  - Citer ses limites d'emploi remarquables (catégories utilitaire/acrobatique, facteurs de charge, VNE).
+  - Comprendre pourquoi un avion léger de voltige sert à sélectionner de futurs pilotes.
 aliases: [CAP 10, Cap 10 B, Cap 10 C, Cap 10 NG, Mudry CAP 10, avion de la 50S]
 module: eopan
 category: appareils
@@ -29,15 +31,22 @@ tags: []
 concours: [eopan]
 level: 1
 createdAt: "2026-07-13"
-verifiedAt: "2026-07-13"
+verifiedAt: "2026-07-16"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche Cap 10, avion de la sélection en vol EOPAN (Lot F, ingestion Guide EOPAN 2020, revérifiée sources 2024-2026).
     author: prepapilote
+  - date: "2026-07-16"
+    version: 2
+    motif: Enrichissement — caractéristiques et limites d'emploi précisées d'après le manuel de vol officiel CAP 10 B (catégories utilitaire/acrobatique, vitesses limites, facteurs de charge, masses).
+    author: prepapilote
 sources:
+  - title: "Manuel de vol CAP 10 B (APEX Aircraft / Avions Mudry, certificat de type n°55, approuvé par la DGAC/SGAC, éd. 2001)"
+    kind: officiel
+    consultedAt: "2026-07-16"
   - title: "Mudry CAP 10 — Wikipédia"
     url: https://fr.wikipedia.org/wiki/Mudry_CAP_10
     kind: institutionnel
@@ -53,10 +62,6 @@ sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — La sélection en vol"
     kind: ouvrage
     consultedAt: "2026-07-13"
-  - title: "« Mudry CAP 10 », Wikipédia (fr)"
-    url: https://fr.wikipedia.org/wiki/Mudry_CAP_10
-    kind: encyclopedie
-    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
@@ -65,64 +70,85 @@ relations:
     - eopan.organisation.aeronautique-navale
 specs:
   crew: "2 (côte à côte)"
-  length: "7,16 m"
+  length: "7,0 m"
   wingspan: "8,06 m"
-  height: "2,55 m"
-  emptyWeight: "540 kg"
-  maxTakeoffWeight: "830 kg"
-  powerplant: "1 moteur Lycoming AEIO-360 (180 ch)"
+  height: "2,30 m"
+  maxTakeoffWeight: "830 kg (utilitaire) / 760 kg (voltige)"
+  powerplant: "1 Lycoming (A)EIO-360-B2F, 180 ch — système Christen (vol dos continu)"
   maxSpeed: "340 km/h (VNE)"
-  ceiling: "5 500 m"
-  range: "1 200 km"
+  armament: "Aucun — avion-école et de voltige"
 infobox:
-  constructeur: Mudry, puis Robin Aircraft (Cap 10 NG)
-  role: Avion d'entraînement et de voltige — sélection en vol EOPAN
+  constructeur: Avions Mudry (puis CAARP / APEX / Robin Aircraft — Cap 10 NG)
+  role: Avion-école et de voltige — sélection en vol EOPAN
   armees: [Marine nationale]
   miseEnService: 1970 (années 1980 dans la Marine)
   statut: En service (escadrille 50S)
   equipage: "2"
+  motorisation: Lycoming (A)EIO-360-B2F, 180 ch
+  vitesseMax: 340 km/h (VNE)
 content:
   essentiel:
     body: |
       Le **Cap 10** est un petit avion **biplace côte à côte** de **voltige**,
-      conçu par **Mudry** (premier vol en 1968) et produit aujourd'hui par
-      **Robin Aircraft** dans sa version modernisée **Cap 10 NG**. Construit
-      en **bois**, motorisé par un **Lycoming de 180 ch**, il supporte les
-      facteurs de charge de la voltige.
+      conçu par les **Avions Mudry** (premier vol en 1968, certifié en 1969) et
+      produit aujourd'hui, modernisé, sous le nom **Cap 10 NG**. C'est un avion
+      **entièrement construit en bois** (longerons en spruce, revêtement en
+      contre-plaqué), à **aile basse** et **train classique** (roulette de
+      queue), motorisé par un **Lycoming de 180 ch** doté du **système
+      Christen** qui autorise le **vol sur le dos continu**.
 
       C'est **l'avion de la sélection en vol EOPAN** : au sein de
       l'**escadrille 50S**, sur la BAN de **Lanvéoc-Poulmic**, les candidats y
-      démontrent en une quinzaine de vols leur **aptitude à apprendre** —
-      avant même de savoir s'ils deviendront pilotes de chasse, de patrouille
+      démontrent en une quinzaine de vols leur **aptitude à apprendre** — avant
+      même de savoir s'ils deviendront pilotes de chasse, de patrouille
       maritime ou d'hélicoptère.
 
-      Pour un candidat EOPAN, connaître le Cap 10, c'est connaître **son
-      premier avion militaire**.
+      Pour un candidat EOPAN, connaître le Cap 10, c'est connaître **son premier
+      avion militaire**.
     aRetenir:
-      - Biplace côte à côte de voltige, construction bois, moteur Lycoming 180 ch.
-      - Conçu par Mudry ; produit et modernisé aujourd'hui par Robin Aircraft (Cap 10 NG).
-      - Avion de la sélection en vol EOPAN — escadrille 50S, BAN Lanvéoc-Poulmic.
-      - Le côte à côte permet à l'instructeur d'observer directement le candidat.
+      - Biplace côte à côte de voltige, entièrement en bois, moteur Lycoming 180 ch.
+      - Certifié en deux catégories — utilitaire et acrobatique ; en voltige, il encaisse +6/−4,5 g.
+      - Le système Christen permet le vol dos continu (moteur alimenté tête en bas).
+      - Avion de la sélection en vol EOPAN — escadrille 50S, BAN Lanvéoc-Poulmic ; le côte à côte laisse l'instructeur observer directement le candidat.
   sections:
-    - id: l-avion
-      title: L'avion
+    - id: la-cellule
+      title: La cellule
       body: |
-        Caractéristiques principales (Cap 10 B/C) :
+        Le Cap 10 est un **avion en bois** : voilure **monolongeron** à
+        caissons de torsion (semelles en spruce, âmes et revêtement en
+        contre-plaqué), fuselage en **treillis de bois**, verrière **largable en
+        vol**. L'aile basse au **profil NACA 23012** offre **10,85 m²** de
+        surface pour **8,06 m** d'envergure.
 
-        | Caractéristique | Valeur |
-        | --- | --- |
-        | Équipage | 2, côte à côte |
-        | Construction | bois (longerons renforcés carbone sur le Cap 10 C) |
-        | Moteur | Lycoming AEIO-360, 180 ch |
-        | Envergure | 8,06 m |
-        | Longueur | 7,16 m |
-        | Masse maximale | 830 kg |
-        | Vitesse maximale | 340 km/h |
-        | Facteurs de charge | +6 / −4,5 g (Cap 10 C) |
+        Le groupe motopropulseur est un **Lycoming (A)EIO-360-B2F** de **180 ch**
+        (182 CV / 134 kW nominal à 2700 t/min), à **injection**, équipé du
+        **système Christen** de graissage qui permet un **vol dos continu** —
+        moteur alimenté en essence même tête en bas. L'hélice est en **bois à
+        pas fixe**. Les deux réservoirs (72 L avant, 78 L arrière) totalisent
+        **150 litres**.
 
-        Léger, maniable et **entièrement voltigeable**, le Cap 10 permet
-        d'évaluer un candidat dans tout le domaine de vol — y compris tête en
-        bas.
+        La version modernisée **Cap 10 C** a introduit un **longeron renforcé
+        au carbone** ; le **Cap 10 NG** (Robin Aircraft) poursuit cette
+        modernisation.
+    - id: limites-d-emploi
+      title: Les limites d'emploi
+      body: |
+        Le Cap 10 B est certifié (règlement AIR 2052) en **deux catégories** :
+        **utilitaire (U)** et **acrobatique (A)**. Les limites changent selon la
+        catégorie choisie pour le vol :
+
+        | Limite | Utilitaire | Acrobatique (voltige) |
+        | --- | --- | --- |
+        | Facteurs de charge (volets rentrés) | +4,4 / −1,8 g | **+6 / −4,5 g** |
+        | Masse maxi au décollage | 830 kg | 760 kg |
+        | Vitesse de manœuvre (VA) | 200 km/h | 235 km/h |
+
+        Quelques repères communs, à mémoriser : **VNE 340 km/h** (à ne jamais
+        dépasser, trait rouge), **VNO 300 km/h** (arc jaune au-delà), **VFE
+        160 km/h** (volets sortis), **décrochage ≈ 85-89 km/h** volets sortis.
+        Le **vent de travers limite** est de **20 kt** (37 km/h). L'avion n'est
+        autorisé qu'en **VFR de jour, hors conditions givrantes** — et la
+        **voltige n'est permise qu'en catégorie A**.
     - id: la-selection-en-vol
       title: Le rôle dans la sélection EOPAN
       body: |
@@ -131,12 +157,12 @@ content:
         candidat apprend les bases du pilotage et doit **restituer** ce qui lui
         est enseigné, de plus en plus vite.
 
-        Ce que les instructeurs évaluent n'est pas un niveau de pilotage —
-        c'est la **pente de progression** : capacité à intégrer une
-        démonstration, à la reproduire, à tenir les paramètres tout en gérant
-        radio et sécurité. La configuration **côte à côte** du Cap 10 permet à
-        l'instructeur d'observer directement le regard, les mains et la charge
-        de travail du candidat.
+        Ce que les instructeurs évaluent n'est pas un niveau de pilotage — c'est
+        la **pente de progression** : capacité à intégrer une démonstration, à
+        la reproduire, à tenir les paramètres tout en gérant radio et sécurité.
+        La configuration **côte à côte** du Cap 10 permet à l'instructeur
+        d'observer directement le regard, les mains et la charge de travail du
+        candidat.
     - id: et-apres
       title: Et après la sélection ?
       strate: maitriser
@@ -144,8 +170,8 @@ content:
         Le Cap 10 ne sert qu'à la **sélection** et à l'**initiation**. La
         formation qui suit se poursuit dans le cadre interarmées — le programme
         **Mentor 2** (marché notifié fin 2024) doit rationaliser la formation
-        initiale des pilotes de l'armée de l'Air et de la Marine sur
-        **Pilatus PC-7 MKX** à Salon-de-Provence.
+        initiale des pilotes de l'armée de l'Air et de la Marine sur **Pilatus
+        PC-7 MKX** à Salon-de-Provence.
 
         La flotte de Cap 10 de la 50S, elle, est **modernisée** (standard
         Cap 10 NG et kits de mise à niveau commandés à Robin Aircraft) : la
@@ -153,4 +179,5 @@ content:
   pieges:
     - Le Cap 10 est l'avion de la sélection en vol, pas celui de la formation de chasse — après la sélection, le cursus se poursuit sur d'autres appareils.
     - Ne pas confondre l'escadrille 50S (sélection et initiation, Lanvéoc) avec les flottilles opérationnelles (11F, 12F, 17F…).
-    - Le Cap 10 est un avion en bois et cela n'en fait pas un jouet — c'est un voltigeur certifié à +6/−4,5 g dans sa version C.
+    - Les facteurs de charge dépendent de la catégorie — c'est en acrobatique (+6/−4,5 g), pas en utilitaire (+4,4/−1,8 g), que le Cap 10 voltige.
+    - Un avion en bois n'est pas un jouet — c'est un voltigeur certifié dont le moteur, grâce au système Christen, tourne même sur le dos.

@@ -1,21 +1,24 @@
 schemaVersion: 1
 id: q.eopan.cap-10-02
 kind: qcm
-theme: selection-en-vol
+theme: appareils-aeronavale
 statement: >-
-  Quelle particularité du Cap 10 aide l'instructeur à évaluer le candidat EOPAN ?
+  Quel dispositif du moteur du Cap 10 lui permet de voler sur le dos de
+  manière continue ?
 choices:
-  - Les deux places côte à côte, qui permettent d'observer directement le candidat
-  - Son pilotage entièrement automatique
-  - Sa cabine pressurisée
-  - Son radar de pointe
+  - "Le système Christen (graissage adapté au vol dos)"
+  - "La postcombustion"
+  - "Un second réservoir pressurisé"
+  - "Le train rentrant"
 correctChoices: [0]
+distractorNotes:
+  "1": "La postcombustion équipe les avions à réaction, pas un moteur à pistons de 180 ch."
 explanation: >-
-  Le Cap 10 est un biplace côte à côte : l'instructeur voit le regard, les
-  mains et la charge de travail du candidat — idéal pour évaluer sa capacité
-  d'apprentissage.
+  Le Lycoming (A)EIO-360-B2F du Cap 10 est équipé du système Christen, qui
+  assure le graissage et l'alimentation du moteur même en vol inversé — d'où la
+  possibilité de voler sur le dos de façon continue, indispensable en voltige.
 evaluates: [eopan.appareils.cap-10]
 difficulty: 2
-competencies: [culture-militaire]
+competencies: [connaissances-aeronautiques]
 concours: [eopan]
 status: publie
