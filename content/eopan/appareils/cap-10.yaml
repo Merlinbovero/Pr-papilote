@@ -53,12 +53,27 @@ sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — La sélection en vol"
     kind: ouvrage
     consultedAt: "2026-07-13"
+  - title: "« Mudry CAP 10 », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Mudry_CAP_10
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopan.ban.lanveoc-poulmic
     - eopan.presentation.le-concours-eopan
     - eopan.organisation.aeronautique-navale
+specs:
+  crew: "2 (côte à côte)"
+  length: "7,16 m"
+  wingspan: "8,06 m"
+  height: "2,55 m"
+  emptyWeight: "540 kg"
+  maxTakeoffWeight: "830 kg"
+  powerplant: "1 moteur Lycoming AEIO-360 (180 ch)"
+  maxSpeed: "340 km/h (VNE)"
+  ceiling: "5 500 m"
+  range: "1 200 km"
 infobox:
   constructeur: Mudry, puis Robin Aircraft (Cap 10 NG)
   role: Avion d'entraînement et de voltige — sélection en vol EOPAN

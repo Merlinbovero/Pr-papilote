@@ -45,12 +45,28 @@ sources:
     url: https://fr.wikipedia.org/wiki/NHIndustries_NH90_Ca%C3%AFman_marine
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "« NHIndustries NH90 », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/NHIndustries_NH90
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopan.appareils.e-2c-hawkeye
     - eopan.appareils.rafale-m
     - eopan.presentation.le-concours-eopan
+specs:
+  crew: "2 pilotes + opérateurs de mission"
+  length: "19,56 m"
+  rotorDiameter: "16,30 m"
+  height: "5,31 m"
+  emptyWeight: "6 400 kg"
+  maxTakeoffWeight: "10 600 kg"
+  powerplant: "2 turbomoteurs RR Turbomeca RTM322 (2 388 ch chacun)"
+  maxSpeed: "~300 km/h (175 nœuds)"
+  ceiling: "3 500 m"
+  range: "880 km (convoyage 1 600 km)"
+  armament: "torpilles MU90, mitrailleuse de sabord (version marine NFH)"
 infobox:
   constructeur: NHIndustries
   role: Hélicoptère embarqué (lutte anti-sous-marine, secours en mer)

@@ -47,6 +47,10 @@ sources:
     url: https://www.opex360.com/2026/01/29/lhelicoptere-h160m-guepard-a-effectue-ses-premieres-approches-avec-un-navire-de-la-marine-nationale/
     kind: presse
     consultedAt: "2026-07-13"
+  - title: "« Airbus Helicopters H160 », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Airbus_Helicopters_H160
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
@@ -54,6 +58,16 @@ relations:
     - alat.appareils.gazelle
     - alat.unites.3e-rhc
     - alat.missions.l-aerocombat
+specs:
+  crew: "2 pilotes (+ passagers selon mission)"
+  length: "15,70 m"
+  rotorDiameter: "13,40 m"
+  height: "4,90 m"
+  maxTakeoffWeight: "6 050 kg (base H160 civil)"
+  powerplant: "2 turbomoteurs Safran Arrano (1 280 ch chacun)"
+  maxSpeed: "315 km/h (croisière 285 km/h)"
+  ceiling: "6 100 m"
+  range: "880 km (base H160 civil)"
 infobox:
   constructeur: Airbus Helicopters
   role: Futur hélicoptère interarmées léger (programme HIL)

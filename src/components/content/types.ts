@@ -19,7 +19,7 @@ export interface RelationItem {
 export interface SourceItem {
   title: string;
   url?: string;
-  kind: "officiel" | "institutionnel" | "presse" | "ouvrage";
+  kind: "officiel" | "institutionnel" | "presse" | "ouvrage" | "encyclopedie";
   consultedAt: string;
 }
 

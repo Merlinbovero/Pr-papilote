@@ -54,12 +54,28 @@ sources:
     url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Breguet Atlantic », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Breguet_Atlantic
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopan.appareils.nh90-caiman
     - eopan.appareils.e-2c-hawkeye
     - eopan.presentation.le-concours-eopan
+specs:
+  crew: "13 (équipage de patrouille maritime)"
+  length: "31,75 m"
+  wingspan: "36,30 m"
+  height: "11,33 m"
+  emptyWeight: "23 500 kg"
+  maxTakeoffWeight: "46 000 kg"
+  powerplant: "2 turbopropulseurs Rolls-Royce Tyne (5 740 ch chacun)"
+  maxSpeed: "650 km/h (Mach 0,63)"
+  ceiling: "9 145 m"
+  range: "rayon d'action 4 400 km ; autonomie ~14 h"
+  armament: "Exocet AM39, torpilles MU90/Mk46, GBU-12, bouées acoustiques"
 infobox:
   constructeur: Dassault Aviation
   role: Avion de patrouille maritime

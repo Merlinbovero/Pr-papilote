@@ -8,6 +8,11 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
     await expect(page.getByRole("heading", { name: "L'essentiel" })).toBeVisible();
     await expect(page.getByText(/Vérifié le/)).toBeVisible();
     await expect(page.getByRole("heading", { name: "Sources et références" })).toBeVisible();
+    // Gabarit Appareils : statut de service + caractéristiques techniques.
+    await expect(page.getByText("En service").first()).toBeVisible();
+    const specs = page.getByRole("region", { name: "Caractéristiques techniques" });
+    await expect(specs.getByText("Envergure")).toBeVisible();
+    await expect(specs.getByText("Motorisation")).toBeVisible();
   });
 
   test("les liens intelligents traversent le graphe (Rafale M → Charles de Gaulle)", async ({

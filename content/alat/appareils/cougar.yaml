@@ -50,6 +50,10 @@ sources:
     url: https://fr.wikipedia.org/wiki/A%C3%A9rospatiale_AS532_Cougar
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "« Eurocopter AS532 Cougar », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Eurocopter_AS532_Cougar
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   factual:
@@ -60,6 +64,18 @@ relations:
     - alat.unites.5e-rhc
     - alat.unites.4e-rhfs
     - alat.histoire.histoire-de-l-alat
+specs:
+  crew: "2 (+ ~25 soldats)"
+  length: "15,50 à 16,85 m"
+  rotorDiameter: "15,60 m"
+  height: "4,95 m"
+  emptyWeight: "5 100 kg"
+  maxTakeoffWeight: "9 350 kg"
+  powerplant: "2 turbomoteurs Turbomeca Makila 1 (2 445 ch chacun)"
+  maxSpeed: "310 km/h (croisière 260 km/h)"
+  ceiling: "5 100 m"
+  range: "898 km"
+  armament: "emport jusqu'à ~25 commandos ; mitrailleuses de sabord"
 infobox:
   constructeur: Aérospatiale, puis Airbus Helicopters
   role: Hélicoptère de transport tactique

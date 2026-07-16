@@ -45,12 +45,28 @@ sources:
     url: https://fr.wikipedia.org/wiki/Eurocopter_EC665_Tigre
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "« Eurocopter Tigre », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Eurocopter_Tigre
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - alat.presentation.devenir-pilote-alat
     - alat.unites.5e-rhc
     - eopan.appareils.nh90-caiman
+specs:
+  crew: "2 (pilote + tireur)"
+  length: "14,08 m (fuselage)"
+  rotorDiameter: "13,00 m"
+  height: "3,83 m"
+  emptyWeight: "4 200 kg"
+  maxTakeoffWeight: "6 100 kg (HAP) à 6 600 kg (HAD)"
+  powerplant: "2 turbomoteurs MTR390 (~1 300 à 1 670 ch chacun)"
+  maxSpeed: "315 km/h"
+  ceiling: "4 000 m"
+  range: "800 km (1 300 km en convoyage)"
+  armament: "canon 30 mm ; missiles Hellfire, HOT, Mistral ; roquettes 70 mm"
 infobox:
   constructeur: Airbus Helicopters
   role: Hélicoptère de combat (appui-protection, appui-destruction)

@@ -46,12 +46,27 @@ sources:
     url: https://www.defense.gouv.fr/unites-du-defile-du-14-juillet-2026/14-juillet-2026-defile-avions/defile-avions-patrouille-france
     kind: officiel
     consultedAt: "2026-07-14"
+  - title: "« Alpha Jet », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Alpha_Jet
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopn.appareils.pc-21
     - eopn.selection.la-formation-du-pilote-de-chasse
     - eopn.histoire.histoire-de-l-armee-de-l-air
+specs:
+  crew: "2 (biplace)"
+  length: "11,85 m"
+  wingspan: "9,16 m"
+  height: "4,19 m"
+  emptyWeight: "3 345 kg"
+  maxTakeoffWeight: "7 250 kg"
+  powerplant: "2 turboréacteurs Snecma-Turbomeca Larzac 04 (14,2 kN chacun)"
+  maxSpeed: "1 062 km/h (Mach 0,86)"
+  ceiling: "15 000 m"
+  range: "1 230 km"
 infobox:
   constructeur: Dassault-Breguet / Dornier (coopération France-RFA)
   role: Avion d'entraînement et d'appui léger — aujourd'hui monture de la Patrouille de France

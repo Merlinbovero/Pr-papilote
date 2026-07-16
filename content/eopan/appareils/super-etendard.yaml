@@ -53,6 +53,10 @@ sources:
     url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_I.pdf
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Dassault Super-Étendard », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Dassault_Super-%C3%89tendard
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
@@ -60,6 +64,18 @@ relations:
     - eopan.histoire.histoire-de-l-aeronautique-navale
     - eopan.concepts.les-armements-de-l-aeronautique-navale
     - eopan.unites.flottille-17f
+specs:
+  crew: "1 pilote"
+  length: "14,31 m"
+  wingspan: "9,60 m"
+  height: "3,86 m"
+  emptyWeight: "6 250 kg"
+  maxTakeoffWeight: "12 000 kg"
+  powerplant: "1 turboréacteur Snecma Atar 8K-50 (49 kN, sans PC)"
+  maxSpeed: "1 560 km/h (Mach 1,3)"
+  ceiling: "15 500 m"
+  range: "650 km (rayon d'action, charge max)"
+  armament: "2 canons DEFA 552A de 30 mm ; 2 100 kg de charges (Exocet AM39, ASMP, Magic II, bombes)"
 infobox:
   constructeur: Dassault-Breguet
   role: Avion d'assaut embarqué (historique)

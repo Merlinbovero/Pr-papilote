@@ -5,6 +5,7 @@ const KIND_LABELS: Record<SourceItem["kind"], string> = {
   institutionnel: "Source institutionnelle",
   presse: "Presse",
   ouvrage: "Ouvrage",
+  encyclopedie: "Encyclopédie",
 };
 
 interface SourceListProps {

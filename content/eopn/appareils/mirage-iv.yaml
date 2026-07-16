@@ -46,12 +46,28 @@ sources:
     url: https://www.defense.gouv.fr/air/actualites/60-ans-premiere-prise-dalerte-nucleaire-hommage-aux-pionniers-dissuasion
     kind: officiel
     consultedAt: "2026-07-14"
+  - title: "« Dassault Mirage IV », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Dassault_Mirage_IV
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopn.unites.escadron-1-4-gascogne
     - eopn.appareils.mirage-2000
     - eopn.histoire.histoire-de-l-armee-de-l-air
+specs:
+  crew: "2 (pilote, navigateur)"
+  length: "23,49 m (perche comprise)"
+  wingspan: "11,84 m"
+  height: "5,40 m"
+  emptyWeight: "14 500 kg"
+  maxTakeoffWeight: "33 475 kg"
+  powerplant: "2 turboréacteurs Snecma Atar 9K (68,6 kN chacun avec PC)"
+  maxSpeed: "2 340 km/h (Mach 2,2)"
+  ceiling: "18 000 m"
+  range: "1 240 km (4 000 km avec bidons)"
+  armament: "bombe nucléaire AN-22 puis missile ASMP ; jusqu'à 6 800 kg"
 infobox:
   constructeur: Dassault (GAMD)
   role: Bombardier stratégique supersonique — premier vecteur de la dissuasion nucléaire

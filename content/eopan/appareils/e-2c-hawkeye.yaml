@@ -46,6 +46,10 @@ sources:
     url: https://www.meretmarine.com/fr/defense/hawkeye-les-yeux-de-la-flotte
     kind: institutionnel
     consultedAt: "2026-07-12"
+  - title: "« Grumman E-2 Hawkeye », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Grumman_E-2_Hawkeye
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   factual:
@@ -56,6 +60,17 @@ relations:
   related:
     - eopan.appareils.rafale-m
     - eopan.presentation.le-concours-eopan
+specs:
+  crew: "5 (2 pilotes, 3 opérateurs)"
+  length: "17,56 m"
+  wingspan: "24,58 m"
+  height: "5,58 m"
+  emptyWeight: "17 090 kg"
+  maxTakeoffWeight: "23 391 kg"
+  powerplant: "2 turbopropulseurs Allison T56 (5 100 ch chacun)"
+  maxSpeed: "604 km/h"
+  ceiling: "9 390 m"
+  range: "1 290 km"
 infobox:
   constructeur: Northrop Grumman
   role: Guet aérien embarqué (alerte avancée)
