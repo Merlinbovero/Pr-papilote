@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: q.alat.familles-01
+kind: qcm
+theme: appareils
+statement: >-
+  Dans quelle famille d'hélicoptères de l'ALAT range-t-on le Tigre ?
+choices:
+  - "Les hélicoptères de reconnaissance et d'attaque (HRA)"
+  - "Les hélicoptères de manœuvre et d'assaut (HMA)"
+  - "Les hélicoptères de transport logistique lourd"
+  - "Les hélicoptères d'entraînement"
+correctChoices: [0]
+distractorNotes:
+  "1": "Les HMA (Puma, Cougar, Caracal, Caïman) transportent et posent les troupes."
+  "2": "L'ALAT ne classe pas sa flotte par « transport lourd »."
+  "3": "Le Tigre est un hélicoptère de combat, pas un appareil-école."
+explanation: >-
+  Le Tigre est un hélicoptère de reconnaissance et d'attaque (HRA), aux côtés
+  de la Gazelle : sa mission est de renseigner et de détruire, pas de
+  transporter des troupes.
+evaluates: [alat.missions.les-familles-d-helicopteres]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [alat]
+status: publie
