@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: eopn.unites.la-patrouille-de-france
+type: concept
+title: La Patrouille de France
+slug: la-patrouille-de-france
+image:
+  src: /images/fiche-alphajet.jpg
+  alt: Alphajet — l'appareil de la Patrouille de France
+  author: happy days photos and art
+  license: CC BY 2.0
+  licenseUrl: https://creativecommons.org/licenses/by/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=30943387
+summary: >-
+  « La grande dame » du ciel français : depuis 1953, la Patrouille de France
+  est l'ambassadrice de l'armée de l'Air et de l'Espace, huit Alphajet en
+  formation qui portent haut les couleurs de la France dans le monde entier.
+objectifs:
+  - Situer la Patrouille de France comme équipe de présentation et ambassadrice de l'armée de l'Air et de l'Espace.
+  - Connaître ses repères (création 1953, Alphajet depuis 1981, base de Salon-de-Provence, huit avions).
+  - Comprendre sa mission de représentation et de rayonnement.
+aliases:
+  [
+    Patrouille de France,
+    PAF,
+    Patrouille acrobatique de France,
+    la grande dame,
+    Alphajet,
+    Salon-de-Provence,
+  ]
+module: eopn
+category: unites
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche Patrouille de France (production éditoriale, lot O6 ; sources officielles armée de l'Air et de l'Espace / defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Histoire de la Patrouille de France (Armée de l'Air et de l'Espace)"
+    url: https://boutique.airespace.defense.gouv.fr/content/46-histoire-patrouille-de-france
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "La Patrouille de France — La grande dame (Ministère des Armées, 14 juillet 2025)"
+    url: https://www.defense.gouv.fr/unites-du-defile-du-14-juillet-2025/14-juillet-2025-defile-avions/14-juillet-2025-patrouille-france-grande-dame
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopn.appareils.alphajet
+    - eopn.bases.salon-de-provence
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.histoire.histoire-de-l-armee-de-l-air
+content:
+  essentiel:
+    body: |
+      La **Patrouille de France (PAF)** — aussi appelée **Patrouille
+      acrobatique de France** — est l'**équipe de présentation** et
+      l'**ambassadrice** de l'armée de l'Air et de l'Espace. Surnommée « **la
+      grande dame** », elle évolue dans le ciel avec grâce et précision depuis
+      **1953**, et compte parmi les patrouilles acrobatiques les plus
+      prestigieuses au monde.
+
+      Son nom naît le **17 mai 1953**, lors d'un meeting à **Alger** : une
+      patrouille de quatre **F-84** de la 3ᵉ escadre de Reims, menée par le
+      commandant **Delachenal**, est baptisée « la Patrouille de France » par
+      le commentateur **Jacques Noetinger**. Le nom restera.
+
+      Elle vole sur **Alphajet** depuis **1981** et se présente en **huit
+      avions** en formation. Elle est basée sur la **base aérienne 701 de
+      Salon-de-Provence**, berceau des officiers de l'armée de l'Air.
+    aRetenir:
+      - La Patrouille de France est l'équipe de présentation et l'ambassadrice de l'armée de l'Air et de l'Espace.
+      - Née en 1953 (baptisée à Alger le 17 mai 1953), surnommée « la grande dame ».
+      - Elle vole sur Alphajet depuis 1981, à huit avions, depuis la base 701 de Salon-de-Provence.
+      - Sa mission est la représentation et le rayonnement — en vol comme au sol.
+  sections:
+    - id: une-naissance-par-hasard
+      title: Un nom né d'un meeting
+      body: |
+        La PAF ne s'est pas décrétée : son nom est **né du public**. Le
+        **17 mai 1953**, à Alger, quatre **F-84 Thunderjet** de la 3ᵉ escadre
+        de chasse de Reims enchaînent des figures serrées. Le commentateur
+        **Jacques Noetinger** lance à la foule : « Et voici… la Patrouille de
+        France ! ». L'expression fait mouche et devient officielle.
+
+        De cette origine, la PAF garde une **exigence** : chaque figure est
+        répétée des centaines de fois, car la précision au mètre près, à
+        quelques dizaines de centimètres entre appareils, ne tolère aucune
+        approximation.
+    - id: ambassadrice-de-l-armee-de-l-air
+      title: Une ambassadrice
+      body: |
+        La Patrouille de France a une **mission de représentation** : elle
+        porte les couleurs de la France et de son armée de l'Air et de
+        l'Espace dans les meetings, en France et à l'étranger. Cette mission
+        exige une **disponibilité**, une **rigueur** et un **engagement**
+        particuliers, **en vol comme au sol**.
+
+        Ses pilotes ne sont pas des acrobates professionnels : ce sont des
+        **pilotes de chasse et d'instruction** confirmés, détachés pour
+        quelques saisons, qui incarnent le **savoir-faire** collectif de leur
+        armée.
+    - id: la-grande-dame
+      title: « La grande dame »
+      strate: maitriser
+      body: |
+        Pour un candidat, la PAF est un **symbole utile** en entretien : elle
+        montre que l'excellence aéronautique est aussi une affaire de
+        **collectif**, de **confiance** et de **discipline**. On ne vole pas à
+        huit, aile dans aile, sans une cohésion totale.
+
+        Évoquer la Patrouille de France, c'est parler de l'**esprit d'équipe**
+        et du **rayonnement** de l'institution — bien au-delà de la simple
+        performance de voltige.
+  pieges:
+    - La Patrouille de France est une équipe de présentation — ce n'est pas une unité de combat.
+    - Ses pilotes viennent des escadrons de chasse et d'instruction ; ce ne sont pas des acrobates civils.
+    - Elle vole sur Alphajet (depuis 1981), pas sur avion de chasse de première ligne.

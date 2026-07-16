@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: q.eopn.paf-02
+kind: qcm
+theme: culture
+statement: >-
+  Quelle est la mission principale de la Patrouille de France ?
+choices:
+  - "Représenter et faire rayonner l'armée de l'Air et de l'Espace"
+  - "Assurer la police du ciel au-dessus du territoire"
+  - "Former les futurs pilotes de chasse"
+  - "Intercepter les avions ennemis en temps de guerre"
+correctChoices: [0]
+distractorNotes:
+  "1": "La police du ciel (PPS-A) est assurée par les escadrons de chasse opérationnels."
+  "2": "La formation des pilotes se fait à l'école de chasse, pas à la PAF."
+  "3": "La PAF est une équipe de présentation, pas une unité de combat."
+explanation: >-
+  Ambassadrice de l'armée de l'Air et de l'Espace, la Patrouille de France a
+  une mission de représentation et de rayonnement, en France comme à
+  l'étranger — en vol comme au sol.
+evaluates: [eopn.unites.la-patrouille-de-france]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

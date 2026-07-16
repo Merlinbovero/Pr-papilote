@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.eopn.paf-01
+kind: qcm
+theme: culture
+statement: >-
+  Sur quel appareil vole la Patrouille de France depuis 1981 ?
+choices:
+  - "L'Alphajet"
+  - "Le Rafale"
+  - "Le Mirage 2000"
+  - "Le PC-21"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le Rafale est l'avion de combat omnirôle de première ligne, pas celui de la PAF."
+  "2": "Le Mirage 2000 est un avion de chasse, pas l'appareil de présentation."
+  "3": "Le PC-21 est l'avion d'entraînement de la formation des pilotes de chasse."
+explanation: >-
+  La Patrouille de France vole sur Alphajet depuis 1981, en formation de huit
+  avions, depuis la base aérienne 701 de Salon-de-Provence.
+evaluates: [eopn.unites.la-patrouille-de-france]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
