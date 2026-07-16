@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: q.eopan.patmar-02
+kind: qcm
+theme: missions
+statement: >-
+  En protégeant les approches et en traquant les sous-marins hostiles, la
+  patrouille maritime contribue surtout à protéger quelle composante ?
+choices:
+  - "La Force océanique stratégique (FOST) — les SNLE de la dissuasion"
+  - "Le groupe aérien embarqué du porte-avions"
+  - "Les bases aériennes de l'armée de l'Air"
+  - "Les sémaphores du littoral"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le groupe aérien est protégé par le groupe aéronaval lui-même, pas d'abord par la PATMAR."
+  "2": "Les bases aériennes relèvent de la sûreté aérienne (PPS-A), pas de la lutte sous la mer."
+  "3": "Les sémaphores surveillent depuis la côte ; ils ne sont pas l'objet à protéger."
+explanation: >-
+  En garantissant qu'aucun sous-marin adverse ne piste nos SNLE, la patrouille
+  maritime protège la Force océanique stratégique — donc la permanence à la mer
+  de la dissuasion.
+evaluates: [eopan.missions.la-patrouille-maritime]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

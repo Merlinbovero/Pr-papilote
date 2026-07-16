@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: q.eopn.projection-01
+kind: qcm
+theme: missions
+statement: >-
+  À quoi sert principalement le ravitaillement en vol pour l'armée de l'Air et
+  de l'Espace ?
+choices:
+  - "Allonger le rayon d'action et l'endurance des avions de combat"
+  - "Réparer les avions endommagés en vol"
+  - "Remplacer les pilotes fatigués en plein vol"
+  - "Transporter des blindés sur de longues distances"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le ravitaillement en vol ne concerne que le carburant."
+  "2": "Aucun échange d'équipage ne se fait en vol."
+  "3": "Le transport de fret lourd relève de l'A400M, pas du ravitaillement lui-même."
+explanation: >-
+  En transférant du carburant d'un avion à un autre en plein ciel, le
+  ravitaillement en vol allonge le rayon d'action et l'endurance : un Rafale
+  peut frapper très loin ou patrouiller très longtemps sans se poser.
+evaluates: [eopn.missions.la-projection-et-le-ravitaillement-en-vol]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie

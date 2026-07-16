@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: eopn.missions.la-projection-et-le-ravitaillement-en-vol
+type: concept
+title: La projection de puissance et le ravitaillement en vol
+slug: la-projection-et-le-ravitaillement-en-vol
+image:
+  src: /images/fiche-a400m.jpg
+  alt: A400M Atlas de l'armée de l'Air et de l'Espace en vol
+  author: U.S. Air Force photo by Tech. Sgt. Alexandre Montes
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=180422838
+summary: >-
+  Aller loin, vite et longtemps : projeter des forces à l'autre bout du monde
+  repose sur le trio A330 MRTT Phénix — Rafale — A400M Atlas, et sur une
+  capacité clé, le ravitaillement en vol, qui allonge le bras de l'aviation.
+objectifs:
+  - Définir la projection de puissance et de forces comme mission de l'armée de l'Air et de l'Espace.
+  - Expliquer le rôle du ravitaillement en vol et le trio A330 MRTT — Rafale — A400M.
+  - Distinguer le transport tactique (A400M) du ravitaillement stratégique (A330 Phénix).
+aliases:
+  [
+    projection,
+    projection de puissance,
+    transport aérien militaire,
+    ravitaillement en vol,
+    A400M Atlas,
+    A330 MRTT Phénix,
+    Pégase,
+  ]
+module: eopn
+category: missions
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche projection de puissance et ravitaillement en vol (production éditoriale, lot O4 ; sources officielles armée de l'Air et de l'Espace).
+    author: prepapilote
+sources:
+  - title: "Airbus A400M Atlas (Armée de l'Air et de l'Espace, Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-avions/airbus-a400m-atlas
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Airbus A330 Phénix (Armée de l'Air et de l'Espace, Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-avions/airbus-a330-phenix
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopn.appareils.a400m
+    - eopn.appareils.mrtt-phenix
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.organisation.les-forces-aeriennes-strategiques
+content:
+  essentiel:
+    body: |
+      **Projeter**, c'est porter une force militaire **là où on en a besoin**,
+      souvent à des milliers de kilomètres. Pour l'armée de l'Air et de
+      l'Espace, cette capacité repose sur un **trio** complémentaire :
+      **A330 MRTT Phénix**, **Rafale** et **A400M Atlas**.
+
+      Le **ravitaillement en vol** en est la clé : en transférant du carburant
+      d'un avion à un autre en plein ciel, il **allonge le rayon d'action** et
+      l'endurance des avions de combat — un Rafale peut ainsi frapper très
+      loin, ou patrouiller très longtemps, sans se poser.
+
+      La démonstration annuelle en est l'exercice **PÉGASE** : à l'été 2024, il
+      a permis de déployer jusqu'à **7 Rafale, 5 A400M et 4 A330** dans une
+      dizaine de pays ou territoires d'Asie, d'Amérique et d'Océanie — la
+      preuve concrète que la France peut agir **loin et vite**.
+    aRetenir:
+      - Projeter, c'est porter une force là où c'est nécessaire ; le trio A330 MRTT — Rafale — A400M en est le socle.
+      - Le ravitaillement en vol allonge le rayon d'action et l'endurance des avions de combat.
+      - L'A400M Atlas assure le transport tactique et stratégique (fret, largage, terrains sommaires).
+      - L'A330 MRTT Phénix ravitaille jusqu'à deux chasseurs à la fois et emporte jusqu'à 110 t de carburant.
+  sections:
+    - id: le-transport-l-a400m
+      title: Transporter — l'A400M Atlas
+      body: |
+        L'**A400M Atlas** est le pilier du **transport aérien militaire** : il
+        emporte fret et troupes sur de longues distances, mais sait aussi
+        pénétrer **à basse altitude** en milieu hostile, **larguer** des
+        parachutistes ou du matériel, se poser sur des **terrains sommaires**
+        et lui-même **ravitailler** d'autres aéronefs.
+
+        La cible française est une flotte de **25 A400M en 2025**, portée à
+        **plus d'une trentaine** d'ici la fin de la décennie — de quoi soutenir
+        durablement les opérations extérieures et l'aide aux populations.
+    - id: le-ravitaillement-l-a330
+      title: Ravitailler — l'A330 MRTT Phénix
+      body: |
+        L'**A330 MRTT Phénix** est un **avion multirôle** : il **ravitaille**
+        jusqu'à **deux chasseurs simultanément** (ou un avion de guet E-3F),
+        emporte jusqu'à **110 tonnes de carburant**, et sert aussi au
+        **transport** de fret et de passagers, ainsi qu'aux **évacuations
+        sanitaires**.
+
+        Sa **mission première** est de ravitailler la **composante aéroportée
+        de la dissuasion nucléaire** — les Rafale des Forces aériennes
+        stratégiques. Le Phénix remplace progressivement les anciens
+        **C-135** (groupe 2/91 « Bretagne ») et les A310/A340 (escadron 3/60
+        « Esterel ») ; **15 A330 Phénix** sont attendus d'ici **2028**.
+    - id: aller-loin-un-atout-strategique
+      title: Aller loin, un atout stratégique
+      strate: maitriser
+      body: |
+        La capacité à **projeter** est ce qui distingue une armée régionale
+        d'une armée à **vocation mondiale**. Peu de pays alignent à la fois le
+        transport lourd, le ravitaillement et des chasseurs de premier plan.
+
+        Pour un candidat, comprendre la projection, c'est comprendre que la
+        **portée** compte autant que la puissance : sans ravitailleurs ni
+        transport, les meilleurs avions de combat resteraient cloués près de
+        leurs bases. C'est un argument fort pour parler de l'**autonomie
+        stratégique** de la France.
+  pieges:
+    - Ne pas confondre l'A400M (transport tactique et stratégique) et l'A330 Phénix (ravitailleur multirôle) — même si l'A400M sait aussi ravitailler.
+    - Le ravitaillement en vol ne « recharge » pas des réservoirs vides au sol — il transfère du carburant d'avion à avion, en plein ciel.
+    - La mission première du Phénix est de ravitailler la dissuasion aéroportée (FAS), pas seulement de transporter du fret.
