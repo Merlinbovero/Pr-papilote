@@ -46,6 +46,10 @@ sources:
     url: https://www.pilatus-aircraft.com/assets/files/Brochures/PC-21/Pilatus-Aircraft-Ltd-PC-21-Factsheet.pdf
     kind: institutionnel
     consultedAt: "2026-07-13"
+  - title: "« Pilatus PC-21 », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Pilatus_PC-21
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   factual:
@@ -55,6 +59,17 @@ relations:
     - eopn.selection.la-formation-du-pilote-de-chasse
     - eopn.appareils.rafale
     - eopan.appareils.cap-10
+specs:
+  crew: "2 (élève + instructeur)"
+  length: "11,23 m"
+  wingspan: "9,11 m"
+  height: "4,05 m"
+  emptyWeight: "2 270 kg"
+  maxTakeoffWeight: "4 250 kg"
+  powerplant: "1 turbopropulseur Pratt & Whitney Canada PT6A-68B (1 600 ch)"
+  maxSpeed: "685 km/h"
+  ceiling: "11 600 m"
+  range: "1 295 km"
 infobox:
   constructeur: Pilatus Aircraft (Suisse)
   role: Avion d'entraînement avancé (formation des pilotes de chasse)

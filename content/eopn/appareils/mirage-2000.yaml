@@ -53,6 +53,10 @@ sources:
     url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Dassault Mirage 2000 », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Dassault_Mirage_2000
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
@@ -60,6 +64,18 @@ relations:
     - eopn.appareils.mirage-iii
     - eopn.organisation.armee-de-l-air-et-de-l-espace
     - eopn.presentation.le-concours-eopn
+specs:
+  crew: "1 pilote (2 sur biplace)"
+  length: "14,34 m"
+  wingspan: "9,13 m"
+  height: "5,20 m"
+  emptyWeight: "7 600 kg"
+  maxTakeoffWeight: "16 500 kg (17 500 kg sur 2000-5)"
+  powerplant: "1 turboréacteur Snecma M53-P2 (98 kN avec PC)"
+  maxSpeed: "2 340 km/h (Mach 2,2)"
+  ceiling: "18 000 m"
+  range: "1 600 km (avec bidons)"
+  armament: "2 canons DEFA 30 mm ; jusqu'à 6,3 t de charges (Magic II, MICA, SCALP-EG, AASM, ASMP)"
 infobox:
   constructeur: Dassault Aviation
   role: Avion de chasse (défense aérienne, pénétration tout temps)

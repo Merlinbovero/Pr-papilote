@@ -46,6 +46,10 @@ sources:
     url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre
     kind: officiel
     consultedAt: "2026-07-13"
+  - title: "« Aérospatiale Gazelle », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9rospatiale_Gazelle
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   factual:
@@ -54,6 +58,18 @@ relations:
   related:
     - alat.appareils.tigre
     - alat.presentation.devenir-pilote-alat
+specs:
+  crew: "1 à 3"
+  length: "9,53 m"
+  rotorDiameter: "10,50 m"
+  height: "3,19 m"
+  emptyWeight: "~1 200 kg (SA 342)"
+  maxTakeoffWeight: "1 900 kg"
+  powerplant: "1 turbomoteur Turbomeca Astazou (~860 ch sur SA 342)"
+  maxSpeed: "310 km/h"
+  ceiling: "6 000 m"
+  range: "670 km"
+  armament: "canon 20 mm M621, missiles HOT ou Mistral, roquettes"
 infobox:
   constructeur: Aérospatiale (Airbus Helicopters)
   role: Hélicoptère léger (reconnaissance, appui, antichar)

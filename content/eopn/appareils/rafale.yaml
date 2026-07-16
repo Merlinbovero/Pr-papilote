@@ -54,11 +54,27 @@ sources:
     url: https://eurosae.com/wp-content/uploads/2025/05/Bonnet_Avions_militaires_II.pdf
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Dassault Rafale », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Dassault_Rafale
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopan.appareils.rafale-m
     - eopn.presentation.le-concours-eopn
+specs:
+  crew: "1 pilote (2 sur biplace)"
+  length: "15,27 m"
+  wingspan: "10,86 m"
+  height: "5,34 m"
+  emptyWeight: "9 850 kg (Rafale C)"
+  maxTakeoffWeight: "24 500 kg"
+  powerplant: "2 turboréacteurs Safran M88-2 (75 kN avec PC chacun)"
+  maxSpeed: "1 912 km/h (Mach 1,8)"
+  ceiling: "15 240 m (50 000 ft)"
+  range: "1 056 km (rayon de pénétration, 3 t de bombes + 4 MICA)"
+  armament: "1 canon Nexter 30 mm ; jusqu'à 9,5 t de charges (MICA, Meteor, SCALP, AASM, AM39, ASMP-A)"
 infobox:
   constructeur: Dassault Aviation
   role: Avion de combat omnirôle

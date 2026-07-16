@@ -45,6 +45,10 @@ sources:
     url: https://www.gifas.fr/press-summary/l-armee-de-l-air-et-de-l-espace-receptionne-son-12eme-a330-mrtt
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Airbus A330 MRTT », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Airbus_A330_MRTT
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   factual:
@@ -54,6 +58,17 @@ relations:
     - eopn.bases.istres
     - eopn.appareils.rafale
     - eopn.appareils.a400m
+specs:
+  crew: "2 pilotes + équipage"
+  length: "58,80 m"
+  wingspan: "60,30 m"
+  height: "17,40 m"
+  maxTakeoffWeight: "233 000 kg"
+  powerplant: "2 turboréacteurs (GE CF6-80 ou RR Trent 700, ~320 kN chacun)"
+  maxSpeed: "913 km/h (Mach 0,86)"
+  ceiling: "12 600 m"
+  range: "7 400 km"
+  armament: "jusqu'à 111 t de carburant (60 t transférables) ; ~300 passagers ou 130 civières"
 infobox:
   constructeur: Airbus (dérivé de l'A330-200)
   role: Ravitaillement en vol, transport stratégique, évacuation médicale, soutien de la dissuasion

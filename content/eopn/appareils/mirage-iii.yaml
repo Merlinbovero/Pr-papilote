@@ -46,12 +46,28 @@ sources:
     url: https://www.dassault-aviation.com/en/passion/aircraft/military-dassault-aircraft/mirage-iii/
     kind: institutionnel
     consultedAt: "2026-07-14"
+  - title: "« Dassault Mirage III », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Dassault_Mirage_III
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopn.appareils.mirage-iv
     - eopn.appareils.mirage-2000
     - eopn.histoire.histoire-de-l-armee-de-l-air
+specs:
+  crew: "1 pilote"
+  length: "14,77 m"
+  wingspan: "8,22 m"
+  height: "4,25 m"
+  emptyWeight: "5 922 kg"
+  maxTakeoffWeight: "11 700 kg"
+  powerplant: "1 turboréacteur Snecma Atar 9C (~59 kN avec PC)"
+  maxSpeed: "2 350 km/h (Mach 2,2)"
+  ceiling: "16 500 m"
+  range: "1 200 km"
+  armament: "2 canons DEFA 552 de 30 mm ; 3 000 kg de charges"
 infobox:
   constructeur: Dassault (GAMD)
   role: Intercepteur puis chasseur polyvalent à aile delta

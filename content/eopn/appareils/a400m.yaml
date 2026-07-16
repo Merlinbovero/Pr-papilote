@@ -45,12 +45,28 @@ sources:
     url: https://air.defense.gouv.fr
     kind: officiel
     consultedAt: "2026-07-13"
+  - title: "« Airbus A400M Atlas », Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Airbus_A400M_Atlas
+    kind: encyclopedie
+    consultedAt: "2026-07-16"
 status: publie
 relations:
   related:
     - eopn.organisation.armee-de-l-air-et-de-l-espace
     - eopn.appareils.rafale
     - eopn.presentation.le-concours-eopn
+specs:
+  crew: "3 à 4 (2 pilotes, 1 chef de soute)"
+  length: "45,09 m"
+  wingspan: "42,36 m"
+  height: "14,68 m"
+  emptyWeight: "80 000 kg"
+  maxTakeoffWeight: "141 000 kg"
+  powerplant: "4 turbopropulseurs EuroProp TP400-D6 (11 000 ch chacun)"
+  maxSpeed: "882 km/h (Mach 0,72)"
+  ceiling: "12 190 m"
+  range: "8 700 km à vide ; 6 400 km avec 20 t"
+  armament: "charge utile jusqu'à 37 t"
 infobox:
   constructeur: Airbus Defence and Space
   role: Avion de transport militaire (tactique et stratégique)

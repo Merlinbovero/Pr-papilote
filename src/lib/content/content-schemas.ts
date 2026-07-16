@@ -175,7 +175,7 @@ const isoDateSchema = z.iso.date();
 export const sourceSchema = z.object({
   title: z.string().min(1),
   url: z.url().optional(),
-  kind: z.enum(["officiel", "institutionnel", "presse", "ouvrage"]),
+  kind: z.enum(["officiel", "institutionnel", "presse", "ouvrage", "encyclopedie"]),
   consultedAt: isoDateSchema,
 });
 
@@ -308,6 +308,29 @@ export const serviceSchema = z.object({
 
 export type Service = z.infer<typeof serviceSchema>;
 
+/**
+ * Caractéristiques techniques chiffrées d'un aéronef (gabarit Appareils, F2).
+ * Toutes facultatives, chaîne libre (valeur + unité) : on n'invente jamais un
+ * chiffre pour remplir un champ ; un champ inconnu est simplement omis. Chaque
+ * valeur saisie est couverte par une source de la fiche.
+ */
+export const aircraftSpecsSchema = z.object({
+  crew: z.string().min(1).optional(),
+  length: z.string().min(1).optional(),
+  wingspan: z.string().min(1).optional(),
+  rotorDiameter: z.string().min(1).optional(),
+  height: z.string().min(1).optional(),
+  emptyWeight: z.string().min(1).optional(),
+  maxTakeoffWeight: z.string().min(1).optional(),
+  powerplant: z.string().min(1).optional(),
+  maxSpeed: z.string().min(1).optional(),
+  ceiling: z.string().min(1).optional(),
+  range: z.string().min(1).optional(),
+  armament: z.string().min(1).optional(),
+});
+
+export type AircraftSpecs = z.infer<typeof aircraftSpecsSchema>;
+
 // ---------------------------------------------------------------------------
 // Fiche
 // ---------------------------------------------------------------------------
@@ -365,6 +388,8 @@ export const ficheMetadataBaseSchema = z.object({
    * en cours / retiré de la catégorie « Appareils ».
    */
   service: serviceSchema.optional(),
+  /** Caractéristiques techniques chiffrées — aéronefs uniquement (F2). */
+  specs: aircraftSpecsSchema.optional(),
   /**
    * Photographie d'illustration (design pass P1) : une vraie photo libre de
    * droits vérifiée qui montre le sujet de la fiche (appareil, base, instrument).
@@ -410,11 +435,19 @@ export function refineFiche(fiche: FicheLike, ctx: z.RefinementCtx): void {
       }
     }
   }
-  if (fiche.service && fiche.type !== "appareil" && fiche.type !== "helicoptere") {
+  const isAircraft = fiche.type === "appareil" || fiche.type === "helicoptere";
+  if (fiche.service && !isAircraft) {
     ctx.addIssue({
       code: "custom",
       path: ["service"],
       message: `Le champ « service » est réservé aux aéronefs (appareil, helicoptere), pas à « ${fiche.type} ».`,
+    });
+  }
+  if (fiche.specs && !isAircraft) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["specs"],
+      message: `Le champ « specs » est réservé aux aéronefs (appareil, helicoptere), pas à « ${fiche.type} ».`,
     });
   }
   if (fiche.revisions.length > 0) {

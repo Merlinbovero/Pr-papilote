@@ -8,6 +8,7 @@ import { FicheFigure } from "@/components/content/fiche-figure";
 import { FicheHeader } from "@/components/content/fiche-header";
 import { FichePhotoBanner } from "@/components/content/fiche-photo";
 import { ServiceStatusBadge } from "@/components/content/service-badge";
+import { AircraftSpecsBlock } from "@/components/content/aircraft-specs";
 import { FicheNav } from "@/components/content/fiche-nav";
 import { FicheSection } from "@/components/content/fiche-section";
 import { Infobox } from "@/components/content/infobox";
@@ -244,6 +245,8 @@ export default async function FichePage({ params }: FichePageProps) {
               ))}
             </FicheSection>
           ))}
+
+          {fiche.specs ? <AircraftSpecsBlock specs={fiche.specs} /> : null}
 
           {fiche.content.pieges.length > 0 ? <PitfallsBlock items={fiche.content.pieges} /> : null}
 
