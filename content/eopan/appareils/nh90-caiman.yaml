@@ -3,6 +3,9 @@ id: eopan.appareils.nh90-caiman
 type: helicoptere
 title: NH90 Caïman Marine
 slug: nh90-caiman
+service:
+  status: actif
+  operator: Marine nationale
 image:
   src: /images/fiche-nh90-caiman.jpg
   alt: Hélicoptère NH90 Caïman Marine à l'appontage

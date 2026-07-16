@@ -3,6 +3,9 @@ id: alat.appareils.guepard
 type: helicoptere
 title: Guépard (H160M)
 slug: guepard
+service:
+  status: commande
+  operator: Aviation légère de l'armée de Terre
 image:
   src: /images/fiche-guepard.jpg
   alt: Hélicoptère Guépard (H160M) au salon du Bourget

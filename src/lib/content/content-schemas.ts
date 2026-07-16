@@ -275,6 +275,39 @@ export const fichePhotoSchema = z.object({
 
 export type FichePhoto = z.infer<typeof fichePhotoSchema>;
 
+/**
+ * Statut de service d'un aéronef (gabarit Appareils, Phase 6.2). Distinctions
+ * volontaires : on ne confond pas commandé / en essais / annoncé / retiré.
+ */
+export const serviceStatusSchema = z.enum([
+  "actif", // en service opérationnel
+  "commande", // commandé, pas encore livré
+  "essais", // en essais ou évaluation
+  "annonce", // programme annoncé / futur
+  "en-retrait", // en cours de retrait
+  "retire", // retiré du service
+  "historique", // appareil du passé
+]);
+
+export type ServiceStatus = z.infer<typeof serviceStatusSchema>;
+
+/** Données de service structurées d'un aéronef (dates factuelles, sourcées). */
+export const serviceSchema = z.object({
+  status: serviceStatusSchema,
+  /** Année du premier vol. */
+  firstFlight: z.int().min(1900).max(2100).optional(),
+  /** Année d'entrée en service. */
+  introducedAt: z.int().min(1900).max(2100).optional(),
+  /** Année de retrait du service. */
+  retiredAt: z.int().min(1900).max(2100).optional(),
+  /** Année d'entrée en service prévue (programmes futurs). */
+  plannedEntryAt: z.int().min(1900).max(2100).optional(),
+  /** Exploitant principal en France (armée / composante). */
+  operator: z.string().min(1).optional(),
+});
+
+export type Service = z.infer<typeof serviceSchema>;
+
 // ---------------------------------------------------------------------------
 // Fiche
 // ---------------------------------------------------------------------------
@@ -327,6 +360,12 @@ export const ficheMetadataBaseSchema = z.object({
   /** Données structurées des fiches-objet (exigences par type). */
   infobox: z.record(z.string(), infoboxValueSchema).optional(),
   /**
+   * Statut de service structuré — réservé aux fiches d'aéronef (appareil,
+   * hélicoptère). Alimente le badge de statut et le regroupement actuel /
+   * en cours / retiré de la catégorie « Appareils ».
+   */
+  service: serviceSchema.optional(),
+  /**
    * Photographie d'illustration (design pass P1) : une vraie photo libre de
    * droits vérifiée qui montre le sujet de la fiche (appareil, base, instrument).
    * Fichier optimisé dans public/images ; auteur/licence/source obligatoires
@@ -370,6 +409,13 @@ export function refineFiche(fiche: FicheLike, ctx: z.RefinementCtx): void {
         });
       }
     }
+  }
+  if (fiche.service && fiche.type !== "appareil" && fiche.type !== "helicoptere") {
+    ctx.addIssue({
+      code: "custom",
+      path: ["service"],
+      message: `Le champ « service » est réservé aux aéronefs (appareil, helicoptere), pas à « ${fiche.type} ».`,
+    });
   }
   if (fiche.revisions.length > 0) {
     const versions = fiche.revisions.map((r) => r.version);

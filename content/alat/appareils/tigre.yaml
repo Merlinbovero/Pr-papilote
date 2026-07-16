@@ -3,6 +3,9 @@ id: alat.appareils.tigre
 type: helicoptere
 title: L'hélicoptère de combat Tigre
 slug: tigre
+service:
+  status: actif
+  operator: Aviation légère de l'armée de Terre
 image:
   src: /images/fiche-tigre.jpg
   alt: Hélicoptère de combat Tigre en vol

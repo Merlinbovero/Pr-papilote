@@ -3,6 +3,9 @@ id: eopan.appareils.cap-10
 type: appareil
 title: Cap 10
 slug: cap-10
+service:
+  status: actif
+  operator: Marine nationale
 image:
   src: /images/fiche-cap-10.jpg
   alt: Mudry CAP 10B, biplace de voltige et de sélection, en vol

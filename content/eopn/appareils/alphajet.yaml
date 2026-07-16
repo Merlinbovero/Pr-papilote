@@ -3,6 +3,9 @@ id: eopn.appareils.alphajet
 type: appareil
 title: Alphajet
 slug: alphajet
+service:
+  status: actif
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-alphajet.jpg
   alt: Alphajet de l'armée de l'Air et de l'Espace

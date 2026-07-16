@@ -3,6 +3,9 @@ id: alat.appareils.nh90-caiman-tth
 type: helicoptere
 title: NH90 Caïman TTH
 slug: nh90-caiman-tth
+service:
+  status: actif
+  operator: Aviation légère de l'armée de Terre
 image:
   src: /images/fiche-nh90-caiman-tth.jpg
   alt: Hélicoptère de manœuvre NH90 Caïman

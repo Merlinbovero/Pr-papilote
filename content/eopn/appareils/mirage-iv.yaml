@@ -3,6 +3,9 @@ id: eopn.appareils.mirage-iv
 type: appareil
 title: Mirage IV
 slug: mirage-iv
+service:
+  status: retire
+  operator: Armée de l'Air et de l'Espace
 image:
   src: /images/fiche-mirage-iv.jpg
   alt: Dassault Mirage IV, bombardier de la dissuasion

@@ -3,6 +3,9 @@ id: eopan.appareils.e-2c-hawkeye
 type: appareil
 title: E-2C Hawkeye
 slug: e-2c-hawkeye
+service:
+  status: actif
+  operator: Marine nationale
 image:
   src: /images/fiche-e-2c-hawkeye.jpg
   alt: E-2C Hawkeye de la Flottille 4F à l'appontage sur un porte-avions
