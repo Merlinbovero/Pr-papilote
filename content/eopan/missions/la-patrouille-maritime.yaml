@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: eopan.missions.la-patrouille-maritime
+type: concept
+title: La patrouille maritime et la lutte sous la mer
+slug: la-patrouille-maritime
+image:
+  src: /images/fiche-atlantique-2.jpg
+  alt: Atlantique 2 de la Marine nationale en vol de patrouille maritime
+  author: Jonathan Payne
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=178291388
+summary: >-
+  Traquer les sous-marins, surveiller les navires, protéger la dissuasion :
+  la patrouille maritime est une mission rare, portée par l'Atlantique 2 —
+  l'un des rares avions au monde conçus pour la lutte anti-sous-marine.
+objectifs:
+  - Définir la patrouille maritime et la lutte sous la mer (ASM) comme missions de l'aéronautique navale.
+  - Situer l'Atlantique 2 (base de Lann-Bihoué, flottilles 21F et 23F) au cœur de ce dispositif.
+  - Expliquer le lien entre patrouille maritime et protection de la Force océanique stratégique.
+aliases:
+  [
+    patrouille maritime,
+    PATMAR,
+    lutte sous la mer,
+    lutte anti-sous-marine,
+    ASM,
+    patrouilleurs,
+    Atlantique 2,
+  ]
+module: eopan
+category: missions
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — fiche patrouille maritime et lutte sous la mer (production éditoriale, lot O4 ; sources officielles Marine nationale / defense.gouv.fr).
+    author: prepapilote
+sources:
+  - title: "Atlantique 2 (ATL 2) — Force de l'aéronautique navale (Marine nationale, Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/atlantique-2-atl-2
+    kind: officiel
+    consultedAt: "2026-07-16"
+  - title: "Nos missions — Marine nationale (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/marine/nos-missions
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+relations:
+  related:
+    - eopan.appareils.atlantique-2
+    - eopan.missions.missions-de-la-marine
+    - eopan.organisation.aeronautique-navale
+    - eopan.concepts.la-force-aeronavale-nucleaire
+content:
+  essentiel:
+    body: |
+      La **patrouille maritime (PATMAR)** est la mission de surveillance et de
+      combat menée **au-dessus de la mer**, loin des côtes, par des avions à
+      **grande endurance**. En France, elle repose sur l'**Atlantique 2
+      (ATL2)**, mis en œuvre depuis la base d'aéronautique navale de
+      **Lann-Bihoué** par les **flottilles 21F et 23F**.
+
+      Sa mission la plus emblématique est la **lutte sous la mer** — la
+      **lutte anti-sous-marine (ASM)** : détecter, pister puis, si nécessaire,
+      traiter un sous-marin adverse. L'ATL2 est **l'un des rares avions en
+      service au monde conçus spécialement pour cette mission**. Il assure
+      aussi la **lutte anti-navires**, l'**action de l'État en mer** et
+      l'**appui aux forces au sol**.
+
+      Un équipage complet compte **14 personnes** — dont pilotes, coordonnateur
+      tactique, détecteurs et opérateurs acoustiques — pour une endurance
+      pouvant atteindre **14 heures de vol**.
+    aRetenir:
+      - La patrouille maritime surveille et combat au large ; sa mission phare est la lutte sous la mer (ASM).
+      - L'Atlantique 2 est mis en œuvre depuis Lann-Bihoué (flottilles 21F et 23F), équipage de 14, jusqu'à 14 h d'endurance.
+      - L'ATL2 est l'un des rares avions au monde conçus spécialement pour la lutte anti-sous-marine.
+      - La patrouille maritime protège la Force océanique stratégique — donc la dissuasion.
+  sections:
+    - id: traquer-sous-la-mer
+      title: Traquer un sous-marin
+      body: |
+        La lutte anti-sous-marine est un travail de **patience** et
+        d'**écoute** : l'avion sème des **bouées acoustiques** (sonobouées),
+        analyse les signatures sonores, croise les indices, puis affine sa
+        recherche pour **localiser** la cible avant de pouvoir la traiter.
+
+        Voler **bas et longtemps**, souvent au-dessus de l'océan sans repère,
+        exige une endurance et une **maniabilité à basse altitude**
+        remarquables — d'où l'importance de l'équipage nombreux et spécialisé
+        qui arme l'ATL2.
+    - id: proteger-la-dissuasion
+      title: Protéger la dissuasion
+      body: |
+        Au-delà du renseignement et du combat naval, la patrouille maritime a
+        une mission **stratégique** : contribuer à la **sûreté des approches**
+        et à la protection de la **Force océanique stratégique (FOST)** — les
+        **SNLE** qui portent la dissuasion.
+
+        Garantir qu'aucun sous-marin hostile ne piste nos propres sous-marins
+        est une condition de la **permanence à la mer** de la dissuasion : la
+        patrouille maritime travaille ainsi, discrètement, au cœur de la
+        souveraineté nationale.
+    - id: une-mission-polyvalente
+      title: Une mission polyvalente
+      strate: maitriser
+      body: |
+        L'ATL2 n'est pas qu'un chasseur de sous-marins. La même plateforme
+        surveille le **trafic de surface**, participe à l'**action de l'État
+        en mer** (lutte contre les trafics, secours, pollutions) et peut,
+        rénové au **standard 6**, appuyer des **opérations à terre** par le
+        renseignement. C'est cette **polyvalence** — un seul avion, plusieurs
+        métiers — qui fait sa valeur.
+  pieges:
+    - La patrouille maritime n'est pas de la simple surveillance — sa mission phare est la lutte anti-sous-marine (ASM).
+    - Ne pas confondre la FOST (les SNLE, cœur de la dissuasion) avec la patrouille maritime qui la protège.
+    - L'Atlantique 2 vole depuis une base à terre (Lann-Bihoué) — ce n'est pas un avion embarqué sur porte-avions.

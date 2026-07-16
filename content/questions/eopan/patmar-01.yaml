@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: q.eopan.patmar-01
+kind: qcm
+theme: missions
+statement: >-
+  Quelle est la mission emblématique de la patrouille maritime assurée par
+  l'Atlantique 2 ?
+choices:
+  - "La lutte sous la mer — la lutte anti-sous-marine (ASM)"
+  - "Le transport de troupes vers le porte-avions"
+  - "L'interception des avions de chasse ennemis"
+  - "Le ravitaillement en vol des Rafale"
+correctChoices: [0]
+distractorNotes:
+  "1": "L'ATL2 n'est pas un avion de transport embarqué."
+  "2": "L'interception relève de la chasse (PPS-A), pas de la patrouille maritime."
+  "3": "Le ravitaillement en vol est une mission de l'armée de l'Air (A330 Phénix, A400M)."
+explanation: >-
+  La patrouille maritime surveille et combat au large ; sa mission phare est la
+  lutte anti-sous-marine. L'Atlantique 2 est l'un des rares avions au monde
+  conçus spécialement pour détecter et traiter les sous-marins.
+evaluates: [eopan.missions.la-patrouille-maritime]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan]
+status: publie

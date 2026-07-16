@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: q.eopn.projection-02
+kind: qcm
+theme: missions
+statement: >-
+  Dans le trio de la projection, quel appareil a pour mission première de
+  ravitailler la composante aéroportée de la dissuasion ?
+choices:
+  - "L'A330 MRTT Phénix"
+  - "L'A400M Atlas"
+  - "Le Rafale"
+  - "Le PC-21"
+correctChoices: [0]
+distractorNotes:
+  "1": "L'A400M est d'abord un avion de transport tactique et stratégique (il sait aussi ravitailler)."
+  "2": "Le Rafale est l'avion de combat ravitaillé, pas le ravitailleur."
+  "3": "Le PC-21 est un avion d'entraînement et de formation."
+explanation: >-
+  L'A330 MRTT Phénix ravitaille jusqu'à deux chasseurs à la fois et emporte
+  jusqu'à 110 t de carburant ; sa mission première est de ravitailler les
+  Rafale des Forces aériennes stratégiques (dissuasion aéroportée).
+evaluates: [eopn.missions.la-projection-et-le-ravitaillement-en-vol]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopn]
+status: publie
