@@ -3,7 +3,7 @@ import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { BiaExamPlayer } from "@/features/bia/exam-player";
 import { getBiaConfig } from "@/lib/bia/config";
-import { getBiaExamPools, toBiaPlayerQuestion, type BiaPlayerQuestion } from "@/lib/bia/data";
+import { getBiaExamPools } from "@/lib/bia/data";
 
 export const metadata: Metadata = {
   title: "Examen blanc BIA — 100 questions",
@@ -18,14 +18,11 @@ export const metadata: Metadata = {
  */
 export default function BiaExamenBlancPage() {
   const config = getBiaConfig();
+  // Le vivier (~450 Ko) n'est plus sérialisé dans la page : le player le
+  // récupère à la demande depuis /bia/examen-blanc/pool au lancement (Phase 16).
+  // Seul le total (un nombre) est calculé au serveur pour l'écran d'accueil.
   const pools = getBiaExamPools();
-
-  const serialized: Record<string, BiaPlayerQuestion[]> = {};
-  for (const matiere of config.matieres) {
-    serialized[matiere.slug] = (pools.byMatiere.get(matiere.slug) ?? []).map((q) =>
-      toBiaPlayerQuestion(q, matiere.slug)
-    );
-  }
+  const totalAvailable = [...pools.byMatiere.values()].reduce((sum, list) => sum + list.length, 0);
   const matiereNames = Object.fromEntries(config.matieres.map((m) => [m.slug, m.name]));
 
   return (
@@ -44,7 +41,12 @@ export default function BiaExamenBlancPage() {
           qui devient votre programme de révision.
         </p>
       </header>
-      <BiaExamPlayer pools={serialized} config={config} matiereNames={matiereNames} />
+      <BiaExamPlayer
+        poolUrl="/bia/examen-blanc/pool"
+        totalAvailable={totalAvailable}
+        config={config}
+        matiereNames={matiereNames}
+      />
     </StandalonePageShell>
   );
 }

@@ -61,15 +61,26 @@ function writeJson(key: string, value: unknown) {
 }
 
 interface BiaExamPlayerProps {
-  pools: Record<string, BiaPlayerQuestion[]>;
+  /** URL du vivier JSON, récupéré à la demande au lancement (Phase 16). */
+  poolUrl: string;
+  /** Nombre total de questions du vivier (compté au serveur, sans les données). */
+  totalAvailable: number;
   config: BiaConfig;
   matiereNames: Record<string, string>;
 }
 
 type Phase = "intro" | "running" | "review";
 
-export function BiaExamPlayer({ pools, config, matiereNames }: BiaExamPlayerProps) {
+export function BiaExamPlayer({
+  poolUrl,
+  totalAvailable,
+  config,
+  matiereNames,
+}: BiaExamPlayerProps) {
   const [phase, setPhase] = React.useState<Phase>("intro");
+  const poolsCache = React.useRef<Record<string, BiaPlayerQuestion[]> | null>(null);
+  const [loading, setLoading] = React.useState(false);
+  const [loadError, setLoadError] = React.useState(false);
   const [questions, setQuestions] = React.useState<BiaExamQuestion<BiaPlayerQuestion>[]>([]);
   const [shortagesCount, setShortagesCount] = React.useState(0);
   const [index, setIndex] = React.useState(0);
@@ -91,7 +102,23 @@ export function BiaExamPlayer({ pools, config, matiereNames }: BiaExamPlayerProp
     return () => cancelAnimationFrame(id);
   }, []);
 
-  const start = () => {
+  const start = async () => {
+    let pools = poolsCache.current;
+    if (!pools) {
+      setLoading(true);
+      setLoadError(false);
+      try {
+        const res = await fetch(poolUrl);
+        if (!res.ok) throw new Error(String(res.status));
+        pools = (await res.json()) as Record<string, BiaPlayerQuestion[]>;
+        poolsCache.current = pools;
+      } catch {
+        setLoading(false);
+        setLoadError(true);
+        return;
+      }
+      setLoading(false);
+    }
     const seenIds = new Set(readJson<string[]>(SEEN_STORAGE_KEY, []));
     const byMatiere = new Map(Object.entries(pools));
     const exam = composeBiaExam({
@@ -171,8 +198,10 @@ export function BiaExamPlayer({ pools, config, matiereNames }: BiaExamPlayerProp
       <ExamIntro
         config={config}
         history={history}
-        totalAvailable={Object.values(pools).reduce((sum, list) => sum + list.length, 0)}
+        totalAvailable={totalAvailable}
         onStart={start}
+        loading={loading}
+        loadError={loadError}
       />
     );
   }
@@ -354,11 +383,15 @@ function ExamIntro({
   history,
   totalAvailable,
   onStart,
+  loading,
+  loadError,
 }: {
   config: BiaConfig;
   history: ExamHistoryEntry[];
   totalAvailable: number;
   onStart: () => void;
+  loading: boolean;
+  loadError: boolean;
 }) {
   const total = config.matieres.length * config.examen.questionsParMatiere;
   return (
@@ -384,10 +417,19 @@ function ExamIntro({
             encore rencontrées ({totalAvailable} questions au total dans les viviers).
           </li>
         </ul>
-        <Button size="lg" onClick={onStart}>
+        <Button size="lg" onClick={onStart} disabled={loading}>
           <PlayIcon aria-hidden className="size-4" />
-          Commencer l&apos;examen
+          {loading ? "Préparation…" : "Commencer l'examen"}
         </Button>
+        {loadError ? (
+          <Alert variant="destructive">
+            <AlertTitle>Chargement impossible</AlertTitle>
+            <AlertDescription>
+              Le vivier de questions n&apos;a pas pu être récupéré. Vérifiez votre connexion et
+              réessayez.
+            </AlertDescription>
+          </Alert>
+        ) : null}
       </div>
 
       {history.length > 0 ? (
