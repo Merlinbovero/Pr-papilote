@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.debit-01
+kind: qcm
+theme: continuite
+statement: >-
+  Qu'appelle-t-on le débit d'un écoulement d'air ?
+choices:
+  - "La quantité d'air traversant une section par unité de temps"
+  - "La vitesse de l'air à un point donné"
+  - "La pression de l'air dans le conduit"
+  - "La masse volumique de l'air"
+correctChoices: [0]
+distractorNotes:
+  "1": "La vitesse n'est qu'un des facteurs du débit (débit = section × vitesse)."
+explanation: >-
+  Le débit mesure la quantité d'air qui traverse une section pendant une unité de
+  temps : débit volumique Qv = S·V, débit massique Qm = ρ·S·V.
+evaluates: [fondamentaux.aerodynamique.conservation-du-debit]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

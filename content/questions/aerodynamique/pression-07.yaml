@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-07
+kind: qcm
+theme: pression
+statement: >-
+  Quelle est la masse volumique de l'air retenue dans l'atmosphère standard au
+  niveau de la mer ?
+choices:
+  - "≈ 1,225 kg/m³"
+  - "≈ 1000 kg/m³"
+  - "≈ 0,225 kg/m³"
+  - "≈ 13 kg/m³"
+correctChoices: [0]
+distractorNotes:
+  "1": "1000 kg/m³ est la masse volumique de l'eau, pas de l'air."
+explanation: >-
+  En atmosphère standard (ISA) au niveau de la mer, ρ ≈ 1,225 kg/m³ (souvent
+  arrondi à 1,3 kg/m³ pour un calcul de tête).
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

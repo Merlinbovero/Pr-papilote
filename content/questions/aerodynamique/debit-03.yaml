@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.debit-03
+kind: qcm
+theme: continuite
+statement: >-
+  Que se passe-t-il pour la vitesse de l'air quand la section d'un conduit se
+  resserre (débit conservé) ?
+choices:
+  - "La vitesse augmente"
+  - "La vitesse diminue"
+  - "La vitesse ne change pas"
+  - "La vitesse s'annule"
+correctChoices: [0]
+explanation: >-
+  À débit constant, S·V = constante : si S diminue, V doit augmenter. L'air
+  accélère dans un rétrécissement.
+evaluates: [fondamentaux.aerodynamique.conservation-du-debit]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

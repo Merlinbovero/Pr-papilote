@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-01
+kind: qcm
+theme: pression
+statement: >-
+  Qu'est-ce que la pression statique de l'air ?
+choices:
+  - "La pression exercée dans toutes les directions, indépendamment du mouvement"
+  - "La pression due uniquement à la vitesse de l'air"
+  - "La somme de la pression dynamique et de la pression totale"
+  - "La pression mesurée face au vent relatif"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est la pression dynamique (q), liée au mouvement."
+  "3": "Face au vent relatif, on mesure la pression totale."
+explanation: >-
+  La pression statique s'exerce dans toutes les directions et ne dépend pas du
+  mouvement de l'air ; en vol elle correspond à la pression atmosphérique de
+  l'altitude.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

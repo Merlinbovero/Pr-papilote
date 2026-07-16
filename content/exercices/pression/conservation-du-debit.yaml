@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.pression-conservation-debit
+title: Appliquer la conservation du débit
+consigne: >-
+  De l'air circule dans un conduit qui se resserre. Calculez la vitesse dans la
+  section réduite.
+donnees: >-
+  Section 1 : S₁ = 0,20 m², vitesse V₁ = 10 m/s. Section 2 : S₂ = 0,05 m². Air
+  supposé peu compressible (ρ constante).
+methode: >-
+  Utiliser la continuité S₁·V₁ = S₂·V₂ et isoler V₂ = S₁·V₁ / S₂.
+correction: >-
+  V₂ = (0,20 × 10) / 0,05 = 2 / 0,05 = 40 m/s. La section est divisée par 4, la
+  vitesse est donc multipliée par 4.
+interpretation: >-
+  C'est exactement ce qui se produit là où les filets d'air se resserrent
+  au-dessus d'une aile : la vitesse augmente, ce qui prépare la baisse de
+  pression et la portance.
+notionLiee: fondamentaux.aerodynamique.conservation-du-debit
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

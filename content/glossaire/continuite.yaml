@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.continuite
+title: Continuité (loi de)
+definition: >-
+  Principe de conservation du débit le long d'un écoulement : la même masse d'air
+  traverse chaque section par unité de temps (ρ·S·V constant). En air peu
+  compressible, cela revient à S·V = constante, donc un rétrécissement accélère
+  l'air.
+english: continuity
+synonyms: [conservation du débit]
+ficheId: fondamentaux.aerodynamique.conservation-du-debit
+tags: []
+status: publie

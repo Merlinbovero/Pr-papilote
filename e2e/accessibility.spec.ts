@@ -14,6 +14,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "dictionnaire", path: "/dictionnaire" },
   { name: "parcours BIA", path: "/bia" },
   { name: "cours (forces et lois de Newton)", path: "/cours/forces-et-lois-de-newton" },
+  { name: "cours (pression et écoulement)", path: "/cours/pression-et-ecoulement" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

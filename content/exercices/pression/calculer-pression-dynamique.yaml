@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.pression-calculer-q
+title: Calculer une pression dynamique
+consigne: >-
+  Calculez la pression dynamique d'un avion volant à 50 m/s au niveau de la mer.
+donnees: >-
+  Vitesse V = 50 m/s. Masse volumique de l'air ρ = 1,225 kg/m³ (atmosphère
+  standard au niveau de la mer).
+methode: >-
+  Appliquer q = ½·ρ·V². Élever d'abord la vitesse au carré, puis multiplier par
+  ρ et par ½. Vérifier l'unité (pascal).
+correction: >-
+  q = ½ × 1,225 × 50² = ½ × 1,225 × 2500 = 1531 Pa (environ 1,53 kPa).
+interpretation: >-
+  La pression dynamique dépend du carré de la vitesse : à 100 m/s, elle serait
+  quatre fois plus grande (≈ 6125 Pa). C'est pourquoi la vitesse pèse tant sur
+  la portance et la traînée.
+notionLiee: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

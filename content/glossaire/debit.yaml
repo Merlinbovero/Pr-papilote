@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.debit
+title: Débit
+definition: >-
+  Quantité d'air qui traverse une section par unité de temps. Le débit volumique
+  vaut Qv = S·V (m³/s) ; le débit massique vaut Qm = ρ·S·V (kg/s). Le long d'un
+  écoulement, le débit se conserve.
+english: flow rate
+synonyms: [débit volumique, débit massique]
+ficheId: fondamentaux.aerodynamique.conservation-du-debit
+tags: []
+status: publie

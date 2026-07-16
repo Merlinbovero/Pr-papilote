@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.pression-statique
+title: Pression statique
+definition: >-
+  Pression que l'air exerce dans toutes les directions, indépendamment de son
+  mouvement. En vol, elle correspond à la pression atmosphérique à l'altitude
+  considérée ; on la capte par une prise statique parallèle à l'écoulement.
+english: static pressure
+synonyms: [ps]
+ficheId: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+tags: []
+status: publie

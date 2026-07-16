@@ -37,3 +37,18 @@ test("la progression démarre (découverte) au chargement", async ({ page }) => 
   await page.goto(COURSE);
   await expect(page.getByText("Ma progression", { exact: true })).toBeVisible();
 });
+
+test("le cours 2 (pression et écoulement) compose ses deux fiches sans les dupliquer", async ({
+  page,
+}) => {
+  await page.goto("/cours/pression-et-ecoulement");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /pression et écoulement/i })
+  ).toBeVisible();
+  // Les deux fiches canoniques sont référencées (liens), pas recopiées.
+  await expect(
+    page.getByRole("link", { name: /pression statique, dynamique et totale/i })
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /la conservation du débit/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /essentiel à retenir/i })).toBeVisible();
+});

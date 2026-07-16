@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.pression-totale
+title: Pression totale
+definition: >-
+  Somme de la pression statique et de la pression dynamique (pt = ps + q). C'est
+  la pression obtenue en arrêtant l'air face au vent relatif ; le tube de Pitot
+  la capte pour en déduire la vitesse.
+english: total pressure
+synonyms: [pt, pression d'arrêt]
+ficheId: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+tags: []
+status: publie

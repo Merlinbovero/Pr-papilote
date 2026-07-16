@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.debit-04
+kind: qcm
+theme: continuite
+statement: >-
+  Quelle est l'expression du débit massique Qm ?
+choices:
+  - "Qm = ρ·S·V"
+  - "Qm = S·V"
+  - "Qm = ½·ρ·V²"
+  - "Qm = ρ / (S·V)"
+correctChoices: [0]
+distractorNotes:
+  "1": "S·V est le débit volumique Qv, pas le débit massique."
+  "2": "½·ρ·V² est la pression dynamique."
+explanation: >-
+  Le débit massique tient compte de la masse volumique : Qm = ρ·S·V (kg/s). C'est
+  lui qui se conserve rigoureusement, même quand l'air se comprime.
+evaluates: [fondamentaux.aerodynamique.conservation-du-debit]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

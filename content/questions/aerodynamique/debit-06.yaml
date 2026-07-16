@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.debit-06
+kind: vrai-faux
+theme: continuite
+statement: >-
+  Au-dessus d'une aile, les filets d'air se resserrent et l'air y accélère.
+answer: true
+explanation: >-
+  Le resserrement des filets d'air au-dessus de l'aile impose, par conservation
+  du débit, une accélération. Cette accélération prépare la baisse de pression
+  (Venturi) à l'origine d'une partie de la portance.
+evaluates: [fondamentaux.aerodynamique.conservation-du-debit]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

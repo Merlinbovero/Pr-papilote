@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-03
+kind: qcm
+theme: pression
+statement: >-
+  Si la vitesse de l'air double, comment varie la pression dynamique ?
+choices:
+  - "Elle est multipliée par 4"
+  - "Elle double"
+  - "Elle est multipliée par 2 seulement si ρ double aussi"
+  - "Elle reste identique"
+correctChoices: [0]
+distractorNotes:
+  "1": "La pression dynamique dépend du carré de la vitesse, pas de la vitesse elle-même."
+explanation: >-
+  q = ½·ρ·V² dépend du carré de la vitesse : doubler V multiplie q par 2² = 4.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

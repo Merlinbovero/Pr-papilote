@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-02
+kind: qcm
+theme: pression
+statement: >-
+  Quelle est l'expression de la pression dynamique q ?
+choices:
+  - "q = ½·ρ·V²"
+  - "q = ρ·V"
+  - "q = ρ·g·h"
+  - "q = F / S"
+correctChoices: [0]
+distractorNotes:
+  "2": "ρ·g·h est la pression hydrostatique (pression d'une colonne de fluide)."
+  "3": "F / S est la définition générale d'une pression, pas la pression dynamique."
+explanation: >-
+  La pression dynamique vaut q = ½·ρ·V² : elle croît avec la masse volumique et
+  avec le carré de la vitesse.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
