@@ -1,21 +1,25 @@
 schemaVersion: 1
 id: q.eopan.cap-10-01
 kind: qcm
-theme: selection-en-vol
+theme: appareils-aeronavale
 statement: >-
-  Sur quel avion se déroule la sélection en vol des candidats EOPAN ?
+  En catégorie acrobatique (voltige), quels facteurs de charge limites le
+  Cap 10 B supporte-t-il, volets rentrés ?
 choices:
-  - Le Cap 10 (escadrille 50S, Lanvéoc-Poulmic)
-  - Le Rafale M (flottille 12F, Landivisiau)
-  - Le Pilatus PC-7 MKX (Salon-de-Provence)
-  - Le NH90 Caïman (flottille 33F)
+  - "+6 g / −4,5 g"
+  - "+4,4 g / −1,8 g"
+  - "+2 g / −2 g"
+  - "+9 g / −6 g"
 correctChoices: [0]
+distractorNotes:
+  "1": "Ce sont les facteurs limites en catégorie utilitaire, pas en voltige."
+  "3": "Ces valeurs correspondent à un chasseur de combat, pas à un avion-école en bois."
 explanation: >-
-  La sélection en vol EOPAN se déroule sur Cap 10, au sein de l'escadrille 50S
-  basée à Lanvéoc-Poulmic. Le PC-7 MKX concerne la formation initiale qui suit
-  la sélection.
+  Le Cap 10 B est certifié en deux catégories. En catégorie acrobatique, il est
+  limité à +6 g / −4,5 g (contre +4,4 / −1,8 en utilitaire) : c'est un vrai
+  voltigeur, mais les limites dépendent de la catégorie du vol.
 evaluates: [eopan.appareils.cap-10]
-difficulty: 1
-competencies: [culture-militaire]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
 concours: [eopan]
 status: publie
