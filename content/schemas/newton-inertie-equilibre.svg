@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .lbl { font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .body { stroke: currentColor; fill: none; stroke-width: 2; }
+    .accent { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
+    .dot { fill: currentColor; }
+  </style>
+  <defs>
+    <marker id="e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+    <marker id="ea" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text x="230" y="30" text-anchor="middle">Vol en palier : ΣF = 0 ⇔ vitesse constante</text>
+  <!-- simplified aircraft silhouette, centre of gravity G -->
+  <path class="body" d="M150,140 q80,-22 190,0 q-80,22 -190,0 z" />
+  <line class="body" x1="230" y1="122" x2="222" y2="96" />
+  <line class="body" x1="230" y1="122" x2="238" y2="96" />
+  <circle class="dot" cx="240" cy="140" r="4" />
+  <text class="lbl" x="248" y="136">G</text>
+  <!-- portance up (accent) -->
+  <line class="accent" x1="240" y1="132" x2="240" y2="60" marker-end="url(#ea)" />
+  <text class="lbl" x="248" y="66">portance</text>
+  <!-- poids down -->
+  <line class="ink" x1="240" y1="148" x2="240" y2="220" marker-end="url(#e)" />
+  <text class="lbl" x="248" y="214">poids</text>
+  <!-- traction forward (left→right, accent) -->
+  <line class="accent" x1="330" y1="140" x2="400" y2="140" marker-end="url(#ea)" />
+  <text class="lbl" x="352" y="132">traction</text>
+  <!-- trainee backward -->
+  <line class="ink" x1="150" y1="140" x2="80" y2="140" marker-end="url(#e)" />
+  <text class="lbl" x="82" y="132">traînée</text>
+  <text class="lbl" x="230" y="248" text-anchor="middle">Les quatre forces s'équilibrent deux à deux — la résultante est nulle.</text>
+</svg>

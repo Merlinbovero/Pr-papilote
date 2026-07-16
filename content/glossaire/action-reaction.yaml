@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.action-reaction
+title: Action – réaction
+definition: >-
+  Troisième loi de Newton : lorsqu'un corps A exerce une force sur un corps B,
+  B exerce sur A une force de même intensité et de même direction, mais de sens
+  opposé. C'est le principe de la propulsion (l'hélice pousse l'air, l'air
+  pousse l'avion).
+english: action and reaction
+synonyms: [troisième loi de Newton]
+ficheId: fondamentaux.physique.les-trois-lois-de-newton
+tags: []
+status: publie

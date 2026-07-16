@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.resultante
+title: Résultante des forces
+definition: >-
+  Somme vectorielle de toutes les forces appliquées à un corps. Si elle est
+  nulle, la vitesse reste constante (équilibre) ; si elle ne l'est pas, elle
+  modifie le mouvement selon ΣF = m·a.
+english: net force
+synonyms: [somme des forces]
+ficheId: fondamentaux.physique.les-trois-lois-de-newton
+tags: []
+status: publie

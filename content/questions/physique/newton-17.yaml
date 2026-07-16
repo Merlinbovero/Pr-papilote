@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.physique.newton-17
+kind: qcm
+theme: forces
+statement: >-
+  Dans le Système international, à quoi correspond 1 newton ?
+choices:
+  - "La force qui donne à 1 kg une accélération de 1 m/s²"
+  - "La force qui soulève 1 kg à la surface de la Terre"
+  - "Une pression de 1 pascal"
+  - "Un travail de 1 joule"
+correctChoices: [0]
+distractorNotes:
+  "1": "Soulever 1 kg nécessite environ 9,81 N (le poids)."
+  "2": "Le pascal est une pression, pas une force."
+explanation: >-
+  Le newton découle de la deuxième loi : 1 N = 1 kg·m·s⁻², soit la force qui
+  communique à une masse de 1 kg une accélération de 1 m/s².
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

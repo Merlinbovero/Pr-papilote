@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.physique.newton-06
+kind: qcm
+theme: forces
+statement: >-
+  Un avion vole en palier rectiligne à vitesse constante. Que vaut la résultante
+  des forces appliquées ?
+choices:
+  - "Elle est nulle"
+  - "Elle est dirigée vers le haut"
+  - "Elle est dirigée vers l'avant"
+  - "Elle est égale au poids"
+correctChoices: [0]
+explanation: >-
+  Vitesse constante en ligne droite ⇒ mouvement rectiligne uniforme ⇒ résultante
+  nulle (première loi de Newton). Portance et poids se compensent, traction et
+  traînée aussi.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

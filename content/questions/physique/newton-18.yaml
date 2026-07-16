@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-18
+kind: qcm
+theme: forces
+statement: >-
+  Quelle grandeur physique mesure l'inertie d'un corps (sa résistance à toute
+  variation de vitesse) ?
+choices:
+  - "Sa masse"
+  - "Son poids"
+  - "Sa vitesse"
+  - "Sa surface"
+correctChoices: [0]
+explanation: >-
+  L'inertie se mesure par la masse : plus la masse est grande, plus il faut de
+  force pour modifier la vitesse (a = ΣF / m).
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

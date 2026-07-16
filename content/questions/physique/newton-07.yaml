@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-07
+kind: qcm
+theme: forces
+statement: >-
+  D'après ΣF = m·a, si la résultante des forces est nulle, que vaut
+  l'accélération ?
+choices:
+  - "Zéro"
+  - "9,81 m/s²"
+  - "Elle est maximale"
+  - "Elle est égale à la masse"
+correctChoices: [0]
+explanation: >-
+  Si ΣF = 0 et que la masse n'est pas nulle, alors a = 0 : la vitesse ne change
+  pas. On retrouve la première loi comme cas particulier de la deuxième.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.physique.newton-15
+kind: qcm
+theme: forces
+statement: >-
+  Un avion monte en ligne droite à vitesse constante. Que peut-on dire de la
+  résultante des forces ?
+choices:
+  - "Elle est nulle (le mouvement est rectiligne uniforme)"
+  - "Elle est dirigée vers le haut"
+  - "Elle est égale à la traction"
+  - "Elle augmente avec la pente"
+correctChoices: [0]
+explanation: >-
+  Vitesse constante en ligne droite ⇒ MRU ⇒ résultante nulle, quelle que soit la
+  pente. Le poids est simplement décomposé et compensé par la portance et la
+  traction.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

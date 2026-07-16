@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-10
+kind: qcm
+theme: forces
+statement: >-
+  Dans quel type de référentiel les lois de Newton s'appliquent-elles ?
+choices:
+  - "Un référentiel galiléen (non accéléré)"
+  - "N'importe quel référentiel"
+  - "Un référentiel en rotation"
+  - "Un référentiel accéléré uniquement"
+correctChoices: [0]
+explanation: >-
+  Les lois de Newton ne sont valables que dans un référentiel galiléen (non
+  accéléré). Pour l'étude du vol à notre échelle, on assimile le sol à un tel
+  référentiel.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

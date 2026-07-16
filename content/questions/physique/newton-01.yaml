@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: q.physique.newton-01
+kind: qcm
+theme: forces
+statement: >-
+  Que dit la première loi de Newton (principe d'inertie) ?
+choices:
+  - "Si la résultante des forces est nulle, la vitesse reste constante"
+  - "Toute force produit une accélération proportionnelle"
+  - "À toute action correspond une réaction opposée"
+  - "La pression est une force divisée par une surface"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est la deuxième loi (ΣF = m·a)."
+  "2": "C'est la troisième loi (action-réaction)."
+explanation: >-
+  Le principe d'inertie énonce qu'un corps soumis à une résultante des forces
+  nulle conserve sa vitesse : immobile il reste immobile, en mouvement il garde
+  une vitesse constante en ligne droite.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

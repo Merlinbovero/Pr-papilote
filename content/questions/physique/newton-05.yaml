@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.physique.newton-05
+kind: vrai-faux
+theme: forces
+statement: >-
+  Les deux forces d'une action-réaction s'annulent mutuellement puisqu'elles
+  sont égales et opposées.
+answer: false
+explanation: >-
+  Faux : les deux forces s'exercent sur deux corps différents (par exemple
+  l'air et l'avion). Elles ne s'additionnent donc pas sur un même corps et ne
+  s'annulent pas entre elles.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

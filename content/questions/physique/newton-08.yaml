@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: q.physique.newton-08
+kind: qcm
+theme: forces
+statement: >-
+  Au sens de la mécanique, « accélérer » un avion signifie modifier son vecteur
+  vitesse. Parmi ces manœuvres, laquelle ne correspond PAS à une accélération ?
+choices:
+  - "Voler en palier rectiligne à vitesse constante"
+  - "Mettre l'avion en virage"
+  - "Amorcer une montée"
+  - "Augmenter la vitesse en palier"
+correctChoices: [0]
+distractorNotes:
+  "1": "Un virage change la direction du vecteur vitesse : c'est une accélération."
+  "2": "La montée modifie le vecteur vitesse : accélération."
+explanation: >-
+  Accélérer, au sens de Newton, c'est toute modification du vecteur vitesse
+  (valeur ou direction). Le vol en palier à vitesse constante est le seul cas
+  sans accélération : la résultante y est nulle.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

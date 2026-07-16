@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.physique.newton-09
+kind: vrai-faux
+theme: forces
+statement: >-
+  « Résultante des forces nulle » signifie qu'aucune force ne s'exerce sur le
+  corps.
+answer: false
+explanation: >-
+  Faux : de nombreuses forces peuvent s'exercer, mais si elles se compensent,
+  leur somme vectorielle (la résultante) est nulle. C'est le cas de l'avion en
+  vol stabilisé, soumis à quatre forces équilibrées.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

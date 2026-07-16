@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.physique.newton-11
+kind: qcm
+theme: forces
+statement: >-
+  La propulsion d'un avion (par hélice ou réacteur) est une application directe
+  de quelle loi ?
+choices:
+  - "La troisième loi (action-réaction)"
+  - "La première loi (inertie)"
+  - "Le théorème de Bernoulli"
+  - "La loi de la pesanteur"
+correctChoices: [0]
+explanation: >-
+  L'ensemble propulsif projette de l'air (ou des gaz) vers l'arrière ; en
+  réaction, l'avion est poussé vers l'avant. C'est la troisième loi de Newton.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

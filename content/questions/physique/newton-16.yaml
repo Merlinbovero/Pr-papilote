@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.physique.newton-16
+kind: vrai-faux
+theme: forces
+statement: >-
+  La première loi de Newton peut être vue comme un cas particulier de la
+  deuxième.
+answer: true
+explanation: >-
+  Vrai : dans ΣF = m·a, si ΣF = 0 alors a = 0, donc la vitesse est constante —
+  ce qui est exactement l'énoncé de la première loi.
+evaluates: [fondamentaux.physique.les-trois-lois-de-newton]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

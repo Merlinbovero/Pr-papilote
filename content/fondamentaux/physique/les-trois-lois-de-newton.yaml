@@ -1,0 +1,147 @@
+schemaVersion: 1
+id: fondamentaux.physique.les-trois-lois-de-newton
+type: concept
+title: Les trois lois de Newton
+slug: les-trois-lois-de-newton
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — les lois de Newton, socle de la mécanique du vol
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Inertie, proportionnalité force-accélération, action-réaction : les trois lois
+  de Newton sont l'outil qui permet de comprendre tout le vol — pourquoi un avion
+  avance, se soutient et garde sa trajectoire.
+objectifs:
+  - Énoncer les trois lois de Newton (inertie, ΣF = m·a, action-réaction).
+  - Comprendre qu'une résultante des forces nulle équivaut à une vitesse constante.
+  - Relier chaque loi à une situation aéronautique concrète.
+aliases: [lois de newton, principe d'inertie, action-réaction, ΣF = ma, résultante des forces]
+module: fondamentaux
+category: physique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 1 « Forces et lois de Newton » (module Mécanique du Vol, lot 2 ; d'après le guide M.V. 001 revérifié, notions de physique standard).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 1 — Rappels de physique"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: "Isaac Newton — Philosophiæ Naturalis Principia Mathematica (1687), lois du mouvement"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+relations:
+  prerequisites: [fondamentaux.physique.pression-forces-unites]
+  related:
+    - fondamentaux.mecanique-du-vol.quatre-forces
+    - fondamentaux.mecanique-du-vol.la-propulsion
+content:
+  essentiel:
+    body: |
+      Trois lois énoncées par **Isaac Newton** au XVIIᵉ siècle décrivent le
+      mouvement des corps. Elles ne sont pas une fin en soi au BIA, mais elles
+      **éclairent toute la mécanique du vol** — d'où leur place ici, en socle.
+
+      - **1ʳᵉ loi — principe d'inertie** : livré à lui-même (résultante des
+        forces nulle), un corps conserve sa vitesse — immobile il reste
+        immobile, en mouvement il garde une vitesse constante en ligne droite.
+      - **2ᵉ loi — relation fondamentale** : la résultante des forces est égale
+        à la masse multipliée par l'accélération, **ΣF = m·a**. Une résultante
+        non nulle **modifie** le mouvement (accélère, freine, incurve).
+      - **3ᵉ loi — action-réaction** : toute action produit une réaction égale
+        et opposée. Deux corps en interaction exercent l'un sur l'autre des
+        forces de **même intensité, même direction, sens opposés**.
+    aRetenir:
+      - 1ʳᵉ loi (inertie) — résultante nulle ⇔ vitesse constante (ΣF = 0 ⇔ V = cste).
+      - 2ᵉ loi — ΣF = m·a ; une résultante non nulle modifie le mouvement.
+      - 3ᵉ loi (action-réaction) — forces égales, opposées, sur deux corps différents.
+      - En vol stabilisé (palier, montée ou descente à vitesse constante), la résultante des forces est nulle.
+  sections:
+    - id: premiere-loi-inertie
+      title: Première loi — le principe d'inertie
+      body: |
+        Un corps sur lequel **aucune force ne s'exerce**, ou dont les forces se
+        **compensent** (résultante nulle), conserve son état : au repos il reste
+        au repos, en mouvement il poursuit à **vitesse constante en ligne
+        droite** (mouvement rectiligne uniforme, MRU).
+
+        Autrement dit :
+
+        **ΣF = 0 ⇔ vitesse constante**
+
+        C'est exactement la situation d'un avion en **vol stabilisé** : en
+        palier, en montée ou en descente à vitesse constante, la somme des
+        forces qui s'exercent sur lui est **nulle**. Les quatre forces du vol
+        (poids, portance, traction, traînée) s'équilibrent alors deux à deux.
+      figures:
+        - schemaId: newton-inertie-equilibre
+          alt: Un avion en palier à vitesse constante ; portance et poids s'équilibrent, traction et traînée aussi, la résultante est nulle.
+          caption: En vol stabilisé, ΣF = 0 — les quatre forces s'équilibrent, la vitesse reste constante.
+          width: 460
+          height: 260
+    - id: deuxieme-loi-fondamentale
+      title: Deuxième loi — force et accélération
+      body: |
+        Lorsque la résultante des forces **n'est pas nulle**, le mouvement
+        **change**. La deuxième loi le quantifie :
+
+        **ΣF = m·a**
+
+        où **m** est la masse (en kg) et **a** l'accélération (en m/s²). Plus la
+        résultante est grande, plus l'accélération est grande ; plus le corps est
+        lourd, moins il accélère pour une même force.
+
+        On retrouve d'ailleurs la première loi comme cas particulier : si
+        **ΣF = 0**, alors **a = 0**, donc la vitesse ne change pas.
+
+        En vol, « accélérer » ne veut pas seulement dire aller plus vite : mettre
+        l'avion **en virage** ou le faire **monter** revient aussi à modifier son
+        vecteur vitesse — donc à lui appliquer une résultante non nulle.
+    - id: troisieme-loi-action-reaction
+      title: Troisième loi — action et réaction
+      body: |
+        Quand un corps A exerce une force sur un corps B, alors **B exerce sur A
+        une force égale et opposée** : même intensité, même direction, sens
+        contraires. Les deux forces s'appliquent sur **deux corps différents** —
+        elles ne s'annulent donc pas entre elles.
+
+        C'est le principe même de la **propulsion** : l'hélice (ou le réacteur)
+        **pousse l'air vers l'arrière** ; en retour, l'air **pousse l'avion vers
+        l'avant**. C'est cette réaction que le pilote recherche.
+      figures:
+        - schemaId: newton-action-reaction
+          alt: Une hélice pousse l'air vers l'arrière ; en réaction, l'air pousse l'avion vers l'avant.
+          caption: "Action – réaction : l'hélice pousse l'air en arrière, l'air pousse l'avion en avant."
+          width: 460
+          height: 240
+    - id: pour-aller-plus-loin
+      title: Pour aller plus loin — référentiels
+      strate: maitriser
+      body: |
+        Les lois de Newton ne sont vraies que dans un **référentiel galiléen**
+        (non accéléré). Pour l'étude du vol à notre échelle, on considère le sol
+        (ou l'air au repos) comme un tel référentiel — une approximation
+        largement suffisante au niveau BIA.
+
+        On raisonne alors sur le **centre de gravité** de l'avion : tout se passe
+        comme si les forces s'y appliquaient et comme si toute la masse y était
+        concentrée.
+  pieges:
+    - « Résultante nulle » ne veut pas dire « aucune force » — les forces peuvent être nombreuses mais se compenser (cas du vol stabilisé).
+    - Les deux forces de la 3ᵉ loi s'exercent sur deux corps différents ; elles ne s'annulent pas l'une l'autre.
+    - Accélérer, au sens de Newton, ce n'est pas seulement aller plus vite — c'est toute modification du vecteur vitesse (virage, montée comprise).

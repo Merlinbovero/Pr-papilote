@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: terme.mru
+title: MRU
+definition: >-
+  Mouvement rectiligne uniforme — déplacement en ligne droite à vitesse
+  constante. D'après la première loi de Newton, un avion en MRU est soumis à
+  une résultante des forces nulle : c'est le cas du vol stabilisé.
+sigleExpansion: Mouvement rectiligne uniforme
+english: uniform straight-line motion
+synonyms: [mouvement rectiligne uniforme]
+ficheId: fondamentaux.physique.les-trois-lois-de-newton
+tags: []
+status: publie
