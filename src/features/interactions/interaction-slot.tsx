@@ -2,6 +2,7 @@
 
 import { ForcesEtVecteurs } from "./forces-et-vecteurs";
 import { Venturi } from "./venturi";
+import { IncidenceDecrochage } from "./incidence-decrochage";
 
 /**
  * Résout un identifiant d'interaction (registre) vers son composant client.
@@ -14,6 +15,8 @@ export function InteractionSlot({ id, onInteract }: { id: string; onInteract?: (
       return <ForcesEtVecteurs onInteract={onInteract} />;
     case "venturi":
       return <Venturi onInteract={onInteract} />;
+    case "incidence-decrochage":
+      return <IncidenceDecrochage onInteract={onInteract} />;
     default:
       return null;
   }

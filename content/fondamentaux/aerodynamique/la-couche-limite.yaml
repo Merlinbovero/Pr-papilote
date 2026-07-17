@@ -1,0 +1,133 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.la-couche-limite
+type: notion-aerodynamique
+title: La couche limite et le décollement
+slug: la-couche-limite
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la couche limite sur l'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  La couche limite est la fine pellicule d'air ralentie par la viscosité au
+  contact de l'aile. Elle est d'abord laminaire, puis turbulente après un point
+  de transition. À forte incidence, elle décolle de l'extrados — c'est l'origine
+  du décrochage.
+objectifs:
+  - Définir la couche limite et distinguer ses régimes laminaire et turbulent.
+  - Situer le rôle du nombre de Reynolds dans la transition laminaire-turbulent.
+  - Expliquer le décollement de la couche limite et son lien avec le décrochage.
+aliases: [couche limite, laminaire, turbulent, Reynolds, décollement]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 7 « La couche limite et le décrochage » (mécanique du vol, p.24-26).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La couche limite"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "NASA — Glenn Research Center, Boundary Layer"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/boundary-layer/
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+  related:
+    - fondamentaux.aerodynamique.decrochage
+content:
+  essentiel:
+    body: |
+      Au contact de l'aile, l'air n'est pas parfaitement libre : la **viscosité**
+      le ralentit. Il se forme une **très fine pellicule** d'air, la **couche
+      limite**, dans laquelle la vitesse passe de **zéro** (à la surface) à celle
+      de l'écoulement libre.
+
+      Cette couche a deux **régimes**. Près du bord d'attaque, elle est
+      **laminaire** : l'air y glisse en filets ordonnés et parallèles. Plus loin,
+      après un **point de transition**, elle devient **turbulente** : l'air s'y
+      agite, plus épaisse mais mieux « accrochée » à la surface. Le passage de
+      l'un à l'autre est gouverné par le **nombre de Reynolds**.
+
+      À **forte incidence**, la couche limite ne parvient plus à suivre la forte
+      remontée de l'extrados : elle **décolle** (décollement). L'écoulement cesse
+      d'épouser l'aile, la portance chute brutalement — c'est le **décrochage**
+      (fiche dédiée).
+    aRetenir:
+      - La couche limite est la fine pellicule d'air ralentie par la viscosité au contact de l'aile.
+      - Elle est d'abord laminaire (filets ordonnés) puis turbulente après un point de transition.
+      - Le nombre de Reynolds gouverne la transition laminaire → turbulent.
+      - À forte incidence, la couche limite décolle de l'extrados — l'écoulement ne suit plus l'aile.
+      - Ce décollement est l'origine du décrochage (perte de portance).
+  sections:
+    - id: qu-est-ce-que-la-couche-limite
+      title: Qu'est-ce que la couche limite ?
+      body: |
+        L'air est légèrement **visqueux** : il « adhère » à la surface de l'aile.
+        Tout contre la paroi, sa vitesse est **nulle** ; elle augmente ensuite
+        très vite pour rejoindre, à quelques millimètres, la vitesse de
+        l'**écoulement libre**. Cette mince zone de transition est la **couche
+        limite**.
+
+        Bien que très fine, elle joue un rôle **majeur** : c'est en son sein que
+        naît le **frottement** (traînée de frottement), et c'est son
+        comportement qui décide si l'écoulement **reste collé** à l'aile ou s'en
+        **détache**.
+      figures:
+        - schemaId: couche-limite
+          alt: Un profil d'aile avec la couche limite, d'abord mince et laminaire près du bord d'attaque, puis turbulente après un point de transition, et décollant à l'arrière de l'extrados.
+          caption: La couche limite, laminaire près du bord d'attaque, devient turbulente après le point de transition, puis peut décoller à l'arrière.
+          width: 420
+          height: 220
+    - id: laminaire-turbulent-reynolds
+      title: Laminaire, turbulent et nombre de Reynolds
+      strate: maitriser
+      body: |
+        La couche limite connaît deux **régimes** :
+
+        - **laminaire** : l'air s'écoule en **filets ordonnés** et parallèles ;
+          elle est mince et **peu** de frottement, mais **fragile** (elle décolle
+          facilement) ;
+        - **turbulent** : l'air s'y **agite** de façon désordonnée ; elle est
+          plus épaisse et **frotte davantage**, mais **résiste mieux** au
+          décollement.
+
+        Le passage de l'un à l'autre (le **point de transition**) est gouverné
+        par le **nombre de Reynolds** — un nombre **sans dimension** qui compare
+        les effets d'**inertie** de l'air à ceux de sa **viscosité**. Un Reynolds
+        élevé (aile grande, air rapide) favorise la turbulence. C'est aussi ce
+        nombre qu'on cherche à **reproduire en soufflerie** pour qu'une maquette
+        se comporte comme l'aile réelle (similitude).
+    - id: le-decollement
+      title: Le décollement et le décrochage
+      body: |
+        Sur l'extrados, l'air doit **remonter** une pente de pression
+        défavorable. Tant que l'incidence reste modérée, la couche limite y
+        parvient et **reste collée**. Mais au-delà de l'**incidence critique**,
+        elle **n'a plus assez d'énergie** : elle **décolle** de la surface.
+
+        L'écoulement cesse alors d'épouser l'aile, une large zone
+        **tourbillonnaire** se forme sur l'extrados, et la **portance chute
+        brutalement**. C'est le **décrochage**, dont le mécanisme et la
+        correction sont détaillés dans la fiche « Le décrochage aérodynamique ».
+  pieges:
+    - La couche limite est très fine (quelques millimètres) mais son comportement décide du décollement et donc du décrochage.
+    - La couche limite turbulente frotte plus, mais elle résiste mieux au décollement que la laminaire — ce n'est pas « que du mauvais ».
+    - Le décrochage vient du décollement de la couche limite à forte incidence, pas d'un manque de vitesse en soi.

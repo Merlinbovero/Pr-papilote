@@ -19,6 +19,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (les souffleries)", path: "/cours/les-souffleries" },
   { name: "cours (la force aérodynamique)", path: "/cours/la-force-aerodynamique" },
   { name: "cours (traînée induite & allongement)", path: "/cours/trainee-induite-et-allongement" },
+  { name: "cours (couche limite & décrochage)", path: "/cours/couche-limite-et-decrochage" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

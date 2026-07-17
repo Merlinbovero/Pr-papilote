@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.nombre-de-reynolds
+title: Nombre de Reynolds
+definition: >-
+  Nombre sans dimension comparant les effets d'inertie de l'air à ceux de sa
+  viscosité. Il gouverne la transition laminaire-turbulent et sert à reproduire
+  en soufflerie le comportement d'une aile réelle (similitude).
+english: Reynolds number
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-couche-limite
+tags: []
+status: publie

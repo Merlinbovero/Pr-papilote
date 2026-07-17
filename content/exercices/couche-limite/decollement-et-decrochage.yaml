@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.couche-decollement
+title: Du décollement au décrochage
+consigne: >-
+  Expliquez la chaîne d'événements qui, en augmentant l'incidence, conduit au
+  décrochage.
+methode: >-
+  Suivre l'incidence croissante : tenue de la couche limite, franchissement de
+  l'incidence critique, décollement, conséquence sur la portance.
+correction: >-
+  À incidence modérée, la couche limite suit l'extrados : la portance croît avec
+  l'incidence. Au-delà de l'incidence critique, la couche limite n'a plus assez
+  d'énergie pour remonter la pente de pression : elle décolle. L'écoulement quitte
+  l'aile, une zone tourbillonnaire se forme et la portance chute brutalement :
+  c'est le décrochage.
+interpretation: >-
+  Le décrochage dépend de l'incidence (pas de la vitesse) ; la correction consiste
+  à réduire l'incidence pour recoller la couche limite.
+notionLiee: fondamentaux.aerodynamique.la-couche-limite
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

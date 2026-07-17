@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-02
+kind: qcm
+theme: couche-limite
+statement: >-
+  Quelle est la vitesse de l'air exactement au contact de la surface de l'aile ?
+choices:
+  - "Nulle"
+  - "Égale à la vitesse de l'écoulement libre"
+  - "Supérieure à la vitesse de l'avion"
+  - "Égale à la vitesse du son"
+correctChoices: [0]
+explanation: >-
+  À cause de la viscosité, l'air adhère à la paroi : sa vitesse y est nulle, puis
+  augmente rapidement à travers la couche limite.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

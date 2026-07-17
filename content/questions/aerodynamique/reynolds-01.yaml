@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.reynolds-01
+kind: qcm
+theme: couche-limite
+statement: >-
+  Que compare le nombre de Reynolds ?
+choices:
+  - "Les effets d'inertie de l'air à ceux de sa viscosité"
+  - "La portance à la traînée"
+  - "La pression statique à la pression dynamique"
+  - "La masse de l'avion à sa surface"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le rapport portance/traînée est la finesse, pas le nombre de Reynolds."
+explanation: >-
+  Le nombre de Reynolds, sans dimension, compare les effets d'inertie de l'air à
+  ceux de sa viscosité ; il gouverne la transition laminaire-turbulent.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

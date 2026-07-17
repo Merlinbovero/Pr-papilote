@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.decollement-03
+kind: vrai-faux
+theme: couche-limite
+statement: >-
+  Le décollement de la couche limite à forte incidence est l'origine du
+  décrochage.
+answer: true
+explanation: >-
+  Quand la couche limite décolle de l'extrados, la portance s'effondre : c'est le
+  mécanisme même du décrochage.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .accent { fill: #3b82f6; font-size: 11px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .cl { stroke: #3b82f6; fill: none; stroke-width: 1.5; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="cl-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">La couche limite sur un profil</text>
+
+  <!-- Profil d'aile -->
+  <path class="ink" d="M50,150 q120,-40 260,-14 q-120,26 -260,14 z" fill="currentColor" fill-opacity="0.10" />
+
+  <!-- Couche limite : mince (laminaire) puis épaissie (turbulente) puis décollée -->
+  <path class="cl" d="M60,140 q90,-30 150,-24 q60,2 80,14" />
+  <path class="cl" d="M60,146 q90,-24 150,-16 q45,4 70,22" stroke-dasharray="2 3" />
+
+  <!-- Filets d'air au-dessus -->
+  <line class="flow" x1="30" y1="96" x2="70" y2="96" marker-end="url(#cl-a)" />
+  <line class="flow" x1="120" y1="86" x2="160" y2="86" marker-end="url(#cl-a)" />
+  <!-- Tourbillons de décollement à l'arrière -->
+  <path class="cl" d="M300,120 a8,8 0 1 0 8,8 a5,5 0 1 1 -5,-5" stroke-dasharray="2 2" />
+  <path class="cl" d="M322,116 a9,9 0 1 1 -9,9 a5,5 0 1 0 5,-5" stroke-dasharray="2 2" />
+
+  <!-- Étiquettes -->
+  <text class="accent" x="95" y="128" text-anchor="middle">laminaire</text>
+  <text class="lbl" x="185" y="108" text-anchor="middle">transition</text>
+  <text class="accent" x="255" y="120" text-anchor="middle">turbulente</text>
+  <text class="lbl" x="322" y="150" text-anchor="middle">décollement</text>
+</svg>

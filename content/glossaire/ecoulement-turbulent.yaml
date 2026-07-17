@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.ecoulement-turbulent
+title: Écoulement turbulent
+definition: >-
+  Régime d'écoulement où l'air s'agite de façon désordonnée. Dans la couche
+  limite, il est plus épais et frotte davantage, mais résiste mieux au
+  décollement que le régime laminaire.
+english: turbulent flow
+synonyms: [turbulent]
+ficheId: fondamentaux.aerodynamique.la-couche-limite
+tags: []
+status: publie

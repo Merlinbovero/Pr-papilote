@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.incidence-critique
+title: Incidence critique
+definition: >-
+  Angle d'incidence au-delà duquel la couche limite décolle de l'extrados et la
+  portance chute : c'est le seuil du décrochage. Elle ne dépend pas de la
+  vitesse.
+english: critical angle of attack
+synonyms: [angle critique]
+ficheId: fondamentaux.aerodynamique.decrochage
+tags: []
+status: publie

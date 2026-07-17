@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.decollement-02
+kind: qcm
+theme: couche-limite
+statement: >-
+  Qu'est-ce qui provoque le décollement de la couche limite sur l'extrados ?
+choices:
+  - "Une incidence trop forte (au-delà de l'incidence critique)"
+  - "Une vitesse trop faible uniquement"
+  - "Un moteur trop puissant"
+  - "Une aile trop lisse"
+correctChoices: [0]
+explanation: >-
+  Au-delà de l'incidence critique, la couche limite n'a plus assez d'énergie pour
+  suivre l'extrados : elle décolle. Le décrochage dépend de l'incidence, pas de la
+  vitesse en soi.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
