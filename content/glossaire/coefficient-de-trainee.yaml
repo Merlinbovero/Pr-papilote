@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.coefficient-de-trainee
+title: Coefficient de traînée (Cx)
+definition: >-
+  Nombre sans dimension de la relation F_x = ½·ρ·S·V²·Cx. Il résume l'effet du
+  profil et de l'incidence sur la traînée. Le rapport Cz/Cx définit la finesse de
+  l'aile.
+english: drag coefficient
+synonyms: [Cx]
+ficheId: fondamentaux.aerodynamique.la-force-aerodynamique
+tags: []
+status: publie

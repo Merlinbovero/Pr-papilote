@@ -84,3 +84,18 @@ test("le cours 4 (souffleries) référence sa fiche et un exercice sur le collec
   // Le cours porte bien un quiz (composition standard).
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
+
+test("le cours 5 (force aérodynamique) compose la fiche neuve et les fiches portance/traînée", async ({
+  page,
+}) => {
+  await page.goto("/cours/la-force-aerodynamique");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /la force aérodynamique/i })
+  ).toBeVisible();
+  // La fiche neuve et les deux fiches existantes sont référencées, pas recopiées.
+  await expect(
+    page.getByRole("link", { name: /la force aérodynamique et ses composantes/i })
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /^la portance/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /^la traînée/i })).toBeVisible();
+});

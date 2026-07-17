@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.faero-02
+kind: qcm
+theme: force-aerodynamique
+statement: >-
+  En quelles deux composantes décompose-t-on la résultante aérodynamique ?
+choices:
+  - "La portance et la traînée"
+  - "Le poids et la portance"
+  - "La traction et la traînée"
+  - "La portance et le poids"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le poids n'est pas une composante de la force aérodynamique : c'est une force à part (la gravité)."
+explanation: >-
+  On projette la résultante selon le vent relatif : la portance (perpendiculaire)
+  et la traînée (parallèle). Ce sont les deux composantes d'une seule force.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

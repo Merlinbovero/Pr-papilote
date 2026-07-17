@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.faero-01
+kind: qcm
+theme: force-aerodynamique
+statement: >-
+  Comment appelle-t-on la force unique exercée par l'air en mouvement sur l'aile ?
+choices:
+  - "La résultante aérodynamique"
+  - "La poussée du moteur"
+  - "Le poids apparent"
+  - "La force centrifuge"
+correctChoices: [0]
+explanation: >-
+  L'ensemble des forces de pression et de frottement se ramène à une force
+  unique : la résultante aérodynamique, appliquée au centre de poussée.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

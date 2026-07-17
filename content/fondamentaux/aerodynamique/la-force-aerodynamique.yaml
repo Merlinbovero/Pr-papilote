@@ -1,0 +1,137 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.la-force-aerodynamique
+type: notion-aerodynamique
+title: La force aérodynamique et ses composantes
+slug: la-force-aerodynamique
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la force aérodynamique sur l'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  L'air en mouvement exerce sur l'aile une force unique, la résultante
+  aérodynamique. On la décompose selon le vent relatif en portance
+  (perpendiculaire) et traînée (parallèle). Chacune suit la relation
+  F = ½·ρ·S·V²·C, où le coefficient C dépend du profil et de l'incidence.
+objectifs:
+  - Définir la résultante aérodynamique et son point d'application (le centre de poussée).
+  - Décomposer la force aérodynamique en portance (perpendiculaire au vent relatif) et traînée (parallèle).
+  - Relier portance et traînée à la relation F = ½·ρ·S·V²·C et aux coefficients Cz et Cx.
+aliases: [résultante aérodynamique, force aérodynamique, Cz, Cx, centre de poussée]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 5 « La force aérodynamique » (mécanique du vol, p.18-20).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La surface portante"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.pression-statique-dynamique-totale
+    - fondamentaux.aerodynamique.profil-d-aile
+  related:
+    - fondamentaux.aerodynamique.portance
+    - fondamentaux.aerodynamique.trainee
+content:
+  essentiel:
+    body: |
+      Quand une aile traverse l'air, celui-ci exerce sur elle une **force
+      unique** : la **résultante aérodynamique** (F_R). Elle s'applique en un
+      point appelé **centre de poussée**.
+
+      Pour l'étudier, on la **décompose** dans le repère du **vent relatif** en
+      deux composantes perpendiculaires : la **portance** (F_z), **perpendiculaire**
+      au vent relatif, qui soutient l'avion, et la **traînée** (F_x),
+      **parallèle** au vent relatif et opposée au mouvement, qui le freine. La
+      résultante et ses composantes sont liées par **F_R² = F_z² + F_x²**.
+
+      Chacune de ces forces suit la même relation : **F = ½·ρ·S·V²·C**, où **C**
+      est un **coefficient** sans dimension (**Cz** pour la portance, **Cx** pour
+      la traînée) qui résume l'effet du **profil** et de l'**angle d'incidence**.
+      Ces coefficients se mesurent en **soufflerie** grâce à la balance
+      aérodynamique. Leur rapport, **Cz/Cx**, est la **finesse**.
+    aRetenir:
+      - L'air exerce sur l'aile une force unique, la résultante aérodynamique, appliquée au centre de poussée.
+      - On la décompose selon le vent relatif — portance (perpendiculaire) et traînée (parallèle).
+      - F_R² = F_z² + F_x² (la résultante est la somme vectorielle des deux composantes).
+      - Portance et traînée suivent F = ½·ρ·S·V²·C (Cz pour la portance, Cx pour la traînée).
+      - Les coefficients Cz et Cx dépendent du profil et de l'incidence ; leur rapport Cz/Cx est la finesse.
+  sections:
+    - id: la-resultante-aerodynamique
+      title: La résultante aérodynamique
+      body: |
+        L'action de l'air sur l'aile se répartit en une multitude de petites
+        forces de pression et de frottement. Leur **somme** est une force unique,
+        la **résultante aérodynamique** (F_R). On la représente par un vecteur
+        appliqué au **centre de poussée** — le point où l'on peut considérer que
+        toute la force s'exerce.
+
+        Cette résultante est en général dirigée **vers le haut et légèrement vers
+        l'arrière** : vers le haut parce qu'elle soutient l'avion, vers l'arrière
+        parce qu'elle s'oppose en partie à l'avancement.
+    - id: portance-et-trainee
+      title: Portance et traînée, les deux composantes
+      body: |
+        Pour exploiter la résultante, on la **projette** dans le repère lié au
+        **vent relatif** :
+
+        - la **portance** (F_z) est la composante **perpendiculaire** au vent
+          relatif — c'est la force utile, celle qui **soutient** l'avion
+          (fiche « La portance ») ;
+        - la **traînée** (F_x) est la composante **parallèle** au vent relatif,
+          dirigée vers l'arrière — c'est la force nuisible, celle qui **freine**
+          l'avion (fiche « La traînée »).
+
+        Ces deux composantes forment un angle droit ; la résultante en est
+        l'**hypoténuse** : **F_R² = F_z² + F_x²**. Comme la portance est très
+        supérieure à la traînée (souvent d'un facteur 10 ou plus), la résultante
+        est **presque** perpendiculaire au vent relatif — mais pas tout à fait.
+      figures:
+        - schemaId: force-aerodynamique-decomposition
+          alt: Un profil d'aile avec le vent relatif horizontal, la résultante aérodynamique décomposée en portance verticale (perpendiculaire au vent relatif) et traînée horizontale (parallèle, vers l'arrière).
+          caption: La résultante aérodynamique se décompose en portance (perpendiculaire au vent relatif) et traînée (parallèle, opposée au mouvement).
+          width: 420
+          height: 240
+    - id: les-coefficients
+      title: Les coefficients Cz et Cx
+      strate: maitriser
+      body: |
+        Portance et traînée obéissent à la **même** forme de relation :
+
+        **F = ½ · ρ · S · V² · C**
+
+        où ρ est la masse volumique de l'air, S la surface de l'aile, V la
+        vitesse, et **C** un **coefficient sans dimension**. On note **Cz** le
+        coefficient de portance (F_z = ½·ρ·S·V²·**Cz**) et **Cx** le coefficient
+        de traînée (F_x = ½·ρ·S·V²·**Cx**).
+
+        Ces coefficients **résument** ce que la géométrie ne dit pas directement :
+        la **forme du profil** et surtout l'**angle d'incidence**. On les
+        détermine expérimentalement, en **soufflerie**, à l'aide de la **balance
+        aérodynamique**. Leur rapport définit la **finesse** de l'aile :
+        **f = F_z / F_x = Cz / Cx** — l'efficacité aérodynamique, étudiée dans la
+        fiche « La traînée ».
+  pieges:
+    - Portance et traînée ne sont pas deux forces indépendantes — ce sont les deux composantes d'une seule force, la résultante aérodynamique.
+    - La portance est perpendiculaire au vent relatif (pas « à la verticale »), la traînée lui est parallèle (pas « à l'horizontale »).
+    - Cz et Cx sont sans dimension — ils résument le profil et l'incidence, pas la taille de l'aile (déjà prise en compte par S).

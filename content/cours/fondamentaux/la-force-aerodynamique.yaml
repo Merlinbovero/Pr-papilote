@@ -1,0 +1,107 @@
+schemaVersion: 1
+id: cours.la-force-aerodynamique
+slug: la-force-aerodynamique
+title: "La force aérodynamique : portance et traînée"
+description: >-
+  L'air exerce sur l'aile une force unique, la résultante aérodynamique. Ce
+  cours la décompose en portance et traînée, introduit les coefficients Cz et Cx
+  (F = ½·ρ·S·V²·C) et relie le tout aux fiches portance et traînée.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Définir la résultante aérodynamique et son point d'application (le centre de poussée).
+  - Décomposer la force en portance (perpendiculaire au vent relatif) et traînée (parallèle).
+  - Relier portance et traînée à F = ½·ρ·S·V²·C et aux coefficients Cz et Cx.
+prerequisites:
+  - cours.les-souffleries
+ordre: 5
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 18
+    to: 20
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.la-force-aerodynamique
+  - fondamentaux.aerodynamique.portance
+  - fondamentaux.aerodynamique.trainee
+termes:
+  - terme.force-aerodynamique
+  - terme.centre-de-poussee
+  - terme.coefficient-de-portance
+  - terme.coefficient-de-trainee
+  - terme.incidence
+exercices:
+  - exercice.faero-calculer-portance
+  - exercice.faero-decomposer
+  - exercice.faero-effet-vitesse
+questions:
+  - q.aerodynamique.faero-01
+  - q.aerodynamique.faero-02
+  - q.aerodynamique.faero-03
+  - q.aerodynamique.faero-04
+  - q.aerodynamique.faero-05
+  - q.aerodynamique.faero-06
+  - q.aerodynamique.faero-07
+  - q.aerodynamique.faero-08
+  - q.aerodynamique.coeff-01
+  - q.aerodynamique.coeff-02
+  - q.aerodynamique.coeff-03
+  - q.aerodynamique.coeff-04
+  - q.aerodynamique.coeff-05
+  - q.aerodynamique.coeff-06
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.la-force-aerodynamique
+    title: Étudier — la force aérodynamique et ses composantes
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.portance
+    title: Approfondir — la portance
+    obligatoire: false
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.trainee
+    title: Approfondir — la traînée
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.faero-calculer-portance
+    title: S'exercer — calculer la portance
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.faero-decomposer
+    title: S'exercer — décomposer la résultante
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - L'air exerce sur l'aile une force unique, la résultante aérodynamique, appliquée au centre de poussée.
+  - On la décompose selon le vent relatif — portance (perpendiculaire) et traînée (parallèle, vers l'arrière).
+  - F_R² = F_z² + F_x² ; la portance dépassant largement la traînée, la résultante est presque perpendiculaire au vent relatif.
+  - Portance et traînée suivent F = ½·ρ·S·V²·C (Cz pour la portance, Cx pour la traînée).
+  - Cz et Cx (sans dimension) résument le profil et l'incidence ; on les mesure en soufflerie.
+  - La finesse est le rapport Cz/Cx — l'efficacité aérodynamique de l'aile.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La surface portante"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: "Création — cours 5 « La force aérodynamique : portance et traînée » (mécanique du vol p.18-20)."
+    author: prepapilote

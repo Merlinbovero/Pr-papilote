@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.centre-de-poussee
+title: Centre de poussée
+definition: >-
+  Point d'application de la résultante aérodynamique sur le profil — le point où
+  l'on peut considérer que toute la force de l'air s'exerce. Sa position se
+  déplace avec l'angle d'incidence.
+english: centre of pressure
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-force-aerodynamique
+tags: []
+status: publie

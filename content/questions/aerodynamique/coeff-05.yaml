@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.aerodynamique.coeff-05
+kind: calcul
+theme: coefficients
+statement: >-
+  Calculez la portance (en N) d'une aile : ρ = 1,225 kg/m³, S = 16 m², V = 50 m/s,
+  Cz = 0,5.
+answerValue: 12250
+tolerance: 50
+unit: N
+explanation: >-
+  F_z = ½·ρ·S·V²·Cz = ½ × 1,225 × 16 × 50² × 0,5 = ½ × 1,225 × 16 × 2500 × 0,5
+  = 12 250 N.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

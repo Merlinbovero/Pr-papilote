@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.force-aerodynamique
+title: Résultante aérodynamique
+definition: >-
+  Force unique exercée par l'air en mouvement sur l'aile, appliquée au centre de
+  poussée. On la décompose selon le vent relatif en portance (perpendiculaire) et
+  traînée (parallèle), avec F_R² = F_z² + F_x².
+english: aerodynamic force / resultant
+synonyms: [force aérodynamique, F_R]
+ficheId: fondamentaux.aerodynamique.la-force-aerodynamique
+tags: []
+status: publie

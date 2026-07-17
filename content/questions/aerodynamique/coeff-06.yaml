@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.coeff-06
+kind: vrai-faux
+theme: coefficients
+statement: >-
+  À profil et incidence donnés, la portance croît avec le carré de la vitesse.
+answer: true
+explanation: >-
+  Dans F_z = ½·ρ·S·V²·Cz, la vitesse intervient au carré : à Cz constant, doubler
+  la vitesse quadruple la portance.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

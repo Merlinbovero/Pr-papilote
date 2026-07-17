@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.coefficient-de-portance
+title: Coefficient de portance (Cz)
+definition: >-
+  Nombre sans dimension de la relation F_z = ½·ρ·S·V²·Cz. Il résume l'effet du
+  profil et de l'angle d'incidence sur la portance ; il croît avec l'incidence
+  jusqu'au décrochage.
+english: lift coefficient
+synonyms: [Cz]
+ficheId: fondamentaux.aerodynamique.la-force-aerodynamique
+tags: []
+status: publie

@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: exercice.faero-effet-vitesse
+title: L'effet de la vitesse sur la portance
+consigne: >-
+  À incidence constante (Cz fixe), un avion double sa vitesse. Par quel facteur
+  sa portance est-elle multipliée ? Justifiez.
+methode: >-
+  Analyser la dépendance de F_z = ½·ρ·S·V²·Cz en fonction de V, les autres
+  facteurs restant constants.
+correction: >-
+  La portance dépend du carré de la vitesse (V²). Doubler V multiplie V² par
+  2² = 4 : la portance est donc multipliée par 4.
+interpretation: >-
+  C'est pourquoi une petite variation de vitesse a un grand effet sur la
+  portance — et pourquoi la vitesse est un paramètre de pilotage majeur.
+notionLiee: fondamentaux.aerodynamique.la-force-aerodynamique
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

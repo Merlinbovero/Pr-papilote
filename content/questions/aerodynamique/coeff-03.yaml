@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.coeff-03
+kind: qcm
+theme: coefficients
+statement: >-
+  Comment mesure-t-on expérimentalement les coefficients Cz et Cx ?
+choices:
+  - "En soufflerie, avec une balance aérodynamique"
+  - "Avec un altimètre"
+  - "Avec un thermomètre"
+  - "En pesant l'avion au sol"
+correctChoices: [0]
+explanation: >-
+  On place une maquette en soufflerie et la balance aérodynamique mesure portance
+  et traînée, d'où l'on tire Cz et Cx.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

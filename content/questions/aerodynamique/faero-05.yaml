@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.faero-05
+kind: qcm
+theme: force-aerodynamique
+statement: >-
+  Comment appelle-t-on le point d'application de la résultante aérodynamique ?
+choices:
+  - "Le centre de poussée"
+  - "Le centre de gravité"
+  - "Le bord d'attaque"
+  - "Le foyer moteur"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le centre de gravité est le point d'application du poids, pas de la force aérodynamique."
+explanation: >-
+  La résultante aérodynamique s'applique au centre de poussée, dont la position
+  se déplace avec l'angle d'incidence.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
