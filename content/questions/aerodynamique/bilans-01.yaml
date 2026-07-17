@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-01
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  En vol en palier stabilisé, quelle relation est vraie ?
+choices:
+  - "Portance = poids et traction = traînée"
+  - "Portance = traînée et traction = poids"
+  - "Portance > poids toujours"
+  - "Traction = 0"
+correctChoices: [0]
+explanation: >-
+  En palier à vitesse constante, la résultante est nulle : la portance équilibre
+  le poids et la traction équilibre la traînée.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

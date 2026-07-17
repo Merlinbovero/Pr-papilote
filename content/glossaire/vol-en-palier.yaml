@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.vol-en-palier
+title: Vol en palier
+definition: >-
+  Vol horizontal, rectiligne et à vitesse constante. Les quatre forces
+  s'équilibrent : la portance compense le poids, la traction compense la traînée
+  (facteur de charge n = 1).
+english: level flight
+synonyms: [palier]
+ficheId: fondamentaux.aerodynamique.les-bilans-de-forces
+tags: []
+status: publie

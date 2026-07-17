@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-08
+kind: vrai-faux
+theme: bilans-de-forces
+statement: >-
+  La vitesse de décrochage augmente avec le facteur de charge.
+answer: true
+explanation: >-
+  La vitesse de décrochage est multipliée par √n : un virage serré (n élevé)
+  rapproche du décrochage.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-06
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  En virage à 60° d'inclinaison, quel est le facteur de charge ?
+choices:
+  - "2"
+  - "1"
+  - "0,5"
+  - "60"
+correctChoices: [0]
+distractorNotes:
+  "1": "n = 1 correspond au vol en palier, pas à un virage incliné."
+explanation: >-
+  À 60° d'inclinaison, n = 1 / cos(60°) = 1 / 0,5 = 2 : l'avion et ses occupants
+  « pèsent » deux fois plus.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

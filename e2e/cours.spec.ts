@@ -139,6 +139,15 @@ test("le cours 9 (types de profils) compose sa fiche neuve et la fiche profil d'
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
+test("le cours 12 (bilans de forces) référence sa fiche et porte un quiz", async ({ page }) => {
+  await page.goto("/cours/les-bilans-de-forces");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /les bilans de forces/i })
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /les bilans de forces en vol/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});
+
 test("le cours 11 propose l'interaction axes/gouvernes, utilisable au clavier", async ({
   page,
 }) => {

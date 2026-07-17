@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.bilans-plane
+title: Distance de plané
+consigne: >-
+  Un moteur tombe en panne à 2000 m. L'avion a une finesse de 12. Quelle distance
+  horizontale peut-il parcourir en air calme ?
+donnees: >-
+  Altitude disponible : 2000 m. Finesse : 12. Air calme.
+methode: >-
+  Distance = finesse × altitude.
+correction: >-
+  Distance = 12 × 2000 m = 24 000 m = 24 km. L'avion peut atteindre un terrain
+  situé dans un rayon d'environ 24 km (moins la marge de sécurité).
+interpretation: >-
+  Connaître sa finesse permet d'estimer les terrains atteignables en cas de panne
+  moteur — un réflexe de sécurité.
+notionLiee: fondamentaux.aerodynamique.les-bilans-de-forces
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-10
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  Que signifie « résultante des forces nulle » en vol stabilisé ?
+choices:
+  - "Les forces s'équilibrent, la vitesse reste constante"
+  - "Aucune force ne s'exerce sur l'avion"
+  - "L'avion est à l'arrêt"
+  - "La portance est nulle"
+correctChoices: [0]
+distractorNotes:
+  "1": "Les forces existent bel et bien ; c'est leur somme vectorielle qui est nulle."
+explanation: >-
+  Résultante nulle signifie que les forces s'équilibrent (1re loi de Newton) :
+  l'avion conserve une vitesse constante, il n'est pas sans force ni à l'arrêt.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

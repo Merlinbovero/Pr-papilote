@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-11
+kind: calcul
+theme: bilans-de-forces
+statement: >-
+  Un planeur de finesse 30 vole en air calme à 1500 m d'altitude. Quelle distance
+  maximale peut-il parcourir (en km) ?
+answerValue: 45
+tolerance: 1
+unit: km
+explanation: >-
+  Distance = finesse × altitude = 30 × 1500 m = 45 000 m = 45 km.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
