@@ -144,7 +144,10 @@ test("le cours 12 (bilans de forces) référence sa fiche et porte un quiz", asy
   await expect(
     page.getByRole("heading", { level: 1, name: /les bilans de forces/i })
   ).toBeVisible();
-  await expect(page.getByRole("link", { name: /les bilans de forces en vol/i })).toBeVisible();
+  // Titre de cours = titre de fiche : on cible le lien de fiche par son résumé.
+  await expect(
+    page.getByRole("link", { name: /les bilans de forces en vol en vol stabilisé/i })
+  ).toBeVisible();
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
