@@ -39,6 +39,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-elevated: var(--elevated);
+  --color-elevated-foreground: var(--elevated-foreground);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
@@ -58,27 +60,32 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Blancs très légèrement bleutés (hue 259, chroma minime) : plus « papier
+     institutionnel » qu'un blanc pur clinique, sans virer au coloré. */
+  --background: oklch(0.995 0.002 259);
+  --foreground: oklch(0.16 0.01 259);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.16 0.01 259);
+  /* Surface surélevée (encadrés, blocs imbriqués). */
+  --elevated: oklch(0.975 0.004 259);
+  --elevated-foreground: oklch(0.16 0.01 259);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.16 0.01 259);
   /* Bleu drapeau français (proche du #0055A4) — couleur d'identité du site.
      Contraste avec le texte blanc ≈ 6,9:1 (AA vérifié par le scan axe). */
   --primary: oklch(0.47 0.15 258);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --secondary: oklch(0.965 0.004 259);
+  --secondary-foreground: oklch(0.22 0.01 259);
+  --muted: oklch(0.965 0.004 259);
   /* Assombri (0.556 → 0.52) pour atteindre le contraste AA ≥ 4.5:1 même sur
-     fond « muted » (#f5f5f5) — vérifié par le scan axe (ch. 9 §5). */
-  --muted-foreground: oklch(0.52 0 0);
-  --accent: oklch(0.96 0.015 258);
+     fond « muted » — vérifié par le scan axe (ch. 9 §5). */
+  --muted-foreground: oklch(0.52 0.008 259);
+  --accent: oklch(0.955 0.017 258);
   --accent-foreground: oklch(0.3 0.09 258);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: oklch(0.9 0.006 259);
+  --input: oklch(0.9 0.006 259);
   --ring: oklch(0.55 0.13 258);
   --success: oklch(0.55 0.13 150);
   --success-foreground: oklch(0.985 0 0);
@@ -95,35 +102,41 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar: oklch(0.98 0.003 259);
+  --sidebar-foreground: oklch(0.16 0.01 259);
+  --sidebar-primary: oklch(0.47 0.15 258);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: oklch(0.955 0.017 258);
+  --sidebar-accent-foreground: oklch(0.3 0.09 258);
+  --sidebar-border: oklch(0.9 0.006 259);
+  --sidebar-ring: oklch(0.55 0.13 258);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  /* Dark theme « bleu ardoise » : neutres légèrement teintés (hue 259, la
+     teinte du bleu drapeau) plutôt que gris purs, avec plusieurs niveaux de
+     surface bien distincts pour sortir du « tout gris foncé » sans éclaircir
+     l'ensemble. background < sidebar < card/popover < elevated. */
+  --background: oklch(0.185 0.012 259);
+  --foreground: oklch(0.965 0.003 259);
+  --card: oklch(0.232 0.014 259);
+  --card-foreground: oklch(0.965 0.003 259);
+  --elevated: oklch(0.272 0.016 259);
+  --elevated-foreground: oklch(0.965 0.003 259);
+  --popover: oklch(0.232 0.014 259);
+  --popover-foreground: oklch(0.965 0.003 259);
   /* Bleu drapeau éclairci pour un fond sombre (identité conservée). */
   --primary: oklch(0.72 0.14 256);
-  --primary-foreground: oklch(0.145 0.02 255);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.31 0.04 258);
-  --accent-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.16 0.02 255);
+  --secondary: oklch(0.288 0.016 259);
+  --secondary-foreground: oklch(0.965 0.003 259);
+  --muted: oklch(0.285 0.014 259);
+  --muted-foreground: oklch(0.735 0.018 259);
+  --accent: oklch(0.34 0.05 258);
+  --accent-foreground: oklch(0.97 0.01 258);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --border: oklch(0.82 0.02 259 / 12%);
+  --input: oklch(0.82 0.02 259 / 16%);
   --ring: oklch(0.62 0.13 256);
   --success: oklch(0.7 0.14 150);
   --success-foreground: oklch(0.145 0 0);
@@ -139,14 +152,14 @@
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar: oklch(0.21 0.013 259);
+  --sidebar-foreground: oklch(0.965 0.003 259);
   --sidebar-primary: oklch(0.72 0.1 250);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-accent: oklch(0.3 0.03 258);
+  --sidebar-accent-foreground: oklch(0.97 0.01 258);
+  --sidebar-border: oklch(0.82 0.02 259 / 12%);
+  --sidebar-ring: oklch(0.62 0.13 256);
 }
 
 @layer base {
