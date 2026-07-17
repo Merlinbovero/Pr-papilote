@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.centrage-06
+kind: vrai-faux
+theme: stabilite-centrage
+statement: >-
+  Le foyer se situe exactement à 26 % de la corde pour tous les profils.
+answer: false
+explanation: >-
+  Non : le foyer se situe approximativement au quart de la corde (~25 %). La
+  valeur 0,26 est le résultat d'un exemple particulier (profil NACA 2412), pas une
+  constante universelle.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

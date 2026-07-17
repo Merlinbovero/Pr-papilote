@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-06
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Quel élément assure la stabilité directionnelle (en lacet) ?
+choices:
+  - "La dérive (empennage vertical)"
+  - "Le dièdre"
+  - "Les ailerons"
+  - "Le train d'atterrissage"
+correctChoices: [0]
+explanation: >-
+  La dérive agit comme une girouette : si le nez dévie, le vent relatif appuie
+  sur elle et réaligne l'avion (stabilité directionnelle).
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

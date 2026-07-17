@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-05
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Quel dispositif assure la stabilité latérale (en roulis) ?
+choices:
+  - "Le dièdre"
+  - "La dérive"
+  - "La gouverne de profondeur"
+  - "Les volets"
+correctChoices: [0]
+explanation: >-
+  Le dièdre (ailes relevées vers les bouts) ramène l'avion à plat après une
+  inclinaison : c'est la stabilité latérale.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

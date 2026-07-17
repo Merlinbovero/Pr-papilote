@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.centrage-04
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  De quoi dépend la position du centre de gravité d'un avion ?
+choices:
+  - "Du chargement (passagers, bagages, carburant)"
+  - "De la couleur de l'avion"
+  - "De l'altitude uniquement"
+  - "De la vitesse uniquement"
+correctChoices: [0]
+explanation: >-
+  Le centrage dépend de la répartition des masses embarquées : c'est pourquoi on
+  calcule le centrage avant chaque vol.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

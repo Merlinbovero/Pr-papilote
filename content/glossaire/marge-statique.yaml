@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.marge-statique
+title: Marge statique
+definition: >-
+  Distance entre le centre de gravité et le foyer. Positive (CG en avant du
+  foyer), elle assure la stabilité longitudinale ; plus elle est grande, plus
+  l'avion est stable mais moins maniable.
+english: static margin
+synonyms: []
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie

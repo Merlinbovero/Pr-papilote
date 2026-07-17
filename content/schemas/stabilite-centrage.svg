@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .accent { fill: #3b82f6; font-size: 11px; }
+    .ink { stroke: currentColor; fill: currentColor; fill-opacity: 0.12; stroke-width: 2; }
+    .cg { fill: currentColor; }
+    .foyer { fill: #3b82f6; }
+    .dim { stroke: #3b82f6; fill: none; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="sc-s" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="sc-e" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">Stabilité longitudinale : CG en avant du foyer</text>
+
+  <!-- Avion vu de côté (profil + empennage) -->
+  <g class="ink">
+    <path d="M60,120 h250 q34,0 50,-10 v20 q-16,-10 -50,-10 z" />
+    <path d="M300,110 v-24 h12 v24 z" />
+  </g>
+  <!-- Corde (repère) -->
+  <line x1="80" y1="150" x2="230" y2="150" class="dim" stroke-dasharray="2 3" />
+  <text class="lbl" x="155" y="168" text-anchor="middle">corde</text>
+
+  <!-- Foyer au ~quart de corde -->
+  <circle class="foyer" cx="118" cy="120" r="5" />
+  <text class="accent" x="118" y="100" text-anchor="middle">foyer (~25 %)</text>
+
+  <!-- Centre de gravité en avant (plus près du nez) -->
+  <circle class="cg" cx="92" cy="120" r="5" />
+  <text class="lbl" x="80" y="100" text-anchor="middle">CG</text>
+
+  <!-- Marge statique -->
+  <line class="dim" x1="92" y1="138" x2="118" y2="138" marker-start="url(#sc-e)" marker-end="url(#sc-s)" />
+  <text class="accent" x="105" y="132" text-anchor="middle">marge statique</text>
+
+  <text class="lbl" x="210" y="206" text-anchor="middle">CG en avant du foyer → l'avion revient de lui-même à l'équilibre (stable)</text>
+</svg>

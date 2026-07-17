@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-01
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Qu'est-ce qu'un avion stable ?
+choices:
+  - "Un avion qui revient de lui-même à son équilibre après une perturbation"
+  - "Un avion qui ne bouge jamais"
+  - "Un avion sans gouvernes"
+  - "Un avion qui accélère toujours"
+correctChoices: [0]
+explanation: >-
+  La stabilité est la tendance à revenir de soi-même à l'équilibre après une
+  perturbation (rafale, mouvement de commande).
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

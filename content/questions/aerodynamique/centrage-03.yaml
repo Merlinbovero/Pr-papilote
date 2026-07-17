@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.centrage-03
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Quel est le danger d'un centrage trop arrière ?
+choices:
+  - "L'avion devient instable et difficile à contrôler"
+  - "L'avion est trop stable"
+  - "La portance disparaît"
+  - "Le moteur cale"
+correctChoices: [0]
+explanation: >-
+  Un centrage trop arrière rapproche le centre de gravité du foyer (marge statique
+  faible ou nulle) : l'avion devient instable et dangereux.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

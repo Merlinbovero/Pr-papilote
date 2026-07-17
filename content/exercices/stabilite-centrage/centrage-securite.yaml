@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.stab-centrage-securite
+title: Centrage et sécurité
+consigne: >-
+  Un pilote charge des bagages lourds dans la soute arrière, repoussant le centre
+  de gravité au-delà de la limite arrière. Quel est le risque et que doit-il faire ?
+methode: >-
+  Relier un centrage trop arrière à ses conséquences sur la stabilité, puis à
+  l'action corrective.
+correction: >-
+  Le centre de gravité se rapproche (voire dépasse) le foyer : la marge statique
+  devient faible ou nulle, l'avion devient instable et dangereux (difficile à
+  contrôler, décrochage imprévisible). Le pilote doit redistribuer les masses pour
+  ramener le centrage dans la plage autorisée avant de voler.
+interpretation: >-
+  Le calcul du centrage avant chaque vol est une obligation de sécurité, pas une
+  formalité.
+notionLiee: fondamentaux.aerodynamique.stabilite-et-centrage
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.plage-de-centrage
+title: Plage de centrage
+definition: >-
+  Intervalle de positions du centre de gravité autorisé par le constructeur,
+  entre une limite avant et une limite arrière. Hors de cette plage, l'avion est
+  soit trop lourd à piloter, soit instable et dangereux.
+english: centre-of-gravity range
+synonyms: []
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie

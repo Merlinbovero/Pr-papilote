@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.foyer
+title: Foyer
+definition: >-
+  Point où s'appliquent les variations de portance lorsque l'incidence change.
+  En régime subsonique, il se situe approximativement au quart de la corde
+  (~25 %) à partir du bord d'attaque, à peu près quel que soit le profil.
+english: aerodynamic centre
+synonyms: []
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie
