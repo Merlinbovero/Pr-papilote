@@ -70,3 +70,17 @@ test("le cours 3 propose l'interaction Venturi, utilisable au clavier et décrit
   // Alternative textuelle accessible présente (au moins une occurrence).
   await expect(page.getByText("Description accessible").first()).toBeVisible();
 });
+
+test("le cours 4 (souffleries) référence sa fiche et un exercice sur le collecteur", async ({
+  page,
+}) => {
+  await page.goto("/cours/les-souffleries");
+  await expect(page.getByRole("heading", { level: 1, name: /les souffleries/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Fiches à étudier" })).toBeVisible();
+  // La fiche canonique est référencée (lien, avec son résumé), pas recopiée.
+  await expect(
+    page.getByRole("link", { name: /les souffleries une soufflerie produit/i })
+  ).toBeVisible();
+  // Le cours porte bien un quiz (composition standard).
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});

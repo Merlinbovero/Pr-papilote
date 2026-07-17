@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-05
+kind: qcm
+theme: soufflerie
+statement: >-
+  Qu'est-ce qui distingue une soufflerie de type Prandtl d'une soufflerie de
+  type Eiffel ?
+choices:
+  - "L'air recircule en boucle (circuit fermé)"
+  - "Elle n'a pas de ventilateur"
+  - "Elle ne mesure pas les forces"
+  - "La maquette y est mobile"
+correctChoices: [0]
+explanation: >-
+  La soufflerie de type Prandtl est à circuit fermé : l'air recircule en boucle.
+  Le type Eiffel, à circuit ouvert, aspire l'air ambiant et le rejette.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

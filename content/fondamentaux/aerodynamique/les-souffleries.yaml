@@ -1,0 +1,139 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.les-souffleries
+type: notion-aerodynamique
+title: Les souffleries
+slug: les-souffleries
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — l'étude de l'air en soufflerie
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Une soufflerie produit un courant d'air contrôlé pour étudier l'action de
+  l'air sur une maquette immobile — c'est la relativité du mouvement. On y
+  distingue les souffleries à circuit ouvert (Eiffel) et fermé (Prandtl), et
+  l'on y mesure les forces avec une balance aérodynamique.
+objectifs:
+  - Expliquer le principe d'une soufflerie (relativité du mouvement entre l'air et la maquette).
+  - Nommer les éléments d'une soufflerie et le rôle de chacun (collecteur, veine d'essai, diffuseur, ventilateur).
+  - Distinguer les souffleries à circuit ouvert (Eiffel) et fermé (Prandtl) et le rôle de la balance aérodynamique.
+aliases: [soufflerie, souffleries, Eiffel, Prandtl, veine d'essai]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 4 « Les souffleries » (mécanique du vol, p.12-14).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Les souffleries"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "ONERA — Les grands moyens d'essais : souffleries"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.conservation-du-debit
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+content:
+  essentiel:
+    body: |
+      Étudier l'action de l'air sur une aile en vol est difficile. On procède
+      donc à l'**inverse** : on maintient une **maquette immobile** et on fait
+      circuler l'air autour d'elle. C'est la **relativité du mouvement** — un
+      objet fixe dans un air en mouvement subit les mêmes forces qu'un objet
+      mobile dans un air immobile. La machine qui produit ce courant d'air
+      contrôlé est la **soufflerie**.
+
+      Une soufflerie enchaîne plusieurs éléments : un **collecteur** (convergent)
+      qui accélère et régularise l'air, une **veine d'essai** où l'on place la
+      maquette, un **diffuseur** qui ralentit l'air ensuite, et un
+      **ventilateur** qui entretient le mouvement. La qualité de l'écoulement se
+      mesure par son **taux de turbulence** — plus il est faible, plus
+      l'écoulement est « propre ».
+
+      On distingue les souffleries à **circuit ouvert** (type **Eiffel**, qui
+      aspire l'air ambiant) et à **circuit fermé** (type **Prandtl**, où l'air
+      recircule en boucle). Dans la veine, une **balance aérodynamique** mesure
+      les forces sur la maquette (portance, traînée).
+    aRetenir:
+      - Une soufflerie étudie une maquette immobile dans un air en mouvement (relativité du mouvement).
+      - Éléments — collecteur (accélère/régularise), veine d'essai (maquette), diffuseur (ralentit), ventilateur.
+      - Le taux de turbulence mesure la qualité de l'écoulement (plus il est bas, mieux c'est).
+      - Circuit ouvert = type Eiffel ; circuit fermé (l'air recircule) = type Prandtl.
+      - La balance aérodynamique mesure les forces (portance, traînée) sur la maquette.
+  sections:
+    - id: le-principe
+      title: "Le principe : la relativité du mouvement"
+      body: |
+        Ce qui crée les forces aérodynamiques, c'est le **mouvement relatif**
+        entre l'air et l'objet — le **vent relatif**. Peu importe, physiquement,
+        que ce soit l'avion qui avance dans l'air calme ou l'air qui défile
+        autour d'un avion immobile : les forces sont **les mêmes**.
+
+        La soufflerie exploite cette équivalence. On fixe une **maquette** (ou un
+        élément réel) dans un courant d'air maîtrisé, ce qui permet de **mesurer**
+        commodément les efforts, de **visualiser** les filets d'air (fumée,
+        brins de laine) et de faire varier les conditions (vitesse, incidence)
+        de façon reproductible.
+    - id: la-composition
+      title: La composition d'une soufflerie
+      body: |
+        Une soufflerie enchaîne des éléments aux rôles complémentaires :
+
+        - **Collecteur** (convergent) : il **accélère** l'air (conservation du
+          débit) et **régularise** l'écoulement. Une **chambre de
+          tranquillisation** (nid d'abeille, grillages) casse en amont les gros
+          tourbillons.
+        - **Veine d'essai** : la section où est placée la **maquette**, avec un
+          écoulement aussi uniforme que possible ; c'est là qu'on mesure et qu'on
+          observe.
+        - **Diffuseur** : en aval, il **ralentit** progressivement l'air et
+          récupère une partie de l'énergie.
+        - **Ventilateur** : la source d'énergie qui **entretient** le courant
+          d'air.
+
+        La qualité de la veine se caractérise par son **taux de turbulence** :
+        plus il est bas, plus l'écoulement est régulier et fidèle à un vol réel.
+      figures:
+        - schemaId: soufflerie
+          alt: Une soufflerie à circuit ouvert de gauche à droite — collecteur convergent, veine d'essai avec une maquette d'aile, diffuseur qui s'élargit, ventilateur.
+          caption: Une soufflerie à circuit ouvert (type Eiffel) — l'air est accéléré par le collecteur, étudié dans la veine d'essai, puis ralenti par le diffuseur.
+          width: 420
+          height: 220
+    - id: eiffel-prandtl-balance
+      title: Eiffel, Prandtl et la balance aérodynamique
+      strate: maitriser
+      body: |
+        Deux grandes architectures existent :
+
+        - **Circuit ouvert (type Eiffel)** : la soufflerie **aspire l'air
+          ambiant** à une extrémité et le rejette à l'autre. Simple, mais
+          sensible aux conditions de la salle. Gustave **Eiffel** fut un pionnier
+          de ces essais.
+        - **Circuit fermé (type Prandtl)** : l'air **recircule en boucle** dans
+          un conduit refermé sur lui-même. Plus coûteux, mais plus stable et plus
+          économe en énergie une fois lancé.
+
+        Dans la veine, une **balance aérodynamique** mesure les **forces** qui
+        s'exercent sur la maquette — notamment la **portance** et la **traînée**.
+        Ces mesures permettent d'en déduire les **coefficients** aérodynamiques
+        (Cz, Cx), étudiés dans les cours suivants sur la portance et la traînée.
+  pieges:
+    - Une soufflerie ne « crée » pas des forces différentes du vol réel — par la relativité du mouvement, ce sont les mêmes.
+    - Circuit ouvert (Eiffel) et circuit fermé (Prandtl) désignent le trajet de l'air, pas la forme de la maquette.
+    - Le collecteur accélère l'air (il se resserre) tandis que le diffuseur le ralentit (il s'élargit) — ne pas les confondre.

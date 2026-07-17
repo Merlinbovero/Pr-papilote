@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.collecteur
+title: Collecteur (convergent)
+definition: >-
+  Partie amont d'une soufflerie dont la section se resserre : il accélère l'air
+  (conservation du débit) et régularise l'écoulement avant la veine d'essai. Le
+  diffuseur, en aval, joue le rôle inverse en ralentissant l'air.
+english: contraction / nozzle
+synonyms: [convergent]
+ficheId: fondamentaux.aerodynamique.les-souffleries
+tags: []
+status: publie

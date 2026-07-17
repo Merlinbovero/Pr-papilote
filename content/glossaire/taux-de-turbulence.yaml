@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.taux-de-turbulence
+title: Taux de turbulence
+definition: >-
+  Grandeur caractérisant l'agitation résiduelle de l'écoulement dans une
+  soufflerie. Plus il est faible, plus l'écoulement est régulier et fidèle aux
+  conditions d'un vol réel.
+english: turbulence intensity
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-souffleries
+tags: []
+status: publie

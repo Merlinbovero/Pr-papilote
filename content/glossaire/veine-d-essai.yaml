@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.veine-d-essai
+title: Veine d'essai
+definition: >-
+  Section d'une soufflerie où l'écoulement est le plus uniforme et où l'on place
+  la maquette pour mesurer et observer. C'est là qu'agit la balance
+  aérodynamique.
+english: test section
+synonyms: [chambre d'expérience]
+ficheId: fondamentaux.aerodynamique.les-souffleries
+tags: []
+status: publie

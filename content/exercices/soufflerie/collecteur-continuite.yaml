@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.soufflerie-collecteur
+title: Vitesse dans le collecteur d'une soufflerie
+consigne: >-
+  Le collecteur d'une soufflerie fait passer l'air d'une grande section d'entrée
+  à la veine d'essai plus étroite. Calculez la vitesse dans la veine.
+donnees: >-
+  Section d'entrée S₁ = 4 m², vitesse V₁ = 3 m/s. Veine d'essai S₂ = 1 m². Air
+  supposé peu compressible.
+methode: >-
+  Appliquer la conservation du débit S₁·V₁ = S₂·V₂ et isoler V₂ = S₁·V₁ / S₂.
+correction: >-
+  V₂ = (4 × 3) / 1 = 12 m/s. Le collecteur, en divisant la section par 4,
+  multiplie la vitesse par 4.
+interpretation: >-
+  C'est précisément le rôle du collecteur : accélérer l'air pour obtenir, dans la
+  veine d'essai, la vitesse d'étude voulue à partir d'un flux d'entrée lent et
+  régulier.
+notionLiee: fondamentaux.aerodynamique.les-souffleries
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

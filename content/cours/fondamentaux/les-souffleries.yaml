@@ -1,0 +1,90 @@
+schemaVersion: 1
+id: cours.les-souffleries
+slug: les-souffleries
+title: Les souffleries
+description: >-
+  Comment étudie-t-on l'air autour d'une aile ? En inversant le problème : une
+  maquette immobile dans un courant d'air maîtrisé (relativité du mouvement). Ce
+  cours présente la soufflerie, ses éléments et la mesure des forces.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Expliquer le principe d'une soufflerie (relativité du mouvement entre l'air et la maquette).
+  - Nommer les éléments d'une soufflerie et le rôle de chacun.
+  - Distinguer circuit ouvert (Eiffel) et fermé (Prandtl) et le rôle de la balance aérodynamique.
+prerequisites:
+  - cours.bernoulli-et-venturi
+ordre: 4
+niveau: 1
+dureeEstimeeMin: 30
+pdfPages:
+  - from: 12
+    to: 14
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-souffleries
+termes:
+  - terme.soufflerie
+  - terme.veine-d-essai
+  - terme.balance-aerodynamique
+  - terme.taux-de-turbulence
+  - terme.collecteur
+exercices:
+  - exercice.soufflerie-eiffel-prandtl
+  - exercice.soufflerie-collecteur
+questions:
+  - q.aerodynamique.soufflerie-01
+  - q.aerodynamique.soufflerie-02
+  - q.aerodynamique.soufflerie-03
+  - q.aerodynamique.soufflerie-04
+  - q.aerodynamique.soufflerie-05
+  - q.aerodynamique.soufflerie-06
+  - q.aerodynamique.soufflerie-07
+  - q.aerodynamique.soufflerie-08
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-souffleries
+    title: Étudier — les souffleries
+    obligatoire: true
+  - kind: exercice
+    ref: exercice.soufflerie-collecteur
+    title: S'exercer — vitesse dans le collecteur
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.soufflerie-eiffel-prandtl
+    title: S'exercer — Eiffel contre Prandtl
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - Une soufflerie étudie une maquette immobile dans un air en mouvement (relativité du mouvement).
+  - Le vent relatif crée les mêmes forces, que l'avion avance ou que l'air défile.
+  - Éléments — collecteur (accélère/régularise), veine d'essai (maquette), diffuseur (ralentit), ventilateur.
+  - Le taux de turbulence mesure la qualité de l'écoulement (plus il est bas, mieux c'est).
+  - Circuit ouvert = type Eiffel ; circuit fermé (l'air recircule) = type Prandtl.
+  - La balance aérodynamique mesure portance et traînée, d'où l'on tire les coefficients Cz, Cx.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Les souffleries"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "ONERA — Les grands moyens d'essais : souffleries"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 4 « Les souffleries » (Lot 3, mécanique du vol p.12-14).
+    author: prepapilote
