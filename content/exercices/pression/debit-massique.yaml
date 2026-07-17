@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.pression-debit-massique
+title: Distinguer débit volumique et débit massique
+consigne: >-
+  Calculez le débit volumique puis le débit massique d'air traversant l'entrée
+  d'air d'un réacteur.
+donnees: >-
+  Section d'entrée S = 0,5 m². Vitesse de l'air V = 80 m/s. Masse volumique
+  ρ = 1,225 kg/m³.
+methode: >-
+  Débit volumique Qv = S·V (m³/s). Débit massique Qm = ρ·S·V (kg/s), soit
+  Qm = ρ·Qv.
+correction: >-
+  Qv = 0,5 × 80 = 40 m³/s. Qm = 1,225 × 40 = 49 kg/s.
+interpretation: >-
+  C'est le débit massique (49 kg/s d'air) qui compte pour la poussée d'un
+  réacteur : ce qui pousse l'avion, c'est la masse d'air accélérée, pas seulement
+  son volume.
+notionLiee: fondamentaux.aerodynamique.conservation-du-debit
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

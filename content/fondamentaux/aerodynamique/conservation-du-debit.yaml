@@ -1,0 +1,131 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.conservation-du-debit
+type: notion-aerodynamique
+title: La conservation du débit
+slug: conservation-du-debit
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — l'air s'écoule et se conserve autour de l'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Le débit, c'est la quantité d'air qui traverse une section par unité de temps.
+  Il se conserve le long d'un écoulement : quand la section se resserre, la
+  vitesse augmente (S·V = constante). C'est la loi de continuité, brique de
+  l'effet Venturi et de la portance.
+objectifs:
+  - Définir le débit et distinguer débit volumique (Qv = S·V) et débit massique (Qm = ρ·S·V).
+  - Énoncer la loi de continuité — le débit se conserve le long d'un écoulement.
+  - En déduire qu'un rétrécissement de section accélère l'air (S₁·V₁ = S₂·V₂).
+aliases: [débit, continuité, conservation du débit, S·V constant]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 2 « Pression et écoulement de l'air » (mécanique du vol, p.6-9).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Pression et écoulement"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.ecoulement-de-l-air
+    - fondamentaux.aerodynamique.air-et-proprietes
+content:
+  essentiel:
+    body: |
+      Le **débit** mesure la **quantité d'air qui traverse une section** pendant
+      une unité de temps. On le lit de deux façons : le **débit volumique**
+      **Qv = S · V** (une surface S multipliée par la vitesse V de l'air), et le
+      **débit massique** **Qm = ρ · S · V**, qui tient compte de la masse
+      volumique ρ.
+
+      La **loi de continuité** dit que, dans un écoulement, ce débit **se
+      conserve** : l'air qui entre par un bout ressort par l'autre, rien ne se
+      perd. Pour un air peu compressible (vitesses subsoniques modérées), ρ varie
+      peu, et la conservation revient à **S · V = constante**.
+
+      Conséquence directe : **si la section se resserre, la vitesse augmente**.
+      C'est ce qui se passe au-dessus d'une aile, où les filets d'air se
+      resserrent et accélèrent — un résultat qu'on relie ensuite à la pression
+      (effet Venturi) et à la portance.
+    aRetenir:
+      - Débit = quantité d'air traversant une section par unité de temps.
+      - Débit volumique Qv = S·V ; débit massique Qm = ρ·S·V.
+      - Loi de continuité — le débit se conserve le long de l'écoulement.
+      - En air peu compressible, cela revient à S·V = constante.
+      - Un rétrécissement de section accélère l'air (S₁·V₁ = S₂·V₂).
+  sections:
+    - id: qu-est-ce-que-le-debit
+      title: Qu'est-ce que le débit ?
+      body: |
+        Le **débit** répond à une question simple : **combien d'air passe** à
+        travers une surface pendant un temps donné ?
+
+        On le mesure de deux manières :
+
+        - **Débit volumique** : **Qv = S · V** (en m³/s). S est la **section**
+          traversée (m²), V la **vitesse** de l'air (m/s). Plus la section est
+          large ou l'air rapide, plus le volume qui passe est grand.
+        - **Débit massique** : **Qm = ρ · S · V** (en kg/s). On multiplie par la
+          **masse volumique** ρ pour obtenir non pas un volume mais une **masse**
+          d'air. C'est le débit massique qui se conserve rigoureusement, même
+          quand l'air se comprime.
+    - id: la-loi-de-continuite
+      title: La loi de continuité
+      body: |
+        Imaginons l'air qui s'écoule dans un tube dont la section change. Comme
+        l'air ne s'accumule nulle part et ne disparaît pas, **la même quantité**
+        traverse chaque section par unité de temps : le **débit se conserve**.
+        C'est la **loi de continuité**.
+
+        Entre une section 1 et une section 2 :
+
+        **ρ₁ · S₁ · V₁ = ρ₂ · S₂ · V₂**
+
+        Aux vitesses de vol modérées, l'air se comprime peu : ρ reste quasi
+        constante. La relation se simplifie alors en :
+
+        **S₁ · V₁ = S₂ · V₂**
+
+        Le produit « section × vitesse » est le même partout le long de
+        l'écoulement.
+      figures:
+        - schemaId: conservation-debit
+          alt: Un conduit passant d'une grande section à une petite section, avec des flèches d'air courtes dans la grande section et longues dans la petite, illustrant S1 fois V1 égale S2 fois V2.
+          caption: Le débit se conserve — quand la section passe de S₁ à S₂ plus petite, la vitesse passe de V₁ à V₂ plus grande (S₁·V₁ = S₂·V₂).
+          width: 420
+          height: 240
+    - id: retrecissement-et-acceleration
+      title: Rétrécissement et accélération
+      body: |
+        La conséquence de la continuité est essentielle en aérodynamique : à
+        débit constant, **une section plus petite impose une vitesse plus
+        grande**. Là où l'air « passe à l'étroit », il **accélère** — comme
+        l'eau d'une rivière dans un passage resserré.
+
+        Au-dessus d'une aile, les filets d'air se **resserrent** : l'air y
+        **accélère**. Cette accélération se traduit ensuite par une **baisse de
+        pression** (effet Venturi), étudiée avec le **théorème de Bernoulli** au
+        cours suivant. La continuité est donc le premier maillon de la chaîne qui
+        mène à la portance.
+      strate: maitriser
+  pieges:
+    - Ce n'est pas la section qui « pousse » l'air — c'est la conservation du débit qui impose l'accélération dans un rétrécissement.
+    - Débit et vitesse ne sont pas la même chose — le débit se conserve, la vitesse, elle, change avec la section.
+    - S·V = constante suppose un air peu compressible ; c'est le débit massique ρ·S·V qui se conserve rigoureusement.

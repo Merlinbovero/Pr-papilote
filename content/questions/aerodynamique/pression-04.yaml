@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-04
+kind: qcm
+theme: pression
+statement: >-
+  Quelle relation lie pression totale (pt), statique (ps) et dynamique (q) ?
+choices:
+  - "pt = ps + q"
+  - "pt = ps − q"
+  - "ps = pt + q"
+  - "q = ps + pt"
+correctChoices: [0]
+explanation: >-
+  La pression totale est la somme de la pression statique et de la pression
+  dynamique : pt = ps + q. En arrêtant l'air, tout son mouvement se convertit en
+  pression.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

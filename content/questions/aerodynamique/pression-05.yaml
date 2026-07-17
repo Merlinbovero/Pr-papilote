@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-05
+kind: vrai-faux
+theme: pression
+statement: >-
+  Le tube de Pitot mesure la pression totale de l'air face au vent relatif.
+answer: true
+explanation: >-
+  Ouvert face au vent, le tube de Pitot capte la pression totale (pt). Combinée à
+  la pression statique de la prise statique, la différence pt − ps donne la
+  pression dynamique, donc la vitesse.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

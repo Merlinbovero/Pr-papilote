@@ -1,0 +1,142 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+type: notion-aerodynamique
+title: Pression statique, dynamique et totale
+slug: pression-statique-dynamique-totale
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la pression de l'air en mouvement
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Dans un air en mouvement, la pression se décompose en trois grandeurs liées :
+  la pression statique (l'air « au repos »), la pression dynamique (le
+  mouvement, q = ½·ρ·V²) et la pression totale (leur somme, ps + q). C'est cette
+  relation qui, mesurée par le tube de Pitot, donne la vitesse de l'avion.
+objectifs:
+  - Distinguer pression statique, pression dynamique et pression totale, et énoncer la relation qui les lie.
+  - Calculer une pression dynamique avec q = ½·ρ·V² en utilisant ρ ≈ 1,225 kg/m³.
+  - Expliquer comment le tube de Pitot exploite pt = ps + q pour mesurer la vitesse.
+aliases: [pression statique, pression dynamique, pression totale, q, Pitot]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 2 « Pression et écoulement de l'air » (mécanique du vol, p.6-9).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Pression et écoulement"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: "Atmosphère type OACI (ISA) — masse volumique de l'air au niveau de la mer"
+    kind: officiel
+    consultedAt: "2026-07-16"
+relations:
+  prerequisites:
+    - fondamentaux.physique.pression-forces-unites
+    - fondamentaux.aerodynamique.air-et-proprietes
+content:
+  essentiel:
+    body: |
+      Quand l'air se déplace, sa pression se lit de trois façons complémentaires.
+
+      La **pression statique** (ps) est la pression que l'air exerce dans
+      **toutes les directions**, indépendamment de son mouvement — c'est la
+      pression « ambiante » que subit un corps immobile dans l'écoulement.
+
+      La **pression dynamique** (q) traduit l'**énergie du mouvement** de l'air.
+      Elle vaut **q = ½·ρ·V²** : elle croît avec la **masse volumique** ρ et
+      surtout avec le **carré de la vitesse** V. Au niveau de la mer,
+      ρ ≈ **1,225 kg/m³** (atmosphère standard).
+
+      La **pression totale** (pt) est la somme des deux : **pt = ps + q**. C'est
+      la pression qu'on mesure en arrêtant l'air face au vent relatif. En
+      retranchant la pression statique, on isole q — donc la **vitesse** : c'est
+      le principe du **tube de Pitot**.
+    aRetenir:
+      - Pression statique (ps) — pression de l'air dans toutes les directions, indépendante du mouvement.
+      - Pression dynamique — q = ½·ρ·V² ; elle croît avec le carré de la vitesse (unité, le pascal).
+      - Pression totale — pt = ps + q ; c'est la pression obtenue en arrêtant l'air.
+      - ρ ≈ 1,225 kg/m³ dans l'atmosphère standard au niveau de la mer.
+      - Le tube de Pitot mesure pt ; avec la pression statique, la différence donne q, donc la vitesse.
+  sections:
+    - id: la-pression-statique
+      title: La pression statique
+      body: |
+        La **pression statique** est la pression qu'exerce l'air sur son
+        environnement, **dans toutes les directions à la fois**. Elle ne dépend
+        pas du fait que l'air soit immobile ou en mouvement : c'est la pression
+        « ambiante » de la masse d'air.
+
+        En vol, elle correspond à la **pression atmosphérique** à l'altitude
+        considérée. Elle diminue lorsqu'on monte (l'air se raréfie), ce qui est
+        exactement le principe de l'**altimètre**. On la mesure par une **prise
+        statique** — un orifice placé **parallèlement** à l'écoulement, pour ne
+        capter que la pression ambiante et pas le choc de l'air.
+    - id: la-pression-dynamique
+      title: La pression dynamique
+      body: |
+        La **pression dynamique** représente l'**énergie de mouvement** de
+        l'air. Un air rapide « pousse » davantage : c'est cette poussée que
+        décrit q.
+
+        Sa formule est fondamentale en aérodynamique :
+
+        **q = ½ · ρ · V²**
+
+        - **ρ** (rhô) : la masse volumique de l'air, en kg/m³ ;
+        - **V** : la vitesse de l'air, en m/s ;
+        - **q** : la pression dynamique, en pascals (Pa).
+
+        Deux conséquences majeures. D'abord, q dépend du **carré** de la vitesse :
+        **doubler la vitesse quadruple** la pression dynamique — d'où l'énorme
+        influence de la vitesse sur la portance et la traînée. Ensuite, q dépend
+        de **ρ** : en altitude, l'air moins dense donne une pression dynamique
+        plus faible à vitesse égale.
+
+        Au niveau de la mer, en atmosphère standard, **ρ ≈ 1,225 kg/m³** (souvent
+        arrondi à 1,3 kg/m³ pour un calcul de tête).
+      figures:
+        - schemaId: pressions-statique-dynamique
+          alt: Un tube de Pitot face au vent relatif captant la pression totale, une prise statique captant la pression statique, leur différence donnant la pression dynamique.
+          caption: Le tube de Pitot capte la pression totale (pt) ; la prise statique capte la pression statique (ps). Leur différence, pt − ps = q, donne la vitesse.
+          width: 420
+          height: 240
+    - id: la-pression-totale-et-le-pitot
+      title: La pression totale et le tube de Pitot
+      body: |
+        Si l'on **arrête** l'air face au vent relatif, tout son mouvement se
+        « convertit » en pression : on mesure alors la **pression totale**,
+        somme de la pression statique et de la pression dynamique :
+
+        **pt = ps + q**
+
+        Le **tube de Pitot** est une sonde ouverte face au vent : elle capte la
+        **pression totale** pt. À côté, la **prise statique** capte la pression
+        statique ps. L'instrument fait la **différence** :
+
+        **pt − ps = q = ½ · ρ · V²**
+
+        De q, on remonte à la **vitesse** V. C'est ainsi que fonctionne
+        l'**anémomètre** (badin) : il ne « voit » pas directement la vitesse,
+        mais la pression dynamique. Le détail de cette chaîne de mesure est
+        traité dans la fiche « instruments ».
+      strate: maitriser
+  pieges:
+    - La pression statique n'est pas « la pression quand l'air est immobile » — c'est la pression dans toutes les directions, même en écoulement.
+    - q dépend du carré de la vitesse — à vitesse doublée, q est multipliée par quatre, pas par deux.
+    - La pression totale n'est pas « plus réelle » que les autres — c'est simplement ps + q ; aucune énergie n'est créée, elle est convertie.

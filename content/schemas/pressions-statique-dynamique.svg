@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .accent { fill: #3b82f6; font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+  </style>
+  <defs>
+    <marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="22" text-anchor="middle">Tube de Pitot et prise statique</text>
+  <!-- Vent relatif -->
+  <line class="flow" x1="20" y1="110" x2="70" y2="110" marker-end="url(#pa)" />
+  <line class="flow" x1="20" y1="150" x2="70" y2="150" marker-end="url(#pa)" />
+  <text class="accent" x="20" y="98">vent relatif</text>
+  <!-- Corps de la sonde -->
+  <path class="ink" d="M90,120 h200 a18,18 0 0 1 18,18 v6 a18,18 0 0 1 -18,18 h-40" />
+  <path class="ink" d="M90,140 h150" />
+  <!-- Prise totale (nez, face au vent) -->
+  <circle cx="90" cy="130" r="6" class="ink" />
+  <text class="accent" x="78" y="200" text-anchor="middle">pt</text>
+  <line class="ink" x1="90" y1="136" x2="90" y2="185" />
+  <!-- Prise statique (paroi, parallèle) -->
+  <circle cx="210" cy="120" r="4" class="ink" />
+  <text class="lbl" x="210" y="108" text-anchor="middle">ps</text>
+  <line class="ink" x1="210" y1="124" x2="210" y2="140" />
+  <!-- Relation -->
+  <text class="lbl" x="210" y="228" text-anchor="middle">pt = ps + q  →  q = pt − ps = ½·ρ·V²  →  vitesse V</text>
+</svg>

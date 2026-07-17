@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.pression-06
+kind: calcul
+theme: pression
+statement: >-
+  Calculez la pression dynamique (en Pa) d'un air à 20 m/s, avec ρ = 1,225 kg/m³.
+answerValue: 245
+tolerance: 1
+unit: Pa
+explanation: >-
+  q = ½·ρ·V² = ½ × 1,225 × 20² = ½ × 1,225 × 400 = 245 Pa.
+evaluates: [fondamentaux.aerodynamique.pression-statique-dynamique-totale]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.pression-dynamique
+title: Pression dynamique
+definition: >-
+  Pression liée au mouvement de l'air, notée q et égale à ½·ρ·V². Elle croît
+  avec la masse volumique ρ et avec le carré de la vitesse V : doubler la
+  vitesse quadruple la pression dynamique.
+english: dynamic pressure
+synonyms: [q]
+ficheId: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+tags: []
+status: publie

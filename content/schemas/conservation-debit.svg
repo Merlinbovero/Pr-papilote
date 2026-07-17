@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .accent { fill: #3b82f6; font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+  </style>
+  <defs>
+    <marker id="dc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="22" text-anchor="middle">La conservation du débit</text>
+  <!-- Parois du conduit : grande section puis petite -->
+  <polyline class="ink" points="30,54 200,54 250,96 390,96" />
+  <polyline class="ink" points="30,186 200,186 250,144 390,144" />
+  <!-- Section 1 (grande) : repère -->
+  <line class="ink" x1="90" y1="54" x2="90" y2="186" stroke-dasharray="4 4" />
+  <text class="lbl" x="90" y="46" text-anchor="middle">S₁</text>
+  <!-- Section 2 (petite) : repère -->
+  <line class="ink" x1="320" y1="96" x2="320" y2="144" stroke-dasharray="4 4" />
+  <text class="lbl" x="320" y="88" text-anchor="middle">S₂</text>
+  <!-- Écoulement : flèches courtes (lent) dans S1 -->
+  <line class="flow" x1="55" y1="120" x2="90" y2="120" marker-end="url(#dc)" />
+  <text class="accent" x="72" y="140" text-anchor="middle">V₁</text>
+  <!-- flèche longue (rapide) dans S2 -->
+  <line class="flow" x1="270" y1="120" x2="345" y2="120" marker-end="url(#dc)" />
+  <text class="accent" x="307" y="134" text-anchor="middle">V₂</text>
+  <!-- Relation -->
+  <text class="lbl" x="210" y="224" text-anchor="middle">S₁·V₁ = S₂·V₂  —  section plus petite ⇒ vitesse plus grande</text>
+</svg>

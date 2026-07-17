@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.pression-totale-pitot
+title: Déduire la vitesse d'un tube de Pitot
+consigne: >-
+  Un tube de Pitot mesure la pression totale et une prise statique la pression
+  statique. Déduisez-en la pression dynamique, puis la vitesse.
+donnees: >-
+  Pression totale pt = 102 831 Pa. Pression statique ps = 101 300 Pa. Masse
+  volumique ρ = 1,225 kg/m³.
+methode: >-
+  Calculer d'abord q = pt − ps. Puis inverser q = ½·ρ·V² pour isoler la vitesse :
+  V = √(2q / ρ).
+correction: >-
+  q = 102 831 − 101 300 = 1531 Pa. V = √(2 × 1531 / 1,225) = √(2500) = 50 m/s.
+interpretation: >-
+  L'anémomètre ne mesure jamais la vitesse directement : il lit une différence
+  de pression (pt − ps) et en déduit V. C'est toute la chaîne anémobarométrique.
+notionLiee: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

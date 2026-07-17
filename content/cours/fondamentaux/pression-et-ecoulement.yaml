@@ -1,0 +1,104 @@
+schemaVersion: 1
+id: cours.pression-et-ecoulement
+slug: pression-et-ecoulement
+title: Pression et écoulement de l'air
+description: >-
+  Comment décrire l'air en mouvement : la pression statique, dynamique et totale
+  (q = ½·ρ·V²), la conservation du débit (S·V = constante) et pourquoi l'air
+  accélère dans un rétrécissement. Les briques quantitatives de la portance.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Distinguer pression statique, dynamique et totale, et relier pt = ps + q.
+  - Calculer une pression dynamique (q = ½·ρ·V²) et l'exploiter pour la vitesse (Pitot).
+  - Énoncer la conservation du débit et en déduire l'accélération dans un rétrécissement.
+prerequisites:
+  - cours.forces-et-lois-de-newton
+ordre: 2
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 6
+    to: 9
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.pression-statique-dynamique-totale
+  - fondamentaux.aerodynamique.conservation-du-debit
+termes:
+  - terme.pression-statique
+  - terme.pression-dynamique
+  - terme.pression-totale
+  - terme.debit
+  - terme.continuite
+  - terme.tube-de-pitot
+exercices:
+  - exercice.pression-calculer-q
+  - exercice.pression-totale-pitot
+  - exercice.pression-conservation-debit
+  - exercice.pression-debit-massique
+questions:
+  - q.aerodynamique.pression-01
+  - q.aerodynamique.pression-02
+  - q.aerodynamique.pression-03
+  - q.aerodynamique.pression-04
+  - q.aerodynamique.pression-05
+  - q.aerodynamique.pression-06
+  - q.aerodynamique.pression-07
+  - q.aerodynamique.pression-08
+  - q.aerodynamique.debit-01
+  - q.aerodynamique.debit-02
+  - q.aerodynamique.debit-03
+  - q.aerodynamique.debit-04
+  - q.aerodynamique.debit-05
+  - q.aerodynamique.debit-06
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.pression-statique-dynamique-totale
+    title: Étudier — pression statique, dynamique et totale
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.conservation-du-debit
+    title: Étudier — la conservation du débit
+    obligatoire: true
+  - kind: exercice
+    ref: exercice.pression-calculer-q
+    title: S'exercer — calculer une pression dynamique
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.pression-conservation-debit
+    title: S'exercer — appliquer la conservation du débit
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - Pression statique (ps) — s'exerce dans toutes les directions, indépendante du mouvement.
+  - Pression dynamique — q = ½·ρ·V² ; elle croît avec le carré de la vitesse.
+  - Pression totale — pt = ps + q ; c'est ce que capte le tube de Pitot pour donner la vitesse.
+  - ρ ≈ 1,225 kg/m³ (atmosphère standard, niveau de la mer).
+  - Débit — Qv = S·V (volumique), Qm = ρ·S·V (massique) ; il se conserve le long de l'écoulement.
+  - Continuité — S·V = constante ; un rétrécissement accélère l'air (premier maillon vers la portance).
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Pression et écoulement"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: "Atmosphère type OACI (ISA) — masse volumique de l'air au niveau de la mer"
+    kind: officiel
+    consultedAt: "2026-07-16"
+status: publie
+author: prepapilote
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 2 « Pression et écoulement de l'air » (Lot 3, mécanique du vol p.6-9).
+    author: prepapilote

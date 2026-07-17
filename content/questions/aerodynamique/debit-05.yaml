@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: q.aerodynamique.debit-05
+kind: calcul
+theme: continuite
+statement: >-
+  Air à V₁ = 12 m/s dans une section S₁ = 0,30 m². Quelle vitesse (m/s) dans une
+  section S₂ = 0,10 m² ? (air peu compressible)
+answerValue: 36
+tolerance: 0.5
+unit: m/s
+explanation: >-
+  S₁·V₁ = S₂·V₂ donne V₂ = (0,30 × 12) / 0,10 = 3,6 / 0,10 = 36 m/s. La section
+  est divisée par 3, la vitesse triplée.
+evaluates: [fondamentaux.aerodynamique.conservation-du-debit]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
