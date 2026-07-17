@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.axe-de-lacet
+title: Axe de lacet
+definition: >-
+  Axe vertical passant par le centre de gravité. La rotation autour de cet axe
+  fait pivoter le nez à gauche ou à droite ; elle est commandée par la gouverne
+  de direction.
+english: yaw axis
+synonyms: [axe vertical]
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

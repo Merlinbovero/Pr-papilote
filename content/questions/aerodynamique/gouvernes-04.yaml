@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-04
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Que comprend l'empennage d'un avion classique ?
+choices:
+  - "Un empennage horizontal (profondeur) et un empennage vertical (direction)"
+  - "Seulement les ailerons"
+  - "Les volets et les becs"
+  - "Le train d'atterrissage"
+correctChoices: [0]
+explanation: >-
+  L'empennage regroupe l'empennage horizontal (portant la gouverne de profondeur)
+  et l'empennage vertical, ou dérive (portant la gouverne de direction).
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

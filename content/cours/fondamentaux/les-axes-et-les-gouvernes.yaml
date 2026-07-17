@@ -1,0 +1,105 @@
+schemaVersion: 1
+id: cours.les-axes-et-les-gouvernes
+slug: les-axes-et-les-gouvernes
+title: Les trois axes et les gouvernes
+description: >-
+  Comment pilote-t-on un avion ? Autour de trois axes passant par le centre de
+  gravité — tangage, roulis, lacet — chacun commandé par une gouverne. Ce cours
+  associe axes, gouvernes et commandes, avec une interaction pour les manipuler.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Nommer les trois axes de rotation et le point par lequel ils passent.
+  - Associer chaque axe à sa gouverne et à sa commande.
+  - Décrire le mouvement produit par chaque gouverne.
+prerequisites:
+  - cours.dispositifs-hypersustentateurs
+ordre: 11
+niveau: 1
+dureeEstimeeMin: 35
+pdfPages:
+  - from: 46
+    to: 51
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+termes:
+  - terme.axe-de-tangage
+  - terme.axe-de-roulis
+  - terme.axe-de-lacet
+  - terme.gouverne-de-profondeur
+  - terme.aileron
+  - terme.gouverne-de-direction
+  - terme.palonnier
+  - terme.empennage
+exercices:
+  - exercice.axes-associer
+  - exercice.axes-virage
+  - exercice.axes-manche-palonnier
+questions:
+  - q.aerodynamique.axes-01
+  - q.aerodynamique.axes-02
+  - q.aerodynamique.axes-03
+  - q.aerodynamique.axes-04
+  - q.aerodynamique.axes-05
+  - q.aerodynamique.axes-06
+  - q.aerodynamique.axes-07
+  - q.aerodynamique.axes-08
+  - q.aerodynamique.gouvernes-01
+  - q.aerodynamique.gouvernes-02
+  - q.aerodynamique.gouvernes-03
+  - q.aerodynamique.gouvernes-04
+  - q.aerodynamique.gouvernes-05
+  - q.aerodynamique.gouvernes-06
+interactions:
+  - axes-gouvernes
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+    title: Étudier — axes, gouvernes et commandes
+    obligatoire: true
+  - kind: interaction
+    ref: axes-gouvernes
+    title: Manipuler — les trois axes
+    obligatoire: true
+  - kind: exercice
+    ref: exercice.axes-associer
+    title: S'exercer — associer axe, gouverne et commande
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.axes-virage
+    title: S'exercer — les commandes d'un virage
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - Trois axes se croisent au centre de gravité — tangage (transversal), roulis (longitudinal), lacet (vertical).
+  - Tangage → gouverne de profondeur (le nez monte ou descend).
+  - Roulis → ailerons (les ailes s'inclinent).
+  - Lacet → gouverne de direction (le nez pivote à gauche ou à droite).
+  - Commandes — le manche (profondeur et ailerons), le palonnier au pied (direction).
+  - Un virage coordonné combine les trois axes (ailerons, palonnier, profondeur).
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 4 — Les axes et les gouvernes"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 11 « Les trois axes et les gouvernes » (mécanique du vol p.46-51).
+    author: prepapilote

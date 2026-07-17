@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.axes-virage
+title: Les commandes d'un virage
+consigne: >-
+  Décrivez, gouverne par gouverne, comment un pilote effectue un virage coordonné
+  à droite.
+methode: >-
+  Ordonner les actions : incliner (roulis), coordonner (lacet), tenir l'altitude
+  (tangage).
+correction: >-
+  Le pilote incline l'avion à droite aux ailerons (manche à droite) pour orienter
+  la portance vers l'intérieur du virage (roulis). Il ajoute un peu de palonnier
+  droit (lacet) pour rester coordonné. Il tire légèrement sur le manche
+  (profondeur, tangage) pour compenser la perte de portance verticale et tenir
+  l'altitude.
+interpretation: >-
+  Un virage n'est pas qu'une affaire de « tourner le volant » : il combine les
+  trois axes.
+notionLiee: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+status: publie

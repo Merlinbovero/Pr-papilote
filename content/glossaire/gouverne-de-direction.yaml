@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.gouverne-de-direction
+title: Gouverne de direction
+definition: >-
+  Surface mobile au bord de fuite de la dérive (empennage vertical), agissant sur
+  le lacet. Actionnée au palonnier, elle fait pivoter le nez à gauche ou à droite.
+english: rudder
+synonyms: [direction]
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

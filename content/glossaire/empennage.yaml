@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.empennage
+title: Empennage
+definition: >-
+  Ensemble des surfaces arrière de l'avion : l'empennage horizontal (portant la
+  gouverne de profondeur) et l'empennage vertical, ou dérive (portant la gouverne
+  de direction). Il assure la stabilité et le contrôle.
+english: empennage / tail
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

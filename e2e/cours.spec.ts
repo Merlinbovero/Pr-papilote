@@ -139,6 +139,22 @@ test("le cours 9 (types de profils) compose sa fiche neuve et la fiche profil d'
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
+test("le cours 11 propose l'interaction axes/gouvernes, utilisable au clavier", async ({
+  page,
+}) => {
+  await page.goto("/cours/les-axes-et-les-gouvernes");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /les trois axes et les gouvernes/i })
+  ).toBeVisible();
+  // L'interaction est présente ; l'état par défaut est « Tangage ».
+  const roulis = page.getByRole("radio", { name: "Roulis" });
+  await expect(roulis).not.toBeChecked();
+  await roulis.focus();
+  await page.keyboard.press("Space");
+  await expect(roulis).toBeChecked();
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
+});
+
 test("le cours 10 (hypersustentateurs) compose ses deux fiches (volets/becs et spoilers/aérofreins)", async ({
   page,
 }) => {

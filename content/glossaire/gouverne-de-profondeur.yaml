@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.gouverne-de-profondeur
+title: Gouverne de profondeur
+definition: >-
+  Surface mobile au bord de fuite de l'empennage horizontal, agissant sur le
+  tangage. Actionnée en tirant ou poussant le manche, elle fait monter ou
+  descendre le nez.
+english: elevator
+synonyms: [profondeur]
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

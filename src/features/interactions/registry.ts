@@ -42,6 +42,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Déplacer l'angle d'incidence pour parcourir la courbe Cz–Cx, lire la finesse et repérer les points remarquables (finesse max, Cz max, décrochage).",
   },
+  {
+    id: "axes-gouvernes",
+    title: "Les trois axes et les gouvernes",
+    summary:
+      "Choisir un axe (tangage, roulis, lacet) pour voir l'axe de rotation, la gouverne concernée et le mouvement produit.",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

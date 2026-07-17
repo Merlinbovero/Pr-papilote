@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.axe-de-roulis
+title: Axe de roulis
+definition: >-
+  Axe longitudinal (du nez à la queue) passant par le centre de gravité. La
+  rotation autour de cet axe incline les ailes ; elle est commandée par les
+  ailerons.
+english: roll axis
+synonyms: [axe longitudinal]
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

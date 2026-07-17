@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.palonnier
+title: Palonnier
+definition: >-
+  Commande au pied qui actionne la gouverne de direction (axe de lacet). Le pied
+  gauche fait pivoter le nez à gauche, le pied droit à droite.
+english: rudder pedals
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.aileron
+title: Aileron
+definition: >-
+  Surface mobile au bord de fuite des bouts d'ailes, agissant sur le roulis.
+  Actionné en inclinant le manche à gauche ou à droite, il fait incliner les
+  ailes.
+english: aileron
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie
