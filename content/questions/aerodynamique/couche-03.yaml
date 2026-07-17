@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-03
+kind: qcm
+theme: couche-limite
+statement: >-
+  Dans quel ordre la couche limite évolue-t-elle le long du profil ?
+choices:
+  - "Laminaire, puis turbulente après un point de transition"
+  - "Turbulente, puis laminaire"
+  - "Toujours laminaire"
+  - "Toujours turbulente"
+correctChoices: [0]
+explanation: >-
+  Près du bord d'attaque, la couche limite est laminaire (filets ordonnés) ;
+  après un point de transition, elle devient turbulente.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

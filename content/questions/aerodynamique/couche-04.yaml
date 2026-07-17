@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-04
+kind: qcm
+theme: couche-limite
+statement: >-
+  Comparée à la couche limite laminaire, la couche limite turbulente…
+choices:
+  - "frotte davantage mais résiste mieux au décollement"
+  - "frotte moins et décolle plus facilement"
+  - "n'existe pas sur une aile"
+  - "supprime toute traînée"
+correctChoices: [0]
+explanation: >-
+  La couche limite turbulente est plus épaisse et frotte davantage, mais elle est
+  mieux « accrochée » et résiste mieux au décollement que la laminaire.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

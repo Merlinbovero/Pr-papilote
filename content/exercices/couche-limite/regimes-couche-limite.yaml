@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.couche-regimes
+title: Comparer couche limite laminaire et turbulente
+consigne: >-
+  Pour chaque régime de couche limite (laminaire, turbulent), indiquez le niveau
+  de frottement et la résistance au décollement, puis dites lequel est le plus
+  fragile.
+methode: >-
+  Opposer les deux régimes sur deux critères : frottement (traînée) et tenue de
+  l'écoulement (décollement).
+correction: >-
+  Laminaire : peu de frottement (traînée faible) mais fragile, elle décolle
+  facilement. Turbulente : plus de frottement (traînée plus forte) mais mieux
+  accrochée, elle résiste au décollement. La couche limite laminaire est la plus
+  fragile.
+interpretation: >-
+  C'est un compromis : on cherche du laminaire pour réduire la traînée, mais du
+  turbulent aux endroits critiques pour retarder le décrochage.
+notionLiee: fondamentaux.aerodynamique.la-couche-limite
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+status: publie

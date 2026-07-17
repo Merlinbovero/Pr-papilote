@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.decollement-01
+kind: qcm
+theme: couche-limite
+statement: >-
+  Que se passe-t-il quand la couche limite décolle de l'extrados ?
+choices:
+  - "L'écoulement cesse de suivre l'aile et la portance chute"
+  - "La portance augmente fortement"
+  - "La traînée devient nulle"
+  - "L'avion accélère"
+correctChoices: [0]
+explanation: >-
+  Le décollement de la couche limite fait cesser l'écoulement d'épouser l'aile :
+  une zone tourbillonnaire se forme et la portance chute — c'est le décrochage.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

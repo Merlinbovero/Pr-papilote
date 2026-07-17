@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.couche-reynolds
+title: Nombre de Reynolds et essais en soufflerie
+consigne: >-
+  Pourquoi cherche-t-on à respecter le même nombre de Reynolds entre une maquette
+  en soufflerie et l'aile réelle ?
+methode: >-
+  Relier le nombre de Reynolds au régime de la couche limite, puis à la fidélité
+  de l'essai.
+correction: >-
+  Le nombre de Reynolds gouverne la transition laminaire-turbulent et donc le
+  comportement de la couche limite. En le reproduisant (similitude), l'écoulement
+  autour de la maquette se comporte comme celui de l'aile réelle : les mesures de
+  portance et de traînée sont représentatives.
+interpretation: >-
+  Sans respect du Reynolds, une petite maquette pourrait décrocher ou traîner
+  autrement que l'aile réelle : l'essai serait trompeur.
+notionLiee: fondamentaux.aerodynamique.la-couche-limite
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+status: publie

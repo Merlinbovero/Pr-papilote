@@ -1,0 +1,105 @@
+schemaVersion: 1
+id: cours.couche-limite-et-decrochage
+slug: couche-limite-et-decrochage
+title: La couche limite et le décrochage
+description: >-
+  La fine couche d'air au contact de l'aile décide de tout : selon qu'elle reste
+  collée ou décolle, l'aile porte ou décroche. Ce cours explique la couche
+  limite (laminaire, turbulente, Reynolds) et le décollement à l'origine du
+  décrochage, avec une interaction pour le voir.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Définir la couche limite et distinguer ses régimes laminaire et turbulent.
+  - Situer le rôle du nombre de Reynolds dans la transition laminaire-turbulent.
+  - Expliquer le décollement de la couche limite et son lien avec le décrochage.
+prerequisites:
+  - cours.trainee-induite-et-allongement
+ordre: 7
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 24
+    to: 26
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.la-couche-limite
+  - fondamentaux.aerodynamique.decrochage
+termes:
+  - terme.couche-limite
+  - terme.ecoulement-laminaire
+  - terme.ecoulement-turbulent
+  - terme.nombre-de-reynolds
+  - terme.decollement
+  - terme.incidence-critique
+exercices:
+  - exercice.couche-regimes
+  - exercice.couche-decollement
+  - exercice.couche-reynolds
+questions:
+  - q.aerodynamique.couche-01
+  - q.aerodynamique.couche-02
+  - q.aerodynamique.couche-03
+  - q.aerodynamique.couche-04
+  - q.aerodynamique.couche-05
+  - q.aerodynamique.couche-06
+  - q.aerodynamique.couche-07
+  - q.aerodynamique.couche-08
+  - q.aerodynamique.reynolds-01
+  - q.aerodynamique.reynolds-02
+  - q.aerodynamique.reynolds-03
+  - q.aerodynamique.decollement-01
+  - q.aerodynamique.decollement-02
+  - q.aerodynamique.decollement-03
+interactions:
+  - incidence-decrochage
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.la-couche-limite
+    title: Étudier — la couche limite et le décollement
+    obligatoire: true
+  - kind: interaction
+    ref: incidence-decrochage
+    title: Manipuler — incidence et décrochage
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.decrochage
+    title: Approfondir — le décrochage aérodynamique
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.couche-decollement
+    title: S'exercer — du décollement au décrochage
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - La couche limite est la fine pellicule d'air ralentie par la viscosité au contact de l'aile.
+  - Elle est d'abord laminaire (filets ordonnés, peu de frottement, fragile) puis turbulente (plus épaisse, mieux accrochée).
+  - Le nombre de Reynolds gouverne la transition laminaire → turbulent et sert à la similitude en soufflerie.
+  - À forte incidence (au-delà de l'incidence critique), la couche limite décolle de l'extrados.
+  - Ce décollement fait chuter la portance — c'est le décrochage ; la correction est de réduire l'incidence.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La couche limite"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "NASA — Glenn Research Center, Boundary Layer"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/boundary-layer/
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 7 « La couche limite et le décrochage » (Lot mécanique du vol p.24-26).
+    author: prepapilote

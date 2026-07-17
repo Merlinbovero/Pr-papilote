@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.ecoulement-laminaire
+title: Écoulement laminaire
+definition: >-
+  Régime d'écoulement où l'air glisse en filets ordonnés et parallèles. Dans la
+  couche limite, il est mince et peu frottant, mais fragile : il décolle plus
+  facilement que le régime turbulent.
+english: laminar flow
+synonyms: [laminaire]
+ficheId: fondamentaux.aerodynamique.la-couche-limite
+tags: []
+status: publie

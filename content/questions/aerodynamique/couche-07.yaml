@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-07
+kind: vrai-faux
+theme: couche-limite
+statement: >-
+  La couche limite est très fine (de l'ordre de quelques millimètres) mais son
+  comportement décide du décollement.
+answer: true
+explanation: >-
+  Malgré son extrême finesse, la couche limite gouverne le frottement et surtout
+  le décollement de l'écoulement, donc le décrochage.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

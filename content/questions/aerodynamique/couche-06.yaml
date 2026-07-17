@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-06
+kind: qcm
+theme: couche-limite
+statement: >-
+  Dans quelle partie de l'aile la traînée de frottement prend-elle naissance ?
+choices:
+  - "Dans la couche limite"
+  - "Au centre de gravité"
+  - "Dans le sillage lointain"
+  - "Dans le réservoir de carburant"
+correctChoices: [0]
+explanation: >-
+  Le frottement de l'air sur l'aile se joue dans la couche limite : c'est là que
+  naît la traînée de frottement.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

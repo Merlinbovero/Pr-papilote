@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-08
+kind: vrai-faux
+theme: couche-limite
+statement: >-
+  La couche limite laminaire décolle plus facilement que la couche limite
+  turbulente.
+answer: true
+explanation: >-
+  La couche limite laminaire, plus fragile, se détache plus facilement ; la
+  turbulente, mieux accrochée, résiste davantage au décollement.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

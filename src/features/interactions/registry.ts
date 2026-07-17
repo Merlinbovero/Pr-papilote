@@ -30,6 +30,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Faire varier le rétrécissement d'un conduit pour voir la vitesse augmenter et la pression statique chuter au col (Bernoulli).",
   },
+  {
+    id: "incidence-decrochage",
+    title: "Incidence et décrochage",
+    summary:
+      "Augmenter l'angle d'incidence pour voir l'écoulement rester collé, atteindre l'incidence critique, puis décoller — la portance s'effondre.",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

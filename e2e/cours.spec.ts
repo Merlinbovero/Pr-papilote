@@ -111,3 +111,20 @@ test("le cours 6 (traînée induite) compose ses fiches neuves et la fiche traî
   await expect(page.getByRole("link", { name: /l.allongement et les winglets/i })).toBeVisible();
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
+
+test("le cours 7 propose l'interaction incidence/décrochage, utilisable au clavier", async ({
+  page,
+}) => {
+  await page.goto("/cours/couche-limite-et-decrochage");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /la couche limite et le décrochage/i })
+  ).toBeVisible();
+  // L'interaction est présente ; l'état par défaut est « Faible ».
+  const stall = page.getByRole("radio", { name: /Décrochage/ });
+  await expect(stall).not.toBeChecked();
+  await stall.focus();
+  await page.keyboard.press("Space");
+  await expect(stall).toBeChecked();
+  // Alternative textuelle accessible présente.
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
+});

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.decollement
+title: Décollement
+definition: >-
+  Détachement de la couche limite de la surface de l'aile, quand elle n'a plus
+  assez d'énergie pour suivre l'extrados à forte incidence. Il fait chuter la
+  portance et provoque le décrochage.
+english: flow separation
+synonyms: [décollement de la couche limite]
+ficheId: fondamentaux.aerodynamique.la-couche-limite
+tags: []
+status: publie

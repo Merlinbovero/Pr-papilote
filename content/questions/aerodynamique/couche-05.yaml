@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.couche-05
+kind: qcm
+theme: couche-limite
+statement: >-
+  D'où vient la couche limite ?
+choices:
+  - "De la viscosité de l'air"
+  - "De la compressibilité de l'air"
+  - "De la gravité"
+  - "Du moteur"
+correctChoices: [0]
+explanation: >-
+  C'est la viscosité de l'air qui le fait adhérer à la surface et crée la couche
+  limite.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.couche-limite
+title: Couche limite
+definition: >-
+  Fine pellicule d'air, au contact de l'aile, dans laquelle la viscosité ralentit
+  l'écoulement : la vitesse y passe de zéro à la surface à celle de l'écoulement
+  libre. Son comportement décide du décollement.
+english: boundary layer
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-couche-limite
+tags: []
+status: publie

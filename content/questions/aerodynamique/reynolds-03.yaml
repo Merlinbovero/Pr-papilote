@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.reynolds-03
+kind: vrai-faux
+theme: couche-limite
+statement: >-
+  On cherche à reproduire le nombre de Reynolds en soufflerie pour qu'une
+  maquette se comporte comme l'aile réelle.
+answer: true
+explanation: >-
+  Respecter le nombre de Reynolds (similitude) permet à l'écoulement autour de la
+  maquette de représenter fidèlement celui de l'aile réelle.
+evaluates: [fondamentaux.aerodynamique.la-couche-limite]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
