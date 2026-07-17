@@ -1,0 +1,124 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.les-types-de-profils
+type: notion-aerodynamique
+title: Les types de profils d'aile
+slug: les-types-de-profils
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — les différents profils d'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Un profil se décrit par son épaisseur relative, sa cambrure et son calage. Ces
+  paramètres définissent des familles — biconvexe symétrique ou dissymétrique,
+  plan-convexe, creux, autostable, supercritique — chacune adaptée à un usage,
+  de la voltige au transport rapide.
+objectifs:
+  - Définir les paramètres géométriques d'un profil (épaisseur relative, cambrure, calage).
+  - Distinguer les grandes familles de profils et leurs caractéristiques.
+  - Associer chaque type de profil à un usage typique.
+aliases: [types de profils, profil biconvexe, profil creux, profil supercritique]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 9 « Les types de profils d'aile » (mécanique du vol, p.33-34).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Les profils"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.profil-d-aile
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+  related:
+    - fondamentaux.aerodynamique.la-polaire
+content:
+  essentiel:
+    body: |
+      Tous les profils ne se valent pas : leur forme est un **compromis** adapté
+      à un usage. On la décrit par trois paramètres.
+
+      L'**épaisseur relative** est le rapport de l'épaisseur maximale à la
+      **corde** (en %). Un profil **épais** porte bien à basse vitesse ; un
+      profil **mince** traîne peu à grande vitesse.
+
+      La **cambrure** est la courbure de la **ligne moyenne** du profil. Un
+      profil **symétrique** n'a aucune cambrure (ligne moyenne droite) ; un
+      profil **cambré** est plus porteur.
+
+      Le **calage** est l'angle entre la corde de l'aile et l'axe de référence de
+      l'avion (fixé à la construction).
+
+      Ces paramètres définissent des **familles** : biconvexe **symétrique**
+      (voltige), biconvexe **dissymétrique** (le plus courant), **plan-convexe**,
+      **creux** (fort porteur, lent), **autostable** (aile volante) et
+      **supercritique** (transport rapide).
+    aRetenir:
+      - L'épaisseur relative = épaisseur maximale / corde (en %) ; épais = porteur à basse vitesse, mince = rapide.
+      - La cambrure est la courbure de la ligne moyenne ; un profil symétrique n'est pas cambré.
+      - Le calage est l'angle entre la corde et l'axe de référence de l'avion, fixé à la construction.
+      - Familles — biconvexe symétrique (voltige), biconvexe dissymétrique (courant), plan-convexe, creux, autostable, supercritique.
+      - Chaque profil est un compromis adapté à un usage (vitesse, portance, stabilité).
+  sections:
+    - id: les-parametres-d-un-profil
+      title: Les paramètres géométriques
+      body: |
+        Trois grandeurs suffisent à caractériser la forme d'un profil :
+
+        - l'**épaisseur relative** : l'épaisseur maximale rapportée à la
+          **corde**, exprimée en pourcentage (par exemple 12 %). Un profil épais
+          offre un bon Cz max (utile à basse vitesse) mais plus de traînée ; un
+          profil mince est fait pour la vitesse ;
+        - la **cambrure** : la courbure de la **ligne moyenne** (la ligne à
+          égale distance de l'extrados et de l'intrados). Plus un profil est
+          cambré, plus il est **porteur** à incidence donnée ;
+        - le **calage** : l'angle, fixé à la construction, entre la **corde** de
+          l'aile et un **axe de référence** de l'avion.
+      figures:
+        - schemaId: types-de-profils
+          alt: Une comparaison de profils d'aile — biconvexe symétrique, biconvexe dissymétrique, plan-convexe et creux — montrant des cambrures et épaisseurs différentes.
+          caption: Quelques familles de profils — du biconvexe symétrique (voltige) au profil creux (fort porteur), en passant par le biconvexe dissymétrique et le plan-convexe.
+          width: 420
+          height: 240
+    - id: les-familles-de-profils
+      title: Les grandes familles de profils
+      body: |
+        - **Biconvexe symétrique** : extrados et intrados identiques, ligne
+          moyenne droite. Portance nulle à incidence nulle, mais efficace « sur
+          le dos » : c'est le profil de la **voltige** et de nombreux
+          **empennages**.
+        - **Biconvexe dissymétrique** : extrados plus courbé que l'intrados, tous
+          deux convexes. C'est le profil **le plus répandu** en aviation
+          générale et de transport.
+        - **Plan-convexe** : intrados plat, extrados convexe. Simple et porteur,
+          typique des avions légers.
+        - **Creux** : intrados concave, très **porteur** mais traînant —
+          réservé aux appareils **lents** (anciens, certains ULM).
+        - **Autostable** : à double courbure (bord de fuite relevé), il se passe
+          d'empennage horizontal — c'est le profil des **ailes volantes**.
+        - **Supercritique** : extrados aplati, conçu pour **retarder** les effets
+          de la compressibilité — profil des avions de **transport rapides**.
+      strate: maitriser
+  pieges:
+    - L'épaisseur relative est un pourcentage de la corde, pas une épaisseur absolue en centimètres.
+    - Un profil symétrique n'est pas « sans portance » — il ne porte pas à incidence nulle, mais porte dès qu'on lui donne de l'incidence.
+    - Le calage est fixé à la construction et ne se confond pas avec l'incidence, qui varie en vol.

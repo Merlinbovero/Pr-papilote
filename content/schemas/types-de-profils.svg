@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .ink { stroke: currentColor; fill: currentColor; fill-opacity: 0.12; stroke-width: 1.8; }
+    .mid { stroke: #3b82f6; fill: none; stroke-width: 1; stroke-dasharray: 3 2; }
+  </style>
+  <text class="title" x="210" y="20" text-anchor="middle">Quelques familles de profils</text>
+
+  <!-- Biconvexe symétrique -->
+  <path class="ink" d="M30,70 q45,-16 90,0 q-45,16 -90,0 z" />
+  <line class="mid" x1="30" y1="70" x2="120" y2="70" />
+  <text class="lbl" x="75" y="96" text-anchor="middle">biconvexe symétrique</text>
+
+  <!-- Biconvexe dissymétrique -->
+  <path class="ink" d="M240,66 q45,-22 90,-2 q-45,14 -90,4 z" />
+  <path class="mid" d="M240,68 q45,-10 90,1" />
+  <text class="lbl" x="285" y="96" text-anchor="middle">biconvexe dissymétrique</text>
+
+  <!-- Plan-convexe -->
+  <path class="ink" d="M30,150 q45,-26 90,0 z" />
+  <text class="lbl" x="75" y="176" text-anchor="middle">plan-convexe</text>
+
+  <!-- Creux -->
+  <path class="ink" d="M240,150 q45,-26 90,0 q-45,10 -90,0 z" />
+  <path class="mid" d="M240,150 q45,-8 90,0" />
+  <text class="lbl" x="285" y="176" text-anchor="middle">creux (intrados concave)</text>
+
+  <text class="lbl" x="210" y="216" text-anchor="middle">chaque profil est un compromis adapté à un usage (vitesse, portance, stabilité)</text>
+</svg>

@@ -21,6 +21,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (traînée induite & allongement)", path: "/cours/trainee-induite-et-allongement" },
   { name: "cours (couche limite & décrochage)", path: "/cours/couche-limite-et-decrochage" },
   { name: "cours (la polaire & finesse)", path: "/cours/la-polaire-et-la-finesse" },
+  { name: "cours (les types de profils)", path: "/cours/les-types-de-profils" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

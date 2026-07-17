@@ -1,0 +1,103 @@
+schemaVersion: 1
+id: cours.les-types-de-profils
+slug: les-types-de-profils
+title: Les profils d'aile — géométrie et types
+description: >-
+  Un profil se décrit par trois paramètres — épaisseur relative, cambrure,
+  calage — qui définissent des familles adaptées à des usages, de la voltige au
+  transport rapide. Ce cours les compare et prolonge la fiche « Le profil
+  d'aile ».
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Définir l'épaisseur relative, la cambrure et le calage d'un profil.
+  - Distinguer les grandes familles de profils et leurs caractéristiques.
+  - Associer chaque type de profil à un usage typique.
+prerequisites:
+  - cours.la-polaire-et-la-finesse
+ordre: 9
+niveau: 1
+dureeEstimeeMin: 35
+pdfPages:
+  - from: 33
+    to: 34
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-types-de-profils
+  - fondamentaux.aerodynamique.profil-d-aile
+termes:
+  - terme.epaisseur-relative
+  - terme.cambrure
+  - terme.calage
+  - terme.profil-biconvexe
+  - terme.profil-creux
+  - terme.profil-autostable
+exercices:
+  - exercice.profils-epaisseur
+  - exercice.profils-choisir
+  - exercice.profils-calage
+questions:
+  - q.aerodynamique.profils-01
+  - q.aerodynamique.profils-02
+  - q.aerodynamique.profils-03
+  - q.aerodynamique.profils-04
+  - q.aerodynamique.profils-05
+  - q.aerodynamique.profils-06
+  - q.aerodynamique.profils-07
+  - q.aerodynamique.profils-08
+  - q.aerodynamique.profils-09
+  - q.aerodynamique.profils-10
+  - q.aerodynamique.profils-11
+  - q.aerodynamique.profils-12
+  - q.aerodynamique.profils-13
+  - q.aerodynamique.profils-14
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-types-de-profils
+    title: Étudier — géométrie et familles de profils
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.profil-d-aile
+    title: Approfondir — l'anatomie d'un profil
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.profils-choisir
+    title: S'exercer — choisir un profil selon l'usage
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.profils-calage
+    title: S'exercer — calage ou incidence ?
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - L'épaisseur relative = épaisseur maximale / corde (en %) ; épais = porteur à basse vitesse, mince = rapide.
+  - La cambrure est la courbure de la ligne moyenne ; un profil symétrique n'est pas cambré.
+  - Le calage est l'angle fixe (construction) entre la corde et l'axe de référence — à ne pas confondre avec l'incidence.
+  - Biconvexe symétrique (voltige), biconvexe dissymétrique (courant), plan-convexe, creux (lent), autostable (aile volante), supercritique (rapide).
+  - Chaque profil est un compromis adapté à un usage — il n'y a pas de profil universel.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Les profils"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 9 « Les types de profils d'aile » (mécanique du vol p.33-34).
+    author: prepapilote

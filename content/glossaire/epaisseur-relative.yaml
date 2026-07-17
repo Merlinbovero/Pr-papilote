@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.epaisseur-relative
+title: Épaisseur relative
+definition: >-
+  Rapport de l'épaisseur maximale d'un profil à sa corde, exprimé en pourcentage.
+  Un profil épais porte bien à basse vitesse mais traîne davantage ; un profil
+  mince est adapté à la vitesse.
+english: relative thickness
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

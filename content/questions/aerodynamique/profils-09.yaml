@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-09
+kind: qcm
+theme: profils
+statement: >-
+  Qu'est-ce que le calage d'une aile ?
+choices:
+  - "L'angle entre la corde et un axe de référence de l'avion, fixé à la construction"
+  - "L'angle d'incidence en vol"
+  - "La courbure de l'extrados"
+  - "L'épaisseur relative"
+correctChoices: [0]
+distractorNotes:
+  "1": "L'incidence varie en vol selon le vent relatif ; le calage, lui, est fixe."
+explanation: >-
+  Le calage est l'angle, fixé à la construction, entre la corde de l'aile et un
+  axe de référence de l'avion. Il ne se confond pas avec l'incidence.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

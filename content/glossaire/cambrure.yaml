@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.cambrure
+title: Cambrure
+definition: >-
+  Courbure de la ligne moyenne d'un profil (la ligne à égale distance de
+  l'extrados et de l'intrados). Un profil symétrique n'a aucune cambrure ; plus
+  un profil est cambré, plus il est porteur.
+english: camber
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

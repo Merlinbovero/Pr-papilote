@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.profils-calage
+title: Distinguer calage et incidence
+consigne: >-
+  Un élève confond calage et incidence. Expliquez la différence en une phrase pour
+  chacun.
+methode: >-
+  Préciser ce qui est fixe (construction) et ce qui varie (vol), et par rapport à
+  quelle référence chaque angle se mesure.
+correction: >-
+  Le calage est l'angle FIXE, réglé à la construction, entre la corde de l'aile et
+  un axe de référence de l'avion. L'incidence est l'angle VARIABLE, en vol, entre
+  la corde et le vent relatif. Le calage ne change pas ; l'incidence change avec
+  l'assiette et la trajectoire.
+interpretation: >-
+  Confondre les deux mène à des erreurs sur le décrochage, qui dépend de
+  l'incidence (variable), pas du calage (fixe).
+notionLiee: fondamentaux.aerodynamique.les-types-de-profils
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

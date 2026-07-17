@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.profils-choisir
+title: Choisir un profil selon l'usage
+consigne: >-
+  Pour chacun de ces besoins, proposez un type de profil adapté : (a) un avion de
+  voltige, (b) un avion de transport rapide, (c) une aile volante.
+methode: >-
+  Associer chaque contrainte (vol dos, compressibilité, absence d'empennage) à la
+  famille de profils correspondante.
+correction: >-
+  (a) Voltige : profil biconvexe symétrique (porte aussi bien sur le dos). (b)
+  Transport rapide : profil supercritique (retarde la compressibilité). (c) Aile
+  volante : profil autostable (équilibre sans empennage horizontal).
+interpretation: >-
+  Le choix du profil découle directement de la mission : il n'y a pas de « meilleur »
+  profil dans l'absolu.
+notionLiee: fondamentaux.aerodynamique.les-types-de-profils
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

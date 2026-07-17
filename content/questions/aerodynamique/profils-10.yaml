@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-10
+kind: qcm
+theme: profils
+statement: >-
+  Un profil biconvexe symétrique, à incidence nulle, produit…
+choices:
+  - "une portance nulle"
+  - "une portance maximale"
+  - "une portance négative"
+  - "une traînée nulle"
+correctChoices: [0]
+explanation: >-
+  Sans cambrure, le profil symétrique ne porte pas à incidence nulle ; il porte
+  dès qu'on lui donne de l'incidence (dans un sens ou l'autre).
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.profil-creux
+title: Profil creux
+definition: >-
+  Profil dont l'intrados est concave. Très porteur mais traînant, il est réservé
+  aux appareils lents (avions anciens, certains ULM).
+english: concave (undercambered) airfoil
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

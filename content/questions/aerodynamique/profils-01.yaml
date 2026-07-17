@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-01
+kind: qcm
+theme: profils
+statement: >-
+  Qu'est-ce que l'épaisseur relative d'un profil ?
+choices:
+  - "Le rapport de l'épaisseur maximale à la corde, en pourcentage"
+  - "L'épaisseur en centimètres au bord d'attaque"
+  - "La longueur de la corde"
+  - "La courbure de la ligne moyenne"
+correctChoices: [0]
+distractorNotes:
+  "3": "La courbure de la ligne moyenne est la cambrure, pas l'épaisseur relative."
+explanation: >-
+  L'épaisseur relative est l'épaisseur maximale rapportée à la corde, exprimée en
+  pourcentage (par exemple 12 %).
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
