@@ -167,10 +167,17 @@ export function DictionaryBrowser({ entries }: { entries: DictionaryEntry[] }) {
             <section key={letter} aria-labelledby={`lettre-${letter}-titre`}>
               <h2
                 id={`lettre-${letter}-titre`}
-                className="border-primary/30 text-primary mb-3 scroll-mt-24 border-b pb-1 text-lg font-bold"
+                className="mb-3 flex scroll-mt-24 items-center gap-3"
               >
-                <span id={`lettre-${letter}`} className="scroll-mt-24">
+                <span
+                  id={`lettre-${letter}`}
+                  className="bg-primary/10 text-primary flex size-8 scroll-mt-24 items-center justify-center rounded-md text-base font-bold"
+                >
                   {letter}
+                </span>
+                <span className="bg-border h-px flex-1" aria-hidden />
+                <span className="text-muted-foreground text-xs tabular-nums">
+                  {list.length} terme{list.length > 1 ? "s" : ""}
                 </span>
               </h2>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -178,29 +185,31 @@ export function DictionaryBrowser({ entries }: { entries: DictionaryEntry[] }) {
                   <li key={entry.slug}>
                     <Link
                       href={`/dictionnaire/${entry.slug}`}
-                      className="hover:border-primary/40 focus-visible:ring-ring block h-full rounded-lg border p-4 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                      className="bg-card hover:border-primary/40 hover:bg-elevated focus-visible:ring-ring block h-full rounded-xl border p-4 transition-colors focus-visible:ring-2 focus-visible:outline-none"
                     >
                       <div className="flex items-start justify-between gap-2">
-                        <p className="font-semibold">{entry.title}</p>
-                        <div className="flex shrink-0 gap-1">
-                          {entry.english ? (
-                            <Badge variant="outline" className="font-normal">
-                              EN
-                            </Badge>
-                          ) : null}
-                          {entry.hasFiche ? (
-                            <Badge variant="outline" className="font-normal">
-                              Fiche
-                            </Badge>
-                          ) : null}
-                        </div>
+                        <p className="leading-snug font-semibold">{entry.title}</p>
+                        {entry.hasFiche ? (
+                          <Badge
+                            variant="outline"
+                            className="text-primary border-primary/30 shrink-0 font-normal"
+                          >
+                            Fiche
+                          </Badge>
+                        ) : null}
                       </div>
                       {entry.sigleExpansion ? (
                         <p className="text-muted-foreground text-xs">{entry.sigleExpansion}</p>
                       ) : null}
-                      <p className="text-muted-foreground mt-1 line-clamp-2 text-sm">
+                      <p className="text-muted-foreground mt-1.5 line-clamp-2 text-sm leading-6">
                         {entry.definition}
                       </p>
+                      {entry.english ? (
+                        <p className="text-muted-foreground mt-2 flex items-center gap-1.5 text-xs">
+                          <LanguagesIcon aria-hidden className="size-3" />
+                          <span className="italic">{entry.english}</span>
+                        </p>
+                      ) : null}
                     </Link>
                   </li>
                 ))}

@@ -56,7 +56,7 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
   test("le dictionnaire renvoie vers la fiche complète", async ({ page }) => {
     await page.goto("/dictionnaire/catobar");
     await expect(page.getByRole("heading", { level: 1, name: "CATOBAR" })).toBeVisible();
-    await page.getByRole("link", { name: /Lire la fiche complète/ }).click();
+    await page.getByRole("link", { name: /Fiche complète/ }).click();
     await expect(page.getByRole("heading", { level: 1, name: "CATOBAR" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "L'essentiel" })).toBeVisible();
   });
