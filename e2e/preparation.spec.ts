@@ -25,5 +25,5 @@ test("choisir un concours cible affiche le tableau de bord et le mémorise", asy
   // La sélection persiste après rechargement (localStorage).
   await page.reload();
   const reloaded = page.getByRole("region", { name: "Ma préparation" });
-  await expect(reloaded.getByRole("link", { name: "Réviser" })).toHaveAttribute("href", "/eopn");
+  await expect(reloaded.getByRole("link", { name: "Fiches" })).toHaveAttribute("href", "/eopn");
 });
