@@ -1,4 +1,4 @@
-import type { Question } from "@/lib/content/content-schemas";
+import type { Concours, Question } from "@/lib/content/content-schemas";
 import {
   getFicheById,
   getFicheHref,
@@ -63,6 +63,19 @@ export function buildCoursePool(questionIds: readonly string[]): PlayerQuestion[
   const wanted = new Set(questionIds);
   return getQuestions()
     .filter((q) => wanted.has(q.id))
+    .map(toPlayerQuestion)
+    .filter((question): question is PlayerQuestion => question !== null);
+}
+
+/**
+ * Vivier d'entraînement d'un concours : toutes les questions de la banque
+ * marquées pour ce concours (`concours`) et jouables au clic (QCM, vrai-faux).
+ * C'est un mode d'entraînement libre — pas la reproduction d'un format officiel
+ * (celui-ci relèverait du contrat `examSchema`, sourcé et daté).
+ */
+export function buildConcoursPool(concours: Concours): PlayerQuestion[] {
+  return getQuestions()
+    .filter((q) => q.concours.includes(concours))
     .map(toPlayerQuestion)
     .filter((question): question is PlayerQuestion => question !== null);
 }

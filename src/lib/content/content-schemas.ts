@@ -17,6 +17,7 @@ export const CONTENT_SCHEMA_VERSION = 1;
 // ---------------------------------------------------------------------------
 
 export const concoursSchema = z.enum(["eopan", "eopn", "alat"]);
+export type Concours = z.infer<typeof concoursSchema>;
 
 /**
  * Workflow éditorial complet (validé) :

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChartLineIcon, TimerIcon } from "lucide-react";
+import { ChartLineIcon, ListChecksIcon, TimerIcon } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { CategoryCard } from "@/components/shared/category-card";
@@ -75,6 +75,26 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     </CardTitle>
                     <CardDescription>
                       Sessions générées — calcul, suites, mémoire, attention, orientation…
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.kind === "concours" ? (
+            <li>
+              <Link
+                href={`/entrainement/${mod.slug}`}
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <ListChecksIcon aria-hidden className="text-primary size-4" />
+                      S&apos;entraîner
+                    </CardTitle>
+                    <CardDescription>
+                      Séries de questions du concours, tirées au hasard, avec correction détaillée.
                     </CardDescription>
                   </CardHeader>
                 </Card>
