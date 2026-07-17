@@ -53,11 +53,16 @@ questions:
   - q.aerodynamique.centrage-04
   - q.aerodynamique.centrage-05
   - q.aerodynamique.centrage-06
-interactions: []
+interactions:
+  - centrage
 sequence:
   - kind: fiche
     ref: fondamentaux.aerodynamique.stabilite-et-centrage
     title: Étudier — stabilité et centrage
+    obligatoire: true
+  - kind: interaction
+    ref: centrage
+    title: Manipuler — le simulateur de centrage
     obligatoire: true
   - kind: fiche
     ref: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
