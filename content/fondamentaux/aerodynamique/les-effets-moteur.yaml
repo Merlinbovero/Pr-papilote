@@ -1,0 +1,127 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.les-effets-moteur
+type: notion-aerodynamique
+title: Les effets moteur
+slug: les-effets-moteur
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion à hélice en vol — les effets moteur
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  L'hélice ne fait pas qu'avancer l'avion : elle produit des effets secondaires
+  qui le font dévier — souffle hélicoïdal, couple de renversement, effet
+  gyroscopique et traction asymétrique. Le pilote les compense au palonnier. Le
+  sens de ces effets dépend du sens de rotation de l'hélice.
+objectifs:
+  - Nommer les quatre effets moteur d'un avion à hélice et leur origine.
+  - Expliquer comment chaque effet fait dévier l'avion.
+  - Comprendre que le sens des effets dépend du sens de rotation de l'hélice.
+aliases: [effets moteur, souffle hélicoïdal, couple de renversement, effet gyroscopique, précession]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 13 « Les effets moteur » (mécanique du vol, p.77-81).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 5 — Les effets moteur"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "DGAC / ENAC — effets moteur (souffle, couple, effet gyroscopique)"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+    - fondamentaux.physique.les-trois-lois-de-newton
+  related:
+    - fondamentaux.aerodynamique.les-bilans-de-forces
+content:
+  essentiel:
+    body: |
+      Sur un avion à **hélice**, le moteur ne fait pas qu'avancer l'appareil :
+      il crée des **effets secondaires** qui tendent à le faire **dévier**,
+      surtout à **forte puissance et basse vitesse** (décollage, montée). Le
+      pilote les **compense** au **palonnier** (et par un calage de dérive ou un
+      compensateur).
+
+      Quatre effets se combinent :
+
+      - le **souffle hélicoïdal** : l'hélice brasse l'air en **spirale** ; ce
+        flux vient frapper la **dérive** d'un côté et provoque un **lacet** ;
+      - le **couple de renversement** : par réaction au couple moteur (3ᵉ loi de
+        Newton), l'avion tend à **rouler** dans le sens **opposé** à l'hélice ;
+      - l'**effet gyroscopique** : l'hélice, comme une toupie, réagit à une
+        rotation par une **précession** décalée de 90° ;
+      - la **traction asymétrique** : à forte incidence, une pale « mord » plus
+        que l'autre, décentrant la traction et créant un **lacet**.
+
+      **Attention** : le **sens** de tous ces effets dépend du **sens de
+      rotation** de l'hélice. On les énonce ici pour une hélice tournant **dans
+      le sens horaire vue du pilote** ; ils **s'inversent** pour une hélice
+      antihoraire.
+    aRetenir:
+      - L'hélice produit des effets secondaires qui font dévier l'avion, surtout à forte puissance et basse vitesse.
+      - Souffle hélicoïdal — l'air brassé en spirale frappe la dérive et crée un lacet.
+      - Couple de renversement — par réaction (Newton), l'avion tend à rouler à l'opposé de l'hélice.
+      - Effet gyroscopique — l'hélice réagit à une rotation par une précession décalée de 90°.
+      - Le sens de ces effets dépend du sens de rotation de l'hélice ; on les compense au palonnier.
+  sections:
+    - id: souffle-et-couple
+      title: Souffle hélicoïdal et couple de renversement
+      body: |
+        Le **souffle hélicoïdal** : l'hélice ne pousse pas l'air tout droit, elle
+        l'envoie en **spirale** autour du fuselage. Cette nappe d'air tournante
+        vient frapper la **dérive** (empennage vertical) d'un seul côté, ce qui
+        engendre un **lacet**. Pour une hélice **horaire** (vue du pilote), le
+        souffle tend à faire partir le nez **à gauche**.
+
+        Le **couple de renversement** : le moteur fait tourner l'hélice dans un
+        sens ; par la **3ᵉ loi de Newton**, l'avion subit un couple **égal et
+        opposé** et tend à **rouler** dans l'autre sens. Pour une hélice horaire,
+        l'avion tend à rouler **vers la gauche**. Ce roulis appuie la roue gauche
+        au sol (roulage) et incline légèrement en vol.
+      figures:
+        - schemaId: effets-moteur
+          alt: Un avion à hélice vu de côté, l'air brassé en spirale par l'hélice venant frapper la dérive et provoquant un lacet.
+          caption: Le souffle hélicoïdal — l'air envoyé en spirale frappe la dérive et fait dévier le nez (ici à gauche, pour une hélice horaire).
+          width: 420
+          height: 240
+    - id: gyroscopique-et-asymetrique
+      title: Effet gyroscopique et traction asymétrique
+      strate: maitriser
+      body: |
+        L'**effet gyroscopique** : l'hélice en rotation se comporte comme un
+        **gyroscope**. Quand on la fait pivoter autour d'un axe (par exemple lever
+        la queue au décollage, un mouvement de **tangage**), elle réagit par une
+        **précession** — un couple qui se manifeste **90° plus loin** dans le sens
+        de rotation, ici en **lacet**. Cet effet est surtout sensible lors des
+        **changements d'assiette**.
+
+        La **traction asymétrique** (parfois appelée « facteur P ») : à **forte
+        incidence**, la pale qui **descend** attaque l'air avec une incidence plus
+        grande que la pale qui monte ; elle produit **plus de traction**. Le point
+        d'application de la traction se **décale**, ce qui crée un **lacet**.
+
+        Ces effets se combinent : pour une hélice horaire, ils tendent tous à
+        faire partir l'avion **à gauche** — d'où une compensation au **palonnier
+        droit** au décollage.
+  pieges:
+    - Le sens des effets moteur n'est pas universel — il dépend du sens de rotation de l'hélice (il s'inverse pour une hélice antihoraire).
+    - Le couple de renversement fait rouler l'avion à l'opposé de l'hélice — c'est une réaction (Newton), pas le souffle.
+    - L'effet gyroscopique se manifeste 90° plus loin (précession) et surtout lors des changements d'assiette, pas en vol stabilisé.

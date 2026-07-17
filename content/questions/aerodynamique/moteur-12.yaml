@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-12
+kind: qcm
+theme: effets-moteur
+statement: >-
+  Pourquoi les effets moteur sont-ils peu sensibles en croisière rapide ?
+choices:
+  - "L'incidence et la puissance relative sont faibles, et les gouvernes efficaces"
+  - "L'hélice s'arrête"
+  - "Le poids diminue"
+  - "La portance disparaît"
+correctChoices: [0]
+explanation: >-
+  En croisière, l'incidence est faible et les gouvernes très efficaces à grande
+  vitesse : les effets moteur, plus faibles, sont facilement compensés (souvent
+  par un simple calage de dérive).
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

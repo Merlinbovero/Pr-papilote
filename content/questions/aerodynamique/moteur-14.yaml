@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-14
+kind: vrai-faux
+theme: effets-moteur
+statement: >-
+  Les effets moteur n'existent que sur les avions à hélice, pas sur les seuls
+  planeurs.
+answer: true
+explanation: >-
+  Ces effets proviennent de l'hélice (souffle, couple, gyroscopie, traction
+  asymétrique) : un planeur sans moteur ne les subit pas.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

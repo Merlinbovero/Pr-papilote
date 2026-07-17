@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-02
+kind: qcm
+theme: effets-moteur
+statement: >-
+  Quel effet moteur naît de l'air brassé en spirale par l'hélice ?
+choices:
+  - "Le souffle hélicoïdal"
+  - "Le couple de renversement"
+  - "L'effet gyroscopique"
+  - "La traction asymétrique"
+correctChoices: [0]
+explanation: >-
+  Le souffle hélicoïdal est la nappe d'air envoyée en spirale, qui frappe la
+  dérive et provoque un lacet.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

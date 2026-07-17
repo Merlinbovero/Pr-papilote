@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-08
+kind: vrai-faux
+theme: effets-moteur
+statement: >-
+  Pour une hélice tournant dans le sens horaire (vue du pilote), les effets
+  moteur tendent globalement à faire partir l'avion à gauche.
+answer: true
+explanation: >-
+  Souffle, couple et traction asymétrique concourent, pour une hélice horaire, à
+  faire dévier l'avion vers la gauche — d'où une compensation au palonnier droit
+  au décollage.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

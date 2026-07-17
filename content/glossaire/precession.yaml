@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.precession
+title: Précession
+definition: >-
+  Réponse d'un corps en rotation (l'hélice) à un couple appliqué : l'effet
+  apparaît 90° plus loin dans le sens de rotation. C'est le mécanisme de l'effet
+  gyroscopique.
+english: precession
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-effets-moteur
+tags: []
+status: publie

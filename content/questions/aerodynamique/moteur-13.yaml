@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-13
+kind: vrai-faux
+theme: effets-moteur
+statement: >-
+  L'effet gyroscopique fait apparaître son effet dans l'axe même de l'action
+  appliquée à l'hélice.
+answer: false
+explanation: >-
+  Non : par précession, l'effet apparaît 90° plus loin dans le sens de rotation,
+  et non dans l'axe de l'action.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .accent { fill: #3b82f6; font-size: 11px; }
+    .ink { stroke: currentColor; fill: currentColor; fill-opacity: 0.12; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="em" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">Le souffle hélicoïdal (hélice horaire, vue du pilote)</text>
+
+  <!-- Avion vu de côté simplifié -->
+  <g class="ink">
+    <path d="M60,120 h230 q30,0 40,-12 v24 q-10,-12 -40,-12 z" />
+    <path d="M290,108 v-30 h10 v30 z" />
+    <rect x="52" y="100" width="8" height="40" rx="3" />
+  </g>
+
+  <!-- Spirale du souffle autour du fuselage -->
+  <path class="flow" d="M70,100 q60,-16 120,10 q60,26 120,0" marker-end="url(#em)" />
+  <path class="flow" d="M70,140 q60,16 120,-10 q60,-26 120,0" marker-end="url(#em)" />
+  <text class="accent" x="150" y="70" text-anchor="middle">air brassé en spirale</text>
+
+  <!-- Impact sur la dérive -->
+  <line class="flow" x1="270" y1="88" x2="292" y2="88" marker-end="url(#em)" />
+  <text class="accent" x="300" y="70">frappe la dérive → lacet à gauche</text>
+
+  <text class="lbl" x="210" y="228" text-anchor="middle">le sens s'inverse pour une hélice antihoraire</text>
+</svg>

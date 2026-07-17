@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-07
+kind: vrai-faux
+theme: effets-moteur
+statement: >-
+  Le sens des effets moteur dépend du sens de rotation de l'hélice.
+answer: true
+explanation: >-
+  Les effets s'énoncent pour un sens de rotation donné (par exemple horaire vu du
+  pilote) et s'inversent pour une hélice tournant dans l'autre sens.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

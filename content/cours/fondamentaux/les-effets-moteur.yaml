@@ -1,0 +1,103 @@
+schemaVersion: 1
+id: cours.les-effets-moteur
+slug: les-effets-moteur
+title: Les effets moteur
+description: >-
+  Sur un avion à hélice, le moteur produit des effets secondaires qui font
+  dévier l'appareil : souffle hélicoïdal, couple de renversement, effet
+  gyroscopique et traction asymétrique. Ce cours les explique et rappelle que
+  leur sens dépend du sens de rotation de l'hélice.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Nommer les quatre effets moteur et leur origine.
+  - Expliquer comment chaque effet fait dévier l'avion.
+  - Comprendre que le sens des effets dépend du sens de rotation de l'hélice.
+prerequisites:
+  - cours.les-bilans-de-forces
+ordre: 13
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 77
+    to: 81
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-effets-moteur
+  - fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+termes:
+  - terme.souffle-helicoidal
+  - terme.couple-de-renversement
+  - terme.effet-gyroscopique
+  - terme.precession
+  - terme.traction-asymetrique
+exercices:
+  - exercice.moteur-quatre-effets
+  - exercice.moteur-sens-rotation
+  - exercice.moteur-decollage
+questions:
+  - q.aerodynamique.moteur-01
+  - q.aerodynamique.moteur-02
+  - q.aerodynamique.moteur-03
+  - q.aerodynamique.moteur-04
+  - q.aerodynamique.moteur-05
+  - q.aerodynamique.moteur-06
+  - q.aerodynamique.moteur-07
+  - q.aerodynamique.moteur-08
+  - q.aerodynamique.moteur-09
+  - q.aerodynamique.moteur-10
+  - q.aerodynamique.moteur-11
+  - q.aerodynamique.moteur-12
+  - q.aerodynamique.moteur-13
+  - q.aerodynamique.moteur-14
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-effets-moteur
+    title: Étudier — les quatre effets moteur
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+    title: Approfondir — axes et gouvernes (compensation au palonnier)
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.moteur-quatre-effets
+    title: S'exercer — identifier les quatre effets
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.moteur-decollage
+    title: S'exercer — compenser au décollage
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - L'hélice produit des effets secondaires qui font dévier l'avion, surtout à forte puissance et basse vitesse.
+  - Souffle hélicoïdal — l'air brassé en spirale frappe la dérive et crée un lacet.
+  - Couple de renversement — par réaction (Newton), l'avion tend à rouler à l'opposé de l'hélice.
+  - Effet gyroscopique — l'hélice réagit à une rotation par une précession décalée de 90°.
+  - Traction asymétrique — à forte incidence, la pale descendante décentre la traction (lacet).
+  - Le sens de ces effets dépend du sens de rotation de l'hélice ; on les compense au palonnier.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 5 — Les effets moteur"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "DGAC / ENAC — effets moteur (souffle, couple, effet gyroscopique)"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 13 « Les effets moteur » (mécanique du vol p.77-81).
+    author: prepapilote

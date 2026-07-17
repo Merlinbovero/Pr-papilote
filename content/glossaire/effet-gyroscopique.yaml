@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.effet-gyroscopique
+title: Effet gyroscopique
+definition: >-
+  Comportement de l'hélice en rotation comme un gyroscope : une action sur un axe
+  se manifeste, par précession, 90° plus loin. Sensible lors des changements
+  d'assiette.
+english: gyroscopic effect
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-effets-moteur
+tags: []
+status: publie
