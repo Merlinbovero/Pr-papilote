@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.coeff-01
+kind: qcm
+theme: coefficients
+statement: >-
+  Quelle relation générale donne la portance ou la traînée ?
+choices:
+  - "F = ½·ρ·S·V²·C"
+  - "F = m·a"
+  - "F = ρ·S·V"
+  - "F = C / (ρ·S·V²)"
+correctChoices: [0]
+explanation: >-
+  Portance et traînée suivent la même forme : F = ½·ρ·S·V²·C, avec C = Cz pour la
+  portance et C = Cx pour la traînée.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

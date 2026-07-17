@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.faero-07
+kind: vrai-faux
+theme: force-aerodynamique
+statement: >-
+  La portance et la traînée sont deux forces totalement indépendantes l'une de
+  l'autre.
+answer: false
+explanation: >-
+  Ce sont les deux composantes d'une seule et même force, la résultante
+  aérodynamique — pas deux forces indépendantes.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

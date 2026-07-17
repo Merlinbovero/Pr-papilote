@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.faero-03
+kind: qcm
+theme: force-aerodynamique
+statement: >-
+  Par rapport au vent relatif, comment est orientée la portance ?
+choices:
+  - "Perpendiculaire au vent relatif"
+  - "Parallèle au vent relatif"
+  - "Toujours strictement verticale"
+  - "Opposée au poids exactement"
+correctChoices: [0]
+distractorNotes:
+  "2": "La portance est perpendiculaire au vent relatif, pas nécessairement verticale (en virage, elle est inclinée)."
+explanation: >-
+  La portance est la composante perpendiculaire au vent relatif ; la traînée en
+  est la composante parallèle.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

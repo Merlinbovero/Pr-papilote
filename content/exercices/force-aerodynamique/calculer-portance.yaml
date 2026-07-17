@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.faero-calculer-portance
+title: Calculer la portance d'une aile
+consigne: >-
+  Calculez la portance produite par une aile dans les conditions données, puis
+  vérifiez qu'elle équilibre le poids de l'avion.
+donnees: >-
+  ρ = 1,225 kg/m³, surface S = 16 m², vitesse V = 55 m/s, coefficient Cz = 0,45.
+  Masse de l'avion : 1200 kg (g ≈ 9,81 m/s²).
+methode: >-
+  Appliquer F_z = ½·ρ·S·V²·Cz. Comparer au poids P = m·g.
+correction: >-
+  F_z = ½ × 1,225 × 16 × 55² × 0,45 = ½ × 1,225 × 16 × 3025 × 0,45 ≈ 13 340 N.
+  Poids P = 1200 × 9,81 ≈ 11 770 N. La portance (13 340 N) dépasse le poids :
+  l'avion peut monter ou voler en palier en réduisant l'incidence (donc Cz).
+interpretation: >-
+  Le pilote ajuste l'incidence (Cz) et la vitesse pour que la portance équilibre
+  exactement le poids en vol stabilisé.
+notionLiee: fondamentaux.aerodynamique.la-force-aerodynamique
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

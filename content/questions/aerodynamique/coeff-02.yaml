@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.coeff-02
+kind: qcm
+theme: coefficients
+statement: >-
+  Que résument les coefficients Cz et Cx ?
+choices:
+  - "L'effet du profil et de l'angle d'incidence"
+  - "La surface et l'envergure de l'aile"
+  - "La masse de l'avion"
+  - "La puissance du moteur"
+correctChoices: [0]
+distractorNotes:
+  "1": "La surface est déjà prise en compte par le terme S de la formule."
+explanation: >-
+  Cz et Cx sont sans dimension : ils résument la forme du profil et l'angle
+  d'incidence. La taille de l'aile est déjà comptée par S.
+evaluates: [fondamentaux.aerodynamique.la-force-aerodynamique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

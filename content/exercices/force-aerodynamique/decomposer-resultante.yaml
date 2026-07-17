@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.faero-decomposer
+title: Décomposer la résultante aérodynamique
+consigne: >-
+  Une aile subit une portance et une traînée données. Calculez la résultante
+  aérodynamique et déduisez-en la finesse.
+donnees: >-
+  Portance F_z = 12 000 N. Traînée F_x = 1000 N.
+methode: >-
+  Utiliser F_R² = F_z² + F_x² pour la résultante, puis la finesse f = F_z / F_x.
+correction: >-
+  F_R = √(12000² + 1000²) = √(144 000 000 + 1 000 000) = √145 000 000 ≈ 12 042 N.
+  Finesse f = 12000 / 1000 = 12. La résultante est à peine supérieure à la
+  portance, car la traînée est petite devant elle.
+interpretation: >-
+  Une finesse de 12 signifie que l'aile produit douze fois plus de portance que
+  de traînée : la résultante est presque perpendiculaire au vent relatif.
+notionLiee: fondamentaux.aerodynamique.la-force-aerodynamique
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

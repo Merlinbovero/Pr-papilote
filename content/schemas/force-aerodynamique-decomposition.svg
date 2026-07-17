@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .accent { fill: #3b82f6; font-size: 12px; }
+    .muted { font-size: 11px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .wind { stroke: currentColor; fill: none; stroke-width: 2; }
+    .lift { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .drag { stroke: currentColor; fill: none; stroke-width: 3; }
+    .res { stroke: #3b82f6; fill: none; stroke-width: 3; stroke-dasharray: 5 4; }
+  </style>
+  <defs>
+    <marker id="fa-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="fa-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">La décomposition de la force aérodynamique</text>
+
+  <!-- Vent relatif (horizontal, venant de la gauche) -->
+  <line class="wind" x1="20" y1="150" x2="90" y2="150" marker-end="url(#fa-k)" />
+  <text class="muted" x="20" y="142">vent relatif</text>
+
+  <!-- Profil d'aile légèrement incliné (incidence), centre de poussée au point P -->
+  <g class="ink">
+    <path d="M120,158 q70,-30 150,-6 q-70,20 -150,6 z" fill="currentColor" fill-opacity="0.10" />
+  </g>
+  <circle cx="196" cy="150" r="3.5" fill="currentColor" />
+  <text class="muted" x="196" y="176" text-anchor="middle">centre de poussée</text>
+
+  <!-- Résultante F_R (haut et légèrement arrière) -->
+  <line class="res" x1="196" y1="150" x2="150" y2="58" marker-end="url(#fa-b)" />
+  <text class="accent" x="150" y="52" text-anchor="middle">F_R</text>
+
+  <!-- Portance F_z (vertical, perpendiculaire au vent relatif) -->
+  <line class="lift" x1="196" y1="150" x2="196" y2="66" marker-end="url(#fa-b)" />
+  <text class="accent" x="204" y="72">portance F_z</text>
+
+  <!-- Traînée F_x (horizontal, parallèle au vent relatif, vers l'arrière) -->
+  <line class="drag" x1="196" y1="150" x2="150" y2="150" marker-end="url(#fa-k)" />
+  <text class="lbl" x="140" y="140" text-anchor="end">traînée F_x</text>
+
+  <!-- Rectangle de décomposition (pointillés fins) -->
+  <path d="M196,66 L150,66 L150,150" fill="none" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3 3" opacity="0.6" />
+
+  <text class="lbl" x="210" y="228" text-anchor="middle">F_z ⊥ vent relatif · F_x ∥ vent relatif · F_R² = F_z² + F_x²</text>
+</svg>
