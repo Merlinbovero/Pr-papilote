@@ -86,3 +86,98 @@ au lieu d'une juxtaposition de styles.
   outre-mer en cartouches, panneau et filtres premium.
 - **Cohérence** : composants partagés (`PageHeader`, `CategoryCard`,
   `FicheCard`), tokens couleur, rayons et survols unifiés.
+
+---
+
+# Passe UI/UX/DA — juillet 2026 (V2)
+
+Seconde passe de direction artistique, en réponse à un audit ergonomique ciblé.
+Méthode : **audit → plan → implémentation par incréments vérifiés → tests → ce
+rapport**. Chaque incrément est passé par `npm run check` + `npm run build` + la
+CI (tests unitaires, e2e Playwright, scan d'accessibilité axe WCAG AA) avant
+fusion. Aucune régression d'architecture, de routes, de progression, de SEO ou
+de responsive. Contrainte tenue : **pas de couleur brute** (tokens uniquement),
+sobriété institutionnelle conservée (aucun effet « gaming / cockpit »).
+
+## Audit — points faibles identifiés
+
+1. **DA trop grise et uniforme.** Les neutres du thème (surtout sombre) étaient
+   des gris purs (chroma 0) : impression de « tout gris », une seule strate de
+   surface, peu de profondeur.
+2. **Barre latérale de module envahissante.** Toujours présente, fixe, elle
+   volait la vedette au contenu — la lecture n'était pas au centre.
+3. **Hiérarchie de lecture faible** dans les fiches et les cours : le gras se
+   fondait dans le texte, les ancres de synthèse manquaient de poids.
+4. **Dictionnaire peu soigné** : lignes plates, peu lisible, peu premium.
+5. **Cartes des bases** au fond plat en couleurs brutes, sans relief terre/mer.
+
+## Incréments livrés
+
+### UI-1 — Palette « bleu ardoise » multi-surfaces + sommaire repliable
+
+- **Palette retintée** (`globals.css`) : neutres passés du gris pur à un léger
+  **bleu ardoise** (teinte 259, celle du bleu drapeau), en clair comme en
+  sombre. Vraie **échelle d'élévation** : `background < sidebar < card/popover <
+elevated`, avec un nouveau token `--elevated` (utilitaire `bg-elevated`).
+  Bordures et survols faiblement bleutés. Contraste AA conservé ou amélioré
+  (`--muted-foreground` calibré, vérifié par axe).
+- **Sommaire de module repliable** (`module-sidebar-nav.tsx`) : panneau
+  **masquable** (état mémorisé en `localStorage`) qui se réduit à un rail étroit
+  pour donner toute la place au contenu ; surface distincte, élément actif à la
+  couleur du module. Le contenu redevient la priorité.
+
+### UI-2 — Refonte du dictionnaire
+
+- **Navigateur** : entrées en **cartes** sur surface (`bg-card`, survol
+  `bg-elevated`, focus visible) au lieu de lignes plates ; badge « Fiche » bleu
+  (navigation) ; **traduction anglaise en ligne** ; en-têtes de lettre repensés
+  (pastille bleutée + filet + décompte).
+- **Page d'un terme** : vraie fiche de référence — carte de définition en avant,
+  métadonnées libellées (anglais, synonymes), **renvoi de fiche en carte
+  cliquable** (icône + flèche), bloc **« Voir aussi »** reliant les termes d'une
+  même fiche (maillage interne).
+
+### UI-3 — Hiérarchie de lecture du contenu
+
+- **Rendu Markdown** (`markdown.tsx`) : le **gras ressort** du texte courant
+  (`text-foreground font-semibold`) — ~2 900 occurrences dans le contenu ;
+  ajout du rendu `h3`/`h4` et des filets `hr`.
+- **Cours** : le bloc **« L'essentiel à retenir »** adopte la carte à filet bleu
+  du bloc « L'essentiel » des fiches — même charge visuelle pour l'ancre de
+  synthèse, fiche comme cours.
+
+### UI-4 — Cartes des bases : fond terre/mer réaliste
+
+- Fin des **couleurs Tailwind brutes** (`sky-50`, `slate-900/950`) : fond
+  **« mer » bleuté** construit sur les tokens (`color-mix` de `--info` sur
+  `--background`, adaptatif clair/sombre) et régions en **terre claire**
+  (`fill-card`). La France se détache franchement du fond marin, sans couleur
+  brute — carte plus réaliste et conforme au design system.
+
+## Décisions notables
+
+- **Retint par tokens plutôt que par page.** La cause du « tout gris » était la
+  définition des neutres (chroma 0). La corriger à la racine (tokens) propage la
+  profondeur partout, sans toucher les composants (aucune couleur en dur à
+  chasser). Choix confirmé par `grep` : zéro couleur brute réintroduite.
+- **Sidebar repliable, pas supprimée.** L'index de module reste utile ; on lui
+  retire seulement sa dominance. Repli mémorisé, lecture différée (pas d'écart
+  d'hydratation).
+- **`color-mix` sur tokens pour la mer.** Un dégradé « eau » qui suit
+  automatiquement le thème, sans dupliquer des valeurs clair/sombre ni
+  réintroduire de couleur brute.
+- **Discipline d'accessibilité.** Un premier jet du dictionnaire a fait chuter
+  le contraste d'un texte (opacité `/80` → 3,59:1) ; la CE axe l'a bloqué, la
+  correction (opacité retirée) est repartie en CI verte. Le garde-fou a joué son
+  rôle : rien n'est fusionné en rouge.
+
+## Ce qui reste (pistes d'incréments futurs)
+
+- **Anti-collision des labels** sur la carte quand plusieurs bases sont proches
+  (déjà noté au Lot L) et regroupement de marqueurs au dézoom.
+- **Sommaire repliable sur mobile** : le repli est aujourd'hui pensé desktop
+  (≥ lg) ; la barre de catégories mobile reste l'entrée principale sur petit
+  écran.
+- **Micro-typographie** : filets de séparation optionnels sous les titres de
+  section de fiche pour les fiches très longues (non fait pour éviter la
+  surcharge sur les fiches courtes).
