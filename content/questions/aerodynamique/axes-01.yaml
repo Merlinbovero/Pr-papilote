@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.axes-01
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Par quel point passent les trois axes de rotation d'un avion ?
+choices:
+  - "Le centre de gravité"
+  - "Le nez"
+  - "Le centre de poussée"
+  - "Le bord d'attaque"
+correctChoices: [0]
+explanation: >-
+  Les trois axes (tangage, roulis, lacet) se croisent tous au centre de gravité
+  de l'avion.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

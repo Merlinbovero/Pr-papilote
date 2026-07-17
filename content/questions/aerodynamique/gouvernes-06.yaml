@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-06
+kind: vrai-faux
+theme: axes-gouvernes
+statement: >-
+  En vol coordonné, un virage combine ailerons (roulis) et un peu de palonnier
+  (lacet).
+answer: true
+explanation: >-
+  On incline l'avion aux ailerons pour virer, et l'on ajoute un peu de palonnier
+  pour garder le vol coordonné (sans glisser ni déraper).
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

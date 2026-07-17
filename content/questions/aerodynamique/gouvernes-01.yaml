@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-01
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Avec quelle commande actionne-t-on la gouverne de direction ?
+choices:
+  - "Le palonnier (les pieds)"
+  - "Le manche tiré"
+  - "Le manche incliné"
+  - "La manette des gaz"
+correctChoices: [0]
+explanation: >-
+  La gouverne de direction (lacet) est commandée au palonnier, avec les pieds ;
+  le manche commande la profondeur et les ailerons.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

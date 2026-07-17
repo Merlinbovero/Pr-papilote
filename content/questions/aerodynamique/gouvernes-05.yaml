@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-05
+kind: vrai-faux
+theme: axes-gouvernes
+statement: >-
+  Tirer sur le manche braque la gouverne de profondeur et fait cabrer l'avion.
+answer: true
+explanation: >-
+  Tirer le manche relève la gouverne de profondeur : la queue s'abaisse, le nez
+  se lève — l'avion cabre (tangage).
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

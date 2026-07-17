@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-02
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Quelles gouvernes le manche commande-t-il ?
+choices:
+  - "La profondeur et les ailerons"
+  - "La direction seule"
+  - "Les volets et les becs"
+  - "Les spoilers seuls"
+correctChoices: [0]
+explanation: >-
+  Le manche commande la profondeur (tangage, en tirant/poussant) et les ailerons
+  (roulis, en inclinant). La direction se commande au palonnier.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

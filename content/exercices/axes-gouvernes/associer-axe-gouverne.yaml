@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.axes-associer
+title: Associer axe, gouverne et commande
+consigne: >-
+  Pour chaque axe (tangage, roulis, lacet), donnez la gouverne associée et la
+  commande au poste de pilotage.
+methode: >-
+  Relier chaque axe de rotation à sa surface mobile puis à la commande (manche ou
+  palonnier).
+correction: >-
+  Tangage → gouverne de profondeur → manche tiré/poussé. Roulis → ailerons →
+  manche incliné à gauche/droite. Lacet → gouverne de direction → palonnier
+  (pieds).
+interpretation: >-
+  Cette correspondance est la base du pilotage : un axe, une gouverne, une
+  commande.
+notionLiee: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+status: publie

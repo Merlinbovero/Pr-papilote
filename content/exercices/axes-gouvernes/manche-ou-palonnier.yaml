@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: exercice.axes-manche-palonnier
+title: Manche ou palonnier ?
+consigne: >-
+  Pour chaque action, indiquez la commande à utiliser : (a) cabrer, (b) incliner
+  à gauche, (c) faire pivoter le nez à droite.
+methode: >-
+  Identifier l'axe visé, puis la commande (manche pour tangage/roulis, palonnier
+  pour lacet).
+correction: >-
+  (a) Cabrer (tangage) : tirer sur le manche. (b) Incliner à gauche (roulis) :
+  manche à gauche. (c) Faire pivoter le nez à droite (lacet) : palonnier droit.
+interpretation: >-
+  Manche = profondeur et ailerons (tangage, roulis) ; palonnier = direction
+  (lacet).
+notionLiee: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

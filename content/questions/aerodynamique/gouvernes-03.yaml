@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.gouvernes-03
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Où se situe la gouverne de profondeur ?
+choices:
+  - "Au bord de fuite de l'empennage horizontal"
+  - "Aux bouts d'ailes"
+  - "Sur la dérive"
+  - "Au bord d'attaque de l'aile"
+correctChoices: [0]
+explanation: >-
+  La gouverne de profondeur est au bord de fuite de l'empennage horizontal ; les
+  ailerons sont aux bouts d'ailes, la direction sur la dérive.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

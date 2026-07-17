@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.axe-de-tangage
+title: Axe de tangage
+definition: >-
+  Axe transversal (d'une aile à l'autre) passant par le centre de gravité. La
+  rotation autour de cet axe fait monter (cabré) ou descendre (piqué) le nez de
+  l'avion ; elle est commandée par la gouverne de profondeur.
+english: pitch axis
+synonyms: [axe transversal]
+ficheId: fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+tags: []
+status: publie

@@ -23,6 +23,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (la polaire & finesse)", path: "/cours/la-polaire-et-la-finesse" },
   { name: "cours (les types de profils)", path: "/cours/les-types-de-profils" },
   { name: "cours (hypersustentateurs)", path: "/cours/dispositifs-hypersustentateurs" },
+  { name: "cours (axes & gouvernes)", path: "/cours/les-axes-et-les-gouvernes" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.axes-08
+kind: vrai-faux
+theme: axes-gouvernes
+statement: >-
+  Un virage se commande d'abord à la gouverne de direction (au palonnier).
+answer: false
+explanation: >-
+  Un virage se fait d'abord aux ailerons (roulis), pour incliner la portance vers
+  l'intérieur du virage ; le palonnier n'ajoute qu'un peu de lacet pour rester
+  coordonné.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

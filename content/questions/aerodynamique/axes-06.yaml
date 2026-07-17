@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.axes-06
+kind: qcm
+theme: axes-gouvernes
+statement: >-
+  Quelle gouverne commande le roulis ?
+choices:
+  - "Les ailerons"
+  - "La gouverne de profondeur"
+  - "La gouverne de direction"
+  - "Le spoiler seul"
+correctChoices: [0]
+explanation: >-
+  Les ailerons, aux bouts d'ailes, agissent sur le roulis : ils font incliner les
+  ailes.
+evaluates: [fondamentaux.aerodynamique.les-axes-et-les-gouvernes]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
