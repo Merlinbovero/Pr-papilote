@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.stabilite
+title: Stabilité
+definition: >-
+  Tendance d'un avion à revenir de lui-même à son état d'équilibre après une
+  perturbation. Elle s'examine selon les trois axes : longitudinale (tangage),
+  latérale (roulis) et directionnelle (lacet).
+english: stability
+synonyms: []
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie

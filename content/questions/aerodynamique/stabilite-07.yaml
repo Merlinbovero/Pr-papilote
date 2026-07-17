@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-07
+kind: vrai-faux
+theme: stabilite-centrage
+statement: >-
+  Une grande marge statique rend l'avion plus stable mais moins maniable.
+answer: true
+explanation: >-
+  Plus le centre de gravité est en avant du foyer (grande marge statique), plus
+  l'avion est stable — mais plus il est « lourd » à la profondeur, donc moins
+  maniable.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

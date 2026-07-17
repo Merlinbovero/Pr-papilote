@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.stab-marge-statique
+title: Comprendre la marge statique
+consigne: >-
+  Deux avions ont leur centre de gravité à des positions différentes par rapport
+  au foyer. Le premier a une grande marge statique, le second une petite. Comparez
+  leur stabilité et leur maniabilité.
+methode: >-
+  Relier la marge statique (distance CG–foyer) à la stabilité et à la maniabilité.
+correction: >-
+  Le premier (grande marge statique) est très stable mais peu maniable, « lourd »
+  à la profondeur. Le second (petite marge statique) est plus maniable mais moins
+  stable. Il faut un compromis, encadré par la plage de centrage.
+interpretation: >-
+  Les avions de voltige acceptent une faible marge statique (maniabilité) ; les
+  avions de transport en gardent une confortable (stabilité, confort).
+notionLiee: fondamentaux.aerodynamique.stabilite-et-centrage
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

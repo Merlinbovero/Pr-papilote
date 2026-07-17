@@ -26,6 +26,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (axes & gouvernes)", path: "/cours/les-axes-et-les-gouvernes" },
   { name: "cours (bilans de forces)", path: "/cours/les-bilans-de-forces" },
   { name: "cours (effets moteur)", path: "/cours/les-effets-moteur" },
+  { name: "cours (stabilité & centrage)", path: "/cours/stabilite-et-centrage" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.fleche-aile
+title: Flèche (d'aile)
+definition: >-
+  Angle de recul des ailes vers l'arrière. Elle contribue à la stabilité latérale
+  et, à grande vitesse, retarde les effets de la compressibilité.
+english: wing sweep
+synonyms: [flèche]
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie

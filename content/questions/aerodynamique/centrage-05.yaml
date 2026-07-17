@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.centrage-05
+kind: vrai-faux
+theme: stabilite-centrage
+statement: >-
+  Le centrage doit rester dans une plage définie par le constructeur, entre une
+  limite avant et une limite arrière.
+answer: true
+explanation: >-
+  La plage de centrage garantit à la fois une pilotabilité correcte (pas trop
+  avant) et une stabilité suffisante (pas trop arrière). La respecter est une
+  question de sécurité.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

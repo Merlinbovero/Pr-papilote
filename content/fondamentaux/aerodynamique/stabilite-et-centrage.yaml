@@ -1,0 +1,140 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.stabilite-et-centrage
+type: notion-aerodynamique
+title: La stabilité et le centrage
+slug: stabilite-et-centrage
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la stabilité et le centrage
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Un avion est stable s'il tend à revenir de lui-même à son équilibre. En
+  tangage, cela dépend de la position du centre de gravité par rapport au foyer
+  (la marge statique). Le dièdre et la dérive assurent la stabilité en roulis et
+  en lacet. Le centrage doit rester dans une plage précise.
+objectifs:
+  - Définir la stabilité et la relier au retour vers l'équilibre après une perturbation.
+  - Expliquer la stabilité longitudinale (foyer, centre de gravité, marge statique).
+  - Décrire les stabilités latérale (dièdre) et directionnelle (dérive) et le rôle du centrage.
+aliases: [stabilité, centrage, foyer, marge statique, dièdre]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 14 « La stabilité et le centrage » (mécanique du vol, p.82-90).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 5 — Stabilité et centrage"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+    - fondamentaux.aerodynamique.les-axes-et-les-gouvernes
+  related:
+    - fondamentaux.aerodynamique.les-bilans-de-forces
+content:
+  essentiel:
+    body: |
+      Un avion est **stable** s'il tend, **de lui-même**, à **revenir** à son
+      état d'équilibre après une perturbation (une rafale, par exemple). Cette
+      stabilité s'examine selon les trois axes.
+
+      En **tangage** (stabilité **longitudinale**), tout se joue entre deux
+      points : le **centre de gravité** (où s'applique le poids) et le **foyer**
+      (le point où s'appliquent les **variations** de portance, situé
+      approximativement au **quart de la corde**, ~25 %). Si le centre de gravité
+      est **en avant** du foyer, l'avion est **stable** ; la distance entre les
+      deux est la **marge statique**. L'**empennage horizontal** assure cette
+      stabilité.
+
+      En **roulis** (stabilité **latérale**), le **dièdre** (ailes légèrement
+      relevées) ramène l'avion à plat. En **lacet** (stabilité
+      **directionnelle**), la **dérive** agit comme une girouette et réaligne le
+      nez avec le vent relatif.
+
+      Enfin, le **centrage** — la position du centre de gravité — doit rester
+      dans une **plage** définie : trop **avant**, l'avion est lourd à piloter ;
+      trop **arrière**, il devient **instable** et dangereux.
+    aRetenir:
+      - Un avion stable revient de lui-même à son équilibre après une perturbation.
+      - Stabilité longitudinale — le centre de gravité doit être en avant du foyer (~25 % de la corde) ; leur écart est la marge statique.
+      - Le dièdre assure la stabilité en roulis ; la dérive assure la stabilité en lacet.
+      - Le centrage (position du centre de gravité) doit rester dans une plage définie.
+      - Centrage trop avant — avion lourd à piloter ; trop arrière — instable et dangereux.
+  sections:
+    - id: la-stabilite-longitudinale
+      title: La stabilité longitudinale
+      body: |
+        C'est la stabilité en **tangage**, la plus importante. Deux points la
+        gouvernent :
+
+        - le **centre de gravité** (CG), où s'applique le **poids** ;
+        - le **foyer**, le point où s'appliquent les **variations** de portance
+          quand l'incidence change. En régime subsonique, il se situe
+          **approximativement au quart de la corde (~25 %)** à partir du bord
+          d'attaque, à peu près quel que soit le profil.
+
+        Si le CG est **en avant** du foyer, toute augmentation d'incidence crée un
+        moment qui tend à **rabaisser le nez** : l'avion **revient** vers son
+        équilibre — il est **stable**. La distance CG–foyer est la **marge
+        statique** : plus elle est grande, plus l'avion est stable (mais moins
+        maniable). L'**empennage horizontal** est là pour garantir cet équilibre.
+      figures:
+        - schemaId: stabilite-centrage
+          alt: Un avion vu de côté avec le centre de gravité en avant du foyer situé au quart de la corde, illustrant la marge statique et la stabilité en tangage.
+          caption: Stabilité longitudinale — le centre de gravité en avant du foyer (~25 % de la corde) rend l'avion stable ; leur écart est la marge statique.
+          width: 420
+          height: 220
+    - id: laterale-et-directionnelle
+      title: Stabilités latérale et directionnelle
+      strate: maitriser
+      body: |
+        - **Stabilité latérale** (roulis) : le **dièdre** — les ailes légèrement
+          **relevées** vers les bouts — fait qu'en cas d'inclinaison, l'aile la
+          plus basse porte un peu plus et ramène l'avion **à plat**. La **flèche**
+          des ailes y contribue aussi.
+        - **Stabilité directionnelle** (lacet) : la **dérive** (empennage
+          vertical) agit comme une **girouette**. Si le nez dévie, le vent relatif
+          appuie sur la dérive et **réaligne** l'avion.
+
+        Ces stabilités sont **naturelles** : elles reposent sur la forme de
+        l'avion, sans action du pilote.
+    - id: le-centrage
+      title: Le centrage
+      body: |
+        Le **centrage** est la **position** du centre de gravité, qui dépend du
+        **chargement** (passagers, bagages, carburant). Elle doit rester dans une
+        **plage** définie par le constructeur :
+
+        - **centrage avant** (CG loin devant le foyer) : grande marge statique,
+          avion **très stable** mais **lourd** à la profondeur, et qui décroche à
+          plus haute vitesse ;
+        - **centrage arrière** (CG proche du foyer) : faible marge statique, avion
+          **maniable** mais **peu stable** ; au-delà de la limite arrière, il
+          devient **instable** et **dangereux**.
+
+        Vérifier et respecter le centrage avant chaque vol est donc une question
+        de **sécurité**.
+  pieges:
+    - Le foyer se situe approximativement au quart de la corde (~25 %) — c'est un ordre de grandeur, pas une valeur exacte universelle.
+    - Pour être stable en tangage, le centre de gravité doit être en AVANT du foyer, pas en arrière.
+    - Un centrage arrière rend l'avion maniable mais moins stable ; au-delà de la limite, il devient dangereux.

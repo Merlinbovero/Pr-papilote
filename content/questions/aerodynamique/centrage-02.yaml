@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.centrage-02
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Que se passe-t-il avec un centrage trop avant ?
+choices:
+  - "L'avion est très stable mais lourd à piloter à la profondeur"
+  - "L'avion devient instable"
+  - "L'avion ne décolle plus jamais"
+  - "Le foyer se déplace au bord de fuite"
+correctChoices: [0]
+explanation: >-
+  Un centrage avant donne une grande marge statique : l'avion est très stable
+  mais lourd à la profondeur, et décroche à plus haute vitesse.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

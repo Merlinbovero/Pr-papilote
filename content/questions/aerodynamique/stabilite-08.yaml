@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-08
+kind: vrai-faux
+theme: stabilite-centrage
+statement: >-
+  Les stabilités latérale et directionnelle reposent sur la forme de l'avion,
+  sans action du pilote.
+answer: true
+explanation: >-
+  Le dièdre et la dérive assurent des stabilités naturelles : l'avion se
+  réaligne de lui-même, sans intervention du pilote.
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

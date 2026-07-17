@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: exercice.stab-trois-stabilites
+title: Les trois stabilités
+consigne: >-
+  Pour chaque axe (tangage, roulis, lacet), indiquez l'élément de l'avion qui
+  assure sa stabilité.
+methode: >-
+  Associer chaque axe à l'élément stabilisateur correspondant.
+correction: >-
+  Tangage (longitudinale) : le centre de gravité en avant du foyer, garanti par
+  l'empennage horizontal. Roulis (latérale) : le dièdre (et la flèche). Lacet
+  (directionnelle) : la dérive (empennage vertical).
+interpretation: >-
+  Ces stabilités naturelles rendent l'avion « docile » : il tend à revenir de
+  lui-même à sa trajectoire.
+notionLiee: fondamentaux.aerodynamique.stabilite-et-centrage
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

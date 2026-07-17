@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.stabilite-03
+kind: qcm
+theme: stabilite-centrage
+statement: >-
+  Pour qu'un avion soit stable en tangage, où doit se trouver le centre de
+  gravité par rapport au foyer ?
+choices:
+  - "En avant du foyer"
+  - "En arrière du foyer"
+  - "Exactement sur le foyer"
+  - "Au bord de fuite"
+correctChoices: [0]
+distractorNotes:
+  "1": "Un CG en arrière du foyer rend l'avion instable."
+explanation: >-
+  Si le centre de gravité est en avant du foyer, toute hausse d'incidence tend à
+  rabaisser le nez : l'avion revient vers l'équilibre (stable).
+evaluates: [fondamentaux.aerodynamique.stabilite-et-centrage]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

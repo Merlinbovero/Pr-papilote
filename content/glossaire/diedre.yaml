@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.diedre
+title: Dièdre
+definition: >-
+  Relèvement des ailes vers leurs extrémités. Il assure la stabilité latérale
+  (en roulis) : en cas d'inclinaison, l'aile la plus basse porte un peu plus et
+  ramène l'avion à plat.
+english: dihedral
+synonyms: []
+ficheId: fondamentaux.aerodynamique.stabilite-et-centrage
+tags: []
+status: publie
