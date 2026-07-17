@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.polaire-03
+kind: qcm
+theme: polaire
+statement: >-
+  Comment trouve-t-on le point de finesse maximale sur la polaire ?
+choices:
+  - "Par la tangente à la courbe menée depuis l'origine"
+  - "Au sommet de la courbe"
+  - "Au point le plus à gauche"
+  - "À l'intersection avec l'axe des Cx"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le sommet de la courbe correspond au Cz maximal, pas à la finesse maximale."
+  "2": "Le point le plus à gauche est la traînée minimale."
+explanation: >-
+  La finesse d'un point est la pente de la droite le reliant à l'origine ; la
+  finesse maximale est donc donnée par la tangente issue de l'origine.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

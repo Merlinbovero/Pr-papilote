@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.finesse
+title: Finesse
+definition: >-
+  Rapport de la portance à la traînée (Cz/Cx), sans unité. Une finesse de 10
+  signifie dix fois plus de portance que de traînée — et, en vol plané, 10 km
+  parcourus pour 1 km de perte d'altitude.
+english: glide ratio / lift-to-drag ratio
+synonyms: [L/D]
+ficheId: fondamentaux.aerodynamique.trainee
+tags: []
+status: publie

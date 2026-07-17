@@ -1,0 +1,132 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.la-polaire
+type: notion-aerodynamique
+title: La polaire et la finesse
+slug: la-polaire
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — la polaire et la finesse de l'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  La polaire d'Eiffel est la courbe qui trace le coefficient de portance Cz en
+  fonction du coefficient de traînée Cx, chaque point correspondant à une
+  incidence. Elle révèle les points remarquables de l'aile : finesse maximale,
+  traînée minimale, portance maximale et décrochage.
+objectifs:
+  - Définir la polaire d'Eiffel comme la courbe Cz en fonction de Cx (une incidence par point).
+  - Situer les points remarquables (portance nulle, traînée mini, finesse max, Cz max, décrochage).
+  - Relier la finesse maximale à la tangente issue de l'origine de la polaire.
+aliases: [polaire, polaire d'Eiffel, finesse, points remarquables]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 8 « La polaire et la finesse » (mécanique du vol, p.27-29).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La polaire d'Eiffel"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+    - fondamentaux.aerodynamique.la-couche-limite
+  related:
+    - fondamentaux.aerodynamique.trainee
+    - fondamentaux.aerodynamique.decrochage
+content:
+  essentiel:
+    body: |
+      La **polaire d'Eiffel** résume tout le comportement d'une aile sur une
+      **seule courbe**. On y porte le **coefficient de portance Cz** (en
+      ordonnée) en fonction du **coefficient de traînée Cx** (en abscisse).
+      **Chaque point** de la courbe correspond à une **incidence** : en la
+      faisant varier (en soufflerie), on parcourt la polaire.
+
+      Cette courbe révèle les **points remarquables** de l'aile :
+
+      - la **portance nulle** (Cz = 0), l'incidence à laquelle l'aile ne porte
+        pas ;
+      - la **traînée minimale** (Cx le plus faible) ;
+      - la **finesse maximale** (le meilleur rapport Cz/Cx), donnée par la
+        **tangente** menée depuis l'**origine** ;
+      - le **Cz maximal**, juste avant le **décrochage**, au-delà duquel la
+        portance chute.
+
+      La finesse (**Cz/Cx**) est l'efficacité de l'aile ; la polaire montre
+      d'un coup d'œil l'incidence qui la maximise.
+    aRetenir:
+      - La polaire d'Eiffel trace Cz en fonction de Cx ; chaque point correspond à une incidence.
+      - Points remarquables — portance nulle, traînée minimale, finesse maximale, Cz maximal, décrochage.
+      - La finesse maximale est donnée par la tangente à la polaire menée depuis l'origine.
+      - Au-delà du Cz maximal (incidence critique), c'est le décrochage.
+      - La finesse (Cz/Cx) mesure l'efficacité aérodynamique de l'aile.
+  sections:
+    - id: qu-est-ce-que-la-polaire
+      title: Qu'est-ce que la polaire d'Eiffel ?
+      body: |
+        Pour caractériser une aile, on mesure en **soufflerie**, pour une série
+        d'**incidences**, ses coefficients **Cz** (portance) et **Cx** (traînée).
+        En reportant chaque couple (Cx, Cz) sur un graphique, on obtient la
+        **polaire d'Eiffel** — du nom de **Gustave Eiffel**, pionnier de ces
+        essais.
+
+        Ce n'est donc pas une courbe « théorique » mais un **relevé
+        expérimental** : elle porte, condensée, toute la carte d'identité
+        aérodynamique de l'aile.
+      figures:
+        - schemaId: polaire-eiffel
+          alt: Une courbe de la polaire d'Eiffel, Cz en ordonnée et Cx en abscisse, avec les points remarquables portance nulle, traînée minimale, finesse maximale (tangente depuis l'origine) et Cz maximal avant décrochage.
+          caption: La polaire d'Eiffel (Cz en fonction de Cx) et ses points remarquables ; la tangente depuis l'origine donne la finesse maximale.
+          width: 420
+          height: 260
+    - id: les-points-remarquables
+      title: Les points remarquables
+      body: |
+        En parcourant la polaire des faibles aux fortes incidences, on rencontre :
+
+        - **portance nulle** : l'incidence où Cz = 0 (l'aile ne porte pas) ;
+        - **traînée minimale** : le point le plus à gauche (Cx le plus petit) ;
+        - **finesse maximale** : le point où le rapport **Cz/Cx** est le plus
+          grand — on le trouve en menant la **tangente** à la courbe **depuis
+          l'origine** ; c'est le point de meilleur rendement, essentiel au **vol
+          plané** ;
+        - **Cz maximal** : le sommet de la courbe, atteint à l'**incidence
+          critique** ; juste après, la portance **chute** — c'est le
+          **décrochage**.
+    - id: la-finesse
+      title: La finesse, lue sur la polaire
+      strate: maitriser
+      body: |
+        La **finesse** est le rapport **Cz / Cx** (voir la fiche « La traînée »).
+        Sur la polaire, la finesse d'un point est la **pente** de la droite qui
+        le relie à l'**origine** : plus cette droite est « couchée », plus la
+        finesse est grande.
+
+        La **finesse maximale** correspond donc à la droite issue de l'origine la
+        plus couchée qui touche encore la courbe : c'est la **tangente**. Voler à
+        cette incidence, c'est parcourir la plus grande distance pour une perte
+        d'altitude donnée — l'objectif du **vol plané** et de la **croisière
+        économique**.
+  pieges:
+    - Sur la polaire, l'axe horizontal est le Cx (traînée) et l'axe vertical le Cz (portance) — chaque point est une incidence, pas une vitesse.
+    - La finesse maximale n'est ni au Cz maximal ni à la traînée minimale, mais au point de tangente depuis l'origine.
+    - Le sommet de la polaire (Cz max) marque l'incidence critique — juste après, c'est le décrochage.

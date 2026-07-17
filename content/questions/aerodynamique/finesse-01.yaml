@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-01
+kind: qcm
+theme: finesse
+statement: >-
+  Comment définit-on la finesse d'une aile ?
+choices:
+  - "Le rapport portance / traînée (Cz/Cx)"
+  - "Le rapport traînée / portance"
+  - "Le produit portance × traînée"
+  - "La différence portance − traînée"
+correctChoices: [0]
+explanation: >-
+  La finesse est le rapport de la portance à la traînée, soit Cz/Cx ; c'est un
+  nombre sans unité mesurant l'efficacité aérodynamique.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

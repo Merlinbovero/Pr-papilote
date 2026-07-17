@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.polaire-lire
+title: Lire les points remarquables d'une polaire
+consigne: >-
+  Sur une polaire d'Eiffel, dites où se lisent la traînée minimale, la finesse
+  maximale, le Cz maximal et le décrochage.
+methode: >-
+  Associer chaque point remarquable à une position sur la courbe (axe des Cx, axe
+  des Cz, tangente depuis l'origine, sommet).
+correction: >-
+  Traînée minimale : point le plus à gauche (Cx le plus faible). Finesse maximale :
+  point de tangence de la droite menée depuis l'origine. Cz maximal : sommet de la
+  courbe (incidence critique). Décrochage : juste au-delà du sommet, la portance
+  chute et la traînée augmente.
+interpretation: >-
+  La polaire condense tout le comportement de l'aile : d'un coup d'œil, on choisit
+  l'incidence adaptée à chaque objectif (finesse, montée, plané).
+notionLiee: fondamentaux.aerodynamique.la-polaire
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

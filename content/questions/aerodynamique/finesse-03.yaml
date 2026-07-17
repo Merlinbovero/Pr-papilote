@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-03
+kind: qcm
+theme: finesse
+statement: >-
+  Un planeur de finesse 40 perd 1000 m d'altitude sans ascendance. Quelle
+  distance parcourt-il (air calme) ?
+choices:
+  - "40 km"
+  - "4 km"
+  - "400 km"
+  - "1 km"
+correctChoices: [0]
+explanation: >-
+  Une finesse de 40 signifie 40 unités de distance pour 1 d'altitude perdue :
+  1000 m de chute → 40 000 m = 40 km parcourus.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

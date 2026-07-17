@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.polaire-finesse-vs-cz
+title: Finesse maximale ou Cz maximal ?
+consigne: >-
+  Un pilote de planeur veut parcourir la plus grande distance possible. Doit-il
+  voler au Cz maximal ou à la finesse maximale ? Justifiez avec la polaire.
+methode: >-
+  Comparer ce que représentent le Cz maximal (sommet) et la finesse maximale
+  (tangente depuis l'origine) sur la polaire.
+correction: >-
+  Il doit voler à la finesse maximale : c'est le meilleur rapport Cz/Cx, donc la
+  plus grande distance par unité d'altitude perdue. Le Cz maximal, lui, se situe
+  à l'incidence critique (proche du décrochage) et s'accompagne d'une forte
+  traînée : la distance de plané y serait moindre.
+interpretation: >-
+  Voler « lentement au Cz max » n'optimise pas la distance : c'est l'incidence de
+  finesse maximale qui compte pour le plané.
+notionLiee: fondamentaux.aerodynamique.la-polaire
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

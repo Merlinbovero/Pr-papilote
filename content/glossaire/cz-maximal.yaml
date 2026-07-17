@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.cz-maximal
+title: Cz maximal
+definition: >-
+  Coefficient de portance le plus élevé qu'une aile puisse atteindre, au sommet
+  de la polaire et à l'incidence critique. Juste au-delà, la portance chute :
+  c'est le décrochage.
+english: maximum lift coefficient
+synonyms: [Cz max]
+ficheId: fondamentaux.aerodynamique.la-polaire
+tags: []
+status: publie

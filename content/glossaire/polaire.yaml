@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.polaire
+title: Polaire d'Eiffel
+definition: >-
+  Courbe expérimentale traçant le coefficient de portance Cz en fonction du
+  coefficient de traînée Cx, chaque point correspondant à une incidence. Elle
+  révèle les points remarquables de l'aile.
+english: drag polar
+synonyms: [polaire]
+ficheId: fondamentaux.aerodynamique.la-polaire
+tags: []
+status: publie

@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-05
+kind: vrai-faux
+theme: finesse
+statement: >-
+  La finesse est un nombre sans unité.
+answer: true
+explanation: >-
+  La finesse est un rapport de deux forces (ou de deux coefficients Cz/Cx) : elle
+  n'a pas d'unité.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

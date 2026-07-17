@@ -1,0 +1,108 @@
+schemaVersion: 1
+id: cours.la-polaire-et-la-finesse
+slug: la-polaire-et-la-finesse
+title: La polaire et la finesse
+description: >-
+  Toute l'aile sur une seule courbe : la polaire d'Eiffel relie Cz et Cx, une
+  incidence par point. Ce cours apprend à y lire les points remarquables —
+  traînée mini, finesse maximale, Cz maximal, décrochage — avec une interaction
+  pour parcourir la courbe.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Définir la polaire d'Eiffel (Cz en fonction de Cx, une incidence par point).
+  - Situer les points remarquables (portance nulle, traînée mini, finesse max, Cz max, décrochage).
+  - Relier la finesse maximale à la tangente issue de l'origine de la polaire.
+prerequisites:
+  - cours.couche-limite-et-decrochage
+ordre: 8
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 27
+    to: 29
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.la-polaire
+  - fondamentaux.aerodynamique.trainee
+termes:
+  - terme.polaire
+  - terme.finesse
+  - terme.finesse-maximale
+  - terme.cz-maximal
+  - terme.polaire-des-vitesses
+exercices:
+  - exercice.polaire-lire
+  - exercice.polaire-finesse
+  - exercice.polaire-finesse-vs-cz
+questions:
+  - q.aerodynamique.polaire-01
+  - q.aerodynamique.polaire-02
+  - q.aerodynamique.polaire-03
+  - q.aerodynamique.polaire-04
+  - q.aerodynamique.polaire-05
+  - q.aerodynamique.polaire-06
+  - q.aerodynamique.polaire-07
+  - q.aerodynamique.polaire-08
+  - q.aerodynamique.finesse-01
+  - q.aerodynamique.finesse-02
+  - q.aerodynamique.finesse-03
+  - q.aerodynamique.finesse-04
+  - q.aerodynamique.finesse-05
+  - q.aerodynamique.finesse-06
+interactions:
+  - polaire
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.la-polaire
+    title: Étudier — la polaire et la finesse
+    obligatoire: true
+  - kind: interaction
+    ref: polaire
+    title: Manipuler — parcourir la polaire d'Eiffel
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.trainee
+    title: Approfondir — la traînée et la finesse
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.polaire-lire
+    title: S'exercer — lire les points remarquables
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.polaire-finesse-vs-cz
+    title: S'exercer — finesse max ou Cz max ?
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - La polaire d'Eiffel trace Cz en fonction de Cx ; chaque point correspond à une incidence.
+  - Points remarquables — portance nulle, traînée minimale, finesse maximale, Cz maximal, décrochage.
+  - La finesse maximale est donnée par la tangente à la polaire menée depuis l'origine.
+  - La finesse (Cz/Cx) est sans unité — une finesse de 40 = 40 km parcourus pour 1 km de chute.
+  - Au-delà du Cz maximal (incidence critique), c'est le décrochage.
+  - La polaire des vitesses relie vitesse horizontale et taux de chute (vol à voile).
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La polaire d'Eiffel"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 8 « La polaire et la finesse » (mécanique du vol p.27-29).
+    author: prepapilote
