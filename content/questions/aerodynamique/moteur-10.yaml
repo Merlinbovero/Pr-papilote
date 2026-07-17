@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-10
+kind: qcm
+theme: effets-moteur
+statement: >-
+  Le couple de renversement est une application directe de quelle loi ?
+choices:
+  - "La 3e loi de Newton (action-réaction)"
+  - "Le théorème de Bernoulli"
+  - "La conservation du débit"
+  - "La loi de continuité"
+correctChoices: [0]
+explanation: >-
+  Le moteur entraîne l'hélice ; par réaction (3e loi de Newton), l'avion subit un
+  couple opposé qui le fait tendre à rouler dans l'autre sens.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

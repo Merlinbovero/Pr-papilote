@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.couple-de-renversement
+title: Couple de renversement
+definition: >-
+  Réaction au couple moteur (3e loi de Newton) : l'avion tend à rouler dans le
+  sens opposé à celui de l'hélice. Sensible surtout à forte puissance et basse
+  vitesse.
+english: torque effect
+synonyms: [couple moteur]
+ficheId: fondamentaux.aerodynamique.les-effets-moteur
+tags: []
+status: publie

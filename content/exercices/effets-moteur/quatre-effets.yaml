@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.moteur-quatre-effets
+title: Identifier les quatre effets moteur
+consigne: >-
+  Reliez chaque description à l'effet moteur correspondant : (a) l'air brassé en
+  spirale frappe la dérive, (b) l'avion tend à rouler à l'opposé de l'hélice, (c)
+  un changement d'assiette produit un effet 90° plus loin, (d) à forte incidence,
+  une pale traîne plus que l'autre.
+methode: >-
+  Associer chaque phénomène à son nom (souffle hélicoïdal, couple de renversement,
+  effet gyroscopique, traction asymétrique).
+correction: >-
+  (a) Souffle hélicoïdal. (b) Couple de renversement (réaction, Newton). (c) Effet
+  gyroscopique (précession). (d) Traction asymétrique (facteur P).
+interpretation: >-
+  Ces quatre effets se combinent, surtout à forte puissance et basse vitesse, et
+  se compensent au palonnier.
+notionLiee: fondamentaux.aerodynamique.les-effets-moteur
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

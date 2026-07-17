@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-09
+kind: qcm
+theme: effets-moteur
+statement: >-
+  Sur quelle partie de l'avion le souffle hélicoïdal agit-il pour créer un lacet ?
+choices:
+  - "La dérive (empennage vertical)"
+  - "Les ailerons"
+  - "Le train d'atterrissage"
+  - "Les volets"
+correctChoices: [0]
+explanation: >-
+  La nappe d'air en spirale frappe la dérive d'un côté, ce qui provoque un lacet.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

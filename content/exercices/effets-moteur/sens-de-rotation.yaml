@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: exercice.moteur-sens-rotation
+title: Le sens des effets dépend de l'hélice
+consigne: >-
+  Pour une hélice tournant dans le sens horaire (vue du pilote), les effets font
+  partir l'avion à gauche. Que se passe-t-il pour une hélice antihoraire ?
+methode: >-
+  Utiliser la dépendance du sens des effets au sens de rotation de l'hélice.
+correction: >-
+  Pour une hélice antihoraire, tous les effets s'inversent : l'avion tend à partir
+  à droite, et la compensation se fait au palonnier gauche. On ne peut donc jamais
+  énoncer le sens des effets sans préciser le sens de rotation.
+interpretation: >-
+  D'où l'intérêt des bimoteurs à hélices contrarotatives, qui annulent la plupart
+  de ces effets.
+notionLiee: fondamentaux.aerodynamique.les-effets-moteur
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

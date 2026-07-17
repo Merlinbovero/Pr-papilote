@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.traction-asymetrique
+title: Traction asymétrique
+definition: >-
+  Décentrage de la traction de l'hélice à forte incidence : la pale descendante,
+  plus incidente, produit plus de traction que la pale montante, d'où un lacet.
+  Aussi appelée « facteur P ».
+english: P-factor / asymmetric thrust
+synonyms: [facteur P]
+ficheId: fondamentaux.aerodynamique.les-effets-moteur
+tags: []
+status: publie

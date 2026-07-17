@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.moteur-decollage
+title: Compenser au décollage
+consigne: >-
+  Au décollage plein gaz d'un avion à hélice horaire, l'avion tend à partir à
+  gauche. Quelle action le pilote doit-il faire, et pourquoi est-ce marqué à ce
+  moment-là ?
+methode: >-
+  Identifier la commande de compensation du lacet et expliquer pourquoi les effets
+  sont forts au décollage.
+correction: >-
+  Le pilote met du palonnier droit pour contrer le lacet à gauche. Les effets sont
+  marqués au décollage car la puissance est maximale, la vitesse faible (gouvernes
+  peu efficaces) et l'incidence élevée (traction asymétrique forte).
+interpretation: >-
+  Le contrôle de la trajectoire au décollage est un point clé de la sécurité sur
+  avion à hélice.
+notionLiee: fondamentaux.aerodynamique.les-effets-moteur
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

@@ -139,6 +139,14 @@ test("le cours 9 (types de profils) compose sa fiche neuve et la fiche profil d'
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
+test("le cours 13 (effets moteur) référence sa fiche et porte un quiz", async ({ page }) => {
+  await page.goto("/cours/les-effets-moteur");
+  await expect(page.getByRole("heading", { level: 1, name: /les effets moteur/i })).toBeVisible();
+  // Titre de cours = titre de fiche : cibler le lien de fiche par son résumé.
+  await expect(page.getByRole("link", { name: /les effets moteur l.hélice/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});
+
 test("le cours 12 (bilans de forces) référence sa fiche et porte un quiz", async ({ page }) => {
   await page.goto("/cours/les-bilans-de-forces");
   await expect(

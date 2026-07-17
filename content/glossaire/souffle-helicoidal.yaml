@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.souffle-helicoidal
+title: Souffle hélicoïdal
+definition: >-
+  Nappe d'air envoyée en spirale par l'hélice autour du fuselage. En frappant la
+  dérive d'un côté, elle provoque un lacet. Le sens dépend du sens de rotation de
+  l'hélice.
+english: helical slipstream
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-effets-moteur
+tags: []
+status: publie

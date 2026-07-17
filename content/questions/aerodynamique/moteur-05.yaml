@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-05
+kind: qcm
+theme: effets-moteur
+statement: >-
+  D'où vient la traction asymétrique (facteur P) ?
+choices:
+  - "À forte incidence, la pale descendante produit plus de traction que la montante"
+  - "De la couleur de l'hélice"
+  - "Du poids du moteur"
+  - "De la gouverne de direction"
+correctChoices: [0]
+explanation: >-
+  À forte incidence, la pale qui descend attaque l'air avec une incidence plus
+  grande et produit plus de traction : la traction se décentre, d'où un lacet.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

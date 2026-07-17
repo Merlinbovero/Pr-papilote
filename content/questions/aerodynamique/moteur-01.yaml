@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-01
+kind: qcm
+theme: effets-moteur
+statement: >-
+  Quand les effets moteur sont-ils les plus sensibles ?
+choices:
+  - "À forte puissance et basse vitesse (décollage, montée)"
+  - "En croisière stabilisée"
+  - "En descente moteur réduit"
+  - "Au sol, moteur coupé"
+correctChoices: [0]
+explanation: >-
+  Les effets moteur sont marqués à forte puissance et basse vitesse, quand
+  l'hélice brasse beaucoup d'air et que les gouvernes sont peu efficaces.
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

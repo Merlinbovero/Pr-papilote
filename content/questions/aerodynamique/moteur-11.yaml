@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.moteur-11
+kind: qcm
+theme: effets-moteur
+statement: >-
+  À quel moment l'effet gyroscopique est-il le plus sensible ?
+choices:
+  - "Lors des changements d'assiette"
+  - "En vol stabilisé en palier"
+  - "Moteur coupé"
+  - "Au point fixe, avion immobile"
+correctChoices: [0]
+explanation: >-
+  L'effet gyroscopique se manifeste quand on fait pivoter l'hélice autour d'un
+  axe, c'est-à-dire lors des changements d'assiette (par exemple lever la queue au
+  décollage).
+evaluates: [fondamentaux.aerodynamique.les-effets-moteur]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
