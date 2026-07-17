@@ -48,6 +48,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Choisir un axe (tangage, roulis, lacet) pour voir l'axe de rotation, la gouverne concernée et le mouvement produit.",
   },
+  {
+    id: "centrage",
+    title: "Simulateur de centrage",
+    summary:
+      "Déplacer le centre de gravité le long de la corde pour lire la marge statique et voir si le centrage reste dans la plage admise.",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

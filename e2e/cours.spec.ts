@@ -201,6 +201,22 @@ test("le cours 10 (hypersustentateurs) compose ses deux fiches (volets/becs et s
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
+test("le cours 14 propose le simulateur de centrage, dont le curseur est réglable au clavier", async ({
+  page,
+}) => {
+  await page.goto("/cours/stabilite-et-centrage");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /la stabilité et le centrage/i })
+  ).toBeVisible();
+  // Curseur de centre de gravité (range) réglable au clavier.
+  const slider = page.getByRole("slider");
+  await expect(slider).toHaveValue("21");
+  await slider.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(slider).toHaveValue("22");
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
+});
+
 test("le cours 8 propose l'interaction polaire, dont le curseur d'incidence est réglable au clavier", async ({
   page,
 }) => {
