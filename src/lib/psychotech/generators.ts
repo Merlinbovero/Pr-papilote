@@ -44,6 +44,14 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/la-memoire",
     timeLimits: [15, 15, 15],
   },
+  "empan-chiffres": {
+    slug: "empan-chiffres",
+    name: "Empan de chiffres",
+    consigne:
+      "Une courte séquence de chiffres s'affiche puis disparaît. Restituez-la À L'ENVERS — c'est la mémoire de travail, cœur des tests pilote, que l'on évalue ici.",
+    ficheHref: "/psychotechnique/exercices/la-memoire",
+    timeLimits: [15, 15, 20],
+  },
   attention: {
     slug: "attention",
     name: "Attention",
@@ -391,6 +399,60 @@ function genMemoire(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// empan-chiffres (mémoire de travail : restituer une séquence à l'envers)
+// ---------------------------------------------------------------------------
+
+function genEmpan(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const length = difficulty === 1 ? 4 : difficulty === 2 ? 5 : 6;
+  const seconds = difficulty === 1 ? 4 : 5;
+
+  // Séquence de chiffres sans répétition consécutive (lisibilité de l'exposition).
+  const digits: number[] = [];
+  let prev = -1;
+  for (let i = 0; i < length; i += 1) {
+    let d = int(rng, 0, 9);
+    while (d === prev) d = int(rng, 0, 9);
+    digits.push(d);
+    prev = d;
+  }
+  // Évite un palindrome (la version « à l'endroit » doit rester un distracteur valide).
+  const reversed = [...digits].reverse();
+  if (reversed.join("") === digits.join("")) {
+    digits[length - 1] = (digits[length - 1] + 1) % 10;
+    reversed[0] = digits[length - 1];
+  }
+
+  const correct = reversed.join(" ");
+  const original = digits.join(" "); // erreur classique : oubli d'inverser
+  const swapped = [...reversed];
+  const s = int(rng, 0, length - 2);
+  [swapped[s], swapped[s + 1]] = [swapped[s + 1], swapped[s]];
+  const changed = [...reversed];
+  const c = int(rng, 0, length - 1);
+  changed[c] = (changed[c] + 1 + int(rng, 0, 8)) % 10;
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 11, correct, [
+    original,
+    swapped.join(" "),
+    changed.join(" "),
+  ]);
+
+  return {
+    id: `psy.empan-chiffres.${seed}`,
+    family: "empan-chiffres",
+    difficulty,
+    exposure: { lines: [digits.join("   ")], seconds },
+    prompt: "Quelle est la séquence lue À L'ENVERS (du dernier au premier chiffre) ?",
+    choices,
+    correctIndex,
+    method:
+      "Répétez la séquence à voix basse en la remontant du dernier au premier chiffre ; regroupez-la par paires pour tenir toute la longueur en mémoire de travail.",
+    timeLimitSeconds: FAMILY_INFO["empan-chiffres"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // attention (comptage en grille)
 // ---------------------------------------------------------------------------
 
@@ -733,6 +795,7 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   "suites-numeriques": genSuite,
   "series-logiques": genSerieLogique,
   memoire: genMemoire,
+  "empan-chiffres": genEmpan,
   attention: genAttention,
   orientation: genOrientation,
   rapidite: genRapidite,

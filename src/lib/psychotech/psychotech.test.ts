@@ -42,6 +42,15 @@ describe("générateurs — invariants sur toutes les familles", () => {
     }
   });
 
+  it("empan de chiffres : la bonne réponse est bien la séquence inversée", () => {
+    for (const seed of [4, 61, 2027]) {
+      const q = generateQuestion("empan-chiffres", seed, 2);
+      const shown = q.exposure!.lines[0].split(/\s+/);
+      const reversed = [...shown].reverse().join(" ");
+      expect(q.choices[q.correctIndex]).toBe(reversed);
+    }
+  });
+
   it("attention : le compte annoncé correspond à la grille", () => {
     for (const seed of [3, 88, 4321]) {
       const q = generateQuestion("attention", seed, 2);

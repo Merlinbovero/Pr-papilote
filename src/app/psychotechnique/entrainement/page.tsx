@@ -6,7 +6,7 @@ import { TrainingSession } from "@/features/psychotech/training-session";
 export const metadata: Metadata = {
   title: "Entraînement psychotechnique — sessions chronométrées",
   description:
-    "Entraînez-vous aux tests psychotechniques des sélections pilote : calcul mental, suites, séries logiques, mémoire, attention, orientation, rapidité — exercices générés, chronométrés et corrigés avec méthode.",
+    "Entraînez-vous aux tests psychotechniques des sélections pilote : calcul mental, suites, séries logiques, mémoire, empan de chiffres, attention, orientation, rapidité, dominos, rotation mentale et double tâche — exercices générés, chronométrés et corrigés avec méthode.",
 };
 
 /**
@@ -28,7 +28,7 @@ export default function EntrainementPage() {
           Entraînement psychotechnique
         </h1>
         <p className="text-muted-foreground max-w-prose text-lg">
-          Sept familles d&apos;exercices générés à l&apos;infini, chronométrés comme aux sélections
+          Onze familles d&apos;exercices générés à l&apos;infini, chronométrés comme aux sélections
           — chaque erreur renvoie vers la méthode.
         </p>
       </header>
