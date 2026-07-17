@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-05
+kind: qcm
+theme: allongement
+statement: >-
+  À quoi sert un winglet en bout d'aile ?
+choices:
+  - "Gêner le tourbillon marginal et réduire la traînée induite"
+  - "Augmenter la surface portante"
+  - "Refroidir le moteur"
+  - "Servir de gouverne de direction"
+correctChoices: [0]
+explanation: >-
+  Placé sur le trajet de l'air qui contourne le bout d'aile, le winglet gêne la
+  formation du tourbillon marginal et réduit ainsi la traînée induite.
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

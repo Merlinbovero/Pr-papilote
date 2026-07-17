@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.induite-effet-vitesse
+title: Traînée induite et vitesse
+consigne: >-
+  Expliquez pourquoi la traînée induite est forte lors d'un vol lent (approche à
+  l'atterrissage) et faible en croisière rapide.
+methode: >-
+  Relier la portance nécessaire, l'incidence, l'intensité des tourbillons
+  marginaux et la vitesse.
+correction: >-
+  À basse vitesse (approche), il faut une forte incidence pour produire la
+  portance nécessaire : les tourbillons marginaux sont intenses, donc la traînée
+  induite est forte. En croisière rapide, une faible incidence suffit : les
+  tourbillons sont faibles et la traînée induite diminue.
+interpretation: >-
+  C'est l'inverse de la traînée parasite (qui croît avec la vitesse) : la somme
+  des deux passe par un minimum à une vitesse intermédiaire.
+notionLiee: fondamentaux.aerodynamique.la-trainee-induite
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

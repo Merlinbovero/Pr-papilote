@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.allongement
+title: Allongement
+definition: >-
+  Grandeur sans dimension mesurant l'élancement d'une aile : λ = envergure² /
+  surface (b²/S). Un grand allongement (aile longue et fine) réduit la traînée
+  induite et améliore la finesse.
+english: aspect ratio
+synonyms: []
+ficheId: fondamentaux.aerodynamique.l-allongement-et-les-winglets
+tags: []
+status: publie

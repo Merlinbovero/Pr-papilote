@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.trainee-induite
+title: Traînée induite
+definition: >-
+  Part de la traînée qui accompagne inévitablement la portance. Elle naît des
+  tourbillons marginaux formés au bout de l'aile ; forte à basse vitesse (forte
+  incidence), elle diminue quand la vitesse augmente.
+english: induced drag
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-trainee-induite
+tags: []
+status: publie

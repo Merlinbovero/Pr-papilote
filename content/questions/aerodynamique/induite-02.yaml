@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.induite-02
+kind: qcm
+theme: trainee-induite
+statement: >-
+  Où se forment les tourbillons marginaux ?
+choices:
+  - "Aux extrémités de l'aile"
+  - "Au bord d'attaque uniquement"
+  - "Au centre du fuselage"
+  - "Sur la dérive"
+correctChoices: [0]
+explanation: >-
+  À l'extrémité de l'aile, l'air passe de l'intrados (surpression) vers
+  l'extrados (dépression) et s'enroule en tourbillon marginal.
+evaluates: [fondamentaux.aerodynamique.la-trainee-induite]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

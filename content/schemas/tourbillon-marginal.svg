@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .accent { fill: #3b82f6; font-size: 11px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+  </style>
+  <defs>
+    <marker id="tm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">Les tourbillons marginaux (aile vue de face)</text>
+
+  <!-- Aile vue de face (une barre horizontale) -->
+  <rect class="ink" x="90" y="112" width="240" height="12" rx="3" fill="currentColor" fill-opacity="0.10" />
+  <text class="lbl" x="210" y="106" text-anchor="middle">aile</text>
+
+  <!-- Intrados en surpression (dessous), extrados en dépression (dessus) -->
+  <text class="lbl" x="210" y="150" text-anchor="middle">intrados : surpression (+)</text>
+  <text class="lbl" x="210" y="96" text-anchor="middle">extrados : dépression (−)</text>
+
+  <!-- Contournement de l'air au bout gauche -->
+  <path class="flow" d="M70,150 q-14,-30 20,-38" marker-end="url(#tm)" />
+  <!-- Tourbillon marginal gauche (spirale) -->
+  <path class="flow" d="M64,92 a16,16 0 1 0 16,16 a10,10 0 1 1 -10,-10" />
+  <text class="accent" x="52" y="84" text-anchor="middle">tourbillon</text>
+
+  <!-- Contournement de l'air au bout droit -->
+  <path class="flow" d="M350,150 q14,-30 -20,-38" marker-end="url(#tm)" />
+  <!-- Tourbillon marginal droit (spirale) -->
+  <path class="flow" d="M356,92 a16,16 0 1 1 -16,16 a10,10 0 1 0 10,-10" />
+  <text class="accent" x="368" y="84" text-anchor="middle">tourbillon</text>
+
+  <text class="lbl" x="210" y="228" text-anchor="middle">au bout de l'aile, l'air passe de l'intrados (+) vers l'extrados (−) et s'enroule</text>
+</svg>

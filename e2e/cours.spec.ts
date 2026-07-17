@@ -99,3 +99,15 @@ test("le cours 5 (force aérodynamique) compose la fiche neuve et les fiches por
   await expect(page.getByRole("link", { name: /^la portance/i })).toBeVisible();
   await expect(page.getByRole("link", { name: /^la traînée/i })).toBeVisible();
 });
+
+test("le cours 6 (traînée induite) compose ses fiches neuves et la fiche traînée", async ({
+  page,
+}) => {
+  await page.goto("/cours/trainee-induite-et-allongement");
+  await expect(page.getByRole("heading", { level: 1, name: /traînée induite/i })).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /la traînée induite et les tourbillons marginaux/i })
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /l.allongement et les winglets/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});

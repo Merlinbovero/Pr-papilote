@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.induite-05
+kind: qcm
+theme: trainee-induite
+statement: >-
+  Comment appelle-t-on le sillage tourbillonnaire laissé derrière un avion ?
+choices:
+  - "La turbulence de sillage"
+  - "La couche limite"
+  - "L'effet de sol"
+  - "Le vent relatif"
+correctChoices: [0]
+explanation: >-
+  Les tourbillons marginaux persistent derrière l'avion : c'est la turbulence de
+  sillage, dangereuse pour les appareils qui suivent.
+evaluates: [fondamentaux.aerodynamique.la-trainee-induite]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
