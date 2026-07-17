@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Ajouté
+
+- 2026-07-17 — **P1a — mode « S'entraîner » par concours** (comblement du manque n°1 de l'audit). Les hubs EOPAN/EOPN/ALAT n'offraient aucune façon de se tester ; pourtant la banque contient déjà des questions **marquées par concours** (718 jouables EOPAN, 668 EOPN, côté ALAT idem). Nouvelle page `/entrainement/[concours]` : l'utilisateur choisit une longueur de série (10/20/40), un **tirage aléatoire** de la banque du concours alimente le lecteur de quiz existant, avec correction détaillée et renvoi vers les fiches. Le vivier est servi **à la demande** en JSON statique (`/entrainement/[concours]/pool`, `force-static`) pour ne pas alourdir la page. Carte « S'entraîner » ajoutée sur les hubs de concours. **Aucune donnée inventée** : uniquement les questions déjà validées de la banque. C'est un entraînement libre, explicitement distinct d'un examen au format officiel (celui-ci relèvera du contrat `examSchema`, sourcé et daté, encore à produire). Builder pur `buildConcoursPool` testé ; e2e fonctionnel + scan axe sur la page d'entraînement.
+
 ### Modifié
 
 - 2026-07-17 — **UI-4 — cartes des bases : fond terre/mer réaliste et conforme aux tokens** (chantier UI/UX/DA, incrément 4). Le fond de la carte utilisait des **couleurs Tailwind brutes** (`sky-50`, `slate-900/950`) — hors design system et sans lien avec la nouvelle palette. Il devient un **dégradé « mer » bleuté** construit sur les tokens (`color-mix` de `--info` sur `--background`), et les régions métropolitaines passent en **terre claire** (`fill-card`) : la terre se détache nettement de la mer, dans les deux thèmes, sans aucune couleur brute. Marqueurs à la couleur de l'armée, panneau de détail et repères villes inchangés.

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getFiches, getQuestionsForFiche } from "@/lib/content/fiches";
-import { buildNotionPool } from "./notion-pool";
+import { buildConcoursPool, buildNotionPool } from "./notion-pool";
 
 describe("buildNotionPool", () => {
   it("ne retient que des formats jouables (qcm, vrai-faux) et normalise en choix", () => {
@@ -24,5 +24,23 @@ describe("buildNotionPool", () => {
 
   it("renvoie un vivier vide pour un identifiant inconnu", () => {
     expect(buildNotionPool("inexistant.fiche.xyz")).toEqual([]);
+  });
+});
+
+describe("buildConcoursPool", () => {
+  it("réunit un vivier jouable et substantiel pour chaque concours", () => {
+    for (const concours of ["eopan", "eopn", "alat"] as const) {
+      const pool = buildConcoursPool(concours);
+      expect(pool.length).toBeGreaterThan(0);
+      // Formats jouables uniquement, avec au moins une bonne réponse valide.
+      for (const question of pool) {
+        expect(question.choices.length).toBeGreaterThanOrEqual(2);
+        expect(question.correctChoices.length).toBeGreaterThanOrEqual(1);
+        for (const index of question.correctChoices) {
+          expect(index).toBeGreaterThanOrEqual(0);
+          expect(index).toBeLessThan(question.choices.length);
+        }
+      }
+    }
   });
 });

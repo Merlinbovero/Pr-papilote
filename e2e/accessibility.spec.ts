@@ -28,6 +28,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (effets moteur)", path: "/cours/les-effets-moteur" },
   { name: "cours (stabilité & centrage)", path: "/cours/stabilite-et-centrage" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
+  { name: "entraînement concours (EOPAN)", path: "/entrainement/eopan" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },
   { name: "mentions légales", path: "/mentions-legales" },
