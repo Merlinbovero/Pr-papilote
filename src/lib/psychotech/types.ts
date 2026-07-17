@@ -8,6 +8,7 @@ export const PSY_FAMILIES = [
   "suites-numeriques",
   "series-logiques",
   "memoire",
+  "empan-chiffres",
   "attention",
   "orientation",
   "rapidite",
