@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-06
+kind: qcm
+theme: soufflerie
+statement: >-
+  À quoi sert la balance aérodynamique d'une soufflerie ?
+choices:
+  - "À mesurer les forces (portance, traînée) sur la maquette"
+  - "À peser la maquette avant l'essai"
+  - "À régler la vitesse du ventilateur"
+  - "À filtrer la turbulence de l'air"
+correctChoices: [0]
+explanation: >-
+  La balance aérodynamique mesure les efforts exercés par l'air sur la maquette
+  — portance et traînée — d'où l'on tire les coefficients Cz et Cx.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.soufflerie
+title: Soufflerie
+definition: >-
+  Installation produisant un courant d'air contrôlé pour étudier l'action de
+  l'air sur une maquette immobile (relativité du mouvement). On distingue les
+  souffleries à circuit ouvert (type Eiffel) et fermé (type Prandtl).
+english: wind tunnel
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-souffleries
+tags: []
+status: publie

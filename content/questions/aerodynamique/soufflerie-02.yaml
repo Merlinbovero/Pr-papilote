@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-02
+kind: qcm
+theme: soufflerie
+statement: >-
+  Dans une soufflerie, où place-t-on la maquette à étudier ?
+choices:
+  - "Dans la veine d'essai"
+  - "Dans le diffuseur"
+  - "Dans le ventilateur"
+  - "Dans la chambre de tranquillisation"
+correctChoices: [0]
+explanation: >-
+  La maquette est placée dans la veine d'essai, où l'écoulement est le plus
+  uniforme et où la balance aérodynamique mesure les efforts.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

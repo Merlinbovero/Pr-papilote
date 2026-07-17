@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-04
+kind: qcm
+theme: soufflerie
+statement: >-
+  Quel est le rôle du diffuseur dans une soufflerie ?
+choices:
+  - "Ralentir progressivement l'air et récupérer de l'énergie"
+  - "Accélérer l'air avant la veine"
+  - "Mesurer la portance de la maquette"
+  - "Casser les gros tourbillons en amont"
+correctChoices: [0]
+distractorNotes:
+  "3": "Casser les tourbillons est le rôle de la chambre de tranquillisation."
+explanation: >-
+  En aval de la veine, le diffuseur s'élargit : il ralentit l'air
+  progressivement et en récupère une partie de l'énergie.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

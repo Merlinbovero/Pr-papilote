@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-08
+kind: vrai-faux
+theme: soufflerie
+statement: >-
+  Les forces mesurées sur une maquette immobile en soufflerie diffèrent
+  fondamentalement de celles subies par l'avion réel en vol.
+answer: false
+explanation: >-
+  Par la relativité du mouvement, un objet fixe dans un air mobile subit les
+  mêmes forces qu'un objet mobile dans un air immobile : les efforts mesurés en
+  soufflerie représentent bien ceux du vol réel.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

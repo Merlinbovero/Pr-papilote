@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: exercice.soufflerie-eiffel-prandtl
+title: Comparer souffleries Eiffel et Prandtl
+consigne: >-
+  Un centre d'essai hésite entre une soufflerie à circuit ouvert (Eiffel) et à
+  circuit fermé (Prandtl). Donnez le trajet de l'air dans chacune et un avantage
+  de chaque architecture.
+methode: >-
+  Décrire le parcours de l'air (ouvert = aspiré puis rejeté ; fermé = recirculé),
+  puis opposer simplicité et stabilité/économie d'énergie.
+correction: >-
+  Circuit ouvert (Eiffel) : l'air ambiant est aspiré à une extrémité et rejeté à
+  l'autre ; avantage : installation simple et peu coûteuse. Circuit fermé
+  (Prandtl) : l'air recircule en boucle dans un conduit refermé ; avantage :
+  écoulement plus stable et, une fois lancé, plus économe en énergie (l'air n'est
+  pas remis en mouvement à chaque passage).
+interpretation: >-
+  Le choix dépend du budget et de la qualité d'écoulement recherchée : le circuit
+  fermé équipe les grandes souffleries exigeantes.
+notionLiee: fondamentaux.aerodynamique.les-souffleries
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

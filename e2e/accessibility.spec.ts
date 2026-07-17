@@ -16,6 +16,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (forces et lois de Newton)", path: "/cours/forces-et-lois-de-newton" },
   { name: "cours (pression et écoulement)", path: "/cours/pression-et-ecoulement" },
   { name: "cours (Bernoulli et Venturi)", path: "/cours/bernoulli-et-venturi" },
+  { name: "cours (les souffleries)", path: "/cours/les-souffleries" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

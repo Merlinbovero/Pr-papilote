@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-03
+kind: qcm
+theme: soufflerie
+statement: >-
+  Quel élément d'une soufflerie accélère et régularise l'air avant la veine
+  d'essai ?
+choices:
+  - "Le collecteur (convergent)"
+  - "Le diffuseur"
+  - "Le ventilateur"
+  - "La balance aérodynamique"
+correctChoices: [0]
+distractorNotes:
+  "1": "Le diffuseur, lui, ralentit l'air en aval de la veine."
+explanation: >-
+  Le collecteur se resserre : il accélère l'air (conservation du débit) et
+  régularise l'écoulement juste avant la veine d'essai.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

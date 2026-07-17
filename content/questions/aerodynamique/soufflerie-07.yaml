@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.soufflerie-07
+kind: vrai-faux
+theme: soufflerie
+statement: >-
+  Plus le taux de turbulence d'une soufflerie est faible, plus l'écoulement est
+  régulier et fidèle à un vol réel.
+answer: true
+explanation: >-
+  Le taux de turbulence mesure l'agitation résiduelle de l'écoulement : un taux
+  faible signifie un écoulement propre, proche des conditions d'un vol réel.
+evaluates: [fondamentaux.aerodynamique.les-souffleries]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

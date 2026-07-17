@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.balance-aerodynamique
+title: Balance aérodynamique
+definition: >-
+  Dispositif qui mesure les forces exercées par l'air sur une maquette placée
+  dans la veine d'essai — notamment la portance et la traînée — pour en déduire
+  les coefficients aérodynamiques (Cz, Cx).
+english: aerodynamic balance
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-souffleries
+tags: []
+status: publie
