@@ -106,7 +106,13 @@ export function BaseMap({
           ) : null}
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-b from-sky-50 to-slate-50 dark:from-slate-900 dark:to-slate-950">
+        <div
+          className="relative overflow-hidden rounded-2xl border"
+          style={{
+            background:
+              "linear-gradient(to bottom, color-mix(in oklab, var(--info) 16%, var(--background)), color-mix(in oklab, var(--info) 8%, var(--background)))",
+          }}
+        >
           <TransformWrapper minScale={0.9} maxScale={6} doubleClick={{ mode: "zoomIn" }}>
             {({ zoomIn, zoomOut, resetTransform }) => (
               <div className="relative">
@@ -147,12 +153,12 @@ export function BaseMap({
                     aria-label={`Carte des implantations — ${armeeLabel}`}
                     className="h-auto w-full select-none"
                   >
-                    {/* Fond : régions métropolitaines */}
+                    {/* Fond : régions métropolitaines (terre claire sur mer bleutée) */}
                     {map.regions.map((region) => (
                       <path
                         key={region.code}
                         d={region.path}
-                        className="fill-muted/50 stroke-border"
+                        className="fill-card stroke-border"
                         strokeWidth={1}
                         strokeLinejoin="round"
                       />
