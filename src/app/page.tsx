@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ModuleCard } from "@/components/shared/module-card";
 import { buildSearchEntries } from "@/features/search/entries";
+import { PreparationBanner } from "@/features/preparation/preparation-banner";
 import { SearchCommand } from "@/features/search/search-command";
 import { getModules } from "@/lib/content/referentials";
 import { SITE_PHOTOS, getModulePhoto } from "@/lib/photos";
@@ -90,6 +91,17 @@ export default function HomePage() {
           Photo : {hero.author} ({hero.license})
         </a>
       </section>
+
+      {/* Ma préparation : tableau de bord personnel (concours cible + compte à rebours) */}
+      <div className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+        <PreparationBanner
+          concoursList={concours.map((mod) => ({
+            slug: mod.slug,
+            name: mod.name,
+            organization: mod.organization,
+          }))}
+        />
+      </div>
 
       {/* Choix du concours : les trois portes d'entrée principales */}
       <section
