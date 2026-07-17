@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.virage
+title: Virage
+definition: >-
+  Manœuvre où l'avion incliné utilise la composante horizontale de la portance
+  comme force centripète. La portance totale doit augmenter, d'où un facteur de
+  charge supérieur à 1 et une vitesse de décrochage plus élevée.
+english: turn
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-bilans-de-forces
+tags: []
+status: publie

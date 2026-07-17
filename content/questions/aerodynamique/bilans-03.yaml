@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-03
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  En vol plané (sans moteur), qu'est-ce qui « tire » l'avion vers l'avant ?
+choices:
+  - "Une composante du poids"
+  - "La traction du moteur"
+  - "La portance"
+  - "La traînée"
+correctChoices: [0]
+explanation: >-
+  Sans moteur, c'est une composante du poids qui fournit l'énergie du mouvement ;
+  l'angle de plané dépend de la finesse.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

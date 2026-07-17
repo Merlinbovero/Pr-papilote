@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-07
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  En virage, qu'est-ce qui fournit la force centripète ?
+choices:
+  - "La composante horizontale de la portance inclinée"
+  - "La gouverne de direction seule"
+  - "Le poids"
+  - "La traînée"
+correctChoices: [0]
+explanation: >-
+  En inclinant l'avion, la portance penche : sa composante horizontale fournit la
+  force centripète qui courbe la trajectoire.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

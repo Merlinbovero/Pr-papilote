@@ -1,0 +1,137 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.les-bilans-de-forces
+type: notion-aerodynamique
+title: Les bilans de forces en vol
+slug: les-bilans-de-forces
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — l'équilibre des forces
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  En vol stabilisé, les quatre forces s'équilibrent. Ce bilan change selon la
+  phase : palier, montée, descente, plané et virage. En virage, la portance doit
+  croître, d'où un facteur de charge supérieur à 1 et une vitesse de décrochage
+  plus élevée.
+objectifs:
+  - Établir le bilan des forces en vol en palier, en montée et en descente.
+  - Expliquer le virage (portance inclinée) et définir le facteur de charge.
+  - Relier le facteur de charge à l'augmentation de la vitesse de décrochage.
+aliases: [bilan de forces, palier, montée, descente, virage, facteur de charge]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 12 « Les bilans de forces en vol » (mécanique du vol, p.52-58).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 4 — Les cas de vol"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+    - fondamentaux.physique.les-trois-lois-de-newton
+  related:
+    - fondamentaux.aerodynamique.decrochage
+    - fondamentaux.aerodynamique.la-polaire
+content:
+  essentiel:
+    body: |
+      Un avion en **vol stabilisé** (trajectoire et vitesse constantes) a une
+      **résultante des forces nulle** (1ʳᵉ loi de Newton). Quatre forces sont en
+      jeu : **poids**, **portance**, **traction** et **traînée**. Leur équilibre
+      dépend de la **phase de vol**.
+
+      En **palier** (vol horizontal), la **portance équilibre le poids** et la
+      **traction équilibre la traînée**. En **montée**, la traction doit en plus
+      « tirer » une partie du poids vers le haut : il faut **plus de puissance**.
+      En **descente** ou en **plané** (moteur réduit ou coupé), c'est une partie
+      du **poids** qui « tire » l'avion vers l'avant.
+
+      En **virage**, l'avion est **incliné** : la portance, perpendiculaire aux
+      ailes, n'est plus verticale. Pour continuer à porter le poids **et**
+      fournir la **force centripète** du virage, la portance doit **augmenter**.
+      Le rapport portance/poids est le **facteur de charge** **n** : il vaut 1 en
+      palier, plus en virage. Comme la portance croît, la **vitesse de
+      décrochage augmente** avec le facteur de charge.
+    aRetenir:
+      - En vol stabilisé, la résultante des forces est nulle (les quatre forces s'équilibrent).
+      - Palier — portance = poids, traction = traînée.
+      - Montée — il faut plus de puissance (la traction soutient une part du poids) ; descente/plané — le poids « tire » l'avion.
+      - En virage, la portance s'incline et doit augmenter — le facteur de charge n passe au-dessus de 1.
+      - La vitesse de décrochage augmente avec le facteur de charge (elle est multipliée par √n).
+  sections:
+    - id: palier-montee-descente
+      title: Palier, montée et descente
+      body: |
+        En **vol en palier** rectiligne et à vitesse constante, l'équilibre est
+        simple : la **portance** compense exactement le **poids**, et la
+        **traction** compense la **traînée**.
+
+        En **montée**, la trajectoire est inclinée vers le haut. La traction doit
+        vaincre la traînée **et** soutenir une composante du poids : la **montée
+        coûte de la puissance**. En **descente**, l'inverse se produit : une
+        composante du poids aide à avancer, on **réduit** la puissance.
+
+        Le **plané** est une descente **sans moteur** : c'est le poids qui fournit
+        toute l'énergie. L'angle de plané dépend directement de la **finesse** —
+        plus elle est grande, plus l'angle est faible et la distance parcourue
+        grande (fiche « La polaire et la finesse »).
+    - id: le-virage
+      title: Le virage et le facteur de charge
+      body: |
+        Pour **virer**, le pilote **incline** l'avion (aux ailerons). La
+        portance, toujours perpendiculaire aux ailes, **penche** avec l'avion :
+        sa composante **horizontale** fournit la **force centripète** qui courbe
+        la trajectoire, tandis que sa composante **verticale** doit toujours
+        équilibrer le **poids**.
+
+        Résultat : la portance totale doit être **plus grande** qu'en palier. On
+        appelle **facteur de charge** le rapport :
+
+        **n = portance / poids**
+
+        En palier, n = 1. En virage à **60° d'inclinaison**, n = 2 : l'avion (et
+        ses occupants) « pèsent » **deux fois** plus. Plus l'inclinaison est
+        forte, plus n grimpe vite.
+      figures:
+        - schemaId: virage-facteur-charge
+          alt: Un avion vu de face incliné en virage, avec la portance perpendiculaire aux ailes décomposée en une composante verticale équilibrant le poids et une composante horizontale centripète.
+          caption: "En virage, la portance inclinée se décompose : sa part verticale porte le poids, sa part horizontale courbe la trajectoire. La portance totale, donc le facteur de charge, augmente."
+          width: 420
+          height: 240
+    - id: charge-et-decrochage
+      title: Facteur de charge et décrochage
+      strate: maitriser
+      body: |
+        Puisqu'en virage la portance doit **augmenter**, il faut plus
+        d'**incidence** ou plus de **vitesse**. À incidence maximale, l'aile est
+        plus proche du **décrochage** : la **vitesse de décrochage augmente** avec
+        le facteur de charge — précisément, elle est **multipliée par √n**.
+
+        Ainsi, à n = 2 (virage à 60°), la vitesse de décrochage est multipliée par
+        **√2 ≈ 1,41** : un virage serré rapproche du décrochage. C'est aussi
+        pourquoi les structures d'avion sont limitées en **facteur de charge**
+        (les fameux « **g** »).
+  pieges:
+    - En vol stabilisé, « résultante nulle » ne veut pas dire « aucune force » — les forces s'équilibrent, elles ne disparaissent pas.
+    - En virage, ce n'est pas la gouverne de direction qui tourne l'avion, mais l'inclinaison (la portance penchée fournit la force centripète).
+    - La vitesse de décrochage augmente avec le facteur de charge (× √n) — un virage serré est plus près du décrochage.

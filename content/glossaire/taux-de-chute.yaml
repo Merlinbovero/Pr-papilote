@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.taux-de-chute
+title: Taux de chute
+definition: >-
+  Vitesse verticale de descente d'un avion (en m/s ou ft/min). En vol à voile, on
+  cherche le taux de chute minimal pour rester en l'air le plus longtemps, distinct
+  de la vitesse de finesse maximale.
+english: sink rate
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-bilans-de-forces
+tags: []
+status: publie

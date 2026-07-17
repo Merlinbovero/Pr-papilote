@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-13
+kind: vrai-faux
+theme: bilans-de-forces
+statement: >-
+  Les structures d'un avion sont limitées en facteur de charge (les « g »).
+answer: true
+explanation: >-
+  Un facteur de charge élevé sollicite fortement la structure : chaque avion a
+  des limites de facteur de charge à ne pas dépasser (utilitaire, voltige…).
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

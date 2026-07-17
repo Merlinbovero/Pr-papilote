@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.angle-de-plane
+title: Angle de plané
+definition: >-
+  Angle de la trajectoire de descente d'un avion sans moteur par rapport à
+  l'horizontale. Il dépend directement de la finesse : plus la finesse est
+  grande, plus l'angle de plané est faible et la distance parcourue grande.
+english: glide angle
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-bilans-de-forces
+tags: []
+status: publie

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 11px; }
+    .accent { fill: #3b82f6; font-size: 11px; }
+    .ink { stroke: currentColor; fill: currentColor; fill-opacity: 0.12; stroke-width: 2; }
+    .lift { stroke: #3b82f6; fill: none; stroke-width: 3; }
+    .comp { stroke: #3b82f6; fill: none; stroke-width: 1; stroke-dasharray: 3 3; }
+    .weight { stroke: currentColor; fill: none; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="vf-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="vf-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">Virage : la portance inclinée</text>
+
+  <!-- Avion vu de face, incliné (ailes en diagonale) -->
+  <g class="ink" transform="rotate(-30 210 150)">
+    <rect x="120" y="146" width="180" height="10" rx="4" />
+    <circle cx="210" cy="151" r="10" />
+  </g>
+
+  <!-- Portance (perpendiculaire aux ailes, inclinée à 30°) -->
+  <line class="lift" x1="210" y1="151" x2="160" y2="65" marker-end="url(#vf-b)" />
+  <text class="accent" x="150" y="60" text-anchor="middle">portance</text>
+
+  <!-- Composante verticale (équilibre le poids) -->
+  <line class="comp" x1="210" y1="151" x2="210" y2="70" marker-end="url(#vf-b)" />
+  <text class="lbl" x="216" y="80">part verticale</text>
+
+  <!-- Composante horizontale (centripète) -->
+  <line class="comp" x1="210" y1="70" x2="160" y2="70" marker-end="url(#vf-b)" />
+  <text class="accent" x="150" y="84" text-anchor="middle">centripète</text>
+
+  <!-- Poids -->
+  <line class="weight" x1="210" y1="151" x2="210" y2="220" marker-end="url(#vf-k)" />
+  <text class="lbl" x="216" y="212">poids</text>
+
+  <text class="lbl" x="210" y="236" text-anchor="middle">la portance doit augmenter : facteur de charge n = portance / poids > 1</text>
+</svg>

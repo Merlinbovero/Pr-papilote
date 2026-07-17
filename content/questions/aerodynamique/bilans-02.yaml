@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-02
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  Pourquoi la montée « coûte-t-elle » de la puissance ?
+choices:
+  - "La traction doit vaincre la traînée et soutenir une part du poids"
+  - "La portance disparaît"
+  - "La traînée devient nulle"
+  - "Le poids augmente réellement"
+correctChoices: [0]
+explanation: >-
+  En montée, la trajectoire est inclinée vers le haut : la traction doit vaincre
+  la traînée et soutenir une composante du poids, d'où un besoin de puissance
+  accru.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

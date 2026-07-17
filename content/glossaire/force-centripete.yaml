@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.force-centripete
+title: Force centripète
+definition: >-
+  Force dirigée vers le centre d'une trajectoire courbe, nécessaire pour courber
+  cette trajectoire. En virage, elle est fournie par la composante horizontale de
+  la portance inclinée.
+english: centripetal force
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-bilans-de-forces
+tags: []
+status: publie

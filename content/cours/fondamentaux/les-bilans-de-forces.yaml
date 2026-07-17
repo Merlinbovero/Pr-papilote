@@ -1,0 +1,103 @@
+schemaVersion: 1
+id: cours.les-bilans-de-forces
+slug: les-bilans-de-forces
+title: Les bilans de forces en vol
+description: >-
+  Comment les quatre forces s'équilibrent selon la phase de vol : palier,
+  montée, descente, plané et virage. Ce cours introduit le facteur de charge et
+  son effet sur la vitesse de décrochage.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Établir le bilan des forces en palier, en montée et en descente.
+  - Expliquer le virage (portance inclinée) et définir le facteur de charge.
+  - Relier le facteur de charge à l'augmentation de la vitesse de décrochage.
+prerequisites:
+  - cours.les-axes-et-les-gouvernes
+ordre: 12
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 52
+    to: 58
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-bilans-de-forces
+  - fondamentaux.aerodynamique.decrochage
+termes:
+  - terme.vol-en-palier
+  - terme.virage
+  - terme.facteur-de-charge
+  - terme.angle-de-plane
+  - terme.taux-de-chute
+  - terme.force-centripete
+exercices:
+  - exercice.bilans-palier
+  - exercice.bilans-facteur-charge
+  - exercice.bilans-plane
+questions:
+  - q.aerodynamique.bilans-01
+  - q.aerodynamique.bilans-02
+  - q.aerodynamique.bilans-03
+  - q.aerodynamique.bilans-04
+  - q.aerodynamique.bilans-05
+  - q.aerodynamique.bilans-06
+  - q.aerodynamique.bilans-07
+  - q.aerodynamique.bilans-08
+  - q.aerodynamique.bilans-09
+  - q.aerodynamique.bilans-10
+  - q.aerodynamique.bilans-11
+  - q.aerodynamique.bilans-12
+  - q.aerodynamique.bilans-13
+  - q.aerodynamique.bilans-14
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-bilans-de-forces
+    title: Étudier — les bilans de forces en vol
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.decrochage
+    title: Approfondir — le décrochage
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.bilans-facteur-charge
+    title: S'exercer — facteur de charge en virage
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.bilans-plane
+    title: S'exercer — distance de plané
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - En vol stabilisé, la résultante des forces est nulle (les quatre forces s'équilibrent).
+  - Palier — portance = poids, traction = traînée.
+  - Montée — plus de puissance ; descente/plané — une composante du poids « tire » l'avion.
+  - L'angle de plané dépend de la finesse (grande finesse = plané tendu, longue distance).
+  - En virage, la portance s'incline et augmente — le facteur de charge n = portance/poids passe au-dessus de 1.
+  - La vitesse de décrochage est multipliée par √n — un virage serré rapproche du décrochage.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 4 — Les cas de vol"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 12 « Les bilans de forces en vol » (mécanique du vol p.52-58).
+    author: prepapilote

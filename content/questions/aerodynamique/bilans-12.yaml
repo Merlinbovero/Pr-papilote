@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-12
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  Qu'est-ce que le taux de chute d'un planeur ?
+choices:
+  - "Sa vitesse verticale de descente"
+  - "Sa vitesse horizontale"
+  - "Son angle d'incidence"
+  - "Sa finesse"
+correctChoices: [0]
+explanation: >-
+  Le taux de chute est la vitesse verticale de descente. En vol à voile, on
+  cherche parfois le taux de chute minimal (rester en l'air), distinct de la
+  vitesse de finesse maximale (aller loin).
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

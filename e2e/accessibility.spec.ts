@@ -24,6 +24,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "cours (les types de profils)", path: "/cours/les-types-de-profils" },
   { name: "cours (hypersustentateurs)", path: "/cours/dispositifs-hypersustentateurs" },
   { name: "cours (axes & gouvernes)", path: "/cours/les-axes-et-les-gouvernes" },
+  { name: "cours (bilans de forces)", path: "/cours/les-bilans-de-forces" },
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },

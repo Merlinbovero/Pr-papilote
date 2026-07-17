@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.bilans-04
+kind: qcm
+theme: bilans-de-forces
+statement: >-
+  De quoi dépend l'angle de plané d'un avion sans moteur ?
+choices:
+  - "De sa finesse"
+  - "De sa couleur"
+  - "De la puissance moteur"
+  - "Du nombre de passagers uniquement"
+correctChoices: [0]
+explanation: >-
+  L'angle de plané dépend directement de la finesse : plus elle est grande, plus
+  l'angle est faible et la distance parcourue grande.
+evaluates: [fondamentaux.aerodynamique.les-bilans-de-forces]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

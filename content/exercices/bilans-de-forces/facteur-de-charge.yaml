@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.bilans-facteur-charge
+title: Facteur de charge en virage
+consigne: >-
+  Calculez le facteur de charge en virage à 45° puis à 60° d'inclinaison, et
+  dites ce que « ressentent » les occupants.
+donnees: >-
+  n = 1 / cos(φ). cos(45°) ≈ 0,71 ; cos(60°) = 0,5.
+methode: >-
+  Appliquer n = 1 / cos(φ) pour chaque inclinaison.
+correction: >-
+  À 45° : n = 1 / 0,71 ≈ 1,41. À 60° : n = 1 / 0,5 = 2. À 60°, les occupants
+  « pèsent » deux fois leur poids.
+interpretation: >-
+  Plus l'inclinaison augmente, plus le facteur de charge grimpe vite — et plus la
+  vitesse de décrochage (× √n) s'élève.
+notionLiee: fondamentaux.aerodynamique.les-bilans-de-forces
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

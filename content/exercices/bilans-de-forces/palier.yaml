@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.bilans-palier
+title: Le bilan des forces en palier
+consigne: >-
+  Un avion vole en palier rectiligne à vitesse constante. Donnez les deux
+  égalités qui traduisent son équilibre et justifiez-les.
+methode: >-
+  Appliquer la 1re loi de Newton (résultante nulle) en projetant sur la verticale
+  et l'horizontale.
+correction: >-
+  Résultante nulle : sur la verticale, portance = poids ; sur l'horizontale,
+  traction = traînée. C'est la condition d'un vol stabilisé (vitesse et
+  trajectoire constantes).
+interpretation: >-
+  Toute rupture de cet équilibre (plus de traction, plus d'incidence) change la
+  trajectoire ou la vitesse.
+notionLiee: fondamentaux.aerodynamique.les-bilans-de-forces
+difficulty: 1
+competencies: [raisonnement-logique]
+status: publie
