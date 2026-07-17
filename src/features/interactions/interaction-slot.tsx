@@ -6,6 +6,7 @@ import { IncidenceDecrochage } from "./incidence-decrochage";
 import { Polaire } from "./polaire";
 import { AxesGouvernes } from "./axes-gouvernes";
 import { Centrage } from "./centrage";
+import { SoufflerieZones } from "./soufflerie-zones";
 
 /**
  * Résout un identifiant d'interaction (registre) vers son composant client.
@@ -26,6 +27,8 @@ export function InteractionSlot({ id, onInteract }: { id: string; onInteract?: (
       return <AxesGouvernes onInteract={onInteract} />;
     case "centrage":
       return <Centrage onInteract={onInteract} />;
+    case "soufflerie-zones":
+      return <SoufflerieZones onInteract={onInteract} />;
     default:
       return null;
   }

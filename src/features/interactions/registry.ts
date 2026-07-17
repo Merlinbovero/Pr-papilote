@@ -54,6 +54,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Déplacer le centre de gravité le long de la corde pour lire la marge statique et voir si le centrage reste dans la plage admise.",
   },
+  {
+    id: "soufflerie-zones",
+    title: "La soufflerie à zones",
+    summary:
+      "Sélectionner une zone de la soufflerie (collecteur, veine d'essai, diffuseur, ventilateur) pour en découvrir le rôle.",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

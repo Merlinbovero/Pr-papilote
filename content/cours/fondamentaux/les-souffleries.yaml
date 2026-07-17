@@ -42,11 +42,16 @@ questions:
   - q.aerodynamique.soufflerie-06
   - q.aerodynamique.soufflerie-07
   - q.aerodynamique.soufflerie-08
-interactions: []
+interactions:
+  - soufflerie-zones
 sequence:
   - kind: fiche
     ref: fondamentaux.aerodynamique.les-souffleries
     title: Étudier — les souffleries
+    obligatoire: true
+  - kind: interaction
+    ref: soufflerie-zones
+    title: Manipuler — la soufflerie à zones
     obligatoire: true
   - kind: exercice
     ref: exercice.soufflerie-collecteur

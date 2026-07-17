@@ -83,6 +83,13 @@ test("le cours 4 (souffleries) référence sa fiche et un exercice sur le collec
   ).toBeVisible();
   // Le cours porte bien un quiz (composition standard).
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+  // Interaction « soufflerie à zones » : sélection d'une zone au clavier.
+  const diffuseur = page.getByRole("radio", { name: "Diffuseur" });
+  await expect(diffuseur).not.toBeChecked();
+  await diffuseur.focus();
+  await page.keyboard.press("Space");
+  await expect(diffuseur).toBeChecked();
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
 });
 
 test("le cours 5 (force aérodynamique) compose la fiche neuve et les fiches portance/traînée", async ({
