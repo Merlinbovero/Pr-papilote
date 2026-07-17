@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.theoreme-de-bernoulli
+type: notion-aerodynamique
+title: Le théorème de Bernoulli et l'effet Venturi
+slug: theoreme-de-bernoulli
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — vitesse et pression de l'air le long de l'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Le long d'un écoulement, la pression totale se conserve : quand l'air
+  accélère, sa pression statique diminue (ps + ½·ρ·V² = constante). C'est le
+  théorème de Bernoulli, dont l'effet Venturi est l'application directe. Un
+  modèle éclairant, mais partiel pour expliquer la portance.
+objectifs:
+  - Énoncer le théorème de Bernoulli (conservation de la pression totale le long d'un écoulement).
+  - Expliquer l'effet Venturi (un rétrécissement accélère l'air et fait chuter sa pression statique).
+  - Situer la portée et les limites de Bernoulli pour la portance (modèle partiel, jamais le « temps de parcours égal »).
+aliases: [Bernoulli, Venturi, théorème de Bernoulli, effet Venturi]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 3 « Théorème de Bernoulli & effet Venturi » (mécanique du vol, p.10-11).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Écoulement et théorème de Bernoulli"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: "NASA — Glenn Research Center, Bernoulli and Newton / Incorrect Theory of Lift"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoulli-and-newton/
+    kind: institutionnel
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.pression-statique-dynamique-totale
+    - fondamentaux.aerodynamique.conservation-du-debit
+content:
+  essentiel:
+    body: |
+      Le **théorème de Bernoulli** exprime la **conservation de l'énergie** d'un
+      fluide en écoulement. Pour un air peu compressible et sans frottement, le
+      long d'une **ligne de courant** :
+
+      **ps + ½·ρ·V² = pt = constante**
+
+      Autrement dit, la **pression totale** (statique + dynamique) se conserve.
+      Comme leur somme est fixe, **si la vitesse augmente, la pression
+      dynamique augmente, donc la pression statique diminue** — et inversement.
+
+      L'**effet Venturi** en est l'application directe : dans un **rétrécissement**,
+      la conservation du débit impose une **accélération** de l'air (vu au cours
+      précédent) ; par Bernoulli, cette accélération s'accompagne d'une **baisse
+      de la pression statique**. C'est ce qui se produit au-dessus d'une aile, où
+      l'air accélère et où la pression chute — une **partie** de l'explication de
+      la portance.
+    aRetenir:
+      - Bernoulli — le long d'un écoulement, ps + ½·ρ·V² = constante (pression totale conservée).
+      - Quand la vitesse augmente, la pression statique diminue (et réciproquement).
+      - Effet Venturi — dans un rétrécissement, l'air accélère et sa pression statique chute.
+      - Hypothèses — fluide peu compressible, sans frottement, le long d'une même ligne de courant.
+      - Pour la portance, Bernoulli est un modèle utile mais partiel ; ne jamais invoquer un « temps de parcours égal ».
+  sections:
+    - id: le-theoreme-de-bernoulli
+      title: Le théorème de Bernoulli
+      body: |
+        En écoulement, un fluide possède de l'énergie sous deux formes qui nous
+        intéressent ici : une énergie **de pression** (la pression statique) et
+        une énergie **de mouvement** (la pression dynamique, q = ½·ρ·V²). Le
+        théorème de Bernoulli dit que, pour un fluide **idéal** (peu compressible,
+        sans frottement), leur **somme se conserve** le long d'une ligne de
+        courant :
+
+        **ps + ½·ρ·V² = constante**
+
+        C'est un **bilan d'énergie** : rien n'est créé ni perdu, l'énergie passe
+        d'une forme à l'autre. Si la vitesse V croît, le terme ½·ρ·V² croît ;
+        pour que la somme reste constante, la pression statique ps doit
+        **diminuer** d'autant. Vitesse et pression statique **varient en sens
+        opposés**.
+    - id: l-effet-venturi
+      title: L'effet Venturi
+      body: |
+        L'**effet Venturi** est la rencontre de deux idées déjà vues : la
+        **conservation du débit** (un rétrécissement accélère l'air) et
+        **Bernoulli** (quand l'air accélère, sa pression statique chute).
+
+        Dans un conduit qui se resserre, au **col** (section la plus étroite),
+        la vitesse est **maximale** et la pression statique **minimale**. Plus le
+        rétrécissement est marqué, plus la vitesse monte et plus la pression
+        descend. C'est le principe du **carburateur**, de la **trompe à eau** —
+        et, en partie, de la **dépression sur l'extrados** d'une aile.
+      figures:
+        - schemaId: bernoulli-venturi
+          alt: Un conduit de Venturi avec des tubes manométriques, la colonne de pression étant haute dans la partie large et basse au col où l'air accélère.
+          caption: Au col, la vitesse est maximale et la pression statique minimale ; la pression totale (statique + dynamique) reste constante.
+          width: 420
+          height: 240
+    - id: bernoulli-et-la-portance
+      title: Bernoulli et la portance — à manier avec prudence
+      strate: maitriser
+      body: |
+        Bernoulli explique **une partie** de la portance : sur l'extrados, l'air
+        accélère et la pression y chute, ce qui « aspire » l'aile vers le haut.
+        Mais c'est un modèle **partiel**, à employer avec deux précautions.
+
+        D'abord, il ne faut **jamais** justifier l'accélération de l'extrados par
+        un prétendu **« temps de parcours égal »** (l'idée que l'air séparé au
+        bord d'attaque devrait se **rejoindre en même temps** au bord de fuite).
+        Cette explication est **fausse** : rien n'impose ce rendez-vous, et
+        l'écart de vitesse réel est plus grand que ce qu'elle prédit.
+
+        Ensuite, Bernoulli **complète** une autre lecture, tout aussi valable :
+        l'aile **dévie l'air vers le bas**, et par la **3ᵉ loi de Newton**, l'air
+        pousse l'aile vers le haut. Les deux descriptions — différence de pression
+        (Bernoulli) et déviation (Newton) — sont les **deux faces d'un même
+        phénomène**. Le détail est traité dans la fiche « La portance ».
+  pieges:
+    - Le « temps de parcours égal » (l'air se rejoindrait au bord de fuite) est une explication FAUSSE de la portance — ne jamais l'utiliser.
+    - Bernoulli suppose un fluide idéal (peu compressible, sans frottement) le long d'une même ligne de courant — hors de ce cadre, il ne s'applique pas tel quel.
+    - Ne pas confondre pression statique (qui chute au col) et pression totale (qui, elle, se conserve).

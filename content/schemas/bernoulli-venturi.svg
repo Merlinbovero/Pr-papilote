@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
+    .title { font-size: 14px; font-weight: 600; }
+    .lbl { font-size: 12px; }
+    .accent { fill: #3b82f6; font-size: 12px; }
+    .ink { stroke: currentColor; fill: none; stroke-width: 2; }
+    .flow { stroke: #3b82f6; fill: none; stroke-width: 2.5; }
+    .col { fill: #3b82f6; }
+  </style>
+  <defs>
+    <marker id="bv" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  <text class="title" x="210" y="20" text-anchor="middle">Théorème de Bernoulli — le tube de Venturi</text>
+
+  <!-- Tubes manométriques : haute pression aux extrémités, basse au col -->
+  <g class="ink">
+    <rect x="72" y="70" width="10" height="60" />
+    <rect x="205" y="70" width="10" height="60" />
+    <rect x="338" y="70" width="10" height="60" />
+  </g>
+  <rect class="col" x="72" y="86" width="10" height="44" />
+  <rect class="col" x="205" y="116" width="10" height="14" />
+  <rect class="col" x="338" y="86" width="10" height="44" />
+  <text class="lbl" x="77" y="66" text-anchor="middle">p élevée</text>
+  <text class="accent" x="210" y="66" text-anchor="middle">p faible</text>
+
+  <!-- Conduit de Venturi (col au centre) -->
+  <g class="ink">
+    <polyline points="30,140 160,140 200,166 220,166 260,140 390,140" />
+    <polyline points="30,200 160,200 200,180 220,180 260,200 390,200" />
+  </g>
+
+  <!-- Écoulement : lent aux extrémités, rapide au col -->
+  <line class="flow" x1="55" y1="173" x2="90" y2="173" marker-end="url(#bv)" />
+  <line class="flow" x1="192" y1="173" x2="248" y2="173" marker-end="url(#bv)" />
+  <line class="flow" x1="330" y1="173" x2="365" y2="173" marker-end="url(#bv)" />
+
+  <text class="lbl" x="210" y="228" text-anchor="middle">au col : vitesse maximale, pression statique minimale — pression totale conservée</text>
+</svg>

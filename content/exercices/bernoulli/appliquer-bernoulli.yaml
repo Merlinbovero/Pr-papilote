@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.bernoulli-appliquer
+title: Appliquer le théorème de Bernoulli
+consigne: >-
+  L'air accélère le long d'un écoulement. Calculez la pression statique au point
+  où la vitesse est la plus grande.
+donnees: >-
+  Point 1 : pression statique ps₁ = 101 300 Pa, vitesse V₁ = 20 m/s. Point 2 :
+  vitesse V₂ = 40 m/s. Masse volumique ρ = 1,225 kg/m³.
+methode: >-
+  Écrire Bernoulli entre 1 et 2 : ps₁ + ½·ρ·V₁² = ps₂ + ½·ρ·V₂². Isoler
+  ps₂ = ps₁ + ½·ρ·(V₁² − V₂²).
+correction: >-
+  ½·ρ·(V₁² − V₂²) = ½ × 1,225 × (400 − 1600) = ½ × 1,225 × (−1200) = −735 Pa.
+  ps₂ = 101 300 − 735 = 100 565 Pa. La pression statique a bien chuté de 735 Pa.
+interpretation: >-
+  Là où l'air va deux fois plus vite, la pression statique diminue : c'est
+  exactement ce qui se passe sur l'extrados d'une aile.
+notionLiee: fondamentaux.aerodynamique.theoreme-de-bernoulli
+difficulty: 3
+competencies: [raisonnement-logique]
+status: publie

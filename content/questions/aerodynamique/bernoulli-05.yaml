@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-05
+kind: vrai-faux
+theme: bernoulli
+statement: >-
+  La portance s'explique par le fait que l'air séparé au bord d'attaque doit se
+  rejoindre en même temps au bord de fuite.
+answer: false
+explanation: >-
+  C'est l'erreur du « temps de parcours égal », physiquement fausse : rien
+  n'impose ce rendez-vous. Bernoulli reste utile (vitesse ↑ ⇒ pression ↓), mais
+  la portance se lit aussi comme une déviation de l'air vers le bas (Newton).
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

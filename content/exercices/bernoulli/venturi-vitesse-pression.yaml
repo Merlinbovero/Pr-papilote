@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: exercice.bernoulli-venturi
+title: Vitesse et pression dans un Venturi
+consigne: >-
+  Dans un tube de Venturi, l'air entre à 15 m/s dans une section trois fois plus
+  grande que le col. Trouvez la vitesse au col, puis la variation de pression
+  dynamique.
+donnees: >-
+  Vitesse d'entrée V₁ = 15 m/s. Rapport de sections S₁/S₂ = 3. ρ = 1,225 kg/m³.
+methode: >-
+  Conservation du débit : V₂ = V₁ × (S₁/S₂). Puis comparer les pressions
+  dynamiques q = ½·ρ·V² à l'entrée et au col.
+correction: >-
+  V₂ = 15 × 3 = 45 m/s. q₁ = ½ × 1,225 × 15² ≈ 138 Pa ; q₂ = ½ × 1,225 × 45²
+  ≈ 1240 Pa. La pression dynamique augmente d'environ 1102 Pa : la pression
+  statique chute d'autant au col.
+interpretation: >-
+  L'interaction « effet Venturi » du cours montre ce mécanisme : plus le col est
+  étroit, plus la vitesse monte et plus la pression statique descend.
+notionLiee: fondamentaux.aerodynamique.theoreme-de-bernoulli
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

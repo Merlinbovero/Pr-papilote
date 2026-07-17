@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: exercice.bernoulli-limite-portance
+title: Repérer une explication fausse de la portance
+consigne: >-
+  Un élève affirme : « L'air du dessus doit rejoindre l'air du dessous en même
+  temps au bord de fuite, donc il va plus vite, donc la pression baisse. »
+  Identifiez l'erreur et proposez une formulation correcte.
+methode: >-
+  Repérer l'hypothèse implicite (le « temps de parcours égal »), la confronter à
+  la physique, puis reformuler avec ce qui est réellement établi.
+correction: >-
+  L'erreur est le « temps de parcours égal » : rien n'oblige les deux filets d'air
+  à se rejoindre simultanément au bord de fuite, et l'écart de vitesse réel est
+  plus grand que ce que cette idée prédit. Formulation correcte : l'air accélère
+  sur l'extrados (la pression y chute — Bernoulli) ET l'aile dévie l'air vers le
+  bas (l'air pousse l'aile vers le haut — Newton). Les deux lectures sont
+  complémentaires.
+interpretation: >-
+  On garde Bernoulli comme modèle d'introduction (vitesse ↑ ⇒ pression ↓), mais
+  jamais adossé au mythe du temps de parcours égal.
+notionLiee: fondamentaux.aerodynamique.theoreme-de-bernoulli
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+status: publie

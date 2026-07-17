@@ -24,6 +24,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Afficher, masquer et faire varier les quatre forces du vol pour comprendre un vecteur-force et la notion de résultante.",
   },
+  {
+    id: "venturi",
+    title: "Effet Venturi : vitesse et pression",
+    summary:
+      "Faire varier le rétrécissement d'un conduit pour voir la vitesse augmenter et la pression statique chuter au col (Bernoulli).",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

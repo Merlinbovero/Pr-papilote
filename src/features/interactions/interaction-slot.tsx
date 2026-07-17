@@ -1,6 +1,7 @@
 "use client";
 
 import { ForcesEtVecteurs } from "./forces-et-vecteurs";
+import { Venturi } from "./venturi";
 
 /**
  * Résout un identifiant d'interaction (registre) vers son composant client.
@@ -11,6 +12,8 @@ export function InteractionSlot({ id, onInteract }: { id: string; onInteract?: (
   switch (id) {
     case "forces-et-vecteurs":
       return <ForcesEtVecteurs onInteract={onInteract} />;
+    case "venturi":
+      return <Venturi onInteract={onInteract} />;
     default:
       return null;
   }

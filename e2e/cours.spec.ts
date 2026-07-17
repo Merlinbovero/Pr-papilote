@@ -52,3 +52,21 @@ test("le cours 2 (pression et écoulement) compose ses deux fiches sans les dupl
   await expect(page.getByRole("link", { name: /la conservation du débit/i })).toBeVisible();
   await expect(page.getByRole("heading", { name: /essentiel à retenir/i })).toBeVisible();
 });
+
+test("le cours 3 propose l'interaction Venturi, utilisable au clavier et décrite", async ({
+  page,
+}) => {
+  await page.goto("/cours/bernoulli-et-venturi");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /théorème de bernoulli et effet venturi/i })
+  ).toBeVisible();
+  // L'interaction Venturi est présente ; son état par défaut est « Moyen ».
+  const fort = page.getByRole("radio", { name: /Fort/ });
+  await expect(fort).not.toBeChecked();
+  // Utilisable au clavier : focus + flèche/espace pour changer d'option.
+  await fort.focus();
+  await page.keyboard.press("Space");
+  await expect(fort).toBeChecked();
+  // Alternative textuelle accessible présente (au moins une occurrence).
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
+});

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-01
+kind: qcm
+theme: bernoulli
+statement: >-
+  Que conserve le théorème de Bernoulli le long d'un écoulement idéal ?
+choices:
+  - "La pression totale (statique + dynamique)"
+  - "La seule pression statique"
+  - "La seule vitesse de l'air"
+  - "La température de l'air"
+correctChoices: [0]
+distractorNotes:
+  "1": "La pression statique, elle, varie ; c'est leur somme qui se conserve."
+explanation: >-
+  Bernoulli exprime la conservation de l'énergie : ps + ½·ρ·V² = constante. La
+  pression totale (statique + dynamique) reste constante le long d'une ligne de
+  courant.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

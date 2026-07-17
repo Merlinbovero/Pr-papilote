@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-06
+kind: qcm
+theme: bernoulli
+statement: >-
+  Pourquoi dit-on que Bernoulli n'explique que partiellement la portance ?
+choices:
+  - "Parce que la portance se lit aussi comme une déviation de l'air (3e loi de Newton)"
+  - "Parce que Bernoulli est une loi fausse"
+  - "Parce que la pression n'a aucun rôle dans la portance"
+  - "Parce que la portance ne dépend pas de la vitesse"
+correctChoices: [0]
+distractorNotes:
+  "1": "Bernoulli n'est pas faux : il est partiel et doit exclure le mythe du temps de parcours égal."
+explanation: >-
+  Bernoulli décrit bien la dépression d'extrados, mais la portance se lit aussi
+  comme la réaction à la déviation de l'air vers le bas (Newton). Les deux
+  lectures sont complémentaires — deux faces d'un même phénomène.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

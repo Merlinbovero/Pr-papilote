@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-02
+kind: qcm
+theme: venturi
+statement: >-
+  Au col d'un tube de Venturi, que devient la pression statique ?
+choices:
+  - "Elle est minimale"
+  - "Elle est maximale"
+  - "Elle est nulle"
+  - "Elle est égale à la pression totale"
+correctChoices: [0]
+explanation: >-
+  L'air est le plus rapide au col ; d'après Bernoulli, la pression statique y est
+  donc la plus basse. La pression totale, elle, reste conservée.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

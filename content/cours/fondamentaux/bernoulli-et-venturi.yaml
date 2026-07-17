@@ -1,0 +1,101 @@
+schemaVersion: 1
+id: cours.bernoulli-et-venturi
+slug: bernoulli-et-venturi
+title: Théorème de Bernoulli et effet Venturi
+description: >-
+  La loi qui relie vitesse et pression dans un écoulement : la pression totale
+  se conserve (ps + ½·ρ·V² = constante), donc quand l'air accélère, sa pression
+  chute. Application au tube de Venturi et première clé de la portance.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Énoncer le théorème de Bernoulli et relier vitesse et pression statique.
+  - Expliquer l'effet Venturi (rétrécissement → vitesse ↑ → pression ↓) et le manipuler.
+  - Situer la portée et les limites de Bernoulli pour la portance (modèle partiel, jamais le « temps de parcours égal »).
+prerequisites:
+  - cours.pression-et-ecoulement
+ordre: 3
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 10
+    to: 11
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.theoreme-de-bernoulli
+termes:
+  - terme.bernoulli
+  - terme.venturi
+  - terme.pression-statique
+  - terme.pression-dynamique
+  - terme.pression-totale
+exercices:
+  - exercice.bernoulli-appliquer
+  - exercice.bernoulli-venturi
+  - exercice.bernoulli-limite-portance
+questions:
+  - q.aerodynamique.bernoulli-01
+  - q.aerodynamique.bernoulli-02
+  - q.aerodynamique.bernoulli-03
+  - q.aerodynamique.bernoulli-04
+  - q.aerodynamique.bernoulli-05
+  - q.aerodynamique.bernoulli-06
+  - q.aerodynamique.venturi-01
+  - q.aerodynamique.venturi-02
+  - q.aerodynamique.venturi-03
+  - q.aerodynamique.venturi-04
+  - q.aerodynamique.venturi-05
+  - q.aerodynamique.venturi-06
+interactions:
+  - venturi
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.theoreme-de-bernoulli
+    title: Étudier — théorème de Bernoulli et effet Venturi
+    obligatoire: true
+  - kind: interaction
+    ref: venturi
+    title: Manipuler — l'effet Venturi
+    obligatoire: true
+  - kind: exercice
+    ref: exercice.bernoulli-venturi
+    title: S'exercer — vitesse et pression dans un Venturi
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.bernoulli-limite-portance
+    title: S'exercer — repérer une explication fausse de la portance
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - Bernoulli — le long d'un écoulement, ps + ½·ρ·V² = constante (pression totale conservée).
+  - Vitesse ↑ ⇒ pression statique ↓ (et réciproquement).
+  - Effet Venturi — au col d'un rétrécissement, vitesse maximale et pression statique minimale.
+  - Hypothèses — fluide peu compressible, sans frottement, le long d'une même ligne de courant.
+  - Portance — Bernoulli est un modèle utile mais partiel ; ne jamais invoquer un « temps de parcours égal ».
+  - La déviation de l'air (Newton) est la lecture complémentaire de la portance.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 2 — Écoulement et théorème de Bernoulli"
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+  - title: "NASA — Glenn Research Center, Bernoulli and Newton / Incorrect Theory of Lift"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoulli-and-newton/
+    kind: institutionnel
+    consultedAt: "2026-07-16"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-16"
+status: publie
+author: prepapilote
+createdAt: "2026-07-16"
+verifiedAt: "2026-07-16"
+revisions:
+  - date: "2026-07-16"
+    version: 1
+    motif: Création — cours 3 « Théorème de Bernoulli & effet Venturi » (Lot 3, mécanique du vol p.10-11).
+    author: prepapilote

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-03
+kind: qcm
+theme: venturi
+statement: >-
+  L'effet Venturi combine deux principes. Lesquels ?
+choices:
+  - "La conservation du débit et le théorème de Bernoulli"
+  - "La 1re et la 2e loi de Newton"
+  - "La poussée d'Archimède et la gravité"
+  - "La viscosité et la couche limite"
+correctChoices: [0]
+explanation: >-
+  Le rétrécissement accélère l'air (conservation du débit) ; l'accélération fait
+  chuter la pression statique (Bernoulli). L'effet Venturi est la rencontre des
+  deux.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

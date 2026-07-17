@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.venturi
+title: Effet Venturi
+definition: >-
+  Application du théorème de Bernoulli : dans un rétrécissement de conduit, l'air
+  accélère (conservation du débit) et sa pression statique chute. Au col, la
+  vitesse est maximale et la pression minimale.
+english: Venturi effect
+synonyms: [tube de Venturi]
+ficheId: fondamentaux.aerodynamique.theoreme-de-bernoulli
+tags: []
+status: publie

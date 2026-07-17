@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-05
+kind: qcm
+theme: venturi
+statement: >-
+  Sur une aile, à quoi correspond l'effet Venturi ?
+choices:
+  - "À l'accélération de l'air et à la dépression sur l'extrados"
+  - "À la surpression sous l'intrados uniquement"
+  - "Au décrochage de la couche limite"
+  - "À la traînée induite"
+correctChoices: [0]
+explanation: >-
+  Au-dessus de l'aile, les filets d'air se resserrent et accélèrent : la pression
+  y chute (dépression d'extrados). C'est une partie de l'explication de la
+  portance — l'autre étant la déviation de l'air (Newton).
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

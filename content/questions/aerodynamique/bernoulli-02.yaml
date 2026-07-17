@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-02
+kind: qcm
+theme: bernoulli
+statement: >-
+  D'après Bernoulli, si la vitesse de l'air augmente le long d'un écoulement,
+  la pression statique…
+choices:
+  - "diminue"
+  - "augmente"
+  - "reste constante"
+  - "s'annule"
+correctChoices: [0]
+explanation: >-
+  La somme ps + ½·ρ·V² étant constante, si la pression dynamique (½·ρ·V²)
+  augmente avec la vitesse, la pression statique doit diminuer d'autant.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 1
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
