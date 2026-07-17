@@ -205,7 +205,7 @@ export function DictionaryBrowser({ entries }: { entries: DictionaryEntry[] }) {
                         {entry.definition}
                       </p>
                       {entry.english ? (
-                        <p className="text-muted-foreground/80 mt-2 flex items-center gap-1.5 text-xs">
+                        <p className="text-muted-foreground mt-2 flex items-center gap-1.5 text-xs">
                           <LanguagesIcon aria-hidden className="size-3" />
                           <span className="italic">{entry.english}</span>
                         </p>
