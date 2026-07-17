@@ -1,0 +1,128 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.la-trainee-induite
+type: notion-aerodynamique
+title: La traînée induite et les tourbillons marginaux
+slug: la-trainee-induite
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — les tourbillons de bout d'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  La traînée induite est le prix à payer de la portance. À l'extrémité de
+  l'aile, l'air passe de l'intrados en surpression vers l'extrados en
+  dépression : il se forme des tourbillons marginaux. Ils inclinent la portance
+  vers l'arrière et persistent en turbulence de sillage.
+objectifs:
+  - Expliquer l'origine de la traînée induite (la formation des tourbillons marginaux).
+  - Énoncer sa variation avec la vitesse (forte à basse vitesse, faible à haute vitesse).
+  - Relier les tourbillons marginaux à la turbulence de sillage et à ses risques.
+aliases: [traînée induite, tourbillon marginal, turbulence de sillage, vortex]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 6 « Traînée induite, allongement et winglets » (mécanique du vol, p.21-23).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La traînée"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-force-aerodynamique
+  related:
+    - fondamentaux.aerodynamique.trainee
+    - fondamentaux.aerodynamique.portance
+content:
+  essentiel:
+    body: |
+      La **traînée induite** est la part de traînée qui **accompagne
+      inévitablement la portance** : sans portance, elle n'existe pas.
+
+      Son origine est aux **extrémités de l'aile**. Comme l'intrados est en
+      **surpression** et l'extrados en **dépression**, l'air « déborde » du
+      dessous vers le dessus en contournant le bout de l'aile. Ce contournement
+      met l'air en rotation et forme un **tourbillon marginal** (un tourbillon
+      de bout d'aile). Ces tourbillons **dévient l'air vers le bas** derrière
+      l'aile, ce qui **incline la portance vers l'arrière** : cette inclinaison
+      crée une composante de traînée — la traînée induite.
+
+      Elle est **forte à basse vitesse** (forte incidence, forte portance
+      demandée) et **diminue quand la vitesse augmente**. Derrière l'avion, les
+      tourbillons persistent : c'est la **turbulence de sillage**, dangereuse
+      pour les appareils qui suivent.
+    aRetenir:
+      - La traînée induite est la conséquence directe de la portance (pas de portance, pas de traînée induite).
+      - Elle naît des tourbillons marginaux, formés au bout de l'aile par le passage de l'air de l'intrados vers l'extrados.
+      - Elle est forte à basse vitesse (forte incidence) et diminue quand la vitesse augmente.
+      - Les tourbillons persistent derrière l'avion — c'est la turbulence de sillage, un risque pour les suiveurs.
+      - On la réduit en augmentant l'allongement de l'aile ou en ajoutant des winglets.
+  sections:
+    - id: d-ou-vient-la-trainee-induite
+      title: D'où vient la traînée induite ?
+      body: |
+        Sous l'aile (**intrados**), l'air est en **surpression** ; au-dessus
+        (**extrados**), il est en **dépression**. À l'**extrémité** de l'aile,
+        plus rien ne sépare les deux : l'air de dessous, poussé par la
+        surpression, **contourne** le bout de l'aile pour rejoindre la
+        dépression du dessus.
+
+        Ce mouvement met l'air en **rotation** et engendre un **tourbillon
+        marginal**. Derrière l'aile, ces tourbillons **dévient le flux vers le
+        bas** (déflexion). La portance, toujours perpendiculaire à l'écoulement
+        **local**, se trouve alors **inclinée vers l'arrière** : sa composante
+        horizontale est la **traînée induite**.
+      figures:
+        - schemaId: tourbillon-marginal
+          alt: Une aile vue de face, avec l'air de l'intrados en surpression contournant l'extrémité vers l'extrados en dépression, formant un tourbillon marginal enroulé à chaque bout d'aile.
+          caption: Au bout de l'aile, l'air passe de l'intrados (surpression) vers l'extrados (dépression) et s'enroule en tourbillon marginal.
+          width: 420
+          height: 240
+    - id: variation-avec-la-vitesse
+      title: Une traînée forte à basse vitesse
+      body: |
+        La traînée induite dépend de la **portance demandée**. À **basse
+        vitesse**, il faut une **forte incidence** pour produire assez de
+        portance : les tourbillons sont intenses et la traînée induite est
+        **importante**. À **haute vitesse**, une faible incidence suffit : la
+        traînée induite **diminue**.
+
+        C'est l'**inverse** de la **traînée parasite** (frottement et forme), qui
+        **augmente** avec la vitesse. La traînée totale est la somme des deux :
+        elle passe par un **minimum** à une vitesse intermédiaire — une idée
+        reprise dans la fiche « La traînée » et dans l'étude de la polaire.
+    - id: la-turbulence-de-sillage
+      title: La turbulence de sillage
+      strate: maitriser
+      body: |
+        Les tourbillons marginaux ne disparaissent pas au passage de l'aile :
+        ils **persistent** derrière l'avion sur une longue distance, formant la
+        **turbulence de sillage**.
+
+        C'est un **risque réel** en aviation : un appareil qui suit de trop près,
+        surtout derrière un **gros porteur**, peut être violemment secoué ou mis
+        en danger. C'est pourquoi le contrôle aérien impose des **distances de
+        séparation** au décollage et à l'atterrissage, plus grandes derrière les
+        avions lourds.
+  pieges:
+    - La traînée induite n'existe pas sans portance — elle en est la conséquence, pas une traînée « en plus » indépendante.
+    - Elle est maximale à basse vitesse (forte incidence), pas à haute vitesse — c'est contre-intuitif.
+    - Les tourbillons marginaux tournent vers l'intérieur en aval ; la turbulence de sillage qu'ils créent est un vrai danger, d'où les séparations réglementaires.

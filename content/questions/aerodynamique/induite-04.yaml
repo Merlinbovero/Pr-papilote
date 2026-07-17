@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.induite-04
+kind: qcm
+theme: trainee-induite
+statement: >-
+  Comment la traînée induite varie-t-elle avec la vitesse ?
+choices:
+  - "Elle est forte à basse vitesse et diminue à haute vitesse"
+  - "Elle augmente avec la vitesse"
+  - "Elle ne dépend pas de la vitesse"
+  - "Elle est nulle à basse vitesse"
+correctChoices: [0]
+distractorNotes:
+  "1": "C'est la traînée parasite (frottement, forme) qui augmente avec la vitesse."
+explanation: >-
+  À basse vitesse, il faut une forte incidence (forte portance) : les tourbillons
+  sont intenses et la traînée induite est forte. Elle diminue quand la vitesse
+  augmente.
+evaluates: [fondamentaux.aerodynamique.la-trainee-induite]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

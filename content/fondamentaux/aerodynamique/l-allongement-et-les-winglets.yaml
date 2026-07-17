@@ -1,0 +1,133 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.l-allongement-et-les-winglets
+type: notion-aerodynamique
+title: L'allongement et les winglets
+slug: l-allongement-et-les-winglets
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — l'allongement de l'aile et les dispositifs de bout d'aile
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  L'allongement mesure l'élancement d'une aile (envergure² / surface). Un grand
+  allongement réduit la traînée induite — d'où les longues ailes des planeurs.
+  Les winglets, en bout d'aile, gênent les tourbillons marginaux et réduisent
+  eux aussi la traînée induite.
+objectifs:
+  - Définir l'allongement d'une aile et le calculer (λ = envergure² / surface).
+  - Expliquer l'effet de l'allongement sur la traînée induite et la finesse.
+  - Décrire le rôle des winglets (réduire la traînée induite en gênant les tourbillons marginaux).
+aliases: [allongement, envergure, winglet, Sharklet, aspect ratio]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 6 « Traînée induite, allongement et winglets » (mécanique du vol, p.21-23).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Allongement et winglets"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Airbus — Sharklets (gain de consommation annoncé par le constructeur)"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-trainee-induite
+  related:
+    - fondamentaux.aerodynamique.trainee
+content:
+  essentiel:
+    body: |
+      L'**allongement** (noté λ, « lambda ») mesure l'**élancement** d'une aile.
+      Pour une aile quelconque, on le calcule par :
+
+      **λ = envergure² / surface**  (soit b² / S)
+
+      Une aile **longue et étroite** a un **grand** allongement ; une aile
+      **courte et large**, un **petit** allongement.
+
+      L'allongement gouverne la **traînée induite** : plus il est **grand**,
+      plus les tourbillons marginaux sont **éloignés** l'un de l'autre et
+      **faibles** relativement à l'aile, donc **moins** de traînée induite et une
+      **meilleure finesse**. C'est pourquoi les **planeurs**, qui cherchent la
+      finesse maximale, ont de très **longues ailes** ; les **avions de chasse**,
+      qui privilégient la maniabilité et la vitesse, ont au contraire un **petit**
+      allongement.
+
+      Les **winglets** (ou **Sharklets** chez Airbus) sont des surfaces dressées
+      en **bout d'aile** : elles **gênent** la formation des tourbillons
+      marginaux et réduisent la traînée induite, avec un gain de consommation de
+      l'ordre de **quelques pour cent**.
+    aRetenir:
+      - Allongement λ = envergure² / surface (b² / S) — l'élancement de l'aile, sans dimension.
+      - Grand allongement (aile longue et fine) → moins de traînée induite, meilleure finesse (planeurs).
+      - Petit allongement (aile courte et large) → plus de manœuvrabilité et de robustesse (chasseurs).
+      - Les winglets gênent les tourbillons marginaux et réduisent la traînée induite.
+      - Le gain des winglets est de l'ordre de quelques pour cent (Airbus annonce ~4 % pour les Sharklets).
+  sections:
+    - id: qu-est-ce-que-l-allongement
+      title: Qu'est-ce que l'allongement ?
+      body: |
+        L'**allongement** compare l'**envergure** (la distance d'un bout d'aile à
+        l'autre) à la **corde** (la largeur de l'aile). On le définit par :
+
+        **λ = b² / S**
+
+        où **b** est l'envergure et **S** la surface de l'aile. Pour une aile
+        **rectangulaire**, cela revient au rapport **envergure / corde**.
+
+        - Un **grand** allongement correspond à une aile **longue et étroite**
+          (planeur : λ souvent supérieur à 20).
+        - Un **petit** allongement correspond à une aile **courte et large**
+          (avion de chasse : λ de l'ordre de 3 à 4).
+      figures:
+        - schemaId: allongement
+          alt: Deux ailes comparées vues de dessus — une aile longue et étroite de grand allongement (planeur) et une aile courte et large de petit allongement (chasseur).
+          caption: À gauche, un grand allongement (aile de planeur, faible traînée induite) ; à droite, un petit allongement (aile de chasseur, plus maniable).
+          width: 420
+          height: 220
+    - id: allongement-et-trainee-induite
+      title: Allongement et traînée induite
+      body: |
+        Plus l'allongement est **grand**, plus les **tourbillons marginaux** —
+        cantonnés aux extrémités — pèsent **peu** au regard de la grande
+        envergure : la **traînée induite diminue** et la **finesse s'améliore**.
+
+        C'est le choix des **planeurs**, taillés pour planer longtemps avec le
+        moins de traînée possible. À l'inverse, un **petit** allongement, plus
+        **robuste** et plus **maniable**, convient aux **avions de chasse** et
+        aux appareils rapides, qui acceptent davantage de traînée induite (faible
+        de toute façon à grande vitesse).
+    - id: les-winglets
+      title: Les winglets
+      strate: maitriser
+      body: |
+        Un **winglet** est une petite surface **dressée** au bout de l'aile. En
+        se plaçant sur le trajet de l'air qui contourne l'extrémité, il **gêne**
+        la formation du **tourbillon marginal** et **réduit la traînée induite**.
+        On obtient un effet proche de celui d'un allongement plus grand, **sans**
+        augmenter autant l'envergure.
+
+        Le gain se traduit par une **baisse de consommation** de l'ordre de
+        **quelques pour cent** — Airbus annonce jusqu'à environ **4 %** pour ses
+        **Sharklets**. C'est un chiffre **constructeur**, à considérer comme un
+        ordre de grandeur commercial plutôt que comme une constante physique.
+  pieges:
+    - L'allongement se calcule avec envergure² / surface (b²/S), et non « envergure × corde ».
+    - Un grand allongement réduit la traînée induite mais fragilise l'aile (bras de levier plus grand) — d'où le compromis avec les chasseurs.
+    - Le gain des winglets (quelques pour cent) est un ordre de grandeur constructeur, pas une valeur physique universelle.

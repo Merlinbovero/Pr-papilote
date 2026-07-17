@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.tourbillon-marginal
+title: Tourbillon marginal
+definition: >-
+  Tourbillon formé au bout de l'aile par le passage de l'air de l'intrados (en
+  surpression) vers l'extrados (en dépression). Il est à l'origine de la traînée
+  induite et persiste en turbulence de sillage.
+english: wingtip vortex
+synonyms: [tourbillon de bout d'aile]
+ficheId: fondamentaux.aerodynamique.la-trainee-induite
+tags: []
+status: publie

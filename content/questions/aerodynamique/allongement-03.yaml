@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-03
+kind: qcm
+theme: allongement
+statement: >-
+  Quel type d'aéronef possède le plus grand allongement ?
+choices:
+  - "Le planeur"
+  - "L'avion de chasse"
+  - "L'hélicoptère"
+  - "La fusée"
+correctChoices: [0]
+distractorNotes:
+  "1": "L'avion de chasse a au contraire un petit allongement (aile courte et large)."
+explanation: >-
+  Le planeur recherche la finesse maximale : il a de longues ailes fines, donc un
+  grand allongement (souvent supérieur à 20).
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

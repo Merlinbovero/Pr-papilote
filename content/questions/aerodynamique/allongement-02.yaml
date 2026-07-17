@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-02
+kind: qcm
+theme: allongement
+statement: >-
+  Quel effet un grand allongement a-t-il sur la traînée induite ?
+choices:
+  - "Il la réduit"
+  - "Il l'augmente"
+  - "Il n'a aucun effet"
+  - "Il la rend infinie"
+correctChoices: [0]
+explanation: >-
+  Un grand allongement éloigne et affaiblit les tourbillons marginaux au regard
+  de l'envergure : la traînée induite diminue et la finesse s'améliore.
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

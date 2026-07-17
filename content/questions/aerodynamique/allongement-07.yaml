@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-07
+kind: vrai-faux
+theme: allongement
+statement: >-
+  Le gain de consommation apporté par les winglets est de l'ordre de quelques
+  pour cent.
+answer: true
+explanation: >-
+  En réduisant la traînée induite, les winglets/Sharklets apportent un gain de
+  consommation de quelques pour cent (Airbus annonce jusqu'à environ 4 %) — un
+  ordre de grandeur constructeur.
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

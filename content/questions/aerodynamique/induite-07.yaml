@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.induite-07
+kind: vrai-faux
+theme: trainee-induite
+statement: >-
+  Sans production de portance, il n'y a pas de traînée induite.
+answer: true
+explanation: >-
+  La traînée induite est la conséquence directe de la portance ; en son absence,
+  les tourbillons marginaux ne se forment pas.
+evaluates: [fondamentaux.aerodynamique.la-trainee-induite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

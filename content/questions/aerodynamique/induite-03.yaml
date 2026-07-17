@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.induite-03
+kind: qcm
+theme: trainee-induite
+statement: >-
+  À l'extrémité de l'aile, dans quel sens l'air contourne-t-il le bout d'aile ?
+choices:
+  - "De l'intrados (surpression) vers l'extrados (dépression)"
+  - "De l'extrados vers l'intrados"
+  - "Du bord de fuite vers le bord d'attaque"
+  - "Il ne contourne pas l'aile"
+correctChoices: [0]
+explanation: >-
+  La surpression d'intrados pousse l'air à contourner le bout d'aile vers la
+  dépression d'extrados : ce mouvement crée le tourbillon marginal.
+evaluates: [fondamentaux.aerodynamique.la-trainee-induite]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

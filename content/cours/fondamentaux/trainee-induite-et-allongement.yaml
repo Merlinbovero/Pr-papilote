@@ -1,0 +1,108 @@
+schemaVersion: 1
+id: cours.trainee-induite-et-allongement
+slug: trainee-induite-et-allongement
+title: Traînée induite, allongement et winglets
+description: >-
+  Le prix aérodynamique de la portance : la traînée induite, née des tourbillons
+  de bout d'aile. Ce cours explique son origine, sa variation avec la vitesse,
+  la turbulence de sillage, et comment l'allongement et les winglets la
+  réduisent.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Expliquer l'origine de la traînée induite (les tourbillons marginaux).
+  - Énoncer sa variation avec la vitesse et le risque de turbulence de sillage.
+  - Définir l'allongement (λ = b²/S) et le rôle des winglets dans la réduction de la traînée induite.
+prerequisites:
+  - cours.la-force-aerodynamique
+ordre: 6
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 21
+    to: 23
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.la-trainee-induite
+  - fondamentaux.aerodynamique.l-allongement-et-les-winglets
+  - fondamentaux.aerodynamique.trainee
+termes:
+  - terme.trainee-induite
+  - terme.tourbillon-marginal
+  - terme.turbulence-de-sillage
+  - terme.allongement
+  - terme.winglet
+exercices:
+  - exercice.induite-allongement
+  - exercice.induite-effet-vitesse
+  - exercice.induite-turbulence-sillage
+questions:
+  - q.aerodynamique.induite-01
+  - q.aerodynamique.induite-02
+  - q.aerodynamique.induite-03
+  - q.aerodynamique.induite-04
+  - q.aerodynamique.induite-05
+  - q.aerodynamique.induite-06
+  - q.aerodynamique.induite-07
+  - q.aerodynamique.allongement-01
+  - q.aerodynamique.allongement-02
+  - q.aerodynamique.allongement-03
+  - q.aerodynamique.allongement-04
+  - q.aerodynamique.allongement-05
+  - q.aerodynamique.allongement-06
+  - q.aerodynamique.allongement-07
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.la-trainee-induite
+    title: Étudier — la traînée induite et les tourbillons marginaux
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.l-allongement-et-les-winglets
+    title: Étudier — l'allongement et les winglets
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.trainee
+    title: Approfondir — la traînée (rappel des sources)
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.induite-allongement
+    title: S'exercer — calculer l'allongement
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.induite-turbulence-sillage
+    title: S'exercer — turbulence de sillage et sécurité
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - La traînée induite est la conséquence directe de la portance (pas de portance, pas de traînée induite).
+  - Elle naît des tourbillons marginaux, formés au bout de l'aile par le passage de l'air de l'intrados vers l'extrados.
+  - Elle est forte à basse vitesse (forte incidence) et diminue à haute vitesse — l'inverse de la traînée parasite.
+  - Les tourbillons persistent en turbulence de sillage — un risque géré par des distances de séparation.
+  - Allongement λ = envergure² / surface ; un grand allongement réduit la traînée induite (planeurs).
+  - Les winglets gênent les tourbillons marginaux et réduisent la traînée induite (gain de quelques pour cent).
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — La traînée"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Airbus — Sharklets (gain de consommation annoncé par le constructeur)"
+    kind: institutionnel
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 6 « Traînée induite, allongement et winglets » (mécanique du vol p.21-23).
+    author: prepapilote

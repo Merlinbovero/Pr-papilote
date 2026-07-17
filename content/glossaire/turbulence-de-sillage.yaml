@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.turbulence-de-sillage
+title: Turbulence de sillage
+definition: >-
+  Sillage tourbillonnaire laissé derrière un avion par ses tourbillons
+  marginaux. Elle persiste sur une longue distance et présente un risque pour les
+  appareils suiveurs, d'où des distances de séparation réglementaires.
+english: wake turbulence
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-trainee-induite
+tags: []
+status: publie

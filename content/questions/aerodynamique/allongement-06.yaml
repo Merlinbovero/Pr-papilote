@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-06
+kind: calcul
+theme: allongement
+statement: >-
+  Une aile a une envergure de 20 m et une surface de 25 m². Quel est son
+  allongement λ ?
+answerValue: 16
+tolerance: 0.2
+explanation: >-
+  λ = b²/S = 20² / 25 = 400 / 25 = 16.
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

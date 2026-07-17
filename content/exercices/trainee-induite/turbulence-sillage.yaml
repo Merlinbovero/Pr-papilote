@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.induite-turbulence-sillage
+title: Sécurité et turbulence de sillage
+consigne: >-
+  Un avion léger doit décoller peu après un gros porteur. Quel danger
+  aérodynamique doit-on prendre en compte, et comment s'en protège-t-on ?
+methode: >-
+  Identifier le phénomène lié aux tourbillons marginaux, puis la mesure de
+  prévention appliquée par le contrôle aérien.
+correction: >-
+  Le danger est la turbulence de sillage : les tourbillons marginaux du gros
+  porteur persistent derrière lui et peuvent secouer violemment l'avion léger.
+  On s'en protège par des distances (ou temps) de séparation réglementaires,
+  plus grandes derrière les avions lourds.
+interpretation: >-
+  La turbulence de sillage est un risque opérationnel réel, surtout à basse
+  altitude au décollage et à l'atterrissage.
+notionLiee: fondamentaux.aerodynamique.la-trainee-induite
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.allongement-04
+kind: qcm
+theme: allongement
+statement: >-
+  Pourquoi les avions de chasse ont-ils un petit allongement ?
+choices:
+  - "Pour la manœuvrabilité et la robustesse (traînée induite faible à grande vitesse)"
+  - "Pour maximiser la finesse en vol plané"
+  - "Pour réduire leur vitesse de décrochage"
+  - "Pour augmenter la traînée induite"
+correctChoices: [0]
+explanation: >-
+  Une aile courte et large est plus maniable et plus robuste ; à grande vitesse,
+  la traînée induite est de toute façon faible, donc le petit allongement est
+  acceptable.
+evaluates: [fondamentaux.aerodynamique.l-allongement-et-les-winglets]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

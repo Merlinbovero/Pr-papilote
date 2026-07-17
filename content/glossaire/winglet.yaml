@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.winglet
+title: Winglet
+definition: >-
+  Surface dressée en bout d'aile qui gêne la formation du tourbillon marginal et
+  réduit la traînée induite. Le gain de consommation est de l'ordre de quelques
+  pour cent (Airbus annonce ~4 % pour ses Sharklets).
+english: winglet
+synonyms: [Sharklet]
+ficheId: fondamentaux.aerodynamique.l-allongement-et-les-winglets
+tags: []
+status: publie

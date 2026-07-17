@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: exercice.induite-allongement
+title: Calculer l'allongement d'une aile
+consigne: >-
+  Calculez l'allongement d'un planeur, puis comparez-le à celui d'un avion de
+  chasse, et commentez la différence de traînée induite.
+donnees: >-
+  Planeur : envergure 18 m, surface 11 m². Chasseur : envergure 9 m, surface
+  27 m².
+methode: >-
+  Appliquer λ = b²/S pour chaque appareil, puis comparer.
+correction: >-
+  Planeur : λ = 18² / 11 = 324 / 11 ≈ 29,5. Chasseur : λ = 9² / 27 = 81 / 27 = 3.
+  Le planeur a un allongement environ dix fois plus grand, donc une traînée
+  induite bien plus faible et une finesse bien supérieure.
+interpretation: >-
+  Le planeur est taillé pour la finesse (planer longtemps) ; le chasseur privilégie
+  la manœuvrabilité, au prix d'une traînée induite plus forte (négligeable à
+  grande vitesse).
+notionLiee: fondamentaux.aerodynamique.l-allongement-et-les-winglets
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie
