@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-13
+kind: vrai-faux
+theme: profils
+statement: >-
+  Le calage d'une aile varie continuellement en vol selon le vent relatif.
+answer: false
+explanation: >-
+  Le calage est fixé à la construction : c'est l'incidence qui varie en vol avec
+  le vent relatif, pas le calage.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

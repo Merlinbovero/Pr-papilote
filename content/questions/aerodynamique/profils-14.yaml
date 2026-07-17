@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-14
+kind: vrai-faux
+theme: profils
+statement: >-
+  Chaque type de profil résulte d'un compromis adapté à un usage (vitesse,
+  portance, stabilité).
+answer: true
+explanation: >-
+  Il n'existe pas de profil universel : chaque forme est un compromis optimisé
+  pour un usage donné, de la voltige au transport rapide.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

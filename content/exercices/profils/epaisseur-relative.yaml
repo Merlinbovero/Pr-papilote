@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: exercice.profils-epaisseur
+title: Calculer une épaisseur relative
+consigne: >-
+  Calculez l'épaisseur relative d'un profil et dites à quel usage il se prête.
+donnees: >-
+  Épaisseur maximale du profil : 18 cm. Corde : 1,50 m.
+methode: >-
+  Épaisseur relative = épaisseur maximale / corde, exprimée en pourcentage
+  (attention aux unités).
+correction: >-
+  18 cm = 0,18 m. Épaisseur relative = 0,18 / 1,50 = 0,12 = 12 %. Un profil de
+  12 % est un profil « moyen », polyvalent (aviation générale).
+interpretation: >-
+  Un profil plus épais (15-18 %) porterait mieux à basse vitesse ; un profil plus
+  mince (< 10 %) serait taillé pour la vitesse.
+notionLiee: fondamentaux.aerodynamique.les-types-de-profils
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

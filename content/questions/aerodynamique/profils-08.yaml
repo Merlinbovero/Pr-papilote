@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-08
+kind: qcm
+theme: profils
+statement: >-
+  Quel est le profil le plus répandu en aviation générale et de transport ?
+choices:
+  - "Le biconvexe dissymétrique"
+  - "Le profil creux"
+  - "Le biconvexe symétrique"
+  - "Le profil autostable"
+correctChoices: [0]
+explanation: >-
+  Le biconvexe dissymétrique (extrados plus courbé que l'intrados, tous deux
+  convexes) est le profil le plus courant.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

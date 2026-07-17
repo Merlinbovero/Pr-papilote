@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-11
+kind: qcm
+theme: profils
+statement: >-
+  Le profil plan-convexe se caractérise par…
+choices:
+  - "un intrados plat et un extrados convexe"
+  - "un intrados et un extrados concaves"
+  - "une double courbure"
+  - "une épaisseur nulle"
+correctChoices: [0]
+explanation: >-
+  Le plan-convexe a un intrados plat et un extrados convexe : simple et porteur,
+  il équipe de nombreux avions légers.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

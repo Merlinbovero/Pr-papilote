@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-04
+kind: qcm
+theme: profils
+statement: >-
+  Quel type de profil est typiquement utilisé en voltige et sur les empennages ?
+choices:
+  - "Le biconvexe symétrique"
+  - "Le profil creux"
+  - "Le profil supercritique"
+  - "Le profil autostable"
+correctChoices: [0]
+explanation: >-
+  Le biconvexe symétrique porte aussi bien « à l'endroit » que « sur le dos » :
+  c'est le profil de la voltige et de nombreux empennages.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

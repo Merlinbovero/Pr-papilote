@@ -129,6 +129,16 @@ test("le cours 7 propose l'interaction incidence/décrochage, utilisable au clav
   await expect(page.getByText("Description accessible").first()).toBeVisible();
 });
 
+test("le cours 9 (types de profils) compose sa fiche neuve et la fiche profil d'aile", async ({
+  page,
+}) => {
+  await page.goto("/cours/les-types-de-profils");
+  await expect(page.getByRole("heading", { level: 1, name: /les profils d.aile/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /les types de profils d.aile/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /^le profil d.aile/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});
+
 test("le cours 8 propose l'interaction polaire, dont le curseur d'incidence est réglable au clavier", async ({
   page,
 }) => {

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.calage
+title: Calage
+definition: >-
+  Angle, fixé à la construction, entre la corde de l'aile et un axe de référence
+  de l'avion. À ne pas confondre avec l'incidence, qui varie en vol selon le vent
+  relatif.
+english: rigging angle / angle of incidence (setting)
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

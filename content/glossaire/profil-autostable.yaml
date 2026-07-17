@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.profil-autostable
+title: Profil autostable
+definition: >-
+  Profil à double courbure (bord de fuite relevé) qui reste en équilibre sans
+  empennage horizontal. C'est le profil des ailes volantes.
+english: reflexed (self-stable) airfoil
+synonyms: [profil à double courbure]
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

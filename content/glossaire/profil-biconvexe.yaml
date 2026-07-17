@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.profil-biconvexe
+title: Profil biconvexe
+definition: >-
+  Profil dont l'extrados et l'intrados sont tous deux convexes. Symétrique (ligne
+  moyenne droite, voltige et empennages) ou dissymétrique (extrados plus courbé,
+  le profil le plus répandu).
+english: biconvex airfoil
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-types-de-profils
+tags: []
+status: publie

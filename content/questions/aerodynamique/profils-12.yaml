@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.profils-12
+kind: vrai-faux
+theme: profils
+statement: >-
+  Plus un profil est cambré, plus il est porteur à incidence donnée.
+answer: true
+explanation: >-
+  La cambrure augmente la portance à incidence donnée : un profil cambré porte
+  plus qu'un profil symétrique au même angle.
+evaluates: [fondamentaux.aerodynamique.les-types-de-profils]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
