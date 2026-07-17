@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpenIcon, GraduationCapIcon, MapIcon, TimerIcon } from "lucide-react";
+import { BookOpenIcon, GraduationCapIcon, MapIcon, RepeatIcon, TimerIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ModuleCard } from "@/components/shared/module-card";
@@ -23,6 +23,13 @@ const TRANSVERSE_SUBTITLES: Record<string, string> = {
 };
 
 const ENTRAINEMENTS = [
+  {
+    href: "/reviser",
+    title: "Révision espacée",
+    description:
+      "Chaque question au bon moment : celles que vous ratez reviennent vite, les autres s'espacent.",
+    icon: RepeatIcon,
+  },
   {
     href: "/bia",
     title: "BIA — cours et examen blanc",

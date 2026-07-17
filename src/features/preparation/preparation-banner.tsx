@@ -143,7 +143,10 @@ export function PreparationBanner({ concoursList }: { concoursList: PreparationC
             </Link>
           </Button>
           <Button asChild size="sm" variant="outline">
-            <Link href={`/${current.slug}`}>Réviser</Link>
+            <Link href="/reviser">Révision du jour</Link>
+          </Button>
+          <Button asChild size="sm" variant="outline">
+            <Link href={`/${current.slug}`}>Fiches</Link>
           </Button>
           <Button asChild size="sm" variant="outline">
             <Link href={`/progression/${current.slug}`}>Progression</Link>

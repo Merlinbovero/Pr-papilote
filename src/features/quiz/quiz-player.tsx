@@ -43,6 +43,8 @@ interface QuizPlayerProps {
   persisted?: boolean;
   /** Appelé une fois la série terminée, avec le score en pourcentage (0–100). */
   onFinished?: (ratePercent: number) => void;
+  /** Appelé à chaque validation, avec l'identifiant de question et sa justesse. */
+  onAnswered?: (questionId: string, isCorrect: boolean) => void;
 }
 
 type Phase = "answering" | "correction" | "finished";
@@ -53,6 +55,7 @@ export function QuizPlayer({
   timePerQuestionSeconds,
   persisted = false,
   onFinished,
+  onAnswered,
 }: QuizPlayerProps) {
   const [index, setIndex] = React.useState(0);
   const [phase, setPhase] = React.useState<Phase>("answering");
@@ -83,8 +86,9 @@ export function QuizPlayer({
     const correct =
       selected.length === expected.size && selected.every((choice) => expected.has(choice));
     setResults((previous) => [...previous, correct]);
+    onAnswered?.(question.id, correct);
     setPhase("correction");
-  }, [phase, question, selected]);
+  }, [phase, question, selected, onAnswered]);
 
   // Chronomètre : décompte pendant la phase de réponse ; à zéro, la
   // question est validée en l'état. La remise à la durée pleine se fait
