@@ -85,3 +85,24 @@ Ces valeurs sont **conservées mais explicitement marquées comme exemples/ordre
 ### Affirmations à révision périodique (⏳ récapitulatif)
 
 C3 (gain winglets), C5 (données vol TS236), C6 (anecdote datée), C7 (valeurs constructeur PHR/spoilers), C8 (programme BIA), — à revérifier au moins une fois par an ou à chaque évolution réglementaire/constructeur.
+
+---
+
+### État de production (bilan à la clôture du module — 2026-07-17)
+
+Le module « mécanique du vol » (14 cours, 7 interactions) est **produit et publié**. Bilan de traçabilité des affirmations sensibles ci-dessus :
+
+| Correction                             | Traitement en production                                                                                                             |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| C1 (ρ ISA 1,225)                       | **Reprise et corrigée** (cours 2, 5) — 1,3 présenté comme simplification de calcul.                                                  |
+| C2 (part dépression extrados 70 %)     | **Non reprise** comme constante — la portance est traitée qualitativement (fiche portance existante).                                |
+| C3 (gain winglets)                     | **Reprise et bornée** (cours 6) — « quelques pour cent, ~4 % Sharklets », attribué au constructeur.                                  |
+| C4 (Bernoulli/temps de parcours)       | **Reprise et corrigée** (cours 3) — Bernoulli partiel, rejet explicite du « temps de parcours égal », lecture Newton complémentaire. |
+| C5 (vol Air Transat TS236)             | **Non reprise en production** — aucune étude de cas Air Transat publiée (vérifié : 0 occurrence dans `content/`).                    |
+| C6 (anecdote datée 2009)               | **Non reprise** — écartée, aucune capture presse.                                                                                    |
+| C7 (valeurs constructeur PHR/spoilers) | **Non reprises telles quelles** — cours 10 et 13 décrivent les effets sans citer les chiffres datés (« 85 kt », « 3°/12° »).         |
+| C8 (cadrage programme BIA / Newton)    | **Reprise** (cours 1) — Newton présenté comme socle de compréhension, conséquences privilégiées.                                     |
+| C9 (sens des effets moteur)            | **Reprise et corrigée** (cours 13) — sens systématiquement conditionné au sens de rotation de l'hélice.                              |
+| C10 (position du foyer ~25 %)          | **Reprise et bornée** (cours 14) — « approximativement au quart de la corde », valeur 0,26 comme exemple NACA 2412.                  |
+
+Conclusion : **aucune donnée non vérifiée ou sous copyright n'a été publiée**. Les affirmations ⏳ restent des marqueurs de révision périodique (flotte, réglementation, chiffres constructeur), sans impact sur le contenu livré.
