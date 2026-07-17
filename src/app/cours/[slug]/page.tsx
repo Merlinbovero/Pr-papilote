@@ -186,14 +186,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </section>
       ) : null}
 
-      {/* Fiche de révision */}
-      <section aria-label="À retenir" id="revision" className="space-y-3">
-        <h2 className="text-xl font-semibold">L’essentiel à retenir</h2>
-        <ul className="bg-card list-disc space-y-1 rounded-lg border p-4 pl-9 text-sm">
-          {course.resumeRevision.map((r) => (
-            <li key={r}>{r}</li>
-          ))}
-        </ul>
+      {/* Fiche de révision — l'ancre « à retenir », mise en avant comme dans les fiches */}
+      <section aria-label="À retenir" id="revision">
+        <div className="bg-card border-primary rounded-xl border border-l-4 p-6">
+          <h2 className="mb-3 text-xl font-semibold tracking-tight">L’essentiel à retenir</h2>
+          <ul className="list-disc space-y-1.5 pl-5 text-sm leading-6">
+            {course.resumeRevision.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* Sources */}
