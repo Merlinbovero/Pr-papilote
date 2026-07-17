@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.volet-fowler
+title: Volet Fowler
+definition: >-
+  Volet qui recule en plus de s'abaisser, ajoutant de la surface à l'aile en plus
+  de la cambrure. C'est le type de volet le plus efficace, courant sur les avions
+  de transport.
+english: Fowler flap
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-volets-et-becs
+tags: []
+status: publie

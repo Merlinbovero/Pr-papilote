@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.hypersust-volets
+title: Volets et vitesse de décrochage
+consigne: >-
+  Expliquez pourquoi un avion sort ses volets à l'atterrissage, et l'effet sur sa
+  vitesse d'approche.
+methode: >-
+  Relier le Cz max, la portance nécessaire (égale au poids) et la vitesse de
+  décrochage.
+correction: >-
+  À l'atterrissage, on veut voler lentement. Les volets augmentent le Cz max :
+  la portance nécessaire (= poids) est atteinte à plus basse vitesse, donc la
+  vitesse de décrochage — et la vitesse d'approche — diminue. La traînée
+  supplémentaire aide en outre à descendre plus pentu.
+interpretation: >-
+  Sans volets, il faudrait approcher beaucoup plus vite, avec des distances
+  d'atterrissage bien plus longues.
+notionLiee: fondamentaux.aerodynamique.les-volets-et-becs
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

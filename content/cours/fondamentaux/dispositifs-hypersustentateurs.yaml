@@ -1,0 +1,105 @@
+schemaVersion: 1
+id: cours.dispositifs-hypersustentateurs
+slug: dispositifs-hypersustentateurs
+title: Hypersustentateurs et hyposustentateurs
+description: >-
+  Pour voler lentement sans décrocher, ou au contraire descendre et freiner :
+  volets et becs augmentent le Cz max, spoilers et aérofreins réduisent la
+  portance ou ajoutent de la traînée. Ce cours compare les deux familles de
+  dispositifs mobiles de l'aile.
+module: fondamentaux
+categorieFondamentaux: aerodynamique
+matiereBia: aerodynamique-et-principes-du-vol
+objectifs:
+  - Expliquer le rôle des dispositifs hypersustentateurs (augmenter le Cz max, abaisser la vitesse de décrochage).
+  - Distinguer volets (bord de fuite) et becs (bord d'attaque).
+  - Distinguer les dispositifs hyposustentateurs (spoiler, aérofrein) et leurs usages.
+prerequisites:
+  - cours.les-types-de-profils
+ordre: 10
+niveau: 1
+dureeEstimeeMin: 40
+pdfPages:
+  - from: 35
+    to: 45
+competencies: [connaissances-aeronautiques]
+fiches:
+  - fondamentaux.aerodynamique.les-volets-et-becs
+  - fondamentaux.aerodynamique.spoilers-et-aerofreins
+termes:
+  - terme.hypersustentateur
+  - terme.volet
+  - terme.volet-fowler
+  - terme.bec
+  - terme.hyposustentateur
+  - terme.spoiler
+  - terme.aerofrein
+exercices:
+  - exercice.hypersust-volets
+  - exercice.hypersust-bec-volet
+  - exercice.hypersust-spoiler-aerofrein
+questions:
+  - q.aerodynamique.hypersust-01
+  - q.aerodynamique.hypersust-02
+  - q.aerodynamique.hypersust-03
+  - q.aerodynamique.hypersust-04
+  - q.aerodynamique.hypersust-05
+  - q.aerodynamique.hypersust-06
+  - q.aerodynamique.hypersust-07
+  - q.aerodynamique.hypersust-08
+  - q.aerodynamique.hyposust-01
+  - q.aerodynamique.hyposust-02
+  - q.aerodynamique.hyposust-03
+  - q.aerodynamique.hyposust-04
+  - q.aerodynamique.hyposust-05
+  - q.aerodynamique.hyposust-06
+interactions: []
+sequence:
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.les-volets-et-becs
+    title: Étudier — volets et becs (hypersustentateurs)
+    obligatoire: true
+  - kind: fiche
+    ref: fondamentaux.aerodynamique.spoilers-et-aerofreins
+    title: Étudier — spoilers et aérofreins (hyposustentateurs)
+    obligatoire: true
+  - kind: exercice
+    ref: exercice.hypersust-bec-volet
+    title: S'exercer — distinguer bec et volet
+    obligatoire: false
+  - kind: exercice
+    ref: exercice.hypersust-spoiler-aerofrein
+    title: S'exercer — spoiler ou aérofrein ?
+    obligatoire: false
+  - kind: revision
+    title: Réviser — l'essentiel du cours
+    obligatoire: true
+  - kind: quiz
+    title: Se tester — quiz du cours
+    obligatoire: true
+resumeRevision:
+  - Les hypersustentateurs augmentent le Cz max — donc abaissent la vitesse de décrochage.
+  - Les volets (bord de fuite) augmentent la cambrure (et parfois la surface) ; le Fowler ajoute de la surface, le plus efficace.
+  - Les becs (bord d'attaque) retardent le décollement et repoussent l'incidence de décrochage.
+  - Configurations — lisse (croisière), décollage (volets modérés), atterrissage (volets et becs au maximum).
+  - Les hyposustentateurs font l'inverse — le spoiler détruit la portance, l'aérofrein augmente la traînée pour ralentir.
+  - Au toucher des roues, les spoilers plaquent l'avion au sol pour un freinage efficace.
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Dispositifs hypersustentateurs et hyposustentateurs"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+status: publie
+author: prepapilote
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 10 « Hypersustentateurs et hyposustentateurs » (mécanique du vol p.35-45).
+    author: prepapilote

@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.hypersustentateur
+title: Dispositif hypersustentateur
+definition: >-
+  Dispositif (volet, bec) qui augmente le Cz maximal de l'aile pour voler plus
+  lentement sans décrocher, notamment au décollage et à l'atterrissage.
+english: high-lift device
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-volets-et-becs
+tags: []
+status: publie

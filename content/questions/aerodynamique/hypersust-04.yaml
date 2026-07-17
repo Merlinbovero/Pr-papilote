@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-04
+kind: qcm
+theme: hypersustentateurs
+statement: >-
+  Pourquoi le volet Fowler est-il le plus efficace ?
+choices:
+  - "Il recule en s'abaissant, ajoutant de la surface en plus de la cambrure"
+  - "Il ne crée aucune traînée"
+  - "Il se situe au bord d'attaque"
+  - "Il remplace les ailerons"
+correctChoices: [0]
+explanation: >-
+  Le Fowler recule et s'abaisse : il augmente à la fois la cambrure et la surface
+  de l'aile, d'où son efficacité (avions de transport).
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

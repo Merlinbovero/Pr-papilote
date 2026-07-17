@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-07
+kind: vrai-faux
+theme: hypersustentateurs
+statement: >-
+  Sortir les volets abaisse la vitesse de décrochage de l'avion.
+answer: true
+explanation: >-
+  En augmentant le Cz max, les volets permettent d'équilibrer le poids à plus
+  basse vitesse : la vitesse de décrochage diminue.
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

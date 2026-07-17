@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.spoiler
+title: Spoiler
+definition: >-
+  Surface qui se dresse sur l'extrados et décolle volontairement l'écoulement,
+  détruisant la portance de la zone (destructeur de portance). Utile en descente,
+  au freinage à l'atterrissage et au contrôle en roulis.
+english: spoiler
+synonyms: [destructeur de portance]
+ficheId: fondamentaux.aerodynamique.spoilers-et-aerofreins
+tags: []
+status: publie

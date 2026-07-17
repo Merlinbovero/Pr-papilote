@@ -139,6 +139,20 @@ test("le cours 9 (types de profils) compose sa fiche neuve et la fiche profil d'
   await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
 });
 
+test("le cours 10 (hypersustentateurs) compose ses deux fiches (volets/becs et spoilers/aérofreins)", async ({
+  page,
+}) => {
+  await page.goto("/cours/dispositifs-hypersustentateurs");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /hypersustentateurs et hyposustentateurs/i })
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /les dispositifs hypersustentateurs/i })
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: /spoilers et aérofreins/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /se tester/i })).toBeVisible();
+});
+
 test("le cours 8 propose l'interaction polaire, dont le curseur d'incidence est réglable au clavier", async ({
   page,
 }) => {

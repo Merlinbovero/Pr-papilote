@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-03
+kind: qcm
+theme: hypersustentateurs
+statement: >-
+  En s'abaissant, un volet agit surtout en…
+choices:
+  - "augmentant la cambrure du profil"
+  - "diminuant la surface de l'aile"
+  - "réduisant l'incidence"
+  - "supprimant la traînée"
+correctChoices: [0]
+explanation: >-
+  Le volet accroît la cambrure (et, pour le Fowler, la surface) : plus de
+  portance, mais aussi plus de traînée.
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

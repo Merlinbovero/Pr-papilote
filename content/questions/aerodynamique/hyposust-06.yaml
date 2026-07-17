@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.hyposust-06
+kind: vrai-faux
+theme: hyposustentateurs
+statement: >-
+  Hypersustentateurs et hyposustentateurs ont des effets opposés sur la portance.
+answer: true
+explanation: >-
+  Les hypersustentateurs (volets, becs) font porter plus à basse vitesse ; les
+  hyposustentateurs (spoilers, aérofreins) réduisent la portance ou freinent :
+  leurs effets sont opposés.
+evaluates: [fondamentaux.aerodynamique.spoilers-et-aerofreins]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
