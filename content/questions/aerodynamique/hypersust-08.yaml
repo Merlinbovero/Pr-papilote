@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-08
+kind: vrai-faux
+theme: hypersustentateurs
+statement: >-
+  Les volets augmentent la portance mais aussi la traînée.
+answer: true
+explanation: >-
+  L'augmentation de cambrure accroît la portance et la traînée. Cette traînée est
+  utile à l'atterrissage (freiner, descendre plus pentu), d'où une sortie
+  modérée au décollage.
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

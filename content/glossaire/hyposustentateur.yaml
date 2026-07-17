@@ -1,0 +1,11 @@
+schemaVersion: 1
+id: terme.hyposustentateur
+title: Dispositif hyposustentateur
+definition: >-
+  Dispositif (spoiler, aérofrein) qui réduit la portance ou augmente la traînée,
+  pour descendre ou freiner. C'est l'inverse d'un dispositif hypersustentateur.
+english: lift-reducing / drag device
+synonyms: []
+ficheId: fondamentaux.aerodynamique.spoilers-et-aerofreins
+tags: []
+status: publie

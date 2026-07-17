@@ -1,0 +1,110 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.spoilers-et-aerofreins
+type: notion-aerodynamique
+title: Spoilers et aérofreins (dispositifs hyposustentateurs)
+slug: spoilers-et-aerofreins
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — spoilers et aérofreins
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  À l'inverse des hypersustentateurs, les dispositifs hyposustentateurs réduisent
+  la portance et augmentent la traînée. Les spoilers (destructeurs de portance)
+  décollent volontairement l'écoulement ; les aérofreins freinent l'avion sans
+  modifier la portance.
+objectifs:
+  - Expliquer le rôle des dispositifs hyposustentateurs (réduire la portance, augmenter la traînée).
+  - Distinguer un spoiler (destructeur de portance) d'un aérofrein.
+  - Donner les usages typiques (descente, freinage à l'atterrissage, contrôle en roulis).
+aliases: [hyposustentateur, spoiler, aérofrein, destructeur de portance]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 10 « Dispositifs hypersustentateurs et hyposustentateurs » (mécanique du vol, p.41-45).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Spoilers et aérofreins"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.les-volets-et-becs
+  related:
+    - fondamentaux.aerodynamique.trainee
+content:
+  essentiel:
+    body: |
+      Si les hypersustentateurs servent à **porter plus** à basse vitesse, les
+      dispositifs **hyposustentateurs** font l'**inverse** : ils **réduisent la
+      portance** ou **augmentent la traînée** pour **descendre** ou **freiner**.
+
+      Le **spoiler** (ou **destructeur de portance**) est une surface qui se
+      dresse sur l'**extrados** et **décolle volontairement** l'écoulement :
+      la portance chute là où il se déploie. En vol, il aide à **descendre**
+      sans accélérer ; au **toucher des roues**, déployé symétriquement, il
+      **plaque** l'avion au sol pour rendre le **freinage** efficace. Déployé
+      d'un seul côté, il aide au **contrôle en roulis** (comme un aileron).
+
+      L'**aérofrein** est une surface dont le seul rôle est d'**augmenter la
+      traînée** pour **ralentir** l'avion, sans chercher à modifier la portance.
+      On en trouve sur les planeurs, les avions de chasse et certains
+      transports.
+    aRetenir:
+      - Les dispositifs hyposustentateurs réduisent la portance et/ou augmentent la traînée (l'inverse des hypersustentateurs).
+      - Le spoiler (destructeur de portance) dresse une surface sur l'extrados et décolle volontairement l'écoulement.
+      - Au toucher des roues, les spoilers plaquent l'avion au sol pour un freinage efficace.
+      - Un spoiler déployé d'un seul côté aide au contrôle en roulis.
+      - L'aérofrein augmente la traînée pour ralentir, sans viser à modifier la portance.
+  sections:
+    - id: le-spoiler
+      title: Le spoiler (destructeur de portance)
+      body: |
+        Le **spoiler** est une plaque articulée sur l'**extrados**. En se
+        dressant, il **perturbe** l'écoulement et **détruit la portance** de la
+        zone concernée — d'où son nom de **destructeur de portance**.
+
+        Ses usages sont multiples :
+
+        - **en descente** : déployé symétriquement, il permet de **descendre
+          vite** sans que la vitesse n'augmente trop ;
+        - **à l'atterrissage** : au **toucher des roues**, il **plaque** l'avion
+          au sol, ce qui reporte le poids sur les roues et rend le **freinage**
+          (et le freinage aérodynamique) efficaces ;
+        - **en roulis** : déployé d'un **seul côté**, il réduit la portance de
+          cette aile et fait **incliner** l'avion — il seconde alors les
+          ailerons.
+    - id: l-aerofrein
+      title: L'aérofrein
+      body: |
+        L'**aérofrein** est une surface (souvent sur le fuselage ou l'aile) qui,
+        déployée, **augmente franchement la traînée** pour **ralentir** l'avion,
+        **sans** viser à détruire la portance. C'est un outil de **gestion de la
+        vitesse** et de la trajectoire.
+
+        On le rencontre par exemple sur les **planeurs** (contrôler l'approche),
+        les **avions de chasse** (décélérer rapidement) et certains **avions de
+        transport**.
+      strate: maitriser
+  pieges:
+    - Le spoiler vise à détruire la portance (et accessoirement à traîner) ; l'aérofrein vise à traîner sans forcément détruire la portance.
+    - Un spoiler déployé au sol au toucher des roues améliore le freinage en reportant le poids sur les roues.
+    - Hypersustentateurs et hyposustentateurs sont opposés — les uns font porter plus, les autres font porter moins ou freinent.

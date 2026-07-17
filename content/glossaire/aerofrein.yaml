@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.aerofrein
+title: Aérofrein
+definition: >-
+  Surface dont le rôle est d'augmenter la traînée pour ralentir l'avion, sans
+  chercher à modifier la portance. On en trouve sur les planeurs, les avions de
+  chasse et certains transports.
+english: airbrake / speed brake
+synonyms: []
+ficheId: fondamentaux.aerodynamique.spoilers-et-aerofreins
+tags: []
+status: publie

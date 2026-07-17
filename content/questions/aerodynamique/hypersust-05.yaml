@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-05
+kind: qcm
+theme: hypersustentateurs
+statement: >-
+  Quel est l'effet d'un bec de bord d'attaque ?
+choices:
+  - "Retarder le décollement et permettre une incidence plus forte avant le décrochage"
+  - "Diminuer la portance"
+  - "Augmenter la vitesse de croisière"
+  - "Freiner l'avion au sol"
+correctChoices: [0]
+explanation: >-
+  Le bec crée une fente qui réénergise la couche limite de l'extrados : le
+  décollement est retardé, l'incidence de décrochage repoussée, le Cz max plus
+  élevé.
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.volet
+title: Volet
+definition: >-
+  Surface mobile au bord de fuite de l'aile qui, en s'abaissant, augmente la
+  cambrure (et parfois la surface) : plus de portance et de traînée. C'est un
+  dispositif hypersustentateur.
+english: flap
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-volets-et-becs
+tags: []
+status: publie

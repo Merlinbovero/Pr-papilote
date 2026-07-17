@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.hyposust-04
+kind: qcm
+theme: hyposustentateurs
+statement: >-
+  Quel est le rôle d'un aérofrein ?
+choices:
+  - "Augmenter la traînée pour ralentir, sans viser à modifier la portance"
+  - "Augmenter la portance"
+  - "Créer de la poussée"
+  - "Remplacer la gouverne de direction"
+correctChoices: [0]
+explanation: >-
+  L'aérofrein augmente franchement la traînée pour ralentir l'avion ; il ne
+  cherche pas à détruire la portance, contrairement au spoiler.
+evaluates: [fondamentaux.aerodynamique.spoilers-et-aerofreins]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

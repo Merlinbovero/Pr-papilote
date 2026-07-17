@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.les-volets-et-becs
+type: notion-aerodynamique
+title: Les dispositifs hypersustentateurs (volets et becs)
+slug: les-volets-et-becs
+image:
+  src: /images/module-fondamentaux.jpg
+  alt: Avion en vol — volets et becs de bord d'attaque
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=140570923
+summary: >-
+  Les dispositifs hypersustentateurs augmentent le Cz maximal de l'aile pour
+  voler plus lentement au décollage et à l'atterrissage. Les volets (bord de
+  fuite) accroissent la cambrure et la surface ; les becs (bord d'attaque)
+  retardent le décrochage.
+objectifs:
+  - Expliquer le rôle des dispositifs hypersustentateurs (augmenter le Cz max, abaisser la vitesse de décrochage).
+  - Distinguer volets (bord de fuite) et becs (bord d'attaque) et leurs effets.
+  - Associer les configurations lisse, décollage et atterrissage à leurs usages.
+aliases: [hypersustentateur, volet, bec, flap, slat, Fowler]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-17"
+verifiedAt: "2026-07-17"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-17"
+    version: 1
+    motif: Création — cours 10 « Dispositifs hypersustentateurs et hyposustentateurs » (mécanique du vol, p.35-40).
+    author: prepapilote
+status: publie
+sources:
+  - title: "Guide « Mécanique du Vol » (M.V. 001), chap. 3 — Les dispositifs hypersustentateurs"
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-17"
+  - title: "Programme du Brevet d'initiation aéronautique (BIA) — aérodynamique"
+    kind: officiel
+    consultedAt: "2026-07-17"
+relations:
+  prerequisites:
+    - fondamentaux.aerodynamique.la-polaire
+    - fondamentaux.aerodynamique.decrochage
+  related:
+    - fondamentaux.aerodynamique.portance
+content:
+  essentiel:
+    body: |
+      Pour décoller et atterrir, un avion doit voler **lentement** sans
+      décrocher. Or, à basse vitesse, il faut un **Cz élevé** pour compenser la
+      faible pression dynamique. Les **dispositifs hypersustentateurs**
+      augmentent le **Cz maximal** de l'aile — donc **abaissent la vitesse de
+      décrochage**.
+
+      Les **volets** (**flaps**), au **bord de fuite**, augmentent la
+      **cambrure** (et, pour certains, la **surface**) de l'aile : ils donnent
+      plus de portance, mais aussi plus de **traînée**. Le **volet Fowler**, qui
+      recule en plus de s'abaisser, ajoute de la surface : c'est le plus
+      efficace.
+
+      Les **becs** (**slats**), au **bord d'attaque**, **retardent le
+      décollement** de la couche limite : ils permettent d'atteindre une
+      **incidence plus forte** avant le décrochage, donc un Cz max encore plus
+      élevé.
+
+      On distingue trois **configurations** : **lisse** (croisière), **décollage**
+      (volets sortis modérément) et **atterrissage** (volets et becs sortis au
+      maximum).
+    aRetenir:
+      - Les dispositifs hypersustentateurs augmentent le Cz max — donc abaissent la vitesse de décrochage.
+      - Les volets (bord de fuite) augmentent la cambrure (et parfois la surface) — plus de portance, plus de traînée.
+      - Le volet Fowler recule et s'abaisse — il ajoute de la surface, c'est le plus efficace.
+      - Les becs (bord d'attaque) retardent le décollement et permettent une incidence plus forte avant le décrochage.
+      - Configurations — lisse (croisière), décollage (volets modérés), atterrissage (volets et becs au maximum).
+  sections:
+    - id: pourquoi-hypersustenter
+      title: Pourquoi hypersustenter ?
+      body: |
+        La portance vaut **F_z = ½·ρ·S·V²·Cz**. À l'atterrissage, la vitesse V
+        est faible : pour garder assez de portance (égale au poids), il faut un
+        **Cz élevé**. Sans dispositif, ce Cz s'obtiendrait à forte incidence —
+        trop proche du **décrochage**.
+
+        Les dispositifs hypersustentateurs relèvent le **Cz maximal** de l'aile :
+        à poids et surface donnés, l'avion peut alors voler **plus lentement**
+        sans décrocher. C'est ce qui rend possibles des **vitesses d'approche**
+        et des **distances de piste** raisonnables.
+    - id: les-volets
+      title: Les volets (bord de fuite)
+      body: |
+        Les **volets** sont des surfaces mobiles articulées au **bord de fuite**.
+        En s'abaissant, ils **augmentent la cambrure** du profil — donc la
+        portance. Plusieurs types, du plus simple au plus efficace :
+
+        - **volet simple (à charnière)** : il s'abaisse et cambre le profil ;
+        - **volet à fente (slotted)** : une fente laisse passer de l'air qui
+          **recolle** la couche limite sur le volet, retardant son décollement ;
+        - **volet Fowler** : il **recule** en s'abaissant, ajoutant de la
+          **surface** en plus de la cambrure — le plus efficace, courant sur les
+          avions de transport.
+
+        Tous augmentent aussi la **traînée** — un effet **utile** à
+        l'atterrissage (freiner, descendre plus pentu), moins au décollage (d'où
+        une sortie modérée).
+      figures:
+        - schemaId: volets-becs
+          alt: Un profil d'aile avec un volet abaissé au bord de fuite et un bec sorti au bord d'attaque, augmentant la cambrure et retardant le décollement.
+          caption: "Volet (bord de fuite) et bec (bord d'attaque) sortis : plus de cambrure, décollement retardé, Cz max plus élevé."
+          width: 420
+          height: 220
+    - id: les-becs
+      title: Les becs (bord d'attaque)
+      strate: maitriser
+      body: |
+        Les **becs** sont des dispositifs mobiles au **bord d'attaque**. En
+        s'avançant, ils créent une **fente** qui **réénergise** la couche limite
+        de l'extrados et **retarde son décollement**. Résultat : l'aile peut
+        atteindre une **incidence plus forte** avant de décrocher, donc un **Cz
+        max plus élevé**.
+
+        Becs et volets sont **complémentaires** : les volets ajoutent de la
+        portance à incidence donnée, les becs repoussent l'incidence de
+        décrochage. Combinés (configuration **atterrissage**), ils permettent les
+        plus basses vitesses.
+  pieges:
+    - Les hypersustentateurs augmentent le Cz max, ils ne « suppriment » pas le décrochage — ils le repoussent à plus basse vitesse.
+    - Les volets augmentent portance ET traînée ; à l'atterrissage la traînée est utile, au décollage on la limite (volets modérés).
+    - Bec (bord d'attaque, retarde le décollement) et volet (bord de fuite, cambre) n'agissent pas au même endroit ni de la même façon.

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: exercice.hypersust-bec-volet
+title: Distinguer bec et volet
+consigne: >-
+  Un bec et un volet augmentent tous deux le Cz max, mais différemment. Précisez
+  où se situe chacun et par quel mécanisme il agit.
+methode: >-
+  Localiser chaque dispositif (bord d'attaque / bord de fuite) et nommer son
+  action (retarder le décollement / augmenter la cambrure).
+correction: >-
+  Le bec est au bord d'attaque : il crée une fente qui réénergise la couche
+  limite et retarde le décollement, repoussant l'incidence de décrochage. Le volet
+  est au bord de fuite : il augmente la cambrure (et parfois la surface), donnant
+  plus de portance à incidence donnée. Combinés, ils permettent les plus basses
+  vitesses.
+interpretation: >-
+  Les deux sont complémentaires : l'un repousse le décrochage, l'autre ajoute de
+  la portance.
+notionLiee: fondamentaux.aerodynamique.les-volets-et-becs
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

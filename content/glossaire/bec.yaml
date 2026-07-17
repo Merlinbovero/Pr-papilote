@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.bec
+title: Bec (de bord d'attaque)
+definition: >-
+  Dispositif mobile au bord d'attaque qui, en s'avançant, crée une fente
+  réénergisant la couche limite et retarde le décollement : l'aile atteint une
+  incidence plus forte avant de décrocher.
+english: slat
+synonyms: []
+ficheId: fondamentaux.aerodynamique.les-volets-et-becs
+tags: []
+status: publie

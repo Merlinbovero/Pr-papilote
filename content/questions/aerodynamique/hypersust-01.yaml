@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.hypersust-01
+kind: qcm
+theme: hypersustentateurs
+statement: >-
+  Quel est le rôle principal d'un dispositif hypersustentateur ?
+choices:
+  - "Augmenter le Cz max pour voler plus lentement sans décrocher"
+  - "Augmenter la vitesse de croisière"
+  - "Réduire la portance en descente"
+  - "Refroidir le moteur"
+correctChoices: [0]
+explanation: >-
+  Les hypersustentateurs augmentent le Cz maximal de l'aile : à poids donné,
+  l'avion peut voler plus lentement sans décrocher (décollage, atterrissage).
+evaluates: [fondamentaux.aerodynamique.les-volets-et-becs]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: exercice.hypersust-spoiler-aerofrein
+title: Spoiler ou aérofrein ?
+consigne: >-
+  Pour chaque besoin, dites s'il faut plutôt un spoiler ou un aérofrein : (a)
+  plaquer l'avion au sol au toucher des roues, (b) simplement ralentir en vol
+  sans réduire la portance.
+methode: >-
+  Distinguer l'objectif (détruire la portance / augmenter la traînée) et associer
+  le bon dispositif.
+correction: >-
+  (a) Un spoiler (destructeur de portance) : déployé au toucher, il supprime la
+  portance et plaque l'avion pour un freinage efficace. (b) Un aérofrein : il
+  augmente la traînée pour ralentir sans chercher à détruire la portance.
+interpretation: >-
+  Spoiler = détruire la portance (et traîner) ; aérofrein = traîner sans viser la
+  portance.
+notionLiee: fondamentaux.aerodynamique.spoilers-et-aerofreins
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+status: publie

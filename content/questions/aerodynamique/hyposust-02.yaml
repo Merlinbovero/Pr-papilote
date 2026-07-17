@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.hyposust-02
+kind: qcm
+theme: hyposustentateurs
+statement: >-
+  Comment appelle-t-on aussi le spoiler ?
+choices:
+  - "Destructeur de portance"
+  - "Bec de bord d'attaque"
+  - "Volet Fowler"
+  - "Compensateur"
+correctChoices: [0]
+explanation: >-
+  Le spoiler se dresse sur l'extrados et détruit la portance de la zone : on
+  l'appelle destructeur de portance.
+evaluates: [fondamentaux.aerodynamique.spoilers-et-aerofreins]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
