@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.bernoulli
+title: Théorème de Bernoulli
+definition: >-
+  Loi de conservation de l'énergie d'un fluide idéal en écoulement : le long
+  d'une ligne de courant, ps + ½·ρ·V² = constante (la pression totale se
+  conserve). Quand la vitesse augmente, la pression statique diminue.
+english: Bernoulli's principle
+synonyms: [principe de Bernoulli]
+ficheId: fondamentaux.aerodynamique.theoreme-de-bernoulli
+tags: []
+status: publie

@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-04
+kind: vrai-faux
+theme: bernoulli
+statement: >-
+  Le théorème de Bernoulli suppose un fluide idéal (peu compressible, sans
+  frottement) le long d'une même ligne de courant.
+answer: true
+explanation: >-
+  Ce sont les hypothèses du théorème : un fluide incompressible et sans
+  viscosité, considéré le long d'une même ligne de courant. Hors de ce cadre, il
+  ne s'applique pas tel quel.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

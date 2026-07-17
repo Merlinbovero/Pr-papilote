@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-06
+kind: qcm
+theme: venturi
+statement: >-
+  Dans un Venturi, la vitesse au col passe de 10 à 30 m/s. Par quel facteur la
+  section a-t-elle été réduite ?
+choices:
+  - "Divisée par 3"
+  - "Divisée par 2"
+  - "Multipliée par 3"
+  - "Inchangée"
+correctChoices: [0]
+distractorNotes:
+  "2": "Multiplier la section augmenterait la section, pas la vitesse."
+explanation: >-
+  Par conservation du débit S·V = constante : si la vitesse est multipliée par 3
+  (10 → 30 m/s), la section est divisée par 3.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

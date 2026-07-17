@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.aerodynamique.bernoulli-03
+kind: qcm
+theme: bernoulli
+statement: >-
+  Quelle est l'expression du théorème de Bernoulli (fluide incompressible) ?
+choices:
+  - "ps + ½·ρ·V² = constante"
+  - "ps × V = constante"
+  - "ps − ρ·V = constante"
+  - "ρ·S·V = constante"
+correctChoices: [0]
+distractorNotes:
+  "3": "ρ·S·V = constante est la conservation du débit massique, pas Bernoulli."
+explanation: >-
+  Le théorème de Bernoulli s'écrit ps + ½·ρ·V² = constante le long d'une ligne
+  de courant : la pression statique plus la pression dynamique.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

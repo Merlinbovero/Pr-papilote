@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-04
+kind: vrai-faux
+theme: venturi
+statement: >-
+  Plus le col d'un tube de Venturi est étroit, plus la chute de pression y est
+  importante.
+answer: true
+explanation: >-
+  Un col plus étroit impose une vitesse plus grande (conservation du débit), donc
+  une pression dynamique plus forte et une pression statique plus basse
+  (Bernoulli) : la chute de pression augmente.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

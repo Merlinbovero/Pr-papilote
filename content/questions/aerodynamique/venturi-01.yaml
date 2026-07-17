@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.venturi-01
+kind: qcm
+theme: venturi
+statement: >-
+  Dans un tube de Venturi, où la vitesse de l'air est-elle maximale ?
+choices:
+  - "Au col (section la plus étroite)"
+  - "À l'entrée (section large)"
+  - "À la sortie (section large)"
+  - "La vitesse est la même partout"
+correctChoices: [0]
+explanation: >-
+  Par conservation du débit, la vitesse est maximale là où la section est la plus
+  petite : au col. C'est aussi là que la pression statique est minimale.
+evaluates: [fondamentaux.aerodynamique.theoreme-de-bernoulli]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
