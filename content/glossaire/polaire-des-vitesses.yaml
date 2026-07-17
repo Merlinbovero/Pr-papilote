@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.polaire-des-vitesses
+title: Polaire des vitesses
+definition: >-
+  Variante de la polaire reliant la vitesse horizontale à la vitesse de chute
+  (taux de chute). Très utilisée en vol à voile, elle donne directement la
+  vitesse de finesse maximale et celle de taux de chute minimal.
+english: speed polar
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-polaire
+tags: []
+status: publie

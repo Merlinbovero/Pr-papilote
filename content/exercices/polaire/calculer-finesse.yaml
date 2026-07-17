@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: exercice.polaire-finesse
+title: Calculer et interpréter la finesse
+consigne: >-
+  Une aile présente Cz = 1,2 et Cx = 0,08 à une incidence donnée. Calculez la
+  finesse et donnez la distance de plané pour 500 m de perte d'altitude.
+donnees: >-
+  Cz = 1,2 ; Cx = 0,08 ; perte d'altitude 500 m ; air calme.
+methode: >-
+  Finesse = Cz/Cx, puis distance = finesse × perte d'altitude.
+correction: >-
+  Finesse = 1,2 / 0,08 = 15. Distance de plané = 15 × 500 = 7500 m = 7,5 km.
+interpretation: >-
+  À cette incidence, l'aile parcourt 15 m pour 1 m de descente ; ce n'est pas
+  forcément la finesse maximale, qui se lit à la tangente de la polaire.
+notionLiee: fondamentaux.aerodynamique.la-polaire
+difficulty: 2
+competencies: [raisonnement-logique]
+status: publie

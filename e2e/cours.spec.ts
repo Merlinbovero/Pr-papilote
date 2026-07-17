@@ -128,3 +128,19 @@ test("le cours 7 propose l'interaction incidence/décrochage, utilisable au clav
   // Alternative textuelle accessible présente.
   await expect(page.getByText("Description accessible").first()).toBeVisible();
 });
+
+test("le cours 8 propose l'interaction polaire, dont le curseur d'incidence est réglable au clavier", async ({
+  page,
+}) => {
+  await page.goto("/cours/la-polaire-et-la-finesse");
+  await expect(
+    page.getByRole("heading", { level: 1, name: /la polaire et la finesse/i })
+  ).toBeVisible();
+  // Curseur d'incidence (range) réglable au clavier.
+  const slider = page.getByRole("slider");
+  await expect(slider).toHaveValue("6");
+  await slider.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(slider).toHaveValue("7");
+  await expect(page.getByText("Description accessible").first()).toBeVisible();
+});

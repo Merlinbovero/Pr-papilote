@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-02
+kind: calcul
+theme: finesse
+statement: >-
+  Une aile a Cz = 0,8 et Cx = 0,05. Quelle est sa finesse ?
+answerValue: 16
+tolerance: 0.2
+explanation: >-
+  Finesse = Cz / Cx = 0,8 / 0,05 = 16. L'aile produit 16 fois plus de portance
+  que de traînée.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 2
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

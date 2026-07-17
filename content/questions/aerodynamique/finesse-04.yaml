@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-04
+kind: qcm
+theme: finesse
+statement: >-
+  Que relie la polaire des vitesses ?
+choices:
+  - "La vitesse horizontale et la vitesse de chute (taux de chute)"
+  - "La portance et le poids"
+  - "La pression statique et dynamique"
+  - "L'incidence et la température"
+correctChoices: [0]
+explanation: >-
+  La polaire des vitesses, très utilisée en vol à voile, relie la vitesse
+  horizontale au taux de chute ; elle donne les vitesses de finesse maximale et
+  de taux de chute minimal.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

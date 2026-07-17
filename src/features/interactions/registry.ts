@@ -36,6 +36,12 @@ export const INTERACTIONS: readonly InteractionMeta[] = [
     summary:
       "Augmenter l'angle d'incidence pour voir l'écoulement rester collé, atteindre l'incidence critique, puis décoller — la portance s'effondre.",
   },
+  {
+    id: "polaire",
+    title: "La polaire d'Eiffel",
+    summary:
+      "Déplacer l'angle d'incidence pour parcourir la courbe Cz–Cx, lire la finesse et repérer les points remarquables (finesse max, Cz max, décrochage).",
+  },
 ];
 
 const BY_ID = new Map(INTERACTIONS.map((i) => [i.id, i]));

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.finesse-06
+kind: qcm
+theme: finesse
+statement: >-
+  La traînée totale d'un avion passe par un minimum à la vitesse où…
+choices:
+  - "la traînée induite égale la traînée parasite"
+  - "la portance est nulle"
+  - "le moteur est à pleine puissance"
+  - "l'incidence est nulle"
+correctChoices: [0]
+explanation: >-
+  La traînée induite (forte à basse vitesse) et la traînée parasite (forte à
+  haute vitesse) s'égalisent à une vitesse intermédiaire : c'est là que la
+  traînée totale est minimale, proche de la finesse maximale.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie

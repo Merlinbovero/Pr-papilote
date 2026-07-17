@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: terme.finesse-maximale
+title: Finesse maximale
+definition: >-
+  Meilleur rapport Cz/Cx d'une aile, donné sur la polaire par la tangente menée
+  depuis l'origine. C'est l'incidence de meilleur rendement, recherchée pour le
+  vol plané et la croisière économique.
+english: maximum glide ratio
+synonyms: []
+ficheId: fondamentaux.aerodynamique.la-polaire
+tags: []
+status: publie

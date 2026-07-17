@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.polaire-06
+kind: qcm
+theme: polaire
+statement: >-
+  D'où proviennent les valeurs de Cz et Cx tracées sur la polaire ?
+choices:
+  - "De mesures en soufflerie (balance aérodynamique)"
+  - "D'un calcul du poids de l'avion"
+  - "De la lecture de l'altimètre"
+  - "De la pression du carburant"
+correctChoices: [0]
+explanation: >-
+  La polaire est un relevé expérimental : on mesure Cz et Cx en soufflerie, à
+  différentes incidences, avec la balance aérodynamique.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

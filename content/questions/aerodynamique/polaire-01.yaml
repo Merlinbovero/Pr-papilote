@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.polaire-01
+kind: qcm
+theme: polaire
+statement: >-
+  Que représente la polaire d'Eiffel ?
+choices:
+  - "Le coefficient de portance Cz en fonction du coefficient de traînée Cx"
+  - "La vitesse en fonction de l'altitude"
+  - "La portance en fonction du poids"
+  - "La température en fonction de la pression"
+correctChoices: [0]
+explanation: >-
+  La polaire d'Eiffel trace Cz (portance) en fonction de Cx (traînée) ; chaque
+  point correspond à une incidence.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

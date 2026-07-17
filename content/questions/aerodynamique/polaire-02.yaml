@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.aerodynamique.polaire-02
+kind: qcm
+theme: polaire
+statement: >-
+  À quoi correspond chaque point de la polaire d'Eiffel ?
+choices:
+  - "À une incidence"
+  - "À une altitude"
+  - "À une masse"
+  - "À un régime moteur"
+correctChoices: [0]
+explanation: >-
+  On parcourt la polaire en faisant varier l'incidence : chaque point est un
+  couple (Cx, Cz) mesuré à une incidence donnée.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

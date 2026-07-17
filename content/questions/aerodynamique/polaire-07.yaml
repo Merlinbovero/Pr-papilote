@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: q.aerodynamique.polaire-07
+kind: vrai-faux
+theme: polaire
+statement: >-
+  Le point de finesse maximale coïncide avec le point de Cz maximal.
+answer: false
+explanation: >-
+  Non : le Cz maximal est au sommet de la polaire, tandis que la finesse maximale
+  est au point de tangente depuis l'origine, à une incidence plus faible.
+evaluates: [fondamentaux.aerodynamique.la-polaire]
+difficulty: 3
+competencies: [raisonnement-logique]
+concours: [eopan, eopn, alat]
+status: publie
