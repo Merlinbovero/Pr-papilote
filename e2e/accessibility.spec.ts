@@ -31,6 +31,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "entraînement concours (EOPAN)", path: "/entrainement/eopan" },
   { name: "révision espacée", path: "/reviser" },
   { name: "anglais aéronautique", path: "/anglais" },
+  { name: "fiche de travail (EOPAN)", path: "/fiche-de-travail/eopan" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },
   { name: "mentions légales", path: "/mentions-legales" },
