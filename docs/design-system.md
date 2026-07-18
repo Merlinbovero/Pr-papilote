@@ -149,7 +149,7 @@ Histoire, Géopolitique, RETEX) et de l'enrichissement des fiches.
 | Composant                                                                                      | Gabarit consommateur        | Rôle                                   |
 | ---------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------------- |
 | `FicheCard`, `DocumentCard`, `QuizCard`                                                        | Hubs de catégorie           | Cartes de liste documentaire           |
-| `FicheHeader` (3 strates), `VerifiedBadge`, `ReadingTime`                                      | Fiche                       | En-tête normalisé                      |
+| `FicheHeader` (surtitre à filet, titre display), `VerifiedBadge`, `ReadingTime`                | Fiche                       | En-tête normalisé                      |
 | `Infobox`                                                                                      | Fiche-objet                 | Données structurées par type           |
 | `RelationBlock` (« Notions préalables/complémentaires », « Voir également », « Applications ») | Fiche                       | Encarts générés du graphe              |
 | `SourceList`, `Citation`, `InternalLink`, `TermTooltip`                                        | Fiche                       | Appareil documentaire                  |

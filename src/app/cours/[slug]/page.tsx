@@ -79,11 +79,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
     >
       {/* En-tête */}
       <header className="space-y-3">
+        {/* Surtitre de section à filet d'accent — même langage que les heros du site. */}
+        <p className="text-primary inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
+          <span aria-hidden className="bg-primary h-px w-8" />
+          {matiere ? matiere.name : "Cours"}
+        </p>
         <div className="flex flex-wrap items-center gap-2">
-          {matiere ? <Badge variant="secondary">{matiere.name}</Badge> : null}
           <Badge variant="outline">{NIVEAU_LABELS[course.niveau]}</Badge>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight">{course.title}</h1>
+        <h1 className="font-heading text-3xl font-extrabold tracking-tight text-balance">
+          {course.title}
+        </h1>
         <p className="text-muted-foreground max-w-2xl">{course.description}</p>
         <div className="text-muted-foreground flex flex-wrap gap-4 text-sm">
           <span className="flex items-center gap-1.5">
