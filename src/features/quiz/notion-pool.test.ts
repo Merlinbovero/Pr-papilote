@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getFiches, getQuestionsForFiche } from "@/lib/content/fiches";
-import { buildConcoursPool, buildNotionPool } from "./notion-pool";
+import { buildConcoursPool, buildEnglishPool, buildNotionPool } from "./notion-pool";
 
 describe("buildNotionPool", () => {
   it("ne retient que des formats jouables (qcm, vrai-faux) et normalise en choix", () => {
@@ -41,6 +41,17 @@ describe("buildConcoursPool", () => {
           expect(index).toBeLessThan(question.choices.length);
         }
       }
+    }
+  });
+});
+
+describe("buildEnglishPool", () => {
+  it("réunit un vivier jouable d'anglais aéronautique", () => {
+    const pool = buildEnglishPool();
+    expect(pool.length).toBeGreaterThan(0);
+    for (const question of pool) {
+      expect(question.choices.length).toBeGreaterThanOrEqual(2);
+      expect(question.correctChoices.length).toBeGreaterThanOrEqual(1);
     }
   });
 });

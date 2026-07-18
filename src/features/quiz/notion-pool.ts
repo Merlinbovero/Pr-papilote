@@ -79,3 +79,15 @@ export function buildConcoursPool(concours: Concours): PlayerQuestion[] {
     .map(toPlayerQuestion)
     .filter((question): question is PlayerQuestion => question !== null);
 }
+
+/**
+ * Vivier d'anglais aéronautique : les questions évaluant la compétence
+ * transversale « anglais-aeronautique » (phraséologie, vocabulaire, grammaire,
+ * compréhension), jouables au clic. Alimente l'espace anglais dédié.
+ */
+export function buildEnglishPool(): PlayerQuestion[] {
+  return getQuestions()
+    .filter((q) => q.competencies.includes("anglais-aeronautique"))
+    .map(toPlayerQuestion)
+    .filter((question): question is PlayerQuestion => question !== null);
+}

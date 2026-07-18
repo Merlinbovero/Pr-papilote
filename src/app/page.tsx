@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpenIcon, GraduationCapIcon, MapIcon, RepeatIcon, TimerIcon } from "lucide-react";
+import {
+  BookOpenIcon,
+  GraduationCapIcon,
+  LanguagesIcon,
+  MapIcon,
+  RepeatIcon,
+  TimerIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ModuleCard } from "@/components/shared/module-card";
@@ -29,6 +36,13 @@ const ENTRAINEMENTS = [
     description:
       "Chaque question au bon moment : celles que vous ratez reviennent vite, les autres s'espacent.",
     icon: RepeatIcon,
+  },
+  {
+    href: "/anglais",
+    title: "Anglais aéronautique",
+    description:
+      "Fiches et textes en anglais, vocabulaire bilingue en cartes-éclair, phraséologie et quiz.",
+    icon: LanguagesIcon,
   },
   {
     href: "/bia",

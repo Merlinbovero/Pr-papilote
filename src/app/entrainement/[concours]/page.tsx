@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
-import { ConcoursTraining } from "@/features/quiz/concours-training";
+import { PoolQuiz } from "@/features/quiz/pool-quiz";
 import { buildConcoursPool } from "@/features/quiz/notion-pool";
 import { concoursSchema } from "@/lib/content/content-schemas";
 import { getModule } from "@/lib/content/referentials";
@@ -64,10 +64,16 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
       </header>
 
       {totalAvailable > 0 ? (
-        <ConcoursTraining
+        <PoolQuiz
           label={label}
           poolUrl={`/entrainement/${mod.slug}/pool`}
           totalAvailable={totalAvailable}
+          blurb={
+            <>
+              Une série de questions tirées au hasard dans la banque du concours ({totalAvailable}{" "}
+              disponibles), avec correction détaillée. Entraînement libre — pas un examen officiel.
+            </>
+          }
         />
       ) : (
         <p className="text-muted-foreground rounded-lg border border-dashed p-6 text-sm">
