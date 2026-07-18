@@ -1,0 +1,145 @@
+schemaVersion: 1
+id: eopan.appareils.falcon-200-gardian
+type: appareil
+title: Falcon 200 Gardian
+slug: falcon-200-gardian
+service:
+  status: en-retrait
+  introducedAt: 1984
+  operator: Marine nationale
+summary: >-
+  Avion de surveillance maritime de l'aéronautique navale, basé outre-mer
+  (Pacifique). Biréacteur dérivé du Falcon 20/200 d'affaires, livré en 1984, il
+  est en cours de retrait et remplacé par le Falcon 50M Triton puis le Falcon
+  2000 Albatros.
+objectifs:
+  - Identifier le Falcon 200 Gardian comme l'avion de surveillance maritime de la Marine déployé outre-mer (Polynésie, Nouvelle-Calédonie), dérivé du Falcon 20/200 de Dassault.
+  - Retenir qu'il est un biréacteur (deux moteurs), à ne pas confondre avec le triréacteur Falcon 50M.
+  - Situer son remplacement — le retrait est engagé (relève par le Falcon 50M Triton, puis le Falcon 2000 Albatros).
+aliases:
+  [Gardian, Falcon 200, Falcon 200 Gardian, Dassault Gardian, surveillance maritime outre-mer]
+module: eopan
+category: appareils
+subcategory: surveillance-maritime
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, l'avion de surveillance maritime outre-mer Falcon 200 Gardian (en cours de retrait).
+    author: prepapilote
+sources:
+  - title: "Falcon 200 - Gardian — Ministère des Armées (Marine nationale, aéronautique navale)"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/falcon-200-gardian
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Le Falcon 200 Gardian tire sa révérence en Polynésie française — Ministère des Armées"
+    url: https://www.defense.gouv.fr/marine/actualites/falcon-200-gardian-tire-sa-reverence-polynesie-francaise
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Le retrait du service des Falcon 200 Gardian basés à Tahiti et Nouméa a débuté — Mer et Marine"
+    url: https://www.meretmarine.com/fr/defense/le-retrait-du-service-des-falcon-200-gardian-bases-a-tahiti-et-noumea-a-debute
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopan.appareils.falcon-50m
+    - eopan.appareils.falcon-2000-albatros
+    - eopan.organisation.aeronautique-navale
+    - eopan.presentation.le-concours-eopan
+specs:
+  crew: "6 (pilote, mécanicien de bord, radio, deux navigateurs-radaristes, un équipier)"
+  length: "17,15 m"
+  wingspan: "16,30 m"
+  height: "5,60 m"
+  emptyWeight: "10 500 kg (min.) — 15 200 kg (max.)"
+  powerplant: "2 turboréacteurs Garrett ATF 3-6 (2 × 5 440 lb de poussée)"
+  maxSpeed: "Mach 0,86 (555 kt)"
+  ceiling: "42 000 ft"
+  range: "2 000 NM (autonomie ≈ 5 h 30)"
+  armament: "Non armé — surveillance et secours (chaîne SAR larguée par trappe de plancher)"
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de surveillance maritime (outre-mer)
+  armees: [Marine nationale]
+  miseEnService: 1984
+  statut: En cours de retrait (relève par le Falcon 50M Triton)
+  equipage: 6 membres
+  vitesseMax: Mach 0,86 (555 kt)
+  plafond: 42 000 ft
+  rayonDAction: 2 000 NM (~5 h 30 d'autonomie)
+content:
+  essentiel:
+    body: |
+      Le **Falcon 200 Gardian** est un avion de **surveillance maritime** de
+      l'aéronautique navale, historiquement déployé **outre-mer**, dans le
+      **Pacifique** (Polynésie française, Nouvelle-Calédonie). C'est un
+      **biréacteur** — deux réacteurs — dérivé de la famille **Falcon 20/200**,
+      des avions d'affaires de Dassault.
+
+      Livré à partir de **1984** (cinq exemplaires), il a assuré pendant quatre
+      décennies la **surveillance** des vastes espaces maritimes ultramarins :
+      police des pêches, lutte contre les trafics, contrôle des approches, et
+      **alerte SAR** (sauvetage) grâce à une chaîne de largage de matériel de
+      secours. Son **radar** détecte les navires de surface à 120–140 nautiques,
+      et deux grands **hublots** servent à l'observation.
+
+      Le Falcon 200 Gardian est aujourd'hui **en cours de retrait** : il cède la
+      place au **Falcon 50M Triton** (relève transitoire), en attendant la
+      plateforme neuve, le **Falcon 2000 Albatros**.
+    aRetenir:
+      - Le Falcon 200 Gardian est l'avion de surveillance maritime de la Marine basé outre-mer (Pacifique).
+      - C'est un biréacteur dérivé du Falcon 20/200 d'affaires, livré à partir de 1984 (5 exemplaires).
+      - Sa mission est la surveillance et le secours en mer, pas la patrouille maritime armée.
+      - Il est en cours de retrait, remplacé par le Falcon 50M Triton puis le Falcon 2000 Albatros.
+  sections:
+    - id: la-surveillance-maritime-outre-mer
+      title: La surveillance maritime outre-mer
+      body: |
+        La France exerce sa souveraineté sur d'immenses espaces maritimes dans
+        le **Pacifique**. Depuis la **Polynésie française** et la
+        **Nouvelle-Calédonie**, le Falcon 200 Gardian a longtemps été l'avion
+        qui **surveille** ces zones : repérer les navires, contrôler la
+        **pêche**, traquer les **trafics**, et assurer l'**alerte SAR** (Search
+        And Rescue) sur toute la surface couverte.
+
+        Pour cela il emporte un **radar** à compression d'impulsions (détection
+        à 120–140 nautiques), deux grands **hublots d'observation** et une
+        **chaîne de largage** ouvrant par une trappe de plancher, pour
+        délivrer canots et matériel de survie à des naufragés. C'est un avion de
+        **service public** en mer, comme le Falcon 50M — pas un avion de combat.
+    - id: un-bireacteur-de-la-famille-falcon
+      title: Un biréacteur de la famille Falcon
+      body: |
+        Le Gardian dérive de la famille **Falcon 20/200**, des avions
+        d'affaires de Dassault, adaptés à la surveillance. C'est un
+        **biréacteur** (deux moteurs Garrett), ce qui le distingue nettement du
+        **Falcon 50M**, qui est un **triréacteur** (trois moteurs).
+
+        Son équipage de **six** — pilote, mécanicien de bord, radio et
+        navigateurs-radaristes — arme les postes de mission pendant les longues
+        veilles au-dessus de l'océan. Livré dans les **années 1980**, l'appareil
+        a rendu quarante ans de service avant d'être relevé.
+    - id: le-retrait-et-la-releve
+      title: Le retrait et la relève (à savoir)
+      strate: maitriser
+      body: |
+        Le retrait du Falcon 200 Gardian est **engagé**. En **Polynésie**, il a
+        été relevé par le **Falcon 50M Triton** (version modernisée du Falcon
+        50M). Les derniers exemplaires, basés à **Nouméa** (Nouvelle-Calédonie),
+        doivent quitter le service dans les années suivantes.
+
+        Cette relève est une étape **intermédiaire** : à terme, la surveillance
+        maritime — métropole comme outre-mer — reposera sur le **Falcon 2000
+        Albatros** du programme **AVSIMAR**. Le Triton fait le **pont** entre
+        l'ancien Gardian et le futur Albatros.
+  pieges:
+    - Le Falcon 200 Gardian est un biréacteur (deux moteurs) ; le Falcon 50M est un triréacteur (trois moteurs) — ne pas les confondre.
+    - Son nom officiel est « Gardian » (orthographe Dassault), pas « Guardian ».
+    - Il est en cours de retrait — sa relève immédiate est le Falcon 50M Triton, avant le Falcon 2000 Albatros.

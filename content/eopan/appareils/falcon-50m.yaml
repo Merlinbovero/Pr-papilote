@@ -1,0 +1,151 @@
+schemaVersion: 1
+id: eopan.appareils.falcon-50m
+type: appareil
+title: Falcon 50M (Surmar)
+slug: falcon-50m
+service:
+  status: actif
+  operator: Marine nationale
+summary: >-
+  Avion de surveillance maritime et de secours en mer de l'aéronautique navale
+  (Surmar). Triréacteur dérivé du Falcon 50 d'affaires, il surveille les espaces
+  maritimes et largue du matériel de secours ; il sera remplacé par le Falcon
+  2000 Albatros.
+objectifs:
+  - Identifier le Falcon 50M comme l'avion de surveillance maritime et de secours en mer (Surmar) de la Marine, dérivé du Falcon 50 de Dassault.
+  - Distinguer sa mission de service public — surveillance, police des pêches, lutte contre les trafics et la pollution, sauvetage (SAR) — de la patrouille maritime armée de l'Atlantique 2.
+  - Situer sa flotte — flottille 24F à Lann-Bihoué et flottille 25F à Tahiti (version Triton) — et sa relève prochaine par le Falcon 2000 Albatros.
+aliases:
+  [Falcon 50, Falcon 50 Marine, Falcon 50M, Surmar, Falcon 50 Triton, Triton, surveillance maritime]
+module: eopan
+category: appareils
+subcategory: surveillance-maritime
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, l'avion de surveillance maritime Falcon 50M (Surmar) de l'aéronautique navale.
+    author: prepapilote
+sources:
+  - title: "Falcon 50 — Ministère des Armées (Marine nationale, aéronautique navale)"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/falcon-50
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Méditerranée — Police des pêches : un Falcon 50 de la Marine surveille la pêche au thon rouge — Ministère des Armées"
+    url: https://www.defense.gouv.fr/marine/actualites/mediterranee-police-peches-falcon-50-marine-nationale-surveille-peche-au-thon-rouge
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "L'avion de surveillance maritime « Triton » s'apprête à prendre la relève du Falcon 200 Gardian en Polynésie — Zone Militaire (opex360)"
+    url: https://www.opex360.com/2025/04/04/lavion-de-surveillance-maritime-triton-sapprete-a-prendre-la-releve-du-falcon-200-gardian-en-polynesie/
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopan.appareils.falcon-2000-albatros
+    - eopan.appareils.atlantique-2
+    - eopan.organisation.aeronautique-navale
+    - eopan.presentation.le-concours-eopan
+specs:
+  crew: "2 pilotes + 3 opérateurs"
+  length: "18,8 m"
+  wingspan: "18,9 m"
+  emptyWeight: "9,15 t (masse à vide)"
+  powerplant: "3 turboréacteurs Honeywell TFE 731-3D-1C"
+  maxSpeed: "370 kt (~685 km/h)"
+  ceiling: "45 000 ft"
+  range: "2 700 NM (autonomie ≈ 6 h 30)"
+  armament: "Non armé — surveillance et secours (jusqu'à 9 chaînes SAR larguées par trappe ventrale)"
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de surveillance maritime et de secours en mer (Surmar)
+  armees: [Marine nationale]
+  miseEnService: À partir de 1999 (version Surmar)
+  statut: En service (relève par le Falcon 2000 Albatros)
+  equipage: 2 pilotes + 3 opérateurs
+  vitesseMax: 370 kt (~685 km/h)
+  plafond: 45 000 ft
+  rayonDAction: 2 700 NM (~6 h 30 d'autonomie)
+content:
+  essentiel:
+    body: |
+      Le **Falcon 50M** (dit **Surmar**, pour « **sur**veillance **mar**itime »)
+      est un avion de **surveillance maritime et de secours en mer** de
+      l'aéronautique navale. C'est un **triréacteur** — trois réacteurs —
+      dérivé du **Falcon 50**, un avion d'affaires de Dassault militarisé pour
+      les besoins de la Marine.
+
+      Sa mission relève du **service public** en mer : **surveillance** des
+      approches et des espaces maritimes, **police des pêches**, lutte contre
+      les **trafics** et la **pollution**, et surtout **sauvetage** (SAR). Pour
+      cela il emporte un **radar** de surface (Ocean Master), une **optronique**
+      stabilisée (EUROFLIR 410), des **hublots d'observation** et une **chaîne
+      de largage** capable de délivrer jusqu'à **9 canots ou lots de secours**
+      par une trappe ventrale.
+
+      La flotte se répartit entre la **flottille 24F** à Lann-Bihoué et la
+      **flottille 25F** à Tahiti (version modernisée **Triton**). Le Falcon 50M
+      sera progressivement **remplacé par le Falcon 2000 Albatros**.
+    aRetenir:
+      - Le Falcon 50M (Surmar) est l'avion de surveillance maritime et de secours en mer de la Marine.
+      - C'est un triréacteur dérivé du Falcon 50 d'affaires de Dassault.
+      - Sa mission est le service public en mer (surveillance, pêches, trafics, pollution, sauvetage) — pas la lutte anti-sous-marine armée.
+      - Flottilles 24F (Lann-Bihoué) et 25F (Tahiti, version Triton) ; relève par le Falcon 2000 Albatros.
+  sections:
+    - id: un-avion-de-service-public-en-mer
+      title: Un avion de service public en mer
+      body: |
+        La France doit surveiller un **domaine maritime** immense, en
+        métropole comme outre-mer. Le Falcon 50M en est l'un des outils : il
+        décolle vite, couvre de grandes distances et **observe** ce qui se passe
+        en mer.
+
+        Ses missions sont dites de **service public** : **police des pêches**
+        (contrôle de la pêche, par exemple au thon rouge en Méditerranée),
+        lutte contre les **trafics** (stupéfiants) et les **pollutions**,
+        surveillance de la **navigation** et des **approches**. Il assure aussi
+        l'**alerte SAR** (Search And Rescue) : repérer des naufragés et leur
+        **larguer** canots et matériel de survie en attendant les secours de
+        surface ou l'hélicoptère.
+
+        C'est donc un avion de **surveillance et de sauvetage**, à distinguer de
+        l'**Atlantique 2**, qui est l'avion de **patrouille maritime armé**
+        (lutte anti-sous-marine et anti-navires).
+    - id: un-falcon-d-affaires-militarise
+      title: Un Falcon d'affaires militarisé
+      body: |
+        Le Falcon 50M reprend la cellule du **Falcon 50**, un **triréacteur**
+        d'affaires réputé pour sa fiabilité et son rayon d'action. Militariser
+        une cellule civile déjà éprouvée permet de disposer d'un avion **fiable**
+        et **économique** à mettre en œuvre.
+
+        La transformation consiste à installer le **système de mission** :
+        radar de veille de surface **Ocean Master**, **boule optronique**
+        (caméra jour/nuit et infrarouge stabilisée) **EUROFLIR 410** sur les
+        appareils modernisés, hublots d'observation et **système de largage**
+        SAR. Huit appareils ont servi la Marine : certains conçus d'emblée pour
+        le « Surmar », d'autres d'anciens **Falcon 50** de transport
+        gouvernemental transformés.
+    - id: la-version-triton-et-la-releve
+      title: La version Triton et la relève (à savoir)
+      strate: maitriser
+      body: |
+        Cinq Falcon 50M ont reçu une **optronique modernisée** (l'**EUROFLIR
+        410** de Safran remplaçant l'ancien pod FLIR Chlio) : c'est la version
+        **Triton**. Elle a été déployée **outre-mer**, à **Tahiti** (flottille
+        **25F**), pour prendre la relève des vieux **Falcon 200 Gardian**.
+
+        À terme, tous les Falcon 50M cèderont la place au **Falcon 2000
+        Albatros**, la plateforme neuve du programme **AVSIMAR**. La transition
+        s'étale sur plusieurs années : le Triton assure le **relais** en
+        attendant la montée en puissance de l'Albatros.
+  pieges:
+    - Le Falcon 50M fait de la surveillance et du secours — il ne remplace pas l'Atlantique 2, avion de patrouille maritime armé (lutte anti-sous-marine).
+    - « Triton » n'est pas un autre avion — c'est la version modernisée (optronique EUROFLIR 410) du Falcon 50M, déployée outre-mer.
+    - C'est un triréacteur (trois moteurs), à ne pas confondre avec le biréacteur Falcon 200 Gardian ni avec le futur Falcon 2000 Albatros.
