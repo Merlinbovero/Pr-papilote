@@ -4,6 +4,10 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ## [Non publié]
 
+### Modifié
+
+- 2026-07-18 — **DA-1 — fondation typographique « cinématique institutionnelle »** (1er incrément de la montée en gamme visuelle). Introduction d'une **police display**, **Archivo** (grotesque sobre, graisses fortes), branchée sur le token `--font-heading` : les titres `h1`/`h2` du site l'adoptent automatiquement (`@layer base`), le corps de texte reste en **Geist** pour la lisibilité. Aucune couleur ni structure touchée — juste l'identité des titres, plus affirmée. Doc `docs/design-system.md` mise à jour. Prochains incréments : hero cinématique de l'accueil, hubs concours (mosaïque d'appareils), pages internes.
+
 ### Ajouté
 
 - 2026-07-18 — **EOPAN — deux hélicoptères de l'aéronautique navale** (complément d'appareils manquants, à partir des fiches officielles de la Marine). **Panther (AS565)** : hélicoptère embarqué léger, version militaire du Dauphin, alerte et sûreté depuis les frégates (flottille 36F, Hyères). **Dauphin** : hélicoptère de secours en mer et de servitude — sauvetage, récupération de pilote depuis le porte-avions (« Pedro »), lutte contre les trafics (flottilles 34F Lanvéoc-Poulmic et 35F Hyères). Rôles, flottilles et caractéristiques repris des **pages officielles defense.gouv.fr** (+ Wikipédia pour l'implantation du Panther). Chaque fiche distingue clairement les deux appareils et leurs missions (à ne pas confondre avec le NH90 Caïman). `content:check` vert.

@@ -32,7 +32,7 @@ Tous les tokens vivent dans `src/app/globals.css` (`:root` clair, `.dark` sombre
 
 ### Typographie
 
-Polices : **Geist Sans** (`--font-sans`, interface et lecture) · **Geist Mono** (`--font-geist-mono` : chiffres, codes OACI, fréquences, immatriculations, formules).
+Polices : **Archivo** (`--font-display`, exposée par le token `--font-heading` — **titres** H1/H2, grands titres cinématiques) · **Geist Sans** (`--font-sans`, interface et lecture, corps de texte) · **Geist Mono** (`--font-geist-mono` : chiffres, codes OACI, fréquences, immatriculations, formules). Les `h1` et `h2` héritent automatiquement de la police display (`@layer base`) ; le corps reste en Geist pour la lisibilité. La police display porte l'identité « cinématique institutionnelle » — grotesque sobre à graisses fortes, jamais d'effet « gaming ».
 
 | Usage                      | Classe                                                                       | Règle                   |
 | -------------------------- | ---------------------------------------------------------------------------- | ----------------------- |
