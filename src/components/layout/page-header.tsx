@@ -81,18 +81,35 @@ export function PageHeader({
       <div
         className={cn(
           "flex flex-col justify-end space-y-2 px-6 pl-8 md:px-10 md:pl-12",
-          size === "hero" ? "min-h-[16rem] py-12 md:min-h-[22rem] md:py-16" : "py-10 md:py-14"
+          size === "hero" ? "min-h-[18rem] py-12 md:min-h-[26rem] md:py-16" : "py-10 md:py-14"
         )}
       >
         {eyebrow ? (
-          <p className="text-xs font-semibold tracking-[0.14em] text-white/90 uppercase">
+          <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-white/90 uppercase">
+            <span aria-hidden className="h-px w-8" style={{ backgroundColor: accentVar }} />
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="text-3xl font-bold tracking-tight text-white drop-shadow-sm md:text-4xl">
+        <h1
+          className={cn(
+            "font-heading tracking-tight text-balance text-white drop-shadow-sm",
+            size === "hero"
+              ? "text-4xl font-extrabold md:text-5xl lg:text-6xl"
+              : "text-3xl font-bold md:text-4xl"
+          )}
+        >
           {title}
         </h1>
-        {description ? <p className="max-w-prose text-white/85">{description}</p> : null}
+        {description ? (
+          <p
+            className={cn(
+              "max-w-prose text-white/85",
+              size === "hero" ? "text-base md:text-lg" : ""
+            )}
+          >
+            {description}
+          </p>
+        ) : null}
         {children ? <div className="flex flex-wrap gap-3 pt-2">{children}</div> : null}
       </div>
       <a
