@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ServiceWorkerRegistrar } from "@/components/layout/service-worker-registrar";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -69,6 +70,7 @@ export default function RootLayout({
           {children}
           <SiteFooter />
           <Toaster />
+          <ServiceWorkerRegistrar />
         </ThemeProvider>
       </body>
     </html>
