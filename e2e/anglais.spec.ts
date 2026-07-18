@@ -19,7 +19,10 @@ test("le hub anglais réunit fiches, vocabulaire et quiz", async ({ page }) => {
 
 test("le vocabulaire bilingue révèle la traduction au clic", async ({ page }) => {
   await page.goto("/anglais");
-  const firstCard = page.getByRole("button", { name: /Afficher la traduction/ }).first();
+  // Carte repérée par sa position (son libellé change après révélation).
+  const vocab = page.getByRole("region", { name: "Vocabulaire bilingue" });
+  const firstCard = vocab.locator("button[aria-expanded]").first();
+  await expect(firstCard).toHaveAttribute("aria-expanded", "false");
   await firstCard.click();
   await expect(firstCard).toHaveAttribute("aria-expanded", "true");
 });
