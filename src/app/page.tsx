@@ -80,15 +80,26 @@ export default function HomePage() {
     <main className="flex-1">
       <h1 className="sr-only">PrépaPilote — préparer les concours EOPAN, EOPN et ALAT</h1>
 
-      {/* Promesse illustrée : photo réelle créditée, recherche et deux actions */}
+      {/* Promesse illustrée : hero cinématique — photo réelle créditée plein cadre,
+          scrim pour le contraste AA, titre display ample, recherche et actions. */}
       <section className="relative isolate overflow-hidden">
         <Image src={hero.src} alt="" fill priority sizes="100vw" className="-z-10 object-cover" />
+        {/* Scrim : dégradé sombre (bas → haut) + voile latéral pour garantir le
+            contraste du texte blanc quelle que soit la photo. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/40 to-black/20"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/55 to-black/25"
         />
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-end gap-5 px-4 py-16 sm:px-6 md:min-h-[30rem] md:py-20 lg:px-8">
-          <p className="text-2xl font-bold tracking-tight text-white drop-shadow-sm md:max-w-2xl md:text-4xl">
+        <div
+          aria-hidden
+          className="from-background absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t to-transparent"
+        />
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-end gap-5 px-4 py-20 sm:px-6 md:min-h-[40rem] md:py-28 lg:min-h-[44rem] lg:px-8">
+          <p className="text-primary-foreground/90 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase">
+            <span aria-hidden className="bg-primary h-px w-8" />
+            Concours de pilote militaire
+          </p>
+          <p className="font-heading max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-white drop-shadow-sm md:text-6xl lg:text-7xl">
             Devenez pilote dans les forces armées françaises.
           </p>
           <p className="max-w-xl text-base text-white/90 md:text-lg">
