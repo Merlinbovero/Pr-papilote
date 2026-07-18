@@ -1,0 +1,151 @@
+schemaVersion: 1
+id: eopn.appareils.falcon-8x-archange
+type: appareil
+title: Falcon 8X Archange (CUGE)
+slug: falcon-8x-archange
+service:
+  status: essais
+  firstFlight: 2025
+  plannedEntryAt: 2026
+  operator: Armée de l'Air et de l'Espace
+summary: >-
+  Futur avion de renseignement électronique stratégique de l'armée de l'Air et
+  de l'Espace (programme Archange / CUGE). Dérivé du Falcon 8X de Dassault, il
+  remplace les Transall C-160 Gabriel de recueil de renseignement.
+objectifs:
+  - Identifier l'Archange comme le futur avion de renseignement électronique stratégique de l'armée de l'Air, dérivé du Falcon 8X de Dassault.
+  - Expliquer sa mission — le recueil de renseignement d'origine électromagnétique (ROEM) avec la charge utile CUGE de Thales.
+  - Situer le programme — 3 appareils remplaçant les C-160 Gabriel, à l'escadron électronique aéroporté 1/54 « Dunkerque » (BA 105 Évreux).
+aliases:
+  [Archange, Falcon 8X Archange, CUGE, renseignement électronique, ROEM, SIGINT, remplaçant Gabriel]
+module: eopn
+category: appareils
+subcategory: renseignement
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, le futur avion de renseignement électronique Falcon 8X Archange (programme CUGE).
+    author: prepapilote
+sources:
+  - title: "Le Falcon 8X Archange au service de l'armée de l'Air — Dassault Aviation (dossier de presse)"
+    url: https://www.dassault-aviation.com/en/group/press/press-kits/the-falcon-8x-archange-to-serve-the-french-air-force/
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Aéronef spécialisé de recueil de renseignement et de surveillance électronique (ARCHANGE) — Ministère des Armées (fiche LPM)"
+    url: https://www.defense.gouv.fr/sites/default/files/ministere-armees/Fiche%20LPM%20-%20A%C3%A9ronef%20sp%C3%A9cialis%C3%A9%20de%20recueil%20de%20renseignement%20et%20de%20surveillance%20%C3%A9lectronique%20(ARCHANGE).pdf
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Comment les Falcon 8X vont servir au programme Archange de l'armée de l'Air — L'Usine Nouvelle"
+    url: https://www.usinenouvelle.com/article/comment-les-falcon-8x-vont-servir-au-programme-archange-de-l-armee-de-l-air.N919499
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+  - title: "Dassault Falcon 8X (spécifications de la cellule) — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Dassault_Falcon_8X
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopn.presentation.le-concours-eopn
+specs:
+  crew: "2 pilotes + opérateurs de mission (cellule Falcon 8X)"
+  length: "24,46 m"
+  wingspan: "26,29 m"
+  height: "7,94 m"
+  maxTakeoffWeight: "33 113 kg"
+  powerplant: "3 turboréacteurs Pratt & Whitney Canada PW307D"
+  maxSpeed: "≈ Mach 0,90"
+  ceiling: "≈ 15 500 m (51 000 ft)"
+  range: "≈ 11 900 km (6 450 NM) — cellule Falcon 8X"
+  armament: "Non armé — renseignement électronique (charge utile CUGE de Thales)"
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de renseignement électronique stratégique
+  armees: [Armée de l'Air et de l'Espace]
+  miseEnService: Prévue à partir de 2025 (calendrier décalé)
+  statut: En essais / premières livraisons
+  equipage: 2 pilotes + opérateurs de mission
+  vitesseMax: Environ Mach 0,90
+  plafond: 51 000 ft
+  rayonDAction: Cellule à très long rayon d'action (~11 900 km)
+content:
+  essentiel:
+    body: |
+      L'**Archange** est le futur avion de **renseignement électronique**
+      stratégique de l'**armée de l'Air et de l'Espace**. Il est issu du
+      programme **CUGE** (Capacité Universelle de Guerre Électronique) et
+      dérivé du **Falcon 8X** de Dassault — un triréacteur d'affaires à très
+      long rayon d'action.
+
+      Sa mission est le **recueil de renseignement d'origine électromagnétique**
+      (**ROEM**, en anglais SIGINT) : depuis la haute altitude et une longue
+      distance, il **écoute** et **localise** les émissions
+      (radars, radios, communications) pour dresser la situation électronique
+      d'une zone. Le cœur du système est la **charge utile CUGE de Thales**,
+      logée notamment dans un **carénage ventral**.
+
+      Trois appareils sont prévus pour succéder aux deux **Transall C-160
+      Gabriel**, retirés en 2022. Ils équipent l'**escadron électronique
+      aéroporté 1/54 « Dunkerque »**, sur la **base aérienne 105 d'Évreux**. Le
+      premier appareil a **volé en 2025** ; les livraisons s'échelonnent
+      ensuite, avec un calendrier décalé.
+    aRetenir:
+      - L'Archange est le futur avion de renseignement électronique stratégique de l'armée de l'Air et de l'Espace.
+      - Il est dérivé du Falcon 8X (triréacteur d'affaires) et porte la charge utile CUGE de Thales.
+      - Sa mission est le ROEM (renseignement électromagnétique / SIGINT) — écouter et localiser les émissions.
+      - 3 appareils remplacent les C-160 Gabriel, à l'escadron 1/54 « Dunkerque » (BA 105 Évreux) ; premier vol en 2025.
+  sections:
+    - id: le-renseignement-electromagnetique
+      title: Le renseignement électromagnétique (ROEM)
+      body: |
+        Tout ce qui émet — un **radar**, une **radio**, un réseau de
+        communication — laisse une **signature électromagnétique**. Le
+        **renseignement d'origine électromagnétique** (ROEM) consiste à
+        **capter** ces signaux, à les **analyser** et à en **localiser** la
+        source, pour comprendre le dispositif adverse sans jamais s'en
+        approcher physiquement.
+
+        L'Archange fait ce travail depuis la **haute altitude** et une **grande
+        distance**, en restant longtemps en vol grâce au rayon d'action de la
+        cellule Falcon 8X. C'est une mission **stratégique** : elle nourrit la
+        décision au plus haut niveau, en complément des satellites et des autres
+        capteurs.
+    - id: la-charge-utile-cuge
+      title: La charge utile CUGE (Thales)
+      body: |
+        Ce qui fait de l'Archange un avion de renseignement, ce n'est pas la
+        cellule (un avion d'affaires de série) mais le **système de mission**.
+        La **CUGE** (Capacité Universelle de Guerre Électronique), développée
+        par **Thales**, regroupe les **capteurs** d'interception et de
+        localisation, les **antennes** (dont un **carénage ventral**
+        caractéristique) et les **consoles** où travaillent les opérateurs.
+
+        « Universelle » signifie que le système est conçu pour couvrir un large
+        **spectre** d'émissions et évoluer dans le temps. Militariser un Falcon
+        déjà produit permet de concentrer l'effort sur cette charge utile,
+        cœur de la capacité.
+    - id: successeur-du-gabriel
+      title: Le successeur du Gabriel — à ne pas confondre avec la Marine
+      strate: maitriser
+      body: |
+        L'Archange remplace les deux **Transall C-160 Gabriel**, avions de
+        renseignement électronique retirés du service en **2022**. Il est mis en
+        œuvre par l'**escadron électronique aéroporté 1/54 « Dunkerque »**, sur
+        la **base aérienne 105 d'Évreux**.
+
+        Attention à une confusion fréquente en sélection : le **Falcon 8X
+        Archange** appartient à l'**armée de l'Air et de l'Espace** et fait du
+        **renseignement**. Il ne faut pas le confondre avec le **Falcon 2000
+        Albatros** de la **Marine nationale**, qui fait de la **surveillance
+        maritime**. Deux Falcon, deux armées, deux missions différentes.
+  pieges:
+    - L'Archange est un avion de l'armée de l'Air et de l'Espace, pas de la Marine — ne pas le confondre avec le Falcon 2000 Albatros (surveillance maritime).
+    - Il n'est pas armé — sa « puissance » est la charge utile CUGE de renseignement électronique, pas des missiles.
+    - C'est un Falcon 8X (triréacteur) ; il remplace les C-160 Gabriel, pas un avion de combat.

@@ -1,0 +1,160 @@
+schemaVersion: 1
+id: eopan.appareils.falcon-2000-albatros
+type: appareil
+title: Falcon 2000 Albatros (AVSIMAR)
+slug: falcon-2000-albatros
+service:
+  status: essais
+  firstFlight: 2025
+  plannedEntryAt: 2025
+  operator: Marine nationale
+summary: >-
+  Futur avion de surveillance et d'intervention maritime de l'aéronautique
+  navale (programme AVSIMAR). Dérivé du Falcon 2000LXS, il doit remplacer les
+  Falcon 50M et Falcon 200 Guardian pour la surveillance des espaces maritimes.
+objectifs:
+  - Identifier l'Albatros comme le futur avion de surveillance et d'intervention maritime (AVSIMAR) de la Marine, dérivé du Falcon 2000LXS de Dassault.
+  - Distinguer sa mission — la surveillance maritime (sauvegarde, lutte contre les trafics, secours) — de la patrouille maritime armée de l'Atlantique 2.
+  - Situer le programme — 12 appareils commandés pour succéder aux Falcon 50M (flottille 24F) et Falcon 200 Guardian (flottille 25F).
+aliases:
+  [Albatros, Falcon Albatros, Falcon 2000 Albatros, AVSIMAR, Falcon 2000 LXS, surveillance maritime]
+module: eopan
+category: appareils
+subcategory: surveillance-maritime
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, le futur avion de surveillance maritime Falcon 2000 Albatros (programme AVSIMAR).
+    author: prepapilote
+sources:
+  - title: "Le Falcon 2000 Albatros au service de la Marine nationale — Dassault Aviation (dossier de presse)"
+    url: https://www.dassault-aviation.com/en/group/press/press-kits/falcon-2000-albatros-for-the-french-navy/
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Dassault a débuté les essais en vol du premier avion de surveillance maritime Albatros — Mer et Marine"
+    url: https://www.meretmarine.com/fr/defense/marine-nationale-dassault-a-debute-les-essais-en-vol-du-premier-avion-de-surveillance-maritime
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+  - title: "Premier vol du futur avion de surveillance maritime « Falcon Albatros » (2025) — Zone Militaire (opex360)"
+    url: https://www.opex360.com/2025/03/05/dassault-aviation-confirme-le-succes-du-premier-vol-du-futur-avion-de-surveillance-maritime-falcon-albatros/
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+  - title: "Dassault Falcon 2000 (spécifications de la cellule Falcon 2000LXS) — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Dassault_Falcon_2000
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopan.appareils.atlantique-2
+    - eopan.organisation.aeronautique-navale
+    - eopan.presentation.le-concours-eopan
+specs:
+  crew: "2 pilotes + opérateurs de mission (cellule Falcon 2000LXS)"
+  length: "20,23 m"
+  wingspan: "21,38 m"
+  height: "7,11 m"
+  maxTakeoffWeight: "19 414 kg"
+  powerplant: "2 turboréacteurs Pratt & Whitney Canada PW308C"
+  maxSpeed: "≈ Mach 0,86 (~1 050 km/h)"
+  ceiling: "≈ 14 300 m (47 000 ft)"
+  range: "≈ 7 400 km (4 000 NM) — cellule Falcon 2000LXS"
+  armament: "Non armé — surveillance et intervention (kit de largage SAR)"
+infobox:
+  constructeur: Dassault Aviation
+  role: Avion de surveillance et d'intervention maritime
+  armees: [Marine nationale]
+  miseEnService: Prévue à partir de 2025
+  statut: En essais / premières livraisons
+  equipage: 2 pilotes + opérateurs de mission
+  vitesseMax: Environ Mach 0,86
+  plafond: 47 000 ft
+  rayonDAction: Cellule à long rayon d'action (~7 400 km)
+content:
+  essentiel:
+    body: |
+      Le **Falcon 2000 Albatros** est le futur avion de **surveillance et
+      d'intervention maritime** de l'aéronautique navale. Il est issu du
+      programme **AVSIMAR** (Avion de Surveillance et d'Intervention MARitime)
+      et dérivé d'un avion d'affaires de Dassault, le **Falcon 2000LXS**.
+
+      Sa mission n'est pas de combattre les sous-marins comme l'Atlantique 2,
+      mais de **surveiller** les vastes espaces maritimes français : lutte
+      contre les **trafics** et la **pollution**, **police des pêches**,
+      surveillance des approches et **sauvetage** en mer (SAR). Pour cela il
+      emporte un **radar** multifonction sous le fuselage, une **boule
+      optronique** performante, des hublots d'observation et une **chaîne de
+      largage** de matériel de secours.
+
+      Le programme prévoit **12 appareils** (7 fermes + 5 en option) pour
+      remplacer progressivement les **Falcon 50M** (flottille 24F, Lann-Bihoué)
+      et les **Falcon 200 Guardian** (flottille 25F, outre-mer). Le premier
+      appareil a effectué son **premier vol en 2025** ; les livraisons
+      s'étalent ensuite sur plusieurs années.
+    aRetenir:
+      - Le Falcon 2000 Albatros est le futur avion de surveillance et d'intervention maritime (AVSIMAR) de la Marine.
+      - Il est dérivé du Falcon 2000LXS de Dassault — un biréacteur d'affaires militarisé.
+      - Sa mission est la surveillance (trafics, pollution, pêches, secours), pas la lutte anti-sous-marine armée.
+      - 12 appareils prévus pour succéder aux Falcon 50M (24F) et Falcon 200 Guardian (25F) ; premier vol en 2025.
+  sections:
+    - id: surveillance-et-intervention-maritime
+      title: La surveillance et l'intervention maritime
+      body: |
+        La France possède l'un des plus vastes **domaines maritimes** du monde.
+        Le surveiller suppose des avions capables de couvrir de grandes
+        distances pour **observer** ce qui se passe en mer : navires suspects,
+        pollutions, pêche illégale, embarcations en détresse.
+
+        C'est le rôle de l'**Albatros**. Grâce à son **radar** et à sa **boule
+        optronique** (caméra jour/nuit et infrarouge stabilisée), il détecte et
+        **identifie** les bâtiments de surface. Ses **hublots d'observation**
+        permettent le travail visuel des opérateurs, et sa **chaîne de largage
+        SAR** lui donne un rôle direct dans le **sauvetage** : larguer canots
+        et matériel de survie à des naufragés.
+
+        C'est donc un avion de **surveillance et d'intervention**, au service de
+        la **sauvegarde maritime** (missions dites de « service public »), et
+        non un avion de combat.
+    - id: derive-d-un-falcon-d-affaires
+      title: Un avion d'affaires militarisé
+      body: |
+        L'Albatros reprend la cellule éprouvée du **Falcon 2000LXS**, un
+        **biréacteur** d'affaires de Dassault : deux réacteurs, long rayon
+        d'action, cabine spacieuse. Militariser un avion civil déjà produit
+        permet de disposer plus vite d'une plateforme **fiable** et
+        **économique** à mettre en œuvre.
+
+        La transformation consiste surtout à installer le **système de
+        mission** : radar ventral, optronique, consoles opérateurs,
+        communications dédiées et système de largage. La première cellule est
+        assemblée en France ; la conversion en configuration Albatros y est
+        réalisée. C'est la même logique que la gamme **Falcon** multi-missions
+        de Dassault, déjà retenue pour d'autres besoins des armées.
+    - id: pourquoi-pas-le-falcon-10x
+      title: Pourquoi pas le Falcon 10X ? (à savoir)
+      strate: maitriser
+      body: |
+        On lit parfois que la Marine se dote d'un « Falcon 8X » ou d'un
+        « Falcon 10X ». C'est une **confusion** à éviter en sélection.
+
+        En 2021, Dassault avait **proposé** un patrouilleur maritime dérivé du
+        futur **Falcon 10X** ; cette piste **n'a pas été retenue** pour
+        l'AVSIMAR. Le besoin de **surveillance** de la Marine est couvert par le
+        **Falcon 2000 Albatros**. Quant au **Falcon 8X**, c'est l'appareil du
+        programme **Archange** de l'**armée de l'Air et de l'Espace** (avion de
+        **renseignement électronique**) — pas un avion de la Marine.
+
+        À retenir : côté Marine, l'avion neuf, c'est l'**Albatros (Falcon
+        2000)**. Le 10X n'a été qu'une proposition ; le 8X sert une autre armée
+        pour une autre mission.
+  pieges:
+    - L'Albatros fait de la surveillance maritime — il ne remplace pas l'Atlantique 2, qui reste l'avion de patrouille maritime armé (lutte anti-sous-marine).
+    - Ce n'est pas un « Falcon 8X » (celui-ci, c'est l'Archange de l'armée de l'Air) ni un « Falcon 10X » (proposition non retenue) — c'est un Falcon 2000LXS.
+    - Il succède aux Falcon 50M (flottille 24F) et Falcon 200 Guardian (flottille 25F), pas à l'Atlantique 2.
