@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpenTextIcon, MessagesSquareIcon } from "lucide-react";
+import { BookOpenTextIcon, MessagesSquareIcon, RadioTowerIcon } from "lucide-react";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { PoolQuiz } from "@/features/quiz/pool-quiz";
 import { BilingualVocab, type BilingualEntry } from "@/features/anglais/bilingual-vocab";
+import { PhoneticTrainer } from "@/features/anglais/phonetic-trainer";
 import { buildEnglishPool } from "@/features/quiz/notion-pool";
 import { getFichesByCategory, getFicheHref, getTermes } from "@/lib/content/fiches";
 
@@ -97,6 +98,24 @@ export default function AnglaisPage() {
           </p>
         </div>
         <BilingualVocab entries={vocab} />
+      </section>
+
+      {/* Alphabet OACI : référence + entraînement + épeleur */}
+      <section aria-labelledby="alphabet-titre" className="space-y-4">
+        <div className="space-y-1">
+          <h2
+            id="alphabet-titre"
+            className="flex items-center gap-2 text-2xl font-semibold tracking-tight"
+          >
+            <RadioTowerIcon aria-hidden className="text-primary size-5" />
+            L&apos;alphabet aéronautique (OACI)
+          </h2>
+          <p className="text-muted-foreground max-w-prose text-sm">
+            Alfa, Bravo, Charlie… l&apos;épellation radio est incontournable à l&apos;oral. Épelez
+            un mot, entraînez-vous en cartes-éclair et gardez la table sous la main.
+          </p>
+        </div>
+        <PhoneticTrainer />
       </section>
 
       {/* Quiz d'anglais */}

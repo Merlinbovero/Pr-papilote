@@ -27,6 +27,16 @@ test("le vocabulaire bilingue révèle la traduction au clic", async ({ page }) 
   await expect(firstCard).toHaveAttribute("aria-expanded", "true");
 });
 
+test("l'épeleur de l'alphabet OACI transcrit un mot", async ({ page }) => {
+  await page.goto("/anglais");
+  const speller = page.getByRole("region", { name: "Épeler un mot" });
+  await page.getByLabel("Mot à épeler").fill("RAF");
+  // R A F → Romeo Alfa Foxtrot
+  await expect(speller.getByText("Romeo")).toBeVisible();
+  await expect(speller.getByText("Alfa")).toBeVisible();
+  await expect(speller.getByText("Foxtrot")).toBeVisible();
+});
+
 test("le quiz d'anglais se lance", async ({ page }) => {
   await page.goto("/anglais");
   await page.getByRole("radio", { name: "10 questions" }).click();
