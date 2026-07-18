@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 import {
   BookOpenIcon,
   GraduationCapIcon,
+  LanguagesIcon,
   MapIcon,
   MenuIcon,
+  RepeatIcon,
   TimerIcon,
   type LucideIcon,
 } from "lucide-react";
@@ -69,6 +71,18 @@ const CONCOURS: NavEntry[] = [
 
 const ENTRAINEMENT: NavEntry[] = [
   { href: "/bia", label: "BIA", description: "Cours et examen blanc", icon: GraduationCapIcon },
+  {
+    href: "/anglais",
+    label: "Anglais",
+    description: "Vocabulaire, textes et quiz",
+    icon: LanguagesIcon,
+  },
+  {
+    href: "/reviser",
+    label: "Réviser",
+    description: "Révision espacée",
+    icon: RepeatIcon,
+  },
   {
     href: "/psychotechnique/entrainement",
     label: "Psychotechnique",

@@ -30,6 +30,7 @@ const keyPages: { name: string; path: string }[] = [
   { name: "examen blanc BIA", path: "/bia/examen-blanc" },
   { name: "entraînement concours (EOPAN)", path: "/entrainement/eopan" },
   { name: "révision espacée", path: "/reviser" },
+  { name: "anglais aéronautique", path: "/anglais" },
   { name: "entraînement psychotechnique", path: "/psychotechnique/entrainement" },
   { name: "carte des bases aériennes", path: "/cartes/armee-de-l-air" },
   { name: "mentions légales", path: "/mentions-legales" },

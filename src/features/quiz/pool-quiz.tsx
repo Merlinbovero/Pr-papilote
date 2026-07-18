@@ -8,20 +8,22 @@ import { cn } from "@/lib/utils";
 import { QuizPlayer, type PlayerQuestion } from "./quiz-player";
 
 /**
- * Entraînement libre d'un concours : l'utilisateur choisit une longueur de
- * série, le vivier est récupéré à la demande (JSON statique) puis un tirage
- * aléatoire alimente le lecteur de quiz. Ce n'est pas un examen officiel — c'est
- * de la révision active sur la banque de questions du concours. Rien n'est
+ * Lanceur de quiz sur un vivier servi à la demande : l'utilisateur choisit une
+ * longueur de série, le vivier est récupéré en JSON statique puis un tirage
+ * aléatoire alimente le lecteur de quiz. Générique — réutilisé pour
+ * l'entraînement par concours comme pour l'anglais aéronautique. Rien n'est
  * enregistré sans compte (le lecteur l'indique).
  */
 
-interface ConcoursTrainingProps {
-  /** Libellé lisible du concours (« EOPAN — Marine nationale »…). */
+interface PoolQuizProps {
+  /** Libellé du vivier (« EOPAN — Marine nationale », « Anglais aéronautique »…). */
   label: string;
   /** URL du vivier statique servi à la demande. */
   poolUrl: string;
   /** Nombre total de questions disponibles (pour borner les longueurs). */
   totalAvailable: number;
+  /** Phrase d'introduction (contextualise le vivier). */
+  blurb?: React.ReactNode;
 }
 
 type Phase = "config" | "loading" | "error" | "playing";
@@ -38,7 +40,7 @@ function shuffled<T>(source: readonly T[]): T[] {
   return copy;
 }
 
-export function ConcoursTraining({ label, poolUrl, totalAvailable }: ConcoursTrainingProps) {
+export function PoolQuiz({ label, poolUrl, totalAvailable, blurb }: PoolQuizProps) {
   const options = LENGTHS.filter((n) => n <= totalAvailable);
   const [count, setCount] = React.useState<number>(options[0] ?? Math.min(10, totalAvailable));
   const [phase, setPhase] = React.useState<Phase>("config");
@@ -95,21 +97,22 @@ export function ConcoursTraining({ label, poolUrl, totalAvailable }: ConcoursTra
             </Button>
           </div>
         </div>
-        <QuizPlayer key={drawId} title={`Entraînement ${label}`} questions={draw} />
+        <QuizPlayer key={drawId} title={label} questions={draw} />
       </div>
     );
   }
 
   return (
-    <section
-      aria-label={`Entraînement ${label}`}
-      className="bg-card space-y-5 rounded-xl border p-6"
-    >
+    <section aria-label={`Quiz ${label}`} className="bg-card space-y-5 rounded-xl border p-6">
       <div className="space-y-1">
-        <h2 className="text-xl font-semibold tracking-tight">S&apos;entraîner</h2>
+        <h2 className="text-xl font-semibold tracking-tight">Quiz</h2>
         <p className="text-muted-foreground text-sm">
-          Une série de questions tirées au hasard dans la banque du concours ({totalAvailable}{" "}
-          disponibles), avec correction détaillée. Entraînement libre — pas un examen officiel.
+          {blurb ?? (
+            <>
+              Une série de questions tirées au hasard ({totalAvailable} disponibles), avec
+              correction détaillée.
+            </>
+          )}
         </p>
       </div>
 
