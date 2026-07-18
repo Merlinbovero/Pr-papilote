@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: alat.appareils.puma
+type: helicoptere
+title: Puma (SA330)
+slug: puma
+service:
+  status: en-retrait
+  introducedAt: 1969
+  operator: Aviation légère de l'armée de Terre
+summary: >-
+  Hélicoptère de manœuvre emblématique de l'ALAT depuis 1969 — le pilier
+  historique de l'héliportage tactique. Biturbine robuste, il est aujourd'hui
+  en fin de service, relevé par le NH90 Caïman et le Caracal.
+objectifs:
+  - Identifier le Puma (SA330) comme l'hélicoptère de manœuvre historique de l'ALAT, pilier de l'héliportage tactique depuis 1969.
+  - Situer sa place dans la famille — tête de la lignée Puma → Super Puma → Cougar → Caracal.
+  - Comprendre son retrait progressif (2025-2030) au profit du NH90 Caïman et du Caracal.
+aliases: [Puma, SA330, SA330B, SA330Ba, hélicoptère de manœuvre, héliportage]
+module: alat
+category: appareils
+subcategory: helicopteres-de-manoeuvre
+tags: []
+concours: [alat]
+level: 3
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche Puma (SA330), hélicoptère de manœuvre historique de l'ALAT en cours de retrait ; sources officielles Armée de Terre et Wikipédia recoupées (motorisation Turmo III C4 confirmée).
+    author: prepapilote
+sources:
+  - title: "Puma SA-330 — Portail de l'armée de Terre (fiches aéronefs)"
+    url: https://www.terre.defense.gouv.fr/aerotorshow/nos-fiches-aeronefs/puma-sa-330
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Présentation de l'hélicoptère SA330 Ba Puma — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/aeronefs-alat-helicopteres-sa330-ba-puma-presentation.html
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+  - title: "Sud-Aviation SA330 Puma — Wikipédia (versions SA330B/Ba, motorisation Turmo III C4)"
+    url: https://fr.wikipedia.org/wiki/Sud-Aviation_SA330_Puma
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.appareils.cougar
+    - alat.appareils.nh90-caiman-tth
+    - alat.appareils.caracal
+    - alat.histoire.histoire-de-l-alat
+specs:
+  crew: "2 (+ jusqu'à 16 soldats)"
+  length: "18,15 m"
+  rotorDiameter: "15,09 m"
+  height: "5,14 m"
+  maxTakeoffWeight: "9 000 kg"
+  powerplant: "2 turbines Turbomeca Turmo III C4 (~1 330 ch chacune)"
+  maxSpeed: "≈ 278 km/h"
+  ceiling: "4 575 m"
+  range: "≈ 500 km"
+  armament: "Selon versions — mitrailleuses, paniers de roquettes"
+infobox:
+  constructeur: Sud-Aviation, puis Aérospatiale
+  role: Hélicoptère de manœuvre (transport tactique)
+  armees: [Armée de terre]
+  miseEnService: 1969
+  statut: En cours de retrait (relève par le NH90 Caïman et le Caracal)
+  equipage: 2 pilotes (+ mécanicien de bord)
+  capaciteEmport: Jusqu'à 16 soldats
+content:
+  essentiel:
+    body: |
+      Le **Puma** (SA330) est l'hélicoptère de **manœuvre** historique de
+      l'ALAT — le **pilier de l'héliportage tactique** depuis un
+      demi-siècle. Conçu par **Sud-Aviation** dans les années 1960 pour offrir
+      à l'armée de Terre un **biturbine** puissant et endurant, il a été livré
+      à **118 exemplaires** (SA330B) entre **1969 et 1987**.
+
+      C'est un appareil de **transport** : jusqu'à **16 soldats**, du fret, des
+      blessés en évacuation sanitaire, des liaisons. Robuste et polyvalent, il a
+      été de tous les engagements de l'armée française pendant des décennies.
+
+      Le Puma est aujourd'hui en **fin de service** : trop coûteux à entretenir
+      et de moins en moins disponible, il est **progressivement retiré**
+      (échéance 2025-2030) et remplacé par le **NH90 Caïman** et le **Caracal**.
+      Il ouvre la lignée **Puma → Super Puma → Cougar → Caracal**.
+    aRetenir:
+      - Puma (SA330) — hélicoptère de manœuvre historique de l'ALAT, en service depuis 1969.
+      - 118 exemplaires (SA330B) livrés entre 1969 et 1987 ; jusqu'à 16 soldats transportés.
+      - Tête de la lignée Puma → Super Puma → Cougar → Caracal.
+      - En cours de retrait (2025-2030), relevé par le NH90 Caïman et le Caracal.
+  sections:
+    - id: le-pilier-de-l-heliportage
+      title: Le pilier de l'héliportage
+      body: |
+        Au début des années 1960, l'armée de Terre cherche un hélicoptère de
+        **transport tactique** plus puissant que ses appareils à moteur à
+        pistons, capable de déplacer un groupe de combat par tous les temps et
+        assez compact pour être transporté par un **Transall C-160**.
+        Sud-Aviation répond avec le **SA330 Puma**, un **biturbine** moderne.
+
+        Livré dès **1969**, le Puma devient le **cheval de bataille** de
+        l'héliportage : transport de troupes, ravitaillement, évacuation
+        sanitaire, recherche et sauvetage. Sa **robustesse** et sa
+        **polyvalence** en font l'un des symboles de l'ALAT, engagé sur presque
+        tous les théâtres où l'armée française a opéré.
+    - id: fin-de-service-et-releve
+      title: Fin de service et relève (à savoir)
+      strate: maitriser
+      body: |
+        Après un demi-siècle de service, le Puma **vieillit** : sa maintenance
+        devient coûteuse et sa **disponibilité** baisse. L'ALAT le **retire**
+        donc progressivement, sur la période **2025-2030**.
+
+        Sa relève est assurée par deux appareils plus modernes : le **NH90
+        Caïman** (transport tactique) et le **Caracal** (manœuvre des forces
+        spéciales) — tous deux déjà en service. Le Puma reste néanmoins la
+        **tête** d'une longue lignée : c'est de lui que descendent le Super
+        Puma, le Cougar et le Caracal.
+  pieges:
+    - Le Puma est un hélicoptère de manœuvre (transport) — pas un hélicoptère d'attaque comme le Tigre.
+    - Le SA330 Puma (turbines Turmo) est la génération d'origine — à ne pas confondre avec le Cougar (AS532, turbines Makila) ni le Caracal (H225M), ses descendants.
+    - Il est en cours de retrait — sa relève est assurée par le NH90 Caïman et le Caracal.

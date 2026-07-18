@@ -1,0 +1,141 @@
+schemaVersion: 1
+id: alat.appareils.caracal
+type: helicoptere
+title: Caracal (H225M)
+slug: caracal
+service:
+  status: actif
+  introducedAt: 2006
+  operator: Aviation légère de l'armée de Terre
+summary: >-
+  Hélicoptère de manœuvre lourd des forces spéciales, dernier standard de la
+  famille Puma/Super Puma. À l'ALAT, ses huit exemplaires arment le 4e RHFS
+  pour les opérations spéciales, avec une très grande autonomie (ravitaillement
+  en vol).
+objectifs:
+  - Identifier le Caracal (H225M) comme l'hélicoptère de manœuvre des forces spéciales, dernier de la lignée Puma → Super Puma → Cougar → Caracal.
+  - Situer son emploi à l'ALAT — huit appareils au 4e régiment d'hélicoptères des forces spéciales (4e RHFS).
+  - Retenir sa signature — grande autonomie (jusqu'à 10 h avec ravitaillement en vol), transport de commandos et RESCO (récupération de personnel).
+aliases: [Caracal, H225M, EC725, hélicoptère forces spéciales, RESCO]
+module: alat
+category: appareils
+subcategory: helicopteres-de-manoeuvre
+tags: []
+concours: [alat]
+level: 3
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche Caracal (H225M) de l'ALAT, hélicoptère de manœuvre des forces spéciales (4e RHFS) ; sources officielles defense.gouv.fr recoupées.
+    author: prepapilote
+sources:
+  - title: "Caracal H225 M — Ministère des Armées (nos aéronefs, nos hélicoptères)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-helicopteres/caracal-h225-m
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Fiche technique Airbus H225M Caracal — Ministère des Armées (PDF)"
+    url: https://www.defense.gouv.fr/sites/default/files/air/fiche-techique-caracal.pdf
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "4e régiment d'hélicoptères des forces spéciales — Ministère des Armées (Armée de Terre)"
+    url: https://www.defense.gouv.fr/terre/unites-larmee-terre/armes/laviation-legere-larmee-terre/4e-regiment-dhelicopteres-forces-speciales
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Airbus Helicopters H225M Caracal — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Airbus_Helicopters_H225M_Caracal
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.appareils.cougar
+    - alat.appareils.nh90-caiman-tth
+    - alat.unites.4e-rhfs
+    - alat.histoire.histoire-de-l-alat
+specs:
+  crew: "2 pilotes + mécanicien(s) de bord / tireurs"
+  length: "19,5 m"
+  rotorDiameter: "16,2 m"
+  height: "4,97 m"
+  powerplant: "2 turbomoteurs (dernier standard de la famille Super Puma)"
+  maxSpeed: "325 km/h (croisière 285 km/h)"
+  ceiling: "6 095 m"
+  range: "Autonomie ≈ 4 h — jusqu'à 10 h avec ravitaillement en vol"
+  armament: "2 mitrailleuses M3M et un canon de 20 mm en sabord ; détecteurs de menaces et lance-leurres infrarouges"
+infobox:
+  constructeur: Airbus Helicopters
+  role: Hélicoptère de manœuvre des forces spéciales (RESCO)
+  armees: [Armée de terre, Armée de l'Air et de l'Espace]
+  miseEnService: 2006
+  statut: En service (8 appareils à l'ALAT, au 4e RHFS)
+  equipage: 2 pilotes + tireurs / mécanicien de bord
+  capaciteEmport: Jusqu'à 28 combattants
+content:
+  essentiel:
+    body: |
+      Le **Caracal** (H225M) est un hélicoptère de **manœuvre lourd**, le
+      **dernier standard** de la grande famille française **Puma → Super Puma →
+      Cougar → Caracal**. Entré en service en **2006**, c'est l'outil de
+      prédilection des **forces spéciales**.
+
+      À l'ALAT, ses **huit** exemplaires arment le **4e régiment d'hélicoptères
+      des forces spéciales (4e RHFS)**. Il transporte jusqu'à **28 combattants**
+      et se distingue par une **très grande autonomie** — environ **4 heures**,
+      et jusqu'à **10 heures** grâce au **ravitaillement en vol**, capacité rare
+      pour un hélicoptère.
+
+      Il assure le transport et l'infiltration de commandos, la **RESCO**
+      (récupération de personnel en milieu hostile) et le sauvetage. Pour
+      opérer au plus près de la menace, il emporte deux **mitrailleuses M3M**,
+      un **canon de 20 mm** en sabord et un système d'**autoprotection**
+      (détecteurs et lance-leurres). Le Caracal est aussi mis en œuvre par
+      l'**armée de l'Air et de l'Espace**.
+    aRetenir:
+      - Caracal (H225M) — hélicoptère de manœuvre des forces spéciales, dernier de la lignée Puma/Super Puma.
+      - À l'ALAT, huit appareils au 4e RHFS ; entré en service en 2006.
+      - Très grande autonomie — jusqu'à 10 heures avec ravitaillement en vol.
+      - Missions — transport de commandos, RESCO (récupération de personnel), sauvetage ; aussi employé par l'armée de l'Air et de l'Espace.
+  sections:
+    - id: le-porteur-des-forces-speciales
+      title: Le porteur des forces spéciales
+      body: |
+        Les **forces spéciales** exigent un hélicoptère capable d'**aller loin**,
+        de **rester longtemps** sur zone et d'**emporter** un groupe de combat
+        avec son matériel. Le Caracal réunit ces qualités.
+
+        Son atout majeur est l'**autonomie** : environ quatre heures de vol, et
+        jusqu'à **dix heures** lorsqu'il est **ravitaillé en vol** — une
+        capacité qui lui permet d'atteindre des objectifs très éloignés. Il
+        peut transporter jusqu'à **28 combattants**, hisser des personnels au
+        **treuil**, et opérer de nuit grâce à sa **vision** adaptée au vol
+        tactique.
+
+        À l'ALAT, il équipe le **4e RHFS**, le régiment dédié à l'aérocombat
+        des opérations spéciales — une spécificité française (seuls la France,
+        le Royaume-Uni et les États-Unis alignent une unité d'hélicoptères
+        entièrement consacrée aux forces spéciales).
+    - id: la-releve-du-puma
+      title: La relève du Puma (à savoir)
+      strate: maitriser
+      body: |
+        Le Caracal appartient à la même **famille** que le Puma et le Cougar,
+        mais il en est la version la plus **récente** et la plus **capable**.
+        Avec le **NH90 Caïman**, il prend la relève des vieux **Puma (SA330)**
+        en cours de retrait.
+
+        Attention à ne pas le confondre avec le **Cougar** (AS532), la
+        génération précédente : le Caracal (H225M) est plus **moderne**,
+        pensé pour la **haute intensité** et la **projection lointaine** des
+        forces spéciales. C'est aussi un appareil **interarmées** — l'armée de
+        l'Air et de l'Espace en met en œuvre pour la RESCO.
+  pieges:
+    - Le Caracal est un hélicoptère de manœuvre (transport) — pas un hélicoptère d'attaque comme le Tigre.
+    - À l'ALAT, il équipe spécifiquement le 4e RHFS (forces spéciales) — huit appareils.
+    - C'est un appareil interarmées — mis en œuvre par l'armée de Terre et par l'armée de l'Air et de l'Espace.
