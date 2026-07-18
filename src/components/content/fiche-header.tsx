@@ -29,11 +29,16 @@ export function FicheHeader({
 }: FicheHeaderProps) {
   return (
     <header className="space-y-3">
-      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h1>
+      {/* Surtitre de section à filet d'accent — même langage que les heros du site. */}
+      <p className="text-primary inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
+        <span aria-hidden className="bg-primary h-px w-8" />
+        {moduleName} · {typeLabel}
+      </p>
+      <h1 className="font-heading text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
+        {title}
+      </h1>
       <p className="text-muted-foreground border-primary border-l-2 pl-3 text-lg">{summary}</p>
       <div className="flex flex-wrap items-center gap-2 print:hidden">
-        <Badge variant="secondary">{moduleName}</Badge>
-        <Badge variant="outline">{typeLabel}</Badge>
         <Badge variant="outline">{levelLabel}</Badge>
         <span className="text-muted-foreground text-sm">{readingMinutes} min de lecture</span>
         <VerifiedBadge verifiedAt={verifiedAt} overdue={overdue} />

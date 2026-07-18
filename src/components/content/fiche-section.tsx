@@ -14,8 +14,10 @@ export function FicheSection({ id, title, strate = "approfondir", children }: Fi
     <section id={id} aria-labelledby={`${id}-titre`} className="scroll-mt-20 space-y-3">
       <h2
         id={`${id}-titre`}
-        className="flex items-center gap-2 text-2xl font-semibold tracking-tight"
+        className="flex items-center gap-2.5 text-2xl font-semibold tracking-tight"
       >
+        {/* Petit filet d'accent : rythme cinématique sobre des titres de section. */}
+        <span aria-hidden className="bg-primary h-6 w-1 shrink-0 rounded-full" />
         {title}
         {strate === "maitriser" ? (
           <Badge variant="outline" className="text-muted-foreground font-normal">
