@@ -6,6 +6,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/). Dates au 
 
 ### Modifié
 
+- 2026-07-18 — **DA-2 — accueil cinématique : hero plein cadre** (2ᵉ incrément de la montée en gamme visuelle). Le hero d'accueil devient une **promesse illustrée plein écran** : la photographie réelle créditée occupe tout le cadre (`min-height` porté à 40–44 rem), un **scrim** dégradé (noir bas → haut) plus un **fondu vers le fond** garantissent le contraste AA du texte blanc quelle que soit l'image. Le titre passe en **police display ample** (`text-4xl` → `text-7xl`, graisse extra-bold, `text-balance`), précédé d'un **surtitre** capitalisé avec filet bleu d'accent. Recherche et actions inchangées. Aucune donnée ni couleur brute ajoutée. Prochains incréments : hubs concours (mosaïque d'appareils), pages internes.
 - 2026-07-18 — **DA-1 — fondation typographique « cinématique institutionnelle »** (1er incrément de la montée en gamme visuelle). Introduction d'une **police display**, **Archivo** (grotesque sobre, graisses fortes), branchée sur le token `--font-heading` : les titres `h1`/`h2` du site l'adoptent automatiquement (`@layer base`), le corps de texte reste en **Geist** pour la lisibilité. Aucune couleur ni structure touchée — juste l'identité des titres, plus affirmée. Doc `docs/design-system.md` mise à jour. Prochains incréments : hero cinématique de l'accueil, hubs concours (mosaïque d'appareils), pages internes.
 
 ### Ajouté
