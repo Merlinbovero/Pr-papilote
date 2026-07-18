@@ -1,0 +1,114 @@
+schemaVersion: 1
+id: eopan.appareils.panther
+type: helicoptere
+title: Panther (AS565)
+slug: panther
+service:
+  status: actif
+  operator: Marine nationale
+summary: >-
+  Hélicoptère embarqué léger de l'aéronautique navale, version militaire du
+  Dauphin. Il arme l'alerte des bâtiments de combat et assure des missions de
+  soutien et de sûreté, au sein de la flottille 36F, à Hyères.
+objectifs:
+  - Identifier le Panther comme l'hélicoptère embarqué léger de la Marine, dérivé militaire du Dauphin.
+  - Expliquer son rôle — alerte du plan d'action immédiat, soutien et sûreté depuis les frégates.
+  - Situer l'appareil au sein de la flottille 36F, sur la base d'aéronautique navale de Hyères.
+aliases: [Panther, AS565, AS565 Panther, hélicoptère embarqué]
+module: eopan
+category: appareils
+subcategory: helicopteres
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, l'hélicoptère embarqué Panther (AS565), d'après la fiche officielle de la Marine.
+    author: prepapilote
+sources:
+  - title: "Panther — Ministère des Armées, Marine nationale (Force de l'aéronautique navale)"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/panther
+    kind: officiel
+    consultedAt: "2026-07-18"
+  - title: "Aérospatiale AS565 Panther — Wikipédia (flottille 36F, Hyères)"
+    url: https://fr.wikipedia.org/wiki/A%C3%A9rospatiale_AS565_Panther
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopan.appareils.nh90-caiman
+    - eopan.appareils.dauphin
+    - eopan.organisation.aeronautique-navale
+specs:
+  crew: "3 (équipage de mission)"
+  maxTakeoffWeight: "4 250 kg"
+  powerplant: "2 turbines Turbomeca (version militaire du Dauphin)"
+  maxSpeed: "150 kt (278 km/h) ; croisière 135 kt"
+  range: "400 NM ; endurance ≈ 3 h"
+  armament: "Mitrailleuse de sabord MAG58 ; système de mission TRISTAN, radar ORB-32"
+infobox:
+  constructeur: Airbus Helicopters (ex-Aérospatiale)
+  role: Hélicoptère embarqué léger
+  armees: [Marine nationale]
+  miseEnService: Années 1990
+  statut: En service
+  equipage: 3
+content:
+  essentiel:
+    body: |
+      Le **Panther** (AS565) est l'**hélicoptère embarqué léger** de
+      l'aéronautique navale. C'est la **version militaire** du **Dauphin** : même
+      cellule, mais équipée pour opérer depuis les **bâtiments de combat**
+      (frégates) et remplir des missions militaires.
+
+      Son rôle principal est d'**armer l'alerte** — le *plan d'action immédiat* —
+      depuis un navire : décoller vite pour une mission de **sûreté**, de
+      **reconnaissance** ou de **transport** (jusqu'à cinq passagers). Il peut
+      emporter une **mitrailleuse de sabord** (MAG58) et s'appuie sur un système
+      de mission (TRISTAN) et un **radar** (ORB-32).
+
+      Il est regroupé au sein de la **flottille 36F**, sur la **base
+      d'aéronautique navale de Hyères** (Var).
+    aRetenir:
+      - Le Panther est l'hélicoptère embarqué léger de la Marine, version militaire du Dauphin.
+      - Il arme l'alerte (plan d'action immédiat) et les missions de sûreté et de soutien depuis les frégates.
+      - Équipage de 3, masse maximale 4 250 kg, vitesse max 150 kt, rayon d'action 400 NM.
+      - Il est mis en œuvre par la flottille 36F, à Hyères.
+  sections:
+    - id: un-helicoptere-embarque
+      title: Un hélicoptère embarqué de combat
+      body: |
+        Contrairement au **NH90 Caïman**, plus gros et dédié à la lutte
+        anti-sous-marine et au sauvetage en haute mer, le **Panther** est un
+        appareil **léger** conçu pour accompagner les **frégates**. Embarqué à
+        bord, il étend le « regard » et le « bras » du navire au-delà de
+        l'horizon.
+
+        Sa mission emblématique est l'**alerte** : maintenu prêt, il décolle sans
+        délai pour aller **identifier** un contact suspect, **transporter** une
+        équipe ou du matériel, ou appuyer une opération de **sûreté maritime**. Sa
+        version dérive directement du **Dauphin** civil, militarisée pour ces
+        besoins.
+    - id: capacites-et-mise-en-oeuvre
+      title: Capacités et mise en œuvre
+      body: |
+        Le Panther emporte un **équipage de trois** et peut transporter jusqu'à
+        **cinq passagers**. Il atteint **150 nœuds** (environ 278 km/h) et tient
+        l'air **environ trois heures**, pour un rayon d'action de l'ordre de
+        **400 milles nautiques**.
+
+        Pour ses missions militaires, il dispose d'un **système de mission**
+        (TRISTAN), d'un **radar** (ORB-32) et peut recevoir une **mitrailleuse de
+        sabord** (MAG58). L'ensemble de la flotte est regroupé au sein de la
+        **flottille 36F**, à **Hyères**, d'où les appareils rejoignent les
+        bâtiments qu'ils accompagnent en opération.
+  pieges:
+    - Le Panther est un hélicoptère embarqué léger — il ne remplit pas les mêmes missions que le NH90 Caïman (lutte anti-sous-marine, sauvetage lourd).
+    - C'est la version militaire du Dauphin ; ne pas les confondre — le Dauphin de la Marine est surtout dédié au secours en mer et à la servitude.
+    - Sa vocation première est l'alerte et la sûreté depuis les frégates, pas le combat anti-navire lourd.

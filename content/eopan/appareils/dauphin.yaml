@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: eopan.appareils.dauphin
+type: helicoptere
+title: Dauphin
+slug: dauphin
+service:
+  status: actif
+  operator: Marine nationale
+summary: >-
+  Hélicoptère de secours et de servitude de l'aéronautique navale. Il assure le
+  secours en mer, la récupération de pilote depuis le porte-avions et le soutien,
+  au sein des flottilles 34F (Lanvéoc-Poulmic) et 35F (Hyères).
+objectifs:
+  - Identifier le Dauphin comme l'hélicoptère de secours en mer et de servitude de la Marine.
+  - Expliquer ses missions — sauvetage, récupération de pilote depuis le porte-avions, lutte contre les trafics.
+  - Situer l'appareil au sein des flottilles 34F (Lanvéoc-Poulmic) et 35F (Hyères).
+aliases: [Dauphin, SA365, AS365, Dauphin Service Public, secours en mer, Pedro]
+module: eopan
+category: appareils
+subcategory: helicopteres
+tags: []
+concours: [eopan]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche-objet appareil, l'hélicoptère de secours Dauphin, d'après la fiche officielle de la Marine.
+    author: prepapilote
+sources:
+  - title: "Dauphin — Ministère des Armées, Marine nationale (Force de l'aéronautique navale)"
+    url: https://www.defense.gouv.fr/marine/force-laeronautique-navale/dauphin
+    kind: officiel
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  related:
+    - eopan.appareils.panther
+    - eopan.appareils.nh90-caiman
+    - eopan.bases.charles-de-gaulle
+specs:
+  crew: "3 (2 pilotes + 1 mécanicien)"
+  length: "13,73 m"
+  emptyWeight: "2,8 t (à vide)"
+  powerplant: "2 turbines Turbomeca Arriel 2C"
+  maxSpeed: "175 kt"
+  ceiling: "20 000 ft"
+  range: "360 NM ; endurance ≈ 3 h"
+  armament: "Non armé — radar, treuil de sauvetage, réservoir souple de 700 L (bombardier d'eau léger)"
+infobox:
+  constructeur: Airbus Helicopters (ex-Aérospatiale)
+  role: Hélicoptère de secours et de servitude
+  armees: [Marine nationale]
+  miseEnService: Années 1980
+  statut: En service
+  equipage: 3 (2 pilotes + 1 mécanicien)
+content:
+  essentiel:
+    body: |
+      Le **Dauphin** est l'hélicoptère de **secours en mer** et de **servitude**
+      de l'aéronautique navale. Là où le Panther accompagne les frégates au
+      combat, le Dauphin est l'appareil du **sauvetage** et du **soutien** au
+      quotidien.
+
+      Ses missions : le **secours, la protection et l'intervention en mer**, la
+      **récupération de pilote** depuis le **porte-avions** (fonction dite
+      « Pedro », l'hélicoptère prêt à repêcher un équipage lors des vols),
+      le **sauvetage** en mer, la **lutte contre les trafics** et
+      l'**entraînement**. Il opère en métropole, outre-mer et **depuis le
+      porte-avions**.
+
+      Il est mis en œuvre par deux flottilles : la **34F** (ESHE) à
+      **Lanvéoc-Poulmic** et la **35F** à **Hyères**. Équipage : deux pilotes et
+      un mécanicien.
+    aRetenir:
+      - Le Dauphin est l'hélicoptère de secours en mer et de servitude de l'aéronautique navale.
+      - Il assure le sauvetage, la récupération de pilote depuis le porte-avions (fonction « Pedro ») et la lutte contre les trafics.
+      - Il est mis en œuvre par les flottilles 34F (Lanvéoc-Poulmic) et 35F (Hyères).
+      - Équipage de 3 (2 pilotes + 1 mécanicien), équipé d'un radar et d'un treuil de sauvetage.
+  sections:
+    - id: l-helicoptere-du-secours
+      title: L'hélicoptère du secours en mer
+      body: |
+        Le Dauphin est d'abord un appareil de **sauvegarde**. Grâce à son
+        **treuil**, il hélitreuille les naufragés et les blessés, de jour comme de
+        nuit, près des côtes comme au large. Il participe ainsi aux missions de
+        **service public** de la Marine — le secours à personne en mer.
+
+        À bord du **porte-avions**, il tient un rôle indispensable pendant les
+        vols : c'est le **« Pedro »**, l'hélicoptère maintenu en vol prêt à
+        **récupérer un équipage** en cas d'éjection ou d'amerrissage. Il contribue
+        aussi à la **lutte contre les trafics** (interception, transport
+        d'équipes) et à l'**entraînement**.
+    - id: caracteristiques-et-flottilles
+      title: Caractéristiques et flottilles
+      body: |
+        Long de **13,73 m** pour une masse à vide d'environ **2,8 tonnes**, le
+        Dauphin est propulsé par **deux turbines Turbomeca Arriel 2C**. Il atteint
+        **175 nœuds**, plafonne à **20 000 pieds** et tient l'air **environ trois
+        heures**, pour un rayon d'action de l'ordre de **360 milles nautiques**.
+
+        Outre son **radar** et son **treuil**, il peut emporter un **réservoir
+        souple** de **700 litres**, qui lui permet d'agir en **bombardier d'eau
+        léger**. Il est réparti entre la **flottille 34F** (ESHE) à
+        **Lanvéoc-Poulmic** et la **flottille 35F** à **Hyères**.
+  pieges:
+    - Le Dauphin est un hélicoptère de secours et de servitude — ce n'est pas un hélicoptère de combat comme le NH90 Caïman.
+    - « Pedro » n'est pas un modèle — c'est la fonction de l'hélicoptère de récupération de pilote maintenu prêt pendant les vols du porte-avions.
+    - Le Dauphin (secours) et le Panther (embarqué, combat léger) partagent la cellule mais pas les missions — ne pas les confondre.
