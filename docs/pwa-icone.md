@@ -46,3 +46,30 @@ Après déploiement, ouvrir le site sur téléphone et « ajouter à l'écran
 d'accueil ». L'icône, le nom court (**PrépaPilote**) et l'ouverture plein
 écran doivent apparaître. Sur desktop Chrome, une invite d'installation
 apparaît dans la barre d'adresse.
+
+## Hors-ligne (service worker)
+
+Le site fonctionne **hors connexion** pour ce qui a déjà été consulté, via un
+service worker **sans dépendance** (`public/sw.js`), enregistré en production
+seulement par `src/components/layout/service-worker-registrar.tsx`.
+
+Stratégies de cache :
+
+- **Pages** (navigations) : réseau d'abord, puis cache, puis la page de repli
+  `/hors-ligne`. Les visiteurs en ligne ont donc toujours la version fraîche ;
+  les pages déjà ouvertes restent lisibles sans réseau.
+- **Ressources statiques** (`_next/static`, images, icônes, polices) : cache
+  d'abord.
+- **Viviers de quiz** (`…/pool`) : cache d'abord, rafraîchi en tâche de fond —
+  on peut rejouer un entraînement hors connexion après une première visite.
+
+Ne sont **jamais** mis en cache : les requêtes non-GET, les autres origines et
+l'**espace authentifié** (`/progression`, `/compte`, `/connexion`,
+`/inscription`, `/auth`) — toujours servis par le réseau.
+
+Pour publier une nouvelle version du cache après un changement de stratégie,
+incrémenter la constante `VERSION` dans `public/sw.js` (les anciens caches sont
+purgés à l'activation).
+
+En développement (`npm run dev`), le service worker **n'est pas enregistré**
+(on évite de mettre en cache les ressources du serveur de dev).
