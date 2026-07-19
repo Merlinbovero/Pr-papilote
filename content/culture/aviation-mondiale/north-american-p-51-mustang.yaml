@@ -1,0 +1,102 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.north-american-p-51-mustang
+type: appareil
+title: North American P-51 Mustang
+slug: north-american-p-51-mustang
+service:
+  status: historique
+  firstFlight: 1940
+  introducedAt: 1942
+  operator: US Army Air Forces et Alliés
+summary: >-
+  Chasseur américain de la Seconde Guerre mondiale devenu décisif après avoir
+  reçu le moteur Rolls-Royce Merlin. Son très grand rayon d'action lui permettait
+  d'escorter les bombardiers de l'Angleterre jusqu'à l'Allemagne et retour — un
+  tournant de la guerre aérienne.
+objectifs:
+  - Identifier le P-51 Mustang comme le grand chasseur d'escorte américain de la Seconde Guerre mondiale.
+  - Comprendre pourquoi le passage au moteur Rolls-Royce Merlin l'a rendu décisif (performances en altitude).
+  - Retenir son atout majeur — un rayon d'action permettant d'escorter les bombardiers jusqu'au cœur de l'Allemagne.
+aliases: [P-51, Mustang, P-51 Mustang, chasseur américain, escorte, Merlin]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le North American P-51 Mustang (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "North American P-51 Mustang — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/North_American_P-51_Mustang
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.messerschmitt-bf-109
+    - culture.aviation-mondiale.focke-wulf-fw-190
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur Allison V-1710 (d'origine), puis Rolls-Royce/Packard Merlin (V-1650)"
+  maxSpeed: "~700 km/h (440 mph) avec moteur Merlin"
+  range: "Très grand rayon d'action (réservoirs internes + bidons largables) — escorte longue distance"
+  armament: "6 mitrailleuses de 12,7 mm (.50)"
+infobox:
+  constructeur: North American Aviation (États-Unis)
+  role: Chasseur d'escorte longue distance / chasseur-bombardier
+  armees: [US Army Air Forces, Royal Air Force]
+  miseEnService: 1942
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+  vitesseMax: ~700 km/h (440 mph)
+content:
+  essentiel:
+    body: |
+      Le **North American P-51 Mustang** est le **chasseur d'escorte** américain
+      qui a changé le cours de la **guerre aérienne** en Europe. Son histoire est
+      celle d'une **transformation** : conçu avec un moteur **Allison** peu
+      performant en altitude, il devient un appareil **exceptionnel** une fois
+      équipé du moteur britannique **Rolls-Royce Merlin** (construit sous licence
+      par Packard).
+
+      Son atout décisif est le **rayon d'action**. Grâce à une cellule sobre en
+      traînée et à des **réservoirs largables**, le Mustang pouvait **escorter les
+      bombardiers** depuis l'Angleterre **jusqu'au cœur de l'Allemagne et
+      revenir** — une capacité que l'on croyait impossible. Les bombardiers,
+      jusque-là très vulnérables au-dessus du Reich, disposaient enfin d'une
+      **protection** sur tout le trajet.
+
+      Rapide, bien armé (six mitrailleuses de 12,7 mm) et endurant, le Mustang a
+      pris l'ascendant sur les chasseurs allemands (**Bf 109**, **Fw 190**) et
+      contribué à la **maîtrise du ciel** en 1944-1945.
+    aRetenir:
+      - Le P-51 Mustang est le grand chasseur d'escorte américain de la Seconde Guerre mondiale.
+      - Le passage au moteur Rolls-Royce Merlin l'a rendu décisif (performances en altitude).
+      - Son atout majeur — un rayon d'action permettant d'escorter les bombardiers jusqu'en Allemagne et retour.
+      - Il a pris l'ascendant sur les Bf 109 et Fw 190 en fin de guerre.
+  sections:
+    - id: le-probleme-de-l-escorte
+      title: Le problème de l'escorte
+      body: |
+        Au début de la guerre aérienne sur l'Europe, les **bombardiers** alliés
+        frappaient l'Allemagne de jour, mais **sans escorte** sur la fin du
+        trajet : aucun chasseur n'avait un rayon d'action suffisant. Résultat,
+        des **pertes énormes** face à la chasse allemande.
+
+        Le **P-51 Mustang** a résolu ce problème. En combinant une **cellule très
+        efficace** (peu de traînée) et une grande **capacité en carburant**
+        (interne + bidons largables), il pouvait **accompagner** les bombardiers
+        de bout en bout. C'est un cas d'école : ce n'est pas seulement la
+        performance pure, mais l'**allonge** — la capacité d'aller loin et de
+        rester — qui a fait du Mustang une arme décisive.
+  pieges:
+    - Le P-51 Mustang est américain (US Army Air Forces) — pas un appareil des forces françaises.
+    - Sa réussite tient au moteur Merlin (britannique) — la version d'origine à moteur Allison était médiocre en altitude.
+    - Son atout n'est pas que la vitesse, mais le rayon d'action (escorte longue distance).

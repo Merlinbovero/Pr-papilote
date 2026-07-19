@@ -1,0 +1,97 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.focke-wulf-fw-190
+type: appareil
+title: Focke-Wulf Fw 190
+slug: focke-wulf-fw-190
+service:
+  status: historique
+  firstFlight: 1939
+  introducedAt: 1941
+  operator: Luftwaffe (Allemagne)
+summary: >-
+  Chasseur allemand conçu par Kurt Tank, second pilier de la Luftwaffe avec le
+  Bf 109. Doté d'un moteur en étoile puissant, redoutable à basse et moyenne
+  altitude, il fut l'un des meilleurs chasseurs de la Seconde Guerre mondiale.
+objectifs:
+  - Identifier le Focke-Wulf Fw 190 comme le second grand chasseur allemand de la Seconde Guerre mondiale, aux côtés du Bf 109.
+  - Retenir sa signature technique — un moteur en étoile (BMW 801), puis un moteur en ligne sur la version « Dora ».
+  - Comprendre sa complémentarité avec le Bf 109 (meilleur à basse/moyenne altitude, plus lourdement armé).
+aliases: [Fw 190, Focke-Wulf 190, Würger, Dora, chasseur allemand, Kurt Tank]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Focke-Wulf Fw 190 (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Focke-Wulf Fw 190 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Focke-Wulf_Fw_190
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.messerschmitt-bf-109
+    - culture.aviation-mondiale.north-american-p-51-mustang
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur en étoile BMW 801 (~1 700 ch) ; moteur en ligne Jumo 213 sur la version D « Dora »"
+  maxSpeed: "Élevée (chasseur de première ligne, selon versions)"
+  armament: "Mitrailleuses de 13 mm + canons de 20 mm ; versions à canons de 30 mm et roquettes"
+infobox:
+  constructeur: Focke-Wulf (Allemagne)
+  role: Chasseur / chasseur-bombardier / attaque au sol
+  armees: [Luftwaffe]
+  miseEnService: 1941
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+content:
+  essentiel:
+    body: |
+      Le **Focke-Wulf Fw 190**, conçu par l'ingénieur **Kurt Tank**, est le
+      **second grand chasseur allemand** de la Seconde Guerre mondiale, aux côtés
+      du **Bf 109**. Apparu au combat en **1941**, il a d'abord surpris les
+      Alliés par ses **performances** et sa **puissance de feu**.
+
+      Sa particularité est son **moteur en étoile** (radial **BMW 801**), plus
+      trapu qu'un moteur en ligne mais robuste et puissant, qui lui donnait
+      d'excellentes performances à **basse et moyenne altitude**. Bien armé
+      (canons de 20 mm, parfois 30 mm), il excellait aussi en **attaque au sol**
+      et en **chasse-bombardement**. À haute altitude, il était d'abord moins à
+      l'aise ; la version **« Dora »** (Fw 190 D), remotorisée avec un **moteur en
+      ligne** Jumo 213, a corrigé ce point.
+
+      Avec le Bf 109, le Fw 190 forme l'**ossature de la chasse allemande** :
+      l'un et l'autre se complètent plutôt qu'ils ne se remplacent.
+    aRetenir:
+      - Le Fw 190 (Kurt Tank) est le second grand chasseur allemand de la guerre, avec le Bf 109.
+      - Signature — moteur en étoile BMW 801, puis moteur en ligne Jumo 213 sur la version « Dora ».
+      - Redoutable à basse/moyenne altitude et lourdement armé (canons de 20 à 30 mm).
+      - Complémentaire du Bf 109, pas son remplaçant.
+  sections:
+    - id: le-radial-qui-surprit-les-allies
+      title: Le radial qui surprit les Alliés
+      body: |
+        Quand le Fw 190 apparaît en 1941, la plupart des chasseurs de pointe
+        (Spitfire, Bf 109) utilisent des **moteurs en ligne**, plus fins
+        aérodynamiquement. Focke-Wulf fait le pari inverse : un **moteur en
+        étoile** (radial), plus large mais très **puissant** et plus **résistant
+        aux coups** (pas de circuit de refroidissement liquide vulnérable).
+
+        Le résultat déstabilise les Alliés : à basse et moyenne altitude, le
+        Fw 190 est **rapide**, monte bien en puissance et frappe fort. Il faudra
+        aux Britanniques de nouvelles versions de Spitfire pour rétablir
+        l'équilibre. C'est un bon exemple d'**innovation** qui rebat les cartes —
+        et de la course permanente à la performance entre camps adverses.
+  pieges:
+    - Le Fw 190 est allemand (Luftwaffe) — pas un appareil des forces françaises.
+    - Il ne remplace pas le Bf 109 — les deux chasseurs servent ensemble et se complètent.
+    - La version d'origine a un moteur en étoile (radial) ; la version « Dora » a un moteur en ligne.

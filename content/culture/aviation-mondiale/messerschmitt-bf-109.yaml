@@ -1,0 +1,101 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.messerschmitt-bf-109
+type: appareil
+title: Messerschmitt Bf 109
+slug: messerschmitt-bf-109
+service:
+  status: historique
+  firstFlight: 1935
+  introducedAt: 1937
+  operator: Luftwaffe (Allemagne)
+summary: >-
+  Chasseur allemand, colonne vertébrale de la Luftwaffe durant toute la Seconde
+  Guerre mondiale. Avec plus de 34 000 exemplaires, c'est le chasseur le plus
+  produit de l'histoire, et l'avion qui a remporté le plus de victoires
+  aériennes du conflit.
+objectifs:
+  - Identifier le Messerschmitt Bf 109 comme le chasseur principal de la Luftwaffe pendant la Seconde Guerre mondiale.
+  - Retenir deux records — le chasseur le plus produit de l'histoire, et l'avion avec le plus de victoires aériennes du conflit.
+  - Le situer comme le grand rival du Spitfire et du P-51 Mustang.
+aliases: [Bf 109, Me 109, Messerschmitt, chasseur allemand, Luftwaffe]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Messerschmitt Bf 109 (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Messerschmitt Bf 109 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Messerschmitt_Bf_109
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.supermarine-spitfire
+    - culture.aviation-mondiale.focke-wulf-fw-190
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur Daimler-Benz DB 601 puis DB 605 (V12 inversé) ; Jumo 210 sur les débuts"
+  maxSpeed: "~640 km/h (399 mph) selon les versions"
+  armament: "Mitrailleuses de 13 mm + canon de 20 mm (ou 30 mm), selon les versions"
+infobox:
+  constructeur: Bayerische Flugzeugwerke, puis Messerschmitt (Allemagne)
+  role: Chasseur
+  armees: [Luftwaffe]
+  miseEnService: 1937
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+  vitesseMax: ~640 km/h (399 mph)
+content:
+  essentiel:
+    body: |
+      Le **Messerschmitt Bf 109** (souvent écrit « Me 109 ») est le **chasseur
+      principal de la Luftwaffe** pendant toute la Seconde Guerre mondiale. Volant
+      dès **1935**, en service à partir de **1937**, il équipe l'aviation
+      allemande du début à la fin du conflit, sans cesse remotorisé (moteurs
+      **Daimler-Benz DB 601** puis **DB 605**).
+
+      Deux **records** en font une référence de culture générale : c'est le
+      **chasseur le plus produit de l'histoire** (plus de **34 000**
+      exemplaires), et l'avion qui a obtenu **le plus de victoires aériennes** de
+      toute la guerre. Compact, rapide et bien armé, il fut un adversaire
+      redoutable — mais son cockpit exigu, son train étroit (accidents au sol) et
+      son rayon d'action limité ont aussi montré ses limites.
+
+      Le Bf 109 est le **grand rival** du **Spitfire** (bataille d'Angleterre)
+      puis du **P-51 Mustang** (défense du Reich). Avec le **Focke-Wulf Fw 190**,
+      il forme l'ossature de la chasse allemande.
+    aRetenir:
+      - Le Bf 109 est le chasseur principal de la Luftwaffe durant toute la Seconde Guerre mondiale.
+      - Records — chasseur le plus produit de l'histoire (34 000+) et le plus de victoires aériennes du conflit.
+      - Grand rival du Spitfire puis du P-51 Mustang.
+      - Forme l'ossature de la chasse allemande avec le Focke-Wulf Fw 190.
+  sections:
+    - id: une-longevite-exceptionnelle
+      title: Une longévité exceptionnelle
+      body: |
+        Peu d'avions ont servi **du premier au dernier jour** d'une guerre
+        comme le Bf 109. Sa recette : une **cellule compacte et légère** autour
+        d'un puissant moteur en **V inversé**, capable d'évoluer au fil des
+        versions (armement, moteur, altitude).
+
+        Cette longévité a un revers. Conçu au milieu des années 1930, l'appareil
+        est resté **petit** : cockpit **exigu**, **rayon d'action** court
+        (handicap lors de la bataille d'Angleterre, où il ne pouvait rester que
+        quelques minutes au-dessus de Londres), et un **train d'atterrissage
+        étroit** responsable de nombreux accidents au décollage et à
+        l'atterrissage. Il illustre le compromis d'un avion qu'on modernise sans
+        cesse plutôt que de le remplacer.
+  pieges:
+    - Le Bf 109 est allemand (Luftwaffe) — pas un appareil des forces françaises.
+    - « Chasseur le plus produit de l'histoire » ne veut pas dire le meilleur — c'est un record de quantité et de longévité.
+    - À ne pas confondre avec le Focke-Wulf Fw 190, l'autre grand chasseur allemand de la guerre.

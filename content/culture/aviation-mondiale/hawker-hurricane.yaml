@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.hawker-hurricane
+type: appareil
+title: Hawker Hurricane
+slug: hawker-hurricane
+service:
+  status: historique
+  firstFlight: 1935
+  introducedAt: 1937
+  operator: Royal Air Force (Royaume-Uni)
+summary: >-
+  Chasseur britannique robuste de la Seconde Guerre mondiale, souvent éclipsé
+  par le Spitfire mais véritable cheval de bataille de la RAF. Plus nombreux, il
+  a remporté la majorité des victoires britanniques lors de la bataille
+  d'Angleterre (1940).
+objectifs:
+  - Identifier le Hawker Hurricane comme le chasseur robuste et nombreux de la RAF pendant la Seconde Guerre mondiale.
+  - Comprendre son rôle décisif dans la bataille d'Angleterre (la majorité des victoires britanniques), souvent sous-estimé face au Spitfire.
+  - Le distinguer du Spitfire (moins rapide, mais plus solide et facile à entretenir).
+aliases: [Hurricane, Hawker Hurricane, chasseur britannique, bataille d'Angleterre]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Hawker Hurricane (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Hawker Hurricane — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Hawker_Hurricane
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.supermarine-spitfire
+    - culture.aviation-mondiale.messerschmitt-bf-109
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur Rolls-Royce Merlin"
+  maxSpeed: "~550 km/h (342 mph, Mk IIa)"
+  armament: "8 mitrailleuses de 7,7 mm (.303), puis 4 canons de 20 mm"
+infobox:
+  constructeur: Hawker Aircraft (Royaume-Uni)
+  role: Chasseur
+  armees: [Royal Air Force]
+  miseEnService: 1937
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+  vitesseMax: ~550 km/h (342 mph)
+content:
+  essentiel:
+    body: |
+      Le **Hawker Hurricane** est l'autre grand **chasseur britannique** de la
+      Seconde Guerre mondiale. Moins célèbre que le **Spitfire**, il en fut
+      pourtant le **partenaire indispensable** : plus **nombreux**, plus
+      **robuste** et plus **facile à réparer**, c'est lui qui a supporté le gros
+      des combats de la **bataille d'Angleterre** (**1940**).
+
+      Les archives lui attribuent la **majorité des victoires** britanniques
+      durant cette bataille (autour de 55-60 % des pertes allemandes) — davantage
+      que le Spitfire, plus rapide mais moins nombreux. Sa structure solide (en
+      partie entoilée) encaissait les dommages et se remettait vite en état, un
+      atout précieux quand chaque appareil comptait.
+
+      Volant dès **1935** et en service à partir de **1937** (moteur **Rolls-
+      Royce Merlin**), il a été construit à près de **14 500** exemplaires. Il
+      illustre une leçon utile : un appareil **fiable et disponible** peut peser
+      plus lourd qu'un appareil brillant mais rare.
+    aRetenir:
+      - Le Hurricane est le chasseur robuste et nombreux de la RAF pendant la Seconde Guerre mondiale.
+      - Il a remporté la majorité des victoires britanniques de la bataille d'Angleterre — plus que le Spitfire.
+      - Moins rapide que le Spitfire, mais plus solide et plus facile à entretenir.
+      - Près de 14 500 exemplaires ; moteur Rolls-Royce Merlin.
+  sections:
+    - id: le-cheval-de-bataille-oublie
+      title: Le cheval de bataille (un peu) oublié
+      body: |
+        Le grand public associe la bataille d'Angleterre au **Spitfire**, plus
+        photogénique. Mais dans les faits, la RAF alignait **plus de Hurricane**,
+        et ce sont eux qui ont intercepté le plus de **bombardiers** allemands.
+
+        Le Hurricane doit ce rôle à ses qualités concrètes : une **plateforme de
+        tir stable** (huit mitrailleuses groupées), une **maniabilité** correcte
+        à basse et moyenne altitude, et surtout une **robustesse** qui
+        permettait de le réparer vite. Face au Messerschmitt **Bf 109**, il était
+        désavantagé en altitude, mais restait redoutable dans le combat
+        tournoyant serré. C'est l'exemple parfait de l'appareil qu'on
+        sous-estime… jusqu'à ce qu'on regarde les chiffres.
+  pieges:
+    - Le Hurricane est britannique (RAF) — pas un appareil des forces françaises.
+    - Ne pas le sous-estimer face au Spitfire — il a remporté la majorité des victoires de la bataille d'Angleterre.
+    - C'est un appareil historique (Seconde Guerre mondiale), retiré depuis longtemps.

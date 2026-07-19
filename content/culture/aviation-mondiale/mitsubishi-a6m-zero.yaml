@@ -1,0 +1,105 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.mitsubishi-a6m-zero
+type: appareil
+title: Mitsubishi A6M Zero
+slug: mitsubishi-a6m-zero
+service:
+  status: historique
+  firstFlight: 1939
+  introducedAt: 1940
+  operator: Marine impériale japonaise
+summary: >-
+  Chasseur embarqué japonais de la Seconde Guerre mondiale, redouté au début de
+  la guerre du Pacifique pour sa maniabilité et son immense rayon d'action. Léger
+  à l'extrême, il devint vulnérable face aux chasseurs alliés plus modernes et
+  mieux protégés.
+objectifs:
+  - Identifier le Mitsubishi A6M Zero comme le chasseur embarqué de la marine impériale japonaise, dominant au début de la guerre du Pacifique.
+  - Comprendre son compromis de conception — légèreté extrême (maniabilité, rayon d'action) au prix d'une protection quasi nulle.
+  - Retenir son basculement — d'une supériorité initiale à une vulnérabilité croissante face aux chasseurs alliés.
+aliases: [Zero, A6M, Mitsubishi Zero, chasseur japonais, Pacifique, embarqué]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Mitsubishi A6M Zero (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Mitsubishi A6M Zero — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Mitsubishi_A6M_Zero
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.f-14-tomcat
+    - culture.aviation-mondiale.north-american-p-51-mustang
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur en étoile Nakajima Sakae (~940 ch)"
+  maxSpeed: "~533 km/h (331 mph)"
+  range: "~1 870 km (rayon d'action exceptionnel)"
+  ceiling: "~10 000 m"
+  armament: "2 mitrailleuses de 7,7 mm + 2 canons de 20 mm ; petites bombes"
+infobox:
+  constructeur: Mitsubishi (Japon)
+  role: Chasseur embarqué
+  armees: [Marine impériale japonaise]
+  miseEnService: 1940
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+  vitesseMax: ~533 km/h (331 mph)
+  rayonDAction: ~1 870 km (exceptionnel)
+content:
+  essentiel:
+    body: |
+      Le **Mitsubishi A6M Zero** est le **chasseur embarqué** de la **marine
+      impériale japonaise**, conçu par **Jiro Horikoshi**. Au début de la
+      **guerre du Pacifique** (à partir de fin 1941), il **domine** le ciel :
+      d'une **maniabilité** stupéfiante et d'un **rayon d'action** immense
+      (~1 870 km), il surprend des adversaires qui le croyaient impossible. Son
+      ratio de victoires initial est écrasant.
+
+      Ce succès repose sur un **choix radical** : la **légèreté**. Pour gagner en
+      agilité et en allonge, les ingénieurs ont **supprimé** presque toute la
+      **protection** — pas de blindage du pilote, pas de réservoirs
+      auto-obturants. Un Zero touché **brûlait ou explosait** facilement.
+
+      À partir de **mi-1942**, les Alliés adaptent leurs **tactiques** (ne pas
+      tourner avec lui, exploiter la vitesse et le piqué) et alignent des
+      chasseurs plus **rapides, robustes et protégés**. Le Zero, peu modernisé,
+      devient alors **vulnérable**. C'est un cas d'école du compromis
+      **agilité/protection** en conception d'avion de combat.
+    aRetenir:
+      - Le Zero est le chasseur embarqué japonais, dominant au début de la guerre du Pacifique.
+      - Son secret — une légèreté extrême, offrant maniabilité et très grand rayon d'action.
+      - Son défaut — une protection quasi nulle (pilote et réservoirs non protégés).
+      - Il devient vulnérable dès 1942 face aux chasseurs alliés plus modernes.
+  sections:
+    - id: agilite-contre-protection
+      title: Agilité contre protection
+      body: |
+        Concevoir un avion de combat, c'est **arbitrer**. Le Zero incarne un
+        arbitrage extrême en faveur de l'**agilité** et de l'**allonge** : en
+        allégeant tout, on obtient un chasseur qui **vire court** et vole
+        **loin** — parfait pour l'immensité du Pacifique et les combats
+        tournoyants du début de guerre.
+
+        Mais ce choix a un **prix**. Sans **blindage** ni **réservoirs
+        protégés**, l'appareil ne **pardonne pas** les coups au but. Quand
+        l'adversaire cesse de jouer le combat tournoyant (le terrain favorable au
+        Zero) pour imposer la **vitesse** et le **piqué**, l'avantage bascule.
+        Le Zero rappelle qu'un point fort poussé à l'extrême crée souvent une
+        **faiblesse symétrique**.
+  pieges:
+    - Le Zero est japonais (marine impériale) — pas un appareil des forces françaises.
+    - Sa maniabilité et son rayon d'action venaient d'une légèreté extrême — au prix d'une protection quasi nulle.
+    - Sa domination initiale n'a pas duré — dès 1942, les chasseurs alliés et de nouvelles tactiques ont renversé la situation.
