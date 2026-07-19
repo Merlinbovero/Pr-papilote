@@ -43,5 +43,11 @@
     { "slug": "methodologie", "name": "Méthodologie", "order": 1 },
     { "slug": "epreuves", "name": "Épreuves par concours", "order": 2 },
     { "slug": "exercices", "name": "Exercices d'entraînement", "order": 3 }
+  ],
+  "culture": [
+    { "slug": "aviation-mondiale", "name": "Aviation mondiale", "order": 1 },
+    { "slug": "geopolitique-defense", "name": "Géopolitique & défense", "order": 2 },
+    { "slug": "culture-aeronautique", "name": "Culture aéronautique", "order": 3 },
+    { "slug": "personnalites", "name": "Personnalités", "order": 4 }
   ]
 }

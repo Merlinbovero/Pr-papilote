@@ -1,0 +1,127 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.f-16-fighting-falcon
+type: appareil
+title: F-16 Fighting Falcon (Viper)
+slug: f-16-fighting-falcon
+service:
+  status: actif
+  firstFlight: 1974
+  introducedAt: 1978
+  operator: US Air Force et 25 autres pays
+summary: >-
+  Chasseur multirôle monoréacteur américain, l'avion de combat occidental le
+  plus répandu au monde (4 600+ exemplaires, 26 pays). Pionnier des commandes de
+  vol électriques et de la stabilité relâchée, surnommé « Viper ». Ce n'est pas
+  un appareil français.
+objectifs:
+  - Situer le F-16 comme le chasseur multirôle le plus répandu du monde occidental, à ne pas confondre avec un appareil français (Rafale, Mirage).
+  - Comprendre ses innovations — commandes de vol électriques (fly-by-wire), stabilité relâchée, verrière-bulle, manche latéral, siège incliné pour encaisser 9 g.
+  - Le replacer dans la culture aéronautique (monoréacteur agile, exporté dans 26 pays, produit de 1974 à aujourd'hui).
+aliases: [F-16, Viper, Fighting Falcon, General Dynamics F-16, chasseur multirôle américain]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique mondiale sur le F-16 Fighting Falcon, à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "General Dynamics F-16 Fighting Falcon — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "General Dynamics F-16 Fighting Falcon — Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.f-14-tomcat
+specs:
+  crew: "1 (monoplace F-16A/C) ou 2 (biplace F-16B/D)"
+  length: "15,06 m"
+  wingspan: "9,96 m"
+  powerplant: "1 turboréacteur Pratt & Whitney F100 ou General Electric F110 (selon les versions)"
+  maxSpeed: "Supérieure à Mach 2 (~2 120 km/h en altitude)"
+  ceiling: "≈ 15 000 m"
+  armament: "1 canon de 20 mm, missiles air-air et air-sol, bombes — chasseur multirôle"
+infobox:
+  constructeur: General Dynamics, puis Lockheed Martin (États-Unis)
+  role: Chasseur multirôle (4e génération)
+  armees: [US Air Force, 25 autres pays]
+  miseEnService: 1978
+  statut: En service (produit depuis 1974)
+  equipage: 1 (monoplace) ou 2 (biplace)
+  vitesseMax: Supérieure à Mach 2
+content:
+  essentiel:
+    body: |
+      Le **F-16 Fighting Falcon**, surnommé **« Viper »**, est un **chasseur
+      multirôle** américain **monoréacteur** (un seul moteur). C'est l'avion de
+      combat **le plus répandu du monde occidental** : plus de **4 600**
+      exemplaires produits depuis **1974**, en service dans **26 pays**. Il
+      figure ici au titre de la **culture aéronautique mondiale** — ce n'est
+      **pas** un appareil français (la France aligne le Rafale et le Mirage).
+
+      Conçu au départ comme un **chasseur léger** et agile, il est devenu un
+      appareil **polyvalent** (air-air, air-sol, reconnaissance). Sa réussite
+      tient à plusieurs **innovations** devenues des standards : les
+      **commandes de vol électriques** (fly-by-wire), une **stabilité
+      relâchée** (l'avion est volontairement instable, rattrapé en permanence
+      par l'ordinateur, ce qui le rend très manœuvrant), une **verrière-bulle**
+      offrant une vue à 360°, un **manche latéral** (à droite, et non au centre)
+      et un **siège incliné** de 30° pour aider le pilote à encaisser des
+      facteurs de charge de **9 g**.
+
+      Léger, relativement peu coûteux et sans cesse modernisé, le Viper est un
+      pilier des forces aériennes occidentales — un appareil qu'on croise
+      partout dans les documentaires et les reportages.
+    aRetenir:
+      - Le F-16 est un chasseur multirôle monoréacteur américain — le plus répandu du monde occidental (4 600+, 26 pays).
+      - Innovations clés — commandes de vol électriques, stabilité relâchée, verrière-bulle, manche latéral, siège incliné (9 g).
+      - Ce n'est pas un appareil français (à ne pas confondre avec le Rafale ou le Mirage).
+      - Surnom « Viper » ; en service depuis 1978, toujours produit et modernisé.
+  sections:
+    - id: pourquoi-il-a-marque-l-aviation
+      title: Pourquoi il a marqué l'aviation
+      body: |
+        Le F-16 est l'un des premiers avions de série à assumer une **stabilité
+        relâchée** : au lieu d'être naturellement stable, il est conçu pour être
+        légèrement **instable**, ce qui le rend **très réactif**. Un pilote
+        humain ne pourrait pas le maîtriser seul ; ce sont les **commandes de
+        vol électriques** (fly-by-wire) qui, des dizaines de fois par seconde,
+        corrigent la trajectoire. Cette combinaison « instabilité + calculateur »
+        est devenue la norme des chasseurs modernes, Rafale compris.
+
+        Autour du pilote, tout est pensé pour le **combat à haut facteur de
+        charge** : la **verrière-bulle** dégage la vue, le **manche latéral** et
+        le **siège incliné** aident à rester lucide et à agir sous **9 g**
+        (neuf fois le poids du corps). Le F-16 a ainsi popularisé une
+        ergonomie de cockpit reprise ensuite un peu partout.
+    - id: un-standard-mondial
+      title: Un standard mondial (à savoir)
+      strate: maitriser
+      body: |
+        Le succès du F-16 est d'abord **industriel et politique** : léger, moins
+        cher qu'un biréacteur lourd, il a été **exporté massivement** et souvent
+        **coproduit** avec les pays clients. D'où sa présence dans 26 forces
+        aériennes et sa longévité (production relancée en version **F-16V**).
+
+        Pour un candidat, l'important n'est pas d'en réciter toutes les versions,
+        mais de savoir **le reconnaître** et **le situer** : un monoréacteur
+        léger américain, emblème de la 4e génération, à distinguer du **Rafale**
+        français (biréacteur, canards) et des chasseurs embarqués comme le
+        **F/A-18** ou le **F-14**. C'est le genre de repère qui évite une
+        confusion en entretien de culture générale.
+  pieges:
+    - Le F-16 est américain — ce n'est pas un appareil des forces françaises (ne pas le ranger dans EOPN/EOPAN/ALAT).
+    - C'est un monoréacteur (un seul moteur) — à ne pas confondre avec le Rafale, biréacteur à plans canard.
+    - « Stabilité relâchée » ne veut pas dire incontrôlable — l'instabilité est maîtrisée en permanence par les commandes de vol électriques.

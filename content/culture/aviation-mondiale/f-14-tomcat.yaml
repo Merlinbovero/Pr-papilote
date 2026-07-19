@@ -1,0 +1,126 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.f-14-tomcat
+type: appareil
+title: F-14 Tomcat
+slug: f-14-tomcat
+service:
+  status: retire
+  firstFlight: 1970
+  introducedAt: 1974
+  retiredAt: 2006
+  operator: US Navy (marine américaine)
+summary: >-
+  Chasseur embarqué américain à géométrie variable, intercepteur de défense de
+  flotte de l'US Navy (1974-2006). Célèbre pour son radar AWG-9 et son missile
+  longue portée AIM-54 Phoenix, et popularisé par le cinéma. Repère de culture
+  aéronautique mondiale — ce n'est pas un appareil français.
+objectifs:
+  - Situer le F-14 Tomcat comme le chasseur embarqué de défense de flotte de l'US Navy, à ne pas confondre avec un appareil des forces françaises.
+  - Comprendre ses deux signatures techniques — l'aile à géométrie variable et le couple radar AWG-9 / missile longue portée AIM-54 Phoenix.
+  - Le replacer dans l'histoire de l'aviation embarquée (successeur du F-4 Phantom II, remplacé par le F/A-18 Super Hornet).
+aliases: [F-14, Tomcat, Grumman F-14, chasseur embarqué américain, géométrie variable]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-embarques
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique mondiale sur le F-14 Tomcat (appareil étranger, hors concours français) ; sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Grumman F-14 Tomcat — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Grumman_F-14_Tomcat
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Grumman F-14 Tomcat — Wikipédia (fr)"
+    url: https://fr.wikipedia.org/wiki/Grumman_F-14_Tomcat
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations: {}
+specs:
+  crew: "2 (pilote + officier d'interception radar, en tandem)"
+  length: "19,1 m"
+  wingspan: "19,55 m (ailes déployées) / 11,65 m (ailes fléchées)"
+  powerplant: "2 turboréacteurs Pratt & Whitney TF30 (F-14A), puis General Electric F110-GE-400 (F-14B/D)"
+  maxSpeed: "Mach 2,34"
+  ceiling: "≈ 15 200 m (50 000 ft)"
+  range: "≈ 2 960 km"
+  armament: "Radar AN/AWG-9, missiles AIM-54 Phoenix (longue portée), AIM-7 Sparrow, AIM-9 Sidewinder, canon de 20 mm"
+infobox:
+  constructeur: Grumman (États-Unis)
+  role: Chasseur embarqué / intercepteur de défense de flotte
+  armees: [US Navy, Iran]
+  miseEnService: 1974
+  statut: Retiré du service américain (2006)
+  equipage: 2 (pilote + officier d'interception radar)
+  vitesseMax: Mach 2,34
+content:
+  essentiel:
+    body: |
+      Le **F-14 Tomcat** est un **chasseur embarqué** américain, mis en œuvre
+      depuis les **porte-avions** de l'**US Navy** de 1974 à 2006. Ce n'est
+      **pas** un appareil des forces françaises : il figure ici au titre de la
+      **culture aéronautique mondiale**, utile pour situer les grands appareils
+      qui reviennent souvent dans les documentaires et les questions de culture
+      générale.
+
+      Sa mission première était la **défense de flotte** : intercepter, très
+      loin du porte-avions, les avions et missiles menaçant le groupe naval.
+      Pour cela il combinait deux atouts célèbres — un puissant **radar AWG-9**
+      capable de suivre plusieurs cibles, et le **missile longue portée AIM-54
+      Phoenix**, qui pouvait frapper à plus de 100 km.
+
+      Techniquement, il est reconnaissable à son **aile à géométrie variable**
+      (« ailes à flèche variable », de 20° à 68°) : dépliées pour décoller et
+      manœuvrer lentement, repliées pour foncer en supersonique. Biplace en
+      tandem (pilote + officier d'interception radar), il a succédé au **F-4
+      Phantom II** avant d'être lui-même remplacé par le **F/A-18 Super
+      Hornet**.
+    aRetenir:
+      - Le F-14 Tomcat est un chasseur embarqué américain (US Navy, 1974-2006) — pas un appareil français.
+      - Rôle — défense de flotte (interception longue distance) grâce au radar AWG-9 et au missile AIM-54 Phoenix.
+      - Signature technique — aile à géométrie variable (20° à 68°) ; biplace en tandem.
+      - Histoire — successeur du F-4 Phantom II, remplacé par le F/A-18 Super Hornet.
+  sections:
+    - id: la-defense-de-flotte
+      title: La défense de flotte
+      body: |
+        Un **porte-avions** est une cible de très grande valeur. Le protéger
+        suppose de détecter et d'intercepter les menaces **le plus loin
+        possible** — avant qu'elles n'approchent. C'est la mission de
+        **défense de flotte** pour laquelle le F-14 a été conçu.
+
+        Son **radar AWG-9** balayait un large volume et pouvait **pister
+        plusieurs cibles** simultanément ; son missile **AIM-54 Phoenix**,
+        d'une portée exceptionnelle pour l'époque, permettait d'engager ces
+        cibles à grande distance. Cette combinaison « radar longue portée +
+        missile longue portée » faisait du Tomcat un **intercepteur** redouté,
+        pensé pour tenir à distance bombardiers et missiles antinavires.
+    - id: aile-a-geometrie-variable
+      title: L'aile à géométrie variable (à savoir)
+      strate: maitriser
+      body: |
+        La particularité la plus visible du F-14 est son **aile à géométrie
+        variable** : l'angle de flèche des ailes **change en vol**. Ailes
+        **dépliées** (peu fléchées), l'avion gagne en **portance** et en
+        maniabilité à basse vitesse — utile pour l'**appontage** et le combat
+        tournoyant. Ailes **repliées** (très fléchées), il réduit sa traînée
+        pour atteindre des vitesses **supersoniques**.
+
+        C'est un compromis d'ingénierie élégant mais **lourd et complexe**, que
+        l'aviation a globalement abandonné ensuite au profit d'ailes fixes
+        optimisées. Culturellement, le Tomcat reste une **icône** — notamment
+        grâce au cinéma —, ce qui explique qu'on le croise si souvent : le
+        connaître évite de le confondre avec un appareil français et permet de
+        parler juste en entretien de culture générale.
+  pieges:
+    - Le F-14 Tomcat est américain (US Navy) — ce n'est pas un appareil des forces françaises (ne pas le ranger dans EOPAN/EOPN/ALAT).
+    - « Géométrie variable » désigne l'aile dont la flèche change en vol — à ne pas confondre avec un simple volet ou bec de bord d'attaque.
+    - Il est retiré du service américain depuis 2006 (remplacé par le F/A-18 Super Hornet) ; seul l'Iran en a longtemps conservé quelques-uns.

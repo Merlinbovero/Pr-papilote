@@ -9,6 +9,7 @@ import {
   LanguagesIcon,
   MapIcon,
   MenuIcon,
+  PlaySquareIcon,
   RepeatIcon,
   TimerIcon,
   type LucideIcon,
@@ -67,6 +68,12 @@ const CONCOURS: NavEntry[] = [
     description: "Le socle théorique commun",
     accentSlug: "fondamentaux",
   },
+  {
+    href: "/culture",
+    label: "Culture & géopolitique",
+    description: "Aviation mondiale, géopolitique, culture générale",
+    accentSlug: "culture",
+  },
 ];
 
 const ENTRAINEMENT: NavEntry[] = [
@@ -95,6 +102,12 @@ const ENTRAINEMENT: NavEntry[] = [
     label: "Dictionnaire",
     description: "Sigles et termes",
     icon: BookOpenIcon,
+  },
+  {
+    href: "/veille",
+    label: "Veille vidéo",
+    description: "Vidéos résumées et reliées aux fiches",
+    icon: PlaySquareIcon,
   },
 ];
 

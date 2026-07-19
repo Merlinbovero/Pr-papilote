@@ -9,20 +9,21 @@ import {
 } from "./referentials";
 
 describe("référentiel des modules", () => {
-  it("contient les cinq portes d'entrée dans l'ordre officiel", () => {
+  it("contient les six portes d'entrée dans l'ordre officiel", () => {
     expect(getModules().map((m) => m.slug)).toEqual([
       "eopan",
       "eopn",
       "alat",
       "psychotechnique",
       "fondamentaux",
+      "culture",
     ]);
   });
 
-  it("désigne trois concours et deux modules transverses", () => {
+  it("désigne trois concours et trois modules transverses", () => {
     const modules = getModules();
     expect(modules.filter((m) => m.kind === "concours")).toHaveLength(3);
-    expect(modules.filter((m) => m.kind === "transverse")).toHaveLength(2);
+    expect(modules.filter((m) => m.kind === "transverse")).toHaveLength(3);
   });
 
   it("retourne undefined pour un module inconnu", () => {
@@ -48,6 +49,7 @@ describe("référentiel des catégories", () => {
   it("fournit des catégories propres aux modules transverses", () => {
     expect(getCategories("fondamentaux").map((c) => c.slug)).toContain("meteorologie");
     expect(getCategories("psychotechnique").map((c) => c.slug)).toContain("exercices");
+    expect(getCategories("culture").map((c) => c.slug)).toContain("aviation-mondiale");
   });
 
   it("trie les catégories par ordre d'affichage", () => {
