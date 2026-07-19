@@ -7,6 +7,7 @@ import {
   BookOpenIcon,
   GraduationCapIcon,
   LanguagesIcon,
+  BookMarkedIcon,
   MapIcon,
   MenuIcon,
   PlaySquareIcon,
@@ -108,6 +109,12 @@ const ENTRAINEMENT: NavEntry[] = [
     label: "Veille vidéo",
     description: "Vidéos résumées et reliées aux fiches",
     icon: PlaySquareIcon,
+  },
+  {
+    href: "/lectures",
+    label: "Lectures",
+    description: "Livres et articles résumés et reliés aux fiches",
+    icon: BookMarkedIcon,
   },
 ];
 

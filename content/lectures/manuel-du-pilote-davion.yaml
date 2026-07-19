@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: lecture.manuel-du-pilote-davion
+slug: manuel-du-pilote-davion
+title: Manuel du pilote d'avion
+author: Collectif (sous l'égide de l'aviation civile / instructeurs)
+kind: livre
+publisher: Cépaduès éditions
+module: fondamentaux
+topics: [Formation, Aérodynamique, Mécanique du vol, Réglementation]
+summary: |-
+  Le « Manuel du pilote d'avion » (Cépaduès éditions) est l'ouvrage de référence
+  de la formation au brevet et à la licence de pilote privé en France. Souvent
+  appelé « le livre bleu », il couvre l'ensemble du programme théorique :
+  aérodynamique, mécanique du vol, connaissance de l'avion, météorologie,
+  navigation, réglementation et facteurs humains.
+
+  Ce n'est pas un livre destiné spécifiquement aux concours militaires, mais son
+  socle théorique recoupe très largement les Fondamentaux attendus aux sélections
+  de pilote — c'est une excellente base pour consolider et approfondir les
+  notions techniques du site. À utiliser comme référence de fond, en complément
+  des fiches.
+takeaways:
+  - L'ouvrage de référence de la formation au pilotage privé en France (« le livre bleu », Cépaduès).
+  - Il couvre tout le socle théorique — aérodynamique, mécanique du vol, météo, navigation, réglementation, facteurs humains.
+  - Son contenu recoupe largement les Fondamentaux des concours de pilote.
+  - À utiliser comme référence de fond, en complément des fiches du site.
+relatedFiches:
+  - fondamentaux.aerodynamique.air-et-proprietes
+  - fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
+  - fondamentaux.facteurs-humains.culture-de-securite-et-rex
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie
