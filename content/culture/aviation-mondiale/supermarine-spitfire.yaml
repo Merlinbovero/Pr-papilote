@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.supermarine-spitfire
+type: appareil
+title: Supermarine Spitfire
+slug: supermarine-spitfire
+service:
+  status: historique
+  firstFlight: 1936
+  introducedAt: 1938
+  operator: Royal Air Force (Royaume-Uni)
+summary: >-
+  Chasseur britannique emblématique de la Seconde Guerre mondiale, à l'aile
+  elliptique reconnaissable. Motorisé par le Rolls-Royce Merlin, héros de la
+  bataille d'Angleterre (1940), c'est le seul chasseur britannique produit sans
+  interruption durant tout le conflit.
+objectifs:
+  - Identifier le Supermarine Spitfire comme le chasseur britannique emblématique de la Seconde Guerre mondiale (aile elliptique, moteur Merlin).
+  - Situer son rôle dans la bataille d'Angleterre (1940), aux côtés du Hurricane, face à la Luftwaffe.
+  - Le distinguer de son rival, le Messerschmitt Bf 109.
+aliases: [Spitfire, Supermarine Spitfire, chasseur britannique, bataille d'Angleterre, Merlin]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs-historiques
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Supermarine Spitfire (chasseur historique), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Supermarine Spitfire — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Supermarine_Spitfire
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.hawker-hurricane
+    - culture.aviation-mondiale.messerschmitt-bf-109
+specs:
+  crew: "1 pilote"
+  powerplant: "1 moteur Rolls-Royce Merlin (~1 030 ch), puis Griffon (jusqu'à ~2 340 ch)"
+  maxSpeed: "~560 à 650 km/h selon les versions"
+  armament: "8 mitrailleuses de 7,7 mm (.303), puis canons de 20 mm et mitrailleuses de 12,7 mm"
+infobox:
+  constructeur: Supermarine (Royaume-Uni)
+  role: Chasseur / intercepteur
+  armees: [Royal Air Force]
+  miseEnService: 1938
+  statut: Historique (Seconde Guerre mondiale)
+  equipage: 1 pilote
+  vitesseMax: ~560 à 650 km/h selon les versions
+content:
+  essentiel:
+    body: |
+      Le **Supermarine Spitfire** est le **chasseur britannique** le plus
+      emblématique de la **Seconde Guerre mondiale**. Dessiné par **R. J.
+      Mitchell**, reconnaissable à son **aile elliptique**, il vole dès **1936**
+      et entre en service en **1938**. Son moteur **Rolls-Royce Merlin** (puis,
+      sur les versions tardives, le **Griffon**) lui donne des performances de
+      premier plan tout au long du conflit.
+
+      Le Spitfire est indissociable de la **bataille d'Angleterre** (été-automne
+      **1940**) : avec le **Hawker Hurricane**, il défend le ciel britannique
+      face à la **Luftwaffe**. Plus rapide et plus fin que le Hurricane, il
+      était surtout chargé d'affronter les **chasseurs** allemands (les
+      **Messerschmitt Bf 109**), pendant que le Hurricane visait les bombardiers.
+
+      Constamment amélioré, il fut le **seul chasseur britannique produit sans
+      interruption** de 1938 à 1948 — plus de **20 000** exemplaires. C'est une
+      **icône** de l'aviation, qu'un candidat doit savoir reconnaître et situer.
+    aRetenir:
+      - Le Spitfire est le chasseur britannique emblématique de la Seconde Guerre mondiale (aile elliptique, moteur Merlin).
+      - Héros de la bataille d'Angleterre (1940), aux côtés du Hurricane, face à la Luftwaffe.
+      - Plus de 20 000 exemplaires ; seul chasseur britannique produit tout au long de la guerre.
+      - Son rival de référence est le Messerschmitt Bf 109.
+  sections:
+    - id: la-bataille-d-angleterre
+      title: La bataille d'Angleterre
+      body: |
+        À l'été **1940**, l'Allemagne cherche à obtenir la **supériorité
+        aérienne** au-dessus de la Manche pour préparer une invasion du
+        Royaume-Uni. La **Royal Air Force** s'y oppose avec deux chasseurs : le
+        **Hurricane**, plus nombreux et robuste, et le **Spitfire**, plus rapide
+        et agile.
+
+        La répartition des rôles est restée célèbre : les Spitfire engageaient
+        de préférence les **chasseurs** Bf 109 en escorte, tandis que les
+        Hurricane s'attaquaient aux **bombardiers**. La victoire défensive de la
+        RAF — la première grande défaite aérienne de l'Allemagne — a fait du
+        Spitfire un **symbole** de la résistance britannique.
+  pieges:
+    - Le Spitfire est britannique (RAF) — pas un appareil des forces françaises.
+    - Spitfire et Hurricane sont deux chasseurs distincts de la RAF — le Hurricane, plus nombreux, a remporté la majorité des victoires de la bataille d'Angleterre.
+    - C'est un appareil historique (Seconde Guerre mondiale), retiré depuis longtemps du service.

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: video.greatest-fighters-wwii
+slug: greatest-fighters-wwii
+youtubeId: 8LAc_-ENRKw
+title: "Les plus grands chasseurs de la Seconde Guerre mondiale (documentaire)"
+channel: Timeline - World History Documentaries
+channelUrl: https://www.youtube.com/@TimelineChannel
+module: culture
+topics: [Aviation mondiale, Seconde Guerre mondiale, Chasseurs historiques, Histoire]
+summary: |-
+  Ce documentaire dresse le panorama des grands chasseurs de la Seconde Guerre
+  mondiale et de la course à la supériorité aérienne entre les belligérants. On
+  y croise les appareils devenus légendaires : côté britannique le Spitfire et
+  le Hurricane (héros de la bataille d'Angleterre), côté allemand le
+  Messerschmitt Bf 109 et le Focke-Wulf Fw 190 (l'ossature de la Luftwaffe),
+  côté américain le P-51 Mustang (le chasseur d'escorte décisif) et côté
+  japonais le Zero (roi du Pacifique au début de la guerre).
+
+  C'est un excellent support de culture aéronautique : reconnaître ces avions,
+  savoir à quel pays et à quel rôle ils correspondent, et comprendre les grands
+  arbitrages de conception (vitesse, altitude, rayon d'action, protection,
+  maniabilité) qui décident d'un duel aérien. Nous en tirons une fiche par
+  appareil, avec les faits vérifiés sur sources encyclopédiques.
+takeaways:
+  - Royaume-Uni — Spitfire (rapide, agile) et Hurricane (robuste, nombreux) défendent le ciel lors de la bataille d'Angleterre.
+  - Allemagne — Bf 109 (le plus produit de l'histoire) et Fw 190 forment l'ossature de la Luftwaffe.
+  - États-Unis — le P-51 Mustang, décisif grâce au moteur Merlin et à son rayon d'action (escorte des bombardiers).
+  - Japon — le Zero domine au début du Pacifique par sa maniabilité et son allonge, au prix d'une protection quasi nulle.
+relatedFiches:
+  - culture.aviation-mondiale.supermarine-spitfire
+  - culture.aviation-mondiale.hawker-hurricane
+  - culture.aviation-mondiale.messerschmitt-bf-109
+  - culture.aviation-mondiale.focke-wulf-fw-190
+  - culture.aviation-mondiale.north-american-p-51-mustang
+  - culture.aviation-mondiale.mitsubishi-a6m-zero
+watchNext: []
+sources:
+  - title: "Supermarine Spitfire — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Supermarine_Spitfire
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Messerschmitt Bf 109 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Messerschmitt_Bf_109
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie
