@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: fondamentaux.facteurs-humains.culture-de-securite-et-rex
+type: concept
+title: La culture de sécurité et le retour d'expérience (REX)
+slug: culture-de-securite-et-rex
+summary: >-
+  L'aviation est devenue sûre en apprenant méthodiquement de ses accidents. En
+  France, le BEA mène des enquêtes de sécurité — pour comprendre et prévenir, pas
+  pour punir. C'est le retour d'expérience (REX) et la « culture juste » : on
+  cherche les causes, jamais un coupable, et on ne spécule pas.
+objectifs:
+  - Expliquer pourquoi l'aviation apprend de ses accidents (retour d'expérience) plutôt que de les oublier.
+  - Distinguer l'enquête de sécurité (BEA, comprendre et prévenir) de l'enquête judiciaire (établir des responsabilités).
+  - Comprendre la « culture juste » et la règle de prudence — on cherche des causes, pas un coupable, et on ne spécule pas tant que l'enquête n'a pas conclu.
+aliases:
+  [
+    culture de sécurité,
+    retour d'expérience,
+    REX,
+    BEA,
+    enquête de sécurité,
+    culture juste,
+    sécurité des vols,
+  ]
+module: fondamentaux
+category: facteurs-humains
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — notion de facteurs humains sur la culture de sécurité et le retour d'expérience (rôle du BEA), à partir d'une veille vidéo ; faits vérifiés sur sources officielles.
+    author: prepapilote
+sources:
+  - title: "Le BEA — missions et enquêtes de sécurité — Bureau d'Enquêtes et d'Analyses (bea.aero)"
+    url: https://bea.aero/le-bea/nos-missions/
+    kind: officiel
+    consultedAt: "2026-07-19"
+  - title: "Bureau d'enquêtes et d'analyses pour la sécurité de l'aviation civile — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Bureau_d%27enqu%C3%AAtes_et_d%27analyses_pour_la_s%C3%A9curit%C3%A9_de_l%27aviation_civile
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.pilatus-pc-6-porter
+content:
+  essentiel:
+    body: |
+      Si le transport aérien est aujourd'hui l'un des plus **sûrs** au monde,
+      c'est le résultat d'une méthode : **apprendre de chaque accident et de
+      chaque incident**. C'est le **retour d'expérience (REX)** — plutôt que
+      d'oublier un événement, on l'**analyse** en profondeur pour en tirer des
+      **enseignements** et éviter qu'il se reproduise.
+
+      En France, c'est le rôle du **BEA** (Bureau d'Enquêtes et d'Analyses pour
+      la sécurité de l'aviation civile). Point essentiel : son **enquête de
+      sécurité** vise uniquement à **comprendre et prévenir** — elle est
+      **distincte de l'enquête judiciaire** qui, elle, cherche d'éventuelles
+      **responsabilités**. Le BEA ne dit pas « qui est coupable », il dit
+      « **qu'est-ce qui s'est passé, et comment l'éviter** », et publie des
+      **recommandations de sécurité**.
+
+      Cette approche suppose une **« culture juste »** : encourager chacun à
+      **signaler** ses erreurs et les anomalies sans crainte de sanction
+      systématique, parce que l'information vaut mieux que le silence. Et une
+      **règle de prudence** : tant que l'enquête n'a pas conclu, **on ne spécule
+      pas** sur les causes.
+    aRetenir:
+      - L'aviation devient sûre en apprenant de ses accidents — c'est le retour d'expérience (REX).
+      - En France, le BEA mène des enquêtes de sécurité pour comprendre et prévenir, pas pour punir.
+      - L'enquête de sécurité (BEA) est distincte de l'enquête judiciaire (responsabilités).
+      - « Culture juste » — on encourage le signalement ; et on ne spécule pas tant que l'enquête n'a pas conclu.
+  sections:
+    - id: apprendre-plutot-que-punir
+      title: Comprendre plutôt que punir
+      body: |
+        Un accident a presque toujours **plusieurs causes** qui s'enchaînent —
+        rarement une faute unique. Pour les mettre au jour, il faut que les
+        acteurs (pilotes, mécaniciens, contrôleurs) **parlent librement** de ce
+        qui s'est passé, y compris de leurs propres erreurs. Or, si toute erreur
+        était immédiatement punie, plus personne ne signalerait rien : la
+        sécurité y perdrait.
+
+        D'où la **« culture juste »** (just culture) : on distingue l'**erreur
+        honnête** (dont on apprend) de la **faute intentionnelle** ou de la
+        négligence grave (qui, elle, engage la responsabilité). L'objectif est
+        de faire **remonter l'information** — via les enquêtes du BEA, mais aussi
+        les **signalements** volontaires d'événements — pour corriger le système
+        avant qu'un accident ne survienne.
+    - id: le-bea-et-la-regle-de-prudence
+      title: Le BEA et la règle de prudence (à savoir)
+      strate: maitriser
+      body: |
+        Le **BEA** est un organisme **indépendant** chargé des **enquêtes de
+        sécurité** sur les accidents et incidents de l'aviation civile en
+        France. Ses enquêteurs recueillent les traces (enregistreurs de vol,
+        témoignages, épave, données radar), reconstituent le déroulement, et
+        publient un **rapport** assorti de **recommandations** destinées à
+        améliorer la sécurité de **tous**.
+
+        Une enquête **prend du temps** — souvent des mois. Pendant ce temps, la
+        cause reste **indéterminée**. La règle professionnelle est alors la
+        **prudence** : ne pas **spéculer**, ne pas désigner de coupable, ne pas
+        propager de rumeurs. C'est exactement la posture des analyses
+        responsables (comme certaines vidéos de spécialistes) qui expliquent un
+        accident **sans en inventer la cause**. Pour un futur pilote, cette
+        **rigueur** fait partie du métier autant que le pilotage.
+  pieges:
+    - L'enquête de sécurité (BEA) n'est pas l'enquête judiciaire — l'une cherche à prévenir, l'autre à établir des responsabilités.
+    - « Culture juste » ne veut pas dire impunité — l'erreur honnête est traitée autrement que la faute intentionnelle.
+    - Tant qu'une enquête n'a pas conclu, la cause est indéterminée — on ne spécule pas.
