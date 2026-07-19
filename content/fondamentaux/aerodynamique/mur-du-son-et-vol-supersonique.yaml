@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
+type: notion-aerodynamique
+title: Le mur du son et le vol supersonique
+slug: mur-du-son-et-vol-supersonique
+summary: >-
+  Le « mur du son » est la forte hausse de traînée qui accompagne l'approche de
+  la vitesse du son, quand des ondes de choc apparaissent. Le nombre de Mach
+  compare la vitesse de l'avion à celle du son ; franchir Mach 1, c'est passer
+  supersonique.
+objectifs:
+  - Définir la vitesse du son et expliquer pourquoi elle diminue avec l'altitude (température).
+  - Définir le nombre de Mach et les régimes de vol (subsonique, transsonique, supersonique, hypersonique).
+  - Expliquer ce qu'est le « mur du son » (traînée d'onde, ondes de choc) et le bang supersonique.
+  - Situer le premier vol supersonique (Chuck Yeager, Bell X-1, 1947) et comprendre pourquoi on franchit plus facilement Mach 1 en altitude.
+aliases:
+  [mur du son, vol supersonique, nombre de Mach, vitesse du son, bang supersonique, onde de choc]
+module: fondamentaux
+category: aerodynamique
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — notion d'aérodynamique sur le mur du son et le vol supersonique, à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Mur du son — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Mur_du_son
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Vitesse du son — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Vitesse_du_son
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Nombre de Mach — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Nombre_de_Mach
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - fondamentaux.aerodynamique.air-et-proprietes
+    - fondamentaux.culture-aeronautique.l-epner
+    - culture.aviation-mondiale.f-16-fighting-falcon
+content:
+  essentiel:
+    body: |
+      Le son se propage dans l'air à une **vitesse** bien précise : environ
+      **340 m/s** (soit **~1 224 km/h**) au niveau de la mer, à 15 °C. Point
+      essentiel : cette vitesse **dépend de la température** de l'air, donc de
+      l'**altitude**. Plus il fait froid, plus le son va lentement — vers
+      11 000 m, la vitesse du son tombe à environ **295 m/s (~1 060 km/h)**.
+
+      Pour comparer la vitesse d'un avion à celle du son, on utilise le
+      **nombre de Mach** : c'est le rapport entre la vitesse de l'avion et la
+      vitesse du son **là où il vole**. **Mach 1**, c'est exactement la vitesse
+      du son ; Mach 2, deux fois. On distingue les régimes **subsonique**
+      (nettement sous Mach 1), **transsonique** (autour de Mach 1),
+      **supersonique** (au-delà) et **hypersonique** (au-delà de Mach 5 environ).
+
+      À l'approche de Mach 1, l'air n'a plus le temps de « s'écarter » devant
+      l'avion : il se comprime brutalement et forme des **ondes de choc**. La
+      **traînée** augmente alors très fortement — c'est le **« mur du son »**,
+      longtemps redouté. Le franchir crée au sol un **bang supersonique**
+      (l'onde de choc perçue comme une détonation). Le premier vol supersonique
+      officiel revient à **Chuck Yeager**, le **14 octobre 1947**, sur
+      l'avion-fusée **Bell X-1**.
+    aRetenir:
+      - La vitesse du son ≈ 340 m/s (~1 224 km/h) au sol à 15 °C, et diminue avec le froid — donc avec l'altitude.
+      - Le nombre de Mach = vitesse de l'avion ÷ vitesse du son locale ; Mach 1 = vitesse du son.
+      - Le « mur du son » est la forte hausse de traînée près de Mach 1, due aux ondes de choc ; le franchir produit un bang supersonique.
+      - Premier vol supersonique — Chuck Yeager, Bell X-1, 14 octobre 1947.
+  sections:
+    - id: vitesse-du-son-et-nombre-de-mach
+      title: Vitesse du son et nombre de Mach
+      body: |
+        La **vitesse du son** n'est pas une constante universelle : dans l'air,
+        elle dépend surtout de la **température**. Air chaud → son rapide ; air
+        froid → son lent. Comme l'air se refroidit en montant, la vitesse du son
+        **diminue avec l'altitude** (jusqu'à la tropopause).
+
+        Le **nombre de Mach** rapporte la vitesse de l'avion à cette vitesse du
+        son **locale** : `Mach = vitesse de l'avion ÷ vitesse du son`. C'est
+        pourquoi un même avion « à Mach 0,9 » ne vole pas à la même vitesse
+        (en km/h) au sol et à 11 000 m. On parle de vol **subsonique**
+        (bien en dessous de Mach 1), **transsonique** (de part et d'autre de
+        Mach 1, régime délicat), **supersonique** (au-delà), et **hypersonique**
+        au-delà de Mach 5 environ.
+    - id: le-mur-du-son
+      title: Le « mur du son » et le bang supersonique
+      body: |
+        En subsonique, l'air se comporte comme s'il « prévenait » de l'arrivée
+        de l'avion et s'écartait devant lui. Près de **Mach 1**, ce n'est plus
+        possible : les perturbations ne vont pas plus vite que l'avion, l'air se
+        **comprime brutalement** et forme des **ondes de choc**. La conséquence
+        est une **traînée d'onde** qui grimpe en flèche : il faut beaucoup plus
+        de poussée pour continuer d'accélérer. C'est cette barrière de traînée,
+        et les difficultés de contrôle associées, qu'on a appelée le **« mur du
+        son »**.
+
+        Une fois franchi, l'avion vole **supersonique**, traînant ses ondes de
+        choc comme un sillage. Au sol, le passage de ces ondes est entendu comme
+        une **détonation** : le **bang supersonique**. Les avions modernes
+        (comme le F-16 de la vidéo) franchissent Mach 1 sans drame — mais la
+        **traînée d'onde** reste un coût énergétique majeur du vol rapide.
+    - id: pourquoi-plus-facile-en-altitude
+      title: Pourquoi c'est « plus facile » en altitude (à savoir)
+      strate: maitriser
+      body: |
+        À très haute altitude — par exemple **50 000 ft (~15 000 m)** —, l'air
+        est **glacial**, donc la **vitesse du son y est plus basse**. Franchir
+        **Mach 1** demande alors une **vitesse vraie plus faible** qu'au niveau
+        de la mer. De plus, l'air raréfié réduit la traînée. C'est pourquoi les
+        essais de passage du mur du son se font volontiers **en altitude**.
+
+        C'est aussi là qu'intervient le travail des **pilotes d'essais** et des
+        centres d'essais en vol (aux États-Unis, **Edwards Air Force Base** ; en
+        France, l'**EPNER**) : explorer précisément le domaine de vol autour de
+        Mach 1, là où le comportement de l'avion change le plus vite.
+  pieges:
+    - Le nombre de Mach dépend de la vitesse du son LOCALE — « Mach 0,9 » ne correspond pas à une vitesse fixe en km/h, elle change avec l'altitude.
+    - Le « mur du son » n'est pas un obstacle matériel — c'est une forte hausse de traînée (traînée d'onde) liée aux ondes de choc près de Mach 1.
+    - Le bang supersonique n'est pas produit « au moment » du franchissement seulement — un avion en vol supersonique traîne son onde de choc en permanence.
