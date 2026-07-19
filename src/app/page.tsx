@@ -9,7 +9,7 @@ import {
   TimerIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ModuleCard } from "@/components/shared/module-card";
 import { buildSearchEntries } from "@/features/search/entries";
 import { PreparationBanner } from "@/features/preparation/preparation-banner";
@@ -169,8 +169,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Entraînements : les actions concrètes, tout de suite */}
-      <section aria-labelledby="entrainement-titre" className="bg-muted/40 border-y">
+      {/* Entraînements : les actions concrètes, tout de suite.
+          Tuiles sur fond « background » (les cartes bg-card ressortent en clair
+          au-dessus, dans les deux thèmes) : pastille d'icône colorée, ombre et
+          élévation au survol — pour qu'on ne passe plus dessus sans les voir. */}
+      <section aria-labelledby="entrainement-titre" className="border-y">
         <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
           <div className="mb-6 space-y-1">
             <h2 id="entrainement-titre" className="text-2xl font-bold tracking-tight md:text-3xl">
@@ -187,14 +190,21 @@ export default function HomePage() {
                   href={item.href}
                   className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
                 >
-                  <Card className="hover:border-primary/40 h-full transition-colors">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2 text-base">
-                        <item.icon aria-hidden className="text-primary size-4 shrink-0" />
-                        {item.title}
-                      </CardTitle>
-                      <CardDescription>{item.description}</CardDescription>
-                    </CardHeader>
+                  <Card className="hover:border-primary/60 h-full border shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                    <CardContent className="flex items-start gap-3">
+                      <span
+                        aria-hidden
+                        className="bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-lg"
+                      >
+                        <item.icon className="size-5" />
+                      </span>
+                      <div className="min-w-0 space-y-1">
+                        <p className="font-heading text-base leading-snug font-semibold">
+                          {item.title}
+                        </p>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </div>
+                    </CardContent>
                   </Card>
                 </Link>
               </li>
