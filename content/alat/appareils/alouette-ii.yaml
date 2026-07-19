@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: alat.appareils.alouette-ii
+type: helicoptere
+title: Alouette II (SE3130)
+slug: alouette-ii
+service:
+  status: retire
+  firstFlight: 1955
+  operator: Aviation légère de l'armée de Terre
+summary: >-
+  Premier hélicoptère de série à turbine au monde, et pionnière de l'ALAT. Le
+  SE3130 (version Artouste) a ouvert l'ère de l'aviation légère à turbine —
+  liaison, évacuation sanitaire et premiers essais de missiles antichar,
+  notamment pendant la guerre d'Algérie.
+objectifs:
+  - Identifier l'Alouette II (SE3130) comme le premier hélicoptère de série à turbine au monde et la pionnière de l'ALAT.
+  - Distinguer la variante SE3130 (turbine Artouste) de la SA318C ultérieure (turbine Astazou).
+  - Connaître son rôle fondateur — liaison, observation, évacuation sanitaire et premiers essais de lutte antichar héliportée (missiles AS10/AS11).
+aliases: [Alouette II, Alouette 2, SE3130, SE 3130, premier hélicoptère à turbine, Artouste]
+module: alat
+category: appareils
+subcategory: helicopteres-legers
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche Alouette II (SE3130), pionnière à turbine de l'ALAT ; variante Artouste désambiguïsée de la SA318C Astazou ; sources ALAT.fr et Wikipédia recoupées.
+    author: prepapilote
+sources:
+  - title: "Présentation de l'hélicoptère SE3130 Alouette II — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/aeronefs-alat-helicopteres-se3130-alouette-2-presentation.html
+    kind: institutionnel
+    consultedAt: "2026-07-19"
+  - title: "SNCASE SE.3130 Alouette II — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/SNCASE_SE.3130_Alouette_II
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Sud-Est SE 3130 Alouette II — Aviations militaires"
+    url: https://aviationsmilitaires.net/v3/kb/aircraft/show/257/sud-est-se-3130-alouette-ii
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.appareils.alouette-iii
+    - alat.appareils.gazelle
+    - alat.histoire.histoire-de-l-alat
+specs:
+  crew: "1 pilote + 1 observateur (jusqu'à 5 places)"
+  length: "9,70 m (fuselage)"
+  rotorDiameter: "10,20 m"
+  height: "2,75 m"
+  emptyWeight: "1 000 kg"
+  maxTakeoffWeight: "1 600 kg"
+  powerplant: "1 turbine Turbomeca Artouste II (~360 à 400 ch selon la version)"
+  maxSpeed: "170 km/h"
+  ceiling: "3 200 m"
+  range: "Autonomie ≈ 3 h de vol de croisière"
+  armament: "Versions armées / essais — missiles filoguidés antichar AS10 et AS11"
+infobox:
+  constructeur: SNCASE / Sud-Aviation
+  role: Hélicoptère léger (premier hélicoptère de série à turbine)
+  armees: [Armée de terre]
+  miseEnService: Années 1950 (à l'ALAT)
+  statut: Retiré du service
+  equipage: 1 pilote + 1 observateur
+  capaciteEmport: Jusqu'à 5 places ; 750 kg sous élingue
+content:
+  essentiel:
+    body: |
+      L'**Alouette II** (SE3130) est une double pionnière : c'est le **premier
+      hélicoptère de série à turbine au monde** (premier vol le **12 mars
+      1955**), et la **première génération** d'hélicoptères à turbine de l'ALAT.
+      Elle ouvre l'ère de l'aviation légère moderne.
+
+      Motorisée par une turbine **Turbomeca Artouste**, plus légère et plus
+      puissante qu'un moteur à pistons, elle offre à l'armée de Terre un
+      appareil **agile** pour la **liaison**, l'**observation**, l'**évacuation
+      sanitaire** et le **transport léger** (750 kg sous élingue). L'ALAT en a
+      reçu **176 SE3130**.
+
+      Engagée dès la **guerre d'Algérie**, elle y a mené ravitaillements,
+      évacuations et dépose de commandos, et a servi aux **premiers essais** de
+      **missiles antichar** héliportés (AS10, AS11) — l'amorce de l'aérocombat.
+      Le SE3130 (turbine **Artouste**) sera plus tard complété par une version
+      remotorisée, la **SA318C** (turbine **Astazou**).
+    aRetenir:
+      - Alouette II (SE3130) — premier hélicoptère de série à turbine au monde (premier vol 1955) et pionnière de l'ALAT.
+      - 176 SE3130 reçus par l'ALAT ; turbine Turbomeca Artouste.
+      - Rôles fondateurs — liaison, observation, évacuation sanitaire, transport léger, premiers essais antichar (AS10/AS11).
+      - À distinguer de la SA318C (version remotorisée avec turbine Astazou).
+  sections:
+    - id: la-revolution-de-la-turbine
+      title: La révolution de la turbine
+      body: |
+        Jusqu'aux années 1950, les hélicoptères sont propulsés par de lourds
+        **moteurs à pistons**, peu puissants et fragiles. L'Alouette II change
+        tout : elle est le **premier hélicoptère de série** équipé d'une
+        **turbine à gaz** (Turbomeca **Artouste**), plus **légère**, plus
+        **puissante** et plus **fiable**.
+
+        Ce saut technologique donne à l'aviation légère un appareil réellement
+        **opérationnel** : capable d'emporter une charge utile, de travailler en
+        montagne, de se poser sur des terrains sommaires. C'est le début de
+        l'**hélicoptère utilitaire** moderne — et le point de départ de la
+        longue lignée des **Alouette** puis des hélicoptères français.
+    - id: pionniere-de-l-aerocombat
+      title: Pionnière de l'aérocombat (à savoir)
+      strate: maitriser
+      body: |
+        Pendant la **guerre d'Algérie**, l'Alouette II démontre l'intérêt
+        militaire de l'hélicoptère : **évacuation sanitaire** au plus près des
+        combats, **ravitaillement**, **liaison** et dépose de **commandos**.
+        Surtout, elle sert de banc d'essai aux **premiers missiles antichar**
+        filoguidés (**AS10**, **AS11**) tirés depuis un hélicoptère — l'ancêtre
+        de la **lutte antichar** qui fera plus tard la spécialité de la Gazelle
+        et du Tigre.
+
+        Attention à la **variante** : le **SE3130** est la version d'origine, à
+        turbine **Artouste**. Une version remotorisée, le **SA318C**, adopte la
+        turbine **Astazou** (leurs caractéristiques diffèrent légèrement). La
+        relève viendra ensuite de l'**Alouette III**, plus grande, puis de la
+        **Gazelle**.
+  pieges:
+    - L'Alouette II est un hélicoptère léger — pas un appareil de manœuvre (transport lourd) comme le Puma.
+    - Elle est retirée du service — c'est un appareil fondateur du patrimoine de l'ALAT.
+    - Deux variantes à ne pas confondre — le SE3130 (turbine Artouste) et le SA318C remotorisé (turbine Astazou).
