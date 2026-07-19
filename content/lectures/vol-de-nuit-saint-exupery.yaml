@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: lecture.vol-de-nuit-saint-exupery
+slug: vol-de-nuit
+title: Vol de nuit
+author: Antoine de Saint-Exupéry
+kind: livre
+publisher: Gallimard
+year: 1931
+module: culture
+topics: [Littérature aéronautique, Culture, Histoire de l'aviation]
+summary: |-
+  « Vol de nuit » est un roman court d'Antoine de Saint-Exupéry, lui-même pilote,
+  paru en 1931 (prix Femina la même année). Il s'inspire des débuts héroïques de
+  l'aéropostale, quand les équipages risquaient leur vie pour acheminer le
+  courrier de nuit au-dessus de l'Amérique du Sud.
+
+  Le livre met en scène Rivière, le chef d'exploitation, et ses pilotes,
+  confrontés à la tempête, à la nuit et au devoir. Au-delà de l'aventure, c'est
+  une méditation sur le sens du risque, la responsabilité et le prix du progrès —
+  des thèmes qui parlent directement à qui vise le métier de pilote. Une lecture
+  de culture générale et d'inspiration, pas un manuel technique.
+takeaways:
+  - Un classique de la littérature aéronautique française, écrit par un pilote (prix Femina 1931).
+  - Il s'inspire de l'aéropostale et des premiers vols de nuit, dangereux et pionniers.
+  - Son sujet profond — le devoir, la responsabilité et le sens du risque, au cœur du métier de pilote.
+  - À lire pour la culture et l'inspiration, pas pour la technique.
+relatedFiches: []
+sources:
+  - title: "Vol de nuit (roman) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Vol_de_nuit_(roman)
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie

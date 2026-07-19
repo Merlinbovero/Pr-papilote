@@ -842,3 +842,46 @@ export const videoSchema = z.object({
 
 export type WatchNext = z.infer<typeof watchNextSchema>;
 export type Video = z.infer<typeof videoSchema>;
+
+// ---------------------------------------------------------------------------
+// Veille lecture (rubrique « une lecture → des fiches »)
+// ---------------------------------------------------------------------------
+
+/**
+ * Article de veille lecture : un livre, un article ou une revue transformé en
+ * petit article relié au contenu du site. Même doctrine que la veille vidéo :
+ * la lecture est un DÉCLENCHEUR ; les faits des fiches liées restent sourcés
+ * indépendamment. Le résumé est rédigé (nos mots), jamais copié.
+ */
+export const readingSchema = z.object({
+  schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
+  id: contentIdSchema,
+  slug: slugSchema,
+  title: z.string().min(1),
+  /** Auteur(s) de la lecture (crédit obligatoire). */
+  author: z.string().min(1),
+  /** Nature de la lecture. */
+  kind: z.enum(["livre", "article", "revue", "rapport", "autre"]),
+  /** Éditeur / publication (facultatif). */
+  publisher: z.string().min(1).optional(),
+  /** Année de publication (facultatif). */
+  year: z.int().min(1800).max(2100).optional(),
+  /** Lien pour lire ou trouver la lecture (facultatif — jamais de rediffusion). */
+  url: z.url().optional(),
+  /** Module de classement (culture, fondamentaux, eopan…). */
+  module: slugSchema.optional(),
+  topics: z.array(z.string().min(1)).default([]),
+  /** Résumé rédigé (nos mots), jamais copié. */
+  summary: z.string().min(20),
+  /** Ce qu'on en retient (puces). */
+  takeaways: z.array(z.string().min(1)).default([]),
+  /** Fiches produites ou reliées (identifiants du graphe). */
+  relatedFiches: z.array(contentIdSchema).default([]),
+  /** Sources éventuelles des faits cités dans le résumé. */
+  sources: z.array(sourceSchema).default([]),
+  createdAt: isoDateSchema,
+  verifiedAt: isoDateSchema,
+  status: contentStatusSchema,
+});
+
+export type Reading = z.infer<typeof readingSchema>;
