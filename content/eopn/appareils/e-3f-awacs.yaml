@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: eopn.appareils.e-3f-awacs
+type: appareil
+title: E-3F AWACS (SDCA)
+slug: e-3f-awacs
+service:
+  status: actif
+  introducedAt: 1991
+  operator: Armée de l'air et de l'Espace
+summary: >-
+  Avion radar de détection et de commandement aéroporté (SDCA), le « radar
+  volant » de l'armée de l'Air et de l'Espace. Quatre exemplaires basés à Avord,
+  son radar dorsal détecte à plus de 400 km et coordonne la manœuvre aérienne.
+objectifs:
+  - Identifier l'E-3F AWACS comme le système de détection et de commandement aéroporté (SDCA) de l'armée de l'Air et de l'Espace.
+  - Comprendre son rôle — voir loin (radar > 400 km, y compris à basse altitude) et commander la manœuvre aérienne, en liaison de données (Link 16).
+  - Situer sa flotte — quatre appareils dérivés du Boeing 707, livrés au début des années 1990, à la 36e escadre (base aérienne 702 d'Avord).
+aliases: [E-3F, AWACS, SDCA, Sentry, radar volant, détection aéroportée, Avord]
+module: eopn
+category: appareils
+subcategory: avions-de-soutien
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche-objet appareil, l'E-3F AWACS (SDCA) de l'AAE ; caractéristiques reprises de la page officielle defense.gouv.fr.
+    author: prepapilote
+sources:
+  - title: "E-3F Système de détection et de commandement aéroporté (SDCA) — Ministère des Armées"
+    url: https://www.defense.gouv.fr/air/e-3f-systeme-detection-commandement-aeroporte-sdca
+    kind: officiel
+    consultedAt: "2026-07-19"
+  - title: "AWACS — Ministère des Armées (nos aéronefs, nos avions)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-avions/awacs
+    kind: officiel
+    consultedAt: "2026-07-19"
+  - title: "Système de détection et de commandement aéroporté — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_d%C3%A9tection_et_de_commandement_a%C3%A9roport%C3%A9
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - eopn.appareils.rafale
+    - eopn.missions.la-posture-permanente-de-surete-aerienne
+    - eopn.missions.missions-de-l-armee-de-l-air
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.presentation.le-concours-eopn
+specs:
+  crew: "18 (2 pilotes, 1 navigateur, 1 mécanicien navigant, 14 contrôleurs/opérateurs/techniciens)"
+  length: "46,6 m"
+  wingspan: "44,4 m"
+  height: "12,6 m"
+  emptyWeight: "85,6 t"
+  maxTakeoffWeight: "152 t"
+  powerplant: "4 réacteurs CFM56-2"
+  maxSpeed: "Mach 0,78 (~963 km/h)"
+  ceiling: "≈ 10 000 m"
+  range: "Autonomie 10 h (18 h avec ravitaillement en vol)"
+  armament: "Non armé — radar de détection (portée > 400 km) et liaison de données Link 16"
+infobox:
+  constructeur: Boeing
+  role: Détection et commandement aéroporté (SDCA / AWACS)
+  armees: [Armée de l'Air et de l'Espace]
+  miseEnService: Début des années 1990
+  statut: En service (4 appareils, base 702 d'Avord)
+  equipage: 18 (dont 14 contrôleurs et opérateurs)
+  vitesseMax: Mach 0,78 (~963 km/h)
+  plafond: 10 000 m
+content:
+  essentiel:
+    body: |
+      L'**E-3F AWACS** (Airborne Warning And Control System), désigné en
+      français **SDCA** (Système de Détection et de Commandement Aéroporté), est
+      le **« radar volant »** de l'armée de l'Air et de l'Espace. Reconnaissable
+      à son grand **radar en forme de soucoupe** (le « rotodôme ») posé sur le
+      dos, c'est un avion dérivé du **Boeing 707**.
+
+      Sa mission est double : **voir** et **commander**. Son radar détecte les
+      aéronefs, les navires et les menaces à **plus de 400 km**, y compris à
+      **basse altitude** là où les radars au sol sont aveuglés par le relief.
+      À bord, une **équipe de contrôleurs** (l'équipage compte **18**
+      personnes) élabore la situation tactique et **coordonne la manœuvre
+      aérienne** — chasseurs, ravitailleurs, défense sol-air — grâce à la
+      liaison de données **Link 16**.
+
+      La France dispose de **quatre** E-3F, livrés au **début des années 1990**,
+      mis en œuvre par la **36e escadre** sur la **base aérienne 702 d'Avord**.
+    aRetenir:
+      - L'E-3F AWACS (SDCA) est l'avion radar de détection et de commandement aéroporté de l'AAE.
+      - Son radar dorsal (rotodôme) détecte à plus de 400 km, y compris à basse altitude.
+      - Il commande la manœuvre aérienne (18 personnes à bord, liaison Link 16) — voir et faire agir.
+      - Quatre appareils dérivés du Boeing 707, livrés au début des années 1990, basés à Avord (36e escadre).
+  sections:
+    - id: voir-loin-et-commander
+      title: Voir loin et commander
+      body: |
+        Un radar posé au sol est **limité par le relief** : les collines et la
+        courbure de la Terre créent des angles morts, surtout à **basse
+        altitude**. En montant le radar dans un avion à haute altitude, l'AWACS
+        supprime ces angles morts et **voit beaucoup plus loin** — au-delà de
+        **400 km**.
+
+        Mais l'E-3F n'est pas qu'un capteur : c'est un **poste de commandement
+        volant**. Les **contrôleurs** à bord identifient les pistes,
+        reconstituent la **situation tactique** (avions, navires, menaces
+        sol-air) et **guident** les chasseurs vers leurs objectifs, orchestrent
+        les ravitaillements, gèrent l'espace aérien. La **liaison Link 16**
+        partage cette image en temps réel avec les autres acteurs — l'E-3F fut
+        d'ailleurs la première plateforme française à en être dotée.
+    - id: un-noeud-de-la-puissance-aerienne
+      title: Un nœud de la puissance aérienne (à savoir)
+      strate: maitriser
+      body: |
+        L'AWACS est un **multiplicateur de force** : il rend l'ensemble du
+        dispositif aérien plus efficace en lui donnant une **vision commune** et
+        une **coordination** centralisée. On le retrouve aussi bien dans la
+        **posture permanente de sûreté aérienne** (surveillance du ciel
+        national) que dans les opérations extérieures et les missions de
+        réassurance de l'**OTAN**.
+
+        Sa très longue **endurance** (10 h de vol, jusqu'à **18 h** avec
+        ravitaillement en vol) lui permet de tenir la veille pendant de longues
+        périodes. C'est un appareil **rare et précieux** : seuls quelques pays
+        en disposent, et ses quatre exemplaires français sont des atouts
+        stratégiques suivis de près.
+  pieges:
+    - L'E-3F n'est pas un avion de chasse — c'est un capteur et un poste de commandement (il « voit » et « commande », il ne combat pas).
+    - Son radar est le rotodôme dorsal — à ne pas confondre avec un simple avion de transport dérivé du Boeing 707.
+    - La France n'en aligne que quatre — c'est une capacité rare, basée à Avord (36e escadre), pas un appareil de série courant.

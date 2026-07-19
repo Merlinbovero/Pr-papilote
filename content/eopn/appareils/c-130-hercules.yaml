@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: eopn.appareils.c-130-hercules
+type: appareil
+title: C-130 Hercules / Super Hercules
+slug: c-130-hercules
+service:
+  status: actif
+  introducedAt: 1987
+  operator: Armée de l'air et de l'Espace
+summary: >-
+  Avion de transport tactique quadrimoteur à turbopropulseurs de l'armée de
+  l'Air et de l'Espace. Complément de l'A400M pour les terrains sommaires, il
+  existe en versions C-130H (depuis 1987) et C-130J Super Hercules (depuis
+  2018), dont deux ravitailleurs KC-130J.
+objectifs:
+  - Identifier le C-130 Hercules comme l'avion de transport tactique à turbopropulseurs de l'armée de l'Air et de l'Espace, complément de l'A400M.
+  - Distinguer les versions — C-130H (livré à partir de 1987) et C-130J Super Hercules (à partir de 2018, hélices à six pales, dont deux ravitailleurs KC-130J).
+  - Situer son emploi — transport de fret et de troupes, largage de parachutistes, poser d'assaut sur terrains sommaires, aéro-évacuation.
+aliases: [C-130, Hercules, C-130H, C-130J, Super Hercules, KC-130J, transport tactique]
+module: eopn
+category: appareils
+subcategory: transport
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche-objet appareil, l'avion de transport tactique C-130 Hercules / Super Hercules de l'AAE ; sources officielles defense.gouv.fr recoupées.
+    author: prepapilote
+sources:
+  - title: "Lockheed C-130J Super Hercules — Ministère des Armées (nos aéronefs, nos avions)"
+    url: https://www.defense.gouv.fr/air/nos-aeronefs/nos-avions/lockheed-c-130j-super-hercules
+    kind: officiel
+    consultedAt: "2026-07-19"
+  - title: "L'armée de l'Air reçoit son premier avion de transport C-130J-30 Super Hercules — Zone Militaire (opex360)"
+    url: https://www.opex360.com/2017/12/22/larmee-de-lair-recoit-premier-avion-de-transport-c-130j-30-super-hercules/
+    kind: institutionnel
+    consultedAt: "2026-07-19"
+  - title: "Lockheed C-130 Hercules — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - eopn.appareils.a400m
+    - eopn.appareils.mrtt-phenix
+    - eopn.missions.la-projection-et-le-ravitaillement-en-vol
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - eopn.presentation.le-concours-eopn
+specs:
+  crew: "2 à 3 (cabine) + 1 chef de soute"
+  length: "34,4 m"
+  wingspan: "40,4 m"
+  height: "11,8 m"
+  maxTakeoffWeight: "74,4 t"
+  powerplant: "4 turbopropulseurs Rolls-Royce AE 2100D3 (4 760 ch, hélices à six pales) — version C-130J"
+  maxSpeed: "Vitesse de croisière max ≈ 355 kt (~660 km/h)"
+  ceiling: "≈ 11 000 m (FL360)"
+  range: "Autonomie ≈ 8 h de vol"
+  armament: "Non armé — charge utile jusqu'à 18,7 t (128 passagers, 92 parachutistes, 97 civières ou 7 palettes)"
+infobox:
+  constructeur: Lockheed Martin
+  role: Avion de transport tactique
+  armees: [Armée de l'Air et de l'Espace]
+  miseEnService: 1987 (C-130H) ; 2018 (C-130J)
+  statut: En service
+  equipage: 2 à 3 + chef de soute
+  capaciteEmport: Jusqu'à 18,7 t (128 passagers ou 92 parachutistes)
+content:
+  essentiel:
+    body: |
+      Le **C-130 Hercules** est l'avion de **transport tactique** à
+      **turbopropulseurs** de l'armée de l'Air et de l'Espace. Quadrimoteur
+      robuste, conçu pour se poser sur des **terrains sommaires** (pistes
+      courtes, non revêtues), il **complète** l'A400M Atlas sur les missions les
+      plus rustiques.
+
+      Il transporte du **fret** et des **troupes**, **largue des
+      parachutistes**, effectue des **poser d'assaut** et l'**aéro-évacuation**
+      sanitaire. Sa soute, sa **rampe** arrière et sa charge utile (jusqu'à
+      **18,7 t**, ou 128 passagers, ou 92 parachutistes) en font un cheval de
+      trait de la **projection**.
+
+      La flotte française comprend des **C-130H** (livrés à partir de **1987**,
+      dont une version allongée C-130H-30) et des **C-130J Super Hercules**
+      (à partir de **2018**), plus modernes — nouveaux moteurs, **hélices à six
+      pales**, avionique numérique. Deux d'entre eux sont des **KC-130J**
+      **ravitailleurs**, capables de ravitailler en vol notamment les
+      hélicoptères. Les appareils sont mis en œuvre depuis Orléans-Bricy
+      (escadron 2/61 « Franche-Comté ») et, pour le C-130J, au sein de
+      l'**escadron franco-allemand** d'Évreux.
+    aRetenir:
+      - Le C-130 Hercules est l'avion de transport tactique à turbopropulseurs de l'AAE, complément de l'A400M.
+      - Deux versions — C-130H (depuis 1987) et C-130J Super Hercules (depuis 2018, hélices à six pales), dont deux ravitailleurs KC-130J.
+      - Emplois — fret, troupes, largage de parachutistes, poser d'assaut sur terrains sommaires, aéro-évacuation.
+      - Charge utile jusqu'à 18,7 t ; mis en œuvre à Orléans-Bricy et dans l'escadron franco-allemand d'Évreux.
+  sections:
+    - id: le-cheval-de-trait-tactique
+      title: Le cheval de trait tactique
+      body: |
+        Là où l'**A400M** apporte la capacité et l'allonge, le **C-130** apporte
+        la **rusticité**. Plus petit, il se pose sur des **pistes courtes** et
+        **sommaires**, au plus près des zones d'engagement, pour livrer du
+        matériel ou déposer des troupes.
+
+        Sa **soute** pressurisée, sa **rampe** arrière et son train robuste
+        permettent le chargement rapide de véhicules et de palettes, le
+        **largage** de fret et de **parachutistes**, et l'**évacuation
+        sanitaire** (jusqu'à 97 civières). C'est un avion **polyvalent**,
+        endurant (≈ 8 h de vol), au cœur de la **logistique** des opérations.
+    - id: h-j-et-ravitaillement
+      title: Du H au J, et le ravitaillement (à savoir)
+      strate: maitriser
+      body: |
+        La France a d'abord acquis **14 C-130H** (1987-1997), dont plusieurs en
+        version allongée **C-130H-30**. À partir de **2018**, elle reçoit des
+        **C-130J Super Hercules**, profondément modernisés : nouveaux moteurs
+        **Rolls-Royce AE 2100**, **hélices à six pales** plus performantes,
+        avionique numérique.
+
+        Deux de ces appareils sont des **KC-130J** : des versions
+        **ravitailleuses**, capables de transférer du carburant en vol — un
+        complément utile, notamment pour les **hélicoptères** (que le grand
+        ravitailleur A330 MRTT Phénix ne ravitaille pas). Le C-130J est aussi
+        au cœur d'une coopération **franco-allemande** (escadron commun basé à
+        **Évreux**).
+  pieges:
+    - Le C-130 est un avion de transport tactique — il complète l'A400M (plus gros et plus rapide), il ne le remplace pas.
+    - Il existe en deux versions bien distinctes — C-130H (depuis 1987) et C-130J Super Hercules (depuis 2018, hélices à six pales).
+    - Seuls les deux KC-130J ravitaillent en vol — à ne pas confondre avec le grand ravitailleur stratégique A330 MRTT Phénix.
