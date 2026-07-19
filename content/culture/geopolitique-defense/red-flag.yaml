@@ -1,0 +1,107 @@
+schemaVersion: 1
+id: culture.geopolitique-defense.red-flag
+type: concept
+title: Red Flag (exercice de combat aérien)
+slug: red-flag
+summary: >-
+  Red Flag est le grand exercice d'entraînement au combat aérien de l'US Air
+  Force, créé en 1975 à Nellis (Nevada) d'après les leçons du Vietnam. Face à des
+  escadrons « agresseurs », il fait vivre aux équipages leurs premières missions
+  de guerre en sécurité, et réunit des alliés dont la France.
+objectifs:
+  - Expliquer ce qu'est Red Flag — un exercice réaliste de combat aérien à grande échelle, à Nellis (Nevada), sur le vaste champ de tir du NTTR.
+  - Comprendre son origine (leçons du Vietnam) et son idée directrice — offrir aux pilotes leurs premières missions de combat à l'entraînement, là où elles sont les plus dangereuses.
+  - Situer le rôle des escadrons « agresseurs » (Red Air) et la dimension multinationale (interopérabilité entre alliés, dont la France).
+aliases: [Red Flag, exercice Red Flag, Nellis, entraînement combat aérien, Red Air]
+module: culture
+category: geopolitique-defense
+subcategory: exercices
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture défense sur l'exercice Red Flag, à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Exercise Red Flag — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Exercise_Red_Flag
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Red Flag-Nellis — Nellis Air Force Base (US Air Force)"
+    url: https://www.nellis.af.mil/About/High-End-Training/Red-Flag-Nellis/
+    kind: officiel
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.f-16-fighting-falcon
+    - eopn.appareils.rafale
+    - eopn.missions.la-projection-et-le-ravitaillement-en-vol
+content:
+  essentiel:
+    body: |
+      **Red Flag** est le plus célèbre **exercice d'entraînement au combat
+      aérien** de l'**US Air Force**. Créé en **1975** sur la base de **Nellis**
+      (Nevada), au-dessus d'un immense champ de tir (le **NTTR**), il reproduit
+      les conditions d'une **vraie guerre aérienne** — mais à l'entraînement.
+
+      Son idée vient directement des **leçons du Vietnam** : on y avait constaté
+      que les **premières missions de combat** d'un pilote étaient de loin les
+      plus dangereuses ; passé ce cap, ses chances de survie augmentaient
+      nettement. Red Flag a donc été conçu pour faire vivre ces **« premières
+      missions »** en sécurité, afin que le baptême du feu réel ne soit plus le
+      premier.
+
+      Concrètement, une force **« bleue »** (les entraînés) affronte une force
+      **« rouge »** jouée par des **escadrons « agresseurs »** : des unités
+      spécialisées qui imitent les **tactiques de l'adversaire**. L'exercice
+      est **multinational** — de nombreuses armées de l'air alliées y
+      participent, dont la **France** (avec le Rafale) — ce qui en fait aussi un
+      grand rendez-vous d'**interopérabilité** entre nations.
+    aRetenir:
+      - Red Flag est l'exercice d'entraînement au combat aérien de l'US Air Force, créé en 1975 à Nellis (Nevada).
+      - Origine — les leçons du Vietnam, pour offrir aux pilotes leurs premières missions de combat à l'entraînement, les plus dangereuses.
+      - Une force « bleue » affronte une force « rouge » jouée par des escadrons « agresseurs » imitant l'adversaire.
+      - Exercice multinational (interopérabilité entre alliés), auquel la France participe avec le Rafale.
+  sections:
+    - id: la-lecon-du-vietnam
+      title: La leçon du Vietnam
+      body: |
+        Pendant la guerre du **Vietnam**, l'US Air Force a analysé ses pertes et
+        fait un constat frappant : un pilote qui survivait à ses **premières
+        missions** de combat voyait ensuite ses chances de survie **augmenter
+        fortement**. Le danger était concentré sur le **baptême du feu** —
+        manque d'expérience, surprise, erreurs de débutant.
+
+        La conclusion a donné Red Flag (1975) : puisqu'on ne peut pas supprimer
+        ces premières missions, autant les faire vivre **à l'entraînement**,
+        dans des conditions aussi réalistes que possible. Le pilote arrive alors
+        au combat réel **comme s'il avait déjà connu** ses premières sorties —
+        c'est le principe **« s'entraîner comme on combat »**.
+    - id: bleus-rouges-et-agresseurs
+      title: Bleus, rouges et « agresseurs » (à savoir)
+      strate: maitriser
+      body: |
+        Un exercice Red Flag oppose deux camps. La force **« bleue »** réunit
+        les équipages entraînés (chasse, ravitailleurs, guet aérien, etc.), y
+        compris les **nations alliées**. La force **« rouge »** simule
+        l'ennemi : c'est le rôle des **escadrons « agresseurs »** (aggressors),
+        des unités dont les pilotes sont **spécialement formés aux tactiques
+        adverses** (historiquement soviétiques) et volent sur des appareils
+        dédiés.
+
+        À cela s'ajoutent des **menaces sol-air** simulées, un **immense
+        espace** d'entraînement, et surtout un **débriefing** minutieux après
+        chaque vol — car à Red Flag, on apprend autant au sol, en analysant ce
+        qui s'est passé, qu'en vol. La participation de **nombreux pays**
+        (dont la France) en fait un laboratoire d'**interopérabilité** entre
+        alliés.
+  pieges:
+    - Red Flag est un exercice d'entraînement — pas une compétition ni un combat réel.
+    - Ce n'est pas un exercice français — c'est un exercice de l'US Air Force (Nellis, Nevada) auquel la France participe.
+    - La force « rouge » (agresseurs) n'est pas l'ennemi réel — ce sont des pilotes alliés qui imitent ses tactiques pour entraîner les autres.

@@ -1,0 +1,103 @@
+schemaVersion: 1
+id: culture.culture-aeronautique.escadrons-agresseurs
+type: concept
+title: Les escadrons « agresseurs » (Aggressors)
+slug: escadrons-agresseurs
+summary: >-
+  Les escadrons « agresseurs » sont des unités dont les pilotes sont formés à
+  imiter les tactiques de l'adversaire pour jouer l'ennemi (la « force rouge »)
+  lors des entraînements. Nés de l'analyse de la guerre du Vietnam, ils rendent
+  les exercices comme Red Flag réalistes.
+objectifs:
+  - Définir un escadron « agresseur » — une unité spécialisée qui simule l'ennemi en reproduisant ses tactiques et son matériel.
+  - Comprendre pourquoi ils existent — offrir aux pilotes un adversaire crédible et exigeant, plutôt qu'un partenaire complaisant.
+  - Relier ce concept aux grands exercices (Red Flag) et à la notion de « force rouge » (Red Air).
+aliases: [agresseurs, aggressor, aggressors, force rouge, Red Air, adversaire simulé]
+module: culture
+category: culture-aeronautique
+subcategory: entrainement
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur les escadrons « agresseurs », à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Aggressor squadron — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Aggressor_squadron
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Exercise Red Flag — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Exercise_Red_Flag
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.geopolitique-defense.red-flag
+    - culture.aviation-mondiale.f-16-fighting-falcon
+content:
+  essentiel:
+    body: |
+      Un **escadron « agresseur »** (aggressor squadron) est une unité dont la
+      mission n'est pas de combattre un vrai ennemi, mais de **le jouer** à
+      l'entraînement. Ses pilotes sont **spécialement formés** aux **tactiques
+      adverses** : ils pensent, manœuvrent et communiquent comme le ferait
+      l'adversaire, afin d'offrir aux équipages entraînés un opposant
+      **crédible et exigeant**.
+
+      L'idée naît de l'analyse de la guerre du **Vietnam** : on s'est aperçu
+      qu'un adversaire d'entraînement **complaisant** (un camarade qui « joue le
+      jeu » sans conviction) n'apprenait rien de utile. En créant des unités
+      **dédiées** à la simulation de l'ennemi — parfois avec des appareils, des
+      **marquages** et des doctrines imitant ceux de l'adversaire —, on obtient
+      un entraînement bien plus réaliste.
+
+      Ces unités forment la **« force rouge »** (Red Air) des grands exercices
+      comme **Red Flag**. Aux États-Unis, des escadrons agresseurs célèbres ont
+      volé sur **F-5**, puis sur **F-16**, en reproduisant les tactiques
+      soviétiques puis modernes.
+    aRetenir:
+      - Un escadron « agresseur » est une unité qui joue l'ennemi à l'entraînement en imitant ses tactiques.
+      - But — offrir un adversaire crédible et exigeant (la « force rouge »), pas un partenaire complaisant.
+      - Né des leçons du Vietnam ; ces unités animent les grands exercices comme Red Flag.
+      - Exemples américains — escadrons agresseurs sur F-5 puis F-16, aux marquages et tactiques adverses.
+  sections:
+    - id: pourquoi-jouer-l-ennemi
+      title: Pourquoi « jouer l'ennemi »
+      body: |
+        Pour progresser, un pilote doit affronter un adversaire qui **ne lui
+        fait pas de cadeau**. Or, si son opposant d'entraînement est un
+        camarade du même escadron, tous deux partagent les mêmes réflexes et le
+        même manuel : l'exercice tourne vite au **jeu convenu**.
+
+        Les **agresseurs** rompent cette complaisance. Ce sont des pilotes
+        d'élite qui **étudient à fond** la doctrine et les tactiques de
+        l'adversaire, s'entraînent à les appliquer, et se comportent en ennemi
+        déterminé. Face à eux, les équipages « bleus » rencontrent des
+        situations **inattendues** et apprennent à réagir — exactement ce qui
+        manquait avant Red Flag.
+    - id: la-force-rouge-des-exercices
+      title: La « force rouge » des exercices (à savoir)
+      strate: maitriser
+      body: |
+        Dans un grand exercice, on parle de **force bleue** (les entraînés) et
+        de **force rouge** (l'ennemi simulé). Les escadrons agresseurs
+        constituent le cœur de cette force rouge. Pour renforcer l'illusion, ils
+        peuvent porter des **marquages** particuliers et voler sur des appareils
+        choisis pour **ressembler**, en performances, à ceux de l'adversaire.
+
+        C'est un métier à part entière : rester **à jour** sur les tactiques
+        adverses, savoir les **enseigner** par le débriefing, et doser la
+        difficulté pour faire progresser sans décourager. Ce concept, popularisé
+        par l'US Air Force et l'US Navy (l'école **Top Gun** en est une cousine),
+        est aujourd'hui repris par de nombreuses forces aériennes.
+  pieges:
+    - Un escadron « agresseur » ne combat pas un vrai ennemi — il le simule pour entraîner les autres.
+    - « Force rouge » ne désigne pas l'ennemi réel dans un exercice — c'est le camp qui joue l'adversaire.
+    - Imiter l'adversaire ne veut pas dire piloter ses avions — c'est surtout reproduire ses tactiques (parfois avec des appareils et marquages ressemblants).

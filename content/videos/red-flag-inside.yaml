@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: video.red-flag-inside
+slug: red-flag-inside
+youtubeId: WhBbMlNWlnU
+title: "Inside Red Flag — l'exercice où les pilotes de chasse s'entraînent à la guerre"
+channel: Sam Eckholm
+channelUrl: https://www.youtube.com/@SamEckholm
+module: culture
+topics: [Entraînement, Red Flag, Combat aérien, Géopolitique & défense]
+summary: |-
+  Ce reportage emmène le spectateur à l'intérieur de Red Flag, le grand
+  exercice d'entraînement au combat aérien de l'US Air Force, sur la base de
+  Nellis (Nevada). On y voit comment les armées de l'air s'entraînent « comme
+  elles combattent » : une force « bleue » (les équipages entraînés, souvent
+  multinationale) affronte une force « rouge » jouée par des escadrons
+  « agresseurs » spécialisés dans les tactiques de l'ennemi.
+
+  C'est un bon point d'entrée pour comprendre deux notions de culture défense :
+  ce qu'est Red Flag (son origine dans les leçons du Vietnam, son but, son
+  ampleur, sa dimension d'alliance) et le concept d'escadron « agresseur » (la
+  « force rouge »). La France participe régulièrement à ce type d'exercice avec
+  le Rafale — d'où l'intérêt d'en connaître les grandes lignes.
+takeaways:
+  - Red Flag est l'exercice d'entraînement au combat aérien de l'US Air Force (Nellis, Nevada), créé en 1975.
+  - Son idée vient du Vietnam — faire vivre aux pilotes leurs premières missions de combat, les plus dangereuses, à l'entraînement.
+  - La « force rouge » est jouée par des escadrons « agresseurs » qui imitent les tactiques de l'adversaire.
+  - C'est un exercice multinational et un rendez-vous d'interopérabilité entre alliés, dont la France (Rafale).
+relatedFiches:
+  - culture.geopolitique-defense.red-flag
+  - culture.culture-aeronautique.escadrons-agresseurs
+watchNext: []
+sources:
+  - title: "Exercise Red Flag — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Exercise_Red_Flag
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Red Flag-Nellis — Nellis Air Force Base (US Air Force)"
+    url: https://www.nellis.af.mil/About/High-End-Training/Red-Flag-Nellis/
+    kind: officiel
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie
