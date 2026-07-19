@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: video.f-16-mur-du-son-edwards
+slug: f-16-mur-du-son-edwards
+youtubeId: 6i8PUlfazXQ
+title: "F-16 Viper — passage du mur du son à 50 000 ft au-dessus d'Edwards Air Force Base"
+channel: Louis Skupien
+channelUrl: https://www.youtube.com/@louisskupien
+module: culture
+topics: [Aviation mondiale, Vol supersonique, F-16, Essais en vol]
+summary: |-
+  Cette vidéo, filmée en vol, suit un F-16 « Viper » lors d'un passage du mur du
+  son à très haute altitude (environ 50 000 ft) au-dessus d'Edwards Air Force
+  Base, le grand centre d'essais en vol américain, en Californie. Elle illustre
+  concrètement deux sujets : d'un côté l'appareil lui-même — le F-16, chasseur
+  multirôle monoréacteur emblématique de l'aviation occidentale ; de l'autre le
+  phénomène du vol supersonique — franchir Mach 1, l'apparition des ondes de
+  choc et la fameuse « barrière » de traînée.
+
+  C'est un bon point d'entrée pour deux notions à connaître : reconnaître et
+  situer le F-16 (un appareil étranger, à ne pas confondre avec le Rafale), et
+  comprendre pourquoi on parle de « mur du son », pourquoi la vitesse du son
+  dépend de l'altitude, et pourquoi les essais de ce type se font volontiers en
+  altitude, là où l'air glacial abaisse la vitesse du son.
+takeaways:
+  - Le F-16 est un chasseur multirôle monoréacteur américain — un repère de culture aéronautique mondiale, pas un appareil français.
+  - Le « mur du son » n'est pas un obstacle matériel mais une forte hausse de traînée liée aux ondes de choc près de Mach 1.
+  - La vitesse du son diminue avec l'altitude (air plus froid) — franchir Mach 1 à 50 000 ft demande une vitesse vraie plus faible qu'au sol.
+  - Edwards Air Force Base est le grand centre d'essais en vol américain — l'équivalent, côté français, de l'EPNER.
+relatedFiches:
+  - culture.aviation-mondiale.f-16-fighting-falcon
+  - fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
+watchNext: []
+sources:
+  - title: "General Dynamics F-16 Fighting Falcon — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Mur du son — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Mur_du_son
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie

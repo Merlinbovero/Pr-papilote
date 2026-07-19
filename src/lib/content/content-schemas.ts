@@ -794,3 +794,51 @@ export const documentNoticeSchema = z
   });
 
 export type DocumentNotice = z.infer<typeof documentNoticeSchema>;
+
+// ---------------------------------------------------------------------------
+// Veille vidéo (rubrique « une vidéo → des fiches »)
+// ---------------------------------------------------------------------------
+
+/** Suggestion « à regarder ensuite » : une autre vidéo sur le même sujet. */
+export const watchNextSchema = z.object({
+  title: z.string().min(1),
+  url: z.url(),
+  note: z.string().min(1).optional(),
+});
+
+/**
+ * Article de veille vidéo : une vidéo externe (YouTube) transformée en petit
+ * article relié au contenu du site. La vidéo est un DÉCLENCHEUR ; les faits des
+ * fiches liées restent sourcés indépendamment (jamais la vidéo comme source de
+ * vérité). Le résumé est rédigé (nos mots), jamais copié.
+ */
+export const videoSchema = z.object({
+  schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
+  id: contentIdSchema,
+  slug: slugSchema,
+  /** Identifiant YouTube (pour l'intégration officielle nocookie). */
+  youtubeId: z.string().min(5),
+  title: z.string().min(1),
+  /** Chaîne / auteur de la vidéo (crédit obligatoire). */
+  channel: z.string().min(1),
+  channelUrl: z.url().optional(),
+  /** Module de classement (culture, fondamentaux, eopan…). */
+  module: slugSchema.optional(),
+  topics: z.array(z.string().min(1)).default([]),
+  /** Résumé rédigé de la vidéo (nos mots), jamais copié. */
+  summary: z.string().min(20),
+  /** Ce qu'on en retient (puces). */
+  takeaways: z.array(z.string().min(1)).default([]),
+  /** Fiches produites ou reliées (identifiants du graphe). */
+  relatedFiches: z.array(contentIdSchema).default([]),
+  /** À regarder ensuite : autres vidéos vérifiées sur le même sujet. */
+  watchNext: z.array(watchNextSchema).default([]),
+  /** Sources éventuelles des faits cités dans le résumé. */
+  sources: z.array(sourceSchema).default([]),
+  createdAt: isoDateSchema,
+  verifiedAt: isoDateSchema,
+  status: contentStatusSchema,
+});
+
+export type WatchNext = z.infer<typeof watchNextSchema>;
+export type Video = z.infer<typeof videoSchema>;
