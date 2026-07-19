@@ -51,7 +51,7 @@ function buildCategoriesIndex(): Map<string, Category[]> {
     const list =
       mod.kind === "concours"
         ? file.concours
-        : file[mod.slug as "fondamentaux" | "psychotechnique"];
+        : file[mod.slug as "fondamentaux" | "psychotechnique" | "culture"];
     if (!list) {
       throw new Error(`Référentiel catégories : aucune liste pour le module « ${mod.slug} »`);
     }

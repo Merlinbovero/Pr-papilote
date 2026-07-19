@@ -27,6 +27,7 @@ import { SITE_PHOTOS, getModulePhoto } from "@/lib/photos";
 const TRANSVERSE_SUBTITLES: Record<string, string> = {
   fondamentaux: "Le socle commun aux trois concours",
   psychotechnique: "Les épreuves de sélection communes",
+  culture: "Aviation mondiale, géopolitique et culture générale",
 };
 
 const ENTRAINEMENTS = [

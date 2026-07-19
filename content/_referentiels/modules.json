@@ -44,5 +44,13 @@
     "kind": "transverse",
     "order": 5,
     "description": "Le socle théorique commun : météorologie, aérodynamique, navigation, facteurs humains, anglais aéronautique et culture de l'aviation."
+  },
+  {
+    "id": "culture",
+    "slug": "culture",
+    "name": "Culture & géopolitique",
+    "kind": "transverse",
+    "order": 6,
+    "description": "La culture générale aéronautique et de défense attendue aux concours : aviation mondiale, grands appareils étrangers, géopolitique, conflits et personnalités marquantes."
   }
 ]

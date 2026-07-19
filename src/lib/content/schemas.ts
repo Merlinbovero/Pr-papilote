@@ -48,6 +48,7 @@ export const categoriesFileSchema = z.object({
   concours: z.array(categorySchema).min(1),
   fondamentaux: z.array(categorySchema).min(1),
   psychotechnique: z.array(categorySchema).min(1),
+  culture: z.array(categorySchema).min(1),
 });
 
 export type Module = z.infer<typeof moduleSchema>;
