@@ -1,0 +1,132 @@
+schemaVersion: 1
+id: alat.appareils.alouette-iii
+type: helicoptere
+title: Alouette III (SA316)
+slug: alouette-iii
+service:
+  status: retire
+  firstFlight: 1959
+  introducedAt: 1963
+  retiredAt: 1999
+  operator: Aviation légère de l'armée de Terre
+summary: >-
+  Hélicoptère léger polyvalent, pilier historique de l'ALAT des années 1960 aux
+  années 1990. Monoturbine à sept places, employé en liaison, évacuation
+  sanitaire et lutte antichar (missiles SS11), avant d'être remplacé par la
+  Gazelle.
+objectifs:
+  - Identifier l'Alouette III (SA316) comme l'hélicoptère léger polyvalent historique de l'ALAT, en service de 1963 à 1999.
+  - Connaître ses emplois — liaison, observation, évacuation sanitaire, transport léger et lutte antichar (missiles filoguidés SS11).
+  - Situer sa place dans l'histoire de l'ALAT — 89 exemplaires, remplacés par la Gazelle dans les années 1980.
+aliases: [Alouette III, Alouette 3, SA316, SE3160, hélicoptère léger, SS11]
+module: alat
+category: appareils
+subcategory: helicopteres-legers
+tags: []
+concours: [alat]
+level: 2
+createdAt: "2026-07-18"
+verifiedAt: "2026-07-18"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-18"
+    version: 1
+    motif: Création — fiche Alouette III (SA316), hélicoptère léger historique de l'ALAT (retiré en 1999) ; sources ALAT.fr et Wikipédia recoupées.
+    author: prepapilote
+sources:
+  - title: "Présentation de l'hélicoptère SE3160 Alouette III — ALAT.fr (UNA-ALAT)"
+    url: https://www.alat.fr/aeronefs-alat-helicopteres-se3160-alouette-3-presentation.html
+    kind: institutionnel
+    consultedAt: "2026-07-18"
+  - title: "Sud-Aviation SA316 Alouette III — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Sud-Aviation_SA316_Alouette_III
+    kind: encyclopedie
+    consultedAt: "2026-07-18"
+status: publie
+relations:
+  factual:
+    - predicate: mis-en-oeuvre-par
+      target: alat.organisation.aviation-legere-armee-de-terre
+  related:
+    - alat.appareils.gazelle
+    - alat.histoire.histoire-de-l-alat
+    - alat.organisation.aviation-legere-armee-de-terre
+specs:
+  crew: "1 pilote (jusqu'à 7 personnes à bord)"
+  length: "10,03 m (fuselage)"
+  rotorDiameter: "11,50 m"
+  height: "3,09 m"
+  emptyWeight: "1 230 kg"
+  maxTakeoffWeight: "2 200 kg"
+  powerplant: "1 turbine Turbomeca Artouste IIIB (850 ch détarés à 550 ch)"
+  maxSpeed: "210 km/h"
+  ceiling: "3 200 m"
+  range: "540 km"
+  armament: "Versions armées — missiles filoguidés antichar SS11 (AS11)"
+infobox:
+  constructeur: Sud-Aviation, puis Aérospatiale
+  role: Hélicoptère léger polyvalent
+  armees: [Armée de terre]
+  miseEnService: 1963 (à l'ALAT)
+  statut: Retiré du service (1999)
+  equipage: 1 pilote (+ jusqu'à 6 passagers)
+  capaciteEmport: 7 personnes ou 750 kg sous élingue
+content:
+  essentiel:
+    body: |
+      L'**Alouette III** (SA316) est un **hélicoptère léger polyvalent** qui fut,
+      des années 1960 aux années 1990, l'un des **piliers historiques** de
+      l'ALAT. Monoturbine à **sept places**, robuste et simple, elle a formé des
+      générations d'équipages et rempli presque toutes les missions de
+      l'aviation légère.
+
+      Livrée à l'ALAT à partir de **1963** (**89 exemplaires**), elle assurait la
+      **liaison**, l'**observation**, l'**évacuation sanitaire** (deux blessés en
+      nacelles extérieures), le **transport léger** (750 kg sous élingue,
+      treuil de 175 kg) et, en version armée, la **lutte antichar** avec les
+      missiles filoguidés **SS11**.
+
+      Remplacée par la **Gazelle** dans les années 1980, l'Alouette III a volé
+      jusqu'en **1999** (dernières unités de l'escadrille de haute montagne).
+      Elle appartient au patrimoine de l'ALAT, aux côtés de l'Alouette II qui
+      l'avait précédée.
+    aRetenir:
+      - Alouette III (SA316) — hélicoptère léger polyvalent, pilier historique de l'ALAT (1963-1999).
+      - 89 exemplaires livrés dès 1963 ; monoturbine à sept places.
+      - Emplois — liaison, observation, évacuation sanitaire, transport léger, lutte antichar (missiles SS11).
+      - Remplacée par la Gazelle dans les années 1980 ; dernières unités retirées en 1999.
+  sections:
+    - id: un-helicoptere-a-tout-faire
+      title: Un hélicoptère à tout faire
+      body: |
+        L'Alouette III doit son succès à sa **polyvalence**. Avec sa cabine de
+        **sept places**, son **treuil** et son crochet de charge, elle passe
+        d'une mission à l'autre : transporter un groupe léger, hélitreuiller un
+        blessé, évacuer des victimes (deux civières en nacelles latérales),
+        acheminer du fret **sous élingue** (750 kg), effectuer des liaisons ou
+        de l'observation.
+
+        Sa **turbine** unique (Artouste IIIB) et sa conception simple la rendent
+        **fiable** et facile à entretenir, y compris sur des terrains sommaires.
+        Ces qualités expliquent son immense carrière — plus de **1 400
+        exemplaires** construits dans le monde, pour de très nombreux pays.
+    - id: de-la-lutte-antichar-a-la-gazelle
+      title: De la lutte antichar à la Gazelle (à savoir)
+      strate: maitriser
+      body: |
+        À l'ALAT, l'Alouette III a aussi été un **hélicoptère de combat** avant
+        l'heure : équipée de missiles filoguidés **SS11** (AS11), elle a inauguré
+        la **lutte antichar** héliportée, une mission qui deviendra centrale
+        pour l'aérocombat.
+
+        Dans les années **1980**, la **Gazelle** — plus rapide, plus moderne —
+        prend sa relève pour la reconnaissance, la liaison et l'antichar (avec
+        le missile HOT). L'Alouette III se retire progressivement, ses dernières
+        unités volant jusqu'en **1999**. Elle reste un jalon : le pont entre les
+        pionnières **Alouette II** et les hélicoptères légers modernes de
+        l'ALAT.
+  pieges:
+    - L'Alouette III est un hélicoptère léger polyvalent — pas un hélicoptère de manœuvre lourd comme le Puma.
+    - Elle est retirée du service (dernières unités en 1999) — c'est un appareil du patrimoine, remplacé par la Gazelle.
+    - À ne pas confondre avec l'Alouette II (SE3130) qui l'a précédée — l'Alouette III est plus grande et plus puissante (sept places, turbine Artouste IIIB).
