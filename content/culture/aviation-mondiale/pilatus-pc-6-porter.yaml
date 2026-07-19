@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.pilatus-pc-6-porter
+type: appareil
+title: Pilatus PC-6 Porter
+slug: pilatus-pc-6-porter
+service:
+  status: retire
+  firstFlight: 1959
+  operator: Usage civil et militaire (nombreux pays)
+summary: >-
+  Avion utilitaire STOL suisse à turbopropulseur, réputé pour décoller et se
+  poser sur des terrains très courts. Polyvalent (fret, liaison, humanitaire), il
+  est l'un des appareils favoris du parachutisme. Produit de 1959 à 2019.
+objectifs:
+  - Identifier le Pilatus PC-6 Porter comme un avion utilitaire STOL suisse à turbopropulseur, à ne pas rattacher aux forces françaises.
+  - Comprendre sa spécialité — le décollage et l'atterrissage courts (STOL) sur terrains sommaires, d'où ses usages utilitaires et humanitaires.
+  - Retenir son rôle emblématique dans le parachutisme (large porte, montée efficace, terrains courts).
+aliases: [PC-6, Pilatus PC-6, Turbo Porter, Porter, avion de parachutisme, STOL]
+module: culture
+category: aviation-mondiale
+subcategory: avions-utilitaires
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Pilatus PC-6 Porter (appareil étranger), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Pilatus PC-6 Porter — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Pilatus_PC-6_Porter
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Accident du Pilatus PC-6 immatriculé D-FIPS le 28/06/2026 à Tomblaine (54) — BEA"
+    url: https://bea.aero/les-enquetes/evenements-notifies/detail/accident-du-pilatus-pc6-immatricule-d-fips-le-28-06-2026-a-tomblaine-54/
+    kind: officiel
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - fondamentaux.facteurs-humains.culture-de-securite-et-rex
+specs:
+  crew: "1 pilote (jusqu'à ~10 personnes à bord)"
+  length: "10,90 m"
+  wingspan: "15,87 m"
+  height: "3,20 m"
+  powerplant: "1 turbopropulseur Pratt & Whitney Canada PT6A (versions « Turbo Porter »)"
+  armament: "Non armé — avion utilitaire (fret, passagers, parachutistes)"
+infobox:
+  constructeur: Pilatus Aircraft (Suisse)
+  role: Avion utilitaire STOL
+  armees: [Usage civil et militaire (nombreux pays)]
+  miseEnService: 1959 (premier vol)
+  statut: Production achevée (1959-2019)
+  equipage: 1 pilote
+content:
+  essentiel:
+    body: |
+      Le **Pilatus PC-6 Porter** est un **avion utilitaire** suisse à
+      **turbopropulseur**, célèbre pour ses capacités **STOL** (Short Take-Off
+      and Landing) : il décolle et se pose sur des **terrains très courts** et
+      **sommaires** (herbe, altitude, zones reculées), là où d'autres avions ne
+      peuvent pas opérer. Volant depuis **1959**, il a été produit jusqu'en
+      **2019** — une longévité rare.
+
+      Sa **polyvalence** en a fait un outil de **transport léger**, de
+      **liaison**, de missions **humanitaires** et de travail aérien. Il est
+      surtout l'un des appareils **favoris du parachutisme** : sa **large
+      porte** (retirable) facilite les sauts, il **monte efficacement** vers
+      l'altitude de largage et se contente de **pistes courtes** au bord des
+      zones de saut.
+
+      Ce n'est **pas** un appareil des forces armées françaises : il figure ici
+      au titre de la **culture aéronautique**, comme repère d'aviation civile et
+      utilitaire.
+    aRetenir:
+      - Le PC-6 Porter est un avion utilitaire STOL suisse à turbopropulseur (Pilatus), volant depuis 1959.
+      - Sa spécialité — décoller et se poser très court, sur terrains sommaires.
+      - Usages — transport léger, liaison, humanitaire, et surtout parachutisme.
+      - Ce n'est pas un appareil des forces françaises (aviation civile / mondiale).
+  sections:
+    - id: le-roi-des-terrains-courts
+      title: Le roi des terrains courts
+      body: |
+        La force du PC-6 est le **STOL** : grâce à une **grande aile**, des
+        **volets** généreux et un moteur à hélice puissant, il **arrache** très
+        vite du sol et s'arrête sur une distance minime. On l'a vu se poser sur
+        des **glaciers**, des **bandes de terre** improvisées ou des **altitudes
+        élevées** — des endroits normalement réservés aux hélicoptères.
+
+        Cette rusticité explique ses usages : ravitaillement de zones isolées,
+        évacuation, largage, travail aérien. Pour le **parachutisme**, il coche
+        toutes les cases — porte large, montée franche, terrains courts —, ce
+        qui en fait un classique des **écoles et clubs** de saut.
+    - id: un-accident-recent-a-savoir
+      title: Un accident récent (à savoir)
+      strate: maitriser
+      body: |
+        Le **28 juin 2026**, un PC-6 s'est écrasé à **Tomblaine**, près de
+        **Nancy**, lors d'un vol de **parachutisme** : **onze personnes** ont
+        perdu la vie. C'est l'**accident d'aviation générale le plus grave en
+        France depuis une trentaine d'années**.
+
+        Au moment où cette fiche est écrite, l'**enquête de sécurité du BEA** est
+        **en cours** et **la cause n'est pas établie**. Par respect des victimes
+        et des règles de l'enquête, on **ne spécule pas** ici sur l'origine de
+        l'accident : c'est au BEA de l'établir. Cet événement rappelle
+        l'importance de la **culture de sécurité** et du **retour d'expérience**
+        dans l'aviation (voir la fiche dédiée).
+  pieges:
+    - Le PC-6 est un avion civil/utilitaire suisse — pas un appareil des forces armées françaises.
+    - « STOL » signifie décollage et atterrissage courts — c'est la marque de fabrique du Porter.
+    - Sur l'accident de Nancy (2026), la cause n'est pas établie — l'enquête du BEA est en cours, on ne spécule pas.

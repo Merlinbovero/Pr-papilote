@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: video.pc-6-nancy-comprendre-sans-speculer
+slug: pc-6-nancy-comprendre-sans-speculer
+youtubeId: CxvpIHDa8ws
+title: "Crash du PC-6 à Nancy — comprendre sans spéculer"
+channel: ATE CHUET
+channelUrl: https://www.youtube.com/@ATECHUET
+module: fondamentaux
+topics: [Sécurité des vols, Facteurs humains, BEA, Pilatus PC-6]
+summary: |-
+  Dans cette vidéo, un pilote spécialiste revient sur l'accident du Pilatus
+  PC-6 survenu le 28 juin 2026 à Tomblaine, près de Nancy, lors d'un vol de
+  parachutisme, qui a coûté la vie à onze personnes. C'est, selon le BEA,
+  l'accident d'aviation générale le plus grave en France depuis une trentaine
+  d'années.
+
+  La démarche de la vidéo est justement de « comprendre sans spéculer » : elle
+  explique le contexte et les questions que se pose une enquête, tout en
+  rappelant que la cause n'est pas établie et qu'il revient au BEA de la
+  déterminer. C'est un excellent exemple de la posture attendue d'un
+  professionnel de l'aviation face à un accident : rigueur, respect des
+  victimes, et refus de la rumeur.
+
+  Nous en tirons deux fiches strictement factuelles et non spéculatives : une
+  présentation de l'appareil (le Pilatus PC-6 Porter) et une fiche sur la
+  culture de sécurité et le retour d'expérience (le rôle du BEA). Par respect,
+  nous n'avançons aucune hypothèse sur la cause de l'accident.
+takeaways:
+  - L'accident (Tomblaine/Nancy, 28 juin 2026, 11 victimes) est le plus grave de l'aviation générale française depuis ~30 ans.
+  - La cause n'est pas établie — l'enquête de sécurité du BEA est en cours ; on ne spécule pas.
+  - La bonne posture face à un accident — comprendre et prévenir, sans désigner de coupable ni propager de rumeurs.
+  - Le savoir transférable — connaître l'appareil (PC-6) et la culture de sécurité / retour d'expérience (BEA).
+relatedFiches:
+  - culture.aviation-mondiale.pilatus-pc-6-porter
+  - fondamentaux.facteurs-humains.culture-de-securite-et-rex
+watchNext: []
+sources:
+  - title: "Accident du Pilatus PC-6 immatriculé D-FIPS le 28/06/2026 à Tomblaine (54) — BEA"
+    url: https://bea.aero/les-enquetes/evenements-notifies/detail/accident-du-pilatus-pc6-immatricule-d-fips-le-28-06-2026-a-tomblaine-54/
+    kind: officiel
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie
