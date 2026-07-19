@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.sukhoi-su-27
+type: appareil
+title: Sukhoi Su-27 (Flanker)
+slug: sukhoi-su-27
+service:
+  status: actif
+  firstFlight: 1977
+  introducedAt: 1985
+  operator: Forces aériennes soviétiques puis russes
+summary: >-
+  Chasseur de supériorité aérienne soviétique, conçu pour rivaliser avec le F-15
+  américain. Biréacteur lourd et très manœuvrant, il est la base d'une immense
+  famille (Su-30, Su-33, Su-34, Su-35) qui équipe encore de nombreuses forces
+  aériennes.
+objectifs:
+  - Identifier le Sukhoi Su-27 (nom OTAN « Flanker ») comme le grand chasseur de supériorité aérienne soviétique/russe.
+  - Comprendre sa place — la matrice d'une vaste famille (Su-30, Su-33, Su-34, Su-35).
+  - Le situer comme l'homologue soviétique du F-15 américain, à ne pas confondre avec un appareil français.
+aliases: [Su-27, Sukhoi Su-27, Flanker, chasseur russe, supériorité aérienne]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Sukhoi Su-27 (Flanker), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Sukhoi Su-27 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-27
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.mikoyan-mig-29
+    - culture.aviation-mondiale.sukhoi-su-35
+specs:
+  crew: "1 pilote (versions biplaces d'entraînement)"
+  powerplant: "2 turboréacteurs Lyulka AL-31"
+  maxSpeed: "Mach 2+"
+  armament: "1 canon de 30 mm, missiles air-air (courte et moyenne/longue portée)"
+infobox:
+  constructeur: Sukhoi (URSS / Russie)
+  role: Chasseur de supériorité aérienne
+  armees: [Forces aériennes russes, nombreux pays]
+  miseEnService: 1985
+  statut: En service (base d'une vaste famille)
+  equipage: 1 pilote
+  vitesseMax: Mach 2+
+content:
+  essentiel:
+    body: |
+      Le **Sukhoi Su-27** (nom de code **OTAN « Flanker »**) est le grand
+      **chasseur de supériorité aérienne** soviétique, conçu dans les années
+      1970 pour **rivaliser avec le F-15 Eagle** américain. Volant en **1977** et
+      en service en **1985**, c'est un **biréacteur** lourd, à grand rayon
+      d'action, réputé pour sa **manœuvrabilité** exceptionnelle (démonstrations
+      spectaculaires comme le « Cobra de Pougatchev »).
+
+      Son importance dépasse l'appareil lui-même : le Su-27 est la **matrice**
+      d'une **immense famille** — **Su-30** (multirôle biplace), **Su-33**
+      (embarqué), **Su-34** (bombardier), **Su-35** (version très modernisée) —,
+      et il a été copié/produit en Chine (J-11). C'est l'un des **piliers** de
+      l'aviation de combat russe et de nombreux pays clients.
+
+      Ce n'est **pas** un appareil français : il figure ici comme repère de
+      **culture aéronautique mondiale** et de défense.
+    aRetenir:
+      - Le Su-27 (« Flanker ») est le grand chasseur de supériorité aérienne soviétique/russe.
+      - Conçu pour rivaliser avec le F-15 américain ; biréacteur lourd et très manœuvrant.
+      - C'est la base d'une vaste famille — Su-30, Su-33, Su-34, Su-35.
+      - Appareil russe (et de nombreux pays), à ne pas confondre avec un appareil français.
+  sections:
+    - id: une-matrice-d-avions
+      title: Une matrice d'avions
+      body: |
+        Rares sont les avions qui donnent naissance à toute une **lignée**. Le
+        Su-27, par sa cellule ample et puissante, s'est prêté à de nombreuses
+        **déclinaisons** : ajouter un second siège et des capacités multirôles
+        (Su-30), un crochet d'appontage (Su-33), une soute et un blindage pour le
+        bombardement (Su-34), une avionique et des moteurs de nouvelle génération
+        (Su-35).
+
+        Pour un candidat, l'important est de **reconnaître** la silhouette
+        « Flanker » (deux dérives, deux moteurs espacés, grande aile) et de
+        savoir qu'elle recouvre **beaucoup d'appareils différents** — un peu comme
+        la famille « Super Puma » côté hélicoptères. C'est un repère utile pour
+        s'y retrouver dans l'aviation militaire moderne.
+  pieges:
+    - Le Su-27 est russe (soviétique à l'origine) — pas un appareil des forces françaises.
+    - « Flanker » désigne toute une famille — Su-27/30/33/34/35 se ressemblent mais ont des rôles distincts.
+    - C'est l'homologue conceptuel du F-15 américain, pas du F-16 (plus léger).

@@ -1,0 +1,99 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.sukhoi-su-57
+type: appareil
+title: Sukhoi Su-57 (Felon)
+slug: sukhoi-su-57
+service:
+  status: actif
+  firstFlight: 2010
+  introducedAt: 2020
+  operator: Forces aérospatiales russes
+summary: >-
+  Premier chasseur furtif russe (5e génération), biréacteur multirôle capable de
+  supercroisière. Conçu pour rivaliser avec les F-22 et F-35 américains, il
+  entre en service en 2020 mais en très petit nombre.
+objectifs:
+  - Identifier le Sukhoi Su-57 (nom OTAN « Felon ») comme le premier chasseur furtif russe (5e génération).
+  - Comprendre ce qui définit un chasseur de 5e génération — furtivité et supercroisière.
+  - Le situer face aux F-22 et F-35 américains, à ne pas confondre avec un appareil français.
+aliases: [Su-57, Sukhoi Su-57, Felon, chasseur furtif russe, 5e génération]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Sukhoi Su-57 (Felon), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Sukhoi Su-57 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-57
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.sukhoi-su-35
+    - culture.aviation-mondiale.sukhoi-su-27
+specs:
+  crew: "1 pilote"
+  powerplant: "2 turboréacteurs Saturn AL-41F-1"
+  maxSpeed: "Mach 2 (supercroisière ~Mach 1,3)"
+  armament: "1 canon de 30 mm, missiles en soutes internes (furtivité)"
+infobox:
+  constructeur: Sukhoi (Russie)
+  role: Chasseur furtif multirôle de 5e génération
+  armees: [Forces aérospatiales russes]
+  miseEnService: 2020
+  statut: En service (petit nombre)
+  equipage: 1 pilote
+  vitesseMax: Mach 2 (supercroisière ~Mach 1,3)
+content:
+  essentiel:
+    body: |
+      Le **Sukhoi Su-57** (nom **OTAN « Felon »**) est le **premier chasseur
+      furtif russe**, de **5e génération** — la catégorie des F-22 et F-35
+      américains. Biréacteur **multirôle**, il vole en **2010** et entre en
+      service en **2020**, mais en **très petit nombre** jusqu'ici.
+
+      Deux caractéristiques définissent sa génération. La **furtivité** : formes
+      anguleuses, matériaux et **soutes internes** pour cacher les missiles,
+      afin d'être **difficile à détecter au radar**. La **supercroisière** :
+      la capacité de **voler en supersonique sans postcombustion** (annoncée
+      autour de Mach 1,3), ce qui économise le carburant et augmente l'allonge.
+
+      Le Su-57 est un appareil **russe** de tout premier plan sur le papier, mais
+      sa production reste **limitée**. Il figure ici comme repère de culture de
+      défense — pas comme un avion français (la France, elle, développe le futur
+      **SCAF** avec ses partenaires).
+    aRetenir:
+      - Le Su-57 (« Felon ») est le premier chasseur furtif russe, de 5e génération.
+      - La 5e génération se définit par la furtivité et la supercroisière.
+      - En service depuis 2020, mais produit en très petit nombre.
+      - Face aux F-22/F-35 américains ; côté français, l'avenir passe par le programme SCAF.
+  sections:
+    - id: qu-est-ce-qu-un-chasseur-de-5e-generation
+      title: Qu'est-ce qu'un chasseur de 5e génération ?
+      body: |
+        La **5e génération** marque un saut : on ne cherche plus seulement à
+        aller plus vite ou à mieux tourner, mais à **voir sans être vu**. Cela
+        passe par la **furtivité** (réduction de la signature radar grâce aux
+        formes, aux matériaux et aux **armes emportées en interne**), une
+        **fusion de capteurs** (l'avion agrège radar, infrarouge et guerre
+        électronique en une image unique) et souvent la **supercroisière**.
+
+        Le Su-57 vise ces standards. Mais la furtivité est **difficile et
+        coûteuse** à atteindre, et sa production a pris du retard : la Russie n'en
+        aligne qu'un **petit nombre**. C'est un bon exemple de l'écart, fréquent
+        en aéronautique militaire, entre les **performances annoncées** d'un
+        programme et sa **réalité** industrielle.
+  pieges:
+    - Le Su-57 est russe — pas un appareil des forces françaises (qui préparent le SCAF).
+    - « 5e génération » signifie surtout furtivité + fusion de capteurs, pas seulement vitesse.
+    - Su-57 en service ne veut pas dire en grand nombre — sa production reste très limitée.

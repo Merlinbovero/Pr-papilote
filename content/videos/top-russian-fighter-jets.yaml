@@ -1,0 +1,53 @@
+schemaVersion: 1
+id: video.top-russian-fighter-jets
+slug: top-russian-fighter-jets
+youtubeId: my1RNRP_pvA
+title: "Les grands chasseurs russes (panorama)"
+channel: Military TV
+channelUrl: https://www.youtube.com/@Military-TV
+module: culture
+topics: [Aviation mondiale, Chasseurs modernes, Russie, Géopolitique & défense]
+summary: |-
+  Cette vidéo est un classement (« top ») des principaux chasseurs russes. C'est
+  un format grand public : il donne un bon aperçu des appareils, mais ses
+  chiffres et affirmations ne doivent pas être pris pour argent comptant. Nous
+  en avons retenu les avions les plus significatifs, et vérifié chaque fait sur
+  des sources encyclopédiques.
+
+  On y retrouve la grande famille Sukhoi « Flanker » — le Su-27 de supériorité
+  aérienne et ses dérivés (le Su-35 très modernisé, le bombardier Su-34), le
+  chasseur furtif de 5e génération Su-57 — et côté Mikoyan le chasseur léger
+  MiG-29 et l'intercepteur ultra-rapide MiG-31. Un bon support pour reconnaître
+  ces appareils, comprendre leurs rôles (supériorité aérienne, interception,
+  frappe, furtivité) et les situer face à leurs homologues occidentaux.
+takeaways:
+  - La famille Sukhoi « Flanker » (Su-27) est la matrice de nombreux appareils russes (Su-35, Su-34…).
+  - Le MiG-29 est le chasseur léger (face au Su-27 lourd), comme le F-16 face au F-15.
+  - Le Su-57 est le premier chasseur furtif russe (5e génération), mais produit en petit nombre.
+  - Le MiG-31 est un intercepteur parmi les plus rapides du monde ; le Su-34 un bombardier, pas un chasseur.
+relatedFiches:
+  - culture.aviation-mondiale.sukhoi-su-27
+  - culture.aviation-mondiale.mikoyan-mig-29
+  - culture.aviation-mondiale.sukhoi-su-35
+  - culture.aviation-mondiale.sukhoi-su-57
+  - culture.aviation-mondiale.mikoyan-mig-31
+  - culture.aviation-mondiale.sukhoi-su-34
+watchNext:
+  - title: "Les plus grands chasseurs de la Seconde Guerre mondiale (Timeline)"
+    url: https://www.youtube.com/watch?v=8LAc_-ENRKw
+    note: Pour comparer avec les chasseurs d'une autre époque (Spitfire, Bf 109, Mustang, Zero…).
+  - title: "F-16 Viper — passage du mur du son (Louis Skupien)"
+    url: https://www.youtube.com/watch?v=6i8PUlfazXQ
+    note: Un chasseur occidental emblématique, à mettre en regard des Flanker russes.
+sources:
+  - title: "Sukhoi Su-27 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-27
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Sukhoi Su-57 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-57
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie

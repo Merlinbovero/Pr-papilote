@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.mikoyan-mig-31
+type: appareil
+title: Mikoyan MiG-31 (Foxhound)
+slug: mikoyan-mig-31
+service:
+  status: actif
+  introducedAt: 1981
+  operator: Forces aériennes soviétiques puis russes
+summary: >-
+  Intercepteur soviétique/russe à très long rayon d'action, l'un des avions de
+  combat les plus rapides du monde (~Mach 2,8, jusqu'à ~3 000 km/h). Biplace,
+  doté d'un radar puissant, il succède au MiG-25 pour défendre d'immenses
+  espaces aériens.
+objectifs:
+  - Identifier le Mikoyan MiG-31 (nom OTAN « Foxhound ») comme l'intercepteur russe très rapide et à long rayon d'action.
+  - Retenir ses records — parmi les avions de combat les plus rapides et haut-volants en service.
+  - Comprendre son rôle d'intercepteur (biplace, radar puissant), successeur du MiG-25.
+aliases: [MiG-31, Mikoyan MiG-31, Foxhound, intercepteur russe]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Mikoyan MiG-31 (Foxhound), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Mikoyan MiG-31 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Mikoyan_MiG-31
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.sukhoi-su-27
+    - culture.aviation-mondiale.mikoyan-mig-29
+specs:
+  crew: "2 (pilote + officier système d'armes)"
+  powerplant: "2 turboréacteurs Soloviev D-30F6"
+  maxSpeed: "~Mach 2,83 (jusqu'à ~3 000 km/h en altitude)"
+  armament: "Missiles air-air longue portée ; radar à antenne à balayage électronique"
+infobox:
+  constructeur: Mikoyan (URSS / Russie)
+  role: Intercepteur longue distance
+  armees: [Forces aérospatiales russes]
+  miseEnService: 1981
+  statut: En service (versions modernisées MiG-31BM)
+  equipage: 2 (pilote + officier système d'armes)
+  vitesseMax: ~Mach 2,83
+content:
+  essentiel:
+    body: |
+      Le **Mikoyan MiG-31** (nom **OTAN « Foxhound »**) est un **intercepteur**
+      soviétique puis russe, conçu pour un problème très particulier : défendre
+      les **immenses espaces aériens** de l'URSS/Russie, y compris l'Arctique,
+      contre des menaces rapides et lointaines (bombardiers, missiles de
+      croisière).
+
+      Sa réponse est la **vitesse** et l'**altitude** : c'est l'un des avions de
+      combat **les plus rapides du monde** en service (~**Mach 2,83**, jusqu'à
+      environ **3 000 km/h** en altitude). **Biplace** (un pilote et un
+      **officier système d'armes** à l'arrière), il embarque un puissant **radar**
+      (l'un des premiers à balayage électronique sur un chasseur) et des
+      **missiles à longue portée**. Il a succédé au **MiG-25 Foxbat**.
+
+      Ce n'est pas un chasseur de combat tournoyant : c'est un **poursuiveur**
+      lourd, rapide et bien armé. Appareil **russe**, à situer dans la culture de
+      défense — pas un avion français.
+    aRetenir:
+      - Le MiG-31 (« Foxhound ») est l'intercepteur russe à très long rayon d'action et très haute vitesse.
+      - Il est l'un des avions de combat les plus rapides du monde (~Mach 2,83).
+      - Biplace, à radar puissant et missiles longue portée ; successeur du MiG-25.
+      - Appareil russe, pensé pour défendre d'immenses espaces (dont l'Arctique).
+  sections:
+    - id: intercepter-n-est-pas-tournoyer
+      title: Intercepter n'est pas tournoyer (à savoir)
+      strate: maitriser
+      body: |
+        Tous les chasseurs ne cherchent pas le **combat tournoyant** rapproché.
+        Le MiG-31 est un **intercepteur** : sa mission est de **foncer** très
+        vite vers une menace détectée loin, de la **verrouiller** au radar et de
+        tirer un **missile longue portée**, souvent sans jamais s'approcher.
+
+        Cette spécialisation explique ses choix : **grande vitesse**, **haute
+        altitude**, **radar** puissant et **deux membres d'équipage** pour gérer
+        la charge de travail. En revanche, lourd et peu maniable, il serait
+        désavantagé dans un duel serré. C'est l'exemple parfait qu'en aviation
+        militaire, **la mission dicte la conception** — un intercepteur et un
+        chasseur de supériorité aérienne ne se ressemblent pas.
+  pieges:
+    - Le MiG-31 est russe — pas un appareil des forces françaises.
+    - C'est un intercepteur (vitesse, altitude, missiles longue portée), pas un chasseur de combat rapproché.
+    - Sa très haute vitesse ne doit pas faire oublier qu'il est lourd et peu maniable en duel serré.

@@ -1,0 +1,99 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.sukhoi-su-35
+type: appareil
+title: Sukhoi Su-35 (Flanker-E)
+slug: sukhoi-su-35
+service:
+  status: actif
+  firstFlight: 2008
+  introducedAt: 2014
+  operator: Forces aérospatiales russes
+summary: >-
+  Chasseur russe de génération 4,5, dérivé très modernisé du Su-27. Doté de
+  moteurs à poussée vectorielle (supermanœuvrabilité) et d'un puissant radar, il
+  est l'un des chasseurs non furtifs les plus performants en service.
+objectifs:
+  - Identifier le Sukhoi Su-35 (nom OTAN « Flanker-E ») comme le dérivé modernisé du Su-27, de génération 4,5.
+  - Retenir ses atouts — moteurs à poussée vectorielle (supermanœuvrabilité) et radar longue portée (Irbis-E).
+  - Le situer parmi les chasseurs russes de premier plan, à ne pas confondre avec un appareil français.
+aliases: [Su-35, Su-35S, Sukhoi Su-35, Flanker-E, chasseur russe moderne]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Sukhoi Su-35 (Flanker-E), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Sukhoi Su-35 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-35
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.sukhoi-su-27
+    - culture.aviation-mondiale.sukhoi-su-57
+specs:
+  crew: "1 pilote"
+  powerplant: "2 turboréacteurs Saturn AL-41F1S à poussée vectorielle"
+  maxSpeed: "Mach 2,25"
+  armament: "1 canon de 30 mm, missiles air-air et air-sol ; radar Irbis-E (~400 km)"
+infobox:
+  constructeur: Sukhoi (Russie)
+  role: Chasseur multirôle de génération 4,5
+  armees: [Forces aérospatiales russes, Chine, Algérie]
+  miseEnService: 2014
+  statut: En service
+  equipage: 1 pilote
+  vitesseMax: Mach 2,25
+content:
+  essentiel:
+    body: |
+      Le **Sukhoi Su-35** (nom **OTAN « Flanker-E »**) est un chasseur russe de
+      **génération 4,5**, c'est-à-dire un appareil non furtif mais **poussé à son
+      maximum** de performances. C'est un dérivé **très modernisé** du **Su-27** :
+      nouvelle avionique, nouveau radar, nouveaux moteurs.
+
+      Ses deux atouts marquants sont les **moteurs à poussée vectorielle** (les
+      tuyères s'orientent, offrant une **supermanœuvrabilité** spectaculaire,
+      jusqu'à des manœuvres post-décrochage) et son **radar Irbis-E** à longue
+      portée (détection annoncée jusqu'à ~400 km, suivi de nombreuses cibles).
+      Volant sous sa forme moderne (Su-35S) en **2008** et en service en **2014**,
+      il est considéré comme l'un des **meilleurs chasseurs non furtifs** en
+      service.
+
+      C'est un appareil **russe** (aussi exporté vers la Chine et l'Algérie), à
+      situer dans la culture de défense — pas un avion français.
+    aRetenir:
+      - Le Su-35 (« Flanker-E ») est un chasseur russe de génération 4,5, dérivé modernisé du Su-27.
+      - Atouts — moteurs à poussée vectorielle (supermanœuvrabilité) et radar longue portée Irbis-E.
+      - En service depuis 2014 ; l'un des meilleurs chasseurs non furtifs.
+      - Appareil russe (aussi Chine, Algérie), à ne pas confondre avec un appareil français.
+  sections:
+    - id: generation-4-5-vs-furtivite
+      title: Génération 4,5 face à la furtivité (à savoir)
+      strate: maitriser
+      body: |
+        On classe les chasseurs par **générations**. La **5e génération** (F-22,
+        F-35, Su-57) mise sur la **furtivité** (faible détectabilité radar). La
+        **génération 4,5**, comme le Su-35, fait un autre pari : **pas de
+        furtivité** poussée, mais des **moteurs**, un **radar** et une
+        **avionique** de tout premier plan, à un coût plus maîtrisé.
+
+        Le Su-35 illustre cette voie : sa **poussée vectorielle** lui donne une
+        agilité hors norme en combat rapproché, et son radar une longue allonge.
+        Ses limites, face à un adversaire furtif, tiennent justement à son
+        **absence de furtivité**. Ce compromis « performances brutes contre
+        discrétion » est au cœur des débats sur l'aviation de combat moderne.
+  pieges:
+    - Le Su-35 est russe — pas un appareil des forces françaises.
+    - « Génération 4,5 » ne veut pas dire furtif — le Su-35 mise sur les performances, pas sur la discrétion radar.
+    - Le Su-35 (modernisé) descend du Su-27 — c'est une évolution, pas un appareil entièrement nouveau comme le Su-57.

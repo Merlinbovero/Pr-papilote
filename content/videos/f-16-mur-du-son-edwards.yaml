@@ -29,7 +29,13 @@ takeaways:
 relatedFiches:
   - culture.aviation-mondiale.f-16-fighting-falcon
   - fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
-watchNext: []
+watchNext:
+  - title: "Les grands chasseurs russes (Military TV)"
+    url: https://www.youtube.com/watch?v=my1RNRP_pvA
+    note: Les homologues russes du F-16 (MiG-29, Su-27 et la famille Flanker).
+  - title: "Les plus grands chasseurs de la Seconde Guerre mondiale (Timeline)"
+    url: https://www.youtube.com/watch?v=8LAc_-ENRKw
+    note: Les ancêtres du combat aérien, pour prendre du recul.
 sources:
   - title: "General Dynamics F-16 Fighting Falcon — Wikipédia (en)"
     url: https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon
