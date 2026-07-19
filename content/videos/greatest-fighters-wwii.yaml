@@ -33,7 +33,10 @@ relatedFiches:
   - culture.aviation-mondiale.focke-wulf-fw-190
   - culture.aviation-mondiale.north-american-p-51-mustang
   - culture.aviation-mondiale.mitsubishi-a6m-zero
-watchNext: []
+watchNext:
+  - title: "Les grands chasseurs russes (Military TV)"
+    url: https://www.youtube.com/watch?v=my1RNRP_pvA
+    note: Pour comparer avec les chasseurs modernes (Su-27, MiG-29, Su-57…).
 sources:
   - title: "Supermarine Spitfire — Wikipédia (en)"
     url: https://en.wikipedia.org/wiki/Supermarine_Spitfire

@@ -1,0 +1,98 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.mikoyan-mig-29
+type: appareil
+title: Mikoyan MiG-29 (Fulcrum)
+slug: mikoyan-mig-29
+service:
+  status: actif
+  firstFlight: 1977
+  introducedAt: 1983
+  operator: Forces aériennes soviétiques puis russes
+summary: >-
+  Chasseur léger de supériorité aérienne soviétique, le pendant du lourd Su-27.
+  Biréacteur agile conçu pour contrer les F-15 et F-16 américains, il a été
+  exporté dans une trentaine de pays et reste très répandu.
+objectifs:
+  - Identifier le Mikoyan MiG-29 (nom OTAN « Fulcrum ») comme le chasseur léger de supériorité aérienne soviétique/russe.
+  - Comprendre son positionnement — le complément léger du Su-27 (comme le F-16 l'est du F-15).
+  - Retenir sa large diffusion (une trentaine de pays), à ne pas confondre avec un appareil français.
+aliases: [MiG-29, Mikoyan MiG-29, Fulcrum, chasseur russe léger]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 1
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Mikoyan MiG-29 (Fulcrum), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Mikoyan MiG-29 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Mikoyan_MiG-29
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.sukhoi-su-27
+    - culture.aviation-mondiale.f-16-fighting-falcon
+specs:
+  crew: "1 pilote (versions biplaces d'entraînement)"
+  powerplant: "2 turboréacteurs Klimov RD-33"
+  maxSpeed: "Mach 2+"
+  armament: "1 canon de 30 mm, missiles air-air"
+infobox:
+  constructeur: Mikoyan (URSS / Russie)
+  role: Chasseur léger de supériorité aérienne
+  armees: [Forces aériennes russes, ~30 pays]
+  miseEnService: 1983
+  statut: En service
+  equipage: 1 pilote
+  vitesseMax: Mach 2+
+content:
+  essentiel:
+    body: |
+      Le **Mikoyan MiG-29** (nom **OTAN « Fulcrum »**) est le **chasseur léger**
+      de supériorité aérienne soviétique. Il forme, avec le lourd **Su-27**, un
+      **couple** comparable à celui du **F-15/F-16** américain : un gros chasseur
+      à long rayon d'action (Su-27) et un chasseur **plus léger** et agile
+      (MiG-29) pour la défense rapprochée.
+
+      **Biréacteur** compact et très **manœuvrant**, volant dès **1977** et en
+      service en **1983**, il a été **massivement exporté** : une **trentaine de
+      pays** l'ont utilisé, ce qui en fait l'un des chasseurs russes les plus
+      répandus au monde. On le reconnaît à ses deux **dérives** et à ses entrées
+      d'air très inclinées.
+
+      C'est un appareil **russe** (soviétique à l'origine), à situer dans la
+      **culture aéronautique mondiale** — pas un avion des forces françaises.
+    aRetenir:
+      - Le MiG-29 (« Fulcrum ») est le chasseur léger de supériorité aérienne soviétique/russe.
+      - Il est le complément léger du Su-27, comme le F-16 l'est du F-15.
+      - Biréacteur agile, exporté dans une trentaine de pays.
+      - Appareil russe, à ne pas confondre avec un appareil français.
+  sections:
+    - id: le-couple-leger-lourd
+      title: Le couple « léger / lourd »
+      body: |
+        Beaucoup d'armées de l'air ont adopté une logique de **paire** : un
+        chasseur **lourd**, cher, à long rayon d'action, et un chasseur **léger**,
+        plus nombreux et moins coûteux, pour compléter le dispositif. Côté
+        américain, c'est **F-15 + F-16**. Côté soviétique, c'est **Su-27 +
+        MiG-29**.
+
+        Le MiG-29 tient le rôle du **léger** : excellent en combat rapproché,
+        très maniable, mais avec un **rayon d'action** et une **capacité
+        d'emport** plus limités que le Su-27. Cette logique de complémentarité
+        est un repère utile pour comprendre l'organisation des flottes de chasse
+        — y compris, côté français, la place unique tenue par le **Rafale**
+        (avion polyvalent qui remplace à lui seul plusieurs types).
+  pieges:
+    - Le MiG-29 est russe (soviétique à l'origine) — pas un appareil des forces françaises.
+    - C'est le chasseur léger (face au Su-27 lourd) — l'équivalent conceptuel du F-16 face au F-15.
+    - À ne pas confondre avec le Su-27 « Flanker », plus grand et à plus long rayon d'action.

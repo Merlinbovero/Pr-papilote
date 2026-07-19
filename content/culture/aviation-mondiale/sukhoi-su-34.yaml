@@ -1,0 +1,98 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.sukhoi-su-34
+type: appareil
+title: Sukhoi Su-34 (Fullback)
+slug: sukhoi-su-34
+service:
+  status: actif
+  firstFlight: 1990
+  introducedAt: 2014
+  operator: Forces aérospatiales russes
+summary: >-
+  Bombardier tactique russe biplace, dérivé de la famille Su-27. Cockpit blindé
+  côte à côte, grande allonge et forte charge de bombes : conçu pour la frappe,
+  reconnaissable à son nez plat en « bec de canard ».
+objectifs:
+  - Identifier le Sukhoi Su-34 (nom OTAN « Fullback ») comme le bombardier tactique biplace russe dérivé du Su-27.
+  - Comprendre sa spécialisation — la frappe (soute de bombes, allonge, cockpit blindé côte à côte).
+  - Le distinguer des chasseurs de la même famille (Su-27, Su-35), à ne pas confondre avec un appareil français.
+aliases: [Su-34, Sukhoi Su-34, Fullback, bombardier russe]
+module: culture
+category: aviation-mondiale
+subcategory: chasseurs
+tags: []
+level: 2
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-19"
+    version: 1
+    motif: Création — fiche de culture aéronautique sur le Sukhoi Su-34 (Fullback), à partir d'une veille vidéo ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Sukhoi Su-34 — Wikipédia (en)"
+    url: https://en.wikipedia.org/wiki/Sukhoi_Su-34
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.sukhoi-su-27
+    - culture.aviation-mondiale.sukhoi-su-35
+specs:
+  crew: "2, côte à côte (pilote + navigateur/opérateur)"
+  powerplant: "2 turboréacteurs Saturn AL-31FM1"
+  maxSpeed: "Mach 1,8+ (en charge)"
+  armament: "Bombes et missiles air-sol (forte charge) ; 1 canon de 30 mm"
+infobox:
+  constructeur: Sukhoi (Russie)
+  role: Bombardier tactique / avion de frappe
+  armees: [Forces aérospatiales russes]
+  miseEnService: 2014
+  statut: En service (version modernisée Su-34M)
+  equipage: 2, côte à côte
+  vitesseMax: Mach 1,8+
+content:
+  essentiel:
+    body: |
+      Le **Sukhoi Su-34** (nom **OTAN « Fullback »**) n'est pas un chasseur mais
+      un **bombardier tactique** — un avion de **frappe**. Dérivé de la famille
+      **Su-27**, il en reprend la cellule puissante mais l'adapte à une autre
+      mission : emporter **loin** une **forte charge** de bombes et de missiles
+      air-sol, et frapper des objectifs au sol.
+
+      Ses particularités le rendent reconnaissable et logique pour sa mission :
+      un **cockpit blindé** (blindage épais autour de l'équipage) et **deux
+      membres d'équipage assis côte à côte** (pilote et navigateur/opérateur),
+      pour les longues missions de frappe. Son nez **plat et large** en « bec de
+      canard » lui a valu des surnoms comme « caneton ». Volant dès **1990**, il
+      est entré massivement en service à partir de **2014**.
+
+      C'est un appareil **russe**, à situer dans la culture de défense — pas un
+      avion des forces françaises.
+    aRetenir:
+      - Le Su-34 (« Fullback ») est un bombardier tactique russe, pas un chasseur.
+      - Dérivé de la famille Su-27, spécialisé dans la frappe air-sol (forte charge, allonge).
+      - Reconnaissable — cockpit blindé, deux équipiers côte à côte, nez plat en « bec de canard ».
+      - Appareil russe, à ne pas confondre avec les chasseurs Su-27/Su-35 de la même famille.
+  sections:
+    - id: une-meme-famille-des-roles-differents
+      title: Une même famille, des rôles différents
+      body: |
+        La famille **Su-27** illustre une idée importante : à partir d'une
+        **cellule** réussie, on peut construire des avions aux **missions très
+        différentes**. Le **Su-27** et le **Su-35** sont des **chasseurs**
+        (supériorité aérienne). Le **Su-34**, lui, est un **bombardier** :
+        priorité à la charge, à l'allonge et à la **survivabilité** de
+        l'équipage (d'où le blindage et l'installation côte à côte, plus
+        confortable pour de longues missions).
+
+        Pour un candidat, la leçon est double : savoir **reconnaître** la parenté
+        « Flanker », mais ne pas confondre un **chasseur** et un **bombardier**
+        sous prétexte qu'ils se ressemblent. Le rôle prime sur l'apparence.
+  pieges:
+    - Le Su-34 est russe — pas un appareil des forces françaises.
+    - Ce n'est pas un chasseur mais un bombardier tactique (frappe air-sol).
+    - Il descend de la famille Su-27 mais ne remplit pas le même rôle que le Su-27 ou le Su-35.
