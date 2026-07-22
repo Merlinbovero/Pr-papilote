@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: lecture.ciels-de-combat-lert-prefontaine
+slug: ciels-de-combat
+title: Ciels de combat
+author: Frédéric Lert et Benjamin Vinot Préfontaine
+kind: livre
+publisher: Éditions Nimrod
+year: 2021
+module: eopn
+topics:
+  [Armée de l'air et de l'espace, Pilote de chasse, Témoignage, Opérations extérieures, Culture]
+summary: |-
+  « Ciels de combat » réunit plus d'une centaine de témoignages inédits
+  d'équipages de chasse de l'Armée de l'air et de l'espace, recueillis et mis
+  en forme par le pilote Benjamin Vinot Préfontaine et le journaliste Frédéric
+  Lert. Des récits vécus qui vont de la formation initiale à l'arrivée en
+  unité, des entraînements et qualifications jusqu'aux missions réelles en
+  opérations extérieures — Balkans, Afrique, Afghanistan, Libye, Mali — sur
+  Jaguar, Mirage F1, Mirage 2000, Super-Étendard et Rafale.
+
+  Ce n'est pas un manuel de sélection, mais un livre qui donne à comprendre le
+  métier de l'intérieur : la préparation, la cohésion d'équipage, la charge
+  mentale, l'engagement opérationnel. Une lecture de motivation et de culture
+  du milieu précieuse pour qui prépare l'EOPN et veut savoir ce qui attend
+  réellement un pilote de chasse.
+takeaways:
+  - Recueil de plus de cent témoignages vécus d'équipages de chasse de l'Armée de l'air et de l'espace.
+  - Coordonné par le pilote Benjamin Vinot Préfontaine et le journaliste Frédéric Lert (Éditions Nimrod, 2021).
+  - Il couvre tout le parcours — formation, unité opérationnelle, entraînements, puis opérations extérieures réelles.
+  - Une lecture de motivation et de culture du milieu pour la préparation à l'EOPN, pas un manuel technique.
+relatedFiches:
+  - eopn.appareils.rafale
+  - eopn.appareils.mirage-2000
+sources:
+  - title: "Ciels de combat — présentation (aeroVFR)"
+    url: https://www.aerovfr.com/2019/10/ciels-de-combat/
+    kind: presse
+    consultedAt: "2026-07-22"
+  - title: "« Ciels de combat », témoignages inédits de pilotes de chasse (Dassault Aviation)"
+    url: https://www.dassault-aviation.com/en/passion/news/book-combat-skies-unpublished-accounts-from-fighter-pilots-in-the-french-air-force/
+    kind: institutionnel
+    consultedAt: "2026-07-22"
+createdAt: "2026-07-22"
+verifiedAt: "2026-07-22"
+status: publie
