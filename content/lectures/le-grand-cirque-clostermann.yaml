@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: lecture.le-grand-cirque-clostermann
+slug: le-grand-cirque
+title: Le Grand Cirque
+author: Pierre Clostermann
+kind: livre
+publisher: Flammarion
+year: 1948
+module: culture
+topics: [Littérature aéronautique, Seconde Guerre mondiale, Témoignage, Culture]
+summary: |-
+  « Le Grand Cirque » est le récit autobiographique de Pierre Clostermann,
+  pilote de chasse français engagé dans les Forces aériennes françaises libres
+  et la Royal Air Force pendant la Seconde Guerre mondiale. Paru en 1948, il
+  raconte ses missions aux commandes du Spitfire, puis du redoutable Hawker
+  Tempest, jusqu'à la fin du conflit.
+
+  C'est bien plus qu'un carnet de combats : le livre dit la camaraderie, la
+  peur, la fatigue, la mort des amis et l'ambivalence de la victoire. Devenu
+  l'un des plus grands succès de la littérature aéronautique, il reste une
+  référence pour comprendre ce qu'était le combat aérien vécu de l'intérieur.
+  Une lecture de culture et d'inspiration pour qui vise le métier de pilote —
+  pas un manuel technique.
+takeaways:
+  - Récit autobiographique de Pierre Clostermann, pilote de chasse français dans la RAF (Forces aériennes françaises libres) pendant la 2GM.
+  - Paru en 1948 (Flammarion) ; l'un des plus grands succès de la littérature aéronautique.
+  - Il vole sur Spitfire puis sur Hawker Tempest — un témoignage direct du combat aérien.
+  - À lire pour la culture, le témoignage humain et l'inspiration, pas pour la technique.
+relatedFiches:
+  - culture.aviation-mondiale.supermarine-spitfire
+sources:
+  - title: "Le Grand Cirque — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Le_Grand_Cirque
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+  - title: "Pierre Clostermann — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Pierre_Clostermann
+    kind: encyclopedie
+    consultedAt: "2026-07-19"
+createdAt: "2026-07-19"
+verifiedAt: "2026-07-19"
+status: publie
