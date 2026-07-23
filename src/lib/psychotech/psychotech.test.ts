@@ -90,6 +90,23 @@ describe("générateurs — invariants sur toutes les familles", () => {
     }
   });
 
+  it("lecture d'instruments : la bonne réponse correspond à la valeur du cadran", () => {
+    const fmtCap = (c: number) => String(((c % 360) + 360) % 360 || 360).padStart(3, "0");
+    for (const seed of [6, 71, 909, 54321]) {
+      const cap = generateQuestion("lecture-instruments", seed, 1);
+      expect(cap.instrument!.kind).toBe("cap");
+      expect(cap.choices[cap.correctIndex]).toBe(`${fmtCap(cap.instrument!.value)}°`);
+
+      const speed = generateQuestion("lecture-instruments", seed, 2);
+      expect(speed.instrument!.kind).toBe("anemometre");
+      expect(speed.choices[speed.correctIndex]).toBe(`${speed.instrument!.value} kt`);
+
+      const alt = generateQuestion("lecture-instruments", seed, 3);
+      expect(alt.instrument!.kind).toBe("altimetre");
+      expect(alt.choices[alt.correctIndex]).toBe(`${alt.instrument!.value} ft`);
+    }
+  });
+
   it("rapidité : identiques ↔ chaînes réellement égales", () => {
     for (const seed of [11, 220, 3033, 40404]) {
       const q = generateQuestion("rapidite", seed, 3);

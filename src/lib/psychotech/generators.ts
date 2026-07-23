@@ -1,5 +1,5 @@
 import { createRng, seededShuffle } from "@/features/quiz/engine";
-import type { PsyFamily, PsyFamilyInfo, PsyQuestion } from "./types";
+import type { PsyFamily, PsyFamilyInfo, PsyInstrument, PsyQuestion } from "./types";
 
 /**
  * Générateurs des familles psychotechniques — règles propres, documentées
@@ -107,6 +107,14 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
       "Chaque cadran a SA propre limite (min, max ou plage). Surveillez-les tous en même temps et repérez ceux qui sont sortis de leur tolérance — c'est l'attention répartie sur 4 à 5 paramètres, cœur du pilotage, que l'on évalue ici.",
     ficheHref: "/psychotechnique/exercices/la-dissociation-d-attention",
     timeLimits: [35, 45, 55],
+  },
+  "lecture-instruments": {
+    slug: "lecture-instruments",
+    name: "Lecture d'instruments",
+    consigne:
+      "Lisez le cadran affiché et donnez sa valeur. Compas puis anémomètre, enfin l'altimètre à deux aiguilles (grande = centaines de pieds, petite = milliers) — l'aptitude cockpit par excellence.",
+    ficheHref: "/psychotechnique/exercices/la-lecture-d-instruments",
+    timeLimits: [15, 18, 25],
   },
 };
 
@@ -935,6 +943,65 @@ function genDissociation(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// lecture-instruments (lire un cadran de vol — compas, anémomètre, altimètre)
+// ---------------------------------------------------------------------------
+
+function genInstruments(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  let instrument: PsyInstrument;
+  let correct: string;
+  let distractors: string[];
+  let prompt: string;
+  let method: string;
+
+  if (difficulty === 1) {
+    // Compas : lire le cap au sommet du cadran.
+    const cap = int(rng, 0, 35) * 10;
+    instrument = { kind: "cap", value: cap };
+    correct = `${fmtCap(cap)}°`;
+    prompt = "Quel cap indique le compas ?";
+    method =
+      "Le cap se lit au repère fixe, en haut du cadran. N = 360/000, E = 090, S = 180, W = 270 ; les chiffres valent des dizaines de degrés (3 = 030, 12 = 120).";
+    distractors = [`${fmtCap(cap + 180)}°`, `${fmtCap(cap + 30)}°`, `${fmtCap(cap - 20)}°`];
+  } else if (difficulty === 2) {
+    // Anémomètre : lire la vitesse indiquée.
+    const speed = int(rng, 6, 32) * 10;
+    instrument = { kind: "anemometre", value: speed };
+    correct = `${speed} kt`;
+    prompt = "Quelle vitesse indique l'anémomètre ?";
+    method =
+      "L'aiguille pointe la vitesse indiquée. Repérez d'abord la graduation majeure la plus proche (tous les 40 kt), puis comptez les petites graduations (20 kt) jusqu'à l'aiguille.";
+    distractors = [`${speed + 20} kt`, `${speed - 20} kt`, `${speed + 40} kt`];
+  } else {
+    // Altimètre à deux aiguilles : grande = centaines, petite = milliers.
+    const value = int(rng, 2, 98) * 100;
+    instrument = { kind: "altimetre", value };
+    correct = `${value} ft`;
+    prompt = "Quelle altitude indique l'altimètre (deux aiguilles) ?";
+    method =
+      "Petite aiguille = milliers de pieds, grande aiguille = centaines. Lisez d'abord la petite (le millier atteint), puis la grande pour les centaines — l'erreur classique est d'inverser les deux.";
+    // Distracteur-piège : inversion milliers/centaines.
+    const thousands = Math.floor(value / 1000);
+    const hundreds = Math.floor((value % 1000) / 100);
+    const swapped = hundreds * 1000 + thousands * 100;
+    distractors = [`${swapped} ft`, `${value + 1000} ft`, `${Math.max(0, value - 100)} ft`];
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.instruments.${seed}`,
+    family: "lecture-instruments",
+    difficulty,
+    prompt,
+    instrument,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["lecture-instruments"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -951,6 +1018,7 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   "rotation-mentale": genRotation,
   "double-tache": genDoubleTache,
   "dissociation-attention": genDissociation,
+  "lecture-instruments": genInstruments,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */
