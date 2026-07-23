@@ -16,9 +16,20 @@ export const PSY_FAMILIES = [
   "rotation-mentale",
   "double-tache",
   "dissociation-attention",
+  "lecture-instruments",
 ] as const;
 
 export type PsyFamily = (typeof PSY_FAMILIES)[number];
+
+/**
+ * Instrument de vol à lire (famille « lecture-instruments »). Le générateur
+ * ne produit que la donnée physique ; le rendu SVG vit dans le player.
+ * cap en degrés (0-359), vitesse en kt, altitude en ft.
+ */
+export interface PsyInstrument {
+  kind: "cap" | "anemometre" | "altimetre";
+  value: number;
+}
 
 export interface PsyFamilyInfo {
   slug: PsyFamily;
@@ -40,6 +51,8 @@ export interface PsyQuestion {
   prompt: string;
   /** Grille monospace (attention) — rendue telle quelle. */
   gridLines?: string[];
+  /** Instrument de vol à lire (lecture-instruments) — rendu en SVG. */
+  instrument?: PsyInstrument;
   choices: string[];
   correctIndex: number;
   /** Explication de méthode (pas seulement la réponse). */

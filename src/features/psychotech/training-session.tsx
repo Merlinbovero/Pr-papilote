@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { FAMILY_INFO } from "@/lib/psychotech/generators";
 import { composeSession, scoreSession, SESSION_SIZES } from "@/lib/psychotech/session";
+import { PsyInstrumentView } from "@/features/psychotech/psy-instrument";
 import {
   PSY_FAMILIES,
   type PsyAnswerEvent,
@@ -433,6 +434,7 @@ export function TrainingSession() {
           {question.gridLines.join("\n")}
         </pre>
       ) : null}
+      {question.instrument ? <PsyInstrumentView instrument={question.instrument} /> : null}
 
       <ul className="space-y-2" role="list">
         {question.choices.map((choice, choiceIndex) => {
