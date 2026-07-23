@@ -1,0 +1,101 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-memoire-associative
+type: concept
+title: La mémoire associative
+slug: la-memoire-associative
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — la mémoire associative
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Retenir des paires — un indicatif et un nombre, un code et une fréquence —
+  puis restituer l'association dans un sens comme dans l'autre. La mémoire qui
+  relie, distincte de la mémoire qui liste.
+objectifs:
+  - Distinguer la mémoire associative (relier deux éléments) de la mémoire de liste (retenir une suite).
+  - Construire des images mentales qui lient chaque paire pour la rendre durable.
+  - Restituer une association dans les deux sens (indicatif → nombre et nombre → indicatif).
+aliases: [mémoire associative, mémoire de paires, associations, mémoire relationnelle, paires]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-23"
+verifiedAt: "2026-07-23"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-23"
+    version: 1
+    motif: Création — famille « mémoire associative » (paires indicatif → nombre), extension du module Psychotechnique.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-23"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-memoire
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      La **mémoire associative** ne consiste pas à retenir une liste, mais à
+      **relier deux éléments** : un indicatif à un nombre, un code à une
+      fréquence, un nom à une piste. C'est la mémoire du cockpit — associer une
+      alarme à une action, un repère à une consigne.
+
+      L'exercice affiche quelques **paires** (« CHARLIE → 47 ») pendant quelques
+      secondes, puis les masque. La question porte sur **une** association — et,
+      aux niveaux avancés, elle peut être posée **dans l'autre sens** (quel
+      indicatif pour tel nombre ?). Il faut donc mémoriser le **lien**, pas
+      seulement les deux bouts.
+
+      > La clé n'est pas de répéter, mais de **lier** — une paire reliée par une
+      > image se retient bien mieux qu'une paire ânonnée.
+
+      La méthode — pour chaque paire, fabriquer une **image mentale** qui unit
+      le mot et le nombre en une mini-scène ; au rappel, on rejoue l'image.
+    aRetenir:
+      - La mémoire associative relie deux éléments — elle diffère de la mémoire de liste.
+      - On mémorise le lien, pas seulement les deux bouts — la question peut être posée dans les deux sens.
+      - Une image mentale qui unit les deux éléments rend la paire durable.
+      - Répéter ne suffit pas — c'est l'association imagée qui fixe le souvenir.
+  sections:
+    - id: relier-plutot-que-repeter
+      title: Relier plutôt que répéter
+      body: |
+        La répétition (« CHARLIE 47, CHARLIE 47… ») s'efface vite sous le stress
+        et le nombre de paires. L'association par l'**image** résiste beaucoup
+        mieux : elle crée un **pont** entre les deux éléments, qu'un seul des
+        deux suffit ensuite à rappeler.
+
+        Plus l'image est **concrète, absurde ou en mouvement**, plus elle
+        s'ancre — le cerveau retient l'inattendu, pas le neutre.
+    - id: la-methode-des-images
+      title: La méthode des images
+      strate: maitriser
+      body: |
+        Pour chaque paire, en une seconde :
+
+        1. **transformer le nombre** en une forme concrète (47 → « quatre
+           roues + un sept qui penche », ou une année, un dossard…) ;
+        2. **fusionner** cette forme avec le mot dans une **mini-scène** animée ;
+        3. passer à la paire suivante sans revenir en arrière ;
+        4. au rappel, partir de l'élément donné (mot **ou** nombre) et
+           **rejouer la scène** pour retrouver l'autre.
+
+        S'entraîner dans les **deux sens** dès l'apprentissage : c'est ce qui
+        permet de répondre que le nombre demandé pointe bien vers tel indicatif,
+        et pas l'inverse.
+  pieges:
+    - Ne retenir que les éléments sans le lien — au rappel, on ne sait plus quel nombre va avec quel mot.
+    - Compter sur la répétition pure — elle lâche dès que les paires s'accumulent.
+    - Négliger le sens inverse — la question peut partir du nombre vers l'indicatif.
+    - Bâtir des images trop neutres — l'image doit être marquante pour tenir.

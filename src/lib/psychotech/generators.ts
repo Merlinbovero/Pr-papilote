@@ -1,5 +1,5 @@
 import { createRng, seededShuffle } from "@/features/quiz/engine";
-import type { PsyFamily, PsyFamilyInfo, PsyInstrument, PsyQuestion } from "./types";
+import type { MatrixCell, PsyFamily, PsyFamilyInfo, PsyInstrument, PsyQuestion } from "./types";
 
 /**
  * Générateurs des familles psychotechniques — règles propres, documentées
@@ -115,6 +115,22 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
       "Lisez le cadran affiché et donnez sa valeur. Compas puis anémomètre, enfin l'altimètre à deux aiguilles (grande = centaines de pieds, petite = milliers) — l'aptitude cockpit par excellence.",
     ficheHref: "/psychotechnique/exercices/la-lecture-d-instruments",
     timeLimits: [15, 18, 25],
+  },
+  "memoire-associative": {
+    slug: "memoire-associative",
+    name: "Mémoire associative",
+    consigne:
+      "Des paires « indicatif → nombre » s'affichent quelques secondes puis disparaissent. Mémorisez les associations : la question porte sur l'une d'elles. Reliez chaque paire par une image mentale.",
+    ficheHref: "/psychotechnique/exercices/la-memoire-associative",
+    timeLimits: [15, 18, 20],
+  },
+  matrices: {
+    slug: "matrices",
+    name: "Matrices",
+    consigne:
+      "Trouvez la figure qui complète la grille 3×3. Cherchez la règle ligne par ligne, puis colonne par colonne (forme, nombre, remplissage) : la bonne réponse respecte toutes les règles à la fois.",
+    ficheHref: "/psychotechnique/exercices/les-matrices",
+    timeLimits: [30, 35, 45],
   },
 };
 
@@ -1002,6 +1018,152 @@ function genInstruments(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// memoire-associative (mémoriser des paires indicatif → nombre, puis restituer)
+// ---------------------------------------------------------------------------
+
+const CALLSIGNS = [
+  "ALPHA",
+  "BRAVO",
+  "CHARLIE",
+  "DELTA",
+  "ECHO",
+  "FOXTROT",
+  "GOLF",
+  "HOTEL",
+  "INDIA",
+  "JULIETT",
+  "KILO",
+  "LIMA",
+  "MIKE",
+  "NOVEMBER",
+  "OSCAR",
+  "PAPA",
+  "QUEBEC",
+  "ROMEO",
+  "SIERRA",
+  "TANGO",
+];
+
+function genAssociative(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const count = difficulty === 1 ? 3 : difficulty === 2 ? 4 : 5;
+  const seconds = difficulty === 3 ? 4 : 5;
+
+  const words = seededShuffle(CALLSIGNS, seed).slice(0, count);
+  const nums: number[] = [];
+  while (nums.length < count) {
+    const n = int(rng, 10, 99);
+    if (!nums.includes(n)) nums.push(n);
+  }
+  const pairs = words.map((word, i) => ({ word, num: nums[i] }));
+  const exposure = { lines: pairs.map((p) => `${p.word}   →   ${p.num}`), seconds };
+
+  const target = pairs[int(rng, 0, count - 1)];
+  let prompt: string;
+  let correct: string;
+  let distractors: string[];
+
+  if (difficulty === 3) {
+    // Sens inverse : nombre → indicatif (mémorisation bidirectionnelle).
+    prompt = `Quel indicatif était associé au nombre ${target.num} ?`;
+    correct = target.word;
+    distractors = seededShuffle(
+      words.filter((w) => w !== target.word),
+      seed + 3
+    ).slice(0, 3);
+  } else {
+    // Sens direct : indicatif → nombre.
+    prompt = `Quel nombre était associé à « ${target.word} » ?`;
+    correct = String(target.num);
+    distractors = seededShuffle(nums.filter((n) => n !== target.num).map(String), seed + 3).slice(
+      0,
+      3
+    );
+    // Complète avec des nombres inédits si moins de 3 distracteurs (niveau 1).
+    while (distractors.length < 3) {
+      let n = int(rng, 10, 99);
+      while (nums.includes(n) || distractors.includes(String(n))) {
+        n = int(rng, 10, 99);
+      }
+      distractors.push(String(n));
+    }
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.associative.${seed}`,
+    family: "memoire-associative",
+    difficulty,
+    exposure,
+    prompt,
+    choices,
+    correctIndex,
+    method:
+      "Reliez chaque paire par une image mentale — un mot et un nombre qui racontent une mini-scène. Au rappel, retrouvez l'image pour restituer l'association, dans un sens comme dans l'autre.",
+    timeLimitSeconds: FAMILY_INFO["memoire-associative"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// matrices (raisonnement non verbal : compléter une grille 3×3)
+// ---------------------------------------------------------------------------
+
+const MATRIX_SHAPES = ["circle", "square", "triangle"] as const;
+
+/** Remplissage d'une cellule selon la difficulté (règle déterministe). */
+function matrixFilled(difficulty: 1 | 2 | 3, r: number, c: number): boolean {
+  if (difficulty === 1) return false; // toutes en contour
+  if (difficulty === 2) return r % 2 === 0; // lignes 0 et 2 pleines
+  return (r + c) % 2 === 0; // damier
+}
+
+/** Cellule à la position (ligne r, colonne c). Forme ← ligne, nombre ← colonne. */
+function matrixCellAt(difficulty: 1 | 2 | 3, r: number, c: number): MatrixCell {
+  return {
+    shape: MATRIX_SHAPES[r],
+    count: (c + 1) as 1 | 2 | 3,
+    filled: matrixFilled(difficulty, r, c),
+  };
+}
+
+function genMatrix(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const grid: (MatrixCell | null)[] = [];
+  for (let r = 0; r < 3; r += 1) {
+    for (let c = 0; c < 3; c += 1) {
+      grid.push(r === 2 && c === 2 ? null : matrixCellAt(difficulty, r, c));
+    }
+  }
+
+  const correct = matrixCellAt(difficulty, 2, 2);
+  // Chaque distracteur casse EXACTEMENT une règle.
+  const wrongCount: MatrixCell = { ...correct, count: correct.count === 3 ? 2 : 3 };
+  const wrongShape: MatrixCell = { ...correct, shape: MATRIX_SHAPES[0] };
+  const wrongFill: MatrixCell = { ...correct, filled: !correct.filled };
+
+  // Mélange déterministe des options ; on suit la bonne réponse.
+  const tagged = [correct, wrongCount, wrongShape, wrongFill].map((cell, i) => ({
+    cell,
+    isCorrect: i === 0,
+  }));
+  const shuffled = seededShuffle(tagged, seed + 7);
+  const options = shuffled.map((o) => o.cell);
+  const correctIndex = shuffled.findIndex((o) => o.isCorrect);
+
+  return {
+    id: `psy.matrices.${seed}`,
+    family: "matrices",
+    difficulty,
+    prompt: "Quelle figure complète logiquement la grille ?",
+    matrix: { grid, options },
+    choices: ["A", "B", "C", "D"],
+    correctIndex,
+    method:
+      "Lisez la grille ligne par ligne (la forme change) puis colonne par colonne (le nombre augmente), et vérifiez le remplissage. La bonne figure respecte les trois règles à la fois ; chaque intrus n'en casse qu'une.",
+    timeLimitSeconds: FAMILY_INFO.matrices.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -1019,6 +1181,8 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   "double-tache": genDoubleTache,
   "dissociation-attention": genDissociation,
   "lecture-instruments": genInstruments,
+  "memoire-associative": genAssociative,
+  matrices: genMatrix,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */

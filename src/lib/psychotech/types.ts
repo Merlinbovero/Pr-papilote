@@ -17,9 +17,31 @@ export const PSY_FAMILIES = [
   "double-tache",
   "dissociation-attention",
   "lecture-instruments",
+  "memoire-associative",
+  "matrices",
 ] as const;
 
 export type PsyFamily = (typeof PSY_FAMILIES)[number];
+
+/**
+ * Cellule d'une matrice logique (famille « matrices »). Une figure est
+ * définie par sa forme, un nombre de répétitions et son remplissage.
+ */
+export interface MatrixCell {
+  shape: "circle" | "square" | "triangle";
+  count: 1 | 2 | 3;
+  filled: boolean;
+}
+
+/**
+ * Matrice logique 3×3 (type Raven). `grid` contient 9 cellules ordonnées
+ * (ligne par ligne) dont la dernière est `null` (case à trouver) ; `options`
+ * sont les 4 figures candidates, alignées sur `choices`.
+ */
+export interface PsyMatrix {
+  grid: (MatrixCell | null)[];
+  options: MatrixCell[];
+}
 
 /**
  * Instrument de vol à lire (famille « lecture-instruments »). Le générateur
@@ -53,6 +75,8 @@ export interface PsyQuestion {
   gridLines?: string[];
   /** Instrument de vol à lire (lecture-instruments) — rendu en SVG. */
   instrument?: PsyInstrument;
+  /** Matrice logique à compléter (matrices) — grille + options en SVG. */
+  matrix?: PsyMatrix;
   choices: string[];
   correctIndex: number;
   /** Explication de méthode (pas seulement la réponse). */
