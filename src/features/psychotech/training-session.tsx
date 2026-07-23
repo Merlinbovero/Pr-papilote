@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { FAMILY_INFO } from "@/lib/psychotech/generators";
 import { composeSession, scoreSession, SESSION_SIZES } from "@/lib/psychotech/session";
 import { PsyInstrumentView } from "@/features/psychotech/psy-instrument";
+import { MatrixCellView, PsyMatrixGrid } from "@/features/psychotech/psy-matrix";
 import {
   PSY_FAMILIES,
   type PsyAnswerEvent,
@@ -435,6 +436,7 @@ export function TrainingSession() {
         </pre>
       ) : null}
       {question.instrument ? <PsyInstrumentView instrument={question.instrument} /> : null}
+      {question.matrix ? <PsyMatrixGrid matrix={question.matrix} /> : null}
 
       <ul className="space-y-2" role="list">
         {question.choices.map((choice, choiceIndex) => {
@@ -460,7 +462,14 @@ export function TrainingSession() {
                     isSelected && "border-primary bg-primary"
                   )}
                 />
-                <span className="flex-1 font-mono">{choice}</span>
+                {question.matrix ? (
+                  <span className="flex flex-1 items-center gap-3">
+                    <MatrixCellView cell={question.matrix.options[choiceIndex]} />
+                    <span className="text-muted-foreground font-mono text-sm">{choice}</span>
+                  </span>
+                ) : (
+                  <span className="flex-1 font-mono">{choice}</span>
+                )}
               </button>
             </li>
           );

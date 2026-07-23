@@ -136,6 +136,27 @@ describe("générateurs — invariants sur toutes les familles", () => {
     }
   });
 
+  it("matrices : la bonne option complète la règle de la grille", () => {
+    for (const seed of [9, 55, 606, 71717]) {
+      for (const difficulty of [1, 2, 3] as const) {
+        const q = generateQuestion("matrices", seed, difficulty);
+        // Grille 3×3 avec une seule case manquante, la dernière.
+        expect(q.matrix!.grid).toHaveLength(9);
+        expect(q.matrix!.grid.filter((c) => c === null)).toHaveLength(1);
+        expect(q.matrix!.grid[8]).toBeNull();
+        expect(q.matrix!.options).toHaveLength(4);
+        // Forme ← ligne (triangle en ligne 2), nombre ← colonne (3 en colonne 2),
+        // remplissage selon la règle de difficulté.
+        const expectedFilled = difficulty === 1 ? false : true;
+        expect(q.matrix!.options[q.correctIndex]).toEqual({
+          shape: "triangle",
+          count: 3,
+          filled: expectedFilled,
+        });
+      }
+    }
+  });
+
   it("rapidité : identiques ↔ chaînes réellement égales", () => {
     for (const seed of [11, 220, 3033, 40404]) {
       const q = generateQuestion("rapidite", seed, 3);
