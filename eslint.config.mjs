@@ -13,6 +13,21 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Autorise l'idiome « retirer une clé » : const { cle: _cle, ...reste } = objet.
+      // Les variables préfixées par « _ » sont volontairement inutilisées.
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          ignoreRestSiblings: true,
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

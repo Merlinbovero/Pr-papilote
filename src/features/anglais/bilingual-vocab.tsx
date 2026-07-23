@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowLeftRightIcon, SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
 import { foldText } from "@/features/search/normalize";
 
 /** Terme bilingue projeté pour le composant (données sérialisables). */
