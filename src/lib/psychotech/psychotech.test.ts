@@ -63,6 +63,33 @@ describe("générateurs — invariants sur toutes les familles", () => {
     }
   });
 
+  it("dissociation d'attention : la réponse correspond aux cadrans hors limite affichés", () => {
+    // Reconstitue l'état « hors limite » depuis le panneau (valeur vs règle affichée).
+    const isOut = (line: string): boolean => {
+      const ruleMatch = line.match(/\(([^)]+)\)\s*$/)!;
+      const rule = ruleMatch[1];
+      const value = Number(line.slice(0, ruleMatch.index).match(/(-?\d+)\s+\S+\s*$/)![1]);
+      if (rule.startsWith("min ")) return value < Number(rule.slice(4));
+      if (rule.startsWith("max ")) return value > Number(rule.slice(4));
+      const [lo, hi] = rule.split("–").map(Number);
+      return value < lo || value > hi;
+    };
+
+    for (const seed of [2, 50, 808, 91234]) {
+      // Niveaux 1-2 : le compte annoncé = nombre de cadrans hors limite.
+      for (const difficulty of [1, 2] as const) {
+        const q = generateQuestion("dissociation-attention", seed, difficulty);
+        const outCount = q.gridLines!.filter(isOut).length;
+        expect(q.choices[q.correctIndex]).toBe(String(outCount));
+      }
+      // Niveau 3 : un seul cadran hors limite, et c'est celui désigné.
+      const q3 = generateQuestion("dissociation-attention", seed, 3);
+      const outLines = q3.gridLines!.filter(isOut);
+      expect(outLines).toHaveLength(1);
+      expect(outLines[0].startsWith(q3.choices[q3.correctIndex])).toBe(true);
+    }
+  });
+
   it("rapidité : identiques ↔ chaînes réellement égales", () => {
     for (const seed of [11, 220, 3033, 40404]) {
       const q = generateQuestion("rapidite", seed, 3);
