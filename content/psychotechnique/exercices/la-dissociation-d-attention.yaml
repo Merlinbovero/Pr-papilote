@@ -1,0 +1,129 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-dissociation-d-attention
+type: concept
+title: La dissociation d'attention
+slug: la-dissociation-d-attention
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — la dissociation d'attention
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Surveiller plusieurs paramètres à la fois, chacun avec sa propre règle —
+  l'attention répartie est au cœur du pilotage et des sélections. On ne fixe
+  jamais un seul cadran — on balaie les quatre ou cinq en boucle, sans jamais
+  décrocher.
+objectifs:
+  - Comprendre ce qu'est l'attention répartie (ou dissociée) et pourquoi elle est déterminante en vol.
+  - Appliquer simultanément plusieurs règles différentes (min, max, plage) à plusieurs cadrans.
+  - Tenir un balayage régulier et complet sous contrainte de temps, sans se fixer sur un seul paramètre.
+aliases:
+  [
+    dissociation d'attention,
+    attention répartie,
+    attention partagée,
+    surveillance multi-cadrans,
+    scanning,
+  ]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-23"
+verifiedAt: "2026-07-23"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-23"
+    version: 1
+    motif: Création — famille « dissociation d'attention » (surveillance de 4 à 5 cadrans), extension du module Psychotechnique.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-23"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.l-attention-et-le-multitache
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      La **dissociation d'attention** — aussi appelée attention répartie ou
+      partagée — consiste à **surveiller plusieurs sources en même temps**,
+      chacune obéissant à **sa propre règle**. C'est exactement ce que fait un
+      pilote qui garde un œil sur l'altitude, la vitesse, le cap, le carburant
+      et le régime moteur — cinq cadrans, cinq tolérances différentes.
+
+      L'exercice présente un **panneau de 4 ou 5 instruments**. Chacun affiche
+      une valeur et **sa limite** — un minimum (`min 25`), un maximum
+      (`max 2500`) ou une plage (`85–100`). La question porte sur l'**ensemble**
+      du panneau — combien de paramètres sont hors tolérance, ou lequel a
+      décroché.
+
+      > Le piège n'est pas le calcul, c'est de **tenir plusieurs critères à la
+      > fois** sans se fixer sur un seul cadran.
+
+      La méthode — un **balayage régulier**, toujours dans le même ordre,
+      chaque cadran comparé à SA règle, sans jamais s'arrêter avant d'avoir
+      fait le tour complet.
+    aRetenir:
+      - Chaque cadran a sa propre règle — min, max ou plage ; aucun critère unique ne s'applique à tous.
+      - On ne se fixe jamais sur un seul instrument — on balaie les 4 ou 5 en boucle.
+      - Ne jamais s'arrêter au premier écart repéré — il peut y en avoir d'autres.
+      - La difficulté n'est pas le calcul mais le maintien de plusieurs critères simultanés.
+  sections:
+    - id: pourquoi-en-vol
+      title: Pourquoi c'est décisif en vol
+      body: |
+        Le cerveau humain ne traite bien qu'**une chose à la fois** : la
+        véritable « attention simultanée » n'existe pas, on **alterne** très
+        vite entre les sources. Piloter, c'est apprendre à faire ce va-et-vient
+        de façon **régulière et fiable**, sans qu'aucun paramètre ne sorte du
+        champ de surveillance trop longtemps.
+
+        Les sélections évaluent cette aptitude parce qu'elle est **peu
+        entraînable dans l'urgence** mais **améliorable par la méthode** — un
+        balayage discipliné vaut mieux qu'un regard qui saute au hasard.
+    - id: la-methode-du-balayage
+      title: La méthode du balayage (scanning)
+      body: |
+        Toujours le **même circuit visuel**, dans le **même ordre** :
+
+        1. fixer un **ordre de tour** stable (de gauche à droite, ou en T) ;
+        2. pour chaque cadran, comparer la valeur à **sa** règle — min, max ou
+           plage — et rien d'autre ;
+        3. **compter** au fur et à mesure les cadrans hors tolérance ;
+        4. terminer **tout** le tour avant de répondre — ne jamais conclure sur
+           le premier écart ;
+        5. en cas de doute sur un cadran, y revenir **après** avoir bouclé, pas
+           pendant.
+
+        Le rythme prime sur la vitesse — un balayage trop rapide saute des
+        cadrans, un balayage trop lent épuise le temps.
+    - id: les-regles-a-tenir
+      title: Les trois types de règles
+      strate: maitriser
+      body: |
+        Trois formes de tolérance, à distinguer d'un coup d'œil :
+
+        - **Minimum** (`min 25`) — la valeur doit **rester au-dessus** ; en
+          dessous, le cadran est hors limite (typique du carburant, de la
+          pression, de la vitesse).
+        - **Maximum** (`max 2500`) — la valeur doit **rester en dessous** ;
+          au-delà, hors limite (altitude plafond, température).
+        - **Plage** (`85–100`) — la valeur doit **rester entre** les deux
+          bornes ; en dessous **ou** au-dessus, hors limite (régime moteur).
+
+        Confondre un `min` et un `max` est l'erreur la plus fréquente sous
+        pression — la règle est affichée, il suffit de la lire à chaque cadran.
+  pieges:
+    - Se fixer sur un cadran et perdre les autres de vue — l'attention doit rester mobile.
+    - S'arrêter au premier paramètre hors limite — il peut y en avoir plusieurs.
+    - Confondre un minimum et un maximum — lire la règle affichée à chaque cadran.
+    - Balayer trop vite et sauter un instrument — le rythme régulier prime sur la vitesse pure.

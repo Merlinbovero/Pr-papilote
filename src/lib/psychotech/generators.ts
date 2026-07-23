@@ -100,6 +100,14 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/l-attention-et-le-multitache",
     timeLimits: [20, 25, 30],
   },
+  "dissociation-attention": {
+    slug: "dissociation-attention",
+    name: "Dissociation d'attention",
+    consigne:
+      "Chaque cadran a SA propre limite (min, max ou plage). Surveillez-les tous en même temps et repérez ceux qui sont sortis de leur tolérance — c'est l'attention répartie sur 4 à 5 paramètres, cœur du pilotage, que l'on évalue ici.",
+    ficheHref: "/psychotechnique/exercices/la-dissociation-d-attention",
+    timeLimits: [35, 45, 55],
+  },
 };
 
 type Rng = () => number;
@@ -787,6 +795,146 @@ function genDoubleTache(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// dissociation-attention (surveiller 4-5 cadrans, chacun avec sa propre règle)
+// ---------------------------------------------------------------------------
+
+type PanelRule =
+  | { kind: "min"; limit: number }
+  | { kind: "max"; limit: number }
+  | { kind: "band"; lo: number; hi: number };
+
+interface PanelSpec {
+  label: string;
+  unit: string;
+  rule: PanelRule;
+  /** Plage physique affichable [min, max] — bornes multiples de `step`. */
+  span: [number, number];
+  step: number;
+}
+
+/** Catalogue d'instruments — plages linéaires (pas de cap cyclique ici). */
+const PANEL_INSTRUMENTS: PanelSpec[] = [
+  {
+    label: "ALTITUDE",
+    unit: "ft",
+    rule: { kind: "max", limit: 2500 },
+    span: [1600, 3200],
+    step: 50,
+  },
+  { label: "VITESSE", unit: "kt", rule: { kind: "min", limit: 180 }, span: [140, 260], step: 5 },
+  { label: "CARBURANT", unit: "%", rule: { kind: "min", limit: 25 }, span: [8, 60], step: 1 },
+  { label: "RÉGIME", unit: "%", rule: { kind: "band", lo: 85, hi: 100 }, span: [72, 108], step: 1 },
+  { label: "T° HUILE", unit: "°C", rule: { kind: "max", limit: 110 }, span: [80, 132], step: 1 },
+  { label: "PRESSION", unit: "psi", rule: { kind: "min", limit: 30 }, span: [18, 55], step: 1 },
+];
+
+function panelRuleLabel(rule: PanelRule): string {
+  if (rule.kind === "min") return `min ${rule.limit}`;
+  if (rule.kind === "max") return `max ${rule.limit}`;
+  return `${rule.lo}–${rule.hi}`;
+}
+
+/** Valeur (sur la grille du pas) DANS ou HORS de la tolérance de l'instrument. */
+function panelReading(rng: Rng, spec: PanelSpec, out: boolean): number {
+  const { step, rule } = spec;
+  const toGrid = (x: number) => Math.round(x / step);
+  const loG = toGrid(spec.span[0]);
+  const hiG = toGrid(spec.span[1]);
+  let vg: number;
+  if (rule.kind === "min") {
+    const L = toGrid(rule.limit);
+    vg = out ? int(rng, loG, L - 1) : int(rng, L, hiG);
+  } else if (rule.kind === "max") {
+    const L = toGrid(rule.limit);
+    vg = out ? int(rng, L + 1, hiG) : int(rng, loG, L);
+  } else {
+    const lo = toGrid(rule.lo);
+    const hi = toGrid(rule.hi);
+    if (out) {
+      vg = rng() < 0.5 && lo - 1 >= loG ? int(rng, loG, lo - 1) : int(rng, hi + 1, hiG);
+    } else {
+      vg = int(rng, lo, hi);
+    }
+  }
+  return vg * step;
+}
+
+/** 4 choix numériques uniques autour de `correct`, bornés à [0, maxCount]. */
+function buildCountChoices(
+  seed: number,
+  correct: number,
+  maxCount: number
+): { choices: string[]; correctIndex: number } {
+  const values = new Set<number>([correct]);
+  for (const d of [1, -1, 2, -2, 3, -3]) {
+    if (values.size >= 4) break;
+    const v = correct + d;
+    if (v >= 0 && v <= maxCount) values.add(v);
+  }
+  for (let v = 0; values.size < 4 && v <= maxCount; v += 1) {
+    values.add(v);
+  }
+  const choices = seededShuffle([...values].slice(0, 4).map(String), seed);
+  return { choices, correctIndex: choices.indexOf(String(correct)) };
+}
+
+function genDissociation(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const count = difficulty === 1 ? 4 : 5;
+  const chosen = seededShuffle(PANEL_INSTRUMENTS, seed).slice(0, count);
+
+  const nbOut = difficulty === 1 ? int(rng, 0, 2) : difficulty === 2 ? int(rng, 1, 3) : 1;
+  const outOrder = seededShuffle(
+    chosen.map((_, i) => i),
+    seed + 5
+  );
+  const outFlags = chosen.map((_, i) => outOrder.indexOf(i) < nbOut);
+
+  const gridLines = chosen.map((spec, i) => {
+    const value = panelReading(rng, spec, outFlags[i]);
+    const reading = `${value} ${spec.unit}`;
+    return `${spec.label.padEnd(10)} ${reading.padStart(9)}   (${panelRuleLabel(spec.rule)})`;
+  });
+
+  const method =
+    "Balayez chaque cadran avec SA propre règle — min, max ou plage : un critère uniforme ne suffit pas. Vérifiez-les tous avant de valider, l'attention se perd si l'on s'arrête au premier écart.";
+  const timeLimitSeconds = FAMILY_INFO["dissociation-attention"].timeLimits[difficulty - 1];
+
+  if (difficulty === 3) {
+    const outLabel = chosen[outOrder[0]].label;
+    const distractors = seededShuffle(
+      chosen.filter((s) => s.label !== outLabel).map((s) => s.label),
+      seed + 9
+    ).slice(0, 3);
+    const { choices, correctIndex } = buildChoices(rng, seed + 7, outLabel, distractors);
+    return {
+      id: `psy.dissociation.${seed}`,
+      family: "dissociation-attention",
+      difficulty,
+      prompt: "Un seul paramètre est sorti de sa limite. Lequel ?",
+      gridLines,
+      choices,
+      correctIndex,
+      method,
+      timeLimitSeconds,
+    };
+  }
+
+  const { choices, correctIndex } = buildCountChoices(seed + 7, nbOut, count);
+  return {
+    id: `psy.dissociation.${seed}`,
+    family: "dissociation-attention",
+    difficulty,
+    prompt: "Combien de paramètres sont HORS de leur limite ?",
+    gridLines,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -802,6 +950,7 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   dominos: genDominos,
   "rotation-mentale": genRotation,
   "double-tache": genDoubleTache,
+  "dissociation-attention": genDissociation,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */
