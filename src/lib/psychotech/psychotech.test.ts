@@ -107,6 +107,35 @@ describe("générateurs — invariants sur toutes les familles", () => {
     }
   });
 
+  it("mémoire associative : la bonne réponse respecte les paires exposées", () => {
+    for (const seed of [8, 64, 707, 90210]) {
+      // Reconstitue les paires exposées « MOT   →   NN ».
+      const parsePairs = (q: ReturnType<typeof generateQuestion>) => {
+        const map = new Map<string, string>();
+        for (const line of q.exposure!.lines) {
+          const [word, num] = line.split("→").map((s) => s.trim());
+          map.set(word, num);
+        }
+        return map;
+      };
+
+      // Sens direct (niveaux 1-2) : indicatif → nombre.
+      for (const difficulty of [1, 2] as const) {
+        const q = generateQuestion("memoire-associative", seed, difficulty);
+        const map = parsePairs(q);
+        const word = q.prompt.match(/« (.+?) »/)![1];
+        expect(q.choices[q.correctIndex]).toBe(map.get(word));
+      }
+
+      // Sens inverse (niveau 3) : nombre → indicatif.
+      const q3 = generateQuestion("memoire-associative", seed, 3);
+      const map3 = parsePairs(q3);
+      const num = q3.prompt.match(/nombre (\d+)/)![1];
+      const expectedWord = [...map3.entries()].find(([, n]) => n === num)![0];
+      expect(q3.choices[q3.correctIndex]).toBe(expectedWord);
+    }
+  });
+
   it("rapidité : identiques ↔ chaînes réellement égales", () => {
     for (const seed of [11, 220, 3033, 40404]) {
       const q = generateQuestion("rapidite", seed, 3);

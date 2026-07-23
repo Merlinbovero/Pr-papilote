@@ -116,6 +116,14 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/la-lecture-d-instruments",
     timeLimits: [15, 18, 25],
   },
+  "memoire-associative": {
+    slug: "memoire-associative",
+    name: "Mémoire associative",
+    consigne:
+      "Des paires « indicatif → nombre » s'affichent quelques secondes puis disparaissent. Mémorisez les associations : la question porte sur l'une d'elles. Reliez chaque paire par une image mentale.",
+    ficheHref: "/psychotechnique/exercices/la-memoire-associative",
+    timeLimits: [15, 18, 20],
+  },
 };
 
 type Rng = () => number;
@@ -1002,6 +1010,93 @@ function genInstruments(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// memoire-associative (mémoriser des paires indicatif → nombre, puis restituer)
+// ---------------------------------------------------------------------------
+
+const CALLSIGNS = [
+  "ALPHA",
+  "BRAVO",
+  "CHARLIE",
+  "DELTA",
+  "ECHO",
+  "FOXTROT",
+  "GOLF",
+  "HOTEL",
+  "INDIA",
+  "JULIETT",
+  "KILO",
+  "LIMA",
+  "MIKE",
+  "NOVEMBER",
+  "OSCAR",
+  "PAPA",
+  "QUEBEC",
+  "ROMEO",
+  "SIERRA",
+  "TANGO",
+];
+
+function genAssociative(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const count = difficulty === 1 ? 3 : difficulty === 2 ? 4 : 5;
+  const seconds = difficulty === 3 ? 4 : 5;
+
+  const words = seededShuffle(CALLSIGNS, seed).slice(0, count);
+  const nums: number[] = [];
+  while (nums.length < count) {
+    const n = int(rng, 10, 99);
+    if (!nums.includes(n)) nums.push(n);
+  }
+  const pairs = words.map((word, i) => ({ word, num: nums[i] }));
+  const exposure = { lines: pairs.map((p) => `${p.word}   →   ${p.num}`), seconds };
+
+  const target = pairs[int(rng, 0, count - 1)];
+  let prompt: string;
+  let correct: string;
+  let distractors: string[];
+
+  if (difficulty === 3) {
+    // Sens inverse : nombre → indicatif (mémorisation bidirectionnelle).
+    prompt = `Quel indicatif était associé au nombre ${target.num} ?`;
+    correct = target.word;
+    distractors = seededShuffle(
+      words.filter((w) => w !== target.word),
+      seed + 3
+    ).slice(0, 3);
+  } else {
+    // Sens direct : indicatif → nombre.
+    prompt = `Quel nombre était associé à « ${target.word} » ?`;
+    correct = String(target.num);
+    distractors = seededShuffle(nums.filter((n) => n !== target.num).map(String), seed + 3).slice(
+      0,
+      3
+    );
+    // Complète avec des nombres inédits si moins de 3 distracteurs (niveau 1).
+    while (distractors.length < 3) {
+      let n = int(rng, 10, 99);
+      while (nums.includes(n) || distractors.includes(String(n))) {
+        n = int(rng, 10, 99);
+      }
+      distractors.push(String(n));
+    }
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  return {
+    id: `psy.associative.${seed}`,
+    family: "memoire-associative",
+    difficulty,
+    exposure,
+    prompt,
+    choices,
+    correctIndex,
+    method:
+      "Reliez chaque paire par une image mentale — un mot et un nombre qui racontent une mini-scène. Au rappel, retrouvez l'image pour restituer l'association, dans un sens comme dans l'autre.",
+    timeLimitSeconds: FAMILY_INFO["memoire-associative"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -1019,6 +1114,7 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   "double-tache": genDoubleTache,
   "dissociation-attention": genDissociation,
   "lecture-instruments": genInstruments,
+  "memoire-associative": genAssociative,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */

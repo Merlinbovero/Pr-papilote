@@ -13,7 +13,7 @@ attention sélective, repérage spatial). Les énoncés sont produits par un
 générateur **déterministe par graine** (PRNG mulberry32 du moteur quiz) —
 rejouable, testable, et infini.
 
-## Les familles (13)
+## Les familles (14)
 
 | Famille                  | Règle de génération                                                                                                                                                                                                         | Difficulté 1 → 3                                                                                     |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -30,6 +30,7 @@ rejouable, testable, et infini.
 | `empan-chiffres`         | mémoire de travail : une courte séquence de chiffres s'affiche puis disparaît, à restituer **à l'envers** ; distracteurs = séquence à l'endroit, chiffres permutés/altérés                                                  | 4 chiffres → 5 chiffres → 6 chiffres                                                                 |
 | `dissociation-attention` | attention répartie : panneau de 4-5 cadrans, chacun avec **sa** règle (min/max/plage) ; question = combien sont hors limite (N1-2) ou lequel (N3) ; distracteurs = comptes voisins / autres cadrans                         | 4 cadrans, « combien » → 5 cadrans, « combien » → 5 cadrans, « lequel »                              |
 | `lecture-instruments`    | lire un cadran de vol **rendu en SVG** ; le générateur ne produit que la donnée physique (cap/vitesse/altitude), la géométrie est calculée dans le player ; distracteur-piège = inversion des deux aiguilles de l'altimètre | compas (cap) → anémomètre (vitesse) → altimètre à deux aiguilles (altitude)                          |
+| `memoire-associative`    | exposition chronométrée de paires « indicatif → nombre » puis restitution d'une association ; distracteurs = autres valeurs exposées ; le niveau 3 pose la question en sens inverse (nombre → indicatif)                    | 3 paires / 5 s, sens direct → 4 paires / 5 s → 5 paires / 4 s, sens inverse                          |
 
 Un **4ᵉ niveau de difficulté** homogène est à l'étude (le contrat reste à
 3 niveaux pour l'instant).
