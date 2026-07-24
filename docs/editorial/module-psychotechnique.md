@@ -45,17 +45,27 @@ le logiciel officiel des armées, avec des **commandes accessibles** : souris
 (ou doigt) pour le suivi sur un « 8 » (manche), flèches ◀ ▶ ou boutons tactiles
 pour la cible horizontale (palonnier), clavier pour le calcul mental.
 
-- **Structure fidèle** : 4 phases à montée en charge (palonnier seul → manche
-  seul → les deux → les deux + calcul), ~52 s chacune, en continu.
+- **Écran unique immersif** (façon cockpit, toujours en thème sombre) : bande
+  **palonnier** en haut (un point apparaît à des positions aléatoires, on pose
+  le carré dessus aux flèches ◀ ▶), **« 8 »** au centre (~56 s le tour, suivi à
+  la souris), **nombre du calcul** en gros dans le coin.
+- **Deux axes réglables** via un écran de sélection :
+  - **mode** (progression) — palonnier seul · « 8 » seul · chiffres seuls ·
+    « 8 » + chiffres · tout ensemble ;
+  - **niveau** 1→5 (quand les chiffres sont actifs) — quand la somme est
+    demandée et la taille des nombres : 1 à chaque croisement, 2 à chaque « 8 »,
+    3 nombres à deux chiffres, 4 tous les deux « 8 », 5 champ libre (à la fin).
+- **Calcul** : un nombre s'affiche 3 s, puis 3 s de repos ; à chaque point de
+  contrôle le jeu **se met en pause** et un **pavé numérique** demande la somme
+  courante (le mouvement reprend après validation — le temps de pause ne compte
+  pas dans le suivi).
 - **Séparation logique/rendu** : toute la logique pure et testée vit dans
-  `src/lib/psychotech/secpil.ts` (géométrie des cibles fonction du temps,
-  conversion erreur → précision, séquence de calcul déterministe) ; le rendu
-  temps réel (boucle `requestAnimationFrame`, mise à jour SVG impérative,
-  lecture des commandes) vit dans `src/features/psychotech/secpil-simulator.tsx`.
-- **Notation** : précision de suivi par tâche (écart moyen à la cible),
-  réussite du calcul, score global et **courbe de progression** entre la
-  première et la dernière phase — on récompense l'équilibre et le progrès, pas
-  la perfection d'un geste.
+  `src/lib/psychotech/secpil.ts` (géométrie des cibles, cadence des points de
+  contrôle, séquence de nombres déterministe, conversion erreur → précision) ;
+  le rendu temps réel (boucle `requestAnimationFrame`, SVG impératif, pavé de
+  pause) vit dans `src/features/psychotech/secpil-simulator.tsx`.
+- **Notation** : précision de suivi par tâche + pourcentage de sommes justes,
+  score global par session.
 - **Route** : `/psychotechnique/secpil` ; fiche méthode
   `/psychotechnique/exercices/le-secpil` (sources : cockpitseeker, piloteready,
   pilotemilitaire).
