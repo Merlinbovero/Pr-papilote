@@ -6,7 +6,8 @@ import {
   improvementTrend,
   mancheTarget,
   mathSequence,
-  palonnierTarget,
+  palonnierTargetAt,
+  PALONNIER_DWELL_MS,
   phaseOverall,
   SECPIL_MAX_ERROR,
   SECPIL_PHASE_MS,
@@ -45,12 +46,16 @@ describe("SECPIL — géométrie des cibles", () => {
     expect(Math.abs(start.y)).toBeLessThan(1e-6);
   });
 
-  it("garde la cible du palonnier sur l'axe horizontal [-1, 1]", () => {
+  it("fait apparaître le point du palonnier à des positions bornées et par paliers", () => {
     for (let ms = 0; ms <= SECPIL_PHASE_MS; ms += 250) {
-      const x = palonnierTarget(ms);
+      const x = palonnierTargetAt(ms, 42);
       expect(x).toBeGreaterThanOrEqual(-1);
       expect(x).toBeLessThanOrEqual(1);
     }
+    // La position reste constante à l'intérieur d'un même palier (le point ne bouge pas).
+    expect(palonnierTargetAt(100, 42)).toBe(palonnierTargetAt(1500, 42));
+    // Elle change d'un palier à l'autre (le point réapparaît ailleurs).
+    expect(palonnierTargetAt(100, 42)).not.toBe(palonnierTargetAt(PALONNIER_DWELL_MS + 100, 42));
   });
 });
 

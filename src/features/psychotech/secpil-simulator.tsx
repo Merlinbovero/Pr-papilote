@@ -11,7 +11,7 @@ import {
   improvementTrend,
   mancheTarget,
   mathSequence,
-  palonnierTarget,
+  palonnierTargetAt,
   phaseOverall,
   SECPIL_DIGIT_INTERVAL_MS,
   SECPIL_PHASE_MS,
@@ -99,6 +99,7 @@ export function SecpilSimulator() {
   const mancheCtrl = React.useRef({ x: 0, y: 0 });
   const mouseTarget = React.useRef({ x: 0, y: 0 });
   const palCtrl = React.useRef({ x: 0 });
+  const palSeedRef = React.useRef(1);
   const keys = React.useRef({ left: false, right: false });
 
   // Calcul mental
@@ -151,6 +152,7 @@ export function SecpilSimulator() {
     mancheCtrl.current = { x: 0, y: 0 };
     mouseTarget.current = { x: 0, y: 0 };
     palCtrl.current = { x: 0 };
+    palSeedRef.current = Math.floor(Math.random() * 1_000_000_000) + 1;
     // Calcul mental (uniquement quand la tâche est active).
     const phase = SECPIL_PHASES[index];
     if (phase.tasks.includes("calcul")) {
@@ -209,7 +211,7 @@ export function SecpilSimulator() {
           -1,
           Math.min(1, palCtrl.current.x + dir * PALONNIER_SPEED * dt)
         );
-        const tgt = palonnierTarget(elapsed);
+        const tgt = palonnierTargetAt(elapsed, palSeedRef.current);
         accRef.current.palErr += Math.abs(palCtrl.current.x - tgt);
         accRef.current.palN += 1;
         if (palTargetEl.current) {
@@ -544,8 +546,9 @@ function SecpilIntro({ onStart }: { onStart: () => void }) {
         <h2 className="text-xl font-semibold">Comment ça marche</h2>
         <ol className="text-muted-foreground list-decimal space-y-1.5 pl-5 text-sm">
           <li>
-            <strong className="text-foreground">Phase 1 — palonnier seul.</strong> Gardez le
-            réticule vertical sur la cible qui glisse, avec les flèches ◀ ▶.
+            <strong className="text-foreground">Phase 1 — palonnier seul.</strong> Un point apparaît
+            à des endroits aléatoires en haut ; amenez le carré dessus avec les flèches ◀ ▶ (plus le
+            point est centré dans le carré, meilleure est la précision).
           </li>
           <li>
             <strong className="text-foreground">Phase 2 — manche seul.</strong> Suivez le point qui
