@@ -46,7 +46,7 @@ export const SECPIL_PHASES: readonly SecpilPhase[] = [
   {
     id: 1,
     label: "Palonnier seul",
-    consigne: "Gardez le réticule sur la cible qui glisse — flèches ◀ ▶ (ou boutons).",
+    consigne: "Amenez le carré sur le point qui apparaît en haut — flèches ◀ ▶ (ou boutons).",
     tasks: ["palonnier"],
   },
   {
@@ -58,7 +58,8 @@ export const SECPIL_PHASES: readonly SecpilPhase[] = [
   {
     id: 3,
     label: "Manche + palonnier",
-    consigne: "Les deux à la fois : souris pour le « 8 », flèches pour la cible horizontale.",
+    consigne:
+      "Les deux à la fois : souris pour le « 8 », flèches pour poser le carré sur le point.",
     tasks: ["manche", "palonnier"],
   },
   {
@@ -75,8 +76,8 @@ export const SECPIL_PHASES: readonly SecpilPhase[] = [
  * tour complet.
  */
 export const MANCHE_PERIOD_S = 56;
-/** Durée d'un aller-retour du palonnier (s). Provisoire, à confirmer. */
-export const PALONNIER_PERIOD_S = 16;
+/** Temps pendant lequel le point du palonnier reste à une position avant de réapparaître ailleurs (ms). */
+export const PALONNIER_DWELL_MS = 2800;
 
 /** Position de la cible du manche sur un « 8 » vertical (Lissajous 1:2). */
 export function mancheTarget(elapsedMs: number): { x: number; y: number } {
@@ -84,10 +85,16 @@ export function mancheTarget(elapsedMs: number): { x: number; y: number } {
   return { x: 0.72 * Math.sin(2 * t), y: Math.sin(t) };
 }
 
-/** Position horizontale de la cible du palonnier (va-et-vient sinusoïdal). */
-export function palonnierTarget(elapsedMs: number): number {
-  const t = (elapsedMs / 1000) * ((2 * Math.PI) / PALONNIER_PERIOD_S);
-  return Math.sin(t);
+/**
+ * Position horizontale de la cible du palonnier. Ce n'est pas un va-et-vient :
+ * un point **apparaît à une position aléatoire**, y reste `PALONNIER_DWELL_MS`,
+ * puis réapparaît ailleurs. Il faut amener le réticule (le carré) dessus.
+ * Déterministe pour un `seed` donné ; borné à [-0.85, 0.85] pour éviter les bords.
+ */
+export function palonnierTargetAt(elapsedMs: number, seed: number): number {
+  const slot = Math.floor(Math.max(0, elapsedMs) / PALONNIER_DWELL_MS);
+  const rng = createRng(seed + slot * 7919);
+  return rng() * 1.7 - 0.85;
 }
 
 /** Tolérance (en unités normalisées) sous laquelle la précision est maximale. */
