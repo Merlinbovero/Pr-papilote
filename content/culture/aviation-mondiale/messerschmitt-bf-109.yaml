@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.messerschmitt-bf-109
 type: appareil
 title: Messerschmitt Bf 109
 slug: messerschmitt-bf-109
+image:
+  src: /images/fiche-messerschmitt-bf-109.jpg
+  alt: Un chasseur allemand Messerschmitt Bf 109 en vol, photographie d'époque de la Seconde Guerre mondiale, vu de profil.
+  author: Bundesarchiv, Bild 101I-662-6659-37 / Hebenstreit
+  license: CC BY-SA 3.0 de
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-662-6659-37,_Flugzeug_Messerschmitt_Me_109.jpg
+  focal: 50% 45%
 service:
   status: historique
   firstFlight: 1935
