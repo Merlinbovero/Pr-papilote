@@ -1,0 +1,100 @@
+schemaVersion: 1
+id: culture.culture-aeronautique.commando-parachutiste-air-cpa-10
+type: organisation
+title: Le CPA 10 (Commando parachutiste de l'air n°10)
+slug: commando-parachutiste-air-cpa-10
+summary: >-
+  L'unité de forces spéciales de l'Armée de l'air et de l'espace, basée à
+  Orléans-Bricy. Spécialiste de l'appui aérien avancé, de l'ouverture de terrain
+  et de la récupération de personnel, intégrée au Commandement des opérations
+  spéciales.
+objectifs:
+  - Situer le CPA 10 comme l'unité de forces spéciales de l'Armée de l'air et de l'espace, intégrée au COS.
+  - Connaître ses missions principales (guidage air-sol FAC/JTAC, ouverture de terrain, récupération de personnel, contre-terrorisme).
+  - Comprendre le lien entre ces commandos et les opérations aériennes qu'ils préparent et appuient au sol.
+aliases: [CPA 10, CPA10, commando parachutiste de l'air, forces spéciales air, commandos de l'air]
+module: culture
+category: culture-aeronautique
+tags: []
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche organisation sur le CPA 10 (forces spéciales de l'Armée de l'air et de l'espace) ; faits vérifiés sur sources encyclopédiques et officielles.
+    author: prepapilote
+sources:
+  - title: "Commando parachutiste de l'air no 10 — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Commando_parachutiste_de_l'air_no_10
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+  - title: "Armée de l'air et de l'espace — actualités CPA 10 (air.defense.gouv.fr)"
+    url: https://air.defense.gouv.fr/
+    kind: officiel
+    consultedAt: "2026-07-24"
+status: publie
+infobox:
+  nomComplet: Commando parachutiste de l'air n°10
+  tutelle: Armée de l'air et de l'espace — Commandement des opérations spéciales (COS)
+  role: Forces spéciales — appui aérien avancé, ouverture de terrain, récupération de personnel
+  effectifs: environ 300 opérateurs
+  creation: héritier des commandos de l'air (créés en 1956) ; intégré au COS depuis 1994
+content:
+  essentiel:
+    body: |
+      Le **CPA 10** (**Commando parachutiste de l'air n°10**) est l'unité de
+      **forces spéciales** de l'**Armée de l'air et de l'espace**. Basé à
+      **Orléans-Bricy** (base aérienne 123), il est intégré au **Commandement
+      des opérations spéciales** (COS) depuis la création de celui-ci en **1994**,
+      et constitue la **pointe** des forces spéciales « air ».
+
+      C'est une unité **compacte** (de l'ordre de **300 opérateurs**) mais très
+      spécialisée, organisée en **équipes** capables d'agir de façon autonome.
+      Sa spécificité tient à son lien avec la **troisième dimension** : ces
+      commandos préparent, guident et sécurisent l'**action aérienne** depuis le
+      sol.
+
+      Leurs missions relèvent typiquement des opérations spéciales :
+      **reconnaissance et ouverture de terrain** (sécuriser une piste ou une
+      zone de poser sommaire en territoire hostile), **appui aérien avancé**
+      (désignation d'objectifs pour les frappes — fonction FAC/JTAC — en liaison
+      avec les pilotes de chasse ou d'hélicoptère), **récupération de personnel**
+      isolé, **contre-terrorisme** et **évacuation de ressortissants**.
+    aRetenir:
+      - Le CPA 10 est l'unité de forces spéciales de l'Armée de l'air et de l'espace, basée à Orléans-Bricy.
+      - Il est intégré au Commandement des opérations spéciales (COS) depuis 1994 ; environ 300 opérateurs.
+      - Missions clés — ouverture de terrain, appui aérien avancé (FAC/JTAC), récupération de personnel, contre-terrorisme.
+      - Il fait le lien entre le sol et l'action aérienne — il prépare et guide la frappe, il ne la délivre pas lui-même.
+  sections:
+    - id: le-lien-avec-l-aerien
+      title: Le lien avec l'action aérienne
+      body: |
+        Ce qui distingue le CPA 10 d'autres unités spéciales, c'est son ancrage
+        dans l'**aérien**. Le **guidage air-sol** (contrôleur aérien avancé,
+        *FAC* / *JTAC*) est emblématique : depuis le terrain, l'opérateur
+        **identifie et désigne** un objectif, puis coordonne la frappe avec les
+        **pilotes** — chasse ou hélicoptère. L'**ouverture de terrain** consiste
+        à reconnaître et sécuriser une zone pour permettre le **poser** d'avions
+        de transport ou d'hélicoptères en environnement non permissif.
+
+        Autrement dit, ces commandos **rendent possible** l'emploi de la
+        puissance aérienne là où elle ne pourrait pas s'exercer seule.
+    - id: a-savoir
+      title: Ce qu'il faut retenir (à savoir)
+      strate: maitriser
+      body: |
+        Pour un candidat, l'important n'est pas de réciter l'organigramme, mais
+        de **situer** le CPA 10 : une unité **de l'Armée de l'air et de
+        l'espace**, **forces spéciales**, intégrée au **COS**, spécialisée dans
+        l'appui et l'ouverture au profit de l'action aérienne.
+
+        À ne pas confondre avec les forces spéciales des autres armées (commandos
+        marine, unités de l'armée de Terre) : chaque armée a les siennes, et le
+        CPA 10 est celle qui **parle le langage de l'aérien**.
+  pieges:
+    - Le CPA 10 relève de l'Armée de l'air et de l'espace — pas de la Terre ni de la Marine.
+    - Ces commandos guident et sécurisent l'action aérienne au sol ; ce ne sont pas des pilotes.
+    - « Appui aérien avancé » (FAC/JTAC) = désigner et coordonner la frappe depuis le sol, pas la délivrer.
