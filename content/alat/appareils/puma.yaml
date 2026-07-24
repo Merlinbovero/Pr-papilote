@@ -3,6 +3,14 @@ id: alat.appareils.puma
 type: helicoptere
 title: Puma (SA330)
 slug: puma
+image:
+  src: /images/fiche-puma.jpg
+  alt: Un hélicoptère SA330 Puma de l'armée de Terre en vol stationnaire, une Gazelle au premier plan.
+  author: MilborneOne (Wikimedia Commons)
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:FrenchArmy-Gazelle-Puma-1589.jpg
+  focal: 62% 45%
 service:
   status: en-retrait
   introducedAt: 1969
