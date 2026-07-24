@@ -3,6 +3,13 @@ id: culture.aviation-mondiale.north-american-p-51-mustang
 type: appareil
 title: North American P-51 Mustang
 slug: north-american-p-51-mustang
+image:
+  src: /images/fiche-p-51-mustang.jpg
+  alt: Un chasseur P-51 Mustang de l'US Army Air Forces en vol au-dessus des nuages pendant la Seconde Guerre mondiale.
+  author: U.S. Army Air Forces (via la 361st Fighter Group Association)
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:P-51-361.jpg
+  focal: 50% 50%
 service:
   status: historique
   firstFlight: 1940

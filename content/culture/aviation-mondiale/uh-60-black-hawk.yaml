@@ -3,6 +3,13 @@ id: culture.aviation-mondiale.uh-60-black-hawk
 type: helicoptere
 title: UH-60 Black Hawk
 slug: uh-60-black-hawk
+image:
+  src: /images/fiche-uh-60-black-hawk.jpg
+  alt: Un hélicoptère UH-60 Black Hawk de l'US Army en vol.
+  author: U.S. Army — 147th Aviation Regiment
+  license: Domaine public (U.S. Army)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:National-Guard-UH-60-Black-Hawk-operations-at-Fort-McCoy.jpg
+  focal: 50% 50%
 service:
   status: actif
   firstFlight: 1974

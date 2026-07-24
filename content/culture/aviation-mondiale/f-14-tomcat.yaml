@@ -3,6 +3,13 @@ id: culture.aviation-mondiale.f-14-tomcat
 type: appareil
 title: F-14 Tomcat
 slug: f-14-tomcat
+image:
+  src: /images/fiche-f-14-tomcat.jpg
+  alt: Un F-14D Tomcat de l'US Navy en vol au-dessus du golfe Persique.
+  author: U.S. Navy
+  license: Domaine public (U.S. Navy)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:US_Navy_051105-F-5480T-005_An_F-14D_Tomcat_conducts_a_mission_over_the_Persian_Gulf-region.jpg
+  focal: 50% 40%
 service:
   status: retire
   firstFlight: 1970
