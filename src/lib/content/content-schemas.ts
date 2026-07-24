@@ -853,6 +853,19 @@ export type Video = z.infer<typeof videoSchema>;
  * la lecture est un DÉCLENCHEUR ; les faits des fiches liées restent sourcés
  * indépendamment. Le résumé est rédigé (nos mots), jamais copié.
  */
+
+/**
+ * Couverture d'une lecture : une photo de l'ouvrage (prise maison), affichée à
+ * titre d'identification éditoriale. La couverture reste © de son éditeur ; le
+ * crédit visible le mentionne.
+ */
+export const readingCoverSchema = z.object({
+  src: z.string().regex(/^\/images\/.+\.(jpg|png|webp)$/),
+  alt: z.string().min(1),
+  /** Crédit affiché (ex. « Photo PrépaPilote — couverture © Flammarion »). */
+  credit: z.string().min(1),
+});
+
 export const readingSchema = z.object({
   schemaVersion: z.literal(CONTENT_SCHEMA_VERSION),
   id: contentIdSchema,
@@ -860,6 +873,8 @@ export const readingSchema = z.object({
   title: z.string().min(1),
   /** Auteur(s) de la lecture (crédit obligatoire). */
   author: z.string().min(1),
+  /** Couverture de l'ouvrage (photo maison, usage éditorial d'identification). */
+  cover: readingCoverSchema.optional(),
   /** Nature de la lecture. */
   kind: z.enum(["livre", "article", "revue", "rapport", "autre"]),
   /** Éditeur / publication (facultatif). */

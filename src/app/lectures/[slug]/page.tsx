@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRightIcon, ExternalLinkIcon, FileTextIcon } from "lucide-react";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
+import { ContentImage } from "@/components/shared/content-image";
 import { Badge } from "@/components/ui/badge";
 import {
   getReadingBySlug,
@@ -54,19 +55,34 @@ export default async function ReadingPage({ params }: ReadingPageProps) {
       ]}
     >
       <div className="mx-auto w-full max-w-3xl space-y-8">
-        <header className="space-y-3">
-          <p className="text-primary inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
-            <span aria-hidden className="bg-primary h-px w-8" />
-            Lecture · {READING_KIND_LABELS[reading.kind]}
-          </p>
-          <h1 className="font-heading text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
-            {reading.title}
-          </h1>
-          <p className="text-muted-foreground text-sm">
-            {reading.author}
-            {reference ? ` — ${reference}` : ""}
-          </p>
-        </header>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+          {reading.cover ? (
+            <div className="mx-auto w-40 shrink-0 sm:mx-0 sm:w-44">
+              <ContentImage
+                src={reading.cover.src}
+                alt={reading.cover.alt}
+                width={1086}
+                height={1448}
+                credit={reading.cover.credit}
+                sizes="(max-width: 640px) 40vw, 176px"
+                className="w-full shadow-sm"
+              />
+            </div>
+          ) : null}
+          <header className="space-y-3">
+            <p className="text-primary inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
+              <span aria-hidden className="bg-primary h-px w-8" />
+              Lecture · {READING_KIND_LABELS[reading.kind]}
+            </p>
+            <h1 className="font-heading text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
+              {reading.title}
+            </h1>
+            <p className="text-muted-foreground text-sm">
+              {reading.author}
+              {reference ? ` — ${reference}` : ""}
+            </p>
+          </header>
+        </div>
 
         <div className="flex flex-wrap items-center gap-3">
           {reading.url ? (
