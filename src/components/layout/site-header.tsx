@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { UserIcon } from "lucide-react";
 import { MainNav } from "@/components/layout/main-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { AuthStatus } from "@/features/auth/auth-status";
 import { SearchCommand } from "@/features/search/search-command";
 import { buildSearchEntries } from "@/features/search/entries";
 
@@ -39,14 +38,7 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-2">
           <SearchCommand entries={entries} />
           <ThemeToggle />
-          <Button asChild variant="outline" size="sm">
-            <Link href="/connexion">
-              <UserIcon aria-hidden className="size-4" />
-              {/* Libellé toujours dans l'arbre d'accessibilité : visible dès sm,
-                  lisible par lecteur d'écran en icône seule sur mobile. */}
-              <span className="sr-only sm:not-sr-only">Connexion</span>
-            </Link>
-          </Button>
+          <AuthStatus />
         </div>
       </div>
     </header>
