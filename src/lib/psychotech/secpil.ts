@@ -69,15 +69,24 @@ export const SECPIL_PHASES: readonly SecpilPhase[] = [
   },
 ] as const;
 
+/**
+ * Durée d'un « 8 » complet (s). Calée sur l'épreuve réelle d'après la mesure
+ * utilisateur : ~28 s entre deux passages au croisement central, soit ~56 s le
+ * tour complet.
+ */
+export const MANCHE_PERIOD_S = 56;
+/** Durée d'un aller-retour du palonnier (s). Provisoire, à confirmer. */
+export const PALONNIER_PERIOD_S = 16;
+
 /** Position de la cible du manche sur un « 8 » vertical (Lissajous 1:2). */
 export function mancheTarget(elapsedMs: number): { x: number; y: number } {
-  const t = (elapsedMs / 1000) * 1.15; // pulsation (rad/s)
+  const t = (elapsedMs / 1000) * ((2 * Math.PI) / MANCHE_PERIOD_S);
   return { x: 0.72 * Math.sin(2 * t), y: Math.sin(t) };
 }
 
 /** Position horizontale de la cible du palonnier (va-et-vient sinusoïdal). */
 export function palonnierTarget(elapsedMs: number): number {
-  const t = (elapsedMs / 1000) * 0.85;
+  const t = (elapsedMs / 1000) * ((2 * Math.PI) / PALONNIER_PERIOD_S);
   return Math.sin(t);
 }
 
