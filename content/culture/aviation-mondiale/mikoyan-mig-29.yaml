@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.mikoyan-mig-29
 type: appareil
 title: Mikoyan MiG-29 (Fulcrum)
 slug: mikoyan-mig-29
+image:
+  src: /images/fiche-mig-29.jpg
+  alt: Un chasseur russe Mikoyan MiG-29 « Fulcrum » aux marquages « ВВС России » en vol, vu de dessous.
+  author: Artem Katranzhi
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:VVS_100th_IMG_0691_(7727464290)_(cropped).jpg
+  focal: 50% 45%
 service:
   status: actif
   firstFlight: 1977

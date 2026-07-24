@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.sukhoi-su-57
 type: appareil
 title: Sukhoi Su-57 (Felon)
 slug: sukhoi-su-57
+image:
+  src: /images/fiche-su-57.jpg
+  alt: Un chasseur furtif russe de 5e génération Sukhoi Su-57 « Felon » en camouflage pixelisé, vu de dessous en vol.
+  author: Anna Zvereva
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Sukhoi_Design_Bureau,_054,_Sukhoi_T-50_(Su-57_prototype)_(49581303977).jpg
+  focal: 50% 45%
 service:
   status: actif
   firstFlight: 2010
