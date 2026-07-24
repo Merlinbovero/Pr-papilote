@@ -34,12 +34,15 @@ import {
  * le calcul mental. Sans lien avec le logiciel officiel des armées.
  */
 
-// Projection des coordonnées normalisées [-1, 1] vers les repères SVG.
-const MANCHE_C = 100; // centre du cadre manche (viewBox 200×200)
-const MANCHE_R = 80; // demi-amplitude
-const PAL_CX = 150; // centre horizontal du bandeau palonnier (viewBox 300×60)
-const PAL_R = 130;
-const PAL_CY = 30;
+// Écran unique (viewBox 320×180). Tout est disposé dans un seul cadre immersif :
+// bande palonnier en haut, zone manche au centre, calcul en bas à droite.
+const PAL_Y = 26; // ligne de la bande palonnier (haut)
+const PAL_CX = 160;
+const PAL_R = 132;
+const MANCHE_CX = 160; // centre de la zone manche
+const MANCHE_CY = 116;
+const MANCHE_RX = 82;
+const MANCHE_RY = 54;
 
 const PALONNIER_SPEED = 1.7; // unités normalisées par seconde (vitesse au clavier)
 const SMOOTH_TAU = 0.09; // constante de temps du lissage du manche (s)
@@ -54,14 +57,27 @@ interface PhaseAccumulator {
 }
 
 function projMancheX(x: number): number {
-  return MANCHE_C + x * MANCHE_R;
+  return MANCHE_CX + x * MANCHE_RX;
 }
 function projMancheY(y: number): number {
-  return MANCHE_C - y * MANCHE_R; // y vers le haut
+  return MANCHE_CY - y * MANCHE_RY; // y vers le haut
 }
 function projPalX(x: number): number {
   return PAL_CX + x * PAL_R;
 }
+
+/** Tracé pointillé du « 8 » que parcourt la cible du manche (Lissajous 1:2). */
+const MANCHE_PATH = (() => {
+  const pts: string[] = [];
+  const N = 140;
+  for (let i = 0; i <= N; i += 1) {
+    const t = (i / N) * Math.PI * 2;
+    const x = 0.72 * Math.sin(2 * t);
+    const y = Math.sin(t);
+    pts.push(`${projMancheX(x).toFixed(1)},${projMancheY(y).toFixed(1)}`);
+  }
+  return "M" + pts.join(" L");
+})();
 
 export function SecpilSimulator() {
   const [screen, setScreen] = React.useState<Screen>("intro");
@@ -96,7 +112,7 @@ export function SecpilSimulator() {
   // Refs des éléments SVG mis à jour image par image.
   const mancheTargetEl = React.useRef<SVGCircleElement | null>(null);
   const mancheCtrlEl = React.useRef<SVGGElement | null>(null);
-  const palTargetEl = React.useRef<SVGRectElement | null>(null);
+  const palTargetEl = React.useRef<SVGCircleElement | null>(null);
   const palCtrlEl = React.useRef<SVGGElement | null>(null);
   const zoneRef = React.useRef<SVGSVGElement | null>(null);
 
@@ -197,12 +213,12 @@ export function SecpilSimulator() {
         accRef.current.palErr += Math.abs(palCtrl.current.x - tgt);
         accRef.current.palN += 1;
         if (palTargetEl.current) {
-          palTargetEl.current.setAttribute("x", String(projPalX(tgt) - 14));
+          palTargetEl.current.setAttribute("cx", String(projPalX(tgt)));
         }
         if (palCtrlEl.current) {
           palCtrlEl.current.setAttribute(
             "transform",
-            `translate(${projPalX(palCtrl.current.x)} 0)`
+            `translate(${projPalX(palCtrl.current.x)} ${PAL_Y})`
           );
         }
       }
@@ -313,9 +329,15 @@ export function SecpilSimulator() {
   function handlePointer(e: React.PointerEvent<SVGSVGElement>) {
     const svg = zoneRef.current;
     if (!svg) return;
-    const rect = svg.getBoundingClientRect();
-    const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    const ny = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return;
+    // Position du pointeur dans le repère du viewBox, puis normalisation sur la zone manche.
+    const pt = svg.createSVGPoint();
+    pt.x = e.clientX;
+    pt.y = e.clientY;
+    const p = pt.matrixTransform(ctm.inverse());
+    const nx = (p.x - MANCHE_CX) / MANCHE_RX;
+    const ny = -(p.y - MANCHE_CY) / MANCHE_RY;
     mouseTarget.current = {
       x: Math.max(-1, Math.min(1, nx)),
       y: Math.max(-1, Math.min(1, ny)),
@@ -335,180 +357,182 @@ export function SecpilSimulator() {
     return <SecpilResults results={results} onReplay={start} />;
   }
 
-  const accuracyTone =
-    hud.accuracy >= 80 ? "text-success" : hud.accuracy >= 55 ? "text-warning" : "text-destructive";
+  const fillTone =
+    hud.accuracy >= 80 ? "fill-success" : hud.accuracy >= 55 ? "fill-warning" : "fill-destructive";
 
   return (
-    <div className="space-y-4">
-      {/* Bandeau : phase, décompte, précision */}
-      <div className="bg-card flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3">
-        <div className="flex items-center gap-2">
-          <span className="bg-primary/10 text-primary rounded-md px-2 py-1 text-sm font-semibold">
-            Phase {phase.id}/4
-          </span>
-          <span className="text-sm font-medium">{phase.label}</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="text-muted-foreground text-sm tabular-nums">
-            {hud.remainingS}s restantes
-          </span>
-          <span className={cn("text-sm font-semibold tabular-nums", accuracyTone)}>
-            Précision {hud.accuracy}%
-          </span>
-          <Button variant="ghost" size="sm" onClick={abort}>
-            Arrêter
-          </Button>
-        </div>
-      </div>
-      <p className="text-muted-foreground text-sm">{phase.consigne}</p>
-
-      <div className="grid gap-4 lg:grid-cols-[1fr_minmax(0,20rem)]">
-        {/* Zone manche (le « 8 ») */}
-        <div className={cn("space-y-3", !showManche && "opacity-40")}>
-          <svg
-            ref={zoneRef}
-            viewBox="0 0 200 200"
-            onPointerMove={showManche ? handlePointer : undefined}
-            className="bg-card aspect-square w-full touch-none rounded-lg border"
-            role="img"
-            aria-label="Zone de suivi au manche : un point parcourt un « 8 », gardez le réticule dessus avec la souris ou le doigt."
-            style={{ cursor: showManche ? "none" : "default" }}
-          >
-            {/* Tracé indicatif du « 8 » */}
-            <path
-              d="M100 100 C 158 60, 158 20, 100 20 C 42 20, 42 60, 100 100 C 158 140, 158 180, 100 180 C 42 180, 42 140, 100 100 Z"
-              className="stroke-muted-foreground/25 fill-none"
-              strokeWidth={1.5}
-            />
-            {/* Cible mobile */}
-            <circle
-              ref={mancheTargetEl}
-              cx={MANCHE_C}
-              cy={MANCHE_C}
-              r={11}
-              className="fill-primary/25 stroke-primary"
-              strokeWidth={2}
-            />
-            {/* Réticule contrôlé */}
-            <g ref={mancheCtrlEl} transform={`translate(${MANCHE_C} ${MANCHE_C})`}>
-              <circle r={6} className="fill-success" />
-              <line x1={-13} y1={0} x2={13} y2={0} className="stroke-success" strokeWidth={1.5} />
-              <line x1={0} y1={-13} x2={0} y2={13} className="stroke-success" strokeWidth={1.5} />
-            </g>
-          </svg>
-        </div>
-
-        {/* Colonne latérale : calcul mental */}
-        <div className="space-y-4">
-          <div className={cn("space-y-2 rounded-lg border p-4", !showCalcul && "opacity-40")}>
-            <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
-              Calcul mental
-            </p>
-            {showCalcul ? (
-              <>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-primary text-5xl font-bold tabular-nums">
-                    {digit ?? "—"}
-                  </span>
-                  <span className="text-muted-foreground text-sm">
-                    Additionnez : tapez la somme courante
-                  </span>
-                </div>
-                <input
-                  type="number"
-                  inputMode="numeric"
-                  value={mathInput}
-                  onChange={(e) => setMathInput(e.target.value)}
-                  aria-label="Somme courante"
-                  className="border-input bg-background focus-visible:ring-ring w-full rounded-md border px-3 py-2 text-lg tabular-nums focus-visible:ring-2 focus-visible:outline-none"
-                />
-                <p className="text-muted-foreground text-xs tabular-nums">
-                  {mathTally.ok} / {mathTally.total} sommes justes
-                </p>
-              </>
-            ) : (
-              <p className="text-muted-foreground text-sm">
-                Apparaît en phase 4 (avec les deux commandes).
-              </p>
-            )}
-          </div>
-
-          {/* Aide commandes */}
-          <div className="text-muted-foreground space-y-1 rounded-lg border p-4 text-xs">
-            <p>
-              <strong className="text-foreground">Souris / doigt</strong> — le « 8 » (manche)
-            </p>
-            <p>
-              <strong className="text-foreground">Flèches ◀ ▶</strong> — la cible horizontale
-              (palonnier)
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Bandeau palonnier (pleine largeur) */}
-      <div className={cn("space-y-2", !showPalonnier && "opacity-40")}>
+    <div className="space-y-3">
+      {/* Écran unique et immersif (toujours en thème sombre, façon cockpit) */}
+      <div className="dark relative overflow-hidden rounded-lg border">
         <svg
-          viewBox="0 0 300 60"
-          className="bg-card w-full rounded-lg border"
+          ref={zoneRef}
+          viewBox="0 0 320 180"
+          onPointerMove={handlePointer}
+          className="bg-background block w-full touch-none"
+          style={{ aspectRatio: "16 / 9", cursor: showManche ? "none" : "default" }}
           role="img"
-          aria-label="Bandeau de suivi au palonnier : gardez le réticule sur la cible qui glisse horizontalement, avec les flèches gauche et droite."
+          aria-label="Écran SECPIL : bande palonnier en haut, trajectoire du manche au centre, calcul mental en bas à droite."
         >
+          {/* --- Bande palonnier (haut) --- */}
           <line
-            x1={20}
-            y1={PAL_CY}
-            x2={280}
-            y2={PAL_CY}
+            x1={28}
+            y1={PAL_Y}
+            x2={292}
+            y2={PAL_Y}
             className="stroke-muted-foreground/25"
-            strokeWidth={1.5}
+            strokeWidth={1}
           />
-          {/* Cible mobile */}
-          <rect
-            ref={palTargetEl}
-            x={PAL_CX - 14}
-            y={PAL_CY - 14}
-            width={28}
-            height={28}
-            rx={3}
-            className="fill-primary/25 stroke-primary"
-            strokeWidth={2}
+          {showPalonnier && (
+            <>
+              <circle
+                ref={palTargetEl}
+                cx={projPalX(0)}
+                cy={PAL_Y}
+                r={4}
+                className="fill-foreground"
+              />
+              <g ref={palCtrlEl} transform={`translate(${projPalX(0)} ${PAL_Y})`}>
+                <rect
+                  x={-7}
+                  y={-7}
+                  width={14}
+                  height={14}
+                  className="stroke-destructive fill-none"
+                  strokeWidth={1.5}
+                />
+                <line x1={0} y1={-7} x2={0} y2={7} className="stroke-destructive" strokeWidth={1} />
+                <line x1={-7} y1={0} x2={7} y2={0} className="stroke-destructive" strokeWidth={1} />
+              </g>
+            </>
+          )}
+
+          {/* --- Séparateur --- */}
+          <line
+            x1={0}
+            y1={44}
+            x2={320}
+            y2={44}
+            className="stroke-foreground/30"
+            strokeWidth={0.75}
           />
-          {/* Réticule contrôlé */}
-          <g ref={palCtrlEl} transform={`translate(${PAL_CX} 0)`}>
-            <line
-              x1={0}
-              y1={PAL_CY - 18}
-              x2={0}
-              y2={PAL_CY + 18}
-              className="stroke-success"
-              strokeWidth={3}
-            />
-          </g>
+
+          {/* --- HUD --- */}
+          <text x={10} y={57} className="fill-muted-foreground" fontSize={9}>
+            Étape {phase.id}
+          </text>
+          <text x={310} y={57} textAnchor="end" className="fill-foreground" fontSize={11}>
+            {hud.remainingS}
+          </text>
+          <text x={10} y={173} className={fillTone} fontSize={8}>
+            Précision {hud.accuracy}%
+          </text>
+
+          {/* --- Zone manche : le « 8 » --- */}
+          <path
+            d={MANCHE_PATH}
+            className={cn(
+              "fill-none",
+              showManche ? "stroke-muted-foreground/60" : "stroke-muted-foreground/20"
+            )}
+            strokeWidth={1}
+            strokeDasharray="0.5 3.5"
+            strokeLinecap="round"
+          />
+          {showManche && (
+            <>
+              <circle
+                ref={mancheTargetEl}
+                cx={projMancheX(0)}
+                cy={projMancheY(0)}
+                r={4.5}
+                className="fill-destructive"
+              />
+              <g ref={mancheCtrlEl} transform={`translate(${projMancheX(0)} ${projMancheY(0)})`}>
+                <circle r={3} className="stroke-foreground fill-none" strokeWidth={1.2} />
+                <line x1={-8} y1={0} x2={8} y2={0} className="stroke-foreground" strokeWidth={1} />
+                <line x1={0} y1={-8} x2={0} y2={8} className="stroke-foreground" strokeWidth={1} />
+              </g>
+            </>
+          )}
+
+          {/* --- Calcul mental (gros chiffre, bas droite) --- */}
+          {showCalcul && (
+            <>
+              <text x={306} y={112} textAnchor="end" className="fill-muted-foreground" fontSize={7}>
+                additionnez →
+              </text>
+              <text
+                x={306}
+                y={168}
+                textAnchor="end"
+                className="fill-warning font-bold"
+                fontSize={38}
+              >
+                {digit ?? ""}
+              </text>
+            </>
+          )}
         </svg>
-        {/* Boutons tactiles pour le palonnier (mobile) */}
-        <div className="flex justify-center gap-4 lg:hidden">
-          <button
-            type="button"
-            aria-label="Palonnier à gauche"
-            className="bg-secondary text-secondary-foreground active:bg-primary active:text-primary-foreground flex h-14 w-20 items-center justify-center rounded-lg border text-2xl select-none"
-            onPointerDown={() => (keys.current.left = true)}
-            onPointerUp={() => (keys.current.left = false)}
-            onPointerLeave={() => (keys.current.left = false)}
-          >
-            ◀
-          </button>
-          <button
-            type="button"
-            aria-label="Palonnier à droite"
-            className="bg-secondary text-secondary-foreground active:bg-primary active:text-primary-foreground flex h-14 w-20 items-center justify-center rounded-lg border text-2xl select-none"
-            onPointerDown={() => (keys.current.right = true)}
-            onPointerUp={() => (keys.current.right = false)}
-            onPointerLeave={() => (keys.current.right = false)}
-          >
-            ▶
-          </button>
-        </div>
+
+        {/* Bouton d'arrêt (coin haut droit) */}
+        <button
+          type="button"
+          onClick={abort}
+          className="border-border/50 bg-background/60 text-muted-foreground hover:text-foreground absolute top-1.5 right-1.5 rounded-md border px-2 py-1 text-xs backdrop-blur"
+        >
+          Arrêter
+        </button>
+
+        {/* Saisie du calcul mental (superposée, même fenêtre) */}
+        {showCalcul && (
+          <div className="absolute right-2 bottom-2 w-28 text-right">
+            <input
+              type="number"
+              inputMode="numeric"
+              value={mathInput}
+              onChange={(e) => setMathInput(e.target.value)}
+              aria-label="Somme courante"
+              className="border-input bg-background/80 text-foreground focus-visible:ring-ring w-full rounded-md border px-2 py-1 text-right text-sm tabular-nums focus-visible:ring-2 focus-visible:outline-none"
+            />
+            <p className="text-muted-foreground mt-0.5 text-[10px] tabular-nums">
+              {mathTally.ok}/{mathTally.total} justes
+            </p>
+          </div>
+        )}
+
+        {/* Boutons tactiles palonnier (mobile) — dans la même fenêtre */}
+        {showPalonnier && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-2 flex justify-between px-3 lg:hidden">
+            <button
+              type="button"
+              aria-label="Palonnier à gauche"
+              className="border-border/50 bg-background/70 text-foreground active:bg-primary active:text-primary-foreground pointer-events-auto flex h-12 w-16 items-center justify-center rounded-lg border text-xl select-none"
+              onPointerDown={() => (keys.current.left = true)}
+              onPointerUp={() => (keys.current.left = false)}
+              onPointerLeave={() => (keys.current.left = false)}
+            >
+              ◀
+            </button>
+            <button
+              type="button"
+              aria-label="Palonnier à droite"
+              className="border-border/50 bg-background/70 text-foreground active:bg-primary active:text-primary-foreground pointer-events-auto flex h-12 w-16 items-center justify-center rounded-lg border text-xl select-none"
+              onPointerDown={() => (keys.current.right = true)}
+              onPointerUp={() => (keys.current.right = false)}
+              onPointerLeave={() => (keys.current.right = false)}
+            >
+              ▶
+            </button>
+          </div>
+        )}
       </div>
+
+      <p className="text-muted-foreground text-sm">
+        <span className="text-foreground font-medium">
+          Phase {phase.id}/4 — {phase.label}.
+        </span>{" "}
+        {phase.consigne}
+      </p>
     </div>
   );
 }
