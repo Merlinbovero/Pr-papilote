@@ -3,6 +3,13 @@ id: culture.culture-aeronautique.commando-parachutiste-air-cpa-10
 type: organisation
 title: Le CPA 10 (Commando parachutiste de l'air n°10)
 slug: commando-parachutiste-air-cpa-10
+image:
+  src: /images/fiche-cpa-10.png
+  alt: Écusson du Commando parachutiste de l'air n°10 (CPA 10) — insigne rond bleu et or, parachute, ailes et étoile.
+  author: Futurhit12
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:%C3%89cusson_Commando_Parachutiste_de_l%27Air_n%C2%B0_10.svg
+  focal: 50% 50%
 summary: >-
   L'unité de forces spéciales de l'Armée de l'air et de l'espace, basée à
   Orléans-Bricy. Spécialiste de l'appui aérien avancé, de l'ouverture de terrain
