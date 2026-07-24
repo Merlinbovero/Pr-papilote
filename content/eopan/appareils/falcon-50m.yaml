@@ -3,6 +3,14 @@ id: eopan.appareils.falcon-50m
 type: appareil
 title: Falcon 50M (Surmar)
 slug: falcon-50m
+image:
+  src: /images/fiche-falcon-50m.jpg
+  alt: Un Dassault Falcon 50 de la Marine nationale au sol, au Groenland.
+  author: Quintin Soloviev (Wikimedia Commons)
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:French_Navy_Dassault_Falcon_50_in_Greenland.jpg
+  focal: 50% 50%
 service:
   status: actif
   operator: Marine nationale
