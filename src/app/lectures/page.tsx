@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpenIcon } from "lucide-react";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
+import { ContentImage } from "@/components/shared/content-image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
@@ -53,13 +54,24 @@ export default function LecturesHubPage() {
               >
                 <Card className="hover:border-primary/60 h-full border shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
                   <CardHeader>
-                    <div className="flex items-center gap-2">
-                      <span
-                        aria-hidden
-                        className="bg-primary/10 text-primary flex size-9 shrink-0 items-center justify-center rounded-lg"
-                      >
-                        <BookOpenIcon className="size-4" />
-                      </span>
+                    <div className="flex items-center gap-3">
+                      {reading.cover ? (
+                        <ContentImage
+                          src={reading.cover.src}
+                          alt={reading.cover.alt}
+                          width={1086}
+                          height={1448}
+                          sizes="48px"
+                          className="w-9 shrink-0 shadow-sm"
+                        />
+                      ) : (
+                        <span
+                          aria-hidden
+                          className="bg-primary/10 text-primary flex size-9 shrink-0 items-center justify-center rounded-lg"
+                        >
+                          <BookOpenIcon className="size-4" />
+                        </span>
+                      )}
                       <Badge variant="secondary" className="font-normal">
                         {READING_KIND_LABELS[reading.kind]}
                       </Badge>

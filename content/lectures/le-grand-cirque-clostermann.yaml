@@ -3,6 +3,10 @@ id: lecture.le-grand-cirque-clostermann
 slug: le-grand-cirque
 title: Le Grand Cirque
 author: Pierre Clostermann
+cover:
+  src: /images/lecture-le-grand-cirque.png
+  alt: Couverture du livre « Le Grand Cirque » de Pierre Clostermann (édition définitive, Flammarion).
+  credit: Photo PrépaPilote — couverture © Flammarion (illustration)
 kind: livre
 publisher: Flammarion
 year: 1948
