@@ -3,6 +3,10 @@ id: lecture.ciels-de-combat-lert-prefontaine
 slug: ciels-de-combat
 title: Ciels de combat
 author: Frédéric Lert et Benjamin Vinot Préfontaine
+cover:
+  src: /images/lecture-ciels-de-combat.png
+  alt: Couverture du livre « Ciels de combat » (témoignages inédits de pilotes de chasse), coordination de Benjamin Vinot Préfontaine et Frédéric Lert.
+  credit: Photo PrépaPilote — couverture © Éditions Nimrod (illustration)
 kind: livre
 publisher: Éditions Nimrod
 year: 2021
