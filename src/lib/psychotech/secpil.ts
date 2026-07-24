@@ -94,8 +94,8 @@ export function levelInfo(level: number): SecpilLevelInfo {
 
 /** Durée d'un « 8 » complet (s). Calée sur la vidéo de référence (~1 min le tour). */
 export const MANCHE_PERIOD_S = 56;
-/** Le point du palonnier reste à une position ~2,8 s avant de réapparaître ailleurs. */
-export const PALONNIER_DWELL_MS = 2800;
+/** Le point du palonnier change de place toutes les 4 s (sans pause, il réapparaît ailleurs). */
+export const PALONNIER_DWELL_MS = 4000;
 /** Un nombre reste affiché 3 s, puis 3 s de repos, puis le suivant. */
 export const SECPIL_NUMBER_ON_MS = 3000;
 export const SECPIL_NUMBER_OFF_MS = 3000;
