@@ -1,0 +1,112 @@
+schemaVersion: 1
+id: culture.culture-aeronautique.jumelles-de-vision-nocturne
+type: concept
+title: Les jumelles de vision nocturne (JVN)
+slug: jumelles-de-vision-nocturne
+summary: >-
+  Instruments qui amplifient la lumière résiduelle pour voler et combattre de
+  nuit. Fixées sur le casque des équipages, elles rendent possibles les missions
+  nocturnes — assaut, sauvetage, transport, appui — au plus près du terrain.
+objectifs:
+  - Comprendre le principe des JVN — l'intensification de la lumière résiduelle (et non la vision thermique).
+  - Connaître les missions où les pilotes les utilisent (assaut héliporté, sauvetage, transport tactique, appui).
+  - Saisir leurs limites (champ de vision réduit, absence de couleur, dépendance à la lumière ambiante).
+aliases:
+  [
+    JVN,
+    jumelles de vision nocturne,
+    NVG,
+    vision nocturne,
+    intensification de lumière,
+    amplificateur de lumière,
+  ]
+module: culture
+category: culture-aeronautique
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche concept sur les jumelles de vision nocturne et leurs missions ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Jumelles de vision nocturne — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Jumelles_de_vision_nocturne
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.uh-60-black-hawk
+content:
+  essentiel:
+    body: |
+      Les **jumelles de vision nocturne** (JVN ; en anglais *NVG*, *Night Vision
+      Goggles*) sont des **amplificateurs de lumière résiduelle**. Elles captent
+      le très faible rayonnement d'une nuit sans lune (étoiles, lueur du ciel) et
+      l'**intensifient** — de l'ordre de plusieurs dizaines de milliers de fois —
+      pour former une image exploitable, classiquement **verte**.
+
+      Attention à ne pas confondre : les JVN reposent sur l'**intensification de
+      lumière** (il faut donc un minimum de lumière ambiante), à la différence de
+      l'imagerie **thermique** (infrarouge), qui « voit » la chaleur même dans le
+      noir total. Ce sont deux technologies distinctes, parfois combinées.
+
+      Pour un équipage, les JVN se **fixent sur le casque**, devant les yeux :
+      elles transforment la nuit en un environnement exploitable pour **voler
+      bas**, se poser en terrain sommaire et opérer en discrétion. Elles ont
+      rendu possible tout un pan des **opérations nocturnes** modernes — mais au
+      prix de contraintes réelles.
+    aRetenir:
+      - Les JVN amplifient la lumière résiduelle (image verte) — ce n'est pas de la vision thermique (infrarouge).
+      - Elles se fixent sur le casque et permettent de voler et se poser de nuit, bas et discrètement.
+      - Missions typiques — assaut héliporté, recherche et sauvetage (RESCO), transport tactique, appui, insertion de commandos.
+      - Limites — champ de vision réduit, pas de couleurs, dépendance à la lumière ambiante, fatigue de l'équipage.
+  sections:
+    - id: les-missions
+      title: Les missions où les pilotes les utilisent
+      body: |
+        De nombreuses opérations militaires se déroulent **de nuit**, pour
+        profiter de la **discrétion** et de la **supériorité technologique** face
+        à un adversaire qui, lui, ne voit pas dans le noir. Les JVN équipent
+        aussi bien les pilotes d'**hélicoptères** (armée de Terre, forces
+        spéciales) que ceux d'**avions de transport ou de chasse**. Elles
+        servent notamment à :
+
+        - l'**assaut héliporté** de nuit — déposer des troupes au plus près de
+          l'objectif, en vol tactique très bas ;
+        - la **recherche et le sauvetage de combat** (RESCO) — récupérer un
+          équipage ou du personnel isolé en territoire hostile ;
+        - le **transport tactique** et le **ravitaillement** discrets ;
+        - l'**insertion et l'extraction de commandos** (forces spéciales) ;
+        - l'**appui** et la **reconnaissance** nocturnes.
+
+        Le point commun : agir **quand l'adversaire est aveugle**, en gardant
+        l'initiative.
+    - id: les-limites
+      title: Les limites (à savoir)
+      strate: maitriser
+      body: |
+        Les JVN ne « transforment pas la nuit en jour ». Leurs contraintes sont
+        importantes et font l'objet d'un **entraînement spécifique** :
+
+        - **champ de vision réduit** (comme regarder à travers deux tubes), qui
+          oblige à « balayer » de la tête en permanence ;
+        - **image monochrome** (verte) — pas de couleurs, perception du relief et
+          des distances dégradée ;
+        - **dépendance à la lumière ambiante** — par nuit très noire ou par
+          mauvais temps, la performance chute ;
+        - **fatigue** et charge de travail accrues pour l'équipage.
+
+        C'est pourquoi voler « sous JVN » est une **qualification** à part
+        entière, et pourquoi elles sont souvent complétées par l'imagerie
+        thermique.
+  pieges:
+    - JVN (intensification de lumière) ≠ imagerie thermique (infrarouge) — deux technologies différentes.
+    - Elles ne fonctionnent pas dans le noir absolu — il faut un minimum de lumière ambiante à amplifier.
+    - Le champ de vision est étroit — voler sous JVN demande un entraînement dédié, ce n'est pas « voir comme en plein jour ».

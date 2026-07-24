@@ -1,0 +1,82 @@
+schemaVersion: 1
+id: fondamentaux.radio-communications.la-bande-uhf
+type: concept
+title: La bande UHF aéronautique
+slug: la-bande-uhf
+summary: >-
+  La bande radio 225–400 MHz, en modulation d'amplitude, est réservée à
+  l'aviation militaire et à certaines liaisons gouvernementales. C'est le
+  standard des communications vocales des avions de combat.
+objectifs:
+  - Situer la bande UHF aéronautique (225–400 MHz) et son usage — les communications militaires air-sol et air-air.
+  - Comprendre pourquoi le militaire dispose de sa propre bande, distincte de la VHF civile.
+  - Connaître la propagation à vue directe (comme la VHF) et l'usage pour le contrôle de l'espace aérien supérieur.
+aliases: [UHF, ultra haute fréquence, bande aéronautique UHF, radio UHF militaire]
+module: fondamentaux
+category: radio-communications
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche concept sur la bande UHF aéronautique (radio et communications).
+    author: prepapilote
+sources:
+  - title: "Radiocommunication aéronautique — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Radiocommunication_a%C3%A9ronautique
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - fondamentaux.radio-communications.la-bande-vhf
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+content:
+  essentiel:
+    body: |
+      L'**UHF** (*Ultra High Frequency*, ultra haute fréquence) désigne, en
+      aéronautique, la bande **225 à 400 MHz** réservée principalement à
+      l'**aviation militaire** et à certaines communications gouvernementales.
+      C'est le **standard mondial de la phonie des avions de combat** — là où
+      l'aviation civile utilise la VHF, le militaire dispose de **sa propre
+      bande**.
+
+      Comme la VHF, l'UHF émet en **modulation d'amplitude (AM)** et se propage
+      **à vue directe** : la portée dépend de l'altitude, l'onde ne suit pas la
+      courbure de la Terre. Les avions militaires embarquent d'ailleurs souvent
+      **les deux** (VHF *et* UHF) pour dialoguer aussi bien avec le civil qu'avec
+      les autres appareils et organismes militaires.
+
+      Cette bande sert aussi au **contrôle de l'espace aérien supérieur** (au
+      dessus du niveau de vol 195, ≈ 5 800 m) et, sur certaines fréquences, à
+      des **liaisons par satellite** (SATCOM). Disposer d'une bande dédiée offre
+      au militaire davantage de **canaux** et une meilleure **séparation** vis
+      à vis du trafic civil.
+    aRetenir:
+      - UHF aéronautique — bande 225 à 400 MHz, réservée surtout à l'aviation militaire.
+      - Même principe que la VHF — modulation AM, propagation à vue directe (portée liée à l'altitude).
+      - Les avions militaires embarquent souvent VHF + UHF pour parler au civil comme au militaire.
+      - Sert aussi au contrôle de l'espace supérieur et à des liaisons SATCOM.
+  sections:
+    - id: pourquoi-une-bande-militaire
+      title: Pourquoi une bande militaire dédiée
+      body: |
+        Séparer les communications militaires de la bande civile répond à trois
+        besoins : **capacité** (plus de canaux disponibles pour les opérations),
+        **cloisonnement** (le trafic militaire n'encombre pas les fréquences du
+        contrôle civil, et inversement) et **interopérabilité** au sein de
+        l'OTAN, où la bande 225–400 MHz est le standard commun.
+
+        Concrètement, un chasseur peut ainsi coordonner une mission sur UHF avec
+        d'autres appareils et un contrôleur militaire, tout en gardant une VHF
+        disponible pour dialoguer avec un organisme civil s'il traverse un espace
+        contrôlé classique.
+  pieges:
+    - UHF ≠ VHF — l'UHF (225–400 MHz) est surtout militaire, la VHF (118–137 MHz) surtout civile.
+    - « Ultra haute fréquence » ne signifie pas plus longue portée — la propagation reste à vue directe, liée à l'altitude.
+    - Un avion militaire n'utilise pas que l'UHF — il embarque généralement VHF et UHF.

@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.a-10-thunderbolt-ii
+type: appareil
+title: A-10 Thunderbolt II (Warthog)
+slug: a-10-thunderbolt-ii
+service:
+  status: actif
+  firstFlight: 1972
+  introducedAt: 1977
+  operator: US Air Force
+summary: >-
+  Avion d'attaque américain biréacteur conçu pour un seul rôle — l'appui aérien
+  rapproché des troupes au sol. Bâti autour de son canon rotatif de 30 mm et
+  fortement blindé, surnommé « Warthog ». Ce n'est pas un appareil français.
+objectifs:
+  - Situer l'A-10 comme un avion d'appui aérien rapproché (CAS) américain, conçu autour de son canon — à ne pas confondre avec un appareil français.
+  - Comprendre sa philosophie de conception — survivabilité, blindage du pilote, vol lent et bas au contact des troupes.
+  - Le replacer dans la culture aéronautique (le « Warthog », emblème de l'appui-sol).
+aliases: [A-10, A-10C, Warthog, Thunderbolt II, Fairchild Republic A-10, avion d'attaque américain]
+module: culture
+category: aviation-mondiale
+tags: []
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche de culture aéronautique mondiale sur l'A-10 Thunderbolt II ; faits vérifiés sur sources encyclopédiques et spécialisées.
+    author: prepapilote
+sources:
+  - title: "Fairchild Republic A-10 Thunderbolt II — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Fairchild_Republic_A-10_Thunderbolt_II
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+  - title: "A-10 Thunderbolt II — U.S. Air Force (fact sheet)"
+    url: https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104490/a-10-thunderbolt-ii/
+    kind: officiel
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.f-16-fighting-falcon
+specs:
+  crew: "1 (monoplace)"
+  length: "16,26 m"
+  wingspan: "17,53 m"
+  powerplant: "2 turbofans General Electric TF34-GE-100"
+  maxSpeed: "≈ 700 km/h"
+  armament: "1 canon rotatif GAU-8/A Avenger de 30 mm (7 tubes, ~3 900 coups/min) ; jusqu'à ~7 t de charges (missiles AGM-65 Maverick, bombes, roquettes)"
+infobox:
+  constructeur: Fairchild Republic (États-Unis)
+  role: Avion d'appui aérien rapproché (CAS)
+  armees: [US Air Force]
+  miseEnService: 1977
+  statut: En service (modernisé en A-10C)
+  equipage: 1 (monoplace)
+  vitesseMax: ≈ 700 km/h
+content:
+  essentiel:
+    body: |
+      L'**A-10 Thunderbolt II**, universellement surnommé **« Warthog »**
+      (phacochère), est un **avion d'attaque** américain **biréacteur**,
+      spécialisé dans un seul rôle : l'**appui aérien rapproché** (*Close Air
+      Support*, CAS) — protéger et appuyer les troupes au sol au plus près du
+      contact. Il figure ici au titre de la **culture aéronautique mondiale** :
+      ce n'est **pas** un appareil français.
+
+      Fait unique, l'avion a été **conçu autour de son arme** : le **canon
+      rotatif GAU-8/A Avenger de 30 mm**, à sept tubes, capable d'environ
+      **3 900 coups par minute**, logé dans le fuselage. Tout le reste sert cette
+      mission — vol **lent et bas**, grande **maniabilité** à basse altitude,
+      autonomie sur zone.
+
+      Sa marque de fabrique est la **survivabilité**. Le pilote et les
+      commandes vitales sont protégés par une véritable **« baignoire » de
+      blindage en titane** (plusieurs centaines de kilos). Les deux réacteurs
+      sont placés **haut à l'arrière**, les commandes sont redondantes :
+      l'appareil est réputé pour **rentrer très abîmé**. Robuste et peu élégant,
+      le Warthog est devenu l'**emblème de l'appui-sol**.
+    aRetenir:
+      - L'A-10 est un avion d'attaque américain dédié à l'appui aérien rapproché (CAS) — pas un appareil français.
+      - Il est conçu autour de son canon rotatif GAU-8/A de 30 mm (7 tubes, ~3 900 coups/min).
+      - Philosophie = survivabilité — blindage titane du pilote, réacteurs hauts à l'arrière, commandes redondantes.
+      - Surnom « Warthog » ; en service depuis 1977, modernisé en A-10C.
+  sections:
+    - id: concu-autour-du-canon
+      title: Un avion construit autour de son canon
+      body: |
+        La plupart des avions embarquent un canon parmi d'autres armes. L'A-10
+        inverse la logique : le **GAU-8/A**, l'un des canons d'avion les plus
+        puissants jamais montés, occupe une grande partie du fuselage avant, et
+        la cellule a été **dessinée autour de lui**. Le train avant est même
+        **décalé** pour laisser la place à l'axe du canon.
+
+        Cette arme tire des obus de **30 mm** à très haute cadence, efficaces
+        contre les véhicules blindés. C'est ce qui a forgé la réputation — et le
+        bruit caractéristique — du Warthog.
+    - id: pourquoi-il-survit
+      title: Pourquoi il encaisse (à savoir)
+      strate: maitriser
+      body: |
+        Voler **lentement et bas** au contact des troupes expose au feu adverse.
+        L'A-10 a donc été pensé pour **encaisser** : cabine et systèmes vitaux
+        enfermés dans un caisson de **titane**, **réacteurs séparés et placés en
+        hauteur** à l'arrière (moins exposés, moins repérables au sol),
+        **commandes de vol redondantes** (dont un mode manuel de secours), et
+        capacité à voler sur **un seul moteur** ou une gouverne endommagée.
+
+        Pour un candidat, l'essentiel est de **savoir le reconnaître et le
+        situer** : un avion d'attaque américain, laid et increvable, dédié à
+        l'appui-sol — à distinguer d'un chasseur multirôle comme le F-16 ou d'un
+        appareil français.
+  pieges:
+    - L'A-10 est américain — ce n'est pas un appareil des forces françaises (ne pas le ranger dans EOPN/EOPAN/ALAT).
+    - Ce n'est pas un chasseur — c'est un avion d'attaque (appui-sol), lent et bas, pas un intercepteur.
+    - Le canon n'est pas un accessoire — l'avion a été conçu autour de lui, c'est sa raison d'être.

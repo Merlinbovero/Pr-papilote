@@ -1,0 +1,124 @@
+schemaVersion: 1
+id: culture.aviation-mondiale.uh-60-black-hawk
+type: helicoptere
+title: UH-60 Black Hawk
+slug: uh-60-black-hawk
+service:
+  status: actif
+  firstFlight: 1974
+  introducedAt: 1979
+  operator: US Army et de nombreux pays
+summary: >-
+  Hélicoptère de transport tactique américain, biturbine à quatre pales, épine
+  dorsale de l'US Army depuis 1979. Rendu célèbre par la bataille de Mogadiscio
+  (1993) et le film « Black Hawk Down ». Ce n'est pas un appareil français.
+objectifs:
+  - Situer le UH-60 Black Hawk comme l'hélicoptère de transport tactique de référence de l'US Army — pas un appareil français.
+  - Connaître ses rôles (assaut héliporté, évacuation sanitaire, opérations spéciales) et ses caractéristiques clés.
+  - Faire le lien culturel avec la bataille de Mogadiscio (1993) et le film « Black Hawk Down », sans en faire un récit fictionnel.
+aliases: [UH-60, Black Hawk, Blackhawk, Sikorsky UH-60, hélicoptère de transport américain]
+module: culture
+category: aviation-mondiale
+tags: []
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche de culture aéronautique mondiale sur le UH-60 Black Hawk (hélicoptère + contexte culturel du film) ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Sikorsky UH-60 Black Hawk — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Sikorsky_UH-60_Black_Hawk
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+  - title: "Bataille de Mogadiscio (1993) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Bataille_de_Mogadiscio_(1993)
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+  - title: "La Chute du faucon noir (Black Hawk Down) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/La_Chute_du_faucon_noir
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - culture.aviation-mondiale.a-10-thunderbolt-ii
+specs:
+  crew: "2 pilotes + 1 à 2 membres d'équipage"
+  length: "≈ 19,76 m (rotor tournant)"
+  powerplant: "2 turbomoteurs General Electric T700"
+  maxSpeed: "≈ 295 km/h"
+  armament: "mitrailleuses de sabord (7,62 ou 12,7 mm) selon les versions ; variantes armées et spéciales (MH-60, etc.)"
+infobox:
+  constructeur: Sikorsky (États-Unis)
+  role: Hélicoptère de transport tactique polyvalent
+  armees: [US Army, nombreux pays]
+  miseEnService: 1979
+  statut: En service
+  equipage: "3 (2 pilotes + 1 chef de soute), ~11 soldats transportés"
+  vitesseMax: ≈ 295 km/h
+content:
+  essentiel:
+    body: |
+      Le **UH-60 Black Hawk** est l'**hélicoptère de transport tactique** de
+      référence de l'**US Army**, en service depuis **1979** en remplacement du
+      célèbre UH-1 « Huey ». Biturbine, à **quatre pales**, il figure ici au
+      titre de la **culture aéronautique mondiale** : ce n'est **pas** un
+      appareil français (l'aviation légère française aligne le Caïman NH90, le
+      Tigre, le Caracal…).
+
+      C'est un appareil **polyvalent** : **assaut héliporté** (il emporte une
+      escouade d'environ **11 soldats** équipés), **évacuation sanitaire**
+      (plusieurs civières), **transport logistique**, **poste de commandement
+      volant** et **opérations spéciales** (versions MH-60). Deux turbomoteurs
+      **General Electric T700** l'animent ; son blindage et sa conception
+      **tolérante aux dommages** en ont fait une bête de somme robuste, déclinée
+      en de très nombreuses versions et exportée dans le monde entier.
+
+      Au delà de la technique, le Black Hawk occupe une place particulière dans
+      la **culture populaire**, notamment à cause d'un épisode marquant : la
+      **bataille de Mogadiscio** (1993) et le film qui l'a portée à l'écran.
+    aRetenir:
+      - Le UH-60 Black Hawk est l'hélicoptère de transport tactique de l'US Army (depuis 1979) — pas un appareil français.
+      - Polyvalent — assaut héliporté (~11 soldats), évacuation sanitaire, logistique, opérations spéciales.
+      - Biturbine (2 × General Electric T700), 4 pales, conçu pour encaisser les dommages.
+      - Rendu célèbre par la bataille de Mogadiscio (1993) et le film « Black Hawk Down ».
+  sections:
+    - id: mogadiscio-et-le-film
+      title: Mogadiscio (1993) et « Black Hawk Down »
+      body: |
+        Les **3 et 4 octobre 1993**, lors d'une opération américaine à
+        **Mogadiscio** (Somalie) visant à capturer des lieutenants du chef de
+        guerre Mohamed Farrah Aidid, **deux hélicoptères UH-60 Black Hawk sont
+        abattus** en zone urbaine. La bataille qui s'ensuit, pour secourir les
+        équipages, coûte la vie à **18 militaires américains** et à un grand
+        nombre de Somaliens — l'engagement le plus meurtrier pour les États-Unis
+        depuis la guerre du Vietnam à cette date.
+
+        L'épisode a été raconté par le journaliste **Mark Bowden** dans un livre
+        (1999), puis porté à l'écran par **Ridley Scott** en **2001** sous le
+        titre **« Black Hawk Down »** (*La Chute du faucon noir*). C'est de là
+        que vient la notoriété de l'appareil auprès du grand public. Il s'agit
+        d'un **événement historique réel** : on le mentionne comme repère de
+        culture, sans le confondre avec la fiction du film.
+    - id: pourquoi-il-compte
+      title: Pourquoi il compte (à savoir)
+      strate: maitriser
+      body: |
+        Le Black Hawk illustre une idée simple mais essentielle : un hélicoptère
+        militaire moderne n'est pas fait pour une seule tâche, mais pour une
+        **famille de missions** dérivées d'une même cellule (transport, sanitaire,
+        recherche et sauvetage, opérations spéciales, guerre électronique…).
+
+        Pour un candidat, l'important est de **le reconnaître et le situer** :
+        un hélicoptère de manœuvre **américain**, emblématique de l'US Army, à
+        distinguer des appareils français (NH90 Caïman, Tigre, Caracal) qu'on
+        retrouve dans les fiches ALAT et EOPAN.
+  pieges:
+    - Le UH-60 est américain — ce n'est pas un appareil des forces françaises (ne pas le ranger dans ALAT/EOPAN).
+    - « Black Hawk Down » est un film tiré de faits réels — la fiche décrit l'événement historique, pas le scénario.
+    - Black Hawk (UH-60, transport) ≠ Apache (AH-64, hélicoptère d'attaque) — deux appareils différents du même pays.

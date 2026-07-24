@@ -1,0 +1,80 @@
+schemaVersion: 1
+id: fondamentaux.radio-communications.la-bande-vhf
+type: concept
+title: La bande VHF aéronautique
+slug: la-bande-vhf
+summary: >-
+  La bande radio 118–137 MHz, en modulation d'amplitude, est le principal moyen
+  de communication vocale entre aéronefs et organismes au sol dans l'aviation
+  civile. Sa portée « à vue » conditionne les échanges.
+objectifs:
+  - Situer la bande VHF aéronautique (118–137 MHz) et son usage principal — la phonie civile air-sol.
+  - Comprendre la propagation « à vue directe » (portée liée à l'altitude, pas de suivi de la courbure terrestre).
+  - Connaître la modulation d'amplitude (AM) et l'espacement des canaux (25 puis 8,33 kHz en Europe).
+aliases: [VHF, très haute fréquence, bande aéronautique VHF, radio VHF, phonie VHF]
+module: fondamentaux
+category: radio-communications
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche concept sur la bande VHF aéronautique (radio et communications).
+    author: prepapilote
+sources:
+  - title: "Radiocommunication aéronautique — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Radiocommunication_a%C3%A9ronautique
+    kind: encyclopedie
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - fondamentaux.radio-communications.la-phraseologie-de-base
+    - fondamentaux.radio-communications.alphabet-oaci
+content:
+  essentiel:
+    body: |
+      La **VHF** (*Very High Frequency*, très haute fréquence) désigne, en
+      aéronautique, la bande **118 à 137 MHz** réservée aux **communications
+      vocales** entre les aéronefs et les organismes au sol (tours de contrôle,
+      approche, information de vol). C'est le **canal principal de la phonie
+      civile**.
+
+      Les émissions se font en **modulation d'amplitude (AM)**, avec un
+      **espacement entre canaux** historiquement de 25 kHz, désormais réduit à
+      **8,33 kHz** dans une grande partie de l'espace aérien européen pour
+      libérer des fréquences.
+
+      Sa caractéristique déterminante est la **propagation « à vue directe »**
+      (*line of sight*) : l'onde VHF ne suit **pas** la courbure de la Terre. La
+      **portée dépend donc de l'altitude** — plus on vole haut, plus on porte
+      loin. Un aéronef au niveau de vol 390 (≈ 11 900 m) peut être reçu au sol à
+      environ **240 NM** (≈ 450 km), alors qu'au sol la portée se réduit à
+      quelques dizaines de kilomètres.
+    aRetenir:
+      - VHF aéronautique — bande 118 à 137 MHz, communication vocale air-sol (aviation civile surtout).
+      - Modulation d'amplitude (AM) ; espacement des canaux 25 kHz, puis 8,33 kHz en Europe.
+      - Propagation à vue directe — la portée croît avec l'altitude, l'onde ne suit pas la courbure terrestre.
+      - Pendant civil de la bande UHF, réservée elle à l'aviation militaire.
+  sections:
+    - id: pourquoi-a-vue-directe
+      title: Pourquoi « à vue directe »
+      body: |
+        Aux fréquences VHF, les ondes se propagent **en ligne droite** et sont
+        très peu réfléchies par l'ionosphère : elles ne « rebondissent » pas
+        pour aller au-delà de l'horizon, contrairement aux ondes courtes (HF)
+        utilisées pour les liaisons à très longue distance (transatlantiques).
+
+        Conséquence pratique : deux stations ne peuvent communiquer que si elles
+        sont **en visibilité radioélectrique** l'une de l'autre. C'est pourquoi
+        un avion en croisière élevée « entend » bien plus loin qu'un avion au
+        sol, et pourquoi les relais au sol sont implantés en hauteur.
+  pieges:
+    - VHF ≠ UHF — la VHF (118–137 MHz) est surtout civile, l'UHF (225–400 MHz) surtout militaire.
+    - La portée n'est pas fixe — elle dépend de l'altitude (propagation à vue directe).
+    - VHF sert à la phonie ; ne pas la confondre avec les moyens de radionavigation (VOR, ILS), même s'ils sont voisins en fréquence.
