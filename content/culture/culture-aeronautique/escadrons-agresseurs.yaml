@@ -3,6 +3,14 @@ id: culture.culture-aeronautique.escadrons-agresseurs
 type: concept
 title: Les escadrons « agresseurs » (Aggressors)
 slug: escadrons-agresseurs
+image:
+  src: /images/fiche-aggressors.jpg
+  alt: Un chasseur F-16 du 64th Aggressor Squadron aux couleurs de camouflage « ennemi » à l'atterrissage sur la base de Nellis.
+  author: Tomás Del Coro from Las Vegas, Nevada, USA
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:General_Dynamics_F-16C_Fighting_Falcon_-_64th_Aggressor_Squadron_from_Nellis_AFB_(15862887646).jpg
+  focal: 50% 45%
 summary: >-
   Les escadrons « agresseurs » sont des unités dont les pilotes sont formés à
   imiter les tactiques de l'adversaire pour jouer l'ennemi (la « force rouge »)

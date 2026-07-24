@@ -3,6 +3,13 @@ id: eopn.appareils.c-130-hercules
 type: appareil
 title: C-130 Hercules / Super Hercules
 slug: c-130-hercules
+image:
+  src: /images/fiche-c-130.jpg
+  alt: Un avion de transport tactique quadrimoteur C-130 Hercules (ici aux couleurs de l'US Air Force) en vol au-dessus de la mer.
+  author: U.S. Air Force photo by Tech. Sgt. Howard Blair
+  license: Domaine public (U.S. Air Force)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Lockheed_C-130_Hercules.jpg
+  focal: 50% 50%
 service:
   status: actif
   introducedAt: 1987

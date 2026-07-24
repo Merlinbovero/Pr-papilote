@@ -3,6 +3,13 @@ id: culture.culture-aeronautique.jumelles-de-vision-nocturne
 type: concept
 title: Les jumelles de vision nocturne (JVN)
 slug: jumelles-de-vision-nocturne
+image:
+  src: /images/fiche-jvn.jpg
+  alt: Un militaire équipé de jumelles de vision nocturne (JVN), scène teintée du vert caractéristique de l'intensification de lumière.
+  author: PEO Soldier (U.S. Army)
+  license: Domaine public (U.S. Army)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:PEO_ANAVS-6_NVG.jpg
+  focal: 50% 40%
 summary: >-
   Instruments qui amplifient la lumière résiduelle pour voler et combattre de
   nuit. Fixées sur le casque des équipages, elles rendent possibles les missions
