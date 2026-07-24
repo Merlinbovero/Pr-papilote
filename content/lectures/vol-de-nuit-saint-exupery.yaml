@@ -3,6 +3,10 @@ id: lecture.vol-de-nuit-saint-exupery
 slug: vol-de-nuit
 title: Vol de nuit
 author: Antoine de Saint-Exupéry
+cover:
+  src: /images/lecture-vol-de-nuit.png
+  alt: Couverture du livre « Vol de nuit » d'Antoine de Saint-Exupéry, édition Folio (Gallimard).
+  credit: Photo PrépaPilote — couverture © Gallimard / Folio (illustration)
 kind: livre
 publisher: Gallimard
 year: 1931
