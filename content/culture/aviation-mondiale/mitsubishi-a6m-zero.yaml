@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.mitsubishi-a6m-zero
 type: appareil
 title: Mitsubishi A6M Zero
 slug: mitsubishi-a6m-zero
+image:
+  src: /images/fiche-mitsubishi-a6m-zero.jpg
+  alt: Un chasseur japonais Mitsubishi A6M Zero aux cocardes rouges « hinomaru » en vol, vu de profil.
+  author: Kogo
+  license: GFDL
+  licenseUrl: https://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html
+  sourceUrl: https://commons.wikimedia.org/wiki/File:A6M3_Zero_N712Z_1.jpg
+  focal: 50% 45%
 service:
   status: historique
   firstFlight: 1939

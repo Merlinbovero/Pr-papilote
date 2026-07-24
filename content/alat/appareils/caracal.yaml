@@ -3,6 +3,14 @@ id: alat.appareils.caracal
 type: helicoptere
 title: Caracal (H225M)
 slug: caracal
+image:
+  src: /images/fiche-caracal.jpg
+  alt: Un hélicoptère Caracal (H225M) de l'armée de l'Air et de l'Espace en vol, commandos assis sur le sabord, cocarde tricolore visible.
+  author: Dylan Agbagni
+  license: CC0
+  licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:French_Air_Force_EC725_lift_off.jpg
+  focal: 50% 45%
 service:
   status: actif
   introducedAt: 2006

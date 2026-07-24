@@ -3,6 +3,13 @@ id: culture.geopolitique-defense.red-flag
 type: concept
 title: Red Flag (exercice de combat aérien)
 slug: red-flag
+image:
+  src: /images/fiche-red-flag.jpg
+  alt: Un bombardier B-1 Lancer à l'atterrissage sur la base de Nellis lors d'un exercice Red Flag, silhouette de Las Vegas en arrière-plan.
+  author: U.S. Air Force photo by Staff Sgt. Jake Jacobsen
+  license: Domaine public (U.S. Air Force)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:230320-F-HX125-1354_-_Red_Flag_Nellis_23-2.jpg
+  focal: 50% 40%
 summary: >-
   Red Flag est le grand exercice d'entraînement au combat aérien de l'US Air
   Force, créé en 1975 à Nellis (Nevada) d'après les leçons du Vietnam. Face à des

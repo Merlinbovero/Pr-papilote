@@ -3,6 +3,14 @@ id: alat.appareils.alouette-iii
 type: helicoptere
 title: Alouette III (SA316)
 slug: alouette-iii
+image:
+  src: /images/fiche-alouette-iii.jpg
+  alt: Un hélicoptère Alouette III de la Marine nationale française en vol, cocarde tricolore et marquage « MARINE » visibles.
+  author: Christian Hanuise
+  license: GFDL 1.2
+  licenseUrl: https://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Aerospatiale_SA-319B_Alouette_III,_France_-_Navy_AN0330160.jpg
+  focal: 50% 45%
 service:
   status: retire
   firstFlight: 1959

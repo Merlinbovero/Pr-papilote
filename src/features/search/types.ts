@@ -6,7 +6,8 @@
  * toucher aux écrans.
  */
 
-export type SearchEntryType = "module" | "categorie" | "fiche" | "terme" | "document" | "quiz";
+export type SearchEntryType =
+  "module" | "categorie" | "fiche" | "terme" | "document" | "quiz" | "outil";
 
 export interface SearchEntry {
   /** Identifiant stable de l'objet documentaire. */
@@ -63,6 +64,7 @@ export const SEARCH_TYPE_LABELS: Record<SearchEntryType, string> = {
   terme: "Dictionnaire",
   document: "Documents",
   quiz: "Quiz",
+  outil: "Outils",
 };
 
 export const SEARCH_TYPE_LABEL_SINGULAR: Record<SearchEntryType, string> = {
@@ -72,4 +74,5 @@ export const SEARCH_TYPE_LABEL_SINGULAR: Record<SearchEntryType, string> = {
   terme: "Terme",
   document: "Document",
   quiz: "Quiz",
+  outil: "Outil",
 };

@@ -2,18 +2,24 @@ import { createElement } from "react";
 import {
   AnchorIcon,
   BookOpenIcon,
+  ClipboardCheckIcon,
   CompassIcon,
   CrosshairIcon,
   FileTextIcon,
   FolderOpenIcon,
   LandmarkIcon,
+  LanguagesIcon,
   LightbulbIcon,
   ListChecksIcon,
+  MapIcon,
   PlaneIcon,
+  RepeatIcon,
   ShieldIcon,
   ShipIcon,
   TargetIcon,
+  TimerIcon,
   UsersIcon,
+  WrenchIcon,
   type LucideIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -35,6 +41,14 @@ const FAMILY_ICONS: Record<string, LucideIcon> = {
   procedure: ListChecksIcon,
   concept: LightbulbIcon,
   terme: BookOpenIcon,
+  // Familles d'outils interactifs (type « outil »)
+  simulateur: CrosshairIcon,
+  chrono: TimerIcon,
+  revision: RepeatIcon,
+  examen: ClipboardCheckIcon,
+  anglais: LanguagesIcon,
+  carte: MapIcon,
+  lexique: BookOpenIcon,
 };
 
 const TYPE_ICONS: Record<SearchEntry["type"], LucideIcon> = {
@@ -44,6 +58,7 @@ const TYPE_ICONS: Record<SearchEntry["type"], LucideIcon> = {
   quiz: TargetIcon,
   categorie: FolderOpenIcon,
   module: CompassIcon,
+  outil: WrenchIcon,
 };
 
 export function searchEntryIcon(entry: SearchEntry): LucideIcon {

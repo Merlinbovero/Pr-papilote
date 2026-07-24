@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.sukhoi-su-35
 type: appareil
 title: Sukhoi Su-35 (Flanker-E)
 slug: sukhoi-su-35
+image:
+  src: /images/fiche-su-35.jpg
+  alt: Un chasseur russe Sukhoi Su-35S « Flanker-E » aux marquages « ВКС России » en vol, vu de trois-quarts avant.
+  author: Anna Zvereva
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Russian_Air_Force,_RF-81719,_Sukhoi_Su-35S_(49581740157).jpg
+  focal: 50% 45%
 service:
   status: actif
   firstFlight: 2008

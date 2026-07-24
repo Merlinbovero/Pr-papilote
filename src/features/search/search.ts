@@ -14,6 +14,7 @@ const TYPE_BOOST: Record<SearchEntry["type"], number> = {
   terme: 15,
   document: 8,
   quiz: 8,
+  outil: 8,
   categorie: 4,
   module: 4,
 };

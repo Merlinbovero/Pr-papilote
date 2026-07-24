@@ -3,6 +3,13 @@ id: fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
 type: notion-aerodynamique
 title: Le mur du son et le vol supersonique
 slug: mur-du-son-et-vol-supersonique
+image:
+  src: /images/fiche-mur-du-son.jpg
+  alt: Un chasseur F/A-18 Hornet au passage transsonique, entouré d'un cône de vapeur (singularité de Prandtl-Glauert).
+  author: Ensign John Gay, U.S. Navy
+  license: Domaine public (U.S. Navy)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:FA-18_Hornet_breaking_sound_barrier_(7_July_1999)_-_filtered.jpg
+  focal: 50% 45%
 summary: >-
   Le « mur du son » est la forte hausse de traînée qui accompagne l'approche de
   la vitesse du son, quand des ondes de choc apparaissent. Le nombre de Mach

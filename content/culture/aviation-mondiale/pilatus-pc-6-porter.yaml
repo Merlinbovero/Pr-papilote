@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.pilatus-pc-6-porter
 type: appareil
 title: Pilatus PC-6 Porter
 slug: pilatus-pc-6-porter
+image:
+  src: /images/fiche-pilatus-pc-6.jpg
+  alt: Un avion utilitaire monoturbine Pilatus PC-6 Porter à aile haute en vol, vu de profil.
+  author: Julian Herzog (JDrewes)
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Pilatus_PC-6_SkydiveLillo_JD18032008_(cropped).jpg
+  focal: 50% 45%
 service:
   status: retire
   firstFlight: 1959

@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.sukhoi-su-34
 type: appareil
 title: Sukhoi Su-34 (Fullback)
 slug: sukhoi-su-34
+image:
+  src: /images/fiche-su-34.jpg
+  alt: Un bombardier tactique russe Sukhoi Su-34 « Fullback » en vol, vu de dessous, reconnaissable à son nez aplati.
+  author: Vitaly V. Kuzmin
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:MAKS2015part1-10_(cropped).jpg
+  focal: 50% 45%
 service:
   status: actif
   firstFlight: 1990

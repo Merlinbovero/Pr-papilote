@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.sukhoi-su-27
 type: appareil
 title: Sukhoi Su-27 (Flanker)
 slug: sukhoi-su-27
+image:
+  src: /images/fiche-su-27.jpg
+  alt: Un chasseur russe Sukhoi Su-27 « Flanker » en vol, vu de dessous, étoiles rouges visibles.
+  author: Dmitriy Pichugin
+  license: GFDL 1.2
+  licenseUrl: https://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Sukhoi_Su-27SKM_at_MAKS-2005_airshow.jpg
+  focal: 50% 45%
 service:
   status: actif
   firstFlight: 1977

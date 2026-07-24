@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.supermarine-spitfire
 type: appareil
 title: Supermarine Spitfire
 slug: supermarine-spitfire
+image:
+  src: /images/fiche-supermarine-spitfire.jpg
+  alt: Un chasseur Supermarine Spitfire aux cocardes de la Royal Air Force en vol, vu de profil.
+  author: Airwolfhound
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Spitfire_-_Season_Premiere_Airshow_2018_(cropped).jpg
+  focal: 50% 45%
 service:
   status: historique
   firstFlight: 1936

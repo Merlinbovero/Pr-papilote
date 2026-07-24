@@ -3,6 +3,13 @@ id: culture.aviation-mondiale.focke-wulf-fw-190
 type: appareil
 title: Focke-Wulf Fw 190
 slug: focke-wulf-fw-190
+image:
+  src: /images/fiche-focke-wulf-fw-190.jpg
+  alt: Un chasseur allemand Focke-Wulf Fw 190 au sol, photographie d'époque de la Seconde Guerre mondiale, vu de profil.
+  author: Royal Air Force official photographer
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Fw_190A-3_JG_2_in_Britain_1942.jpg
+  focal: 50% 50%
 service:
   status: historique
   firstFlight: 1939

@@ -3,6 +3,14 @@ id: culture.aviation-mondiale.mikoyan-mig-31
 type: appareil
 title: Mikoyan MiG-31 (Foxhound)
 slug: mikoyan-mig-31
+image:
+  src: /images/fiche-mig-31.jpg
+  alt: Un intercepteur russe Mikoyan MiG-31 « Foxhound » aux marquages « ВВС России » en vol au-dessus d'un paysage enneigé.
+  author: Dmitriy Pichugin
+  license: GFDL 1.2
+  licenseUrl: https://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Russian_Air_Force_Mikoyan-Gurevich_MiG-31P.jpg
+  focal: 50% 40%
 service:
   status: actif
   introducedAt: 1981
