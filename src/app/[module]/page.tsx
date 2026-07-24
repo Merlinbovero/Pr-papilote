@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import {
   ChartLineIcon,
   ClipboardCheckIcon,
+  CrosshairIcon,
   ListChecksIcon,
   RepeatIcon,
   TimerIcon,
@@ -81,6 +82,27 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     </CardTitle>
                     <CardDescription>
                       Sessions générées — calcul, suites, mémoire, attention, orientation…
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/secpil"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <CrosshairIcon aria-hidden className="text-primary size-4" />
+                      Simulateur SECPIL
+                    </CardTitle>
+                    <CardDescription>
+                      Entraîneur psychomoteur — suivi au manche et au palonnier, puis calcul mental,
+                      en attention partagée.
                     </CardDescription>
                   </CardHeader>
                 </Card>

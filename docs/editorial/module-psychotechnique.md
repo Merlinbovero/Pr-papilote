@@ -36,6 +36,30 @@ rejouable, testable, et infini.
 Un **4ᵉ niveau de difficulté** homogène est à l'étude (le contrat reste à
 3 niveaux pour l'instant).
 
+## Le simulateur SECPIL (mode temps réel, hors QCM)
+
+À côté des 15 familles QCM, le module propose un **entraîneur psychomoteur
+temps réel** inspiré du **SECPIL** des sélections EOPN — une **reconstitution
+pédagogique** du _principe_ de l'épreuve (attention partagée), sans lien avec
+le logiciel officiel des armées, avec des **commandes accessibles** : souris
+(ou doigt) pour le suivi sur un « 8 » (manche), flèches ◀ ▶ ou boutons tactiles
+pour la cible horizontale (palonnier), clavier pour le calcul mental.
+
+- **Structure fidèle** : 4 phases à montée en charge (palonnier seul → manche
+  seul → les deux → les deux + calcul), ~52 s chacune, en continu.
+- **Séparation logique/rendu** : toute la logique pure et testée vit dans
+  `src/lib/psychotech/secpil.ts` (géométrie des cibles fonction du temps,
+  conversion erreur → précision, séquence de calcul déterministe) ; le rendu
+  temps réel (boucle `requestAnimationFrame`, mise à jour SVG impérative,
+  lecture des commandes) vit dans `src/features/psychotech/secpil-simulator.tsx`.
+- **Notation** : précision de suivi par tâche (écart moyen à la cible),
+  réussite du calcul, score global et **courbe de progression** entre la
+  première et la dernière phase — on récompense l'équilibre et le progrès, pas
+  la perfection d'un geste.
+- **Route** : `/psychotechnique/secpil` ; fiche méthode
+  `/psychotechnique/exercices/le-secpil` (sources : cockpitseeker, piloteready,
+  pilotemilitaire).
+
 ## Le moteur (`src/lib/psychotech/`)
 
 Fonctions pures, format unique :

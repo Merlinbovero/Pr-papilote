@@ -1,0 +1,147 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-secpil
+type: concept
+title: Le SECPIL
+slug: le-secpil
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — l'épreuve psychomotrice SECPIL
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  L'épreuve psychomotrice éliminatoire des sélections EOPN : suivre deux cibles à
+  la fois (manche et palonnier), puis y ajouter un calcul mental. Ce n'est pas la
+  précision d'une tâche qui compte, mais la capacité à tenir plusieurs commandes
+  en même temps — l'attention partagée du pilote.
+objectifs:
+  - Comprendre ce que mesure le SECPIL — la coordination psychomotrice et l'attention partagée, pas les connaissances.
+  - Connaître la structure de l'épreuve — trois tâches (manche, palonnier, calcul) ajoutées progressivement en quatre phases.
+  - Retenir la bonne stratégie — répartir son attention, ne jamais abandonner une tâche pour perfectionner l'autre, et progresser sur la durée.
+aliases:
+  [
+    SECPIL,
+    système d'évaluation des candidats pilote,
+    épreuve psychomotrice,
+    manche et palonnier,
+    tracking,
+    poursuite de cible,
+  ]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopn]
+level: 2
+createdAt: "2026-07-24"
+verifiedAt: "2026-07-24"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-24"
+    version: 1
+    motif: Création — fiche méthode du SECPIL, accompagnant l'entraîneur psychomoteur accessible (souris + flèches).
+    author: prepapilote
+sources:
+  - title: "SECPIL EOPN — présentation de l'épreuve (cockpitseeker.com)"
+    url: https://cockpitseeker.com/eopn/secpil/
+    kind: presse
+    consultedAt: "2026-07-24"
+  - title: "SECPIL EOPN — présentation, méthode et préparation (piloteready.fr)"
+    url: https://piloteready.fr/eopn/epreuves/secpil
+    kind: presse
+    consultedAt: "2026-07-24"
+  - title: "SECPIL EOPN (pilotemilitaire.fr)"
+    url: https://pilotemilitaire.fr/eopn/secpil-eopn/
+    kind: presse
+    consultedAt: "2026-07-24"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-dissociation-d-attention
+content:
+  essentiel:
+    body: |
+      Le **SECPIL** (Système d'Évaluation des Candidats PILote) est l'**épreuve
+      psychomotrice** de la sélection **EOPN** (armée de l'Air et de l'Espace,
+      base de Tours). C'est une épreuve **éliminatoire** réputée : elle écarte
+      une grande part des candidats encore présents. Elle ne mesure aucune
+      connaissance — elle évalue la **coordination** et l'**attention partagée**,
+      c'est-à-dire la matière première du pilotage.
+
+      Dans l'épreuve réelle, le candidat est installé dans un poste inspiré d'un
+      cockpit, avec un **manche** et un **palonnier**, et doit mener **trois
+      tâches** ajoutées **progressivement** :
+
+      - **suivre au manche** un point qui parcourt un **« 8 »** à l'écran ;
+      - **maintenir au palonnier** un repère sur une **cible horizontale** qui se
+        déplace ;
+      - **additionner mentalement** des chiffres qui apparaissent un à un (somme
+        courante).
+
+      La difficulté n'est pas une tâche isolée — chacune est simple — mais de les
+      **tenir toutes en même temps** sans en lâcher aucune.
+
+      > On n'est pas noté sur la perfection d'un geste, mais sur la **capacité à
+      > répartir** son attention et à **progresser** au fil de l'épreuve.
+    aRetenir:
+      - Le SECPIL est l'épreuve psychomotrice éliminatoire des sélections EOPN — elle mesure la coordination, pas les connaissances.
+      - Trois tâches — suivi au manche (le « 8 »), suivi au palonnier (cible horizontale), calcul mental (somme courante).
+      - Elles sont ajoutées progressivement en quatre phases — palonnier seul, manche seul, les deux, puis les deux plus le calcul.
+      - La note tient compte de la précision ET de la courbe de progression — l'attention partagée prime sur la perfection d'un geste.
+  sections:
+    - id: la-structure-en-phases
+      title: La structure en phases
+      body: |
+        L'épreuve monte en charge par **paliers**, chacun d'environ **52
+        secondes** :
+
+        1. **palonnier seul** — on apprend à garder le repère sur la cible
+           horizontale ;
+        2. **manche seul** — on suit le point sur le « 8 » ;
+        3. **les deux à la fois** — la coordination des deux mains (ou main +
+           pieds dans l'épreuve réelle) ;
+        4. **les deux + calcul mental** — on ajoute la charge cognitive.
+
+        Cette progression n'est pas un hasard : elle laisse le temps de
+        **maîtriser chaque commande** avant de les combiner, puis mesure comment
+        la performance **tient** quand une tâche supplémentaire s'ajoute.
+    - id: la-strategie
+      title: La stratégie — répartir, ne pas abandonner
+      body: |
+        L'erreur classique est de **se concentrer sur une seule tâche** pour la
+        rendre parfaite — et de laisser l'autre partir complètement. Le score
+        récompense l'inverse : une performance **moyenne mais équilibrée** sur
+        toutes les tâches vaut mieux qu'une tâche parfaite et une abandonnée.
+
+        Quelques principes :
+
+        - **balayer** en permanence entre les commandes, comme en vol entre les
+          instruments ;
+        - accepter une **précision imparfaite** sur chaque tâche plutôt que d'en
+          sacrifier une ;
+        - pour le calcul, garder la **somme courante** en tête sans cesser de
+          suivre — c'est là que se joue l'attention partagée ;
+        - rester **régulier** : un geste souple et anticipé fatigue moins qu'une
+          correction brutale.
+    - id: notre-entraineur
+      title: Notre entraîneur accessible (à savoir)
+      strate: maitriser
+      body: |
+        Le [simulateur SECPIL](/psychotechnique/secpil) de PrépaPilote reproduit
+        le **principe** de l'épreuve avec des commandes **accessibles à tous** :
+        la **souris** (ou le doigt) remplace le manche pour suivre le « 8 », les
+        **flèches ◀ ▶** (ou deux boutons) remplacent le palonnier, et le calcul
+        mental se fait au clavier.
+
+        C'est une **reconstitution pédagogique** : elle entraîne la bonne
+        aptitude — tenir plusieurs tâches à la fois — mais elle **n'est pas** le
+        logiciel officiel des armées et ne prétend pas prédire un résultat de
+        sélection. L'important n'est pas le score absolu, mais de **s'habituer à
+        l'attention partagée** et de voir sa **progression** séance après séance.
+  pieges:
+    - Le SECPIL ne teste pas les connaissances — c'est une épreuve psychomotrice de coordination et d'attention partagée.
+    - Se concentrer sur une seule tâche pour la perfectionner et abandonner les autres — le score récompense l'équilibre.
+    - Croire qu'un score parfait est l'objectif — c'est la répartition de l'attention et la progression qui comptent.
+    - Confondre notre entraîneur accessible avec le logiciel officiel — c'est une reconstitution du principe, sans lien avec les armées.
