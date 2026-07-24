@@ -3,6 +3,14 @@ id: eopn.appareils.e-3f-awacs
 type: appareil
 title: E-3F AWACS (SDCA)
 slug: e-3f-awacs
+image:
+  src: /images/fiche-e-3f-awacs.jpg
+  alt: Un Boeing E-3F Sentry (AWACS/SDCA) de l'Armée de l'air et de l'espace au sol, avec son radôme rotatif.
+  author: Colin Cooke Photo (Wikimedia Commons)
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:201_36-CA_Boeing_E-3F_French_Air_Force_EDCA01.036_SAL58_RAF_Fairford_20.7.25_(55039726644).jpg
+  focal: 50% 55%
 service:
   status: actif
   introducedAt: 1991
