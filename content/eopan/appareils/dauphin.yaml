@@ -3,6 +3,13 @@ id: eopan.appareils.dauphin
 type: helicoptere
 title: Dauphin
 slug: dauphin
+image:
+  src: /images/fiche-dauphin.jpg
+  alt: Un hélicoptère Dauphin 35F de la Marine nationale au décollage depuis un porte-avions.
+  author: U.S. Navy — Mass Communication Specialist 3rd Class Paul J. Perkins
+  license: Domaine public (U.S. Navy)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:US_Navy_070410-N-2659P-069_The_Dauphin_35F_from_the_French_nuclear-powered_aircraft_carrier_FNS_Charles_De_Gaulle_(R_91)_takes_off_from_the_flight_deck_of_the_Nimitz-class_aircraft_carrier_USS_John_C._Stennis_(CVN_74).jpg
+  focal: 50% 45%
 service:
   status: actif
   operator: Marine nationale

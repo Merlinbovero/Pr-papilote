@@ -3,6 +3,13 @@ id: eopan.appareils.panther
 type: helicoptere
 title: Panther (AS565)
 slug: panther
+image:
+  src: /images/fiche-panther.jpg
+  alt: Un hélicoptère Panther AS565 de la Marine nationale, arrimé sur le pont d'un bâtiment.
+  author: U.S. Navy — Commander, U.S. Naval Forces Europe-Africa / 6th Fleet
+  license: Domaine public (U.S. Navy)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:170520-N-FQ994-213_(34656520512).jpg
+  focal: 50% 45%
 service:
   status: actif
   operator: Marine nationale
