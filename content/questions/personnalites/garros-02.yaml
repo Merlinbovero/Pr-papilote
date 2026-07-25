@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.garros-02
+kind: qcm
+theme: roland-garros
+statement: >-
+  Le stade de tennis parisien « Roland-Garros » porte le nom d'un…
+choices:
+  - Aviateur pionnier
+  - Champion de tennis
+  - Ministre des Sports
+  - Architecte du stade
+correctChoices: [0]
+explanation: >-
+  Roland Garros était un aviateur pionnier (première traversée de la
+  Méditerranée, 1913). Le stade de tennis a été baptisé de son nom en hommage à
+  la fin des années 1920 ; il n'était pas joueur de tennis.
+evaluates: [culture.personnalites.roland-garros]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
