@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.agresseurs-01
+kind: qcm
+theme: escadrons-agresseurs
+statement: >-
+  Quel est le rôle d'un escadron « agresseur » (Aggressor) à l'entraînement ?
+choices:
+  - Jouer l'ennemi (la « force rouge ») en imitant ses tactiques
+  - Ravitailler les chasseurs en vol
+  - Assurer le sauvetage des équipages
+  - Former les mécaniciens au sol
+correctChoices: [0]
+explanation: >-
+  Un escadron agresseur incarne l'adversaire (« force rouge ») en reproduisant ses
+  tactiques, pour offrir un entraînement crédible. Né des leçons du Vietnam, il
+  anime les grands exercices comme Red Flag.
+evaluates: [culture.culture-aeronautique.escadrons-agresseurs]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

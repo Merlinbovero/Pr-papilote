@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.radio-communications.uhf-01
+kind: qcm
+theme: bande-uhf
+statement: >-
+  La bande UHF aéronautique (225–400 MHz) est réservée principalement à…
+choices:
+  - L'aviation militaire
+  - L'aviation civile de ligne
+  - La radiodiffusion FM
+  - La téléphonie mobile
+correctChoices: [0]
+explanation: >-
+  L'UHF aéronautique (225–400 MHz) est surtout militaire — c'est le standard de
+  la phonie des avions de combat. Les militaires embarquent souvent VHF et UHF ;
+  la propagation reste « à vue directe », comme en VHF.
+evaluates: [fondamentaux.radio-communications.la-bande-uhf]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

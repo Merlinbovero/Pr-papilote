@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.aerodynamique.mur-du-son-01
+kind: qcm
+theme: mur-du-son
+statement: >-
+  Qui a réalisé le premier vol supersonique de l'histoire, en 1947 ?
+choices:
+  - Chuck Yeager, sur le Bell X-1
+  - Charles Lindbergh, sur le Spirit of St. Louis
+  - Louis Blériot, sur le Blériot XI
+  - André Turcat, sur Concorde
+correctChoices: [0]
+explanation: >-
+  Le 14 octobre 1947, l'Américain Chuck Yeager franchit pour la première fois le
+  mur du son à bord du Bell X-1. « Mach 1 » correspond à la vitesse du son
+  (≈ 340 m/s au sol à 15 °C).
+evaluates: [fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
