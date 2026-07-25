@@ -25,13 +25,17 @@ tags: []
 concours: [eopan]
 level: 1
 createdAt: "2026-07-13"
-verifiedAt: "2026-07-13"
+verifiedAt: "2026-07-25"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche grades de la Marine (Lot A, ingestion Guide EOPAN 2020, recoupée sources officielles).
+    author: prepapilote
+  - date: "2026-07-25"
+    version: 2
+    motif: Mise en forme — les équivalences (officiers, officiers mariniers, équipage) passent en tableaux comparatifs Marine ↔ Terre/Air ; données inchangées, recoupées aux sources officielles.
     author: prepapilote
 sources:
   - title: "Marine nationale — grades et appellations (Ministère des Armées)"
@@ -71,26 +75,22 @@ content:
     - id: les-officiers
       title: Les officiers
       body: |
-        Chez les **officiers**, la hiérarchie de la Marine se lit ainsi (du plus
-        élevé au plus bas), avec son équivalent dans l'armée de terre et de
-        l'air :
+        Chez les **officiers**, la hiérarchie de la Marine se lit du plus élevé
+        au plus bas, avec son équivalent dans l'armée de Terre et de l'Air :
 
-        **Officiers généraux (amiraux)**
-        - **Amiral** — équivaut au général d'armée
-        - **Vice-amiral d'escadre** — général de corps d'armée
-        - **Vice-amiral** — général de division
-        - **Contre-amiral** — général de brigade
-
-        **Officiers supérieurs**
-        - **Capitaine de vaisseau** — colonel
-        - **Capitaine de frégate** — lieutenant-colonel
-        - **Capitaine de corvette** — commandant
-
-        **Officiers subalternes**
-        - **Lieutenant de vaisseau** — capitaine
-        - **Enseigne de vaisseau de 1re classe** — lieutenant
-        - **Enseigne de vaisseau de 2e classe** — sous-lieutenant
-        - **Aspirant** — aspirant
+        | Catégorie | Grade (Marine) | Équivalent (Terre / Air) |
+        | --- | --- | --- |
+        | Officiers généraux | Amiral | Général d'armée |
+        | | Vice-amiral d'escadre | Général de corps d'armée |
+        | | Vice-amiral | Général de division |
+        | | Contre-amiral | Général de brigade |
+        | Officiers supérieurs | Capitaine de vaisseau | Colonel |
+        | | Capitaine de frégate | Lieutenant-colonel |
+        | | Capitaine de corvette | Commandant |
+        | Officiers subalternes | Lieutenant de vaisseau | Capitaine |
+        | | Enseigne de vaisseau de 1re classe | Lieutenant |
+        | | Enseigne de vaisseau de 2e classe | Sous-lieutenant |
+        | | Aspirant | Aspirant |
 
         Astuce mémoire — le mot « **vaisseau** » marque le haut de chaque bloc
         d'officiers, « **frégate** » et « **corvette** » descendent en taille de
@@ -102,17 +102,16 @@ content:
         (l'équivalent des **sous-officiers**) puis l'**équipage** (les
         **militaires du rang**) :
 
-        **Officiers mariniers**
-        - **Major**
-        - **Maître principal** — équivaut à l'adjudant-chef
-        - **Premier maître** — adjudant
-        - **Maître** — sergent-chef
-        - **Second maître** — sergent
-
-        **Équipage**
-        - **Quartier-maître de 1re classe** — caporal-chef
-        - **Quartier-maître de 2e classe** — caporal
-        - **Matelot** — soldat de 1re classe
+        | Catégorie | Grade (Marine) | Équivalent (Terre / Air) |
+        | --- | --- | --- |
+        | Officiers mariniers | Major | Major |
+        | | Maître principal | Adjudant-chef |
+        | | Premier maître | Adjudant |
+        | | Maître | Sergent-chef |
+        | | Second maître | Sergent |
+        | Équipage | Quartier-maître de 1re classe | Caporal-chef |
+        | | Quartier-maître de 2e classe | Caporal |
+        | | Matelot | Soldat de 1re classe |
 
         Le mot « **maître** » signe l'appartenance au corps des officiers
         mariniers, celui de « **quartier-maître** » et « **matelot** »,
