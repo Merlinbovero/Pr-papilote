@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.turbomoteur-02
+kind: qcm
+theme: turbomoteur
+statement: >-
+  À quoi sert le rotor de queue (rotor anti-couple) d'un hélicoptère classique ?
+choices:
+  - À compenser le couple de réaction du rotor principal
+  - À fournir la portance principale
+  - À freiner l'appareil à l'atterrissage
+  - À refroidir le moteur
+correctChoices: [0]
+explanation: >-
+  En faisant tourner le rotor principal, le moteur impose au fuselage un couple
+  de réaction (3ᵉ loi de Newton). Le rotor de queue produit une poussée latérale
+  qui compense ce couple ; il sert aussi à pivoter en lacet.
+evaluates: [fondamentaux.mecanique-du-vol.turbomoteur-et-helicopteres]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

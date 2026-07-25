@@ -1,0 +1,135 @@
+schemaVersion: 1
+id: fondamentaux.mecanique-du-vol.turbomoteur-et-helicopteres
+type: notion-aerodynamique
+title: Le turbomoteur et la propulsion des hélicoptères
+slug: turbomoteur-et-helicopteres
+image:
+  src: /images/fiche-turbomoteur-helicoptere.jpg
+  alt: Un hélicoptère NH90 Caïman de l'armée française en vol, rotor tournant, lors d'une démonstration d'insertion de commandos.
+  author: Ibex73 (Wikimedia Commons)
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:NH90_at_Paris_Air_Show_2019_(5).jpg
+  focal: 30% 25%
+summary: >-
+  Contrairement au turboréacteur, qui produit une poussée, le turbomoteur
+  produit de la puissance sur un arbre : c'est le cœur des hélicoptères, dont le
+  rotor est une aile tournante. Turbine libre, anti-couple, autorotation — les
+  clés de la « voilure tournante ».
+objectifs:
+  - Distinguer le turbomoteur (couple sur un arbre) du turboréacteur (poussée).
+  - Comprendre la chaîne turbine libre → BTP → rotor principal d'un hélicoptère.
+  - Connaître le rôle du rotor anti-couple et le principe de l'autorotation.
+aliases:
+  [
+    turbomoteur,
+    turboshaft,
+    turbine libre,
+    hélicoptère,
+    rotor anti-couple,
+    autorotation,
+    BTP,
+  ]
+module: fondamentaux
+category: mecanique-du-vol
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche « turbomoteur et hélicoptères » (complète la fiche la-propulsion, centrée avions) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Turbomoteur — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Turbomoteur
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Hélicoptère (rotor anti-couple, autorotation) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/H%C3%A9licopt%C3%A8re
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - fondamentaux.mecanique-du-vol.la-propulsion
+    - fondamentaux.physique.les-trois-lois-de-newton
+    - alat.organisation.aviation-legere-armee-de-terre
+content:
+  essentiel:
+    body: |
+      Un **turbomoteur** (*turboshaft*) est une **turbine à gaz** qui transforme
+      l'énergie des gaz brûlés non pas en **poussée** (comme un turboréacteur),
+      mais en **couple** disponible sur un **arbre**. C'est le moteur des
+      **hélicoptères** — et, sous une forme voisine, des turbopropulseurs.
+
+      La plupart des turbomoteurs sont **à turbine libre** : une première turbine
+      entraîne le **compresseur** (le « générateur de gaz »), tandis qu'une
+      seconde turbine, **mécaniquement indépendante**, récupère la puissance et
+      l'envoie, via une **boîte de transmission principale (BTP)** fortement
+      **réductrice**, au **rotor principal** (qui tourne lentement, quelques
+      centaines de tours par minute).
+
+      Le **rotor principal** est une **aile tournante** : il crée la **portance**
+      qui soulève l'appareil. Mais en le faisant tourner, le moteur exerce sur le
+      fuselage un **couple de réaction** (3ᵉ loi de Newton) qui tendrait à faire
+      **pivoter** l'hélicoptère sur lui-même. C'est le rôle du **rotor
+      anti-couple** (rotor de queue) que de **compenser** ce couple.
+    aRetenir:
+      - Le turbomoteur produit du couple sur un arbre (puissance), pas une poussée comme le turboréacteur.
+      - La plupart sont « à turbine libre » ; la BTP réduit la vitesse pour entraîner le rotor.
+      - Le rotor principal porte l'hélicoptère ; le rotor anti-couple (de queue) compense le couple de réaction.
+      - En cas de panne moteur, l'autorotation permet une descente contrôlée et un poser.
+  sections:
+    - id: turbomoteur-vs-turboreacteur
+      title: Turbomoteur ou turboréacteur ?
+      body: |
+        Les deux sont des **turbines à gaz**, mais elles n'exploitent pas
+        l'énergie de la même façon :
+
+        | | Turboréacteur | Turbomoteur |
+        | --- | --- | --- |
+        | Ce qu'il produit | Une **poussée** (gaz éjectés vers l'arrière) | Un **couple** sur un arbre |
+        | Unité de mesure | Poussée (daN / kg) | Puissance (kW / ch) |
+        | Poussée résiduelle | C'est le but | Presque nulle |
+        | Emploi typique | Avions à réaction | **Hélicoptères** (et turbopropulseurs) |
+
+        Autrement dit, le turboréacteur **pousse**, le turbomoteur **entraîne**.
+    - id: de-la-turbine-au-rotor
+      title: De la turbine au rotor
+      body: |
+        Dans un turbomoteur **à turbine libre**, la **turbine de puissance**
+        n'est pas reliée mécaniquement au compresseur : elle peut tourner à un
+        régime **différent**, ce qui est idéal pour un hélicoptère.
+
+        Cette puissance passe par la **boîte de transmission principale (BTP)**,
+        une **réduction** qui fait chuter la vitesse de rotation (la turbine
+        tourne très vite, le rotor **lentement** — de l'ordre de **quelques
+        centaines de tr/min**). La BTP entraîne à la fois le **rotor principal**
+        et, par un arbre, le **rotor de queue**.
+    - id: anticouple-et-autorotation
+      title: Anti-couple et autorotation
+      strate: maitriser
+      body: |
+        **Anti-couple.** Faire tourner le rotor principal impose au fuselage un
+        **couple de réaction** en sens inverse (3ᵉ loi de Newton). Sans
+        compensation, l'hélicoptère tournerait sur lui-même. Le **rotor de
+        queue** produit une **poussée latérale** qui **annule** ce couple ; le
+        pilote le dose au **palonnier**, ce qui permet aussi de **tourner** autour
+        de l'axe de lacet. (D'autres solutions existent : rotors **coaxiaux**,
+        système **NOTAR**.)
+
+        **Autorotation.** En cas de **panne moteur**, une **roue libre** désolidarise
+        le rotor du moteur : l'air qui **traverse le disque rotor** de bas en
+        haut le maintient en **rotation**, comme une « graine d'érable ». Le
+        pilote conserve ainsi le contrôle et peut réaliser un **poser** — ce
+        n'est **pas** une chute libre, mais une **descente maîtrisée**.
+  pieges:
+    - Le turbomoteur ne produit pas de poussée comme un réacteur — il fournit de la puissance (couple) sur un arbre.
+    - Le rotor de queue ne « propulse » pas l'hélicoptère — il compense le couple de réaction du rotor principal (anti-couple).
+    - Entre la turbine et le rotor, la BTP réduit fortement la vitesse — le rotor tourne lentement (quelques centaines de tr/min).
+    - L'autorotation n'est pas une chute libre — c'est une descente contrôlée, le rotor étant entraîné par le flux d'air.

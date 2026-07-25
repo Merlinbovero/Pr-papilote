@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.turbomoteur-01
+kind: qcm
+theme: turbomoteur
+statement: >-
+  Que produit principalement un turbomoteur (turboshaft), moteur des
+  hélicoptères ?
+choices:
+  - De la puissance (couple) sur un arbre
+  - Une poussée par éjection de gaz
+  - De l'électricité pour les batteries
+  - Une portance directe
+correctChoices: [0]
+explanation: >-
+  Le turbomoteur transforme l'énergie des gaz en couple sur un arbre (puissance),
+  transmis au rotor via la boîte de transmission. C'est le turboréacteur, lui,
+  qui produit une poussée par éjection des gaz.
+evaluates: [fondamentaux.mecanique-du-vol.turbomoteur-et-helicopteres]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
