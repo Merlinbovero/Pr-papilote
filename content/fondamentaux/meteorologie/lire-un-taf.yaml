@@ -1,0 +1,135 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.lire-un-taf
+type: notion-meteo
+title: La météo aéronautique — lire un TAF
+slug: lire-un-taf
+image:
+  src: /images/fiche-taf.jpg
+  alt: Un grand cumulonimbus déversant des averses au-dessus de l'eau — le type de phénomène qu'une prévision TAF cherche à anticiper.
+  author: Kingshuk Mondal (Wikimedia Commons)
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Cumulonimbus_cloud_over_the_Sundarbans,_West_Bengal,_India_04.jpg
+  focal: 50% 40%
+summary: >-
+  Le TAF est la prévision météo codée d'un aérodrome, valable 24 h (30 h pour
+  certains). Complément du METAR (qui observe l'instant), il annonce l'évolution
+  attendue — vent, visibilité, temps, nuages — avec ses groupes de changement
+  (BECMG, TEMPO, PROB, FM).
+objectifs:
+  - Savoir ce qu'est un TAF et en quoi il diffère d'un METAR (prévision contre observation).
+  - Lire la période de validité et les groupes d'évolution d'un TAF.
+  - Décoder un exemple simple de TAF.
+aliases:
+  [
+    TAF,
+    prévision aérodrome,
+    Terminal Aerodrome Forecast,
+    BECMG,
+    TEMPO,
+    PROB,
+    prévision météo,
+  ]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche météo « lire un TAF » (pendant du METAR) ; format et abréviations vérifiés sur sources encyclopédiques (normalisation OACI/OMM).
+    author: prepapilote
+sources:
+  - title: "Terminal aerodrome forecast — Wikipedia"
+    url: https://en.wikipedia.org/wiki/Terminal_aerodrome_forecast
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Trend type forecast (BECMG, TEMPO, PROB) — Wikipedia"
+    url: https://en.wikipedia.org/wiki/Trend_type_forecast
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - fondamentaux.meteorologie.lire-un-metar
+    - fondamentaux.meteorologie.les-nuages
+    - fondamentaux.meteorologie.phenomenes-dangereux
+content:
+  essentiel:
+    body: |
+      Le **TAF** (*Terminal Aerodrome Forecast*) est la **prévision**
+      météorologique **codée** d'un aérodrome. Là où le **METAR** décrit le temps
+      **observé à l'instant**, le TAF annonce le temps **prévu** pour les heures
+      à venir.
+
+      Il est en général **émis toutes les 6 heures** (avec des amendements si
+      besoin) et **valable 24 heures** — **30 heures** pour certains grands
+      aérodromes. Sa **période de validité** s'écrit **JJHH/JJHH** (jour-heure de
+      début / jour-heure de fin, en **UTC**).
+
+      Le TAF reprend le **même vocabulaire** que le METAR (vent, visibilité,
+      temps, nuages, **CAVOK** — voir la fiche METAR), mais il y ajoute des
+      **groupes d'évolution** qui décrivent **comment** le temps doit **changer** :
+      **FM** (à partir de), **BECMG** (devient), **TEMPO** (temporairement) et
+      **PROB** (probabilité).
+
+      Exemple :
+
+      `TAF LFPG 061100Z 0612/0712 24012KT 9999 SCT025 BECMG 0615/0617 03008KT
+      TEMPO 0618/0622 4000 RA BKN012 PROB30 0620/0622 2000 TSRA`
+
+      → **Paris-CDG**, émis le **6 à 11 h UTC**, valable **du 6 à 12 h au 7 à
+      12 h UTC** ; vent **240° 12 kt**, visibilité **≥ 10 km**, nuages épars à
+      2500 ft ; **devenant** (BECMG) vent **030° 8 kt** entre 15 h et 17 h ;
+      **temporairement** (TEMPO) **4000 m sous la pluie** et ciel fragmenté à
+      1200 ft entre 18 h et 22 h ; **30 % de probabilité** (PROB30) de **2000 m
+      sous orage** entre 20 h et 22 h.
+    aRetenir:
+      - TAF = prévision météo codée d'un aérodrome ; le METAR, lui, est une observation.
+      - Validité 24 h (30 h pour certains grands aérodromes), émis en général toutes les 6 heures.
+      - La période de validité s'écrit JJHH/JJHH (ex. 0612/0712 = du 6 à 12 h UTC au 7 à 12 h UTC).
+      - Groupes d'évolution — FM (à partir de), BECMG (devient), TEMPO (temporaire), PROB (probabilité).
+  sections:
+    - id: metar-ou-taf
+      title: METAR ou TAF ?
+      body: |
+        Les deux messages partagent le même code, mais pas le même rôle :
+
+        | | METAR | TAF |
+        | --- | --- | --- |
+        | Nature | **Observation** (le temps qu'il fait) | **Prévision** (le temps prévu) |
+        | Portée dans le temps | L'instant | 24 h (30 h pour certains) |
+        | Fréquence | Toutes les 30 min ou 1 h | En général toutes les 6 h |
+        | Groupes d'évolution | Une simple tendance (NOSIG…) | FM, BECMG, TEMPO, PROB |
+
+        En pratique, le pilote **croise** les deux : le METAR pour l'état actuel,
+        le TAF pour anticiper la suite (arrivée, déroutement…).
+    - id: les-groupes-d-evolution
+      title: Les groupes d'évolution
+      strate: maitriser
+      body: |
+        Un TAF décrit d'abord une situation « de base », puis ses **changements**
+        au moyen de groupes datés :
+
+        - **FM** (*from*) — un changement **rapide et durable** à partir d'une
+          heure donnée (ex. `FM061500` = à partir du 6 à 15 h UTC) ; ce qui suit
+          remplace l'état précédent.
+        - **BECMG** (*becoming*) — un changement **graduel**, attendu **au cours**
+          d'une plage horaire (ex. `BECMG 0615/0617`).
+        - **TEMPO** — des **fluctuations temporaires** (chaque épisode dure moins
+          d'une heure et occupe moins de la moitié de la période) ; le temps
+          **revient** ensuite à l'état précédent.
+        - **PROB30** / **PROB40** — une **probabilité** (30 % ou 40 %) qu'une
+          éventualité se produise.
+
+        Rappel — comme pour le METAR, **toutes les heures sont en UTC** (Z).
+  pieges:
+    - TAF = prévision, METAR = observation — ne pas confondre les deux messages.
+    - La période de validité (ex. 0612/0712) n'est pas l'heure d'émission ; l'heure d'émission est le groupe précédent (ex. 061100Z).
+    - TEMPO n'est pas BECMG — TEMPO décrit des fluctuations passagères (retour à l'état précédent), BECMG un changement durable.
+    - Toutes les heures d'un TAF sont en UTC (Z), jamais en heure locale.

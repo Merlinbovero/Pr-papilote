@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.taf-02
+kind: qcm
+theme: taf
+statement: >-
+  Dans un TAF, que signifie le groupe « TEMPO » ?
+choices:
+  - Des variations temporaires, avant retour à l'état précédent
+  - Un changement définitif à partir d'une heure donnée
+  - La fin de validité du message
+  - La température prévue au sol
+correctChoices: [0]
+explanation: >-
+  TEMPO annonce des fluctuations temporaires (chaque épisode dure moins d'une
+  heure et occupe moins de la moitié de la période) ; le temps revient ensuite à
+  l'état précédent. Un changement durable, lui, s'exprime par BECMG ou FM.
+evaluates: [fondamentaux.meteorologie.lire-un-taf]
+difficulty: 3
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie
