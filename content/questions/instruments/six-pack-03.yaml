@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.instruments.six-pack-03
+kind: qcm
+theme: six-instruments-de-base
+statement: >-
+  Quel instrument de base mesure la vitesse verticale (montée ou descente) de
+  l'avion ?
+choices:
+  - Le variomètre
+  - L'altimètre
+  - L'anémomètre
+  - Le conservateur de cap
+correctChoices: [0]
+explanation: >-
+  Le variomètre indique la vitesse verticale (en pieds/minute), à ne pas
+  confondre avec l'altimètre, qui indique l'altitude. Tous deux utilisent la
+  prise statique.
+evaluates: [fondamentaux.instruments.les-six-instruments-de-base]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
