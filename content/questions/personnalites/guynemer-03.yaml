@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.guynemer-03
+kind: qcm
+theme: guynemer
+statement: >-
+  Combien de victoires aériennes homologuées Georges Guynemer comptait-il ?
+choices:
+  - "53"
+  - "75"
+  - "30"
+  - "10"
+correctChoices: [0]
+explanation: >-
+  Guynemer totalise 53 victoires homologuées. Le plus grand as français en
+  nombre reste René Fonck (75 victoires) ; Guynemer en est la figure la plus
+  légendaire.
+evaluates: [culture.personnalites.georges-guynemer]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

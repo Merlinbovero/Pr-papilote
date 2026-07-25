@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.garros-03
+kind: qcm
+theme: roland-garros
+statement: >-
+  Quelle innovation du combat aérien Roland Garros a-t-il contribué à mettre au
+  point en 1915 ?
+choices:
+  - Le tir à travers l'hélice (déflecteurs sur les pales)
+  - Le parachute de secours
+  - Le radar embarqué
+  - Le train d'atterrissage rétractable
+correctChoices: [0]
+explanation: >-
+  En 1915, Garros fixe des déflecteurs sur les pales de l'hélice pour tirer vers
+  l'avant sans la briser. La vraie synchronisation de la mitrailleuse viendra
+  ensuite, côté allemand (Fokker).
+evaluates: [culture.personnalites.roland-garros]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

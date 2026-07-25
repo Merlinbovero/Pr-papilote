@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.bleriot-03
+kind: qcm
+theme: bleriot
+statement: >-
+  Quelle ville anglaise Louis Blériot a-t-il ralliée en traversant la Manche le
+  25 juillet 1909 ?
+choices:
+  - Douvres
+  - Londres
+  - Brighton
+  - Portsmouth
+correctChoices: [0]
+explanation: >-
+  Parti des Baraques (près de Calais), Blériot se pose à Douvres après une
+  trentaine de minutes de vol sur son monoplan Blériot XI.
+evaluates: [culture.personnalites.louis-bleriot]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.boucher-03
+kind: qcm
+theme: helene-boucher
+statement: >-
+  Quel honneur exceptionnel Hélène Boucher a-t-elle reçu à sa mort en 1934 ?
+choices:
+  - Elle est la première femme à recevoir des obsèques nationales aux Invalides
+  - Elle a été la première femme ministre de l'Air
+  - Elle a donné son nom à un porte-avions
+  - Elle a reçu le prix Nobel
+correctChoices: [0]
+explanation: >-
+  À sa mort à 26 ans, l'émotion nationale est telle qu'Hélène Boucher devient la
+  première femme à recevoir des obsèques nationales en la cathédrale
+  Saint-Louis-des-Invalides ; elle est faite chevalier de la Légion d'honneur à
+  titre posthume.
+evaluates: [culture.personnalites.helene-boucher]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
