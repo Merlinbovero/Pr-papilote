@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.geopolitique-defense.organisation-defense-01
+kind: qcm
+theme: organisation-defense
+statement: >-
+  Dans l'organisation de la défense française, qui est le « chef des armées » ?
+choices:
+  - Le Président de la République
+  - Le ministre des Armées
+  - Le chef d'état-major des armées (CEMA)
+  - Le Premier ministre
+correctChoices: [0]
+explanation: >-
+  L'article 15 de la Constitution fait du Président de la République le chef des
+  armées. Le ministre dirige le ministère et le CEMA commande les opérations,
+  mais le chef des armées est bien le Président.
+evaluates: [culture.geopolitique-defense.organisation-de-la-defense-francaise]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

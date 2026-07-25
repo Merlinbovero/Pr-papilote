@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.geopolitique-defense.organisation-defense-02
+kind: qcm
+theme: organisation-defense
+statement: >-
+  Qui est responsable de l'emploi des forces et assure le commandement des
+  opérations militaires ?
+choices:
+  - Le chef d'état-major des armées (CEMA)
+  - Le ministre des Armées
+  - Le Président de la République
+  - Le directeur général de l'armement
+correctChoices: [0]
+explanation: >-
+  Placé sous l'autorité du Président et du gouvernement, le CEMA est responsable
+  de l'emploi des forces et conduit les opérations militaires ; il est aussi le
+  conseiller militaire du gouvernement. Le ministre, lui, dirige la politique et
+  l'administration du ministère.
+evaluates: [culture.geopolitique-defense.organisation-de-la-defense-francaise]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

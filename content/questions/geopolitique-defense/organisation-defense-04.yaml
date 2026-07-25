@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.geopolitique-defense.organisation-defense-04
+kind: qcm
+theme: organisation-defense
+statement: >-
+  La dissuasion nucléaire française repose sur deux composantes. Lesquelles ?
+choices:
+  - Une composante océanique (SNLE) et une composante aéroportée
+  - Une composante terrestre et une composante spatiale
+  - Une composante aéroportée et une composante terrestre
+  - Une composante océanique et une composante cyber
+correctChoices: [0]
+explanation: >-
+  La dissuasion française associe la composante océanique — les sous-marins
+  nucléaires lanceurs d'engins (SNLE) — et la composante aéroportée (avions de
+  combat porteurs d'un missile nucléaire). Sa mise en œuvre relève du seul
+  Président de la République.
+evaluates: [culture.geopolitique-defense.organisation-de-la-defense-francaise]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

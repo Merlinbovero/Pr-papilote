@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.geopolitique-defense.organisation-defense-03
+kind: qcm
+theme: organisation-defense
+statement: >-
+  La Gendarmerie nationale est une force armée. De quel ministère relève-t-elle
+  pour son emploi ?
+choices:
+  - Le ministère de l'Intérieur
+  - Le ministère des Armées
+  - Le ministère de la Justice
+  - Les services du Premier ministre
+correctChoices: [0]
+explanation: >-
+  La Gendarmerie est bien une force armée à statut militaire, mais elle est
+  rattachée au ministère de l'Intérieur pour ses missions de sécurité — à ne pas
+  confondre avec les trois armées, qui relèvent du ministère des Armées.
+evaluates: [culture.geopolitique-defense.organisation-de-la-defense-francaise]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
