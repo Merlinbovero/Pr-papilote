@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
-import { CategoryCard } from "@/components/shared/category-card";
+import { CategoryIndex } from "@/components/shared/category-index";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getFichesByCategory } from "@/lib/content/fiches";
 import { getCategories, getModule } from "@/lib/content/referentials";
@@ -190,26 +190,13 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
         </ul>
       </section>
 
-      {/* Catégories nourries : cartes avec compteur ; le reste en liste discrète */}
+      {/* Catégories nourries : index de revue éditorial ; le reste en liste discrète */}
       {populated.length > 0 ? (
         <section aria-labelledby="categories-titre" className="space-y-4">
           <h2 id="categories-titre" className="text-xl font-semibold tracking-tight">
             À réviser
           </h2>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {populated.map((category) => (
-              <li key={category.slug}>
-                <CategoryCard
-                  href={`/${mod.slug}/${category.slug}`}
-                  name={category.name}
-                  categorySlug={category.slug}
-                  count={category.count}
-                  description={category.description}
-                  accentVar={accentVar}
-                />
-              </li>
-            ))}
-          </ul>
+          <CategoryIndex basePath={`/${mod.slug}`} categories={populated} accentVar={accentVar} />
         </section>
       ) : null}
 
