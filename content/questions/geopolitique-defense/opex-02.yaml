@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.geopolitique-defense.opex-02
+kind: qcm
+theme: operations-exterieures
+statement: >-
+  L'opération Chammal est le volet français d'une coalition internationale.
+  Contre quel adversaire, et dans quelle région ?
+choices:
+  - Contre Daech, en Irak puis en Syrie
+  - Contre les groupes djihadistes au Sahel
+  - Contre le régime libyen, en Libye
+  - Contre la piraterie, dans le golfe d'Aden
+correctChoices: [0]
+explanation: >-
+  Chammal (depuis le 19 septembre 2014) est le volet français de la coalition
+  internationale contre Daech (l'« État islamique »), d'abord en Irak puis en
+  Syrie. À ne pas confondre avec les opérations du Sahel (Serval, Barkhane).
+evaluates: [culture.geopolitique-defense.operations-exterieures-recentes]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
