@@ -3,6 +3,10 @@ id: lecture.manuel-du-pilote-davion
 slug: manuel-du-pilote-davion
 title: Manuel du pilote d'avion
 author: Collectif (sous l'égide de l'aviation civile / instructeurs)
+cover:
+  src: /images/lecture-manuel-du-pilote-davion.png
+  alt: Couverture du « Manuel du pilote d'Avion » (Cépaduès éditions) — formation initiale et maintien des compétences.
+  credit: Photo PrépaPilote — couverture © Cépaduès éditions (illustration)
 kind: livre
 publisher: Cépaduès éditions
 module: fondamentaux
