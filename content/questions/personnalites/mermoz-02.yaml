@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.mermoz-02
+kind: qcm
+theme: mermoz
+statement: >-
+  Quel exploit Jean Mermoz a-t-il réalisé le 12-13 mai 1930 ?
+choices:
+  - La première liaison postale de l'Atlantique Sud (Sénégal → Brésil)
+  - La première traversée de la Manche
+  - Le premier vol supersonique
+  - Le premier tour du monde en avion
+correctChoices: [0]
+explanation: >-
+  Les 12-13 mai 1930, Mermoz relie Saint-Louis du Sénégal à Natal (Brésil) avec
+  le courrier, à bord d'un hydravion Latécoère 28 : c'est la première liaison
+  postale de l'Atlantique Sud.
+evaluates: [culture.personnalites.jean-mermoz]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

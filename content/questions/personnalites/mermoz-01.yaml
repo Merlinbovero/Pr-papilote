@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.mermoz-01
+kind: qcm
+theme: mermoz
+statement: >-
+  Quel était le surnom de l'aviateur Jean Mermoz ?
+choices:
+  - « L'Archange »
+  - « Le Vieux Charles »
+  - « Le Cigogne »
+  - « Le Baron rouge »
+correctChoices: [0]
+explanation: >-
+  Jean Mermoz était surnommé « l'Archange ». « Le Vieux Charles » était l'avion
+  de Guynemer, et « le Baron rouge » désigne l'as allemand Manfred von
+  Richthofen.
+evaluates: [culture.personnalites.jean-mermoz]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
