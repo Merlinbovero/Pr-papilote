@@ -1,0 +1,149 @@
+schemaVersion: 1
+id: fondamentaux.meteorologie.lire-un-metar
+type: notion-meteo
+title: La météo aéronautique — lire un METAR
+slug: lire-un-metar
+image:
+  src: /images/fiche-metar.jpg
+  alt: Une manche à air d'aérodrome se découpe sur un ciel nuageux au crépuscule — le vent et les nuages, deux informations clés d'un METAR.
+  author: paullymac (Wikimedia Commons)
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Christmas_Island_Airport_at_dusk_(1).jpg
+  focal: 50% 45%
+summary: >-
+  Le METAR est le bulletin d'observation météo d'un aérodrome, codé de façon
+  normalisée dans le monde entier. Savoir en décoder les groupes — vent,
+  visibilité, temps, nuages, température, pression — est une compétence de base
+  du pilote.
+objectifs:
+  - Savoir ce qu'est un METAR et à quoi il sert.
+  - Décoder les principaux groupes d'un METAR (vent, visibilité, temps, nuages, température, QNH).
+  - Connaître les abréviations clés (CAVOK, FEW/SCT/BKN/OVC, RA, TS…).
+aliases:
+  [
+    METAR,
+    message d'observation,
+    météo aérodrome,
+    CAVOK,
+    QNH,
+    bulletin météo,
+  ]
+module: fondamentaux
+category: meteorologie
+tags: []
+concours: [eopan, eopn, alat]
+level: 2
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche météo « lire un METAR » ; format et abréviations vérifiés sur sources encyclopédiques (normalisation OACI/OMM).
+    author: prepapilote
+sources:
+  - title: "METAR — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/METAR
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "CAVOK, code de nébulosité (FEW/SCT/BKN/OVC) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/METAR
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - fondamentaux.meteorologie.le-vent
+    - fondamentaux.meteorologie.les-nuages
+    - fondamentaux.meteorologie.pression-et-calage
+    - fondamentaux.meteorologie.phenomenes-dangereux
+content:
+  essentiel:
+    body: |
+      Le **METAR** (*METeorological Aerodrome Report*) est le **message
+      d'observation** météorologique **régulière** d'un aérodrome. Il est
+      **codé** de façon **normalisée** (OACI / OMM), donc lisible partout dans le
+      monde, et diffusé en général **toutes les 30 minutes** ou **toutes les
+      heures**.
+
+      Il se lit **groupe par groupe**, toujours dans le **même ordre** :
+      l'**aérodrome** (code OACI), la **date et l'heure** (en **UTC**, suffixe
+      **Z**), le **vent**, la **visibilité**, le **temps présent** (pluie,
+      orage…), les **nuages**, la **température** et le **point de rosée**, la
+      **pression** (**QNH**), puis une éventuelle **tendance**.
+
+      Exemple :
+
+      `METAR LFPG 121330Z 24015G27KT 5000 RA BKN012 OVC020 12/09 Q1013 NOSIG`
+
+      → **Paris-CDG**, le **12** à **13 h 30 UTC**, vent du **240°** à **15 kt**
+      (rafales **27 kt**), visibilité **5000 m**, **pluie**, nuages **fragmentés
+      à 1200 ft** et **couverts à 2000 ft**, **12 °C** / rosée **9 °C**, **QNH
+      1013 hPa**, **pas de changement** significatif prévu.
+    aRetenir:
+      - METAR = message d'observation météo régulière d'un aérodrome, codé de façon normalisée (OACI/OMM).
+      - Les groupes se lisent toujours dans le même ordre — station, date/heure (UTC/Z), vent, visibilité, temps, nuages, température/rosée, QNH, tendance.
+      - Le vent se code direction (° vrais) + vitesse en kt (G = rafales) ; la nébulosité en octas (FEW/SCT/BKN/OVC).
+      - CAVOK = visibilité ≥ 10 km, pas de nuage bas gênant ni de phénomène significatif.
+  sections:
+    - id: la-structure
+      title: La structure d'un METAR
+      body: |
+        Chaque groupe a une place fixe. En reprenant l'exemple
+        `LFPG 121330Z 24015G27KT 5000 RA BKN012 OVC020 12/09 Q1013 NOSIG` :
+
+        | Groupe | Exemple | Signification |
+        | --- | --- | --- |
+        | Aérodrome | LFPG | Code OACI de l'aérodrome (Paris-CDG). |
+        | Date / heure | 121330Z | Le 12 du mois à 13 h 30 UTC (Z = temps universel). |
+        | Vent | 24015G27KT | Du 240° (vrais), 15 kt, rafales (G) 27 kt. |
+        | Visibilité | 5000 | 5000 m (9999 = 10 km ou plus ; CAVOK possible). |
+        | Temps présent | RA | Pluie (− faible, + forte ; voir abréviations). |
+        | Nuages | BKN012 OVC020 | Fragmenté à 1200 ft, couvert à 2000 ft. |
+        | Température / rosée | 12/09 | 12 °C, point de rosée 9 °C (M = valeur négative). |
+        | Pression | Q1013 | QNH 1013 hPa (A = pouces de mercure). |
+        | Tendance | NOSIG | Pas de changement significatif prévu. |
+
+        Les **hauteurs de nuages** sont en **centaines de pieds** au-dessus de
+        l'aérodrome : `BKN012` = fragmenté à **1200 ft**.
+    - id: nuages-et-cavok
+      title: Nuages, octas et CAVOK
+      body: |
+        La **nébulosité** se code en **octas** (huitièmes de ciel couvert) :
+
+        | Sigle | Nom | Couverture |
+        | --- | --- | --- |
+        | FEW | *Few* (épars) | 1 à 2/8 |
+        | SCT | *Scattered* (clairsemés) | 3 à 4/8 |
+        | BKN | *Broken* (fragmentés) | 5 à 7/8 |
+        | OVC | *Overcast* (couvert) | 8/8 |
+
+        Le mot **CAVOK** (*Ceiling And Visibility OK*) **remplace** à lui seul la
+        visibilité, le temps et les nuages quand **trois conditions** sont
+        réunies : visibilité **≥ 10 km**, **aucun nuage** sous **1500 m (5000 ft)**
+        ou sous l'altitude minimale de secteur ni de **cumulonimbus**, et **aucun
+        phénomène** météo significatif.
+    - id: les-abreviations
+      title: Les abréviations du temps présent
+      strate: maitriser
+      body: |
+        Le groupe « temps présent » combine une **intensité**, parfois un
+        **descripteur**, et un **phénomène** :
+
+        - **intensité** : `−` faible, (rien) modéré, `+` fort ;
+        - **phénomènes** fréquents : **RA** pluie, **DZ** bruine, **SN** neige,
+          **GR** grêle, **TS** orage, **FG** brouillard, **BR** brume, **HZ**
+          brume sèche ;
+        - **descripteurs** : **SH** averse, **FZ** surfondu (*freezing*), **MI**
+          mince, **BC** bancs.
+
+        Ainsi `+TSRA` se lit « **orage avec forte pluie** », `FZFG` « **brouillard
+        givrant** ». Un METAR peut aussi se terminer par une **tendance**
+        (`NOSIG`, `BECMG`… changement en cours, `TEMPO`… changement temporaire).
+  pieges:
+    - L'heure d'un METAR est toujours en UTC (suffixe Z), jamais en heure locale.
+    - La direction du vent est donnée en degrés vrais (par rapport au nord vrai), et la vitesse en nœuds (kt) — « G » signale les rafales.
+    - Les hauteurs de nuages sont en centaines de pieds au-dessus de l'aérodrome (BKN012 = 1200 ft), pas en mètres.
+    - CAVOK n'est pas « beau temps » au sens courant — c'est un ensemble de trois conditions précises (visibilité ≥ 10 km, pas de nuage bas gênant, pas de phénomène significatif).
