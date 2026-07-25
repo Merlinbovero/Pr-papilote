@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.guynemer-01
+kind: qcm
+theme: guynemer
+statement: >-
+  Au sein de quelle escadrille célèbre Georges Guynemer a-t-il remporté ses
+  victoires ?
+choices:
+  - L'escadrille des Cigognes
+  - L'escadrille Normandie-Niémen
+  - La patrouille de France
+  - L'escadron de chasse Lafayette
+correctChoices: [0]
+explanation: >-
+  Guynemer a volé au sein de l'escadrille des Cigognes (N.3, puis SPA 3), dont
+  il est devenu la figure de proue. Le Normandie-Niémen, lui, date de la Seconde
+  Guerre mondiale.
+evaluates: [culture.personnalites.georges-guynemer]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
