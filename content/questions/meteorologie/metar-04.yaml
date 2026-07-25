@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.metar-04
+kind: qcm
+theme: metar
+statement: >-
+  Dans un METAR, que représente le groupe « Q1013 » ?
+choices:
+  - Le calage altimétrique QNH, 1013 hPa
+  - La visibilité, 1013 mètres
+  - La température, 10 °C / point de rosée 13 °C
+  - La fréquence radio de la tour
+correctChoices: [0]
+explanation: >-
+  Le « Q » indique le QNH (calage altimétrique) en hectopascals — ici 1013 hPa.
+  Aux États-Unis, on trouve plutôt un « A » suivi de la pression en pouces de
+  mercure.
+evaluates: [fondamentaux.meteorologie.lire-un-metar]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

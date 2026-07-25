@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.guillaumet-03
+kind: qcm
+theme: guillaumet
+statement: >-
+  Dans quel massif montagneux Henri Guillaumet a-t-il survécu à un accident en
+  marchant plusieurs jours dans la neige ?
+choices:
+  - La Cordillère des Andes
+  - Le massif du Mont-Blanc
+  - L'Himalaya
+  - L'Atlas
+correctChoices: [0]
+explanation: >-
+  En juin 1930, après un atterrissage forcé dans la Cordillère des Andes,
+  Guillaumet marche cinq jours et quatre nuits avant d'être secouru — un exploit
+  d'endurance raconté par Saint-Exupéry.
+evaluates: [culture.personnalites.henri-guillaumet]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

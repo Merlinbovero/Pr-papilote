@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.geopolitique-defense.organisation-defense-05
+kind: qcm
+theme: organisation-defense
+statement: >-
+  Qui préside le Conseil de défense et de sécurité nationale (CDSN) ?
+choices:
+  - Le Président de la République
+  - Le Premier ministre
+  - Le ministre des Armées
+  - Le chef d'état-major des armées
+correctChoices: [0]
+explanation: >-
+  Le CDSN, où sont arrêtées les grandes orientations de défense et de sécurité,
+  est présidé par le Président de la République, chef des armées.
+evaluates: [culture.geopolitique-defense.organisation-de-la-defense-francaise]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
