@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.boucher-01
+kind: qcm
+theme: helene-boucher
+statement: >-
+  Pour quoi l'aviatrice Hélène Boucher est-elle surtout célèbre ?
+choices:
+  - Ses records du monde de vitesse en 1934
+  - La première traversée de l'Atlantique
+  - Le premier vol de nuit postal
+  - La mise au point du tir à travers l'hélice
+correctChoices: [0]
+explanation: >-
+  En 1934, Hélène Boucher établit plusieurs records du monde de vitesse (dont un
+  record féminin à 445 km/h) sur le Caudron Rafale. Elle meurt la même année,
+  à 26 ans, lors d'un vol d'entraînement.
+evaluates: [culture.personnalites.helene-boucher]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
