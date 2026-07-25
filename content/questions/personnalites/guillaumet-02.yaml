@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.guillaumet-02
+kind: qcm
+theme: guillaumet
+statement: >-
+  Avec quels autres aviateurs Henri Guillaumet forme-t-il le trio légendaire de
+  « la Ligne » (l'Aéropostale) ?
+choices:
+  - Jean Mermoz et Antoine de Saint-Exupéry
+  - Georges Guynemer et René Fonck
+  - Roland Garros et Louis Blériot
+  - Charles Lindbergh et Amelia Earhart
+correctChoices: [0]
+explanation: >-
+  Guillaumet, Mermoz et Saint-Exupéry sont les trois grandes figures de
+  l'Aéropostale (« la Ligne »). Guynemer et Fonck sont des as de la Première
+  Guerre mondiale ; Garros et Blériot, des pionniers d'avant-guerre.
+evaluates: [culture.personnalites.henri-guillaumet]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

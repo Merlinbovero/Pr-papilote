@@ -1,0 +1,121 @@
+schemaVersion: 1
+id: culture.personnalites.henri-guillaumet
+type: concept
+title: Henri Guillaumet, le rescapé des Andes
+slug: henri-guillaumet
+image:
+  src: /images/fiche-guillaumet.jpg
+  alt: Des aviateurs de l'Aéropostale, parmi lesquels Henri Guillaumet, photographiés en Amérique du Sud (années 1930).
+  author: G. Garitan (Wikimedia Commons)
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Victor_Etienne_Mermoz_Guillaumet_Rio_de_Janeiro.jpg
+  focal: 50% 30%
+summary: >-
+  Pilote de l'Aéropostale et compagnon de Mermoz et Saint-Exupéry, Henri
+  Guillaumet (1902-1940) est resté célèbre pour avoir survécu à un accident dans
+  la Cordillère des Andes en 1930, marchant cinq jours dans la neige. Il est
+  abattu en vol en 1940.
+objectifs:
+  - Situer Henri Guillaumet parmi les pilotes de l'Aéropostale.
+  - Connaître son exploit de survie dans les Andes (1930) et la phrase qui l'a immortalisé.
+  - Comprendre les circonstances de sa mort en 1940.
+aliases:
+  [
+    Guillaumet,
+    Henri Guillaumet,
+    Andes,
+    Aéropostale,
+    rescapé des Andes,
+    la Ligne,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Henri Guillaumet) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Henri Guillaumet — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Henri_Guillaumet
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.jean-mermoz
+    - culture.personnalites.antoine-de-saint-exupery
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Henri Guillaumet** (1902-1940) est, avec **Mermoz** et **Saint-Exupéry**,
+      l'une des trois grandes figures de « **la Ligne** » — l'aventure du
+      **courrier aérien** de l'Aéropostale. Il en fut le **spécialiste de la
+      Cordillère des Andes**, qu'il franchit des centaines de fois.
+
+      Sa légende naît d'un **accident** : le **13 juin 1930**, son **Potez 25**
+      se pose en catastrophe dans les **Andes**, en pleine tempête de neige. Donné
+      pour **perdu**, Guillaumet **marche cinq jours et quatre nuits** dans le
+      froid et l'altitude, refusant de se coucher pour ne pas mourir, jusqu'à être
+      **secouru**. Saint-Exupéry immortalise l'épisode dans *Terre des hommes*, et
+      rapporte sa phrase : « **Ce que j'ai fait, je te le jure, jamais aucune bête
+      ne l'aurait fait.** »
+
+      Passé à **Air France**, Guillaumet trouve la mort pendant la **Seconde
+      Guerre mondiale** : le **27 novembre 1940**, son avion, reliant Marignane à
+      Beyrouth, est **abattu** par un chasseur au-dessus de la **Méditerranée**.
+    aRetenir:
+      - Henri Guillaumet (1902-1940), pilote de l'Aéropostale, compagnon de Mermoz et Saint-Exupéry.
+      - Célèbre pour sa survie dans les Andes en 1930 — cinq jours de marche dans la neige après un accident.
+      - Saint-Exupéry rapporte sa phrase — « Ce que j'ai fait, jamais aucune bête ne l'aurait fait. »
+      - Il est abattu en vol au-dessus de la Méditerranée le 27 novembre 1940.
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 29 mai 1902, Bouy (Marne) |
+        | Mort | 27 novembre 1940, abattu au-dessus de la Méditerranée, à 38 ans |
+        | Compagnies | Latécoère, Aéropostale, Air France |
+        | Exploit | Survie dans les Andes (juin 1930) — cinq jours de marche |
+        | Spécialité | La ligne de la Cordillère des Andes |
+    - id: le-rescape-des-andes
+      title: Le rescapé des Andes (1930)
+      body: |
+        Franchir les **Andes** en avion, dans les années 1930, est l'une des
+        épreuves les plus dures de « la Ligne » : des sommets de plusieurs
+        **milliers de mètres**, un froid extrême, une météo brutale.
+
+        Le 13 juin 1930, pris dans une **tempête de neige**, Guillaumet doit poser
+        son **Potez 25** en catastrophe. Commence alors une **marche de survie**
+        de **cinq jours** dans la montagne. Épuisé, il tient par pure **volonté**,
+        se relevant sans cesse pour ne pas se laisser mourir dans le froid. Il est
+        finalement **sauvé** — un exploit d'**endurance** entré dans la légende
+        grâce au récit de **Saint-Exupéry**.
+    - id: la-ligne-et-la-fin
+      title: La Ligne et la fin
+      strate: maitriser
+      body: |
+        Guillaumet incarne, plus encore que l'exploit, la **fidélité au devoir**
+        et le **courage tranquille** du pilote de ligne. Ses camarades **Mermoz**
+        et **Saint-Exupéry** en ont fait un modèle d'**amitié** et de
+        **solidarité** entre aviateurs.
+
+        Après l'Aéropostale, il vole pour **Air France**. Le **27 novembre 1940**,
+        en pleine guerre, l'avion qu'il pilote entre **Marignane** et **Beyrouth**
+        est **abattu** au-dessus de la **Méditerranée**. Avec lui disparaît le
+        dernier des trois grands noms de « la Ligne ».
+  pieges:
+    - Guillaumet survit à son accident des Andes (1930) — ce n'est pas là qu'il meurt ; il est abattu en 1940 en Méditerranée.
+    - Son exploit est une marche de survie (endurance), pas un record de vitesse ou de distance.
+    - Il forme avec Mermoz et Saint-Exupéry le trio de « la Ligne », mais l'épisode des Andes lui est propre.
+    - En 1940, il meurt dans un avion civil abattu par la guerre, et non au combat comme pilote militaire.
