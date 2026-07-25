@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.mermoz-03
+kind: qcm
+theme: mermoz
+statement: >-
+  À bord de quel hydravion Jean Mermoz a-t-il disparu en décembre 1936 ?
+choices:
+  - La « Croix-du-Sud » (Latécoère 300)
+  - Le « Comte-de-la-Vaulx » (Latécoère 28)
+  - Le « Spirit of St. Louis »
+  - Le « Point d'Interrogation »
+correctChoices: [0]
+explanation: >-
+  Mermoz a disparu le 7 décembre 1936 à bord de l'hydravion Latécoère 300
+  « Croix-du-Sud », après une avarie moteur. Le Latécoère 28 « Comte-de-la-Vaulx »
+  était l'appareil de sa traversée postale de 1930.
+evaluates: [culture.personnalites.jean-mermoz]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

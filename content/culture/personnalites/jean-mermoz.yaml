@@ -1,0 +1,124 @@
+schemaVersion: 1
+id: culture.personnalites.jean-mermoz
+type: concept
+title: Jean Mermoz, l'Archange de l'Aéropostale
+slug: jean-mermoz
+image:
+  src: /images/fiche-mermoz.jpg
+  alt: Portrait de l'aviateur Jean Mermoz, souriant, en blouson de vol (années 1930).
+  author: Auteur inconnu — domaine public
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Jean_Mermoz_11.jpg
+  focal: 50% 22%
+summary: >-
+  Pilote mythique de l'Aéropostale, Jean Mermoz (1901-1936), surnommé
+  « l'Archange », a ouvert les grandes lignes du courrier aérien — la Cordillère
+  des Andes, puis la première liaison postale de l'Atlantique Sud — avant de
+  disparaître en mer à bord de la « Croix-du-Sud ».
+objectifs:
+  - Situer Jean Mermoz dans l'épopée de l'Aéropostale (courrier aérien, années 1920-1930).
+  - Connaître ses exploits — la traversée des Andes et la première liaison postale de l'Atlantique Sud.
+  - Comprendre l'« esprit pionnier » de la Ligne, culture partagée par les grands aviateurs français.
+aliases:
+  [
+    Mermoz,
+    Jean Mermoz,
+    Aéropostale,
+    l'Archange,
+    Croix-du-Sud,
+    Atlantique Sud,
+    la Ligne,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Jean Mermoz) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Jean Mermoz — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Jean_Mermoz
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.georges-guynemer
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Jean Mermoz** (1901-1936) est l'une des grandes figures de l'**épopée de
+      l'Aéropostale**, cette aventure du **courrier aérien** qui, dans les années
+      1920-1930, relia la France à l'Afrique et à l'Amérique du Sud. Pilote
+      d'exception, surnommé « **l'Archange** », il incarne l'**esprit pionnier**
+      de « la Ligne ».
+
+      Entré chez **Latécoère** (devenue la **Compagnie générale aéropostale**),
+      il ouvre des routes réputées impossibles : la traversée de la **Cordillère
+      des Andes** (**1929**), puis, le **12-13 mai 1930**, la **première liaison
+      postale de l'Atlantique Sud** — de **Saint-Louis du Sénégal** à **Natal**
+      (Brésil), à bord de l'hydravion **Latécoère 28** « Comte-de-la-Vaulx », en
+      un peu plus de **21 heures**.
+
+      Le **7 décembre 1936**, à **34 ans**, il **disparaît** au-dessus de
+      l'**Atlantique Sud** à bord de l'hydravion **Latécoère 300 « Croix-du-Sud »**,
+      après avoir signalé une **avarie moteur**. Sa disparition en fait, comme
+      Guynemer, une **légende** de l'aviation française.
+    aRetenir:
+      - Jean Mermoz (1901-1936) — pilote de l'Aéropostale, surnommé « l'Archange ».
+      - Il ouvre la ligne des Andes (1929) et réalise la première liaison postale de l'Atlantique Sud (mai 1930).
+      - Il vole pour Latécoère, puis la Compagnie générale aéropostale (« la Ligne »).
+      - Il disparaît le 7 décembre 1936 à bord de l'hydravion « Croix-du-Sud ».
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 9 décembre 1901, Aubenton (Aisne) |
+        | Disparition | 7 décembre 1936, au-dessus de l'Atlantique Sud, à 34 ans |
+        | Compagnie | Latécoère, puis Compagnie générale aéropostale |
+        | Surnom | « L'Archange » |
+        | Exploits | Traversée des Andes (1929) ; 1ʳᵉ liaison postale de l'Atlantique Sud (1930) |
+        | Dernier avion | Hydravion Latécoère 300 « Croix-du-Sud » |
+    - id: les-lignes
+      title: Les lignes de l'Aéropostale
+      body: |
+        L'**Aéropostale** ne transporte pas d'abord des passagers, mais le
+        **courrier** : il faut acheminer les lettres **toujours plus vite**, et
+        **coûte que coûte**. Cela suppose de franchir des obstacles redoutables.
+
+        Mermoz ouvre ainsi la ligne des **Andes** (1929), en faisant passer les
+        avions au-dessus de sommets de plusieurs milliers de mètres. Puis il
+        s'attaque à l'**Atlantique Sud** : le **12-13 mai 1930**, il relie
+        **Saint-Louis du Sénégal** à **Natal** (Brésil) avec le courrier, à bord
+        d'un hydravion **Latécoère 28**. Entre 1930 et 1936, il multipliera les
+        **traversées** de l'Atlantique Sud.
+    - id: la-legende
+      title: La légende de la Croix-du-Sud
+      strate: maitriser
+      body: |
+        Le **7 décembre 1936**, l'hydravion **« Croix-du-Sud »** décolle de Dakar
+        pour l'Amérique du Sud. Peu après, Mermoz signale une **avarie** à un
+        moteur, puis le contact est perdu : l'appareil et son équipage
+        **disparaissent** en mer.
+
+        Comme Guynemer, Mermoz devient un **héros national**, symbole du
+        **courage** et du **sens du devoir**. Il partage cette légende de « la
+        Ligne » avec d'autres pilotes fameux — **Antoine de Saint-Exupéry** et
+        **Henri Guillaumet** — dont les récits ont fait entrer l'Aéropostale dans
+        la **culture** française. Un bel exemple de l'esprit d'**équipe** et de
+        **dépassement** attendu d'un futur pilote.
+  pieges:
+    - Mermoz a réussi la première liaison postale de l'Atlantique Sud (transport du courrier), pas la toute première traversée aérienne de cet océan — c'est une nuance classique.
+    - L'Aéropostale est une compagnie civile de transport du courrier, pas une unité militaire — même si elle a forgé un esprit « pionnier ».
+    - La « Croix-du-Sud » est l'hydravion de sa disparition (1936) ; l'avion de la traversée de 1930 était un Latécoère 28 (« Comte-de-la-Vaulx »).
+    - Mermoz partage la légende de « la Ligne » avec Saint-Exupéry et Guillaumet — mais chacun a son histoire propre.
