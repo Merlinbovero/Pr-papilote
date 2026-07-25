@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.dauphin-02
+kind: qcm
+theme: dauphin
+statement: Au sein de quelles flottilles le Dauphin de l'aéronautique navale est-il mis en œuvre ?
+choices:
+- Les flottilles 34F (Lanvéoc-Poulmic) et 35F (Hyères)
+- La flottille 36F uniquement
+- Les flottilles 24F et 25F
+- L'escadron 1/54 « Dunkerque »
+correctChoices:
+- 0
+explanation: Le Dauphin est mis en œuvre par les flottilles 34F (Lanvéoc-Poulmic) et 35F (Hyères), avec un équipage de 3 (2 pilotes + 1 mécanicien), un radar et un treuil de sauvetage.
+evaluates:
+- eopan.appareils.dauphin
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+status: publie

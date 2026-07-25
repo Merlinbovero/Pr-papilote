@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.panther-02
+kind: qcm
+theme: panther
+statement: Quel est le rôle principal du Panther au sein de l'aéronautique navale ?
+choices:
+- Armer l'alerte et les missions de sûreté et de soutien depuis les frégates
+- La lutte anti-sous-marine lourde
+- Le secours en mer et la servitude
+- Le transport de commandos des forces spéciales
+correctChoices:
+- 0
+explanation: Le Panther, version militaire embarquée du Dauphin, arme l'alerte (plan d'action immédiat) et les missions de sûreté et de soutien depuis les frégates (flottille 36F, Hyères). Il ne remplit pas les missions lourdes du NH90 Caïman.
+evaluates:
+- eopan.appareils.panther
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+status: publie
