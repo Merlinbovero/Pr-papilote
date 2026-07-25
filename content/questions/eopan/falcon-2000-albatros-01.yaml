@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.falcon-2000-albatros-01
+kind: qcm
+theme: falcon-2000-albatros
+statement: >-
+  Le Falcon 2000 Albatros (programme AVSIMAR) doit remplacer quels avions de la
+  Marine ?
+choices:
+  - Les Falcon 50M et Falcon 200 Gardian
+  - Les Rafale Marine
+  - Les E-3F AWACS
+  - Les Atlantique 2
+correctChoices: [0]
+explanation: >-
+  L'Albatros (dérivé du Falcon 2000LXS) est le futur avion de surveillance et
+  d'intervention maritime (AVSIMAR) ; il succède aux Falcon 50M et Falcon 200
+  Gardian pour la surveillance des espaces maritimes.
+evaluates: [eopan.appareils.falcon-2000-albatros]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.falcon-50m-01
+kind: qcm
+theme: falcon-50m
+statement: >-
+  Quelle est la mission du Falcon 50M (Surmar) de l'aéronautique navale ?
+choices:
+  - La surveillance maritime et le secours en mer
+  - La chasse embarquée
+  - Le ravitaillement en vol des chasseurs
+  - La détection radar aéroportée
+correctChoices: [0]
+explanation: >-
+  Le Falcon 50M (Surmar), triréacteur dérivé du Falcon 50 d'affaires, assure la
+  surveillance des espaces maritimes et le secours en mer — pas la lutte
+  anti-sous-marine armée. Il sera remplacé par le Falcon 2000 Albatros.
+evaluates: [eopan.appareils.falcon-50m]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.caracal-01
+kind: qcm
+theme: caracal
+statement: >-
+  À l'ALAT, quel type d'unité met en œuvre le Caracal (H225M) ?
+choices:
+  - Les forces spéciales (4e RHFS)
+  - Une école de pilotage
+  - Une flottille embarquée
+  - Un escadron de chasse
+correctChoices: [0]
+explanation: >-
+  Le Caracal (dernier de la lignée Puma/Super Puma) équipe le 4e RHFS pour les
+  opérations spéciales — transport de commandos, RESCO — avec une très grande
+  autonomie (ravitaillement en vol).
+evaluates: [alat.appareils.caracal]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

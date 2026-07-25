@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.e-3f-awacs-01
+kind: qcm
+theme: e-3f-awacs
+statement: >-
+  À quoi sert l'E-3F AWACS (SDCA) de l'armée de l'Air et de l'Espace ?
+choices:
+  - À la détection radar et au commandement de la manœuvre aérienne
+  - Au transport de troupes
+  - Au ravitaillement en vol
+  - À la lutte anti-sous-marine
+correctChoices: [0]
+explanation: >-
+  L'E-3F, « radar volant » (rotodôme dorsal détectant à plus de 400 km), assure
+  la détection et le commandement aéroporté (SDCA). Quatre exemplaires dérivés du
+  Boeing 707 sont basés à Avord.
+evaluates: [eopn.appareils.e-3f-awacs]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

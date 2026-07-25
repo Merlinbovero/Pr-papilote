@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.falcon-8x-archange-01
+kind: qcm
+theme: falcon-8x-archange
+statement: >-
+  Quelle est la mission du Falcon 8X Archange (programme CUGE) ?
+choices:
+  - Le renseignement électronique (ROEM / SIGINT)
+  - Le transport de parachutistes
+  - L'interception de chasseurs
+  - La surveillance maritime
+correctChoices: [0]
+explanation: >-
+  L'Archange, dérivé du Falcon 8X et porteur de la charge CUGE de Thales, est le
+  futur avion de renseignement électromagnétique (ROEM / SIGINT) ; il remplace
+  les C-160 Gabriel.
+evaluates: [eopn.appareils.falcon-8x-archange]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.alat.alouette-iii-01
+kind: qcm
+theme: alouette-iii
+statement: >-
+  Quel hélicoptère, pilier de l'ALAT des années 1960 aux années 1990, a été
+  employé en lutte antichar avec les missiles SS11 ?
+choices:
+  - L'Alouette III (SA316)
+  - Le Caracal
+  - Le Tigre
+  - Le NH90 Caïman
+correctChoices: [0]
+explanation: >-
+  L'Alouette III (SA316), hélicoptère léger polyvalent monoturbine, fut un pilier
+  de l'ALAT (1963-1999) — liaison, évacuation sanitaire et lutte antichar (SS11) —
+  avant d'être remplacée par la Gazelle.
+evaluates: [alat.appareils.alouette-iii]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie
