@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: culture.personnalites.antoine-de-saint-exupery
+type: concept
+title: Antoine de Saint-Exupéry, pilote et écrivain
+slug: antoine-de-saint-exupery
+image:
+  src: /images/fiche-saint-exupery.jpg
+  alt: Portrait en noir et blanc du jeune Antoine de Saint-Exupéry, aviateur et écrivain.
+  author: Auteur inconnu — domaine public
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Antoine_de_Saint-Euxpery_(1920).jpg
+  focal: 50% 25%
+summary: >-
+  Aviateur de l'Aéropostale et grand écrivain, Antoine de Saint-Exupéry
+  (1900-1944) a tiré de ses vols une œuvre majeure — « Vol de nuit », « Terre des
+  hommes », « Le Petit Prince » — avant de disparaître en mission de
+  reconnaissance en 1944.
+objectifs:
+  - Situer Antoine de Saint-Exupéry comme pilote (Aéropostale, puis reconnaissance) et comme écrivain.
+  - Connaître ses œuvres majeures nées de l'expérience du vol.
+  - Comprendre les circonstances de sa disparition en 1944 et sa place dans la mémoire aéronautique.
+aliases:
+  [
+    Saint-Exupéry,
+    Saint-Ex,
+    Le Petit Prince,
+    Vol de nuit,
+    Terre des hommes,
+    Aéropostale,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Antoine de Saint-Exupéry) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org, Britannica).
+    author: prepapilote
+sources:
+  - title: "Antoine de Saint-Exupéry — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Antoine_de_Saint-Exup%C3%A9ry
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Antoine de Saint-Exupéry — Encyclopædia Britannica"
+    url: https://www.britannica.com/biography/Antoine-de-Saint-Exupery
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.jean-mermoz
+    - culture.personnalites.georges-guynemer
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Antoine de Saint-Exupéry** (1900-1944) est une figure unique :
+      **pilote** et **écrivain** à la fois. De ses années de vol, il a tiré une
+      **œuvre littéraire** parmi les plus lues au monde.
+
+      Pilote de l'**Aéropostale**, il connaît les escales isolées — il est chef
+      d'aéroplace à **Cap Juby**, sur la côte du Sahara — et partage l'esprit de
+      « la Ligne » avec **Mermoz** et **Guillaumet**. De cette expérience
+      naissent ses premiers livres : **« Courrier Sud »** (1929), **« Vol de
+      nuit »** (1931, prix Femina), puis **« Terre des hommes »** (1939).
+
+      Pendant la **Seconde Guerre mondiale**, il redevient **pilote de
+      reconnaissance** (escadrille **2/33**) et publie **« Pilote de guerre »**
+      (1942) et le célèbre **« Le Petit Prince »** (1943). Le **31 juillet
+      1944**, il **disparaît** en Méditerranée, au large de **Marseille**, aux
+      commandes d'un **Lockheed P-38 Lightning**, lors d'une mission de
+      reconnaissance.
+    aRetenir:
+      - Saint-Exupéry (1900-1944) est à la fois pilote (Aéropostale, puis reconnaissance) et grand écrivain.
+      - Ses œuvres naissent du vol — « Vol de nuit » (1931), « Terre des hommes » (1939), « Le Petit Prince » (1943).
+      - Il disparaît le 31 juillet 1944 en mission de reconnaissance, aux commandes d'un Lockheed P-38.
+      - Il incarne, avec Mermoz et Guillaumet, l'esprit de « la Ligne ».
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 29 juin 1900, Lyon |
+        | Disparition | 31 juillet 1944, en Méditerranée (au large de Marseille), en mission |
+        | Carrière | Pilote de l'Aéropostale (Cap Juby), puis pilote de reconnaissance (escadrille 2/33) |
+        | Dernier avion | Lockheed P-38 Lightning (version de reconnaissance) |
+        | Œuvres majeures | « Vol de nuit » (1931), « Terre des hommes » (1939), « Le Petit Prince » (1943) |
+    - id: le-pilote-et-l-ecrivain
+      title: Le pilote et l'écrivain
+      body: |
+        Chez Saint-Exupéry, le **vol nourrit l'écriture**. Les nuits de courrier
+        au-dessus de l'Amérique du Sud inspirent **« Vol de nuit »** ; les
+        escales du désert et le sauvetage de son ami **Guillaumet** dans les
+        Andes irriguent **« Terre des hommes »**. Il n'écrit pas *sur* l'aviation
+        de l'extérieur : il écrit **en pilote**, sur le courage, la responsabilité
+        et le lien entre les hommes.
+
+        Cette double vie fait de lui un **passeur** : il donne à comprendre, au
+        grand public, ce que vivent les aviateurs — une raison de plus pour un
+        candidat de connaître son nom et son œuvre.
+    - id: une-disparition-mythique
+      title: Une disparition mythique
+      strate: maitriser
+      body: |
+        Engagé dans la France libre, Saint-Exupéry obtient, malgré son âge et ses
+        blessures, de **voler à nouveau** en reconnaissance. Le **31 juillet
+        1944**, il décolle de **Corse** pour survoler la France ; il ne
+        **revient jamais**.
+
+        Le mystère de sa disparition a longtemps duré : son **bracelet** est
+        repêché en **1998**, et l'**épave** de son avion identifiée en **2004**
+        au large de Marseille. Comme Guynemer et Mermoz, il est ainsi devenu une
+        **légende** — celle d'un homme qui a lié jusqu'au bout le **vol** et
+        l'**humanisme**.
+  pieges:
+    - Saint-Exupéry est pilote ET écrivain — ne pas le réduire à « l'auteur du Petit Prince ».
+    - « Le Petit Prince » (1943) n'est pas son seul livre — « Vol de nuit » et « Terre des hommes » sont nés de l'Aéropostale.
+    - Il disparaît en 1944 lors d'une mission militaire de reconnaissance (sur P-38), pas au cours d'un vol de l'Aéropostale.
+    - Cap Juby n'est pas un avion mais une escale isolée du Sahara, dont il fut chef d'aéroplace.
