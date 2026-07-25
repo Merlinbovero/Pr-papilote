@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.instruments.six-pack-01
+kind: qcm
+theme: six-instruments-de-base
+statement: >-
+  Dans le « six-pack », quel instrument occupe le centre de la rangée
+  supérieure, autour duquel s'organise le « T de base » ?
+choices:
+  - L'horizon artificiel
+  - L'altimètre
+  - L'anémomètre
+  - Le variomètre
+correctChoices: [0]
+explanation: >-
+  L'horizon artificiel (assiette) est placé au centre de la rangée supérieure ;
+  l'anémomètre, l'altimètre et le conservateur de cap l'entourent pour former le
+  « T de base ». C'est l'instrument le plus regardé.
+evaluates: [fondamentaux.instruments.les-six-instruments-de-base]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

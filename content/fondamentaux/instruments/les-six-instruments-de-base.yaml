@@ -1,0 +1,143 @@
+schemaVersion: 1
+id: fondamentaux.instruments.les-six-instruments-de-base
+type: concept
+title: Les 6 instruments de base du tableau de bord
+slug: les-six-instruments-de-base
+image:
+  src: /images/fiche-six-pack.jpg
+  alt: Le tableau de bord d'un avion léger (Cessna 172) montrant les six instruments de base — anémomètre, horizon artificiel, altimètre, coordinateur de virage, conservateur de cap et variomètre.
+  author: Kentaro Iemoto (Wikimedia Commons)
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Cessna172P_Instrument_panel_(3945364004).jpg
+  focal: 45% 55%
+summary: >-
+  Le « six-pack » — les six instruments classiques du tableau de bord : vitesse,
+  assiette, altitude, virage, cap et vitesse verticale. On les regroupe en deux
+  familles (pression et gyroscopiques) et on les dispose en « T » autour de
+  l'horizon artificiel.
+objectifs:
+  - Nommer les six instruments de base et la grandeur que chacun mesure.
+  - Comprendre la disposition standard (le « T de base ») autour de l'horizon artificiel.
+  - Distinguer les deux familles — instruments à pression (Pitot-statique) et instruments gyroscopiques.
+aliases:
+  [
+    six-pack,
+    six instruments de base,
+    tableau de bord,
+    T de base,
+    instruments de vol,
+    planche de bord,
+  ]
+module: fondamentaux
+category: instruments
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche de synthèse « les 6 instruments de base » (relie les fiches d'instruments existantes) ; faits vérifiés sur sources encyclopédiques.
+    author: prepapilote
+sources:
+  - title: "Instrument de vol — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Instrument_de_vol
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Anémomètre (aéronautique), Altimètre, Variomètre, Horizon artificiel — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Instrument_de_vol
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - fondamentaux.instruments.anemometre
+    - fondamentaux.instruments.altimetre
+    - fondamentaux.instruments.horizon-artificiel
+    - fondamentaux.instruments.compas-et-conservateur
+    - fondamentaux.instruments.chaine-pitot-statique
+content:
+  essentiel:
+    body: |
+      Sur un avion classique, six instruments **analogiques** suffisent à voler :
+      c'est ce qu'on appelle familièrement le **« six-pack »**. Chacun mesure une
+      **grandeur** du vol :
+
+      1. l'**anémomètre** (ou badin) — la **vitesse** par rapport à l'air ;
+      2. l'**horizon artificiel** — l'**assiette** de l'avion (tangage et
+         inclinaison) ;
+      3. l'**altimètre** — l'**altitude** ;
+      4. le **coordinateur de virage** (bille-aiguille) — le **taux de virage**
+         et la **symétrie** du vol (la bille) ;
+      5. le **conservateur de cap** (directionnel) — le **cap** ;
+      6. le **variomètre** — la **vitesse verticale** (montée ou descente).
+
+      Ils sont rangés en **deux rangées de trois** et forment un **« T de
+      base »** centré sur l'**horizon artificiel**, l'instrument le plus regardé.
+      Enfin, ils se répartissent en **deux familles** selon leur principe : les
+      instruments **à pression** (chaîne **Pitot-statique**) et les instruments
+      **gyroscopiques**.
+    aRetenir:
+      - Les six instruments — anémomètre, horizon artificiel, altimètre, coordinateur de virage, conservateur de cap, variomètre.
+      - Disposition en deux rangées de trois ; le « T de base » place l'horizon artificiel au centre.
+      - Trois instruments à pression (anémomètre, altimètre, variomètre) et trois gyroscopiques (horizon, conservateur de cap, coordinateur de virage).
+      - Chaque instrument mesure une grandeur — vitesse, assiette, altitude, virage, cap, vitesse verticale.
+  sections:
+    - id: la-disposition-en-t
+      title: La disposition en « T »
+      body: |
+        Les six instruments occupent une place **normalisée**, pour qu'un pilote
+        les retrouve d'un avion à l'autre :
+
+        | Rangée | Gauche | Centre | Droite |
+        | --- | --- | --- | --- |
+        | Haut | Anémomètre (vitesse) | Horizon artificiel (assiette) | Altimètre (altitude) |
+        | Bas | Coordinateur de virage (virage + symétrie) | Conservateur de cap (cap) | Variomètre (vitesse verticale) |
+
+        Les **quatre instruments principaux** — anémomètre, horizon, altimètre et
+        conservateur de cap — forment un **« T »** autour de l'horizon artificiel.
+        C'est le **balayage visuel** de base : l'œil revient sans cesse à
+        l'horizon, au centre.
+    - id: deux-familles-selon-le-principe
+      title: Deux familles selon le principe
+      body: |
+        Chaque instrument fonctionne selon l'un de **deux principes** :
+
+        | Instrument | Grandeur mesurée | Principe |
+        | --- | --- | --- |
+        | Anémomètre | Vitesse (air) | Pression (Pitot + statique) |
+        | Altimètre | Altitude | Pression (statique) |
+        | Variomètre | Vitesse verticale | Pression (statique) |
+        | Horizon artificiel | Assiette | Gyroscopique |
+        | Conservateur de cap | Cap | Gyroscopique |
+        | Coordinateur de virage | Taux de virage & symétrie | Gyroscopique |
+
+        Les trois **instruments à pression** partagent la **chaîne
+        Pitot-statique** ; les trois **gyroscopiques** reposent sur un **gyroscope**
+        (entraîné par dépression ou électriquement).
+    - id: pannes-et-pieges
+      title: Pannes et vigilance
+      strate: maitriser
+      body: |
+        Comprendre le **principe** de chaque instrument, c'est aussi anticiper ses
+        **pannes** :
+
+        - un **Pitot givré** ou une **prise statique obstruée** faussent
+          l'anémomètre, l'altimètre et le variomètre (les trois instruments de
+          pression) ;
+        - une **panne de dépression** (pompe à vide) fige les instruments
+          gyroscopiques classiques (horizon, conservateur de cap) ;
+        - le **conservateur de cap** dérive avec le temps : on le **recale**
+          régulièrement sur le **compas magnétique**.
+
+        C'est pourquoi le pilote ne se fie jamais à un seul instrument, mais
+        **recoupe** les informations — le cœur du pilotage « aux instruments ».
+  pieges:
+    - Le variomètre indique une vitesse verticale (montée/descente), pas une altitude — ne pas le confondre avec l'altimètre.
+    - Anémomètre, altimètre et variomètre dépendent de la chaîne Pitot-statique — une prise obstruée les fausse tous les trois.
+    - Le conservateur de cap (gyroscopique) dérive et doit être recalé sur le compas magnétique.
+    - Sur le coordinateur de virage, l'aiguille (ou l'avion symbolique) donne le taux de virage, la bille donne la symétrie du vol.

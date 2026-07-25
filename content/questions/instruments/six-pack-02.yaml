@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.instruments.six-pack-02
+kind: qcm
+theme: six-instruments-de-base
+statement: >-
+  Parmi ces instruments, lesquels reposent sur la chaîne Pitot-statique (mesure
+  de pression) ?
+choices:
+  - Anémomètre, altimètre et variomètre
+  - Horizon artificiel, conservateur de cap et coordinateur de virage
+  - Altimètre, horizon artificiel et compas
+  - Anémomètre, horizon artificiel et variomètre
+correctChoices: [0]
+explanation: >-
+  Les trois instruments à pression sont l'anémomètre, l'altimètre et le
+  variomètre. Les trois autres (horizon artificiel, conservateur de cap,
+  coordinateur de virage) sont gyroscopiques.
+evaluates: [fondamentaux.instruments.les-six-instruments-de-base]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
