@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.alat.puma-01
+kind: qcm
+theme: puma
+statement: >-
+  Quel hélicoptère de manœuvre, en service à l'ALAT depuis 1969, est le pilier
+  historique de l'héliportage tactique ?
+choices:
+  - Le Puma (SA330)
+  - Le Tigre
+  - L'Alouette II
+  - Le Fennec
+correctChoices: [0]
+explanation: >-
+  Le Puma (SA330), biturbine robuste transportant jusqu'à 16 soldats, est en
+  service depuis 1969 ; tête de la lignée Puma → Super Puma → Cougar → Caracal,
+  il est aujourd'hui relevé par le NH90 Caïman et le Caracal.
+evaluates: [alat.appareils.puma]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

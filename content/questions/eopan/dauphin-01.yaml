@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.eopan.dauphin-01
+kind: qcm
+theme: dauphin
+statement: >-
+  Quelle est la mission principale de l'hélicoptère Dauphin de l'aéronautique
+  navale ?
+choices:
+  - Le secours en mer et la servitude (récupération de pilote, « Pedro »)
+  - La lutte anti-sous-marine armée
+  - Le bombardement stratégique
+  - Le transport de chars
+correctChoices: [0]
+explanation: >-
+  Le Dauphin est l'hélicoptère de secours en mer et de servitude de la Marine
+  (sauvetage, récupération de pilote depuis le porte-avions — fonction « Pedro »),
+  au sein des flottilles 34F et 35F.
+evaluates: [eopan.appareils.dauphin]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

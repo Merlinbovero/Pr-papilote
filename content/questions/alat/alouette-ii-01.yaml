@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.alouette-ii-01
+kind: qcm
+theme: alouette-ii
+statement: >-
+  Quelle particularité historique distingue l'Alouette II (SE3130) ?
+choices:
+  - C'est le premier hélicoptère de série à turbine au monde
+  - C'est le premier hélicoptère à réaction
+  - C'est le premier hélicoptère biplace de l'histoire
+  - C'est le premier drone hélicoptère
+correctChoices: [0]
+explanation: >-
+  L'Alouette II (premier vol 1955) est le premier hélicoptère de série à turbine
+  au monde et une pionnière de l'ALAT — liaison, évacuation sanitaire, premiers
+  essais antichar.
+evaluates: [alat.appareils.alouette-ii]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [alat]
+status: publie

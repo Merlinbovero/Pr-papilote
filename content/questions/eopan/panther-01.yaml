@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.panther-01
+kind: qcm
+theme: panther
+statement: >-
+  Le Panther (AS565) de la Marine est la version militaire embarquée de quel
+  hélicoptère ?
+choices:
+  - Le Dauphin
+  - Le NH90 Caïman
+  - Le Caracal
+  - L'Alouette III
+correctChoices: [0]
+explanation: >-
+  Le Panther est la version militaire du Dauphin ; hélicoptère embarqué léger, il
+  arme l'alerte des bâtiments de combat au sein de la flottille 36F (Hyères).
+evaluates: [eopan.appareils.panther]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan]
+status: publie

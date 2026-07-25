@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.c-130-hercules-01
+kind: qcm
+theme: c-130-hercules
+statement: >-
+  Quel est le rôle du C-130 Hercules dans l'armée de l'Air et de l'Espace ?
+choices:
+  - Avion de transport tactique (complément de l'A400M)
+  - Avion de chasse
+  - Avion radar de détection
+  - Bombardier stratégique
+correctChoices: [0]
+explanation: >-
+  Le C-130 Hercules est un avion de transport tactique à turbopropulseurs
+  (fret, troupes, largage, poser d'assaut sur terrains sommaires), complément de
+  l'A400M ; versions C-130H et C-130J Super Hercules.
+evaluates: [eopn.appareils.c-130-hercules]
+difficulty: 1
+competencies: [connaissances-aeronautiques]
+concours: [eopn]
+status: publie
