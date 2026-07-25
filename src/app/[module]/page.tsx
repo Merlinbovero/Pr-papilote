@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
-import { CategoryIndex } from "@/components/shared/category-index";
+import { CategoryTable } from "@/components/shared/category-table";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getFichesByCategory } from "@/lib/content/fiches";
 import { getCategories, getModule } from "@/lib/content/referentials";
@@ -190,13 +190,13 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
         </ul>
       </section>
 
-      {/* Catégories nourries : index de revue éditorial ; le reste en liste discrète */}
+      {/* Catégories nourries : tableau de revue éditorial ; le reste en liste discrète */}
       {populated.length > 0 ? (
         <section aria-labelledby="categories-titre" className="space-y-4">
           <h2 id="categories-titre" className="text-xl font-semibold tracking-tight">
             À réviser
           </h2>
-          <CategoryIndex basePath={`/${mod.slug}`} categories={populated} accentVar={accentVar} />
+          <CategoryTable basePath={`/${mod.slug}`} categories={populated} accentVar={accentVar} />
         </section>
       ) : null}
 
