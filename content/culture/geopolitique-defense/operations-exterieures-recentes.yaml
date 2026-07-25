@@ -1,0 +1,155 @@
+schemaVersion: 1
+id: culture.geopolitique-defense.operations-exterieures-recentes
+type: concept
+title: Les opérations extérieures (OPEX) récentes
+slug: operations-exterieures-recentes
+image:
+  src: /images/fiche-opex.jpg
+  alt: Une patrouille de l'armée de l'Air française — un Rafale encadré de Mirage F1 aux couleurs du Normandie-Niémen — au-dessus du littoral.
+  author: R. Nicolas-Nelson / Armée de l'air
+  license: CC BY 2.0
+  licenseUrl: https://creativecommons.org/licenses/by/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Air-to-air_with_French_Air_Force_Dassault_Rafale_and_Mirage_F1.jpg
+  focal: 50% 50%
+summary: >-
+  Depuis 2011, la France a conduit plusieurs opérations extérieures majeures :
+  Harmattan (Libye), Serval puis Barkhane (Sahel) et Chammal (Irak-Syrie, contre
+  Daech). En connaître le contexte, les dates et le rôle de l'aviation est un
+  repère de culture attendu au concours.
+objectifs:
+  - Identifier les principales OPEX françaises récentes, leur zone et leur période.
+  - Comprendre l'enchaînement Serval → Barkhane au Sahel et distinguer Chammal (Levant).
+  - Situer le rôle de l'aviation (frappes, appui, transport, ravitaillement) dans ces opérations.
+aliases:
+  [
+    OPEX,
+    opérations extérieures,
+    Serval,
+    Barkhane,
+    Chammal,
+    Harmattan,
+    Sahel,
+    Daech,
+  ]
+module: culture
+category: geopolitique-defense
+subcategory: operations
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche de culture défense sur les OPEX françaises récentes ; dates et faits vérifiés sur sources officielles et encyclopédiques (defense.gouv.fr, fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Opération Barkhane (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/operations/bande-sahelo-saharienne/operation-barkhane
+    kind: officiel
+    consultedAt: "2026-07-25"
+  - title: "Opération Serval — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Op%C3%A9ration_Serval
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Opération Chammal — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Op%C3%A9ration_Chammal
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Opération Harmattan — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Op%C3%A9ration_Harmattan
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.geopolitique-defense.organisation-de-la-defense-francaise
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+content:
+  essentiel:
+    body: |
+      Une **opération extérieure** (**OPEX**) est une intervention des forces
+      françaises **hors du territoire national**. Depuis 2011, quatre grandes
+      OPEX reviennent régulièrement dans l'actualité de la Défense.
+
+      Au **Sahel**, l'opération **Serval** (lancée le **11 janvier 2013**) stoppe
+      l'offensive de groupes **djihadistes** qui menaçaient **Bamako**, la
+      capitale du **Mali**, puis reconquiert le nord du pays. Elle est relayée par
+      l'opération **Barkhane** (**1ᵉʳ août 2014**), élargie à toute la **bande
+      sahélo-saharienne** (cinq pays), jusqu'à sa **fin annoncée le 9 novembre
+      2022**.
+
+      Au **Levant**, l'opération **Chammal** (depuis le **19 septembre 2014**) est
+      le **volet français** de la coalition internationale contre **Daech**
+      (l'« État islamique »), d'abord en **Irak** puis en **Syrie** (2015).
+
+      Avant elles, l'opération **Harmattan** (**2011**) était intervenue en
+      **Libye** pour **protéger les populations**, sous mandat de l'**ONU** et
+      dans un cadre **OTAN**.
+    aRetenir:
+      - Harmattan (Libye, 2011) — protection des populations, sous mandat de l'ONU.
+      - Serval (Mali, 2013-2014) — stoppe l'offensive djihadiste et reconquiert le Nord.
+      - Barkhane (Sahel, 2014-2022) — lutte antiterroriste régionale, prend la suite de Serval.
+      - Chammal (Irak-Syrie, depuis 2014) — volet français de la coalition contre Daech.
+  sections:
+    - id: panorama
+      title: Panorama des OPEX récentes
+      body: |
+        | Opération | Zone | Période | Objet |
+        | --- | --- | --- | --- |
+        | Harmattan | Libye | 2011 (mars–octobre) | Protéger les populations, sous mandat de l'ONU (cadre OTAN). |
+        | Serval | Mali | 2013–2014 | Stopper l'offensive djihadiste vers Bamako, reconquérir le Nord. |
+        | Barkhane | Bande sahélo-saharienne (5 pays) | 2014–2022 | Lutte antiterroriste au Sahel ; prend la suite de Serval. |
+        | Chammal | Irak puis Syrie | depuis 2014 | Volet français de la coalition contre Daech (Inherent Resolve). |
+    - id: le-sahel
+      title: Le Sahel — Serval puis Barkhane
+      body: |
+        En janvier 2013, des groupes **djihadistes** qui contrôlent le nord du
+        **Mali** lancent une offensive vers le sud. À la demande du Mali, la
+        France déclenche l'opération **Serval** (**11 janvier 2013**) : elle
+        **stoppe la progression** vers Bamako, puis **reconquiert** les grandes
+        villes du Nord.
+
+        En **2014**, l'effort est **régionalisé** : l'opération **Barkhane**
+        (**1ᵉʳ août 2014**) étend la lutte antiterroriste à toute la **bande
+        sahélo-saharienne** (Mauritanie, Mali, Niger, Tchad, Burkina Faso). Après
+        plusieurs années d'engagement, la France annonce la **fin de Barkhane**
+        le **9 novembre 2022**, après son retrait du Mali.
+    - id: le-levant
+      title: Le Levant — Chammal
+      body: |
+        Face à l'expansion de **Daech** (l'« État islamique ») en Irak et en
+        Syrie, la France engage l'opération **Chammal** à partir du **19 septembre
+        2014**. C'est le **volet français** d'une vaste **coalition
+        internationale** (opération *Inherent Resolve*), d'abord en **Irak** —
+        à la demande de son gouvernement — puis étendue à la **Syrie** en 2015.
+
+        L'engagement est surtout **aérien** : frappes et reconnaissance par des
+        **Rafale** et **Mirage 2000**, appuyés par le **ravitaillement en vol**,
+        et, par moments, par le **groupe aéronaval** autour du porte-avions
+        **Charles de Gaulle**.
+    - id: le-role-de-l-aviation
+      title: Le rôle de l'aviation dans les OPEX
+      strate: maitriser
+      body: |
+        Dans toutes ces opérations, l'**aviation** joue un rôle central, parce
+        qu'elle apporte **allonge**, **rapidité** et **précision** sur des
+        théâtres très étendus :
+
+        - **reconnaissance et renseignement** (avions, drones) ;
+        - **appui aérien** des troupes au sol et **frappes** de précision ;
+        - **ravitaillement en vol**, qui démultiplie le rayon d'action ;
+        - **transport stratégique et tactique** (A400M, C-130) pour projeter
+          hommes et matériel loin du territoire national.
+
+        C'est pourquoi la **projection** — la capacité à agir vite et loin — est
+        une notion clé pour comprendre les OPEX, et un thème récurrent des
+        entretiens de sélection.
+  pieges:
+    - Serval (Mali) précède et prépare Barkhane (Sahel élargi) — ne pas inverser l'ordre ni les confondre.
+    - Chammal n'est pas une opération au Sahel — c'est le Levant (Irak puis Syrie), contre Daech.
+    - Harmattan (2011) se déroule sous mandat de l'ONU et dans un cadre OTAN — ce n'est pas une action isolée de la France.
+    - Barkhane s'est achevée en 2022 (fin annoncée le 9 novembre 2022) — ne pas la présenter comme toujours en cours.

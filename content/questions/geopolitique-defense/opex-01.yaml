@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.geopolitique-defense.opex-01
+kind: qcm
+theme: operations-exterieures
+statement: >-
+  Quelle opération française, lancée en 2013, a stoppé l'offensive djihadiste
+  qui menaçait Bamako, au Mali ?
+choices:
+  - Serval
+  - Barkhane
+  - Chammal
+  - Harmattan
+correctChoices: [0]
+explanation: >-
+  L'opération Serval (11 janvier 2013) stoppe la progression djihadiste vers
+  Bamako puis reconquiert le nord du Mali. Elle est relayée en 2014 par
+  Barkhane, élargie à toute la bande sahélo-saharienne.
+evaluates: [culture.geopolitique-defense.operations-exterieures-recentes]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.geopolitique-defense.opex-03
+kind: qcm
+theme: operations-exterieures
+statement: >-
+  Quelle opération française, menée en 2011 en Libye, visait à protéger les
+  populations sous mandat de l'ONU ?
+choices:
+  - Harmattan
+  - Serval
+  - Barkhane
+  - Chammal
+correctChoices: [0]
+explanation: >-
+  L'opération Harmattan (mars–octobre 2011) est l'intervention française en
+  Libye pour protéger les populations, sous mandat de l'ONU et dans un cadre
+  OTAN. Serval, Barkhane et Chammal sont postérieures et se déroulent ailleurs.
+evaluates: [culture.geopolitique-defense.operations-exterieures-recentes]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
