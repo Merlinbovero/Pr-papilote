@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.mikoyan-mig-31-02
+kind: qcm
+theme: mikoyan-mig-31
+statement: De quel appareil le MiG-31 est-il le successeur ?
+choices:
+- Du MiG-25
+- Du MiG-29
+- Du Su-27
+- Du Tupolev Tu-95
+correctChoices:
+- 0
+explanation: Biplace et doté d'un radar puissant, le MiG-31 succède au MiG-25 pour l'interception à très long rayon d'action, notamment au-dessus de l'Arctique.
+evaluates:
+- culture.aviation-mondiale.mikoyan-mig-31
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

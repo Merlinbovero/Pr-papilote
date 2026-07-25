@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-34-01
+kind: qcm
+theme: sukhoi-su-34
+statement: Quel est le rôle du Su-34 (« Fullback ») ?
+choices:
+- Un bombardier tactique (frappe air-sol)
+- Un chasseur de supériorité aérienne
+- Un intercepteur à haute altitude
+- Un avion de transport
+correctChoices:
+- 0
+explanation: Le Su-34 est un bombardier tactique russe dérivé de la famille Su-27, spécialisé dans la frappe air-sol (forte charge, grande allonge) — ce n'est pas un chasseur.
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-34
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

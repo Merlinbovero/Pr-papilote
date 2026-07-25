@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.mitsubishi-a6m-zero-02
+kind: qcm
+theme: mitsubishi-a6m-zero
+statement: À quoi le Zero devait-il ses qualités — et son principal défaut ?
+choices:
+- À une légèreté extrême, au prix d'une protection quasi nulle
+- À un blindage épais, au prix de la vitesse
+- À un moteur à réaction, au prix de l'autonomie
+- À une aile à géométrie variable, au prix de la fiabilité
+correctChoices:
+- 0
+explanation: La maniabilité et le grand rayon d'action du Zero venaient d'une légèreté extrême — mais pilote et réservoirs n'étaient quasiment pas protégés, ce qui le rendit vulnérable dès 1942.
+evaluates:
+- culture.aviation-mondiale.mitsubishi-a6m-zero
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.uh-60-black-hawk-02
+kind: qcm
+theme: uh-60-black-hawk
+statement: Quelle distinction faut-il faire à propos du Black Hawk ?
+choices:
+- Black Hawk (UH-60, transport) ≠ Apache (AH-64, hélicoptère d'attaque)
+- Black Hawk et Apache sont le même appareil
+- Le Black Hawk est un avion à voilure fixe
+- Le Black Hawk est un appareil russe
+correctChoices:
+- 0
+explanation: Le Black Hawk (UH-60) est un hélicoptère de transport, à ne pas confondre avec l'Apache (AH-64), hélicoptère d'attaque — deux appareils américains différents. Le UH-60 a été rendu célèbre par la bataille de Mogadiscio (1993).
+evaluates:
+- culture.aviation-mondiale.uh-60-black-hawk
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.a-10-thunderbolt-ii-02
+kind: qcm
+theme: a-10-thunderbolt-ii
+statement: Quel est le rôle principal de l'A-10 Thunderbolt II ?
+choices:
+- L'appui aérien rapproché des troupes au sol (CAS)
+- L'interception à haute altitude
+- Le bombardement stratégique
+- La reconnaissance maritime
+correctChoices:
+- 0
+explanation: 'L''A-10 est un avion d''attaque américain dédié à l''appui aérien rapproché (CAS) : lent, bas et fortement blindé. Ce n''est pas un chasseur ni un appareil français.'
+evaluates:
+- culture.aviation-mondiale.a-10-thunderbolt-ii
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

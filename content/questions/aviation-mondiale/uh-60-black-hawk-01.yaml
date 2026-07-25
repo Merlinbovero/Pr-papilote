@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.uh-60-black-hawk-01
+kind: qcm
+theme: uh-60-black-hawk
+statement: Qu'est-ce que le UH-60 Black Hawk ?
+choices:
+- L'hélicoptère de transport tactique de l'US Army
+- Un chasseur furtif américain
+- Un bombardier russe
+- Un hélicoptère d'attaque français
+correctChoices:
+- 0
+explanation: Le UH-60 Black Hawk est l'hélicoptère de transport tactique de l'US Army depuis 1979 (assaut héliporté, évacuation sanitaire, logistique). Ce n'est pas un appareil français.
+evaluates:
+- culture.aviation-mondiale.uh-60-black-hawk
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

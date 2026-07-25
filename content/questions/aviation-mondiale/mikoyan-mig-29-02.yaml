@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.mikoyan-mig-29-02
+kind: qcm
+theme: mikoyan-mig-29
+statement: À quel couple américain correspond le duo MiG-29 / Su-27 ?
+choices:
+- Le F-16 (léger) face au F-15 (lourd)
+- Le F-22 face au F-35
+- Le A-10 face au B-52
+- Le F-14 face au F/A-18
+correctChoices:
+- 0
+explanation: Le MiG-29 est le chasseur léger complément du Su-27 lourd, exactement comme le F-16 l'est du F-15 côté américain.
+evaluates:
+- culture.aviation-mondiale.mikoyan-mig-29
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

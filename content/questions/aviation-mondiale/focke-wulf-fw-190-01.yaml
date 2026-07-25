@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.focke-wulf-fw-190-01
+kind: qcm
+theme: focke-wulf-fw-190
+statement: De quel pays le chasseur Focke-Wulf Fw 190 était-il l'un des deux grands chasseurs durant la Seconde Guerre mondiale ?
+choices:
+- L'Allemagne (Luftwaffe)
+- Le Royaume-Uni
+- Les États-Unis
+- Le Japon
+correctChoices:
+- 0
+explanation: Le Fw 190, conçu par Kurt Tank, est le second grand chasseur allemand de la guerre, aux côtés du Messerschmitt Bf 109.
+evaluates:
+- culture.aviation-mondiale.focke-wulf-fw-190
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie
