@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.f-14-tomcat-02
+kind: qcm
+theme: f-14-tomcat
+statement: Quelle force armée a mis en œuvre le F-14 Tomcat (1974-2006) ?
+choices:
+- L'US Navy (chasseur embarqué)
+- L'armée de l'air française
+- La Royal Air Force britannique
+- La marine soviétique
+correctChoices:
+- 0
+explanation: Le F-14 Tomcat était l'intercepteur de défense de flotte de l'US Navy, doté du radar AWG-9 et du missile AIM-54 Phoenix. Ce n'est pas un appareil français ; il a été remplacé par le F/A-18 Super Hornet.
+evaluates:
+- culture.aviation-mondiale.f-14-tomcat
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

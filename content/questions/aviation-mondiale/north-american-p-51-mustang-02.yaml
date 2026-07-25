@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.north-american-p-51-mustang-02
+kind: qcm
+theme: north-american-p-51-mustang
+statement: Qu'est-ce qui a rendu le P-51 Mustang décisif ?
+choices:
+- Le passage au moteur Rolls-Royce Merlin (britannique)
+- L'ajout d'un second réacteur
+- L'adoption d'une aile delta
+- L'installation d'un radar embarqué
+correctChoices:
+- 0
+explanation: La version d'origine à moteur Allison était médiocre en altitude ; c'est l'adoption du moteur Rolls-Royce Merlin qui a rendu le Mustang décisif, prenant l'ascendant sur les Bf 109 et Fw 190.
+evaluates:
+- culture.aviation-mondiale.north-american-p-51-mustang
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie

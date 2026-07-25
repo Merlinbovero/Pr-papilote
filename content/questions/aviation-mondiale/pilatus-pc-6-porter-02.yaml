@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.pilatus-pc-6-porter-02
+kind: qcm
+theme: pilatus-pc-6-porter
+statement: Pour quel usage le Pilatus PC-6 Porter est-il particulièrement réputé ?
+choices:
+- Le parachutisme
+- La chasse embarquée
+- L'interception à haute altitude
+- Le bombardement
+correctChoices:
+- 0
+explanation: Polyvalent (fret, liaison, humanitaire), le PC-6 est surtout l'un des appareils favoris du parachutisme, grâce à ses qualités STOL. C'est un avion civil suisse, pas un appareil des forces françaises.
+evaluates:
+- culture.aviation-mondiale.pilatus-pc-6-porter
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

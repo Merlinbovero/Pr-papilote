@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-27-02
+kind: qcm
+theme: sukhoi-su-27
+statement: Quelle particularité a le Su-27 au sein de l'aviation russe ?
+choices:
+- Il est la base d'une vaste famille (Su-30, Su-33, Su-34, Su-35)
+- C'est le premier chasseur furtif russe
+- C'est un hélicoptère d'attaque
+- C'est un bombardier stratégique
+correctChoices:
+- 0
+explanation: Le Su-27 est la base d'une immense famille — Su-30, Su-33, Su-34, Su-35 — qui se ressemblent mais remplissent des rôles distincts.
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-27
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

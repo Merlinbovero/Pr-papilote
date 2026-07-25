@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-57-01
+kind: qcm
+theme: sukhoi-su-57
+statement: Qu'est-ce que le Su-57 (« Felon ») ?
+choices:
+- Le premier chasseur furtif russe, de 5e génération
+- Un bombardier stratégique des années 1980
+- Un hélicoptère d'attaque
+- Un avion de transport lourd
+correctChoices:
+- 0
+explanation: Le Su-57 est le premier chasseur furtif russe (5e génération), en service depuis 2020 mais produit en très petit nombre. Face aux F-22/F-35 américains ; côté français, l'avenir passe par le programme SCAF.
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-57
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

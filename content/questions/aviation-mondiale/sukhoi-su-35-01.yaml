@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-35-01
+kind: qcm
+theme: sukhoi-su-35
+statement: Quel atout technique caractérise le Su-35 (« Flanker-E ») ?
+choices:
+- Des moteurs à poussée vectorielle offrant une supermanœuvrabilité
+- La furtivité radar de 5e génération
+- Une aile à géométrie variable
+- Un décollage vertical
+correctChoices:
+- 0
+explanation: Le Su-35 est un chasseur russe de génération 4,5 doté de moteurs à poussée vectorielle (supermanœuvrabilité) et d'un puissant radar Irbis-E ; c'est l'un des meilleurs chasseurs non furtifs.
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-35
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie

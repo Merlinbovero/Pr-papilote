@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-57-02
+kind: qcm
+theme: sukhoi-su-57
+statement: Qu'est-ce qui définit avant tout un chasseur de 5e génération comme le Su-57 ?
+choices:
+- La furtivité et la fusion des capteurs (avec supercroisière)
+- Uniquement la vitesse maximale
+- L'aile à géométrie variable
+- Le nombre de canons embarqués
+correctChoices:
+- 0
+explanation: La 5e génération se définit surtout par la furtivité et la fusion des capteurs, avec la supercroisière — pas seulement par la vitesse.
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-57
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie

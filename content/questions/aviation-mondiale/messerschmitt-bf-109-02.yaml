@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.messerschmitt-bf-109-02
+kind: qcm
+theme: messerschmitt-bf-109
+statement: Quel rôle le Bf 109 a-t-il tenu pour l'Allemagne ?
+choices:
+- La colonne vertébrale de la chasse de la Luftwaffe, rival du Spitfire
+- Un bombardier stratégique
+- Un hydravion de reconnaissance
+- Un avion de transport de troupes
+correctChoices:
+- 0
+explanation: Le Bf 109 est le chasseur principal de la Luftwaffe durant toute la guerre, grand rival du Spitfire puis du P-51 Mustang, et forme l'ossature de la chasse allemande avec le Fw 190.
+evaluates:
+- culture.aviation-mondiale.messerschmitt-bf-109
+difficulty: 2
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

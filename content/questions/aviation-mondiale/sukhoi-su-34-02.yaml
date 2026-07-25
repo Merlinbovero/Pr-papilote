@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.aviation-mondiale.sukhoi-su-34-02
+kind: qcm
+theme: sukhoi-su-34
+statement: À quoi reconnaît-on le Su-34 ?
+choices:
+- À son cockpit blindé biplace côte à côte et son nez plat en « bec de canard »
+- À son aile à géométrie variable
+- À sa verrière-bulle monoplace
+- À son unique réacteur
+correctChoices:
+- 0
+explanation: Le Su-34 se reconnaît à son cockpit blindé où les deux équipiers sont assis côte à côte, et à son nez plat en « bec de canard ».
+evaluates:
+- culture.aviation-mondiale.sukhoi-su-34
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie
