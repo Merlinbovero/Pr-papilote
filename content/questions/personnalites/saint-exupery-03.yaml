@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.saint-exupery-03
+kind: qcm
+theme: saint-exupery
+statement: >-
+  Lequel de ces ouvrages a été écrit par Antoine de Saint-Exupéry ?
+choices:
+  - « Vol de nuit »
+  - « Le Grand Cirque »
+  - « Le Grand Meaulnes »
+  - « L'Équipage »
+correctChoices: [0]
+explanation: >-
+  « Vol de nuit » (1931, prix Femina) est de Saint-Exupéry. « Le Grand Cirque »
+  est le récit de guerre de Pierre Clostermann ; « Le Grand Meaulnes » est
+  d'Alain-Fournier.
+evaluates: [culture.personnalites.antoine-de-saint-exupery]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.saint-exupery-02
+kind: qcm
+theme: saint-exupery
+statement: >-
+  Dans quelles circonstances Antoine de Saint-Exupéry a-t-il disparu en juillet
+  1944 ?
+choices:
+  - Au cours d'une mission de reconnaissance, aux commandes d'un P-38
+  - Lors d'un vol postal de l'Aéropostale au-dessus des Andes
+  - Dans un accident au décollage à l'entraînement
+  - Lors d'une tentative de record de vitesse
+correctChoices: [0]
+explanation: >-
+  Le 31 juillet 1944, Saint-Exupéry disparaît en Méditerranée lors d'une mission
+  de reconnaissance de la Seconde Guerre mondiale, aux commandes d'un Lockheed
+  P-38 Lightning. L'épave a été identifiée en 2004 au large de Marseille.
+evaluates: [culture.personnalites.antoine-de-saint-exupery]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

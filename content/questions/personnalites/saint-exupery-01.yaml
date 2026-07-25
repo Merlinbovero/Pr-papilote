@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.saint-exupery-01
+kind: qcm
+theme: saint-exupery
+statement: >-
+  Antoine de Saint-Exupéry est célèbre pour avoir été à la fois…
+choices:
+  - Pilote et écrivain
+  - Ingénieur et ministre
+  - Médecin et explorateur
+  - Peintre et diplomate
+correctChoices: [0]
+explanation: >-
+  Saint-Exupéry fut à la fois pilote (Aéropostale, puis reconnaissance) et
+  écrivain. Ses œuvres — « Vol de nuit », « Terre des hommes », « Le Petit
+  Prince » — naissent de son expérience du vol.
+evaluates: [culture.personnalites.antoine-de-saint-exupery]
+difficulty: 1
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
