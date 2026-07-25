@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.metar-03
+kind: qcm
+theme: metar
+statement: >-
+  Que signifie « CAVOK » dans un METAR ?
+choices:
+  - Visibilité ≥ 10 km, pas de nuage bas gênant ni de phénomène significatif
+  - Ciel entièrement dégagé et vent nul
+  - Conditions de vol aux instruments obligatoires
+  - Aérodrome fermé pour cause météo
+correctChoices: [0]
+explanation: >-
+  CAVOK (Ceiling And Visibility OK) remplace visibilité, temps et nuages quand
+  trois conditions sont réunies : visibilité ≥ 10 km, aucun nuage sous 1500 m
+  (5000 ft) ni cumulonimbus, et aucun phénomène météo significatif.
+evaluates: [fondamentaux.meteorologie.lire-un-metar]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

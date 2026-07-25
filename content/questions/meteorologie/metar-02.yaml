@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.metar-02
+kind: qcm
+theme: metar
+statement: >-
+  Dans un METAR, que signifie le groupe nuageux « BKN012 » ?
+choices:
+  - Ciel fragmenté (5 à 7/8) à 1200 pieds
+  - Ciel couvert (8/8) à 1200 mètres
+  - Quelques nuages (1 à 2/8) à 120 pieds
+  - Ciel clair au-dessus de 12 000 pieds
+correctChoices: [0]
+explanation: >-
+  BKN (broken) = 5 à 7 octas ; le nombre donne la hauteur en centaines de pieds
+  au-dessus de l'aérodrome, donc 012 = 1200 ft. Les octas vont de FEW (1-2/8) à
+  OVC (8/8).
+evaluates: [fondamentaux.meteorologie.lire-un-metar]
+difficulty: 3
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

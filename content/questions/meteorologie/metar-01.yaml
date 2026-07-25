@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.metar-01
+kind: qcm
+theme: metar
+statement: >-
+  Dans un METAR, à quel fuseau horaire correspond l'heure indiquée (ex.
+  « 121330Z ») ?
+choices:
+  - À l'heure UTC (temps universel)
+  - À l'heure locale de l'aérodrome
+  - À l'heure locale de Paris
+  - À l'heure du méridien de départ du vol
+correctChoices: [0]
+explanation: >-
+  L'heure d'un METAR est toujours donnée en UTC, signalée par le suffixe « Z ».
+  « 121330Z » = le 12 du mois à 13 h 30 UTC.
+evaluates: [fondamentaux.meteorologie.lire-un-metar]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie
