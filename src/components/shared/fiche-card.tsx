@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
  * - **par défaut** : titre, résumé, badge — sobre, pour les listes denses ;
  * - **média** (dès qu'une `image` est fournie) : vignette photo à gauche,
  *   type de fiche, titre, résumé et temps de lecture — pour donner envie
- *   d'explorer. Relief discret au survol, cohérent avec CategoryCard.
+ *   d'explorer. Relief discret au survol, cohérent avec le reste du catalogue.
  */
 
 interface FicheCardImage {
