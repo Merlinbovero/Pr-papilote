@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.radio-communications.vhf-01
+kind: qcm
+theme: bande-vhf
+statement: >-
+  Quelle bande de fréquences la VHF aéronautique occupe-t-elle, et pour quel
+  usage principal ?
+choices:
+  - 118–137 MHz, la phonie civile air-sol
+  - 225–400 MHz, l'aviation militaire
+  - 3–30 MHz, les liaisons transatlantiques
+  - 960–1215 MHz, la radionavigation
+correctChoices: [0]
+explanation: >-
+  La VHF aéronautique (118–137 MHz), en modulation d'amplitude, est le canal
+  principal de la phonie civile air-sol ; sa propagation « à vue directe » fait
+  dépendre la portée de l'altitude.
+evaluates: [fondamentaux.radio-communications.la-bande-vhf]
+difficulty: 2
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie

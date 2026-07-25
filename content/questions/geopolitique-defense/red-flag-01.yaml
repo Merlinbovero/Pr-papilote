@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.geopolitique-defense.red-flag-01
+kind: qcm
+theme: red-flag
+statement: >-
+  Qu'est-ce que l'exercice « Red Flag » ?
+choices:
+  - Le grand exercice d'entraînement au combat aérien de l'US Air Force, à Nellis
+  - Un salon aéronautique civil au Bourget
+  - Une patrouille acrobatique américaine
+  - Un système d'alerte anti-missile
+correctChoices: [0]
+explanation: >-
+  Créé en 1975 à Nellis (Nevada) d'après les leçons du Vietnam, Red Flag oppose
+  une force « bleue » à une force « rouge » (escadrons agresseurs). Multinational,
+  il accueille la France avec le Rafale.
+evaluates: [culture.geopolitique-defense.red-flag]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

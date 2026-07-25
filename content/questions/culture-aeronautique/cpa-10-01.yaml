@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.cpa-10-01
+kind: qcm
+theme: cpa-10
+statement: >-
+  Que désigne le CPA 10 (Commando parachutiste de l'air n°10) ?
+choices:
+  - L'unité de forces spéciales de l'armée de l'Air et de l'Espace
+  - Un escadron de chasse
+  - Une patrouille acrobatique
+  - Une école de parachutisme sportif
+correctChoices: [0]
+explanation: >-
+  Le CPA 10, basé à Orléans-Bricy et intégré au Commandement des opérations
+  spéciales (COS), est l'unité de forces spéciales de l'AAE — ouverture de
+  terrain, appui aérien avancé (FAC/JTAC), récupération de personnel.
+evaluates: [culture.culture-aeronautique.commando-parachutiste-air-cpa-10]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

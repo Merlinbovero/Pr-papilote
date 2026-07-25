@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.culture-aeronautique.jvn-01
+kind: qcm
+theme: jumelles-vision-nocturne
+statement: >-
+  Comment fonctionnent les jumelles de vision nocturne (JVN) utilisées en vol ?
+choices:
+  - Elles amplifient la lumière résiduelle (image verte)
+  - Elles détectent la chaleur (infrarouge thermique)
+  - Elles émettent un faisceau laser visible
+  - Elles projettent une carte sur la visière
+correctChoices: [0]
+explanation: >-
+  Les JVN amplifient la faible lumière ambiante (d'où l'image verte) — ce n'est
+  pas de la vision thermique. Fixées au casque, elles permettent de voler et se
+  poser de nuit, avec un champ de vision réduit et sans couleurs.
+evaluates: [culture.culture-aeronautique.jumelles-de-vision-nocturne]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
