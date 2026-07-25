@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: q.personnalites.bleriot-02
+kind: qcm
+theme: bleriot
+statement: >-
+  À bord de quel type d'appareil Louis Blériot a-t-il traversé la Manche ?
+choices:
+  - Un monoplan (le Blériot XI)
+  - Un biplan
+  - Un dirigeable
+  - Un hydravion
+correctChoices: [0]
+explanation: >-
+  Blériot a traversé la Manche sur le Blériot XI, un monoplan à hélice tractive —
+  une configuration d'avenir alors que beaucoup misaient encore sur le biplan.
+evaluates: [culture.personnalites.louis-bleriot]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

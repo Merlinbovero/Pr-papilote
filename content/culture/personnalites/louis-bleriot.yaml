@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: culture.personnalites.louis-bleriot
+type: concept
+title: Louis Blériot, la traversée de la Manche
+slug: louis-bleriot
+image:
+  src: /images/fiche-bleriot.jpg
+  alt: Portrait de l'aviateur Louis Blériot, premier homme à avoir traversé la Manche en avion (carte postale d'époque).
+  author: Rotary Photo — domaine public
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Louis_Bleriot.jpg
+  focal: 50% 22%
+summary: >-
+  Ingénieur et aviateur, Louis Blériot (1872-1936) réalise la première traversée
+  de la Manche en avion, le 25 juillet 1909, à bord de son monoplan Blériot XI.
+  L'exploit lui vaut une gloire mondiale ; il devient l'un des grands
+  constructeurs de l'aviation naissante.
+objectifs:
+  - Situer Louis Blériot parmi les pionniers de l'aviation.
+  - Connaître sa première traversée de la Manche (1909) et l'appareil utilisé.
+  - Comprendre sa double dimension — aviateur et constructeur d'avions.
+aliases:
+  [
+    Blériot,
+    Louis Blériot,
+    traversée de la Manche,
+    Blériot XI,
+    pionnier de l'aviation,
+    brevet n°1,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Louis Blériot) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Louis Blériot — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Louis_Bl%C3%A9riot
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.roland-garros
+    - culture.personnalites.georges-guynemer
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Louis Blériot** (1872-1936) est l'un des **pères de l'aviation**. Le
+      **25 juillet 1909**, il réalise la **première traversée de la Manche** en
+      avion : parti des **Baraques** (près de **Calais**), il se pose à
+      **Douvres**, en Angleterre, après environ **37 minutes** de vol, aux
+      commandes de son monoplan **Blériot XI** (moteur Anzani).
+
+      L'exploit fait de lui une **gloire mondiale** et lui vaut le **prix de
+      1 000 livres** offert par le journal britannique *Daily Mail*. Surtout, il a
+      une portée **symbolique** énorme : l'avion vient de franchir une **frontière
+      naturelle**, et le Royaume-Uni n'est plus une île à l'abri des airs.
+
+      Blériot n'est pas qu'un pilote : c'est aussi un **ingénieur** et un
+      **industriel**. Son **Blériot XI**, monoplan à hélice tractive, préfigure
+      l'avion moderne ; il fonde **Blériot Aéronautique**, qui construira des
+      **milliers d'avions**. Il détient aussi le **brevet de pilote n°1** délivré
+      en France.
+    aRetenir:
+      - Louis Blériot (1872-1936), aviateur, ingénieur et constructeur d'avions.
+      - Première traversée de la Manche en avion le 25 juillet 1909 (Calais → Douvres, ~37 min) sur le Blériot XI.
+      - L'exploit lui vaut le prix de 1 000 livres du Daily Mail et une renommée mondiale.
+      - Il fonde Blériot Aéronautique et détient le brevet de pilote n°1 en France.
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 1ᵉʳ juillet 1872, Cambrai |
+        | Mort | 1ᵉʳ août 1936, Paris |
+        | Exploit | 1ʳᵉ traversée de la Manche en avion (25 juillet 1909) |
+        | Trajet | Les Baraques (près de Calais) → Douvres, ~37 min |
+        | Avion | Monoplan Blériot XI |
+        | Autres titres | Brevet de pilote n°1 en France ; constructeur d'avions |
+    - id: la-manche
+      title: La traversée de la Manche (1909)
+      body: |
+        Au début du XXe siècle, la **Manche** est un défi symbolique : la franchir
+        en avion prouverait que la mer n'arrête plus la machine volante. Plusieurs
+        aviateurs s'y préparent, attirés par le **prix** du *Daily Mail*.
+
+        Le **25 juillet 1909**, malgré une jambe brûlée lors d'un vol précédent et
+        un moteur fragile, Blériot décolle près de **Calais** et rejoint
+        **Douvres** en une trentaine de minutes, sans instruments de navigation.
+        L'exploit fait la **une** des journaux du monde entier et marque le début
+        d'une **nouvelle ère** — celle où les distances, et les frontières, se
+        mesurent aussi dans les airs.
+    - id: l-ingenieur-et-le-constructeur
+      title: L'ingénieur et le constructeur
+      strate: maitriser
+      body: |
+        Avant même la Manche, Blériot avait fait fortune dans les **phares
+        d'automobiles**, ce qui lui permit de **financer** ses recherches
+        aéronautiques. Son **Blériot XI** — un **monoplan** à hélice à l'avant —
+        s'impose comme une configuration d'avenir, à une époque où beaucoup
+        misaient encore sur les biplans.
+
+        Après 1909, il devient un grand **constructeur** : **Blériot
+        Aéronautique** produit des milliers d'appareils, notamment pendant la
+        **Première Guerre mondiale**, et absorbe la firme **SPAD** en 1921. De
+        l'exploit sportif à l'industrie, Blériot incarne la **naissance** de
+        l'aviation française.
+  pieges:
+    - Blériot traverse la Manche (1909) — à ne pas confondre avec la Méditerranée (Garros, 1913) ni l'Atlantique (Lindbergh, 1927).
+    - Le Blériot XI est un monoplan (une seule aile), pas un biplan.
+    - Blériot n'est pas seulement un pilote — c'est aussi un ingénieur et un industriel de l'aviation.
+    - Le prix récompensant la traversée était offert par un journal britannique, le Daily Mail.
