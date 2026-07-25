@@ -3,6 +3,14 @@ id: culture.geopolitique-defense.organisation-de-la-defense-francaise
 type: concept
 title: L'organisation de la Défense française
 slug: organisation-de-la-defense-francaise
+image:
+  src: /images/fiche-organisation-defense.jpg
+  alt: La Patrouille de France survole Paris avec les fumigènes bleu-blanc-rouge lors du défilé aérien du 14 Juillet.
+  author: Yann Caradec
+  license: CC BY-SA 2.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:D%C3%A9fil%C3%A9_a%C3%A9rien_14_juillet_2018_(29540546878).jpg
+  focal: 50% 40%
 summary: >-
   Qui dirige les armées françaises ? Une chaîne claire, du politique au
   militaire — le Président chef des armées, le Premier ministre, le ministre des
@@ -30,11 +38,15 @@ level: 1
 createdAt: "2026-07-25"
 verifiedAt: "2026-07-25"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-25"
     version: 1
     motif: Création — fiche de culture institutionnelle sur l'organisation de la défense française ; faits vérifiés sur sources officielles (Constitution, defense.gouv.fr, elysee.fr, vie-publique.fr).
+    author: prepapilote
+  - date: "2026-07-25"
+    version: 2
+    motif: Ajout de l'image — défilé aérien du 14 Juillet (Patrouille de France, fumigènes tricolores), image libre créditée CC BY-SA 2.0.
     author: prepapilote
 sources:
   - title: "L'organisation de la défense : responsables et acteurs (vie-publique.fr)"
