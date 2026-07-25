@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.guillaumet-01
+kind: qcm
+theme: guillaumet
+statement: >-
+  Pour quel exploit Henri Guillaumet est-il resté célèbre ?
+choices:
+  - Avoir survécu à un accident dans les Andes en marchant cinq jours dans la neige
+  - La première traversée de l'Atlantique Nord
+  - Le premier vol supersonique
+  - La première boucle (looping) de l'histoire
+correctChoices: [0]
+explanation: >-
+  En juin 1930, après un atterrissage forcé dans la Cordillère des Andes,
+  Guillaumet marche cinq jours et quatre nuits dans la neige avant d'être
+  secouru. Saint-Exupéry a immortalisé cet exploit d'endurance dans « Terre des
+  hommes ».
+evaluates: [culture.personnalites.henri-guillaumet]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
