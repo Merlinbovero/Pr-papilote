@@ -3,6 +3,14 @@ id: fondamentaux.radio-communications.la-bande-vhf
 type: concept
 title: La bande VHF aéronautique
 slug: la-bande-vhf
+image:
+  src: /images/fiche-tour-controle-civile.jpg
+  alt: Tour de contrôle d'un aéroport civil, d'où le contrôle aérien communique avec les aéronefs en VHF.
+  author: J o (Wikimedia Commons)
+  license: CC BY-SA 3.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/3.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Matsuyama_Airport_Control_Tower_20090807-001.jpg
+  focal: 50% 40%
 summary: >-
   La bande radio 118–137 MHz, en modulation d'amplitude, est le principal moyen
   de communication vocale entre aéronefs et organismes au sol dans l'aviation

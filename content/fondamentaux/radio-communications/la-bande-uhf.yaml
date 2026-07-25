@@ -3,6 +3,13 @@ id: fondamentaux.radio-communications.la-bande-uhf
 type: concept
 title: La bande UHF aéronautique
 slug: la-bande-uhf
+image:
+  src: /images/fiche-tour-controle-militaire.jpg
+  alt: Tour de contrôle d'une base aérienne militaire au crépuscule, d'où le contrôle militaire communique avec les aéronefs en UHF.
+  author: U.S. Air Force photo by Staff Sgt. Jonathan Steffen
+  license: Domaine public (U.S. Air Force)
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Yokota_Air_Base_-_Control_Tower_-_2011.jpg
+  focal: 50% 45%
 summary: >-
   La bande radio 225–400 MHz, en modulation d'amplitude, est réservée à
   l'aviation militaire et à certaines liaisons gouvernementales. C'est le
