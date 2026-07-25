@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.mecanique-du-vol.turbomoteur-03
+kind: qcm
+theme: turbomoteur
+statement: >-
+  En cas de panne moteur en vol, qu'est-ce qui permet à un hélicoptère de se
+  poser en sécurité ?
+choices:
+  - L'autorotation (le rotor entraîné par le flux d'air)
+  - La mise en drapeau des pales
+  - Le déploiement d'un parachute de rotor
+  - Le rallumage automatique du rotor de queue
+correctChoices: [0]
+explanation: >-
+  En autorotation, une roue libre désolidarise le rotor du moteur ; l'air qui
+  traverse le disque rotor le maintient en rotation, ce qui permet une descente
+  contrôlée et un poser. Ce n'est pas une chute libre.
+evaluates: [fondamentaux.mecanique-du-vol.turbomoteur-et-helicopteres]
+difficulty: 3
+competencies: [connaissances-aeronautiques]
+concours: [eopan, eopn, alat]
+status: publie
