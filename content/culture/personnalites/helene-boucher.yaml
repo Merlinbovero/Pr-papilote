@@ -1,0 +1,117 @@
+schemaVersion: 1
+id: culture.personnalites.helene-boucher
+type: concept
+title: Hélène Boucher, recordwoman de vitesse
+slug: helene-boucher
+image:
+  src: /images/fiche-helene-boucher.jpg
+  alt: L'aviatrice Hélène Boucher, en tenue de vol (casque et lunettes), devant l'hélice de son avion (années 1930).
+  author: Agence Mondial Photo-Presse — domaine public
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:H%C3%A9l%C3%A8ne_Boucher_1933.jpg
+  focal: 30% 42%
+summary: >-
+  Aviatrice française, Hélène Boucher (1908-1934) établit en 1934 plusieurs
+  records du monde de vitesse, dont un record féminin à 445 km/h sur Caudron
+  Rafale. Morte en vol la même année à 26 ans, elle devient un symbole de
+  l'audace des femmes pilotes.
+objectifs:
+  - Situer Hélène Boucher parmi les grandes aviatrices françaises.
+  - Connaître ses records de vitesse de 1934 et l'avion utilisé.
+  - Comprendre pourquoi elle est devenue un symbole national.
+aliases:
+  [
+    Hélène Boucher,
+    aviatrice,
+    record de vitesse,
+    Caudron Rafale,
+    femmes pilotes,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Hélène Boucher) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Hélène Boucher — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/H%C3%A9l%C3%A8ne_Boucher
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.louis-bleriot
+    - culture.personnalites.roland-garros
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Hélène Boucher** (1908-1934) est l'une des plus célèbres **aviatrices**
+      françaises. En **1934**, aux commandes du **Caudron Rafale** (Caudron-
+      Renault), elle bat plusieurs **records du monde de vitesse** — dont un
+      record **féminin** à **445 km/h** — qui la rendent célèbre dans toute la
+      France.
+
+      Sa carrière est fulgurante : le **30 novembre 1934**, lors d'un **vol
+      d'entraînement** à **Guyancourt**, son avion s'écrase ; elle meurt à
+      **26 ans**. L'émotion est immense : elle devient la **première femme** à
+      recevoir des **obsèques nationales** en la cathédrale Saint-Louis-des-
+      **Invalides**, et est décorée de la **Légion d'honneur** à titre posthume.
+
+      Figure de l'**audace** et de la **place des femmes** dans l'aviation, elle
+      a donné son nom à de nombreux **établissements** et **rues**. Un exemple de
+      détermination utile à connaître pour un candidat pilote.
+    aRetenir:
+      - Hélène Boucher (1908-1934), aviatrice française, recordwoman de vitesse.
+      - En 1934, records du monde de vitesse sur Caudron Rafale, dont 445 km/h (record féminin).
+      - Morte lors d'un vol d'entraînement le 30 novembre 1934, à 26 ans, à Guyancourt.
+      - Première femme à recevoir des obsèques nationales aux Invalides ; Légion d'honneur posthume.
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 23 mai 1908, Paris |
+        | Mort | 30 novembre 1934, à Guyancourt (accident en vol), à 26 ans |
+        | Exploits | Records du monde de vitesse en 1934 (dont 445 km/h, record féminin) |
+        | Avion | Caudron Rafale (Caudron-Renault) |
+        | Postérité | 1ʳᵉ femme aux obsèques nationales aux Invalides ; Légion d'honneur |
+    - id: les-records-de-1934
+      title: Les records de 1934
+      body: |
+        L'été **1934** est celui de la consécration. En **août**, Hélène Boucher
+        établit des **records du monde de vitesse** : environ **412 km/h** sur
+        **100 km** et **409 km/h** sur **1000 km** (records toutes catégories),
+        puis, le **11 août**, un **record du monde féminin** à **445 km/h**.
+
+        Ces performances, réalisées sur le rapide **Caudron Rafale**, mettent en
+        valeur à la fois l'**industrie aéronautique française** et le **talent**
+        d'une pilote qui rivalise avec les meilleurs.
+    - id: un-symbole
+      title: Un symbole
+      strate: maitriser
+      body: |
+        La mort brutale d'Hélène Boucher, en pleine gloire, provoque une
+        **émotion nationale**. Les honneurs qui lui sont rendus — **obsèques aux
+        Invalides**, **Légion d'honneur** — sont exceptionnels pour une femme de
+        son époque.
+
+        Engagée pour la **place des femmes** dans l'aviation, elle reste un
+        **modèle** de courage et de persévérance. Son nom, encore très présent
+        dans l'espace public (lycées, rues), rappelle qu'aux origines de
+        l'aviation, des **femmes** ont compté parmi les pilotes les plus
+        performants.
+  pieges:
+    - Hélène Boucher est une aviatrice des records de vitesse (années 1930), pas une pilote militaire de guerre.
+    - Son avion, le « Caudron Rafale », n'a rien à voir avec le Dassault Rafale, l'avion de combat actuel — même nom, époques et constructeurs différents.
+    - Elle meurt en 1934 lors d'un vol d'entraînement, et non au combat ni pendant une tentative de record.
+    - Ses 445 km/h sont un record du monde féminin de vitesse — un chiffre remarquable pour l'époque.

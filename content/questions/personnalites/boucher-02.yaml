@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.boucher-02
+kind: qcm
+theme: helene-boucher
+statement: >-
+  Hélène Boucher a établi ses records de vitesse sur un avion nommé « Rafale ».
+  De quel constructeur s'agissait-il ?
+choices:
+  - Caudron (Caudron-Renault)
+  - Dassault
+  - Morane-Saulnier
+  - Latécoère
+correctChoices: [0]
+explanation: >-
+  Il s'agit du Caudron Rafale (Caudron-Renault), un avion de course des années
+  1930 — à ne pas confondre avec le Dassault Rafale, l'avion de combat français
+  actuel.
+evaluates: [culture.personnalites.helene-boucher]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
