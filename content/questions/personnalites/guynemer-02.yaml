@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.guynemer-02
+kind: qcm
+theme: guynemer
+statement: >-
+  Comment Georges Guynemer a-t-il trouvé la mort en 1917 ?
+choices:
+  - Il a disparu en combat, son corps n'a jamais été retrouvé
+  - Il est mort dans un accident à l'entraînement
+  - Il a été fait prisonnier puis exécuté
+  - Il est décédé de maladie à l'hôpital
+correctChoices: [0]
+explanation: >-
+  Le 11 septembre 1917, Guynemer disparaît au-dessus de Poelkapelle (Belgique) à
+  22 ans ; son corps et son avion ne furent jamais retrouvés, ce qui a nourri sa
+  légende.
+evaluates: [culture.personnalites.georges-guynemer]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

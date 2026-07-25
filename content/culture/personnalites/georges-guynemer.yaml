@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: culture.personnalites.georges-guynemer
+type: concept
+title: Georges Guynemer, l'as des Cigognes
+slug: georges-guynemer
+image:
+  src: /images/fiche-guynemer.jpg
+  alt: Georges Guynemer assis dans son avion Morane-Saulnier, une mitrailleuse en main, entouré de soldats (Première Guerre mondiale).
+  author: Agence Rol / BnF Gallica
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Georges_Guynemer_Morane_Saulnier.jpg
+  focal: 40% 35%
+summary: >-
+  Figure légendaire de l'aviation française, Georges Guynemer (1894-1917) fut
+  l'un des plus grands as de la Première Guerre mondiale — 53 victoires
+  homologuées au sein de l'escadrille des Cigognes, avant sa disparition à 22
+  ans, qui fit de lui un mythe.
+objectifs:
+  - Situer Georges Guynemer dans l'histoire de l'aviation militaire française (Première Guerre mondiale).
+  - Connaître ses hauts faits — l'escadrille des Cigognes, ses 53 victoires, son avion « Vieux Charles ».
+  - Comprendre pourquoi il est devenu une figure emblématique du courage du pilote de chasse.
+aliases:
+  [
+    Guynemer,
+    Georges Guynemer,
+    as de la Grande Guerre,
+    Cigognes,
+    Vieux Charles,
+    SPA 3,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — première fiche de la catégorie Personnalités (Georges Guynemer) ; faits vérifiés sur sources encyclopédiques (fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Georges Guynemer — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Georges_Guynemer
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+content:
+  essentiel:
+    body: |
+      **Georges Guynemer** (1894-1917) est l'une des figures les plus
+      **légendaires** de l'aviation française. Pendant la **Première Guerre
+      mondiale**, ce jeune pilote de chasse, d'abord jugé de **santé fragile**,
+      s'impose comme l'un des plus grands **as** du conflit.
+
+      Il vole au sein de la célèbre **escadrille des Cigognes** (la **N.3**, puis
+      **SPA 3**), à laquelle il donne son prestige. À son actif : **53 victoires
+      aériennes homologuées** (et une trentaine de « probables »), obtenues aux
+      commandes de son avion, le fameux « **Vieux Charles** ». Nommé
+      **capitaine** en 1917, il a survécu à **huit** atterrissages forcés — à une
+      époque **sans parachute**.
+
+      Le **11 septembre 1917**, à **22 ans**, il **disparaît** au-dessus de
+      **Poelkapelle** (Belgique). Son corps n'ayant **jamais été retrouvé**, sa
+      mort nourrit une véritable **légende** — celle du pilote donné tout entier
+      à son devoir.
+    aRetenir:
+      - Georges Guynemer (1894-1917) — l'un des plus grands as français de la Première Guerre mondiale.
+      - Il vole à l'escadrille des Cigognes (N.3 / SPA 3) et totalise 53 victoires homologuées.
+      - Son avion est surnommé le « Vieux Charles » ; il est nommé capitaine en 1917.
+      - Il disparaît le 11 septembre 1917 à 22 ans (corps jamais retrouvé), devenant une figure mythique.
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 24 décembre 1894, Paris |
+        | Disparition | 11 septembre 1917, près de Poelkapelle (Belgique), à 22 ans |
+        | Escadrille | Les Cigognes (N.3, puis SPA 3) |
+        | Victoires | 53 homologuées (≈ 35 probables) |
+        | Avion | « Le Vieux Charles » (SPAD) |
+        | Grade | Capitaine (1917) |
+    - id: les-cigognes
+      title: Le « Vieux Charles » et les Cigognes
+      body: |
+        L'**escadrille des Cigognes** est l'unité de chasse la plus **célèbre**
+        de la Grande Guerre : son emblème, la **cigogne**, orne les avions de
+        plusieurs as fameux. Guynemer en devient la **figure de proue**.
+
+        Il baptise successivement ses appareils « **Le Vieux Charles** », nom
+        resté attaché à son **SPAD** frappé d'une cigogne. L'un de ces avions est
+        aujourd'hui conservé au **musée de l'Air et de l'Espace** du **Bourget**,
+        où il rappelle l'audace des pionniers du combat aérien.
+    - id: la-legende
+      title: La légende
+      strate: maitriser
+      body: |
+        Ce qui fait de Guynemer un **mythe**, c'est autant son courage que sa
+        **fin mystérieuse** : disparu en combat, son corps et son avion ne furent
+        **jamais retrouvés**. La France en fit un **héros national**, exemple
+        offert aux écoliers et aux futurs aviateurs.
+
+        On lui **attribue** cette formule, devenue une devise de l'effort total :
+        « **Tant qu'on n'a pas tout donné, on n'a rien donné.** » Elle résume
+        l'esprit qu'un candidat pilote a tout intérêt à connaître — la culture du
+        dépassement et de l'engagement.
+  pieges:
+    - Guynemer n'est pas « mort au combat » de façon constatée — il a disparu, corps jamais retrouvé, d'où la légende.
+    - Les Cigognes désignent une escadrille (emblème la cigogne), pas un avion — plusieurs as y ont servi.
+    - On retient 53 victoires homologuées ; les victoires « probables » ne comptent pas dans le total officiel.
+    - Guynemer n'est pas le plus grand as français en nombre de victoires — c'est René Fonck (75) — mais il en est la figure la plus légendaire.
