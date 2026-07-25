@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.taf-03
+kind: qcm
+theme: taf
+statement: >-
+  Quelle est la durée de validité habituelle d'un TAF ?
+choices:
+  - 24 heures (30 heures pour certains grands aérodromes)
+  - 1 heure
+  - 6 jours
+  - Jusqu'au prochain METAR
+correctChoices: [0]
+explanation: >-
+  Un TAF couvre en général 24 heures — 30 heures pour certains grands aérodromes
+  — et il est émis environ toutes les 6 heures, avec des amendements si
+  nécessaire.
+evaluates: [fondamentaux.meteorologie.lire-un-taf]
+difficulty: 2
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie

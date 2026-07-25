@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.meteorologie.taf-01
+kind: qcm
+theme: taf
+statement: >-
+  Quelle est la différence essentielle entre un TAF et un METAR ?
+choices:
+  - Le TAF est une prévision, le METAR une observation
+  - Le TAF concerne la nuit, le METAR le jour
+  - Le TAF est militaire, le METAR civil
+  - Le TAF donne le vent, le METAR la température
+correctChoices: [0]
+explanation: >-
+  Le TAF (Terminal Aerodrome Forecast) est une prévision météo d'aérodrome,
+  tandis que le METAR décrit le temps observé à l'instant. Les deux utilisent le
+  même code.
+evaluates: [fondamentaux.meteorologie.lire-un-taf]
+difficulty: 1
+competencies: [meteorologie]
+concours: [eopan, eopn, alat]
+status: publie
