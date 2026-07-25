@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.falcon-200-gardian-02
+kind: qcm
+theme: falcon-200-gardian
+statement: Où est principalement basé le Falcon 200 Gardian de la Marine ?
+choices:
+- Outre-mer, dans le Pacifique
+- En Bretagne, à Lann-Bihoué uniquement
+- À Avord, au centre de la France
+- À Évreux, en Normandie
+correctChoices:
+- 0
+explanation: Le Falcon 200 Gardian, biréacteur de surveillance maritime livré à partir de 1984, est basé outre-mer (Pacifique). En cours de retrait, il est remplacé par le Falcon 50M Triton puis le Falcon 2000 Albatros.
+evaluates:
+- eopan.appareils.falcon-200-gardian
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopan.falcon-50m-02
+kind: qcm
+theme: falcon-50m
+statement: Combien de réacteurs équipent le Falcon 50M (Surmar) de la Marine ?
+choices:
+- Trois (triréacteur)
+- Deux (biréacteur)
+- Un (monoréacteur)
+- Quatre (quadriréacteur)
+correctChoices:
+- 0
+explanation: Le Falcon 50M est un triréacteur dérivé du Falcon 50 d'affaires de Dassault — à ne pas confondre avec le biréacteur Falcon 200 Gardian. Il assure la surveillance maritime et le secours en mer (Surmar), pas la lutte anti-sous-marine armée.
+evaluates:
+- eopan.appareils.falcon-50m
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+status: publie

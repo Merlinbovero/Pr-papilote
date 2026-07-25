@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.eopn.falcon-8x-archange-02
+kind: qcm
+theme: falcon-8x-archange
+statement: Quelle est la mission du futur avion Archange (Falcon 8X) de l'armée de l'Air et de l'Espace ?
+choices:
+- Le renseignement électromagnétique (ROEM / SIGINT)
+- La surveillance maritime
+- Le transport de troupes
+- La lutte anti-sous-marine
+correctChoices:
+- 0
+explanation: 'L''Archange, dérivé du Falcon 8X et porteur de la charge utile CUGE de Thales, assure le renseignement électromagnétique (ROEM/SIGINT) : écouter et localiser les émissions. Il remplace les C-160 Gabriel et n''est pas armé.'
+evaluates:
+- eopn.appareils.falcon-8x-archange
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopn
+status: publie

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.alat.alouette-ii-02
+kind: qcm
+theme: alouette-ii
+statement: Quelle première mondiale l'Alouette II représente-t-elle ?
+choices:
+- Le premier hélicoptère de série à turbine au monde
+- Le premier hélicoptère à décollage vertical
+- Le premier hélicoptère embarqué
+- Le premier hélicoptère d'attaque
+correctChoices:
+- 0
+explanation: L'Alouette II (SE3130, premier vol 1955) est le premier hélicoptère de série à turbine au monde et la pionnière de l'ALAT (turbine Turbomeca Artouste). Appareil fondateur aujourd'hui retiré du service.
+evaluates:
+- alat.appareils.alouette-ii
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- alat
+status: publie
