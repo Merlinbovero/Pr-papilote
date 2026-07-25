@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: q.personnalites.bleriot-01
+kind: qcm
+theme: bleriot
+statement: >-
+  Quel exploit Louis Blériot a-t-il réalisé le 25 juillet 1909 ?
+choices:
+  - La première traversée de la Manche en avion
+  - La première traversée de la Méditerranée
+  - La première traversée de l'Atlantique
+  - Le premier vol motorisé de l'histoire
+correctChoices: [0]
+explanation: >-
+  Le 25 juillet 1909, Blériot relie Calais à Douvres en une trentaine de minutes
+  sur son monoplan Blériot XI : c'est la première traversée de la Manche en
+  avion. La Méditerranée sera franchie par Garros (1913), l'Atlantique par
+  Lindbergh (1927).
+evaluates: [culture.personnalites.louis-bleriot]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
