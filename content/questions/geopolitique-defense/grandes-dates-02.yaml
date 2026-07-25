@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.geopolitique-defense.grandes-dates-02
+kind: qcm
+theme: grandes-dates-aviation
+statement: >-
+  Quelle unité aérienne l'armée de terre crée-t-elle le 22 novembre 1954 ?
+choices:
+  - L'ALAT (aviation légère de l'armée de terre)
+  - Les Forces aériennes stratégiques
+  - L'aéronautique navale
+  - L'armée de l'Air
+correctChoices: [0]
+explanation: >-
+  L'ALAT, aviation légère de l'armée de terre, est créée le 22 novembre 1954 ;
+  elle met en œuvre les hélicoptères et avions légers de l'armée de terre — la
+  voie des pilotes ALAT.
+evaluates: [culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise]
+difficulty: 3
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie

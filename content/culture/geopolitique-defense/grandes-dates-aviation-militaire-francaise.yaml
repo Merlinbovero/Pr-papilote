@@ -1,0 +1,148 @@
+schemaVersion: 1
+id: culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+type: concept
+title: Les grandes dates de l'aviation militaire française
+slug: grandes-dates-aviation-militaire-francaise
+image:
+  src: /images/fiche-grandes-dates-aviation.jpg
+  alt: Un bombardier Dassault Mirage IV, vecteur historique de la dissuasion nucléaire française, exposé en extérieur (base de Cazaux).
+  author: Redfive (Wikimedia Commons)
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/
+  sourceUrl: https://commons.wikimedia.org/wiki/File:MirageIV-Cazaux.jpg
+  focal: 50% 45%
+summary: >-
+  Un fil chronologique de l'aviation militaire française — de sa naissance
+  (1910-1912) à l'armée de l'Air et de l'Espace (2020), en passant par la
+  création de l'armée de l'Air (1934), de l'ALAT (1954) et de la dissuasion
+  nucléaire aéroportée (1964). Des repères de culture attendus au concours.
+objectifs:
+  - Situer les grandes étapes de l'aviation militaire française, de 1910 à nos jours.
+  - Retenir les dates clés — 1912, 1934, 1954, 1964, 2020 — et ce que chacune fonde.
+  - Comprendre comment chaque armée s'est dotée d'une composante aérienne propre.
+aliases:
+  [
+    histoire aviation militaire,
+    grandes dates,
+    création armée de l'air,
+    "1934",
+    ALAT 1954,
+    Mirage IV,
+    armée de l'air et de l'espace,
+  ]
+module: culture
+category: geopolitique-defense
+subcategory: histoire
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche de repères chronologiques de l'aviation militaire française ; dates vérifiées sur sources officielles et encyclopédiques (defense.gouv.fr, fr.wikipedia.org).
+    author: prepapilote
+sources:
+  - title: "Histoire de l'Armée de l'air française — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Histoire_de_l'Arm%C3%A9e_de_l'air_fran%C3%A7aise
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "L'histoire de l'armée de l'Air et de l'Espace (Ministère des Armées)"
+    url: https://www.defense.gouv.fr/air/mieux-nous-connaitre/lhistoire-larmee-lair-lespace
+    kind: officiel
+    consultedAt: "2026-07-25"
+  - title: "Aviation légère de l'armée de terre (ALAT) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Aviation_l%C3%A9g%C3%A8re_de_l%27arm%C3%A9e_de_terre
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Forces aériennes stratégiques — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Forces_a%C3%A9riennes_strat%C3%A9giques
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.geopolitique-defense.organisation-de-la-defense-francaise
+    - eopn.organisation.armee-de-l-air-et-de-l-espace
+    - alat.organisation.aviation-legere-armee-de-terre
+content:
+  essentiel:
+    body: |
+      L'aviation militaire française naît au **début du XXe siècle**, bien avant
+      qu'existe une « armée de l'Air ». On peut retenir **cinq grandes étapes**.
+
+      D'abord les **pionniers** : la loi du **29 mars 1912** crée
+      l'**aéronautique militaire**, d'abord **rattachée à l'armée de terre** ;
+      la **Première Guerre mondiale** (1914-1918) en fait un outil de combat, avec
+      ses **escadrilles** et ses **as** (Guynemer, Fonck).
+
+      Vient ensuite l'**autonomie** : le **2 juillet 1934**, l'**armée de l'Air**
+      devient une **arme à part entière**, aux côtés de l'armée de terre et de la
+      Marine. Après-guerre, l'**armée de terre** se dote de sa propre aviation
+      avec la création de l'**ALAT** le **22 novembre 1954**.
+
+      Puis la **dissuasion** : en **1964**, la **dissuasion nucléaire
+      aéroportée** devient opérationnelle avec le bombardier **Mirage IV**.
+      Enfin, l'**ère moderne** : le **Rafale** entre en service dans les années
+      2000, et en **2020** l'armée de l'Air devient l'**armée de l'Air et de
+      l'Espace**, intégrant explicitement le **domaine spatial**.
+    aRetenir:
+      - 29 mars 1912 — la loi crée l'aéronautique militaire, d'abord rattachée à l'armée de terre.
+      - 2 juillet 1934 — l'armée de l'Air devient une arme à part entière.
+      - 22 novembre 1954 — création de l'ALAT (aviation légère de l'armée de terre).
+      - 1964 — la dissuasion nucléaire aéroportée devient opérationnelle (Mirage IV) ; 2020 — l'armée de l'Air devient l'armée de l'Air et de l'Espace.
+  sections:
+    - id: la-chronologie
+      title: La chronologie en un coup d'œil
+      body: |
+        | Date | Événement |
+        | --- | --- |
+        | 1910 | Naissance de l'aviation militaire française (9 juin 1910). |
+        | 1912 | La loi du 29 mars 1912 crée l'aéronautique militaire, rattachée à l'armée de terre ; premières escadrilles. |
+        | 1914-1918 | Première Guerre mondiale : essor des escadrilles et des « as » (Guynemer, Fonck), escadrille des Cigognes. |
+        | 1934 | L'armée de l'Air devient une arme à part entière (2 juillet 1934). |
+        | 1954 | Création de l'ALAT — aviation légère de l'armée de terre (22 novembre 1954). |
+        | 1964 | Dissuasion nucléaire aéroportée opérationnelle avec le Mirage IV (première alerte le 8 octobre 1964). |
+        | 2020 | L'armée de l'Air devient l'armée de l'Air et de l'Espace. |
+    - id: des-pionniers-a-l-autonomie
+      title: Des pionniers à l'autonomie (1910-1934)
+      body: |
+        Les premiers avions militaires français apparaissent vers **1910**. La
+        **loi du 29 mars 1912** institue l'**aéronautique militaire** : l'aviation
+        est alors une **composante de l'armée de terre**, organisée en
+        **escadrilles**.
+
+        La **Première Guerre mondiale** transforme l'aviation en véritable **arme
+        de combat** — reconnaissance, chasse, bombardement — et fait naître la
+        légende des **as**, comme **Georges Guynemer** (escadrille des
+        **Cigognes**) et **René Fonck**, le plus grand as allié de la guerre.
+
+        L'expérience de la guerre montre que l'aviation mérite une **organisation
+        propre**. Après la création d'un **ministère de l'Air** (1928), l'**armée
+        de l'Air** devient une **arme à part entière le 2 juillet 1934**.
+    - id: de-la-dissuasion-a-l-espace
+      title: De la dissuasion à l'Espace (1954-2020)
+      strate: maitriser
+      body: |
+        Après 1945, chaque armée consolide sa **composante aérienne**. L'**armée
+        de terre** crée l'**ALAT** (aviation légère de l'armée de terre) le
+        **22 novembre 1954**, pour l'observation puis, très vite, l'**hélicoptère**
+        de manœuvre et de combat.
+
+        La décennie suivante voit naître la **dissuasion nucléaire** : en
+        **1964**, les **Forces aériennes stratégiques** mettent en service le
+        bombardier **Mirage IV**, premier vecteur de la dissuasion **aéroportée**
+        (première alerte opérationnelle le **8 octobre 1964**).
+
+        À l'**époque contemporaine**, le **Rafale** — avion de combat polyvalent —
+        entre en service dans la **Marine** au début des années 2000, puis dans
+        l'**armée de l'Air en 2006**. En **2020**, pour tenir compte de
+        l'importance croissante du **spatial militaire**, l'armée de l'Air devient
+        l'**armée de l'Air et de l'Espace**.
+  pieges:
+    - L'armée de l'Air n'existe comme arme indépendante que depuis 1934 — avant, l'aviation était une composante de l'armée de terre.
+    - « Aviation militaire » n'est pas « armée de l'Air » — l'aviation militaire naît vers 1910-1912, l'armée de l'Air en 1934.
+    - L'ALAT (armée de terre) et l'aéronautique navale (Marine) sont distinctes de l'armée de l'Air — chaque armée a sa propre composante aérienne.
+    - Depuis 2020, on dit « armée de l'Air et de l'Espace » — la dimension spatiale y est désormais explicite.

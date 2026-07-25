@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.geopolitique-defense.grandes-dates-03
+kind: qcm
+theme: grandes-dates-aviation
+statement: >-
+  En 2020, l'armée de l'Air change de nom pour intégrer un nouveau domaine.
+  Comment s'appelle-t-elle désormais ?
+choices:
+  - L'armée de l'Air et de l'Espace
+  - L'armée de l'Air et du Cyber
+  - L'aéronautique militaire
+  - Les Forces aériennes stratégiques
+correctChoices: [0]
+explanation: >-
+  En 2020, l'armée de l'Air devient l'armée de l'Air et de l'Espace, pour tenir
+  compte de l'importance croissante du domaine spatial militaire.
+evaluates: [culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
