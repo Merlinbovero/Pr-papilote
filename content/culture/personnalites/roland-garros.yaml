@@ -1,0 +1,136 @@
+schemaVersion: 1
+id: culture.personnalites.roland-garros
+type: concept
+title: Roland Garros, pionnier de la Méditerranée
+slug: roland-garros
+image:
+  src: /images/fiche-roland-garros.jpg
+  alt: Un hydroaéroplane Morane-Saulnier piloté par Roland Garros survole le lac de Côme lors de la saison 1913.
+  author: Auteur inconnu — domaine public
+  license: Domaine public
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Roland_Garros_su_Morane-Saulnier_(1913).jpg
+  focal: 45% 40%
+summary: >-
+  Pionnier de l'aviation, Roland Garros (1888-1918) réussit la première
+  traversée aérienne de la Méditerranée en 1913 et met au point le tir à travers
+  l'hélice en 1915, avant de tomber au combat en 1918. Le stade de tennis
+  parisien porte son nom.
+objectifs:
+  - Situer Roland Garros parmi les pionniers de l'aviation française.
+  - Connaître ses deux grands apports — la traversée de la Méditerranée et le tir à travers l'hélice.
+  - Comprendre pourquoi son nom est passé à la postérité (y compris via le stade de tennis).
+aliases:
+  [
+    Roland Garros,
+    traversée de la Méditerranée,
+    tir à travers l'hélice,
+    Morane-Saulnier,
+    pionnier de l'aviation,
+  ]
+module: culture
+category: personnalites
+tags: []
+level: 1
+createdAt: "2026-07-25"
+verifiedAt: "2026-07-25"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-25"
+    version: 1
+    motif: Création — fiche Personnalités (Roland Garros) ; faits vérifiés sur sources encyclopédiques et officielles (fr.wikipedia.org, rolandgarros.com).
+    author: prepapilote
+sources:
+  - title: "Roland Garros (aviateur) — Wikipédia"
+    url: https://fr.wikipedia.org/wiki/Roland_Garros_(aviateur)
+    kind: encyclopedie
+    consultedAt: "2026-07-25"
+  - title: "Roland Garros, l'aviateur — site officiel du tournoi de Roland-Garros"
+    url: https://www.rolandgarros.com/fr-fr/article/cinq-choses-a-savoir-sur-roland-garros-aviateur
+    kind: officiel
+    consultedAt: "2026-07-25"
+status: publie
+relations:
+  related:
+    - culture.personnalites.georges-guynemer
+    - culture.personnalites.jean-mermoz
+    - culture.geopolitique-defense.grandes-dates-aviation-militaire-francaise
+content:
+  essentiel:
+    body: |
+      **Roland Garros** (1888-1918) est l'un des grands **pionniers** de
+      l'aviation, né à **Saint-Denis de La Réunion**. On lui doit deux exploits
+      qui ont marqué l'histoire du vol.
+
+      D'abord la **première traversée aérienne de la Méditerranée** : le
+      **23 septembre 1913**, il relie **Saint-Raphaël** (Var) à **Bizerte**
+      (Tunisie) — près de **780 km** au-dessus de la mer, en une huitaine
+      d'heures, sur un monoplan **Morane-Saulnier**, malgré des ennuis moteur.
+
+      Ensuite, pendant la **Première Guerre mondiale**, il résout un problème clé
+      du combat aérien : **tirer vers l'avant** sans détruire son **hélice**. Sa
+      solution — des **déflecteurs** métalliques fixés sur les pales — lui permet
+      d'abattre ses premiers adversaires dès **1915**.
+
+      **Capturé** puis **évadé**, il reprend le combat et est **tué** le
+      **5 octobre 1918**, la veille de ses 30 ans. Son nom reste célèbre — y
+      compris parce que le **stade de tennis** parisien le porte.
+    aRetenir:
+      - Roland Garros (1888-1918), pionnier de l'aviation, né à La Réunion.
+      - Première traversée aérienne de la Méditerranée le 23 septembre 1913 (Saint-Raphaël → Bizerte).
+      - Il met au point le tir à travers l'hélice (déflecteurs) en 1915.
+      - Tué au combat le 5 octobre 1918 ; le stade de tennis Roland-Garros porte son nom.
+  sections:
+    - id: reperes
+      title: Repères
+      body: |
+        | Repère | Détail |
+        | --- | --- |
+        | Naissance | 6 octobre 1888, Saint-Denis (La Réunion) |
+        | Mort | 5 octobre 1918, près de Vouziers (Ardennes), au combat |
+        | Exploit | 1ʳᵉ traversée aérienne de la Méditerranée (23 septembre 1913) |
+        | Innovation | Tir à travers l'hélice (déflecteurs sur les pales, 1915) |
+        | Postérité | Le stade Roland-Garros (tennis) porte son nom |
+    - id: la-mediterranee
+      title: La traversée de la Méditerranée (1913)
+      body: |
+        Au début des années 1910, franchir la **Méditerranée** en avion tient de
+        l'exploit : une longue étendue d'**eau**, sans terrain de secours, avec
+        des moteurs peu fiables. Le **23 septembre 1913**, Garros s'élance de
+        **Saint-Raphaël** et se pose à **Bizerte** (Tunisie) après environ
+        **780 km** et **huit heures** de vol, avec très peu de carburant restant.
+
+        Ce vol fait de lui une **célébrité** et illustre les progrès rapides de
+        l'aviation, à peine dix ans après les premiers vols motorisés.
+    - id: le-tir-a-travers-l-helice
+      title: Le tir à travers l'hélice (1915)
+      body: |
+        Sur les premiers avions de chasse, une difficulté majeure se pose :
+        l'**hélice** tourne juste devant le pilote ; tirer droit devant risque de
+        **briser les pales**. Garros contribue à la solution en fixant des
+        **déflecteurs** (plaques d'acier) sur les pales, qui **dévient** les
+        balles frappant l'hélice.
+
+        Ce dispositif, rudimentaire mais efficace, lui permet de **tirer dans
+        l'axe** de l'avion et de remporter ses premières **victoires** en 1915.
+        La **synchronisation** véritable de la mitrailleuse (qui ne tire que
+        lorsque les pales sont hors de l'axe) viendra peu après, côté allemand
+        (Fokker).
+    - id: guerre-et-memoire
+      title: Guerre, évasion et mémoire
+      strate: maitriser
+      body: |
+        En 1915, une panne derrière les lignes ennemies conduit à sa **capture**.
+        Après près de trois ans, il parvient à **s'évader** en 1918 et **reprend
+        le combat**, malgré une vue affaiblie. Il est **tué en combat aérien** le
+        **5 octobre 1918**, tout près de la fin de la guerre.
+
+        Sa notoriété lui survit : à la fin des années **1920**, le grand **stade
+        de tennis** parisien est baptisé **Roland-Garros** en son honneur — d'où
+        le nom du célèbre tournoi. Un bel exemple de la façon dont un **pionnier**
+        de l'aviation entre dans la mémoire collective.
+  pieges:
+    - Roland Garros était un aviateur — le stade de tennis porte son nom en hommage ; il n'était pas joueur de tennis.
+    - Il réussit la première traversée aérienne de la Méditerranée (1913), à ne pas confondre avec une traversée de l'Atlantique.
+    - Le « tir à travers l'hélice » de Garros repose sur des déflecteurs ; la vraie synchronisation de la mitrailleuse viendra ensuite (Fokker).
+    - Il meurt au combat en 1918, pas au cours d'un exploit sportif — la veille de ses 30 ans.

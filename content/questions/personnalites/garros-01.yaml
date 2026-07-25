@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: q.personnalites.garros-01
+kind: qcm
+theme: roland-garros
+statement: >-
+  Quel exploit aéronautique Roland Garros a-t-il réalisé le 23 septembre 1913 ?
+choices:
+  - La première traversée aérienne de la Méditerranée
+  - La première traversée de l'Atlantique Nord
+  - Le premier looping de l'histoire
+  - Le premier vol de nuit postal
+correctChoices: [0]
+explanation: >-
+  Le 23 septembre 1913, Garros réalise la première traversée aérienne de la
+  Méditerranée, de Saint-Raphaël à Bizerte (Tunisie), sur un monoplan
+  Morane-Saulnier.
+evaluates: [culture.personnalites.roland-garros]
+difficulty: 2
+competencies: [culture-militaire]
+concours: [eopan, eopn, alat]
+status: publie
