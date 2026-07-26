@@ -47,8 +47,12 @@ import { cn } from "@/lib/utils";
  * La structure vit dans `src/lib/navigation.ts`, où un test vérifie que chaque
  * lien mène à une route réelle. Ici, uniquement le rendu.
  *
- * Sous `lg`, la barre laisse la place à un tiroir : six libellés, la recherche
- * et le compte ne tiennent pas sur un écran de portable.
+ * Le basculement en tiroir se fait à **1180 px**, une largeur mesurée et non
+ * choisie : logo (136) + six sections (612) + bloc de droite connecté (269,
+ * « Mon compte » et la déconnexion étant plus larges que « Connexion ») +
+ * gouttières (48) = 1065 px de contenu, soit 1129 px de fenêtre avec les
+ * marges. En dessous, la barre se chevauchait — d'où ce point d'arrêt propre
+ * plutôt qu'un `lg` qui tombait 100 px trop bas.
  */
 
 const ICONS: Record<NavIconName, LucideIcon> = {
@@ -84,7 +88,7 @@ export function MainNav() {
       <NavigationMenu
         viewport={false}
         aria-label="Navigation principale"
-        className="hidden lg:flex"
+        className="hidden min-[1180px]:flex"
       >
         <NavigationMenuList className="gap-0.5">
           {NAV_SECTIONS.map((section) => {
@@ -144,7 +148,7 @@ export function MainNav() {
       </NavigationMenu>
 
       {/* Mobile et tablette : tiroir, une section par volet dépliable */}
-      <div className="lg:hidden">
+      <div className="min-[1180px]:hidden">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" aria-label="Ouvrir le menu">

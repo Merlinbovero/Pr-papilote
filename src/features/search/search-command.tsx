@@ -22,7 +22,13 @@ interface SearchCommandProps {
   /** Index de recherche, construit côté serveur (indexeur de build). */
   entries: SearchEntry[];
   /** hero : barre large et centrée (accueil) ; compact : header. */
-  variant?: "compact" | "hero";
+  /**
+   * `hero` : grande barre de la page d’accueil. `compact` : bouton-champ.
+   * `icon` : bouton carré du header — la vraie barre est en page d’accueil,
+   * le header ne garde qu’un accès à la palette pour ne pas manger la place
+   * de la navigation.
+   */
+  variant?: "icon" | "compact" | "hero";
 }
 
 /**
@@ -79,25 +85,36 @@ export function SearchCommand({ entries, variant = "compact" }: SearchCommandPro
 
   return (
     <>
-      <Button
-        variant="outline"
-        size={variant === "hero" ? "lg" : "sm"}
-        className={cn(
-          "text-muted-foreground justify-start gap-2",
-          variant === "hero" ? "w-full max-w-xl" : "w-full sm:w-56"
-        )}
-        onClick={() => setOpen(true)}
-      >
-        <SearchIcon aria-hidden className="size-4" />
-        <span className="flex-1 text-left">
-          {variant === "hero"
-            ? "Rechercher un appareil, une notion, une procédure…"
-            : "Rechercher…"}
-        </span>
-        <kbd className="bg-muted pointer-events-none hidden rounded px-1.5 font-mono text-xs sm:inline">
-          Ctrl K
-        </kbd>
-      </Button>
+      {variant === "icon" ? (
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label="Rechercher (Ctrl K)"
+          onClick={() => setOpen(true)}
+        >
+          <SearchIcon aria-hidden className="size-4" />
+        </Button>
+      ) : (
+        <Button
+          variant="outline"
+          size={variant === "hero" ? "lg" : "sm"}
+          className={cn(
+            "text-muted-foreground justify-start gap-2",
+            variant === "hero" ? "w-full max-w-xl" : "w-full sm:w-56"
+          )}
+          onClick={() => setOpen(true)}
+        >
+          <SearchIcon aria-hidden className="size-4" />
+          <span className="flex-1 text-left">
+            {variant === "hero"
+              ? "Rechercher un appareil, une notion, une procédure…"
+              : "Rechercher…"}
+          </span>
+          <kbd className="bg-muted pointer-events-none hidden rounded px-1.5 font-mono text-xs sm:inline">
+            Ctrl K
+          </kbd>
+        </Button>
+      )}
       <CommandDialog
         open={open}
         onOpenChange={setOpen}
