@@ -39,7 +39,7 @@ test.describe("parcours BIA", () => {
     await page.goto("/bia/examen-blanc");
 
     await expect(page.getByRole("heading", { level: 1, name: "Examen blanc BIA" })).toBeVisible();
-    await page.getByRole("button", { name: "Commencer l'examen" }).click();
+    await page.getByRole("button", { name: "Commencer l’examen" }).click();
 
     // L'examen tourne : question 1, chronomètre, navigation.
     await expect(page.getByText(/Question 1 \/ /)).toBeVisible();
@@ -56,7 +56,7 @@ test.describe("parcours BIA", () => {
     await expect(page.getByText(/Question 1 \/ /)).toBeVisible();
 
     // Termine sans tout remplir : correction, note, erreurs listées.
-    await page.getByRole("button", { name: "Terminer l'examen" }).click();
+    await page.getByRole("button", { name: "Terminer l’examen" }).click();
     await expect(page.getByText(/\/20/).first()).toBeVisible();
     await expect(page.getByRole("button", { name: /Mes erreurs/ })).toBeVisible();
     await expect(page.getByText("Non admis")).toBeVisible();

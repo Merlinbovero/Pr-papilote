@@ -63,6 +63,16 @@ pour la cible horizontale (palonnier), clavier pour le calcul mental.
   contrôle le jeu **se met en pause** et un **pavé numérique** demande la somme
   courante (le mouvement reprend après validation — le temps de pause ne compte
   pas dans le suivi).
+- **Tutoriel d'accueil** (`secpil-tutorial.tsx`, sur l'écran de sélection, il
+  disparaît pendant la session) : les **trois tâches** expliquées une à une,
+  chacune avec une **figure** — le « 8 » avec la cible et le curseur en retard,
+  la bande palonnier avec le point à rejoindre, le nombre et sa cadence
+  affiché/masqué. Ces figures sont tracées **à partir des fonctions du moteur**
+  (`mancheTarget`, constantes de cadence) : elles ne peuvent pas se
+  désynchroniser du simulateur. Suivent la logique de progression (modes puis
+  niveaux, sans redire les libellés que portent déjà les sélecteurs) et la
+  **règle de méthode** de l'attention partagée : **dégrader un peu partout**
+  plutôt qu'abandonner une tâche.
 - **Séparation logique/rendu** : toute la logique pure et testée vit dans
   `src/lib/psychotech/secpil.ts` (géométrie des cibles, cadence des points de
   contrôle, séquence de nombres déterministe, conversion erreur → précision) ;

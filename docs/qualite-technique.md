@@ -36,6 +36,15 @@ Engagement **WCAG 2.1 AA**, vérifié **automatiquement** : scan **axe** (`@axe-
 
 > Le scan a d'emblée corrigé trois défauts réels : contraste de `--muted-foreground` sur fond `muted` (0.556 → 0.52), bouton de connexion icône-seule sans nom accessible sur mobile (`sr-only`), et liens de sources distingués par la seule couleur (soulignement permanent).
 
+## Typographie du texte JSX
+
+**Pas d'entité HTML dans le texte JSX** — on écrit l'apostrophe typographique **`’`** (U+2019), jamais `&apos;`. Deux raisons :
+
+1. **C'est la bonne apostrophe française** (l'apostrophe droite `'` est un signe de machine à écrire).
+2. **`&apos;` déclenche un défaut de compilation** : quand un nœud de texte JSX contient une entité HTML, le transformateur (SWC) **supprime l'espace en tête du nœud**. Concrètement, `<strong>trois de front</strong> sans en abandonner aucune. […] qu&apos;elles […]` s'affiche **« trois de frontsans »** — les mots se collent. Le même texte sans entité conserve son espace. La règle ESLint `react/no-unescaped-entities`, qui interdit `'` brut, ne signale pas `’` : la bonne typographie est aussi la seule qui compile juste.
+
+Si un espace collé apparaît malgré tout après une balise (`</strong>`, `</em>`), c'est le symptôme : chercher l'entité dans le nœud de texte, pas l'espace manquant.
+
 ## Responsive (§6)
 
 Conception desktop-first, implémentation CSS mobile-first. **Aucune fonctionnalité ne disparaît** sur mobile : seule la présentation évolue. Tests E2E Playwright sur deux profils (Desktop Chrome + Pixel 7).
