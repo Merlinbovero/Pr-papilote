@@ -4,18 +4,18 @@ kind: qcm
 theme: caracal
 statement: Quelle unité de l'ALAT met en œuvre le Caracal (H225M) ?
 choices:
-- Le 4e RHFS (forces spéciales)
-- Le régiment de Gazelle
-- La flottille 36F
-- L'escadron 1/54 « Dunkerque »
+  - Le 4e RHFS (forces spéciales)
+  - Le régiment de Gazelle
+  - La flottille 36F
+  - L'escadron 1/54 « Dunkerque »
 correctChoices:
-- 0
+  - 0
 explanation: À l'ALAT, le Caracal (hélicoptère de manœuvre des forces spéciales, dernier de la lignée Puma/Super Puma) arme le 4e RHFS avec huit appareils. Grâce au ravitaillement en vol, il atteint jusqu'à 10 heures d'autonomie.
 evaluates:
-- alat.appareils.caracal
+  - alat.appareils.caracal
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- alat
+  - alat
 status: publie

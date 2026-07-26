@@ -20,15 +20,7 @@ objectifs:
   - Savoir ce qu'est un METAR et à quoi il sert.
   - Décoder les principaux groupes d'un METAR (vent, visibilité, temps, nuages, température, QNH).
   - Connaître les abréviations clés (CAVOK, FEW/SCT/BKN/OVC, RA, TS…).
-aliases:
-  [
-    METAR,
-    message d'observation,
-    météo aérodrome,
-    CAVOK,
-    QNH,
-    bulletin météo,
-  ]
+aliases: [METAR, message d'observation, météo aérodrome, CAVOK, QNH, bulletin météo]
 module: fondamentaux
 category: meteorologie
 tags: []

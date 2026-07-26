@@ -4,20 +4,20 @@ kind: qcm
 theme: jumelles-vision-nocturne
 statement: Sur quel principe reposent les jumelles de vision nocturne (JVN) employées par les équipages ?
 choices:
-- L'amplification de la lumière résiduelle
-- La détection de la chaleur (infrarouge thermique)
-- L'émission d'un faisceau laser
-- La vision par ondes radar
+  - L'amplification de la lumière résiduelle
+  - La détection de la chaleur (infrarouge thermique)
+  - L'émission d'un faisceau laser
+  - La vision par ondes radar
 correctChoices:
-- 0
-explanation: 'Les JVN amplifient la lumière résiduelle (image verte) — ce n''est pas de la vision thermique (infrarouge). Elles ne fonctionnent donc pas dans le noir absolu : il faut un minimum de lumière ambiante à amplifier, et le champ de vision reste étroit.'
+  - 0
+explanation: "Les JVN amplifient la lumière résiduelle (image verte) — ce n'est pas de la vision thermique (infrarouge). Elles ne fonctionnent donc pas dans le noir absolu : il faut un minimum de lumière ambiante à amplifier, et le champ de vision reste étroit."
 evaluates:
-- culture.culture-aeronautique.jumelles-de-vision-nocturne
+  - culture.culture-aeronautique.jumelles-de-vision-nocturne
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

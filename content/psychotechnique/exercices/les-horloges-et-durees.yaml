@@ -1,0 +1,119 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-horloges-et-durees
+type: concept
+title: Les horloges et les durées
+slug: les-horloges-et-durees
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en manœuvre — le calcul des heures et des durées
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
+summary: >-
+  Heure d'arrivée, temps de vol, passage de minuit, UTC ou heure locale — le
+  calcul du temps est un réflexe de pilote. Tout se joue en base 60 et modulo
+  24 h, jamais en base 100.
+objectifs:
+  - Additionner une heure et une durée en gérant la retenue des minutes (base 60).
+  - Calculer une durée entre deux heures, y compris en passant par minuit.
+  - Convertir entre heure locale et heure UTC selon le décalage horaire.
+aliases: [horloges, durées, temps de vol, heure d'arrivée, UTC, heure locale, base 60]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-26"
+verifiedAt: "2026-07-26"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-26"
+    version: 1
+    motif: Création — fiche d'entraînement « heures et durées » (nouvelle famille génératrice du moteur psychotechnique).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-26"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.le-calcul-mental
+    - fondamentaux.navigation.cap-route-et-derive
+content:
+  essentiel:
+    body: |
+      Le **calcul du temps** est omniprésent en aéronautique : estimer une
+      **heure d'arrivée** (ETA), mesurer un **temps de vol**, jongler entre
+      **heure locale** et **heure UTC**. Les tests psychotechniques le vérifient
+      avec des énoncés courts et chronométrés.
+
+      La règle d'or : le temps se compte en **base 60** (60 minutes = 1 heure),
+      **jamais en base 100**. L'erreur classique est d'ajouter les minutes comme
+      des centièmes.
+
+      Trois formats reviennent :
+
+      - **arrivée = départ + durée** — additionner heures et minutes, avec
+        retenue quand les minutes dépassent 59 ;
+      - **durée entre deux heures** — compter d'une heure à l'autre, en passant
+        éventuellement par **minuit** (modulo 24 h) ;
+      - **conversion UTC ↔ locale** — retrancher ou ajouter le **décalage
+        horaire** (en France : UTC+1 en hiver, UTC+2 en été).
+    aRetenir:
+      - Le temps se compte en base 60 (60 min = 1 h), jamais en base 100.
+      - Départ + durée — additionner les minutes d'abord ; au-delà de 59, une retenue de +1 h.
+      - "Durée à cheval sur minuit — compter jusqu'à minuit, puis ajouter le reste (modulo 24 h)."
+      - "UTC — heure locale − décalage : en France, −1 h en hiver, −2 h en été."
+  sections:
+    - id: additionner-une-duree
+      title: Arrivée = départ + durée
+      body: |
+        Pour trouver l'heure d'atterrissage, ajoutez le **temps de vol** à
+        l'heure de décollage — en deux temps :
+
+        1. additionnez les **minutes** ; si le total dépasse **59**, retirez 60
+           et **retenez +1 heure** ;
+        2. additionnez les **heures**, retenue comprise ; au-delà de **24 h**,
+           retirez 24 (on passe au lendemain).
+
+        Exemple : décollage **09h45**, vol **2h30**. Minutes : 45 + 30 = 75 →
+        **15 min** avec retenue ; heures : 9 + 2 + 1 = **12**. Arrivée :
+        **12h15**.
+    - id: duree-entre-deux-heures
+      title: Durée entre deux heures
+      body: |
+        Pour mesurer un temps de vol entre deux heures données, comptez
+        **jusqu'à l'heure ronde** puis ajoutez le reste — et n'oubliez pas le
+        **passage de minuit**.
+
+        Exemple : décollage **22h50**, atterrissage **01h20** (le lendemain).
+        De 22h50 à 23h00 = **10 min** ; de 23h00 à 01h00 = **2 h** ; de 01h00 à
+        01h20 = **20 min**. Total : **2h30**.
+
+        Le piège : soustraire bêtement (01 − 22) donne un nombre négatif —
+        toujours raisonner **modulo 24 h**.
+    - id: utc-et-heure-locale
+      title: UTC et heure locale
+      strate: maitriser
+      body: |
+        En aéronautique, l'heure de référence est l'**UTC** (temps universel
+        coordonné), identique partout dans le monde — ce qui évite les
+        confusions entre fuseaux.
+
+        Pour passer de l'heure **locale** à l'**UTC**, retranchez le décalage :
+
+        - **France métropolitaine** — UTC+1 en **hiver**, UTC+2 en **été** ;
+        - donc à Paris en été, il faut **retirer 2 heures** pour obtenir l'UTC.
+
+        Exemple : décollage à **14h20 locale** (UTC+2) → **12h20 UTC**. Si le vol
+        dure **3h00**, l'arrivée est à **15h20 UTC**. Convertissez **d'abord**
+        en UTC, ajoutez le temps de vol **ensuite**.
+  pieges:
+    - Le temps se compte en base 60 — 45 + 30 minutes font 1h15, pas « 75 » ni « 0,75 ».
+    - Une durée à cheval sur minuit se compte modulo 24 h — ne jamais soustraire naïvement les heures.
+    - "Heure locale vers UTC — on retranche le décalage (France : −1 h en hiver, −2 h en été) ; l'inverse est une erreur classique."
+    - Convertir en UTC AVANT d'ajouter le temps de vol — pas l'inverse.

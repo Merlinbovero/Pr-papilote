@@ -4,20 +4,20 @@ kind: qcm
 theme: mitsubishi-a6m-zero
 statement: Quel appareil dominait le début de la guerre du Pacifique grâce à sa maniabilité et son rayon d'action ?
 choices:
-- Le chasseur embarqué japonais Mitsubishi A6M Zero
-- Le P-51 Mustang américain
-- Le Spitfire britannique
-- Le Bf 109 allemand
+  - Le chasseur embarqué japonais Mitsubishi A6M Zero
+  - Le P-51 Mustang américain
+  - Le Spitfire britannique
+  - Le Bf 109 allemand
 correctChoices:
-- 0
+  - 0
 explanation: Le Zero est le chasseur embarqué de la marine impériale japonaise, redouté au début de la guerre du Pacifique pour sa maniabilité et son immense rayon d'action.
 evaluates:
-- culture.aviation-mondiale.mitsubishi-a6m-zero
+  - culture.aviation-mondiale.mitsubishi-a6m-zero
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

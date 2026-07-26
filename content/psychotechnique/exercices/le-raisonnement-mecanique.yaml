@@ -1,0 +1,118 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-raisonnement-mecanique
+type: concept
+title: Le raisonnement mécanique
+slug: le-raisonnement-mecanique
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en manœuvre — le raisonnement mécanique
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
+summary: >-
+  Engrenages et poulies — sens de rotation et vitesse. Deux roues engrenées
+  tournent en sens inverse ; plus une roue a de dents, plus elle tourne
+  lentement. Une courroie non croisée conserve le sens.
+objectifs:
+  - Déterminer le sens de rotation dans un train d'engrenages (alternance).
+  - Comparer les vitesses selon le nombre de dents ou le diamètre.
+  - Distinguer engrenages (sens inverse) et poulies à courroie (même sens).
+aliases:
+  [raisonnement mécanique, engrenages, poulies, courroie, sens de rotation, rapport de transmission]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-26"
+verifiedAt: "2026-07-26"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-26"
+    version: 1
+    motif: Création — fiche d'entraînement « raisonnement mécanique » (nouvelle famille génératrice du moteur psychotechnique).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-26"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.la-vision-spatiale
+content:
+  essentiel:
+    body: |
+      Le **raisonnement mécanique** évalue la compréhension intuitive de
+      systèmes simples — **engrenages**, **poulies**, **leviers**. Nul besoin de
+      formules savantes : quelques règles physiques suffisent, appliquées avec
+      rigueur.
+
+      Deux principes gouvernent les **engrenages** :
+
+      - **le sens** — deux roues **engrenées** (qui se touchent) tournent
+        toujours en **sens inverse** l'une de l'autre ; dans une chaîne, le sens
+        **alterne** ;
+      - **la vitesse** — plus une roue a de **dents**, plus elle tourne
+        **lentement** ; le produit **dents × tours** se conserve d'une roue à
+        l'autre.
+
+      Les **poulies** reliées par une **courroie** obéissent à une logique
+      voisine, avec une différence clé sur le sens.
+    aRetenir:
+      - Deux roues dentées engrenées tournent en sens INVERSE ; le sens alterne le long d'une chaîne.
+      - Plus une roue a de dents, plus elle tourne lentement (dents × tours = constante).
+      - Une courroie NON croisée conserve le sens ; une courroie croisée l'inverse.
+      - Une roue intermédiaire (« folle ») change le sens, pas le rapport de vitesse.
+  sections:
+    - id: le-sens-de-rotation
+      title: Le sens de rotation
+      body: |
+        Quand deux roues dentées **s'engrènent**, leurs dents se poussent
+        mutuellement : elles tournent forcément en **sens contraire**. Dans une
+        **chaîne** de roues alignées, le sens **alterne** donc à chaque
+        contact :
+
+        - roues de rang **impair** (1, 3, 5…) → même sens que la première ;
+        - roues de rang **pair** (2, 4, 6…) → sens opposé.
+
+        Une **roue intermédiaire** (dite « folle ») sert uniquement à
+        **inverser** ou **transmettre** le mouvement : elle ne modifie **pas**
+        le rapport de vitesse entre l'entrée et la sortie.
+    - id: la-vitesse
+      title: La vitesse de rotation
+      body: |
+        La règle est inverse de l'intuition : la **grande** roue tourne
+        **lentement**, la **petite** vite. Physiquement, le **produit** du
+        nombre de dents par la vitesse se conserve :
+
+        > dents₁ × tours₁ = dents₂ × tours₂
+
+        Exemple : un petit pignon de **12 dents** entraîne une roue de
+        **36 dents**. La roue a **3 fois plus** de dents : elle tourne **3 fois
+        moins vite**. Si le pignon fait 90 tr/min, la roue en fait **30**.
+    - id: poulies-et-courroies
+      title: Poulies et courroies
+      strate: maitriser
+      body: |
+        Deux **poulies** reliées par une **courroie** transmettent le
+        mouvement à distance. La règle de vitesse est la même que pour les
+        engrenages (**petit diamètre = tours plus rapides**), mais le **sens**
+        diffère :
+
+        - **courroie non croisée** — les deux poulies tournent dans le **même
+          sens** ;
+        - **courroie croisée** (en 8) — elles tournent en **sens inverse**.
+
+        C'est la grande différence avec les engrenages, où le contact direct
+        impose **toujours** le sens inverse. Repérez donc d'abord la nature de
+        la liaison (dents qui s'engrènent ? courroie ? croisée ?) avant de
+        conclure.
+  pieges:
+    - Engrenages en contact = sens inverse ; poulies à courroie non croisée = même sens. Ne pas confondre.
+    - La grande roue tourne lentement, la petite vite — l'inverse de l'intuition.
+    - Une roue intermédiaire ne change que le sens, jamais le rapport de vitesse entrée/sortie.
+    - Une courroie croisée (en 8) inverse le sens — vérifier si la courroie est croisée avant de répondre.

@@ -4,20 +4,20 @@ kind: qcm
 theme: culture-de-securite
 statement: En quoi l'enquête de sécurité menée par le BEA diffère-t-elle de l'enquête judiciaire ?
 choices:
-- Elle cherche à comprendre et prévenir, non à établir des responsabilités
-- Elle vise à désigner un coupable
-- Elle remplace l'enquête judiciaire
-- Elle est menée par les compagnies aériennes elles-mêmes
+  - Elle cherche à comprendre et prévenir, non à établir des responsabilités
+  - Elle vise à désigner un coupable
+  - Elle remplace l'enquête judiciaire
+  - Elle est menée par les compagnies aériennes elles-mêmes
 correctChoices:
-- 0
-explanation: 'L''enquête de sécurité (BEA) est distincte de l''enquête judiciaire : elle cherche à comprendre et prévenir, pas à punir ni établir des responsabilités. C''est le principe du retour d''expérience (REX) et de la « culture juste » — qui n''est pas l''impunité.'
+  - 0
+explanation: "L'enquête de sécurité (BEA) est distincte de l'enquête judiciaire : elle cherche à comprendre et prévenir, pas à punir ni établir des responsabilités. C'est le principe du retour d'expérience (REX) et de la « culture juste » — qui n'est pas l'impunité."
 evaluates:
-- fondamentaux.facteurs-humains.culture-de-securite-et-rex
+  - fondamentaux.facteurs-humains.culture-de-securite-et-rex
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

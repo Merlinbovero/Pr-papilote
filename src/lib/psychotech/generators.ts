@@ -132,6 +132,22 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/les-matrices",
     timeLimits: [30, 35, 45],
   },
+  "horloges-durees": {
+    slug: "horloges-durees",
+    name: "Heures et durées",
+    consigne:
+      "Calculez des heures et des durées comme en vol (départ, temps de vol, arrivée, UTC/locale). Raisonnez en base 60 : 1 h = 60 min, et repassez par minuit modulo 24 h — jamais en base 100.",
+    ficheHref: "/psychotechnique/exercices/les-horloges-et-durees",
+    timeLimits: [25, 30, 40],
+  },
+  "raisonnement-mecanique": {
+    slug: "raisonnement-mecanique",
+    name: "Raisonnement mécanique",
+    consigne:
+      "Engrenages et poulies. Deux roues dentées engrenées tournent en sens inverse ; plus une roue a de dents, plus elle tourne lentement (le produit dents × tours se conserve). Une courroie non croisée conserve le sens.",
+    ficheHref: "/psychotechnique/exercices/le-raisonnement-mecanique",
+    timeLimits: [25, 30, 40],
+  },
 };
 
 type Rng = () => number;
@@ -1164,6 +1180,158 @@ function genMatrix(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// horloges-durees
+// ---------------------------------------------------------------------------
+
+/** Heure du jour (minutes depuis minuit, ramenée modulo 24 h) au format HHhMM. */
+function fmtTime(totalMinutes: number): string {
+  const m = ((totalMinutes % 1440) + 1440) % 1440;
+  const h = Math.floor(m / 60);
+  const mm = m % 60;
+  return `${String(h).padStart(2, "0")}h${String(mm).padStart(2, "0")}`;
+}
+
+/** Durée (heures non bornées à 24) au format HhMM. */
+function fmtDur(totalMinutes: number): string {
+  const m = Math.max(0, totalMinutes);
+  const h = Math.floor(m / 60);
+  const mm = m % 60;
+  return `${h}h${String(mm).padStart(2, "0")}`;
+}
+
+function genHorloges(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const roundQuarter = (min: number) => min - (min % 15);
+
+  let prompt: string;
+  let correctValue: string;
+  let method: string;
+  let distractors: string[];
+
+  if (difficulty === 1) {
+    // Arrivée = départ + temps de vol.
+    const dep = roundQuarter(int(rng, 5 * 60, 21 * 60));
+    const dur = int(rng, 1, 5) * 60 + pickOne(rng, [0, 15, 30, 45]);
+    const arr = dep + dur;
+    prompt = `Décollage à ${fmtTime(dep)}, temps de vol ${fmtDur(dur)}. Heure d'atterrissage ?`;
+    correctValue = fmtTime(arr);
+    method = `${fmtTime(dep)} + ${fmtDur(dur)} : additionnez les heures puis les minutes en base 60 — 60 minutes font une heure de retenue.`;
+    distractors = [fmtTime(arr + 60), fmtTime(arr - 60), fmtTime(dep - dur)];
+  } else if (difficulty === 2) {
+    // Durée entre deux heures, en passant éventuellement par minuit.
+    const dep = roundQuarter(int(rng, 0, 23 * 60 + 45));
+    const dur = int(rng, 1, 6) * 60 + pickOne(rng, [0, 15, 30, 45]);
+    const arr = (dep + dur) % 1440;
+    const realDur = (arr - dep + 1440) % 1440;
+    prompt = `Décollage à ${fmtTime(dep)}, atterrissage à ${fmtTime(arr)}${arr < dep ? " (le lendemain)" : ""}. Durée du vol ?`;
+    correctValue = fmtDur(realDur);
+    method = `Comptez de ${fmtTime(dep)} à ${fmtTime(arr)} en passant si besoin par minuit : d'abord jusqu'à l'heure ronde, puis le reste des minutes.`;
+    const alt = realDur >= 90 ? realDur - 60 : realDur + 120;
+    distractors = [fmtDur(realDur + 60), fmtDur(alt), fmtDur(realDur + 30)];
+  } else {
+    // Conversion heure locale → UTC, puis ajout du temps de vol.
+    const off = pickOne(rng, [1, 2]);
+    const localDep = roundQuarter(int(rng, 0, 23 * 60 + 45));
+    const dur = int(rng, 1, 7) * 60 + pickOne(rng, [0, 15, 30, 45]);
+    const utcDep = localDep - off * 60;
+    const utcArr = utcDep + dur;
+    prompt = `Décollage à ${fmtTime(localDep)} heure locale (UTC+${off}), temps de vol ${fmtDur(dur)}. Heure d'arrivée en UTC ?`;
+    correctValue = fmtTime(utcArr);
+    method = `Repassez d'abord en UTC (heure locale − ${off} h = ${fmtTime(utcDep)}), puis ajoutez le temps de vol ${fmtDur(dur)}.`;
+    distractors = [
+      fmtTime(localDep + dur),
+      fmtTime(localDep + off * 60 + dur),
+      fmtTime(utcArr - 60),
+    ];
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 11, correctValue, distractors);
+  return {
+    id: `psy.horloges-durees.${seed}`,
+    family: "horloges-durees",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["horloges-durees"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// raisonnement-mecanique
+// ---------------------------------------------------------------------------
+
+const FR_NUMBERS: Record<number, string> = {
+  4: "Quatre",
+  5: "Cinq",
+  6: "Six",
+  7: "Sept",
+};
+
+function genMecanique(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const senseSpeed = (sameSense: boolean, faster: boolean) =>
+    `${sameSense ? "Dans le même sens" : "En sens inverse"}, plus ${faster ? "vite" : "lentement"}`;
+
+  let prompt: string;
+  let correctValue: string;
+  let method: string;
+  let distractors: string[];
+
+  if (difficulty === 1) {
+    // Deux roues engrenées : sens inverse ; plus de dents = plus lent.
+    const base = pickOne(rng, [12, 14, 15, 18, 20]);
+    const factor = pickOne(rng, [2, 3]);
+    const bigFirst = rng() < 0.5;
+    const a = bigFirst ? base * factor : base;
+    const b = bigFirst ? base : base * factor;
+    const faster = b < a;
+    prompt = `Une roue dentée de ${a} dents est engrenée avec une roue de ${b} dents. Par rapport à la première, la seconde tourne :`;
+    correctValue = senseSpeed(false, faster);
+    method = `Deux roues engrenées tournent toujours en sens inverse. La roue de ${b} dents a ${b < a ? "moins" : "plus"} de dents, donc elle tourne plus ${faster ? "vite" : "lentement"} (le produit dents × tours se conserve).`;
+    distractors = [senseSpeed(false, !faster), senseSpeed(true, faster), senseSpeed(true, !faster)];
+  } else if (difficulty === 2) {
+    // Chaîne de roues : le sens alterne.
+    const n = pickOne(rng, [4, 5, 6, 7]);
+    const same = Math.ceil(n / 2);
+    prompt = `${FR_NUMBERS[n]} roues dentées sont engrenées en ligne. La première tourne dans le sens horaire. Combien de roues tournent dans le sens horaire (comme la première) ?`;
+    correctValue = `${same}`;
+    method = `Deux roues engrenées tournent en sens inverse : le sens alterne le long de la chaîne. Tournent comme la première les roues de rang impair (1, 3, 5…), soit ${same} sur ${n}.`;
+    distractors = [`${same - 1}`, `${same + 1}`, `${n}`];
+  } else {
+    // Poulies reliées par courroie : courroie croisée = sens inverse ; petite poulie = plus rapide.
+    const crossed = rng() < 0.5;
+    const d1 = pickOne(rng, [24, 30, 36]);
+    const factor = pickOne(rng, [2, 3]);
+    const drivenBigger = rng() < 0.5;
+    const d2 = drivenBigger ? d1 * factor : d1 / factor;
+    const faster = d2 < d1;
+    const sameSense = !crossed;
+    prompt = `Deux poulies sont reliées par une courroie ${crossed ? "croisée" : "non croisée"}. La poulie menante (diamètre ${d1}) entraîne la poulie menée (diamètre ${d2}). Par rapport à la menante, la menée tourne :`;
+    correctValue = senseSpeed(sameSense, faster);
+    method = `Une courroie ${crossed ? "croisée inverse le sens de rotation" : "non croisée conserve le sens"}. Une poulie ${d2 < d1 ? "plus petite" : "plus grande"} tourne plus ${faster ? "vite" : "lentement"} (petit diamètre = tours plus rapides).`;
+    distractors = [
+      senseSpeed(sameSense, !faster),
+      senseSpeed(!sameSense, faster),
+      senseSpeed(!sameSense, !faster),
+    ];
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 13, correctValue, distractors);
+  return {
+    id: `psy.raisonnement-mecanique.${seed}`,
+    family: "raisonnement-mecanique",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["raisonnement-mecanique"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -1183,6 +1351,8 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   "lecture-instruments": genInstruments,
   "memoire-associative": genAssociative,
   matrices: genMatrix,
+  "horloges-durees": genHorloges,
+  "raisonnement-mecanique": genMecanique,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */

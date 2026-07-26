@@ -4,20 +4,20 @@ kind: qcm
 theme: f-16-fighting-falcon
 statement: Quelle innovation majeure le F-16 a-t-il popularisée ?
 choices:
-- Les commandes de vol électriques et la stabilité relâchée
-- L'aile à géométrie variable
-- La poussée vectorielle
-- La furtivité radar
+  - Les commandes de vol électriques et la stabilité relâchée
+  - L'aile à géométrie variable
+  - La poussée vectorielle
+  - La furtivité radar
 correctChoices:
-- 0
+  - 0
 explanation: Le F-16 est un pionnier des commandes de vol électriques et de la stabilité relâchée (instabilité maîtrisée en permanence par les calculateurs), avec verrière-bulle et manche latéral.
 evaluates:
-- culture.aviation-mondiale.f-16-fighting-falcon
+  - culture.aviation-mondiale.f-16-fighting-falcon
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

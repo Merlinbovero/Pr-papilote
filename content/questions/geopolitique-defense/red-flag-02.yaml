@@ -4,20 +4,20 @@ kind: qcm
 theme: red-flag
 statement: Quelle est l'origine de l'exercice Red Flag, créé en 1975 à Nellis (Nevada) ?
 choices:
-- Les leçons de la guerre du Vietnam
-- La guerre du Golfe de 1991
-- La guerre froide en Europe
-- La création de l'OTAN
+  - Les leçons de la guerre du Vietnam
+  - La guerre du Golfe de 1991
+  - La guerre froide en Europe
+  - La création de l'OTAN
 correctChoices:
-- 0
-explanation: 'Red Flag est l''exercice d''entraînement au combat aérien de l''US Air Force, créé en 1975 d''après les leçons du Vietnam : offrir aux pilotes leurs premières missions de combat (les plus dangereuses) à l''entraînement. Exercice multinational, la France y participe avec le Rafale.'
+  - 0
+explanation: "Red Flag est l'exercice d'entraînement au combat aérien de l'US Air Force, créé en 1975 d'après les leçons du Vietnam : offrir aux pilotes leurs premières missions de combat (les plus dangereuses) à l'entraînement. Exercice multinational, la France y participe avec le Rafale."
 evaluates:
-- culture.geopolitique-defense.red-flag
+  - culture.geopolitique-defense.red-flag
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

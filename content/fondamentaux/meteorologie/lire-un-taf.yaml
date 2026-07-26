@@ -21,15 +21,7 @@ objectifs:
   - Lire la période de validité et les groupes d'évolution d'un TAF.
   - Décoder un exemple simple de TAF.
 aliases:
-  [
-    TAF,
-    prévision aérodrome,
-    Terminal Aerodrome Forecast,
-    BECMG,
-    TEMPO,
-    PROB,
-    prévision météo,
-  ]
+  [TAF, prévision aérodrome, Terminal Aerodrome Forecast, BECMG, TEMPO, PROB, prévision météo]
 module: fondamentaux
 category: meteorologie
 tags: []

@@ -4,20 +4,20 @@ kind: qcm
 theme: hawker-hurricane
 statement: Comment se compare le Hawker Hurricane au Supermarine Spitfire ?
 choices:
-- Moins rapide, mais plus solide et plus facile à entretenir
-- Plus rapide et plus moderne
-- Plus lourdement blindé et furtif
-- Équipé d'un réacteur au lieu d'un moteur à hélice
+  - Moins rapide, mais plus solide et plus facile à entretenir
+  - Plus rapide et plus moderne
+  - Plus lourdement blindé et furtif
+  - Équipé d'un réacteur au lieu d'un moteur à hélice
 correctChoices:
-- 0
+  - 0
 explanation: Le Hurricane est moins rapide que le Spitfire mais plus robuste et plus simple à entretenir ; produit à près de 14 500 exemplaires, il partageait le moteur Rolls-Royce Merlin.
 evaluates:
-- culture.aviation-mondiale.hawker-hurricane
+  - culture.aviation-mondiale.hawker-hurricane
 difficulty: 2
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

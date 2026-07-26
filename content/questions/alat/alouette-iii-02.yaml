@@ -4,18 +4,18 @@ kind: qcm
 theme: alouette-iii
 statement: Par quel appareil l'Alouette III a-t-elle été remplacée au sein de l'ALAT ?
 choices:
-- La Gazelle
-- Le Puma
-- Le Tigre
-- Le NH90 Caïman
+  - La Gazelle
+  - Le Puma
+  - Le Tigre
+  - Le NH90 Caïman
 correctChoices:
-- 0
+  - 0
 explanation: Pilier historique de l'ALAT (1963-1999), l'Alouette III (hélicoptère léger polyvalent, missiles SS11) a été remplacée par la Gazelle dans les années 1980, ses dernières unités étant retirées en 1999.
 evaluates:
-- alat.appareils.alouette-iii
+  - alat.appareils.alouette-iii
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- alat
+  - alat
 status: publie
