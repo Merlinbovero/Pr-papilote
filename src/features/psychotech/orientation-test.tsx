@@ -392,12 +392,12 @@ function OrientationTutorial() {
 
   return (
     <section className="bg-card mt-6 rounded-2xl border p-5 shadow-sm sm:p-6">
-      <h2 className="text-lg font-semibold tracking-tight">Comment lire l&apos;instrument</h2>
+      <h2 className="text-lg font-semibold tracking-tight">Comment lire l’instrument</h2>
       <p className="text-muted-foreground mt-2 text-sm">
         Le disque montre ce que verrait le pilote : <strong>bleu = le ciel</strong>,{" "}
-        <strong>brun = le sol</strong>, séparés par la ligne d&apos;horizon. Le petit avion au
-        centre ne bouge jamais — c&apos;est le monde qui bascule autour de lui. Trois informations
-        s&apos;y lisent d&apos;un coup d&apos;œil.
+        <strong>brun = le sol</strong>, séparés par la ligne d’horizon. Le petit avion au centre ne
+        bouge jamais — c’est le monde qui bascule autour de lui. Trois informations s’y lisent d’un
+        coup d’œil.
       </p>
       <ul className="mt-5 space-y-5">
         {TUTORIAL_EXAMPLES.map((example, i) => (
@@ -405,9 +405,9 @@ function OrientationTutorial() {
         ))}
       </ul>
       <p className="text-muted-foreground mt-5 text-sm">
-        Dans le test, la vue est toujours orientée <strong>vers le nord</strong> et l&apos;appareil
-        vu <strong>de derrière</strong> : sa droite est donc à votre droite. La difficulté monte
-        comme à l&apos;épreuve réelle — situations simples au début,{" "}
+        Dans le test, la vue est toujours orientée <strong>vers le nord</strong> et l’appareil vu{" "}
+        <strong>de derrière</strong> : sa droite est donc à votre droite. La difficulté monte comme
+        à l’épreuve réelle — situations simples au début,{" "}
         <strong>fortes assiettes et vol sur le dos</strong> à la fin (le sol passe alors en haut de
         la boule). Le <strong>mode entraînement</strong> vous montre la bonne réponse après chaque
         question : commencez par là.
@@ -586,8 +586,8 @@ export function OrientationTest() {
         <div className="bg-card rounded-2xl border p-6 text-center shadow-sm sm:p-8">
           <h1 className="text-3xl font-bold tracking-tight">Orientation</h1>
           <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">
-            Observez l&apos;instrument de bord (horizon et compas), puis désignez l&apos;aéronef
-            dans la position correspondante. Choisissez votre format.
+            Observez l’instrument de bord (horizon et compas), puis désignez l’aéronef dans la
+            position correspondante. Choisissez votre format.
           </p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">

@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { SecpilTutorial } from "@/features/psychotech/secpil-tutorial";
 import { cn } from "@/lib/utils";
 import {
   accuracyFromError,
@@ -581,6 +582,8 @@ function SecpilSelect({
   const withCalcul = modeTasks(mode).includes("calcul");
   return (
     <div className="space-y-6">
+      <SecpilTutorial />
+
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">1. Choisissez un mode (progression)</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

@@ -280,8 +280,8 @@ export function BiaExamPlayer({
           <AlertTitle>Examen légèrement réduit</AlertTitle>
           <AlertDescription>
             La banque ne permet pas encore de servir {shortagesCount} question
-            {shortagesCount > 1 ? "s" : ""} sur ce tirage — l&apos;examen reste noté sur les
-            questions présentes.
+            {shortagesCount > 1 ? "s" : ""} sur ce tirage — l’examen reste noté sur les questions
+            présentes.
           </AlertDescription>
         </Alert>
       ) : null}
@@ -340,7 +340,7 @@ export function BiaExamPlayer({
         <span className="flex-1" />
         <Button variant="destructive" onClick={finish}>
           <FlagIcon aria-hidden className="size-4" />
-          Terminer l&apos;examen
+          Terminer l’examen
         </Button>
       </div>
 
@@ -397,15 +397,15 @@ function ExamIntro({
   return (
     <section aria-label="Présentation de l'examen blanc" className="space-y-6">
       <div className="bg-card space-y-4 rounded-xl border p-6">
-        <h2 className="text-lg font-semibold">Les conditions de l&apos;épreuve</h2>
+        <h2 className="text-lg font-semibold">Les conditions de l’épreuve</h2>
         <ul className="space-y-2 text-sm leading-6">
           <li>
             <strong>{total} questions</strong> — {config.examen.questionsParMatiere} par matière,
-            dans l&apos;ordre officiel des cinq matières.
+            dans l’ordre officiel des cinq matières.
           </li>
           <li>
             <strong>{formatDuration(config.examen.dureeSecondes)}</strong> de chronomètre global —
-            comme à l&apos;épreuve réelle. À zéro, la copie est relevée en l&apos;état.
+            comme à l’épreuve réelle. À zéro, la copie est relevée en l’état.
           </li>
           <li>
             Navigation <strong>libre</strong> entre les questions, marquage « à revoir », validation
@@ -413,19 +413,19 @@ function ExamIntro({
           </li>
           <li>
             Admission à <strong>{config.examen.seuilAdmission}/20</strong> de moyenne — mentions
-            comme au vrai BIA. Chaque tirage privilégie les questions que vous n&apos;avez pas
-            encore rencontrées ({totalAvailable} questions au total dans les viviers).
+            comme au vrai BIA. Chaque tirage privilégie les questions que vous n’avez pas encore
+            rencontrées ({totalAvailable} questions au total dans les viviers).
           </li>
         </ul>
         <Button size="lg" onClick={onStart} disabled={loading}>
           <PlayIcon aria-hidden className="size-4" />
-          {loading ? "Préparation…" : "Commencer l'examen"}
+          {loading ? "Préparation…" : "Commencer l’examen"}
         </Button>
         {loadError ? (
           <Alert variant="destructive">
             <AlertTitle>Chargement impossible</AlertTitle>
             <AlertDescription>
-              Le vivier de questions n&apos;a pas pu être récupéré. Vérifiez votre connexion et
+              Le vivier de questions n’a pas pu être récupéré. Vérifiez votre connexion et
               réessayez.
             </AlertDescription>
           </Alert>

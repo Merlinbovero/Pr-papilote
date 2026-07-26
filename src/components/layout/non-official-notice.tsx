@@ -15,10 +15,10 @@ export function NonOfficialNotice({ className }: { className?: string }) {
       <p className="flex items-start gap-2">
         <InfoIcon aria-hidden className="text-info mt-0.5 size-4 shrink-0" />
         <span>
-          <strong>Projet indépendant et non officiel.</strong> PrépaPilote n&apos;est ni affilié ni
-          soutenu par le ministère des Armées, la Marine nationale, l&apos;Armée de l&apos;Air et de
-          l&apos;Espace ou l&apos;Armée de Terre. Les informations sont fournies à titre pédagogique
-          ; seuls les sites et centres de recrutement officiels font foi.
+          <strong>Projet indépendant et non officiel.</strong> PrépaPilote n’est ni affilié ni
+          soutenu par le ministère des Armées, la Marine nationale, l’Armée de l’Air et de l’Espace
+          ou l’Armée de Terre. Les informations sont fournies à titre pédagogique ; seuls les sites
+          et centres de recrutement officiels font foi.
         </span>
       </p>
     </aside>
