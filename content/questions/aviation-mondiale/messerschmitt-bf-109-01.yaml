@@ -4,20 +4,20 @@ kind: qcm
 theme: messerschmitt-bf-109
 statement: Quel record détient le Messerschmitt Bf 109 ?
 choices:
-- Le chasseur le plus produit de l'histoire (plus de 34 000 exemplaires)
-- Le premier chasseur à réaction
-- Le chasseur le plus rapide de la guerre
-- Le premier chasseur embarqué
+  - Le chasseur le plus produit de l'histoire (plus de 34 000 exemplaires)
+  - Le premier chasseur à réaction
+  - Le chasseur le plus rapide de la guerre
+  - Le premier chasseur embarqué
 correctChoices:
-- 0
+  - 0
 explanation: Avec plus de 34 000 exemplaires, le Bf 109 est le chasseur le plus produit de l'histoire ; c'est un record de quantité et de longévité, pas un jugement de supériorité.
 evaluates:
-- culture.aviation-mondiale.messerschmitt-bf-109
+  - culture.aviation-mondiale.messerschmitt-bf-109
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

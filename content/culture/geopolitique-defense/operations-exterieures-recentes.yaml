@@ -20,17 +20,7 @@ objectifs:
   - Identifier les principales OPEX françaises récentes, leur zone et leur période.
   - Comprendre l'enchaînement Serval → Barkhane au Sahel et distinguer Chammal (Levant).
   - Situer le rôle de l'aviation (frappes, appui, transport, ravitaillement) dans ces opérations.
-aliases:
-  [
-    OPEX,
-    opérations extérieures,
-    Serval,
-    Barkhane,
-    Chammal,
-    Harmattan,
-    Sahel,
-    Daech,
-  ]
+aliases: [OPEX, opérations extérieures, Serval, Barkhane, Chammal, Harmattan, Sahel, Daech]
 module: culture
 category: geopolitique-defense
 subcategory: operations

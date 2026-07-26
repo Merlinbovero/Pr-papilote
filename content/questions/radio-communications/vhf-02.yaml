@@ -4,20 +4,20 @@ kind: qcm
 theme: bande-vhf
 statement: De quoi dépend principalement la portée d'une liaison radio VHF aéronautique ?
 choices:
-- De l'altitude (propagation à vue directe)
-- De la puissance d'émission uniquement
-- De l'heure de la journée
-- De la courbure de la Terre, qu'elle suit
+  - De l'altitude (propagation à vue directe)
+  - De la puissance d'émission uniquement
+  - De l'heure de la journée
+  - De la courbure de la Terre, qu'elle suit
 correctChoices:
-- 0
-explanation: 'La VHF (118–137 MHz, surtout civile) se propage à vue directe : l''onde ne suit pas la courbure terrestre, donc la portée croît avec l''altitude. Elle n''est pas fixe.'
+  - 0
+explanation: "La VHF (118–137 MHz, surtout civile) se propage à vue directe : l'onde ne suit pas la courbure terrestre, donc la portée croît avec l'altitude. Elle n'est pas fixe."
 evaluates:
-- fondamentaux.radio-communications.la-bande-vhf
+  - fondamentaux.radio-communications.la-bande-vhf
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

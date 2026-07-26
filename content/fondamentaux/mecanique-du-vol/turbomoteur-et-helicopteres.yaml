@@ -20,16 +20,7 @@ objectifs:
   - Distinguer le turbomoteur (couple sur un arbre) du turboréacteur (poussée).
   - Comprendre la chaîne turbine libre → BTP → rotor principal d'un hélicoptère.
   - Connaître le rôle du rotor anti-couple et le principe de l'autorotation.
-aliases:
-  [
-    turbomoteur,
-    turboshaft,
-    turbine libre,
-    hélicoptère,
-    rotor anti-couple,
-    autorotation,
-    BTP,
-  ]
+aliases: [turbomoteur, turboshaft, turbine libre, hélicoptère, rotor anti-couple, autorotation, BTP]
 module: fondamentaux
 category: mecanique-du-vol
 tags: []

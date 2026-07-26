@@ -4,20 +4,20 @@ kind: qcm
 theme: mur-du-son
 statement: Que représente le nombre de Mach d'un avion ?
 choices:
-- Le rapport entre la vitesse de l'avion et la vitesse du son locale
-- Sa vitesse en km/h par rapport au sol
-- Son altitude exprimée en milliers de pieds
-- Le nombre d'ondes de choc générées
+  - Le rapport entre la vitesse de l'avion et la vitesse du son locale
+  - Sa vitesse en km/h par rapport au sol
+  - Son altitude exprimée en milliers de pieds
+  - Le nombre d'ondes de choc générées
 correctChoices:
-- 0
+  - 0
 explanation: Le nombre de Mach = vitesse de l'avion ÷ vitesse du son locale ; Mach 1 correspond à la vitesse du son. Comme la vitesse du son dépend de la température (donc de l'altitude), « Mach 0,9 » ne correspond pas à une vitesse fixe en km/h.
 evaluates:
-- fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
+  - fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

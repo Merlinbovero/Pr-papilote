@@ -165,6 +165,65 @@ describe("générateurs — invariants sur toutes les familles", () => {
       expect(verdict).toBe(a === b ? "Identiques" : "Différentes");
     }
   });
+
+  it("horloges et durées : l'heure/durée annoncée est cohérente avec l'énoncé", () => {
+    const toMin = (hhmm: string) => {
+      const [, h, m] = hhmm.match(/(\d{2})h(\d{2})/)!;
+      return Number(h) * 60 + Number(m);
+    };
+    const durToMin = (s: string) => {
+      const [, h, m] = s.match(/(\d+)h(\d{2})/)!;
+      return Number(h) * 60 + Number(m);
+    };
+    for (const seed of [12, 340, 5005, 60606]) {
+      // Niveau 1 : arrivée = départ + temps de vol (modulo 24 h).
+      const q1 = generateQuestion("horloges-durees", seed, 1);
+      const [, dep1] = q1.prompt.match(/à (\d{2}h\d{2})/)!;
+      const [, dur1] = q1.prompt.match(/temps de vol (\d+h\d{2})/)!;
+      const arr = (toMin(dep1) + durToMin(dur1)) % 1440;
+      expect(toMin(q1.choices[q1.correctIndex])).toBe(arr);
+
+      // Niveau 2 : durée = arrivée − départ (modulo 24 h).
+      const q2 = generateQuestion("horloges-durees", seed, 2);
+      const times = q2.prompt.match(/(\d{2}h\d{2})/g)!;
+      const realDur = (toMin(times[1]) - toMin(times[0]) + 1440) % 1440;
+      expect(durToMin(q2.choices[q2.correctIndex])).toBe(realDur);
+
+      // Niveau 3 : arrivée UTC = (locale − décalage) + temps de vol.
+      const q3 = generateQuestion("horloges-durees", seed, 3);
+      const [, loc] = q3.prompt.match(/à (\d{2}h\d{2}) heure locale/)!;
+      const [, off] = q3.prompt.match(/UTC\+(\d)/)!;
+      const [, dur3] = q3.prompt.match(/temps de vol (\d+h\d{2})/)!;
+      const utcArr = (toMin(loc) - Number(off) * 60 + durToMin(dur3) + 1440 * 2) % 1440;
+      expect(toMin(q3.choices[q3.correctIndex])).toBe(utcArr);
+    }
+  });
+
+  it("raisonnement mécanique : sens et vitesse cohérents avec l'énoncé", () => {
+    for (const seed of [13, 260, 7007, 80808]) {
+      // Niveau 1 : deux roues engrenées → sens inverse ; plus de dents → plus lent.
+      const q1 = generateQuestion("raisonnement-mecanique", seed, 1);
+      const [, a, b] = q1.prompt.match(/de (\d+) dents est engrenée avec une roue de (\d+) dents/)!;
+      const faster = Number(b) < Number(a);
+      expect(q1.choices[q1.correctIndex]).toBe(
+        `En sens inverse, plus ${faster ? "vite" : "lentement"}`
+      );
+
+      // Niveau 2 : nombre de roues tournant comme la première = ceil(n / 2).
+      const q2 = generateQuestion("raisonnement-mecanique", seed, 2);
+      const n = { Quatre: 4, Cinq: 5, Six: 6, Sept: 7 }[q2.prompt.split(" ")[0]]!;
+      expect(q2.choices[q2.correctIndex]).toBe(String(Math.ceil(n / 2)));
+
+      // Niveau 3 : courroie croisée → sens inverse ; petite poulie menée → plus rapide.
+      const q3 = generateQuestion("raisonnement-mecanique", seed, 3);
+      const crossed = q3.prompt.includes("courroie croisée");
+      const [, d1, d2] = q3.prompt.match(/menante \(diamètre (\d+)\).+?menée \(diamètre (\d+)\)/)!;
+      const fasterP = Number(d2) < Number(d1);
+      expect(q3.choices[q3.correctIndex]).toBe(
+        `${crossed ? "En sens inverse" : "Dans le même sens"}, plus ${fasterP ? "vite" : "lentement"}`
+      );
+    }
+  });
 });
 
 describe("composition de session", () => {

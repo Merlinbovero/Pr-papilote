@@ -4,18 +4,18 @@ kind: qcm
 theme: puma
 statement: Par quels appareils le Puma de l'ALAT est-il progressivement relevé ?
 choices:
-- Le NH90 Caïman et le Caracal
-- Le Tigre et la Gazelle
-- L'Alouette III et l'Alouette II
-- Le C-130 et l'A400M
+  - Le NH90 Caïman et le Caracal
+  - Le Tigre et la Gazelle
+  - L'Alouette III et l'Alouette II
+  - Le C-130 et l'A400M
 correctChoices:
-- 0
+  - 0
 explanation: Hélicoptère de manœuvre historique de l'ALAT depuis 1969, le Puma (SA330) est en cours de retrait (2025-2030) et relevé par le NH90 Caïman et le Caracal. Tête de la lignée Puma → Super Puma → Cougar → Caracal.
 evaluates:
-- alat.appareils.puma
+  - alat.appareils.puma
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- alat
+  - alat
 status: publie

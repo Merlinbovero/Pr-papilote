@@ -4,20 +4,20 @@ kind: qcm
 theme: focke-wulf-fw-190
 statement: Quel est le rapport entre le Fw 190 et le Messerschmitt Bf 109 ?
 choices:
-- Ils sont complémentaires et servent ensemble
-- Le Fw 190 remplace le Bf 109
-- Le Fw 190 est un prototype jamais produit
-- Ils appartiennent à deux pays différents
+  - Ils sont complémentaires et servent ensemble
+  - Le Fw 190 remplace le Bf 109
+  - Le Fw 190 est un prototype jamais produit
+  - Ils appartiennent à deux pays différents
 correctChoices:
-- 0
-explanation: 'Le Fw 190 ne remplace pas le Bf 109 : les deux chasseurs allemands servent ensemble et se complètent. Le Fw 190 est redoutable à basse et moyenne altitude.'
+  - 0
+explanation: "Le Fw 190 ne remplace pas le Bf 109 : les deux chasseurs allemands servent ensemble et se complètent. Le Fw 190 est redoutable à basse et moyenne altitude."
 evaluates:
-- culture.aviation-mondiale.focke-wulf-fw-190
+  - culture.aviation-mondiale.focke-wulf-fw-190
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

@@ -4,20 +4,20 @@ kind: qcm
 theme: cpa-10
 statement: Que signifie l'« appui aérien avancé » (FAC/JTAC), spécialité du CPA 10 ?
 choices:
-- Désigner et coordonner la frappe aérienne depuis le sol
-- Piloter les avions de chasse qui délivrent la frappe
-- Ravitailler les avions en vol
-- Assurer la maintenance des aéronefs
+  - Désigner et coordonner la frappe aérienne depuis le sol
+  - Piloter les avions de chasse qui délivrent la frappe
+  - Ravitailler les avions en vol
+  - Assurer la maintenance des aéronefs
 correctChoices:
-- 0
-explanation: 'Le CPA 10, forces spéciales de l''Armée de l''air et de l''espace intégrées au COS, fait le lien entre le sol et l''action aérienne : l''appui aérien avancé (FAC/JTAC) consiste à désigner et coordonner la frappe depuis le sol — pas à la délivrer. Ce ne sont pas des pilotes.'
+  - 0
+explanation: "Le CPA 10, forces spéciales de l'Armée de l'air et de l'espace intégrées au COS, fait le lien entre le sol et l'action aérienne : l'appui aérien avancé (FAC/JTAC) consiste à désigner et coordonner la frappe depuis le sol — pas à la délivrer. Ce ne sont pas des pilotes."
 evaluates:
-- culture.culture-aeronautique.commando-parachutiste-air-cpa-10
+  - culture.culture-aeronautique.commando-parachutiste-air-cpa-10
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

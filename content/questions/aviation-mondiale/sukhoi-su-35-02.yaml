@@ -4,20 +4,20 @@ kind: qcm
 theme: sukhoi-su-35
 statement: Que signifie la « génération 4,5 » du Su-35 ?
 choices:
-- Un chasseur très performant mais non furtif, évolution du Su-27
-- Un chasseur furtif de dernière génération
-- Un appareil sans pilote
-- Un prototype jamais mis en service
+  - Un chasseur très performant mais non furtif, évolution du Su-27
+  - Un chasseur furtif de dernière génération
+  - Un appareil sans pilote
+  - Un prototype jamais mis en service
 correctChoices:
-- 0
-explanation: '« Génération 4,5 » ne veut pas dire furtif : le Su-35 mise sur les performances, pas sur la discrétion radar. C''est une évolution modernisée du Su-27, pas un appareil entièrement nouveau comme le Su-57.'
+  - 0
+explanation: "« Génération 4,5 » ne veut pas dire furtif : le Su-35 mise sur les performances, pas sur la discrétion radar. C'est une évolution modernisée du Su-27, pas un appareil entièrement nouveau comme le Su-57."
 evaluates:
-- culture.aviation-mondiale.sukhoi-su-35
+  - culture.aviation-mondiale.sukhoi-su-35
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

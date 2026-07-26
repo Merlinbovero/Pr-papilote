@@ -13,7 +13,7 @@ attention sélective, repérage spatial). Les énoncés sont produits par un
 générateur **déterministe par graine** (PRNG mulberry32 du moteur quiz) —
 rejouable, testable, et infini.
 
-## Les familles (15)
+## Les familles (17)
 
 | Famille                  | Règle de génération                                                                                                                                                                                                         | Difficulté 1 → 3                                                                                     |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -32,6 +32,8 @@ rejouable, testable, et infini.
 | `lecture-instruments`    | lire un cadran de vol **rendu en SVG** ; le générateur ne produit que la donnée physique (cap/vitesse/altitude), la géométrie est calculée dans le player ; distracteur-piège = inversion des deux aiguilles de l'altimètre | compas (cap) → anémomètre (vitesse) → altimètre à deux aiguilles (altitude)                          |
 | `memoire-associative`    | exposition chronométrée de paires « indicatif → nombre » puis restitution d'une association ; distracteurs = autres valeurs exposées ; le niveau 3 pose la question en sens inverse (nombre → indicatif)                    | 3 paires / 5 s, sens direct → 4 paires / 5 s → 5 paires / 4 s, sens inverse                          |
 | `matrices`               | grille logique 3×3 (type Raven) **rendue en SVG**, case à trouver ; forme ← ligne, nombre ← colonne, remplissage ← règle de difficulté ; les 4 options sont des figures, chaque intrus ne casse qu'une règle                | contour, formes+nombres → remplissage par ligne → remplissage en damier                              |
+| `horloges-durees`        | calcul d'heures et de durées en base 60, modulo 24 h (contexte aéronautique : ETA, temps de vol, UTC/locale) ; distracteurs = erreurs de retenue (±1 h), sens de conversion inversé, oubli de la conversion UTC             | arrivée = départ + durée → durée entre deux heures (passage de minuit) → conversion locale↔UTC + vol |
+| `raisonnement-mecanique` | engrenages et poulies — sens de rotation (alternance des engrenages, courroie croisée ou non) et vitesse (dents ou diamètre) ; distracteurs = mauvais sens et/ou mauvaise vitesse, comptes voisins                          | deux roues engrenées (sens + vitesse) → chaîne de roues (alternance) → poulies à courroie            |
 
 Un **4ᵉ niveau de difficulté** homogène est à l'étude (le contrat reste à
 3 niveaux pour l'instant).

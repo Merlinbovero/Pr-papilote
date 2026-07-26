@@ -4,20 +4,20 @@ kind: qcm
 theme: f-14-tomcat
 statement: Quelle est la signature technique du chasseur embarqué américain F-14 Tomcat ?
 choices:
-- Son aile à géométrie variable (flèche réglable en vol)
-- Une aile delta fixe
-- Une voilure canard
-- Une aile en flèche inversée
+  - Son aile à géométrie variable (flèche réglable en vol)
+  - Une aile delta fixe
+  - Une voilure canard
+  - Une aile en flèche inversée
 correctChoices:
-- 0
+  - 0
 explanation: Le F-14 possède une aile à géométrie variable dont la flèche change en vol (20° à 68°) — à ne pas confondre avec un simple volet ou bec de bord d'attaque.
 evaluates:
-- culture.aviation-mondiale.f-14-tomcat
+  - culture.aviation-mondiale.f-14-tomcat
 difficulty: 2
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

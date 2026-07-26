@@ -4,20 +4,20 @@ kind: qcm
 theme: hawker-hurricane
 statement: Quel chasseur a remporté la majorité des victoires britanniques lors de la bataille d'Angleterre (1940) ?
 choices:
-- Le Hawker Hurricane
-- Le Supermarine Spitfire
-- Le Messerschmitt Bf 109
-- Le P-51 Mustang
+  - Le Hawker Hurricane
+  - Le Supermarine Spitfire
+  - Le Messerschmitt Bf 109
+  - Le P-51 Mustang
 correctChoices:
-- 0
+  - 0
 explanation: Souvent éclipsé par le Spitfire, le Hurricane — plus nombreux et plus robuste — a en réalité remporté la majorité des victoires britanniques de la bataille d'Angleterre.
 evaluates:
-- culture.aviation-mondiale.hawker-hurricane
+  - culture.aviation-mondiale.hawker-hurricane
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

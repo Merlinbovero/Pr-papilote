@@ -4,20 +4,20 @@ kind: qcm
 theme: north-american-p-51-mustang
 statement: Quel était l'atout majeur du chasseur américain P-51 Mustang ?
 choices:
-- Un rayon d'action permettant d'escorter les bombardiers jusqu'en Allemagne et retour
-- Sa capacité d'appontage sur porte-avions
-- Sa furtivité radar
-- Sa capacité d'emport de bombes nucléaires
+  - Un rayon d'action permettant d'escorter les bombardiers jusqu'en Allemagne et retour
+  - Sa capacité d'appontage sur porte-avions
+  - Sa furtivité radar
+  - Sa capacité d'emport de bombes nucléaires
 correctChoices:
-- 0
+  - 0
 explanation: Le grand rayon d'action du P-51 lui permettait d'escorter les bombardiers de l'Angleterre jusqu'en Allemagne et retour — un tournant de la guerre aérienne. Son atout n'est pas que la vitesse.
 evaluates:
-- culture.aviation-mondiale.north-american-p-51-mustang
+  - culture.aviation-mondiale.north-american-p-51-mustang
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

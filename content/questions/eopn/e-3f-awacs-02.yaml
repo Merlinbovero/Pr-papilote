@@ -4,18 +4,18 @@ kind: qcm
 theme: e-3f-awacs
 statement: À quelle distance environ le radar dorsal (rotodôme) de l'E-3F AWACS détecte-t-il ses cibles ?
 choices:
-- Plus de 400 km
-- Environ 50 km
-- Environ 100 km
-- Environ 1 000 km
+  - Plus de 400 km
+  - Environ 50 km
+  - Environ 100 km
+  - Environ 1 000 km
 correctChoices:
-- 0
+  - 0
 explanation: Le radar dorsal (rotodôme) de l'E-3F AWACS (SDCA) détecte à plus de 400 km, y compris à basse altitude, et coordonne la manœuvre aérienne. Ce n'est pas un avion de chasse mais un capteur et un poste de commandement (4 appareils basés à Avord).
 evaluates:
-- eopn.appareils.e-3f-awacs
+  - eopn.appareils.e-3f-awacs
 difficulty: 3
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopn
+  - eopn
 status: publie

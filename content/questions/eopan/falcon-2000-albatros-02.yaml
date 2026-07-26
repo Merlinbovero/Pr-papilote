@@ -4,18 +4,18 @@ kind: qcm
 theme: falcon-2000-albatros
 statement: Quels appareils le Falcon 2000 Albatros (programme AVSIMAR) doit-il remplacer ?
 choices:
-- Les Falcon 50M et Falcon 200 Gardian
-- L'Atlantique 2 de patrouille maritime
-- Les E-3F AWACS
-- Les hélicoptères Dauphin
+  - Les Falcon 50M et Falcon 200 Gardian
+  - L'Atlantique 2 de patrouille maritime
+  - Les E-3F AWACS
+  - Les hélicoptères Dauphin
 correctChoices:
-- 0
+  - 0
 explanation: Le Falcon 2000 Albatros (dérivé du Falcon 2000LXS, 12 appareils prévus) succède aux Falcon 50M (24F) et Falcon 200 Gardian (25F) pour la surveillance maritime. Il ne remplace pas l'Atlantique 2, qui reste l'avion de patrouille maritime armé.
 evaluates:
-- eopan.appareils.falcon-2000-albatros
+  - eopan.appareils.falcon-2000-albatros
 difficulty: 3
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
+  - eopan
 status: publie

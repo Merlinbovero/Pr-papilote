@@ -4,20 +4,20 @@ kind: qcm
 theme: supermarine-spitfire
 statement: Quel était le rival de référence du Spitfire ?
 choices:
-- Le Messerschmitt Bf 109
-- Le P-51 Mustang
-- Le Mitsubishi Zero
-- Le Hawker Hurricane
+  - Le Messerschmitt Bf 109
+  - Le P-51 Mustang
+  - Le Mitsubishi Zero
+  - Le Hawker Hurricane
 correctChoices:
-- 0
+  - 0
 explanation: Le rival de référence du Spitfire est le Messerschmitt Bf 109. Le Hurricane, lui, est l'autre chasseur britannique de la RAF, allié et non adversaire.
 evaluates:
-- culture.aviation-mondiale.supermarine-spitfire
+  - culture.aviation-mondiale.supermarine-spitfire
 difficulty: 2
 competencies:
-- culture-militaire
+  - culture-militaire
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie

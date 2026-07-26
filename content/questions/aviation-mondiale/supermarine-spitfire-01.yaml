@@ -4,20 +4,20 @@ kind: qcm
 theme: supermarine-spitfire
 statement: À quoi reconnaît-on le chasseur britannique Supermarine Spitfire ?
 choices:
-- À son aile elliptique caractéristique
-- À son aile à géométrie variable
-- À sa voilure delta
-- À ses deux réacteurs
+  - À son aile elliptique caractéristique
+  - À son aile à géométrie variable
+  - À sa voilure delta
+  - À ses deux réacteurs
 correctChoices:
-- 0
+  - 0
 explanation: Le Spitfire, motorisé par le Rolls-Royce Merlin, est reconnaissable à son aile elliptique. Héros de la bataille d'Angleterre (1940), c'est le seul chasseur britannique produit sans interruption durant tout le conflit.
 evaluates:
-- culture.aviation-mondiale.supermarine-spitfire
+  - culture.aviation-mondiale.supermarine-spitfire
 difficulty: 2
 competencies:
-- connaissances-aeronautiques
+  - connaissances-aeronautiques
 concours:
-- eopan
-- eopn
-- alat
+  - eopan
+  - eopn
+  - alat
 status: publie
