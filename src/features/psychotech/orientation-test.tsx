@@ -50,7 +50,14 @@ interface SessionHistoryEntry {
   answered: number;
   correct: number;
   precision: number;
+  durationSeconds: number;
   training: boolean;
+}
+
+function formatDuration(totalSeconds: number): string {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m}m ${String(s).padStart(2, "0")}s`;
 }
 
 // --------------------------------------------------------------------------
@@ -279,6 +286,7 @@ export function OrientationTest() {
   const [chosen, setChosen] = React.useState<number | null>(null);
   const [revealed, setRevealed] = React.useState(false);
   const [timeLeft, setTimeLeft] = React.useState(ORIENTATION_DURATION_SECONDS);
+  const [elapsed, setElapsed] = React.useState(0);
   const [thumbs, setThumbs] = React.useState<string[]>([]);
   const [history, setHistory] = React.useState<SessionHistoryEntry[]>([]);
 
@@ -296,12 +304,16 @@ export function OrientationTest() {
   const finish = React.useCallback(
     (finalAnswers: OrientationAnswer[]) => {
       const score = scoreOrientation(finalAnswers);
+      const remaining = Math.max(0, Math.round((endRef.current - Date.now()) / 1000));
+      const elapsedSeconds = ORIENTATION_DURATION_SECONDS - remaining;
+      setElapsed(elapsedSeconds);
       const entry: SessionHistoryEntry = {
         date: new Date().toISOString(),
         total: score.total,
         answered: score.answered,
         correct: score.correct,
         precision: score.precision,
+        durationSeconds: elapsedSeconds,
         training,
       };
       const next = [entry, ...loadHistory()].slice(0, 10);
@@ -457,24 +469,75 @@ export function OrientationTest() {
 
   // ---- Résultats ----
   if (phase === "done") {
-    const score = scoreOrientation(answers);
+    const totalQuestions = questions.length;
+    const correct = answers.filter((a) => a.chosenIndex === a.correctIndex).length;
+    const answered = answers.filter((a) => a.chosenIndex !== null).length;
+    const reussite = totalQuestions ? Math.round((correct / totalQuestions) * 100) : 0;
+
+    // Réussite par niveau (données réelles de la session ; answers[i] ↔ questions[i]).
+    const perDiff = ([1, 2, 3] as const).map((d) => {
+      const label = d === 1 ? "Facile" : d === 2 ? "Moyen" : "Difficile";
+      const total = questions.filter((q) => q.difficulty === d).length;
+      const good = answers.filter(
+        (a, i) => questions[i]?.difficulty === d && a.chosenIndex === a.correctIndex
+      ).length;
+      const pct = total ? good / total : 0;
+      const tone = pct >= 0.7 ? "bg-success" : pct >= 0.4 ? "bg-primary" : "bg-destructive";
+      return { d, label, total, good, pct, tone };
+    });
+
+    const tiles = [
+      { label: "Score total", value: `${correct}/${totalQuestions}` },
+      { label: "Temps écoulé", value: formatDuration(elapsed) },
+      { label: "Répondues", value: `${answered}/${totalQuestions}` },
+      { label: "Réussite", value: `${reussite} %` },
+    ];
+
     return (
-      <div className="mx-auto max-w-xl">
-        <div className="bg-card rounded-2xl border p-8 text-center shadow-sm">
-          <h1 className="text-2xl font-bold tracking-tight">Résultat</h1>
-          <p className="mt-4 text-5xl font-bold tabular-nums">
-            {score.correct}
-            <span className="text-muted-foreground text-2xl">/{score.total}</span>
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            {score.answered} question{score.answered > 1 ? "s" : ""} traitée
-            {score.answered > 1 ? "s" : ""} · précision {Math.round(score.precision * 100)} %
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
-            <Button onClick={start}>Recommencer</Button>
+      <div className="mx-auto max-w-2xl">
+        <div className="bg-card rounded-2xl border p-6 shadow-sm sm:p-8">
+          <h1 className="text-center text-2xl font-bold tracking-tight">Résultats</h1>
+
+          <div
+            className="mt-6 flex items-end justify-center gap-6 sm:gap-10"
+            role="img"
+            aria-label={`Réussite par niveau : ${perDiff
+              .map((b) => `${b.label} ${b.good} sur ${b.total}`)
+              .join(", ")}`}
+          >
+            {perDiff.map((b) => (
+              <div key={b.d} className="flex w-16 flex-col items-center gap-2 sm:w-20">
+                <span className="text-sm font-semibold tabular-nums">
+                  {Math.round(b.pct * 100)} %
+                </span>
+                <div className="bg-muted/50 flex h-28 w-full items-end overflow-hidden rounded-md">
+                  <div
+                    className={`w-full rounded-md transition-[height] duration-500 ${b.tone}`}
+                    style={{ height: `${Math.max(6, Math.round(b.pct * 100))}%` }}
+                  />
+                </div>
+                <span className="text-sm font-medium">{b.label}</span>
+                <span className="text-muted-foreground text-xs tabular-nums">
+                  {b.good}/{b.total}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {tiles.map((t) => (
+              <div key={t.label} className="bg-muted/40 rounded-xl border p-4 text-center">
+                <p className="text-muted-foreground text-xs">{t.label}</p>
+                <p className="text-primary mt-1 text-2xl font-bold tabular-nums">{t.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex justify-center gap-3">
             <Button variant="outline" onClick={() => setPhase("intro")}>
-              Retour
+              ← Retour
             </Button>
+            <Button onClick={start}>Recommencer →</Button>
           </div>
         </div>
       </div>
