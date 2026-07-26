@@ -148,6 +148,22 @@ export const FAMILY_INFO: Record<PsyFamily, PsyFamilyInfo> = {
     ficheHref: "/psychotechnique/exercices/le-raisonnement-mecanique",
     timeLimits: [25, 30, 40],
   },
+  analogies: {
+    slug: "analogies",
+    name: "Analogies",
+    consigne:
+      "« A est à B ce que C est à … ? » Trouvez d'abord la règle qui mène de A à B (addition, multiplication, carré…), puis appliquez-la exactement à C.",
+    ficheHref: "/psychotechnique/exercices/les-analogies",
+    timeLimits: [20, 25, 30],
+  },
+  "comparaison-nombres": {
+    slug: "comparaison-nombres",
+    name: "Comparaison de nombres",
+    consigne:
+      "Repérez le plus grand ou le plus petit nombre le plus vite possible. Comparez chiffre par chiffre à partir de la gauche ; avec des négatifs, le plus grand est le plus proche de zéro.",
+    ficheHref: "/psychotechnique/exercices/la-comparaison-de-nombres",
+    timeLimits: [15, 18, 22],
+  },
 };
 
 type Rng = () => number;
@@ -1332,6 +1348,133 @@ function genMecanique(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
+// analogies
+// ---------------------------------------------------------------------------
+
+/** Trois distracteurs entiers uniques (≠ bonne réponse), complétés si besoin. */
+function uniqueNumericChoices(correct: number, candidates: number[]): string[] {
+  const out: number[] = [];
+  const push = (v: number) => {
+    if (v !== correct && !out.includes(v) && out.length < 3) out.push(v);
+  };
+  for (const c of candidates) push(c);
+  let step = 1;
+  while (out.length < 3) {
+    push(correct + step);
+    push(correct - step);
+    step += 1;
+  }
+  return out.map(String);
+}
+
+function genAnalogies(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  const a = int(rng, 2, 9);
+  let c: number;
+  let b: number;
+  let ans: number;
+  let prompt: string;
+  let method: string;
+  let distractors: string[];
+
+  if (difficulty === 1) {
+    const k = pickOne(rng, [2, 3, 4, 5]);
+    const mul = rng() < 0.5;
+    b = mul ? a * k : a + k;
+    c = int(rng, 3, 12);
+    ans = mul ? c * k : c + k;
+    const rel = mul ? `× ${k}` : `+ ${k}`;
+    prompt = `${a} est à ${b} ce que ${c} est à … ?`;
+    method = `On passe de ${a} à ${b} en faisant « ${rel} » ; on applique la même règle à ${c} : ${c} ${rel} = ${ans}.`;
+    distractors = uniqueNumericChoices(ans, [mul ? c + k : c * k, ans + 1, ans - 1]);
+  } else if (difficulty === 2) {
+    // Élévation au carré.
+    b = a * a;
+    do {
+      c = int(rng, 2, 12);
+    } while (c === a);
+    ans = c * c;
+    prompt = `${a} est à ${b} ce que ${c} est à … ?`;
+    method = `Chaque nombre est élevé au carré : ${a}² = ${b}, donc ${c}² = ${ans}.`;
+    distractors = uniqueNumericChoices(ans, [c * 2, (c + 1) * (c + 1), c * c - c]);
+  } else {
+    // Relation affine : × k puis + m.
+    const k = pickOne(rng, [2, 3]);
+    const m = int(rng, 1, 4);
+    b = a * k + m;
+    c = int(rng, 3, 12);
+    ans = c * k + m;
+    prompt = `${a} est à ${b} ce que ${c} est à … ?`;
+    method = `La règle est « × ${k} puis + ${m} » (car ${a} × ${k} + ${m} = ${b}) ; appliquée à ${c} : ${c} × ${k} + ${m} = ${ans}.`;
+    distractors = uniqueNumericChoices(ans, [c * k, c + (b - a), ans + m]);
+  }
+
+  const { choices, correctIndex } = buildChoices(rng, seed + 17, String(ans), distractors);
+  return {
+    id: `psy.analogies.${seed}`,
+    family: "analogies",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO.analogies.timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// comparaison-nombres
+// ---------------------------------------------------------------------------
+
+/** n entiers distincts dans [min, max]. */
+function uniqueInts(rng: Rng, n: number, min: number, max: number): number[] {
+  const set = new Set<number>();
+  while (set.size < n) set.add(int(rng, min, max));
+  return [...set];
+}
+
+function genComparaison(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
+  const rng = createRng(seed);
+  let nums: number[];
+  let correct: number;
+  let prompt: string;
+  let method: string;
+
+  if (difficulty === 1) {
+    nums = uniqueInts(rng, 4, 10, 99);
+    correct = Math.max(...nums);
+    prompt = `Parmi ces nombres, lequel est le plus grand ?\n${nums.join(" · ")}`;
+    method = `Comparez les dizaines d'abord, puis les unités : le plus grand est ${correct}.`;
+  } else if (difficulty === 2) {
+    const base = int(rng, 200, 800);
+    const set = new Set<number>();
+    while (set.size < 4) set.add(base + int(rng, 0, 60));
+    nums = [...set];
+    correct = Math.min(...nums);
+    prompt = `Parmi ces nombres, lequel est le plus petit ?\n${nums.join(" · ")}`;
+    method = `Les nombres sont proches : comparez chiffre par chiffre à partir de la gauche. Le plus petit est ${correct}.`;
+  } else {
+    nums = uniqueInts(rng, 4, -99, -1);
+    correct = Math.max(...nums);
+    prompt = `Parmi ces nombres, lequel est le plus grand ?\n${nums.join(" · ")}`;
+    method = `Avec des nombres négatifs, le plus grand est celui le plus proche de zéro (le plus petit en valeur absolue) : ${correct}.`;
+  }
+
+  const distractors = nums.filter((n) => n !== correct).map(String);
+  const { choices, correctIndex } = buildChoices(rng, seed + 19, String(correct), distractors);
+  return {
+    id: `psy.comparaison-nombres.${seed}`,
+    family: "comparaison-nombres",
+    difficulty,
+    prompt,
+    choices,
+    correctIndex,
+    method,
+    timeLimitSeconds: FAMILY_INFO["comparaison-nombres"].timeLimits[difficulty - 1],
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Point d'entrée
 // ---------------------------------------------------------------------------
 
@@ -1353,6 +1496,8 @@ const GENERATORS: Record<PsyFamily, (seed: number, d: 1 | 2 | 3) => PsyQuestion>
   matrices: genMatrix,
   "horloges-durees": genHorloges,
   "raisonnement-mecanique": genMecanique,
+  analogies: genAnalogies,
+  "comparaison-nombres": genComparaison,
 };
 
 /** Génère une question d'une famille — déterministe par (famille, graine, difficulté). */

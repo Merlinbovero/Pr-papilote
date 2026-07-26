@@ -1,0 +1,98 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-analogies
+type: concept
+title: Les analogies
+slug: les-analogies
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en manœuvre — les analogies
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
+summary: >-
+  « A est à B ce que C est à … ? » Les analogies évaluent la capacité à
+  identifier une relation entre deux termes, puis à la transposer fidèlement à
+  un troisième. Le tout est de trouver la bonne règle.
+objectifs:
+  - Identifier la relation qui lie les deux premiers termes (opération, ordre de grandeur).
+  - Transposer exactement cette relation au troisième terme.
+  - Écarter les distracteurs qui appliquent une règle voisine mais fausse.
+aliases: [analogies, analogie numérique, A est à B, relation, transposition]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-26"
+verifiedAt: "2026-07-26"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-26"
+    version: 1
+    motif: Création — fiche d'entraînement « analogies » (nouvelle famille génératrice du moteur psychotechnique).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-26"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.les-suites-logiques
+    - psychotechnique.exercices.le-calcul-mental
+content:
+  essentiel:
+    body: |
+      Une **analogie** se lit : « **A** est à **B** ce que **C** est à **?** ».
+      Le principe est simple mais exigeant : il faut d'abord **découvrir la
+      relation** qui transforme A en B, puis l'appliquer **à l'identique** à C.
+
+      La difficulté n'est pas le calcul, mais l'**identification de la règle** —
+      qui peut être une **addition**, une **multiplication**, une **élévation au
+      carré**, ou une combinaison (× puis +). Plusieurs règles peuvent sembler
+      convenir sur le premier couple : vérifiez qu'elle **tient** avant de
+      transposer.
+
+      La méthode en deux temps :
+
+      1. **trouver la règle** A → B (quelle opération, quel facteur ?) ;
+      2. **transposer** exactement à C, sans changer d'opération en route.
+    aRetenir:
+      - "Analogie — trouver la relation A → B, puis l'appliquer à l'identique à C."
+      - Tester la règle sur le premier couple avant de la transposer.
+      - Les distracteurs appliquent souvent une règle voisine (addition au lieu de multiplication).
+      - Vérifier l'ordre de grandeur de la réponse — une multiplication change vite l'échelle.
+  sections:
+    - id: trouver-la-regle
+      title: Trouver la règle
+      body: |
+        Devant « 3 est à 12 », plusieurs pistes : **+9** ? **×4** ? La bonne
+        démarche est de garder la piste la plus **simple et régulière**, puis de
+        la **confirmer** sur le second terme.
+
+        Les relations les plus fréquentes :
+
+        - **additive** — B = A + k (ex. 5 → 8, soit +3) ;
+        - **multiplicative** — B = A × k (ex. 4 → 12, soit ×3) ;
+        - **carré** — B = A² (ex. 6 → 36) ;
+        - **affine** — B = A × k + m (ex. 3 → 7, soit ×2 +1).
+    - id: transposer-sans-se-tromper
+      title: Transposer sans se tromper
+      strate: maitriser
+      body: |
+        Une fois la règle trouvée, l'erreur classique est de **changer
+        d'opération** en la transposant, ou de s'arrêter à mi-chemin sur une
+        règle affine (oublier le « + m »).
+
+        Le réflexe de sécurité : **réécrire la règle** avant de l'appliquer
+        (« × 2 puis + 1 »), puis dérouler le calcul sur C, chiffre à chiffre.
+        Enfin, vérifiez l'**ordre de grandeur** : si la première relation
+        multiplie, la réponse doit être nettement plus grande que C.
+  pieges:
+    - Confondre addition et multiplication — « 4 → 12 » est ×3, pas +8 (transposé à un autre nombre, les deux divergent).
+    - Oublier la seconde étape d'une règle affine (× k puis + m).
+    - Changer d'opération entre le couple modèle et sa transposition.
+    - Ne pas vérifier l'ordre de grandeur de la réponse.
