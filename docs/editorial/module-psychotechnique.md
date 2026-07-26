@@ -74,6 +74,33 @@ pour la cible horizontale (palonnier), clavier pour le calcul mental.
   `/psychotechnique/exercices/le-secpil` (sources : cockpitseeker, piloteready,
   pilotemilitaire).
 
+## Le test d'orientation spatiale (rendu 3D, hors QCM texte)
+
+Reconstitution pédagogique du **test d'orientation** des sélections (type
+EOPN/SPEP), **sans lien avec le logiciel officiel**. Le candidat lit un
+**instrument** (horizon artificiel + compas) donnant une **attitude** — cap,
+assiette, inclinaison — et choisit, parmi **cinq vues 3D d'un aéronef**, celle
+dont l'attitude correspond.
+
+- **Génération infinie et déterministe** : une attitude tient en trois nombres,
+  donc l'espace des questions est immense. Chaque question tire une attitude
+  cible au hasard (amplitude croissante par difficulté) + **quatre distracteurs**
+  qui reproduisent les confusions classiques (inclinaison inversée, cap
+  réciproque ou ±90°, assiette inversée…), écartés s'ils sont « confondables »
+  pour garantir une seule bonne réponse. Logique pure, testée, dans
+  `src/lib/psychotech/orientation.ts`.
+- **Rendu 3D** : deux **modèles glTF de libre réutilisation** (CC BY —
+  registre `src/lib/models-3d.ts`, crédités sur `/credits-photos`), tirés au
+  hasard selon les questions, orientés en direct via **Three.js** (importé
+  dynamiquement, code-splitté sur cette seule page). Les vignettes sont rendues
+  hors écran puis affichées comme images ; l'instrument est en SVG. Rendu et
+  logique séparés — même doctrine que le SECPIL.
+- **Format** : session chronométrée de **7 minutes / 27 questions**, écran
+  d'intro avec **Mode entraînement** (correction immédiate), barre de
+  progression, résultats + historique local (10 dernières sessions).
+- **Route** : `/psychotechnique/orientation` ; méthode rattachée à la fiche
+  `la-vision-spatiale`.
+
 ## Le moteur (`src/lib/psychotech/`)
 
 Fonctions pures, format unique :

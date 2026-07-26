@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import {
   ChartLineIcon,
   ClipboardCheckIcon,
+  CompassIcon,
   CrosshairIcon,
   ListChecksIcon,
   RepeatIcon,
@@ -103,6 +104,27 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     <CardDescription>
                       Entraîneur psychomoteur — suivi au manche et au palonnier, puis calcul mental,
                       en attention partagée.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/orientation"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <CompassIcon aria-hidden className="text-primary size-4" />
+                      Test d&apos;orientation
+                    </CardTitle>
+                    <CardDescription>
+                      Lire une attitude de vol (horizon et compas) et retrouver l&apos;aéronef en 3D
+                      — questions générées à l&apos;infini.
                     </CardDescription>
                   </CardHeader>
                 </Card>
