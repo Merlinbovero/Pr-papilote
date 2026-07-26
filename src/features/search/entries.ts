@@ -58,6 +58,28 @@ const OUTILS: SearchEntryInput[] = [
     priority: 3,
   },
   {
+    id: "outil.appareils-photos",
+    type: "outil",
+    family: "simulateur",
+    title: "Test des appareils photos",
+    summary:
+      "Une scène, trois appareils numérotés, une seule photo : retrouver l'objectif qui l'a prise. Scènes 3D générées à l'infini, format officiel 30 vues en 8 minutes.",
+    moduleName: "Psychotechnique",
+    moduleSlug: "psychotechnique",
+    url: "/psychotechnique/appareils-photos",
+    aliases: [
+      "appareils photos",
+      "appareil photo",
+      "photos",
+      "point de vue",
+      "perspective",
+      "visualisation spatiale",
+      "projection 3D",
+      "occultation",
+    ],
+    priority: 3,
+  },
+  {
     id: "outil.dominos",
     type: "outil",
     family: "simulateur",
