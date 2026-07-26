@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   attitudesConfusable,
-  capDelta,
+  angleDelta,
   composeOrientationSession,
   generateOrientationQuestion,
   ORIENTATION_FORMATS,
@@ -55,10 +55,28 @@ describe("orientation — générateur", () => {
           expect(a.cap).toBeGreaterThanOrEqual(0);
           expect(a.cap).toBeLessThan(360);
           expect(Math.abs(a.pitch)).toBeLessThanOrEqual(55);
-          expect(Math.abs(a.roll)).toBeLessThanOrEqual(90);
+          expect(Math.abs(a.roll)).toBeLessThanOrEqual(180);
         }
       }
     }
+  });
+
+  it("réserve le vol sur le dos et les fortes assiettes au niveau 3", () => {
+    const rolls: Record<1 | 2 | 3, number[]> = { 1: [], 2: [], 3: [] };
+    const pitches: Record<1 | 2 | 3, number[]> = { 1: [], 2: [], 3: [] };
+    for (const difficulty of [1, 2, 3] as const) {
+      for (let seed = 1; seed <= 200; seed += 1) {
+        const { target } = generateOrientationQuestion(seed, difficulty);
+        rolls[difficulty].push(Math.abs(target.roll));
+        pitches[difficulty].push(Math.abs(target.pitch));
+      }
+    }
+    // Niveaux 1 et 2 : jamais sur le dos (inclinaison au plus 90°).
+    expect(Math.max(...rolls[1])).toBeLessThanOrEqual(90);
+    expect(Math.max(...rolls[2])).toBeLessThanOrEqual(90);
+    // Niveau 3 : le vol sur le dos apparaît, et les assiettes montent plus haut.
+    expect(rolls[3].some((r) => r > 90)).toBe(true);
+    expect(Math.max(...pitches[3])).toBeGreaterThan(Math.max(...pitches[1]));
   });
 
   it("le modèle est l'un des deux appareils disponibles", () => {
@@ -69,12 +87,14 @@ describe("orientation — générateur", () => {
   });
 });
 
-describe("capDelta", () => {
+describe("angleDelta", () => {
   it("mesure l'écart circulaire minimal", () => {
-    expect(capDelta(10, 20)).toBe(10);
-    expect(capDelta(350, 10)).toBe(20);
-    expect(capDelta(0, 180)).toBe(180);
-    expect(capDelta(90, 270)).toBe(180);
+    expect(angleDelta(10, 20)).toBe(10);
+    expect(angleDelta(350, 10)).toBe(20);
+    expect(angleDelta(0, 180)).toBe(180);
+    expect(angleDelta(90, 270)).toBe(180);
+    // Vol sur le dos : +175 et −175 ne sont distants que de 10°.
+    expect(angleDelta(175, -175)).toBe(10);
   });
 });
 

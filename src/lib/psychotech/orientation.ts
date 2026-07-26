@@ -86,8 +86,12 @@ function pick<T>(rng: () => number, items: readonly T[]): T {
   return items[intFrom(rng, 0, items.length - 1)];
 }
 
-/** Écart circulaire minimal entre deux caps (0-180). */
-export function capDelta(a: number, b: number): number {
+/**
+ * Écart circulaire minimal entre deux angles (0-180). Vaut pour le cap comme
+ * pour l'inclinaison : depuis l'ajout du vol sur le dos, une inclinaison de
+ * +175° et une de −175° ne sont distantes que de 10°, pas de 350°.
+ */
+export function angleDelta(a: number, b: number): number {
   const d = Math.abs(((a - b) % 360) + 360) % 360;
   return Math.min(d, 360 - d);
 }
@@ -99,14 +103,16 @@ export function capDelta(a: number, b: number): number {
  */
 export function attitudesConfusable(a: Attitude, b: Attitude): boolean {
   return (
-    capDelta(a.cap, b.cap) < 25 &&
+    angleDelta(a.cap, b.cap) < 25 &&
     Math.abs(a.pitch - b.pitch) < 15 &&
-    Math.abs(a.roll - b.roll) < 20
+    angleDelta(a.roll, b.roll) < 20
   );
 }
 
-function clampRoll(v: number): number {
-  return Math.max(-90, Math.min(90, v));
+/** Ramène une inclinaison dans (−180, 180] — le vol sur le dos est admis. */
+function normalizeRoll(v: number): number {
+  const wrapped = ((((v + 180) % 360) + 360) % 360) - 180;
+  return wrapped === -180 ? 180 : wrapped;
 }
 function clampPitch(v: number): number {
   return Math.max(-55, Math.min(55, v));
@@ -135,24 +141,31 @@ export function generateOrientationQuestion(
       roll: pick(rng, [-70, -45, -30, 30, 45, 70]),
     };
   } else {
+    // Niveau 3 — « fortes assiettes et vol sur le dos », comme la fin du test
+    // réel (pilotemilitaire.fr, description de l'épreuve EOPN).
+    const inverted = rng() < 0.45;
     target = {
       cap: intFrom(rng, 0, 71) * 5,
-      pitch: intFrom(rng, -9, 9) * 5,
-      roll: intFrom(rng, -18, 18) * 5,
+      pitch: pick(rng, [-55, -45, -30, -15, 0, 15, 30, 45, 55]),
+      roll: inverted
+        ? pick(rng, [-160, -140, -120, 120, 140, 160, 180])
+        : pick(rng, [-90, -70, -50, -30, 30, 50, 70, 90]),
     };
   }
 
   // Pool de distracteurs = confusions classiques du test.
   const transforms: ((t: Attitude) => Attitude)[] = [
-    (t) => ({ ...t, roll: clampRoll(-t.roll) }), // roulis inversé
+    (t) => ({ ...t, roll: normalizeRoll(-t.roll) }), // roulis inversé
     (t) => ({ ...t, pitch: clampPitch(-t.pitch) }), // assiette inversée
     (t) => ({ ...t, cap: (t.cap + 180) % 360 }), // cap réciproque
     (t) => ({ ...t, cap: (t.cap + 90) % 360 }), // cap +90
     (t) => ({ ...t, cap: (t.cap + 270) % 360 }), // cap −90
-    (t) => ({ ...t, pitch: clampPitch(-t.pitch), roll: clampRoll(-t.roll) }), // les deux inversés
-    (t) => ({ ...t, cap: (t.cap + 180) % 360, roll: clampRoll(-t.roll) }),
-    (t) => ({ ...t, roll: clampRoll(t.roll >= 0 ? t.roll - 60 : t.roll + 60) }),
+    (t) => ({ ...t, pitch: clampPitch(-t.pitch), roll: normalizeRoll(-t.roll) }), // les deux inversés
+    (t) => ({ ...t, cap: (t.cap + 180) % 360, roll: normalizeRoll(-t.roll) }),
+    (t) => ({ ...t, roll: normalizeRoll(t.roll >= 0 ? t.roll - 60 : t.roll + 60) }),
     (t) => ({ ...t, pitch: clampPitch(t.pitch >= 0 ? t.pitch - 40 : t.pitch + 40) }),
+    // Remis à l'endroit / mis sur le dos : le piège propre au niveau 3.
+    (t) => ({ ...t, roll: normalizeRoll(180 - t.roll) }),
   ];
 
   const order = seededShuffle(
