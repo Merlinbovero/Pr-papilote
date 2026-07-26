@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { DominoHalfTile, DominoSeries } from "@/features/psychotech/domino-tile";
+import { DominoHalfTile, DominoSeries, DominoTile } from "@/features/psychotech/domino-tile";
 import {
   buildDominoSession,
   DOMINO_LEVEL_LIST,
@@ -145,6 +145,61 @@ function AnswerPad({
       <p className="text-muted-foreground text-xs">
         La moitié vide vaut <strong>0</strong> — c’est le blanc du domino, et il suit le 6.
       </p>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Comparatif de correction
+// ---------------------------------------------------------------------------
+
+/**
+ * Ce que l’on a répondu, face à ce qu’il fallait.
+ *
+ * Sans ce bloc, la tuile révélée dans la série — la **bonne** réponse — était
+ * teintée en rouge quand on s’était trompé : on croyait lire son erreur alors
+ * qu’on lisait la solution. La série montre désormais toujours la bonne tuile
+ * en vert, et l’erreur est mise en regard, nommée.
+ */
+function AnswerComparison({
+  answer,
+  solution,
+}: {
+  answer: DominoAnswer | undefined;
+  solution: { top: number; bottom: number };
+}) {
+  const given = answer && isComplete(answer) ? answer : null;
+  return (
+    <div className="bg-muted/20 mt-3 flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border p-3">
+      <div className="flex items-center gap-2.5">
+        <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+          Votre réponse
+        </span>
+        {given ? (
+          <DominoTile
+            domino={given}
+            size={34}
+            tone="wrong"
+            label={`Votre réponse : ${given.top} sur ${given.bottom}`}
+          />
+        ) : (
+          <span className="text-muted-foreground text-sm italic">non traité</span>
+        )}
+      </div>
+      <span aria-hidden className="text-muted-foreground text-lg">
+        →
+      </span>
+      <div className="flex items-center gap-2.5">
+        <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+          La bonne réponse
+        </span>
+        <DominoTile
+          domino={solution}
+          size={34}
+          tone="correct"
+          label={`La bonne réponse : ${solution.top} sur ${solution.bottom}`}
+        />
+      </div>
     </div>
   );
 }
@@ -483,26 +538,11 @@ export function DominosTest() {
                   <DominoSeries
                     puzzle={puzzle}
                     tileSize={38}
-                    revealed={{
-                      domino: puzzle.solution,
-                      tone: verdict.correct ? "correct" : "wrong",
-                    }}
+                    revealed={{ domino: puzzle.solution, tone: "correct" }}
                   />
                 </div>
                 {!verdict.correct ? (
-                  <p className="text-muted-foreground mt-3 text-sm">
-                    Votre réponse :{" "}
-                    <strong>
-                      {answers[i] && isComplete(answers[i])
-                        ? `${answers[i].top} sur ${answers[i].bottom}`
-                        : "non traité"}
-                    </strong>{" "}
-                    — la bonne était{" "}
-                    <strong>
-                      {puzzle.solution.top} sur {puzzle.solution.bottom}
-                    </strong>
-                    .
-                  </p>
+                  <AnswerComparison answer={answers[i]} solution={puzzle.solution} />
                 ) : null}
                 <p className="text-muted-foreground mt-2 text-sm">
                   <strong className="text-foreground">La règle :</strong> {puzzle.rule}
@@ -557,11 +597,7 @@ export function DominosTest() {
           puzzle={current}
           answer={answer}
           tileSize={52}
-          revealed={
-            verdict
-              ? { domino: current.solution, tone: verdict.correct ? "correct" : "wrong" }
-              : undefined
-          }
+          revealed={verdict ? { domino: current.solution, tone: "correct" } : undefined}
         />
       </div>
 
@@ -576,12 +612,11 @@ export function DominosTest() {
               : "border-destructive/40 bg-destructive/5"
           )}
         >
-          <p className="text-sm font-semibold">
-            {verdict.correct
-              ? "Juste."
-              : `Faux — il fallait ${current.solution.top} sur ${current.solution.bottom}.`}
-          </p>
-          <p className="text-muted-foreground mt-1 text-sm">{current.rule}</p>
+          <p className="text-sm font-semibold">{verdict.correct ? "Juste." : "Faux."}</p>
+          {!verdict.correct ? (
+            <AnswerComparison answer={answer} solution={current.solution} />
+          ) : null}
+          <p className="text-muted-foreground mt-2 text-sm">{current.rule}</p>
         </div>
       ) : null}
 
