@@ -27,17 +27,41 @@ const GROUND = "#6f4d2e";
 
 const THUMB = 260; // taille de rendu d'une vignette d'appareil (px)
 
-// Calibration par modèle : rotation de base amenant le nez vers +Z, le haut
-// vers +Y (repère canonique), et échelle de cadrage. Ajustée visuellement.
-const CALIBRATION: Record<ModelKey, { base: [number, number, number]; fit: number }> = {
-  jet: { base: [0, Math.PI, 0], fit: 2.6 },
-  biplane: { base: [0, Math.PI, 0], fit: 2.4 },
+/**
+ * Calibration par modèle — rotation de base amenant le modèle dans le repère
+ * canonique NEZ = +Z, HAUT = +Y. Ces valeurs sont MESURÉES (rendu de chaque
+ * modèle selon les six directions canoniques), pas estimées :
+ *  - `jet`     : le modèle est déjà nez = +Z, haut = +Y → aucune rotation ;
+ *  - `biplane` : le modèle a le nez sur +X → rotation de −90° autour de Y.
+ * Un modèle ajouté plus tard doit être mesuré de la même façon.
+ */
+const CALIBRATION: Record<ModelKey, { base: [number, number, number] }> = {
+  jet: { base: [0, 0, 0] },
+  biplane: { base: [0, -Math.PI / 2, 0] },
 };
 
-// Signe des axes (calibrés pour coller à la lecture de l'instrument).
-const YAW_SIGN = -1; // cap
-const PITCH_SIGN = -1; // + = montée (nez haut)
-const ROLL_SIGN = -1; // + = virage à droite
+/**
+ * Part de la hauteur visible occupée par la sphère englobante de l'appareil.
+ * Cadrer sur la SPHÈRE (et non sur la plus grande dimension de la boîte)
+ * garantit deux choses : l'appareil n'est jamais rogné, quelle que soit son
+ * attitude, et sa taille apparente reste constante — la taille ne doit pas
+ * devenir un indice pour répondre.
+ */
+const FIT_MARGIN = 0.95;
+
+/**
+ * Signes des rotations, démontrés dans le repère canonique (nez = +Z,
+ * haut = +Y, donc aile droite = nez × haut = −X) et vérifiés visuellement :
+ *  - cabré (assiette > 0) = rotation NÉGATIVE autour de X ;
+ *  - cap croissant (vers l'est) = rotation NÉGATIVE autour de Y ;
+ *  - virage à droite (inclinaison > 0, aile droite basse) = rotation POSITIVE
+ *    autour de Z.
+ * L'ordre d'Euler « YXZ » applique l'inclinaison, puis l'assiette, puis le cap
+ * — c'est la convention aéronautique.
+ */
+const YAW_SIGN = -1;
+const PITCH_SIGN = -1;
+const ROLL_SIGN = +1;
 
 const DEG = Math.PI / 180;
 const HISTORY_KEY = "pp.orientation.history.v1";
@@ -90,8 +114,12 @@ async function getRenderer(): Promise<Renderer3D> {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     const scene = new THREE.Scene();
+    // Caméra DERRIÈRE l'appareil (vue de poursuite), légèrement au-dessus :
+    // l'aile droite de l'appareil tombe alors à droite de l'écran, ce qui rend
+    // l'inclinaison lisible exactement comme sur l'instrument.
     const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
     camera.position.set(0, 1.1, -4.4);
+    camera.up.set(0, 1, 0);
     camera.lookAt(0, 0, 0);
 
     scene.add(new THREE.HemisphereLight(0xffffff, 0x4a5568, 1.15));
@@ -108,44 +136,65 @@ async function getRenderer(): Promise<Renderer3D> {
         loader.load(url, (gltf) => resolve(gltf.scene), undefined, reject);
       });
 
+    // Rayon utile à la distance de l'appareil : au-delà, il serait rogné.
+    const camDistance = camera.position.length();
+    const visibleRadius = camDistance * Math.tan((camera.fov / 2) * DEG) * FIT_MARGIN;
+
     const pivots: Partial<Record<ModelKey, import("three").Group>> = {};
     for (const keyName of Object.keys(SITE_3D_MODELS) as ModelKey[]) {
       const raw = await load(SITE_3D_MODELS[keyName].src);
       raw.updateMatrixWorld(true);
-      const box = new THREE.Box3().setFromObject(raw);
-      const size = box.getSize(new THREE.Vector3());
-      const center = box.getCenter(new THREE.Vector3());
-      raw.position.sub(center);
-      const maxDim = Math.max(size.x, size.y, size.z) || 1;
-      raw.scale.setScalar(CALIBRATION[keyName].fit / maxDim);
+      const center = new THREE.Box3().setFromObject(raw).getCenter(new THREE.Vector3());
+
+      // Rayon réel = distance maximale d'un sommet au centre de rotation. Bien
+      // plus serré que la diagonale de la boîte englobante : l'appareil occupe
+      // donc le cadre au maximum, sans jamais en sortir.
+      const vertex = new THREE.Vector3();
+      let radius = 0;
+      raw.traverse((child) => {
+        const mesh = child as import("three").Mesh;
+        if (!mesh.isMesh) return;
+        const position = mesh.geometry.getAttribute("position");
+        for (let i = 0; i < position.count; i += 1) {
+          vertex.fromBufferAttribute(position, i).applyMatrix4(mesh.matrixWorld);
+          radius = Math.max(radius, vertex.distanceTo(center));
+        }
+      });
+
+      // Deux groupes imbriqués : on recentre d'abord, on met à l'échelle
+      // ensuite. Faire l'inverse décalerait l'appareil (la position d'un objet
+      // s'exprime dans le repère du parent, donc hors de sa propre échelle).
+      const centered = new THREE.Group();
+      centered.position.copy(center).multiplyScalar(-1);
+      centered.add(raw);
+
+      const fitted = new THREE.Group();
+      fitted.scale.setScalar(visibleRadius / (radius || 1));
+      fitted.add(centered);
 
       const base = new THREE.Group();
       base.rotation.set(...CALIBRATION[keyName].base);
-      base.add(raw);
+      base.add(fitted);
 
       const pivot = new THREE.Group();
-      pivot.rotation.order = "YXZ";
+      pivot.rotation.order = "YXZ"; // inclinaison, puis assiette, puis cap
       pivot.add(base);
+      pivot.visible = false;
+      scene.add(pivot);
       pivots[keyName] = pivot;
     }
 
     const render = (model: ModelKey, attitude: Attitude): string => {
       const pivot = pivots[model];
       if (!pivot) return "";
-      scene.clear();
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x4a5568, 1.15));
-      const k = new THREE.DirectionalLight(0xffffff, 2.1);
-      k.position.set(-3, 5, -4);
-      scene.add(k);
-      const f = new THREE.DirectionalLight(0xffffff, 0.5);
-      f.position.set(4, 1, 3);
-      scene.add(f);
+      // Les deux appareils vivent dans la scène ; on n'affiche que le bon.
+      for (const p of Object.values(pivots)) p.visible = false;
+      pivot.visible = true;
       pivot.rotation.set(
         PITCH_SIGN * attitude.pitch * DEG,
         YAW_SIGN * attitude.cap * DEG,
         ROLL_SIGN * attitude.roll * DEG
       );
-      scene.add(pivot);
       renderer.render(scene, camera);
       return canvas.toDataURL("image/png");
     };
@@ -171,8 +220,9 @@ function Instrument({ attitude }: { attitude: Attitude }) {
     ["S", 180],
     ["O", 270],
   ];
+  // Graduations tous les 45°, solidaires de la rose (donc du cap).
   const ticks = Array.from({ length: 8 }, (_, i) => {
-    const a = (i * 45 - roll - 90) * DEG;
+    const a = (i * 45 - cap - 90) * DEG;
     const r1 = R - 4;
     const r2 = R - 12;
     return (
@@ -215,28 +265,31 @@ function Instrument({ attitude }: { attitude: Attitude }) {
             strokeWidth={2}
           />
         </g>
-        {ticks}
-        {letters.map(([ch, ang]) => {
-          const a = (ang - cap - 90) * DEG;
-          const rr = R - 22;
-          const x = c + rr * Math.cos(a);
-          const y = c + rr * Math.sin(a);
-          return (
-            <text
-              key={ch}
-              x={x}
-              y={y}
-              textAnchor="middle"
-              dominantBaseline="central"
-              fontSize={17}
-              fontWeight={700}
-              fill="rgba(255,255,255,0.96)"
-              transform={`rotate(${-roll} ${x} ${y})`}
-            >
-              {ch}
-            </text>
-          );
-        })}
+        {/* Rose des caps — peinte sur la boule, elle s'incline donc avec elle.
+            Ailes à plat, la lettre du cap suivi est en haut. */}
+        <g transform={`rotate(${-roll} ${c} ${c})`}>
+          {ticks}
+          {letters.map(([ch, ang]) => {
+            const a = (ang - cap - 90) * DEG;
+            const rr = R - 22;
+            const x = c + rr * Math.cos(a);
+            const y = c + rr * Math.sin(a);
+            return (
+              <text
+                key={ch}
+                x={x}
+                y={y}
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontSize={17}
+                fontWeight={700}
+                fill="rgba(255,255,255,0.96)"
+              >
+                {ch}
+              </text>
+            );
+          })}
+        </g>
       </g>
       <circle cx={c} cy={c} r={R} fill="none" stroke="var(--border)" strokeWidth={3} />
       {/* Avion fixe de référence, au centre */}
@@ -574,7 +627,7 @@ export function OrientationTest() {
           {current ? <Instrument attitude={current.target} /> : null}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <div className="mt-6 grid grid-cols-3 gap-2 sm:grid-cols-5 sm:gap-3">
           {current?.choices.map((_, i) => {
             const isChosen = chosen === i;
             const isCorrect = current.correctIndex === i;
