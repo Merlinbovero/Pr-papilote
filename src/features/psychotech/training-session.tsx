@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { FAMILY_INFO } from "@/lib/psychotech/generators";
 import { composeSession, scoreSession, SESSION_SIZES } from "@/lib/psychotech/session";
 import { PsyInstrumentView } from "@/features/psychotech/psy-instrument";
+import { DominoSeries, DominoTile } from "@/features/psychotech/domino-tile";
 import { MatrixCellView, PsyMatrixGrid } from "@/features/psychotech/psy-matrix";
 import {
   PSY_FAMILIES,
@@ -437,6 +438,11 @@ export function TrainingSession() {
       ) : null}
       {question.instrument ? <PsyInstrumentView instrument={question.instrument} /> : null}
       {question.matrix ? <PsyMatrixGrid matrix={question.matrix} /> : null}
+      {question.dominos ? (
+        <div className="bg-muted/20 rounded-xl border p-4">
+          <DominoSeries puzzle={question.dominos.puzzle} tileSize={42} />
+        </div>
+      ) : null}
 
       <ul className="space-y-2" role="list">
         {question.choices.map((choice, choiceIndex) => {
@@ -465,6 +471,11 @@ export function TrainingSession() {
                 {question.matrix ? (
                   <span className="flex flex-1 items-center gap-3">
                     <MatrixCellView cell={question.matrix.options[choiceIndex]} />
+                    <span className="text-muted-foreground font-mono text-sm">{choice}</span>
+                  </span>
+                ) : question.dominos ? (
+                  <span className="flex flex-1 items-center gap-3">
+                    <DominoTile domino={question.dominos.options[choiceIndex]} size={26} />
                     <span className="text-muted-foreground font-mono text-sm">{choice}</span>
                   </span>
                 ) : (

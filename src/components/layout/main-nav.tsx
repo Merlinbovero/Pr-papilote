@@ -8,6 +8,7 @@ import {
   BookOpenIcon,
   CompassIcon,
   GaugeIcon,
+  Grid2x2Icon,
   GraduationCapIcon,
   LanguagesIcon,
   MapIcon,
@@ -66,6 +67,7 @@ const ICONS: Record<NavIconName, LucideIcon> = {
   repeat: RepeatIcon,
   timer: TimerIcon,
   compass: CompassIcon,
+  dominos: Grid2x2Icon,
   gauge: GaugeIcon,
 };
 

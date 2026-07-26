@@ -58,6 +58,28 @@ const OUTILS: SearchEntryInput[] = [
     priority: 3,
   },
   {
+    id: "outil.dominos",
+    type: "outil",
+    family: "simulateur",
+    title: "Test de dominos",
+    summary:
+      "Retrouver la tuile manquante d'une série de dominos : trois niveaux, dix dominos par session, réponse composée au pavé, correction expliquée.",
+    moduleName: "Psychotechnique",
+    moduleSlug: "psychotechnique",
+    url: "/psychotechnique/dominos",
+    aliases: [
+      "dominos",
+      "domino",
+      "test de dominos",
+      "D70",
+      "D48",
+      "série de dominos",
+      "raisonnement logique",
+      "logique",
+    ],
+    priority: 3,
+  },
+  {
     id: "outil.orientation",
     type: "outil",
     family: "simulateur",
