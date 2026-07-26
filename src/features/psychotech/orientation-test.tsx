@@ -405,9 +405,12 @@ function OrientationTutorial() {
         ))}
       </ul>
       <p className="text-muted-foreground mt-5 text-sm">
-        Dans le test, l&apos;appareil est toujours vu <strong>de derrière</strong> : sa droite est
-        donc à votre droite. Le <strong>mode entraînement</strong> vous montre la bonne réponse
-        après chaque question — commencez par là.
+        Dans le test, la vue est toujours orientée <strong>vers le nord</strong> et l&apos;appareil
+        vu <strong>de derrière</strong> : sa droite est donc à votre droite. La difficulté monte
+        comme à l&apos;épreuve réelle — situations simples au début,{" "}
+        <strong>fortes assiettes et vol sur le dos</strong> à la fin (le sol passe alors en haut de
+        la boule). Le <strong>mode entraînement</strong> vous montre la bonne réponse après chaque
+        question : commencez par là.
       </p>
     </section>
   );

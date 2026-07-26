@@ -82,13 +82,25 @@ EOPN/SPEP), **sans lien avec le logiciel officiel**. Le candidat lit un
 assiette, inclinaison — et choisit, parmi **cinq vues 3D d'un aéronef**, celle
 dont l'attitude correspond.
 
+- **Conventions de lecture** (conformes à la description de l'épreuve EOPN sur
+  pilotemilitaire.fr, vérifiées une à une) : la vue est **toujours orientée vers
+  le nord** — nez droit devant = nord, vers la droite = est, vers soi = sud, à
+  gauche = ouest ; une **pente d'horizon montant à droite** = inclinaison à
+  droite ; **plus de brun que de bleu** = appareil à piquer. Cinq propositions
+  par question.
 - **Génération infinie et déterministe** : une attitude tient en trois nombres,
   donc l'espace des questions est immense. Chaque question tire une attitude
   cible au hasard (amplitude croissante par difficulté) + **quatre distracteurs**
   qui reproduisent les confusions classiques (inclinaison inversée, cap
-  réciproque ou ±90°, assiette inversée…), écartés s'ils sont « confondables »
-  pour garantir une seule bonne réponse. Logique pure, testée, dans
-  `src/lib/psychotech/orientation.ts`.
+  réciproque ou ±90°, assiette inversée, remise à l'endroit…), écartés s'ils sont
+  « confondables » pour garantir une seule bonne réponse. Logique pure, testée,
+  dans `src/lib/psychotech/orientation.ts`.
+- **Progression de difficulté fidèle à l'épreuve** : niveaux 1-2 en attitudes
+  usuelles (inclinaison ≤ 90°), puis niveau 3 en **fortes assiettes (jusqu'à
+  ±55°) et vol sur le dos** (inclinaison au-delà de 90°, jusqu'à 180° — le sol
+  passe alors au-dessus de l'horizon), comme la fin du test réel. L'inclinaison
+  est traitée comme un **angle circulaire** : +175° et −175° ne sont distants que
+  de 10°, ce dont le filtre anti-ambiguïté tient compte.
 - **Rendu 3D** : deux **modèles glTF de libre réutilisation** (CC BY —
   registre `src/lib/models-3d.ts`, crédités sur `/credits-photos`), tirés au
   hasard selon les questions, orientés en direct via **Three.js** (importé
