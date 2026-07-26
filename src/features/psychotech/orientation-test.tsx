@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { SITE_3D_MODELS, type ModelKey } from "@/lib/models-3d";
 import {
   composeOrientationSession,
-  ORIENTATION_DURATION_SECONDS,
-  ORIENTATION_SESSION_SIZE,
+  ORIENTATION_FORMATS,
   scoreOrientation,
   type Attitude,
   type OrientationAnswer,
+  type OrientationFormatKey,
   type OrientationQuestion,
 } from "@/lib/psychotech/orientation";
 
@@ -76,6 +76,8 @@ interface SessionHistoryEntry {
   precision: number;
   durationSeconds: number;
   training: boolean;
+  /** Absent des sessions enregistrées avant l'ajout du format court. */
+  format?: OrientationFormatKey;
 }
 
 function formatDuration(totalSeconds: number): string {
@@ -208,12 +210,15 @@ async function getRenderer(): Promise<Renderer3D> {
 // Instrument (horizon artificiel + compas), SVG
 // --------------------------------------------------------------------------
 
-function Instrument({ attitude }: { attitude: Attitude }) {
-  const S = 200;
+function Instrument({ attitude, size = 200 }: { attitude: Attitude; size?: number }) {
+  // Identifiant unique : plusieurs instruments coexistent sur l'écran d'accueil
+  // (le tutoriel), et deux `clipPath` de même id se télescoperaient.
+  const clipId = React.useId();
+  const S = size;
   const c = S / 2;
-  const R = 88;
+  const R = S * 0.44;
   const { cap, pitch, roll } = attitude;
-  const horizonShift = Math.max(-R, Math.min(R, pitch * 1.5));
+  const horizonShift = Math.max(-R, Math.min(R, pitch * (R / 58)));
   const letters: [string, number][] = [
     ["N", 0],
     ["E", 90],
@@ -223,8 +228,8 @@ function Instrument({ attitude }: { attitude: Attitude }) {
   // Graduations tous les 45°, solidaires de la rose (donc du cap).
   const ticks = Array.from({ length: 8 }, (_, i) => {
     const a = (i * 45 - cap - 90) * DEG;
-    const r1 = R - 4;
-    const r2 = R - 12;
+    const r1 = R - S * 0.02;
+    const r2 = R - S * 0.06;
     return (
       <line
         key={i}
@@ -247,12 +252,12 @@ function Instrument({ attitude }: { attitude: Attitude }) {
       aria-label={`Instrument : cap ${cap} degrés, assiette ${pitch} degrés, inclinaison ${roll} degrés`}
     >
       <defs>
-        <clipPath id="orientation-ball">
+        <clipPath id={clipId}>
           <circle cx={c} cy={c} r={R} />
         </clipPath>
       </defs>
       <circle cx={c} cy={c} r={R} fill={SKY} />
-      <g clipPath="url(#orientation-ball)">
+      <g clipPath={`url(#${clipId})`}>
         <g transform={`rotate(${-roll} ${c} ${c}) translate(0 ${horizonShift})`}>
           <rect x={c - R - 50} y={c - R - 80} width={(R + 50) * 2} height={R + 80} fill={SKY} />
           <rect x={c - R - 50} y={c} width={(R + 50) * 2} height={R + 80} fill={GROUND} />
@@ -271,7 +276,7 @@ function Instrument({ attitude }: { attitude: Attitude }) {
           {ticks}
           {letters.map(([ch, ang]) => {
             const a = (ang - cap - 90) * DEG;
-            const rr = R - 22;
+            const rr = R - S * 0.11;
             const x = c + rr * Math.cos(a);
             const y = c + rr * Math.sin(a);
             return (
@@ -281,7 +286,7 @@ function Instrument({ attitude }: { attitude: Attitude }) {
                 y={y}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize={17}
+                fontSize={S * 0.085}
                 fontWeight={700}
                 fill="rgba(255,255,255,0.96)"
               >
@@ -291,14 +296,120 @@ function Instrument({ attitude }: { attitude: Attitude }) {
           })}
         </g>
       </g>
-      <circle cx={c} cy={c} r={R} fill="none" stroke="var(--border)" strokeWidth={3} />
+      <circle cx={c} cy={c} r={R} fill="none" stroke="var(--border)" strokeWidth={S * 0.015} />
       {/* Avion fixe de référence, au centre */}
-      <g stroke="#111" strokeWidth={3} strokeLinecap="round" fill="none">
-        <line x1={c - 22} y1={c} x2={c - 7} y2={c} />
-        <line x1={c + 7} y1={c} x2={c + 22} y2={c} />
-        <circle cx={c} cy={c} r={2.5} fill="#111" stroke="none" />
+      <g stroke="#111" strokeWidth={S * 0.015} strokeLinecap="round" fill="none">
+        <line x1={c - S * 0.11} y1={c} x2={c - S * 0.035} y2={c} />
+        <line x1={c + S * 0.035} y1={c} x2={c + S * 0.11} y2={c} />
+        <circle cx={c} cy={c} r={S * 0.0125} fill="#111" stroke="none" />
       </g>
     </svg>
+  );
+}
+
+// --------------------------------------------------------------------------
+// Tutoriel — comment lire l'instrument
+// --------------------------------------------------------------------------
+
+/**
+ * Exemples du tutoriel. Ils sont rendus par le MÊME moteur que le test : ils
+ * ne peuvent donc pas se désynchroniser du jeu réel.
+ */
+const TUTORIAL_EXAMPLES: {
+  attitude: Attitude;
+  model: ModelKey;
+  title: string;
+  body: string;
+}[] = [
+  {
+    attitude: { cap: 0, pitch: 30, roll: 0 },
+    model: "biplane",
+    title: "L'assiette : monte ou descend ?",
+    body: "Beaucoup de ciel, l'horizon est bas : l'appareil monte. Beaucoup de sol : il descend. Ici, nez en l'air, ailes à plat.",
+  },
+  {
+    attitude: { cap: 0, pitch: 0, roll: 45 },
+    model: "biplane",
+    title: "L'inclinaison : de quel côté penche-t-il ?",
+    body: "L'horizon bascule. Le côté vers lequel le sol remonte est celui de l'aile basse. Ici, l'aile droite est basse : virage à droite.",
+  },
+  {
+    attitude: { cap: 90, pitch: 0, roll: 0 },
+    model: "biplane",
+    title: "Le cap : vers où pointe le nez ?",
+    body: "La lettre en haut de la boule donne le cap suivi. Ici « E » : l'appareil file plein est, donc son nez part vers la droite de l'écran.",
+  },
+];
+
+function TutorialRow({
+  example,
+  thumb,
+}: {
+  example: (typeof TUTORIAL_EXAMPLES)[number];
+  thumb: string | undefined;
+}) {
+  return (
+    <li className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+      <div className="flex shrink-0 items-center gap-3">
+        <Instrument attitude={example.attitude} size={116} />
+        <span aria-hidden className="text-muted-foreground text-lg">
+          →
+        </span>
+        <div className="bg-muted/40 size-[116px] overflow-hidden rounded-lg border">
+          {thumb ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={thumb} alt="" className="size-full object-contain" />
+          ) : null}
+        </div>
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm font-semibold">{example.title}</p>
+        <p className="text-muted-foreground text-sm">{example.body}</p>
+      </div>
+    </li>
+  );
+}
+
+function OrientationTutorial() {
+  const [thumbs, setThumbs] = React.useState<string[]>([]);
+
+  // Le rendu 3D est chargé en tâche de fond : le tutoriel est lisible tout de
+  // suite (l'instrument est du SVG) et le moteur est préchauffé pour le test.
+  React.useEffect(() => {
+    let cancelled = false;
+    getRenderer()
+      .then((r) => {
+        if (cancelled) return;
+        setThumbs(TUTORIAL_EXAMPLES.map((e) => r.render(e.model, e.attitude)));
+      })
+      .catch(() => {
+        /* sans 3D, le tutoriel reste utile : instrument + explication */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return (
+    <section className="bg-card mt-6 rounded-2xl border p-5 shadow-sm sm:p-6">
+      <h2 className="text-lg font-semibold tracking-tight">Comment lire l&apos;instrument</h2>
+      <p className="text-muted-foreground mt-2 text-sm">
+        Le disque montre ce que verrait le pilote : <strong>bleu = le ciel</strong>,{" "}
+        <strong>brun = le sol</strong>, séparés par la ligne d&apos;horizon. Le petit avion au
+        centre ne bouge jamais — c&apos;est le monde qui bascule autour de lui. Trois informations
+        s&apos;y lisent d&apos;un coup d&apos;œil.
+      </p>
+      <ul className="mt-5 space-y-5">
+        {TUTORIAL_EXAMPLES.map((example, i) => (
+          <TutorialRow key={example.title} example={example} thumb={thumbs[i]} />
+        ))}
+      </ul>
+      <p className="text-muted-foreground mt-5 text-sm">
+        Dans le test, l&apos;appareil est toujours vu <strong>de derrière</strong> : sa droite est
+        donc à votre droite. Le <strong>mode entraînement</strong> vous montre la bonne réponse
+        après chaque question — commencez par là.
+      </p>
+    </section>
   );
 }
 
@@ -338,7 +449,8 @@ export function OrientationTest() {
   const [answers, setAnswers] = React.useState<OrientationAnswer[]>([]);
   const [chosen, setChosen] = React.useState<number | null>(null);
   const [revealed, setRevealed] = React.useState(false);
-  const [timeLeft, setTimeLeft] = React.useState(ORIENTATION_DURATION_SECONDS);
+  const [format, setFormat] = React.useState<OrientationFormatKey>("officiel");
+  const [timeLeft, setTimeLeft] = React.useState(ORIENTATION_FORMATS.officiel.durationSeconds);
   const [elapsed, setElapsed] = React.useState(0);
   const [thumbs, setThumbs] = React.useState<string[]>([]);
   const [history, setHistory] = React.useState<SessionHistoryEntry[]>([]);
@@ -358,7 +470,7 @@ export function OrientationTest() {
     (finalAnswers: OrientationAnswer[]) => {
       const score = scoreOrientation(finalAnswers);
       const remaining = Math.max(0, Math.round((endRef.current - Date.now()) / 1000));
-      const elapsedSeconds = ORIENTATION_DURATION_SECONDS - remaining;
+      const elapsedSeconds = ORIENTATION_FORMATS[format].durationSeconds - remaining;
       setElapsed(elapsedSeconds);
       const entry: SessionHistoryEntry = {
         date: new Date().toISOString(),
@@ -368,13 +480,14 @@ export function OrientationTest() {
         precision: score.precision,
         durationSeconds: elapsedSeconds,
         training,
+        format,
       };
       const next = [entry, ...loadHistory()].slice(0, 10);
       saveHistory(next);
       setHistory(next);
       setPhase("done");
     },
-    [training]
+    [training, format]
   );
 
   // Refs tenus à jour pour le minuteur (évite les setState synchrones en effet).
@@ -418,19 +531,21 @@ export function OrientationTest() {
     };
   }, [phase, current]);
 
-  function start() {
-    const seed = Date.now();
-    setQuestions(composeOrientationSession(ORIENTATION_SESSION_SIZE, seed));
+  const start = React.useCallback((formatKey: OrientationFormatKey) => {
+    const chosenFormat = ORIENTATION_FORMATS[formatKey];
+    const now = Date.now();
+    setFormat(formatKey);
+    setQuestions(composeOrientationSession(chosenFormat.size, now));
     setIndex(0);
     setAnswers([]);
     answersRef.current = [];
     setChosen(null);
     setRevealed(false);
     setThumbs([]);
-    setTimeLeft(ORIENTATION_DURATION_SECONDS);
-    endRef.current = Date.now() + ORIENTATION_DURATION_SECONDS * 1000;
+    setTimeLeft(chosenFormat.durationSeconds);
+    endRef.current = now + chosenFormat.durationSeconds * 1000;
     setPhase("playing");
-  }
+  }, []);
 
   function choose(i: number) {
     if (revealed) return;
@@ -465,28 +580,48 @@ export function OrientationTest() {
   if (phase === "intro") {
     return (
       <div className="mx-auto max-w-xl">
-        <div className="bg-card rounded-2xl border p-8 text-center shadow-sm">
+        <div className="bg-card rounded-2xl border p-6 text-center shadow-sm sm:p-8">
           <h1 className="text-3xl font-bold tracking-tight">Orientation</h1>
           <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">
-            Vous avez 7 minutes pour répondre à {ORIENTATION_SESSION_SIZE} questions. Pour chaque
-            question, observez l&apos;instrument de bord (horizon et compas) et sélectionnez
-            l&apos;aéronef dans la position correspondante.
+            Observez l&apos;instrument de bord (horizon et compas), puis désignez l&apos;aéronef
+            dans la position correspondante. Choisissez votre format.
           </p>
-          <label className="mt-6 flex items-center justify-center gap-2 text-sm">
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {(["officiel", "court"] as const).map((key) => {
+              const f = ORIENTATION_FORMATS[key];
+              const officiel = key === "officiel";
+              return (
+                <div key={key} className="bg-muted/30 flex flex-col rounded-xl border p-4">
+                  <p className="text-base font-semibold">{f.label}</p>
+                  <p className="text-primary mt-1 text-sm font-medium tabular-nums">
+                    {f.size} questions · {formatDuration(f.durationSeconds)}
+                  </p>
+                  <p className="text-muted-foreground mt-1 mb-4 text-sm">{f.hint}</p>
+                  <Button
+                    className="mt-auto w-full"
+                    variant={officiel ? "default" : "outline"}
+                    onClick={() => start(key)}
+                  >
+                    Commencer →
+                  </Button>
+                </div>
+              );
+            })}
+          </div>
+
+          <label className="mt-5 flex items-center justify-center gap-2 text-sm">
             <input
               type="checkbox"
               checked={training}
               onChange={(e) => setTraining(e.target.checked)}
               className="border-input size-4 rounded"
             />
-            Mode entraînement (correction immédiate, sans pression du temps utile)
+            Mode entraînement (la bonne réponse est montrée après chaque question)
           </label>
-          <div className="mt-6">
-            <Button size="lg" onClick={start}>
-              Commencer le test →
-            </Button>
-          </div>
         </div>
+
+        <OrientationTutorial />
 
         {history.length > 0 ? (
           <div className="mt-6">
@@ -506,6 +641,7 @@ export function OrientationTest() {
                       hour: "2-digit",
                       minute: "2-digit",
                     })}
+                    {h.format ? ` · ${ORIENTATION_FORMATS[h.format].label.toLowerCase()}` : ""}
                     {h.training ? " · entraînement" : ""}
                   </span>
                   <span className="font-medium tabular-nums">
@@ -590,7 +726,7 @@ export function OrientationTest() {
             <Button variant="outline" onClick={() => setPhase("intro")}>
               ← Retour
             </Button>
-            <Button onClick={start}>Recommencer →</Button>
+            <Button onClick={() => start(format)}>Recommencer →</Button>
           </div>
         </div>
       </div>

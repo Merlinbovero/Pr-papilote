@@ -38,8 +38,43 @@ export interface OrientationQuestion {
   correctIndex: number;
 }
 
-export const ORIENTATION_SESSION_SIZE = 27;
-export const ORIENTATION_DURATION_SECONDS = 7 * 60;
+export type OrientationFormatKey = "officiel" | "court";
+
+export interface OrientationFormat {
+  key: OrientationFormatKey;
+  label: string;
+  /** Nombre de questions. */
+  size: number;
+  /** Temps imparti, en secondes. */
+  durationSeconds: number;
+  /** Phrase d'aide affichée sous le bouton. */
+  hint: string;
+}
+
+/**
+ * Deux formats. Le format court conserve **exactement la même cadence** que le
+ * format officiel (≈ 15,5 s par question) : seule la longueur de la session
+ * change, jamais la pression temporelle — un score court reste donc comparable.
+ */
+export const ORIENTATION_FORMATS: Record<OrientationFormatKey, OrientationFormat> = {
+  officiel: {
+    key: "officiel",
+    label: "Test officiel",
+    size: 27,
+    durationSeconds: 7 * 60,
+    hint: "Le format des sélections, en conditions réelles.",
+  },
+  court: {
+    key: "court",
+    label: "Format court",
+    size: 10,
+    durationSeconds: 155,
+    hint: "Même rythme, session express — idéal pour s'échauffer.",
+  },
+};
+
+export const ORIENTATION_SESSION_SIZE = ORIENTATION_FORMATS.officiel.size;
+export const ORIENTATION_DURATION_SECONDS = ORIENTATION_FORMATS.officiel.durationSeconds;
 
 const MODELS: OrientationModel[] = ["jet", "biplane"];
 
