@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { cn } from "@/lib/utils";
 import { CAMERA_FOV, type CameraPuzzle } from "@/lib/psychotech/cameras";
 
 /**
@@ -42,7 +43,19 @@ function ObjectMark({ shape, x, y, r }: { shape: string; x: number; y: number; r
   );
 }
 
-export function ScenePlan({ puzzle, size = SIZE }: { puzzle: CameraPuzzle; size?: number }) {
+export function ScenePlan({
+  puzzle,
+  size = SIZE,
+  correctLabel,
+  chosenLabel,
+}: {
+  puzzle: CameraPuzzle;
+  size?: number;
+  /** À la correction : l’appareil qui a réellement pris la photo (en vert). */
+  correctLabel?: number;
+  /** À la correction : celui qu’on avait désigné à tort (en rouge). */
+  chosenLabel?: number;
+}) {
   // Repère du plan : x vers la droite, z vers le bas — vue de dessus directe.
   const project = (x: number, z: number) => ({
     px: SIZE / 2 + (x / WORLD) * (SIZE / 2),
@@ -57,7 +70,11 @@ export function ScenePlan({ puzzle, size = SIZE }: { puzzle: CameraPuzzle; size?
       height={size}
       className="bg-muted/20 h-auto w-full rounded-lg border"
       role="img"
-      aria-label={`Plan de la scène vu de dessus : ${puzzle.objects.length} objets et trois appareils photo numérotés.`}
+      aria-label={
+        correctLabel !== undefined
+          ? `Plan de la scène : l’appareil ${correctLabel} est celui qui a pris la photo.`
+          : `Plan de la scène vu de dessus : ${puzzle.objects.length} objets et trois appareils photo numérotés.`
+      }
     >
       <rect x={0} y={0} width={SIZE} height={SIZE} className="fill-transparent" />
 
@@ -94,13 +111,19 @@ export function ScenePlan({ puzzle, size = SIZE }: { puzzle: CameraPuzzle; size?
 
       {puzzle.cameras.map((cam) => {
         const { px, py } = project(cam.x, cam.z);
+        const isCorrect = correctLabel === cam.label;
+        const isWrongChoice = chosenLabel === cam.label && correctLabel !== cam.label;
         return (
           <g key={`cam-${cam.label}`}>
+            {isCorrect ? <circle cx={px} cy={py} r={14} className="fill-success/25" /> : null}
             <circle
               cx={px}
               cy={py}
               r={9}
-              className="fill-primary stroke-background"
+              className={cn(
+                "stroke-background",
+                isCorrect ? "fill-success" : isWrongChoice ? "fill-destructive" : "fill-primary"
+              )}
               strokeWidth={2}
             />
             <text

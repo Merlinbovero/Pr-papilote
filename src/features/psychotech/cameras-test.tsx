@@ -351,6 +351,7 @@ export function CamerasTest() {
           {puzzles.map((puzzle, i) => {
             const given = answers[i];
             const right = given === puzzle.answerIndex;
+            const goodLabel = puzzle.cameras[puzzle.answerIndex].label;
             return (
               <div key={i} className="bg-card rounded-lg border p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -361,38 +362,81 @@ export function CamerasTest() {
                       · niveau {puzzle.level}
                     </span>
                   </p>
-                  <span
-                    className={cn(
-                      "rounded-full px-2 py-0.5 text-xs font-semibold",
-                      right ? "bg-success/10 text-success" : "bg-destructive/10 text-destructive"
-                    )}
-                  >
-                    {right
-                      ? "Juste"
-                      : given === null
-                        ? "Non traité"
-                        : `Vous avez répondu ${puzzle.cameras[given].label}`}
+                  {/* La bonne réponse est annoncée ici, en clair : elle ne doit
+                      pas se chercher dans le paragraphe d’explication. */}
+                  <span className="flex flex-wrap items-center gap-2">
+                    {!right ? (
+                      <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
+                        {given === null
+                          ? "Non traité"
+                          : `Vous aviez répondu appareil ${puzzle.cameras[given].label}`}
+                      </span>
+                    ) : null}
+                    <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
+                      {right
+                        ? `Juste — appareil ${goodLabel}`
+                        : `Bonne réponse : appareil ${goodLabel}`}
+                    </span>
                   </span>
                 </div>
-                <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_1fr_auto]">
-                  <SceneImage
-                    puzzle={puzzle}
-                    kind={{ mode: "overview" }}
-                    alt={`Vue ${i + 1} : la scène et les trois appareils.`}
-                  />
-                  <SceneImage
-                    puzzle={puzzle}
-                    kind={{ mode: "view", cameraIndex: puzzle.answerIndex }}
-                    alt={`Vue ${i + 1} : la photo à identifier.`}
-                  />
+
+                <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_auto]">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div>
+                      <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                        La scène
+                      </p>
+                      <SceneImage
+                        puzzle={puzzle}
+                        kind={{ mode: "overview" }}
+                        alt={`Vue ${i + 1} : la scène et les trois appareils.`}
+                      />
+                    </div>
+                    <div>
+                      <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
+                        La photo — appareil {goodLabel}
+                      </p>
+                      <SceneImage
+                        puzzle={puzzle}
+                        kind={{ mode: "view", cameraIndex: puzzle.answerIndex }}
+                        alt={`Vue ${i + 1} : la photo montrée, prise par l’appareil ${goodLabel}.`}
+                        className="ring-success/60 ring-2"
+                      />
+                    </div>
+                  </div>
                   <div className="lg:w-44">
-                    <ScenePlan puzzle={puzzle} />
+                    <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                      Le plan
+                    </p>
+                    <ScenePlan
+                      puzzle={puzzle}
+                      correctLabel={goodLabel}
+                      chosenLabel={given !== null ? puzzle.cameras[given].label : undefined}
+                    />
                   </div>
                 </div>
+
+                {/* S’être trompé s’explique mieux en voyant ce que l’appareil
+                    choisi aurait donné : la comparaison est plus parlante que
+                    n’importe quelle phrase. */}
+                {!right && given !== null ? (
+                  <div className="mt-3">
+                    <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                      Ce qu’aurait donné l’appareil {puzzle.cameras[given].label}, votre réponse
+                    </p>
+                    <div className="sm:max-w-sm">
+                      <SceneImage
+                        puzzle={puzzle}
+                        kind={{ mode: "view", cameraIndex: given }}
+                        alt={`Ce que l’appareil ${puzzle.cameras[given].label} aurait photographié.`}
+                        className="ring-destructive/50 ring-2"
+                      />
+                    </div>
+                  </div>
+                ) : null}
+
                 <p className="text-muted-foreground mt-3 text-sm">
-                  <strong className="text-foreground">
-                    Appareil {puzzle.cameras[puzzle.answerIndex].label}.
-                  </strong>{" "}
+                  <strong className="text-foreground">Appareil {goodLabel}.</strong>{" "}
                   {puzzle.explanation}
                 </p>
               </div>
@@ -510,8 +554,39 @@ export function CamerasTest() {
             right ? "border-success/40 bg-success/5" : "border-destructive/40 bg-destructive/5"
           )}
         >
-          <p className="text-sm font-semibold">{right ? "Juste." : "Faux."}</p>
+          <p className="text-sm font-semibold">
+            {right
+              ? `Juste — appareil ${current.cameras[current.answerIndex].label}.`
+              : `Faux — la photo vient de l’appareil ${current.cameras[current.answerIndex].label}.`}
+          </p>
           <p className="text-muted-foreground mt-1 text-sm">{current.explanation}</p>
+          {!right && answer !== null ? (
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div>
+                <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                  Ce qu’aurait donné l’appareil {current.cameras[answer].label}
+                </p>
+                <SceneImage
+                  puzzle={current}
+                  kind={{ mode: "view", cameraIndex: answer }}
+                  alt={`Ce que l’appareil ${current.cameras[answer].label} aurait photographié.`}
+                  className="ring-destructive/50 ring-2"
+                />
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                  Le plan — le bon appareil en vert
+                </p>
+                <div className="max-w-[15rem]">
+                  <ScenePlan
+                    puzzle={current}
+                    correctLabel={current.cameras[current.answerIndex].label}
+                    chosenLabel={current.cameras[answer].label}
+                  />
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       ) : null}
 
