@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.culture-aeronautique.agresseurs-02
+kind: qcm
+theme: escadrons-agresseurs
+statement: Que désigne la « force rouge » dans un exercice aérien comme Red Flag ?
+choices:
+- Le camp qui joue l'adversaire (escadrons agresseurs)
+- L'ennemi réel affronté au combat
+- Le camp allié à défendre
+- Les avions en avarie retirés de l'exercice
+correctChoices:
+- 0
+explanation: 'Un escadron « agresseur » joue l''ennemi à l''entraînement en imitant ses tactiques : la « force rouge » est le camp qui simule l''adversaire, pas l''ennemi réel. Ce concept, né des leçons du Vietnam, rend les exercices comme Red Flag réalistes.'
+evaluates:
+- culture.culture-aeronautique.escadrons-agresseurs
+difficulty: 3
+competencies:
+- culture-militaire
+concours:
+- eopan
+- eopn
+- alat
+status: publie

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: q.radio-communications.uhf-02
+kind: qcm
+theme: bande-uhf
+statement: Pourquoi les avions de combat embarquent-ils généralement à la fois la VHF et l'UHF ?
+choices:
+- Pour pouvoir communiquer aussi bien avec le monde civil (VHF) que militaire (UHF)
+- Parce que l'UHF ne fonctionne qu'au sol
+- Pour doubler la portée totale
+- Parce que la VHF est réservée au décollage
+correctChoices:
+- 0
+explanation: L'UHF (225–400 MHz) est surtout militaire, la VHF (118–137 MHz) surtout civile ; les avions militaires embarquent les deux pour parler au civil comme au militaire. « Ultra haute fréquence » n'implique pas une plus grande portée — la propagation reste à vue directe.
+evaluates:
+- fondamentaux.radio-communications.la-bande-uhf
+difficulty: 3
+competencies:
+- connaissances-aeronautiques
+concours:
+- eopan
+- eopn
+- alat
+status: publie
