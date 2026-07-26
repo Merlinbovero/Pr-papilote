@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { getFichePhotos } from "@/lib/content/fiches";
+import { getAll3DModels } from "@/lib/models-3d";
 import { getAllSitePhotos } from "@/lib/photos";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function CreditsPhotosPage() {
   const photos = getAllSitePhotos();
   const fichePhotos = getFichePhotos();
+  const models3d = getAll3DModels();
   return (
     <main className="mx-auto w-full max-w-4xl space-y-8 px-4 py-8 sm:px-6 md:py-12 lg:px-8">
       <SiteBreadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Crédits photos" }]} />
@@ -128,6 +130,43 @@ export default function CreditsPhotosPage() {
                     Voir la source →
                   </a>
                 </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {models3d.length > 0 ? (
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold tracking-tight">Modèles 3D</h2>
+          <p className="text-muted-foreground max-w-prose text-sm">
+            Les appareils du test d&apos;orientation sont des modèles 3D de libre réutilisation,
+            rendus en direct. Aucun modèle n&apos;est publié sans licence compatible et attribution.
+          </p>
+          <ul className="space-y-4">
+            {models3d.map((model) => (
+              <li key={model.src} className="bg-card space-y-1 rounded-xl border p-4 text-sm">
+                <p className="text-base font-semibold">{model.title}</p>
+                <p className="text-muted-foreground">Auteur : {model.author}</p>
+                <p className="text-muted-foreground">
+                  Licence :{" "}
+                  {model.licenseUrl ? (
+                    <a
+                      href={model.licenseUrl}
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      {model.license}
+                    </a>
+                  ) : (
+                    model.license
+                  )}
+                </p>
+                <a
+                  href={model.sourceUrl}
+                  className="text-primary inline-block underline-offset-4 hover:underline"
+                >
+                  Voir la source →
+                </a>
               </li>
             ))}
           </ul>
