@@ -80,6 +80,19 @@ pour la cible horizontale (palonnier), clavier pour le calcul mental.
   pause) vit dans `src/features/psychotech/secpil-simulator.tsx`.
 - **Notation** : précision de suivi par tâche + pourcentage de sommes justes,
   score global par session.
+- **Progression** (`src/lib/psychotech/secpil-progress.ts`, logique pure et
+  testée ; vues dans `secpil-progress-panel.tsx`) : les sessions sont
+  conservées **localement** (40 dernières). Une session n'est jamais comparée
+  qu'à celles de la **même configuration** — un « palonnier seul » à 90 % et un
+  « tout ensemble » à 90 % n'ont rien à voir ; le **niveau** n'entre dans la
+  clé de comparaison **que si le calcul est actif**. Le bilan de fin de session
+  affiche l'**écart au record antérieur** (rien à la première session : il n'y
+  a pas de repère), la **courbe** des dernières sessions (échelle toujours
+  0–100 %, jamais ajustée aux données) et un **conseil** — rejouer, consolider,
+  ou monter d'un cran. L'écran de sélection porte un **tableau par mode**
+  (sessions, record, dernière date) où les modes jamais joués restent visibles.
+  Le repère de maîtrise (80 % sur 3 sessions) est un **repère du site**,
+  toujours présenté comme tel, jamais comme un barème officiel.
 - **Route** : `/psychotechnique/secpil` ; fiche méthode
   `/psychotechnique/exercices/le-secpil` (sources : cockpitseeker, piloteready,
   pilotemilitaire).
