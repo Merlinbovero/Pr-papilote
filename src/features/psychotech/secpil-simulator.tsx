@@ -3,8 +3,23 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  SecpilProgressTable,
+  SecpilSessionReport,
+} from "@/features/psychotech/secpil-progress-panel";
 import { SecpilTutorial } from "@/features/psychotech/secpil-tutorial";
 import { cn } from "@/lib/utils";
+import {
+  addSession,
+  adviseAfter,
+  bestFor,
+  buildEntry,
+  deltaVsBest,
+  progressionSeries,
+  SECPIL_HISTORY_LIMIT,
+  type SecpilAdvice,
+  type SecpilSessionEntry,
+} from "@/lib/psychotech/secpil-progress";
 import {
   accuracyFromError,
   checkpointTimes,
@@ -52,6 +67,29 @@ const SMOOTH_TAU = 0.09;
 
 type Screen = "select" | "running" | "done";
 
+const HISTORY_KEY = "pp.secpil.history.v1";
+
+function loadHistory(): SecpilSessionEntry[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(HISTORY_KEY);
+    return raw ? (JSON.parse(raw) as SecpilSessionEntry[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveHistory(entries: readonly SecpilSessionEntry[]) {
+  try {
+    window.localStorage.setItem(
+      HISTORY_KEY,
+      JSON.stringify(entries.slice(0, SECPIL_HISTORY_LIMIT))
+    );
+  } catch {
+    /* quota / mode privé : on ignore silencieusement */
+  }
+}
+
 function projMancheX(x: number): number {
   return MANCHE_CX + x * MANCHE_RX;
 }
@@ -85,6 +123,22 @@ export function SecpilSimulator() {
   const [keypad, setKeypad] = React.useState("");
   const [results, setResults] = React.useState<SecpilScore | null>(null);
 
+  // Progression : le ref fait foi pendant la session (pas de dépendance de
+  // callback), l'état sert au rendu.
+  const historyRef = React.useRef<SecpilSessionEntry[]>([]);
+  const [history, setHistory] = React.useState<SecpilSessionEntry[]>([]);
+  const [lastEntry, setLastEntry] = React.useState<SecpilSessionEntry | null>(null);
+  const [lastDelta, setLastDelta] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      const stored = loadHistory();
+      historyRef.current = stored;
+      setHistory(stored);
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   // Chemin chaud (refs, sans re-render).
   const rafRef = React.useRef<number | null>(null);
   const frameRef = React.useRef<(now: number) => void>(() => {});
@@ -115,6 +169,11 @@ export function SecpilSimulator() {
   const palTargetEl = React.useRef<SVGCircleElement | null>(null);
   const palCtrlEl = React.useRef<SVGGElement | null>(null);
   const zoneRef = React.useRef<SVGSVGElement | null>(null);
+  /** Configuration de la session en cours — figée au départ, lue à l'arrivée. */
+  const sessionConfigRef = React.useRef<{ mode: SecpilMode; level: number }>({
+    mode: "tout",
+    level: 1,
+  });
 
   const stopRaf = React.useCallback(() => {
     if (rafRef.current !== null) {
@@ -138,6 +197,19 @@ export function SecpilSimulator() {
         : null,
     };
     setResults(score);
+
+    // Enregistrement de la session : l'écart se mesure contre le meilleur
+    // score **antérieur**, donc avant d'ajouter celle-ci à l'historique.
+    const { mode: playedMode, level: playedLevel } = sessionConfigRef.current;
+    const entry = buildEntry(playedMode, playedLevel, score, new Date());
+    const before = historyRef.current;
+    setLastDelta(deltaVsBest(before, entry));
+    setLastEntry(entry);
+    const next = addSession(before, entry);
+    historyRef.current = next;
+    setHistory(next);
+    saveHistory(next);
+
     setScreen("done");
     stopRaf();
   }, [stopRaf]);
@@ -246,6 +318,7 @@ export function SecpilSimulator() {
 
   const start = React.useCallback((m: SecpilMode, lvl: number) => {
     const tasks = modeTasks(m);
+    sessionConfigRef.current = { mode: m, level: lvl };
     tasksRef.current = tasks;
     sessionMsRef.current = sessionDurationMs(m);
     checkpointsRef.current = checkpointTimes(m, lvl);
@@ -359,6 +432,7 @@ export function SecpilSimulator() {
       <SecpilSelect
         mode={mode}
         level={level}
+        history={history}
         onMode={setMode}
         onLevel={setLevel}
         onStart={() => start(mode, level)}
@@ -370,6 +444,15 @@ export function SecpilSimulator() {
     return (
       <SecpilResults
         results={results}
+        entry={lastEntry}
+        delta={lastDelta}
+        best={lastEntry ? bestFor(history, lastEntry.mode, lastEntry.level) : null}
+        series={lastEntry ? progressionSeries(history, lastEntry.mode, lastEntry.level) : []}
+        advice={
+          lastEntry
+            ? adviseAfter(history, lastEntry.mode, lastEntry.level)
+            : { kind: "keep-going", suggested: null }
+        }
         onReplay={() => start(mode, level)}
         onMenu={() => setScreen("select")}
       />
@@ -569,12 +652,14 @@ function SecpilKeypad({
 function SecpilSelect({
   mode,
   level,
+  history,
   onMode,
   onLevel,
   onStart,
 }: {
   mode: SecpilMode;
   level: number;
+  history: readonly SecpilSessionEntry[];
   onMode: (m: SecpilMode) => void;
   onLevel: (l: number) => void;
   onStart: () => void;
@@ -582,7 +667,8 @@ function SecpilSelect({
   const withCalcul = modeTasks(mode).includes("calcul");
   return (
     <div className="space-y-6">
-      <SecpilTutorial />
+      {/* Le tutoriel n'a plus à être en tête une fois qu'on a un historique. */}
+      {history.length > 0 ? <SecpilProgressTable history={history} /> : <SecpilTutorial />}
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">1. Choisissez un mode (progression)</h2>
@@ -631,8 +717,7 @@ function SecpilSelect({
           </div>
         ) : (
           <p className="text-muted-foreground text-sm">
-            Ce mode n&apos;inclut pas le calcul — le niveau s&apos;applique dès que les nombres sont
-            présents.
+            Ce mode n’inclut pas le calcul — le niveau s’applique dès que les nombres sont présents.
           </p>
         )}
       </section>
@@ -648,6 +733,9 @@ function SecpilSelect({
       <Button size="lg" onClick={onStart}>
         Démarrer la session
       </Button>
+
+      {/* Déjà lu : le tutoriel passe en rappel, sous les réglages. */}
+      {history.length > 0 ? <SecpilTutorial /> : null}
     </div>
   );
 }
@@ -658,10 +746,20 @@ function scoreTone(v: number): string {
 
 function SecpilResults({
   results,
+  entry,
+  delta,
+  best,
+  series,
+  advice,
   onReplay,
   onMenu,
 }: {
   results: SecpilScore;
+  entry: SecpilSessionEntry | null;
+  delta: number | null;
+  best: number | null;
+  series: readonly number[];
+  advice: SecpilAdvice;
   onReplay: () => void;
   onMenu: () => void;
 }) {
@@ -696,6 +794,16 @@ function SecpilResults({
           </tbody>
         </table>
       </div>
+
+      {entry ? (
+        <SecpilSessionReport
+          entry={entry}
+          delta={delta}
+          best={best}
+          series={series}
+          advice={advice}
+        />
+      ) : null}
       <div className="flex flex-wrap gap-3">
         <Button onClick={onReplay}>Rejouer</Button>
         <Button variant="outline" onClick={onMenu}>
