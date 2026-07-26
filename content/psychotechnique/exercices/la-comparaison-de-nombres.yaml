@@ -1,0 +1,101 @@
+schemaVersion: 1
+id: psychotechnique.exercices.la-comparaison-de-nombres
+type: concept
+title: La comparaison de nombres
+slug: la-comparaison-de-nombres
+image:
+  src: /images/accueil-hero.jpg
+  alt: Chasseur en manœuvre — la comparaison de nombres
+  author: Antonin JLY
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=185879030
+summary: >-
+  Repérer le plus grand ou le plus petit nombre le plus vite possible : un test
+  de vitesse perceptive, proche du traitement rapide des paramètres en vol. La
+  méthode fiable est de comparer chiffre par chiffre, de gauche à droite.
+objectifs:
+  - Comparer rapidement des nombres de plusieurs chiffres.
+  - Appliquer la comparaison chiffre par chiffre, de gauche à droite.
+  - Gérer le cas des nombres négatifs (le plus grand est le plus proche de zéro).
+aliases: [comparaison de nombres, plus grand, plus petit, vitesse perceptive, ordre de grandeur]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn, alat]
+level: 1
+createdAt: "2026-07-26"
+verifiedAt: "2026-07-26"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-26"
+    version: 1
+    motif: Création — fiche d'entraînement « comparaison de nombres » (nouvelle famille génératrice du moteur psychotechnique).
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-26"
+status: publie
+relations:
+  related:
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+    - psychotechnique.exercices.l-attention-et-le-multitache
+    - psychotechnique.exercices.le-calcul-mental
+content:
+  essentiel:
+    body: |
+      Certains tests mesurent moins le raisonnement que la **vitesse de
+      traitement** : parmi une poignée de nombres, désigner **le plus grand** ou
+      **le plus petit** en quelques secondes. C'est une aptitude proche de celle
+      du pilote qui balaie ses instruments et repère d'un coup la valeur
+      critique.
+
+      La règle est simple mais doit devenir **automatique** :
+
+      - comparez d'abord le **nombre de chiffres** (999 > 87) ;
+      - à nombre de chiffres égal, comparez **chiffre par chiffre à partir de la
+        gauche** — le premier écart tranche ;
+      - avec des **négatifs**, tout s'inverse : le plus grand est celui **le plus
+        proche de zéro**.
+
+      L'ennemi, c'est la **précipitation** : sous pression, on lit mal un chiffre
+      ou on inverse deux nombres proches.
+    aRetenir:
+      - "Comparer d'abord le nombre de chiffres, puis chiffre par chiffre de gauche à droite."
+      - Le premier chiffre qui diffère (en partant de la gauche) tranche la comparaison.
+      - "Nombres négatifs — le plus grand est le plus proche de zéro (−3 > −12)."
+      - La vitesse vient de l'entraînement ; la précipitation fait inverser deux nombres proches.
+  sections:
+    - id: la-methode
+      title: La méthode chiffre par chiffre
+      body: |
+        Pour des nombres à même longueur, ne lisez pas la valeur entière :
+        comparez **position par position**, de la gauche vers la droite. Dès que
+        deux chiffres diffèrent, la comparaison est **tranchée** — inutile de
+        lire la suite.
+
+        Exemple : entre **472** et **479**, les centaines (4) et les dizaines (7)
+        sont égales ; c'est l'unité (2 contre 9) qui décide : **479** est le plus
+        grand.
+
+        Quand les nombres n'ont pas la même longueur, le plus **long** l'emporte
+        (pour des entiers positifs) : **1 003 > 998**.
+    - id: le-piege-des-negatifs
+      title: Le piège des négatifs
+      strate: maitriser
+      body: |
+        Avec des nombres **négatifs**, l'intuition trompe : **−3 est plus grand
+        que −12**, alors que 12 est plus grand que 3. Le plus grand négatif est
+        celui dont la **valeur absolue est la plus petite** (le plus proche de
+        zéro).
+
+        Le réflexe : sur une **droite graduée** mentale, « plus grand » veut
+        toujours dire « **plus à droite** » — donc, pour les négatifs, le plus
+        proche de zéro.
+  pieges:
+    - Ne pas lire le nombre entier — comparer chiffre par chiffre, de gauche à droite.
+    - "Négatifs — le plus grand est le plus proche de zéro (−3 > −12), contre-intuitif."
+    - "À nombre de chiffres égal, le premier écart de gauche tranche ; le reste est inutile."
+    - La précipitation fait inverser deux nombres proches — ralentir un instant sur les valeurs voisines.

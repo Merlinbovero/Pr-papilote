@@ -21,6 +21,8 @@ export const PSY_FAMILIES = [
   "matrices",
   "horloges-durees",
   "raisonnement-mecanique",
+  "analogies",
+  "comparaison-nombres",
 ] as const;
 
 export type PsyFamily = (typeof PSY_FAMILIES)[number];

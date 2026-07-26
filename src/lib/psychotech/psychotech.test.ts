@@ -224,6 +224,33 @@ describe("générateurs — invariants sur toutes les familles", () => {
       );
     }
   });
+
+  it("analogies : la bonne réponse est le résultat annoncé par la méthode", () => {
+    for (const seed of [14, 300, 8008, 90909]) {
+      for (const difficulty of [1, 2, 3] as const) {
+        const q = generateQuestion("analogies", seed, difficulty);
+        // La méthode se termine par « = <réponse> » : le dernier nombre = la bonne réponse.
+        const nums = q.method.match(/-?\d+/g)!;
+        expect(Number(nums[nums.length - 1])).toBe(Number(q.choices[q.correctIndex]));
+      }
+    }
+  });
+
+  it("comparaison de nombres : la bonne réponse est bien l'extremum de la liste", () => {
+    for (const seed of [15, 320, 9009, 12121]) {
+      const nums = (q: ReturnType<typeof generateQuestion>) =>
+        q.prompt.split("\n")[1].split(" · ").map(Number);
+
+      const q1 = generateQuestion("comparaison-nombres", seed, 1);
+      expect(Number(q1.choices[q1.correctIndex])).toBe(Math.max(...nums(q1)));
+
+      const q2 = generateQuestion("comparaison-nombres", seed, 2);
+      expect(Number(q2.choices[q2.correctIndex])).toBe(Math.min(...nums(q2)));
+
+      const q3 = generateQuestion("comparaison-nombres", seed, 3);
+      expect(Number(q3.choices[q3.correctIndex])).toBe(Math.max(...nums(q3)));
+    }
+  });
 });
 
 describe("composition de session", () => {
