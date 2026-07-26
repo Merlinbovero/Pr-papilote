@@ -24,6 +24,7 @@ export type NavIconName =
   | "repeat"
   | "timer"
   | "compass"
+  | "dominos"
   | "gauge";
 
 export interface NavLink {
@@ -252,6 +253,12 @@ export const NAV_SECTIONS: readonly NavSection[] = [
         label: "Simulateur SECPIL",
         description: "Attention partagée en temps réel",
         icon: "gauge",
+      },
+      {
+        href: "/psychotechnique/dominos",
+        label: "Test de dominos",
+        description: "Trois niveaux, séries générées à l’infini",
+        icon: "dominos",
       },
       {
         href: "/psychotechnique/orientation",

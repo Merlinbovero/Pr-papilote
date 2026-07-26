@@ -6,6 +6,7 @@ import {
   ClipboardCheckIcon,
   CompassIcon,
   CrosshairIcon,
+  Grid2x2Icon,
   ListChecksIcon,
   RepeatIcon,
   TimerIcon,
@@ -125,6 +126,27 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     <CardDescription>
                       Lire une attitude de vol (horizon et compas) et retrouver l&apos;aéronef en 3D
                       — questions générées à l&apos;infini.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/dominos"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <Grid2x2Icon aria-hidden className="text-primary size-4" />
+                      Test de dominos
+                    </CardTitle>
+                    <CardDescription>
+                      Retrouver la tuile manquante d’une série — trois niveaux, dix dominos, séries
+                      générées à l’infini.
                     </CardDescription>
                   </CardHeader>
                 </Card>

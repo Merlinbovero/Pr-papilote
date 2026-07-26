@@ -1,4 +1,5 @@
 import { createRng, seededShuffle } from "@/features/quiz/engine";
+import { generateDominoPuzzle, makeDomino, sameDomino, type Domino } from "./dominos";
 import type { MatrixCell, PsyFamily, PsyFamilyInfo, PsyInstrument, PsyQuestion } from "./types";
 
 /**
@@ -696,68 +697,56 @@ function genRapidite(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
 }
 
 // ---------------------------------------------------------------------------
-// dominos (progressions sur les deux moitiés, arithmétique modulo 7)
+// dominos — délégué au moteur du test dédié
 // ---------------------------------------------------------------------------
 
-/** Valeur de moitié de domino ramenée dans [0 ; 6] (le blanc vaut 0). */
-function half(value: number): number {
-  return ((value % 7) + 7) % 7;
-}
-
-function domino(top: number, bottom: number): string {
-  return `[${half(top)}|${half(bottom)}]`;
-}
-
+/**
+ * La famille reprend **le moteur et le rendu du test de dominos** : mêmes
+ * règles, mêmes dispositions, mêmes tuiles dessinées. Seul le mode de réponse
+ * change — ici un QCM à quatre tuiles, format unique du player de
+ * l'entraînement chronométré, commun aux dix-neuf familles.
+ */
 function genDominos(seed: number, difficulty: 1 | 2 | 3): PsyQuestion {
-  const rng = createRng(seed);
-  const t0 = int(rng, 0, 6);
-  const b0 = int(rng, 0, 6);
-  let terms: string[];
-  let nextTop: number;
-  let nextBottom: number;
-  let method: string;
+  const rng = createRng(seed + 5_000);
+  const puzzle = generateDominoPuzzle(seed, difficulty);
+  const { top, bottom } = puzzle.solution;
 
-  if (difficulty === 1) {
-    const st = pickOne(rng, [1, 2]);
-    const sb = pickOne(rng, [1, 2]);
-    terms = [0, 1, 2].map((i) => domino(t0 + i * st, b0 + i * sb));
-    nextTop = t0 + 3 * st;
-    nextBottom = b0 + 3 * sb;
-    method = `Chaque moitié suit sa propre progression — le haut avance de ${st}, le bas de ${sb} (le blanc suit le 6).`;
-  } else if (difficulty === 2) {
-    const st = pickOne(rng, [1, 2, 3]);
-    const sb = pickOne(rng, [-1, -2, -3]);
-    terms = [0, 1, 2, 3].map((i) => domino(t0 + i * st, b0 + i * sb));
-    nextTop = t0 + 4 * st;
-    nextBottom = b0 + 4 * sb;
-    method = `Le haut monte de ${st}, le bas descend de ${Math.abs(sb)} — au-delà de 6 on repart à 0, en dessous de 0 on repart à 6.`;
-  } else {
-    // Haut entrelacé (+a puis +b en alternance), bas à pas constant.
-    const a = pickOne(rng, [1, 2]);
-    const b = pickOne(rng, [3, 4]);
-    const sb = pickOne(rng, [1, 2]);
-    const tops = [t0, t0 + a, t0 + a + b, t0 + 2 * a + b];
-    terms = tops.map((t, i) => domino(t, b0 + i * sb));
-    nextTop = t0 + 2 * a + 2 * b;
-    nextBottom = b0 + 4 * sb;
-    method = `Deux règles à mener de front — le haut alterne +${a} puis +${b}, pendant que le bas avance de ${sb}.`;
+  // Distracteurs : les confusions classiques — tuile retournée, erreur d'une
+  // unité sur une moitié, oubli du passage par 0.
+  const candidates: Domino[] = [
+    makeDomino(bottom, top),
+    makeDomino(top + 1, bottom),
+    makeDomino(top, bottom - 1),
+    makeDomino(top + 1, bottom + 1),
+    makeDomino(top - 1, bottom + 2),
+  ];
+  const options: Domino[] = [puzzle.solution];
+  for (const candidate of candidates) {
+    if (options.length >= 4) break;
+    if (options.some((o) => sameDomino(o, candidate))) continue;
+    options.push(candidate);
+  }
+  while (options.length < 4) {
+    const filler = makeDomino(int(rng, 0, 6), int(rng, 0, 6));
+    if (!options.some((o) => sameDomino(o, filler))) options.push(filler);
   }
 
-  const correct = domino(nextTop, nextBottom);
-  const distractors = [
-    domino(nextBottom, nextTop),
-    domino(nextTop + 1, nextBottom),
-    domino(nextTop, nextBottom - 1),
-  ];
-  const { choices, correctIndex } = buildChoices(rng, seed + 7, correct, distractors);
+  const order = seededShuffle(
+    options.map((_, i) => i),
+    seed + 11
+  );
+  const shuffled = order.map((i) => options[i]);
+  const correctIndex = shuffled.findIndex((o) => sameDomino(o, puzzle.solution));
+
   return {
     id: `psy.dominos.${seed}`,
     family: "dominos",
     difficulty,
-    prompt: `${terms.join("  ")}  [ ? ] — quel domino complète la série ?`,
-    choices,
+    prompt: "Quel domino complète la série ?",
+    choices: shuffled.map((o) => `${o.top} sur ${o.bottom}`),
     correctIndex,
-    method,
+    dominos: { puzzle, options: shuffled },
+    method: puzzle.rule,
     timeLimitSeconds: FAMILY_INFO.dominos.timeLimits[difficulty - 1],
   };
 }

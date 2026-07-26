@@ -1,3 +1,5 @@
+import type { Domino, DominoPuzzle } from "./dominos";
+
 /**
  * Contrat du moteur psychotechnique (docs/editorial/module-psychotechnique.md).
  * Tout est QCM à 4 choix — un format unique pour un player unique.
@@ -48,6 +50,17 @@ export interface PsyMatrix {
 }
 
 /**
+ * Série de dominos (famille « dominos »). Le générateur ne produit que les
+ * données ; le rendu SVG est **le même** que celui du test dédié
+ * (`/psychotechnique/dominos`), pour qu'un domino se lise partout pareil.
+ * `options` sont les tuiles candidates, alignées sur `choices`.
+ */
+export interface PsyDominos {
+  puzzle: DominoPuzzle;
+  options: Domino[];
+}
+
+/**
  * Instrument de vol à lire (famille « lecture-instruments »). Le générateur
  * ne produit que la donnée physique ; le rendu SVG vit dans le player.
  * cap en degrés (0-359), vitesse en kt, altitude en ft.
@@ -81,6 +94,8 @@ export interface PsyQuestion {
   instrument?: PsyInstrument;
   /** Matrice logique à compléter (matrices) — grille + options en SVG. */
   matrix?: PsyMatrix;
+  /** Série de dominos (dominos) — série + tuiles candidates en SVG. */
+  dominos?: PsyDominos;
   choices: string[];
   correctIndex: number;
   /** Explication de méthode (pas seulement la réponse). */

@@ -148,6 +148,42 @@ dont l'attitude correspond.
 - **Route** : `/psychotechnique/orientation` ; méthode rattachée à la fiche
   `la-vision-spatiale`.
 
+## Le test de dominos (réponse composée, hors QCM)
+
+Reconstitution du **test de dominos** (type D70/D48). Une série suit une règle,
+une tuile est masquée : le candidat la **compose au pavé**, une moitié après
+l'autre. Pas de propositions à éliminer — donc **aucune bonne réponse trouvée
+par hasard**, comme sur la feuille du test papier.
+
+- **Trois niveaux, dix dominos chacun**, avec des durées calées sur le rythme
+  du test papier (44 dominos en 25 min, soit ≈ 34 s l'unité) puis élargies à
+  mesure que les règles se superposent : **facile** 6 min (une règle par
+  moitié, indépendantes), **difficile** 8 min (règles opposées, somme
+  constante, pas alterné), **impossible** 10 min (chaînes entrelacées, cascade
+  croisée, somme en suite de Fibonacci, écart croissant).
+- **Dispositions** : ligne et grille au niveau 1 ; cercle au niveau 2 ; spirale
+  et arbre au niveau 3. Règle de justesse : **la règle peut être retorse,
+  l'ordre de lecture jamais**. Ligne et grille se lisent par convention (gauche
+  → droite, haut → bas) et ne portent aucun lien ; toute autre disposition
+  affiche des **liens pointillés** qui donnent le chemin. L'anneau ne se
+  referme pas (la règle est linéaire) et l'**arbre est réservé à la règle
+  entrelacée**, dont ses deux branches sont la clé visuelle.
+- **Notation** : une tuile n'est juste que si **ses deux moitiés** le sont —
+  règle du test papier. Le détail par moitié est tout de même exposé : savoir
+  qu'on a tenu le haut et manqué le bas vaut mieux qu'un « faux ».
+- **Mode entraînement** : sans chronomètre, la règle est expliquée après chaque
+  domino. En test, la correction complète (série, bonne tuile, règle) arrive au
+  bilan.
+- **Rendu** : SVG maison sur les tokens, points en disposition de dé, **blanc =
+  0** (moitié vide, jamais un « 0 » écrit). Le même composant sert au test et à
+  la famille « Dominos » de l'entraînement chronométré : un domino se lit
+  partout pareil.
+- **Logique pure** : `src/lib/psychotech/dominos.ts` (génération, règles,
+  dispositions, notation), testée dans `dominos.test.ts`.
+- **Route** : `/psychotechnique/dominos` ; méthode rattachée à la fiche
+  `les-dominos`. Une mention rappelle que les dominos ont été **retirés de la
+  sélection EOPAN en 2025** mais restent au programme d'autres sélections.
+
 ## Le moteur (`src/lib/psychotech/`)
 
 Fonctions pures, format unique :
