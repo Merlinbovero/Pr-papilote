@@ -25,6 +25,7 @@ export type NavIconName =
   | "timer"
   | "compass"
   | "dominos"
+  | "camera"
   | "gauge";
 
 export interface NavLink {
@@ -253,6 +254,12 @@ export const NAV_SECTIONS: readonly NavSection[] = [
         label: "Simulateur SECPIL",
         description: "Attention partagée en temps réel",
         icon: "gauge",
+      },
+      {
+        href: "/psychotechnique/appareils-photos",
+        label: "Test des appareils photos",
+        description: "Trois objectifs, une photo : lequel l’a prise ?",
+        icon: "camera",
       },
       {
         href: "/psychotechnique/dominos",

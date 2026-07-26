@@ -184,6 +184,47 @@ par hasard**, comme sur la feuille du test papier.
   `les-dominos`. Une mention rappelle que les dominos ont été **retirés de la
   sélection EOPAN en 2025** mais restent au programme d'autres sélections.
 
+## Le test des appareils photos (rendu 3D, hors QCM)
+
+Reconstitution du **test des appareils photos** des sélections EOPAN. Une scène
+contient quelques objets posés au sol et **trois appareils numérotés**, chacun
+à une place et une orientation distinctes ; une seule photo est montrée :
+laquelle des trois l'a prise ?
+
+- **Aucun modèle 3D importé.** Les objets sont des **primitives calculées**
+  (cube, cône, cylindre, sphère, pyramide, tore). Pour une épreuve de
+  perspective, seules comptent la silhouette et la position relative — un
+  modèle téléchargé n'apporterait rien et coûterait un chargement, une échelle
+  à recaler et une licence à créditer. Le moteur ne manipule que des positions
+  et des rayons : brancher de vrais objets plus tard ne toucherait pas la
+  logique.
+- **La garantie d'unicité de la réponse est le cœur du générateur.** Trois
+  appareils tirés au hasard donnent vite deux vues quasi identiques — scène
+  symétrique, objectifs trop proches, objets alignés. La question devient alors
+  indécidable, et le candidat a raison de ne pas pouvoir trancher : c'est le
+  générateur qui est fautif. Chaque vue reçoit donc une **signature** — ordre
+  gauche-droite des objets visibles, et qui masque qui — et une question n'est
+  retenue que si la bonne vue s'écarte assez des deux autres. Le seuil se
+  resserre avec le niveau. Un test le vérifie sur **360 scènes**.
+- **Difficulté progressive au fil de la session**, comme au test réel : le
+  premier tiers sépare franchement les points de vue (≥ 75°), le dernier les
+  resserre (22 à 55°), où seule une occultation tranche.
+- **Formats** : **officiel** (30 vues en 8 min, soit 16 s l'unité) et **court**
+  (10 vues, même cadence — un score reste comparable). Mode entraînement sans
+  chronomètre, avec la réponse commentée après chaque vue.
+- **Le plan vue de dessus** (SVG, `camera-plan.tsx`) est une **béquille
+  pédagogique** : offerte en entraînement et sur le premier tiers du test
+  seulement. S'en passer fait partie de l'aptitude évaluée.
+- **La correction nomme ce qui tranche** : quel objet un autre appareil ne
+  verrait pas, ou lequel occuperait cette place — jamais un vague « un autre
+  ordre ».
+- **Logique pure** : `src/lib/psychotech/cameras.ts` (géométrie de prise de
+  vue, occultations, signatures, génération, notation), testée dans
+  `cameras.test.ts` (41 tests). Rendu dans `camera-scene.tsx` (Three.js importé
+  dynamiquement) et `camera-plan.tsx`.
+- **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
+  fiche `la-vision-spatiale`.
+
 ## Le moteur (`src/lib/psychotech/`)
 
 Fonctions pures, format unique :

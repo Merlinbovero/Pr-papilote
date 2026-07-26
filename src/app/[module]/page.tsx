@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  CameraIcon,
   ChartLineIcon,
   ClipboardCheckIcon,
   CompassIcon,
@@ -126,6 +127,26 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     <CardDescription>
                       Lire une attitude de vol (horizon et compas) et retrouver l&apos;aéronef en 3D
                       — questions générées à l&apos;infini.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/appareils-photos"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <CameraIcon aria-hidden className="text-primary size-4" />
+                      Test des appareils photos
+                    </CardTitle>
+                    <CardDescription>
+                      Trois appareils, une photo : lequel l’a prise ? Scènes 3D générées à l’infini.
                     </CardDescription>
                   </CardHeader>
                 </Card>
