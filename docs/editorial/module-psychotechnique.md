@@ -95,9 +95,21 @@ dont l'attitude correspond.
   dynamiquement, code-splitté sur cette seule page). Les vignettes sont rendues
   hors écran puis affichées comme images ; l'instrument est en SVG. Rendu et
   logique séparés — même doctrine que le SECPIL.
-- **Format** : session chronométrée de **7 minutes / 27 questions**, écran
-  d'intro avec **Mode entraînement** (correction immédiate), barre de
-  progression, résultats + historique local (10 dernières sessions).
+- **Deux formats** : **test officiel** (27 questions / 7 min, le format des
+  sélections) et **format court** (10 questions / 2 min 35). Le format court
+  conserve **exactement la même cadence** (≈ 15,5 s par question) : seule la
+  longueur change, jamais la pression temporelle — un score court reste donc
+  comparable. Les deux vivent dans `ORIENTATION_FORMATS`, et l'historique
+  mémorise le format joué.
+- **Tutoriel d'accueil** : un bloc « Comment lire l'instrument » explique le
+  code (bleu = ciel, brun = sol, avion central fixe) puis déroule **trois
+  exemples** — assiette, inclinaison, cap — chacun montrant l'instrument à côté
+  de l'appareil correspondant. Ces exemples sont produits par le **même moteur
+  de rendu que le test** : ils ne peuvent pas se désynchroniser du jeu réel, et
+  leur chargement préchauffe la 3D avant la première question.
+- **Écran d'intro** : choix du format, case **Mode entraînement** (correction
+  immédiate), puis barre de progression, résultats et historique local
+  (10 dernières sessions).
 - **Route** : `/psychotechnique/orientation` ; méthode rattachée à la fiche
   `la-vision-spatiale`.
 

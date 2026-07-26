@@ -4,6 +4,7 @@ import {
   capDelta,
   composeOrientationSession,
   generateOrientationQuestion,
+  ORIENTATION_FORMATS,
   ORIENTATION_SESSION_SIZE,
   scoreOrientation,
   type OrientationQuestion,
@@ -74,6 +75,27 @@ describe("capDelta", () => {
     expect(capDelta(350, 10)).toBe(20);
     expect(capDelta(0, 180)).toBe(180);
     expect(capDelta(90, 270)).toBe(180);
+  });
+});
+
+describe("orientation — formats", () => {
+  it("propose le format officiel (27 questions / 7 min) et un format court (10 questions)", () => {
+    expect(ORIENTATION_FORMATS.officiel.size).toBe(27);
+    expect(ORIENTATION_FORMATS.officiel.durationSeconds).toBe(420);
+    expect(ORIENTATION_FORMATS.court.size).toBe(10);
+  });
+
+  it("garde la même cadence dans les deux formats (à une seconde près)", () => {
+    const paceOf = (f: { size: number; durationSeconds: number }) => f.durationSeconds / f.size;
+    const officiel = paceOf(ORIENTATION_FORMATS.officiel);
+    const court = paceOf(ORIENTATION_FORMATS.court);
+    expect(Math.abs(officiel - court)).toBeLessThan(1);
+  });
+
+  it("compose une session de la taille du format demandé", () => {
+    for (const format of Object.values(ORIENTATION_FORMATS)) {
+      expect(composeOrientationSession(format.size, 42)).toHaveLength(format.size);
+    }
   });
 });
 
