@@ -225,6 +225,55 @@ laquelle des trois l'a prise ?
 - **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
   fiche `la-vision-spatiale`.
 
+## L'entraîneur de calcul mental (hors QCM du moteur)
+
+L'épreuve jugée la plus difficile des sélections — et celle qui se travaille le
+mieux. Format officiel : **24 questions en 8 minutes, quatre propositions**,
+difficulté croissante, décimaux, fractions et pourcentages, et **pas de
+brouillon**.
+
+Deux conséquences structurent le générateur : la plupart des questions se
+traitent par **encadrement** plutôt que par calcul exact, et les distracteurs
+sont les **erreurs qu'on commet vraiment de tête** (virgule décalée, retenue
+oubliée, opération inversée) — jamais des nombres au hasard, qui se
+laisseraient éliminer sans réfléchir.
+
+- **Neuf thèmes** : additions/soustractions · multiplications · divisions ·
+  les quatre opérations · **grilles 3×3** · **ordres de grandeur** ·
+  **fractions et pourcentages** · **calculs du métier** · tout mélangé.
+- **Les grilles 3×3** : une grille de nombres avec les totaux en marge, une
+  case vide. On tient cinq nombres en tête et on croise deux chemins (ligne et
+  colonne). Au **niveau 3, le total de la ligne disparaît aussi** — le
+  raccourci évident est coupé, il faut passer par la colonne. Un test vérifie
+  que tous les totaux affichés sont cohérents et qu'un chemin de résolution
+  subsiste toujours.
+- **Les ordres de grandeur** ne demandent pas le résultat exact : les
+  propositions sont écartées d'au moins 30 %, seul l'encadrement tranche.
+  C'est la compétence que décrit la source, et qu'aucune opération exacte ne
+  travaille.
+- **Les calculs du métier** n'emploient que des facteurs **déjà consignés dans
+  les fiches Fondamentaux** (1 nœud = 1,852 km/h, 1 pied = 0,3048 m, 1 mille
+  marin = 1852 m). Les règles d'estimation (1 en 60, pente à 3° ≈ 300 ft/NM)
+  sont présentées comme les approximations qu'elles sont — un test l'exige.
+- **Quatre niveaux de difficulté** : 1, 2, 3 et **progressif**, qui monte au
+  fil de la session comme à l'épreuve réelle.
+- **Quatre longueurs** : 10, 20, **officiel** (24 en 8 min) et **sans fin**,
+  que l'on arrête quand on veut — pensé pour enchaîner deux cents calculs. Les
+  formats courts gardent la cadence officielle (20 s la question), si bien
+  qu'un score reste comparable.
+- **Les questions ne sont jamais stockées** : elles se recalculent à partir de
+  la graine de session et de leur rang. C'est ce qui permet au format sans fin
+  de n'accumuler aucune mémoire, et à la correction finale de les retrouver
+  toutes.
+- **Deux modes** : test (correction à la fin) et entraînement (réponse et
+  méthode après chaque question — celui à prendre pour le format sans fin).
+  Au-delà de 30 questions, la correction ne liste **que les erreurs**.
+- **Logique pure** : `src/lib/psychotech/calcul.ts`, testée dans
+  `calcul.test.ts` (60 tests, dont la vérification arithmétique de chaque
+  thème).
+- **Route** : `/psychotechnique/calcul-mental` ; méthode rattachée à la fiche
+  `le-calcul-mental`.
+
 ## Le moteur (`src/lib/psychotech/`)
 
 Fonctions pures, format unique :

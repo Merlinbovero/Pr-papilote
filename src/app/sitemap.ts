@@ -47,6 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: absoluteUrl("/psychotechnique/calcul-mental"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     { url: absoluteUrl("/cartes"), changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/cartes/aeronavale"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/cartes/armee-de-l-air"), changeFrequency: "monthly", priority: 0.5 },
