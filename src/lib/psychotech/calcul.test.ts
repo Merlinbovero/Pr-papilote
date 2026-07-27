@@ -211,6 +211,20 @@ describe("ordres de grandeur", () => {
     }
   });
 
+  it("propose des nombres ronds — on estime, on ne calcule pas au millième", () => {
+    for (const level of LEVELS) {
+      for (const question of sample("ordres-de-grandeur", level, 60)) {
+        for (const choice of question.choices) {
+          expect(choice.split(",")[1]?.length ?? 0).toBeLessThanOrEqual(1);
+        }
+        // L'énoncé ne doit pas être plus précis que la réponse attendue.
+        for (const number of question.prompt.match(/\d+,\d+/g) ?? []) {
+          expect(number.split(",")[1].length).toBeLessThanOrEqual(1);
+        }
+      }
+    }
+  });
+
   it("pose la question en approximation, pas en résultat exact", () => {
     for (const question of sample("ordres-de-grandeur", 1, 20)) {
       expect(question.prompt).toContain("≈");

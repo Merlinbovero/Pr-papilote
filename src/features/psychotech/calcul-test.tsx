@@ -2,6 +2,19 @@
 
 import * as React from "react";
 import Link from "next/link";
+import {
+  CalculatorIcon,
+  DivideIcon,
+  Grid3x3Icon,
+  InfinityIcon,
+  PercentIcon,
+  PlaneIcon,
+  PlusIcon,
+  ScalingIcon,
+  ShuffleIcon,
+  XIcon,
+  type LucideIcon,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +22,7 @@ import {
   CALC_FORMATS,
   CALC_THEMES,
   fmt,
+  generateCalcQuestion,
   questionAt,
   scoreCalcSession,
   type CalcFormatKey,
@@ -78,6 +92,46 @@ const LEVEL_CHOICES: { value: CalcLevelChoice; label: string; hint: string }[] =
     hint: "Monte au fil de la session, comme à l’épreuve.",
   },
 ];
+
+/** Une icône par thème — le rendu seul s'en occupe, jamais le moteur. */
+const THEME_ICONS: Record<CalcTheme, LucideIcon> = {
+  "addition-soustraction": PlusIcon,
+  multiplication: XIcon,
+  division: DivideIcon,
+  "quatre-operations": CalculatorIcon,
+  matrices: Grid3x3Icon,
+  "ordres-de-grandeur": ScalingIcon,
+  "fractions-pourcentages": PercentIcon,
+  metier: PlaneIcon,
+  melange: ShuffleIcon,
+};
+
+/**
+ * Un calcul réel par thème, **produit par le générateur lui-même** : la vitrine
+ * ne peut donc pas mentir sur ce qu'on va rencontrer. Les grilles font
+ * exception — leur énoncé ne dit rien sans la grille, on la nomme donc.
+ */
+const THEME_EXAMPLES: Record<CalcTheme, string> = Object.fromEntries(
+  CALC_THEMES.map((info) => [
+    info.theme,
+    info.theme === "matrices"
+      ? "grille 3×3 à compléter"
+      : generateCalcQuestion(2026, info.theme, 2).prompt.replace(" = ?", "").replace(" ≈ ?", " ≈"),
+  ])
+) as Record<CalcTheme, string>;
+
+/** Titre de section : filet d'accent vertical, comme sur les pages de contenu. */
+function SectionTitle({ children, aside }: { children: React.ReactNode; aside?: React.ReactNode }) {
+  return (
+    <div className="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 className="flex items-center gap-2.5 text-lg font-semibold tracking-tight">
+        <span aria-hidden className="bg-primary h-5 w-1 rounded-full" />
+        {children}
+      </h2>
+      {aside ? <span className="text-muted-foreground text-sm">{aside}</span> : null}
+    </div>
+  );
+}
 
 // ---------------------------------------------------------------------------
 // La grille 3×3
@@ -260,103 +314,208 @@ export function CalculTest() {
 
   // --- Intro ---------------------------------------------------------------
   if (phase === "intro") {
+    const themeInfo = CALC_THEMES.find((t) => t.theme === theme);
+    const levelInfo = LEVEL_CHOICES.find((l) => l.value === levelChoice);
+    const formatInfo = CALC_FORMATS[format];
+    const others = CALC_THEMES.filter((t) => t.theme !== "melange");
+    const mixed = CALC_THEMES.find((t) => t.theme === "melange");
+
+    /** Une carte de thème : icône, nom, et un vrai calcul en guise de vitrine. */
+    const themeCard = (info: (typeof CALC_THEMES)[number], featured = false) => {
+      const Icon = THEME_ICONS[info.theme];
+      const selected = theme === info.theme;
+      return (
+        <button
+          key={info.theme}
+          type="button"
+          onClick={() => setTheme(info.theme)}
+          aria-pressed={selected}
+          className={cn(
+            "focus-visible:ring-ring group rounded-xl border p-4 text-left transition-all focus-visible:ring-2 focus-visible:outline-none",
+            selected
+              ? "border-primary bg-primary/5 ring-primary/25 shadow-sm ring-2"
+              : "hover:border-primary/50 hover:shadow-sm",
+            featured && "sm:col-span-2 lg:col-span-3"
+          )}
+        >
+          <span className="flex items-start gap-3">
+            <span
+              className={cn(
+                "flex size-9 shrink-0 items-center justify-center rounded-lg transition-colors",
+                selected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+              )}
+            >
+              <Icon aria-hidden className="size-4.5" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold">{info.label}</span>
+              <span className="text-muted-foreground mt-0.5 block text-sm">{info.hint}</span>
+              <span
+                className={cn(
+                  "mt-2 inline-block rounded-md px-2 py-1 font-mono text-sm tabular-nums",
+                  selected ? "bg-primary/10 text-primary" : "bg-muted/70 text-muted-foreground"
+                )}
+              >
+                {THEME_EXAMPLES[info.theme]}
+              </span>
+            </span>
+          </span>
+        </button>
+      );
+    };
+
     return (
-      <div className="space-y-6">
-        <section className="bg-card rounded-2xl border p-5 shadow-sm sm:p-6">
-          <h2 className="text-lg font-semibold tracking-tight">Comment ça marche</h2>
-          <p className="text-muted-foreground mt-2 max-w-prose text-sm">
-            Quatre propositions, aucun brouillon — comme à l’épreuve. La plupart des questions ne
-            demandent <strong>pas le résultat exact</strong> mais le bon{" "}
-            <strong>encadrement</strong> : c’est ce qui fait gagner du temps. Les mauvaises réponses
-            proposées sont les erreurs qu’on commet vraiment de tête — virgule décalée, retenue
-            oubliée, opération inversée — pour qu’aucune ne s’élimine sans réfléchir.
-          </p>
-        </section>
-
+      <div className="space-y-8">
         <section className="space-y-3">
-          <h2 className="text-lg font-semibold">1. Choisissez un thème</h2>
+          <SectionTitle aside="Le calcul que vous rencontrerez">Le thème</SectionTitle>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {CALC_THEMES.map((info) => (
-              <button
-                key={info.theme}
-                type="button"
-                onClick={() => setTheme(info.theme)}
-                aria-pressed={theme === info.theme}
-                className={cn(
-                  "rounded-lg border p-3 text-left transition-colors",
-                  theme === info.theme
-                    ? "border-primary bg-primary/5 ring-primary/30 ring-2"
-                    : "hover:border-primary/50"
-                )}
-              >
-                <p className="font-medium">{info.label}</p>
-                <p className="text-muted-foreground mt-0.5 text-sm">{info.hint}</p>
-              </button>
-            ))}
+            {mixed ? themeCard(mixed, true) : null}
+            {others.map((info) => themeCard(info))}
           </div>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">2. Niveau</h2>
-          <div className="flex flex-wrap gap-2">
-            {LEVEL_CHOICES.map((info) => (
-              <button
-                key={String(info.value)}
-                type="button"
-                onClick={() => setLevelChoice(info.value)}
-                aria-pressed={levelChoice === info.value}
-                className={cn(
-                  "rounded-lg border px-3 py-2 text-left text-sm transition-colors",
-                  levelChoice === info.value
-                    ? "border-primary bg-primary/5 ring-primary/30 ring-2"
-                    : "hover:border-primary/50"
-                )}
-              >
-                <span className="font-semibold">{info.label}</span>
-                <span className="text-muted-foreground ml-2">{info.hint}</span>
-              </button>
-            ))}
-          </div>
-        </section>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <section className="space-y-3">
+            <SectionTitle>Le niveau</SectionTitle>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {LEVEL_CHOICES.map((info) => (
+                <button
+                  key={String(info.value)}
+                  type="button"
+                  onClick={() => setLevelChoice(info.value)}
+                  aria-pressed={levelChoice === info.value}
+                  className={cn(
+                    "focus-visible:ring-ring rounded-lg border px-3 py-2.5 text-sm font-semibold transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                    levelChoice === info.value
+                      ? "border-primary bg-primary/5 text-primary ring-primary/25 ring-2"
+                      : "hover:border-primary/50"
+                  )}
+                >
+                  {info.label}
+                </button>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-sm">{levelInfo?.hint}</p>
+          </section>
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">3. Longueur</h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {CALC_FORMAT_LIST.map((info) => (
-              <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
-                <p className="text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                <p className="text-muted-foreground mt-2 text-sm tabular-nums">
-                  {info.size === null ? "Sans limite" : `${info.size} questions`}
-                  {info.durationSeconds !== null
-                    ? ` · ${formatDuration(info.durationSeconds)}`
-                    : ""}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button size="sm" onClick={() => start(theme, levelChoice, info.key, false)}>
-                    Lancer
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => start(theme, levelChoice, info.key, true)}
+          <section className="space-y-3">
+            <SectionTitle>La longueur</SectionTitle>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {CALC_FORMAT_LIST.map((info) => (
+                <button
+                  key={info.key}
+                  type="button"
+                  onClick={() => setFormat(info.key)}
+                  aria-pressed={format === info.key}
+                  className={cn(
+                    "focus-visible:ring-ring rounded-lg border px-3 py-2.5 text-center transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                    format === info.key
+                      ? "border-primary bg-primary/5 text-primary ring-primary/25 ring-2"
+                      : "hover:border-primary/50"
+                  )}
+                >
+                  <span className="block text-sm font-semibold">{info.label}</span>
+                  <span className="text-muted-foreground mt-0.5 flex items-center justify-center gap-1 text-xs tabular-nums">
+                    {info.size === null ? (
+                      <>
+                        <InfinityIcon aria-hidden className="size-3.5" />
+                        sans limite
+                      </>
+                    ) : (
+                      `${info.size} questions`
+                    )}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-sm">{formatInfo.hint}</p>
+          </section>
+        </div>
+
+        {/* Un seul point de départ. Le mode est une bascule, pas un doublement
+            des boutons de lancement. */}
+        <section className="border-primary/30 bg-primary/5 rounded-2xl border p-5 sm:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                Votre session
+              </p>
+              <p className="mt-1 text-base font-semibold">
+                {themeInfo?.label} · {levelInfo?.label} ·{" "}
+                {formatInfo.size === null
+                  ? "sans fin"
+                  : `${formatInfo.size} questions${
+                      formatInfo.durationSeconds !== null
+                        ? ` en ${formatDuration(formatInfo.durationSeconds)}`
+                        : ""
+                    }`}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <div
+                role="group"
+                aria-label="Mode"
+                className="bg-background flex rounded-lg border p-0.5"
+              >
+                {[
+                  { value: false, label: "Test" },
+                  { value: true, label: "Entraînement" },
+                ].map((option) => (
+                  <button
+                    key={option.label}
+                    type="button"
+                    onClick={() => setTraining(option.value)}
+                    aria-pressed={training === option.value}
+                    className={cn(
+                      "focus-visible:ring-ring rounded-md px-3 py-1.5 text-sm font-semibold transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                      training === option.value
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
                   >
-                    Entraînement
-                  </Button>
-                </div>
+                    {option.label}
+                  </button>
+                ))}
               </div>
-            ))}
+              <Button size="lg" onClick={() => start(theme, levelChoice, format, training)}>
+                Commencer
+              </Button>
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm">
-            En <strong>mode entraînement</strong>, la réponse et la méthode s’affichent après chaque
-            question — c’est celui à prendre pour le format sans fin. En <strong>test</strong>, la
-            correction n’arrive qu’à la fin.
+          <p className="text-muted-foreground mt-3 text-sm">
+            {training
+              ? "La réponse et la méthode s’affichent après chaque question — le mode à prendre pour enchaîner sans fin."
+              : "Aucune correction avant la fin, comme à l’épreuve. Le chronomètre tourne."}
           </p>
+        </section>
+
+        <section className="grid gap-5 sm:grid-cols-3">
+          <div>
+            <h3 className="text-sm font-semibold">Quatre propositions, aucun brouillon</h3>
+            <p className="text-muted-foreground mt-1 text-sm">
+              Comme à l’épreuve. Tout se fait de tête, y compris les décimaux.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold">Encadrer plutôt que calculer</h3>
+            <p className="text-muted-foreground mt-1 text-sm">
+              La plupart des questions ne demandent <strong>pas le résultat exact</strong> : le bon
+              ordre de grandeur suffit, et c’est ce qui fait gagner du temps.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold">Des faux plausibles</h3>
+            <p className="text-muted-foreground mt-1 text-sm">
+              Virgule décalée, retenue oubliée, opération inversée : aucune proposition ne s’élimine
+              sans réfléchir.
+            </p>
+          </div>
         </section>
 
         {history.length > 0 ? (
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+            <SectionTitle>Vos dernières sessions</SectionTitle>
             <div className="overflow-hidden rounded-lg border">
               <table className="w-full text-sm">
                 <tbody>
