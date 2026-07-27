@@ -19,31 +19,60 @@ objectifs:
   - Maîtriser les techniques de décomposition pour additionner, soustraire et multiplier vite.
   - Calculer pourcentages et proportions sans poser d'opération.
   - Résoudre les problèmes temps-vitesse-distance, omniprésents dans les sélections de pilote.
-aliases: [calcul mental, calcul rapide, temps vitesse distance, TVD, proportions]
+  - Convertir de tête les unités du métier (nœuds, pieds, milles marins, degrés) et appliquer les règles d'estimation en vol.
+aliases:
+  [
+    calcul mental,
+    calcul rapide,
+    temps vitesse distance,
+    TVD,
+    proportions,
+    conversions,
+    nœuds,
+    pieds,
+    règle du 1 en 60,
+  ]
 module: psychotechnique
 category: exercices
 tags: []
 concours: [eopan, eopn, alat]
 level: 1
 createdAt: "2026-07-13"
-verifiedAt: "2026-07-13"
+verifiedAt: "2026-07-27"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-13"
     version: 1
     motif: Création — fiche d'entraînement calcul mental, ouverture du module Psychotechnique (Lot G).
     author: prepapilote
+  - date: "2026-07-27"
+    version: 2
+    motif: >-
+      Ajout de la section « Les conversions et les règles du métier » — table des
+      facteurs exacts avec un raccourci de calcul pour chacun, règle du 1 en 60 et
+      pente à 3°. Comble le trou pointé sur l'entraîneur de calcul mental, dont le
+      thème « Calculs du métier » employait ces règles sans qu'aucune page ne les
+      explique.
+    author: prepapilote
 sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
     kind: ouvrage
     consultedAt: "2026-07-13"
+  - title: "OACI — Annexe 5 : Unités de mesure à utiliser dans l'exploitation en vol et au sol"
+    url: https://www.bazl.admin.ch/dam/bazl/fr/dokumente/Fachleute/Regulationen_und_Grundlagen/icao-annex/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf.download.pdf/icao_annex_5_unitsofmeasurementtobeusedinairandgroundoperations.pdf
+    kind: officiel
+    consultedAt: "2026-07-27"
+  - title: Manuel du pilote d'avion (Cépaduès Éditions)
+    kind: ouvrage
+    consultedAt: "2026-07-27"
 status: publie
 relations:
   related:
     - psychotechnique.methodologie.reussir-les-tests-psychotechniques
     - psychotechnique.exercices.les-suites-logiques
     - fondamentaux.navigation.temps-vitesse-distance
+    - fondamentaux.physique.systeme-international-et-unites
 content:
   essentiel:
     body: |
@@ -124,8 +153,56 @@ content:
         Convertir les **durées** en minutes avant de calculer (1 h 24 =
         84 min), et connaître les fractions d'heure usuelles — 15 min = ¼ h,
         20 min = ⅓ h, 45 min = ¾ h.
+    - id: conversions-du-metier
+      title: Les conversions et les règles du métier
+      strate: maitriser
+      body: |
+        Les sélections mêlent au calcul pur des **conversions d'unités
+        aéronautiques**. Elles ne se devinent pas : on les apprend une fois,
+        avec un raccourci de calcul pour chacune.
+
+        **Les facteurs, et comment les appliquer de tête**
+
+        | Conversion | Facteur exact | Le raccourci mental | Exemple |
+        | --- | --- | --- | --- |
+        | Nœuds → km/h | × 1,852 | doubler, puis retirer 7,4 % | 300 kt → 600 − 44 = **556 km/h** |
+        | km/h → nœuds | × 0,54 | la moitié, puis ajouter 8 % | 500 km/h → 250 + 20 = **270 kt** |
+        | Pieds → mètres | × 0,3048 | × 0,3, puis ajouter 1,6 % | 9000 ft → 2700 + 43 = **2743 m** |
+        | Mètres → pieds | × 3,281 | × 3, puis ajouter 9 % | 3000 m → 9000 + 810 ≈ **9800 ft** |
+        | °C → °F | × 9/5 + 32 | doubler, retirer un dixième, ajouter 32 | 20 °C → 40 − 4 + 32 = **68 °F** |
+        | °F → °C | (− 32) × 5/9 | retirer 32, la moitié, ajouter 10 % | 68 °F → 36 → 18 + 1,8 ≈ **20 °C** |
+
+        Les deux raccourcis pieds/mètres sont justes à **mieux de 1 %** — plus
+        que suffisant pour trancher entre quatre propositions, jamais pour un
+        calcul de performance : là, on prend le facteur exact.
+
+        Le **mille marin** vaut **1852 m**, soit **6076 ft** — c'est une minute
+        d'arc de latitude, d'où la valeur choisie. Retenir « un mille ≈ 1,85 km
+        et ≈ 6000 pieds » suffit pour la quasi-totalité des questions.
+
+        **Le carburant** se traite comme une vitesse : une consommation en
+        litres par heure devient une consommation **par minute** en divisant
+        par 60. À 240 L/h, on brûle 4 L/min — donc 90 min de vol consomment
+        360 L.
+
+        **La règle du 1 en 60** — la plus rentable de toutes. Un écart de **1°
+        de cap** creuse **1 mille marin** d'écart au bout de **60 milles**.
+        D'où, pour toute distance : écart (NM) = angle (°) × distance (NM) ÷ 60.
+        Trois degrés de travers sur 40 NM font donc 2 NM d'écart. La règle
+        s'inverse pour corriger : dérivé de 3 NM après 30 NM, il faut reprendre
+        3 × 60 ÷ 30 = 6°. C'est une **approximation**, excellente jusqu'à une
+        vingtaine de degrés, moins au-delà.
+
+        **La pente à 3 %** — l'approche standard. Un mille marin faisant
+        6076 ft, une pente de 3° perd en toute rigueur 6076 × tan 3° ≈
+        **318 ft par mille**, que l'on arrondit à **300 ft/NM** pour calculer
+        de tête. D'où le point de descente : 9000 ft à perdre → 30 NM avant le
+        terrain. Et le taux de descente correspondant vaut environ **cinq fois
+        la vitesse sol** en nœuds — 120 kt donnent 600 ft/min.
   pieges:
     - Poser mentalement l'opération « comme à l'école » au lieu de décomposer — lent et source d'erreurs.
     - En temps-vitesse-distance, mélanger les unités (nœuds et minutes, km/h et secondes) — tout convertir avant de calculer.
     - +10 % puis −10 % ne ramène pas à la valeur initiale — les pourcentages successifs se multiplient, ils ne s'additionnent pas.
     - Négliger l'ordre de grandeur — une vérification d'une seconde qui évite les réponses absurdes.
+    - Confondre le sens d'une conversion — un nombre de nœuds est toujours **plus petit** que le même trajet exprimé en km/h, et une altitude en mètres toujours plus petite qu'en pieds. Un coup d'œil au sens avant de calculer élimine la moitié des propositions.
+    - Prendre les règles d'estimation pour des égalités — le 1 en 60 et les 300 ft/NM sont des approximations, commodes et volontairement arrondies (3° valent en réalité ≈ 318 ft/NM).
