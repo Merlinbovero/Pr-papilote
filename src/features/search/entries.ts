@@ -104,6 +104,27 @@ const OUTILS: SearchEntryInput[] = [
     priority: 3,
   },
   {
+    id: "outil.triangles",
+    type: "outil",
+    family: "simulateur",
+    title: "Test des triangles",
+    summary:
+      "Un grand triangle découpé en petits triangles coloriés, deux laissés blancs : retrouver le losange qui complète la figure. Format officiel 20 figures en 8 minutes, correction nommant la règle.",
+    moduleName: "Psychotechnique",
+    moduleSlug: "psychotechnique",
+    url: "/psychotechnique/triangles",
+    aliases: [
+      "triangles",
+      "test des triangles",
+      "figure triangulaire",
+      "losange",
+      "reconnaissance de motifs",
+      "motifs",
+      "raisonnement logique",
+    ],
+    priority: 3,
+  },
+  {
     id: "outil.codage",
     type: "outil",
     family: "simulateur",

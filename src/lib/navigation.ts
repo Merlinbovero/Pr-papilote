@@ -29,6 +29,7 @@ export type NavIconName =
   | "calculator"
   | "shapes"
   | "keyboard"
+  | "triangle"
   | "gauge";
 
 export interface NavLink {
@@ -269,6 +270,12 @@ export const NAV_SECTIONS: readonly NavSection[] = [
         label: "Test des appareils photos",
         description: "Trois objectifs, une photo : lequel l’a prise ?",
         icon: "camera",
+      },
+      {
+        href: "/psychotechnique/triangles",
+        label: "Test des triangles",
+        description: "Quel losange complète la figure ?",
+        icon: "triangle",
       },
       {
         href: "/psychotechnique/codage",
