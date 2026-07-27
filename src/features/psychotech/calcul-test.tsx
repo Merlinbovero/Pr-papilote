@@ -120,6 +120,30 @@ const THEME_EXAMPLES: Record<CalcTheme, string> = Object.fromEntries(
   ])
 ) as Record<CalcTheme, string>;
 
+/**
+ * Où lire la méthode de chaque thème. La fiche « Le calcul mental » est
+ * découpée en sections ancrées : on renvoie directement à la bonne, plutôt
+ * qu'en haut d'une page où il faudrait chercher.
+ */
+const FICHE = "/psychotechnique/exercices/le-calcul-mental";
+const THEME_METHOD: Record<CalcTheme, { href: string; label: string }> = {
+  "addition-soustraction": { href: `${FICHE}#techniques-de-base`, label: "Les techniques de base" },
+  multiplication: { href: `${FICHE}#techniques-de-base`, label: "Les techniques de base" },
+  division: { href: `${FICHE}#techniques-de-base`, label: "Les techniques de base" },
+  "quatre-operations": { href: `${FICHE}#techniques-de-base`, label: "Les techniques de base" },
+  matrices: { href: `${FICHE}#techniques-de-base`, label: "Les techniques de base" },
+  "ordres-de-grandeur": { href: `${FICHE}#techniques-de-base`, label: "Estimer avant de calculer" },
+  "fractions-pourcentages": {
+    href: `${FICHE}#pourcentages-et-proportions`,
+    label: "Pourcentages et proportions",
+  },
+  metier: {
+    href: `${FICHE}#conversions-du-metier`,
+    label: "Les conversions et les règles du métier",
+  },
+  melange: { href: FICHE, label: "Toute la méthode" },
+};
+
 /** Titre de section : filet d'accent vertical, comme sur les pages de contenu. */
 function SectionTitle({ children, aside }: { children: React.ReactNode; aside?: React.ReactNode }) {
   return (
@@ -372,6 +396,22 @@ export function CalculTest() {
             {mixed ? themeCard(mixed, true) : null}
             {others.map((info) => themeCard(info))}
           </div>
+          {/* On n’attaque pas un thème à l’aveugle : la méthode correspondante
+              est à un clic, et l’on tombe directement sur la bonne section. */}
+          <p className="text-muted-foreground text-sm">
+            {theme === "metier" ? (
+              <>
+                Les facteurs de conversion, les raccourcis de calcul, la règle du 1 en 60 et la
+                pente à 3° sont rassemblés dans{" "}
+              </>
+            ) : (
+              <>La méthode de ce thème est détaillée dans </>
+            )}
+            <Link href={THEME_METHOD[theme].href} className="text-primary font-medium underline">
+              {THEME_METHOD[theme].label}
+            </Link>
+            .
+          </p>
         </section>
 
         <div className="grid gap-8 lg:grid-cols-2">
@@ -679,6 +719,14 @@ export function CalculTest() {
             {CALC_THEMES.find((t) => t.theme === current.theme)?.label} · niveau {current.level}
           </span>
         </p>
+        <Link
+          href={THEME_METHOD[current.theme].href}
+          target="_blank"
+          rel="noreferrer"
+          className="text-muted-foreground hover:text-foreground text-sm underline underline-offset-2"
+        >
+          Aide-mémoire
+        </Link>
         {CALC_FORMATS[format].durationSeconds !== null ? (
           <span
             className={cn(
