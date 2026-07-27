@@ -362,3 +362,31 @@ describe("notation", () => {
     expect(score.bestStreak).toBe(0);
   });
 });
+
+/**
+ * Le format « sans fin » invite à enchaîner 150 à 200 questions. Un thème dont
+ * la réserve d'énoncés distincts se compterait en quelques centaines
+ * s'épuiserait avant la fin d'une seule session — d'où ce plancher, mesuré et
+ * non supposé. Les fourchettes de tirage ne doivent jamais rétrécir en silence.
+ */
+describe("réserve d’énoncés", () => {
+  const DRAWS = 4000;
+  const FLOOR = 600;
+
+  function distinctPrompts(theme: CalcTheme, level: CalcLevel): number {
+    const seen = new Set<string>();
+    for (let seed = 0; seed < DRAWS; seed += 1) {
+      const q = generateCalcQuestion(seed * 1000 + 7, theme, level);
+      seen.add(`${q.prompt}|${JSON.stringify(q.grid ?? null)}|${q.choices[q.correctIndex]}`);
+    }
+    return seen.size;
+  }
+
+  for (const theme of THEMES) {
+    for (const level of LEVELS) {
+      it(`garde plus de ${FLOOR} énoncés distincts — ${theme} niveau ${level}`, () => {
+        expect(distinctPrompts(theme, level)).toBeGreaterThan(FLOOR);
+      });
+    }
+  }
+});
