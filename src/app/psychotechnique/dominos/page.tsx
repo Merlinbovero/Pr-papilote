@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { MethodeFicheCard } from "@/components/content/methode-fiche-card";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { DominosTest } from "@/features/psychotech/dominos-test";
@@ -32,14 +32,13 @@ export default function DominosPage() {
         <p className="text-muted-foreground max-w-prose text-lg">
           Une série de dominos suit une règle, une tuile manque : reconstituez-la. Trois niveaux,
           dix dominos par session, et des séries <strong>générées à l’infini</strong> — jamais deux
-          fois la même. La réponse se compose au pavé : rien ne s’obtient par élimination. Pour la
-          méthode, voyez la{" "}
-          <Link href="/psychotechnique/exercices/les-dominos" className="text-primary underline">
-            fiche dominos
-          </Link>
-          .
+          fois la même. La réponse se compose au pavé : rien ne s’obtient par élimination.
         </p>
       </header>
+      <MethodeFicheCard
+        ficheId="psychotechnique.exercices.les-dominos"
+        intro="Les familles de règles, l’ordre dans lequel les chercher et l’arithmétique modulo 7 qui gouverne les séries. À lire avant d’attaquer le niveau 2."
+      />
       <DominosTest />
     </StandalonePageShell>
   );

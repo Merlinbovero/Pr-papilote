@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { MethodeFicheCard } from "@/components/content/methode-fiche-card";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { SecpilSimulator } from "@/features/psychotech/secpil-simulator";
@@ -32,14 +32,13 @@ export default function SecpilPage() {
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Simulateur SECPIL</h1>
         <p className="text-muted-foreground max-w-prose text-lg">
           L&apos;épreuve psychomotrice reine des sélections EOPN, reconstituée avec des commandes
-          accessibles : suivre, coordonner, puis calculer — le tout en même temps. Pour comprendre
-          l&apos;épreuve et la méthode, lisez la{" "}
-          <Link href="/psychotechnique/exercices/le-secpil" className="text-primary underline">
-            fiche SECPIL
-          </Link>
-          .
+          accessibles : suivre, coordonner, puis calculer — le tout en même temps.
         </p>
       </header>
+      <MethodeFicheCard
+        ficheId="psychotechnique.exercices.le-secpil"
+        intro="Le déroulé réel de l’épreuve, ce que chaque phase mesure et la stratégie d’attention partagée. À lire en premier : le SECPIL se comprend avant de se travailler."
+      />
       <SecpilSimulator />
     </StandalonePageShell>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { MethodeFicheCard } from "@/components/content/methode-fiche-card";
 import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { CamerasTest } from "@/features/psychotech/cameras-test";
@@ -34,16 +34,13 @@ export default function AppareilsPhotosPage() {
           Une scène, <strong>trois appareils numérotés</strong> à des places et des orientations
           différentes, et une seule photo : lequel l’a prise ? Les scènes sont{" "}
           <strong>générées à l’infini</strong> et chacune est vérifiée pour qu’une seule réponse
-          soit défendable. Pour la méthode, voyez la{" "}
-          <Link
-            href="/psychotechnique/exercices/la-vision-spatiale"
-            className="text-primary underline"
-          >
-            fiche vision spatiale
-          </Link>
-          .
+          soit défendable.
         </p>
       </header>
+      <MethodeFicheCard
+        ficheId="psychotechnique.exercices.la-vision-spatiale"
+        intro="Comment lire une scène depuis un autre point de vue : l’ordre des objets de gauche à droite, les occultations, et la méthode pour éliminer deux appareils sur trois en quelques secondes."
+      />
       <CamerasTest />
     </StandalonePageShell>
   );
