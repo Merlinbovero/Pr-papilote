@@ -28,6 +28,7 @@ export type NavIconName =
   | "camera"
   | "calculator"
   | "shapes"
+  | "keyboard"
   | "gauge";
 
 export interface NavLink {
@@ -268,6 +269,12 @@ export const NAV_SECTIONS: readonly NavSection[] = [
         label: "Test des appareils photos",
         description: "Trois objectifs, une photo : lequel l’a prise ?",
         icon: "camera",
+      },
+      {
+        href: "/psychotechnique/codage",
+        label: "Test de codage",
+        description: "Une grille de codes, 45 questions en 2 min 30",
+        icon: "keyboard",
       },
       {
         href: "/psychotechnique/formes-imbriquees",

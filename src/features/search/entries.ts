@@ -104,6 +104,28 @@ const OUTILS: SearchEntryInput[] = [
     priority: 3,
   },
   {
+    id: "outil.codage",
+    type: "outil",
+    family: "simulateur",
+    title: "Test de codage",
+    summary:
+      "Une grille de mots associés à des codes à quatre chiffres : retrouver le code du mot demandé. Format officiel du TAMI-C, 45 questions en 2 min 30, trois tailles de grille.",
+    moduleName: "Psychotechnique",
+    moduleSlug: "psychotechnique",
+    url: "/psychotechnique/codage",
+    aliases: [
+      "codage",
+      "test de codage",
+      "TAMI-C",
+      "TAMI C",
+      "tami",
+      "grille de codes",
+      "vitesse de recherche",
+      "vitesse perceptive",
+    ],
+    priority: 3,
+  },
+  {
     id: "outil.formes-imbriquees",
     type: "outil",
     family: "simulateur",
