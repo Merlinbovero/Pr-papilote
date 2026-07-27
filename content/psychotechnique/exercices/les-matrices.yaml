@@ -19,20 +19,28 @@ objectifs:
   - Reconnaître les règles usuelles des matrices (progression, rotation, addition, superposition).
   - Appliquer la méthode ligne-par-ligne puis colonne-par-colonne.
   - Gérer le temps et éliminer les distracteurs.
-aliases: [matrices, matrices logiques, raisonnement non verbal, figure manquante]
+aliases: [matrices, matrices logiques, raisonnement non verbal, figure manquante, triangles]
 module: psychotechnique
 category: exercices
 tags: []
 concours: [eopan, eopn, alat]
 level: 2
 createdAt: "2026-07-14"
-verifiedAt: "2026-07-14"
+verifiedAt: "2026-07-27"
 author: prepapilote
-version: 1
+version: 2
 revisions:
   - date: "2026-07-14"
     version: 1
     motif: Création — lot F3 du plan V1 (famille prioritaire de la phase psychotechnique sans fiche de méthode).
+    author: prepapilote
+  - date: "2026-07-27"
+    version: 2
+    motif: >-
+      Ajout de la section « Le test des triangles » — format officiel EOPAN
+      (20 figures en 8 minutes), les sept familles de règles et la méthode en
+      quatre temps. Le raisonnement des matrices s'y applique mot pour mot ; la
+      fiche accueille donc l'entraîneur dédié.
     author: prepapilote
 sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
@@ -109,8 +117,46 @@ content:
         dernières demandent de combiner trois règles. Ne pas s'enliser :
         une matrice qui résiste après deux minutes se marque et se
         retrouve à la fin.
+    - id: le-test-des-triangles
+      title: Le test des triangles
+      strate: maitriser
+      body: |
+        Même raisonnement, autre support. Aux sélections EOPAN : un grand
+        triangle découpé en **seize petits triangles** coloriés, **deux laissés
+        blancs**, quatre losanges proposés — **20 figures en 8 minutes**. La
+        figure n'est pas coloriée au hasard : elle obéit à une règle, et les
+        motifs se combinent au fil de l'épreuve.
+
+        Les familles de règles à connaître :
+
+        - **répétition par lignes** — chaque ligne porte sa couleur ;
+        - **alternance** — les couleurs reviennent toutes les deux ou trois
+          cases le long d'une ligne ;
+        - **orientation** — les triangles pointe en haut se distinguent de ceux
+          pointe en bas ;
+        - **symétrie** — la figure se replie sur son axe vertical ;
+        - **diagonales** — les couleurs suivent les obliques ;
+        - **couronnes** — le pourtour se distingue du cœur ;
+        - **sous-triangles** — le motif d'un quart se répète dans les autres.
+
+        La méthode, dans cet ordre :
+
+        1. **Chercher la règle avant la pièce.** Balayer la figure entière,
+           repérer ce qui se répète — la réponse tombe ensuite toute seule.
+        2. **Vérifier la règle sur une case connue** avant de l'appliquer au
+           trou. Une règle fausse coûte plus cher qu'une minute de vérification.
+        3. **Traiter les deux moitiés du losange séparément** : elles ne
+           relèvent pas forcément de la même classe.
+        4. **Éliminer.** Une seule moitié fautive suffit à écarter une
+           proposition — inutile de la lire en entier.
+
+        Le piège de l'épreuve : les marques (points, petits symboles) suivent
+        souvent **une règle différente de celle des couleurs**. Il faut donc
+        lire la figure deux fois, sur deux logiques.
   pieges:
     - Regarder les propositions avant d'avoir analysé la grille — les distracteurs sont faits pour l'œil pressé.
     - Oublier une propriété (souvent l'orientation ou le remplissage) — inventorier TOUT ce qui varie avant de conclure.
     - "Dans les superpositions, deux traits identiques s'annulent souvent — la règle la plus contre-intuitive des matrices."
     - S'enliser sur une matrice difficile — marquer, passer, revenir — la suivante vaut autant de points.
+    - "Triangles — les marques suivent souvent une autre règle que les couleurs : lire la figure deux fois."
+    - "Triangles — vérifier la règle trouvée sur une case connue avant de l'appliquer au trou."

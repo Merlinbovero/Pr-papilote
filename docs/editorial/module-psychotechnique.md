@@ -225,6 +225,68 @@ laquelle des trois l'a prise ?
 - **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
   fiche `la-vision-spatiale`.
 
+## Le test des triangles (SVG, hors QCM)
+
+Reconstitution du **test des triangles** des sélections EOPAN. Un grand
+triangle est découpé en petits triangles coloriés ; **deux triangles adjacents
+sont laissés blancs** et il faut désigner, parmi quatre **losanges**, celui qui
+complète la figure. Format officiel : **20 figures en 8 minutes**, seize petits
+triangles, quatre propositions.
+
+- **La figure n'est pas coloriée au hasard.** C'est le point qui décide de
+  tout : l'épreuve annonce des motifs — alternance, répétitions par
+  lignes/colonnes, sous-triangles, décalage « un sur deux », rotations,
+  symétries — et c'est cette règle qui rend la pièce manquante déductible. Le
+  générateur part donc de la règle et en déduit la figure, jamais l'inverse.
+- **Une règle est un classement.** Toutes les familles de motifs se ramènent à
+  une seule abstraction : la règle range les cases en classes, et toutes les
+  cases d'une classe portent la même couleur. Cette formulation unique donne
+  gratuitement les deux propriétés dont on a besoin — une case est
+  **déductible** dès qu'une autre case de sa classe est visible, et la règle se
+  **nomme** en français pour la correction. Sept règles sont implémentées :
+  lignes, orientation, symétrie axiale, diagonales, couronnes concentriques,
+  alternance une case sur trois, motif d'un quart répété.
+- **Le trou doit rester déductible.** Si la règle est « une couleur par ligne »
+  et que le trou emporte les deux seules cases visibles de cette ligne, la
+  question n'a plus de réponse — et le candidat a raison de ne pas pouvoir
+  trancher. Le trou n'est retenu que si chaque case manquante garde une sœur
+  visible dans sa classe, couleur **et** décor. Un test le vérifie.
+- **Les couleurs sont distribuées en balayant une palette mélangée**, et non
+  tirées indépendamment : la règle doit se **voir**. Un premier tirage libre
+  produisait régulièrement des figures quasi unies, où plus rien ne trahissait
+  le motif — la question devenait une devinette. Le mélange de la palette et
+  celui de l'ordre des classes suffisent à garder la variété.
+- **Les mauvaises pièces n'emploient que des couleurs présentes dans la
+  figure.** Une couleur qu'on ne voit nulle part ailleurs s'écarterait sans
+  réfléchir, et la question perdrait un quart de sa difficulté. Corollaire :
+  sans décor, la couleur porte seule la difficulté et la règle doit produire au
+  moins **trois** classes — à deux tons, on ne peut pas construire trois fausses
+  pièces qui se tiennent.
+- **La même géométrie dessine la figure et les losanges proposés** : une pièce
+  apparaît donc exactement dans l'orientation du trou qu'elle doit combler,
+  comme à l'épreuve. Deux géométries séparées auraient fini par diverger, et la
+  question serait devenue injuste. Les trois orientations de losange (penché à
+  gauche, penché à droite, vertical) sont toutes produites.
+- **Difficulté progressive au fil de la session** : niveau 1, seize triangles
+  et une règle de couleur sans décor — le format réel ; niveau 2, vingt-cinq
+  triangles et des marques ; niveau 3, **couleurs et marques obéissant à deux
+  règles différentes**, ce qui oblige à lire la figure deux fois.
+- **Le test reste sec, le débrief est généreux.** Pendant la session, rien
+  d'autre que la figure et les quatre losanges, comme aux sélections. La
+  correction **nomme la règle**, montre la **figure complétée** par la bonne
+  pièce et, en cas d'erreur, la figure complétée par la pièce choisie avec ce
+  qui clochait. Le débrief n'est pas l'épreuve : c'est là qu'on apprend à
+  reconnaître les motifs, ce que la page de référence donne comme la clé de
+  l'entraînement.
+- **Rendu SVG calculé**, sans dépendance ni chargement différé — contrairement
+  aux appareils photos et aux formes imbriquées, aucune 3D n'est nécessaire.
+- **Logique pure** : `src/lib/psychotech/triangles.ts` (géométrie de la grille
+  triangulaire, règles, déductibilité, distracteurs, notation), testée dans
+  `triangles.test.ts` (25 tests). Rendu dans `triangle-figure.tsx`.
+- **Route** : `/psychotechnique/triangles` ; méthode rattachée à la fiche
+  `les-matrices`, section « Le test des triangles » — le raisonnement des
+  matrices s'y applique mot pour mot.
+
 ## Le test de codage (TAMI-C, hors QCM)
 
 Reconstitution du **test de codage du TAMI-C** (sélections EOPN). Une **grille

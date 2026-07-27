@@ -21,6 +21,7 @@ import {
   ShapesIcon,
   TargetIcon,
   TimerIcon,
+  TriangleIcon,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -76,6 +77,7 @@ const ICONS: Record<NavIconName, LucideIcon> = {
   calculator: CalculatorIcon,
   shapes: ShapesIcon,
   keyboard: KeyboardIcon,
+  triangle: TriangleIcon,
   gauge: GaugeIcon,
 };
 
