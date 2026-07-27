@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   BookMarkedIcon,
   BookOpenIcon,
+  CalculatorIcon,
   CameraIcon,
   CompassIcon,
   GaugeIcon,
@@ -70,6 +71,7 @@ const ICONS: Record<NavIconName, LucideIcon> = {
   compass: CompassIcon,
   dominos: Grid2x2Icon,
   camera: CameraIcon,
+  calculator: CalculatorIcon,
   gauge: GaugeIcon,
 };
 

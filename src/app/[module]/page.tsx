@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  CalculatorIcon,
   CameraIcon,
   ChartLineIcon,
   ClipboardCheckIcon,
@@ -127,6 +128,26 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     <CardDescription>
                       Lire une attitude de vol (horizon et compas) et retrouver l&apos;aéronef en 3D
                       — questions générées à l&apos;infini.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/calcul-mental"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <CalculatorIcon aria-hidden className="text-primary size-4" />
+                      Calcul mental
+                    </CardTitle>
+                    <CardDescription>
+                      Neuf thèmes, trois niveaux, du format officiel aux séries sans fin.
                     </CardDescription>
                   </CardHeader>
                 </Card>
