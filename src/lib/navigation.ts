@@ -27,6 +27,7 @@ export type NavIconName =
   | "dominos"
   | "camera"
   | "calculator"
+  | "shapes"
   | "gauge";
 
 export interface NavLink {
@@ -267,6 +268,12 @@ export const NAV_SECTIONS: readonly NavSection[] = [
         label: "Test des appareils photos",
         description: "Trois objectifs, une photo : lequel l’a prise ?",
         icon: "camera",
+      },
+      {
+        href: "/psychotechnique/formes-imbriquees",
+        label: "Test des formes imbriquées",
+        description: "Un assemblage, quatre jeux de pièces : lequel est le bon ?",
+        icon: "shapes",
       },
       {
         href: "/psychotechnique/dominos",
