@@ -17,6 +17,7 @@ import {
   MenuIcon,
   PlaySquareIcon,
   RepeatIcon,
+  ShapesIcon,
   TargetIcon,
   TimerIcon,
   type LucideIcon,
@@ -72,6 +73,7 @@ const ICONS: Record<NavIconName, LucideIcon> = {
   dominos: Grid2x2Icon,
   camera: CameraIcon,
   calculator: CalculatorIcon,
+  shapes: ShapesIcon,
   gauge: GaugeIcon,
 };
 

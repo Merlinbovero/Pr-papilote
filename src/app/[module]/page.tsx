@@ -9,6 +9,7 @@ import {
   CompassIcon,
   CrosshairIcon,
   Grid2x2Icon,
+  ShapesIcon,
   ListChecksIcon,
   RepeatIcon,
   TimerIcon,
@@ -168,6 +169,27 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     </CardTitle>
                     <CardDescription>
                       Trois appareils, une photo : lequel l’a prise ? Scènes 3D générées à l’infini.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/formes-imbriquees"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <ShapesIcon aria-hidden className="text-primary size-4" />
+                      Test des formes imbriquées
+                    </CardTitle>
+                    <CardDescription>
+                      Un assemblage, quatre jeux de pièces désassemblées : lequel a servi à le
+                      construire ?
                     </CardDescription>
                   </CardHeader>
                 </Card>

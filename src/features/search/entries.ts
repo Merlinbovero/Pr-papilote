@@ -104,6 +104,28 @@ const OUTILS: SearchEntryInput[] = [
     priority: 3,
   },
   {
+    id: "outil.formes-imbriquees",
+    type: "outil",
+    family: "simulateur",
+    title: "Test des formes imbriquées",
+    summary:
+      "Un assemblage de pièces enchevêtrées, quatre jeux de pièces désassemblées : identifier celui qui l'a construit. Format officiel 20 assemblages en 8 minutes, trois niveaux.",
+    moduleName: "Psychotechnique",
+    moduleSlug: "psychotechnique",
+    url: "/psychotechnique/formes-imbriquees",
+    aliases: [
+      "formes imbriquées",
+      "formes imbriquees",
+      "formes",
+      "test des formes",
+      "pièces imbriquées",
+      "assemblage",
+      "visualisation spatiale",
+      "projection 3D",
+    ],
+    priority: 3,
+  },
+  {
     id: "outil.dominos",
     type: "outil",
     family: "simulateur",

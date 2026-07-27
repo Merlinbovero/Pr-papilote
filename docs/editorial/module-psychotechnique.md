@@ -225,6 +225,59 @@ laquelle des trois l'a prise ?
 - **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
   fiche `la-vision-spatiale`.
 
+## Le test des formes imbriquées (rendu 3D, hors QCM)
+
+Reconstitution du **test des formes imbriquées** des sélections EOPAN. Un
+**assemblage** de pièces enchevêtrées est montré ; quatre jeux de pièces
+**désassemblées** sont proposés, un seul a servi à le construire. Format
+officiel : **20 assemblages en 8 minutes**, soit 24 s l'unité.
+
+- **Aucun modèle 3D importé**, comme pour les appareils photos, et pour la même
+  raison. Chaque pièce est une **primitive paramétrique** : un anneau ouvert est
+  un tore d'arc partiel, un disque entaillé un cylindre d'angle partiel, un tube
+  un profil annulaire révolutionné, une barre une boîte. C'est exactement le
+  vocabulaire de formes de l'épreuve réelle, sans téléchargement, sans échelle à
+  recaler et sans licence à créditer. Aucune opération booléenne n'est
+  nécessaire — donc aucune dépendance de géométrie constructive.
+- **L'imbrication est construite, pas tirée au sort.** Les pièces de révolution
+  sont **enfilées sur un axe commun** en se chevauchant ; les barres traversent
+  l'enfilade de part en part. Un premier modèle qui plaçait les pièces au hasard
+  dans une sphère donnait des pièces flottant côte à côte, sans imbrication : il
+  a été remplacé.
+- **Trois garanties, tenues par construction et vérifiées par les tests.**
+  - _Aucune pièce avalée_ : une pièce entièrement contenue dans une autre serait
+    invisible, et deux jeux différents produiraient alors la même image. Le
+    chevauchement axial est partiel, jamais une inclusion.
+  - _Assemblage d'un seul tenant_ : chaque pièce enfilée chevauche sa voisine,
+    et chaque barre dépasse de l'enfilade — donc reste visible.
+  - _Entaille tournée vers l'observateur_ : la rotation d'une pièce autour de
+    l'axe reste dans une fourchette qui garde le creux face à la vue. Une
+    entaille passée derrière rendrait deux jeux également défendables.
+- **Un distracteur diffère du bon jeu par une pièce et une seule**, et cette
+  différence doit dépasser un **écart minimal mesuré** (`shapeDistance`), qui se
+  resserre avec le niveau. Les altérations sans effet visible à l'écran ont été
+  retirées : la section d'une barre fait deux ou trois pixels, la modifier
+  produirait une différence indécelable — seule sa longueur est jouée.
+- **Le cadrage est commun aux quatre propositions.** Cadrer chaque image sur son
+  propre contenu aurait grossi le jeu contenant la pièce la plus courte : le
+  zoom aurait trahi la réponse sans qu'on ait à regarder les formes.
+- **Les quatre propositions montrent les mêmes pièces sous les mêmes angles** —
+  l'orientation ne dépend que de la question et du rang de la pièce, jamais de
+  la proposition. Seule la forme les distingue.
+- **Difficulté progressive au fil de la session** : niveau 1, trois pièces
+  franches sans basculement ; niveau 2, quatre pièces et basculement libre ;
+  niveau 3, cinq pièces et un seul détail qui tranche. Au-delà de trois pièces,
+  les propositions passent sur **deux rangs** — en une seule rangée elles
+  seraient minuscules.
+- **L'assemblage n'est pas manipulable.** C'est la projection mentale qui est
+  évaluée, et un score doit rester comparable à celui de l'épreuve.
+- **Logique pure** : `src/lib/psychotech/formes.ts` (pièces, signatures,
+  distances, imbrication, distracteurs, notation), testée dans
+  `formes.test.ts` (22 tests). Rendu dans `forme-scene.tsx` (Three.js importé
+  dynamiquement).
+- **Route** : `/psychotechnique/formes-imbriquees` ; méthode rattachée à la
+  fiche `la-vision-spatiale`, section « Les formes imbriquées ».
+
 ## L'entraîneur de calcul mental (hors QCM du moteur)
 
 L'épreuve jugée la plus difficile des sélections — et celle qui se travaille le
