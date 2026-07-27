@@ -4,13 +4,13 @@ type: concept
 title: Le calcul mental
 slug: le-calcul-mental
 image:
-  src: /images/module-psychotechnique.jpg
-  alt: Planche de bord — le calcul mental
-  author: Giles Laurent
-  license: CC BY-SA 4.0
-  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
-  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
-  focal: 50% 62%
+  src: /images/fiche-calcul-mental.jpg
+  alt: >-
+    Bandeau « Les fondamentaux du calcul mental » — deux avions de ligne en vol
+    au-dessus d'une couche de nuages, ciel bleu dégagé.
+  author: PrépaPilote
+  license: Création originale — tous droits réservés
+  sourceUrl: https://pr-papilote.vercel.app/credits-photos
 summary: >-
   Calculer vite et juste sans calculatrice — décompositions, multiplications
   astucieuses, pourcentages, proportions et le grand classique aéronautique,
@@ -40,7 +40,7 @@ level: 1
 createdAt: "2026-07-13"
 verifiedAt: "2026-07-27"
 author: prepapilote
-version: 2
+version: 3
 revisions:
   - date: "2026-07-13"
     version: 1
@@ -54,6 +54,14 @@ revisions:
       pente à 3°. Comble le trou pointé sur l'entraîneur de calcul mental, dont le
       thème « Calculs du métier » employait ces règles sans qu'aucune page ne les
       explique.
+    author: prepapilote
+  - date: "2026-07-27"
+    version: 3
+    motif: >-
+      Remplacement du bandeau d'en-tête par le visuel « Les fondamentaux du calcul
+      mental », création originale PrépaPilote fournie par la direction éditoriale.
+      La planche de bord de Giles Laurent (CC BY-SA 4.0) reste employée par la carte
+      du module Psychotechnique.
     author: prepapilote
 sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
