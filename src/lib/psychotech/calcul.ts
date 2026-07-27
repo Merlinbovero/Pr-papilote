@@ -204,6 +204,18 @@ function round(value: number): number {
 }
 
 /**
+ * Arrondi d'estimation : on ne demande pas l'approximation d'un nombre donné
+ * au millième. Les propositions restent lisibles à l'échelle où on les
+ * manipule — c'est le propre d'un ordre de grandeur.
+ */
+function roundish(value: number): number {
+  const abs = Math.abs(value);
+  if (abs >= 100) return Math.round(value / 5) * 5;
+  if (abs >= 10) return Math.round(value);
+  return Math.round(value * 10) / 10;
+}
+
+/**
  * Écriture française d'un nombre : virgule décimale, pas de séparateur de
  * milliers (il gênerait plus qu'il n'aiderait sur des nombres de cette taille).
  * Formatage maison plutôt que `toLocaleString`, dont le résultat dépend de
@@ -457,7 +469,9 @@ function genMagnitude(rng: Rng, level: CalcLevel): RawQuestion {
   } else if (level === 2) {
     const b = round(int(rng, 15, 95) / 10);
     const q = int(rng, 8, 40);
-    const a = round(b * q * (1 + int(rng, -6, 6) / 100));
+    // Le dividende s'affiche : on le garde à une décimale, sans quoi on
+    // demanderait d'estimer un nombre plus précis que la réponse attendue.
+    const a = Math.round(b * q * (1 + int(rng, -6, 6) / 100) * 10) / 10;
     exact = a / b;
     prompt = `${fmt(a)} ÷ ${fmt(b)} ≈ ?`;
     method = `On arrondit le diviseur à ${Math.round(b)} : ${fmt(a)} ÷ ${Math.round(b)} ≈ ${fmt(a / Math.round(b))}.`;
@@ -469,9 +483,10 @@ function genMagnitude(rng: Rng, level: CalcLevel): RawQuestion {
     method = `${p} %, c’est un peu ${p > 25 ? "plus" : "moins"} d’un quart : ${n} ÷ 4 = ${fmt(n / 4)}. On ajuste vers ${fmt(exact)}.`;
   }
 
-  // Propositions espacées d'au moins 40 % — l'exactitude n'est pas le sujet.
-  const answer = round(exact);
-  const wrong = [round(exact * 0.45), round(exact * 1.75), round(exact * 3)];
+  // Propositions espacées d'au moins 40 % — l'exactitude n'est pas le sujet,
+  // et des nombres ronds le disent mieux que des décimales inutiles.
+  const answer = roundish(exact);
+  const wrong = [roundish(exact * 0.45), roundish(exact * 1.75), roundish(exact * 3)];
   return { prompt, answer, wrong, method };
 }
 
