@@ -24,12 +24,15 @@ type ThreeMod = typeof import("three");
 interface FormeRenderer {
   renderAssembly: (puzzle: FormePuzzle) => string;
   renderOption: (puzzle: FormePuzzle, optionIndex: number) => string;
+  renderPiece: (puzzle: FormePuzzle, optionIndex: number, slot: number, frame: number) => string;
 }
 
 const ASSEMBLY_W = 640;
 const ASSEMBLY_H = 420;
 const OPTION_W = 620;
 const OPTION_H = 320;
+const PIECE_W = 320;
+const PIECE_H = 260;
 
 /**
  * Teintes des pièces. Volontairement **hors palette sémantique** : sur ce site
@@ -279,6 +282,18 @@ async function getFormeRenderer(): Promise<FormeRenderer> {
         }
         return renderGroup(group, OPTION_W, OPTION_H, widest / 2);
       },
+      renderPiece(puzzle, optionIndex, slot, frame) {
+        clear();
+        const piece = puzzle.options[optionIndex][slot];
+        const group = new THREE.Group();
+        const mesh = meshFor(piece);
+        applyOptionPose(mesh, puzzle, piece, slot);
+        group.add(mesh);
+        // Cadrage imposé, commun aux deux pièces comparées : sans lui, une
+        // pièce plus courte serait rendue plus grosse et la comparaison
+        // mentirait.
+        return renderGroup(group, PIECE_W, PIECE_H, frame);
+      },
     };
   })();
   return rendererPromise;
@@ -288,7 +303,11 @@ async function getFormeRenderer(): Promise<FormeRenderer> {
 // Composants
 // ---------------------------------------------------------------------------
 
-type Kind = { mode: "assembly" } | { mode: "option"; optionIndex: number };
+type Kind =
+  | { mode: "assembly" }
+  | { mode: "option"; optionIndex: number }
+  /** Une seule pièce, en grand — pour mettre en regard celle qui change. */
+  | { mode: "piece"; optionIndex: number; slot: number; frame: number };
 
 /**
  * Une image de formes. Le rendu se fait une fois puis reste une image fixe :
@@ -307,8 +326,10 @@ export function FormeImage({
   className?: string;
 }) {
   const mode = kind.mode;
-  const optionIndex = kind.mode === "option" ? kind.optionIndex : -1;
-  const signature = `${puzzle.id}|${mode}:${optionIndex}`;
+  const optionIndex = kind.mode === "assembly" ? -1 : kind.optionIndex;
+  const slot = kind.mode === "piece" ? kind.slot : -1;
+  const frame = kind.mode === "piece" ? kind.frame : 0;
+  const signature = `${puzzle.id}|${mode}:${optionIndex}:${slot}:${frame}`;
 
   const [rendered, setRendered] = React.useState<{ key: string; src: string } | null>(null);
 
@@ -319,13 +340,15 @@ export function FormeImage({
       const image =
         mode === "assembly"
           ? renderer.renderAssembly(puzzle)
-          : renderer.renderOption(puzzle, optionIndex);
+          : mode === "option"
+            ? renderer.renderOption(puzzle, optionIndex)
+            : renderer.renderPiece(puzzle, optionIndex, slot, frame);
       setRendered({ key: signature, src: image });
     });
     return () => {
       active = false;
     };
-  }, [puzzle, mode, optionIndex, signature]);
+  }, [puzzle, mode, optionIndex, slot, frame, signature]);
 
   const src = rendered?.key === signature ? rendered.src : null;
 
@@ -333,7 +356,11 @@ export function FormeImage({
     <div
       className={cn(
         "bg-muted/40 relative overflow-hidden rounded-lg border",
-        mode === "assembly" ? "aspect-[640/420]" : "aspect-[620/320]",
+        mode === "assembly"
+          ? "aspect-[640/420]"
+          : mode === "option"
+            ? "aspect-[620/320]"
+            : "aspect-[320/260]",
         className
       )}
     >

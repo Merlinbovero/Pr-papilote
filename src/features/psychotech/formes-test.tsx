@@ -6,7 +6,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FormeImage, usePreloadFormes } from "@/features/psychotech/forme-scene";
 import {
+  boundingRadius,
   buildFormeSession,
+  differingIndex,
   FORME_FORMATS,
   FORME_LEVEL_LIST,
   generateFormePuzzle,
@@ -111,6 +113,63 @@ function FormesTutorial() {
   );
 }
 
+/**
+ * La pièce qui change, en grand, mise en regard.
+ *
+ * Une phrase — « le tube est fermé alors qu'il est entaillé » — demande de
+ * retrouver le tube dans deux vignettes de trois centimètres. Deux images côte
+ * à côte se lisent d'un coup d'œil. Les deux pièces partagent le **même
+ * cadrage**, sans quoi la plus courte paraîtrait simplement plus proche.
+ */
+function PieceComparison({
+  puzzle,
+  given,
+  label,
+}: {
+  puzzle: FormePuzzle;
+  given: number;
+  label: string;
+}) {
+  const truth = puzzle.options[puzzle.answerIndex];
+  const chosen = puzzle.options[given];
+  const slot = differingIndex(truth, chosen);
+  if (slot < 0) return null;
+  const frame = Math.max(boundingRadius(truth[slot]), boundingRadius(chosen[slot]));
+
+  return (
+    <div className="mt-3">
+      <p className="mb-2 text-sm font-semibold">La pièce qui change</p>
+      <div className="grid max-w-2xl gap-3 sm:grid-cols-2">
+        <div>
+          <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+            Votre réponse — jeu {label}
+          </p>
+          <FormeImage
+            puzzle={puzzle}
+            kind={{ mode: "piece", optionIndex: given, slot, frame }}
+            alt={`La pièce du jeu ${label}, celle que vous aviez choisi.`}
+            className="ring-destructive/50 ring-2"
+          />
+        </div>
+        <div>
+          <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
+            La bonne réponse — jeu {OPTION_LABELS[puzzle.answerIndex]}
+          </p>
+          <FormeImage
+            puzzle={puzzle}
+            kind={{ mode: "piece", optionIndex: puzzle.answerIndex, slot, frame }}
+            alt={`La même pièce dans le jeu ${OPTION_LABELS[puzzle.answerIndex]}, le bon.`}
+            className="ring-success/60 ring-2"
+          />
+        </div>
+      </div>
+      <p className="text-muted-foreground mt-2 text-sm">
+        Dans le jeu {label}, {puzzle.differences[given]}.
+      </p>
+    </div>
+  );
+}
+
 export function FormesTest() {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [format, setFormat] = React.useState<FormeFormatKey>("officiel");
@@ -122,6 +181,22 @@ export function FormesTest() {
   const [remaining, setRemaining] = React.useState(0);
   const [history, setHistory] = React.useState<HistoryEntry[]>([]);
   const deadlineRef = React.useRef(0);
+  const rootRef = React.useRef<HTMLDivElement>(null);
+
+  /**
+   * Ramène l'exercice en haut de l'écran. Sans cela on atterrit au milieu des
+   * propositions, l'assemblage hors champ : il faut remonter à la main avant de
+   * pouvoir répondre. Même chose au bilan, où l'on tombait sur la dernière
+   * correction plutôt que sur son score.
+   */
+  const scrollToTop = React.useCallback(() => {
+    requestAnimationFrame(() => {
+      const element = rootRef.current;
+      if (!element) return;
+      const top = element.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    });
+  }, []);
 
   usePreloadFormes();
 
@@ -162,7 +237,8 @@ export function FormesTest() {
       return next;
     });
     setPhase("done");
-  }, []);
+    scrollToTop();
+  }, [scrollToTop]);
 
   React.useEffect(() => {
     if (phase !== "playing" || training) return;
@@ -177,18 +253,22 @@ export function FormesTest() {
     return () => window.clearInterval(id);
   }, [phase, training, finish]);
 
-  const start = React.useCallback((key: FormeFormatKey, isTraining: boolean) => {
-    const session = buildFormeSession(Math.floor(Math.random() * 1_000_000_000), key);
-    setFormat(key);
-    setTraining(isTraining);
-    setPuzzles(session);
-    setAnswers(session.map(() => null));
-    setIndex(0);
-    setChecked(false);
-    deadlineRef.current = Date.now() + FORME_FORMATS[key].durationSeconds * 1000;
-    setRemaining(FORME_FORMATS[key].durationSeconds);
-    setPhase("playing");
-  }, []);
+  const start = React.useCallback(
+    (key: FormeFormatKey, isTraining: boolean) => {
+      const session = buildFormeSession(Math.floor(Math.random() * 1_000_000_000), key);
+      setFormat(key);
+      setTraining(isTraining);
+      setPuzzles(session);
+      setAnswers(session.map(() => null));
+      setIndex(0);
+      setChecked(false);
+      deadlineRef.current = Date.now() + FORME_FORMATS[key].durationSeconds * 1000;
+      setRemaining(FORME_FORMATS[key].durationSeconds);
+      setPhase("playing");
+      scrollToTop();
+    },
+    [scrollToTop]
+  );
 
   const current = puzzles[index];
   const answer = answers[index] ?? null;
@@ -206,12 +286,13 @@ export function FormesTest() {
     }
     setIndex(index + 1);
     setChecked(false);
+    scrollToTop();
   }
 
   // --- Intro ---------------------------------------------------------------
   if (phase === "intro") {
     return (
-      <div className="space-y-6">
+      <div ref={rootRef} className="space-y-6">
         <FormesTutorial />
 
         <section className="space-y-3">
@@ -305,7 +386,7 @@ export function FormesTest() {
   if (phase === "done") {
     const score = scoreFormeSession(puzzles, answers);
     return (
-      <div className="space-y-6">
+      <div ref={rootRef} className="space-y-6">
         <div className="bg-card rounded-lg border p-5 text-center">
           <p className="text-muted-foreground text-sm">
             {FORME_FORMATS[format].label}
@@ -390,20 +471,20 @@ export function FormesTest() {
                 {/* Voir côte à côte le jeu choisi et le bon vaut mieux que
                     n'importe quelle phrase pour comprendre son erreur. */}
                 {!right && given !== null ? (
-                  <div className="mt-3">
-                    <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
-                      Le jeu {OPTION_LABELS[given]}, votre réponse
-                    </p>
-                    <FormeImage
-                      puzzle={puzzle}
-                      kind={{ mode: "option", optionIndex: given }}
-                      alt={`Le jeu ${OPTION_LABELS[given]}, celui que vous aviez choisi.`}
-                      className="ring-destructive/50 ring-2"
-                    />
-                    <p className="text-muted-foreground mt-2 text-sm">
-                      Ce qui clochait : {puzzle.differences[given]}.
-                    </p>
-                  </div>
+                  <>
+                    <div className="mt-3">
+                      <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                        Le jeu {OPTION_LABELS[given]}, votre réponse
+                      </p>
+                      <FormeImage
+                        puzzle={puzzle}
+                        kind={{ mode: "option", optionIndex: given }}
+                        alt={`Le jeu ${OPTION_LABELS[given]}, celui que vous aviez choisi.`}
+                        className="ring-destructive/50 ring-2"
+                      />
+                    </div>
+                    <PieceComparison puzzle={puzzle} given={given} label={OPTION_LABELS[given]} />
+                  </>
                 ) : null}
               </div>
             );
@@ -427,7 +508,7 @@ export function FormesTest() {
   const right = checked && answer === current.answerIndex;
 
   return (
-    <div className="space-y-5">
+    <div ref={rootRef} className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
           Assemblage {index + 1}
@@ -515,9 +596,7 @@ export function FormesTest() {
               : `Faux — l’assemblage vient du jeu ${OPTION_LABELS[current.answerIndex]}.`}
           </p>
           {!right && answer !== null ? (
-            <p className="text-muted-foreground mt-1 text-sm">
-              Dans le jeu {OPTION_LABELS[answer]}, {current.differences[answer]}.
-            </p>
+            <PieceComparison puzzle={current} given={answer} label={OPTION_LABELS[answer]} />
           ) : null}
         </div>
       ) : null}
