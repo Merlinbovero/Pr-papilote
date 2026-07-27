@@ -312,8 +312,10 @@ function genAddSub(rng: Rng, level: CalcLevel): RawQuestion {
 
 function genMultiplication(rng: Rng, level: CalcLevel): RawQuestion {
   if (level === 1) {
-    const a = int(rng, 6, 14);
-    const b = int(rng, 4, 12);
+    // Deux familles d'opérandes pour le même énoncé « a × b = ? » : la table
+    // étendue, et le produit d'un nombre à deux chiffres par un petit facteur.
+    const [a, b] =
+      rng() < 0.5 ? [int(rng, 3, 25), int(rng, 3, 19)] : [int(rng, 12, 99), int(rng, 3, 9)];
     const answer = a * b;
     return {
       prompt: `${a} × ${b} = ?`,
@@ -323,19 +325,32 @@ function genMultiplication(rng: Rng, level: CalcLevel): RawQuestion {
     };
   }
   if (level === 2) {
-    const a = int(rng, 12, 48);
-    const b = pick(rng, [11, 15, 25, 12, 9]);
+    const a = int(rng, 11, 99);
+    if (rng() < 0.5) {
+      // Multiplicateur juste au-dessus de 100 : × 100 puis le reste.
+      const b = int(rng, 101, 119);
+      const rest = b - 100;
+      const answer = a * b;
+      return {
+        prompt: `${a} × ${b} = ?`,
+        answer,
+        wrong: [a * 100, answer + a, a * (b + 1)],
+        method: `On coupe à la centaine : ${a} × 100 = ${a * 100}, puis ${a} × ${rest} = ${a * rest}. Total ${answer}.`,
+      };
+    }
+    const b = pick(rng, [9, 11, 12, 15, 19, 21, 25, 50]);
     const answer = a * b;
-    const trick =
-      b === 11
-        ? `× 11 = × 10 + une fois`
-        : b === 15
-          ? `× 15 = × 10 + la moitié de × 10`
-          : b === 25
-            ? `× 25 = × 100 ÷ 4`
-            : b === 9
-              ? `× 9 = × 10 − une fois`
-              : `× 12 = × 10 + × 2`;
+    const TRICKS: Record<number, string> = {
+      9: "× 9 = × 10 − une fois",
+      11: "× 11 = × 10 + une fois",
+      12: "× 12 = × 10 + × 2",
+      15: "× 15 = × 10 + la moitié de × 10",
+      19: "× 19 = × 20 − une fois",
+      21: "× 21 = × 20 + une fois",
+      25: "× 25 = × 100 ÷ 4",
+      50: "× 50 = × 100 ÷ 2",
+    };
+    const trick = TRICKS[b];
     return {
       prompt: `${a} × ${b} = ?`,
       answer,
@@ -343,8 +358,8 @@ function genMultiplication(rng: Rng, level: CalcLevel): RawQuestion {
       method: `On décompose : ${trick}. Ici ${a} × ${b} = ${answer}.`,
     };
   }
-  const a = round(int(rng, 15, 60) / 10 + int(rng, 1, 8));
-  const b = int(rng, 6, 24);
+  const a = round(int(rng, 15, 95) / 10 + int(rng, 1, 12));
+  const b = int(rng, 6, 32);
   const answer = round(a * b);
   return {
     prompt: `${fmt(a)} × ${b} = ?`,
@@ -356,8 +371,8 @@ function genMultiplication(rng: Rng, level: CalcLevel): RawQuestion {
 
 function genDivision(rng: Rng, level: CalcLevel): RawQuestion {
   if (level === 1) {
-    const b = int(rng, 3, 12);
-    const q = int(rng, 4, 15);
+    const b = int(rng, 2, 19);
+    const q = int(rng, 3, 60);
     const a = b * q;
     return {
       prompt: `${a} ÷ ${b} = ?`,
@@ -367,17 +382,30 @@ function genDivision(rng: Rng, level: CalcLevel): RawQuestion {
     };
   }
   if (level === 2) {
-    const b = pick(rng, [4, 5, 8, 25]);
-    const q = int(rng, 6, 40);
+    if (rng() < 0.45) {
+      // Diviseur « sans raccourci » : on cherche le quotient par encadrement.
+      const b = int(rng, 3, 12);
+      const q = int(rng, 11, 140);
+      const a = b * q;
+      return {
+        prompt: `${a} ÷ ${b} = ?`,
+        answer: q,
+        wrong: [q + 10, round(q / 2), q * 2],
+        method: `On encadre : ${b} × ${Math.floor(q / 10) * 10} = ${b * Math.floor(q / 10) * 10}, il reste ${a - b * Math.floor(q / 10) * 10} à diviser par ${b}. Quotient ${q}.`,
+      };
+    }
+    const b = pick(rng, [4, 5, 8, 20, 25, 50]);
+    const q = int(rng, 6, 120);
     const a = b * q;
-    const trick =
-      b === 5
-        ? `÷ 5 = × 2 ÷ 10`
-        : b === 25
-          ? `÷ 25 = × 4 ÷ 100`
-          : b === 4
-            ? `÷ 4 = deux moitiés`
-            : `÷ 8 = trois moitiés`;
+    const TRICKS: Record<number, string> = {
+      4: "÷ 4 = deux moitiés",
+      5: "÷ 5 = × 2 ÷ 10",
+      8: "÷ 8 = trois moitiés",
+      20: "÷ 20 = ÷ 2 puis ÷ 10",
+      25: "÷ 25 = × 4 ÷ 100",
+      50: "÷ 50 = × 2 ÷ 100",
+    };
+    const trick = TRICKS[b];
     return {
       prompt: `${a} ÷ ${b} = ?`,
       answer: q,
@@ -385,8 +413,8 @@ function genDivision(rng: Rng, level: CalcLevel): RawQuestion {
       method: `Raccourci : ${trick}. Ici ${a} ÷ ${b} = ${q}.`,
     };
   }
-  const b = pick(rng, [0.5, 0.2, 0.25, 1.5]);
-  const q = int(rng, 8, 60);
+  const b = pick(rng, [0.2, 0.25, 0.4, 0.5, 0.75, 0.8, 1.25, 1.5, 2.5, 7.5]);
+  const q = int(rng, 8, 160);
   const a = round(b * q);
   return {
     prompt: `${fmt(a)} ÷ ${fmt(b)} = ?`,
@@ -494,12 +522,26 @@ function genFractions(rng: Rng, level: CalcLevel): RawQuestion {
   if (level === 1) {
     const [num, den] = pick(rng, [
       [1, 2],
+      [1, 3],
+      [2, 3],
       [1, 4],
       [3, 4],
       [1, 5],
       [2, 5],
+      [3, 5],
+      [4, 5],
+      [1, 6],
+      [5, 6],
+      [1, 8],
+      [3, 8],
+      [5, 8],
+      [7, 8],
+      [1, 10],
+      [3, 10],
+      [7, 10],
+      [9, 10],
     ]);
-    const base = den * int(rng, 4, 24);
+    const base = den * int(rng, 3, 60);
     const answer = (base * num) / den;
     return {
       prompt: `${num}/${den} de ${base} = ?`,
@@ -509,8 +551,8 @@ function genFractions(rng: Rng, level: CalcLevel): RawQuestion {
     };
   }
   if (level === 2) {
-    const p = pick(rng, [15, 20, 30, 12.5, 60, 75]);
-    const base = int(rng, 8, 60) * 4;
+    const p = pick(rng, [5, 10, 12.5, 15, 20, 25, 30, 35, 40, 45, 60, 70, 75, 80, 90]);
+    const base = int(rng, 5, 250) * 4;
     const answer = round((base * p) / 100);
     return {
       prompt: `${fmt(p)} % de ${base} = ?`,
@@ -519,9 +561,9 @@ function genFractions(rng: Rng, level: CalcLevel): RawQuestion {
       method: `10 % de ${base} vaut ${fmt(base / 10)} ; on en déduit ${fmt(p)} % = ${fmt(answer)}.`,
     };
   }
-  const base = int(rng, 20, 90) * 10;
-  const up = pick(rng, [10, 20, 25, 30]);
-  const down = pick(rng, [10, 20, 25, 30]);
+  const base = int(rng, 15, 180) * 5;
+  const up = pick(rng, [10, 15, 20, 25, 30, 40]);
+  const down = pick(rng, [10, 15, 20, 25, 30, 40]);
   const answer = round(base * (1 + up / 100) * (1 - down / 100));
   return {
     prompt: `${base}, augmenté de ${up} % puis diminué de ${down} % = ?`,
@@ -545,7 +587,7 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
   if (level === 1) {
     const kind = pick(rng, ["kt", "ft", "temp"] as const);
     if (kind === "kt") {
-      const kt = int(rng, 80, 480);
+      const kt = int(rng, 60, 520);
       const answer = round(kt * 1.852);
       return {
         prompt: `${kt} kt en km/h ≈ ?`,
@@ -555,7 +597,7 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
       };
     }
     if (kind === "ft") {
-      const ft = int(rng, 5, 39) * 1000;
+      const ft = int(rng, 2, 450) * 100;
       const answer = round(ft * 0.3048);
       return {
         prompt: `${ft} ft en mètres ≈ ?`,
@@ -564,7 +606,7 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
         method: `1 pied = 0,3048 m, soit environ le tiers d’un mètre : ${ft} ÷ 3 ≈ ${fmt(ft / 3)}, un peu moins en réalité.`,
       };
     }
-    const c = int(rng, -40, 35);
+    const c = int(rng, -50, 45);
     const answer = round((c * 9) / 5 + 32);
     return {
       prompt: `${c} °C en °F = ?`,
@@ -577,8 +619,8 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
   if (level === 2) {
     const kind = pick(rng, ["temps", "carburant"] as const);
     if (kind === "temps") {
-      const speed = pick(rng, [120, 150, 180, 240, 300]);
-      const minutes = pick(rng, [20, 30, 40, 45, 50]);
+      const speed = int(rng, 6, 60) * 5;
+      const minutes = pick(rng, [10, 12, 15, 20, 24, 30, 36, 40, 45, 50, 80, 90]);
       const answer = round((speed * minutes) / 60);
       return {
         prompt: `À ${speed} kt, quelle distance en ${minutes} min ?`,
@@ -587,8 +629,8 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
         method: `En une minute on parcourt ${fmt(speed / 60)} NM. En ${minutes} min : ${fmt(answer)} NM.`,
       };
     }
-    const conso = pick(rng, [180, 240, 320, 450]);
-    const minutes = pick(rng, [30, 45, 90, 120]);
+    const conso = int(rng, 12, 90) * 5;
+    const minutes = pick(rng, [15, 20, 30, 40, 45, 60, 75, 90, 120, 150]);
     const answer = round((conso * minutes) / 60);
     return {
       prompt: `Une consommation de ${conso} L/h pendant ${minutes} min, cela fait ?`,
@@ -600,8 +642,8 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
 
   const kind = pick(rng, ["1en60", "pente"] as const);
   if (kind === "1en60") {
-    const distance = pick(rng, [30, 45, 60, 90, 120]);
-    const ecart = int(rng, 2, 8);
+    const distance = int(rng, 3, 50) * 5;
+    const ecart = int(rng, 1, 20);
     const answer = round((ecart * distance) / 60);
     return {
       prompt: `Règle du 1 en 60 : ${ecart}° d’écart sur ${distance} NM, cela fait combien de milles de dérive ?`,
@@ -610,7 +652,7 @@ function genMetier(rng: Rng, level: CalcLevel): RawQuestion {
       method: `1° d’écart vaut 1 NM à 60 NM. À ${distance} NM : ${ecart} × ${distance} ÷ 60 = ${fmt(answer)} NM. C’est une approximation, valable pour de petits angles.`,
     };
   }
-  const nm = int(rng, 3, 25);
+  const nm = int(rng, 2, 60);
   const answer = nm * 300;
   return {
     prompt: `Descente à 3° : quelle perte d’altitude sur ${nm} NM ?`,
