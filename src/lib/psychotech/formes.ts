@@ -730,6 +730,18 @@ export function generateFormePuzzle(seed: number, level: FormeLevel): FormePuzzl
 }
 
 /** Ce qui sépare un jeu faux du bon — une phrase, pour la correction. */
+/**
+ * Rang de la pièce qui change entre le bon jeu et un jeu faux — c'est elle que
+ * la correction met en regard, en grand : deux pièces côte à côte valent mieux
+ * que n'importe quelle phrase.
+ */
+export function differingIndex(truth: readonly Piece[], other: readonly Piece[]): number {
+  for (let i = 0; i < truth.length; i += 1) {
+    if (pieceSignature(truth[i]) !== pieceSignature(other[i])) return i;
+  }
+  return -1;
+}
+
 export function describeDifference(truth: readonly Piece[], other: readonly Piece[]): string {
   for (let i = 0; i < truth.length; i += 1) {
     if (pieceSignature(truth[i]) === pieceSignature(other[i])) continue;
