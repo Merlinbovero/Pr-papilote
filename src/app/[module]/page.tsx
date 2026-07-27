@@ -9,6 +9,7 @@ import {
   CompassIcon,
   CrosshairIcon,
   Grid2x2Icon,
+  KeyboardIcon,
   ShapesIcon,
   ListChecksIcon,
   RepeatIcon,
@@ -169,6 +170,27 @@ export default async function ModuleHubPage({ params }: ModuleHubProps) {
                     </CardTitle>
                     <CardDescription>
                       Trois appareils, une photo : lequel l’a prise ? Scènes 3D générées à l’infini.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </li>
+          ) : null}
+          {mod.slug === "psychotechnique" ? (
+            <li>
+              <Link
+                href="/psychotechnique/codage"
+                className="focus-visible:ring-ring block h-full rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <Card className="border-primary/30 hover:border-primary h-full transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <KeyboardIcon aria-hidden className="text-primary size-4" />
+                      Test de codage
+                    </CardTitle>
+                    <CardDescription>
+                      Une grille de mots et leurs codes — 45 questions en 2 min 30, à 3,3 secondes
+                      l’unité.
                     </CardDescription>
                   </CardHeader>
                 </Card>

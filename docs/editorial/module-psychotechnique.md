@@ -225,6 +225,59 @@ laquelle des trois l'a prise ?
 - **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
   fiche `la-vision-spatiale`.
 
+## Le test de codage (TAMI-C, hors QCM)
+
+Reconstitution du **test de codage du TAMI-C** (sélections EOPN). Une **grille
+de mots** est affichée, chacun associé à un **code à quatre chiffres** ; on
+demande un mot, il faut désigner son code parmi **cinq propositions**. Format
+officiel : **45 questions en 2 min 30**, soit 3,3 s l'unité.
+
+- **La grille ne change pas de toute la session.** C'est le trait qui définit
+  l'épreuve : la mémoire ne remplace pas la recherche, elle l'accélère. Au fil
+  des questions on cesse de chercher les mots fréquents, on sait où ils sont.
+- **Les cinq propositions sont des codes de la grille**, jamais des nombres
+  inventés — relevé sur les captures de l'épreuve, où les vingt propositions
+  observées figuraient toutes au tableau. Conséquence : aucun code ne s'élimine
+  parce qu'il « n'existe pas », il faut vraiment retrouver la ligne du mot.
+  C'est le point qu'on n'aurait pas deviné, et celui qui fait la difficulté.
+- **Les codes se ressemblent, de plus en plus avec le niveau.** Ils sont bâtis
+  par **familles** : un code de référence, puis des variantes qui n'en changent
+  qu'un ou deux chiffres — ce qui reproduit les grilles réelles, où l'on trouve
+  1985, 1988, 1485 et 1785 côte à côte. Les distracteurs sont pris parmi les
+  plus proches du bon code : **61 % d'entre eux ne diffèrent que d'un ou deux
+  chiffres au niveau 1, 81 % au niveau 2, 96 % au niveau 3** — mesuré, et tenu
+  par un test.
+- **Les mots aussi se ressemblent.** Le vocabulaire est rangé par groupes de
+  ressemblance visuelle (`portail`, `portier`, `portique`, `portage`) ; les
+  niveaux élevés piochent plusieurs mots du même groupe, si bien qu'on ne peut
+  plus reconnaître une silhouette, il faut lire jusqu'au bout.
+- **Le niveau vaut pour la session entière**, contrairement à nos autres
+  épreuves où il monte par tiers : la grille étant fixe, la difficulté ne peut
+  pas monter en cours de route sans la remplacer — ce que l'épreuve ne fait
+  pas. Le **niveau 1 est le format réel** (douze mots) ; les niveaux 2 et 3
+  portent la grille à vingt puis trente mots.
+- **Répondre enchaîne aussitôt.** À 3,3 s la question, un bouton « suivant »
+  mangerait la moitié du temps. En entraînement, la bonne ligne de la grille
+  s'allume une seconde avant d'enchaîner — assez pour voir son erreur, pas
+  assez pour casser le rythme que l'épreuve exige d'installer.
+- **La session occupe l'écran seule** : à cette cadence, tout ce qui reste
+  au-dessus est une distraction.
+- **La correction nomme le mot du code donné par erreur** : « vous avez
+  répondu 1988, c'est le code de _galerie_ ». On comprend aussitôt qu'on a lu
+  une ligne à côté — ce qu'un simple « faux » ne dirait pas. Le bilan affiche
+  aussi le **débit** : les questions non traitées comptent comme fausses, et la
+  justesse sur ce qui a été traité est donnée à part.
+- **Le vocabulaire est une donnée de moteur, pas du contenu éditorial** : il
+  n'énonce aucun fait, ne se cite pas, n'a pas de source à créditer. Il vit
+  donc dans `codage.ts` et non dans `content/`.
+- **Logique pure** : `src/lib/psychotech/codage.ts` (grille, familles de codes,
+  distance entre codes, questions, notation), testée dans `codage.test.ts`
+  (16 tests). Lecteur dans `codage-test.tsx` — aucun rendu 3D, donc aucun
+  chargement différé.
+- **Route** : `/psychotechnique/codage` ; méthode rattachée à la fiche
+  `la-comparaison-de-nombres`, section « Le test de codage » — la comparaison
+  chiffre par chiffre qu'elle enseigne est exactement ce que le codage exige.
+
 ## Le test des formes imbriquées (rendu 3D, hors QCM)
 
 Reconstitution du **test des formes imbriquées** des sélections EOPAN. Un

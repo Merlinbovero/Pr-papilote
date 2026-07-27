@@ -12,6 +12,7 @@ import {
   GaugeIcon,
   Grid2x2Icon,
   GraduationCapIcon,
+  KeyboardIcon,
   LanguagesIcon,
   MapIcon,
   MenuIcon,
@@ -74,6 +75,7 @@ const ICONS: Record<NavIconName, LucideIcon> = {
   camera: CameraIcon,
   calculator: CalculatorIcon,
   shapes: ShapesIcon,
+  keyboard: KeyboardIcon,
   gauge: GaugeIcon,
 };
 
