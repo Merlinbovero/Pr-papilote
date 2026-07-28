@@ -182,6 +182,22 @@ a.pl-mark {
   gap: 10px 16px;
   flex-wrap: wrap;
 }
+/* Accès à la recherche : un lien, pas la palette. Voir le commentaire de
+   `planche-bandeau.tsx` — la palette sérialise 431 kB d'index par page. */
+.pl-recherche {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet);
+  padding-bottom: 2px;
+}
+.pl-recherche:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-filet-fort);
+}
 /* Bascule de registre — trois libellés, un filet, aucune surface. */
 .pl-registre {
   display: flex;

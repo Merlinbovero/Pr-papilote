@@ -81,6 +81,52 @@ sombre, et le format de production des sources (dessin vectoriel versionné).
 
 ---
 
+## Dette antérieure à M3 — deux tests Playwright rouges
+
+**Constaté le 2026-07-28, pendant le lot M3.** Deux fichiers de test échouent, et
+ils échouaient **déjà sur le commit précédent** : vérifié en construisant le
+commit antérieur dans un `git worktree` et en servant les deux versions côte à
+côte. Le lot M3 ne les a ni causés ni aggravés, et **ne les répare pas** : ce
+sont des fonctionnalités sans rapport avec le gabarit, et un lot de migration
+graphique ne doit pas les toucher.
+
+| Fichier                   | Symptôme                                                           |
+| ------------------------- | ------------------------------------------------------------------ |
+| `e2e/preparation.spec.ts` | le repère `region « Ma préparation »` n'existe plus dans `src/`    |
+| `e2e/revision.spec.ts`    | la séance de révision ne parvient pas à l'état attendu par le test |
+
+**Comment ils s'exécutent** — et pourquoi ils n'ont pas fait rougir un commit :
+
+- `npm run check` = `lint` + `typecheck` + `format:check` + `vitest run`.
+  **Playwright n'en fait pas partie.** Les 633 tests annoncés verts sont les
+  tests unitaires et d'intégration Vitest.
+- La suite Playwright s'exécute par `npm run test:e2e` (soit `playwright test`).
+  Elle démarre `npm run dev` par la configuration ; les routes protégées par
+  drapeau exigent `NEXT_PUBLIC_DESIGN_LAB=1` et `NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1`,
+  faute de quoi une trentaine de tests supplémentaires échouent sur des 404
+  attendus. Commande complète :
+
+  ```
+  NEXT_PUBLIC_DESIGN_LAB=1 NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1 npm run test:e2e
+  ```
+
+  Pour ces deux seuls fichiers :
+
+  ```
+  npx playwright test e2e/preparation.spec.ts e2e/revision.spec.ts
+  ```
+
+**À traiter dans un lot dédié**, hors migration : décider si « Ma préparation »
+doit revenir sur l'accueil ou si le test doit suivre la fonctionnalité là où
+elle a été déplacée, puis rebrancher le test sur l'état réel du produit.
+
+**Question ouverte à trancher au passage** : `npm run test:e2e` devrait-il
+entrer dans la porte de qualité, ou rester une vérification manuelle ? Tant
+qu'il en est dehors, une régression de bout en bout peut être commitée sans
+rien faire rougir.
+
+---
+
 ## V2 — améliorations importantes
 
 - Lighthouse CI branché après le premier déploiement (budgets de `docs/qualite-technique.md`).

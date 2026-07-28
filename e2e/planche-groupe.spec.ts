@@ -146,6 +146,20 @@ test.describe("gabarit PLANCHE en production", () => {
     await expect(page.getByRole("link", { name: "Mentions légales" })).toBeVisible();
   });
 
+  test("la recherche reste accessible par un lien, sans son index", async ({ page }) => {
+    const reponse = await page.goto(LECON);
+    const html = (await reponse?.text()) ?? "";
+    await expect(page.getByRole("link", { name: "Rechercher" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Rechercher" })).toHaveAttribute(
+      "href",
+      "/recherche"
+    );
+    // L'index sérialisé de la palette pèse 431 kB par page : il ne doit
+    // jamais revenir par un import de `buildSearchEntries` dans le bandeau.
+    // 200 kB laisse la marge d'une leçon longue, très loin des 516 kB d'avant.
+    expect(html.length).toBeLessThan(200_000);
+  });
+
   test("les jetons PLANCHE ne touchent jamais `:root`", async ({ page }) => {
     await page.goto(LECON);
     const surRacine = await page.evaluate(() =>

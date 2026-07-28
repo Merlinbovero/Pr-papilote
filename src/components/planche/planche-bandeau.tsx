@@ -21,11 +21,12 @@ import { NAV_SECTIONS } from "@/lib/navigation";
  * n'était plus atteignable depuis les quatorze leçons. Son habillage reste
  * celui de la charte historique jusqu'au lot des primitives.
  *
- * Ce que le bandeau ne porte **pas** : la recherche globale. Mesuré : sur une
- * leçon, l'index sérialisé de `SearchCommand` pèse 431 kB de HTML — la page
- * passe de 516 kB à 85 kB sans lui. Le point d'entrée sera réintroduit sous
- * une forme légère avec le lot de la recherche ; d'ici là, les six sections
- * du bandeau et les renvois de la leçon couvrent la navigation.
+ * La recherche est un **lien vers `/recherche`**, pas la palette. Mesuré : sur
+ * une leçon, l'index sérialisé de `SearchCommand` pèse 431 kB de HTML — la
+ * page passe de 516 kB à 85 kB sans lui. Le lien coûte quelques octets et
+ * garde la recherche à un clic ; la palette reviendra sous une forme légère
+ * avec le lot de la recherche. **Ne pas importer `buildSearchEntries` ici** :
+ * ce seul import ramènerait l'index sur les quatorze leçons.
  */
 export function PlancheBandeau({ actif }: { actif?: string }) {
   return (
@@ -45,6 +46,9 @@ export function PlancheBandeau({ actif }: { actif?: string }) {
         ))}
       </nav>
       <div className="pl-top-fin">
+        <Link href="/recherche" className="pl-recherche">
+          Rechercher
+        </Link>
         <PlancheRegistre />
         <AuthStatus />
       </div>

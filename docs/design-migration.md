@@ -596,8 +596,10 @@ l'index de recherche sérialisé, que le bandeau PLANCHE ne porte pas — mesur�
 - **`CourseExperience`** — progression, interaction, quiz — garde son habillage
   historique. Composant client partagé avec d'autres familles : sa mise en
   PLANCHE est le lot M5, pas un lot d'architecture.
-- **La recherche globale** n'est pas dans le bandeau PLANCHE : 431 kB par page.
-  Un point d'entrée léger viendra avec son lot.
+- **La palette de recherche** n'est pas dans le bandeau PLANCHE : son index
+  sérialisé pèse 431 kB par page. Le bandeau porte un **lien vers `/recherche`**
+  — quelques octets, la recherche à un clic — et un test interdit le retour de
+  l'index en plafonnant le HTML de la leçon à 200 kB.
 - **`AuthStatus`** est monté avec ses boutons historiques : le remplacer
   supposerait de dupliquer la logique de session.
 
@@ -608,6 +610,11 @@ commit précédent**, vérifié en servant les deux versions côte à côte. Le 
 `region « Ma préparation »` n'existe plus dans `src/` : le test survit à une
 fonctionnalité déplacée. Corriger cela demande de toucher une fonctionnalité
 sans rapport avec le gabarit ; ce sera un lot à part.
+
+Ils **ne font pas partie de `npm run check`**, qui enchaîne `lint`, `typecheck`,
+`format:check` et `vitest run` — la suite Playwright s'exécute séparément par
+`npm run test:e2e`. Commande, dette et question de porte de qualité sont
+consignées dans `docs/roadmap.md`, section « Dette antérieure à M3 ».
 
 ### 14.11 Procédure d'annulation
 
