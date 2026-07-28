@@ -41,6 +41,46 @@ Priorisation issue d'un audit d'usage : l'investissement pédagogique était con
 - **Production de contenu concours** : parcours guidés (cours) et enrichissement des banques EOPAN/EOPN/ALAT. **Bloqué sur sources** (annales, notices officielles).
 - **Intégration Supabase réelle** (déplace aussi un point V1) : faire de Supabase le socle multi-appareils de la progression/`préparation`. **Bloqué sur configuration** (variables d'environnement du projet).
 
+## Chantier ouvert — Système d'illustration technique PrépaPilote
+
+**Ouvert le 2026-07-28, sur réserve de la direction éditoriale.** Les croquis du
+prototype PLANCHE — silhouette d'appareil, schéma de couche limite — sont
+**acceptés comme provisoires du design-lab, refusés comme système graphique de
+production** : trop rudimentaires pour le niveau de précision du reste de la
+charte. **Ce chantier ne bloque pas la migration générale.**
+
+Le chantier devra définir une direction artistique complète, entièrement
+originale à PrépaPilote, inspirée des documents de bureau d'études aéronautiques
+et des manuels professionnels — jamais décalquée d'eux — pour :
+
+- les **schémas aérodynamiques** ;
+- les **forces et écoulements** ;
+- les **vues d'appareils** (silhouettes, trois vues, échelles comparées) ;
+- les **coupes** ;
+- les **instruments** ;
+- la **navigation** ;
+- les **plans** ;
+- les **illustrations scientifiques**.
+
+Il devra fixer, au minimum : les graisses de trait et leur signification, la
+grille de construction, le traitement des repères et des cotes, les conventions
+de coupe et de hachure, l'échelle et son affichage, le comportement en registre
+sombre, et le format de production des sources (dessin vectoriel versionné).
+
+**Règles en vigueur jusqu'à ce chantier** — elles s'appliquent dès maintenant :
+
+1. **Aucune silhouette approximative ne peut être présentée comme fidèle à un
+   appareil réel.** Un tracé qui n'a pas été établi sur des cotes sourcées est
+   un démonstrateur, et le dit.
+2. **Les démonstrateurs génériques restent explicitement signalés** — dans la
+   légende visible _et_ dans le texte alternatif.
+3. Les schémas existants sont conservés provisoirement, sans effort de
+   reprise : ce serait du travail perdu.
+4. **Aucune illustration décorative n'est inventée pour remplir un espace.** Un
+   emplacement sans figure reste vide, comme une donnée absente reste « — ».
+
+---
+
 ## V2 — améliorations importantes
 
 - Lighthouse CI branché après le premier déploiement (budgets de `docs/qualite-technique.md`).

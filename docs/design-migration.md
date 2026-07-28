@@ -1,0 +1,249 @@
+# Plan de migration — Système PLANCHE
+
+> **Statut : plan soumis à validation. Aucune migration n'est commencée.**
+> Le prototype (`/design-lab/planche/…`) est validé comme base ; ce document
+> décrit comment le faire descendre en production sans casser le site en
+> service. Il suppose la revue sur appareil réel faite — voir §0.
+
+---
+
+## 0. Ce qui conditionne le démarrage
+
+| Préalable                                     | État                                                                                                                                                                        |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Direction PLANCHE et trois prototypes validés | **Fait** (2026-07-28)                                                                                                                                                       |
+| Revue sur iPad, téléphone et ordinateur       | **À faire — par la direction éditoriale.** Je ne dispose que d'un navigateur sans écran : je peux mesurer des pixels, pas juger un confort de lecture. Banc d'essai fourni. |
+| Deux écarts mesurés tranchés                  | **À trancher** — voir §1                                                                                                                                                    |
+| Système d'illustration technique              | **Chantier séparé, non bloquant** (`docs/roadmap.md`)                                                                                                                       |
+
+---
+
+## 1. Les deux écarts à trancher avant le lot 1
+
+### La justure sur téléphone
+
+Mesurée à **42 signes** sur un écran de 393 px, contre les 66–72 que le
+manifeste déclare « non négociables sur tous les écrans ». **La règle est
+fausse et c'est mon erreur** : atteindre 66 signes à cette largeur exigerait un
+corps de 11 px, illisible.
+
+**Correction proposée au manifeste** : la justure vise 66–72 signes **dès que la
+largeur le permet** ; en dessous, **la taille du corps l'emporte sur le compte de
+signes**, jamais l'inverse. Un plancher de 15,5 px est posé sur écran étroit.
+
+### Les cibles tactiles
+
+Les liens d'annexe et de sommaire mesurent **33 px de haut**, sous les 44 px
+recommandés. **Correction proposée** : plancher de 44 px sur pointeur grossier
+(`@media (pointer: coarse)`), sans changer la densité visuelle sur bureau.
+
+---
+
+## 2. Composants globaux à migrer
+
+Dans cet ordre — chaque étage dépend du précédent.
+
+| #   | Étage          | Contenu                                                                                             | Risque                                                           |
+| --- | -------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 1   | **Jetons**     | `fond`, `fond-2`, `fond-3`, encres, filets, six encres de module, trois états, deux registres       | Faible — rien de visible ne change tant que rien ne les consomme |
+| 2   | **Fontes**     | Spectral, Fira Sans, Fira Mono auto-hébergées ; retrait de Geist et Archivo                         | Moyen — touche toutes les pages d'un coup                        |
+| 3   | **Gabarit**    | `PlancheRoot`, marge, corps, annexe, cartouche, cote, repères, pied de planche                      | Élevé — c'est la bascule visible                                 |
+| 4   | **Primitives** | Boutons, champs, tableaux, encadrés, citations, légendes, filets ; retrait des ombres et des rayons | Moyen                                                            |
+| 5   | **Chrome**     | Bandeau, pied de site, recherche, navigation de module                                              | Élevé — visible partout                                          |
+| 6   | **Familles**   | Les six archétypes, un par lot                                                                      | Contenu par contenu, réversible                                  |
+
+Les étages 1 et 2 se livrent **sans changement visuel** : les jetons PLANCHE
+sont ajoutés à côté des jetons existants, les fontes sont chargées mais non
+appliquées. C'est ce qui rend la bascule de l'étage 3 réversible en une ligne.
+
+---
+
+## 3. Ordre des familles
+
+L'ordre suit le **rapport bénéfice / risque**, pas la logique du plan de site.
+
+| Rang | Famille                                             | Pourquoi ici                                                                                                                                                               |
+| ---- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **La Leçon** — cours                                | Prototype déjà éprouvé, périmètre fermé (14 leçons), aucune interaction critique. C'est la famille où PLANCHE apporte le plus.                                             |
+| 2    | **La Planche d'identification** — fiches techniques | Volume le plus élevé (442 fiches) mais gabarit unique et déjà prototypé. Le gain de lisibilité y est immédiat.                                                             |
+| 3    | **Le Dossier** — concours                           | Hubs et index. Peu de texte, beaucoup de structure : la table numérotée s'y installe sans risque.                                                                          |
+| 4    | **Le Banc** — entraînement                          | Prototypé, mais touche le quiz, les scores et la progression. On y va **après** avoir stabilisé le reste, pour ne pas mêler refonte visuelle et régression fonctionnelle.  |
+| 5    | **Le Cahier** — culture                             | Titre à 52 px, lettrine : la famille la plus typographique, donc celle qui bénéficie le plus d'un système déjà rodé.                                                       |
+| 6    | **La Situation** — géopolitique                     | Quatre dossiers seulement, mais elle porte le cartouche d'arrêté et la section « ce qui reste incertain » — deux gestes qui demandent une reprise éditoriale en parallèle. |
+
+Hors familles, en dernier : accueil, recherche, espace authentifié.
+
+---
+
+## 4. Coexistence des deux chartes
+
+**Principe : jamais de « grand soir ».** Les deux chartes cohabitent le temps de
+la migration, et le partage se fait **par route**, pas par composant.
+
+- Les jetons PLANCHE sont posés sur une classe de portée, `.pl-root`, jusqu'à ce
+  que **toutes** les familles soient migrées. Ils ne montent sur `:root` qu'au
+  dernier lot, et ce jour-là le fichier `globals.css` perd ses anciens jetons
+  dans le même commit.
+- Une page migrée porte `PlancheRoot` ; une page non migrée ne le porte pas.
+  Aucune page ne mélange les deux.
+- Le drapeau `NEXT_PUBLIC_DESIGN_LAB` disparaît au lot 1 : la migration n'est
+  plus une expérimentation. À la place, chaque lot est **réversible par un
+  retour arrière git**, ce qui suppose de ne jamais mêler dans un même commit
+  une migration visuelle et une modification de contenu ou de logique.
+- **Le pansement `body:has(.pl-root)` ne survit pas au lot 3.** Voir §7.
+
+---
+
+## 5. Suppression progressive des styles historiques
+
+Dans cet ordre, et jamais avant la migration de la dernière famille qui les
+consomme.
+
+1. **Les jetons Tailwind de l'ancienne charte** (`--primary`, `--card`,
+   `--muted`…) restent tant qu'une primitive shadcn les utilise.
+2. **Les primitives shadcn** sont remplacées une par une par leur équivalent
+   PLANCHE. Celles qui n'ont pas d'équivalent (menu déroulant, dialogue) sont
+   **conservées et restylées**, pas réécrites.
+3. **Geist et Archivo** sont retirées du layout racine au lot 2. C'est le seul
+   retrait qui se voit immédiatement sur les pages non encore migrées : elles
+   passeront en Fira Sans avant d'avoir leur gabarit. **C'est acceptable et
+   volontaire** — un site en deux polices pendant deux semaines vaut mieux qu'un
+   site qui charge cinq familles.
+4. **`docs/refonte-design.md`** passe en archive au dernier lot ;
+   `docs/design-system.md` et `docs/ui-framework.md` sont réécrits pour se
+   conformer au manifeste, comme celui-ci l'annonce.
+
+**Règle de sécurité** : aucun style historique n'est supprimé dans le même
+commit que celui qui le remplace. Suppression au commit suivant, après
+vérification.
+
+---
+
+## 6. Tests de non-régression
+
+Le prototype en fournit le modèle ; la migration l'étend.
+
+| Test                      | Portée                                                                    | Où                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Contrastes                | Chaque encre, état et filet, sur les trois fonds, dans les deux registres | Vitest, `planche-tokens.test.ts` — **36 tests, déjà en place**                                |
+| Débordement horizontal    | Chaque route migrée × 3 largeurs                                          | Playwright, à étendre route par route                                                         |
+| Accessibilité             | axe-core WCAG A et AA                                                     | Playwright, sur chaque route migrée                                                           |
+| Focus visible             | Anneau de 2 px présent                                                    | Playwright                                                                                    |
+| Petites capitales réelles | Écart de largeur > 5 % avec et sans `smcp`                                | Playwright — **déjà en place**                                                                |
+| Donnée inconnue           | Toute cellule vide vaut « — », « N/A » interdit                           | Playwright — **déjà en place**                                                                |
+| Cibles tactiles           | ≥ 44 px sur pointeur grossier                                             | Playwright, **à écrire**                                                                      |
+| Justure                   | Entre 66 et 72 signes dès que la largeur le permet                        | Playwright, **à écrire**                                                                      |
+| Fonctionnel               | Quiz, progression, recherche, contenu                                     | Suites existantes, **inchangées** — c'est la garantie que la refonte ne touche pas la logique |
+
+**Captures de référence** : une par route migrée × 3 largeurs × 2 registres,
+prises au lot qui migre la route et comparées à chaque lot suivant.
+
+---
+
+## 7. Traitement propre du layout de production
+
+**Le pansement `body:has(.pl-root)` ne devient pas l'architecture.**
+
+Le prototype masque l'en-tête et le pied de production par une règle CSS parce
+qu'il vit sous le layout racine existant. En production, la solution est un
+**groupe de routes avec son propre layout racine** :
+
+```
+src/app/
+  (planche)/          ← layout racine PLANCHE : jetons, fontes, bandeau, pied
+    cours/…
+    [module]/…
+  (heritage)/         ← layout racine actuel, vidé au fil des lots
+    …
+```
+
+Next.js autorise plusieurs layouts racine dès lors qu'ils vivent dans des
+groupes de routes distincts. Le coût est un **déplacement de fichiers**, pas une
+réécriture : chaque route change de dossier au lot qui la migre, et le groupe
+`(heritage)` se vide jusqu'à disparaître.
+
+Conséquences à assumer :
+
+- une navigation entre les deux groupes provoque un **rechargement complet** —
+  acceptable, et de moins en moins fréquent à mesure que `(heritage)` se vide ;
+- le service worker et le manifeste PWA sont déclarés **une seule fois**, dans le
+  groupe PLANCHE, dès le lot 3.
+
+---
+
+## 8. Stratégie de cache des fontes
+
+Le prototype sert les fontes depuis `/public`, **sans empreinte dans le nom ni
+cache longue durée**. En production, deux options :
+
+| Option                                               | Avantage                                                                   | Coût                                                                                                                                                                                                                        |
+| ---------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A — Chargeur de fontes local** (`next/font/local`) | Empreinte automatique, cache immuable, préchargement géré                  | Le contrôle fin du préchargement se perd : le chargeur précharge toute la famille déclarée. Il faut **déclarer plusieurs familles** pour retrouver ce contrôle, ce qui casse l'italique dans la même famille que le romain. |
+| **B — `@font-face` manuel + en-tête de cache**       | Contrôle exact du préchargement, italique et romain dans une seule famille | Une règle `headers()` à maintenir, et une empreinte à poser à la main dans le nom de fichier à chaque mise à jour                                                                                                           |
+
+**Recommandation : B**, pour deux raisons. La première est le contrôle du
+préchargement — quatre fichiers sur sept, mesuré. La seconde est l'italique :
+avec l'option A, mettre l'italique dans une famille séparée ferait retomber
+`<em>` sur une italique **synthétisée**, ce que la charte interdit.
+
+Réglages : `Cache-Control: public, max-age=31536000, immutable`, empreinte de
+contenu dans le nom (`spectral-400.<hash>.woff2`), régénérée par le script de
+découpe.
+
+**Le script de découpe entre au dépôt** : le sous-ensemble et les fonctionnalités
+OpenType conservées (`smcp`, `c2sc`, `tnum`, `onum`, `lnum`) ne doivent pas
+dépendre d'une manipulation manuelle.
+
+---
+
+## 9. Optimisation des images
+
+Le prototype emploie `<img>` brut, volontairement, pour mesurer le poids réel :
+**228,7 kB pour une photographie affichée à 600 px de large**. Inacceptable en
+production.
+
+| Mesure                                                                          | Effet attendu                                                                 |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Composant d'image de Next, avec `sizes` renseigné par gabarit                   | Sert la largeur réelle, en AVIF ou WebP selon le navigateur                   |
+| Largeurs déclarées par famille — panoramique 3:1 en tête, portrait 4:3 en corps | Évite de servir 1 200 px pour un cadre de 600                                 |
+| `priority` sur la seule planche au-dessus de la ligne de flottaison             | Une image prioritaire par page, jamais deux                                   |
+| Étalonnage par filtre CSS conservé                                              | Aucun retraitement des fichiers sources — le registre sombre reste ajustable  |
+| Registre des crédits inchangé                                                   | Auteur, licence et source restent portés par le contenu, pas par le composant |
+
+**Cible mesurable** : moins de 120 kB par photographie servie à 800 px, contre
+228,7 kB aujourd'hui.
+
+---
+
+## 10. Découpe en lots
+
+Chaque lot est un commit vert, réversible, et livrable seul.
+
+| Lot     | Contenu                                                                                                                             | Visible ?                  |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| **M1**  | Jetons PLANCHE ajoutés à côté des existants + tests de contraste                                                                    | Non                        |
+| **M2**  | Fontes auto-hébergées, script de découpe, cache, retrait de Geist et Archivo                                                        | Oui — changement de police |
+| **M3**  | Groupe de routes `(planche)`, layout racine, gabarit, bandeau et pied ; retrait du pansement `:has`                                 | Oui — la bascule           |
+| **M4**  | Primitives : boutons, tableaux, encadrés, légendes ; retrait des ombres et rayons                                                   | Oui                        |
+| **M5**  | La Leçon — 14 leçons                                                                                                                | Oui                        |
+| **M6**  | La Planche d'identification — 442 fiches                                                                                            | Oui                        |
+| **M7**  | Le Dossier — hubs et index                                                                                                          | Oui                        |
+| **M8**  | Le Banc — entraînement, quiz, progression                                                                                           | Oui                        |
+| **M9**  | Le Cahier, puis La Situation                                                                                                        | Oui                        |
+| **M10** | Accueil, recherche, espace authentifié ; suppression des styles historiques ; réécriture de `design-system.md` et `ui-framework.md` | Oui                        |
+
+**Après chaque lot** : `npm run check` vert, captures de référence prises, suites
+fonctionnelles inchangées et vertes.
+
+---
+
+## 11. Ce qui ne change pas
+
+Pour lever toute ambiguïté : la migration est **visuelle**. Elle ne touche ni le
+contenu, ni les schémas de données, ni les moteurs de quiz, de progression, de
+recherche ou de psychotechnique. Un lot qui exigerait de modifier l'un d'eux
+n'est pas un lot de migration — c'est un chantier séparé, et il attend.
+
+---
+
+_Aucune migration n'a été commencée pour écrire ce document._
