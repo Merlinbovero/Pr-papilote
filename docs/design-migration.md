@@ -754,3 +754,121 @@ Un seul commit. Aucun contenu, schéma, migration SQL ni identifiant touché ;
 aucune logique métier modifiée. Pour ne retirer que l'habillage des
 interactions en gardant les primitives, il suffit de rétablir `interactive.tsx`
 dans sa forme précédente : les sept composants n'appellent que ses props.
+
+---
+
+## 16. Lot M5 — livré le 2026-07-28
+
+La famille **La Leçon** achevée : la cote gelée, le sommaire ancré, le bloc
+« Voir aussi », le sas de sortie. Toujours sur `/cours/[slug]` et ses quatorze
+leçons, et sur rien d'autre.
+
+### 16.1 La cote quitte le calcul pour le référentiel
+
+Avant M5, la page composait `FOND · AERO.07` au rendu, depuis la matière BIA et
+le rang du cours. Deux défauts : la grammaire n'était pas celle de l'archétype,
+et surtout **la valeur dépendait du tri courant** — insérer une leçon aurait
+décalé les suivantes, et une référence notée sur un cahier aurait cessé de
+désigner la même page.
+
+Les quatorze cotes ont été engendrées **une fois** depuis la hiérarchie, puis
+inscrites dans `content/_referentiels/cotes.json`. Le rendu les lit. Une leçon
+sans cote fait **échouer le build** plutôt que d'afficher un vide.
+
+|                                                    |                            |
+| -------------------------------------------------- | -------------------------- |
+| `forces-et-lois-de-newton`                         | `FOND · B.1.01`            |
+| `pression-et-ecoulement` → `stabilite-et-centrage` | `FOND · B.3.02` → `B.3.14` |
+
+La première leçon relève de la catégorie **Physique utile** (rang 1), les treize
+autres d'**Aérodynamique** (rang 3) : le `C` de la cote le dit, et c'est
+précisément ce qu'une cote dérivée du seul rang BIA masquait.
+
+### 16.2 Le sommaire ancré, par amélioration progressive
+
+| Couche  | Ce qu'elle apporte                | Sans elle                   |
+| ------- | --------------------------------- | --------------------------- |
+| Serveur | les ancres, le libellé, le numéro | —                           |
+| Client  | le repère de section courante     | la navigation reste entière |
+
+Un test s'exécute dans un contexte **`javaScriptEnabled: false`** : le sommaire
+y est visible, ses liens fonctionnent, l'ancre atteint sa cible. C'est le seul
+test qui distingue une amélioration progressive d'un composant client déguisé.
+
+Le repère n'écrit **jamais** dans l'URL. Un sommaire qui pousse un hash à chaque
+section remplit l'historique et rend le bouton « retour » inutilisable ; un test
+vérifie que le hash reste vide après trois défilements.
+
+### 16.3 Trois défauts trouvés en exécutant, pas en relisant
+
+**Le repère qui s'éteint.** La première version observait une bande étroite : un
+titre la traverse en une fraction de seconde, et dès qu'on s'arrêtait de défiler
+entre deux titres, plus rien n'était marqué. La section courante est désormais
+**la dernière dont le titre est passé** au-dessus du quart haut — une propriété
+de position, pas un événement fugace.
+
+**Le repère bloqué en bas de page.** Le dernier titre ne franchit jamais la
+ligne : le document ne peut plus défiler. Une sentinelle posée sur le pied de
+planche rend l'événement manquant.
+
+**Le défilement doux qui survit à son correctif.** `scroll-behavior: smooth`
+était déclaré après le bloc `prefers-reduced-motion` censé le neutraliser : même
+spécificité, la dernière règle gagnait. Il est maintenant déclaré **uniquement**
+sous `@media (prefers-reduced-motion: no-preference)`, ce qui ne dépend plus de
+l'ordre du fichier. Le test lisait `smooth` là où il attendait `auto` : sans
+lui, le défaut partait en production.
+
+### 16.4 Une source unique pour la numérotation
+
+La page codait ses numéros de paragraphe en dur (`numero={1}`…) tandis que le
+sommaire les dérivait. Deux sources pour un même numéro, donc deux réponses
+possibles. La page **lit désormais** ses numéros dans le sommaire
+(`numeroDeSection`) : le désaccord n'est plus représentable.
+
+Au passage, la section « Prérequis » reste au sommaire même vide : elle dit
+alors « Aucun — c'est le point de départ », ce qui est une information et non
+un vide.
+
+### 16.5 Le sas de sortie
+
+« → 14 questions portent sur cette leçon », vers `#se-tester`. Le compte est
+celui du **vivier réellement jouable**, pas de la liste déclarée : une question
+citée dans un format non jouable ne serait pas au rendez-vous. Un test compare
+le nombre annoncé au compteur du lecteur de quiz sur la même page. Singulier et
+pluriel accordés ; rien d'affiché quand le compte est nul.
+
+### 16.6 Ce que M5 n'a pas fait
+
+- **L'encadré Piège** n'est pas alimenté depuis `fiche.content.pieges` : les
+  fiches sont référencées, jamais recopiées. Il attendra que la leçon porte sa
+  propre donnée canonique.
+- **La prose des fiches** n'est pas rendue dans la leçon, pour la même raison.
+- **`QuizPlayer`** reste dans son bloc hôte, intouché.
+
+### 16.7 Preuves
+
+| Contrôle                                                        | Résultat                                           |
+| --------------------------------------------------------------- | -------------------------------------------------- |
+| Routes non migrées, pixel (worktree sur M4, servi en parallèle) | **32 sur 32 identiques**                           |
+| Tests unitaires                                                 | 667 verts, dont 6 sur la cote et 9 sur le sommaire |
+| Suite de bout en bout de la famille                             | 24 verts sur deux projets                          |
+| Sommaire sans JavaScript                                        | ancres visibles et fonctionnelles                  |
+| Hash de l'URL pendant le défilement                             | inchangé                                           |
+| `prefers-reduced-motion`                                        | `scroll-behavior: auto`                            |
+| Débordement à 390 / 834 / 1440                                  | 0 px                                               |
+| Suite complète                                                  | 360 verts, 3 rouges — les mêmes qu'avant M5        |
+
+Les trois rouges restants sont la dette consignée dans `docs/roadmap.md`
+(`preparation.spec.ts`, `revision.spec.ts`), inchangée.
+
+### 16.8 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M5>
+npm run check
+```
+
+Un seul commit. Le référentiel de cotes disparaît avec lui — aucune donnée
+utilisateur, aucune migration SQL, aucun identifiant de contenu touché. Pour ne
+retirer que le sommaire en gardant la cote, il suffit de retirer
+`<PlancheSommaire>` de l'annexe : le reste de la page l'ignore.

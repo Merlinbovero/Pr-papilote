@@ -59,11 +59,19 @@ EOPN  · C.6.11     Appareils, 11ᵉ planche
 PSY   · F.1.04     Épreuves, 4ᵉ banc
 ```
 
-**La cote est stable et gelée.** Elle se dérive de données déjà présentes dans
-le contenu ; elle n'est jamais saisie à la main, jamais renumérotée après coup.
-Une fiche déplacée garde sa cote et reçoit un renvoi. C'est la condition pour
-qu'une cote puisse être notée sur un cahier par un candidat et retrouvée six
-mois plus tard.
+**La cote est stable et gelée.** Elle n'est jamais saisie à la main, jamais
+renumérotée après coup. Une fiche déplacée garde sa cote et reçoit un renvoi.
+C'est la condition pour qu'une cote puisse être notée sur un cahier par un
+candidat et retrouvée six mois plus tard.
+
+**Où elle vit — lot M5.** La hiérarchie du contenu sert à _engendrer_ la
+référence initiale, une fois. La valeur est ensuite **inscrite** dans
+`content/_referentiels/cotes.json`, associée au slug, et lue au rendu. Elle
+n'est plus recalculée : sans quoi ajouter une leçon en renumérotererait
+d'autres, et la référence notée sur un cahier ne vaudrait plus rien. Quatre
+tests la tiennent (`src/lib/content/cotes.test.ts`) : unicité, présence pour
+chaque leçon publiée, conformité à la grammaire, et **stabilité** — un tableau
+gelé, qu'on n'ouvre que pour ajouter une ligne à la fin.
 
 ---
 

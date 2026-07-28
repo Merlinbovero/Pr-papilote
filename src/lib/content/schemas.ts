@@ -51,6 +51,27 @@ export const categoriesFileSchema = z.object({
   culture: z.array(categorySchema).min(1),
 });
 
+/**
+ * Cote documentaire — `MODULE · F.C.NN` (docs/design-archetypes.md §1).
+ *
+ * Une cote se note sur un cahier et se retrouve six mois plus tard : elle est
+ * donc **inscrite** dans `content/_referentiels/cotes.json`, jamais recalculée
+ * au rendu. Le rendu ne dépend d'aucun tri courant, et ajouter une leçon ne
+ * renumérote rien.
+ */
+export const coteSchema = z
+  .string()
+  .regex(
+    /^[A-Z]{3,5} · [A-F]\.\d{1,2}\.\d{2}$/,
+    "cote invalide (attendu : MODULE · F.C.NN, ex. « FOND · B.3.07 »)"
+  );
+
+export const cotesFileSchema = z.object({
+  /** Commentaire de tête du fichier — ignoré par le chargeur. */
+  _doc: z.array(z.string()).optional(),
+  cours: z.record(slugSchema, coteSchema),
+});
+
 export type Module = z.infer<typeof moduleSchema>;
 export type Category = z.infer<typeof categorySchema>;
 export type ModuleKind = z.infer<typeof moduleKindSchema>;

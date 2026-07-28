@@ -1,0 +1,31 @@
+{
+  "_doc": [
+    "Cotes documentaires des leçons — GELÉES (lot M5).",
+    "Une cote identifie une leçon comme une référence de manuel : on la note",
+    "sur un cahier, on la retrouve six mois plus tard. Elle est donc inscrite",
+    "ici, jamais recalculée au rendu.",
+    "Grammaire : MODULE · F.C.NN (docs/design-archetypes.md §1). F=B pour la",
+    "famille Cours ; C = rang de la catégorie Fondamentaux ; NN = rang de la",
+    "leçon dans son parcours, sur deux chiffres.",
+    "Les valeurs initiales ont été dérivées une fois de cette hiérarchie, le",
+    "2026-07-28, puis figées. AJOUTER une leçon = ajouter une cote neuve.",
+    "NE JAMAIS renuméroter une cote existante, même si l'ordre change : une",
+    "référence déplacée garde sa cote et reçoit un renvoi."
+  ],
+  "cours": {
+    "forces-et-lois-de-newton": "FOND · B.1.01",
+    "pression-et-ecoulement": "FOND · B.3.02",
+    "bernoulli-et-venturi": "FOND · B.3.03",
+    "les-souffleries": "FOND · B.3.04",
+    "la-force-aerodynamique": "FOND · B.3.05",
+    "trainee-induite-et-allongement": "FOND · B.3.06",
+    "couche-limite-et-decrochage": "FOND · B.3.07",
+    "la-polaire-et-la-finesse": "FOND · B.3.08",
+    "les-types-de-profils": "FOND · B.3.09",
+    "dispositifs-hypersustentateurs": "FOND · B.3.10",
+    "les-axes-et-les-gouvernes": "FOND · B.3.11",
+    "les-bilans-de-forces": "FOND · B.3.12",
+    "les-effets-moteur": "FOND · B.3.13",
+    "stabilite-et-centrage": "FOND · B.3.14"
+  }
+}

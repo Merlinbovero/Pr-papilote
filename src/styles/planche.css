@@ -714,6 +714,14 @@ a.pl-mark {
   margin-bottom: 28px;
   font-size: 15px;
 }
+.pl-sortie a {
+  color: var(--pl-encre);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet-fort);
+}
+.pl-sortie a:hover {
+  border-bottom-color: var(--pl-mod);
+}
 .pl-pied {
   border-top: 2px solid var(--pl-filet-fort);
   margin-top: 34px;
@@ -786,6 +794,45 @@ a.pl-mark {
   flex: none;
 }
 .pl-toc a:hover {
+  color: var(--pl-encre);
+}
+.pl-toc-n {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  color: var(--pl-encre-3);
+  min-width: 12px;
+}
+/* Repère plein sur la section courante — le sommaire dit où l'on est, sans
+   barre de progression de lecture (docs/design-archetypes.md, La Leçon). */
+.pl-toc a[aria-current="true"] {
+  color: var(--pl-encre);
+}
+.pl-toc a[aria-current="true"]::before {
+  background: var(--pl-mod);
+  height: 3px;
+}
+
+/* ---- voir aussi ---- */
+.pl-voir {
+  display: flex;
+  flex-direction: column;
+}
+.pl-voir a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  line-height: 1.45;
+}
+.pl-voir a::before {
+  content: "→";
+  color: var(--pl-filet-fort);
+  flex: none;
+}
+.pl-voir a:hover {
   color: var(--pl-encre);
 }
 .pl-chrono {
@@ -1403,6 +1450,22 @@ button.pl-etape:hover {
 .pl-root,
 .pl-univers {
   overflow-x: clip;
+}
+/* Le saut vers une ancre n'est adouci que si le lecteur n'a rien demandé
+   d'autre. Déclaré en `no-preference` plutôt que neutralisé plus bas : la
+   règle ne dépend alors pas de l'ordre des blocs — c'est exactement ce qui
+   avait fait échouer la première version, le `smooth` étant redéclaré après
+   son propre correctif. */
+@media (prefers-reduced-motion: no-preference) {
+  .pl-root,
+  .pl-univers {
+    scroll-behavior: smooth;
+  }
+}
+/* Une ancre ne colle pas au bord haut de la fenêtre. */
+.pl-corps [id],
+.pl-annexe [id] {
+  scroll-margin-top: 24px;
 }
 /* Conteneur du groupe de routes — lot M3.
    Il porte les jetons pour le bandeau et le pied de page, et pousse ce

@@ -6,7 +6,13 @@ import {
   type Competence,
   type Predicate,
 } from "./content-schemas";
-import { categoriesFileSchema, modulesFileSchema, type Category, type Module } from "./schemas";
+import {
+  categoriesFileSchema,
+  cotesFileSchema,
+  modulesFileSchema,
+  type Category,
+  type Module,
+} from "./schemas";
 
 /**
  * Chargeurs des référentiels de contenu (content/_referentiels/).
@@ -113,4 +119,44 @@ export function getCompetences(): Competence[] {
 /** Une compétence par identifiant, ou undefined si inconnue. */
 export function getCompetence(id: string): Competence | undefined {
   return getCompetences().find((c) => c.id === id);
+}
+
+let cotesCoursCache: Map<string, string> | undefined;
+
+/**
+ * Les cotes documentaires des leçons — **gelées** (lot M5).
+ *
+ * Lues dans `content/_referentiels/cotes.json`, jamais dérivées au rendu.
+ * Deux leçons ne peuvent pas porter la même cote : le build échoue plutôt
+ * que de servir deux pages sous une référence identique.
+ */
+function buildCotesCours(): Map<string, string> {
+  const fichier = cotesFileSchema.parse(readJson("cotes.json"));
+  const index = new Map(Object.entries(fichier.cours));
+  const cotes = new Set(index.values());
+  if (cotes.size !== index.size) {
+    throw new Error("Référentiel cotes : deux leçons portent la même cote");
+  }
+  return index;
+}
+
+/**
+ * La cote d'une leçon, ou `undefined` si elle n'en a pas encore.
+ *
+ * Une leçon sans cote est une erreur d'intégrité, pas un cas nominal : la
+ * page de cours fait échouer le build plutôt que d'afficher un vide.
+ */
+export function getCoteCours(slug: string): string | undefined {
+  if (!cotesCoursCache) {
+    cotesCoursCache = buildCotesCours();
+  }
+  return cotesCoursCache.get(slug);
+}
+
+/** Toutes les cotes de leçon, pour les contrôles d'intégrité. */
+export function getCotesCours(): ReadonlyMap<string, string> {
+  if (!cotesCoursCache) {
+    cotesCoursCache = buildCotesCours();
+  }
+  return cotesCoursCache;
 }

@@ -17,7 +17,9 @@ import {
 } from "@/lib/content/cours";
 import { getFicheById, getFicheHref } from "@/lib/content/fiches";
 import { getBiaMatiere } from "@/lib/bia/config";
-import { getCategory } from "@/lib/content/referentials";
+import { getCategory, getCoteCours } from "@/lib/content/referentials";
+import { numeroDeSection, sasDeSortie, sommaireLecon } from "@/lib/lecon/sommaire";
+import { PlancheSommaire } from "@/components/planche/planche-sommaire";
 import { buildCoursePool } from "@/features/quiz/notion-pool";
 
 /**
@@ -91,9 +93,24 @@ export default async function CoursePage({ params }: CoursePageProps) {
     obligatoire: s.obligatoire,
   }));
 
-  // La cote de planche est **dérivée** d'identifiants existants — matière BIA
-  // et numéro d'ordre du cours — et n'invente rien.
-  const cote = `FOND · ${course.matiereBia.slice(0, 4).toUpperCase()}.${String(course.ordre).padStart(2, "0")}`;
+  // La cote est **lue** dans `content/_referentiels/cotes.json`, jamais
+  // recalculée : elle se note sur un cahier et doit se retrouver six mois plus
+  // tard. Une leçon sans cote est une erreur d'intégrité, pas un cas nominal.
+  const cote = getCoteCours(course.slug);
+  if (!cote) {
+    throw new Error(`Cote manquante pour la leçon « ${course.slug} » (cotes.json)`);
+  }
+
+  // Le sommaire décrit ce que la page rend : il est calculé au serveur, ses
+  // ancres existent donc dans le HTML et fonctionnent sans JavaScript.
+  const sommaire = sommaireLecon({
+    etapes: steps.some((s) => s.obligatoire),
+    interaction: steps.some((s) => s.kind === "interaction") && course.interactions.length > 0,
+    quiz: steps.some((s) => s.kind === "quiz") && quizPool.length > 0,
+    exercices: exercices.length > 0,
+  });
+  // Le compte porte sur les questions **jouables**, pas sur la liste déclarée.
+  const sas = sasDeSortie(quizPool.length);
   // La révision est la date de vérification de la première fiche du cours.
   // Sans fiche, la donnée est inconnue : elle s'écrit « — », jamais estimée.
   const revision = fiches[0]?.verifiedAt ?? "—";
@@ -128,7 +145,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
           <p className="pl-chapo">{course.description}</p>
 
           <section aria-label="Objectifs">
-            <PlancheSection numero={1} id="objectifs">
+            <PlancheSection numero={numeroDeSection(sommaire, "objectifs")} id="objectifs">
               Objectifs
             </PlancheSection>
             <ul>
@@ -139,7 +156,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
           </section>
 
           <section aria-label="Prérequis">
-            <PlancheSection numero={2} id="prerequis">
+            <PlancheSection numero={numeroDeSection(sommaire, "prerequis")} id="prerequis">
               Prérequis
             </PlancheSection>
             {course.prerequisites.length === 0 ? (
@@ -154,7 +171,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
           </section>
 
           <section aria-label="Fiches à étudier">
-            <PlancheSection numero={3} id="fiches">
+            <PlancheSection numero={numeroDeSection(sommaire, "fiches")} id="fiches">
               Fiches à étudier
             </PlancheSection>
             <ul className="pl-renvois">
@@ -183,7 +200,10 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
           {exercices.length > 0 ? (
             <section aria-label="Exercices" id="exercices">
-              <PlancheSection numero={4} id="exercices-titre">
+              <PlancheSection
+                numero={numeroDeSection(sommaire, "exercices-titre")}
+                id="exercices-titre"
+              >
                 Exercices guidés
               </PlancheSection>
               {exercices.map((ex) => (
@@ -211,6 +231,12 @@ export default async function CoursePage({ params }: CoursePageProps) {
             </section>
           ) : null}
 
+          {sas ? (
+            <p className="pl-sortie">
+              → <a href="#se-tester">{sas}</a>
+            </p>
+          ) : null}
+
           <section aria-label="À retenir" id="revision">
             <PlancheEncadre libelle="L’essentiel à retenir" titre id="essentiel">
               <ul>
@@ -232,6 +258,19 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </div>
 
         <aside className="pl-annexe">
+          <p className="pl-an-h" id="sommaire">
+            Dans cette leçon
+          </p>
+          <PlancheSommaire entrees={sommaire} />
+
+          <p className="pl-an-h">Voir aussi</p>
+          <nav className="pl-voir" aria-label="Voir aussi">
+            {previous ? <Link href={`/cours/${previous.slug}`}>{previous.title}</Link> : null}
+            {next ? <Link href={`/cours/${next.slug}`}>{next.title}</Link> : null}
+            {categorie ? <Link href={fondamentauxHref}>{categorie.name}</Link> : null}
+            {matiere ? <Link href={biaHref}>{matiere.name}</Link> : null}
+          </nav>
+
           <p className="pl-an-h">Repères</p>
           <div className="pl-an-row">
             <span>Durée estimée</span>
@@ -245,12 +284,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <span>Questions</span>
             <span className="pl-num">{course.questions.length}</span>
           </div>
-          {categorie ? (
-            <div className="pl-an-row">
-              <span>Fondamentaux</span>
-              <Link href={fondamentauxHref}>{categorie.name}</Link>
-            </div>
-          ) : null}
 
           {course.sources.length > 0 ? (
             <>
