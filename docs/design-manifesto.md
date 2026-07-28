@@ -320,14 +320,33 @@ attention, `#ED756A` erreur.
 
 Trois familles, choisies pour ce qu'elles savent faire, pas pour leur allure.
 
-> **Arbitrage du 2026-07-28.** Spectral est **validée comme voix éditoriale
-> principale** : grands titres, introductions, citations, numérotation, articles,
-> mode lecture, éléments de chapitre. Elle **ne remplace pas la sans-serif dans
-> l'interface** — c'est une limite, pas une préférence de goût. La sans-serif
-> d'interface est **validée à titre provisoire** en Fira Sans, dans l'attente
-> d'un comparatif visuel entre trois appariements sur trois écrans identiques
-> (cours scientifique, fiche appareil, session d'entraînement). Ce comparatif est
-> produit ; le choix reste à trancher. Voir `docs/design-ecrans-maitres.md`.
+> **Arbitrage du 2026-07-28 — arrêté.** Appariement **A** retenu :
+> **Spectral + Fira Sans**, après comparatif avec IBM Plex Sans et Inria Sans sur
+> trois écrans identiques.
+>
+> - **Spectral** porte la voix éditoriale : grands titres, introductions,
+>   citations, numérotation, articles, mode lecture, éléments de chapitre. Elle
+>   **ne prend jamais l'interface**.
+> - **Fira Sans** porte l'interface et le fonctionnement.
+> - **Fira Mono** est **restreinte** : codes, fréquences, coordonnées,
+>   références et cotes, valeurs techniques de tableau, dates de chronologie,
+>   chronomètres. Partout ailleurs — libellés, mentions, comptes rédigés — c'est
+>   Fira Sans. Une monospace employée pour « faire technique » est un défaut.
+>
+> **Conséquence d'implémentation, vérifiée à la source.** Le sous-ensemble
+> webfont servi par Google Fonts pour Spectral **ne contient pas la
+> fonctionnalité `smcp`** : ses tables GSUB n'exposent que `ccmp dnom frac kern
+liga locl mark numr pnum tnum`. Le TTF source OFL, lui, expose `smcp`, `c2sc`,
+> `onum`, `lnum` et `tnum`. **`next/font/google` ne peut donc pas produire de
+> vraies petites capitales** — il ne resterait que la synthèse du navigateur, que
+> nous nous interdisons.
+>
+> Les fontes doivent être **auto-hébergées**, découpées depuis les TTF sources en
+> conservant explicitement `smcp`, `c2sc`, `tnum`, `onum` et `lnum`. Coût mesuré
+> sur le jeu complet (Spectral 400/600/italique, Fira Sans 400/500/600, Fira Mono
+> 400/500) : **211 kB de woff2** pour le sous-ensemble latin. Fira Sans expose
+> également `smcp` ; Fira Mono n'en a pas besoin, une monospace ayant déjà des
+> chasses fixes.
 
 ### Spectral — la lecture
 
@@ -499,6 +518,28 @@ gauche dans l'encre du module — jamais par une pastille de couleur.
 `DÉFINITION` · `MÉTHODE` · `PIÈGE` · `À RETENIR`
 
 Teinte de fond autorisée : 4 % de l'encre du module, pas davantage.
+
+Les libellés sont composés en **vraies petites capitales** (`smcp`). La synthèse
+du navigateur est interdite : un texte saisi en capitales auquel on applique
+`font-variant-caps` ne produit pas de petites capitales, et une graisse réduite
+en fausse encore moins. Si la fonctionnalité n'est pas disponible, on emploie des
+capitales franches — jamais une imitation.
+
+### Les quatre statuts de l'énoncé
+
+**Obligation éditoriale, arrêtée le 2026-07-28.** Un lecteur doit voir, sans
+lire, à quoi il a affaire. Quatre statuts, quatre traitements distincts :
+
+| Statut         | Traitement                                                                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Fait**       | Corps de texte normal, appel de source numéroté.                                                                                                             |
+| **Estimation** | Mention explicite (« environ », « de l'ordre de ») **et** source de l'estimation. Jamais une estimation présentée comme une mesure.                          |
+| **Analyse**    | Attribuée à qui la tient, dans le texte. Une analyse sans auteur n'est pas publiable.                                                                        |
+| **Hypothèse**  | Encadré ou section propre, jamais fondue dans le fil des faits. La section « ce qui reste incertain » en est la forme obligatoire pour la famille Situation. |
+
+Et la règle qui les précède toutes : **une donnée inconnue s'écrit `—`.** Jamais
+« N/A », jamais un blanc, jamais une valeur inventée ni une estimation
+silencieuse.
 
 ### Tableaux
 
@@ -696,18 +737,21 @@ Devant un choix graphique, poser trois questions dans cet ordre :
 
 ## État des arbitrages au 2026-07-28
 
-| Point                   | État                          | Détail                                                                              |
-| ----------------------- | ----------------------------- | ----------------------------------------------------------------------------------- |
-| Direction PLANCHE       | **Arrêtée**                   | Devient la loi du projet après validation des écrans maîtres.                       |
-| Les six familles        | **Arrêtées**                  | Le Banc dépouillé en session ; son hub reste sous charte.                           |
-| Retrait d'Archivo       | **Arrêté**                    | Spectral devient la voix éditoriale.                                                |
-| Spectral, rôle          | **Arrêté**                    | Voix éditoriale seulement — elle ne prend pas l'interface.                          |
-| Abandon du blanc pur    | **Arrêté**                    | Blanc cassé neutre ; le papier chaud sépia est refusé.                              |
-| Mode sombre             | **Arrêté**                    | Charbon bleuté, pas un papier sombre simulé.                                        |
-| Marge technique         | **Arrêtée dans son principe** | Responsive, trois variantes, désactivable. La valeur fixe de 200 px est abandonnée. |
-| Sans-serif d'interface  | **En attente**                | Fira Sans à titre provisoire ; comparatif produit, choix à trancher.                |
-| Valeurs de palette      | **En attente**                | Calculées et vérifiées ; soumises pour accord.                                      |
-| Les sept écrans maîtres | **En attente**                | Maquettes produites ; validation écran par écran.                                   |
+| Point                  | État           | Détail                                                                                |
+| ---------------------- | -------------- | ------------------------------------------------------------------------------------- |
+| Direction PLANCHE      | **Arrêtée**    | Devient la loi du projet après validation des écrans maîtres.                         |
+| Les six familles       | **Arrêtées**   | Le Banc dépouillé en session ; son hub reste sous charte.                             |
+| Retrait d'Archivo      | **Arrêté**     | Spectral devient la voix éditoriale.                                                  |
+| Spectral, rôle         | **Arrêté**     | Voix éditoriale seulement — elle ne prend pas l'interface.                            |
+| Abandon du blanc pur   | **Arrêté**     | Blanc cassé neutre ; le papier chaud sépia est refusé.                                |
+| Mode sombre            | **Arrêté**     | Charbon bleuté, pas un papier sombre simulé.                                          |
+| Marge technique        | **Arrêtée**    | Trois variantes, désactivable, **déclarée** par `marginMode` — jamais déduite du DOM. |
+| Sans-serif d'interface | **Arrêtée**    | Fira Sans (appariement A). Fira Mono restreinte aux codes, références et valeurs.     |
+| Valeurs de palette     | **Arrêtées**   | `#FBFAF8` clair, `#10141A` sombre. Seuils de contraste à couvrir par les tests.       |
+| Petites capitales      | **Arrêtées**   | Vraies `smcp` seulement, donc fontes auto-hébergées. Aucune synthèse.                 |
+| Statuts de l'énoncé    | **Arrêtés**    | Fait, estimation, analyse, hypothèse distingués. Donnée inconnue = `—`.               |
+| Huit écrans maîtres    | **En attente** | Exports produits en contenu réel ; validation écran par écran.                        |
+| Prototype codé         | **À venir**    | Trois écrans isolés derrière un drapeau, sans toucher aux jetons de production.       |
 
 ---
 

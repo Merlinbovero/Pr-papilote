@@ -6,8 +6,11 @@
 > le produire. La refonte du code ne commence qu'après validation des écrans
 > ci-dessous.
 >
-> **Maquette visuelle** (composition réelle, fontes embarquées, sélecteur de
-> variante de marge) :
+> **Exports visuels, contenu réel** — huit écrans × desktop clair, desktop sombre,
+> mobile :
+> <https://claude.ai/code/artifact/aa2b69bc-9834-4694-8368-3aa40c708757>
+>
+> **Dossier d'arbitrage** (palette, comparatif typographique, variantes de marge) :
 > <https://claude.ai/code/artifact/92aa1905-b062-4e27-83d6-cebaeb4ee5eb>
 
 ---
@@ -35,6 +38,22 @@
 **Règle de bascule.** Ce n'est pas la largeur d'écran seule, c'est **la charge** :
 une marge qui ne porte rien ne s'affiche pas, même sur un grand écran. Une page
 sans repères de section retombe sur la variante 2. **La marge large se mérite.**
+
+### La décision est déclarative
+
+**Arrêté le 2026-07-28.** La variante n'est **jamais déduite du contenu présent
+dans le DOM**. Elle est déclarée, par archétype et surchargeable par page :
+
+```ts
+type MarginMode = "wide" | "rail" | "none";
+```
+
+Chaque archétype porte un `marginMode` par défaut ; les métadonnées d'une page
+peuvent le surcharger. Une déduction automatique serait invisible, instable au
+fil des éditions, et impossible à tester — trois raisons de ne pas la faire. Les
+largeurs restent responsives à l'intérieur du mode déclaré : `wide` retombe sur
+`rail` puis sur `none` quand la fenêtre se resserre, mais **une page déclarée
+`none` ne remonte jamais**.
 
 **Marge par défaut, par famille**
 
@@ -65,26 +84,43 @@ appareil, session d'entraînement.
 Sa licence la réserve à l'État : elle est écartée pour raison juridique, pas
 esthétique.
 
-**Recommandation : A — Fira Sans**, et sans enthousiasme militant. C'est le choix
-qui laisse le plus de place à Spectral. Plex a un caractère fort, mais ce
-caractère est déjà celui d'une marque technologique installée et il entre en
-concurrence avec la voix éditoriale. Inria est séduisante et son histoire
-française est réelle, mais ses formes rondes affaiblissent le registre
-d'instruction militaire du Dossier.
+**Décision : A — Spectral + Fira Sans**, arrêtée le 2026-07-28. Spectral porte la
+voix éditoriale, Fira Sans l'interface et le fonctionnement.
 
-**Le seul argument sérieux en faveur de B** : la superfamille. Adopter Plex Sans
-permettrait de prendre Plex Mono, donc une seule fonderie pour l'interface et la
-donnée. Si la cohérence de famille compte plus que l'effacement, c'est B.
+**Fira Mono est restreinte.** Elle ne sert plus qu'aux codes, fréquences,
+coordonnées, références et cotes, valeurs techniques de tableau, dates de
+chronologie et chronomètres. Les libellés, les mentions d'annexe et les comptes
+rédigés (« 11 fiches ») repassent en Fira Sans — seul le nombre reste en Mono,
+pour que les colonnes de chiffres s'alignent.
 
-**Constat honnête** : sur le Banc, la sans-serif ne porte presque rien —
-compteur, chronomètre, lettres de proposition. C'est l'écran où le choix compte
-le moins, et cela retire un argument au débat.
+### Petites capitales : ce que la vérification a changé
+
+**Le sous-ensemble webfont de Spectral servi par Google Fonts ne contient pas
+`smcp`.** Vérifié en inspectant les tables GSUB du woff2 réellement servi : il
+n'expose que `ccmp dnom frac kern liga locl mark numr pnum tnum`. Le TTF source
+OFL, lui, expose `smcp`, `c2sc`, `onum`, `lnum` et `tnum`.
+
+Conséquence directe : **`next/font/google` ne peut pas produire de vraies petites
+capitales.** Il ne resterait que la synthèse du navigateur — interdite.
+
+Les fontes seront donc **auto-hébergées**, découpées depuis les TTF sources en
+conservant explicitement `smcp`, `c2sc`, `tnum`, `onum`, `lnum`. Coût mesuré sur
+le jeu complet — Spectral 400 / 600 / italique, Fira Sans 400 / 500 / 600, Fira
+Mono 400 / 500, sous-ensemble latin — : **211 kB de woff2**. Fira Sans expose
+aussi `smcp`. Fira Mono n'en a pas besoin.
+
+**Constat honnête sur le comparatif** : sur le Banc, la sans-serif ne porte
+presque rien — compteur, chronomètre, lettres de proposition. C'est l'écran où le
+choix comptait le moins, et cela retirait un argument au débat plutôt que d'en
+ajouter un.
 
 ---
 
-# Les sept écrans maîtres
+# Les huit écrans maîtres
 
-Chaque écran est décrit selon les mêmes dix points. Ce qui est commun au système
+Sept écrans demandés, plus le hub du Banc — complément à l'arbitrage qui veut
+que, hors session, Le Banc reste sous charte. Chaque écran est décrit selon les
+mêmes dix points. Ce qui est commun au système
 (cote, pied de planche, justure, rythme) n'est pas répété : seules les inflexions
 le sont.
 
@@ -390,7 +426,92 @@ la chronologie en marge, l'arrêté daté, le dépouillement du Banc.
 
 ---
 
-## 4. Ordre de refonte, après validation
+## 4. Les exports visuels
+
+**Produits le 2026-07-28**, en **contenu réel du dépôt** : fiches, cours,
+référentiels, photographies créditées, comptes mesurés. Vingt-quatre images —
+huit écrans × trois variantes (desktop clair 1440 px, desktop sombre 1440 px,
+mobile clair 390 px), chacune dans la marge de son archétype.
+
+<https://claude.ai/code/artifact/aa2b69bc-9834-4694-8368-3aa40c708757>
+
+**Ce qui est réel dans les exports** : le texte des fiches _La couche limite et
+le décollement_, _Rafale M_, _Hélène Boucher_ et _L'organisation de la Défense
+française_ ; les caractéristiques Dassault Aviation ; les articles 15 et 21 de la
+Constitution ; les photographies avec auteur, licence et source ; les comptes du
+fonds (442 fiches, 1 127 questions, 14 leçons, 11 appareils EOPAN) ; le format
+officiel du test des triangles.
+
+**Ce qui ne l'est pas, et qui est signalé comme tel dans les exports** :
+
+- la **silhouette** de la fiche appareil est un tracé **générique de
+  démonstration**. Elle montre le traitement — graisses, cadrage, encre du
+  module — et non la géométrie du Rafale M. Le fonds de silhouettes fidèles reste
+  un chantier de fond ;
+- le **schéma** de la leçon est tracé pour la maquette ;
+- la section **« ce qui reste incertain »** du dossier géopolitique est rendue
+  **vide et signalée** : la fiche réelle est antérieure à la règle ;
+- **aucune citation** n'apparaît dans l'article culturel, parce que la fiche n'en
+  contient aucune de sourcée. Le gabarit ne fabrique pas de citation pour remplir
+  un bloc ;
+- le **relevé** du hub d'entraînement affiche `—` : aucune séance n'est
+  enregistrée.
+
+### Trois corrections faites au rendu
+
+Aucune n'était visible dans les documents ; toutes le sont devenues à l'écran.
+
+1. **Les repères de marge étaient posés au jugé.** Ils sont maintenant calculés
+   en face de la section qu'ils annoncent — sinon la marge ment.
+2. **La colonne de texte était plus large que sa justure**, laissant les filets
+   déborder de cent pixels au-delà du texte. Corps ramené à 620 px.
+3. **L'échéancier passait après l'inventaire sur mobile**, contre la doctrine que
+   j'avais moi-même écrite. Il remonte avant la table numérotée, et le pied de
+   planche ferme la page après l'annexe.
+
+---
+
+## 5. Le prototype codé
+
+**Arrêté le 2026-07-28 : la migration générale ne commence pas.** Un prototype
+isolé sur **trois écrans** la précède.
+
+| Écran          | Route de prototype             | Réutilise                                |
+| -------------- | ------------------------------ | ---------------------------------------- |
+| La Leçon       | `/design-lab/planche/lecon`    | Chargeur de cours et de fiches existant  |
+| Fiche appareil | `/design-lab/planche/appareil` | Chargeur de fiches et `specs` existants  |
+| Le Banc        | `/design-lab/planche/banc`     | Moteur `src/lib/psychotech/triangles.ts` |
+
+**Règles du prototype, non négociables :**
+
+- il vit derrière un **drapeau de fonctionnalité**, hors des routes publiques ;
+- il **ne remplace aucun jeton global de production** : les jetons PLANCHE sont
+  portés par une classe de portée locale, pas par `:root` ;
+- il **réutilise le vrai contenu et la vraie logique** — chargeurs, moteurs,
+  schémas — sans les modifier ;
+- il **ne touche pas** aux routes publiques, aux données, au quiz, à la
+  progression, à la recherche ni aux schémas de contenu ;
+- `npm run check` reste vert, et les **seuils de contraste sont couverts par des
+  tests** — chaque paire jeton/fond est vérifiée dans les deux registres.
+
+---
+
+## 6. Ce qui conditionne la migration générale
+
+La migration ne commencera qu'après validation, dans cet ordre :
+
+1. les **exports** ci-dessus ;
+2. les **trois prototypes codés** ;
+3. le **responsive** vérifié sur les trois variantes de marge ;
+4. le **clair et le sombre** vérifiés sur chaque écran ;
+5. l'**accessibilité** — contrastes testés, focus visible, `getByRole`,
+   `prefers-reduced-motion` ;
+6. la **stabilité fonctionnelle** — aucune régression sur quiz, progression,
+   recherche et contenu.
+
+---
+
+## 7. Ordre de refonte, après validation
 
 1. **Les jetons** — fond, encres, encres de module, états, registres clair et
    sombre. Rien de visible ne change encore ; tout en dépend.
