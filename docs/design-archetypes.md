@@ -50,7 +50,17 @@ RÉV. AAAA-MM-JJ
 - **C** — le rang de la catégorie dans `content/_referentiels/categories.json`.
   Ce référentiel existe déjà et porte un `order` par catégorie ; la cote ne fait
   que le rendre visible.
-- **NN** — le rang de la fiche dans sa catégorie, sur deux chiffres.
+- **NN** — le **rang dans le parcours**, sur deux chiffres. C'est un rang
+  **global** au module, et non un rang par catégorie.
+
+**Pourquoi un rang global (arrêté au lot M5).** Un rang par catégorie ferait
+porter le même `NN` à deux documents de catégories différentes : « la leçon 3 »
+deviendrait ambigu, à l'oral comme dans une marge de cahier. Avec un rang
+global, la suite se lit d'affilée et une référence désigne un document et un
+seul. La conséquence visible est assumée : la première leçon d'Aérodynamique
+porte `FOND · B.3.02`, parce qu'elle est la deuxième du parcours — derrière
+`FOND · B.1.01`, qui relève de Physique utile. Un test l'énonce
+(`src/lib/content/cotes.test.ts`).
 
 ```
 EOPAN · A.3.07     Parcours de sélection, 7ᵉ fiche
@@ -70,8 +80,16 @@ référence initiale, une fois. La valeur est ensuite **inscrite** dans
 n'est plus recalculée : sans quoi ajouter une leçon en renumérotererait
 d'autres, et la référence notée sur un cahier ne vaudrait plus rien. Quatre
 tests la tiennent (`src/lib/content/cotes.test.ts`) : unicité, présence pour
-chaque leçon publiée, conformité à la grammaire, et **stabilité** — un tableau
-gelé, qu'on n'ouvre que pour ajouter une ligne à la fin.
+chaque leçon publiée, conformité à la grammaire, sémantique des segments, et
+**stabilité** — un tableau gelé, qu'on n'ouvre que pour ajouter une ligne à la
+fin.
+
+**Le slug n'est qu'une clé.** Le référentiel est indexé par slug, donc
+**un changement de slug ou d'URL ne modifie jamais la cote documentaire.** La
+correspondance doit être explicitement migrée ou conservée : on renomme la clé
+en gardant la valeur. Entre-temps le build échoue — la page renommée n'a plus
+de cote, l'ancienne clé devient orpheline, et deux tests tombent. C'est voulu :
+la migration doit être un geste conscient, jamais un effet de bord.
 
 ---
 

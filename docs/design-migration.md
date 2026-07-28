@@ -861,6 +861,43 @@ pluriel accordés ; rien d'affiché quand le compte est nul.
 Les trois rouges restants sont la dette consignée dans `docs/roadmap.md`
 (`preparation.spec.ts`, `revision.spec.ts`), inchangée.
 
+### 16.9 Sémantique de la cote — arrêtée après M5
+
+Question posée à la validation : le dernier segment est-il un rang **global**
+ou un rang **par catégorie** ? Réponse : **global**, et c'est volontaire.
+
+```
+FOND · B.3.02
+ │      │ │ └── NN — rang dans le PARCOURS, deux chiffres. Global au module.
+ │      │ └──── C  — rang de la catégorie dans categories.json (3 = Aérodynamique).
+ │      └────── F  — lettre de famille (B = Cours).
+ └───────────── MODULE propriétaire (FOND = Fondamentaux).
+```
+
+Un rang par catégorie ferait porter le même `NN` à deux documents de catégories
+différentes : « la leçon 3 » deviendrait ambigu, à l'oral comme dans une marge
+de cahier. Le rang global garde une référence pour un document et un seul.
+
+La conséquence visible est assumée : `pression-et-ecoulement` est la **1re**
+leçon d'Aérodynamique mais la **2e** du parcours — elle porte `B.3.02`, jamais
+`B.3.01`. Trois tests énoncent la règle : le `NN` vaut le rang de parcours, le
+`C` vaut le rang de catégorie déclaré, et les `NN` se suivent sans trou.
+
+**Le slug n'est qu'une clé.** Un changement de slug ou d'URL **ne modifie jamais
+la cote**. La correspondance doit être explicitement migrée ou conservée : on
+renomme la clé du référentiel en gardant la valeur. Entre-temps, deux tests
+tombent — la leçon renommée n'a plus de cote, l'ancienne clé devient orpheline.
+C'est le mécanisme d'application : la migration est un geste conscient, jamais
+un effet de bord.
+
+**Limite connue, à traiter le jour venu.** Les valeurs initiales ont été
+engendrées depuis `course.ordre`, qui est unique **par matière BIA**. Les
+quatorze leçons partageant aujourd'hui une seule matière, ce rang est de fait
+global. Le jour où une leçon naîtra sous une autre matière, `ordre` repartira
+à 1 et pourrait entrer en collision. Le test d'unicité l'attrapera, et le
+correctif est celui que permet un référentiel gelé : allouer à la main le
+prochain `NN` libre. Aucune renumérotation.
+
 ### 16.8 Procédure d'annulation
 
 ```

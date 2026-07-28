@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getCourses } from "./cours";
-import { getCotesCours, getCoteCours } from "./referentials";
+import { getCategories, getCotesCours, getCoteCours } from "./referentials";
 
 /**
  * Les cotes documentaires des leçons — lot M5.
@@ -70,6 +70,47 @@ describe("cotes documentaires des leçons", () => {
     }
   });
 
+  it("le dernier segment est un rang de PARCOURS, jamais un rang de catégorie", () => {
+    // C'est la sémantique arrêtée, et elle se voit d'un coup d'œil sur la
+    // deuxième leçon : « pression-et-ecoulement » est la **1re** leçon de la
+    // catégorie Aérodynamique, mais la **2e** du parcours. Elle porte 02.
+    // Si le NN était un rang de catégorie, elle porterait 01 — et « la leçon
+    // 3 » désignerait deux leçons différentes selon la catégorie visée.
+    expect(getCoteCours("pression-et-ecoulement")).toBe("FOND · B.3.02");
+
+    const cours = [...getCourses()].sort((a, b) => a.ordre - b.ordre);
+    for (const c of cours) {
+      const nn = getCoteCours(c.slug)?.slice(-2);
+      expect(Number(nn), `${c.slug} : NN doit valoir son rang de parcours`).toBe(c.ordre);
+    }
+  });
+
+  it("le segment de catégorie est le rang déclaré au référentiel", () => {
+    const rangs = new Map(getCategories("fondamentaux").map((c) => [c.slug, c.order]));
+    for (const c of getCourses()) {
+      const segment = getCoteCours(c.slug)?.split(".")[1];
+      expect(Number(segment), `${c.slug} : C doit valoir le rang de sa catégorie`).toBe(
+        rangs.get(c.categorieFondamentaux)
+      );
+    }
+  });
+
+  it("les rangs de parcours se suivent sans trou : « la leçon 7 » désigne une leçon", () => {
+    const nn = [...getCotesCours().values()]
+      .map((cote) => Number(cote.slice(-2)))
+      .sort((a, b) => a - b);
+    expect(nn).toEqual(Array.from({ length: nn.length }, (_, i) => i + 1));
+  });
+
+  /**
+   * Le référentiel est indexé par **slug**. Un changement de slug ou d'URL ne
+   * modifie donc jamais la cote : la correspondance doit être explicitement
+   * migrée — on renomme la clé en gardant la valeur.
+   *
+   * Ces deux tests sont le mécanisme d'application : un slug renommé sans
+   * migration laisse une leçon sans cote **et** une cote orpheline, donc deux
+   * échecs. La migration devient un geste conscient, jamais un effet de bord.
+   */
   it("le référentiel ne contient aucune cote orpheline", () => {
     // Une cote sans leçon serait une référence morte : elle pointerait vers
     // une page qui n'existe pas si un candidat la cherchait.
