@@ -38,8 +38,8 @@ export default function CodagePage() {
         </p>
       </header>
       <MethodeFicheCard
-        ficheId="psychotechnique.exercices.la-comparaison-de-nombres"
-        intro="La comparaison chiffre par chiffre, de gauche à droite : c’est exactement ce qui sépare 1985 de 1988 quand les deux sont proposés. La fiche traite aussi le test de codage et sa boucle de lecture."
+        ficheId="psychotechnique.exercices.le-test-de-codage"
+        intro="La boucle de lecture à installer, la comparaison chiffre par chiffre qui sépare 1985 de 1988, et pourquoi le débit compte ici autant que la justesse."
       />
       <CodageTest />
     </StandalonePageShell>

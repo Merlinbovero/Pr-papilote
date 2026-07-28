@@ -492,7 +492,7 @@ export function CodageTest() {
             Changer de grille ou de format
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/la-comparaison-de-nombres">Lire la méthode</Link>
+            <Link href="/psychotechnique/exercices/le-test-de-codage">Lire la méthode</Link>
           </Button>
         </div>
       </div>

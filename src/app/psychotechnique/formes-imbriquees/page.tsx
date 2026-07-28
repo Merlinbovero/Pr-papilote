@@ -39,8 +39,8 @@ export default function FormesImbriqueesPage() {
         </p>
       </header>
       <MethodeFicheCard
-        ficheId="psychotechnique.exercices.la-vision-spatiale"
-        intro="Lire les contours avant tout — ruptures d’angle, concavités, entailles — cartographier les points de jonction, et procéder par élimination plutôt que par confirmation."
+        ficheId="psychotechnique.exercices.les-formes-imbriquees"
+        intro="Compter les pièces, lire les contours avant les volumes, cartographier les jonctions, puis éliminer plutôt que confirmer — et pourquoi deux passages valent mieux qu'un."
       />
       <FormesTest />
     </StandalonePageShell>

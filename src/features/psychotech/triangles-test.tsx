@@ -419,7 +419,7 @@ export function TrianglesTest() {
             Changer de format
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/les-matrices">Lire la méthode</Link>
+            <Link href="/psychotechnique/exercices/le-test-des-triangles">Lire la méthode</Link>
           </Button>
         </div>
       </div>

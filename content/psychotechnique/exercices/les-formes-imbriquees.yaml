@@ -1,0 +1,123 @@
+schemaVersion: 1
+id: psychotechnique.exercices.les-formes-imbriquees
+type: concept
+title: Les formes imbriquées
+slug: les-formes-imbriquees
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — les formes imbriquées
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Un assemblage de pièces enchevêtrées, quatre jeux de pièces désassemblées :
+  lequel a servi à le construire ? Une épreuve de décomposition mentale, où
+  l'on élimine plutôt que l'on confirme.
+objectifs:
+  - Lire les contours d'une pièce avant ses volumes.
+  - Cartographier les points de jonction entre pièces.
+  - Éliminer les jeux manifestement faux avant de départager sur le détail.
+aliases: [formes imbriquées, formes, assemblage, pièces imbriquées]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-27"
+verifiedAt: "2026-07-27"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-27"
+    version: 1
+    motif: >-
+      Création — fiche de méthode dédiée aux formes imbriquées. La méthode
+      vivait jusque-là dans une section de la fiche « La vision spatiale », qui
+      portait trois épreuves à la fois : une fiche par épreuve.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-27"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-vision-spatiale
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      Un **assemblage** de pièces enchevêtrées est montré. En dessous, quatre
+      jeux de pièces **désassemblées** : un seul a servi à le construire.
+      Format des sélections EOPAN : **20 assemblages en 8 minutes**, quatre
+      propositions.
+
+      La difficulté monte d'une question à l'autre — chevauchements simples au
+      début, rotations et symétries ensuite, découpes fines à la fin.
+
+      > On n'a pas le temps de **reconstruire** l'assemblage mentalement.
+      > Seulement de le **décomposer**.
+
+      C'est la même aptitude que le test des appareils photos : se représenter
+      un objet sous un autre angle. Mais ici l'objet est démonté, et c'est la
+      correspondance pièce à pièce qu'il faut établir.
+    aRetenir:
+      - Compter les pièces d'abord — un jeu qui n'a pas le compte s'élimine sans examen.
+      - Lire les contours avant les volumes — une entaille se repère plus vite qu'un rayon.
+      - Les rapports entre pièces survivent à la rotation, pas les silhouettes.
+      - Éliminer plutôt que confirmer — deux fois plus rapide, et sans doute résiduel.
+  sections:
+    - id: la-methode
+      title: La méthode en quatre temps
+      body: |
+        1. **Compter les pièces.** Un jeu qui n'en a pas le compte s'élimine
+           sans rien examiner. C'est l'élimination la moins coûteuse, et elle
+           passe souvent inaperçue.
+        2. **Lire les contours** avant les volumes — ruptures d'angle,
+           concavités, entailles. Une encoche est le détail le plus rapide à
+           repérer et le plus rarement présent par hasard.
+        3. **Cartographier les jonctions** : quelle pièce traverse quelle
+           autre, laquelle passe devant. Ces rapports survivent à la rotation,
+           pas les silhouettes.
+        4. **Éliminer, ne pas confirmer.** Chercher ce qui cloche dans chaque
+           proposition va deux fois plus vite que chercher ce qui colle dans la
+           bonne — et ne laisse pas la place au doute.
+    - id: deux-passages
+      title: Deux passages valent mieux qu'un
+      strate: maitriser
+      body: |
+        À 24 secondes la question, la tentation est de trancher du premier
+        coup. C'est le meilleur moyen de tomber dans le distracteur le plus
+        séduisant.
+
+        La façon de faire qui marche : un **premier passage rapide** pour
+        écarter les jeux manifestement faux — mauvais compte, une pièce d'une
+        famille absente de l'assemblage, une proportion grossièrement fausse.
+        Puis un **second passage** pour départager ce qui reste, sur le détail.
+
+        Le plus souvent, le premier passage élimine deux propositions sur
+        quatre en quelques secondes. Le temps gagné se reporte entièrement sur
+        les deux qui restent.
+    - id: les-pieces-partiellement-cachees
+      title: Les pièces partiellement cachées
+      strate: maitriser
+      body: |
+        Dans l'assemblage, chaque pièce est **partiellement masquée** par les
+        autres. C'est normal — et ce n'est pas un problème : une pièce garde
+        toujours un contour visible, et c'est lui qu'il faut lire.
+
+        L'erreur consiste à vouloir deviner la partie cachée. On ne le
+        demande jamais : ce qui distingue le bon jeu des autres est **toujours
+        visible** sur l'assemblage. Si un détail semble décisif mais reste
+        invisible, c'est qu'on regarde le mauvais détail.
+
+        En pratique : privilégier les pièces **les plus dégagées** de
+        l'assemblage pour établir la correspondance, et n'aller vers les plus
+        enchevêtrées qu'en dernier recours.
+  pieges:
+    - Trancher au premier coup d'œil — le distracteur le plus séduisant est fait pour ça.
+    - Comparer des silhouettes plutôt que des rapports entre pièces — la rotation change les unes, pas les autres.
+    - Vouloir deviner la partie cachée d'une pièce — ce qui départage est toujours visible.
+    - Oublier de compter les pièces avant de comparer les formes.

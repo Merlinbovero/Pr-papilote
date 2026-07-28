@@ -1,0 +1,120 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-test-des-appareils-photos
+type: concept
+title: Le test des appareils photos
+slug: le-test-des-appareils-photos
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le test des appareils photos
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Une scène, trois appareils numérotés, une seule photo : lequel l'a prise ?
+  L'épreuve de projection dans l'espace la plus emblématique des sélections
+  EOPAN.
+objectifs:
+  - Lire l'ordre gauche-droite des objets depuis un point de vue donné.
+  - Utiliser les occultations comme critère d'élimination.
+  - Se placer mentalement à l'emplacement de l'objectif plutôt que devant la scène.
+aliases: [appareils photos, test des appareils photos, photographie, point de vue]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-27"
+verifiedAt: "2026-07-27"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-27"
+    version: 1
+    motif: >-
+      Création — fiche de méthode dédiée au test des appareils photos.
+      L'entraîneur renvoyait jusque-là vers « La vision spatiale », qui portait
+      trois épreuves à la fois : une fiche par épreuve.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-27"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-vision-spatiale
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      Une scène contient quelques objets posés au sol et **trois appareils
+      numérotés**, chacun à une place et une orientation distinctes. Une seule
+      photo est montrée : **laquelle des trois l'a prise ?** Format des
+      sélections EOPAN : **30 vues en 8 minutes**, soit 16 secondes l'unité.
+
+      L'aptitude évaluée est la **projection dans l'espace** : se placer
+      mentalement là où est l'objectif, et non devant la scène.
+
+      > L'erreur qui coûte le plus : raisonner depuis sa propre position de
+      > lecteur. Un appareil placé derrière la scène voit l'ordre des objets
+      > **inversé** par rapport au plan.
+    aRetenir:
+      - L'ordre gauche-droite des objets change avec le point de vue — c'est le premier critère.
+      - "Une occultation ne se produit que depuis certaines positions : elle élimine vite."
+      - Un appareil placé à l'opposé voit l'ordre inversé.
+      - Se placer mentalement à l'objectif, jamais devant la scène.
+  sections:
+    - id: lordre-gauche-droite
+      title: L'ordre gauche-droite
+      body: |
+        Le critère le plus rapide, et celui qui tranche la majorité des
+        questions : **dans quel ordre les objets apparaissent-ils, de gauche à
+        droite, depuis chaque appareil ?**
+
+        Sur le plan vu de dessus, tracer mentalement la direction de visée de
+        chaque appareil, puis lire les objets **perpendiculairement** à cette
+        direction. Deux appareils placés de part et d'autre de la scène liront
+        le même alignement **en sens inverse**.
+
+        Un réflexe utile : repérer l'objet le plus **excentré** de la scène.
+        C'est lui qui bascule d'un bord à l'autre de l'image selon le point de
+        vue, donc lui qui départage le plus vite.
+    - id: les-occultations
+      title: Les occultations
+      strate: maitriser
+      body: |
+        Quand deux objets sont **alignés** avec un appareil, le plus proche
+        masque partiellement le plus lointain. C'est un critère puissant, parce
+        qu'il ne se produit que depuis **certaines positions** — souvent une
+        seule des trois.
+
+        Sur la photo, une occultation se lit immédiatement : un objet
+        tronqué, un contour qui disparaît derrière un autre. Il suffit alors de
+        chercher sur le plan quel appareil est aligné avec ces deux objets.
+
+        À l'inverse, si la photo montre tous les objets **bien séparés**, c'est
+        que l'appareil n'est aligné avec aucune paire — ce qui élimine ceux qui
+        le sont.
+    - id: la-methode
+      title: La méthode sous chronomètre
+      strate: maitriser
+      body: |
+        À 16 secondes la vue, il n'y a pas de temps pour une reconstruction
+        complète. L'ordre qui marche :
+
+        1. **Lire la photo, pas le plan.** Noter l'ordre gauche-droite et les
+           éventuelles occultations. Deux informations, pas plus.
+        2. **Chercher sur le plan quel appareil produit cet ordre.** Le plus
+           souvent, un seul convient — et l'on a fini.
+        3. **Si deux restent possibles**, départager sur l'occultation ou sur
+           la taille relative des objets (le plus proche paraît plus grand).
+
+        Le plan vu de dessus est une **béquille** : indispensable au début,
+        elle doit disparaître. Aux sélections, il n'y en a pas.
+  pieges:
+    - Raisonner depuis sa position de lecteur au lieu de se placer à l'objectif.
+    - Oublier qu'un appareil placé à l'opposé voit l'ordre gauche-droite inversé.
+    - Négliger les occultations — c'est souvent le seul critère qui tranche.
+    - Vouloir reconstruire toute la scène plutôt que de lire deux indices et éliminer.

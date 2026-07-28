@@ -37,8 +37,8 @@ export default function OrientationPage() {
         </p>
       </header>
       <MethodeFicheCard
-        ficheId="psychotechnique.exercices.la-vision-spatiale"
-        intro="Lire un horizon artificiel et un compas sans hésiter : le code de couleurs, l’assiette, l’inclinaison et le cap, puis la rotation mentale qui relie l’instrument à l’aéronef."
+        ficheId="psychotechnique.exercices.le-test-d-orientation"
+        intro="Le code de l'horizon artificiel, l'inclinaison qui se lit à l'envers de l'appareil, et le cap qui se lit au compas — jamais déduit de l'inclinaison."
       />
       <OrientationTest />
     </StandalonePageShell>

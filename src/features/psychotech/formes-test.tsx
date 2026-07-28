@@ -497,7 +497,7 @@ export function FormesTest() {
             Changer de format
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/la-vision-spatiale">Lire la méthode</Link>
+            <Link href="/psychotechnique/exercices/les-formes-imbriquees">Lire la méthode</Link>
           </Button>
         </div>
       </div>

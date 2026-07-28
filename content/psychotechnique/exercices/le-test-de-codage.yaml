@@ -1,0 +1,128 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-test-de-codage
+type: concept
+title: Le test de codage
+slug: le-test-de-codage
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le test de codage
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Une grille de mots, un code à quatre chiffres pour chacun, 45 questions en
+  2 min 30. Une épreuve de vitesse de recherche et de rigueur, où le débit
+  compte autant que la justesse.
+objectifs:
+  - Installer une boucle de lecture régulière — mot, ligne, code, clic.
+  - Comparer les codes chiffre par chiffre, de gauche à droite.
+  - Tenir la cadence sans revenir en arrière.
+aliases: [codage, test de codage, TAMI-C, grille de codes]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopn]
+level: 1
+createdAt: "2026-07-27"
+verifiedAt: "2026-07-27"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-27"
+    version: 1
+    motif: >-
+      Création — fiche de méthode dédiée au test de codage du TAMI-C. La méthode
+      vivait jusque-là dans une section de la fiche « La comparaison de
+      nombres » : une fiche par épreuve.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-27"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-comparaison-de-nombres
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      Une **grille de mots** est affichée, chacun associé à un **code à quatre
+      chiffres**. On demande un mot, il faut désigner son code parmi **cinq
+      propositions**. Format du TAMI-C (sélections EOPN) : **45 questions en
+      2 min 30**, soit **3,3 secondes** l'unité.
+
+      Deux traits font toute la difficulté.
+
+      **La grille ne change pas de toute l'épreuve.** Ce n'est donc pas un test
+      de mémoire — elle reste sous les yeux. Mais la mémoire **accélère** : au
+      fil des questions, on cesse de chercher les mots fréquents, on sait où
+      ils sont.
+
+      **Les cinq codes proposés viennent tous de la grille.** Aucun n'est
+      inventé, donc aucun ne s'élimine parce qu'il « n'existe pas ». Et ils se
+      ressemblent — on trouve 1985, 1988, 1485 et 1785 dans la même grille.
+    aRetenir:
+      - "3,3 secondes par question : le débit compte autant que la justesse."
+      - Les cinq codes proposés existent tous dans la grille — aucune élimination gratuite.
+      - Comparer les codes chiffre par chiffre, de gauche à droite.
+      - Ne jamais revenir en arrière — une question perdue coûte moins qu'un doute entretenu.
+  sections:
+    - id: la-boucle-de-lecture
+      title: La boucle de lecture
+      body: |
+        Le geste se répète quarante-cinq fois : il doit devenir **automatique**.
+        Toujours dans cet ordre :
+
+        1. **Lire le mot demandé en entier**, pas sa silhouette. « Portier » et
+           « portique » ne se distinguent qu'à la fin.
+        2. **Descendre la colonne** où il se trouve, plutôt que balayer toute
+           la grille. La position se mémorise vite, et c'est là que se gagne le
+           temps.
+        3. **Lire le code de gauche à droite**, et ne pas le relâcher avant
+           d'avoir cliqué. Un code relu deux fois, c'est une question perdue.
+        4. **Ne pas revenir en arrière.**
+
+        S'entraîner par **sessions courtes** — cinq à dix minutes — en
+        privilégiant d'abord la précision, la vitesse ensuite. Une boucle
+        propre et lente devient une boucle propre et rapide ; l'inverse n'est
+        pas vrai.
+    - id: distinguer-des-codes-voisins
+      title: Distinguer des codes voisins
+      strate: maitriser
+      body: |
+        Les codes de la grille partagent des chiffres, et les mauvaises
+        propositions sont justement celles qui **ressemblent le plus** au bon
+        code. C'est là que la comparaison **chiffre par chiffre, de gauche à
+        droite** fait la différence : dès que deux codes diffèrent à une
+        position, le reste est inutile.
+
+        Entre 1985 et 1988, le premier écart est en quatrième position. Entre
+        1985 et 1785, il est en deuxième. Lire dans l'ordre et s'arrêter au
+        premier écart évite de relire le nombre entier.
+
+        Le piège classique : reconnaître un code « à sa forme » — deux
+        chiffres identiques, une terminaison familière. Cela mène droit au
+        distracteur.
+    - id: le-debit
+      title: Le débit compte autant que la justesse
+      strate: maitriser
+      body: |
+        Une question non traitée compte comme fausse. À 3,3 secondes l'unité,
+        **s'arrêter pour vérifier coûte plus cher que se tromper**.
+
+        Le bon régime est donc un **rythme régulier légèrement imparfait**,
+        pas une précision lente. Un candidat qui traite 45 questions à 85 % de
+        justesse marque bien plus qu'un candidat qui en traite 30 sans faute.
+
+        En entraînement, suivre les deux nombres séparément : combien de
+        questions traitées, et quel pourcentage de justesse sur ce qui a été
+        traité. Ils progressent rarement ensemble — c'est normal, et cela
+        indique lequel travailler.
+  pieges:
+    - Reconnaître un mot à sa silhouette fait lire la mauvaise ligne — lire jusqu'au bout.
+    - Revenir sur une question déjà passée coûte plus cher que de la laisser fausse.
+    - Chercher un code « qui ressemble » plutôt que de le comparer chiffre par chiffre.
+    - Croire qu'il faut mémoriser la grille — elle reste affichée, la mémoire ne fait qu'accélérer.

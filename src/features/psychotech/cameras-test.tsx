@@ -450,7 +450,9 @@ export function CamerasTest() {
             Changer de format
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/la-vision-spatiale">Lire la méthode</Link>
+            <Link href="/psychotechnique/exercices/le-test-des-appareils-photos">
+              Lire la méthode
+            </Link>
           </Button>
         </div>
       </div>

@@ -38,8 +38,8 @@ export default function AppareilsPhotosPage() {
         </p>
       </header>
       <MethodeFicheCard
-        ficheId="psychotechnique.exercices.la-vision-spatiale"
-        intro="Comment lire une scène depuis un autre point de vue : l’ordre des objets de gauche à droite, les occultations, et la méthode pour éliminer deux appareils sur trois en quelques secondes."
+        ficheId="psychotechnique.exercices.le-test-des-appareils-photos"
+        intro="L'ordre gauche-droite des objets, les occultations qui éliminent en un coup d'œil, et l'erreur qui coûte le plus cher : raisonner depuis sa place de lecteur au lieu de se placer à l'objectif."
       />
       <CamerasTest />
     </StandalonePageShell>

@@ -18,7 +18,6 @@ objectifs:
   - Comparer rapidement des nombres de plusieurs chiffres.
   - Appliquer la comparaison chiffre par chiffre, de gauche à droite.
   - Gérer le cas des nombres négatifs (le plus grand est le plus proche de zéro).
-  - Tenir la cadence du test de codage sans perdre la ligne dans la grille.
 aliases:
   [
     comparaison de nombres,
@@ -37,7 +36,7 @@ level: 1
 createdAt: "2026-07-26"
 verifiedAt: "2026-07-27"
 author: prepapilote
-version: 2
+version: 3
 revisions:
   - date: "2026-07-26"
     version: 1
@@ -52,6 +51,12 @@ revisions:
       enseignée ici est précisément ce que le codage exige ; la fiche accueille
       donc l'entraîneur dédié.
     author: prepapilote
+  - date: "2026-07-27"
+    version: 3
+    motif: >-
+      Retrait de la section « Le test de codage », transférée dans une fiche
+      dédiée. Une fiche par épreuve.
+    author: prepapilote
 sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
     kind: ouvrage
@@ -59,6 +64,7 @@ sources:
 status: publie
 relations:
   related:
+    - psychotechnique.exercices.le-test-de-codage
     - psychotechnique.methodologie.reussir-les-tests-psychotechniques
     - psychotechnique.exercices.l-attention-et-le-multitache
     - psychotechnique.exercices.le-calcul-mental
@@ -113,46 +119,8 @@ content:
         Le réflexe : sur une **droite graduée** mentale, « plus grand » veut
         toujours dire « **plus à droite** » — donc, pour les négatifs, le plus
         proche de zéro.
-    - id: le-test-de-codage
-      title: Le test de codage
-      strate: maitriser
-      body: |
-        Le **codage** du TAMI-C (sélections EOPN) pousse la même aptitude un
-        cran plus loin. Une **grille de mots** est affichée, chacun associé à un
-        **code à quatre chiffres** ; la grille ne change pas de toute l'épreuve.
-        On demande un mot, il faut désigner son code parmi **cinq
-        propositions** — **45 questions en 2 min 30**, soit 3,3 secondes
-        l'unité.
-
-        Le piège tient en une phrase : **les cinq codes proposés viennent tous
-        de la grille**. Aucun n'est inventé, donc aucun ne s'élimine parce
-        qu'il « n'existe pas ». Et ils se ressemblent — on trouve 1985, 1988,
-        1485 et 1785 dans la même grille. C'est exactement là que la
-        comparaison chiffre par chiffre, de gauche à droite, fait la
-        différence.
-
-        La boucle qui marche, toujours dans cet ordre :
-
-        1. **lire le mot demandé** en entier, pas sa silhouette — « portier »
-           et « portique » ne se distinguent qu'à la fin ;
-        2. **descendre la colonne** où il se trouve plutôt que balayer toute la
-           grille : la position se mémorise vite ;
-        3. **lire le code de gauche à droite**, et ne le relâcher qu'une fois
-           cliqué ;
-        4. **ne pas revenir en arrière**. À 3,3 secondes, une question perdue
-           coûte moins qu'un doute entretenu.
-
-        Ce n'est pas une épreuve de mémoire : la grille reste sous les yeux. La
-        mémoire ne fait qu'accélérer — au fil des questions, on cesse de
-        chercher les mots les plus fréquents, on sait où ils sont.
-
-        Le **débit compte autant que la justesse** : les questions non traitées
-        comptent comme fausses. Mieux vaut un rythme régulier légèrement
-        imparfait qu'une précision lente.
   pieges:
     - Ne pas lire le nombre entier — comparer chiffre par chiffre, de gauche à droite.
     - "Négatifs — le plus grand est le plus proche de zéro (−3 > −12), contre-intuitif."
     - "À nombre de chiffres égal, le premier écart de gauche tranche ; le reste est inutile."
     - La précipitation fait inverser deux nombres proches — ralentir un instant sur les valeurs voisines.
-    - "Codage — reconnaître un mot à sa silhouette fait lire la mauvaise ligne : « portier » et « portique » ne se séparent qu'à la fin."
-    - "Codage — revenir sur une question déjà passée coûte plus cher que de la laisser fausse : le temps est la ressource rare."

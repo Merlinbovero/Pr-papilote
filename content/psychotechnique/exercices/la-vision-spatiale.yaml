@@ -18,7 +18,6 @@ objectifs:
   - Reconnaître les grands formats (rotations mentales, patrons de cubes, orientation/caps).
   - Distinguer rotation (figure conservée) et miroir (figure inversée).
   - Appliquer les techniques de repère et d'ancrage pour fiabiliser ses réponses.
-  - Décomposer un assemblage de formes imbriquées en éliminant plutôt qu'en confirmant.
 aliases:
   [
     vision spatiale,
@@ -36,7 +35,7 @@ level: 1
 createdAt: "2026-07-14"
 verifiedAt: "2026-07-27"
 author: prepapilote
-version: 2
+version: 3
 revisions:
   - date: "2026-07-14"
     version: 1
@@ -50,6 +49,13 @@ revisions:
       Accompagne l'ouverture de l'entraîneur dédié, qui renvoyait jusque-là vers
       une fiche ne traitant pas cette épreuve.
     author: prepapilote
+  - date: "2026-07-27"
+    version: 3
+    motif: >-
+      Retrait de la section « Les formes imbriquées », transférée dans une fiche
+      dédiée, comme les tests des appareils photos et d'orientation qui
+      renvoyaient ici sans y trouver leur méthode. Une fiche par épreuve.
+    author: prepapilote
 sources:
   - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
     kind: ouvrage
@@ -57,6 +63,9 @@ sources:
 status: publie
 relations:
   related:
+    - psychotechnique.exercices.les-formes-imbriquees
+    - psychotechnique.exercices.le-test-des-appareils-photos
+    - psychotechnique.exercices.le-test-d-orientation
     - psychotechnique.methodologie.reussir-les-tests-psychotechniques
     - psychotechnique.exercices.les-dominos
     - fondamentaux.navigation.cap-route-et-derive
@@ -144,39 +153,8 @@ content:
 
         Ces réflexes serviront tels quels en **navigation** — la fiche
         cap-route-dérive des Fondamentaux prend le relais.
-    - id: formes-imbriquees
-      title: Les formes imbriquées
-      strate: maitriser
-      body: |
-        Format des sélections EOPAN : **20 assemblages en 8 minutes**, quatre
-        propositions. On montre un **assemblage** de pièces enchevêtrées ; il
-        faut désigner, parmi quatre jeux de pièces **désassemblées**, celui
-        dont il a été fait. La difficulté monte de l'un à l'autre :
-        chevauchements simples au début, rotations et symétries ensuite,
-        découpes fines à la fin.
-
-        La méthode, dans cet ordre :
-
-        1. **Compter les pièces.** Un jeu qui n'en a pas le compte s'élimine
-           sans rien examiner.
-        2. **Lire les contours** avant les volumes — ruptures d'angle,
-           concavités, entailles. Une encoche est le détail le plus rapide à
-           repérer et le plus rarement présent par hasard.
-        3. **Cartographier les jonctions** : quelle pièce traverse quelle
-           autre, laquelle passe devant. Ces rapports survivent à la rotation,
-           pas les silhouettes.
-        4. **Éliminer, ne pas confirmer.** Chercher ce qui cloche dans chaque
-           proposition va deux fois plus vite que chercher ce qui colle dans
-           la bonne — et ne laisse pas la place au doute.
-
-        Deux passages valent mieux qu'un : un premier pour écarter les jeux
-        manifestement faux, un second pour départager ce qui reste sur le
-        détail. À 24 secondes la question, on n'a pas le temps de reconstruire
-        l'assemblage mentalement — seulement de le **décomposer**.
   pieges:
     - Le miroir est LE piège des rotations mentales — vérifier le sens de parcours du contour, pas l'allure générale.
     - Deux faces opposées d'un cube ne peuvent jamais se voir ensemble — l'outil d'élimination le plus rapide des patrons.
     - Dans les problèmes de caps, la gauche et la droite sont celles du mobile — pas celles du lecteur.
     - Reconstituer mentalement tout le cube est lent — chercher la contradiction dans chaque proposition.
-    - "Formes imbriquées — une pièce partiellement cachée garde toujours un contour visible : c'est lui qu'il faut lire, pas la partie masquée."
-    - "Formes imbriquées — compter les pièces avant de comparer les formes ; c'est l'élimination la moins coûteuse."
