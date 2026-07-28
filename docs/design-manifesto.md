@@ -221,27 +221,44 @@ sobriété. La pédagogie se déploie **avant** et **après**, jamais pendant.
 
 ## 3.1 Papier & encre — la palette
 
+> **Arbitrage du 2026-07-28.** L'abandon du blanc pur est validé ; le papier
+> chaud à 0,010 de chroma est **refusé** — il produisait un beige. Les valeurs
+> ci-dessous sont la deuxième proposition : un blanc cassé très léger,
+> contemporain et neutre, sans effet sépia ni vieux papier. Elles sont
+> **calculées et non estimées** (conversion oklch → sRGB, contrôle du gamut,
+> ratio WCAG sur le fond de leur registre), et corrigent quatre défauts de la
+> première : `encre-air` et `attention` sortaient du gamut sRGB, `encre-3`
+> tombait à 4,47:1 et `filet-fort` à 2,06:1.
+
+### Un nommage qui tient dans les deux registres
+
+Les jetons de fond ne s'appellent plus `papier` mais **`fond`**. En registre
+sombre, ce n'est pas du papier — c'est de l'encre, et un jeton nommé `papier`
+qui vaut un charbon est un mensonge dans le code. « Papier » reste le nom du
+**registre clair** ; il ne nomme plus un jeton.
+
 ### Le fond
 
-Le socle est un papier chaud, jamais blanc. Trois niveaux, pas davantage.
+Trois niveaux, pas davantage. L'écart au blanc pur est de 4 à 7 unités sRGB : on
+ne le voit pas comme une couleur, on le voit comme une absence d'agression.
 
-| Rôle         | Nom            | Valeur (oklch)   | Usage                             |
-| ------------ | -------------- | ---------------- | --------------------------------- |
-| Fond général | `papier`       | `97.2% 0.006 85` | Le fond de toute page             |
-| Surface      | `papier-vergé` | `94.8% 0.008 85` | Planches, encadrés, tableaux      |
-| Creux        | `papier-creux` | `92.0% 0.010 85` | Champs de saisie, zones inactives |
+| Rôle         | Nom      | Valeur (oklch)    | sRGB      | Usage                   |
+| ------------ | -------- | ----------------- | --------- | ----------------------- |
+| Fond général | `fond`   | `98.6% 0.0025 95` | `#FBFAF8` | Le fond de toute page   |
+| Surface      | `fond-2` | `97.0% 0.0035 95` | `#F6F5F2` | Planches, encadrés      |
+| Creux        | `fond-3` | `95.0% 0.0045 95` | `#EFEEEB` | Champs, zones inactives |
 
 ### L'encre
 
-| Rôle             | Nom          | Valeur (oklch)  | Usage                         |
-| ---------------- | ------------ | --------------- | ----------------------------- |
-| Texte principal  | `encre`      | `24% 0.028 250` | Corps, titres                 |
-| Texte secondaire | `encre-2`    | `42% 0.022 250` | Chapôs, descriptions          |
-| Texte tertiaire  | `encre-3`    | `58% 0.016 250` | Légendes, cotes, crédits      |
-| Filet            | `filet`      | `84% 0.012 250` | Tous les traits de séparation |
-| Filet appuyé     | `filet-fort` | `70% 0.016 250` | Séparations de premier rang   |
+| Rôle             | Nom          | Valeur (oklch)    | sRGB      | Sur `fond` |
+| ---------------- | ------------ | ----------------- | --------- | ---------- |
+| Texte principal  | `encre`      | `22.0% 0.020 255` | `#141B24` | 16,6:1     |
+| Texte secondaire | `encre-2`    | `40.0% 0.018 255` | `#414851` | 8,8:1      |
+| Texte tertiaire  | `encre-3`    | `54.5% 0.014 255` | `#6B7178` | 4,8:1      |
+| Filet            | `filet`      | `88.0% 0.006 255` | `#D5D8DB` | 1,4:1      |
+| Filet appuyé     | `filet-fort` | `65.0% 0.010 255` | `#8B9095` | 3,1:1      |
 
-L'encre tire sur le bleu (teinte 250), jamais sur le neutre pur. C'est ce qui
+L'encre tire sur le bleu (teinte 255), jamais sur le neutre pur. C'est ce qui
 donne le grain d'imprimerie plutôt que le gris d'interface.
 
 ### Les encres de module
@@ -249,14 +266,14 @@ donne le grain d'imprimerie plutôt que le gris d'interface.
 Six teintes, **délibérément proches en clarté et en saturation** pour se lire
 comme une seule famille d'encres. Elles situent ; elles ne décorent pas.
 
-| Module                 | Nom             | Valeur (oklch) | Origine                      |
-| ---------------------- | --------------- | -------------- | ---------------------------- |
-| EOPAN                  | `encre-marine`  | `46% 0.10 245` | Bleu de mer                  |
-| EOPN                   | `encre-air`     | `52% 0.11 225` | Bleu d'air                   |
-| ALAT                   | `encre-terre`   | `46% 0.07 145` | Vert de terre                |
-| Fondamentaux           | `encre-bistre`  | `45% 0.09 60`  | Ocre des planches techniques |
-| Psychotechnique        | `encre-violine` | `45% 0.10 300` | Violet d'encre               |
-| Culture & géopolitique | `encre-sienne`  | `44% 0.10 25`  | Terre de Sienne              |
+| Module                 | Nom             | Valeur (oklch)    | sRGB      | Sur `fond` |
+| ---------------------- | --------------- | ----------------- | --------- | ---------- |
+| EOPAN                  | `encre-marine`  | `46.0% 0.105 248` | `#1D5B8F` | 6,8:1      |
+| EOPN                   | `encre-air`     | `47.0% 0.088 232` | `#156383` | 6,4:1      |
+| ALAT                   | `encre-terre`   | `46.0% 0.075 150` | `#376441` | 6,6:1      |
+| Fondamentaux           | `encre-bistre`  | `47.0% 0.085 70`  | `#79511E` | 6,7:1      |
+| Psychotechnique        | `encre-violine` | `45.0% 0.100 305` | `#624581` | 7,5:1      |
+| Culture & géopolitique | `encre-sienne`  | `46.0% 0.110 35`  | `#8A3D2B` | 7,2:1      |
 
 Emploi autorisé : le filet sous un titre de page, le repère de marge, le trait
 d'un encadré, la cote, un trait de schéma. **Jamais un fond de bloc pleine
@@ -267,36 +284,50 @@ largeur, jamais un bouton, jamais un badge rempli.**
 Registre **séparé**, plus vif, réservé au retour d'action. Une couleur d'état
 qui apparaît ailleurs que dans une correction ou une validation est un bug.
 
-| État        | Valeur (oklch) | Emploi                            |
-| ----------- | -------------- | --------------------------------- |
-| `juste`     | `55% 0.14 150` | Bonne réponse, contenu vérifié    |
-| `attention` | `70% 0.15 75`  | Approximation, échéance, prudence |
-| `erreur`    | `55% 0.19 27`  | Mauvaise réponse, contenu périmé  |
+| État        | Valeur (oklch)    | sRGB      | Sur `fond` | Emploi                            |
+| ----------- | ----------------- | --------- | ---------- | --------------------------------- |
+| `juste`     | `52.0% 0.130 152` | `#137D41` | 5,0:1      | Bonne réponse, contenu vérifié    |
+| `attention` | `54.0% 0.116 70`  | `#996103` | 5,0:1      | Approximation, échéance, prudence |
+| `erreur`    | `52.0% 0.190 27`  | `#BE2323` | 5,8:1      | Mauvaise réponse, contenu périmé  |
 
-### Le mode sombre — « table lumineuse »
+### Le registre sombre — charbon bleuté
 
-Le mode sombre **n'est pas une inversion de gris**. C'est le retournement d'une
-table à dessin : le fond devient une encre profonde, le texte devient le papier.
-La famille de teintes ne change pas.
+Le mode sombre **n'est pas une inversion de gris, et il ne feint pas le
+papier**. Le fond est un charbon bleuté ; l'encre claire garde une pointe de
+chaleur à très bas chroma pour ne pas virer au gris d'écran.
 
-| Rôle           | Valeur (oklch)  |
-| -------------- | --------------- |
-| `papier`       | `21% 0.025 250` |
-| `papier-vergé` | `25% 0.024 250` |
-| `encre`        | `93% 0.010 85`  |
-| `encre-3`      | `66% 0.014 85`  |
-| `filet`        | `34% 0.020 250` |
+| Jeton        | Valeur (oklch)    | sRGB      | Sur `fond` |
+| ------------ | ----------------- | --------- | ---------- |
+| `fond`       | `19.0% 0.014 255` | `#10141A` | —          |
+| `fond-2`     | `23.0% 0.014 255` | `#191D24` | —          |
+| `fond-3`     | `27.0% 0.014 255` | `#22272D` | —          |
+| `encre`      | `92.5% 0.004 95`  | `#E7E6E3` | 14,8:1     |
+| `encre-2`    | `78.0% 0.007 250` | `#B4B8BC` | 9,2:1      |
+| `encre-3`    | `63.0% 0.011 250` | `#848A90` | 5,3:1      |
+| `filet`      | `32.0% 0.014 255` | `#2E333A` | 1,5:1      |
+| `filet-fort` | `52.0% 0.017 255` | `#626A73` | 3,4:1      |
 
-Les encres de module **remontent en clarté** (+14 points) pour tenir le contraste
-sur fond sombre, sans changer de teinte. Les états conservent leur teinte et
-gagnent également en clarté.
+Les encres de module **remontent en clarté** (autour de 74 %) et perdent un peu
+de chroma pour tenir le contraste sans changer de teinte : `#7DB0E1` marine,
+`#74B8DB` air, `#8CB894` terre, `#D2A979` bistre, `#B599D6` violine, `#E09582`
+sienne. Les états suivent la même logique : `#72C78B` juste, `#EFB062`
+attention, `#ED756A` erreur.
 
 **Contraste.** Aucun texte sous 4.5:1, aucun filet porteur d'information sous
-3:1. Vérifié dans les deux modes, pas seulement dans le mode clair.
+3:1. Vérifié dans les deux registres, pas seulement dans le clair.
 
 ## 3.2 Typographie
 
 Trois familles, choisies pour ce qu'elles savent faire, pas pour leur allure.
+
+> **Arbitrage du 2026-07-28.** Spectral est **validée comme voix éditoriale
+> principale** : grands titres, introductions, citations, numérotation, articles,
+> mode lecture, éléments de chapitre. Elle **ne remplace pas la sans-serif dans
+> l'interface** — c'est une limite, pas une préférence de goût. La sans-serif
+> d'interface est **validée à titre provisoire** en Fira Sans, dans l'attente
+> d'un comparatif visuel entre trois appariements sur trois écrans identiques
+> (cours scientifique, fiche appareil, session d'entraînement). Ce comparatif est
+> produit ; le choix reste à trancher. Voir `docs/design-ecrans-maitres.md`.
 
 ### Spectral — la lecture
 
@@ -364,11 +395,28 @@ invisible qui signe.
 
 C'est ici que se joue l'essentiel de la reconnaissance.
 
-**Écran large (≥ 1280 px)**
+> **Arbitrage du 2026-07-28.** La marge technique est validée **comme signature
+> éditoriale**, mais la largeur fixe de 200 px appliquée partout est **refusée**.
+> Ce qui signe n'est pas une valeur, c'est l'existence d'un appareil documentaire
+> tenu hors du corps de texte — et cet appareil doit savoir se replier sans
+> disparaître. **Le concept PLANCHE ne dépend d'aucune valeur en pixels.**
 
 ```
-│ marge 200 │ 40 │ corps 720 │ 40 │ annexe 280 │
+│ marge variable │ 40 │ corps 66–72 signes │ 40 │ annexe 260–300 │
 ```
+
+**La seule valeur non négociable de la grille est la justure du corps**, parce
+que c'est elle qui sert la lecture. La marge s'ajuste autour.
+
+| Variante                  | Largeur                     | À partir de                           | Porte                                         | La cote devient              |
+| ------------------------- | --------------------------- | ------------------------------------- | --------------------------------------------- | ---------------------------- |
+| 1 · Marge large           | `clamp(168px, 13vw, 224px)` | ≥ 1440 px                             | Cote, révision, module, repères, numéros de § | —                            |
+| 2 · Rail intermédiaire    | 72–88 px                    | 1180–1439 px                          | Repères et numéros de § seuls                 | Cartouche au-dessus du titre |
+| 3 · Sans marge permanente | 0                           | < 1180 px, et Le Banc à toute largeur | Rien — la colonne n'existe plus               | Cartouche pleine largeur     |
+
+**La règle de bascule n'est pas la largeur d'écran seule, c'est la charge.** Une
+marge qui ne porte rien ne s'affiche pas, même sur un écran de 1600 px : une page
+sans repères de section retombe sur la variante 2. **La marge large se mérite.**
 
 - **La marge technique** porte la cote, la révision, la marque du module et les
   repères de section. **Rien d'autre.** Jamais de navigation, jamais de bouton,
@@ -376,15 +424,14 @@ C'est ici que se joue l'essentiel de la reconnaissance.
   fonds classé.
 - **Le corps** porte le texte, à la justure imposée.
 - **L'annexe** porte les débords de figure, les notes, les sources, les
-  renvois.
+  renvois. Sous 1180 px, elle passe sous le corps.
 
-**Écran moyen (1024 – 1279 px)** — la marge se réduit à un rail de 48 px qui ne
-porte plus que les repères ; l'annexe passe sous le corps.
+**La marge est désactivable.** Le Banc en session, et toute interaction qui a
+besoin de la largeur entière, passent en variante 3 quelle que soit la taille de
+l'écran. **Aucune fonction ne disparaît jamais** : elle change de place.
 
-**Écran étroit (< 1024 px)** — la marge devient un **bandeau horizontal** au-dessus
-du titre, portant la cote et la révision sur une ligne. Les repères disparaissent.
-L'annexe passe sous le corps. **Aucune fonction ne disparaît** : elle change de
-place.
+Le détail par famille et les trois variantes appliquées aux sept écrans maîtres
+sont dans `docs/design-ecrans-maitres.md`.
 
 ## 3.4 Le système d'ornement
 
@@ -647,19 +694,23 @@ Devant un choix graphique, poser trois questions dans cet ordre :
 2. **Est-ce que cela sert la lecture ou la consultation ?** Si non, retirer.
 3. **Est-ce que cela signifie quelque chose de précis ?** Si non, retirer.
 
-## Ce qui reste à trancher avec vous
+## État des arbitrages au 2026-07-28
 
-Trois décisions ne m'appartiennent pas.
-
-- **Le retrait d'Archivo** au profit de Spectral + Fira. C'est un changement de
-  voix, pas seulement de police.
-- **L'abandon du blanc pur** pour un papier chaud. C'est le changement le plus
-  visible et le plus irréversible.
-- **La marge technique** sur écran large : elle coûte 200 px de largeur qui ne
-  portent presque rien. C'est précisément ce qui la rend signante — et c'est
-  discutable.
+| Point                   | État                          | Détail                                                                              |
+| ----------------------- | ----------------------------- | ----------------------------------------------------------------------------------- |
+| Direction PLANCHE       | **Arrêtée**                   | Devient la loi du projet après validation des écrans maîtres.                       |
+| Les six familles        | **Arrêtées**                  | Le Banc dépouillé en session ; son hub reste sous charte.                           |
+| Retrait d'Archivo       | **Arrêté**                    | Spectral devient la voix éditoriale.                                                |
+| Spectral, rôle          | **Arrêté**                    | Voix éditoriale seulement — elle ne prend pas l'interface.                          |
+| Abandon du blanc pur    | **Arrêté**                    | Blanc cassé neutre ; le papier chaud sépia est refusé.                              |
+| Mode sombre             | **Arrêté**                    | Charbon bleuté, pas un papier sombre simulé.                                        |
+| Marge technique         | **Arrêtée dans son principe** | Responsive, trois variantes, désactivable. La valeur fixe de 200 px est abandonnée. |
+| Sans-serif d'interface  | **En attente**                | Fira Sans à titre provisoire ; comparatif produit, choix à trancher.                |
+| Valeurs de palette      | **En attente**                | Calculées et vérifiées ; soumises pour accord.                                      |
+| Les sept écrans maîtres | **En attente**                | Maquettes produites ; validation écran par écran.                                   |
 
 ---
 
-_Les six familles d'écrans et leurs maquettes détaillées sont traitées dans
-`docs/design-archetypes.md`._
+_Les six familles d'écrans sont traitées dans `docs/design-archetypes.md`. Les
+sept écrans maîtres, les trois variantes de marge et le comparatif typographique
+sont dans `docs/design-ecrans-maitres.md`._

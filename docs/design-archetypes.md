@@ -92,8 +92,17 @@ dans chaque archétype ; seules les inflexions le sont.
    marge   filet de marge (1 px, vertical)
 ```
 
+> **Révision du 2026-07-28.** Les largeurs du schéma ci-dessus ne valent que pour
+> la variante de marge la plus large. **Le gabarit ne dépend d'aucune valeur en
+> pixels** : la marge connaît trois états (large, rail, aucune), choisis d'après
+> la charge documentaire de la page et non d'après la seule largeur d'écran, et
+> elle est désactivable. Marge par défaut de chaque famille, règle de bascule et
+> variantes : `docs/design-ecrans-maitres.md`.
+
 - La **marge** ne porte que : cote, révision, marque de module, repères de
-  section. Rien d'autre, dans aucune famille.
+  section. Rien d'autre, dans aucune famille. Quand elle disparaît, la cote
+  devient un cartouche et les repères passent en tête de section — rien n'est
+  perdu, tout change de place.
 - Le **corps** tient la justure de 66 à 72 signes, dans toutes les familles,
   sans exception.
 - L'**annexe** est facultative. Quand elle est vide, elle reste vide : on ne la
