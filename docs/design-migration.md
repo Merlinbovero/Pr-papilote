@@ -162,33 +162,68 @@ groupes de routes distincts. Le coût est un **déplacement de fichiers**, pas u
 réécriture : chaque route change de dossier au lot qui la migre, et le groupe
 `(heritage)` se vide jusqu'à disparaître.
 
-Conséquences à assumer :
+Conséquences à assumer, et à traiter comme **temporaires** :
 
-- une navigation entre les deux groupes provoque un **rechargement complet** —
-  acceptable, et de moins en moins fréquent à mesure que `(heritage)` se vide ;
+- une navigation entre les deux groupes provoque un **rechargement complet de la
+  page**. Next ne peut pas faire de transition client entre deux layouts
+  racine ; le navigateur repart de zéro ;
 - le service worker et le manifeste PWA sont déclarés **une seule fois**, dans le
   groupe PLANCHE, dès le lot 3.
 
+**Règles pendant la coexistence** — elles tombent à la fin de la migration,
+quand le groupe hérité disparaît :
+
+1. **Tester les navigations dans les deux sens** à chaque lot : hérité → PLANCHE
+   et PLANCHE → hérité, et pas seulement le sens qui vient d'être migré.
+2. **Vérifier qu'aucun état important n'est perdu** au franchissement :
+   préparation en cours, filtres de recherche, position de lecture, thème.
+3. **Ne jamais faire traverser une frontière de layout racine pendant une
+   session d'entraînement.** Le Banc et ses écrans de correction restent du même
+   côté, quel que soit l'ordre des lots — c'est une contrainte de découpe, pas
+   une préférence.
+4. Le rechargement complet est **un défaut connu et daté**, pas un choix
+   d'architecture : sa disparition est un critère de clôture de la migration.
+
 ---
 
-## 8. Stratégie de cache des fontes
+## 8. Stratégie de fontes — décision inversée après mesure
 
-Le prototype sert les fontes depuis `/public`, **sans empreinte dans le nom ni
-cache longue durée**. En production, deux options :
+**J'avais recommandé `@font-face` manuel en affirmant que le chargeur intégré
+séparerait nécessairement l'italique. C'était faux, et la mesure le montre.**
 
-| Option                                               | Avantage                                                                   | Coût                                                                                                                                                                                                                        |
-| ---------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A — Chargeur de fontes local** (`next/font/local`) | Empreinte automatique, cache immuable, préchargement géré                  | Le contrôle fin du préchargement se perd : le chargeur précharge toute la famille déclarée. Il faut **déclarer plusieurs familles** pour retrouver ce contrôle, ce qui casse l'italique dans la même famille que le romain. |
-| **B — `@font-face` manuel + en-tête de cache**       | Contrôle exact du préchargement, italique et romain dans une seule famille | Une règle `headers()` à maintenir, et une empreinte à poser à la main dans le nom de fichier à chaque mise à jour                                                                                                           |
+Un banc de comparaison a rendu les deux stratégies côte à côte, sur le même
+spécimen, avec mesure de la largeur du texte par `Range` — la seule façon de
+distinguer une italique authentique d'une oblique synthétisée, et de vraies
+petites capitales d'une simulation.
 
-**Recommandation : B**, pour deux raisons. La première est le contrôle du
-préchargement — quatre fichiers sur sept, mesuré. La seconde est l'italique :
-avec l'option A, mettre l'italique dans une famille séparée ferait retomber
-`<em>` sur une italique **synthétisée**, ce que la charte interdit.
+| Critère                      | `next/font/local` (tableau de fichiers)      | `@font-face` manuel               |
+| ---------------------------- | -------------------------------------------- | --------------------------------- |
+| Italique authentique         | **Oui** — écart de −7,8 % sur la largeur     | Oui — −7,8 %                      |
+| `smcp` conservé              | **Oui** — +23,6 %                            | Oui — +23,6 %                     |
+| `c2sc` conservé              | Oui                                          | Oui                               |
+| Synthèse du navigateur       | Aucune                                       | Aucune                            |
+| Poids transféré              | Identique, au kilo-octet près                | Identique                         |
+| Empreinte dans le nom        | **Oui**, automatique                         | Non — à poser à la main           |
+| Cache                        | **`max-age=31536000, immutable`**            | `max-age=0` sans règle d'en-têtes |
+| Métriques de repli           | **Famille de repli générée automatiquement** | À écrire à la main                |
+| Décalage de mise en page     | **0,0001**                                   | Non mesuré séparément             |
+| Granularité du préchargement | Par déclaration, pas par fichier             | **Par fichier**                   |
 
-Réglages : `Cache-Control: public, max-age=31536000, immutable`, empreinte de
-contenu dans le nom (`spectral-400.<hash>.woff2`), régénérée par le script de
-découpe.
+`next/font/local` accepte plusieurs graisses **et** l'italique dans une seule
+famille : l'italique reste authentique, et les fonctionnalités OpenType du
+sous-ensemble sont intégralement conservées.
+
+**Décision : `next/font/local`.** Le cache immuable, l'empreinte de contenu et
+les métriques de repli automatiques sont des gains de production que le
+`@font-face` manuel n'obtient qu'au prix d'une machinerie à maintenir. Le seul
+recul est la granularité du préchargement : préchargez Spectral et vous
+préchargez son italique, soit **+28,1 kB sur les pages qui ne l'emploient pas**.
+
+**Réglage retenu** : Spectral en `preload: true` (romain, gras, italique — 84,2 kB),
+Fira Sans et Fira Mono en `preload: false`. C'est **moins d'octets préchargés**
+que les quatre fichiers du prototype (101 kB), au prix d'un léger retard
+d'affichage sur la sans-serif de bandeau, que `font-display: swap` et les
+métriques de repli couvrent sans décalage mesurable.
 
 **Le script de découpe entre au dépôt** : le sous-ensemble et les fonctionnalités
 OpenType conservées (`smcp`, `c2sc`, `tnum`, `onum`, `lnum`) ne doivent pas
@@ -247,3 +282,75 @@ n'est pas un lot de migration — c'est un chantier séparé, et il attend.
 ---
 
 _Aucune migration n'a été commencée pour écrire ce document._
+
+---
+
+## 12. Lot M1 — livré le 2026-07-28
+
+### Fichiers modifiés
+
+| Fichier                                  | Nature                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------ |
+| `src/styles/planche-tokens.css`          | **Nouveau** — les jetons, de portée `.planche`                                       |
+| `src/lib/design/planche-tokens.ts`       | **Déplacé** depuis `src/lib/design-lab/` — le module devient un module de production |
+| `src/lib/design/planche-tokens.test.ts`  | **Déplacé**, et **étendu** de 3 tests                                                |
+| `src/app/globals.css`                    | Une ligne : l'import de la feuille de jetons                                         |
+| `src/app/design-lab/planche/planche.css` | Cibles tactiles à 44 px, métadonnées mobiles, renvoi vers la source des valeurs      |
+| `e2e/design-lab-planche.spec.ts`         | 5 tests de pointeur grossier                                                         |
+| `docs/design-manifesto.md`               | Doctrine de justure corrigée, cibles tactiles, métadonnées mobiles                   |
+| `docs/design-migration.md`               | Stratégie de fontes inversée, coexistence des layouts racine, ce chapitre            |
+
+### Jetons introduits
+
+Trente-quatre variables CSS sous `.planche`, en deux registres : trois fonds,
+trois encres, deux filets, six encres de module, trois états — plus six jetons de
+rythme et de grille. **Aucun sur `:root`.**
+
+### Tests ajoutés
+
+| Test                                                 | Ce qu'il garantit                                                                                                                         |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `la feuille de jetons et le module ne divergent pas` | Les 17 couleurs du CSS valent celles du TypeScript, dans les deux registres. Sans lui, une correction d'un côté dériverait en silence.    |
+| `les jetons ne sont jamais posés sur :root`          | La garantie d'invisibilité du lot, tenue par une assertion et non par la vigilance.                                                       |
+| 5 tests de pointeur grossier                         | 44 px sans chevauchement sur les trois écrans, métadonnées ≥ 12,5 px, et **le corps de lecture jamais réduit** pour atteindre la justure. |
+
+Total : **39 tests** sur les jetons, **48 tests** Playwright sur le prototype.
+
+### Preuve que le rendu public est inchangé
+
+Quatorze captures pleine page — accueil, hub EOPAN, fiche appareil, cours,
+psychotechnique, recherche, dictionnaire — en 1440 px et 390 px, comparées
+**pixel par pixel** entre un build de la révision précédente et un build de M1,
+tous deux reconstruits **cache vide** pour éliminer le bruit d'outillage.
+
+| Résultat                        |                                                                       |
+| ------------------------------- | --------------------------------------------------------------------- |
+| Captures identiques au bit près | **13 sur 14**                                                         |
+| Écart résiduel                  | **5 pixels sur 7,4 millions**, sur la seule fiche appareil            |
+| Amplitude de l'écart            | **±2 sur 255**, un canal                                              |
+| Localisation                    | Dans la photographie optimisée, sur la page la plus longue (5 172 px) |
+
+Deux témoins encadrent la mesure : le **même build capturé deux fois** donne 0
+pixel d'écart, et **deux builds successifs de la même source** donnent 0 pixel.
+L'écart résiduel n'est donc ni de l'instabilité de capture ni de l'instabilité de
+build : il vient du ré-encodage d'une photographie par l'optimiseur d'images.
+
+**Je ne peux donc pas écrire « strictement inchangé » au sens du bit.** Ce que la
+mesure établit : aucune modification de mise en page, aucune modification de
+couleur, aucun texte déplacé — 5 pixels imperceptibles dans une image, sur une
+page sur sept.
+
+### Procédure d'annulation
+
+M1 est un commit unique et sans dépendance. L'annuler :
+
+```
+git revert <sha-du-lot-M1>
+npm run check
+```
+
+Rien d'autre n'est à défaire : aucune migration de données, aucun contenu
+touché, aucune route publique modifiée. Si seule la partie production doit
+partir en gardant le prototype, il suffit de retirer la ligne d'import de
+`src/app/globals.css` et de supprimer `src/styles/planche-tokens.css` — la
+feuille n'est référencée nulle part ailleurs.

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* Lot M1 — jetons PLANCHE, de portée `.planche`. Inertes tant qu'aucun
+   élément ne porte la classe : le rendu public est inchangé. */
+@import "../styles/planche-tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 

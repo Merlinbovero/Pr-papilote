@@ -152,3 +152,99 @@ test.describe("Prototype PLANCHE", () => {
     await expect(page.getByText("ne représente pas le Rafale M")).toBeVisible();
   });
 });
+
+/**
+ * Pointeur grossier — arbitrages du 2026-07-28.
+ *
+ * Le projet `mobile` de `playwright.config.ts` (Pixel 7) fournit déjà un
+ * pointeur grossier ; ces tests ne s'exécutent que là.
+ */
+test.describe("Pointeur grossier", () => {
+  test.skip(({ isMobile }) => !isMobile, "réservé aux projets tactiles");
+
+  for (const ecran of ECRANS) {
+    test(`${ecran.nom} — toute cible tactile atteint 44 px, sans chevauchement`, async ({
+      page,
+    }) => {
+      await page.goto(ecran.chemin);
+      await page.evaluate(() => document.fonts.ready);
+
+      const bilan = await page.evaluate(() => {
+        const cibles = [
+          ...document.querySelectorAll(
+            ".pl-root a, .pl-root button, .pl-root .pl-radio, .pl-root .pl-opt"
+          ),
+        ]
+          .map((el) => {
+            const r = el.getBoundingClientRect();
+            return {
+              nom: `${el.tagName}.${String(el.className).split(" ")[0] || "—"}`,
+              h: Math.round(r.height),
+              top: r.top,
+              bottom: r.bottom,
+              left: r.left,
+              right: r.right,
+            };
+          })
+          .filter((r) => r.h > 0 && r.right > r.left);
+
+        let chevauchements = 0;
+        for (let i = 0; i < cibles.length; i += 1) {
+          for (let j = i + 1; j < cibles.length; j += 1) {
+            const a = cibles[i];
+            const b = cibles[j];
+            if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) {
+              chevauchements += 1;
+            }
+          }
+        }
+        return {
+          trop: cibles.filter((c) => c.h < 44).map((c) => `${c.nom} ${c.h}px`),
+          chevauchements,
+        };
+      });
+
+      expect(bilan.trop).toEqual([]);
+      expect(bilan.chevauchements).toBe(0);
+    });
+  }
+
+  test("les métadonnées ne descendent pas sous 12,5 px sur téléphone", async ({ page }) => {
+    await page.goto("/design-lab/planche/lecon");
+    await page.evaluate(() => document.fonts.ready);
+    const tailles = await page.evaluate(() =>
+      [".pl-cote", ".pl-cart", ".pl-legende", ".pl-pied", ".pl-an-note"]
+        .map((s) => {
+          const el = document.querySelector(s);
+          return el ? { s, px: Number.parseFloat(getComputedStyle(el).fontSize) } : null;
+        })
+        .filter((x): x is { s: string; px: number } => x !== null)
+    );
+    expect(tailles.length).toBeGreaterThan(0);
+    for (const { s, px } of tailles) {
+      expect(px, s).toBeGreaterThanOrEqual(12.5);
+    }
+  });
+
+  test("la justure descend sous 66 signes sans que le corps soit réduit", async ({ page }) => {
+    await page.goto("/design-lab/planche/lecon");
+    await page.evaluate(() => document.fonts.ready);
+    const mesure = await page.evaluate(() => {
+      const p = document.querySelector(".pl-corps p") as HTMLElement;
+      const sonde = document.createElement("span");
+      sonde.textContent = "0";
+      sonde.style.cssText = `font:${getComputedStyle(p).font};visibility:hidden;position:absolute`;
+      document.body.appendChild(sonde);
+      const largeurSigne = sonde.getBoundingClientRect().width;
+      document.body.removeChild(sonde);
+      return {
+        signes: Math.round(p.getBoundingClientRect().width / largeurSigne),
+        corps: Number.parseFloat(getComputedStyle(p).fontSize),
+      };
+    });
+    // Doctrine : sur écran étroit, la taille prime sur le compte de signes.
+    // Le corps ne doit JAMAIS être réduit pour atteindre la justure cible.
+    expect(mesure.corps).toBeGreaterThanOrEqual(15.5);
+    expect(mesure.signes).toBeLessThan(66);
+  });
+});

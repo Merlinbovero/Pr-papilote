@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   CLAIR,
@@ -106,5 +108,68 @@ describe("le registre sombre est un charbon bleuté, pas un gris inversé", () =
     // Une inversion naïve donnerait des luminances complémentaires.
     const somme = relativeLuminance(CLAIR.fond) + relativeLuminance(SOMBRE.fond);
     expect(somme).not.toBeCloseTo(1, 2);
+  });
+});
+
+/**
+ * Le module TypeScript et la feuille CSS sont deux sources pour les mêmes
+ * valeurs. Ce test les confronte : sans lui, une correction faite d'un côté
+ * dériverait silencieusement de l'autre, et les tests de contraste
+ * vérifieraient une palette que le site n'emploie pas.
+ */
+describe("la feuille de jetons et le module ne divergent pas", () => {
+  const css = readFileSync(join(process.cwd(), "src/styles/planche-tokens.css"), "utf-8");
+
+  function bloc(selecteur: string): Record<string, string> {
+    const debut = css.indexOf(selecteur);
+    expect(debut, `bloc « ${selecteur} » introuvable`).toBeGreaterThan(-1);
+    const ouvrante = css.indexOf("{", debut);
+    const fermante = css.indexOf("}", ouvrante);
+    const corps = css.slice(ouvrante + 1, fermante);
+    const jetons: Record<string, string> = {};
+    for (const ligne of corps.split(";")) {
+      const m = /--planche-([a-z0-9-]+)\s*:\s*(#[0-9a-f]{6})/i.exec(ligne);
+      if (m) jetons[m[1]] = m[2].toUpperCase();
+    }
+    return jetons;
+  }
+
+  const CORRESPONDANCE: [keyof PlancheRegister, string][] = [
+    ["fond", "fond"],
+    ["fond2", "fond-2"],
+    ["fond3", "fond-3"],
+    ["encre", "encre"],
+    ["encre2", "encre-2"],
+    ["encre3", "encre-3"],
+    ["filet", "filet"],
+    ["filetFort", "filet-fort"],
+    ["marine", "marine"],
+    ["air", "air"],
+    ["terre", "terre"],
+    ["bistre", "bistre"],
+    ["violine", "violine"],
+    ["sienne", "sienne"],
+    ["juste", "juste"],
+    ["attention", "attention"],
+    ["erreur", "erreur"],
+  ];
+
+  it.each([
+    ["clair", CLAIR, ".planche {"],
+    ["sombre", SOMBRE, ".dark .planche,"],
+  ] as const)(
+    "registre %s : chaque jeton CSS vaut celui du module",
+    (_nom, registre, selecteur) => {
+      const jetons = bloc(selecteur);
+      for (const [cle, nomCss] of CORRESPONDANCE) {
+        expect(jetons[nomCss], `--planche-${nomCss}`).toBe(registre[cle].toUpperCase());
+      }
+    }
+  );
+
+  it("les jetons ne sont jamais posés sur :root", () => {
+    // Toute la garantie du lot M1 tient dans cette ligne : tant que les
+    // jetons vivent sous `.planche`, aucun écran public ne change.
+    expect(css).not.toMatch(/:root\s*\{[^}]*--planche-/);
   });
 });

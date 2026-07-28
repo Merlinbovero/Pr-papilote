@@ -1,6 +1,9 @@
 /*
  * Système PLANCHE — feuille de style du prototype.
  *
+ * Les valeurs de couleur sont celles de `src/styles/planche-tokens.css`
+ * (lot M1) et de `src/lib/design/planche-tokens.ts`, où elles sont testées.
+ *
  * PORTÉE LOCALE, sans exception : chaque sélecteur descend de `.pl-root`.
  * Aucun jeton de production n'est touché, `:root` reste intact. Cette
  * feuille n'est chargée que par les pages `/design-lab/planche/…`.
@@ -944,4 +947,59 @@ body:has(.pl-root) > footer {
 }
 .pl-root table {
   max-width: 100%;
+}
+
+/* ============================================================
+   Arbitrages du 2026-07-28 — mobile et pointeur grossier
+   ============================================================ */
+
+/* Cibles tactiles : plancher de 44 px sur pointeur grossier. La hauteur
+   pousse la ligne au lieu d'étendre une zone invisible : deux cibles
+   voisines ne peuvent donc jamais se chevaucher. */
+@media (pointer: coarse) {
+  .pl-toc a,
+  .pl-top a,
+  .pl-an-row a,
+  .pl-index a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .pl-btn {
+    min-height: 44px;
+  }
+  .pl-radio {
+    min-height: 44px;
+  }
+  .pl-opt {
+    min-height: 44px;
+  }
+}
+
+/* Métadonnées sur téléphone : 2,0 mm mesurés sur iPhone, c'est trop peu.
+   Les cotes et légendes montent à 13 px (2,36 mm), les pieds, dates et
+   révisions de 11 à 12,5 px (2,27 mm, soit +15 %). L'interlettrage ne
+   bouge pas : on ne compense pas une taille insuffisante par du tracking. */
+@media (max-width: 700px) {
+  .pl-cote {
+    font-size: 13px;
+  }
+  .pl-legende {
+    font-size: 13px;
+  }
+  .pl-cart {
+    font-size: 12.5px;
+  }
+  .pl-rev,
+  .pl-pied {
+    font-size: 12.5px;
+  }
+  .pl-chrono .pl-num,
+  .pl-srcs .pl-num,
+  .pl-an-row .pl-num {
+    font-size: 13px;
+  }
+  .pl-an-note {
+    font-size: 13px;
+  }
 }

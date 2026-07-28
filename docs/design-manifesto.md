@@ -394,9 +394,24 @@ d'une échelle trop riche.
 | Titre de planche | Spectral  | 34 px                | 1.15       |                                  |
 | Titre de page    | Spectral  | 44 px / 32 px mobile | 1.10       |                                  |
 
-**Justure.** Le corps de lecture est calé entre **66 et 72 signes**. Au-delà,
-l'œil perd la ligne ; en deçà, le rythme se hache. Cette borne n'est pas
-négociable et vaut sur tous les écrans.
+**Justure.** Le corps de lecture vise **66 à 72 signes lorsque la largeur
+disponible le permet**. Au-delà, l'œil perd la ligne. **En dessous, la taille et
+le confort de lecture priment toujours sur le nombre de signes : la police ne
+doit jamais être réduite artificiellement pour atteindre la justure cible.**
+
+> **Correction du 2026-07-28.** Cette règle disait auparavant que la borne
+> « vaut sur tous les écrans ». C'était faux : mesuré sur un iPhone 15, le corps
+> de lecture tient **42 signes**, et atteindre 66 exigerait de descendre à 11 px.
+> Un plancher de 15,5 px est posé sur écran étroit ; le compte de signes cède.
+
+**Cibles tactiles.** Sur pointeur grossier, tout contrôle atteint **44 × 44 px**
+d'aire d'activation. L'élément visible peut rester plus petit, mais deux cibles
+ne se chevauchent jamais.
+
+**Métadonnées sur téléphone.** Cotes et légendes à 13 px, pieds de planche, dates
+et révisions à 12,5 px — soit **2,27 à 2,36 mm mesurés sur un iPhone 15**.
+L'interlettrage ne bouge pas : on ne compense pas une taille insuffisante par du
+tracking.
 
 ## 3.3 Rythme et grille
 
