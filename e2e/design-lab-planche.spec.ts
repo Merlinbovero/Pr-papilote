@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { type Page, expect, test } from "@playwright/test";
 
 /**
  * Prototype PLANCHE — vérifications de non-régression.
@@ -65,25 +65,79 @@ test.describe("Prototype PLANCHE", () => {
     });
   }
 
+  /**
+   * Mesure la largeur du TEXTE — pas de la boîte — pour une variante donnée.
+   *
+   * La sonde vit sous `.pl-root`, sans quoi `--pl-serif` n'existe pas, la
+   * déclaration devient invalide et l'on mesurerait la police héritée du
+   * gabarit de production. Cette erreur a produit un faux « synthèse » avant
+   * d'être corrigée.
+   */
+  async function largeurTexte(page: Page, style: string): Promise<number> {
+    return page.evaluate((css) => {
+      const racine = document.querySelector(".pl-root");
+      if (!racine) throw new Error(".pl-root introuvable");
+      const sonde = document.createElement("span");
+      sonde.textContent = "definition aerodynamique";
+      sonde.style.cssText = `font-family:var(--pl-serif);font-size:48px;position:absolute;visibility:hidden;${css}`;
+      racine.appendChild(sonde);
+      const plage = document.createRange();
+      plage.selectNodeContents(sonde);
+      const largeur = plage.getBoundingClientRect().width;
+      sonde.remove();
+      return largeur;
+    }, style);
+  }
+
   test("les petites capitales sont réelles, jamais synthétisées", async ({ page }) => {
     await page.goto("/design-lab/planche/lecon");
     await page.evaluate(() => document.fonts.ready);
-    const mesure = await page.evaluate(() => {
-      const sonde = document.createElement("span");
-      sonde.textContent = "definition";
-      sonde.style.cssText =
-        "font-family:'Planche Spectral';font-size:48px;position:absolute;visibility:hidden";
-      document.body.appendChild(sonde);
-      const normal = sonde.getBoundingClientRect().width;
-      sonde.style.fontVariantCaps = "small-caps";
-      const petites = sonde.getBoundingClientRect().width;
-      document.body.removeChild(sonde);
-      return { normal, petites };
+    const roman = await largeurTexte(page, "");
+    const petites = await largeurTexte(page, "font-variant-caps:small-caps");
+    // Une synthèse redimensionne les capitales sans changer les chasses : la
+    // largeur bougerait à peine. Un vrai jeu `smcp` a ses propres dessins.
+    expect(Math.abs(petites - roman)).toBeGreaterThan(roman * 0.05);
+  });
+
+  test("l'italique est authentique, jamais une oblique synthétisée", async ({ page }) => {
+    await page.goto("/design-lab/planche/lecon");
+    await page.evaluate(() => document.fonts.ready);
+    const roman = await largeurTexte(page, "");
+    const italique = await largeurTexte(page, "font-style:italic");
+    // Une oblique synthétisée penche les glyphes sans toucher aux chasses :
+    // la largeur resterait identique au pixel près.
+    expect(Math.abs(italique - roman)).toBeGreaterThan(roman * 0.02);
+  });
+
+  test("seule Spectral est préchargée, et le cache est immuable", async ({ page }) => {
+    const entetes = new Map<string, string>();
+    page.on("response", async (reponse) => {
+      if (!/\.woff2/.test(reponse.url())) return;
+      const h = await reponse.allHeaders().catch(() => ({}) as Record<string, string>);
+      entetes.set(reponse.url().split("/").pop() ?? "", h["cache-control"] ?? "");
     });
-    // Une synthèse par le navigateur redimensionne les capitales sans changer
-    // les chasses : la largeur bougerait à peine. Un vrai jeu `smcp` a ses
-    // propres dessins, donc une largeur nettement différente.
-    expect(Math.abs(mesure.petites - mesure.normal)).toBeGreaterThan(mesure.normal * 0.05);
+
+    await page.goto("/design-lab/planche/lecon");
+    await page.evaluate(() => document.fonts.ready);
+
+    const preloads = await page.evaluate(() =>
+      [...document.querySelectorAll('link[rel="preload"][as="font"]')]
+        .map((l) => l.getAttribute("href") ?? "")
+        .filter((h) => /spectral|fira/.test(h))
+    );
+    // Spectral et elle seule : romain, gras, italique — la granularité du
+    // chargeur est la famille, pas le fichier. Fira Sans et Fira Mono
+    // attendent d'être découvertes.
+    expect(preloads).toHaveLength(3);
+    expect(preloads.every((h) => h.includes("spectral"))).toBe(true);
+
+    for (const [nom, cache] of entetes) {
+      if (!/spectral|fira/.test(nom)) continue;
+      expect(cache, nom).toContain("immutable");
+      expect(nom, "empreinte de contenu attendue dans le nom").toMatch(
+        /-s?\.?[a-z0-9_-]{8,}\.woff2$/
+      );
+    }
   });
 
   test("Le Banc — la session se joue et se corrige au clavier seul", async ({ page }) => {

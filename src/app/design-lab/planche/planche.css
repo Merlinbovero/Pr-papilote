@@ -9,56 +9,6 @@
  * feuille n'est chargée que par les pages `/design-lab/planche/…`.
  */
 
-@font-face {
-  font-family: "Planche Spectral";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/planche/spectral-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Spectral";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/planche/spectral-600.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Spectral";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/planche/spectral-400-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Fira Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/planche/fira-sans-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Fira Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/planche/fira-sans-500.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Fira Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/planche/fira-sans-600.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Planche Fira Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/planche/fira-mono-400.woff2") format("woff2");
-}
-
 /* Le prototype occupe la fenêtre : l'en-tête et le pied de production
    sont masqués tant qu'une page PLANCHE est montée. Aucune règle ne
    s'applique en dehors de cette condition. */
@@ -87,9 +37,12 @@ body:has(.pl-root) > footer {
   --pl-t1: #c9c6c1;
   --pl-t2: #9c9892;
 
-  --pl-serif: "Planche Spectral", Georgia, serif;
-  --pl-sans: "Planche Fira Sans", system-ui, sans-serif;
-  --pl-mono: "Planche Fira Mono", ui-monospace, monospace;
+  /* Lot M2 — les familles viennent de `next/font/local`
+     (`src/lib/design/planche-fonts.ts`). Les replis sont ceux que le
+     chargeur génère, avec leurs métriques ajustées. */
+  --pl-serif: var(--font-planche-serif), Georgia, serif;
+  --pl-sans: var(--font-planche-sans), system-ui, sans-serif;
+  --pl-mono: var(--font-planche-mono), ui-monospace, monospace;
 
   --pl-mod: var(--pl-encre-2);
   --pl-marge: 200px;

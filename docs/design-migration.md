@@ -354,3 +354,106 @@ touché, aucune route publique modifiée. Si seule la partie production doit
 partir en gardant le prototype, il suffit de retirer la ligne d'import de
 `src/app/globals.css` et de supprimer `src/styles/planche-tokens.css` — la
 feuille n'est référencée nulle part ailleurs.
+
+---
+
+## 13. Lot M2 — livré le 2026-07-28
+
+### 13.1 Inventaire des références à Geist et Archivo
+
+**Produit avant toute ligne de code, et il commande la suite.**
+
+| Référence                 | Occurrences  | Où                                                                         |
+| ------------------------- | ------------ | -------------------------------------------------------------------------- |
+| Import `next/font/google` | 1            | `src/app/layout.tsx` — les trois familles                                  |
+| Variables CSS déclarées   | 3            | `--font-sans`, `--font-geist-mono`, `--font-display`                       |
+| Jetons Tailwind dérivés   | 3            | `--font-sans`, `--font-mono`, `--font-heading` dans `globals.css`          |
+| `className` de police     | **36**       | 20 × `font-mono`, 14 × `font-heading`, 1 × `font-sans`, 1 × `font-display` |
+| Fichiers concernés        | 23           | Composants d'interface, de contenu, entraîneurs psychotechniques, pages    |
+| Application globale       | **2 règles** | `body { @apply font-sans }` et `h1, h2 { @apply font-heading }`            |
+| Tests                     | 0            | Aucun test ne référence ces polices                                        |
+| Storybook                 | —            | Le projet n'en a pas                                                       |
+| Documentation             | 6            | `design-system.md`, deux docs éditoriales, deux skills, ce plan            |
+
+**Verdict : la suppression est impossible.** Les deux règles de `globals.css`
+appliquent Geist au corps de **toutes** les pages et Archivo à **tous** les
+titres de niveau 1 et 2 — soit les **50 routes publiques**. Le compteur de
+références ne peut atteindre zéro qu'après la migration de la dernière famille.
+
+**Geist et Archivo restent donc en place, intactes.** M2 ne les touche pas.
+
+### 13.2 Ce que M2 a fait
+
+Les trois familles PLANCHE sont installées via `next/font/local` et appliquées
+**au seul design-lab**. Le gabarit racine de production n'a pas changé d'une
+ligne.
+
+| Livrable           | Emplacement                                                 |
+| ------------------ | ----------------------------------------------------------- |
+| Fichiers de fontes | `src/fonts/planche/*.woff2` — 7 fichiers, **186,6 kB**      |
+| Licences           | `public/fonts/planche/OFL-{spectral,firasans,firamono}.txt` |
+| Script de découpe  | `scripts/build-planche-fonts.mjs`, avec un mode `--verify`  |
+| Déclarations       | `src/lib/design/planche-fonts.ts`                           |
+
+Le script est **reproductible au bit** : `SOURCE_DATE_EPOCH` fige l'horodatage
+que fontTools inscrirait dans la table `head`. Sans lui, deux exécutions
+produisaient des fichiers différents et `--verify` ne pouvait rien affirmer —
+défaut trouvé et corrigé pendant le lot. Le script **échoue** si `smcp` manque
+après découpe d'une fonte de lecture : la charte interdisant la synthèse, une
+telle fonte serait inutilisable.
+
+### 13.3 Poids préchargé par archétype
+
+| Archétype      | Préchargé PLANCHE                | Chargé PLANCHE       | Hérité (gabarit racine)           |
+| -------------- | -------------------------------- | -------------------- | --------------------------------- |
+| La Leçon       | 3 fichiers Spectral, **84,2 kB** | 6 fichiers, 157,5 kB | 3 fichiers Geist/Archivo, 85,3 kB |
+| Fiche appareil | 3 fichiers Spectral, **84,2 kB** | 7 fichiers, 186,7 kB | idem                              |
+| Le Banc        | 3 fichiers Spectral, **84,2 kB** | 6 fichiers, 157,5 kB | idem                              |
+
+Toutes les fontes PLANCHE sont servies en `public, max-age=31536000, immutable`
+avec une empreinte de contenu dans le nom — deux gains que le `@font-face`
+manuel n'obtenait pas. Les 85,3 kB hérités disparaîtront avec le gabarit racine
+séparé, au lot M3.
+
+### 13.4 Vérifications typographiques
+
+| Contrôle                        | Résultat                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| Italique authentique            | **−7,8 %** de largeur — une oblique synthétisée ne change pas les chasses |
+| Petites capitales               | **+26,1 %** — une synthèse ne changerait presque rien                     |
+| Décalage cumulé de mise en page | **0,0001**                                                                |
+
+> **Une erreur de mesure a failli passer.** La première sonde plaçait son
+> élément témoin sur `document.body`, hors de `.pl-root` : `--pl-serif` n'y
+> existe pas, la déclaration devenait invalide, et l'on mesurait la police
+> héritée. Résultat affiché : « italique : synthèse ». Faux. La sonde vit
+> désormais sous `.pl-root`, et le test Playwright fait de même.
+
+### 13.5 Preuve que les routes non migrées sont inchangées
+
+Quatorze captures pleine page, M1 contre M2 :
+
+| Résultat               |                                                          |
+| ---------------------- | -------------------------------------------------------- |
+| Identiques au bit près | **12 sur 14**                                            |
+| Écart résiduel         | **8 pixels**, sur deux pages                             |
+| Amplitude              | **±2 sur 255**                                           |
+| Localisation           | Photographies optimisées, jamais du texte ni une bordure |
+
+Même signature que le résidu de M1 : le ré-encodage d'image par l'optimiseur.
+Aucune mise en page, aucune couleur d'interface, aucun texte n'a bougé — ce qui
+était attendu, puisque **aucun fichier de production n'a été modifié** hors le
+déplacement des fontes hors de `public/`.
+
+### 13.6 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M2>
+npm run check
+```
+
+Aucune dépendance : les fontes ne sont référencées que par
+`src/lib/design/planche-fonts.ts`, lui-même importé par le seul gabarit du
+design-lab. Pour ne retirer que le chargeur en gardant les fichiers, il suffit
+de rétablir les `@font-face` dans `planche.css` — le lot précédent en contient
+la forme exacte.

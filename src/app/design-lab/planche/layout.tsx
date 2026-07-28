@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isDesignLabEnabled } from "@/lib/design-lab/flag";
+import { PLANCHE_FONT_VARIABLES } from "@/lib/design/planche-fonts";
 import "./planche.css";
 
 export const metadata: Metadata = {
@@ -16,46 +17,16 @@ export const metadata: Metadata = {
  * Trois garanties, tenues par ce fichier :
  *  1. le drapeau — sans `NEXT_PUBLIC_DESIGN_LAB=1`, la route répond 404 ;
  *  2. l'isolation — `planche.css` ne pose aucun jeton sur `:root` ;
- *  3. le préchargement — seules les quatre fontes du premier écran sont
- *     préchargées ; les graisses secondaires se chargent à la demande.
+ *  3. le préchargement — `next/font/local` précharge Spectral (la voix
+ *     éditoriale, présente au premier écran) et laisse Fira Sans et Fira
+ *     Mono se charger à la demande.
  */
 export default function PlancheLayout({ children }: { children: React.ReactNode }) {
   if (!isDesignLabEnabled()) {
     notFound();
   }
 
-  return (
-    <>
-      {/* React 19 remonte ces balises dans <head>. */}
-      <link
-        rel="preload"
-        href="/fonts/planche/spectral-400.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/fonts/planche/spectral-600.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/fonts/planche/fira-sans-400.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/fonts/planche/fira-mono-400.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      {children}
-    </>
-  );
+  // Les variables de fontes sont posées ici, et nulle part ailleurs : le
+  // gabarit racine de production reste sur Geist et Archivo.
+  return <div className={PLANCHE_FONT_VARIABLES}>{children}</div>;
 }
