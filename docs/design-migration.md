@@ -457,3 +457,167 @@ Aucune dépendance : les fontes ne sont référencées que par
 design-lab. Pour ne retirer que le chargeur en gardant les fichiers, il suffit
 de rétablir les `@font-face` dans `planche.css` — le lot précédent en contient
 la forme exacte.
+
+---
+
+## 14. Lot M3 — livré le 2026-07-28
+
+Architecture **B** : une racine commune minimale, un groupe historique `(site)`,
+un groupe PLANCHE `(planche)`. C'est le lot de la bascule : la première route
+publique change de charte.
+
+### 14.1 Arborescence, avant et après
+
+```
+AVANT                              APRÈS
+src/app/                           src/app/
+├── layout.tsx  ← fontes + chrome  ├── layout.tsx        ← html/body/thème seulement
+├── page.tsx                       ├── (site)/           ← 49 routes, charte historique
+├── (auth)/ …                      │   ├── layout.tsx    ← Geist, Geist Mono, Archivo
+├── [module]/ …                    │   ├── page.tsx
+├── bia/ …                         │   ├── (auth)/ [module]/ bia/ …
+├── cours/[slug]/                  │   └── … (24 segments déplacés)
+├── … 24 segments                  ├── (planche)/        ← 1 route, système PLANCHE
+├── design-lab/                    │   ├── layout.tsx    ← Spectral, Fira Sans, Fira Mono
+└── globals.css                    │   └── cours/[slug]/
+                                   ├── design-lab/
+                                   └── globals.css
+```
+
+Les groupes **n'apparaissent pas dans l'URL** : `/cours/couche-limite-et-decrochage`
+répond à la même adresse qu'avant. Les 492 URL du plan du site sont inchangées.
+
+### 14.2 Fichiers déplacés
+
+`git mv` sur **24 segments de route** (57 fichiers) vers `src/app/(site)/`, puis
+`src/app/(site)/cours/[slug]` vers `src/app/(planche)/cours/[slug]`. Le
+déplacement est enregistré comme un renommage : l'historique Git suit.
+
+La feuille `planche.css` a quitté `src/app/design-lab/planche/` pour
+`src/styles/planche.css` — un seul fichier désormais, importé par les deux
+gabarits qui en ont besoin. Le **pansement `body:has(.pl-root) > header, > footer`
+a disparu** : le chrome historique n'est plus monté sur ces routes, il n'y a
+plus rien à masquer.
+
+### 14.3 Fichiers réellement modifiés
+
+| Fichier                               | Ce qui change                                                     |
+| ------------------------------------- | ----------------------------------------------------------------- |
+| `src/app/layout.tsx`                  | réduit à `html`/`body`/thème/service worker ; plus aucune fonte   |
+| `src/app/(site)/layout.tsx`           | **neuf** — Geist, Geist Mono, Archivo, `SiteHeader`, `SiteFooter` |
+| `src/app/(planche)/layout.tsx`        | **neuf** — fontes PLANCHE, bandeau, pied de page                  |
+| `src/app/globals.css`                 | `html`/`h1, h2` → `.site-root`/`.site-root h1, h2`                |
+| `src/app/(planche)/cours/[slug]/…`    | gabarit PLANCHE ; URL, contenu et métadonnées inchangés           |
+| `src/components/planche/*`            | **neuf** — ossature promue du prototype + bandeau, pied, registre |
+| `src/styles/planche.css`              | déplacé, dédoublonné, `.pl-univers` ajouté                        |
+| `src/features/design-lab/planche.tsx` | réexporte l'ossature commune ; ne garde que son bandeau           |
+| `src/lib/navigation.test.ts`          | la résolution d'URL traverse les répertoires parenthésés          |
+| `e2e/planche-groupe.spec.ts`          | **neuf** — 12 tests de coexistence                                |
+
+### 14.4 Deux défauts que seule la capture a montrés
+
+**La grille écrasée.** Le premier gabarit posait `.pl-root` deux fois — une fois
+pour le chrome, une fois pour la planche. Les règles de gabarit sont écrites en
+descendance (`.pl-root[data-marge="none"] .pl-page`) : le conteneur externe, en
+marge `none`, a donc imposé sa grille à deux colonnes à la page interne. La
+colonne de corps est tombée de 620 à 280 px et l'annexe a basculé sous la marge.
+Le conteneur de groupe porte désormais `.pl-univers`, qui déclare les mêmes
+jetons **sans** hériter des sélecteurs de gabarit.
+
+**Le pied de page décroché.** `<body>` est une colonne flex en `min-h-full` et
+c'est `<main>` qui portait le `flex-1`. Le conteneur de groupe s'intercalant
+entre les deux, il devait grandir à leur place : posé en `min-h-full`, il
+laissait le pied remonter de **258 px** sur les pages courtes. `flex-1` rétablit
+le comportement exact d'avant — et c'est la comparaison pixel, pas la relecture,
+qui l'a trouvé.
+
+### 14.5 Preuve pixel des routes non migrées
+
+Méthode : un `git worktree` sur le commit précédent, construit et servi sur le
+port 3100 ; le lot servi sur le port 3000 ; **34 captures pleine page** prises
+dans la même exécution, à deux largeurs.
+
+| Résultat                             |                                        |
+| ------------------------------------ | -------------------------------------- |
+| Routes non migrées identiques au bit | **32 sur 32**                          |
+| Route migrée                         | 2 captures, différentes — c'est le lot |
+
+`/credits-photos` a d'abord montré un écart : des vignettes non décodées sur le
+serveur fraîchement démarré, cache d'optimiseur froid. Trois répétitions à cache
+chaud des deux côtés donnent **0 pixel d'écart** — même signature que le
+faux écart de M1, et la même leçon : contrôler la mesure avant de conclure.
+
+### 14.6 Navigation, thème, défilement
+
+Témoin de persistance : un jeton réécrit à chaque analyse de document. S'il
+survit, le document n'a pas été rechargé. Il vit dans le harnais de test
+(`addInitScript`), pas dans le bundle publié.
+
+| Parcours                 | Résultat          |
+| ------------------------ | ----------------- |
+| `/bia/[matiere]` → leçon | navigation client |
+| leçon → `/bia/[matiere]` | navigation client |
+| retour arrière           | navigation client |
+| leçon → leçon            | navigation client |
+
+Thème posé sur une route historique, retrouvé sur la route PLANCHE (`.dark` et
+registre sombre `#10141a`). Défilement : haut de page à l'aller, position
+restaurée au retour — identique à avant.
+
+### 14.7 Ressources chargées par groupe
+
+| Route              | Fontes chargées                                 | Feuilles             |
+| ------------------ | ----------------------------------------------- | -------------------- |
+| `/cours/[slug]`    | Spectral 400/600/400-italic — **rien d'autre**  | globale + PLANCHE    |
+| `/bia/…` et les 48 | trois fichiers Geist/Archivo — **rien d'autre** | globale + historique |
+
+Aucune fuite dans un sens ni dans l'autre ; deux tests Playwright le tiennent.
+
+**Poids de la leçon : 516 kB → 88 kB de HTML.** L'essentiel de la baisse est
+l'index de recherche sérialisé, que le bandeau PLANCHE ne porte pas — mesuré à
+**431 kB par page**.
+
+### 14.8 SEO, PWA, liens internes
+
+- Plan du site, `robots.txt` et manifeste : **octet pour octet identiques**.
+- Les **14 leçons** gardent titre et description à l'identique.
+- Aucune balise canonique n'existe sur le site, ni avant ni après.
+- `/cours/*` n'est pas dans le plan du site — c'était déjà le cas ; à traiter
+  dans un lot SEO, pas ici.
+- Service worker : le composant d'enregistrement vit dans la racine commune,
+  donc monté à l'identique des deux côtés ; état d'enregistrement mesuré
+  identique sur les deux groupes.
+- **Un seul lien avait disparu** : `/connexion`, que le bandeau PLANCHE ne
+  portait pas. `AuthStatus` y est monté tel quel — le lot ne migre pas
+  l'authentification, mais il n'a pas le droit de la faire disparaître.
+
+### 14.9 Ce que M3 n'a pas fait, et pourquoi
+
+- **`CourseExperience`** — progression, interaction, quiz — garde son habillage
+  historique. Composant client partagé avec d'autres familles : sa mise en
+  PLANCHE est le lot M5, pas un lot d'architecture.
+- **La recherche globale** n'est pas dans le bandeau PLANCHE : 431 kB par page.
+  Un point d'entrée léger viendra avec son lot.
+- **`AuthStatus`** est monté avec ses boutons historiques : le remplacer
+  supposerait de dupliquer la logique de session.
+
+### 14.10 Deux tests rouges, antérieurs au lot
+
+`preparation.spec.ts` et `revision.spec.ts` échouent — **à l'identique sur le
+commit précédent**, vérifié en servant les deux versions côte à côte. Le repère
+`region « Ma préparation »` n'existe plus dans `src/` : le test survit à une
+fonctionnalité déplacée. Corriger cela demande de toucher une fonctionnalité
+sans rapport avec le gabarit ; ce sera un lot à part.
+
+### 14.11 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M3>
+npm run check
+```
+
+Le lot est un seul commit et ne touche ni contenu, ni schéma, ni migration SQL.
+Le retour arrière remet les 24 segments à leur place et rétablit `html { @apply
+font-sans }`. Pour ne retirer que la bascule publique en gardant l'architecture,
+il suffit de rendre `cours/[slug]` au groupe `(site)` : les deux gabarits
+coexistent sans lui.

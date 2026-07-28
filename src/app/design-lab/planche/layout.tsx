@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isDesignLabEnabled } from "@/lib/design-lab/flag";
 import { PLANCHE_FONT_VARIABLES } from "@/lib/design/planche-fonts";
-import "./planche.css";
+import "@/styles/planche.css";
 
 export const metadata: Metadata = {
   title: "Laboratoire de design — PLANCHE",

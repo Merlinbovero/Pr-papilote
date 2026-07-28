@@ -134,9 +134,10 @@ test.describe("Prototype PLANCHE", () => {
     for (const [nom, cache] of entetes) {
       if (!/spectral|fira/.test(nom)) continue;
       expect(cache, nom).toContain("immutable");
-      expect(nom, "empreinte de contenu attendue dans le nom").toMatch(
-        /-s?\.?[a-z0-9_-]{8,}\.woff2$/
-      );
+      // `next/font/local` nomme les fichiers `<famille>-s.p.<empreinte>.woff2`
+      // (ou `-s.<empreinte>` sans préchargement). Seule l'empreinte compte :
+      // c'est elle qui autorise le cache immuable d'un an.
+      expect(nom, "empreinte de contenu attendue dans le nom").toMatch(/\.[a-z0-9_-]{10,}\.woff2$/);
     }
   });
 

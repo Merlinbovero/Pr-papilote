@@ -172,13 +172,17 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
+  /* Lot M3 — la typographie historique passe sous `.site-root`, portée par
+     le layout du groupe `(site)`. Elle s'appliquait auparavant au document
+     entier et atteignait donc aussi les routes PLANCHE. Le rendu des routes
+     historiques est inchangé : `.site-root` enveloppe tout leur contenu. */
+  .site-root {
     @apply font-sans;
   }
   /* Titres en police display (identité « cinématique institutionnelle ») ;
      le corps de texte reste en Geist pour la lisibilité. */
-  h1,
-  h2 {
+  .site-root h1,
+  .site-root h2 {
     @apply font-heading;
   }
 }

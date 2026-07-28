@@ -63,8 +63,12 @@ content/                        ← la richesse du projet (texte structuré)
   glossaire/  questions/  quiz/  documents/
 src/
   app/                          routes = gabarits
+    layout.tsx                  racine commune minimale : html/body, thème, service worker
+    (site)/                     groupe historique — Geist + Archivo, header et footer du site
+    (planche)/                  groupe PLANCHE — Spectral, Fira Sans, Fira Mono, bandeau planche
   components/ui                 primitives shadcn (design system)
   components/layout              header, footer, sidebar, breadcrumb
+  components/planche             ossature du système PLANCHE (docs/design-manifesto.md)
   components/content             rendu du contenu structuré (RSC purs)
   components/shared              cartes et blocs métier réutilisés
   features/                     moteurs verticaux (composants + logique colocalisés)
@@ -110,6 +114,27 @@ Sept entités (fiche, question, quiz, document, schéma, terme, exercice psychot
 ```
 
 Gabarits limités (~11) : accueil, hub module, hub catégorie, fiche, fiche-objet, notice document, lecteur quiz, restitution, moteur psychotechnique, progression, recherche. Toute nouvelle page doit répondre à « quel gabarit ? ».
+
+### Deux chartes en coexistence — groupes de routes
+
+La migration vers le système PLANCHE (`docs/design-manifesto.md`) est
+progressive : deux directions artistiques cohabitent pendant plusieurs lots.
+Elles sont séparées par des **groupes de routes**, invisibles dans l'URL.
+
+`app/layout.tsx` ne contient que ce que les deux univers partagent réellement —
+`html`, `body`, la langue, le thème, le service worker. **Aucune fonte, aucun
+chrome, aucune classe typographique.** C'est cette racine unique qui permet à la
+traversée d'un univers à l'autre de rester une navigation client : deux layouts
+racine distincts imposeraient un rechargement complet du document.
+
+Chaque groupe déclare ses fontes et son chrome dans son propre gabarit, et rien
+ne fuit : une route `(site)` ne charge aucune fonte PLANCHE, une route
+`(planche)` ne charge ni Geist ni Archivo. Les règles typographiques historiques
+sont portées par `.site-root`, celles de PLANCHE par `.pl-root` et `.pl-univers`.
+Des tests Playwright (`e2e/planche-groupe.spec.ts`) tiennent ces frontières.
+
+Déplacer une route d'un groupe à l'autre ne change **jamais** son URL. Le plan du
+site, les identifiants de contenu et les métadonnées sont indépendants du groupe.
 
 ## Base de données (données utilisateur uniquement)
 

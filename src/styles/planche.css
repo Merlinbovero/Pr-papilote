@@ -1,23 +1,22 @@
 /*
- * Système PLANCHE — feuille de style du prototype.
+ * Système PLANCHE — feuille de style du système.
  *
  * Les valeurs de couleur sont celles de `src/styles/planche-tokens.css`
  * (lot M1) et de `src/lib/design/planche-tokens.ts`, où elles sont testées.
  *
  * PORTÉE LOCALE, sans exception : chaque sélecteur descend de `.pl-root`.
  * Aucun jeton de production n'est touché, `:root` reste intact. Cette
- * feuille n'est chargée que par les pages `/design-lab/planche/…`.
+ * feuille n'est chargée que par les layouts qui l'importent : le groupe de
+ * routes `(planche)` et le laboratoire de design. Elle n'est **pas** dans
+ * `globals.css` : les routes historiques ne la téléchargent pas.
+ *
+ * Lot M3 — le pansement `body:has(.pl-root) > header, > footer { display:none }`
+ * du prototype a disparu : le chrome historique n'est plus monté sur ces
+ * routes, il n'y a donc plus rien à masquer.
  */
 
-/* Le prototype occupe la fenêtre : l'en-tête et le pied de production
-   sont masqués tant qu'une page PLANCHE est montée. Aucune règle ne
-   s'applique en dehors de cette condition. */
-body:has(.pl-root) > header,
-body:has(.pl-root) > footer {
-  display: none;
-}
-
-.pl-root {
+.pl-root,
+.pl-univers {
   /* ---- registre clair : papier ---- */
   --pl-fond: #fbfaf8;
   --pl-fond-2: #f6f5f2;
@@ -63,7 +62,9 @@ body:has(.pl-root) > footer {
    ThemeProvider de production) et la préférence système. Ce n'est pas une
    inversion : c'est un charbon bleuté. */
 .dark .pl-root,
-.pl-root[data-registre="sombre"] {
+.dark .pl-univers,
+.pl-root[data-registre="sombre"],
+.pl-univers[data-registre="sombre"] {
   --pl-fond: #10141a;
   --pl-fond-2: #191d24;
   --pl-fond-3: #22272d;
@@ -82,7 +83,8 @@ body:has(.pl-root) > footer {
   --pl-t1: #454c55;
   --pl-t2: #69727c;
 }
-.pl-root[data-registre="clair"] {
+.pl-root[data-registre="clair"],
+.pl-univers[data-registre="clair"] {
   --pl-fond: #fbfaf8;
   --pl-fond-2: #f6f5f2;
   --pl-fond-3: #efeeeb;
@@ -169,6 +171,78 @@ body:has(.pl-root) > footer {
   color: var(--pl-encre);
   border-bottom-color: var(--pl-filet-fort);
 }
+a.pl-mark {
+  color: inherit;
+  text-decoration: none;
+}
+/* Fin de bandeau : registre puis état de connexion. */
+.pl-top-fin {
+  display: flex;
+  align-items: center;
+  gap: 10px 16px;
+  flex-wrap: wrap;
+}
+/* Bascule de registre — trois libellés, un filet, aucune surface. */
+.pl-registre {
+  display: flex;
+  gap: 2px;
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pl-registre button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--pl-encre-3);
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 5px 9px;
+}
+.pl-registre button:hover {
+  color: var(--pl-encre);
+}
+.pl-registre button[aria-pressed="true"] {
+  border-color: var(--pl-filet-fort);
+  color: var(--pl-encre);
+}
+
+/* ---- pied de page du groupe (à ne pas confondre avec .pl-pied) ---- */
+.pl-foot {
+  border-top: 1px solid var(--pl-filet-fort);
+  margin-top: auto;
+  padding: 20px var(--pl-pad) 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  align-items: baseline;
+  font-size: 12.5px;
+  color: var(--pl-encre-3);
+}
+.pl-foot nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+.pl-foot a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.pl-foot a:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-filet-fort);
+}
+.pl-foot p {
+  margin: 0;
+  flex-basis: 100%;
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
 .pl-cart {
   font-family: var(--pl-mono);
   font-size: 11px;
@@ -320,6 +394,111 @@ body:has(.pl-root) > footer {
 }
 .pl-corps li {
   margin-bottom: 8px;
+}
+
+/* Fil d'Ariane — mêmes destinations que le fil historique, en cotes. */
+.pl-fil {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-family: var(--pl-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pl-encre-3);
+  margin-bottom: 18px;
+}
+.pl-fil > * + *::before {
+  content: "› ";
+  color: var(--pl-filet-fort);
+}
+.pl-fil a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.pl-fil a:hover {
+  border-bottom-color: var(--pl-filet-fort);
+}
+
+/* Renvois vers d'autres planches : un filet par entrée, aucune carte. */
+.pl-renvois {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 66ch;
+}
+.pl-renvois li {
+  border-top: 1px solid var(--pl-filet);
+  padding: 11px 0;
+  margin: 0;
+}
+.pl-renvois li:last-child {
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-renvois a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.pl-renvoi-t {
+  display: block;
+  font-family: var(--pl-serif);
+  font-size: 17px;
+  color: var(--pl-encre);
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+}
+.pl-renvois a:hover .pl-renvoi-t {
+  border-bottom-color: var(--pl-mod);
+}
+.pl-renvoi-r {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--pl-encre-3);
+  margin-top: 3px;
+}
+
+/* Exercice guidé : un dépliant sobre, filet en tête, pas de surface. */
+.pl-exo {
+  border-top: 1px solid var(--pl-filet);
+  padding: 12px 0;
+  max-width: 66ch;
+}
+.pl-exo:last-of-type {
+  border-bottom: 1px solid var(--pl-filet);
+  margin-bottom: 28px;
+}
+.pl-exo > summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+.pl-exo > p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+/* Navigation de parcours : un rang de renvois sous un filet fort. */
+.pl-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  border-top: 1px solid var(--pl-filet-fort);
+  padding-top: 14px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.pl-nav a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-nav a:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-mod);
 }
 
 /* La section porte son propre repère de marge, posé en absolu : il tombe
@@ -681,7 +860,8 @@ body:has(.pl-root) > footer {
   color: var(--pl-encre);
 }
 
-.pl-root :focus-visible {
+.pl-root :focus-visible,
+.pl-univers :focus-visible {
   outline: 2px solid var(--pl-mod);
   outline-offset: 2px;
 }
@@ -887,7 +1067,10 @@ body:has(.pl-root) > footer {
 @media (prefers-reduced-motion: reduce) {
   .pl-root *,
   .pl-root *::before,
-  .pl-root *::after {
+  .pl-root *::after,
+  .pl-univers *,
+  .pl-univers *::before,
+  .pl-univers *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
@@ -895,10 +1078,27 @@ body:has(.pl-root) > footer {
 
 /* Rien ne dépasse jamais la largeur de la fenêtre : la page ne défile
    pas latéralement, seuls les tableaux le font dans leur conteneur. */
-.pl-root {
+.pl-root,
+.pl-univers {
   overflow-x: clip;
 }
-.pl-root table {
+/* Conteneur du groupe de routes — lot M3.
+   Il porte les jetons pour le bandeau et le pied de page, et pousse ce
+   dernier en bas de fenêtre quand la planche est courte.
+   Il ne porte **pas** la classe `.pl-root` : les règles de gabarit sont
+   écrites en descendance (`.pl-root[data-marge="none"] .pl-page`), et un
+   `.pl-root` imbriqué les ferait fuir sur la grille de la page. */
+.pl-univers {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.pl-univers > .pl-root {
+  flex: 1;
+  min-height: 0;
+}
+.pl-root table,
+.pl-univers table {
   max-width: 100%;
 }
 
@@ -913,12 +1113,15 @@ body:has(.pl-root) > footer {
   .pl-toc a,
   .pl-top a,
   .pl-an-row a,
+  .pl-foot a,
+  .pl-corps nav a,
   .pl-index a {
     min-height: 44px;
     display: flex;
     align-items: center;
   }
-  .pl-btn {
+  .pl-btn,
+  .pl-registre button {
     min-height: 44px;
   }
   .pl-radio {
@@ -944,7 +1147,9 @@ body:has(.pl-root) > footer {
     font-size: 12.5px;
   }
   .pl-rev,
-  .pl-pied {
+  .pl-pied,
+  .pl-foot p,
+  .pl-registre {
     font-size: 12.5px;
   }
   .pl-chrono .pl-num,
