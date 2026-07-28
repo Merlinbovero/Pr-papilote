@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheChoix } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   CONSTRICTION_LABELS,
@@ -45,20 +46,13 @@ export function Venturi({ onInteract }: { onInteract?: () => void }) {
   const p2Bar = Math.round(56 * m.ratio);
 
   const controls = (
-    <fieldset className="flex flex-wrap items-center gap-3 border-0 p-0">
-      <legend className="text-muted-foreground mr-1 text-sm">Rétrécissement du conduit :</legend>
-      {CONSTRICTIONS.map((c) => (
-        <label key={c} className="flex items-center gap-1.5 text-sm">
-          <input
-            type="radio"
-            name="venturi-constriction"
-            checked={state.constriction === c}
-            onChange={() => setConstriction(c)}
-          />
-          {CONSTRICTION_LABELS[c]}
-        </label>
-      ))}
-    </fieldset>
+    <PlancheChoix
+      legende="Rétrécissement du conduit"
+      nom="venturi-constriction"
+      options={CONSTRICTIONS.map((c) => ({ valeur: c, libelle: CONSTRICTION_LABELS[c] }))}
+      valeur={state.constriction}
+      onChange={setConstriction}
+    />
   );
 
   const legend = (
@@ -102,12 +96,12 @@ export function Venturi({ onInteract }: { onInteract?: () => void }) {
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" className="fill-primary" />
+            <path d="M0,0 L10,5 L0,10 z" className="pl-f-mod" />
           </marker>
         </defs>
 
         {/* Parois du conduit (col variable) */}
-        <g className="stroke-foreground fill-none" strokeWidth={2}>
+        <g className="pl-t-encre fill-none" strokeWidth={2}>
           <polyline
             points={`30,${120 - half} 150,${120 - half} 200,${top} 240,${top} 290,${120 - half} 390,${120 - half}`}
           />
@@ -118,7 +112,7 @@ export function Venturi({ onInteract }: { onInteract?: () => void }) {
 
         {/* Flèche de vitesse à l'entrée */}
         <line
-          className="stroke-primary"
+          className="pl-t-mod"
           strokeWidth={3}
           x1="60"
           y1="120"
@@ -126,13 +120,13 @@ export function Venturi({ onInteract }: { onInteract?: () => void }) {
           y2="120"
           markerEnd="url(#vt-arrow)"
         />
-        <text x="60" y={120 - half - 8} className="fill-foreground text-xs">
+        <text x="60" y={120 - half - 8} className="pl-f-encre">
           entrée · V₁ = {V1} m/s
         </text>
 
         {/* Flèche de vitesse au col */}
         <line
-          className="stroke-primary"
+          className="pl-t-mod"
           strokeWidth={3}
           x1="188"
           y1="120"
@@ -140,18 +134,18 @@ export function Venturi({ onInteract }: { onInteract?: () => void }) {
           y2="120"
           markerEnd="url(#vt-arrow)"
         />
-        <text x="220" y={top - 8} textAnchor="middle" className="fill-primary text-xs">
+        <text x="220" y={top - 8} textAnchor="middle" className="pl-f-mod">
           col · V₂ = {Math.round(m.v2)} m/s
         </text>
 
         {/* Indicateurs de pression statique (schématiques) */}
         <g>
-          <rect x="96" y={210 - p1Bar} width="14" height={p1Bar} className="fill-foreground/70" />
-          <text x="103" y="228" textAnchor="middle" className="fill-foreground text-xs">
+          <rect x="96" y={210 - p1Bar} width="14" height={p1Bar} className="pl-f-encre-2" />
+          <text x="103" y="228" textAnchor="middle" className="pl-f-encre">
             p₁
           </text>
-          <rect x="213" y={210 - p2Bar} width="14" height={p2Bar} className="fill-primary/70" />
-          <text x="220" y="228" textAnchor="middle" className="fill-primary text-xs">
+          <rect x="213" y={210 - p2Bar} width="14" height={p2Bar} className="pl-f-mod" />
+          <text x="220" y="228" textAnchor="middle" className="pl-f-mod">
             p₂
           </text>
         </g>

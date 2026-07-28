@@ -628,3 +628,129 @@ Le retour arrière remet les 24 segments à leur place et rétablit `html { @app
 font-sans }`. Pour ne retirer que la bascule publique en gardant l'architecture,
 il suffit de rendre `cours/[slug]` au groupe `(site)` : les deux gabarits
 coexistent sans lui.
+
+---
+
+## 15. Lot M4 — livré le 2026-07-28
+
+Les primitives, puis la mise en PLANCHE de ce que la leçon monte : le relevé de
+progression, les étapes, et les **sept interactions pédagogiques**.
+
+### 15.1 Périmètre tenu
+
+| Touché                                     | Non touché                               |
+| ------------------------------------------ | ---------------------------------------- |
+| `/cours/[slug]` — les 14 leçons            | les 49 routes historiques                |
+| `CourseExperience` (montage unique)        | `QuizPlayer` — **0 ligne**               |
+| `Interactive`, `InteractionSlot`           | `src/components/ui/*` — **0 ligne**      |
+| les 7 interactions, **présentation seule** | les 7 modèles `*-model.ts` — **0 ligne** |
+
+Vérification mécanique : `git diff -- src/features/quiz/ src/components/ui/
+src/features/interactions/*-model.ts` rend **zéro ligne**.
+
+### 15.2 Primitives extraites — et celles qui ne l'ont pas été
+
+`src/components/planche/planche-commandes.tsx` : `PlancheBouton`,
+`PlancheChoix` (radios), `PlancheCases` (cases), `PlancheCurseur`. Toutes
+reposent sur des éléments natifs — le clavier, les rôles et les noms
+accessibles viennent du navigateur, jamais d'un `role=` posé à la main.
+
+`.pl-tab` et `.pl-legende` **restent des classes du laboratoire** : aucune
+route publique ne les emploie encore, et l'on ne fige pas une API de
+production pour personne. Elles entreront au catalogue avec La Planche
+d'identification (M6).
+
+### 15.3 Le bloc hôte — comment on ne restyle pas ce qu'on ne migre pas
+
+`QuizPlayer` est déposé dans un `<div class="pl-hote">` qui lui donne un titre,
+des filets et un rythme, **sans un seul sélecteur qui entre dedans**. Mieux :
+la règle du corps a été rétrécie pour ne pas le franchir.
+
+```css
+.pl-corps p:not(.pl-hote *, .pl-manip *) { … }
+```
+
+C'est une règle **négative** : elle n'habille pas le quiz, elle empêche PLANCHE
+de l'habiller. Sans elle, `.pl-corps p` imposait déjà, depuis M3, sa serif de
+17 px aux paragraphes du lecteur de quiz — une fuite silencieuse, corrigée ici.
+
+### 15.4 Les figures : la couleur, jamais la géométrie
+
+Dix-sept familles de classes de couleur remappées vers les jetons PLANCHE
+(`fill-primary` → `pl-f-mod`, `stroke-foreground` → `pl-t-encre`, …). **Aucun
+attribut `d`, `points`, `x`, `y`, `viewBox` n'a bougé** : le dessin appartient
+au chantier « Système d'illustration technique ».
+
+Nouveau test unitaire : les couleurs de tracé sont mesurées **sur `fond2`**, le
+fond du cadre `.pl-fig`, et non sur le fond de page — une couleur validée sur
+le papier ne l'est pas d'office sur le creux. Les deux registres tiennent
+leurs seuils (4,5:1 pour les libellés, 3:1 pour les traits).
+
+### 15.5 Deux défauts pré-existants, trouvés à la capture
+
+**Les libellés empâtés.** Un `<text>` placé dans un `<g stroke=… strokeWidth=2>`
+héritait du trait : « Portance », « Poids », « Traction » sortaient
+bavocheux — **avant ce lot déjà**, capture comparative à l'appui. Une ligne de
+CSS (`.pl-fig text { stroke: none }`) les rend nets, sans toucher un tracé.
+
+**Le libellé du col qui percute la paroi.** Sur l'effet Venturi, « col · V₂ =
+20 m/s » chevauche le conduit. La capture du commit précédent montre le même
+chevauchement : c'est une géométrie de figure, pas une typographie. **Laissé au
+chantier illustration**, conformément à l'arbitrage « aucun SVG redessiné ».
+
+### 15.6 Une amélioration d'accessibilité, assumée
+
+Le nom accessible du curseur incluait sa valeur (« Angle d'incidence : 6° ») :
+il changeait à chaque flèche et se faisait relire en entier. La valeur est
+sortie du `<label>` et portée par `aria-valuetext`. Le nom est stable, la
+valeur reste annoncée — ce qu'attend une technologie d'assistance d'un curseur.
+
+### 15.7 Preuves
+
+| Contrôle                                                        | Résultat                     |
+| --------------------------------------------------------------- | ---------------------------- |
+| Routes non migrées, pixel (worktree sur M3, servi en parallèle) | **32 sur 32 identiques**     |
+| Tests unitaires                                                 | 637 verts, dont 43 de jetons |
+| Par interaction × 2 projets (bureau, tactile)                   | 6 tests × 7 × 2, tous verts  |
+| Scan axe des 14 leçons                                          | aucune violation             |
+| Scan axe des 7 interactions, clair **et** sombre                | aucune violation             |
+| Cibles tactiles des commandes                                   | ≥ 44 px, 7 sur 7             |
+| Débordement horizontal à 390 / 834 / 1440                       | 0 px, 7 sur 7                |
+
+Comme en M3, le résidu apparu au premier passage (`/eopan`, `/credits-photos`)
+n'était qu'un cache d'optimiseur d'images froid : caches chauds des deux côtés,
+l'écart tombe à **0 pixel**. Le contrôle « même build, deux exécutions » est
+lancé avant toute conclusion.
+
+### 15.8 Une erreur de méthode, et sa correction
+
+Le remappage des couleurs a d'abord été fait par un script qui normalisait
+aussi les espaces. Il a transformé `{" "}` en `{""}` — c'est-à-dire **supprimé
+des espaces rendus**, dans sept fichiers. Un changement de contenu, exactement
+ce que le lot s'interdit. Trouvé en **lisant le diff**, pas en lançant les
+tests : aucune suite n'aurait signalé un espace manquant entre deux mots.
+
+Les sept fichiers ont été rendus à leur état commité, puis repris avec un
+script dont la normalisation ne s'applique qu'à l'intérieur d'un `className`.
+Leçon : un remplacement mécanique sur du JSX doit connaître la syntaxe qu'il
+touche, ou se limiter à ce qu'il sait délimiter.
+
+### 15.9 Ce que M4 n'a pas fait
+
+- **`QuizPlayer`** garde son habillage : partagé avec `/reviser`,
+  `/bia/[matiere]` et la prévisualisation. La couture est visible dans la
+  leçon et assumée jusqu'au lot du Banc.
+- **`AuthStatus`** garde ses boutons historiques (lot M3).
+- **Les tracés** ne sont pas redessinés.
+
+### 15.10 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M4>
+npm run check
+```
+
+Un seul commit. Aucun contenu, schéma, migration SQL ni identifiant touché ;
+aucune logique métier modifiée. Pour ne retirer que l'habillage des
+interactions en gardant les primitives, il suffit de rétablir `interactive.tsx`
+dans sa forme précédente : les sept composants n'appellent que ses props.

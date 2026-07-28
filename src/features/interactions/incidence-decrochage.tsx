@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheChoix } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   describeIncidence,
@@ -34,20 +35,13 @@ export function IncidenceDecrochage({ onInteract }: { onInteract?: () => void })
   const czBar = Math.round((m.cz / 1.5) * 120);
 
   const controls = (
-    <fieldset className="flex flex-wrap items-center gap-3 border-0 p-0">
-      <legend className="text-muted-foreground mr-1 text-sm">Angle d’incidence :</legend>
-      {INCIDENCE_LEVELS.map((lvl) => (
-        <label key={lvl} className="flex items-center gap-1.5 text-sm">
-          <input
-            type="radio"
-            name="incidence-level"
-            checked={state.level === lvl}
-            onChange={() => setLevel(lvl)}
-          />
-          {INCIDENCE_LABELS[lvl]}
-        </label>
-      ))}
-    </fieldset>
+    <PlancheChoix
+      legende="Angle d’incidence"
+      nom="incidence-level"
+      options={INCIDENCE_LEVELS.map((lvl) => ({ valeur: lvl, libelle: INCIDENCE_LABELS[lvl] }))}
+      valeur={state.level}
+      onChange={setLevel}
+    />
   );
 
   const legend = (
@@ -93,13 +87,13 @@ export function IncidenceDecrochage({ onInteract }: { onInteract?: () => void })
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" className="fill-primary" />
+            <path d="M0,0 L10,5 L0,10 z" className="pl-f-mod" />
           </marker>
         </defs>
 
         {/* Vent relatif */}
         <line
-          className="stroke-foreground"
+          className="pl-t-encre"
           strokeWidth={2}
           x1="20"
           y1="150"
@@ -107,7 +101,7 @@ export function IncidenceDecrochage({ onInteract }: { onInteract?: () => void })
           y2="150"
           markerEnd="url(#id-arrow)"
         />
-        <text x="20" y="142" className="fill-foreground text-xs">
+        <text x="20" y="142" className="pl-f-encre">
           vent relatif
         </text>
 
@@ -115,14 +109,14 @@ export function IncidenceDecrochage({ onInteract }: { onInteract?: () => void })
         <g transform={`rotate(${-m.angle} 150 150)`}>
           <path
             d="M100,150 q60,-22 130,-4 q-60,16 -130,4 z"
-            className="stroke-foreground fill-foreground/10"
+            className="pl-t-encre pl-f-creux"
             strokeWidth={2}
           />
         </g>
 
         {/* Filets d'air sur l'extrados : collés, ou décollés (sillage turbulent) */}
         {m.flow !== "decolle" ? (
-          <g className="stroke-primary" strokeWidth={2} fill="none">
+          <g className="pl-t-mod" strokeWidth={2} fill="none">
             <path d="M95,120 q60,-30 135,-18" markerEnd="url(#id-arrow)" />
             <path d="M95,132 q60,-24 135,-12" markerEnd="url(#id-arrow)" />
             {m.flow === "limite" ? (
@@ -136,29 +130,29 @@ export function IncidenceDecrochage({ onInteract }: { onInteract?: () => void })
             )}
           </g>
         ) : (
-          <g className="stroke-primary" strokeWidth={2} fill="none">
+          <g className="pl-t-mod" strokeWidth={2} fill="none">
             {/* Le filet décolle tôt puis part en tourbillons (sillage) */}
             <path d="M95,120 q30,-18 60,-16" markerEnd="url(#id-arrow)" />
             <path d="M158,100 a10,10 0 1 0 10,10 a6,6 0 1 1 -6,-6" strokeDasharray="3 3" />
             <path d="M186,104 a11,11 0 1 1 -11,11 a6,6 0 1 0 6,-6" strokeDasharray="3 3" />
             <path d="M214,108 a10,10 0 1 0 10,10 a6,6 0 1 1 -6,-6" strokeDasharray="3 3" />
-            <text x="210" y="86" textAnchor="middle" className="fill-primary text-xs">
+            <text x="210" y="86" textAnchor="middle" className="pl-f-mod">
               décollement
             </text>
           </g>
         )}
 
         {/* Jauge de Cz */}
-        <text x="300" y="196" className="fill-foreground text-xs">
+        <text x="300" y="196" className="pl-f-encre">
           Cz
         </text>
-        <rect x="318" y="180" width="80" height="14" className="fill-foreground/10" />
-        <rect x="318" y="180" width={Math.min(czBar, 80)} height="14" className="fill-primary" />
-        <text x="358" y="216" textAnchor="middle" className="fill-foreground text-xs">
+        <rect x="318" y="180" width="80" height="14" className="pl-f-creux" />
+        <rect x="318" y="180" width={Math.min(czBar, 80)} height="14" className="pl-f-mod" />
+        <text x="358" y="216" textAnchor="middle" className="pl-f-encre">
           {m.cz.toFixed(2)}
         </text>
         {m.stalled ? (
-          <text x="200" y="240" textAnchor="middle" className="fill-primary text-xs font-semibold">
+          <text x="200" y="240" textAnchor="middle" className="pl-f-mod font-semibold">
             décrochage — la portance chute
           </text>
         ) : null}

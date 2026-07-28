@@ -390,17 +390,21 @@ a.pl-mark {
   margin: 0 0 28px;
   max-width: 66ch;
 }
-.pl-corps p {
+/* La typographie du corps s'arrête à la frontière d'un bloc hôte : un
+   composant non encore migré n'est ni ciblé ni restylé, il est laissé
+   tranquille. `:not(<selecteur complexe>)` est du CSS Selectors 4, accepté
+   par tous les navigateurs à feuilles persistantes. */
+.pl-corps p:not(.pl-hote *, .pl-manip *) {
   font-family: var(--pl-serif);
   font-size: 17px;
   line-height: 1.647;
   margin: 0 0 28px;
   max-width: 66ch;
 }
-.pl-corps p strong {
+.pl-corps p:not(.pl-hote *, .pl-manip *) strong {
   font-weight: 600;
 }
-.pl-corps ul {
+.pl-corps ul:not(.pl-hote *, .pl-manip *) {
   font-family: var(--pl-serif);
   font-size: 17px;
   line-height: 1.647;
@@ -408,7 +412,7 @@ a.pl-mark {
   padding-left: 20px;
   max-width: 66ch;
 }
-.pl-corps li {
+.pl-corps li:not(.pl-hote *, .pl-manip *) {
   margin-bottom: 8px;
 }
 
@@ -876,6 +880,308 @@ a.pl-mark {
   color: var(--pl-encre);
 }
 
+/* ---- champ : une légende, puis ses commandes ---- */
+.pl-champ {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+.pl-champ > legend {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-3);
+  font-variant-caps: small-caps;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 6px;
+}
+.pl-champ .pl-radios {
+  margin: 0;
+}
+
+/* Case à cocher : même gabarit que le radio, angle vif. Le radio est rond
+   parce qu'un choix y est exclusif ; la case est carrée parce qu'elle ne
+   l'est pas. La forme porte le sens, pas seulement le style. */
+.pl-radio input[type="checkbox"] {
+  border-radius: 0;
+}
+.pl-radio input[type="checkbox"]:checked {
+  border-color: var(--pl-mod);
+  background: var(--pl-mod);
+  box-shadow: inset 0 0 0 2px var(--pl-fond);
+}
+
+/* ---- curseur ---- */
+.pl-curseur {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 420px;
+}
+.pl-curseur-t {
+  font-size: 13px;
+  color: var(--pl-encre-2);
+  margin: 0;
+}
+.pl-curseur .pl-v {
+  font-family: var(--pl-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--pl-encre);
+}
+.pl-curseur input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.pl-curseur input[type="range"]::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--pl-filet-fort);
+}
+.pl-curseur input[type="range"]::-moz-range-track {
+  height: 1px;
+  background: var(--pl-filet-fort);
+}
+/* Le curseur est un trait vertical — un repère de règle, pas une pastille. */
+.pl-curseur input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 3px;
+  height: 18px;
+  margin-top: -9px;
+  border: 0;
+  border-radius: 0;
+  background: var(--pl-mod);
+}
+.pl-curseur input[type="range"]::-moz-range-thumb {
+  width: 3px;
+  height: 18px;
+  border: 0;
+  border-radius: 0;
+  background: var(--pl-mod);
+}
+
+/* ---- relevé de progression ---- */
+.pl-releve {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  border-top: 1px solid var(--pl-filet-fort);
+  border-bottom: 1px solid var(--pl-filet);
+  padding: 9px 0;
+  margin: 0 0 28px;
+}
+.pl-releve-l {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-3);
+  font-variant-caps: small-caps;
+  font-weight: 500;
+}
+.pl-releve-v {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+  border: 1px solid var(--pl-filet-fort);
+  border-radius: 2px;
+  padding: 2px 8px;
+}
+/* Vert de validation réservé au seul statut « maîtrisé » : la couleur porte
+   un sens, elle ne décore pas un état intermédiaire. */
+.pl-releve-v[data-etat="maitrise"] {
+  color: var(--pl-juste);
+  border-color: var(--pl-juste);
+}
+.pl-releve .pl-btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* ---- étapes du cours ---- */
+.pl-etapes {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 66ch;
+}
+.pl-etapes li {
+  border-top: 1px solid var(--pl-filet);
+  margin: 0;
+}
+.pl-etapes li:last-child {
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-etape {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 0;
+  font: inherit;
+  font-size: 14.5px;
+  text-align: left;
+  color: var(--pl-encre-2);
+  background: transparent;
+  border: 0;
+}
+button.pl-etape {
+  cursor: pointer;
+}
+button.pl-etape:hover {
+  color: var(--pl-encre);
+}
+/* Le repère d'étape est un carré vide qui se remplit : pas une coche
+   décorative, un état lisible même en niveaux de gris. */
+.pl-etape-m {
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--pl-filet-fort);
+}
+.pl-etapes li[data-fait="oui"] .pl-etape-m {
+  background: var(--pl-juste);
+  border-color: var(--pl-juste);
+}
+.pl-etapes li[data-fait="oui"] .pl-etape {
+  color: var(--pl-encre);
+}
+
+/* ---- bloc de manipulation (les sept interactions) ---- */
+.pl-manip {
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 14px;
+  margin: 0 0 28px;
+}
+.pl-manip-t {
+  font-family: var(--pl-serif);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+.pl-manip-c {
+  font-size: 13.5px;
+  color: var(--pl-encre-2);
+  margin: 0 0 14px;
+}
+.pl-manip-l {
+  font-size: 13.5px;
+  color: var(--pl-encre-2);
+  margin: 12px 0 0;
+}
+.pl-manip-l p {
+  margin: 0;
+}
+.pl-manip-l strong {
+  font-family: var(--pl-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  color: var(--pl-encre);
+}
+.pl-manip-cmd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 32px;
+  margin-top: 16px;
+}
+.pl-manip-d {
+  font-size: 13px;
+  margin-top: 12px;
+}
+.pl-manip-d summary {
+  color: var(--pl-encre-3);
+  cursor: pointer;
+}
+.pl-manip-d p {
+  margin: 6px 0 0;
+}
+.pl-manip-p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 14px;
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 10px;
+}
+.pl-manip-k {
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  margin: 0;
+}
+.pl-manip-p .pl-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* ---- tracé des figures ----
+   Les couleurs seules changent : la géométrie des schémas appartient au
+   chantier « Système d'illustration technique » (docs/roadmap.md). */
+.pl-fig .pl-t-encre {
+  stroke: var(--pl-encre);
+}
+.pl-fig .pl-f-encre {
+  fill: var(--pl-encre);
+}
+.pl-fig .pl-t-mod {
+  stroke: var(--pl-mod);
+}
+.pl-fig .pl-f-mod {
+  fill: var(--pl-mod);
+}
+.pl-fig .pl-t-filet {
+  stroke: var(--pl-filet-fort);
+}
+.pl-fig .pl-f-creux {
+  fill: var(--pl-fond-3);
+}
+.pl-fig .pl-t-juste {
+  stroke: var(--pl-juste);
+}
+.pl-fig .pl-f-juste {
+  fill: color-mix(in oklab, var(--pl-juste) 18%, transparent);
+}
+.pl-fig .pl-f-erreur {
+  fill: var(--pl-erreur);
+}
+.pl-fig .pl-f-encre-2 {
+  fill: var(--pl-encre-2);
+}
+.pl-fig .pl-f-mod-clair {
+  fill: color-mix(in oklab, var(--pl-mod) 22%, transparent);
+}
+.pl-fig .pl-t-mince {
+  stroke: var(--pl-filet);
+}
+.pl-fig text {
+  font-family: var(--pl-sans);
+  font-size: 11px;
+  fill: var(--pl-encre-2);
+  /* Un `<text>` placé dans un `<g stroke=… strokeWidth=2>` héritait du
+     trait : les libellés « Portance », « Poids »… sortaient empâtés, avant
+     ce lot déjà. Une ligne de CSS les rend nets, sans toucher un tracé. */
+  stroke: none;
+}
+.pl-fig text.pl-f-mod {
+  fill: var(--pl-mod);
+}
+
+/* ---- bloc hôte ----
+   Une zone de la planche qui accueille un composant **non migré**. La
+   typographie du corps s'arrête à sa frontière : le bloc n'est pas restylé,
+   il est simplement laissé tranquille. Voir `.pl-corps p:not(.pl-hote *)`. */
+.pl-hote {
+  margin: 0 0 28px;
+}
+
 .pl-root :focus-visible,
 .pl-univers :focus-visible {
   outline: 2px solid var(--pl-mod);
@@ -1137,7 +1443,8 @@ a.pl-mark {
     align-items: center;
   }
   .pl-btn,
-  .pl-registre button {
+  .pl-registre button,
+  .pl-curseur input[type="range"] {
     min-height: 44px;
   }
   .pl-radio {

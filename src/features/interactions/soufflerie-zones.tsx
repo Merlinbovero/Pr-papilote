@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheChoix } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   describeSoufflerie,
@@ -30,25 +31,16 @@ export function SoufflerieZones({ onInteract }: { onInteract?: () => void }) {
   }
 
   const active = (zone: Zone) =>
-    state.zone === zone
-      ? "fill-primary/25 stroke-primary"
-      : "fill-foreground/5 stroke-foreground/40";
+    state.zone === zone ? "pl-f-mod-clair pl-t-mod" : "pl-f-creux pl-t-filet";
 
   const controls = (
-    <fieldset className="flex flex-wrap items-center gap-3 border-0 p-0">
-      <legend className="text-muted-foreground mr-1 text-sm">Zone :</legend>
-      {ZONES.map((z) => (
-        <label key={z} className="flex items-center gap-1.5 text-sm">
-          <input
-            type="radio"
-            name="soufflerie-zone"
-            checked={state.zone === z}
-            onChange={() => setZone(z)}
-          />
-          {ZONE_LABELS[z]}
-        </label>
-      ))}
-    </fieldset>
+    <PlancheChoix
+      legende="Zone"
+      nom="soufflerie-zone"
+      options={ZONES.map((z) => ({ valeur: z, libelle: ZONE_LABELS[z] }))}
+      valeur={state.zone}
+      onChange={setZone}
+    />
   );
 
   const legend = (
@@ -89,27 +81,27 @@ export function SoufflerieZones({ onInteract }: { onInteract?: () => void }) {
         {/* Ventilateur */}
         <g className={active("ventilateur")} strokeWidth={2}>
           <circle cx="372" cy="90" r="24" />
-          <line x1="372" y1="66" x2="372" y2="114" className="stroke-foreground/60" />
-          <line x1="348" y1="90" x2="396" y2="90" className="stroke-foreground/60" />
+          <line x1="372" y1="66" x2="372" y2="114" className="pl-t-filet" />
+          <line x1="348" y1="90" x2="396" y2="90" className="pl-t-filet" />
         </g>
 
         {/* Maquette dans la veine */}
         <path
           d="M170,90 q22,-8 44,0 q-22,8 -44,0 z"
-          className="fill-foreground/40 stroke-foreground"
+          className="pl-f-creux pl-t-encre"
           strokeWidth={1}
         />
 
-        <text x="75" y="162" textAnchor="middle" className="fill-foreground text-xs">
+        <text x="75" y="162" textAnchor="middle" className="pl-f-encre">
           collecteur
         </text>
-        <text x="190" y="162" textAnchor="middle" className="fill-foreground text-xs">
+        <text x="190" y="162" textAnchor="middle" className="pl-f-encre">
           veine d’essai
         </text>
-        <text x="295" y="162" textAnchor="middle" className="fill-foreground text-xs">
+        <text x="295" y="162" textAnchor="middle" className="pl-f-encre">
           diffuseur
         </text>
-        <text x="372" y="162" textAnchor="middle" className="fill-foreground text-xs">
+        <text x="372" y="162" textAnchor="middle" className="pl-f-encre">
           ventilateur
         </text>
       </svg>

@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle2, Circle, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { PlancheBouton } from "@/components/planche/planche-commandes";
+import { PlancheSection } from "@/components/planche/planche";
 import { QuizPlayer, type PlayerQuestion } from "@/features/quiz/quiz-player";
 import { InteractionSlot } from "@/features/interactions/interaction-slot";
 import {
@@ -19,6 +18,18 @@ import {
  * le parcours d'entrée), l'interaction et le quiz. Le statut est DÉRIVÉ des
  * signaux (étapes obligatoires consultées, quiz réussi) — jamais un simple
  * bouton « terminé ». Stockage local ; la forme est prête pour Supabase.
+ *
+ * Lot M4 — habillage PLANCHE. Ce composant n'a qu'un seul point de montage,
+ * la route `/cours/[slug]` : il est donc réécrit directement, sans prop de
+ * variante ni branche conditionnelle. **La logique est intacte** — clé de
+ * stockage, dérivation du statut, signaux, seuil de quiz.
+ *
+ * `QuizPlayer` reste **hors périmètre** : il est partagé avec `/reviser`,
+ * `/bia/[matiere]` et la prévisualisation du design-system. Il est déposé
+ * dans un bloc `.pl-hote`, qui lui donne un titre, des filets et un rythme
+ * PLANCHE **sans cibler un seul de ses éléments internes** — la règle
+ * `.pl-corps p:not(.pl-hote *)` arrête même la typographie du corps à sa
+ * frontière. La couture est visible et assumée jusqu'au lot du Banc.
  */
 export interface CourseStepView {
   index: number;
@@ -140,40 +151,33 @@ export function CourseExperience({
   const seuilPct = Math.round(DEFAULT_COURSE_PROGRESS_CONFIG.quizSeuil * 100);
 
   return (
-    <div className="space-y-8">
-      {/* En-tête de progression */}
-      <div className="bg-card flex flex-wrap items-center justify-between gap-3 rounded-lg border p-4">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-medium">Ma progression</span>
-          <Badge variant={status === "maitrise" ? "default" : "secondary"}>
-            {COURSE_STATUS_LABELS[status]}
-          </Badge>
-          <span className="sr-only" aria-live="polite">
-            Statut du cours : {COURSE_STATUS_LABELS[status]}
-          </span>
-        </div>
-        <Button type="button" variant="ghost" size="sm" onClick={resetProgress}>
-          <RefreshCw className="size-4" aria-hidden="true" />
+    <>
+      {/* Relevé de progression — un rang de cotes, pas une carte. */}
+      <div className="pl-releve">
+        <span className="pl-releve-l">Ma progression</span>
+        <span className="pl-releve-v" data-etat={status}>
+          {COURSE_STATUS_LABELS[status]}
+        </span>
+        <span className="sr-only" aria-live="polite">
+          Statut du cours : {COURSE_STATUS_LABELS[status]}
+        </span>
+        <PlancheBouton variante="fantome" onClick={resetProgress}>
           Réinitialiser ma progression
-        </Button>
+        </PlancheBouton>
       </div>
 
       {/* Étapes obligatoires — case à cocher accessible */}
-      <section aria-label="Étapes du cours" className="space-y-2">
-        <h2 className="text-xl font-semibold">Étapes à valider</h2>
-        <ul className="space-y-2">
+      <section aria-label="Étapes du cours">
+        <PlancheSection id="etapes">Étapes à valider</PlancheSection>
+        <ul className="pl-etapes">
           {obligatory.map((step) => {
             const done = progress.consulted.includes(step.index);
             const auto = step.kind === "interaction" || step.kind === "quiz";
             return (
-              <li key={step.index} className="flex items-center gap-2">
+              <li key={step.index} data-fait={done ? "oui" : "non"}>
                 {auto ? (
-                  <span className="text-muted-foreground flex items-center gap-2 text-sm">
-                    {done ? (
-                      <CheckCircle2 className="text-success size-5" aria-hidden="true" />
-                    ) : (
-                      <Circle className="size-5" aria-hidden="true" />
-                    )}
+                  <span className="pl-etape">
+                    <span className="pl-etape-m" aria-hidden="true" />
                     {step.title}
                     {done ? <span className="sr-only"> (fait)</span> : null}
                   </span>
@@ -182,13 +186,9 @@ export function CourseExperience({
                     type="button"
                     aria-pressed={done}
                     onClick={() => (done ? undefined : markConsulted(step.index))}
-                    className="hover:text-foreground text-muted-foreground flex items-center gap-2 text-left text-sm"
+                    className="pl-etape"
                   >
-                    {done ? (
-                      <CheckCircle2 className="text-success size-5" aria-hidden="true" />
-                    ) : (
-                      <Circle className="size-5" aria-hidden="true" />
-                    )}
+                    <span className="pl-etape-m" aria-hidden="true" />
                     <span>
                       {step.title}
                       {done ? "" : " — marquer comme étudié"}
@@ -204,8 +204,8 @@ export function CourseExperience({
 
       {/* Interaction */}
       {interactionStep && interactionIds.length > 0 ? (
-        <section aria-label="Interaction" className="space-y-3">
-          <h2 className="text-xl font-semibold">Manipuler</h2>
+        <section aria-label="Interaction">
+          <PlancheSection id="manipuler">Manipuler</PlancheSection>
           {interactionIds.map((id) => (
             <InteractionSlot
               key={id}
@@ -216,16 +216,18 @@ export function CourseExperience({
         </section>
       ) : null}
 
-      {/* Quiz du cours */}
+      {/* Quiz du cours — bloc hôte : cadre PLANCHE, intérieur non touché. */}
       {quizStep && quizPool.length > 0 ? (
-        <section aria-label="Quiz du cours" className="space-y-3">
-          <h2 className="text-xl font-semibold">Se tester</h2>
-          <p className="text-muted-foreground text-sm">
+        <section aria-label="Quiz du cours">
+          <PlancheSection id="se-tester">Se tester</PlancheSection>
+          <p className="pl-manip-c">
             Réussissez au moins {seuilPct} % pour atteindre le statut « maîtrisé ».
           </p>
-          <QuizPlayer title="Quiz du cours" questions={quizPool} onFinished={onQuizFinished} />
+          <div className="pl-hote">
+            <QuizPlayer title="Quiz du cours" questions={quizPool} onFinished={onQuizFinished} />
+          </div>
         </section>
       ) : null}
-    </div>
+    </>
   );
 }

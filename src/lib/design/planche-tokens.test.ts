@@ -173,3 +173,43 @@ describe("la feuille de jetons et le module ne divergent pas", () => {
     expect(css).not.toMatch(/:root\s*\{[^}]*--planche-/);
   });
 });
+
+/**
+ * Lot M4 — les figures des interactions.
+ *
+ * Les tracés vivent sur `fond2`, le fond du cadre `.pl-fig`, et non sur le
+ * fond de page. Une couleur validée sur le papier ne l'est pas d'office sur
+ * le creux : c'est exactement l'erreur qu'avait révélée la palette en M1.
+ */
+describe("contrastes des figures d'interaction (lot M4)", () => {
+  const TRACES = [
+    // [jeton, seuil, ce que la couleur porte dans les figures]
+    ["encre", SEUIL_TEXTE, "libellés de figure et traits pleins"],
+    ["encre2", SEUIL_TEXTE, "libellés secondaires et barres de mesure"],
+    ["filetFort", SEUIL_GRAPHIQUE, "axes, repères et traits d'appel"],
+    ["juste", SEUIL_GRAPHIQUE, "plage de centrage admissible"],
+    ["erreur", SEUIL_GRAPHIQUE, "dépassement de limite"],
+  ] as const;
+
+  it.each([
+    ["clair", CLAIR],
+    ["sombre", SOMBRE],
+  ] as const)("registre %s : chaque tracé tient son seuil sur le fond de figure", (_nom, r) => {
+    for (const [jeton, seuil, role] of TRACES) {
+      const ratio = contrastRatio(r[jeton], r.fond2);
+      expect(ratio, `${jeton} (${role})`).toBeGreaterThanOrEqual(seuil);
+    }
+  });
+
+  it.each([
+    ["clair", CLAIR],
+    ["sombre", SOMBRE],
+  ] as const)(
+    "registre %s : les six encres de module tiennent 3:1 sur le fond de figure",
+    (_nom, r) => {
+      for (const encre of ENCRES_MODULE) {
+        expect(contrastRatio(r[encre], r.fond2), encre).toBeGreaterThanOrEqual(SEUIL_GRAPHIQUE);
+      }
+    }
+  );
+});

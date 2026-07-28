@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { RotateCcw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { PlancheBouton } from "@/components/planche/planche-commandes";
 
 /**
  * Conteneur commun des interactions pédagogiques (docs/editorial/cours.md).
@@ -10,6 +9,13 @@ import { Button } from "@/components/ui/button";
  * titre, consigne, zone interactive, légende, bouton de réinitialisation,
  * alternative textuelle accessible, indication clavier. Chaque interaction
  * fournit sa propre zone (`children`) et ses commandes (`controls`).
+ *
+ * Lot M4 — habillage PLANCHE. La carte générique (`bg-card`, coins arrondis,
+ * bordure) laisse place à des filets : le bloc s'ouvre sur un filet, la
+ * figure vit dans un cadre `.pl-fig`, le pied se referme sur un second filet.
+ * **Seule la présentation change** : le contrat de props, l'alternative
+ * textuelle, l'annonce `aria-live` et le comportement clavier sont ceux
+ * d'avant, à la ligne près.
  *
  * Accessibilité : la zone interactive est décrite par une alternative
  * textuelle (`textAlternative`) exposée à la fois en `aria-live` (mise à jour
@@ -44,34 +50,32 @@ export function Interactive({
   keyboardHint = "Toutes les commandes sont accessibles au clavier (Tab, Entrée/Espace).",
 }: InteractiveProps) {
   return (
-    <section className="bg-card space-y-4 rounded-lg border p-4 sm:p-6" aria-label={title}>
-      <div className="space-y-1">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-muted-foreground text-sm">{consigne}</p>
-      </div>
+    <section className="pl-manip" aria-label={title}>
+      <h3 className="pl-manip-t">{title}</h3>
+      <p className="pl-manip-c">{consigne}</p>
 
-      <div className="bg-background rounded-md border p-3">{children}</div>
+      <div className="pl-fig">{children}</div>
 
       {/* Alternative textuelle : annoncée dynamiquement + consultable. */}
       <p className="sr-only" aria-live="polite">
         {textAlternative}
       </p>
-      <details className="text-sm">
-        <summary className="text-muted-foreground cursor-pointer">Description accessible</summary>
-        <p className="text-foreground mt-2">{textAlternative}</p>
+
+      {legend ? <div className="pl-manip-l">{legend}</div> : null}
+
+      {controls ? <div className="pl-manip-cmd">{controls}</div> : null}
+
+      <details className="pl-manip-d">
+        <summary>Description accessible</summary>
+        <p>{textAlternative}</p>
       </details>
 
-      {legend ? <div className="text-muted-foreground text-sm">{legend}</div> : null}
-
-      {controls ? <div className="flex flex-wrap items-center gap-3">{controls}</div> : null}
-
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-muted-foreground text-xs">{keyboardHint}</p>
+      <div className="pl-manip-p">
+        <p className="pl-manip-k">{keyboardHint}</p>
         {onReset ? (
-          <Button type="button" variant="outline" size="sm" onClick={onReset}>
-            <RotateCcw className="size-4" aria-hidden="true" />
+          <PlancheBouton variante="fantome" onClick={onReset}>
             Réinitialiser
-          </Button>
+          </PlancheBouton>
         ) : null}
       </div>
     </section>

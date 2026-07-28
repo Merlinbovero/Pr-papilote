@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheCurseur } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   CENTRAGE_LABELS,
@@ -41,21 +42,15 @@ export function Centrage({ onInteract }: { onInteract?: () => void }) {
   const m = centrageMetrics(state.cg);
 
   const controls = (
-    <div className="flex w-full flex-col gap-1">
-      <label htmlFor="centrage-cg" className="text-muted-foreground text-sm">
-        Centre de gravité : <strong className="text-foreground">{m.cg} %</strong> de la corde
-      </label>
-      <input
-        id="centrage-cg"
-        type="range"
-        min={CG_MIN}
-        max={CG_MAX}
-        step={1}
-        value={m.cg}
-        onChange={(e) => setCg(Number(e.target.value))}
-        className="w-full max-w-sm"
-      />
-    </div>
+    <PlancheCurseur
+      id="centrage-cg"
+      libelle="Centre de gravité, en % de la corde"
+      affichage={`${m.cg} %`}
+      valeur={m.cg}
+      min={CG_MIN}
+      max={CG_MAX}
+      onChange={setCg}
+    />
   );
 
   const legend = (
@@ -84,18 +79,11 @@ export function Centrage({ onInteract }: { onInteract?: () => void }) {
         aria-label={describeCentrage(state)}
       >
         {/* Corde (axe) */}
-        <line
-          x1={AX.x0}
-          y1="96"
-          x2={AX.x1}
-          y2="96"
-          className="stroke-foreground/60"
-          strokeWidth={2}
-        />
-        <text x={AX.x0} y="150" className="fill-foreground text-xs">
+        <line x1={AX.x0} y1="96" x2={AX.x1} y2="96" className="pl-t-filet" strokeWidth={2} />
+        <text x={AX.x0} y="150" className="pl-f-encre">
           bord d’attaque
         </text>
-        <text x={AX.x1} y="150" textAnchor="end" className="fill-foreground text-xs">
+        <text x={AX.x1} y="150" textAnchor="end" className="pl-f-encre">
           bord de fuite
         </text>
 
@@ -105,14 +93,14 @@ export function Centrage({ onInteract }: { onInteract?: () => void }) {
           y="84"
           width={px(LIMITE_ARRIERE) - px(LIMITE_AVANT)}
           height="24"
-          className="fill-success/20 stroke-success"
+          className="pl-f-juste pl-t-juste"
           strokeWidth={1}
         />
         <text
           x={(px(LIMITE_AVANT) + px(LIMITE_ARRIERE)) / 2}
           y="76"
           textAnchor="middle"
-          className="fill-foreground text-xs"
+          className="pl-f-encre"
         >
           plage de centrage
         </text>
@@ -123,11 +111,11 @@ export function Centrage({ onInteract }: { onInteract?: () => void }) {
           y1="70"
           x2={px(FOYER)}
           y2="122"
-          className="stroke-foreground"
+          className="pl-t-encre"
           strokeWidth={1.5}
           strokeDasharray="4 3"
         />
-        <text x={px(FOYER)} y="136" textAnchor="middle" className="fill-foreground text-xs">
+        <text x={px(FOYER)} y="136" textAnchor="middle" className="pl-f-encre">
           foyer ({FOYER} %)
         </text>
 
@@ -137,15 +125,13 @@ export function Centrage({ onInteract }: { onInteract?: () => void }) {
             cx={px(m.cg)}
             cy="96"
             r="8"
-            className={m.dansLaPlage ? "fill-primary" : "fill-destructive"}
+            className={m.dansLaPlage ? "pl-f-mod" : "pl-f-erreur"}
           />
           <text
             x={px(m.cg)}
             y="60"
             textAnchor="middle"
-            className={
-              m.dansLaPlage ? "fill-primary text-xs" : "fill-destructive text-xs font-semibold"
-            }
+            className={m.dansLaPlage ? "pl-f-mod" : "pl-f-erreur font-semibold"}
           >
             CG {m.cg} %
           </text>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheCurseur } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   ALPHA_MAX,
@@ -44,21 +45,15 @@ export function Polaire({ onInteract }: { onInteract?: () => void }) {
   const path = curve.map((p, i) => `${i === 0 ? "M" : "L"}${sx(p.cx)},${sy(p.cz)}`).join(" ");
 
   const controls = (
-    <div className="flex w-full flex-col gap-1">
-      <label htmlFor="polaire-alpha" className="text-muted-foreground text-sm">
-        Angle d’incidence : <strong className="text-foreground">{m.alpha}°</strong>
-      </label>
-      <input
-        id="polaire-alpha"
-        type="range"
-        min={ALPHA_MIN}
-        max={ALPHA_MAX}
-        step={1}
-        value={m.alpha}
-        onChange={(e) => setAlpha(Number(e.target.value))}
-        className="w-full max-w-sm"
-      />
-    </div>
+    <PlancheCurseur
+      id="polaire-alpha"
+      libelle="Angle d’incidence"
+      affichage={`${m.alpha}°`}
+      valeur={m.alpha}
+      min={ALPHA_MIN}
+      max={ALPHA_MAX}
+      onChange={setAlpha}
+    />
   );
 
   const legend = (
@@ -84,19 +79,14 @@ export function Polaire({ onInteract }: { onInteract?: () => void }) {
         aria-label={describePolaire(state)}
       >
         {/* Axes */}
-        <g className="stroke-foreground/60" strokeWidth={1.5}>
+        <g className="pl-t-filet" strokeWidth={1.5}>
           <line x1={PLOT.x0} y1={PLOT.y0} x2={PLOT.x1} y2={PLOT.y0} />
           <line x1={PLOT.x0} y1={PLOT.y0} x2={PLOT.x0} y2={PLOT.yTop} />
         </g>
-        <text x={PLOT.x1} y={PLOT.y0 + 16} textAnchor="end" className="fill-foreground text-xs">
+        <text x={PLOT.x1} y={PLOT.y0 + 16} textAnchor="end" className="pl-f-encre">
           Cx (traînée)
         </text>
-        <text
-          x={PLOT.x0 - 6}
-          y={PLOT.yTop + 2}
-          textAnchor="end"
-          className="fill-foreground text-xs"
-        >
+        <text x={PLOT.x0 - 6} y={PLOT.yTop + 2} textAnchor="end" className="pl-f-encre">
           Cz
         </text>
 
@@ -106,22 +96,22 @@ export function Polaire({ onInteract }: { onInteract?: () => void }) {
           y1={sy(0)}
           x2={sx(m.remarquable === "finesse-max" ? m.cx : polaireMetrics(6).cx)}
           y2={sy(m.remarquable === "finesse-max" ? m.cz : polaireMetrics(6).cz)}
-          className="stroke-foreground/30"
+          className="pl-t-mince"
           strokeWidth={1}
           strokeDasharray="4 3"
         />
 
         {/* Courbe polaire */}
-        <path d={path} className="stroke-primary" strokeWidth={2.5} fill="none" />
+        <path d={path} className="pl-t-mod" strokeWidth={2.5} fill="none" />
 
         {/* Point courant */}
-        <circle cx={sx(m.cx)} cy={sy(m.cz)} r={5} className="fill-primary" />
-        <text x={sx(m.cx) + 8} y={sy(m.cz) - 6} className="fill-primary text-xs">
+        <circle cx={sx(m.cx)} cy={sy(m.cz)} r={5} className="pl-f-mod" />
+        <text x={sx(m.cx) + 8} y={sy(m.cz) - 6} className="pl-f-mod">
           {m.alpha}°
         </text>
 
         {m.remarquable === "decrochage" ? (
-          <text x="210" y="230" textAnchor="middle" className="fill-primary text-xs font-semibold">
+          <text x="210" y="230" textAnchor="middle" className="pl-f-mod font-semibold">
             décrochage — la portance chute
           </text>
         ) : null}
