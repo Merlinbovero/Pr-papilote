@@ -72,6 +72,24 @@ export const cotesFileSchema = z.object({
   cours: z.record(slugSchema, coteSchema),
 });
 
+/**
+ * Archétype documentaire d'une fiche — la famille visuelle dont elle relève
+ * (docs/design-archetypes.md). Référentiel **fermé** : une valeur inconnue
+ * fait échouer le build plutôt que de laisser passer une faute de frappe.
+ */
+export const archetypeSchema = z.enum(["identification", "lecon", "cahier", "situation"]);
+
+export const archetypesFileSchema = z.object({
+  /** Commentaire de tête du fichier — ignoré par le chargeur. */
+  _doc: z.array(z.string()).optional(),
+  /** Défaut par « module/categorie ». */
+  defauts: z.record(z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/), archetypeSchema),
+  /** Exception par identifiant de fiche — l'emporte sur le défaut. */
+  exceptions: z.record(slugSchema, archetypeSchema),
+});
+
+export type Archetype = z.infer<typeof archetypeSchema>;
+
 export type Module = z.infer<typeof moduleSchema>;
 export type Category = z.infer<typeof categorySchema>;
 export type ModuleKind = z.infer<typeof moduleKindSchema>;

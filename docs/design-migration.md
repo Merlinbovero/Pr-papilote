@@ -65,7 +65,7 @@ L'ordre suit le **rapport bénéfice / risque**, pas la logique du plan de site.
 | Rang | Famille                                             | Pourquoi ici                                                                                                                                                               |
 | ---- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1    | **La Leçon** — cours                                | Prototype déjà éprouvé, périmètre fermé (14 leçons), aucune interaction critique. C'est la famille où PLANCHE apporte le plus.                                             |
-| 2    | **La Planche d'identification** — fiches techniques | Volume le plus élevé (442 fiches) mais gabarit unique et déjà prototypé. Le gain de lisibilité y est immédiat.                                                             |
+| 2    | **La Planche d'identification** — fiches techniques | Volume le plus élevé (238 fiches, dont 75 véritables notices) mais gabarit unique et déjà prototypé. Le gain de lisibilité y est immédiat.                                 |
 | 3    | **Le Dossier** — concours                           | Hubs et index. Peu de texte, beaucoup de structure : la table numérotée s'y installe sans risque.                                                                          |
 | 4    | **Le Banc** — entraînement                          | Prototypé, mais touche le quiz, les scores et la progression. On y va **après** avoir stabilisé le reste, pour ne pas mêler refonte visuelle et régression fonctionnelle.  |
 | 5    | **Le Cahier** — culture                             | Titre à 52 px, lettrine : la famille la plus typographique, donc celle qui bénéficie le plus d'un système déjà rodé.                                                       |
@@ -261,7 +261,7 @@ Chaque lot est un commit vert, réversible, et livrable seul.
 | **M3**  | Groupe de routes `(planche)`, layout racine, gabarit, bandeau et pied ; retrait du pansement `:has`                                 | Oui — la bascule           |
 | **M4**  | Primitives : boutons, tableaux, encadrés, légendes ; retrait des ombres et rayons                                                   | Oui                        |
 | **M5**  | La Leçon — 14 leçons                                                                                                                | Oui                        |
-| **M6**  | La Planche d'identification — 442 fiches                                                                                            | Oui                        |
+| **M6**  | La Planche d'identification — 238 fiches, dont 75 notices                                                                           | Oui                        |
 | **M7**  | Le Dossier — hubs et index                                                                                                          | Oui                        |
 | **M8**  | Le Banc — entraînement, quiz, progression                                                                                           | Oui                        |
 | **M9**  | Le Cahier, puis La Situation                                                                                                        | Oui                        |
@@ -909,3 +909,128 @@ Un seul commit. Le référentiel de cotes disparaît avec lui — aucune donnée
 utilisateur, aucune migration SQL, aucun identifiant de contenu touché. Pour ne
 retirer que le sommaire en gardant la cote, il suffit de retirer
 `<PlancheSommaire>` de l'annexe : le reste de la page l'ignore.
+
+---
+
+## 17. Lot M6a — livré le 2026-07-28
+
+Le premier des deux commits de M6 : **la route change de groupe, le rendu ne
+change pas encore**. La classification documentaire entre au dépôt, la route
+de fiche rejoint `(planche)`, et les 238 fiches passent par un composant
+explicitement nommé `FicheTransition`.
+
+### 17.1 Un chiffre corrigé
+
+Le plan annonçait « 442 fiches ». Le dépôt en contient **238**. Le 442 venait
+du **compte de questions** de la banque (`docs/CHANGELOG.md`, 2026-07-13),
+repris par mégarde comme un compte de fiches. Les deux occurrences du plan
+sont corrigées.
+
+### 17.2 Une route, quatre familles
+
+`/[module]/[categorie]/[slug]` est une route unique qui sert cinq modules. Or
+l'archétype appelé n'est pas le même selon la fiche :
+
+| Famille          | Fiches | Ce que M6b fera                      |
+| ---------------- | ------ | ------------------------------------ |
+| `identification` | **75** | migrée graphiquement en M6b          |
+| `lecon`          | 122    | attend la validation de sa grammaire |
+| `cahier`         | 37     | attend M9                            |
+| `situation`      | 4      | attend M9                            |
+
+Le périmètre visuel de M6b n'est donc pas 238 pages mais **75**.
+
+### 17.3 La classification vit hors du schéma
+
+`content/_referentiels/archetypes.json` : un défaut par `module/categorie`, des
+exceptions par identifiant de fiche. **Le schéma des fiches n'a pas bougé** —
+à quelle famille appartient un document est une décision éditoriale, pas une
+propriété du contenu.
+
+Deux garanties, vérifiées en les cassant volontairement puis en restaurant :
+
+- **une fiche non classée fait échouer le build.** Retirer `eopan/appareils`
+  du référentiel produit `Archétypes : 11 fiche(s) non classée(s)` ;
+- **une valeur inconnue est refusée** par l'énumération Zod fermée.
+
+Deux règles mortes sont aussi refusées : une exception qui ne vise aucune
+fiche, un défaut pour une catégorie sans contenu. Une règle qui ne s'applique
+à rien donne l'illusion d'un classement.
+
+### 17.4 `FicheTransition` — ne pas déguiser ce qui n'est pas migré
+
+Une fiche non migrée **ne doit pas avoir l'air migrée**. `FicheTransition`
+porte donc la charte historique telle quelle, dans un bloc `.pl-hote` que la
+typographie PLANCHE ne franchit pas.
+
+Trois précautions le rendent honnête :
+
+1. **ses fontes** — Geist et Archivo sont extraites dans
+   `src/lib/design/site-fonts.ts` et chargées par le composant. Sans cela, 238
+   pages publiées se seraient rendues en Fira Sans, jamais dessinée pour ces
+   composants ;
+2. **sa portée** — `.site-root` rétablit la typographie de base que le layout
+   `(site)` fournissait ;
+3. **sa navigation** — l'index latéral des catégories et la barre mobile, que
+   la route héritait de `ModuleLayout`, sont **reproduits dans le composant**.
+   Changer de groupe ne doit pas coûter une navigation ; sans cette précaution,
+   les 238 fiches perdaient leur index de catégorie.
+
+### 17.5 Preuve exhaustive — 238 fiches, avant contre après
+
+Les deux versions servies en parallèle, chaque fiche comparée sur onze
+critères : statut HTTP, titre, description, canonique, directive `robots`,
+`og:url`, empreinte textuelle du corps, liens internes, liens externes
+(sources et crédits), images, et présence du corps.
+
+| Résultat                                |                          |
+| --------------------------------------- | ------------------------ |
+| Fiches identiques sur tous les critères | **238 sur 238**          |
+| Plan du site                            | identique, 492 URL       |
+| `robots.txt`                            | identique                |
+| Routes hors périmètre, pixel            | **34 sur 34 identiques** |
+
+Ce qui change, et rien d'autre : le **chrome**. `SiteHeader` et `SiteFooter`
+laissent place au bandeau et au pied PLANCHE — c'est la conséquence assumée du
+déplacement de groupe. La première passe de comparaison l'a d'ailleurs isolée
+toute seule : les seuls écarts détectés portaient sur le libellé du bandeau
+(« Prépa Pilote » → « PrépaPilote »), la feuille de style et le logo.
+
+Une fiche de transition charge donc **les deux chartes** : trois fichiers
+Geist/Archivo et trois Spectral. C'est le coût d'un état transitoire, il se
+mesure, et il disparaît fiche par fiche.
+
+### 17.6 Ce que M6a n'a pas fait
+
+- **Aucune cote de fiche** n'est engendrée : elles relèvent de M6b, et seules
+  les 75 notices en recevront.
+- **Aucun gabarit PLANCHE** n'est appliqué à une fiche.
+- **`NotionQuiz`** n'est pas touché — il reste dans le corps historique.
+- **Le schéma des fiches**, le contenu, les identifiants et l'index de
+  recherche sont inchangés.
+
+### 17.7 Classifications à confirmer avant M6b
+
+M6a rend toutes les familles à l'identique : une erreur de classement n'a donc
+aucune conséquence visible aujourd'hui. Elle en aura en M6b. Ces couples
+méritent un regard :
+
+| Couple                                   | Classé           | Doute                           |
+| ---------------------------------------- | ---------------- | ------------------------------- |
+| `*/missions` (9 fiches)                  | `identification` | une mission n'est pas un objet  |
+| `*/presentation`, `*/selection` (6)      | `lecon`          | procédural, mais institutionnel |
+| `eopan/concepts`, `eopan/procedures` (7) | `lecon`          | notions ou notices ?            |
+| `psychotechnique/exercices` (20)         | `lecon`          | méthode ou banc ?               |
+| `fondamentaux/culture-aeronautique` (6)  | `cahier`         | récit ou notion ?               |
+
+### 17.8 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M6a>
+npm run check
+```
+
+Le commit est autonome : il rend la route au groupe `(site)`, retire le
+référentiel d'archétypes et `FicheTransition`. Aucun contenu, aucun schéma,
+aucune migration SQL, aucun identifiant touché. M6b sera un commit distinct,
+révocable seul.
