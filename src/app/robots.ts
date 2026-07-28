@@ -18,6 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         "/inscription",
         "/mot-de-passe-oublie",
         "/design-system",
+        "/design-lab",
       ],
     },
     sitemap: absoluteUrl("/sitemap.xml"),

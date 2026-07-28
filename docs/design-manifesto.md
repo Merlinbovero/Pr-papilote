@@ -254,9 +254,9 @@ ne le voit pas comme une couleur, on le voit comme une absence d'agression.
 | ---------------- | ------------ | ----------------- | --------- | ---------- |
 | Texte principal  | `encre`      | `22.0% 0.020 255` | `#141B24` | 16,6:1     |
 | Texte secondaire | `encre-2`    | `40.0% 0.018 255` | `#414851` | 8,8:1      |
-| Texte tertiaire  | `encre-3`    | `54.5% 0.014 255` | `#6B7178` | 4,8:1      |
+| Texte tertiaire  | `encre-3`    | `53.0% 0.014 255` | `#666C74` | 5,1:1      |
 | Filet            | `filet`      | `88.0% 0.006 255` | `#D5D8DB` | 1,4:1      |
-| Filet appuyé     | `filet-fort` | `65.0% 0.010 255` | `#8B9095` | 3,1:1      |
+| Filet appuyé     | `filet-fort` | `60.0% 0.010 255` | `#7C8186` | 3,8:1      |
 
 L'encre tire sur le bleu (teinte 255), jamais sur le neutre pur. C'est ce qui
 donne le grain d'imprimerie plutôt que le gris d'interface.
@@ -286,8 +286,8 @@ qui apparaît ailleurs que dans une correction ou une validation est un bug.
 
 | État        | Valeur (oklch)    | sRGB      | Sur `fond` | Emploi                            |
 | ----------- | ----------------- | --------- | ---------- | --------------------------------- |
-| `juste`     | `52.0% 0.130 152` | `#137D41` | 5,0:1      | Bonne réponse, contenu vérifié    |
-| `attention` | `54.0% 0.116 70`  | `#996103` | 5,0:1      | Approximation, échéance, prudence |
+| `juste`     | `51.6% 0.130 152` | `#117C40` | 5,1:1      | Bonne réponse, contenu vérifié    |
+| `attention` | `53.7% 0.116 70`  | `#986001` | 5,1:1      | Approximation, échéance, prudence |
 | `erreur`    | `52.0% 0.190 27`  | `#BE2323` | 5,8:1      | Mauvaise réponse, contenu périmé  |
 
 ### Le registre sombre — charbon bleuté

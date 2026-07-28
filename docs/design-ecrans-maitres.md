@@ -471,10 +471,83 @@ Aucune n'était visible dans les documents ; toutes le sont devenues à l'écran
 
 ---
 
-## 5. Le prototype codé
+## 5. Le prototype codé — livré le 2026-07-28
 
-**Arrêté le 2026-07-28 : la migration générale ne commence pas.** Un prototype
-isolé sur **trois écrans** la précède.
+**Trois routes, derrière le drapeau `NEXT_PUBLIC_DESIGN_LAB=1`** :
+`/design-lab/planche/lecon`, `/design-lab/planche/appareil`,
+`/design-lab/planche/banc`. Sans le drapeau, elles répondent 404 ; elles sont
+exclues de l'indexation par leur `metadata.robots` et par `robots.ts`.
+
+### Ce qui est tenu, et vérifié par des tests
+
+| Garantie                           | Comment elle est tenue                                               | Vérification                                                                                                        |
+| ---------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Aucun jeton de production remplacé | Les jetons `--pl-*` sont posés sur `.pl-root`, jamais sur `:root`    | Test e2e : `getComputedStyle(document.documentElement)` ne rend aucun `--pl-*`                                      |
+| `marginMode` déclaré               | Attribut `data-marge` posé par la page                               | Test e2e : `wide` / `rail` / `none` attendus par écran                                                              |
+| Donnée inconnue = `—`              | Composant `PlancheValeur`, pas la vigilance de l'auteur              | Test e2e : toute cellule vide vaut `—`, et « N/A » n'apparaît nulle part                                            |
+| Silhouette non trompeuse           | Légende et `aria-label` disent qu'elle ne représente pas le Rafale M | Test e2e sur les deux mentions                                                                                      |
+| Petites capitales réelles          | Fontes auto-hébergées avec `smcp` conservé                           | Test e2e : la largeur change de plus de 5 % entre normal et `small-caps` — une synthèse ne le ferait pas            |
+| Aucun débordement                  | —                                                                    | Test e2e : 3 écrans × 3 largeurs, `scrollWidth - clientWidth === 0`                                                 |
+| Accessibilité                      | —                                                                    | axe-core WCAG 2.0/2.1 A et AA sur les trois écrans : **aucune violation**                                           |
+| Session au clavier seul            | Touches 1-4 ou A-D, focus posé sur la première proposition           | Test e2e : 20 réponses au clavier jusqu'à la correction                                                             |
+| Focus visible                      | Anneau de 2 px dans l'encre du module                                | Test e2e sur `outline-width` et `outline-style`                                                                     |
+| Contrastes                         | Module pur `planche-tokens.ts`                                       | **36 tests Vitest** : chaque encre, chaque état, chaque filet, sur **les trois fonds**, dans **les deux registres** |
+
+### Ce que le prototype a corrigé, et que rien d'autre n'aurait vu
+
+1. **Le test de contraste a démoli quatre valeurs de la palette validée.** Elles
+   avaient été vérifiées sur le fond de base, jamais sur les surfaces ni les
+   creux. Sur `fond-3`, `encre-3` tombait à 4,25:1, `juste` à 4,48:1,
+   `attention` à 4,45:1 et `filet-fort` à 2,95:1. Les valeurs sont resserrées —
+   `encre-3` `#666C74`, `filet-fort` `#7C8186`, `juste` `#117C40`, `attention`
+   `#986001` en clair ; `encre-3` `#888E94` et `filet-fort` `#6B727C` en sombre.
+   Le filet appuyé est visiblement plus foncé qu'avant : c'est le prix du seuil.
+2. **Le bandeau survivait à l'entrée en session.** Corrigé : c'est le composant
+   d'épreuve qui décide de l'afficher, pas la page.
+3. **Le viewBox de la figure était faux** — calculé sur un repère de 40 quand
+   `cellPolygon` travaille sur un côté de 100. La figure se rognait en un
+   fuseau. Invisible aux tests, évident au rendu.
+4. **Le bandeau préchargeait ses voisins** : la photographie de la fiche
+   appareil (229 kB) était tirée sur des écrans sans image. Les `<Link>` sont
+   devenus des ancres simples.
+5. **34 px de débordement horizontal sur mobile**, dus au bandeau.
+
+### Poids transféré et LCP, mesurés
+
+| Écran          | Fontes PLANCHE           | Reste                                    | LCP bureau / tablette / mobile |
+| -------------- | ------------------------ | ---------------------------------------- | ------------------------------ |
+| La Leçon       | 5 fichiers, **129,5 kB** | 124,0 kB                                 | 236 / 176 / 172 ms             |
+| Fiche appareil | 6 fichiers, **158,7 kB** | 352,7 kB (dont 228,7 kB de photographie) | 284 / 236 / 232 ms             |
+| Le Banc        | 6 fichiers, **157,6 kB** | 124,0 kB                                 | 196 / 212 / 164 ms             |
+
+**Préchargement.** Quatre fontes seulement sont préchargées — Spectral 400 et
+600, Fira Sans 400, Fira Mono 400 : celles du premier écran. Fira Sans 500 et
+600 et l'italique se chargent à la demande.
+
+### Compromis constatés, à lever à la migration
+
+- **Le prototype vit sous le layout racine de production.** Il en hérite donc
+  l'en-tête, le pied de page, l'enregistrement du service worker, l'icône
+  d'application et **trois fontes Geist / Archivo inutiles** — l'essentiel des
+  124 kB de « reste ». L'en-tête et le pied sont masqués par une règle
+  `body:has(.pl-root)`, ce qui fonctionne mais reste un pansement. La solution
+  propre est un **groupe de routes avec son propre layout racine**, ce qui
+  suppose de déplacer les routes existantes : trop invasif pour un prototype.
+- **Les fontes sont servies depuis `/public`**, donc sans en-tête de cache
+  longue durée ni empreinte dans le nom. À la migration, elles devront passer
+  par le chargeur de fontes ou par une règle d'en-têtes dédiée.
+- **La photographie n'est pas optimisée** : `<img>` brut plutôt que le composant
+  d'image, volontairement, pour mesurer le poids réel sans couche intermédiaire.
+  228,7 kB pour une image affichée à 600 px de large est excessif en production.
+- **Le drapeau est ouvert en développement** (`NODE_ENV === "development"`), pour
+  ne pas avoir à configurer l'environnement local. En production, seule la
+  variable compte.
+
+---
+
+## 5 bis. Le cadre du prototype
+
+Un prototype isolé sur **trois écrans** précède la migration générale.
 
 | Écran          | Route de prototype             | Réutilise                                |
 | -------------- | ------------------------------ | ---------------------------------------- |
