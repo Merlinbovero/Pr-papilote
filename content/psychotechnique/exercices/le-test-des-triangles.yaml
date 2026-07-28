@@ -1,0 +1,137 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-test-des-triangles
+type: concept
+title: Le test des triangles
+slug: le-test-des-triangles
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le test des triangles
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Un grand triangle découpé en petits triangles coloriés, deux laissés blancs,
+  quatre losanges proposés. La figure obéit à une règle : trouver la règle,
+  c'est trouver la pièce.
+objectifs:
+  - Reconnaître les sept familles de règles qui gouvernent la figure.
+  - Vérifier une règle sur une case connue avant de l'appliquer au trou.
+  - Traiter séparément les deux moitiés du losange, couleur puis marques.
+aliases: [triangles, test des triangles, losange, figure triangulaire]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan]
+level: 1
+createdAt: "2026-07-27"
+verifiedAt: "2026-07-27"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-27"
+    version: 1
+    motif: >-
+      Création — fiche de méthode dédiée au test des triangles. La méthode
+      vivait jusque-là dans une section de la fiche « Les matrices » : une fiche
+      par épreuve, jamais plusieurs épreuves dans une même fiche.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-27"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.les-matrices
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      Un grand triangle est découpé en **seize petits triangles** coloriés, et
+      **deux triangles adjacents sont laissés blancs**. Parmi quatre
+      **losanges**, un seul complète la figure. Format des sélections EOPAN :
+      **20 figures en 8 minutes**, soit 24 secondes l'unité.
+
+      Le point qui décide de tout : **la figure n'est pas coloriée au hasard**.
+      Elle obéit à une règle, et la difficulté monte parce que les motifs se
+      **combinent** au fil de l'épreuve.
+
+      > **Trouver la règle, c'est trouver la pièce.** Chercher directement la
+      > bonne proposition sans avoir lu la figure fait perdre du temps et mène
+      > au distracteur le plus séduisant.
+
+      Le losange à trouver se présente toujours dans **l'orientation exacte du
+      trou** — penché à gauche, penché à droite, ou vertical. Ce n'est donc
+      jamais une question de rotation : uniquement de couleurs et de marques.
+    aRetenir:
+      - La figure obéit à une règle — la chercher avant de regarder les propositions.
+      - Vérifier la règle trouvée sur une case connue avant de l'appliquer au trou.
+      - Les deux moitiés du losange ne relèvent pas forcément de la même classe.
+      - Une seule moitié fautive suffit à écarter une proposition.
+  sections:
+    - id: les-familles-de-regles
+      title: Les sept familles de règles
+      body: |
+        Les motifs de l'épreuve se ramènent tous à la même idée : **des cases
+        de même famille portent la même couleur**. Reste à trouver ce qui
+        définit la famille.
+
+        - **Répétition par lignes** — chaque ligne porte sa propre couleur.
+          C'est la plus fréquente et la plus rapide à voir.
+        - **Orientation** — les triangles pointe en haut se distinguent de ceux
+          pointe en bas. Se repère au fait que la couleur alterne une case sur
+          deux le long d'une ligne.
+        - **Symétrie axiale** — la figure se replie sur son axe vertical. La
+          case manquante reprend alors sa jumelle, en face.
+        - **Diagonales** — les couleurs suivent les obliques issues d'un côté.
+        - **Couronnes concentriques** — le pourtour se distingue du cœur.
+        - **Alternance** — les couleurs reviennent toutes les deux ou trois
+          cases le long d'une ligne.
+        - **Sous-triangles** — le motif d'un quart de la figure se répète dans
+          les autres quarts.
+
+        Un réflexe qui fait gagner du temps : **balayer une ligne entière**.
+        Si les couleurs y sont constantes, c'est la règle des lignes ; si elles
+        alternent une sur deux, c'est l'orientation ; une sur trois,
+        l'alternance.
+    - id: la-methode
+      title: La méthode en quatre temps
+      strate: maitriser
+      body: |
+        1. **Chercher la règle avant la pièce.** Balayer la figure entière,
+           repérer ce qui se répète. La réponse tombe ensuite toute seule.
+        2. **Vérifier la règle sur une case connue.** Prendre une case bien
+           visible, prédire sa couleur avec la règle supposée, comparer. Une
+           règle fausse coûte bien plus cher que ces cinq secondes.
+        3. **Traiter les deux moitiés séparément.** La moitié haute et la
+           moitié basse du losange ne relèvent pas forcément de la même
+           famille — surtout quand le trou est à cheval sur deux lignes.
+        4. **Éliminer, ne pas confirmer.** Une seule moitié fautive suffit à
+           écarter une proposition : inutile de la lire en entier. Chercher ce
+           qui cloche va deux fois plus vite que chercher ce qui colle.
+
+        À 24 secondes la figure, une question qui résiste se laisse : la
+        suivante vaut autant de points.
+    - id: le-piege-des-marques
+      title: Le piège des marques
+      strate: maitriser
+      body: |
+        Les cases portent parfois des **marques** — points, petits symboles. Le
+        piège de l'épreuve tient en une phrase : **elles suivent souvent une
+        règle différente de celle des couleurs**.
+
+        Une figure peut très bien être coloriée **par lignes** et marquée **par
+        orientation** : les couleurs changent d'une ligne à l'autre, mais les
+        points ne dépendent que du sens de la pointe. Il faut alors lire la
+        figure **deux fois**, sur deux logiques, et ne conclure qu'après.
+
+        C'est ce qui distingue les dernières questions des premières. Quand
+        deux propositions ont les bonnes couleurs, c'est toujours la marque qui
+        départage.
+  pieges:
+    - Regarder les propositions avant d'avoir lu la figure — les distracteurs sont faits pour l'œil pressé.
+    - "Les marques suivent souvent une autre règle que les couleurs : lire la figure deux fois."
+    - Appliquer une règle sans l'avoir vérifiée sur une case connue.
+    - Croire que la pièce doit être tournée — elle est toujours présentée dans l'orientation du trou.

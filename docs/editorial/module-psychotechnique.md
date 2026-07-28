@@ -225,6 +225,37 @@ laquelle des trois l'a prise ?
 - **Route** : `/psychotechnique/appareils-photos` ; méthode rattachée à la
   fiche `la-vision-spatiale`.
 
+## Une fiche de méthode par épreuve
+
+**Règle éditoriale, posée après un retour utilisateur** (« je n'ai pas compris
+pourquoi tu me renvoies vers les matrices 3×3, il faut bien une explication par
+test »).
+
+Chaque entraîneur renvoie vers **sa** fiche de méthode, et une fiche ne traite
+**qu'une** épreuve. Le raccourci qui consiste à ajouter une section à une fiche
+voisine — parce que le raisonnement se ressemble — produit un renvoi
+incompréhensible : on clique sur « Avant de vous lancer » depuis le test des
+triangles et l'on tombe sur une fiche intitulée « Les matrices ».
+
+L'état corrigé, huit entraîneurs pour huit fiches :
+
+| Entraîneur                           | Fiche de méthode               |
+| ------------------------------------ | ------------------------------ |
+| `/psychotechnique/calcul-mental`     | `le-calcul-mental`             |
+| `/psychotechnique/dominos`           | `les-dominos`                  |
+| `/psychotechnique/secpil`            | `le-secpil`                    |
+| `/psychotechnique/triangles`         | `le-test-des-triangles`        |
+| `/psychotechnique/codage`            | `le-test-de-codage`            |
+| `/psychotechnique/formes-imbriquees` | `les-formes-imbriquees`        |
+| `/psychotechnique/appareils-photos`  | `le-test-des-appareils-photos` |
+| `/psychotechnique/orientation`       | `le-test-d-orientation`        |
+
+Les fiches de famille — `les-matrices`, `la-comparaison-de-nombres`,
+`la-vision-spatiale` — gardent leur périmètre propre et sont reliées aux fiches
+d'épreuve par `relations.related`. Le lien de parenté reste donc navigable,
+sans que la fiche de famille prétende expliquer une épreuve qu'elle ne traite
+pas.
+
 ## Le test des triangles (SVG, hors QCM)
 
 Reconstitution du **test des triangles** des sélections EOPAN. Un grand

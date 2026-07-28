@@ -1,0 +1,125 @@
+schemaVersion: 1
+id: psychotechnique.exercices.le-test-d-orientation
+type: concept
+title: Le test d'orientation
+slug: le-test-d-orientation
+image:
+  src: /images/module-psychotechnique.jpg
+  alt: Planche de bord — le test d'orientation
+  author: Giles Laurent
+  license: CC BY-SA 4.0
+  licenseUrl: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+  sourceUrl: https://commons.wikimedia.org/w/index.php?curid=142187142
+  focal: 50% 62%
+summary: >-
+  Lire une attitude de vol sur l'instrument de bord, puis reconnaître
+  l'aéronef qui l'adopte. L'épreuve la plus proche du métier — et celle qui se
+  travaille le plus vite.
+objectifs:
+  - Lire un horizon artificiel — assiette et inclinaison — sans hésiter.
+  - Lire un compas et en déduire le cap.
+  - Relier l'instrument à la position réelle de l'aéronef.
+aliases: [orientation, test d'orientation, horizon artificiel, attitude de vol]
+module: psychotechnique
+category: exercices
+tags: []
+concours: [eopan, eopn]
+level: 1
+createdAt: "2026-07-27"
+verifiedAt: "2026-07-27"
+author: prepapilote
+version: 1
+revisions:
+  - date: "2026-07-27"
+    version: 1
+    motif: >-
+      Création — fiche de méthode dédiée au test d'orientation. L'entraîneur
+      renvoyait jusque-là vers « La vision spatiale », qui portait trois
+      épreuves à la fois : une fiche par épreuve.
+    author: prepapilote
+sources:
+  - title: "Guide EOPAN 2020 (eopan.fr), Partie 2 — Les tests psychotechniques"
+    kind: ouvrage
+    consultedAt: "2026-07-27"
+status: publie
+relations:
+  related:
+    - psychotechnique.exercices.la-vision-spatiale
+    - fondamentaux.navigation.cap-route-et-derive
+    - psychotechnique.methodologie.reussir-les-tests-psychotechniques
+content:
+  essentiel:
+    body: |
+      L'un des tests emblématiques des sélections : **lire une attitude de vol
+      sur l'instrument de bord**, puis reconnaître l'aéronef qui l'adopte.
+      Format des sélections : **27 questions en 7 minutes**, soit environ
+      15 secondes l'unité.
+
+      Trois informations, et trois seulement, sont à lire :
+
+      - **l'assiette** — le nez monte ou descend ;
+      - **l'inclinaison** — l'appareil penche à gauche ou à droite ;
+      - **le cap** — vers où pointe le nez.
+
+      Le code de lecture de l'horizon artificiel ne change jamais : **bleu en
+      haut, c'est le ciel ; brun en bas, c'est le sol**. La maquette d'avion
+      au centre est **fixe** : c'est l'horizon qui bouge derrière elle.
+
+      > C'est l'épreuve qui se travaille le plus vite, parce qu'elle repose sur
+      > un code — une fois le code acquis, la lecture devient immédiate.
+    aRetenir:
+      - "Horizon artificiel — bleu en haut = ciel, brun en bas = sol, maquette fixe au centre."
+      - Beaucoup de ciel visible = le nez est haut ; beaucoup de sol = le nez est bas.
+      - "L'inclinaison se lit à la pente de la ligne d'horizon : elle penche à l'inverse de l'appareil."
+      - Le cap se lit au compas, jamais déduit de l'inclinaison.
+  sections:
+    - id: lire-lassiette
+      title: Lire l'assiette
+      body: |
+        L'**assiette** est l'angle du nez par rapport à l'horizon. Sur
+        l'instrument, elle se lit à la **proportion de ciel et de sol** :
+
+        - beaucoup de **bleu**, la ligne d'horizon basse → le nez est **haut**,
+          l'appareil monte ;
+        - beaucoup de **brun**, la ligne d'horizon haute → le nez est **bas**,
+          l'appareil descend ;
+        - moitié-moitié → vol horizontal.
+
+        Le repère qui évite l'erreur : la maquette d'avion au centre ne bouge
+        jamais. Si elle se retrouve **au-dessus** de la ligne d'horizon, c'est
+        que le nez est au-dessus de l'horizon — donc que l'appareil monte.
+    - id: lire-linclinaison
+      title: Lire l'inclinaison
+      strate: maitriser
+      body: |
+        L'**inclinaison** est l'angle des ailes. Elle se lit à la **pente de la
+        ligne d'horizon** — et c'est là qu'est le piège : l'horizon penche
+        **à l'inverse** de l'appareil.
+
+        Si la ligne d'horizon descend vers la droite, c'est que l'appareil est
+        incliné **à gauche**. Le monde réel ne bascule pas ; c'est l'avion qui
+        tourne, et l'instrument montre le monde tel qu'il apparaît depuis le
+        cockpit.
+
+        Le contrôle qui ne trompe pas : suivre du regard **l'aile basse**. Sur
+        l'image de l'aéronef, l'aile basse est du côté vers lequel il vire.
+    - id: le-cap
+      title: Le cap
+      strate: maitriser
+      body: |
+        Le **cap** se lit au compas, et **uniquement** au compas. L'erreur
+        classique consiste à le déduire de l'inclinaison : un appareil incliné
+        à gauche est en train de tourner vers la gauche, mais son cap à
+        l'instant de la photo reste celui qu'indique le compas.
+
+        La rose des caps : **nord 360/000, est 090, sud 180, ouest 270**. Sur
+        les questions rapides, il suffit souvent de savoir dans quel **quadrant**
+        se trouve le cap pour trancher entre les propositions.
+
+        Ces réflexes servent tels quels en navigation — la fiche
+        cap-route-dérive des Fondamentaux prend le relais.
+  pieges:
+    - "L'horizon penche à l'inverse de l'appareil : horizon descendant à droite = appareil incliné à gauche."
+    - Croire que la maquette centrale bouge — elle est fixe, c'est l'horizon qui tourne.
+    - Déduire le cap de l'inclinaison — le cap se lit au compas, à l'instant présent.
+    - Chercher à lire les trois informations d'un coup — les prendre une par une va plus vite.

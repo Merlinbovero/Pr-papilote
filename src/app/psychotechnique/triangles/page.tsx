@@ -38,8 +38,8 @@ export default function TrianglesPage() {
         </p>
       </header>
       <MethodeFicheCard
-        ficheId="psychotechnique.exercices.les-matrices"
-        intro="Chercher la règle avant la réponse, la vérifier sur une case connue, puis éliminer : la méthode des matrices s’applique mot pour mot aux triangles."
+        ficheId="psychotechnique.exercices.le-test-des-triangles"
+        intro="Les sept familles de règles qui gouvernent la figure, la méthode en quatre temps — chercher la règle avant la pièce, la vérifier sur une case connue, éliminer — et le piège des marques, qui suivent souvent une autre règle que les couleurs."
       />
       <TrianglesTest />
     </StandalonePageShell>
