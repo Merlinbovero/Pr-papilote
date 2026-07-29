@@ -21,10 +21,16 @@ import { archetypesFileSchema, archetypeSchema } from "./schemas";
 const FICHIER = path.join(process.cwd(), "content", "_referentiels", "archetypes.json");
 const brut = archetypesFileSchema.parse(JSON.parse(readFileSync(FICHIER, "utf-8")));
 
-/** Répartition gelée au 2026-07-28. La modifier est une décision éditoriale. */
+/**
+ * Répartition gelée. La modifier est une décision éditoriale.
+ *
+ * 2026-07-28 (M6a) — identification 75, lecon 122.
+ * 2026-07-29 (M6b) — les neuf fiches de missions passent à `lecon` : une
+ * mission est un processus, pas un objet à identifier. D'où 66 et 131.
+ */
 const REPARTITION = {
-  identification: 75,
-  lecon: 122,
+  identification: 66,
+  lecon: 131,
   cahier: 37,
   situation: 4,
 } as const;
@@ -48,6 +54,18 @@ describe("classification documentaire", () => {
     expect(() =>
       archetypesFileSchema.parse({ defauts: { "eopan/appareils": "notice" }, exceptions: {} })
     ).toThrow();
+  });
+
+  it("accepte une exception clée par identifiant de fiche", () => {
+    // Régression M6a : `exceptions` était typé en `slugSchema`, qui interdit le
+    // point. Toute exception réelle — les identifiants sont pointés — aurait
+    // fait échouer la validation. La table était vide, donc rien ne le disait.
+    expect(() =>
+      archetypesFileSchema.parse({
+        defauts: {},
+        exceptions: { "eopan.appareils.rafale-m": "lecon" },
+      })
+    ).not.toThrow();
   });
 
   it("refuse une clé de défaut qui n'est pas « module/categorie »", () => {

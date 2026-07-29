@@ -1034,3 +1034,208 @@ Le commit est autonome : il rend la route au groupe `(site)`, retire le
 référentiel d'archétypes et `FicheTransition`. Aucun contenu, aucun schéma,
 aucune migration SQL, aucun identifiant touché. M6b sera un commit distinct,
 révocable seul.
+
+---
+
+## 18. Lot M6b — livré le 2026-07-29
+
+**La Planche d'identification.** Le gabarit des notices techniques, appliqué
+aux **66 fiches** classées `identification` — et à elles seules.
+
+### 18.1 Les arbitrages de classification d'abord
+
+Trois classements de M6a ont été révisés avant d'appliquer la moindre règle
+visuelle, parce qu'une famille mal classée reçoit la mauvaise charte :
+
+| Couple                              | M6a              | M6b      | Motif                                      |
+| ----------------------------------- | ---------------- | -------- | ------------------------------------------ |
+| `*/missions` (9 fiches)             | `identification` | `lecon`  | une mission est un processus, pas un objet |
+| `psychotechnique/exercices` (20)    | `lecon`          | `lecon`  | confirmé, **à titre provisoire**           |
+| `fondamentaux/culture-aeronautique` | `cahier`         | `cahier` | confirmé                                   |
+
+Le périmètre visuel passe donc de **75 à 66 notices**. Répartition gelée :
+**identification 66, lecon 131, cahier 37, situation 4** — tenue par un test.
+
+Deux réserves sont inscrites dans le référentiel lui-même, pas seulement ici :
+
+- **`*/missions` → `lecon` est provisoire.** Un archétype « dossier de mission »
+  pourra être étudié après la migration principale. Rien dans M6b ne le prépare,
+  et les neuf fiches restent sous `FicheTransition`.
+- **`psychotechnique/exercices` → `lecon` ne vaut que pour les fiches
+  documentaires** qui _expliquent_ un exercice. Les interfaces où l'utilisateur
+  _exécute_ un exercice relèvent du **Banc**. La Leçon n'est pas la destination
+  finale du module Psychotechnique : elle en couvre l'exposé, pas la pratique.
+
+### 18.2 Les cotes de notices — gelées
+
+66 cotes engendrées **une fois** le 2026-07-29, puis inscrites dans
+`content/_referentiels/cotes.json`, section `fiches`. Grammaire `MODULE · C.C.NN` :
+`C` pour la famille Fiches techniques, le rang de catégorie, puis **un numéro
+d'enregistrement dans la catégorie** sur deux chiffres.
+
+Ce dernier segment n'a **pas** la même sémantique que celui des leçons, et c'est
+délibéré :
+
+|                 | La Leçon (M5)                                                | La Planche d'identification (M6b)                                                                                          |
+| --------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| Clé             | slug                                                         | **identifiant de contenu** (gelé à vie)                                                                                    |
+| Dernier segment | rang **global au parcours**                                  | **numéro d'enregistrement dans la catégorie**                                                                              |
+| Motif           | « la leçon 7 » doit désigner une leçon et une seule à l'oral | une notice se cite toujours entière — `EOPAN · C.6.10`, jamais « la notice 10 » — le segment de catégorie lève l'ambiguïté |
+
+**La clé est l'identifiant, pas le slug.** L'identifiant est gelé à vie par
+contrat (`contentIdSchema`) : un changement de slug ou d'URL ne modifie donc
+jamais la cote, et ici n'exige même pas de migration de clé. Conséquence
+assumée : quelques identifiants historiques ne correspondent plus à leur
+catégorie actuelle — `eopan.bases.charles-de-gaulle` vit dans la catégorie
+`navires` et porte `EOPAN · C.7.01`. **La cote suit la catégorie, pas le préfixe
+de l'identifiant** ; c'est précisément pourquoi l'identifiant est gelé et la
+catégorie ne l'est pas.
+
+**Deux chiffres, arrêté sur mesure** : la catégorie la plus dense en compte 11
+(`eopan/appareils`, `eopn/appareils`), la médiane 3, sur 15 catégories de
+notices. Un test échoue si l'une dépasse 90 — la migration en trois chiffres
+sera une décision, pas une surprise au moment d'écrire la centième notice.
+
+Douze tests tiennent la table : présence sur les 66 notices, **absence sur
+toutes les autres familles** (coter une fiche de La Leçon serait geler une
+référence avant d'avoir arrêté sa grammaire), unicité, gel valeur par valeur,
+grammaire, segment de famille, segment de catégorie lu au référentiel,
+numérotation repartant de 01 sans trou par catégorie, indépendance du tri
+courant, absence d'orpheline, et capacité restante.
+
+La contre-épreuve du « ce n'est pas un rang d'affichage » n'est pas
+tautologique : **cinq catégories** ont aujourd'hui un ordre d'affichage
+différent de l'ordre des cotes — dans `eopn/bases`, la notice affichée en
+premier porte `03`.
+
+### 18.3 Le gabarit
+
+Cartouche, cote, marge technique, fil d'Ariane, en-tête, photographie créditée,
+sommaire ancré, sections numérotées, **fiche signalétique** (`.pl-tab`),
+encadrés, documents, sources, quiz hôte, navigation de catégorie, pied de
+planche ; en annexe : sommaire, données, relations, historique de révision.
+
+**Deux primitives quittent le laboratoire** parce qu'elles ont enfin un
+consommateur réel : `.pl-tab` (fiche signalétique) et `.pl-legende` (crédit
+photographique). `PlancheMarkdown` est promue au même titre, avec le
+comportement de lien externe du rendu historique repris à l'identique.
+
+**Deux encres manquaient.** `planche-tokens.css` (M1) déclarait les six encres
+de module ; `planche.css`, la feuille que les routes publiques chargent
+réellement, n'en déclarait que trois. `air` et `terre` existaient, leur
+contraste était testé, et elles n'atteignaient aucune page. Les notices EOPN et
+ALAT l'ont révélé. Un test neuf confronte désormais les deux fichiers : toute
+encre sélectionnable par `data-module` doit être déclarée aux valeurs du module
+— vérifié en supprimant `--pl-air`, qui fait tomber le test.
+
+### 18.4 Ce que le lot n'avait pas le droit de faire
+
+- **La photographie n'est ni recadrée, ni transformée.** `.pl-photo` existe
+  précisément pour ne pas hériter du `filter: saturate/contrast/sepia` que
+  `.pl-planche` applique au laboratoire. Le cadrage et l'`object-position`
+  d'auteur sont repris tels quels du gabarit historique : les pixels rendus ne
+  bougent pas. Un test vérifie que le filtre calculé vaut `none`.
+- **Aucun schéma, aucun dessin n'est créé.** Les figures rendues sont celles que
+  le contenu déclare, servies par le composant historique dans un bloc hôte.
+- **`NotionQuiz` reste intact**, monté dans `.pl-hote`, dont la seule fonction
+  est d'arrêter la typographie PLANCHE à sa frontière. Aucune de ses classes
+  internes n'est ciblée.
+- **Les trois familles non migrées ne reçoivent rien.** Un test vérifie qu'une
+  fiche de La Leçon ne porte ni `.pl-corps` ni `.pl-cote`.
+
+### 18.5 Deux défauts trouvés en exécutant
+
+**Une fonction retirée.** La campagne visuelle a montré que le bouton
+« Version PDF » — présent sur les 66 notices avant le lot — avait disparu :
+`FicheHeader` le portait, le nouveau gabarit ne le reprenait pas. La durée de
+lecture avait sauté de la même façon. Une migration graphique n'a pas le droit
+de retirer une fonction ; les deux sont revenues, la commande d'impression en
+grammaire PLANCHE (`PlancheImpression`), et un test de bout en bout les tient.
+
+**Une ancre ambiguë.** Le bloc de spécifications portait `id="caracteristiques"`
+— or **quatre fiches du corpus rédigent déjà une section de ce nom**. Deux
+éléments portaient le même identifiant, et le test « le sommaire est utilisable
+sans JavaScript » l'a attrapé : `resolved to 2 elements`. L'ancre est devenue
+`#signaletique`, et un test de corpus interdit désormais qu'une notice rédige
+une section portant l'une des ancres que le gabarit s'attribue.
+
+### 18.6 Preuves
+
+**Contenu — les 238 fiches, deux versions servies en parallèle.**
+Deux régimes : les 172 fiches hors périmètre en **égalité stricte** de
+l'empreinte textuelle ; les 66 notices en **conservation** — chaque chaîne du
+contenu doit se retrouver dans le texte rendu, le gabarit ayant changé.
+Vérifiés pour toutes : statut, titre, description, canonique, `robots`,
+`og:url`, liens internes, liens externes, images. Vérifiés pour les notices :
+résumé, corps de l'essentiel, points à retenir, titre **et** corps de chaque
+section, pièges, titres et URL de sources, auteur, licence, lien de source et
+fichier de la photographie, motifs de révision, cote du référentiel, et
+**ancres publiques** (`#l-essentiel`, chaque identifiant de section, `#pieges`,
+`#sources`). Résultat : **238 sur 238 conformes**.
+
+**Hors périmètre — 254 routes du plan du site, HTML identique.** Une fois
+neutralisées les deux empreintes qui changent à chaque reconstruction
+indépendamment du contenu — URL des ressources bâties et identifiant de build —
+le HTML est identique **à l'octet** sur les 254. Cela couvre `/recherche` :
+**l'index de recherche est inchangé**. Plan du site (492 URL) et `robots.txt`
+identiques.
+
+**Campagne visuelle — 32 spécimens.** Les 15 catégories de notices, les 3
+modules, les 4 archétypes, les états réellement présents au corpus (avec et sans
+photographie, avec et sans fiche signalétique, avec et sans encadré de données),
+les extrêmes de longueur (2 270 et 5 363 caractères de contenu), clair et
+sombre, 1440 / 834 / 390 px. Résultat : **0 débordement horizontal, 0 erreur de
+console, 0 statut non conforme**.
+
+**Accessibilité.** **Zéro violation axe sur les 28 spécimens de notice**, en
+clair comme en sombre. Quatre violations subsistent, toutes `color-contrast`
+sur les quatre spécimens `FicheTransition` : `.border-success` à **4,38:1**, un
+défaut de la charte historique **prouvé identique avant et après** en servant
+les deux versions. M6b le **retire** des 66 notices et le laisse intact
+ailleurs — ce n'est pas à un lot de migration graphique de corriger la charte
+qu'il ne migre pas.
+
+**Cibles tactiles.** Sur mobile, **14 cibles sous 44 px avant, 10 après**. Les
+quatre disparues sont la navigation de fiche et le bouton d'impression, désormais
+au gabarit. Les dix restantes sont le **bandeau et le pied du groupe PLANCHE**
+(M3) et `NotionQuiz` — mesurées identiques avant et après, toutes hors
+périmètre. Un défaut propre au lot a été corrigé au passage : les renvois de
+l'annexe tombaient à 35 px sur pointeur grossier, l'annexe n'apparaissant
+jusque-là qu'en desktop.
+
+**Suite automatique.** `npm run check` : **50 fichiers, 701 tests verts**
+(677 à M6a). **34 tests de bout en bout** neufs sur la famille
+(`e2e/planche-notice.spec.ts`), dont le sommaire éprouvé avec
+`javaScriptEnabled: false`.
+
+**Garde-fou de cote prouvé en le cassant** : la ligne de `rafale-m` retirée du
+référentiel, le build échoue —
+`Cote manquante pour la notice « eopan.appareils.rafale-m » (cotes.json)`.
+
+### 18.7 Ce que M6b n'a pas fait
+
+- **Aucun contenu modifié**, aucune donnée utilisateur, aucune migration SQL,
+  aucun identifiant, aucune URL, aucun slug, aucune redirection.
+- **La branche `documents` du gabarit n'est pas éprouvée en production** :
+  aucune des 66 notices ne déclare de document rattaché. Le code existe, le
+  sommaire l'annonce le cas échéant, mais rien ne le rend aujourd'hui.
+- **Une duplication éditoriale reste en l'état** : quatre notices rédigent une
+  section « Caractéristiques » _et_ renseignent `specs`, si bien que deux
+  tableaux voisinent. La duplication est **antérieure au lot** — le gabarit
+  historique rendait déjà les deux — et relève de l'éditorial, pas du graphisme.
+- **Trois fiches de La Leçon rédigent une section `s-entrainer`**, qui heurte
+  l'identifiant de `NotionQuiz`. Défaut **antérieur** au lot, présent dans le
+  gabarit historique ; le test de corpus ne le couvre que pour les notices, où
+  il n'existe pas.
+
+### 18.8 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M6b>
+npm run check
+```
+
+Le commit est autonome et se révoque **sans toucher à M6a** : il rend la branche
+`identification` à `FicheTransition`, retire le gabarit de notice, la table
+`fiches` des cotes et les deux encres de la feuille du système. Le référentiel
+d'archétypes revient à la répartition de M6a, missions comprises.

@@ -120,6 +120,27 @@ graphique ne doit pas les toucher.
 doit revenir sur l'accueil ou si le test doit suivre la fonctionnalité là où
 elle a été déplacée, puis rebrancher le test sur l'état réel du produit.
 
+## Dette relevée au lot M6b — trois défauts antérieurs, hors migration
+
+Le lot M6b a mesuré les 238 fiches avant et après. Trois défauts ressortent qui
+**existaient déjà** et qu'un lot de migration graphique n'avait pas à corriger.
+Chacun est prouvé antérieur en servant les deux versions côte à côte.
+
+| Défaut                                                                                                      | Portée                                                                                                                                              | Preuve                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `.border-success` à **4,38:1** — sous le seuil WCAG AA de 4,5:1                                             | charte historique, 172 fiches restantes                                                                                                             | scan axe identique avant/après ; **retiré** des 66 notices migrées     |
+| Trois fiches rédigent une section `s-entrainer`, qui heurte l'identifiant de `NotionQuiz`                   | `eopn/missions/le-domaine-spatial-militaire`, `fondamentaux/anglais-aeronautique/la-comprehension-ecrite`, `psychotechnique/exercices/les-matrices` | identifiant en double dans le gabarit historique comme dans le nouveau |
+| Quatre notices rédigent une section « Caractéristiques » **et** renseignent `specs` — deux tableaux voisins | `eopan/appareils/rafale-m`, `eopan/navires/charles-de-gaulle`, `eopn/appareils/pc-21`, `eopn/appareils/alphajet`                                    | le gabarit historique rendait déjà les deux                            |
+
+Les deux premiers sont techniques et se traitent dans un lot d'accessibilité ou
+de contenu. Le troisième est **éditorial** : décider si la section rédigée doit
+disparaître au profit de la fiche signalétique, ou l'inverse, n'est pas une
+décision de graphisme.
+
+Une quatrième observation, sans défaut associé : **aucune des 66 notices ne
+déclare de document rattaché**. La branche « Documents » du gabarit existe et
+n'est éprouvée par aucune page — à garder en tête avant de s'appuyer dessus.
+
 **Question ouverte à trancher au passage** : `npm run test:e2e` devrait-il
 entrer dans la porte de qualité, ou rester une vérification manuelle ? Tant
 qu'il en est dehors, une régression de bout en bout peut être commitée sans

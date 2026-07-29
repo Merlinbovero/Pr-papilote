@@ -69,6 +69,36 @@ EOPN  · C.6.11     Appareils, 11ᵉ planche
 PSY   · F.1.04     Épreuves, 4ᵉ banc
 ```
 
+**Deux sémantiques pour `NN`, et c'est délibéré (arrêté aux lots M5 et M6b).**
+
+| Famille                               | Clé du référentiel           | `NN` désigne                                     |
+| ------------------------------------- | ---------------------------- | ------------------------------------------------ |
+| **La Leçon** (M5)                     | le slug                      | le **rang global au parcours**                   |
+| **La Planche d'identification** (M6b) | l'**identifiant de contenu** | un **numéro d'enregistrement dans la catégorie** |
+
+Pourquoi la différence. Une leçon se cite à l'oral par son seul numéro — « la
+leçon 7 » — donc le rang doit être global, sans quoi deux leçons de catégories
+différentes le porteraient. Une notice ne se cite **jamais** ainsi : on dit
+« EOPAN · C.6.10 », jamais « la notice 10 ». Le segment de catégorie lève donc
+l'ambiguïté, et un numéro par catégorie suffit — chaque catégorie repart de
+`01`. Un test l'énonce de part et d'autre (`cotes.test.ts`,
+`cotes-fiches.test.ts`).
+
+Un **numéro d'enregistrement** n'est ni un rang alphabétique, ni un rang
+d'affichage : il est attribué une fois, à l'entrée de la notice au corpus, et
+ne bouge plus. Renommer la notice ne le change pas ; changer son slug ne le
+change pas ; la déplacer dans l'ordre d'affichage ne le change pas ; en retirer
+une ne libère pas son numéro. Cinq catégories ont aujourd'hui un ordre
+d'affichage différent de l'ordre de leurs cotes — la preuve que l'un ne dérive
+pas de l'autre.
+
+**Pour les notices, la clé est l'identifiant de contenu, pas le slug.**
+L'identifiant est gelé à vie par contrat, donc un changement d'URL n'exige même
+pas de migration de clé. Conséquence assumée : quelques identifiants
+historiques ne correspondent plus à leur catégorie — `eopan.bases.charles-de-gaulle`
+vit dans la catégorie `navires` et porte `EOPAN · C.7.01`. **La cote suit la
+catégorie**, pas le préfixe de l'identifiant.
+
 **La cote est stable et gelée.** Elle n'est jamais saisie à la main, jamais
 renumérotée après coup. Une fiche déplacée garde sa cote et reçoit un renvoi.
 C'est la condition pour qu'une cote puisse être notée sur un cahier par un

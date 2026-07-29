@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { FicheTransition } from "@/features/fiches/fiche-transition";
+import { PlancheIdentification } from "@/features/fiches/planche-identification";
 import { getArchetypeFiche } from "@/lib/content/archetypes";
 import { getFiche, getFicheHref, getFiches } from "@/lib/content/fiches";
 import { getCategory, getModule } from "@/lib/content/referentials";
@@ -13,10 +14,11 @@ import { getCategory, getModule } from "@/lib/content/referentials";
  * fiche est classée par `content/_referentiels/archetypes.json` — une décision
  * éditoriale, tenue hors du schéma des fiches — et le rendu suit.
  *
- * En M6a, les quatre familles passent encore par `FicheTransition`, qui porte
- * la charte historique telle quelle. M6b remplacera la seule branche
- * `identification` par le gabarit de La Planche ; les trois autres attendront
- * la validation de leur propre grammaire documentaire.
+ * Depuis M6b, la branche `identification` — 66 notices techniques — rend La
+ * Planche d'identification. Les trois autres familles passent encore par
+ * `FicheTransition`, qui porte la charte historique telle quelle : elles
+ * attendent la validation de leur propre grammaire documentaire, et ne doivent
+ * surtout pas recevoir celle de La Planche par commodité.
  *
  * Ce qui ne change pas ici, et doit rester vérifiable : l'URL, les paramètres
  * statiques, les métadonnées, la canonique, la règle d'indexation.
@@ -66,6 +68,7 @@ export default async function FichePage({ params }: FichePageProps) {
 
   switch (archetype) {
     case "identification":
+      return <PlancheIdentification fiche={fiche} mod={mod} category={category} />;
     case "lecon":
     case "cahier":
     case "situation":

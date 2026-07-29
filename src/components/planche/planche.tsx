@@ -13,7 +13,14 @@ import type { ReactNode } from "react";
  * à tester. Le repli responsive se fait à l'intérieur du mode déclaré.
  */
 export type MarginMode = "wide" | "rail" | "none";
-export type EncreModule = "marine" | "bistre" | "violine" | "neutre";
+/**
+ * L'encre du module hôte. `air` et `terre` rejoignent la liste au lot M6b :
+ * les notices EOPN et ALAT devaient porter l'encre de leur armée, et non le
+ * bleu de la Marine ni le gris neutre. Les deux valeurs existaient déjà dans
+ * `planche-tokens.css` et dans le module de jetons, où leur contraste est
+ * vérifié ; seule la feuille du système ne les déclarait pas.
+ */
+export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "neutre";
 
 export function PlancheRoot({
   marginMode,

@@ -213,3 +213,43 @@ describe("contrastes des figures d'interaction (lot M4)", () => {
     }
   );
 });
+
+/**
+ * Lot M6b — la feuille du SYSTÈME et le module de jetons.
+ *
+ * `planche-tokens.css` (lot M1) déclarait bien les six encres de module ;
+ * `planche.css`, la feuille que les routes publiques chargent réellement, n'en
+ * déclarait que trois. `air` et `terre` existaient, étaient testées pour leur
+ * contraste, et n'atteignaient aucune page — une divergence entre deux fichiers
+ * que rien ne confrontait. Les notices EOPN et ALAT l'ont révélée au lot M6b.
+ *
+ * Ce test ferme la brèche : toute encre sélectionnable par `data-module` doit
+ * être déclarée dans les trois blocs de la feuille, à la valeur du module.
+ */
+describe("la feuille du système déclare les encres qu'elle sait sélectionner", () => {
+  const systeme = readFileSync(join(process.cwd(), "src/styles/planche.css"), "utf-8");
+
+  /** Les encres que `PlancheRoot` peut demander via `data-module`. */
+  const selectionnables = [...systeme.matchAll(/\.pl-root\[data-module="([a-z]+)"\]/g)].map(
+    (m) => m[1]
+  );
+
+  it("connaît au moins les trois armées", () => {
+    for (const encre of ["marine", "air", "terre"]) {
+      expect(selectionnables, `data-module="${encre}"`).toContain(encre);
+    }
+  });
+
+  it.each([
+    ["clair", CLAIR, ".pl-root,"],
+    ["sombre", SOMBRE, ".dark .pl-root,"],
+  ] as const)("registre %s : chaque encre sélectionnable vaut celle du module", (_n, r, debut) => {
+    const ouvrante = systeme.indexOf("{", systeme.indexOf(debut));
+    const bloc = systeme.slice(ouvrante, systeme.indexOf("}", ouvrante));
+    for (const encre of selectionnables) {
+      const m = new RegExp(`--pl-${encre}\\s*:\\s*(#[0-9a-f]{6})`, "i").exec(bloc);
+      expect(m, `--pl-${encre} absent du bloc ${_n}`).not.toBeNull();
+      expect(m?.[1].toUpperCase(), `--pl-${encre}`).toBe(r[encre as keyof typeof r].toUpperCase());
+    }
+  });
+});

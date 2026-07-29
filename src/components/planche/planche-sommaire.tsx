@@ -20,7 +20,16 @@ import type { EntreeSommaire } from "@/lib/lecon/sommaire";
  *    que `prefers-reduced-motion` neutralise (`src/styles/planche.css`) ;
  *  - il ne rend pas la leçon cliente : seule cette colonne l'est.
  */
-export function PlancheSommaire({ entrees }: { entrees: readonly EntreeSommaire[] }) {
+export function PlancheSommaire({
+  entrees,
+  libelle = "Sommaire de la leçon",
+}: {
+  entrees: readonly EntreeSommaire[];
+  /** Nom accessible du sommaire — « de la leçon » par défaut, « de la notice »
+   *  sur La Planche d'identification (lot M6b). Le défaut préserve mot pour mot
+   *  le nom rendu par La Leçon. */
+  libelle?: string;
+}) {
   const [courante, setCourante] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -93,7 +102,7 @@ export function PlancheSommaire({ entrees }: { entrees: readonly EntreeSommaire[
   }, [entrees]);
 
   return (
-    <nav className="pl-toc" aria-label="Sommaire de la leçon">
+    <nav className="pl-toc" aria-label={libelle}>
       {entrees.map((entree) => (
         <a
           key={entree.id}

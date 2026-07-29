@@ -69,7 +69,17 @@ export const coteSchema = z
 export const cotesFileSchema = z.object({
   /** Commentaire de tête du fichier — ignoré par le chargeur. */
   _doc: z.array(z.string()).optional(),
+  /** Leçons, clées par slug — dernier segment = rang global au parcours (M5). */
   cours: z.record(slugSchema, coteSchema),
+  /**
+   * Notices techniques, clées par **identifiant de contenu** — dernier segment
+   * = numéro d'enregistrement dans la catégorie (M6b).
+   *
+   * La clé diffère volontairement de celle des leçons : l'identifiant est gelé
+   * à vie par contrat, le slug ne l'est pas. Un renommage d'URL n'exige donc
+   * même pas de migration de clé ici.
+   */
+  fiches: z.record(contentIdSchema, coteSchema),
 });
 
 /**
@@ -84,8 +94,15 @@ export const archetypesFileSchema = z.object({
   _doc: z.array(z.string()).optional(),
   /** Défaut par « module/categorie ». */
   defauts: z.record(z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/), archetypeSchema),
-  /** Exception par identifiant de fiche — l'emporte sur le défaut. */
-  exceptions: z.record(slugSchema, archetypeSchema),
+  /**
+   * Exception par **identifiant de fiche** — l'emporte sur le défaut.
+   *
+   * La clé est un `contentIdSchema` (« eopan.appareils.rafale-m »), pas un
+   * slug : M6a avait typé ce champ en `slugSchema`, qui interdit le point.
+   * Aucune exception n'aurait donc pu être déclarée sans faire échouer la
+   * validation — un défaut resté invisible tant que la table était vide.
+   */
+  exceptions: z.record(contentIdSchema, archetypeSchema),
 });
 
 export type Archetype = z.infer<typeof archetypeSchema>;

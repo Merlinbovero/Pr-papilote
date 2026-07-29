@@ -27,6 +27,8 @@
   --pl-filet: #d5d8db;
   --pl-filet-fort: #7c8186;
   --pl-marine: #1d5b8f;
+  --pl-air: #156383;
+  --pl-terre: #376441;
   --pl-bistre: #79511e;
   --pl-violine: #624581;
   --pl-juste: #117c40;
@@ -74,6 +76,8 @@
   --pl-filet: #2e333a;
   --pl-filet-fort: #6b727c;
   --pl-marine: #7db0e1;
+  --pl-air: #74b8db;
+  --pl-terre: #8cb894;
   --pl-bistre: #d2a979;
   --pl-violine: #b599d6;
   --pl-juste: #72c78b;
@@ -94,6 +98,8 @@
   --pl-filet: #d5d8db;
   --pl-filet-fort: #7c8186;
   --pl-marine: #1d5b8f;
+  --pl-air: #156383;
+  --pl-terre: #376441;
   --pl-bistre: #79511e;
   --pl-violine: #624581;
   --pl-juste: #117c40;
@@ -106,6 +112,12 @@
 
 .pl-root[data-module="marine"] {
   --pl-mod: var(--pl-marine);
+}
+.pl-root[data-module="air"] {
+  --pl-mod: var(--pl-air);
+}
+.pl-root[data-module="terre"] {
+  --pl-mod: var(--pl-terre);
 }
 .pl-root[data-module="bistre"] {
   --pl-mod: var(--pl-bistre);
@@ -648,6 +660,39 @@ a.pl-mark {
   margin-right: 5px;
 }
 
+/* ---- photographie documentaire (lot M6b) ----
+   Volontairement distincte de `.pl-planche`, qui teinte ses images au
+   laboratoire (`filter: saturate/contrast/sepia`) et leur impose un rapport
+   fixe. Une photographie de notice est une PIÈCE, pas une illustration : elle
+   n'est ni recadrée arbitrairement, ni transformée. Pas de filtre ici, et le
+   cadrage repris tel quel du gabarit historique — même rapport, même
+   `object-position` d'auteur — pour que les pixels rendus ne bougent pas.
+   Le filet et la légende sont tout ce que PLANCHE ajoute. */
+.pl-photo {
+  margin: 0 0 28px;
+}
+.pl-photo-c {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--pl-filet-fort);
+  background: var(--pl-fond-2);
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .pl-photo-c {
+    aspect-ratio: 2 / 1;
+  }
+}
+.pl-photo img {
+  object-fit: cover;
+}
+.pl-photo .pl-legende a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ---- encadrés ---- */
 .pl-enc {
   border-left: 2px solid var(--pl-mod);
@@ -695,6 +740,15 @@ a.pl-mark {
 .pl-tab td {
   padding: 9px 14px 9px 0;
   border-bottom: 1px solid var(--pl-filet);
+  vertical-align: top;
+}
+/* En-tête de LIGNE (`scope="row"`) : c'est un libellé, pas un en-tête de
+   colonne. Il garde les petites capitales mais reprend le filet léger des
+   cellules — sinon la même ligne portait deux filets d'épaisseur différente,
+   coupés au milieu du tableau (constaté au rendu, lot M6b). */
+.pl-tab th[scope="row"] {
+  border-bottom: 1px solid var(--pl-filet);
+  padding: 9px 14px 9px 0;
   vertical-align: top;
 }
 .pl-tab td.pl-v {
@@ -826,6 +880,14 @@ a.pl-mark {
   color: var(--pl-encre-2);
   text-decoration: none;
   line-height: 1.45;
+}
+/* Sur pointeur grossier, un renvoi devient une cible tactile isolée : il doit
+   tenir ses 44 px de haut. Mesuré à 35 px lors de la campagne M6b — l'annexe
+   n'apparaissait jusque-là qu'en desktop, où la règle ne s'applique pas. */
+@media (pointer: coarse) {
+  .pl-voir a {
+    min-height: 44px;
+  }
 }
 .pl-voir a::before {
   content: "→";

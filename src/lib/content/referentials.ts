@@ -160,3 +160,44 @@ export function getCotesCours(): ReadonlyMap<string, string> {
   }
   return cotesCoursCache;
 }
+
+let cotesFichesCache: Map<string, string> | undefined;
+
+/**
+ * Les cotes documentaires des notices techniques — **gelées** (lot M6b).
+ *
+ * Clées par identifiant de contenu, pas par slug : l'identifiant est gelé à
+ * vie, donc une notice renommée garde sa cote sans qu'aucune clé n'ait à
+ * migrer. Deux notices ne peuvent pas porter la même cote.
+ */
+function buildCotesFiches(): Map<string, string> {
+  const fichier = cotesFileSchema.parse(readJson("cotes.json"));
+  const index = new Map(Object.entries(fichier.fiches));
+  const cotes = new Set(index.values());
+  if (cotes.size !== index.size) {
+    throw new Error("Référentiel cotes : deux notices portent la même cote");
+  }
+  return index;
+}
+
+/**
+ * La cote d'une notice, ou `undefined` si elle n'en a pas.
+ *
+ * `undefined` est un cas **nominal** hors de La Planche d'identification :
+ * seules les 66 notices en portent une. Une fiche de La Leçon n'en a pas, et
+ * ne doit pas en recevoir avant que sa famille soit migrée.
+ */
+export function getCoteFiche(id: string): string | undefined {
+  if (!cotesFichesCache) {
+    cotesFichesCache = buildCotesFiches();
+  }
+  return cotesFichesCache.get(id);
+}
+
+/** Toutes les cotes de notice, pour les contrôles d'intégrité. */
+export function getCotesFiches(): ReadonlyMap<string, string> {
+  if (!cotesFichesCache) {
+    cotesFichesCache = buildCotesFiches();
+  }
+  return cotesFichesCache;
+}
