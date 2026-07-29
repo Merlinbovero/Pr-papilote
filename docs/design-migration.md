@@ -1231,11 +1231,32 @@ référentiel, le build échoue —
 ### 18.8 Procédure d'annulation
 
 ```
-git revert <sha-du-lot-M6b>
+git revert 07b1917
 npm run check
 ```
 
 Le commit est autonome et se révoque **sans toucher à M6a** : il rend la branche
 `identification` à `FicheTransition`, retire le gabarit de notice, la table
-`fiches` des cotes et les deux encres de la feuille du système. Le référentiel
-d'archétypes revient à la répartition de M6a, missions comprises.
+`fiches` des cotes et les deux encres de la feuille du système.
+
+> **Avertissement — le retour arrière défait aussi un arbitrage éditorial.**
+>
+> `git revert 07b1917` ne se contente pas de retirer le gabarit : il **rétablit
+> la classification antérieure des missions**. Les neuf fiches `*/missions`
+> redeviennent `identification`, et la répartition repasse à 75 / 122 / 37 / 4.
+>
+> Ce n'est pas un effet de bord tolérable en silence : le classement des
+> missions en `lecon` est une décision — une mission est un processus, pas un
+> objet à identifier — validée séparément de la migration graphique. Le revert
+> l'emporte avec lui parce que les deux vivent dans le même commit.
+>
+> **Si M6b est relancé, cet arbitrage doit être réappliqué explicitement**, avant
+> toute génération de cote : les neuf missions ne doivent recevoir ni cote de
+> notice, ni gabarit de Planche. Le test de répartition gelée
+> (`src/lib/content/archetypes.test.ts`) est le point de contrôle — il attend
+> 66 / 131 / 37 / 4 et tombe si les missions sont restées en `identification`.
+>
+> Le choix a été fait de **ne pas réécrire l'historique** pour isoler la
+> reclassification dans un commit distinct : l'historique publié ne se réécrit
+> pas pour une commodité de retour arrière. La mise en garde ci-dessus tient
+> lieu de séparation.

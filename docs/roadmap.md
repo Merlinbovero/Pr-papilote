@@ -141,6 +141,18 @@ Une quatrième observation, sans défaut associé : **aucune des 66 notices ne
 déclare de document rattaché**. La branche « Documents » du gabarit existe et
 n'est éprouvée par aucune page — à garder en tête avant de s'appuyer dessus.
 
+### Le retour arrière de M6b emporte un arbitrage éditorial
+
+`git revert 07b1917` rétablit **la classification antérieure des missions** :
+les neuf fiches `*/missions` redeviennent `identification` et la répartition
+repasse à 75 / 122 / 37 / 4. Le classement en `lecon` a été validé séparément de
+la migration graphique, mais les deux vivent dans le même commit.
+
+**Si M6b est relancé, réappliquer l'arbitrage explicitement** avant toute
+génération de cote — les neuf missions ne doivent recevoir ni cote de notice ni
+gabarit de Planche. Le test de répartition gelée est le point de contrôle : il
+attend 66 / 131 / 37 / 4. Détail : `docs/design-migration.md` §18.8.
+
 **Question ouverte à trancher au passage** : `npm run test:e2e` devrait-il
 entrer dans la porte de qualité, ou rester une vérification manuelle ? Tant
 qu'il en est dehors, une régression de bout en bout peut être commitée sans
