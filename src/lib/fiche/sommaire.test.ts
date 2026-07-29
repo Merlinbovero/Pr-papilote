@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { ANCRES_RESERVEES, sommaireNotice } from "./sommaire";
+import { ANCRES_RESERVEES, sommaireCahier, sommaireNotice, sommaireSituation } from "./sommaire";
 
 /**
  * Le sommaire d'une notice — lot M6b.
@@ -94,6 +94,103 @@ describe("les ancres du gabarit ne heurtent aucune section rédigée", () => {
     const { getFichesParArchetype } = await import("@/lib/content/archetypes");
     const heurts: string[] = [];
     for (const fiche of getFichesParArchetype("identification")) {
+      for (const section of fiche.content.sections) {
+        if ((ANCRES_RESERVEES as readonly string[]).includes(section.id)) {
+          heurts.push(`${fiche.id} → #${section.id}`);
+        }
+      }
+    }
+    expect(heurts, "renommer la section rédigée, jamais l'ancre du gabarit").toEqual([]);
+  });
+});
+
+/**
+ * Le Cahier — lot M7b.
+ *
+ * Un récit n'a ni fiche signalétique ni documents : son plan est plus court, et
+ * ses ancres sont exactement celles du gabarit historique. Aucune n'est
+ * inventée pour la circonstance.
+ */
+describe("sommaire d’un article du Cahier", () => {
+  const complet = { sections: SECTIONS, pieges: true, quiz: true };
+
+  it("suit l’ordre du document", () => {
+    expect(sommaireCahier(complet).map((e) => e.id)).toEqual([
+      "l-essentiel",
+      "role-et-missions",
+      "unites",
+      "pieges",
+      "s-entrainer",
+      "sources",
+    ]);
+  });
+
+  it("n’annonce ni fiche signalétique ni documents", () => {
+    const ids = sommaireCahier(complet).map((e) => e.id);
+    expect(ids).not.toContain("signaletique");
+    expect(ids).not.toContain("documents");
+  });
+
+  it("numérote sans trou et laisse le quiz hors numérotation", () => {
+    const entrees = sommaireCahier(complet);
+    const numeros = entrees.map((e) => e.numero).filter((n): n is number => n !== undefined);
+    expect(numeros).toEqual(Array.from({ length: numeros.length }, (_, i) => i + 1));
+    expect(entrees.find((e) => e.id === "s-entrainer")?.numero).toBeUndefined();
+  });
+});
+
+/**
+ * La Situation — lot M7b.
+ *
+ * Une seule propriété compte vraiment ici, et c'est le geste éditorial le plus
+ * fort du site : **« ce qui reste incertain » ne peut pas disparaître.** Aucune
+ * combinaison de contenu ne doit permettre à une situation de se taire sur ce
+ * que ses sources ne tranchent pas.
+ */
+describe("sommaire d’une situation", () => {
+  it("porte toujours « ce qui reste incertain », quel que soit le contenu", () => {
+    const combinaisons = [
+      { sections: SECTIONS, pieges: true, quiz: true },
+      { sections: SECTIONS, pieges: false, quiz: false },
+      { sections: [], pieges: false, quiz: false },
+      { sections: [], pieges: true, quiz: true },
+    ];
+    for (const c of combinaisons) {
+      expect(
+        sommaireSituation(c).map((e) => e.id),
+        JSON.stringify(c)
+      ).toContain("ce-qui-reste-incertain");
+    }
+  });
+
+  it("la place après les sections rédigées, avant les pièges", () => {
+    const ids = sommaireSituation({ sections: SECTIONS, pieges: true, quiz: false }).map(
+      (e) => e.id
+    );
+    expect(ids.indexOf("ce-qui-reste-incertain")).toBeGreaterThan(ids.indexOf("unites"));
+    expect(ids.indexOf("ce-qui-reste-incertain")).toBeLessThan(ids.indexOf("pieges"));
+  });
+
+  it("lui donne un numéro de plein rang : ce n’est pas une note", () => {
+    const entree = sommaireSituation({ sections: SECTIONS, pieges: false, quiz: false }).find(
+      (e) => e.id === "ce-qui-reste-incertain"
+    );
+    expect(entree?.numero).toBeGreaterThan(0);
+  });
+
+  it("son ancre est réservée : aucune fiche ne peut la rédiger", () => {
+    expect(ANCRES_RESERVEES).toContain("ce-qui-reste-incertain");
+  });
+});
+
+/**
+ * Le garde-fou d'ancres, étendu aux familles migrées au lot M7b.
+ */
+describe("les ancres du gabarit ne heurtent aucune section rédigée — Cahier et Situation", () => {
+  it.each(["cahier", "situation"] as const)("famille %s", async (famille) => {
+    const { getFichesParArchetype } = await import("@/lib/content/archetypes");
+    const heurts: string[] = [];
+    for (const fiche of getFichesParArchetype(famille)) {
       for (const section of fiche.content.sections) {
         if ((ANCRES_RESERVEES as readonly string[]).includes(section.id)) {
           heurts.push(`${fiche.id} → #${section.id}`);

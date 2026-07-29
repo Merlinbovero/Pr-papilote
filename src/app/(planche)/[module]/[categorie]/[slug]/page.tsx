@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { Cahier } from "@/features/fiches/cahier";
 import { FicheTransition } from "@/features/fiches/fiche-transition";
 import { PlancheIdentification } from "@/features/fiches/planche-identification";
+import { Situation } from "@/features/fiches/situation";
 import { getArchetypeFiche } from "@/lib/content/archetypes";
 import { getFiche, getFicheHref, getFiches } from "@/lib/content/fiches";
 import { getCategory, getModule } from "@/lib/content/referentials";
@@ -14,11 +16,14 @@ import { getCategory, getModule } from "@/lib/content/referentials";
  * fiche est classée par `content/_referentiels/archetypes.json` — une décision
  * éditoriale, tenue hors du schéma des fiches — et le rendu suit.
  *
- * Depuis M6b, la branche `identification` — 66 notices techniques — rend La
- * Planche d'identification. Les trois autres familles passent encore par
- * `FicheTransition`, qui porte la charte historique telle quelle : elles
- * attendent la validation de leur propre grammaire documentaire, et ne doivent
- * surtout pas recevoir celle de La Planche par commodité.
+ * Trois familles sur quatre ont désormais leur gabarit : La Planche
+ * d'identification (83 notices, lots M6b et M7a), Le Cahier (20 articles) et
+ * La Situation (4 points datés, lot M7b).
+ *
+ * **La Leçon — 131 fiches — passe encore par `FicheTransition`**, qui porte la
+ * charte historique telle quelle. Elle attend la validation de sa propre
+ * grammaire documentaire et ne doit surtout pas recevoir celle d'une autre
+ * famille par commodité. `FicheTransition` disparaîtra avec elle.
  *
  * Ce qui ne change pas ici, et doit rester vérifiable : l'URL, les paramètres
  * statiques, les métadonnées, la canonique, la règle d'indexation.
@@ -69,9 +74,11 @@ export default async function FichePage({ params }: FichePageProps) {
   switch (archetype) {
     case "identification":
       return <PlancheIdentification fiche={fiche} mod={mod} category={category} />;
-    case "lecon":
     case "cahier":
+      return <Cahier fiche={fiche} mod={mod} category={category} />;
     case "situation":
+      return <Situation fiche={fiche} mod={mod} category={category} />;
+    case "lecon":
       return <FicheTransition fiche={fiche} mod={mod} category={category} />;
   }
 }

@@ -1388,3 +1388,161 @@ Le commit est autonome. Il rend les 17 fiches à `cahier` donc à
 > conséquence mécanique. Il n'y a pas deux décisions à séparer. Le découpage
 > M7a / M7b protège l'inverse : un retour arrière sur Le Cahier et La Situation
 > (M7b) ne défera pas la migration cohérente d'Aviation mondiale.
+
+---
+
+## 20. Lot M7b — Le Cahier et La Situation — livré le 2026-07-29
+
+**Vingt-quatre pages, deux familles, deux gabarits.** À la fin de ce lot,
+`FicheTransition` ne sert plus qu'**une seule famille** : les 131 fiches de
+La Leçon.
+
+### 20.1 Vingt-quatre cotes
+
+20 pour Le Cahier — famille **D** — de `ALAT · D.15.01` à `FOND · D.15.06`, et
+4 pour La Situation — famille **E** — `CULT · E.2.01` à `CULT · E.2.04`. Même
+procédé qu'en M6b et M7a : tri par slug une fois, attribution, gel.
+
+**Les 83 cotes antérieures n'ont pas bougé** — vérifié par comparaison
+clé par clé avant écriture, puis sur le diff.
+
+Le test de cotes a été **restructuré pour raisonner par famille** au lieu
+d'attendre « C » partout : la lettre attendue est désormais dérivée de
+l'archétype de la fiche. C'est la cote qui doit suivre la famille, jamais
+l'inverse — reclasser une fiche sans réécrire sa cote laisserait une référence
+qui ment. Quinze tests couvrent les 107 cotes des trois familles, et un seizième
+énonce que **La Leçon n'en porte aucune**, délibérément.
+
+### 20.2 Le Cahier — ce qu'il fait, et surtout ce qu'il ne fabrique pas
+
+Quatre dérogations, et **uniquement** celles que le manifeste réserve nommément
+à cette famille : marge large au lieu du rail, titre à 52 px posé sur trois
+lignes de rythme vides, chapô en italique, et une lettrine en ouverture.
+
+**Son encre est celle de la FAMILLE, pas celle du module hôte** — `sienne`,
+toujours, y compris pour une histoire de l'Aéronautique navale qui vit dans le
+module EOPAN. Culture et Géopolitique partagent volontairement une encre parce
+qu'elles sont « deux registres d'un même fonds » : l'encre dit ici le fonds, pas
+l'étagère. La Planche d'identification suit la règle inverse, et c'est délibéré
+— une notice appartient à son armée, un récit appartient au fonds.
+
+**Ce qu'il ne fait pas, faute de contenu canonique — décision, pas oubli :**
+
+- **Aucune chronologie en marge.** Le motif est décrit au manifeste, mais aucun
+  champ ne porte de chronologie, et « une chronologie non sourcée n'est pas
+  publiée ». La déduire de la prose serait la fabriquer. Sept fiches rédigent
+  une section « Repères » sous forme de tableau Markdown : elle est rendue telle
+  quelle, comme le contenu l'a écrite.
+- **Aucun bloc de citation.** Aucun champ ne porte de citation attribuée ; en
+  extraire des guillemets du corps reviendrait à en fabriquer une.
+- **Aucune photographie ajoutée**, aucun portrait sans crédit.
+
+**La lettrine ne retire aucun caractère au texte.** Elle est posée par
+`::first-letter` sur le seul bloc d'ouverture : aucun nœud ajouté, aucun
+caractère extrait, l'ordre de lecture et le texte annoncé sont ceux du contenu.
+Découper la chaîne pour isoler la lettre aurait été un changement de contenu
+déguisé en ornement. Un test vérifie que le premier mot reste entier.
+
+### 20.3 La Situation — deux motifs, tous deux contraints
+
+**Le bandeau documentaire, au-dessus du chapô.** Il énonce
+« Informations vérifiées au … », **et non « Arrêté au … »**. La nuance n'est pas
+cosmétique : `verifiedAt` est la date de dernière vérification des faits, pas
+une date d'arrêt éditorial. Les deux ne coïncident pas nécessairement, et écrire
+« arrêté au » ferait passer l'une pour l'autre. **Une véritable date d'arrêt
+demandera un champ canonique distinct ; elle ne se simule pas dans un lot
+graphique.** L'annexe le dit en clair au lecteur, et un test vérifie que la
+chaîne « arrêté au » n'apparaît nulle part dans le corps des quatre pages.
+
+La mention `À revoir` vient de `editorialState`, la règle de fraîcheur déjà en
+place — jamais d'une appréciation.
+
+**« Ce qui reste incertain », section obligatoire.** De plein rang, avec son
+filet et son intertitre, numérotée comme les faits — jamais reléguée en note.
+Aucun champ ne la porte aujourd'hui : le composant **n'invente rien** et affiche
+une formulation éditoriale neutre. Elle décrit **l'état de la documentation, pas
+l'état du monde** : « Aucun élément d'incertitude n'est explicitement documenté
+dans cette version de la fiche. Cette mention porte sur l'état de la
+documentation, non sur l'état du sujet : elle ne signifie pas que tout est
+établi. » Rien n'est déduit — ni qu'une affirmation serait un fait, une
+estimation, une analyse ou une hypothèse quand le contenu ne le précise pas.
+
+Quatre tests unitaires vérifient qu'**aucune combinaison de contenu** ne fait
+disparaître cette section du sommaire.
+
+Aucune carte n'est dessinée : les quatre situations n'en déclarent aucune.
+
+### 20.4 Preuves — Le Cahier
+
+**15 spécimens** couvrant **les 8 catégories** de la famille, les deux extrêmes
+de longueur, la fiche à encadré de données, les deux fiches à figure, clair et
+sombre, 1440 / 834 / 390 px.
+
+| Contrôle                                | Résultat                                                        |
+| --------------------------------------- | --------------------------------------------------------------- |
+| Statut, débordement, erreurs de console | 200 · **0 px** · **0**                                          |
+| Violations axe (WCAG 2 A/AA)            | **0**                                                           |
+| Encre                                   | `#8a3d2b` en clair, `#e09582` en sombre — **sienne sur les 15** |
+| Lettrine                                | **exactement une** par page                                     |
+| Titre                                   | **52 px** en desktop, **34 px** en transposition étroite        |
+| Chapô                                   | italique sur les 15                                             |
+| Chronologie fabriquée                   | **aucune** — seul l'historique de révision, donnée réelle       |
+
+### 20.5 Preuves — La Situation
+
+**Les 4 fiches, aucune n'est un échantillon**, plus tablette, mobile et sombre :
+8 spécimens.
+
+| Contrôle                                | Résultat                                |
+| --------------------------------------- | --------------------------------------- |
+| Statut, débordement, erreurs de console | 200 · **0 px** · **0**                  |
+| Violations axe (WCAG 2 A/AA)            | **0**                                   |
+| Encre                                   | sienne dans les deux registres          |
+| Bandeau documentaire                    | présent, **avant le chapô**, sur les 8  |
+| Libellé                                 | « Informations vérifiées au » sur les 8 |
+| « Arrêté au »                           | **absent partout**                      |
+| Section « Ce qui reste incertain »      | présente et **numérotée** sur les 8     |
+
+### 20.6 Preuves communes
+
+**238 fiches sur 238 conformes** : 214 hors périmètre en égalité stricte de
+l'empreinte textuelle, 24 migrées en conservation vérifiée chaîne par chaîne.
+
+**254 routes hors périmètre au HTML identique à l'octet**, empreintes de build
+neutralisées.
+
+`npm run check` : **713 tests verts** (701 à M7a). **28 tests de bout en bout**
+neufs sur les deux familles.
+
+### 20.7 Un défaut trouvé par la campagne
+
+La première version du Cahier appliquait la règle d'encre de la notice — celle
+du module hôte. La campagne a rendu **quatre encres différentes** là où il n'en
+fallait qu'une : marine pour l'histoire de l'Aéronautique navale, air pour celle
+de l'Armée de l'Air, terre pour l'ALAT, bistre pour les Fondamentaux. Aucun test
+ne l'aurait vu ; la sonde d'encre de la campagne l'a affiché en clair. Corrigé,
+puis tenu par un test qui vérifie la règle **sur une fiche hors du module
+Culture**, là où l'erreur se produisait.
+
+### 20.8 Ce que M7b n'a pas fait
+
+- **La Leçon n'est pas touchée** : 131 fiches, toujours `FicheTransition`.
+- **Aviation mondiale n'est pas touchée** : son contrôle permanent des 17
+  reste vert.
+- **`NotionQuiz` reste intact** dans son bloc hôte.
+- Aucun contenu, aucune donnée utilisateur, aucune migration SQL, aucun
+  identifiant, aucune URL, aucun slug, aucune redirection.
+
+### 20.9 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M7b>
+npm run check
+```
+
+Autonome, et **sans effet sur Aviation mondiale** : le découpage M7a / M7b l'a
+protégée, comme demandé. Le revert rend Le Cahier et La Situation à
+`FicheTransition`, retire les deux gabarits et leurs 24 cotes. Le contrôle
+permanent des 17 notices vit dans un commit antérieur : il survit au revert.
+
+Aucun arbitrage éditorial n'est emporté cette fois — M7b ne reclasse rien.

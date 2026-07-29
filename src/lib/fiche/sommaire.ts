@@ -20,7 +20,11 @@ import type { EntreeSommaire } from "@/lib/lecon/sommaire";
  * notice ne le contredit.
  */
 
-/** Les identifiants que le gabarit de notice pose lui-même. */
+/**
+ * Les identifiants que les gabarits de fiche posent eux-mêmes, toutes familles
+ * confondues. Un test de corpus vérifie qu'aucune fiche migrée ne rédige une
+ * section portant l'un d'eux.
+ */
 export const ANCRES_RESERVEES = [
   "l-essentiel",
   "signaletique",
@@ -29,6 +33,8 @@ export const ANCRES_RESERVEES = [
   "s-entrainer",
   "sources",
   "sommaire",
+  // Lot M7b — la section obligatoire de La Situation.
+  "ce-qui-reste-incertain",
 ] as const;
 
 export interface SourcesSommaireNotice {
@@ -73,5 +79,79 @@ export function sommaireNotice(sources: SourcesSommaireNotice): EntreeSommaire[]
   }
   numerotee("sources", "Sources");
 
+  return entrees;
+}
+
+/**
+ * Le sommaire d'un article du Cahier — lot M7b.
+ *
+ * Le Cahier n'a ni fiche signalétique ni documents : c'est un récit, pas une
+ * notice. Son plan est donc plus court, et ses ancres sont exactement celles du
+ * gabarit historique — `l-essentiel`, les sections rédigées, `pieges`,
+ * `sources`. Aucune n'est inventée pour la circonstance.
+ */
+export interface SourcesSommaireCahier {
+  sections: readonly { id: string; title: string }[];
+  pieges: boolean;
+  quiz: boolean;
+}
+
+export function sommaireCahier(sources: SourcesSommaireCahier): EntreeSommaire[] {
+  const entrees: EntreeSommaire[] = [];
+  let numero = 0;
+  const numerotee = (id: string, libelle: string) => {
+    numero += 1;
+    entrees.push({ id, libelle, numero });
+  };
+
+  numerotee("l-essentiel", "L’essentiel");
+  for (const section of sources.sections) {
+    numerotee(section.id, section.title);
+  }
+  if (sources.pieges) {
+    numerotee("pieges", "Pièges fréquents");
+  }
+  if (sources.quiz) {
+    entrees.push({ id: "s-entrainer", libelle: "Se tester" });
+  }
+  numerotee("sources", "Sources");
+  return entrees;
+}
+
+/**
+ * Le sommaire d'une situation — lot M7b.
+ *
+ * **`ce-qui-reste-incertain` est toujours présent**, quel que soit le contenu.
+ * C'est la seule entrée du système qu'une fiche ne peut pas faire disparaître :
+ * la famille La Situation doit énoncer ce que ses sources ne permettent pas de
+ * trancher (docs/design-archetypes.md, archétype V). Une situation qui ne
+ * documente aucune incertitude le dit ; elle ne se tait pas.
+ */
+export interface SourcesSommaireSituation {
+  sections: readonly { id: string; title: string }[];
+  pieges: boolean;
+  quiz: boolean;
+}
+
+export function sommaireSituation(sources: SourcesSommaireSituation): EntreeSommaire[] {
+  const entrees: EntreeSommaire[] = [];
+  let numero = 0;
+  const numerotee = (id: string, libelle: string) => {
+    numero += 1;
+    entrees.push({ id, libelle, numero });
+  };
+
+  numerotee("l-essentiel", "L’essentiel");
+  for (const section of sources.sections) {
+    numerotee(section.id, section.title);
+  }
+  numerotee("ce-qui-reste-incertain", "Ce qui reste incertain");
+  if (sources.pieges) {
+    numerotee("pieges", "Pièges fréquents");
+  }
+  if (sources.quiz) {
+    entrees.push({ id: "s-entrainer", libelle: "Se tester" });
+  }
+  numerotee("sources", "Sources");
   return entrees;
 }

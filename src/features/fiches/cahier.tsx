@@ -10,17 +10,14 @@ import {
   PlanchePied,
   PlancheRoot,
   PlancheSection,
-  PlancheValeur,
 } from "@/components/planche/planche";
 import { PlancheImpression } from "@/components/planche/planche-impression";
 import { PlancheMarkdown } from "@/components/planche/planche-markdown";
 import { PlancheSommaire } from "@/components/planche/planche-sommaire";
 import { buildNotionPool } from "@/features/quiz/notion-pool";
 import { NotionQuiz } from "@/features/quiz/notion-quiz";
-import type { DocumentNotice, FicheFile } from "@/lib/content/content-schemas";
+import type { FicheFile } from "@/lib/content/content-schemas";
 import {
-  getDocumentHref,
-  getDocumentsForFiche,
   getFicheById,
   getFicheHref,
   getFicheLinks,
@@ -28,71 +25,56 @@ import {
   getReadingMinutes,
   getTermesForFiche,
 } from "@/lib/content/fiches";
-import { editorialState } from "@/lib/content/freshness";
 import { infoboxLabel } from "@/lib/content/infobox-labels";
 import { getCoteFiche } from "@/lib/content/referentials";
 import type { Category, Module } from "@/lib/content/schemas";
 import { numeroDeSection } from "@/lib/lecon/sommaire";
-import { sommaireNotice } from "@/lib/fiche/sommaire";
-import { SERVICE_STATUS } from "@/lib/service-status";
-import { AVERTISSEMENTS, ENCRE_MODULE, dateCourte, renvoisDeFiche } from "./commun";
+import { sommaireCahier } from "@/lib/fiche/sommaire";
+import { AVERTISSEMENTS, dateCourte, renvoisDeFiche } from "./commun";
 
 /**
- * La Planche d'identification — lot M6b.
+ * Le Cahier — lot M7b.
  *
- * La famille des **notices techniques** : un appareil, un navire, une base,
- * une unité, un grade, une institution. Un objet qu'on identifie, pas une
- * notion qu'on apprend. Son modèle est la notice constructeur et le cartel de
- * musée : une pièce, sa cote, ses caractéristiques, ses sources.
+ * La famille du **récit** : une histoire, une personne, un épisode. Son modèle
+ * est la revue d'histoire, et c'est la famille la plus généreuse en blanc des
+ * six (docs/design-archetypes.md, archétype IV).
  *
- * CE QUE CE COMPOSANT CHANGE — le gabarit, et lui seul. Chaque bloc de la
- * fiche historique se retrouve ici, dans le même ordre, avec le même texte,
- * les mêmes liens et les mêmes ancres publiques (`l-essentiel`, les
- * identifiants de section déclarés, `pieges`, `documents`, `sources`,
- * `s-entrainer`). Un lecteur qui avait collé une ancre la retrouve.
+ * SON ENCRE EST CELLE DE LA FAMILLE, PAS CELLE DU MODULE HÔTE. `sienne`,
+ * toujours — y compris pour une histoire de l'Aéronautique navale, qui vit dans
+ * le module EOPAN. C'est la règle de `docs/design-archetypes.md` §0 : Culture et
+ * Géopolitique partagent volontairement une encre parce qu'elles sont « deux
+ * registres d'un même fonds ». L'encre dit ici le FONDS, pas l'étagère.
  *
- * CE QU'IL NE CHANGE PAS, volontairement :
- *  - **la photographie** — ni recadrée, ni teintée, ni retouchée. Même
- *    rapport et même `object-position` d'auteur que le gabarit historique ;
- *    PLANCHE n'ajoute qu'un filet et une légende. Voir `.pl-photo`, qui existe
- *    justement pour ne pas hériter du filtre décoratif de `.pl-planche`.
- *  - **aucun schéma n'est créé** — les figures rendues sont celles que le
- *    contenu déclare, servies par le composant historique. M6b ne dessine rien.
- *  - **NotionQuiz** — monté tel quel dans un bloc `.pl-hote`, dont la seule
- *    fonction est d'arrêter la typographie PLANCHE à sa frontière. Aucune de
- *    ses classes internes n'est ciblée. Il attend son lot propriétaire.
+ * La Planche d'identification suit la règle inverse — encre du module hôte —
+ * et c'est délibéré : une notice appartient à son armée, un récit appartient au
+ * fonds documentaire. La première version de ce composant avait appliqué la
+ * règle de la notice ; la campagne visuelle a montré quatre encres différentes
+ * là où il n'en fallait qu'une.
  *
- * La cote est **lue** dans `content/_referentiels/cotes.json`, jamais dérivée
- * de l'ordre courant : une notice sans cote est une erreur d'intégrité, et la
- * page le dit en faisant échouer le build.
+ * CE QUI LA DISTINGUE DE LA NOTICE, et rien d'autre :
+ *  - la **marge large** au lieu du rail — la place va au texte, pas au tableau ;
+ *  - le **titre à 52 px**, posé sur trois lignes de rythme vides ;
+ *  - le **chapô en italique** ;
+ *  - la **lettrine**, une seule, en ouverture de l'essentiel.
+ *
+ * Ce sont les quatre dérogations que le manifeste réserve nommément à cette
+ * famille. Aucune autre : on change de chapitre, pas de livre.
+ *
+ * CE QU'ELLE NE FAIT PAS, faute de contenu canonique — et c'est une décision,
+ * pas un oubli :
+ *  - **aucune chronologie en marge.** Le motif est décrit au manifeste, mais
+ *    aucun champ ne porte de chronologie, et « une chronologie non sourcée
+ *    n'est pas publiée ». La déduire de la prose serait la fabriquer. Sept
+ *    fiches rédigent une section « Repères » sous forme de tableau Markdown :
+ *    elle est rendue telle quelle, comme le contenu l'a écrite.
+ *  - **aucun bloc de citation.** Aucun champ ne porte de citation attribuée ;
+ *    en extraire des guillemets du corps reviendrait à en fabriquer une.
+ *  - **aucune photographie ajoutée**, aucun portrait sans crédit.
+ *
+ * Les figures historiques déclarées par le contenu sont servies **dans leur
+ * bloc hôte**, par le composant historique : M7b ne dessine rien.
  */
-
-const TYPE_LABELS: Partial<Record<FicheFile["type"], string>> = {
-  appareil: "Appareil",
-  helicoptere: "Hélicoptère",
-  navire: "Navire",
-  flottille: "Flottille",
-  procedure: "Procédure",
-  concept: "Concept",
-  organisation: "Organisation",
-};
-
-const LEVEL_LABELS: Record<number, string> = {
-  1: "Découverte",
-  2: "Niveau concours",
-  3: "Expert",
-};
-
-const DOCUMENT_KIND_LABELS: Record<DocumentNotice["kind"], string> = {
-  arrete: "Arrêté",
-  rapport: "Rapport",
-  brochure: "Brochure",
-  documentation: "Documentation",
-  communique: "Communiqué",
-  autre: "Document",
-};
-
-export function PlancheIdentification({
+export function Cahier({
   fiche,
   mod,
   category,
@@ -103,24 +85,13 @@ export function PlancheIdentification({
 }) {
   const cote = getCoteFiche(fiche.id);
   if (!cote) {
-    throw new Error(`Cote manquante pour la notice « ${fiche.id} » (cotes.json)`);
+    throw new Error(`Cote manquante pour l’article « ${fiche.id} » (cotes.json)`);
   }
 
   const quizPool = buildNotionPool(fiche.id);
-  const documents = getDocumentsForFiche(fiche);
-  const specs = fiche.specs;
-  const infoboxEntries = fiche.infobox
-    ? Object.entries(fiche.infobox).map(([cle, valeur]) => ({
-        label: infoboxLabel(cle),
-        value: Array.isArray(valeur) ? valeur.join(", ") : String(valeur),
-      }))
-    : [];
-
-  const sommaire = sommaireNotice({
+  const sommaire = sommaireCahier({
     sections: fiche.content.sections.map((s) => ({ id: s.id, title: s.title })),
-    caracteristiques: Boolean(specs),
     pieges: fiche.content.pieges.length > 0,
-    documents: documents.length > 0,
     quiz: quizPool.length > 0,
   });
   const numero = (id: string) => numeroDeSection(sommaire, id);
@@ -138,15 +109,16 @@ export function PlancheIdentification({
   const suivante = rang >= 0 && rang < voisines.length - 1 ? voisines[rang + 1] : undefined;
 
   const avertissement = AVERTISSEMENTS[fiche.status];
-  const perimee = editorialState(fiche, new Date()) === "a-verifier";
-  const service = fiche.service ? SERVICE_STATUS[fiche.service.status] : undefined;
-  // L'armée d'appartenance, pas le code du concours : une notice se range sous
-  // « Marine nationale », pas sous « EOPAN ». Les modules transverses n'en
-  // déclarent pas — ils retombent sur leur nom.
   const organisation = mod.organization ?? mod.name;
+  const infoboxEntries = fiche.infobox
+    ? Object.entries(fiche.infobox).map(([cle, valeur]) => ({
+        label: infoboxLabel(cle),
+        value: Array.isArray(valeur) ? valeur.join(", ") : String(valeur),
+      }))
+    : [];
 
   return (
-    <PlancheRoot marginMode="rail" module={ENCRE_MODULE[mod.slug] ?? "neutre"}>
+    <PlancheRoot marginMode="wide" module="sienne" famille="cahier">
       <PlancheCartouche>
         {cote} — rév. {fiche.verifiedAt} — {organisation}
       </PlancheCartouche>
@@ -165,15 +137,7 @@ export function PlancheIdentification({
           <p className="pl-sur">{category.name}</p>
           <h1 className="pl-titre">{fiche.title}</h1>
           <p className="pl-stitre">
-            {[
-              TYPE_LABELS[fiche.type] ?? fiche.type,
-              service?.label,
-              fiche.service?.operator,
-              LEVEL_LABELS[fiche.level] ?? `Niveau ${fiche.level}`,
-              `${getReadingMinutes(fiche)} min de lecture`,
-            ]
-              .filter(Boolean)
-              .join(" · ")}
+            {getReadingMinutes(fiche)} min de lecture · vérifié le {dateCourte(fiche.verifiedAt)}
           </p>
           <div className="pl-ft" />
           <p className="pl-chapo">{fiche.summary}</p>
@@ -189,19 +153,17 @@ export function PlancheIdentification({
           {fiche.image ? (
             <figure className="pl-photo">
               <div className="pl-photo-c">
-                {/* Cadrage et position d'auteur repris tels quels du gabarit
-                    historique : les pixels rendus ne bougent pas. */}
                 <Image
                   src={fiche.image.src}
                   alt={fiche.image.alt}
                   fill
                   priority
-                  sizes="(min-width: 1180px) 720px, 100vw"
+                  sizes="(min-width: 1440px) 720px, 100vw"
                   style={fiche.image.focal ? { objectPosition: fiche.image.focal } : undefined}
                 />
               </div>
-              <PlancheLegende planche="PHOT.">
-                {fiche.image.alt}. Photo :{" "}
+              <PlancheLegende planche="PL. 01">
+                {fiche.image.alt} Photo :{" "}
                 <a href={fiche.image.sourceUrl} target="_blank" rel="noopener noreferrer">
                   {fiche.image.author} ({fiche.image.license})
                 </a>
@@ -213,7 +175,12 @@ export function PlancheIdentification({
             <PlancheSection numero={numero("l-essentiel")} id="l-essentiel">
               L’essentiel
             </PlancheSection>
-            <PlancheMarkdown>{fiche.content.essentiel.body}</PlancheMarkdown>
+            {/* `.pl-ouverture` porte la lettrine, par `::first-letter` : aucun
+                caractère n'est extrait du texte, l'ordre de lecture et le texte
+                annoncé sont ceux du contenu. Une seule par page. */}
+            <div className="pl-ouverture">
+              <PlancheMarkdown>{fiche.content.essentiel.body}</PlancheMarkdown>
+            </div>
             <PlancheEncadre libelle="À retenir">
               <ul>
                 {fiche.content.essentiel.aRetenir.map((point) => (
@@ -229,8 +196,6 @@ export function PlancheIdentification({
                 {section.title}
               </PlancheSection>
               <PlancheMarkdown>{section.body}</PlancheMarkdown>
-              {/* Les figures sont celles que le contenu déclare — M6b n'en
-                  dessine aucune. Le composant historique les sert. */}
               {section.figures.map((figure) => (
                 <div className="pl-hote" key={figure.schemaId}>
                   <FicheFigure {...figure} />
@@ -238,48 +203,6 @@ export function PlancheIdentification({
               ))}
             </section>
           ))}
-
-          {specs ? (
-            <section aria-labelledby="signaletique">
-              {/* « signalétique » et non « caractéristiques » : quatre fiches du
-                  corpus rédigent déjà une section `#caracteristiques`, et deux
-                  éléments ne peuvent pas porter le même identifiant — l'ancre
-                  devenait ambiguë. Un test de corpus tient désormais la règle. */}
-              <PlancheSection numero={numero("signaletique")} id="signaletique">
-                Fiche signalétique
-              </PlancheSection>
-              <table className="pl-tab">
-                <caption className="sr-only">Caractéristiques techniques — {fiche.title}</caption>
-                <tbody>
-                  {(
-                    [
-                      ["Équipage", specs.crew],
-                      ["Longueur", specs.length],
-                      ["Envergure", specs.wingspan],
-                      ["Hauteur", specs.height],
-                      ["Masse à vide", specs.emptyWeight],
-                      ["Masse maximale au décollage", specs.maxTakeoffWeight],
-                      ["Motorisation", specs.powerplant],
-                      ["Vitesse maximale", specs.maxSpeed],
-                      ["Plafond", specs.ceiling],
-                      ["Rayon d’action", specs.range],
-                      ["Armement", specs.armament],
-                    ] as const
-                  )
-                    // Une ligne n'apparaît que si la donnée existe : le tableau
-                    // ne fabrique pas de trous pour faire nombre. Une valeur
-                    // vide déclarée, elle, se lit « — » (PlancheValeur).
-                    .filter(([, valeur]) => valeur !== undefined)
-                    .map(([libelle, valeur]) => (
-                      <tr key={libelle}>
-                        <th scope="row">{libelle}</th>
-                        <PlancheValeur valeur={valeur} />
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </section>
-          ) : null}
 
           {fiche.content.pieges.length > 0 ? (
             <section aria-labelledby="pieges">
@@ -296,36 +219,22 @@ export function PlancheIdentification({
             </section>
           ) : null}
 
-          {documents.length > 0 ? (
-            <section aria-labelledby="documents">
-              <PlancheSection numero={numero("documents")} id="documents">
-                Documents
-              </PlancheSection>
-              <ul className="pl-renvois">
-                {documents.map((doc) => (
-                  <li key={doc.id}>
-                    <Link href={getDocumentHref(doc)}>
-                      <span className="pl-renvoi-t">{doc.title}</span>
-                      <span className="pl-renvoi-r">{DOCUMENT_KIND_LABELS[doc.kind]}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
           <section aria-labelledby="sources">
             <PlancheSection numero={numero("sources")} id="sources">
               Sources
             </PlancheSection>
             <ol className="pl-srcs">
               {fiche.sources.map((source, index) => (
-                <li key={source.url}>
+                <li key={source.url ?? source.title}>
                   <span className="pl-num">{index + 1}</span>
                   <span>
-                    <a href={source.url} target="_blank" rel="noopener noreferrer">
-                      {source.title}
-                    </a>{" "}
+                    {source.url ? (
+                      <a href={source.url} target="_blank" rel="noopener noreferrer">
+                        {source.title}
+                      </a>
+                    ) : (
+                      source.title
+                    )}{" "}
                     — consultée le {dateCourte(source.consultedAt)}
                   </span>
                 </li>
@@ -333,8 +242,6 @@ export function PlancheIdentification({
             </ol>
           </section>
 
-          {/* QuizPlayer et NotionQuiz restent hors périmètre jusqu'à leur lot
-              propriétaire. `.pl-hote` n'habille pas ce bloc : il l'isole. */}
           {quizPool.length > 0 ? (
             <div className="pl-hote">
               <NotionQuiz ficheTitle={fiche.title} pool={quizPool} />
@@ -355,15 +262,14 @@ export function PlancheIdentification({
           <p className="pl-an-note">
             ID {fiche.id} · créée le {dateCourte(fiche.createdAt)} · vérifiée le{" "}
             {dateCourte(fiche.verifiedAt)} · {fiche.author}
-            {perimee ? " · vérification à renouveler" : ""}
           </p>
         </div>
 
         <aside className="pl-annexe">
           <p className="pl-an-h" id="sommaire">
-            Dans cette notice
+            Dans cet article
           </p>
-          <PlancheSommaire entrees={sommaire} libelle="Sommaire de la notice" />
+          <PlancheSommaire entrees={sommaire} libelle="Sommaire de l’article" />
 
           {infoboxEntries.length > 0 ? (
             <>

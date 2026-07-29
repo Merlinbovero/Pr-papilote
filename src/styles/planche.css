@@ -666,6 +666,118 @@ a.pl-mark {
   margin-right: 5px;
 }
 
+/* ============================================================
+   LE CAHIER — la revue d'histoire (lot M7b)
+
+   Ce que la famille change par rapport à la notice, et rien d'autre :
+   plus de blanc, un titre plus haut, un chapô en italique, et une lettrine.
+   Ce sont les seules dérogations que docs/design-archetypes.md autorise, et
+   elles sont réservées à cette famille — d'où la portée `[data-famille]`.
+
+   Ce que la famille NE FAIT PAS : aucune chronologie en marge. Le motif est
+   décrit au manifeste, mais aucun champ canonique ne porte de chronologie, et
+   « une chronologie non sourcée n'est pas publiée ». La déduire de la prose
+   serait la fabriquer. Elle attend son champ.
+   ============================================================ */
+.pl-root[data-famille="cahier"] .pl-titre {
+  /* 52 px : la seule dérogation à l'échelle du manifeste, réservée au Cahier. */
+  font-size: 52px;
+  /* Trois lignes de rythme vides au-dessus : la respiration de la famille. */
+  margin-top: 84px;
+  margin-bottom: 14px;
+}
+.pl-root[data-famille="cahier"] .pl-ft {
+  border-top-color: var(--pl-mod);
+}
+.pl-root[data-famille="cahier"] .pl-chapo {
+  font-style: italic;
+  font-size: 18.5px;
+}
+@media (max-width: 1179px) {
+  /* Transposition étroite : le titre descend à 34 px et la respiration se
+     réduit — 84 px de blanc au-dessus d'un titre sur mobile, c'est une page
+     vide au premier écran. */
+  .pl-root[data-famille="cahier"] .pl-titre {
+    font-size: 34px;
+    margin-top: 28px;
+  }
+}
+
+/* Lettrine — première lettre du premier paragraphe de l'essentiel.
+
+   Posée par `::first-letter` sur le SEUL bloc d'ouverture : aucun caractère
+   n'est extrait du texte, aucun nœud n'est ajouté, l'ordre de lecture et le
+   texte annoncé restent identiques. Découper la chaîne pour isoler la lettre
+   aurait été un changement de contenu déguisé en ornement.
+
+   Une seule par page : la classe n'est posée qu'une fois par le composant,
+   jamais par une règle `:first-of-type` qui en sèmerait à chaque bloc. */
+.pl-root[data-famille="cahier"] .pl-ouverture > p:first-child::first-letter {
+  float: left;
+  font-family: var(--pl-serif);
+  font-size: 3.3em;
+  line-height: 0.86;
+  font-weight: 600;
+  color: var(--pl-mod);
+  padding: 0.06em 0.09em 0 0;
+}
+/* Sur colonne étroite, une lettrine flottante hache le paragraphe : elle
+   rentre dans le rang. */
+@media (max-width: 599px) {
+  .pl-root[data-famille="cahier"] .pl-ouverture > p:first-child::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+/* ============================================================
+   LA SITUATION — le point de situation daté (lot M7b)
+   ============================================================ */
+
+/* L'appareil documentaire, au-dessus du chapô : le seul bloc du système à la
+   fois obligatoire, non décoratif et placé avant le texte. Il dit au lecteur
+   ce qu'il engage.
+
+   LIBELLÉ — « Informations vérifiées au » et non « Arrêté au ». La nuance
+   n'est pas cosmétique : `verifiedAt` est la date de dernière vérification des
+   faits, pas une date d'arrêt éditorial. Écrire « arrêté au » ferait passer
+   l'une pour l'autre. Une véritable date d'arrêt demandera un champ canonique
+   distinct ; elle ne se simule pas. */
+.pl-arrete {
+  border-top: 2px solid var(--pl-filet-fort);
+  border-bottom: 2px solid var(--pl-filet-fort);
+  padding: 10px 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-family: var(--pl-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+}
+.pl-arrete .pl-alerte {
+  color: var(--pl-attention);
+}
+
+/* La section « ce qui reste incertain » : une section de plein rang, avec son
+   filet et son intertitre, exactement comme les faits. Jamais reléguée en
+   note. Le fond très léger la distingue sans la mettre en alarme. */
+.pl-incertain {
+  border-left: 2px solid var(--pl-filet-fort);
+  background: var(--pl-fond-2);
+  padding: 14px 16px;
+  margin: 0 0 28px;
+  max-width: 66ch;
+}
+.pl-incertain p {
+  margin: 0;
+}
+
 /* ---- photographie documentaire (lot M6b) ----
    Volontairement distincte de `.pl-planche`, qui teinte ses images au
    laboratoire (`filter: saturate/contrast/sepia`) et leur impose un rapport

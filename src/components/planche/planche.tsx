@@ -23,14 +23,27 @@ export type MarginMode = "wide" | "rail" | "none";
  */
 export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "sienne" | "neutre";
 
+/**
+ * La famille documentaire, **déclarée** par la page comme `marginMode`.
+ *
+ * Elle n'ouvre pas une palette ni une typographie propres — la règle de
+ * l'ouvrage relié reste entière : on change de chapitre, pas de livre. Elle
+ * n'autorise que les inflexions que `docs/design-archetypes.md` réserve
+ * nommément à une famille : le titre à 52 px et la lettrine du Cahier. Toute
+ * règle sous `[data-famille]` doit pouvoir citer le paragraphe qui l'autorise.
+ */
+export type FamillePlanche = "cahier" | "situation";
+
 export function PlancheRoot({
   marginMode,
   module = "neutre",
+  famille,
   children,
   className,
 }: {
   marginMode: MarginMode;
   module?: EncreModule;
+  famille?: FamillePlanche;
   children: ReactNode;
   className?: string;
 }) {
@@ -39,6 +52,7 @@ export function PlancheRoot({
       className={className ? `pl-root ${className}` : "pl-root"}
       data-marge={marginMode}
       data-module={module}
+      data-famille={famille}
     >
       {children}
     </div>
