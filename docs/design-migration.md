@@ -1411,7 +1411,21 @@ d'attendre « C » partout : la lettre attendue est désormais dérivée de
 l'archétype de la fiche. C'est la cote qui doit suivre la famille, jamais
 l'inverse — reclasser une fiche sans réécrire sa cote laisserait une référence
 qui ment. Quinze tests couvrent les 107 cotes des trois familles, et un seizième
-énonce que **La Leçon n'en porte aucune**, délibérément.
+énonce que **les 131 fiches classées `lecon` n'en portent aucune**, délibérément.
+
+> **Deux objets portent le nom « La Leçon » — ne pas les confondre.**
+>
+> 1. Les **14 leçons canoniques** du parcours, route `/cours/[slug]`. Elles sont
+>    **cotées depuis le lot M5**, en famille **B**, dans la table `cours` :
+>    `FOND · B.1.01` à `FOND · B.3.14`. Elles sont gelées et ne bougeront pas.
+> 2. Les **131 fiches explicatives** classées `lecon`, route
+>    `/[module]/[categorie]/[slug]`. Elles **n'ont pas de cote** à ce jour.
+>
+> Ce sont deux objets de contenu distincts : une leçon canonique porte un rang
+> de parcours, une séquence, une interaction et un sas de quiz ; une fiche
+> explicative porte un essentiel, des sections et des pièges. Deux routes, deux
+> chargeurs, deux schémas. La phrase « La Leçon n'a pas de cote » ne vaut que
+> pour les secondes, et un test le dit désormais dans les deux sens.
 
 ### 20.2 Le Cahier — ce qu'il fait, et surtout ce qu'il ne fabrique pas
 

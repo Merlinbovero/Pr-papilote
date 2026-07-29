@@ -2,7 +2,13 @@ import { describe, expect, it } from "vitest";
 
 import { getFichesParArchetype } from "./archetypes";
 import { getFiches, getFichesByCategory } from "./fiches";
-import { getCategories, getCotesFiches, getCoteFiche } from "./referentials";
+import {
+  getCategories,
+  getCotesCours,
+  getCotesFiches,
+  getCoteCours,
+  getCoteFiche,
+} from "./referentials";
 
 /**
  * Les cotes documentaires des notices techniques — lot M6b.
@@ -155,14 +161,24 @@ describe("cotes documentaires des fiches", () => {
     expect(sans, `fiches sans cote — famille ${famille}`).toEqual([]);
   });
 
-  it("La Leçon n'en porte aucune", () => {
-    // Une cote attribuée à une fiche de La Leçon serait un gel prématuré : sa
-    // grammaire documentaire n'est pas encore arrêtée. On ne cote que les
-    // familles effectivement migrées.
+  it("les 131 FICHES classées « lecon » n'en portent aucune", () => {
+    // ATTENTION — deux objets portent le nom « La Leçon », et un seul est visé
+    // ici. Les 14 LEÇONS CANONIQUES de /cours/[slug] sont cotées depuis M5,
+    // en famille B, dans la table `cours` : elles ne sont pas concernées et
+    // ne doivent surtout pas être décotées. Ce test porte sur les 131 FICHES
+    // EXPLICATIVES de /[module]/[categorie]/[slug], qui attendent que la
+    // grammaire de leur famille soit arrêtée.
     const hors = getFichesParArchetype("lecon")
       .filter((fiche) => getCoteFiche(fiche.id) !== undefined)
       .map((fiche) => fiche.id);
     expect(hors, "cotes attribuées avant l'heure").toEqual([]);
+  });
+
+  it("les 14 leçons canoniques gardent les leurs — elles ne sont pas visées", () => {
+    // Le pendant du test précédent : sans lui, « La Leçon n'a pas de cote »
+    // pourrait être lu comme une consigne de retrait.
+    expect(getCotesCours().size).toBe(14);
+    expect(getCoteCours("couche-limite-et-decrochage")).toBe("FOND · B.3.07");
   });
 
   it("aucune fiche non classée dans une famille cotée n'en porte", () => {
