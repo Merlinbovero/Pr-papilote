@@ -22,68 +22,49 @@ import {
   getFicheHref,
   getFicheLinks,
   getFichesByCategory,
+  getReadingMinutes,
   getTermesForFiche,
 } from "@/lib/content/fiches";
-import { editorialState } from "@/lib/content/freshness";
 import { getCoteFiche } from "@/lib/content/referentials";
 import type { Category, Module } from "@/lib/content/schemas";
 import { numeroDeSection } from "@/lib/lecon/sommaire";
-import { ancreQuiz, sommaireSituation } from "@/lib/fiche/sommaire";
+import { ancreQuiz, sommaireLeconFiche } from "@/lib/fiche/sommaire";
 import { AVERTISSEMENTS, dateCourte, renvoisDeFiche } from "./commun";
 
 /**
- * La Situation — lot M7b.
+ * La Leçon — fiche explicative de notion — lot M8b.
  *
- * La famille du **point daté**. Le lecteur vient y chercher de quoi tenir dix
- * minutes d'entretien sur un sujet international : il a besoin d'être exact, et
- * de savoir jusqu'à quand son information vaut. C'est la famille la plus
- * prudente des six, et celle où l'appareil documentaire est le plus visible
- * (docs/design-archetypes.md, archétype V).
+ * **Le gabarit frère des quatorze leçons canoniques, pas leur copie.** Les deux
+ * familles partagent la grammaire de La Leçon : paragraphes numérotés avec leur
+ * repère `§ n` en marge, et annexe qui devient le sommaire ancré. Ce sont les
+ * deux seules inflexions que le manifeste accorde à cette famille, et elles
+ * existent déjà dans `PlancheSection` et `PlancheSommaire` depuis M5 — ce lot
+ * n'ajoute aucune règle de style.
  *
- * Son encre est `sienne`, celle du fonds documentaire qu'elle partage avec Le
- * Cahier — jamais celle du module hôte. Ce qui sépare les deux familles n'est
- * pas la couleur, c'est leur rapport au temps : Le Cahier raconte ce qui est
- * arrivé, La Situation décrit ce qui est en cours.
+ * L'encre est `bistre`, celle de la **famille** Cours, comme pour les quatorze
+ * leçons — jamais celle du module hôte. Même règle qu'au Cahier : l'encre dit le
+ * genre du document.
  *
- * DEUX MOTIFS LUI SONT PROPRES.
+ * CE QU'IL NE FAIT PAS, et c'est la limite centrale du lot : **il ne convertit
+ * pas une fiche en cours.** Une leçon canonique porte des objectifs, des
+ * prérequis pédagogiques, des étapes à valider, une interaction, des exercices
+ * et un sas de sortie vers le quiz. Une fiche de notion n'en porte aucun — ces
+ * champs n'existent pas sur son schéma. Le gabarit ne rend donc que ce que la
+ * fiche déclare : essentiel, sections, pièges, sources, relations,
+ * photographie, figures, révisions. Fabriquer les rubriques manquantes aurait
+ * été inventer du contenu pédagogique.
  *
- * **1. Le bandeau documentaire, au-dessus du chapô.** Le seul bloc du système à
- * la fois obligatoire, non décoratif et placé avant le texte.
+ * L'ANCRE DU QUIZ. `s-entrainer` est l'ancre publique historique, conservée par
+ * défaut. Une fiche du corpus rédige pourtant une section de ce nom : sur elle,
+ * et sur elle seule, c'est le bloc hôte qui cède et prend `se-tester`. Voir
+ * `ancreQuiz` — la règle est une fonction pure, pas une liste de slugs, et un
+ * test relève le compte réel sur le corpus.
  *
- * Il énonce « Informations vérifiées au … », **et non « Arrêté au … »**. La
- * nuance n'est pas cosmétique : `verifiedAt` est la date de dernière
- * vérification des faits, pas une date d'arrêt éditorial. Les deux ne coïncident
- * pas nécessairement, et écrire « arrêté au » ferait passer l'une pour l'autre.
- * Une véritable date d'arrêt demandera **un champ canonique distinct** ; elle ne
- * se simule pas dans un lot graphique. Le manifeste prévoit la mention
- * `À REVOIR` au-delà d'un seuil d'ancienneté : elle vient de `editorialState`,
- * la règle de fraîcheur déjà en place, jamais d'une appréciation.
- *
- * **2. « Ce qui reste incertain », section obligatoire.** Une section de plein
- * rang, avec son filet et son intertitre, exactement comme les faits — jamais
- * reléguée en note.
- *
- * Aucun champ ne la porte aujourd'hui. Le composant **n'invente donc rien** : il
- * affiche une formulation éditoriale neutre disant qu'aucun élément
- * d'incertitude n'est explicitement documenté dans cette version. Il ne déduit
- * pas non plus qu'une affirmation serait un fait, une estimation, une analyse ou
- * une hypothèse quand le contenu ne le précise pas. Le jour où un champ
- * canonique existera, il prendra la place de cette formulation.
- *
- * Aucune carte n'est dessinée : les quatre situations n'en déclarent aucune.
+ * `NotionQuiz` et les figures restent dans des blocs `.pl-hote` : la
+ * typographie PLANCHE s'arrête à leur frontière, aucune de leurs classes
+ * internes n'est ciblée, aucune géométrie n'est touchée.
  */
-
-/**
- * La formulation de repli, employée tant qu'aucun champ canonique ne porte les
- * incertitudes. Elle décrit **l'état de la documentation**, pas l'état du
- * monde : elle n'affirme pas qu'il n'y a pas d'incertitude.
- */
-const INCERTITUDE_NON_DOCUMENTEE =
-  "Aucun élément d’incertitude n’est explicitement documenté dans cette version " +
-  "de la fiche. Cette mention porte sur l’état de la documentation, non sur " +
-  "l’état du sujet : elle ne signifie pas que tout est établi.";
-
-export function Situation({
+export function LeconFiche({
   fiche,
   mod,
   category,
@@ -94,16 +75,18 @@ export function Situation({
 }) {
   const cote = getCoteFiche(fiche.id);
   if (!cote) {
-    throw new Error(`Cote manquante pour la situation « ${fiche.id} » (cotes.json)`);
+    throw new Error(`Cote manquante pour la fiche de notion « ${fiche.id} » (cotes.json)`);
   }
 
   const quizPool = buildNotionPool(fiche.id);
-  const sommaire = sommaireSituation({
-    sections: fiche.content.sections.map((s) => ({ id: s.id, title: s.title })),
+  const sections = fiche.content.sections.map((s) => ({ id: s.id, title: s.title }));
+  const sommaire = sommaireLeconFiche({
+    sections,
     pieges: fiche.content.pieges.length > 0,
     quiz: quizPool.length > 0,
   });
   const numero = (id: string) => numeroDeSection(sommaire, id);
+  const idQuiz = ancreQuiz(sections);
 
   const renvois = renvoisDeFiche(fiche, {
     getFicheById,
@@ -118,13 +101,12 @@ export function Situation({
   const suivante = rang >= 0 && rang < voisines.length - 1 ? voisines[rang + 1] : undefined;
 
   const avertissement = AVERTISSEMENTS[fiche.status];
-  const aRevoir = editorialState(fiche, new Date()) === "a-verifier";
   const organisation = mod.organization ?? mod.name;
 
   return (
-    <PlancheRoot marginMode="wide" module="sienne" famille="situation">
+    <PlancheRoot marginMode="wide" module="bistre">
       <PlancheCartouche>
-        {cote} — rév. {fiche.verifiedAt} — {organisation}
+        {cote} — rév. {fiche.verifiedAt} — {category.name}
       </PlancheCartouche>
 
       <div className="pl-page">
@@ -140,17 +122,10 @@ export function Situation({
 
           <p className="pl-sur">{category.name}</p>
           <h1 className="pl-titre">{fiche.title}</h1>
-          <div className="pl-ft" />
-
-          {/* L'appareil documentaire, avant le chapô — il ne descend jamais. */}
-          <p className="pl-arrete">
-            <span>Informations vérifiées au {dateCourte(fiche.verifiedAt)}</span>
-            <span>
-              {fiche.sources.length} source{fiche.sources.length > 1 ? "s" : ""}
-            </span>
-            {aRevoir ? <span className="pl-alerte">À revoir</span> : null}
+          <p className="pl-stitre">
+            {getReadingMinutes(fiche)} min de lecture · vérifié le {dateCourte(fiche.verifiedAt)}
           </p>
-
+          <div className="pl-ft" />
           <p className="pl-chapo">{fiche.summary}</p>
 
           <PlancheImpression />
@@ -202,6 +177,10 @@ export function Situation({
                 {section.title}
               </PlancheSection>
               <PlancheMarkdown>{section.body}</PlancheMarkdown>
+              {/* Les schémas au trait sont ceux du contenu, servis par le
+                  composant historique dans un bloc hôte : géométrie, textes,
+                  légendes, alternatives et identifiants inchangés. M8b ne
+                  redessine rien. */}
               {section.figures.map((figure) => (
                 <div className="pl-hote" key={figure.schemaId}>
                   <FicheFigure {...figure} />
@@ -209,16 +188,6 @@ export function Situation({
               ))}
             </section>
           ))}
-
-          {/* Section obligatoire — elle existe même sans contenu à y mettre. */}
-          <section aria-labelledby="ce-qui-reste-incertain">
-            <PlancheSection numero={numero("ce-qui-reste-incertain")} id="ce-qui-reste-incertain">
-              Ce qui reste incertain
-            </PlancheSection>
-            <div className="pl-incertain">
-              <p>{INCERTITUDE_NON_DOCUMENTEE}</p>
-            </div>
-          </section>
 
           {fiche.content.pieges.length > 0 ? (
             <section aria-labelledby="pieges">
@@ -260,11 +229,7 @@ export function Situation({
 
           {quizPool.length > 0 ? (
             <div className="pl-hote">
-              <NotionQuiz
-                ficheTitle={fiche.title}
-                pool={quizPool}
-                idBloc={ancreQuiz(fiche.content.sections)}
-              />
+              <NotionQuiz ficheTitle={fiche.title} pool={quizPool} idBloc={idQuiz} />
             </div>
           ) : null}
 
@@ -287,27 +252,9 @@ export function Situation({
 
         <aside className="pl-annexe">
           <p className="pl-an-h" id="sommaire">
-            Dans cette situation
+            Dans cette fiche
           </p>
-          <PlancheSommaire entrees={sommaire} libelle="Sommaire de la situation" />
-
-          <p className="pl-an-h">Appareil documentaire</p>
-          <div className="pl-an-row">
-            <span>Informations vérifiées au</span>
-            <span className="pl-num">{fiche.verifiedAt}</span>
-          </div>
-          <div className="pl-an-row">
-            <span>Sources</span>
-            <span className="pl-num">{fiche.sources.length}</span>
-          </div>
-          <div className="pl-an-row">
-            <span>Révision</span>
-            <span className="pl-num">v{fiche.version}</span>
-          </div>
-          <p className="pl-an-note">
-            La date ci-dessus est celle de la dernière vérification des faits. Elle ne vaut pas date
-            d’arrêt éditorial : ce champ n’existe pas encore.
-          </p>
+          <PlancheSommaire entrees={sommaire} libelle="Sommaire de la fiche" />
 
           {renvois.map((bloc) => (
             <div key={bloc.titre}>

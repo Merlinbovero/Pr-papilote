@@ -36,7 +36,7 @@ import { editorialState } from "@/lib/content/freshness";
 import { infoboxLabel } from "@/lib/content/infobox-labels";
 import { getCategories } from "@/lib/content/referentials";
 import type { Category, Module } from "@/lib/content/schemas";
-import { SITE_FONT_VARIABLES } from "@/lib/design/site-fonts";
+import { TRANSITION_FONT_VARIABLES } from "@/lib/design/site-fonts-transition";
 import { getModuleAccentVar } from "@/lib/module-accent";
 
 /**
@@ -49,7 +49,11 @@ import { getModuleAccentVar } from "@/lib/module-accent";
  *
  * Trois précautions le rendent honnête :
  *  1. **ses fontes** — Geist et Archivo sont chargées ici, sinon la page se
- *     rendrait en Fira Sans, jamais dessinée pour ces composants ;
+ *     rendrait en Fira Sans, jamais dessinée pour ces composants. Depuis M8b
+ *     elles viennent de `site-fonts-transition`, une déclaration **sans
+ *     préchargement** : autrement, les 215 fiches déjà migrées les
+ *     préchargeaient elles aussi, parce que ce fichier vit dans le même module
+ *     de route qu'elles ;
  *  2. **sa portée** — `.site-root` rétablit la typographie de base que le
  *     layout `(site)` fournissait ;
  *  3. **sa navigation** — l'index latéral des catégories et la barre mobile,
@@ -160,7 +164,7 @@ export function FicheTransition({
     new Intl.DateTimeFormat("fr-FR", { dateStyle: "short" }).format(new Date(iso));
 
   return (
-    <div className={`${SITE_FONT_VARIABLES} site-root pl-hote`}>
+    <div className={`${TRANSITION_FONT_VARIABLES} site-root pl-hote`}>
       <div className="mx-auto flex w-full max-w-7xl flex-1 gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <ModuleSidebarNav
           moduleSlug={mod.slug}

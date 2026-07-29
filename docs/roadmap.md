@@ -176,3 +176,35 @@ rien faire rougir.
 - Recommandations pédagogiques affinées par IA (sans changer le modèle de progression dérivée).
 
 > Toute promotion V2 → V1 ou V3 → V2 passe par le critère des trois questions (`docs/gouvernance.md` §3) et, si structurante, une ADR.
+
+## Dette relevée au lot M8b
+
+### Identifiants dupliqués dans les SVG de schémas — 16 fiches
+
+Seize fiches de notion portent un doublon `id="a"` ou `id="ac"` : des `<marker>`
+de flèche définis à l'identique dans deux fichiers `content/schemas/*.svg` montés
+sur la même page.
+
+**Antérieur au lot** (mesuré identique avant et après), **sans effet visuel**
+(les définitions en double sont identiques à l'octet, la flèche se rend bien) et
+**situé dans le contenu**, pas dans le gabarit.
+
+Non corrigé en M8b : les deux issues possibles sortaient du périmètre — éditer
+les SVG est une modification de contenu, préfixer les identifiants dans
+`FicheFigure` changerait le rendu du Cahier et du Dossier. À arbitrer dans un lot
+d'assainissement du contenu graphique. Détail : `docs/design-migration.md` §22.5.
+
+### Trois composants sans consommateur de production
+
+`fiche-photo`, `service-badge` et `aircraft-specs` ne sont plus montés que par
+`FicheTransition` (23 Dossiers) et la galerie `/design-system/fiche`. Dix autres
+composants de `src/components/content/` sont dans le même cas. Ils disparaîtront
+avec le lot du Dossier ; un lot de migration graphique ne fait pas le ménage du
+dépôt.
+
+### Une leçon de méthode : `npm run check` n'exécute pas Playwright
+
+`e2e/planche-aviation-mondiale.spec.ts` est resté rouge pendant tout le lot M7b
+sans être vu, parce que seuls les fichiers du lot en cours étaient relancés.
+**La suite complète doit être exécutée avant chaque livraison**, pas seulement
+les fichiers touchés.

@@ -2,9 +2,28 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Cahier } from "@/features/fiches/cahier";
-import { FicheTransition } from "@/features/fiches/fiche-transition";
+import dynamic from "next/dynamic";
+
+import { LeconFiche } from "@/features/fiches/lecon-fiche";
 import { PlancheIdentification } from "@/features/fiches/planche-identification";
 import { Situation } from "@/features/fiches/situation";
+
+/**
+ * `FicheTransition` est chargé **dynamiquement** — lot M8b.
+ *
+ * Il déclare Geist et Archivo pour les 23 Dossiers qui en dépendent encore.
+ * Importé statiquement, il entrait dans le graphe de modules de la route, et
+ * Next préchargeait donc ses trois fontes **sur les 238 fiches** — y compris
+ * les 215 déjà migrées, qui ne les emploient nulle part. Mesuré à la liste
+ * réseau, pas déduit des classes : les fichiers portent des noms hachés où
+ * « Geist » n'apparaît pas, et un filtre par nom aurait conclu à tort.
+ *
+ * Le chargement différé le sort du graphe statique : seules les pages qui le
+ * rendent réellement tirent sa charte.
+ */
+const FicheTransition = dynamic(() =>
+  import("@/features/fiches/fiche-transition").then((m) => m.FicheTransition)
+);
 import { getArchetypeFiche } from "@/lib/content/archetypes";
 import { getFiche, getFicheHref, getFiches } from "@/lib/content/fiches";
 import { getCategory, getModule } from "@/lib/content/referentials";
@@ -20,11 +39,12 @@ import { getCategory, getModule } from "@/lib/content/referentials";
  * d'identification (83 notices, lots M6b et M7a), Le Cahier (20 articles) et
  * La Situation (4 points datés, lot M7b).
  *
- * **Deux familles passent encore par `FicheTransition`**, qui porte la charte
- * historique telle quelle : les 108 fiches de notion (`lecon`, lot M8b) et les
- * 23 fiches du concours (`dossier`). Elles attendent la validation de leur
- * propre grammaire documentaire et ne doivent surtout pas recevoir celle d'une
- * autre famille par commodité. `FicheTransition` disparaîtra avec la seconde.
+ * Quatre familles sur cinq ont désormais leur gabarit. **Seul Le Dossier — 23
+ * fiches de concours — passe encore par `FicheTransition`**, qui porte la
+ * charte historique telle quelle. Il attend la validation de sa propre
+ * grammaire documentaire et ne doit surtout pas recevoir celle d'une autre
+ * famille par commodité. `FicheTransition` disparaîtra avec lui, et Geist et
+ * Archivo quitteront cette route à ce moment-là, pas avant.
  *
  * Ce qui ne change pas ici, et doit rester vérifiable : l'URL, les paramètres
  * statiques, les métadonnées, la canonique, la règle d'indexation.
@@ -79,9 +99,11 @@ export default async function FichePage({ params }: FichePageProps) {
       return <Cahier fiche={fiche} mod={mod} category={category} />;
     case "situation":
       return <Situation fiche={fiche} mod={mod} category={category} />;
-    // Deux familles attendent encore leur gabarit, et partagent la charte
-    // historique : les notions expliquées (lot M8b) et Le Dossier du concours.
     case "lecon":
+      return <LeconFiche fiche={fiche} mod={mod} category={category} />;
+    // Seul Le Dossier attend encore son gabarit, et garde la charte historique.
+    // C'est lui, désormais, qui maintient `FicheTransition` — et avec elle Geist
+    // et Archivo — en vie sur cette route.
     case "dossier":
       return <FicheTransition fiche={fiche} mod={mod} category={category} />;
   }

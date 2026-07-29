@@ -1685,3 +1685,188 @@ retire la lettre `G` de l'alphabet.
 > **avant** toute génération de cote — sans quoi les 23 recevraient une cote `G`
 > qu'elles ne doivent pas porter. Le test de répartition gelée est le point de
 > contrôle : il attend 83 / 108 / 20 / 4 / 23.
+
+---
+
+## 22. Lot M8b — les 108 fiches de notion — livré le 2026-07-29
+
+**Le gabarit frère de La Leçon**, appliqué aux 108 fiches explicatives. À la fin
+de ce lot, **une seule famille reste sous `FicheTransition`** : les 23 Dossiers
+du concours.
+
+### 22.1 Un gabarit frère, pas une conversion
+
+Les deux familles partagent la grammaire de La Leçon — paragraphes numérotés
+avec leur repère `§ n` en marge, annexe qui devient le sommaire ancré. Ce sont
+les deux seules inflexions que le manifeste accorde à cette famille, et elles
+existaient déjà dans `PlancheSection` et `PlancheSommaire` depuis M5 : **le lot
+n'ajoute aucune règle de style**. L'encre est `bistre`, celle de la famille,
+comme pour les quatorze leçons canoniques.
+
+**Ce que le gabarit n'invente pas.** Une leçon canonique porte des objectifs,
+des prérequis pédagogiques, des étapes à valider, une interaction, des exercices
+et un sas de sortie. Une fiche de notion n'en porte aucun : ces champs
+n'existent pas sur son schéma. Le gabarit ne rend donc que ce que la fiche
+déclare. Un test vérifie qu'aucune de ces cinq rubriques n'apparaît au sommaire.
+
+### 22.2 L'ancre du quiz — et une correction de compte
+
+`s-entrainer` est l'ancre publique historique, posée par `NotionQuiz` depuis
+l'origine et conservée par défaut.
+
+**Une fiche du corpus rédige une section portant déjà cet identifiant** :
+`psychotechnique/exercices/les-matrices`. Deux éléments ne peuvent pas le
+partager. Trois issues étaient possibles ; deux sont exclues — renommer la
+section casserait une ancre publique du contenu, retirer le quiz retirerait une
+fonction. **C'est donc le bloc hôte qui cède**, et lui seul, sur la seule page
+concernée : il prend `se-tester`.
+
+La règle est une **fonction pure** (`ancreQuiz`), pas une liste de slugs : une
+deuxième fiche écrite demain sera traitée sans que personne y pense. Elle échoue
+plutôt que de servir un doublon si les deux ancres sont revendiquées. Les quatre
+familles migrées l'emploient — aucune ne collisionne aujourd'hui, mais le piège
+cesse d'être latent.
+
+> **Correction.** J'avais annoncé « trois collisions », puis « deux ». Le compte
+> réel est **une**. Mon relevé cherchait `id: s-entrainer` en sous-chaîne et
+> attrapait `s-entrainer-efficacement` et `s-entrainer-en-conditions`. Le test
+> interroge désormais le corpus en correspondance exacte plutôt que de figer un
+> nombre.
+
+`NotionQuiz` reçoit un unique paramètre optionnel `idBloc`, dont le défaut
+préserve le rendu au caractère près. Ni le lecteur, ni les questions, ni les
+scores, ni la progression, ni les routes d'entraînement ne changent.
+
+### 22.3 Les fontes — le contrôle qui a trouvé le vrai défaut
+
+La consigne demandait la **liste réseau réelle**, pas une lecture des classes.
+Elle avait raison, et pour une raison précise : les fichiers de `next/font`
+portent des noms hachés où « Geist » n'apparaît pas. Un filtre par nom de
+fichier concluait « aucune Geist » — **faux**. La famille se lit dans les règles
+`@font-face` du document, et c'est ainsi que le défaut est apparu.
+
+**Le défaut.** `FicheTransition` déclarait les fontes du site et vivait dans le
+même module de route que les quatre gabarits PLANCHE. Next émet un
+`<link rel="preload">` pour toute fonte présente dans le graphe d'une route, que
+la page la rende ou non : **les 238 fiches préchargeaient Geist, Geist Mono et
+Archivo**, y compris les 130 déjà migrées qui ne les emploient nulle part.
+
+`next/dynamic` sur `FicheTransition` **n'y change rien** — le graphe est analysé
+à la construction, import différé compris. La correction est une seconde
+déclaration des mêmes familles avec `preload: false`
+(`site-fonts-transition.ts`), employée par le seul `FicheTransition`.
+
+**Mesure, prefetch de route coupé pour ne compter que la page elle-même :**
+
+| Route                     | avant                       | après              |
+| ------------------------- | --------------------------- | ------------------ |
+| Fiche de notion (G)       | 9 fontes, **3 historiques** | 7, **0**           |
+| Notice (C)                | 10, **3**                   | 7, **0**           |
+| Cahier (D)                | 10, **3**                   | 7, **0**           |
+| Situation (E)             | 10, **3**                   | 7, **0**           |
+| Dossier (transitoire)     | 9, 3 **préchargées**        | 8, 2 **à l'usage** |
+| Leçon canonique (B)       | 7, 0                        | 7, 0 — inchangée   |
+| Route historique `(site)` | 3 historiques               | 3 — inchangée      |
+
+Sur l'ensemble des 238 fiches : **714 préchargements retirés, 0 ajouté.** Le
+gain dépasse largement les 108 du lot.
+
+Un piège de mesure écarté au passage : une première campagne comptait trois
+fontes « de famille inconnue » sur **toutes** les pages, y compris la leçon
+canonique dont le graphe ne contient aucune Geist. C'était le **préchargement de
+route** — Next tire les routes liées visibles. La sonde le coupe désormais.
+
+### 22.4 Les figures
+
+**80 figures rendues** sur les spécimens, chacune dans son bloc `.pl-hote` :
+géométrie, textes, légendes, alternatives et identifiants inchangés, servis par
+le composant historique. Aucun croquis redessiné.
+
+La vérification exhaustive contrôle, pour chacune des 108 fiches, **la présence
+de chaque figure déclarée avec son alternative accessible** et la conservation
+de sa légende. Aucune ne déborde de son bloc ni de la page, aux trois largeurs.
+
+### 22.5 Identifiants dupliqués — un constat à arbitrer
+
+Le contrôle exhaustif sur les 108 pages, mené sur le **DOM rendu**, donne
+**92 / 108 sans identifiant dupliqué**. Les 16 restantes portent un doublon
+`id="a"` ou `id="ac"` — des `<marker>` de flèche **à l'intérieur des SVG de
+schémas**, quand deux figures d'une même page proviennent de fichiers qui
+définissent le même identifiant.
+
+Trois faits, tous vérifiés :
+
+1. **Antérieur au lot** — mesuré identique avant et après, sur les deux
+   serveurs. Le gabarit n'en introduit aucun.
+2. **Sans effet** — les définitions en double sont **identiques à l'octet**
+   (même `viewBox`, même `refX/refY`, même tracé, même remplissage). `url(#ac)`
+   résout sur la première, qui est la seconde. Les flèches se rendent bien.
+3. **Dans le contenu** — les identifiants vivent dans `content/schemas/*.svg`.
+
+**Je n'ai pas corrigé, et c'est un arbitrage que je te rends.** La consigne
+demandait « aucun identifiant HTML dupliqué sur les 108 fiches » **et** « aucune
+donnée de contenu ne doit changer ». Les deux ne peuvent pas être tenues
+ensemble ici. Deux issues :
+
+- **éditer les 16 fichiers SVG** pour préfixer leurs identifiants — une
+  modification de contenu, hors périmètre déclaré ;
+- **préfixer les identifiants à l'inclusion**, dans `FicheFigure` — mais ce
+  composant sert les cinq familles, et le rendu des Cahiers et des Dossiers
+  changerait, ce que le lot interdit aussi.
+
+En l'état, le défaut est consigné comme dette avec sa liste exacte.
+
+### 22.6 Preuves
+
+- **238 fiches sur 238 conformes** : 130 hors périmètre en égalité stricte de
+  l'empreinte textuelle, 108 migrées en conservation vérifiée chaîne par
+  chaîne — texte, sources, photographies, crédits, relations, ancres publiques,
+  cote G, **et chaque figure avec son alternative et sa légende**.
+- **254 routes hors périmètre au HTML identique à l'octet.**
+- **Campagne stratifiée de 25 spécimens**, dont le tirage est **calculé sur le
+  corpus** et non écrit à la main : une fiche par catégorie, plus les extrêmes
+  de longueur, les fiches les plus chargées en figures, des fiches sans figure,
+  la fiche à ancre cédée, clair et sombre, 1440 / 834 / 390 px. Résultat :
+  **25 / 25 sans réserve** — 0 débordement, 0 figure débordante, 0 violation
+  axe, 0 erreur de console.
+- `npm run check` : **728 tests verts** (718 à M8a).
+- **Suite Playwright complète : 438 passés, 0 échec.**
+
+> **Correction d'un chiffre annoncé.** J'avais annoncé « les 23 catégories » pour
+> la campagne. Après le départ des Dossiers en M8a, les 108 fiches de notion se
+> répartissent sur **13 catégories**, pas 23 — les 10 autres étaient celles du
+> Dossier. Les 13 sont couvertes.
+
+### 22.7 Un test resté rouge un lot entier
+
+`e2e/planche-aviation-mondiale.spec.ts` affirmait que les autres fiches Culture
+ne portaient « aucune cartouche de cote ». Vrai quand il a été écrit, **faux dès
+que M7b a donné au Cahier et à La Situation leurs propres cotes**. La
+formulation confondait « pas migrée » et « pas migrée en notice ».
+
+Il est resté rouge tout au long de M7b sans être vu : **`npm run check`
+n'exécute pas Playwright**, et je n'avais relancé que les fichiers du lot en
+cours. Le test est réécrit sur le marqueur qui distingue réellement les familles
+— la lettre de cote et l'absence de fiche signalétique — et la suite complète
+est désormais exécutée avant livraison, pas seulement les fichiers touchés.
+
+### 22.8 Ce que M8b n'a pas fait
+
+- **Les 23 Dossiers ne bougent pas** : toujours `FicheTransition`, sans cote.
+- **`FicheTransition` reste**, et avec lui Geist et Archivo — non préchargées.
+- **Les trois composants sans consommateur** (`fiche-photo`, `service-badge`,
+  `aircraft-specs`) ne sont pas supprimés ; ils rejoignent la dette de nettoyage.
+- Aucun contenu, aucune cote, aucune classification, aucune donnée utilisateur,
+  aucune migration SQL, aucun identifiant, aucune URL.
+
+### 22.9 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M8b>
+npm run check
+```
+
+Autonome. Le revert rend les 108 fiches à `FicheTransition`, retire le gabarit,
+la règle d'ancre et la déclaration de fonte sans préchargement — les 238 fiches
+reprennent alors leurs trois préchargements. **M8a est conservé** : les cotes G
+et la classification `dossier` survivent. Aucune autre famille n'est touchée.

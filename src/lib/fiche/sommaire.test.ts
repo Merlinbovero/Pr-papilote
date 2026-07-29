@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { ANCRES_RESERVEES, sommaireCahier, sommaireNotice, sommaireSituation } from "./sommaire";
+import {
+  ANCRES_RESERVEES,
+  ancreQuiz,
+  sommaireCahier,
+  sommaireLeconFiche,
+  sommaireNotice,
+  sommaireSituation,
+} from "./sommaire";
 
 /**
  * Le sommaire d'une notice — lot M6b.
@@ -187,7 +194,7 @@ describe("sommaire d’une situation", () => {
  * Le garde-fou d'ancres, étendu aux familles migrées au lot M7b.
  */
 describe("les ancres du gabarit ne heurtent aucune section rédigée — Cahier et Situation", () => {
-  it.each(["cahier", "situation"] as const)("famille %s", async (famille) => {
+  it.each(["cahier", "situation", "lecon"] as const)("famille %s", async (famille) => {
     const { getFichesParArchetype } = await import("@/lib/content/archetypes");
     const heurts: string[] = [];
     for (const fiche of getFichesParArchetype(famille)) {
@@ -198,5 +205,102 @@ describe("les ancres du gabarit ne heurtent aucune section rédigée — Cahier 
       }
     }
     expect(heurts, "renommer la section rédigée, jamais l'ancre du gabarit").toEqual([]);
+  });
+});
+
+/**
+ * L'ancre du quiz — lot M8b.
+ *
+ * Le cas qui a motivé cette règle : deux fiches du corpus rédigent une section
+ * `s-entrainer`, l'ancre que `NotionQuiz` pose depuis l'origine. Deux éléments
+ * ne peuvent pas partager un identifiant.
+ */
+describe("ancre du bloc hôte du quiz", () => {
+  it("garde l’ancre historique quand le contenu ne la revendique pas", () => {
+    expect(ancreQuiz(SECTIONS)).toBe("s-entrainer");
+    expect(ancreQuiz([])).toBe("s-entrainer");
+  });
+
+  it("cède l’ancre à la section rédigée, jamais l’inverse", () => {
+    // C'est le bloc hôte qui bouge. Renommer la section de l'auteur casserait
+    // une ancre publique du contenu ; retirer le quiz retirerait une fonction.
+    expect(ancreQuiz([{ id: "s-entrainer" }])).toBe("se-tester");
+  });
+
+  it("échoue plutôt que de servir un identifiant en double", () => {
+    expect(() => ancreQuiz([{ id: "s-entrainer" }, { id: "se-tester" }])).toThrow(
+      /Ancres du quiz indisponibles/
+    );
+  });
+
+  it("relève le cas réel sur le corpus, pas sur une liste écrite à la main", async () => {
+    // UNE seule fiche est concernée. Un premier relevé en avait compté trois :
+    // le motif de recherche attrapait `s-entrainer-efficacement` et
+    // `s-entrainer-en-conditions` par préfixe. D'où ce test, qui interroge le
+    // corpus en correspondance exacte plutôt que de figer un compte.
+    const { getFichesParArchetype } = await import("@/lib/content/archetypes");
+    const cedantes = getFichesParArchetype("lecon")
+      .filter((f) => ancreQuiz(f.content.sections) !== "s-entrainer")
+      .map((f) => f.id)
+      .sort();
+    expect(cedantes).toEqual(["psychotechnique.exercices.les-matrices"]);
+  });
+
+  it("aucune fiche migrée ne revendique les deux ancres à la fois", async () => {
+    const { getFichesParArchetype } = await import("@/lib/content/archetypes");
+    for (const famille of ["identification", "lecon", "cahier", "situation"] as const) {
+      for (const fiche of getFichesParArchetype(famille)) {
+        expect(() => ancreQuiz(fiche.content.sections), fiche.id).not.toThrow();
+      }
+    }
+  });
+});
+
+/**
+ * Le sommaire d'une fiche de notion — lot M8b.
+ *
+ * La garantie centrale : **il ne convertit pas une fiche en cours.** Aucune des
+ * rubriques propres à la leçon canonique — objectifs, prérequis, étapes,
+ * interaction, exercices, sas de sortie — ne doit apparaître, puisque le schéma
+ * de la fiche ne les porte pas.
+ */
+describe("sommaire d’une fiche de notion", () => {
+  const complet = { sections: SECTIONS, pieges: true, quiz: true };
+
+  it("suit l’ordre du document", () => {
+    expect(sommaireLeconFiche(complet).map((e) => e.id)).toEqual([
+      "l-essentiel",
+      "role-et-missions",
+      "unites",
+      "pieges",
+      "s-entrainer",
+      "sources",
+    ]);
+  });
+
+  it("n’invente aucune rubrique de cours", () => {
+    const ids = sommaireLeconFiche(complet).map((e) => e.id);
+    for (const rubrique of ["objectifs", "prerequis", "etapes", "manipuler", "exercices-titre"]) {
+      expect(ids, `« ${rubrique} » n'existe pas sur le schéma d'une fiche`).not.toContain(rubrique);
+    }
+  });
+
+  it("place le quiz sur l’ancre résolue", () => {
+    const ids = sommaireLeconFiche({
+      sections: [{ id: "s-entrainer", title: "S’entraîner" }],
+      pieges: false,
+      quiz: true,
+    }).map((e) => e.id);
+    // La section rédigée garde son ancre ; le bloc hôte prend la sienne.
+    expect(ids).toContain("s-entrainer");
+    expect(ids).toContain("se-tester");
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("numérote sans trou et laisse le quiz hors numérotation", () => {
+    const entrees = sommaireLeconFiche(complet);
+    const numeros = entrees.map((e) => e.numero).filter((n): n is number => n !== undefined);
+    expect(numeros).toEqual(Array.from({ length: numeros.length }, (_, i) => i + 1));
+    expect(entrees.find((e) => e.id === "s-entrainer")?.numero).toBeUndefined();
   });
 });

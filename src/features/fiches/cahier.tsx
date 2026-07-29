@@ -29,7 +29,7 @@ import { infoboxLabel } from "@/lib/content/infobox-labels";
 import { getCoteFiche } from "@/lib/content/referentials";
 import type { Category, Module } from "@/lib/content/schemas";
 import { numeroDeSection } from "@/lib/lecon/sommaire";
-import { sommaireCahier } from "@/lib/fiche/sommaire";
+import { ancreQuiz, sommaireCahier } from "@/lib/fiche/sommaire";
 import { AVERTISSEMENTS, dateCourte, renvoisDeFiche } from "./commun";
 
 /**
@@ -244,7 +244,11 @@ export function Cahier({
 
           {quizPool.length > 0 ? (
             <div className="pl-hote">
-              <NotionQuiz ficheTitle={fiche.title} pool={quizPool} />
+              <NotionQuiz
+                ficheTitle={fiche.title}
+                pool={quizPool}
+                idBloc={ancreQuiz(fiche.content.sections)}
+              />
             </div>
           ) : null}
 

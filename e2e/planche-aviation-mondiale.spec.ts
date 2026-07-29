@@ -122,20 +122,31 @@ test.describe("Aviation mondiale — les 17 notices", () => {
 
   test("aucune fuite vers les autres fiches Culture", async ({ page }) => {
     // Le module Culture héberge trois familles. La reclassification n'a visé
-    // qu'une catégorie ; les deux autres ne doivent porter aucune marque de La
-    // Planche d'identification tant que leur propre lot ne les a pas migrées.
-    for (const url of [
-      "/culture/personnalites/georges-guynemer",
-      "/culture/culture-aeronautique/escadrons-agresseurs",
-      "/culture/geopolitique-defense/red-flag",
-    ]) {
+    // qu'une catégorie ; les deux autres gardent leur propre gabarit.
+    //
+    // **Ce test a dû être réécrit au lot M8b, et il a d'abord été rouge.** Sa
+    // première rédaction affirmait que ces pages ne portaient « aucune
+    // cartouche de cote » — vrai tant qu'elles passaient par FicheTransition,
+    // faux dès que M7b leur a donné Le Cahier et La Situation, avec leurs
+    // propres cotes D et E. La formulation confondait « pas migrée » et « pas
+    // migrée EN NOTICE ». Le marqueur qui distingue réellement les familles est
+    // la lettre de cote, plus la fiche signalétique, propre à la notice.
+    //
+    // Le test est resté rouge un lot entier sans être vu : `npm run check`
+    // n'exécute pas Playwright, et je n'avais pas relancé ce fichier après M7b.
+    const CAS: [string, string][] = [
+      ["/culture/personnalites/georges-guynemer", "D"],
+      ["/culture/culture-aeronautique/escadrons-agresseurs", "D"],
+      ["/culture/geopolitique-defense/red-flag", "E"],
+    ];
+    for (const [url, lettre] of CAS) {
       await page.goto(url);
-      const cotes = await page.locator(".pl-cart").count();
-      const signaletique = await page.locator("#signaletique").count();
-      expect(
-        cotes + signaletique,
-        `${url} ne doit porter ni cartouche de cote ni fiche signalétique`
-      ).toBe(0);
+      // Pas de fiche signalétique : c'est le bloc propre à la notice.
+      await expect(page.locator("#signaletique"), url).toHaveCount(0);
+      // Et la cote porte la lettre de SA famille, jamais le « C » des notices.
+      const cartouche = await page.locator(".pl-cart").innerText();
+      const famille = cartouche.split("·")[1]?.trim().split(".")[0];
+      expect(famille, `${url} doit porter une cote de famille ${lettre}`).toBe(lettre);
     }
   });
 });
