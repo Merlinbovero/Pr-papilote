@@ -30,12 +30,17 @@ const brut = archetypesFileSchema.parse(JSON.parse(readFileSync(FICHIER, "utf-8"
  * 2026-07-29 (M7a) — les dix-sept fiches d'aviation mondiale passent de
  * `cahier` à `identification` : ce sont des notices d'appareil, et le module
  * où une fiche est rangée ne dit pas ce qu'elle est. D'où 83 et 20.
+ * 2026-07-29 (M8a) — vingt-trois fiches de missions, sélection, concepts,
+ * présentation et procédures passent de `lecon` à `dossier` : elles relèvent
+ * du registre administratif du concours, pas de la notion expliquée. D'où 108
+ * et une cinquième famille.
  */
 const REPARTITION = {
   identification: 83,
-  lecon: 131,
+  lecon: 108,
   cahier: 20,
   situation: 4,
+  dossier: 23,
 } as const;
 
 describe("classification documentaire", () => {
@@ -52,7 +57,13 @@ describe("classification documentaire", () => {
   });
 
   it("n'admet que les quatre archétypes du référentiel fermé", () => {
-    expect(archetypeSchema.options).toEqual(["identification", "lecon", "cahier", "situation"]);
+    expect(archetypeSchema.options).toEqual([
+      "identification",
+      "lecon",
+      "cahier",
+      "situation",
+      "dossier",
+    ]);
     // Une valeur inventée doit être refusée par le schéma, pas absorbée.
     expect(() =>
       archetypesFileSchema.parse({ defauts: { "eopan/appareils": "notice" }, exceptions: {} })

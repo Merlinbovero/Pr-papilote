@@ -20,10 +20,11 @@ import { getCategory, getModule } from "@/lib/content/referentials";
  * d'identification (83 notices, lots M6b et M7a), Le Cahier (20 articles) et
  * La Situation (4 points datés, lot M7b).
  *
- * **La Leçon — 131 fiches — passe encore par `FicheTransition`**, qui porte la
- * charte historique telle quelle. Elle attend la validation de sa propre
- * grammaire documentaire et ne doit surtout pas recevoir celle d'une autre
- * famille par commodité. `FicheTransition` disparaîtra avec elle.
+ * **Deux familles passent encore par `FicheTransition`**, qui porte la charte
+ * historique telle quelle : les 108 fiches de notion (`lecon`, lot M8b) et les
+ * 23 fiches du concours (`dossier`). Elles attendent la validation de leur
+ * propre grammaire documentaire et ne doivent surtout pas recevoir celle d'une
+ * autre famille par commodité. `FicheTransition` disparaîtra avec la seconde.
  *
  * Ce qui ne change pas ici, et doit rester vérifiable : l'URL, les paramètres
  * statiques, les métadonnées, la canonique, la règle d'indexation.
@@ -78,7 +79,10 @@ export default async function FichePage({ params }: FichePageProps) {
       return <Cahier fiche={fiche} mod={mod} category={category} />;
     case "situation":
       return <Situation fiche={fiche} mod={mod} category={category} />;
+    // Deux familles attendent encore leur gabarit, et partagent la charte
+    // historique : les notions expliquées (lot M8b) et Le Dossier du concours.
     case "lecon":
+    case "dossier":
       return <FicheTransition fiche={fiche} mod={mod} category={category} />;
   }
 }

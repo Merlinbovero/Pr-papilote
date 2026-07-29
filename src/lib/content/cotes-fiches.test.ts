@@ -26,6 +26,7 @@ import {
  * 2026-07-29 (M7a) — 17 notices d'appareils étrangers, « CULT · C.1.NN »,
  * reclassées depuis Le Cahier.
  * 2026-07-29 (M7b) — 20 articles du Cahier (« D ») et 4 situations (« E »).
+ * 2026-07-29 (M8a) — 108 fiches explicatives de notion (« G »).
  *
  * **Aucune cote antérieure n'a jamais bougé** à chacune de ces arrivées : c'est
  * exactement ce que le gel doit démontrer, une arrivée ne renumérote rien.
@@ -39,10 +40,11 @@ const FAMILLE: Record<string, string> = {
   identification: "C",
   cahier: "D",
   situation: "E",
+  lecon: "G",
 };
 
-/** Les familles cotées à ce jour. La Leçon n'en fait pas partie. */
-const FAMILLES_COTEES = ["identification", "cahier", "situation"] as const;
+/** Les familles cotées à ce jour. Le Dossier n'en fait pas encore partie. */
+const FAMILLES_COTEES = ["identification", "cahier", "situation", "lecon"] as const;
 const COTES_GELEES: Record<string, string> = {
   "alat.appareils.alouette-ii": "ALAT · C.6.01",
   "alat.appareils.alouette-iii": "ALAT · C.6.02",
@@ -145,12 +147,120 @@ const COTES_GELEES: Record<string, string> = {
   "eopn.unites.escadron-1-4-gascogne": "EOPN · C.10.01",
   "eopn.unites.la-patrouille-de-france": "EOPN · C.10.02",
   "eopn.unites.normandie-niemen": "EOPN · C.10.03",
+  "fondamentaux.aerodynamique.air-et-proprietes": "FOND · G.3.01",
+  "fondamentaux.aerodynamique.conservation-du-debit": "FOND · G.3.02",
+  "fondamentaux.aerodynamique.decrochage": "FOND · G.3.03",
+  "fondamentaux.aerodynamique.ecoulement-de-l-air": "FOND · G.3.04",
+  "fondamentaux.aerodynamique.l-aerostatique": "FOND · G.3.05",
+  "fondamentaux.aerodynamique.l-allongement-et-les-winglets": "FOND · G.3.06",
+  "fondamentaux.aerodynamique.la-couche-limite": "FOND · G.3.07",
+  "fondamentaux.aerodynamique.la-force-aerodynamique": "FOND · G.3.08",
+  "fondamentaux.aerodynamique.la-polaire": "FOND · G.3.09",
+  "fondamentaux.aerodynamique.la-trainee-induite": "FOND · G.3.10",
+  "fondamentaux.aerodynamique.les-axes-et-les-gouvernes": "FOND · G.3.11",
+  "fondamentaux.aerodynamique.les-bilans-de-forces": "FOND · G.3.12",
+  "fondamentaux.aerodynamique.les-effets-moteur": "FOND · G.3.13",
+  "fondamentaux.aerodynamique.les-souffleries": "FOND · G.3.14",
+  "fondamentaux.aerodynamique.les-types-de-profils": "FOND · G.3.15",
+  "fondamentaux.aerodynamique.les-volets-et-becs": "FOND · G.3.16",
+  "fondamentaux.aerodynamique.mur-du-son-et-vol-supersonique": "FOND · G.3.17",
+  "fondamentaux.aerodynamique.portance": "FOND · G.3.18",
+  "fondamentaux.aerodynamique.pression-statique-dynamique-totale": "FOND · G.3.19",
+  "fondamentaux.aerodynamique.profil-d-aile": "FOND · G.3.20",
+  "fondamentaux.aerodynamique.spoilers-et-aerofreins": "FOND · G.3.21",
+  "fondamentaux.aerodynamique.stabilite-et-centrage": "FOND · G.3.22",
+  "fondamentaux.aerodynamique.theoreme-de-bernoulli": "FOND · G.3.23",
+  "fondamentaux.aerodynamique.trainee": "FOND · G.3.24",
+  "fondamentaux.anglais-aeronautique.l-anglais-de-l-approche": "FOND · G.12.01",
+  "fondamentaux.anglais-aeronautique.l-anglais-des-selections": "FOND · G.12.02",
+  "fondamentaux.anglais-aeronautique.l-anglais-des-urgences": "FOND · G.12.03",
+  "fondamentaux.anglais-aeronautique.l-anglais-du-sol-et-du-decollage": "FOND · G.12.04",
+  "fondamentaux.anglais-aeronautique.l-anglais-militaire": "FOND · G.12.05",
+  "fondamentaux.anglais-aeronautique.la-cellule-et-les-commandes": "FOND · G.12.06",
+  "fondamentaux.anglais-aeronautique.la-comprehension-ecrite": "FOND · G.12.07",
+  "fondamentaux.anglais-aeronautique.la-meteo-en-anglais": "FOND · G.12.08",
+  "fondamentaux.anglais-aeronautique.la-phraseologie-anglaise": "FOND · G.12.09",
+  "fondamentaux.anglais-aeronautique.le-brevity-code": "FOND · G.12.10",
+  "fondamentaux.anglais-aeronautique.le-moteur-et-le-carburant": "FOND · G.12.11",
+  "fondamentaux.anglais-aeronautique.les-faux-amis": "FOND · G.12.12",
+  "fondamentaux.anglais-aeronautique.les-instruments-en-anglais": "FOND · G.12.13",
+  "fondamentaux.anglais-aeronautique.les-modaux": "FOND · G.12.14",
+  "fondamentaux.anglais-aeronautique.les-temps-du-recit": "FOND · G.12.15",
+  "fondamentaux.anglais-aeronautique.les-verbes-du-vol": "FOND · G.12.16",
+  "fondamentaux.anglais-aeronautique.lire-un-notam": "FOND · G.12.17",
+  "fondamentaux.anglais-aeronautique.vocabulaire-de-base": "FOND · G.12.18",
+  "fondamentaux.cartographie.echelle-et-mesures": "FOND · G.8.01",
+  "fondamentaux.cartographie.lire-une-carte-aeronautique": "FOND · G.8.02",
   "fondamentaux.culture-aeronautique.l-epner": "FOND · D.15.01",
   "fondamentaux.culture-aeronautique.la-conquete-de-l-espace": "FOND · D.15.02",
   "fondamentaux.culture-aeronautique.le-bia": "FOND · D.15.03",
   "fondamentaux.culture-aeronautique.les-grandes-ecoles-aeronautiques": "FOND · D.15.04",
   "fondamentaux.culture-aeronautique.les-pionniers-et-l-aeropostale": "FOND · D.15.05",
   "fondamentaux.culture-aeronautique.naissance-de-l-aviation-francaise": "FOND · D.15.06",
+  "fondamentaux.facteurs-humains.culture-de-securite-et-rex": "FOND · G.10.01",
+  "fondamentaux.facteurs-humains.desorientation-et-illusions": "FOND · G.10.02",
+  "fondamentaux.facteurs-humains.etude-de-cas-abordage-de-cognac": "FOND · G.10.03",
+  "fondamentaux.facteurs-humains.hypoxie-et-altitude": "FOND · G.10.04",
+  "fondamentaux.facteurs-humains.l-aptitude-medicale-du-navigant": "FOND · G.10.05",
+  "fondamentaux.facteurs-humains.le-retour-d-experience": "FOND · G.10.06",
+  "fondamentaux.instruments.altimetre": "FOND · G.7.01",
+  "fondamentaux.instruments.anemometre": "FOND · G.7.02",
+  "fondamentaux.instruments.chaine-pitot-statique": "FOND · G.7.03",
+  "fondamentaux.instruments.compas-et-conservateur": "FOND · G.7.04",
+  "fondamentaux.instruments.horizon-artificiel": "FOND · G.7.05",
+  "fondamentaux.instruments.les-six-instruments-de-base": "FOND · G.7.06",
+  "fondamentaux.mecanique-du-vol.axes-et-gouvernes": "FOND · G.4.01",
+  "fondamentaux.mecanique-du-vol.decrochage-et-vrille": "FOND · G.4.02",
+  "fondamentaux.mecanique-du-vol.equilibre-et-centrage": "FOND · G.4.03",
+  "fondamentaux.mecanique-du-vol.la-propulsion": "FOND · G.4.04",
+  "fondamentaux.mecanique-du-vol.le-vol-de-l-helicoptere": "FOND · G.4.05",
+  "fondamentaux.mecanique-du-vol.quatre-forces": "FOND · G.4.06",
+  "fondamentaux.mecanique-du-vol.turbomoteur-et-helicopteres": "FOND · G.4.07",
+  "fondamentaux.mecanique-du-vol.virage": "FOND · G.4.08",
+  "fondamentaux.meteorologie.atmosphere-standard": "FOND · G.5.01",
+  "fondamentaux.meteorologie.le-vent": "FOND · G.5.02",
+  "fondamentaux.meteorologie.les-nuages": "FOND · G.5.03",
+  "fondamentaux.meteorologie.lire-un-metar": "FOND · G.5.04",
+  "fondamentaux.meteorologie.lire-un-taf": "FOND · G.5.05",
+  "fondamentaux.meteorologie.masses-d-air-et-fronts": "FOND · G.5.06",
+  "fondamentaux.meteorologie.phenomenes-dangereux": "FOND · G.5.07",
+  "fondamentaux.meteorologie.pression-et-calage": "FOND · G.5.08",
+  "fondamentaux.meteorologie.temperature-et-humidite": "FOND · G.5.09",
+  "fondamentaux.navigation.cap-route-et-derive": "FOND · G.6.01",
+  "fondamentaux.navigation.declinaison-magnetique": "FOND · G.6.02",
+  "fondamentaux.navigation.la-radionavigation": "FOND · G.6.03",
+  "fondamentaux.navigation.temps-vitesse-distance": "FOND · G.6.04",
+  "fondamentaux.navigation.terre-et-coordonnees": "FOND · G.6.05",
+  "fondamentaux.physique.les-trois-lois-de-newton": "FOND · G.1.01",
+  "fondamentaux.physique.pression-forces-unites": "FOND · G.1.02",
+  "fondamentaux.physique.systeme-international-et-unites": "FOND · G.1.03",
+  "fondamentaux.radio-communications.alphabet-oaci": "FOND · G.11.01",
+  "fondamentaux.radio-communications.la-bande-uhf": "FOND · G.11.02",
+  "fondamentaux.radio-communications.la-bande-vhf": "FOND · G.11.03",
+  "fondamentaux.radio-communications.la-phraseologie-de-base": "FOND · G.11.04",
+  "fondamentaux.reglementation.espaces-aeriens": "FOND · G.9.01",
+  "fondamentaux.reglementation.les-regles-de-l-air": "FOND · G.9.02",
+  "psychotechnique.exercices.l-attention-et-le-multitache": "PSY · G.3.01",
+  "psychotechnique.exercices.la-comparaison-de-nombres": "PSY · G.3.02",
+  "psychotechnique.exercices.la-dissociation-d-attention": "PSY · G.3.03",
+  "psychotechnique.exercices.la-lecture-d-instruments": "PSY · G.3.04",
+  "psychotechnique.exercices.la-memoire": "PSY · G.3.05",
+  "psychotechnique.exercices.la-memoire-associative": "PSY · G.3.06",
+  "psychotechnique.exercices.la-vision-spatiale": "PSY · G.3.07",
+  "psychotechnique.exercices.le-calcul-mental": "PSY · G.3.08",
+  "psychotechnique.exercices.le-raisonnement-mecanique": "PSY · G.3.09",
+  "psychotechnique.exercices.le-secpil": "PSY · G.3.10",
+  "psychotechnique.exercices.le-test-d-orientation": "PSY · G.3.11",
+  "psychotechnique.exercices.le-test-de-codage": "PSY · G.3.12",
+  "psychotechnique.exercices.le-test-des-appareils-photos": "PSY · G.3.13",
+  "psychotechnique.exercices.le-test-des-triangles": "PSY · G.3.14",
+  "psychotechnique.exercices.les-analogies": "PSY · G.3.15",
+  "psychotechnique.exercices.les-dominos": "PSY · G.3.16",
+  "psychotechnique.exercices.les-formes-imbriquees": "PSY · G.3.17",
+  "psychotechnique.exercices.les-horloges-et-durees": "PSY · G.3.18",
+  "psychotechnique.exercices.les-matrices": "PSY · G.3.19",
+  "psychotechnique.exercices.les-suites-logiques": "PSY · G.3.20",
+  "psychotechnique.methodologie.reussir-les-tests-psychotechniques": "PSY · G.1.01",
 };
 
 describe("cotes documentaires des fiches", () => {
@@ -161,17 +271,48 @@ describe("cotes documentaires des fiches", () => {
     expect(sans, `fiches sans cote — famille ${famille}`).toEqual([]);
   });
 
-  it("les 131 FICHES classées « lecon » n'en portent aucune", () => {
-    // ATTENTION — deux objets portent le nom « La Leçon », et un seul est visé
-    // ici. Les 14 LEÇONS CANONIQUES de /cours/[slug] sont cotées depuis M5,
-    // en famille B, dans la table `cours` : elles ne sont pas concernées et
-    // ne doivent surtout pas être décotées. Ce test porte sur les 131 FICHES
-    // EXPLICATIVES de /[module]/[categorie]/[slug], qui attendent que la
-    // grammaire de leur famille soit arrêtée.
-    const hors = getFichesParArchetype("lecon")
+  it("Le Dossier n'en porte aucune : sa grammaire n'est pas arrêtée", () => {
+    const hors = getFichesParArchetype("dossier")
       .filter((fiche) => getCoteFiche(fiche.id) !== undefined)
       .map((fiche) => fiche.id);
     expect(hors, "cotes attribuées avant l'heure").toEqual([]);
+  });
+
+  /**
+   * LA GARANTIE CENTRALE DE LA DOCTRINE M8a.
+   *
+   * L'unicité était vérifiée DANS `cours` et DANS `fiches`, jamais ENTRE les
+   * deux. Aucune collision n'existait — les lettres différaient — mais rien ne
+   * l'empêchait, et c'est exactement le risque qu'introduisait la famille des
+   * fiches de notion : réutiliser « B » aurait produit quatorze doublons entre
+   * les deux tables, tous invisibles à une vérification table par table.
+   */
+  it("l'unicité vaut sur l'UNION des référentiels, pas table par table", () => {
+    const toutes = [...getCotesCours().values(), ...getCotesFiches().values()];
+    const doublons = toutes.filter((c, i) => toutes.indexOf(c) !== i);
+    expect([...new Set(doublons)], "cotes portées par deux documents").toEqual([]);
+    expect(new Set(toutes).size).toBe(toutes.length);
+  });
+
+  it("B et G ne se rencontrent jamais", () => {
+    // B est réservé aux leçons canoniques, G aux fiches explicatives. Si l'une
+    // des deux familles débordait sur l'autre lettre, la citation redeviendrait
+    // ambiguë entre deux documents voisins.
+    for (const [slug, cote] of getCotesCours()) {
+      expect(cote.split(" · ")[1].startsWith("B."), `leçon ${slug}`).toBe(true);
+    }
+    for (const fiche of getFichesParArchetype("lecon")) {
+      expect(getCoteFiche(fiche.id)?.split(" · ")[1].startsWith("G."), fiche.id).toBe(true);
+    }
+  });
+
+  it("aucune clé n'appartient aux deux tables", () => {
+    // Les deux tables sont clées différemment — slug d'un côté, identifiant de
+    // contenu de l'autre. Une clé partagée signalerait une confusion entre les
+    // deux objets de contenu.
+    const slugs = new Set(getCotesCours().keys());
+    const ids = new Set(getCotesFiches().keys());
+    expect([...slugs].filter((s) => ids.has(s))).toEqual([]);
   });
 
   it("les 14 leçons canoniques gardent les leurs — elles ne sont pas visées", () => {
@@ -204,7 +345,7 @@ describe("cotes documentaires des fiches", () => {
 
   it("suit la grammaire MODULE · F.C.NN", () => {
     for (const [id, cote] of getCotesFiches()) {
-      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT|FOND|CULT) · [CDE]\.\d{1,2}\.\d{2}$/);
+      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT|FOND|PSY|CULT) · [CDEG]\.\d{1,2}\.\d{2}$/);
     }
   });
 

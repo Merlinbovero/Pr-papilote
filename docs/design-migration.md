@@ -1560,3 +1560,128 @@ protégée, comme demandé. Le revert rend Le Cahier et La Situation à
 permanent des 17 notices vit dans un commit antérieur : il survit au revert.
 
 Aucun arbitrage éditorial n'est emporté cette fois — M7b ne reclasse rien.
+
+---
+
+## 21. Lot M8a — doctrine de cotation et Le Dossier — livré le 2026-07-29
+
+**Un lot sans un pixel de changement.** M8a ne touche qu'aux référentiels : les
+131 fiches restantes se scindent en 108 fiches de notion cotées et 23 dossiers
+de concours, et toutes continuent de passer par `FicheTransition`. La preuve
+attendue n'est donc pas la conservation mais l'**identité** — et elle est
+tenue : **492 routes sur 492 au HTML identique à l'octet.**
+
+### 21.1 La collision, mesurée avant d'écrire
+
+Réutiliser la famille `B` pour les fiches de notion aurait produit **quatorze
+collisions** — exactement les quatorze leçons gelées en M5 :
+
+```
+FOND · B.3.07   leçon  couche-limite-et-decrochage
+                fiche  fondamentaux.aerodynamique.la-couche-limite
+FOND · B.1.01   leçon  forces-et-lois-de-newton
+                fiche  fondamentaux.physique.les-trois-lois-de-newton
+… douze autres, toutes dans fondamentaux/aerodynamique
+```
+
+Ce n'est pas fortuit : la fiche explique la notion que la leçon enseigne. **Les
+paires sont sémantiquement voisines, donc la collision aurait été invisible à
+la lecture** — un candidat citant `FOND · B.3.07` n'aurait pas su s'il désignait
+le cours ou la fiche, deux URL différentes.
+
+### 21.2 La doctrine
+
+**`B` reste exclusivement la leçon canonique.** Quatorze documents, route
+`/cours/[slug]`, table `cours`, clé = slug, `NN` = rang de parcours. Gelés.
+
+**`G` désigne la fiche explicative de notion.** Cent huit documents, route
+`/[module]/[categorie]/[slug]`, table `fiches`, clé = identifiant de contenu,
+`NN` = numéro d'enregistrement par catégorie.
+
+`G` ajoute une lettre à l'alphabet des cotes — le schéma passe de `[A-F]` à
+`[A-G]` — **et non un septième genre visuel** : les deux familles partageront
+la grammaire de La Leçon. La lettre de cote distingue des **types de document**,
+et une leçon canonique et une fiche explicative en sont deux.
+
+### 21.3 Les cinq garanties, et le mécanisme de chacune
+
+| Garantie                                 | Mécanisme                                               | Vérifié            |
+| ---------------------------------------- | ------------------------------------------------------- | ------------------ |
+| Aucune collision avec les cotes M5       | `B` et `G` ne se rencontrent jamais — structurel        | test dédié         |
+| Aucune modification des 14 cotes `B`     | comparaison clé par clé avant écriture ; table gelée    | 2 tests            |
+| Sémantique claire de `B`                 | leçon canonique **uniquement**, `NN` = rang de parcours | référentiel + test |
+| Unicité sur **l'union** des référentiels | **lacune comblée** — voir ci-dessous                    | test dédié         |
+| Distinction leçon / fiche                | deux tables, deux clés, aucune clé partagée             | test dédié         |
+
+**La lacune comblée.** L'unicité était vérifiée _dans_ `cours` et _dans_
+`fiches`, **jamais entre les deux**. Aucune collision n'existait — les lettres
+différaient — mais rien ne l'empêchait, et c'est précisément le risque
+qu'introduisait cette famille. Le test porte désormais sur l'union des 229
+cotes.
+
+**Validé en le cassant** : la fiche `la-couche-limite` forcée sur
+`FOND · B.3.07` fait tomber **cinq tests**, dont l'unicité globale et
+« B et G ne se rencontrent jamais ». Restauré.
+
+### 21.4 Le Dossier — une cinquième famille
+
+Vingt-trois fiches passent de `lecon` à **`dossier`** : `*/missions` (9),
+`*/selection` (4), `eopan/concepts` (5), `*/presentation` (3),
+`eopan/procedures` (2).
+
+Elles décrivent des épreuves, des parcours de sélection, des missions et des
+procédures — le registre que le manifeste attribue depuis l'origine à la famille
+Concours : _« il ne vient pas lire, il vient savoir où il en est »_. Leur
+classement en `lecon` était provisoire, et celui des missions portait déjà cette
+réserve depuis M6b.
+
+**Elles ne reçoivent aucune cote.** La lettre `A` du Dossier attend son lot : on
+ne gèle pas une référence avant d'avoir arrêté la grammaire de sa famille. Un
+test l'énonce.
+
+Répartition gelée : **identification 83, lecon 108, cahier 20, situation 4,
+dossier 23** — 238.
+
+### 21.5 Les 108 cotes
+
+De `ALAT · G.14.01` à `PSY · G.3.20`, engendrées une fois par tri de slug puis
+figées. Catégorie la plus dense : 24 (`fondamentaux/aerodynamique`) — deux
+chiffres restent amples, et le générateur échoue au-delà de 89.
+
+**Les 121 cotes antérieures n'ont pas bougé** : 14 en `B`, 107 en `C`/`D`/`E`.
+Vérifié par comparaison clé par clé avant écriture, puis sur le diff.
+
+### 21.6 Preuves
+
+- **492 routes sur 492 au HTML identique à l'octet**, empreintes de build
+  neutralisées. Aucune page ne change, ce qui est exactement le contrat d'un lot
+  de référentiel.
+- `npm run check` : **718 tests verts** (714 avant). Vingt tests couvrent
+  désormais les 229 cotes des cinq tables de familles.
+- Le build échoue toujours si une fiche d'une famille migrée perd sa cote.
+
+### 21.7 Ce que M8a n'a pas fait
+
+- **Aucun gabarit créé.** Les 108 fiches de notion attendent M8b ; les 23
+  dossiers attendent leur propre lot.
+- **`FicheTransition` reste**, et gardera Geist et Archivo tant que les 23
+  dossiers en dépendront. Sa disparition n'est plus prévue en M8.
+- Aucun contenu, aucune donnée utilisateur, aucune migration SQL, aucun
+  identifiant, aucune URL.
+
+### 21.8 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M8a>
+npm run check
+```
+
+Autonome. Le revert retire les 108 cotes `G`, ramène les 23 fiches à `lecon` et
+retire la lettre `G` de l'alphabet.
+
+> **Comme pour M6b, le retour arrière emporte un arbitrage éditorial** : les 23
+> fiches redeviennent `lecon` et la répartition repasse à 83 / 131 / 20 / 4. Si
+> M8a est rejoué, la reclassification en `dossier` doit être réappliquée
+> **avant** toute génération de cote — sans quoi les 23 recevraient une cote `G`
+> qu'elles ne doivent pas porter. Le test de répartition gelée est le point de
+> contrôle : il attend 83 / 108 / 20 / 4 / 23.
