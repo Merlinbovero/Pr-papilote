@@ -1341,7 +1341,30 @@ la famille (34 en M6b), dont deux neufs — chaque module porte son encre et
 jamais le gris neutre ; une notice reclassée garde son bloc de spécifications,
 valeurs comprises.
 
-### 19.5 Ce que M7a n'a pas fait
+### 19.5 Le contrôle permanent des dix-sept
+
+`e2e/planche-aviation-mondiale.spec.ts` tient les six propriétés du lot **sur
+les dix-sept fiches**, pas sur un échantillon : statut 200, absence de
+débordement, **chaque valeur de spécification** présente dans le texte rendu,
+cote du référentiel affichée, encre sienne appliquée et distincte du gris
+neutre, et **absence de fuite** — Le Cahier et La Situation du même module ne
+portent ni cartouche de cote ni fiche signalétique.
+
+Le corpus est lu au contenu, pas listé à la main : une dix-huitième notice
+entrerait automatiquement sous contrôle, et un déclassement de la catégorie fait
+tomber le premier test.
+
+**Validé en le cassant** — l'encre du module Culture ramenée à `neutre` : 17 des
+19 cas tombent, seuls le contrôle de corpus et celui de non-fuite survivent.
+
+> **Piège de méthode rencontré à cette occasion.** La première exécution de
+> cette contre-épreuve a rendu « 19 passed » : un serveur de production tournait
+> encore sur le port 3000, et `reuseExistingServer` l'a réemployé — Playwright
+> mesurait donc l'ancien build, pas la source modifiée. Le défaut injecté
+> n'atteignait jamais le navigateur. Tuer le serveur avant la campagne fait
+> partie du protocole ; un test vert sur un serveur périmé ne prouve rien.
+
+### 19.6 Ce que M7a n'a pas fait
 
 - **Ni Le Cahier ni La Situation ne sont touchés.** Les 20 fiches `cahier`
   restantes et les 4 `situation` passent toujours par `FicheTransition`.
@@ -1349,7 +1372,7 @@ valeurs comprises.
   identifiant, aucune URL, aucun slug, aucune redirection.
 - Aucun gabarit neuf : les 17 pages emploient **le gabarit déjà validé en M6b**.
 
-### 19.6 Procédure d'annulation
+### 19.7 Procédure d'annulation
 
 ```
 git revert <sha-du-lot-M7a>
