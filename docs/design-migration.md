@@ -1260,3 +1260,108 @@ Le commit est autonome et se révoque **sans toucher à M6a** : il rend la branc
 > reclassification dans un commit distinct : l'historique publié ne se réécrit
 > pas pour une commodité de retour arrière. La mise en garde ci-dessus tient
 > lieu de séparation.
+
+---
+
+## 19. Lot M7a — Aviation mondiale — livré le 2026-07-29
+
+**Dix-sept notices d'appareils étrangers rejoignent La Planche d'identification.**
+
+### 19.1 L'arbitrage : le module ne détermine pas l'archétype
+
+Les 17 fiches de `culture/aviation-mondiale` — A-10, F-14, F-16, Spitfire,
+Hurricane, Bf 109, Fw 190, Zero, Mustang, MiG-29, MiG-31, Su-27, Su-34, Su-35,
+Su-57, PC-6, Black Hawk — déclarent toutes `type: appareil` ou `helicoptere`,
+portent toutes `specs` **et** `infobox`, et se lisent exactement comme les 66
+notices migrées en M6b.
+
+Elles étaient classées `cahier`. Ce qui les y avait rangées, c'est leur
+**module** : Culture & géopolitique. C'est précisément l'erreur que le
+référentiel d'archétypes existe pour éviter — **le module dit où une fiche est
+rangée, l'archétype dit ce qu'elle est.** Une notice d'appareil étranger reste
+une notice, qu'elle serve la culture générale ou la préparation d'un concours.
+
+Répartition gelée : **identification 83, lecon 131, cahier 20, situation 4.**
+
+### 19.2 Dix-sept cotes, aux mêmes conditions que M6
+
+`CULT · C.1.01` à `CULT · C.1.17` — famille C (Fiches techniques), catégorie 1
+(aviation mondiale), numéro d'enregistrement. Clé : l'identifiant de contenu.
+Engendrées une fois par tri de slug, inscrites, gelées.
+
+**Les 66 cotes de M6b n'ont pas bougé d'un caractère** — vérifié sur le diff :
+27 lignes ajoutées, aucune ligne de cote retirée ni modifiée. C'est la
+démonstration de la règle elle-même : une arrivée ne renumérote jamais une
+référence existante.
+
+### 19.3 L'encre du module Culture
+
+`sienne` rejoint la feuille du système. Comme `air` et `terre` en M6b, la
+valeur existait déjà dans `planche-tokens.css` et dans le module de jetons, où
+son contraste est vérifié ; seule `planche.css` ne la déclarait pas. Le test de
+synchronisation écrit en M6b l'a prise en charge **automatiquement**, puisqu'il
+découvre les encres par les sélecteurs `data-module` — vérifié en supprimant
+`--pl-sienne`, qui le fait tomber.
+
+**Une ligne du plan de M7b est donc consommée ici.** L'encre sienne devait être
+introduite en M7b ; elle l'est en M7a, parce que les 17 notices en avaient
+besoin pour être cohérentes — les servir en gris neutre, puis les recolorer en
+M7b, aurait fait toucher deux fois les mêmes pages. M7b **emploiera** sienne
+pour Le Cahier et La Situation ; il n'aura pas à l'introduire.
+
+### 19.4 Preuves
+
+**Contenu — 238 fiches, deux versions servies en parallèle : 238/238
+conformes.** 221 hors périmètre en égalité stricte de l'empreinte textuelle ;
+17 reclassées en conservation vérifiée chaîne par chaîne — résumé, corps,
+points à retenir, titre et corps de chaque section, pièges, titres et URL de
+sources, auteur, licence, lien et fichier de la photographie, motifs de
+révision, cote, ancres publiques. **Et, nouveauté par rapport à M6b, chaque
+valeur de `specs` une par une** : ces fiches portaient des spécifications que
+le gabarit du Cahier ne rendait pas en tableau ; il fallait prouver qu'aucune
+ne se perd en changeant de gabarit.
+
+**Hors périmètre — 254 routes au HTML identique à l'octet**, empreintes de
+build neutralisées. `/recherche` et `/culture/aviation-mondiale` compris :
+l'index de recherche et l'index de catégorie sont inchangés.
+
+**Campagne — 13 spécimens** couvrant les types réellement présents : chasseur
+embarqué, avion d'attaque, chasseur léger, chasseur russe moderne, chasseur de
+la Seconde Guerre, avion utilitaire, hélicoptère ; clair et sombre ; 1440, 834
+et 390 px. Résultat : **0 débordement, 0 erreur de console, 0 violation axe**,
+encre `#8a3d2b` en clair et `#e09582` en sombre sur les douze.
+
+Le treizième est un **témoin** : `culture/personnalites/georges-guynemer`, une
+fiche `cahier` du même module. Elle ne porte aucun `.pl-root` — donc toujours
+`FicheTransition` — et conserve la violation `color-contrast` connue. La
+reclassification n'a pas débordé sur ses voisines.
+
+**Suite automatique** : `npm run check` vert, **44 tests de bout en bout** sur
+la famille (34 en M6b), dont deux neufs — chaque module porte son encre et
+jamais le gris neutre ; une notice reclassée garde son bloc de spécifications,
+valeurs comprises.
+
+### 19.5 Ce que M7a n'a pas fait
+
+- **Ni Le Cahier ni La Situation ne sont touchés.** Les 20 fiches `cahier`
+  restantes et les 4 `situation` passent toujours par `FicheTransition`.
+- Aucun contenu, aucune donnée utilisateur, aucune migration SQL, aucun
+  identifiant, aucune URL, aucun slug, aucune redirection.
+- Aucun gabarit neuf : les 17 pages emploient **le gabarit déjà validé en M6b**.
+
+### 19.6 Procédure d'annulation
+
+```
+git revert <sha-du-lot-M7a>
+npm run check
+```
+
+Le commit est autonome. Il rend les 17 fiches à `cahier` donc à
+`FicheTransition`, retire leurs 17 cotes et l'encre sienne.
+
+> **Contrairement à M6b, l'arbitrage éditorial et la migration graphique sont
+> ici volontairement dans le même commit** — et c'est cohérent : reclasser ces
+> fiches _est_ la décision, leur appliquer le gabarit n'en est que la
+> conséquence mécanique. Il n'y a pas deux décisions à séparer. Le découpage
+> M7a / M7b protège l'inverse : un retour arrière sur Le Cahier et La Situation
+> (M7b) ne défera pas la migration cohérente d'Aviation mondiale.

@@ -27,11 +27,14 @@ const brut = archetypesFileSchema.parse(JSON.parse(readFileSync(FICHIER, "utf-8"
  * 2026-07-28 (M6a) — identification 75, lecon 122.
  * 2026-07-29 (M6b) — les neuf fiches de missions passent à `lecon` : une
  * mission est un processus, pas un objet à identifier. D'où 66 et 131.
+ * 2026-07-29 (M7a) — les dix-sept fiches d'aviation mondiale passent de
+ * `cahier` à `identification` : ce sont des notices d'appareil, et le module
+ * où une fiche est rangée ne dit pas ce qu'elle est. D'où 83 et 20.
  */
 const REPARTITION = {
-  identification: 66,
+  identification: 83,
   lecon: 131,
-  cahier: 37,
+  cahier: 20,
   situation: 4,
 } as const;
 

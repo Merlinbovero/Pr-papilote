@@ -67,11 +67,20 @@ import { SERVICE_STATUS } from "@/lib/service-status";
  * page le dit en faisant échouer le build.
  */
 
-/** L'encre du module hôte — le sens de la couleur, pas une décoration. */
+/**
+ * L'encre du module hôte — le sens de la couleur, pas une décoration.
+ *
+ * `culture` rejoint la table au lot M7a, avec les notices d'appareils
+ * étrangers. `sienne` est **l'encre du module Culture**, partagée avec Le
+ * Cahier et La Situation (docs/design-archetypes.md §0) : ce n'est pas la
+ * couleur qui distingue ces familles, c'est leur rapport au temps. Le lot M7b
+ * l'emploiera pour les deux autres familles — il n'aura pas à l'introduire.
+ */
 const ENCRE_MODULE: Record<string, EncreModule> = {
   eopan: "marine",
   eopn: "air",
   alat: "terre",
+  culture: "sienne",
 };
 
 const TYPE_LABELS: Partial<Record<FicheFile["type"], string>> = {

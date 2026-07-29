@@ -92,6 +92,13 @@ une ne libère pas son numéro. Cinq catégories ont aujourd'hui un ordre
 d'affichage différent de l'ordre de leurs cotes — la preuve que l'un ne dérive
 pas de l'autre.
 
+**Le module ne détermine pas l'archétype (arrêté au lot M7a).** Le module dit
+**où** une fiche est rangée ; l'archétype dit **ce qu'elle est**. Les 17 notices
+d'appareils étrangers vivent dans Culture & géopolitique et relèvent pourtant de
+La Planche d'identification : elles portent `CULT · C.1.NN`, l'encre `sienne` du
+module hôte, et le gabarit de la notice. Ranger une fiche par son module serait
+confondre l'étagère et l'ouvrage.
+
 **Pour les notices, la clé est l'identifiant de contenu, pas le slug.**
 L'identifiant est gelé à vie par contrat, donc un changement d'URL n'exige même
 pas de migration de clé. Conséquence assumée : quelques identifiants

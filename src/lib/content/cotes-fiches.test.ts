@@ -15,6 +15,11 @@ import { getCategories, getCotesFiches, getCoteFiche } from "./referentials";
  * Cette table est le gel. Elle n'est pas une copie décorative du référentiel :
  * elle est la seule chose qui empêche un script de tout renuméroter proprement
  * et silencieusement. On ne l'ouvre que pour ajouter une ligne.
+ *
+ * 2026-07-29 (M6b) — 66 notices des trois concours.
+ * 2026-07-29 (M7a) — 17 notices d'appareils étrangers, « CULT · C.1.NN »,
+ * reclassées depuis Le Cahier. **Aucune des 66 premières n'a bougé** : c'est
+ * exactement ce que le gel doit démontrer, une arrivée ne renumérote rien.
  */
 const COTES_GELEES: Record<string, string> = {
   "alat.appareils.alouette-ii": "ALAT · C.6.01",
@@ -34,6 +39,23 @@ const COTES_GELEES: Record<string, string> = {
   "alat.unites.3e-rhc": "ALAT · C.10.02",
   "alat.unites.4e-rhfs": "ALAT · C.10.03",
   "alat.unites.5e-rhc": "ALAT · C.10.04",
+  "culture.aviation-mondiale.a-10-thunderbolt-ii": "CULT · C.1.01",
+  "culture.aviation-mondiale.f-14-tomcat": "CULT · C.1.02",
+  "culture.aviation-mondiale.f-16-fighting-falcon": "CULT · C.1.03",
+  "culture.aviation-mondiale.focke-wulf-fw-190": "CULT · C.1.04",
+  "culture.aviation-mondiale.hawker-hurricane": "CULT · C.1.05",
+  "culture.aviation-mondiale.messerschmitt-bf-109": "CULT · C.1.06",
+  "culture.aviation-mondiale.mikoyan-mig-29": "CULT · C.1.07",
+  "culture.aviation-mondiale.mikoyan-mig-31": "CULT · C.1.08",
+  "culture.aviation-mondiale.mitsubishi-a6m-zero": "CULT · C.1.09",
+  "culture.aviation-mondiale.north-american-p-51-mustang": "CULT · C.1.10",
+  "culture.aviation-mondiale.pilatus-pc-6-porter": "CULT · C.1.11",
+  "culture.aviation-mondiale.sukhoi-su-27": "CULT · C.1.12",
+  "culture.aviation-mondiale.sukhoi-su-34": "CULT · C.1.13",
+  "culture.aviation-mondiale.sukhoi-su-35": "CULT · C.1.14",
+  "culture.aviation-mondiale.sukhoi-su-57": "CULT · C.1.15",
+  "culture.aviation-mondiale.supermarine-spitfire": "CULT · C.1.16",
+  "culture.aviation-mondiale.uh-60-black-hawk": "CULT · C.1.17",
   "eopan.appareils.atlantique-2": "EOPAN · C.6.01",
   "eopan.appareils.cap-10": "EOPAN · C.6.02",
   "eopan.appareils.dauphin": "EOPAN · C.6.03",
@@ -119,7 +141,7 @@ describe("cotes documentaires des notices", () => {
 
   it("suit la grammaire MODULE · C.C.NN", () => {
     for (const [id, cote] of getCotesFiches()) {
-      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT) · C\.\d{1,2}\.\d{2}$/);
+      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT|CULT) · C\.\d{1,2}\.\d{2}$/);
     }
   });
 

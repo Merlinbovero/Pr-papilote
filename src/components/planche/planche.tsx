@@ -14,13 +14,14 @@ import type { ReactNode } from "react";
  */
 export type MarginMode = "wide" | "rail" | "none";
 /**
- * L'encre du module hôte. `air` et `terre` rejoignent la liste au lot M6b :
- * les notices EOPN et ALAT devaient porter l'encre de leur armée, et non le
- * bleu de la Marine ni le gris neutre. Les deux valeurs existaient déjà dans
- * `planche-tokens.css` et dans le module de jetons, où leur contraste est
- * vérifié ; seule la feuille du système ne les déclarait pas.
+ * L'encre du module hôte. `air` et `terre` rejoignent la liste au lot M6b,
+ * `sienne` au lot M7a : les notices EOPN, ALAT puis Culture devaient porter
+ * l'encre de leur module, et non le bleu de la Marine ni le gris neutre. Les
+ * trois valeurs existaient déjà dans `planche-tokens.css` et dans le module de
+ * jetons, où leur contraste est vérifié ; seule la feuille du système ne les
+ * déclarait pas. Un test confronte désormais les deux fichiers.
  */
-export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "neutre";
+export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "sienne" | "neutre";
 
 export function PlancheRoot({
   marginMode,
