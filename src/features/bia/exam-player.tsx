@@ -272,7 +272,17 @@ export function BiaExamPlayer({
             </span>
           </span>
         </div>
-        <Progress value={(answered / questions.length) * 100} />
+        {/*
+          À l'examen, la navigation est libre : `answered` compte les questions
+          RÉPONDUES, sans lien avec la position. Le libellé le dit tel quel.
+        */}
+        <Progress
+          aria-label="Progression de l’examen"
+          aria-valuetext={`${answered} réponse${answered > 1 ? "s" : ""} complétée${
+            answered > 1 ? "s" : ""
+          } sur ${questions.length}`}
+          value={(answered / questions.length) * 100}
+        />
       </div>
 
       {shortagesCount > 0 && index === 0 ? (

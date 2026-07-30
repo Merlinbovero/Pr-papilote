@@ -77,6 +77,8 @@ export function QuizPlayer({
 
   const question = questions[index];
   const isMultiple = question ? question.correctChoices.length > 1 : false;
+  /** Questions achevées : la question courante ne l'est qu'une fois corrigée. */
+  const terminees = index + (phase === "correction" ? 1 : 0);
 
   const validate = React.useCallback(() => {
     if (phase !== "answering" || !question) {
@@ -195,8 +197,14 @@ export function QuizPlayer({
           </span>
         </div>
         <Progress
-          aria-label="Progression dans le quiz"
-          value={((index + (phase === "correction" ? 1 : 0)) / questions.length) * 100}
+          aria-label="Progression du quiz"
+          // La barre compte les questions ACHEVÉES, pas la position courante :
+          // sur la question 3 encore sans réponse, deux sont terminées. Le
+          // libellé suit donc l'avancement, comme la valeur.
+          aria-valuetext={`${terminees} question${terminees > 1 ? "s" : ""} terminée${
+            terminees > 1 ? "s" : ""
+          } sur ${questions.length}`}
+          value={(terminees / questions.length) * 100}
         />
       </div>
 
