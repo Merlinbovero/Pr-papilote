@@ -228,3 +228,30 @@ Chaîne éditoriale consacrée (docs/editorial/gestion-documentaire.md) : le con
 Exigences techniques permanentes consacrées (docs/qualite-technique.md) : la qualité technique est une fonctionnalité, aussi importante que l'éditoriale. Budgets Core Web Vitals (LCP < 2,5 s, INP < 200 ms, CLS < 0,1), sobriété, refus des dépendances lourdes.
 
 **SEO** — helper `SITE_URL` (configurable, jamais de domaine codé en dur), `metadataBase` + Open Graph au layout racine, `sitemap.ts` et `robots.ts` générés depuis le contenu (espace personnel et prévisualisations exclus), URL canonique + OG par fiche et par document ; maillage interne porté par le graphe. **Robustesse** — frontières d'erreur `error.tsx` (segment) et `global-error.tsx` (racine autonome), point d'accroche `console.error` pour le monitoring futur ; jamais d'impasse (404 dédiée, notFound, intégrité des liens au build). **Images** — composant unique `ContentImage` sur next/image (alt obligatoire, dimensions explicites → zéro CLS, lazy, AVIF/WebP). **Accessibilité automatisée** — `@axe-core/playwright`, scan WCAG A/AA des pages clés en CI (e2e/accessibility.spec.ts) ; a corrigé trois défauts réels : contraste `--muted-foreground` (0.556 → 0.52), lien de connexion icône-seule sans nom accessible sur mobile (sr-only), liens de sources distingués par la seule couleur (soulignement permanent). **Observabilité** V1 = intégrité au build (content:check + Zod + graphe + axe) ; monitoring runtime différé à l'intégration. Lighthouse CI différé au premier déploiement réel.
+
+## `tsx` — dépendance de développement (lot M10)
+
+**Pourquoi Node seul ne suffit pas.** L'index de recherche doit être généré
+**avant** `next build`, donc hors de Next. Le générateur appelle
+`buildSearchEntries()`, écrite en TypeScript et important ses dépendances par
+l'alias `@/…`. Node n'exécute pas TypeScript avec alias : ni un script `.mjs`
+ni `--experimental-strip-types` ne résolvent `@/`.
+
+**Pourquoi il faut résoudre les alias plutôt que les contourner.** L'alternative
+était de réécrire en chemins relatifs la chaîne d'imports d'`entries.ts` — donc
+de modifier du code de production pour un besoin d'outillage. La règle inverse
+prime : l'outillage s'adapte au code, pas l'inverse.
+
+**Pourquoi pas Vitest comme lanceur.** Il est déjà présent et résout les alias,
+mais c'est un exécuteur de tests. Un test qui écrit un artefact de build
+détourne son rôle, brouille la frontière entre vérifier et produire, et rendrait
+`npm run test` producteur d'effets de bord.
+
+**Portée.** `tsx` est en `devDependencies` uniquement. Il n'est appelé que par
+`npm run generate:search-index`, lui-même raccordé à `prebuild`. Il n'entre ni
+dans le bundle client, ni dans le runtime de production : le serveur ne sert que
+le JSON déjà écrit sous `public/generated/`.
+
+**L'artefact n'est pas versionné** (`.gitignore`). Il est régénéré à chaque
+build et ne doit jamais être édité à la main : sa seule vérité est
+`buildSearchEntries()`.

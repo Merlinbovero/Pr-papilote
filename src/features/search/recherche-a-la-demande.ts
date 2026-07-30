@@ -1,5 +1,4 @@
-import { z } from "zod";
-
+import { artefactRechercheSchema, CHEMIN_INDEX_RECHERCHE } from "./artefact";
 import type { SearchEntry } from "./types";
 
 /**
@@ -23,25 +22,6 @@ import type { SearchEntry } from "./types";
  * possible. Sans cela, une coupure passagère condamnerait la palette pour toute
  * la session — et l'utilisateur n'aurait plus que le repli `/recherche`.
  */
-
-/** L'artefact servi par `/recherche-index`, validé et non supposé. */
-const artefactSchema = z.object({
-  schema: z.literal(1),
-  entries: z
-    .array(
-      z
-        .object({
-          id: z.string().min(1),
-          type: z.string().min(1),
-          title: z.string().min(1),
-          moduleName: z.string(),
-          moduleSlug: z.string(),
-          url: z.string().min(1),
-        })
-        .passthrough()
-    )
-    .min(1),
-});
 
 /** Ce que la palette a besoin de recevoir, une fois tout prêt. */
 export interface RessourcesRecherche {
@@ -67,14 +47,14 @@ export function chargerRecherche(): Promise<RessourcesRecherche> {
     const moduleP = import("./search");
 
     compteurs.requetes += 1;
-    const indexP = fetch("/recherche-index", { headers: { accept: "application/json" } });
+    const indexP = fetch(CHEMIN_INDEX_RECHERCHE, { headers: { accept: "application/json" } });
 
     const [, reponse] = await Promise.all([moduleP, indexP]);
     if (!reponse.ok) {
       throw new Error(`Index de recherche indisponible (HTTP ${reponse.status})`);
     }
 
-    const artefact = artefactSchema.parse(await reponse.json());
+    const artefact = artefactRechercheSchema.parse(await reponse.json());
     return { entries: artefact.entries as unknown as SearchEntry[] };
   })();
 
