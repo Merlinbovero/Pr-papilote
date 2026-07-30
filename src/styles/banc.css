@@ -1,0 +1,182 @@
+/*
+ * Jetons du Banc — lot F1b.
+ *
+ * PORTÉE STRICTEMENT LOCALE : tout est émis sous `.banc`, jamais sur `:root`.
+ * Tant qu'aucun élément ne porte la classe, le produit est inchangé — c'est
+ * la même précaution qu'au lot M1 pour PLANCHE, et c'est ce qui rend le lot
+ * annulable sans effet de bord.
+ *
+ * Les valeurs sont celles de `src/lib/design/banc-tokens.ts`, où elles sont
+ * mesurées ; ce fichier ne fait que les servir au navigateur. Le test
+ * `banc-tokens.test.ts` lit les deux et échoue si elles divergent.
+ */
+
+.banc {
+  --bc-fond: #fbfaf8;
+  --bc-fond2: #f6f5f2;
+  --bc-fond3: #f2f1ee;
+  --bc-encre: #141b24;
+  --bc-encre2: #414851;
+  --bc-filet: #d5d8db;
+  --bc-filet-fort: #7c8186;
+  /* Encre de famille F — turquoise h 193, arbitrée par la mesure (F1b). */
+  --bc-banc: #036564;
+  --bc-juste: #117c40;
+  --bc-attention: #986001;
+  --bc-erreur: #be2323;
+
+  /* Mesures de lecture — plafonds, jamais des coupes.
+     L'audit F0b §1 a relevé jusqu'à 203 caractères par ligne. */
+  --bc-mesure-consigne: 68ch;
+  --bc-mesure-enonce: 90ch;
+
+  /* Rythme : serré entre les réponses, ample entre les zones fonctionnelles,
+     pour que stimulus / réponses / actions se lisent d'un coup d'œil. */
+  --bc-espace-reponse: 0.5rem;
+  --bc-espace-zone: 2rem;
+  --bc-rayon: 0.625rem;
+
+  color: var(--bc-encre);
+  background-color: var(--bc-fond);
+}
+
+.dark .banc {
+  --bc-fond: #10141a;
+  --bc-fond2: #191d24;
+  --bc-fond3: #22272d;
+  --bc-encre: #e7e6e3;
+  --bc-encre2: #b4b8bc;
+  --bc-filet: #2e333a;
+  --bc-filet-fort: #6b727c;
+  --bc-banc: #6bbdba;
+  --bc-juste: #72c78b;
+  --bc-attention: #efb062;
+  --bc-erreur: #ed756a;
+}
+
+/* --- Cadre de séance ------------------------------------------------------
+   Une seule largeur, partagée par tous les moteurs : l'audit en avait relevé
+   deux (1216 px partout, 768 px pour orientation). */
+
+.banc-cadre {
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* --- Zones ----------------------------------------------------------------
+   La hiérarchie passe par la SURFACE, pas par la bordure : la carte bordée
+   appartient au registre documentaire, pas à l'instrument. */
+
+.banc-stimulus {
+  background-color: var(--bc-fond2);
+  border-radius: var(--bc-rayon);
+  padding: 1.5rem;
+}
+
+.banc-reponse {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background-color: var(--bc-fond3);
+  border: 1px solid transparent;
+  border-radius: var(--bc-rayon);
+}
+
+.banc-reponse[aria-pressed="true"] {
+  border-color: var(--bc-filet-fort);
+}
+
+/* Les états portent une teinte ET un repère non chromatique rendu par le
+   composant : jamais la couleur seule, jamais l'opacité seule (DT-002). */
+.banc-reponse[data-etat="juste"] {
+  border-color: var(--bc-juste);
+}
+
+.banc-reponse[data-etat="erreur"] {
+  border-color: var(--bc-erreur);
+}
+
+.banc-reponse[data-etat="attention"] {
+  border-color: var(--bc-attention);
+}
+
+/* « Neutralisée après correction » n'est pas « désactivée » : la première
+   reste lisible, la seconde signale qu'aucune action n'est possible. */
+.banc-reponse[data-etat="neutre"] {
+  color: var(--bc-encre2);
+}
+
+.banc-reponse:disabled {
+  cursor: not-allowed;
+}
+
+.banc-separateur {
+  border-top: 1px solid var(--bc-filet);
+}
+
+/* --- Chronomètre ----------------------------------------------------------
+   Les chiffres qui changent en place sont tabulaires, sans quoi la largeur
+   danse à chaque seconde. */
+
+.banc-chrono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.banc-chrono[data-etat="warning"] {
+  color: var(--bc-attention);
+}
+
+.banc-chrono[data-etat="critical"],
+.banc-chrono[data-etat="expired"] {
+  color: var(--bc-erreur);
+}
+
+.banc-chrono[data-etat="absent"] {
+  color: var(--bc-encre2);
+}
+
+/* --- Mesures de lecture --------------------------------------------------- */
+
+.banc-consigne {
+  max-width: var(--bc-mesure-consigne);
+}
+
+.banc-enonce {
+  max-width: var(--bc-mesure-enonce);
+  text-wrap: balance;
+}
+
+/* Un stimulus graphique prend la largeur disponible du cadre : le plafonner
+   le rendrait illisible. */
+.banc-stimulus-graphique {
+  max-width: none;
+}
+
+/* --- Mode séance ----------------------------------------------------------
+   L'introduction se replie au lancement : c'est ce qui manque aujourd'hui,
+   où l'aire de jeu s'empile SOUS le chapeau éditorial et tombe hors écran. */
+
+.banc-introduction[hidden] {
+  display: none;
+}
+
+.banc-zone-seance {
+  outline: none;
+  scroll-margin-top: 1rem;
+}
+
+.banc-transition {
+  transition: opacity 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banc-transition {
+    transition: none;
+  }
+}
