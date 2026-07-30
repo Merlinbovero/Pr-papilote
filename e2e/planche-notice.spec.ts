@@ -19,8 +19,11 @@ import { expect, test } from "@playwright/test";
  */
 
 const NOTICE = "/eopan/appareils/rafale-m";
-/** Une fiche de La Leçon : elle doit rester sous FicheTransition. */
-const TRANSITION = "/eopan/missions/la-patrouille-maritime";
+/**
+ * Une fiche d'une AUTRE famille — Le Dossier. Elle sert de témoin : le gabarit
+ * de notice ne doit pas avoir déteint sur elle.
+ */
+const AUTRE_FAMILLE = "/eopan/missions/la-patrouille-maritime";
 
 /** Quelques cotes gelées (`content/_referentiels/cotes.json`). */
 const COTES: [string, string][] = [
@@ -116,13 +119,21 @@ test.describe("La Planche d'identification", () => {
     await expect(annexe.getByRole("link", { name: "Flottille 11F" })).toBeVisible();
   });
 
-  test("une fiche non migrée ne porte aucune marque de La Planche", async ({ page }) => {
-    await page.goto(TRANSITION);
-    // Le groupe de routes est commun — le bandeau PLANCHE est donc là. Mais le
-    // gabarit de notice, lui, ne doit pas avoir déteint sur elle.
-    await expect(page.locator(".pl-corps")).toHaveCount(0);
-    await expect(page.locator(".pl-cote")).toHaveCount(0);
-    await expect(page.locator(".pl-hote")).toHaveCount(1);
+  test("une fiche d'une autre famille ne porte pas les marques de la notice", async ({ page }) => {
+    // **Réécrit au lot M9b, et c'était nécessaire.** Ce test disait « une fiche
+    // NON MIGRÉE ne porte aucune marque de La Planche » et prenait pour témoin
+    // une page servie par `FicheTransition`. M9b migre la dernière famille :
+    // plus aucune page n'est non migrée, et le témoin lui-même est devenu un
+    // Dossier. La prémisse a disparu avec le composant.
+    //
+    // Ce qu'il faut continuer de garantir n'a pas changé : les familles ne
+    // déteignent pas l'une sur l'autre. Le témoin porte donc maintenant les
+    // marques communes de PLANCHE — c'est le but de la migration — mais pas
+    // celles PROPRES à la notice : ni fiche signalétique, ni cote de famille C.
+    await page.goto(AUTRE_FAMILLE);
+    await expect(page.locator("#signaletique")).toHaveCount(0);
+    const cartouche = await page.locator(".pl-cart").innerText();
+    expect(cartouche.split("·")[1]?.trim().split(".")[0]).toBe("A");
   });
 
   test("chaque module porte son encre, jamais celle d'un autre", async ({ page }) => {

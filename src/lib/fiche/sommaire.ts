@@ -238,3 +238,43 @@ export function sommaireLeconFiche(sources: SourcesSommaireLeconFiche): EntreeSo
   numerotee("sources", "Sources");
   return entrees;
 }
+
+/**
+ * Le sommaire d'un Dossier de concours — lot M9b.
+ *
+ * Identique en ossature à celui du Cahier, et c'est voulu : les 23 dossiers
+ * portent exactement les mêmes rubriques canoniques — essentiel, sections,
+ * pièges, sources, quiz. **Aucune entrée n'est ajoutée pour faire nombre.** Le
+ * manifeste décrit une annexe en « échéancier permanent » ; aucun champ du
+ * contenu ne porte d'échéance, et fabriquer un calendrier à partir de rien
+ * aurait été inventer une donnée administrative — la faute la plus grave dans
+ * la famille précisément chargée de dater et de classer.
+ */
+export interface SourcesSommaireDossier {
+  sections: readonly { id: string; title: string }[];
+  pieges: boolean;
+  quiz: boolean;
+  ancreQuiz: string;
+}
+
+export function sommaireDossier(sources: SourcesSommaireDossier): EntreeSommaire[] {
+  const entrees: EntreeSommaire[] = [];
+  let numero = 0;
+  const numerotee = (id: string, libelle: string) => {
+    numero += 1;
+    entrees.push({ id, libelle, numero });
+  };
+
+  numerotee("l-essentiel", "L’essentiel");
+  for (const section of sources.sections) {
+    numerotee(section.id, section.title);
+  }
+  if (sources.pieges) {
+    numerotee("pieges", "Pièges fréquents");
+  }
+  if (sources.quiz) {
+    entrees.push({ id: sources.ancreQuiz, libelle: "Se tester" });
+  }
+  numerotee("sources", "Sources");
+  return entrees;
+}

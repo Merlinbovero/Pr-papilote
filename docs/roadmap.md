@@ -339,11 +339,15 @@ les SVG est une modification de contenu, préfixer les identifiants dans
 clôture du chantier illustration ou la mise en production finale.** Détail :
 `docs/design-migration.md` §22.5.
 
-### Trois composants sans consommateur de production
+### Vingt composants sans consommateur de production — mis à jour au lot M9b
 
-`fiche-photo`, `service-badge` et `aircraft-specs` ne sont plus montés que par
-`FicheTransition` (23 Dossiers) et la galerie `/design-system/fiche`. Dix autres
-composants de `src/components/content/` sont dans le même cas. Ils disparaîtront
+**Le compte annoncé ici était faux : 13, alors que la mesure en donne 20** (plus
+`types.ts`), sur 26. La reachability a été recalculée transitivement depuis les
+racines de production. Six survivent : `fiche-figure`, `markdown`,
+`methode-fiche-card`, `notice-document`, `print-button`, `relation-block`.
+
+Depuis M9b, `FicheTransition` n'existe plus : les vingt ne sont donc **plus
+maintenus que par la vitrine `/design-system/fiche`**, derrière son drapeau. Ils disparaîtront
 avec le lot du Dossier ; un lot de migration graphique ne fait pas le ménage du
 dépôt.
 

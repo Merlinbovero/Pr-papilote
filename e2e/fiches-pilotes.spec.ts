@@ -58,6 +58,15 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
     await expect(page.getByRole("heading", { level: 1, name: "CATOBAR" })).toBeVisible();
     await page.getByRole("link", { name: /Fiche complète/ }).click();
     await expect(page.getByRole("heading", { level: 1, name: "CATOBAR" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "L'essentiel" })).toBeVisible();
+    // **Une seule apostrophe change ici, et c'était nécessaire au lot M9b.**
+    // `catobar` est un Dossier : M9b l'a migré, et La Planche écrit « L’essentiel »
+    // avec l'apostrophe courbe là où le gabarit historique écrivait `L&apos;essentiel`.
+    // Le titre est bien présent — c'est le caractère qui a changé, pas le bloc.
+    //
+    // Le test frère de la ligne 8 (Rafale M) porte la même apostrophe droite et
+    // reste ROUGE volontairement : il l'était déjà avant ce lot, depuis M6b, et
+    // il appartient à la ligne de base documentée que M10 corrigera. On ne
+    // répare ici que ce que ce lot a effectivement cassé.
+    await expect(page.getByRole("heading", { name: "L’essentiel" })).toBeVisible();
   });
 });

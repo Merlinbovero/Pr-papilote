@@ -21,7 +21,8 @@ export type MarginMode = "wide" | "rail" | "none";
  * jetons, où leur contraste est vérifié ; seule la feuille du système ne les
  * déclarait pas. Un test confronte désormais les deux fichiers.
  */
-export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "sienne" | "neutre";
+export type EncreModule =
+  "marine" | "air" | "terre" | "bistre" | "violine" | "sienne" | "indigo" | "neutre";
 
 /**
  * La famille documentaire, **déclarée** par la page comme `marginMode`.
@@ -32,7 +33,7 @@ export type EncreModule = "marine" | "air" | "terre" | "bistre" | "violine" | "s
  * nommément à une famille : le titre à 52 px et la lettrine du Cahier. Toute
  * règle sous `[data-famille]` doit pouvoir citer le paragraphe qui l'autorise.
  */
-export type FamillePlanche = "cahier" | "situation";
+export type FamillePlanche = "cahier" | "situation" | "dossier";
 
 export function PlancheRoot({
   marginMode,

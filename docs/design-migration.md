@@ -1964,3 +1964,91 @@ posé par aucun gabarit.
 
 `git revert` du commit M9a retire les 23 cotes, la table des natures et l'encre.
 Rien d'autre n'en dépend tant que M9b n'est pas livré.
+
+## 24. Lot M9b — Le Dossier de concours — livré le 2026-07-30
+
+**La migration PLANCHE est close.** Les cinq familles ont leur gabarit, les 238
+fiches sont migrées, `FicheTransition` n'existe plus.
+
+### 24.1 Un gabarit, cinq natures
+
+`src/features/fiches/dossier.tsx` sert les 23 fiches. La nature — Mission,
+Sélection, Concept, Présentation, Procédure — est un **libellé** lu par
+`getNatureDossier`, affiché dans le cartouche et le sur-titre. Aucune structure
+n'a été fabriquée pour les distinguer, parce qu'aucune donnée ne les distingue.
+
+**Ce que le gabarit refuse de faire.** Le manifeste prévoit pour cette famille
+une annexe en « échéancier permanent ». Aucun champ canonique ne porte
+d'échéance. Fabriquer un calendrier de concours aurait été la faute la plus
+grave possible dans la famille chargée de dater et de classer — un candidat
+aurait pu s'y fier. L'annexe porte donc sommaire, renvois et historique.
+
+### 24.2 Conservation — mesurée, pas affirmée
+
+Les deux versions ont été construites et servies côte à côte (3000 après, 3100
+avant), après vérification que chaque serveur servait bien **son** `BUILD_ID`.
+
+| Contrôle                                                                                     | Résultat     |
+| -------------------------------------------------------------------------------------------- | ------------ |
+| statuts HTTP des 23                                                                          | 23 × 200     |
+| unités de contenu canonique (titres, résumés, à-retenir, pièges, sections, sources, crédits) | **0 perdue** |
+| renvois — liens vers d'autres fiches et vers le dictionnaire                                 | **0 perdu**  |
+| quiz                                                                                         | 23/23 servis |
+
+**Une différence assumée, et vérifiée comme conforme.** 506 destinations de liens
+disparaissent : la barre latérale historique qui listait les 20 catégories du
+module, plus quelques entrées de pied. Ce n'est pas une régression de M9b — les
+**quatre familles déjà migrées ne la portent pas non plus** depuis M3, ce qui a
+été vérifié en la mesurant sur une notice, un Cahier et une fiche de notion. Le
+Dossier rejoint la convention, il ne s'en écarte pas. Toute destination utile
+reste atteignable : fil d'Ariane, fiches voisines, renvois, en-tête global, pied
+légal.
+
+### 24.3 Fontes — la preuve réseau
+
+Mesuré sur un build de production servi par `next start`, sur **les 238 fiches** :
+
+- familles `@font-face` servies : `plancheSerif`, `plancheSans`, `plancheMono`
+  (et leurs substituts) — **rien d'autre** ;
+- préchargements : les 3 fichiers Spectral, sur chaque page ;
+- **aucune Geist, Geist Mono ou Archivo.**
+
+La mesure porte sur les familles déclarées dans les feuilles réellement servies,
+pas sur les noms de fichiers — ils sont hachés, et « Geist » n'y apparaît jamais.
+`site-fonts.ts` n'est plus consommé que par `(site)/layout.tsx`.
+
+Un piège de mesure rencontré : en développement, la surcouche d'erreur de Next
+déclare sa propre `__nextjs-Geist`. Elle n'est jamais livrée — le build de
+production ne la contient pas — et le contrôle e2e l'exclut explicitement plutôt
+que de mesurer l'outillage à la place de la page.
+
+### 24.4 Deux tests modifiés, et pourquoi c'était nécessaire
+
+La consigne interdisait de toucher aux tests hors nécessité stricte. Deux
+l'exigeaient, tous deux invalidés **par la migration elle-même** :
+
+1. `planche-notice.spec.ts` — « une fiche NON MIGRÉE ne porte aucune marque de
+   La Planche », dont le témoin était servi par `FicheTransition`. M9b migre la
+   dernière famille : la prémisse a disparu avec le composant. Le test garantit
+   désormais la même chose autrement — les familles ne déteignent pas l'une sur
+   l'autre — sur la lettre de cote et l'absence de fiche signalétique.
+2. `fiches-pilotes.spec.ts:56` — `catobar` est un Dossier ; migré, il écrit
+   « L’essentiel » avec l'apostrophe courbe. **Une apostrophe changée.** Le test
+   frère de la ligne 4 porte la même apostrophe droite et **reste rouge
+   volontairement** : il l'était avant ce lot, il appartient à la ligne de base,
+   et M10 le corrigera. On ne répare que ce que ce lot a cassé.
+
+### 24.5 Preuves
+
+`npm run check` vert. Suite Playwright complète : **519 passés, 15 ignorés,
+6 échecs — exactement la ligne de base datée**, dont les 52 tests du nouveau
+contrôle permanent des 23 Dossiers, verts.
+
+### 24.6 Retour arrière
+
+`git revert` du commit M9b rétablit `FicheTransition`, `site-fonts-transition.ts`
+et le rendu historique des 23 pages. Le contrôle permanent vit dans un **commit
+séparé** : un revert du lot ne l'emporte pas — il deviendrait rouge, et c'est
+précisément ce qu'on veut d'un contrôle. Les cotes A et l'encre indigo, livrées
+en M9a, ne sont pas touchées. Point de restauration distant :
+branche `sauvegarde/m9a` sur `51cae37`.
