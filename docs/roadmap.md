@@ -120,6 +120,54 @@ graphique ne doit pas les toucher.
 doit revenir sur l'accueil ou si le test doit suivre la fonctionnalité là où
 elle a été déplacée, puis rebrancher le test sur l'état réel du produit.
 
+## Deux tests rouges de plus, découverts le 2026-07-30
+
+La règle « suite Playwright complète avant chaque livraison » a produit son
+premier effet dès sa première application : la suite entière donne **467 passés,
+15 ignorés, 6 échecs sur 488**, et **quatre de ces six échecs n'étaient pas
+consignés**. Aucun n'est imputable au commit qui les a révélés — il ne touche que
+`docs/` et un fichier de test Vitest, aucun fichier de production.
+
+### `e2e/fiches-pilotes.spec.ts:4` — rouge depuis M6b (chromium + mobile)
+
+Le test décrit la fiche Rafale M avec le **vocabulaire du gabarit historique**,
+que M6b a remplacé par La Planche d'identification sur `eopan/appareils`. Trois
+écarts, **aucun n'est une perte de donnée** :
+
+| Attendu par le test                             | Rendu par La Planche                                   |
+| ----------------------------------------------- | ------------------------------------------------------ |
+| titre `L'essentiel` (apostrophe droite)         | `L’essentiel` (apostrophe courbe)                      |
+| titre `Sources et références`                   | `Sources`                                              |
+| `role="region"` « Caractéristiques techniques » | `<table>` avec `<caption class="sr-only">` du même nom |
+
+Vérifié dans le gabarit : `EssentialBlock` écrivait `L&apos;essentiel`, La
+Planche écrit `L’essentiel` — l'échec porte donc sur le caractère, pas sur
+l'absence du bloc. Le statut de service (« En service ») **est toujours rendu**,
+dans la ligne de sous-titre, et les caractéristiques techniques **sont toujours
+là**, dans le tableau signalétique.
+
+**À arbitrer** : réécrire le test sur le vocabulaire PLANCHE, ou décider que la
+notice doit exposer ses caractéristiques comme une `region` nommée plutôt qu'un
+tableau à légende `sr-only` — c'est la seule des trois différences qui touche
+autre chose que du libellé.
+
+### `e2e/psychotechnique.spec.ts:43` — instable, pas déterministe
+
+Mesuré : **4 succès sur 6** en réexécution isolée sur mobile ; passé sur chromium
+dans la même campagne. Ce n'est pas un défaut du produit, c'est un test devenu
+probabiliste.
+
+Il désélectionne **6 familles** en supposant qu'il ne reste que « Calcul
+mental ». Le module en compte **19** aujourd'hui (lots P3 et J en ont ajouté
+douze). Treize familles restent donc actives, et une session de 10 questions
+tirée dans ce vivier ne contient « Calcul mental » **que par chance** — le
+diagnostic vient de l'instantané d'échec, qui montrait « Heures et durées » et
+« Mémoire associative » à la place.
+
+**À corriger** : désélectionner toutes les familles sauf celle visée, en les
+lisant depuis `FAMILY_INFO` plutôt qu'en les listant à la main — une famille
+ajoutée demain rendrait le test faux à nouveau.
+
 ## Dette relevée au lot M6b — trois défauts antérieurs, hors migration
 
 Le lot M6b a mesuré les 238 fiches avant et après. Trois défauts ressortent qui
@@ -182,17 +230,76 @@ rien faire rougir.
 ### Identifiants dupliqués dans les SVG de schémas — 16 fiches
 
 Seize fiches de notion portent un doublon `id="a"` ou `id="ac"` : des `<marker>`
-de flèche définis à l'identique dans deux fichiers `content/schemas/*.svg` montés
-sur la même page.
+de pointe de flèche déclarés par deux fichiers `content/schemas/*.svg` montés sur
+la même page. Le document sert alors deux fois le même identifiant, et chaque
+`url(#…)` résout sur la **première** occurrence — donc, pour la seconde figure,
+sur une définition qui n'est pas la sienne.
 
-**Antérieur au lot** (mesuré identique avant et après), **sans effet visuel**
-(les définitions en double sont identiques à l'octet, la flèche se rend bien) et
-**situé dans le contenu**, pas dans le gabarit.
+**Périmètre exact : 16 pages, 32 fichiers SVG distincts** (33 montages —
+`nord-vrai-magnetique.svg` sert sur deux pages), **2 identifiants** (`a`, `ac`),
+**18 paires en collision**. Toutes les références passent par `marker-end`, sauf
+`calages-altimetriques.svg` qui emploie aussi `marker-start`.
+
+| Page                                                         | Fichiers SVG (ordre de montage)                                     | Id dupliqués | Références `url(#…)`                             |
+| ------------------------------------------------------------ | ------------------------------------------------------------------- | ------------ | ------------------------------------------------ |
+| `/fondamentaux/aerodynamique/decrochage`                     | `decrochage-courbe-cz`, `decrochage-ecoulement`                     | `ac`         | `marker-end` ×1 / ×7                             |
+| `/fondamentaux/aerodynamique/ecoulement-de-l-air`            | `filets-air`, `venturi`                                             | `ac`         | `marker-end` ×3 / ×4                             |
+| `/fondamentaux/aerodynamique/portance`                       | `portance-incidence`, `portance-origine`                            | `ac`         | `marker-end` ×1 / ×3                             |
+| `/fondamentaux/aerodynamique/trainee`                        | `trainee-forces`, `trainee-sources`                                 | `ac`         | `marker-end` ×2 / ×2                             |
+| `/fondamentaux/facteurs-humains/desorientation-et-illusions` | `croire-instruments`, `illusion-acceleration`                       | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/instruments/chaine-pitot-statique`            | `pitot-statique-sources`, `chaine-anemobarometrique`                | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/mecanique-du-vol/decrochage-et-vrille`        | `vrille-asymetrie`, `vrille-trajectoire`                            | `ac`         | `marker-end` ×3 / ×1                             |
+| `/fondamentaux/mecanique-du-vol/quatre-forces`               | `equilibre-en-palier`, `quatre-forces-avion`                        | `a`          | `marker-end` ×4 / ×4                             |
+| `/fondamentaux/mecanique-du-vol/virage`                      | `facteur-de-charge`, `virage-decomposition`                         | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/meteorologie/atmosphere-standard`             | `pression-altitude`, `profil-isa`                                   | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/meteorologie/le-vent`                         | `triangle-des-vitesses`, `vent-pression`                            | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/meteorologie/les-nuages`                      | `etages-nuages`, `formation-nuage`                                  | `ac`         | `marker-end` ×1 / ×1                             |
+| `/fondamentaux/meteorologie/pression-et-calage`              | `calage-transition`, `calages-altimetriques`                        | `ac`         | `marker-end` ×1 / `marker-start`+`marker-end` ×4 |
+| `/fondamentaux/navigation/cap-route-et-derive`               | `cap-route-derive`, `nord-vrai-magnetique`                          | `a`, `ac`    | `a` : ×3 / ×1 — `ac` : ×1 / ×1                   |
+| `/fondamentaux/navigation/declinaison-magnetique`            | `declinaison-est-ouest`, `nord-vrai-magnetique`                     | `a`, `ac`    | `a` : ×2 / ×1 — `ac` : ×2 / ×2                   |
+| `/fondamentaux/physique/pression-forces-unites`              | `force-vecteur`, `pression-atmospherique`, `pression-force-surface` | `ac`         | `marker-end` ×1 / ×3 / ×2                        |
+
+#### Une paire sur dix-huit a un effet visuel réel
+
+**Correction d'une affirmation faite à la livraison de M8b.** J'ai d'abord
+présenté ce défaut comme uniformément « sans effet visuel, les définitions en
+double étant identiques ». La mesure exhaustive dit autrement : **17 paires sont
+effectivement inertes, une ne l'est pas.**
+
+Sur `/fondamentaux/instruments/chaine-pitot-statique`, les deux `id="ac"`
+diffèrent — `markerWidth`/`markerHeight` valent 7 dans `pitot-statique-sources`
+et 6 dans `chaine-anemobarometrique`. Le premier est monté en tête, il gagne :
+les pointes de flèche de `chaine-anemobarometrique` **se rendent en 7 × 7 alors
+que son fichier déclare 6 × 6**. Géométrie du chemin, orientation et couleur sont
+identiques ; seule la taille des pointes de la seconde figure est affectée, et
+elle l'est en plus grand.
+
+Conséquence pour la correction à venir : sur cette page, l'unicité des
+identifiants **changera le rendu** — les flèches de la seconde figure
+retrouveront la taille que son auteur avait écrite. C'est un retour à
+l'intention, pas une régression, mais il doit être annoncé et non découvert.
+
+#### Détection maintenue
+
+`src/lib/content/schemas-identifiants.test.ts` fige ce relevé. Il tombe si un
+doublon **apparaît**, s'il **disparaît** sans mise à jour du registre, si une
+19ᵉ paire se met à diverger, ou si l'ordre de montage de la page divergente
+change. La dette ne peut donc ni s'aggraver en silence, ni être corrigée à
+moitié. Les trois modes d'échec ont été vérifiés en cassant délibérément le
+contenu.
+
+#### Ce que la correction devra faire
+
+Attribuer à chaque figure des identifiants **uniques et stables**, en mettant à
+jour **simultanément** les références `url(#…)` internes, **sans modifier la
+géométrie ni le contenu visuel** — à la seule exception, documentée ci-dessus, de
+la page pitot-statique.
 
 Non corrigé en M8b : les deux issues possibles sortaient du périmètre — éditer
 les SVG est une modification de contenu, préfixer les identifiants dans
-`FicheFigure` changerait le rendu du Cahier et du Dossier. À arbitrer dans un lot
-d'assainissement du contenu graphique. Détail : `docs/design-migration.md` §22.5.
+`FicheFigure` changerait le rendu du Cahier et du Dossier. **Échéance : avant la
+clôture du chantier illustration ou la mise en production finale.** Détail :
+`docs/design-migration.md` §22.5.
 
 ### Trois composants sans consommateur de production
 

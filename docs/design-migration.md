@@ -1798,10 +1798,22 @@ Trois faits, tous vérifiés :
 
 1. **Antérieur au lot** — mesuré identique avant et après, sur les deux
    serveurs. Le gabarit n'en introduit aucun.
-2. **Sans effet** — les définitions en double sont **identiques à l'octet**
-   (même `viewBox`, même `refX/refY`, même tracé, même remplissage). `url(#ac)`
-   résout sur la première, qui est la seconde. Les flèches se rendent bien.
+2. ~~**Sans effet** — les définitions en double sont **identiques à l'octet**.~~
+   **Faux, corrigé après coup.** Voir l'encadré ci-dessous : 17 paires sur 18
+   sont inertes, la dix-huitième ne l'est pas.
 3. **Dans le contenu** — les identifiants vivent dans `content/schemas/*.svg`.
+
+> **Correction — une paire sur dix-huit a bien un effet visuel.** L'affirmation
+> « sans effet » ci-dessus était une extrapolation, faite à partir des paires
+> inspectées à la main et présentée comme un fait vérifié sur l'ensemble. En
+> écrivant le test de détection j'ai mesuré les dix-huit paires : sur
+> `/fondamentaux/instruments/chaine-pitot-statique`, les deux `id="ac"` diffèrent
+> (`markerWidth`/`markerHeight` 7 contre 6). `pitot-statique-sources` étant monté
+> en premier, les pointes de flèche de `chaine-anemobarometrique` se rendent en
+> 7 × 7 au lieu des 6 × 6 qu'il déclare. Inventaire complet, conséquences pour la
+> correction et test de détection : `docs/roadmap.md`, « Dette relevée au lot
+> M8b ». Ce qui reste vrai des trois faits : le défaut est antérieur au lot et
+> vit dans le contenu.
 
 **Je n'ai pas corrigé, et c'est un arbitrage que je te rends.** La consigne
 demandait « aucun identifiant HTML dupliqué sur les 108 fiches » **et** « aucune
