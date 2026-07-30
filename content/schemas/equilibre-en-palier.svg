@@ -9,7 +9,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="equilibre-en-palier__a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
     </marker>
   </defs>
@@ -19,16 +19,16 @@
   <path class="plane" d="M300,120 C285,111 245,107 205,108 L178,109 C170,110 166,115 166,120 C166,125 170,130 178,131 L205,132 C245,133 285,129 300,120 Z" />
   <path class="plane" d="M180,109 L172,90 L194,108 Z" />
   <!-- Portance (haut) -->
-  <line class="force" x1="230" y1="104" x2="230" y2="52" marker-end="url(#a)" />
+  <line class="force" x1="230" y1="104" x2="230" y2="52" marker-end="url(#equilibre-en-palier__a)" />
   <text class="lbl" x="240" y="72" text-anchor="start">portance</text>
   <!-- Poids (bas), même longueur que la portance -->
-  <line class="force" x1="230" y1="136" x2="230" y2="188" marker-end="url(#a)" />
+  <line class="force" x1="230" y1="136" x2="230" y2="188" marker-end="url(#equilibre-en-palier__a)" />
   <text class="lbl" x="240" y="176" text-anchor="start">poids</text>
   <!-- Poussée (avant) -->
-  <line class="force" x1="304" y1="120" x2="388" y2="120" marker-end="url(#a)" />
+  <line class="force" x1="304" y1="120" x2="388" y2="120" marker-end="url(#equilibre-en-palier__a)" />
   <text class="lbl" x="346" y="112" text-anchor="middle">poussée</text>
   <!-- Traînée (arrière), même longueur que la poussée -->
-  <line class="force" x1="156" y1="120" x2="72" y2="120" marker-end="url(#a)" />
+  <line class="force" x1="156" y1="120" x2="72" y2="120" marker-end="url(#equilibre-en-palier__a)" />
   <text class="lbl" x="114" y="112" text-anchor="middle">traînée</text>
   <!-- Relation d'équilibre (grandeur mise en avant) -->
   <text class="accent-t" x="230" y="222" text-anchor="middle">portance = poids   ·   poussée = traînée</text>

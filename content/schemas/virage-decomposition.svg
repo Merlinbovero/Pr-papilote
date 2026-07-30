@@ -12,7 +12,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="virage-decomposition__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -31,7 +31,7 @@
   <line class="comp" x1="230" y1="77" x2="299" y2="77" />
   <text class="sub" x="264" y="70" text-anchor="middle">composante horizontale (centripète)</text>
   <!-- Portance (inclinée avec l'avion) -->
-  <line class="flow" x1="230" y1="175" x2="299" y2="77" marker-end="url(#ac)" />
+  <line class="flow" x1="230" y1="175" x2="299" y2="77" marker-end="url(#virage-decomposition__ac)" />
   <text class="accent-t" x="305" y="74" text-anchor="start">portance</text>
   <!-- Poids -->
   <line class="force" x1="230" y1="175" x2="230" y2="256" marker-end="url(#a)" />

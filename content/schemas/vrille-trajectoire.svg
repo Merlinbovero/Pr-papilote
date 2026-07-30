@@ -12,7 +12,7 @@
     <marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="vrille-trajectoire__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
@@ -21,7 +21,7 @@
   <path class="plane" d="M150,54 L150,74 M132,64 L168,64 M144,80 L156,80" />
   <text class="sub" x="196" y="60" text-anchor="start">nez bas, ailes décrochées</text>
   <!-- Trajectoire hélicoïdale -->
-  <path class="helix" d="M150,72 C96,86 96,114 150,128 C204,142 204,170 150,184 C96,198 96,226 150,240 C204,254 204,278 168,286" marker-end="url(#ac)" />
+  <path class="helix" d="M150,72 C96,86 96,114 150,128 C204,142 204,170 150,184 C96,198 96,226 150,240 C204,254 204,278 168,286" marker-end="url(#vrille-trajectoire__ac)" />
   <!-- Axe de descente -->
   <line class="axis" x1="300" y1="70" x2="300" y2="284" marker-end="url(#am)" />
   <text class="sub" x="312" y="180" text-anchor="start">forte perte</text>

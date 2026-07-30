@@ -39,84 +39,18 @@ import { getFiches } from "./fiches";
 /** Relevé du 2026-07-29 — 16 pages, 32 schémas, identifiants « a » et « ac ». */
 const REGISTRE: { page: string; identifiants: string[]; schemas: string[] }[] = [
   {
-    page: "/fondamentaux/aerodynamique/decrochage",
-    identifiants: ["ac"],
-    schemas: ["decrochage-courbe-cz", "decrochage-ecoulement"],
-  },
-  {
-    page: "/fondamentaux/aerodynamique/ecoulement-de-l-air",
-    identifiants: ["ac"],
-    schemas: ["filets-air", "venturi"],
-  },
-  {
-    page: "/fondamentaux/aerodynamique/portance",
-    identifiants: ["ac"],
-    schemas: ["portance-incidence", "portance-origine"],
-  },
-  {
-    page: "/fondamentaux/aerodynamique/trainee",
-    identifiants: ["ac"],
-    schemas: ["trainee-forces", "trainee-sources"],
-  },
-  {
-    page: "/fondamentaux/facteurs-humains/desorientation-et-illusions",
-    identifiants: ["ac"],
-    schemas: ["croire-instruments", "illusion-acceleration"],
-  },
-  {
+    // **La seule page qui reste.** Les quinze autres ont été corrigées au lot
+    // M10 : leurs identifiants sont désormais préfixés du nom de leur fichier
+    // (`venturi__ac`), uniques et stables, sans qu'aucune géométrie ne bouge.
+    //
+    // Celle-ci ne pouvait pas l'être sous la même règle. Ses deux définitions
+    // `ac` DIFFÈRENT — markerWidth 6 contre 7 — et les rendre uniques changerait
+    // la taille des pointes de flèche de la seconde figure. Ce serait un retour
+    // à l'intention de son auteur, mais un changement visuel tout de même, que
+    // le lot excluait explicitement. Elle appartient au chantier illustration.
     page: "/fondamentaux/instruments/chaine-pitot-statique",
     identifiants: ["ac"],
-    schemas: ["chaine-anemobarometrique", "pitot-statique-sources"],
-  },
-  {
-    page: "/fondamentaux/mecanique-du-vol/decrochage-et-vrille",
-    identifiants: ["ac"],
-    schemas: ["vrille-asymetrie", "vrille-trajectoire"],
-  },
-  {
-    page: "/fondamentaux/mecanique-du-vol/quatre-forces",
-    identifiants: ["a"],
-    schemas: ["equilibre-en-palier", "quatre-forces-avion"],
-  },
-  {
-    page: "/fondamentaux/mecanique-du-vol/virage",
-    identifiants: ["ac"],
-    schemas: ["facteur-de-charge", "virage-decomposition"],
-  },
-  {
-    page: "/fondamentaux/meteorologie/atmosphere-standard",
-    identifiants: ["ac"],
-    schemas: ["pression-altitude", "profil-isa"],
-  },
-  {
-    page: "/fondamentaux/meteorologie/le-vent",
-    identifiants: ["ac"],
-    schemas: ["triangle-des-vitesses", "vent-pression"],
-  },
-  {
-    page: "/fondamentaux/meteorologie/les-nuages",
-    identifiants: ["ac"],
-    schemas: ["etages-nuages", "formation-nuage"],
-  },
-  {
-    page: "/fondamentaux/meteorologie/pression-et-calage",
-    identifiants: ["ac"],
-    schemas: ["calage-transition", "calages-altimetriques"],
-  },
-  {
-    page: "/fondamentaux/navigation/cap-route-et-derive",
-    identifiants: ["a", "ac"],
-    schemas: ["cap-route-derive", "nord-vrai-magnetique"],
-  },
-  {
-    page: "/fondamentaux/navigation/declinaison-magnetique",
-    identifiants: ["a", "ac"],
-    schemas: ["declinaison-est-ouest", "nord-vrai-magnetique"],
-  },
-  {
-    page: "/fondamentaux/physique/pression-forces-unites",
-    identifiants: ["ac"],
-    schemas: ["force-vecteur", "pression-atmospherique", "pression-force-surface"],
+    schemas: ["pitot-statique-sources", "chaine-anemobarometrique"],
   },
 ];
 
@@ -227,7 +161,7 @@ describe("dette — identifiants dupliqués dans les schémas SVG", () => {
     }
   });
 
-  it("une seule paire a un effet visuel : les dix-sept autres sont inertes", () => {
+  it("il ne reste que la paire divergente : les quinze pages inertes sont corrigées", () => {
     // Ce test ne postule pas l'innocuité, il la **compte**. Une paire de plus
     // dont les définitions divergent, et le décompte tombe : on saurait qu'une
     // figure vient de changer d'aspect sans que personne l'ait décidé.
@@ -248,7 +182,7 @@ describe("dette — identifiants dupliqués dans les schémas SVG", () => {
     }
 
     expect(divergentsReels).toEqual(DIVERGENTS.map(({ page, id }) => ({ page, id })));
-    expect(inertes, "paires dont les deux définitions sont identiques").toBe(17);
+    expect(inertes, "plus aucune paire inerte : les quinze pages sont corrigées").toBe(0);
   });
 
   it("sur la paire divergente, c’est bien la définition annoncée qui l’emporte", () => {

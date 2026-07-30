@@ -12,13 +12,13 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="facteur-de-charge__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="210" y="24" text-anchor="middle">Le facteur de charge en virage</text>
   <!-- Axes -->
-  <line class="accent-axis" x1="70" y1="222" x2="70" y2="46" marker-end="url(#ac)" />
+  <line class="accent-axis" x1="70" y1="222" x2="70" y2="46" marker-end="url(#facteur-de-charge__ac)" />
   <text class="lbl" x="70" y="40" text-anchor="middle">facteur de charge (n)</text>
   <line class="ink" x1="70" y1="222" x2="392" y2="222" />
   <text class="lbl" x="322" y="244">inclinaison</text>

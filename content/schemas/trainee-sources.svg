@@ -9,18 +9,18 @@
     .flow { stroke: #3b82f6; fill: none; stroke-width: 2; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="trainee-sources__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="230" y="24" text-anchor="middle">Les sources de traînée</text>
   <!-- Sens du déplacement -->
-  <line class="flow" x1="150" y1="66" x2="270" y2="66" marker-end="url(#ac)" />
+  <line class="flow" x1="150" y1="66" x2="270" y2="66" marker-end="url(#trainee-sources__ac)" />
   <text class="lbl" x="150" y="58">sens du déplacement</text>
   <!-- Aile (vue de dessus) -->
   <rect class="ink" x="128" y="112" width="216" height="26" rx="4" />
   <!-- Tourbillon de bout d'aile (droite) -->
-  <path class="flow" d="M344,125 C362,120 362,142 344,138 C332,135 335,122 346,126" marker-end="url(#ac)" />
+  <path class="flow" d="M344,125 C362,120 362,142 344,138 C332,135 335,122 346,126" marker-end="url(#trainee-sources__ac)" />
   <!-- Sillage (traînée de forme) -->
   <path class="muted" d="M344,120 q12,-5 24,0 t24,0" />
   <!-- Étiquettes -->

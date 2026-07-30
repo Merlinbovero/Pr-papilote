@@ -12,13 +12,13 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="decrochage-courbe-cz__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="210" y="24" text-anchor="middle">La portance chute après l'angle critique</text>
   <!-- Axes -->
-  <line class="accent-axis" x1="70" y1="228" x2="70" y2="46" marker-end="url(#ac)" />
+  <line class="accent-axis" x1="70" y1="228" x2="70" y2="46" marker-end="url(#decrochage-courbe-cz__ac)" />
   <text class="lbl" x="70" y="40" text-anchor="middle">portance (Cz)</text>
   <line class="ink" x1="70" y1="228" x2="398" y2="228" />
   <text class="lbl" x="336" y="249">incidence (α)</text>

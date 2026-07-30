@@ -10,19 +10,19 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="nord-vrai-magnetique__a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="nord-vrai-magnetique__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="210" y="26" text-anchor="middle">Nord vrai et nord magnétique</text>
   <!-- Nord vrai -->
-  <line class="vrai" x1="160" y1="204" x2="160" y2="60" marker-end="url(#a)" />
+  <line class="vrai" x1="160" y1="204" x2="160" y2="60" marker-end="url(#nord-vrai-magnetique__a)" />
   <text class="lbl" x="160" y="52" text-anchor="middle">nord vrai (carte)</text>
   <!-- Nord magnétique -->
-  <line class="magn" x1="160" y1="204" x2="205" y2="66" marker-end="url(#ac)" />
+  <line class="magn" x1="160" y1="204" x2="205" y2="66" marker-end="url(#nord-vrai-magnetique__ac)" />
   <text class="accent-t" x="238" y="70" text-anchor="middle">nord magnétique</text>
   <text class="sub" x="238" y="86" text-anchor="middle">(boussole)</text>
   <!-- Déclinaison -->

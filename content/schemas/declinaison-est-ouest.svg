@@ -10,24 +10,24 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 13px; }
   </style>
   <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="declinaison-est-ouest__a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="declinaison-est-ouest__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="230" y="24" text-anchor="middle">Convertir le cap vrai en cap magnétique</text>
   <!-- Déclinaison Est (gauche) -->
   <circle class="rose" cx="120" cy="112" r="52" />
-  <line class="vrai" x1="120" y1="112" x2="120" y2="58" marker-end="url(#a)" />
-  <line class="magn" x1="120" y1="112" x2="137" y2="61" marker-end="url(#ac)" />
+  <line class="vrai" x1="120" y1="112" x2="120" y2="58" marker-end="url(#declinaison-est-ouest__a)" />
+  <line class="magn" x1="120" y1="112" x2="137" y2="61" marker-end="url(#declinaison-est-ouest__ac)" />
   <text class="lbl" x="120" y="184" text-anchor="middle">déclinaison Est</text>
   <text class="accent-t" x="120" y="202" text-anchor="middle">Cm = Cv − D</text>
   <!-- Déclinaison Ouest (droite) -->
   <circle class="rose" cx="340" cy="112" r="52" />
-  <line class="vrai" x1="340" y1="112" x2="340" y2="58" marker-end="url(#a)" />
-  <line class="magn" x1="340" y1="112" x2="323" y2="61" marker-end="url(#ac)" />
+  <line class="vrai" x1="340" y1="112" x2="340" y2="58" marker-end="url(#declinaison-est-ouest__a)" />
+  <line class="magn" x1="340" y1="112" x2="323" y2="61" marker-end="url(#declinaison-est-ouest__ac)" />
   <text class="lbl" x="340" y="184" text-anchor="middle">déclinaison Ouest</text>
   <text class="accent-t" x="340" y="202" text-anchor="middle">Cm = Cv + D</text>
   <!-- Repères nord -->

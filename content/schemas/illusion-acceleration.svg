@@ -11,7 +11,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="illusion-acceleration__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
@@ -20,7 +20,7 @@
   <line class="ground" x1="20" y1="192" x2="210" y2="192" />
   <path class="plane" d="M96,176 C103,172 123,171 135,176 C123,181 103,181 96,176 Z" />
   <path class="plane" d="M101,174 L96,165 L108,174 Z" />
-  <line class="flow" x1="140" y1="176" x2="200" y2="176" marker-end="url(#ac)" />
+  <line class="flow" x1="140" y1="176" x2="200" y2="176" marker-end="url(#illusion-acceleration__ac)" />
   <text class="accent-t" x="172" y="168" text-anchor="middle">accélération</text>
   <text class="sub" x="115" y="210" text-anchor="middle">réalité — assiette à plat</text>
   <!-- Sensation : cabré (dans une bulle) -->
