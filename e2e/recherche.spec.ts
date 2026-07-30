@@ -35,9 +35,15 @@ test.describe("moteur de recherche", () => {
 
   test("la barre de recherche de l'accueil ouvre la palette", async ({ page }) => {
     await page.goto("/");
+    // **Le repère change au lot M10, pas la garantie.** La barre de l'accueil
+    // était un bouton portant l'index sérialisé ; c'est désormais un LIEN vers
+    // `/recherche`, que JavaScript enrichit en palette. Le changement est
+    // délibéré : il rend la recherche utilisable sans JavaScript et retire
+    // 411 Ko de HTML du hub. Ce que le test doit garantir — la barre ouvre la
+    // palette et la palette cherche — est inchangé.
     await page
       .getByRole("main")
-      .getByRole("button", { name: /Rechercher un appareil/ })
+      .getByRole("link", { name: /Rechercher un appareil/ })
       .click();
     await page.getByPlaceholder("Appareil, notion, procédure, sigle…").fill("catobar");
     await expect(page.getByRole("option", { name: /CATOBAR/ }).first()).toBeVisible();

@@ -86,3 +86,31 @@ test("sans JavaScript, le lien mène à /recherche", async ({ browser }) => {
   expect(href).toBe("/recherche");
   await ctx.close();
 });
+
+/**
+ * Le groupe `(site)` utilise le même chargeur depuis le lot M10 — bloc 2.
+ * L'index n'y est plus sérialisé : le hub est passé de 532 à 121 Ko de HTML.
+ */
+for (const url of ["/", "/eopan"]) {
+  test(`${url} — (site) : aucun index avant ouverture, une seule requête ensuite`, async ({
+    page,
+  }) => {
+    const n = compteur(page);
+    await page.goto(url);
+    await page.waitForLoadState("networkidle");
+    expect(n.index, "aucune requête avant ouverture").toBe(0);
+    expect(await page.content()).not.toContain("recherche-index");
+
+    await page
+      .getByRole("link", { name: /Rechercher/i })
+      .first()
+      .click();
+    await expect(page.getByPlaceholder(/Appareil, notion/)).toBeVisible();
+    expect(n.index, "une seule requête").toBe(1);
+
+    await page.keyboard.press("Escape");
+    await page.keyboard.press("Control+k");
+    await expect(page.getByPlaceholder(/Appareil, notion/)).toBeVisible();
+    expect(n.index, "aucune requête supplémentaire").toBe(1);
+  });
+}

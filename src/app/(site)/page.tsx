@@ -11,8 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ModuleCard } from "@/components/shared/module-card";
-import { buildSearchEntries } from "@/features/search/entries";
-import { SearchCommand } from "@/features/search/search-command";
+import { DeclencheurRecherche } from "@/features/search/declencheur-recherche";
 import { getModules } from "@/lib/content/referentials";
 import { SITE_PHOTOS, getModulePhoto } from "@/lib/photos";
 
@@ -114,7 +113,7 @@ export default function HomePage() {
               <Link href="/bia/examen-blanc">Passer un examen blanc</Link>
             </Button>
           </div>
-          <SearchCommand entries={buildSearchEntries()} variant="hero" />
+          <DeclencheurRecherche presentation="hero" />
         </div>
         <a
           href={hero.sourceUrl}

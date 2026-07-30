@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { SearchIcon } from "lucide-react";
 
 import { chargerRecherche } from "./recherche-a-la-demande";
 import type { SearchEntry } from "./types";
@@ -27,7 +28,18 @@ const PaletteChargee = React.lazy(async () => {
  * L'index n'est jamais chargé avant la première ouverture. Aucun préchargement
  * au survol ni au focus : il devrait d'abord être mesuré.
  */
-export function DeclencheurRecherche({ className }: { className?: string }) {
+/** Verrou de page : un seul déclencheur sert le raccourci clavier. */
+let raccourciPris = false;
+
+export type PresentationDeclencheur = "lien" | "icon" | "hero";
+
+export function DeclencheurRecherche({
+  className,
+  presentation = "lien",
+}: {
+  className?: string;
+  presentation?: PresentationDeclencheur;
+}) {
   const [ouvert, setOuvert] = React.useState(false);
   const [entrees, setEntrees] = React.useState<SearchEntry[] | null>(null);
   const [erreur, setErreur] = React.useState(false);
@@ -46,7 +58,13 @@ export function DeclencheurRecherche({ className }: { className?: string }) {
       .finally(() => setChargement(false));
   }, [entrees]);
 
+  // **Un seul écouteur pour toute la page.** L'accueil monte deux déclencheurs
+  // — celui de l'en-tête et celui du héros — et sans ce verrou les deux
+  // répondaient à `Ctrl K` : deux palettes s'ouvraient l'une sur l'autre.
+  // Le premier monté prend le raccourci et le rend en se démontant.
   React.useEffect(() => {
+    if (raccourciPris) return;
+    raccourciPris = true;
     const surTouche = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
@@ -54,7 +72,10 @@ export function DeclencheurRecherche({ className }: { className?: string }) {
       }
     };
     window.addEventListener("keydown", surTouche);
-    return () => window.removeEventListener("keydown", surTouche);
+    return () => {
+      window.removeEventListener("keydown", surTouche);
+      raccourciPris = false;
+    };
   }, [ouvrir]);
 
   const surClic = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -68,8 +89,41 @@ export function DeclencheurRecherche({ className }: { className?: string }) {
 
   return (
     <>
-      <Link href="/recherche" className={className} onClick={surClic}>
-        Rechercher
+      {/* Toujours une ancre, quelle que soit la présentation : c'est ce qui
+          garantit le repli sans JavaScript et les clics modifiés. Seule
+          l'apparence change entre les routes. */}
+      <Link
+        href="/recherche"
+        onClick={surClic}
+        // L'étiquette n'est posée que sur la variante SANS texte visible.
+        // Ailleurs elle masquerait le libellé descriptif — « Rechercher un
+        // appareil, une notion, une procédure… » — et appauvrirait ce que le
+        // lecteur d'écran annonce.
+        aria-label={presentation === "icon" ? "Rechercher (Ctrl K)" : undefined}
+        className={
+          className ??
+          (presentation === "icon"
+            ? "border-input bg-background hover:bg-accent inline-flex size-9 items-center justify-center rounded-md border"
+            : presentation === "hero"
+              ? "border-input bg-background text-muted-foreground hover:bg-accent flex w-full max-w-xl items-center gap-2 rounded-lg border px-4 py-3 text-sm"
+              : undefined)
+        }
+      >
+        {presentation === "icon" ? (
+          <SearchIcon aria-hidden className="size-4" />
+        ) : presentation === "hero" ? (
+          <>
+            <SearchIcon aria-hidden className="size-4" />
+            <span className="flex-1 text-left">
+              Rechercher un appareil, une notion, une procédure…
+            </span>
+            <kbd className="bg-muted pointer-events-none hidden rounded px-1.5 font-mono text-xs sm:inline">
+              Ctrl K
+            </kbd>
+          </>
+        ) : (
+          "Rechercher"
+        )}
       </Link>
 
       {/* L'état est annoncé, pas seulement affiché. */}

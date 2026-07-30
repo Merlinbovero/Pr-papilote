@@ -3,8 +3,7 @@ import Link from "next/link";
 import { MainNav } from "@/components/layout/main-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { AuthStatus } from "@/features/auth/auth-status";
-import { SearchCommand } from "@/features/search/search-command";
-import { buildSearchEntries } from "@/features/search/entries";
+import { DeclencheurRecherche } from "@/features/search/declencheur-recherche";
 
 /**
  * Header global, présent sur toutes les pages : logo, navigation principale,
@@ -12,8 +11,6 @@ import { buildSearchEntries } from "@/features/search/entries";
  * les référentiels.
  */
 export function SiteHeader() {
-  const entries = buildSearchEntries();
-
   return (
     <header className="bg-background/95 sticky top-0 z-40 border-b backdrop-blur print:hidden">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
@@ -40,7 +37,7 @@ export function SiteHeader() {
         {/* La vraie barre de recherche vit en page d'accueil ; le header ne
             garde qu'un bouton, pour laisser la place aux six sections. */}
         <div className="ml-auto flex shrink-0 items-center gap-2">
-          <SearchCommand entries={entries} variant="icon" />
+          <DeclencheurRecherche presentation="icon" />
           <ThemeToggle />
           <AuthStatus />
         </div>
