@@ -120,13 +120,43 @@ graphique ne doit pas les toucher.
 doit revenir sur l'accueil ou si le test doit suivre la fonctionnalité là où
 elle a été déplacée, puis rebrancher le test sur l'état réel du produit.
 
-## Deux tests rouges de plus, découverts le 2026-07-30
+## Ligne de base Playwright — six échecs datés (2026-07-30)
 
 La règle « suite Playwright complète avant chaque livraison » a produit son
 premier effet dès sa première application : la suite entière donne **467 passés,
 15 ignorés, 6 échecs sur 488**, et **quatre de ces six échecs n'étaient pas
-consignés**. Aucun n'est imputable au commit qui les a révélés — il ne touche que
-`docs/` et un fichier de test Vitest, aucun fichier de production.
+consignés**.
+
+**La ligne de base est bien passée de 3 à 6, et voici pourquoi.** Chaque échec a
+été daté en construisant les commits antérieurs dans des `git worktree` séparés
+et en y rejouant les mêmes fichiers, après avoir vérifié à chaque fois qu'aucun
+serveur ne subsistait sur le port 3000 — `reuseExistingServer` aurait sinon servi
+le mauvais commit et rendu toute la mesure fausse.
+
+| Commit                        | Échecs | Détail                                                   |
+| ----------------------------- | -----: | -------------------------------------------------------- |
+| `6e6adb8` — M6a, avant M6b    |      3 | preparation ×2, revision ×1                              |
+| `07b1917` — M6b               |   (+2) | fiches-pilotes ×2 apparaissent ici                       |
+| `9dd8810` — M8b, commit avant |      6 | les six, à l'identique                                   |
+| `0ba510d` — commit courant    |      6 | inchangé : il ne touche que `docs/` et un fichier Vitest |
+
+Aucun des six n'est imputable au commit courant : le jeu d'échecs est **identique
+au caractère près** entre `9dd8810` et `0ba510d`.
+
+### Les six, un par un
+
+| Fichier                               | Scénario                                                  | Cause                                                           | Antériorité prouvée                        |
+| ------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------ |
+| `preparation.spec.ts:9` (chromium)    | choisir un concours cible affiche le tableau de bord      | le repère `region « Ma préparation »` n'existe plus dans `src/` | rouge dès `6e6adb8` — dette pré-M3         |
+| `preparation.spec.ts:9` (mobile)      | idem                                                      | idem                                                            | rouge dès `6e6adb8` — dette pré-M3         |
+| `revision.spec.ts:9` (chromium)       | une séance de révision se lance et enregistre une réponse | la séance n'atteint pas l'état attendu                          | rouge dès `6e6adb8` — dette pré-M3         |
+| `fiches-pilotes.spec.ts:4` (chromium) | la fiche Rafale M rend le gabarit complet                 | vocabulaire du gabarit historique (voir ci-dessous)             | **vert à `6e6adb8`, rouge à `07b1917`**    |
+| `fiches-pilotes.spec.ts:4` (mobile)   | idem                                                      | idem                                                            | **vert à `6e6adb8`, rouge à `07b1917`**    |
+| `psychotechnique.spec.ts:43` (mobile) | la session personnalisée respecte le choix des familles   | test probabiliste (voir ci-dessous)                             | **instable dès `6e6adb8` : 6 échecs / 16** |
+
+`revision.spec.ts:9` n'échoue que sur chromium ; le même scénario passe sur
+mobile, aux deux commits mesurés. Ce n'est pas une instabilité — le comportement
+est reproductible dans les deux sens.
 
 ### `e2e/fiches-pilotes.spec.ts:4` — rouge depuis M6b (chromium + mobile)
 
@@ -153,16 +183,24 @@ autre chose que du libellé.
 
 ### `e2e/psychotechnique.spec.ts:43` — instable, pas déterministe
 
-Mesuré : **4 succès sur 6** en réexécution isolée sur mobile ; passé sur chromium
-dans la même campagne. Ce n'est pas un défaut du produit, c'est un test devenu
-probabiliste.
+Ce n'est pas un défaut du produit : c'est un test devenu probabiliste, et il
+l'était **avant tous les lots de migration**.
 
 Il désélectionne **6 familles** en supposant qu'il ne reste que « Calcul
-mental ». Le module en compte **19** aujourd'hui (lots P3 et J en ont ajouté
-douze). Treize familles restent donc actives, et une session de 10 questions
-tirée dans ce vivier ne contient « Calcul mental » **que par chance** — le
-diagnostic vient de l'instantané d'échec, qui montrait « Heures et durées » et
-« Mémoire associative » à la place.
+mental ». Il avait raison le jour où il a été écrit : à `ea7e93d`
+(2026-07-14, moteur d'entraînement), le module comptait **exactement 7
+familles**. `e6ccfaa` (lot J — dominos, rotation mentale, double tâche) l'a porté
+à 10 et a rendu le test faux ; six commits plus tard il en compte **19**.
+
+Treize familles restent donc sélectionnées, et une session de 10 questions tirée
+dans ce vivier ne contient « Calcul mental » **que par chance**. Le diagnostic
+vient de l'instantané d'échec, qui montrait « Heures et durées » et « Mémoire
+associative » à la place.
+
+**Antériorité mesurée, pas déduite** : au commit `6e6adb8`, avec les mêmes 19
+familles qu'aujourd'hui, le test rejoué 8 fois sur les deux projets donne **6
+échecs sur 16**. Le fait qu'il soit passé lors d'une exécution isolée ne prouvait
+rien — pour un test instable, un seul succès n'est pas une preuve.
 
 **À corriger** : désélectionner toutes les familles sauf celle visée, en les
 lisant depuis `FAMILY_INFO` plutôt qu'en les listant à la main — une famille
