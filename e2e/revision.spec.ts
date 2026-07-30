@@ -33,7 +33,12 @@ test("une séance de révision se lance et enregistre une réponse", async ({ pa
   // On répond : la validation révèle la correction (l'échéance est enregistrée).
   await page.locator('ul[role="list"] > li button').first().click();
   await page.getByRole("button", { name: "Valider" }).click();
-  await expect(page.getByText(/Bonne réponse|Réponse incorrecte/)).toBeVisible();
+  // Le verdict VISIBLE, dans le bloc de correction. Depuis le lot F1a, le
+  // même texte existe aussi dans la région d'annonce `sr-only` : viser la
+  // page entière ferait correspondre deux éléments.
+  await expect(
+    page.getByRole("group", { name: "Correction" }).getByText(/Bonne réponse|Réponse incorrecte/)
+  ).toBeVisible();
 });
 
 test("le hub d'un concours renvoie vers la révision espacée", async ({ page }) => {

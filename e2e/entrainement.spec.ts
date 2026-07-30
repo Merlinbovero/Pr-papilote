@@ -26,7 +26,12 @@ test("une série d'entraînement se lance et se corrige", async ({ page }) => {
   await page.getByRole("button", { name: "Valider" }).waitFor();
   await page.locator('ul[role="list"] > li button').first().click();
   await page.getByRole("button", { name: "Valider" }).click();
-  await expect(page.getByText(/Bonne réponse|Réponse incorrecte/)).toBeVisible();
+  // Le verdict VISIBLE, dans le bloc de correction. Depuis le lot F1a, le
+  // même texte existe aussi dans la région d'annonce `sr-only` : viser la
+  // page entière ferait correspondre deux éléments.
+  await expect(
+    page.getByRole("group", { name: "Correction" }).getByText(/Bonne réponse|Réponse incorrecte/)
+  ).toBeVisible();
 
   // On peut relancer une nouvelle série sans recharger.
   await expect(page.getByRole("button", { name: /Nouvelle série/i })).toBeVisible();

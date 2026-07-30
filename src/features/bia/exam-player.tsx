@@ -14,6 +14,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Annonce } from "@/components/a11y/annonce";
+import { deplacerFocus } from "@/lib/a11y/focus-transition";
 import { cn } from "@/lib/utils";
 import {
   composeBiaExam,
@@ -138,6 +140,28 @@ export function BiaExamPlayer({
     setPhase("running");
   };
 
+  // Annonces et focus — lot F1a. L'examen est le cas le plus sensible au
+  // temps : une transition qui laisse le focus sur `body` renvoie au haut du
+  // document pendant que le chronomètre tourne.
+  const [annonce, setAnnonce] = React.useState("");
+  const zoneQuestion = React.useRef<HTMLDivElement>(null);
+  /** L'élément qui a déclenché la transition (voir `quiz-player`). */
+  const declencheur = React.useRef<Element | null>(null);
+  const noterDeclencheur = (evenement: { currentTarget: Element }) => {
+    declencheur.current = evenement.currentTarget;
+  };
+  const premierRendu = React.useRef(true);
+
+  React.useEffect(() => {
+    if (premierRendu.current) {
+      premierRendu.current = false;
+      return;
+    }
+    if (phase === "running") {
+      deplacerFocus(zoneQuestion.current, { declencheur: declencheur.current });
+    }
+  }, [phase, index]);
+
   const finish = React.useCallback(() => {
     if (phase !== "running") {
       return;
@@ -172,6 +196,11 @@ export function BiaExamPlayer({
     setReport(graded);
     setElapsed(spent);
     setHistory(nextHistory);
+    // L'examen se note sur 20, pas en nombre de bonnes réponses : l'annonce
+    // dit la note, qui est le résultat que le candidat attend.
+    setAnnonce(
+      `Examen terminé. Note : ${graded.noteGlobale20.toFixed(1).replace(".", ",")} sur 20.`
+    );
     setPhase("review");
   }, [phase, questions, answers, config, startedAt, history]);
 
@@ -208,14 +237,17 @@ export function BiaExamPlayer({
 
   if (phase === "review" && report) {
     return (
-      <ExamReview
-        questions={questions}
-        answers={answers}
-        report={report}
-        matiereNames={matiereNames}
-        elapsedSeconds={elapsed}
-        onRestart={() => setPhase("intro")}
-      />
+      <>
+        <Annonce message={annonce} />
+        <ExamReview
+          questions={questions}
+          answers={answers}
+          report={report}
+          matiereNames={matiereNames}
+          elapsedSeconds={elapsed}
+          onRestart={() => setPhase("intro")}
+        />
+      </>
     );
   }
 
@@ -296,46 +328,68 @@ export function BiaExamPlayer({
         </Alert>
       ) : null}
 
-      <h2 className="text-xl font-semibold">{current.question.statement}</h2>
-      {isMultiple ? (
-        <p className="text-muted-foreground text-sm">Plusieurs réponses possibles.</p>
-      ) : null}
+      {/*
+        Cible de focus à chaque changement de question. Son nom accessible
+        porte la POSITION, que la barre n'exprime pas : elle compte les
+        réponses données, indépendantes de l'ordre de parcours.
+      */}
+      <div
+        ref={zoneQuestion}
+        tabIndex={-1}
+        role="group"
+        aria-label={`Question ${index + 1} sur ${questions.length}`}
+        className="space-y-6 outline-none"
+      >
+        <h2 className="text-xl font-semibold">{current.question.statement}</h2>
+        {isMultiple ? (
+          <p className="text-muted-foreground text-sm">Plusieurs réponses possibles.</p>
+        ) : null}
 
-      <ul className="space-y-2" role="list">
-        {current.question.choices.map((choice, choiceIndex) => {
-          const isSelected = selected.includes(choiceIndex);
-          return (
-            <li key={choiceIndex}>
-              <button
-                type="button"
-                onClick={() => toggle(choiceIndex)}
-                aria-pressed={isSelected}
-                className={cn(
-                  "focus-visible:ring-ring flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                  isSelected ? "border-primary bg-accent" : "hover:bg-accent/50"
-                )}
-              >
-                <span
-                  aria-hidden
+        <ul className="space-y-2" role="list">
+          {current.question.choices.map((choice, choiceIndex) => {
+            const isSelected = selected.includes(choiceIndex);
+            return (
+              <li key={choiceIndex}>
+                <button
+                  type="button"
+                  onClick={() => toggle(choiceIndex)}
+                  aria-pressed={isSelected}
                   className={cn(
-                    "size-4 shrink-0 rounded-full border",
-                    isSelected && "border-primary bg-primary"
+                    "focus-visible:ring-ring flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                    isSelected ? "border-primary bg-accent" : "hover:bg-accent/50"
                   )}
-                />
-                <span className="flex-1">{choice.label}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+                >
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "size-4 shrink-0 rounded-full border",
+                      isSelected && "border-primary bg-primary"
+                    )}
+                  />
+                  <span className="flex-1">{choice.label}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <Button variant="outline" onClick={() => setIndex((i) => Math.max(0, i - 1))}>
+        <Button
+          variant="outline"
+          onClick={(evenement) => {
+            noterDeclencheur(evenement);
+            setIndex((i) => Math.max(0, i - 1));
+          }}
+        >
           Précédente
         </Button>
         <Button
           variant="outline"
-          onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
+          onClick={(evenement) => {
+            noterDeclencheur(evenement);
+            setIndex((i) => Math.min(questions.length - 1, i + 1));
+          }}
         >
           Suivante
         </Button>
@@ -363,7 +417,10 @@ export function BiaExamPlayer({
               <li key={question.id}>
                 <button
                   type="button"
-                  onClick={() => setIndex(i)}
+                  onClick={(evenement) => {
+                    noterDeclencheur(evenement);
+                    setIndex(i);
+                  }}
                   aria-label={`Question ${i + 1}${hasAnswer ? ", répondue" : ""}${isMarked ? ", marquée" : ""}`}
                   aria-current={i === index ? "true" : undefined}
                   className={cn(

@@ -32,7 +32,10 @@ test.describe("parcours BIA", () => {
     const quiz = page.getByRole("region", { name: /^Quiz — / });
     await quiz.getByRole("listitem").first().getByRole("button").click();
     await page.getByRole("button", { name: "Valider" }).click();
-    await expect(page.getByText(/Bonne réponse|Réponse incorrecte/)).toBeVisible();
+    // Verdict visible uniquement : la région d'annonce F1a porte le même texte.
+    await expect(
+      page.getByRole("group", { name: "Correction" }).getByText(/Bonne réponse|Réponse incorrecte/)
+    ).toBeVisible();
   });
 
   test("l'examen blanc démarre, navigue, se termine et se corrige", async ({ page }) => {
