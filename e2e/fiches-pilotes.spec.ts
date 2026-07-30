@@ -4,15 +4,35 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
   test("la fiche Rafale M rend le gabarit complet avec ses relations", async ({ page }) => {
     await page.goto("/eopan/appareils/rafale-m");
 
+    // **Réécrit au lot M10, sur arbitrage de la direction éditoriale.**
+    // Ce test décrivait la fiche avec le vocabulaire du gabarit historique et
+    // était rouge depuis M6b. Trois écarts, tous vérifiés comme des changements
+    // de forme et non de contenu : l'apostrophe de « L’essentiel », le titre
+    // « Sources » au lieu de « Sources et références », et la fiche signalétique
+    // servie comme un tableau à légende accessible plutôt que comme une
+    // `region` nommée.
+    //
+    // **La sémantique de référence est le tableau avec `<caption>`**, pas le
+    // repère de région : un tableau de caractéristiques EST un tableau, et on
+    // n'ajoute pas un landmark pour satisfaire un ancien test. Le test suit donc
+    // le produit, sans rien exiger de plus.
     await expect(page.getByRole("heading", { level: 1, name: "Rafale M" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "L'essentiel" })).toBeVisible();
-    await expect(page.getByText(/Vérifié le/)).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Sources et références" })).toBeVisible();
-    // Gabarit Appareils : statut de service + caractéristiques techniques.
+    await expect(page.getByRole("heading", { name: "L’essentiel" })).toBeVisible();
+    await expect(page.getByText(/vérifié le/i)).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Sources" })).toBeVisible();
+
+    // Le statut de service reste rendu — il vit dans la ligne de sous-titre.
     await expect(page.getByText("En service").first()).toBeVisible();
-    const specs = page.getByRole("region", { name: "Caractéristiques techniques" });
+
+    // La fiche signalétique : un tableau, nommé par sa légende accessible.
+    const specs = page.getByRole("table", { name: /Caractéristiques techniques/ });
+    await expect(specs).toHaveCount(1);
     await expect(specs.getByText("Envergure")).toBeVisible();
     await expect(specs.getByText("Motorisation")).toBeVisible();
+
+    // Et les valeurs elles-mêmes survivent, pas seulement leurs intitulés.
+    const rendu = (await specs.innerText()).replace(/\s+/g, " ");
+    expect(rendu.length, "le tableau ne doit pas être vide").toBeGreaterThan(40);
   });
 
   test("les liens intelligents traversent le graphe (Rafale M → Charles de Gaulle)", async ({

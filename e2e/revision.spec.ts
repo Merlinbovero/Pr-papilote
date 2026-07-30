@@ -11,7 +11,20 @@ test("une séance de révision se lance et enregistre une réponse", async ({ pa
   await expect(page.getByRole("heading", { level: 1, name: "Réviser" })).toBeVisible();
 
   // Choix du concours puis lancement (vivier récupéré à la demande).
-  await page.getByRole("button", { name: "EOPAN", exact: true }).click();
+  //
+  // **`pressed: false` n'est pas décoratif — c'est la correction du lot M10.**
+  // Ce test échouait sur chromium et passait sur mobile. Cause exacte : sur
+  // desktop, le déclencheur Radix du menu de navigation porte lui aussi le nom
+  // accessible « EOPAN » et précède le sélecteur dans le DOM. Le test cliquait
+  // donc le menu d'en-tête ; `concours` restait indéfini et « Commencer la
+  // révision » restait désactivé jusqu'au délai d'attente. Sur mobile ce
+  // déclencheur n'est pas rendu, et le test tombait sur le bon bouton.
+  //
+  // Le produit n'était pas en cause. La correction consiste à chercher le bouton
+  // là où il vit — dans le contenu principal — plutôt que dans toute la page.
+  // Un repère de région est stable : l'en-tête pourra changer de composant sans
+  // remettre ce test en cause.
+  await page.getByRole("main").getByRole("button", { name: "EOPAN", exact: true }).click();
   await page.getByRole("button", { name: /Commencer la révision/i }).click();
 
   // Une première question de la file du jour s'affiche.
