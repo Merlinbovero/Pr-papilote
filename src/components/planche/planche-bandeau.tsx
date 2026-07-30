@@ -1,4 +1,6 @@
 import Link from "next/link";
+
+import { DeclencheurRecherche } from "@/features/search/declencheur-recherche";
 import { PlancheRegistre } from "@/components/planche/planche-registre";
 import { AuthStatus } from "@/features/auth/auth-status";
 import { NAV_SECTIONS } from "@/lib/navigation";
@@ -21,12 +23,18 @@ import { NAV_SECTIONS } from "@/lib/navigation";
  * n'était plus atteignable depuis les quatorze leçons. Son habillage reste
  * celui de la charte historique jusqu'au lot des primitives.
  *
- * La recherche est un **lien vers `/recherche`**, pas la palette. Mesuré : sur
- * une leçon, l'index sérialisé de `SearchCommand` pèse 431 kB de HTML — la
- * page passe de 516 kB à 85 kB sans lui. Le lien coûte quelques octets et
- * garde la recherche à un clic ; la palette reviendra sous une forme légère
- * avec le lot de la recherche. **Ne pas importer `buildSearchEntries` ici** :
- * ce seul import ramènerait l'index sur les quatorze leçons.
+ * LA RECHERCHE — unifiée au lot M10. C'était un simple lien vers `/recherche`,
+ * pour une raison mesurée : l'index sérialisé de `SearchCommand` pesait 431 kB
+ * de HTML, et la page passait de 516 kB à 85 kB sans lui.
+ *
+ * Le lien reste, et c'est lui le déclencheur. `DeclencheurRecherche` ouvre la
+ * même palette, sur le même index et le même classement que `(site)` et
+ * `/recherche` — mais l'index est désormais une **ressource chargée à la
+ * première ouverture**, jamais sérialisée dans la page. Sans JavaScript, le
+ * lien navigue comme avant.
+ *
+ * **Ne pas importer `buildSearchEntries` ici** : ce seul import ramènerait
+ * l'index dans le HTML des 252 documents, et annulerait tout le lot.
  */
 export function PlancheBandeau({ actif }: { actif?: string }) {
   return (
@@ -46,9 +54,7 @@ export function PlancheBandeau({ actif }: { actif?: string }) {
         ))}
       </nav>
       <div className="pl-top-fin">
-        <Link href="/recherche" className="pl-recherche">
-          Rechercher
-        </Link>
+        <DeclencheurRecherche className="pl-recherche" />
         <PlancheRegistre />
         <AuthStatus />
       </div>
