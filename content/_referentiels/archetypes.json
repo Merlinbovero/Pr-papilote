@@ -81,7 +81,22 @@
     "  serve la culture générale ou la préparation d'un concours.",
     "",
     "  Leur cote est « CULT · C.1.NN » : la famille C (Fiches techniques), la",
-    "  catégorie 1 (aviation-mondiale), et le numéro d'enregistrement."
+    "  catégorie 1 (aviation-mondiale), et le numéro d'enregistrement.",
+    "",
+    "NATURES DU DOSSIER (lot M9a)",
+    "  Les cinq catégories de concours ne sont PAS cinq archétypes visuels : la",
+    "  mesure du corpus le dit. Les 23 fiches partagent le même profil de données",
+    "  — une image chacune, deux ou trois sections, trois ou quatre pièges, des",
+    "  sources, un quiz, aucune spécification, aucune relation. Seul le champ",
+    "  `type` sépare quoi que ce soit : 21 « concept » et 2 « procedure ».",
+    "",
+    "  Un gabarit unique les sert donc toutes, et leur nature s'affiche par un",
+    "  LIBELLÉ, lu dans `naturesDossier` ci-dessous. Fabriquer cinq structures",
+    "  aurait exigé d'inventer des distinctions que le contenu ne porte pas.",
+    "",
+    "  Les deux procédures ne recevront un traitement propre que si leurs étapes,",
+    "  avertissements ou prérequis existent explicitement dans les données. À ce",
+    "  jour ils n'existent pas : aucun champ canonique ne les porte."
   ],
   "defauts": {
     "alat/appareils": "identification",
@@ -132,5 +147,17 @@
     "psychotechnique/exercices": "lecon",
     "psychotechnique/methodologie": "lecon"
   },
-  "exceptions": {}
+  "exceptions": {},
+  "naturesDossier": {
+    "alat/missions": "Mission",
+    "alat/presentation": "Présentation",
+    "eopan/concepts": "Concept",
+    "eopan/missions": "Mission",
+    "eopan/presentation": "Présentation",
+    "eopan/procedures": "Procédure",
+    "eopan/selection": "Sélection",
+    "eopn/missions": "Mission",
+    "eopn/presentation": "Présentation",
+    "eopn/selection": "Sélection"
+  }
 }

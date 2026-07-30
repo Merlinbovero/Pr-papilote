@@ -21,7 +21,7 @@ livre.**
 
 | Famille           | Identité secondaire             | Modèle d'origine                  | Encre                                |
 | ----------------- | ------------------------------- | --------------------------------- | ------------------------------------ |
-| Concours          | **Le Dossier**                  | L'instruction administrative      | Encre du concours                    |
+| Concours          | **Le Dossier**                  | L'instruction administrative      | `encre-indigo` (révisé M9a)          |
 | Cours             | **La Leçon**                    | Le cahier de cours                | `encre-bistre`                       |
 | Fiches techniques | **La Planche d'identification** | La notice constructeur, le cartel | Encre du module hôte                 |
 | Culture           | **Le Cahier**                   | La revue d'histoire               | `encre-sienne`                       |
@@ -46,7 +46,9 @@ RÉV. AAAA-MM-JJ
 
 - **MODULE** — `EOPAN`, `EOPN`, `ALAT`, `PSY`, `FOND`, `CULT`.
 - **F** — la lettre de famille : **A** Concours, **B** Cours, **C** Fiches
-  techniques, **D** Culture, **E** Géopolitique, **F** Entraînement.
+  techniques, **D** Culture, **E** Géopolitique, **F** Entraînement, **G** fiches
+  de notion. **A** et **G** ont été attribuées après coup — **G** au lot M8a,
+  **A** au lot M9a — et **F** reste seule inoccupée, faute de Banc.
 - **C** — le rang de la catégorie dans `content/_referentiels/categories.json`.
   Ce référentiel existe déjà et porte un `order` par catégorie ; la cote ne fait
   que le rendre visible.
@@ -196,9 +198,24 @@ respect. C'est la famille **la plus sèche des six**, et elle doit le rester. Le
 Dossier ne motive pas, ne rassure pas, ne félicite pas. Il informe et il tient
 ses délais.
 
-C'est aussi la famille qui porte l'**encre du concours** — `encre-marine`,
-`encre-air`, `encre-terre`. Un candidat EOPAN qui bascule sur EOPN doit sentir
-le changement d'armée dans le filet sous le titre, avant d'avoir lu le nom.
+~~C'est aussi la famille qui porte l'**encre du concours** — `encre-marine`,
+`encre-air`, `encre-terre`.~~ **Révisé au lot M9a, sur arbitrage de la direction
+éditoriale : Le Dossier porte une encre de FAMILLE unique, `encre-indigo`, pour
+les 23 fiches des trois concours.**
+
+C'est la même règle que Le Cahier et La Leçon appliquent déjà : **l'encre dit le
+genre du document, pas l'étagère où il est rangé.** Le Dossier faisait exception,
+et cette exception était la seule chose qui empêchait un lecteur de reconnaître
+la famille à sa couleur — un dossier EOPAN et un dossier ALAT n'auraient eu
+aucune parenté visible. L'appartenance à l'armée reste lisible : elle est dite
+par le fil d'Ariane, le préfixe de cote (`EOPAN ·`, `EOPN ·`, `ALAT ·`) et le
+nom du module en marge.
+
+`encre-indigo` n'a pas été choisie à l'œil. Les six encres antérieures forment
+une famille **isoluminante** que seule la teinte sépare ; la septième devait
+obéir à cette loi et occuper le seul créneau bleu encore libre, à distance du
+bleu fonctionnel de navigation. Valeurs, seuils et variantes écartées :
+`src/lib/design/planche-tokens.ts` et son test.
 
 ## Inflexion de la grille
 

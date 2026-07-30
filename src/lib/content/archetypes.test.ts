@@ -78,6 +78,7 @@ describe("classification documentaire", () => {
       archetypesFileSchema.parse({
         defauts: {},
         exceptions: { "eopan.appareils.rafale-m": "lecon" },
+        naturesDossier: {},
       })
     ).not.toThrow();
   });

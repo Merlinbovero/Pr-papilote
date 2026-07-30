@@ -1882,3 +1882,85 @@ Autonome. Le revert rend les 108 fiches à `FicheTransition`, retire le gabarit,
 la règle d'ancre et la déclaration de fonte sans préchargement — les 238 fiches
 reprennent alors leurs trois préchargements. **M8a est conservé** : les cotes G
 et la classification `dossier` survivent. Aucune autre famille n'est touchée.
+
+## 23. Lot M9a — la cote A, l'encre du Dossier — livré le 2026-07-30
+
+Lot **sans aucune modification visuelle** : il pose les données et la couleur que
+M9b consommera. Les 23 Dossiers continuent d'être rendus par `FicheTransition`.
+
+### 23.1 Les cinq sous-types ne sont pas cinq archétypes
+
+La question posée était : missions, sélections, concepts, présentations et
+procédures diffèrent-elles assez pour mériter des gabarits distincts ? **Mesuré
+sur les 23 fiches, non.** Toutes portent une image, deux ou trois sections, trois
+ou quatre pièges, des sources, un quiz, trois objectifs ; **aucune** ne porte de
+spécifications ni de relations. Seul `type` sépare quoi que ce soit : 21
+« concept » et 2 « procedure ».
+
+Un gabarit unique les sert donc toutes, et leur nature s'affiche par un
+**libellé** lu dans `naturesDossier`. Les deux procédures ne recevront un
+traitement propre que si leurs étapes ou prérequis existent dans les données ; à
+ce jour aucun champ canonique ne les porte.
+
+### 23.2 Vingt-trois cotes de famille A
+
+`MODULE · A.C.NN`, `C` = rang de catégorie (présentation 1, sélection 3,
+procédures 11, concepts 12, missions 14), `NN` = rang dans la catégorie.
+**L'ordre de catégorie a servi à générer, il ne sert plus à rendre** : les 23
+valeurs sont gelées dans `cotes.json` et répliquées dans le registre du test.
+
+Le corpus est désormais **entièrement coté** : 238 fiches + 14 leçons = 252
+références, **toutes uniques sur l'union des deux tables**. Les 229 cotes
+antérieures sont inchangées — c'est ce que le registre gelé démontre.
+
+Un piège rencontré : `eopan.procedures.catobar` vit dans la catégorie
+`concepts`. Son identifiant est **gelé** et garde la trace de son ancien
+rangement — c'est une clé, pas un chemin. Sa cote suit la catégorie réelle
+(`A.12.01`), et un test le fixe pour que personne ne « corrige » l'identifiant.
+
+### 23.3 L'encre : ce que la mesure a imposé
+
+La consigne demandait un bleu d'état-major profond, désaturé, distinct du bleu de
+navigation et des accents d'armée, et de mesurer deux ou trois variantes avant de
+figer.
+
+La mesure a d'abord renvoyé une réponse qu'il a fallu refuser. Une optimisation
+libre — maximiser la distance aux six encres — converge vers un gris ardoise,
+parce que le gris est loin de tout. Elle ignorait que l'encre doit aussi se
+distinguer **des gris du texte**. Le critère corrigé, l'optimum a filé vers les
+bords du domaine : un outremer très saturé, contraire à « désaturée ».
+
+Ce qui a débloqué l'arbitrage est une observation sur la charte elle-même : **les
+six encres forment une famille isoluminante** — clarté 0,449–0,470, chroma
+0,070–0,110 — et ne se distinguent que par la teinte. La bonne question n'était
+donc pas « quelle couleur ? » mais « **quelle teinte reste libre ?** ». Les
+teintes occupées sont 34, 69, 150, 231, 248, 305 ; la navigation siège à 258. Le
+seul créneau bleu disponible est l'indigo.
+
+Le seuil n'est pas inventé non plus : c'est celui que la charte s'accorde déjà,
+la paire marine/air, **ΔE00 7,4 en clair et 6,2 en sombre**.
+
+| Variante                  | clair       | sombre      | Séparation minimale              |
+| ------------------------- | ----------- | ----------- | -------------------------------- |
+| I — h 264, côté marine    | #435883     | #98AFDC     | 7,2 clair — **sous le plancher** |
+| **II — h 275, retenue**   | **#4F5882** | **#A4AFDB** | **10,6 / 10,9 — OK**             |
+| III — h 288, côté violine | #57527F     | #ACA8D8     | 6,7 clair — **sous le plancher** |
+
+**II est la seule variante recevable**, et elle l'est par la mesure, pas par
+goût. Contraste 6,6 à 8,6 sur les trois fonds, très au-dessus de 4,5. Retenir I
+ou III supposerait d'abaisser le plancher de la charte — décision qui devrait
+être explicite. Un test fige les trois résultats, y compris l'échec des deux
+variantes écartées.
+
+### 23.4 Preuves
+
+`npm run check` vert : **743 tests**, 0 erreur. Suite Playwright complète :
+**467 passés, 15 ignorés, 6 échecs** — exactement la ligne de base datée, aucun
+septième. C'est la preuve de l'absence de changement visuel : les jetons ajoutés
+n'ont pas encore de consommateur, et le sélecteur `data-module="indigo"` n'est
+posé par aucun gabarit.
+
+### 23.5 Retour arrière
+
+`git revert` du commit M9a retire les 23 cotes, la table des natures et l'encre.
+Rien d'autre n'en dépend tant que M9b n'est pas livré.

@@ -124,6 +124,15 @@ export const archetypesFileSchema = z.object({
    * validation — un défaut resté invisible tant que la table était vide.
    */
   exceptions: z.record(contentIdSchema, archetypeSchema),
+  /**
+   * Libellé de nature du Dossier, par « module/categorie » — lot M9a.
+   *
+   * Il ne se déduit pas du nom de la catégorie : « Parcours de sélection »
+   * donnerait « Parcours de sélection », pas « Sélection ». Une table explicite
+   * évite d'inventer une règle de troncature qui casserait à la première
+   * catégorie nommée autrement.
+   */
+  naturesDossier: z.record(z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/), z.string().min(1)),
 });
 
 export type Archetype = z.infer<typeof archetypeSchema>;

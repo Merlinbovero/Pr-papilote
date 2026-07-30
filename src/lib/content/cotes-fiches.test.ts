@@ -27,12 +27,16 @@ import {
  * reclassées depuis Le Cahier.
  * 2026-07-29 (M7b) — 20 articles du Cahier (« D ») et 4 situations (« E »).
  * 2026-07-29 (M8a) — 108 fiches explicatives de notion (« G »).
+ * 2026-07-30 (M9a) — 23 dossiers de concours (« A »). Le corpus est entièrement
+ * coté : 238 fiches, plus les 14 leçons canoniques, soit 252 références.
  *
  * **Aucune cote antérieure n'a jamais bougé** à chacune de ces arrivées : c'est
  * exactement ce que le gel doit démontrer, une arrivée ne renumérote rien.
  *
- * Les 131 fiches de La Leçon n'ont **pas** de cote, et c'est délibéré : on ne
- * gèle pas une référence avant d'avoir arrêté la grammaire de sa famille.
+ * Cette phrase disait, jusqu'à M8a, que les fiches de La Leçon n'avaient pas de
+ * cote, et jusqu'à M9a que Le Dossier n'en avait pas. Les deux familles sont
+ * cotées désormais — la règle qu'elles illustraient reste vraie : on ne gèle pas
+ * une référence avant d'avoir arrêté la grammaire de sa famille.
  */
 
 /** La lettre de famille attendue, par archétype (docs/design-archetypes.md §1). */
@@ -41,11 +45,35 @@ const FAMILLE: Record<string, string> = {
   cahier: "D",
   situation: "E",
   lecon: "G",
+  dossier: "A",
 };
 
-/** Les familles cotées à ce jour. Le Dossier n'en fait pas encore partie. */
-const FAMILLES_COTEES = ["identification", "cahier", "situation", "lecon"] as const;
+/** Les familles cotées à ce jour — les cinq, depuis M9a. */
+const FAMILLES_COTEES = ["identification", "cahier", "situation", "lecon", "dossier"] as const;
 const COTES_GELEES: Record<string, string> = {
+  "alat.missions.l-aerocombat": "ALAT · A.14.01",
+  "alat.missions.les-familles-d-helicopteres": "ALAT · A.14.02",
+  "alat.presentation.devenir-pilote-alat": "ALAT · A.1.01",
+  "eopan.concepts.groupe-aeronaval": "EOPAN · A.12.02",
+  "eopan.concepts.la-force-aeronavale-nucleaire": "EOPAN · A.12.03",
+  "eopan.concepts.les-armements-de-l-aeronautique-navale": "EOPAN · A.12.04",
+  "eopan.concepts.pont-d-envol": "EOPAN · A.12.05",
+  "eopan.missions.l-action-de-l-etat-en-mer": "EOPAN · A.14.01",
+  "eopan.missions.la-patrouille-maritime": "EOPAN · A.14.02",
+  "eopan.missions.missions-de-la-marine": "EOPAN · A.14.03",
+  "eopan.presentation.le-concours-eopan": "EOPAN · A.1.01",
+  "eopan.procedures.appontage": "EOPAN · A.11.01",
+  "eopan.procedures.catapultage": "EOPAN · A.11.02",
+  "eopan.procedures.catobar": "EOPAN · A.12.01",
+  "eopan.selection.la-preselection-en-vol": "EOPAN · A.3.01",
+  "eopan.selection.les-themes-recurrents-de-l-entretien": "EOPAN · A.3.02",
+  "eopan.selection.preparer-l-entretien-de-motivation": "EOPAN · A.3.03",
+  "eopn.missions.la-posture-permanente-de-surete-aerienne": "EOPN · A.14.01",
+  "eopn.missions.la-projection-et-le-ravitaillement-en-vol": "EOPN · A.14.02",
+  "eopn.missions.le-domaine-spatial-militaire": "EOPN · A.14.03",
+  "eopn.missions.missions-de-l-armee-de-l-air": "EOPN · A.14.04",
+  "eopn.presentation.le-concours-eopn": "EOPN · A.1.01",
+  "eopn.selection.la-formation-du-pilote-de-chasse": "EOPN · A.3.01",
   "alat.appareils.alouette-ii": "ALAT · C.6.01",
   "alat.appareils.alouette-iii": "ALAT · C.6.02",
   "alat.appareils.caracal": "ALAT · C.6.03",
@@ -271,11 +299,38 @@ describe("cotes documentaires des fiches", () => {
     expect(sans, `fiches sans cote — famille ${famille}`).toEqual([]);
   });
 
-  it("Le Dossier n'en porte aucune : sa grammaire n'est pas arrêtée", () => {
-    const hors = getFichesParArchetype("dossier")
-      .filter((fiche) => getCoteFiche(fiche.id) !== undefined)
-      .map((fiche) => fiche.id);
-    expect(hors, "cotes attribuées avant l'heure").toEqual([]);
+  /**
+   * Ce test disait l'inverse jusqu'au lot M9a : « Le Dossier n'en porte aucune,
+   * sa grammaire n'est pas arrêtée ». Elle l'est maintenant — famille A — et les
+   * 23 fiches sont cotées. La contrainte utile a donc changé de nature : ce
+   * n'est plus l'absence qu'il faut garder, c'est la **forme**.
+   */
+  it("les 23 Dossiers portent une cote de famille A, et personne d'autre", () => {
+    const dossiers = getFichesParArchetype("dossier");
+    expect(dossiers).toHaveLength(23);
+
+    for (const fiche of dossiers) {
+      const cote = getCoteFiche(fiche.id);
+      expect(cote, `cote manquante — ${fiche.id}`).toBeTruthy();
+      expect(cote, `${fiche.id} doit porter une cote A`).toMatch(
+        /^(EOPAN|EOPN|ALAT) · A\.\d{1,2}\.\d{2}$/
+      );
+    }
+
+    // Réciproquement : aucune autre famille n'emprunte la lettre A.
+    const usurpateurs = [...getCotesFiches().entries()]
+      .filter(([, cote]) => / · A\./.test(cote))
+      .map(([id]) => id)
+      .filter((id) => !dossiers.some((f) => f.id === id));
+    expect(usurpateurs, "cotes A portées par une autre famille").toEqual([]);
+  });
+
+  it("la lettre de la cote suit la catégorie, jamais l'identifiant", () => {
+    // « eopan.procedures.catobar » vit dans la catégorie `concepts` : son
+    // identifiant est gelé et garde la trace de son ancien rangement. Le segment
+    // de catégorie de sa cote doit suivre la catégorie RÉELLE (concepts = 12),
+    // pas celle que son identifiant laisse croire (procedures = 11).
+    expect(getCoteFiche("eopan.procedures.catobar")).toBe("EOPAN · A.12.01");
   });
 
   /**
@@ -345,7 +400,7 @@ describe("cotes documentaires des fiches", () => {
 
   it("suit la grammaire MODULE · F.C.NN", () => {
     for (const [id, cote] of getCotesFiches()) {
-      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT|FOND|PSY|CULT) · [CDEG]\.\d{1,2}\.\d{2}$/);
+      expect(cote, id).toMatch(/^(EOPAN|EOPN|ALAT|FOND|PSY|CULT) · [ACDEG]\.\d{1,2}\.\d{2}$/);
     }
   });
 

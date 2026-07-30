@@ -11,6 +11,7 @@ import {
   SEUIL_TEXTE,
   SOMBRE,
   contrastRatio,
+  deltaE2000,
   relativeLuminance,
 } from "./planche-tokens";
 
@@ -149,6 +150,7 @@ describe("la feuille de jetons et le module ne divergent pas", () => {
     ["bistre", "bistre"],
     ["violine", "violine"],
     ["sienne", "sienne"],
+    ["indigo", "indigo"],
     ["juste", "juste"],
     ["attention", "attention"],
     ["erreur", "erreur"],
@@ -251,5 +253,63 @@ describe("la feuille du système déclare les encres qu'elle sait sélectionner"
       expect(m, `--pl-${encre} absent du bloc ${_n}`).not.toBeNull();
       expect(m?.[1].toUpperCase(), `--pl-${encre}`).toBe(r[encre as keyof typeof r].toUpperCase());
     }
+  });
+});
+
+describe("l'encre du Dossier — séparation perceptuelle (lot M9a)", () => {
+  /**
+   * Le seuil n'est pas choisi : c'est celui que la charte s'accorde DÉJÀ.
+   * La paire la plus serrée des six encres antérieures est marine/air, à
+   * ΔE00 7,4 en clair et 6,2 en sombre. Une septième encre qui ferait moins
+   * bien introduirait une confusion que le système n'a jamais tolérée.
+   */
+  const PLANCHER = { clair: 7.4, sombre: 6.2 } as const;
+
+  /** Le bleu fonctionnel de navigation, `--primary` de `globals.css`. */
+  const NAVIGATION = "#1A57AD";
+
+  /** Les gris : une encre qui s'en approche cesse de se lire comme une couleur. */
+  const NEUTRES = ["encre", "encre2", "encre3", "filetFort"] as const;
+
+  it.each(REGISTRES)(
+    "registre %s : la paire la plus serrée reste marine/air, pas une paire d'indigo",
+    (nom, r) => {
+      const autres = ENCRES_MODULE.filter((e) => e !== "indigo");
+      for (const encre of autres) {
+        expect(
+          deltaE2000(r.indigo, r[encre]),
+          `indigo/${encre} doit rester au-dessus du plancher de la charte`
+        ).toBeGreaterThanOrEqual(PLANCHER[nom as keyof typeof PLANCHER]);
+      }
+    }
+  );
+
+  it.each(REGISTRES)("registre %s : indigo ne se confond pas avec les gris", (_nom, r) => {
+    for (const neutre of NEUTRES) {
+      expect(deltaE2000(r.indigo, r[neutre]), `indigo/${neutre}`).toBeGreaterThan(10);
+    }
+  });
+
+  it("indigo se distingue du bleu fonctionnel de navigation", () => {
+    // Bleu = navigation dans le framework UI. L'encre d'une famille
+    // documentaire ne doit pas être prise pour un lien.
+    expect(deltaE2000(CLAIR.indigo, NAVIGATION)).toBeGreaterThan(PLANCHER.clair);
+    expect(deltaE2000(SOMBRE.indigo, NAVIGATION)).toBeGreaterThan(PLANCHER.sombre);
+  });
+
+  it("les deux variantes écartées le sont bien par la mesure, pas par goût", () => {
+    // h 264 (côté marine) et h 288 (côté violine) : toutes deux tombent SOUS le
+    // plancher en registre clair. Si un jour l'une d'elles était retenue, c'est
+    // que le plancher aurait été abaissé — décision qui doit être explicite.
+    expect(deltaE2000("#435883", CLAIR.marine)).toBeLessThan(PLANCHER.clair);
+    expect(deltaE2000("#57527F", CLAIR.violine)).toBeLessThan(PLANCHER.clair);
+  });
+
+  it("deltaE2000 rend 0 pour une couleur avec elle-même, et est symétrique", () => {
+    expect(deltaE2000(CLAIR.indigo, CLAIR.indigo)).toBeCloseTo(0, 10);
+    expect(deltaE2000(CLAIR.indigo, CLAIR.marine)).toBeCloseTo(
+      deltaE2000(CLAIR.marine, CLAIR.indigo),
+      10
+    );
   });
 });

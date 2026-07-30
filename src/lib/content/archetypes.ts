@@ -25,6 +25,7 @@ const FICHIER = path.join(process.cwd(), "content", "_referentiels", "archetypes
 interface IndexArchetypes {
   defauts: Map<string, Archetype>;
   exceptions: Map<string, Archetype>;
+  naturesDossier: Map<string, string>;
 }
 
 let cache: IndexArchetypes | undefined;
@@ -38,6 +39,7 @@ function construire(): IndexArchetypes {
   const index: IndexArchetypes = {
     defauts: new Map(Object.entries(brut.defauts)),
     exceptions: new Map(Object.entries(brut.exceptions)),
+    naturesDossier: new Map(Object.entries(brut.naturesDossier)),
   };
 
   // Contrôle d'intégrité du corpus entier, au premier accès : une fiche non
@@ -95,4 +97,24 @@ export function getArchetypeCategorie(
 /** Toutes les fiches d'un archétype donné — pour les contrôles et les campagnes. */
 export function getFichesParArchetype(archetype: Archetype): FicheFile[] {
   return getFiches().filter((fiche) => getArchetypeFiche(fiche) === archetype);
+}
+
+/**
+ * Le libellé de nature d'un Dossier — « Mission », « Sélection »… — lot M9a.
+ *
+ * Il vient du référentiel, jamais d'une transformation du nom de catégorie.
+ * L'absence d'entrée est une erreur et non un cas à rendre discrètement : une
+ * catégorie classée `dossier` sans nature déclarée signifie qu'on a classé sans
+ * décider comment la nommer, et le gabarit afficherait alors un vide. Mieux
+ * vaut tomber ici.
+ */
+export function getNatureDossier(fiche: Pick<FicheFile, "id" | "module" | "category">): string {
+  const nature = index().naturesDossier.get(cleCategorie(fiche));
+  if (!nature) {
+    throw new Error(
+      `Nature de Dossier non déclarée pour « ${cleCategorie(fiche)} » ` +
+        `(fiche ${fiche.id}) — compléter naturesDossier dans archetypes.json`
+    );
+  }
+  return nature;
 }
