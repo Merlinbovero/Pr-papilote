@@ -15,9 +15,9 @@ Tous les tokens vivent dans `src/app/globals.css` (`:root` clair, `.dark` sombre
 | `primary`                         | Navigation, action principale, lien         | **Bleu drapeau français** (≈ #0055A4) |
 | `secondary`                       | Fonds d'action secondaire                   | Neutre                                |
 | `accent`                          | Survols, sélection, état actif de nav       | Bleu très pâle (teinte de `primary`)  |
-| `success`                         | Validation, réponse juste, vérifié          | Vert                                  |
+| `success`                         | Validation, réponse juste, vérifié          | Vert (clarté 0,515 en clair — F1a)    |
 | `warning`                         | Attention, à re-vérifier                    | Orange                                |
-| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                                 |
+| `destructive`                     | Erreur, danger, réponse fausse              | Rouge (clarté 0,528 en clair — F1a)   |
 | `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary`     |
 | `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface                  |
 | `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                       |
