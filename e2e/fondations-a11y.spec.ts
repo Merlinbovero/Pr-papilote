@@ -23,6 +23,17 @@ const SEANCE = 'main section[aria-label] ul[role="list"] button';
  */
 const HORS_PERIMETRE_F1A = ["link-in-text-block"];
 
+// L'exclusion reste **strictement limitée à cette règle** : toute autre
+// violation doit faire échouer la campagne. Cette garde le rend impossible à
+// contourner par ajout discret d'une seconde entrée.
+if (HORS_PERIMETRE_F1A.length !== 1 || HORS_PERIMETRE_F1A[0] !== "link-in-text-block") {
+  throw new Error(
+    "L'exclusion axe de F1a ne couvre que `link-in-text-block` (DT-002). " +
+      "Toute autre règle écartée doit être justifiée et consignée dans " +
+      "docs/dette-technique.md avant d'être ajoutée ici."
+  );
+}
+
 async function violations(page: Page) {
   const resultat = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
