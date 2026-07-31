@@ -314,14 +314,29 @@ export function QuizPlayer({
           </section>
         ) : null}
 
+        {/* Même information, deux registres. En Banc, la carte bordée de
+            `Alert` détonne : la bordure appartient au registre documentaire,
+            et la hiérarchie du Banc passe par la SURFACE. Un encadré de
+            notification au milieu d'une séance donne en outre l'apparence
+            générique que la charte proscrit. */}
         {!persisted ? (
-          <Alert>
-            <AlertTitle>Connectez-vous pour conserver vos résultats</AlertTitle>
-            <AlertDescription>
-              Vos réponses alimenteront alors votre carnet d&apos;erreurs et vos statistiques de
-              progression.
-            </AlertDescription>
-          </Alert>
+          banc ? (
+            <div className="banc-stimulus space-y-1">
+              <p className="font-medium">Connectez-vous pour conserver vos résultats</p>
+              <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+                Vos réponses alimenteront alors votre carnet d&apos;erreurs et vos statistiques de
+                progression.
+              </p>
+            </div>
+          ) : (
+            <Alert>
+              <AlertTitle>Connectez-vous pour conserver vos résultats</AlertTitle>
+              <AlertDescription>
+                Vos réponses alimenteront alors votre carnet d&apos;erreurs et vos statistiques de
+                progression.
+              </AlertDescription>
+            </Alert>
+          )
         ) : null}
         <Button
           onClick={() => {
