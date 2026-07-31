@@ -214,6 +214,49 @@ Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0
 
 **Vitrine** : `/design-lab/banc` (catalogue) et `/design-lab/banc/seance` (étalon de densité), derrière `NEXT_PUBLIC_DESIGN_LAB`, `noindex`.
 
+### Quand une activité prend le registre du Banc
+
+**La règle**, arbitrée au lot F4 :
+
+> Une activité interactive adopte le registre du Banc **uniquement lorsqu'elle
+> devient la tâche principale de la vue**. Une activité courte, contextuelle et
+> encastrée conserve le registre de son document hôte, même si elle réutilise le
+> moteur fonctionnel du Banc.
+
+La frontière n'est donc pas « lecture contre exercice », mais **exercice
+subordonné au document** contre **séance autonome qui remplace momentanément le
+document comme tâche principale**.
+
+Une interface encastrée reste au registre de son hôte tant qu'elle est
+subordonnée au contenu consulté, dépendante de son contexte, courte,
+optionnelle, sans attention exclusive, sans parcours autonome complet, et qu'elle
+ne justifie pas à elle seule une entrée, une sortie, une reprise ou un résultat
+de séance. Le registre distinct devient justifié quand l'utilisateur cesse
+temporairement de lire pour entrer dans une activité autonome : lancement
+explicite, plusieurs étapes, progression propre, chronomètre éventuel, correction
+structurée, résultat final, reprise possible, besoin d'un espace sans
+concurrence avec le document.
+
+**Quatre choses à ne pas confondre** — c'est ce que le code mélangeait avant ce
+lot : le **registre visuel**, le **moteur fonctionnel**, le **contrat
+d'accessibilité** et le **modèle de données**. Un quiz encastré garde le premier
+de son hôte tout en partageant les trois autres avec le Banc.
+
+| Variante       | Pour                   | Prend                                                                                                                                                   | Ne prend pas                                                                                            |
+| -------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `banc`         | séances autonomes      | tout le registre                                                                                                                                        | —                                                                                                       |
+| `documentaire` | quiz encastrés         | sémantique, focus après validation, annonces, corrections accessibles, clavier, états juste/faux/désactivé, lien distingué autrement que par la couleur | fond du Banc, cadre de séance, plein écran, typographie complète, disparition de l'en-tête documentaire |
+| `legacy`       | **non encore arbitré** | rien                                                                                                                                                    | —                                                                                                       |
+
+`legacy` ne signifie pas « en attente de migration » mais **en attente
+d'arbitrage** : chaque appelant qui le porte doit être classé en `banc` ou en
+`documentaire`.
+
+**Reclassement.** Si un quiz encastré devient long, chronométré, persistant ou
+doté d'un résultat autonome, il franchit le seuil de la séance : il doit alors
+proposer une **entrée explicite** vers le Banc, jamais transformer silencieusement
+la page documentaire.
+
 ### Migration route par route
 
 Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.

@@ -17,12 +17,20 @@ production) et sur la branche de recette qui le prolonge.
 
 ## Le Banc — avancement
 
-| Route                 | Registre | Lot |
-| --------------------- | -------- | --- |
-| `/entrainement/eopan` | **Banc** | F2a |
-| `/reviser`            | **Banc** | F2b |
-| `/entrainement/eopn`  | **Banc** | F3  |
-| `/entrainement/alat`  | **Banc** | F3  |
+| Route / surface       | Registre         | Lot |
+| --------------------- | ---------------- | --- |
+| `/entrainement/eopan` | **Banc**         | F2a |
+| `/reviser`            | **Banc**         | F2b |
+| `/entrainement/eopn`  | **Banc**         | F3  |
+| `/entrainement/alat`  | **Banc**         | F3  |
+| Quiz de matière BIA   | **documentaire** | F4  |
+| Mini-quiz de fiche    | **documentaire** | F4  |
+
+Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
+**classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
+immédiate d'une lecture, subordonnés à leur document, sans destination autonome.
+Ils gardent l'apparence de leur hôte **et** tiennent le contrat d'accessibilité
+du Banc — DT-002 y est remboursée. Voir la règle dans `design-system.md`.
 
 Les deux premières sont vérifiées en production ; les deux suivantes ne sont pas
 encore déployées.

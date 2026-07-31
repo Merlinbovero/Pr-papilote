@@ -50,17 +50,47 @@ interface QuizPlayerProps {
   /** Appelé à chaque validation, avec l'identifiant de question et sa justesse. */
   onAnswered?: (questionId: string, isCorrect: boolean) => void;
   /**
-   * Registre visuel — lot F2a.
+   * Registre visuel — lot F2a, doctrine complétée au lot F4.
    *
-   * `legacy` est le rendu historique, et reste le **défaut** : les cinq
-   * autres appelants du lecteur ne changent pas d'apparence. `banc` active
-   * la charte du Banc sur la seule route pilote.
+   * ── La règle ────────────────────────────────────────────────────────
+   * Une activité interactive adopte le registre du Banc **uniquement
+   * lorsqu'elle devient la tâche principale de la vue**. Une activité
+   * courte, contextuelle et encastrée conserve le registre de son document
+   * hôte, même si elle réutilise le moteur fonctionnel du Banc.
    *
-   * La variante ne porte que la **présentation** : phases, chronomètre,
-   * annonces, focus et calcul du score sont communs. Dupliquer la logique
-   * aurait créé deux moteurs à maintenir, et deux occasions de diverger.
+   * La frontière n'est donc pas « lecture contre exercice », mais
+   * « exercice subordonné au document » contre « séance autonome qui
+   * remplace momentanément le document comme tâche principale ».
+   *
+   * ── Les trois valeurs ───────────────────────────────────────────────
+   * - `banc` — séances autonomes : `/entrainement/*`, `/reviser`. Lancement
+   *   explicite, plusieurs questions, progression propre, résultat final,
+   *   reprise possible, et besoin d'un espace sans concurrence.
+   * - `documentaire` — quiz encastrés : mini-quiz de fiche, quiz de matière
+   *   BIA. Prolongation immédiate de la lecture, dépendante du contexte
+   *   présent sur la page, sans destination autonome. Garde le registre de
+   *   son hôte, mais **doit** tenir le contrat d'accessibilité du Banc :
+   *   sémantique, focus après validation, annonces dynamiques, corrections
+   *   accessibles, clavier, états juste/faux/désactivé, et lien de renvoi
+   *   distingué autrement que par la couleur. Ne prend **pas** le fond du
+   *   Banc, ni le cadre de séance, ni le plein écran, ni sa typographie
+   *   complète, et ne fait pas disparaître l'en-tête documentaire.
+   * - `legacy` — rendu historique **non encore arbitré**, et défaut. Les
+   *   appelants qui le portent attendent soit une migration vers `banc`,
+   *   soit un reclassement en `documentaire`.
+   *
+   * ── Ce que la variante ne porte pas ─────────────────────────────────
+   * Phases, chronomètre, annonces, focus et calcul du score sont communs.
+   * Dupliquer la logique aurait créé deux moteurs à maintenir, et deux
+   * occasions de diverger.
+   *
+   * ── Reclassement ────────────────────────────────────────────────────
+   * Si un quiz encastré devient long, chronométré, persistant ou doté d'un
+   * résultat autonome, il franchit le seuil de la séance : il doit alors
+   * proposer une **entrée explicite** vers le Banc, et non transformer
+   * silencieusement la page documentaire.
    */
-  variant?: "legacy" | "banc";
+  variant?: "legacy" | "documentaire" | "banc";
   /**
    * Déplacer le focus dès le montage, et pas seulement aux transitions.
    *
@@ -89,6 +119,13 @@ export function QuizPlayer({
   focusAuMontage = false,
 }: QuizPlayerProps) {
   const banc = variant === "banc";
+  /*
+    Le registre documentaire garde l'apparence de son hôte, mais tient le
+    CONTRAT D'ACCESSIBILITÉ du Banc. Les deux notions sont distinctes et ne
+    doivent pas être confondues : `banc` décide de la présentation, `reglesA11y`
+    décide de ce qui est dû au lecteur quelle que soit la présentation.
+  */
+  const reglesA11y = banc || variant === "documentaire";
   const [index, setIndex] = React.useState(0);
   const [phase, setPhase] = React.useState<Phase>("answering");
   const [selected, setSelected] = React.useState<number[]>([]);
@@ -526,11 +563,14 @@ export function QuizPlayer({
                 {question.furtherReading.map((fiche, ficheIndex) => (
                   <React.Fragment key={fiche.href}>
                     {ficheIndex > 0 ? ", " : ""}
-                    {banc ? (
-                      // DT-002 remboursé sur le rendu Banc : soulignement
-                      // permanent, teinte du Banc. Le rendu historique garde
-                      // `hover:underline` — la dette y reste ouverte et
-                      // prouvée par `e2e/dette-lien-correction.spec.ts`.
+                    {reglesA11y ? (
+                      // DT-002 remboursée dès qu'un registre tient le contrat
+                      // d'accessibilité — Banc comme documentaire :
+                      // soulignement PERMANENT, seul repère non chromatique
+                      // qu'exige WCAG 1.4.1. Le rendu `legacy`, non encore
+                      // arbitré, garde `hover:underline` ; la dette y reste
+                      // ouverte et prouvée par
+                      // `e2e/dette-lien-correction.spec.ts`.
                       <LienApprofondir href={fiche.href}>{fiche.label}</LienApprofondir>
                     ) : (
                       <a

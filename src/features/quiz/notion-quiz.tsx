@@ -108,7 +108,25 @@ export function NotionQuiz({
       aria-label="Quiz de la notion"
       className="scroll-mt-20 space-y-4 print:hidden"
     >
-      <QuizPlayer key={tirage} title={`Tester — ${ficheTitle}`} questions={series} />
+      <QuizPlayer
+        key={tirage}
+        title={`Tester — ${ficheTitle}`}
+        questions={series}
+        /*
+          Registre DOCUMENTAIRE, et non `banc` : ce quiz est la prolongation
+          immédiate de la lecture, subordonné au document, sans destination
+          autonome. Il garde donc l'apparence de son hôte — mais il tient le
+          contrat d'accessibilité du Banc, DT-002 comprise.
+        */
+        variant="documentaire"
+        /*
+          Le contrat de `focusAuMontage` le demande explicitement : au remontage
+          voulu par l'utilisateur, le focus va à la première question, pas au
+          bouton qui vient d'être actionné. Faux au premier tirage, où le
+          lecteur n'a pas encore été demandé.
+        */
+        focusAuMontage={tirage > 1}
+      />
       <div className="flex flex-wrap gap-3">
         {pool.length > drawCount ? (
           <Button variant="outline" onClick={tirer}>
