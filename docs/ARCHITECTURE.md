@@ -257,3 +257,21 @@ le JSON déjà écrit sous `public/generated/`.
 **L'artefact n'est pas versionné** (`.gitignore`). Il est régénéré à chaque
 build et ne doit jamais être édité à la main : sa seule vérité est
 `buildSearchEntries()`.
+
+**La commande de build est déclarée dans le dépôt** (`vercel.json`,
+`buildCommand: "npm run build"`). Ce n'est pas une redondance avec le
+préréglage : le préréglage Next.js de Vercel appelle `next build`
+**directement**, ce qui n'ouvre pas le cycle de vie npm et ne déclenche donc
+pas `prebuild`. Le raccordement décrit ci-dessus ne tient que si le build
+passe par un script npm — l'artefact étant ignoré par git, un déploiement
+partait sinon sans index, et `/generated/recherche-index.json` répondait 404
+en production alors que `chargerRecherche()` lève sans repli sur une réponse
+non-ok.
+
+La même dépendance vaut pour Playwright, dont le `webServer` lance
+`next dev` : la génération y est appelée explicitement avant le serveur. La
+règle générale : **tout chemin d'exécution qui n'appelle pas `npm run build`
+doit générer l'index lui-même.** Elle est tenue par
+`src/features/search/chaine-de-build.test.ts`, qui vérifie les quatre
+maillons — commande déclarée, hook raccordé, générateur appelé, chemin écrit
+égal au chemin servi.
