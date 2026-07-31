@@ -228,7 +228,16 @@ Le Banc entre dans le produit **une route à la fois**, chacune servant de témo
 1. **Le registre est chargé par le point d'adhésion** — ce qui pose `.banc` importe `banc.css`. En F1b la feuille n'était importée que par la mise en page du laboratoire : la première migration a donc rendu des classes **inertes**, sans flex, sans surface, sans teinte. Un test qui vérifie la présence de la classe serait passé ; seule la mesure du **style calculé** l'a vu. Les contrôles portent désormais sur `getComputedStyle`.
 2. **Le registre est porté par la page, pas par un bloc** — un `.banc` posé sur la seule aire de séance dessine un rectangle tiède dans un fond froid. Le fond du site étant le plus clair des deux (ΔE00 2,16 en clair, 0,86 en sombre), toutes les encres du Banc y mesurent un contraste **supérieur** à celui vérifié sur `--bc-fond` : les tests de jetons gardent le pire cas.
 
-**Effet mesuré sur la route pilote** : bas du premier contrôle de réponse à 347 px (écran de 900) et 403 px (écran de 844, mobile). L'audit F0b relevait 891, 995 et 994 px pour un écran de 844.
+**Effet mesuré sur la route pilote**, bas du premier contrôle de réponse, comparé au **témoin vivant** qu'est `/entrainement/eopn` — même gabarit, variante `legacy`, mesuré le même jour :
+
+| Viewport           | Témoin `legacy` | Route migrée |
+| ------------------ | --------------- | ------------ |
+| 1440 × 900         | 509 px          | **347 px**   |
+| 390 × 844 (mobile) | 670 px          | **403 px**   |
+
+Sur mobile, la séance entière — énoncé, quatre réponses, validation et les deux issues — tient désormais dans le premier écran.
+
+Les valeurs de 891, 995 et 994 px citées ailleurs dans ce document proviennent de **trois épreuves psychotechniques**, et non de cette route : elles mesurent la même maladie sur les moteurs qui restent à migrer, pas l'avant de celui-ci.
 
 ## 7. Risques identifiés
 
