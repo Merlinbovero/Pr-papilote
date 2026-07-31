@@ -15,13 +15,23 @@ import "@/styles/banc.css";
 export const dynamicParams = false;
 
 /**
- * Route pilote de l'identité Banc — lot F2a.
+ * Identité Banc — lot F2a (pilote `eopan`), étendu au lot F3.
  *
- * Un seul concours l'active. Les autres gabarits d'entraînement, servis par
- * ce même fichier, gardent le rendu historique : la migration se fait route
- * par route, et se compare donc à un témoin non migré.
+ * Les trois concours servis par ce fichier portent désormais le Banc. Le
+ * gabarit est commun : `eopan` a servi de pilote pendant que `eopn` et `alat`
+ * restaient témoins, et c'est cette comparaison qui a mesuré le gain avant de
+ * l'étendre.
+ *
+ * **Le témoin ne disparaît pas pour autant.** Les autres appelants du lecteur
+ * de quiz — `/anglais`, les quiz de matière BIA, les mini-quiz de fiche, les
+ * leçons canoniques — gardent le rendu historique, et leur registre vit dans
+ * `e2e/banc-route-pilote.spec.ts`. La comparaison reste donc possible ; elle
+ * change simplement de surface.
+ *
+ * Un ensemble plutôt qu'une valeur : ajouter un concours au Banc ne doit pas
+ * demander de retoucher la condition, seulement cette ligne.
  */
-const CONCOURS_BANC = "eopan";
+const CONCOURS_BANC = new Set(["eopan", "eopn", "alat"]);
 
 interface EntrainementPageProps {
   params: Promise<{ concours: string }>;
@@ -58,7 +68,7 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
 
   const totalAvailable = buildConcoursPool(parsed.data).length;
   const label = mod.fullName ? `${mod.name} — ${mod.fullName}` : mod.name;
-  const banc = parsed.data === CONCOURS_BANC;
+  const banc = CONCOURS_BANC.has(parsed.data);
 
   const entete = (
     <header className="space-y-2">
