@@ -214,7 +214,21 @@ Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0
 
 **Vitrine** : `/design-lab/banc` (catalogue) et `/design-lab/banc/seance` (étalon de densité), derrière `NEXT_PUBLIC_DESIGN_LAB`, `noindex`.
 
-**État au lot F1b** : ces composants ne vivent que sur la vitrine. **Aucun moteur de production n'est migré**, et le défaut « la séance ne prend pas le cadre » n'est donc pas encore corrigé dans le produit — il le sera lot par lot.
+### Migration route par route
+
+Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.
+
+| Route                 | Lot | État                                                                                                       |
+| --------------------- | --- | ---------------------------------------------------------------------------------------------------------- |
+| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement. |
+| Six autres appelants  | —   | Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`.                  |
+
+**Deux règles nées de la première migration, et vérifiées par rupture délibérée :**
+
+1. **Le registre est chargé par le point d'adhésion** — ce qui pose `.banc` importe `banc.css`. En F1b la feuille n'était importée que par la mise en page du laboratoire : la première migration a donc rendu des classes **inertes**, sans flex, sans surface, sans teinte. Un test qui vérifie la présence de la classe serait passé ; seule la mesure du **style calculé** l'a vu. Les contrôles portent désormais sur `getComputedStyle`.
+2. **Le registre est porté par la page, pas par un bloc** — un `.banc` posé sur la seule aire de séance dessine un rectangle tiède dans un fond froid. Le fond du site étant le plus clair des deux (ΔE00 2,16 en clair, 0,86 en sombre), toutes les encres du Banc y mesurent un contraste **supérieur** à celui vérifié sur `--bc-fond` : les tests de jetons gardent le pire cas.
+
+**Effet mesuré sur la route pilote** : bas du premier contrôle de réponse à 347 px (écran de 900) et 403 px (écran de 844, mobile). L'audit F0b relevait 891, 995 et 994 px pour un écran de 844.
 
 ## 7. Risques identifiés
 
