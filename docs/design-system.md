@@ -194,6 +194,28 @@ Règle éditoriale : **uniquement de vraies photographies, jamais d'images gén�
 
 **En-tête de page unique** : toutes les pages intérieures utilisent `PageHeader` (`src/components/layout/page-header.tsx`) — bandeau photo réelle créditée, **filet d'accent à la couleur du concours** (`getModuleAccentVar` : EOPAN bleu Marine, EOPN bleu Air, ALAT vert Terre, transverses en `primary`), libellé de section en capitales (eyebrow **précédé d'un filet d'accent**), titre et description. Le titre est en **police display** (`--font-heading`) ; en taille `hero` (portes d'entrée : hubs concours, BIA) il est agrandi (`text-4xl` → `lg:text-6xl`, extra-bold, `text-balance`) sur une bannière plus haute (18–26 rem), pour le même langage cinématique que le hero d'accueil. Les catégories tirent leur photo de `getCategoryPhoto` (photo thématique de la famille, sinon photo du module) : aucune page sans visuel. Sans photo, `PageHeader` se réduit à un en-tête typographique à filet d'accent.
 
+## 6ter. Le Banc — charte fonctionnelle (lot F1b)
+
+Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0b §1 avait montré que les séances empruntaient le vocabulaire des pages de consultation — cartes bordées, même densité, jusqu'à 203 caractères par ligne — alors qu'elles sont l'inverse d'une lecture. Sa charte est donc distincte, et **autonome** : elle suit la discipline colorimétrique de PLANCHE sans dépendre d'aucun de ses fichiers.
+
+**Portée.** Tout est émis sous `.banc` (`src/styles/banc.css`), jamais sur `:root`, et préfixé `--bc-`. Tant qu'aucun élément ne porte la classe, le produit est inchangé.
+
+| Sujet              | Règle                                                                                                                                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Encre de famille F | Turquoise h 193 — `#036564` clair, `#6BBDBA` sombre. Choisie par la mesure : seul créneau libre de la famille isoluminante, ΔE00 ≥ 13,9 des sept encres PLANCHE, ≥ 16,6 des trois états, dans le gamut sRGB.                          |
+| Fonds              | Trois niveaux : cadre, stimulus, réponses. **Recalculés** — les niveaux de PLANCHE, taillés pour du texte documentaire, faisaient tomber `juste` et `attention` sous 4,5.                                                             |
+| Hiérarchie         | Par la **surface**, jamais par la bordure : la carte bordée appartient au registre documentaire.                                                                                                                                      |
+| États de réponse   | `juste`, `erreur`, `attention`, `neutre` — chacun avec un **repère non chromatique**. Jamais la couleur seule, jamais l'opacité seule. « Neutralisé après correction » et « désactivé » sont distincts.                               |
+| Chronomètre        | Une écriture (`M:SS`, `H:MM:SS`), `role="timer"`, `aria-live="off"`, chiffres tabulaires, formulation naturelle par le contenu accessible. **Aucun seuil n'est codé** : l'état vient du moteur. L'absence de chronomètre est un état. |
+| Progression        | Dit l'**avancement**, jamais la position — celle-ci appartient au titre de la question. Une seule barre par séance ; aucune barre si la séance n'a pas de fin connue.                                                                 |
+| Mesure de lecture  | Consignes 60–75 caractères, énoncé jusqu'à ~90, stimulus graphique en largeur libre. Des **plafonds CSS**, jamais des coupes.                                                                                                         |
+| Cadre              | Une seule largeur, partagée par tous les moteurs.                                                                                                                                                                                     |
+| Mode séance        | Au lancement : l'introduction se replie, l'aire entre dans le cadre, le focus s'y déplace, **et le temps ne démarre qu'ensuite**. Consignes rappelables, sortie explicite.                                                            |
+
+**Vitrine** : `/design-lab/banc` (catalogue) et `/design-lab/banc/seance` (étalon de densité), derrière `NEXT_PUBLIC_DESIGN_LAB`, `noindex`.
+
+**État au lot F1b** : ces composants ne vivent que sur la vitrine. **Aucun moteur de production n'est migré**, et le défaut « la séance ne prend pas le cadre » n'est donc pas encore corrigé dans le produit — il le sera lot par lot.
+
 ## 7. Risques identifiés
 
 1. **Dérive des variantes** (« encore une taille, encore un variant ») → cva borné à `variant` + `size` (≤ 3 tailles), toute variante nouvelle justifiée en PR.
