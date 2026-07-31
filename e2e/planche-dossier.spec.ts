@@ -134,6 +134,18 @@ test.describe("Le Dossier — les 23 fiches de concours", () => {
   }
 
   test("les 86 questions de quiz sont toutes servies", async ({ page }) => {
+    /*
+      Ce contrôle visite les 23 dossiers l'un après l'autre, contre un
+      serveur de développement qui compile chaque route à la demande. Son
+      coût réel dépasse donc le délai par défaut de 30 s dès que la campagne
+      complète occupe la machine — observé à 30,2 s lors de la campagne de
+      clôture de F2a, sur le projet mobile uniquement.
+
+      `test.slow()` triple le délai au lieu de le fixer arbitrairement : le
+      contrôle reste inchangé, seul son budget reconnaît qu'il fait 23
+      navigations et non une.
+    */
+    test.slow();
     // Le vivier est la fonction la plus facile à perdre en changeant de
     // gabarit : elle ne laisse aucune trace dans le texte. On compte.
     let total = 0;
