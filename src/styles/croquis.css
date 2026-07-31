@@ -1,0 +1,86 @@
+/*
+ * Charte des croquis techniques — pilote.
+ *
+ * PORTÉE STRICTEMENT LOCALE : tout est émis sous `.croquis`, jamais sur
+ * `:root`. Un schéma qui ne porte pas la classe est rendu exactement comme
+ * avant, ce qui rend le pilote annulable sans effet de bord — même
+ * précaution qu'aux lots M1 (PLANCHE) et F1b (Banc).
+ *
+ * ── Pourquoi une feuille commune ────────────────────────────────────────
+ * Les 106 schémas embarquent chacun leur propre bloc `<style>` : 106
+ * déclarations de police, 101 `.title`, 92 `.lbl`, 70 `.sub`. Corriger un
+ * contraste demandait 106 modifications. Ici, une seule.
+ *
+ * ── Ce que la mesure a imposé ───────────────────────────────────────────
+ * Les couleurs en dur des schémas actuels ne tiennent pas le seuil :
+ *   #94a3b8 (texte secondaire, traits)  → 2,56:1 sur fond clair  ❌
+ *   #3b82f6 (accent, PORTEUR DE TEXTE)  → 3,68:1 clair, 3,94:1 sombre  ❌
+ * Les jetons ci-dessous sont donc pris dans la palette du produit, où le
+ * contraste est déjà vérifié, et l'accent textuel emprunte `--primary`,
+ * mesuré à 4,5:1 dans les deux registres.
+ *
+ * ── Direction B : planche technique cotée ───────────────────────────────
+ * Le trait porte la figure ; le TEXTE LONG SORT DU SVG. Un titre et des
+ * formules gravés dans le dessin ne se sélectionnent pas, ne se traduisent
+ * pas, et surtout ne suivent ni la taille de police du lecteur ni le zoom
+ * texte — un `font-size: 13px` réduit à 33 % sur mobile tombe sous 5 px.
+ * Ne restent dans le SVG que les repères courts, indissociables de la
+ * géométrie.
+ */
+
+.croquis {
+  /* Le dessin hérite de la couleur du texte : il suit le thème sans effort. */
+  color: var(--foreground);
+}
+
+.croquis svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Traits ---------------------------------------------------------------
+   Une seule épaisseur structurante, une seule épaisseur secondaire. */
+
+.croquis .trait {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.croquis .trait-fin {
+  fill: none;
+  stroke: var(--muted-foreground);
+  stroke-width: 1.5;
+}
+
+/* --- Repères ---------------------------------------------------------------
+   Les seuls textes qui restent gravés : courts, liés à la géométrie. La
+   taille est en `em`, donc relative au conteneur, donc sensible au zoom. */
+
+.croquis .repere {
+  fill: currentColor;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.croquis .repere-petit {
+  fill: var(--muted-foreground);
+  font-size: 0.9em;
+}
+
+/* --- Accent ---------------------------------------------------------------
+   Une seule teinte porteuse de sens, empruntée au jeton de navigation dont
+   le contraste est déjà garanti dans les deux registres. */
+
+.croquis .accent {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2;
+}
+
+.croquis .accent-plein {
+  fill: var(--primary);
+}

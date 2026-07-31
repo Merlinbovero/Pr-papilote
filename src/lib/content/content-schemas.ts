@@ -502,6 +502,26 @@ export const ficheFigureSchema = z.object({
   alt: z.string().min(5),
   /** Légende affichée sous le schéma. */
   caption: z.string().min(1).optional(),
+  /**
+   * Légende structurée — repère du dessin → intitulé, en HTML réel.
+   *
+   * Ce qu'un croquis ne doit pas graver : les intitulés longs et les
+   * formules. Dans le SVG, ils ne se sélectionnent pas, ne se traduisent
+   * pas, et leur taille en pixels ne suit ni la police du lecteur ni le
+   * zoom texte — un `13px` réduit à 33 % sur mobile tombe sous 5 px. Ici,
+   * ils sont du texte comme un autre.
+   *
+   * Facultatif : les schémas historiques n'en portent pas.
+   */
+  legende: z
+    .array(
+      z.object({
+        /** Le repère tel qu'il figure dans le dessin (« D », « A », « 1 »). */
+        repere: z.string().min(1).max(4),
+        texte: z.string().min(1),
+      })
+    )
+    .optional(),
   /** Dimensions du viewBox (ratio) — évite tout décalage de mise en page. */
   width: z.int().positive(),
   height: z.int().positive(),

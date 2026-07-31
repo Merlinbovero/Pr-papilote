@@ -101,10 +101,17 @@ content:
         disposition des deux autres donne la formule.
       figures:
         - schemaId: triangle-dvt
-          alt: Un triangle avec la distance en haut, la vitesse et le temps en bas, donnant les trois formules D = V fois t, t = D sur V et V = D sur t.
+          alt: Un triangle partagé en trois cases — la distance occupe la case du haut, la vitesse et le temps les deux cases du bas.
           caption: Le triangle D-V-t — on masque la grandeur cherchée pour lire directement sa formule.
+          legende:
+            - repere: D
+              texte: Distance — case du haut, donc produit des deux autres. D = V × t
+            - repere: V
+              texte: Vitesse — case du bas gauche. V = D / t
+            - repere: t
+              texte: Temps — case du bas droite. t = D / V
           width: 380
-          height: 260
+          height: 210
     - id: calculer-en-navigation
       title: Calculer en navigation
       body: |
