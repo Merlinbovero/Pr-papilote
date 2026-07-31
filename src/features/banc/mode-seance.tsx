@@ -62,6 +62,15 @@ export interface ModeSeanceProps {
   onSeanceEntree?: () => void;
   /** Appelé à la sortie explicite. */
   onSortie?: () => void;
+  /**
+   * Empêche le lancement tant que l'avant-séance est incomplet — lot F2b.
+   *
+   * `/reviser` exige de choisir un concours avant de démarrer ; le bouton
+   * existe donc dès l'abord, mais reste inopérant. C'est le comportement
+   * historique de cette route, conservé tel quel : la migration ne change que
+   * la présentation.
+   */
+  lancementDesactive?: boolean;
   className?: string;
 }
 
@@ -72,6 +81,7 @@ export function ModeSeance({
   labelSeance,
   onSeanceEntree,
   onSortie,
+  lancementDesactive = false,
   className,
 }: ModeSeanceProps) {
   const [enSeance, setEnSeance] = React.useState(false);
@@ -104,6 +114,7 @@ export function ModeSeance({
         {!enSeance ? (
           <Button
             className="mt-6"
+            disabled={lancementDesactive}
             onClick={(evenement) => {
               declencheur.current = evenement.currentTarget;
               setEnSeance(true);
