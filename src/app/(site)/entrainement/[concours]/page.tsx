@@ -121,6 +121,7 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
           totalAvailable={totalAvailable}
           variant={banc ? "banc" : "legacy"}
           entete={banc ? entete : undefined}
+          labelSeance={banc ? `Série d'entraînement — ${mod.name}` : undefined}
           blurb={
             <>
               Une série de questions tirées au hasard dans la banque du concours ({totalAvailable}{" "}

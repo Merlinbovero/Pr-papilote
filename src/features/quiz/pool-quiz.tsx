@@ -40,6 +40,16 @@ interface PoolQuizProps {
    * restait empilé au-dessus.
    */
   entete?: React.ReactNode;
+  /**
+   * Nom accessible de l'aire de séance — ce que le focus fait lire au
+   * lancement, en variante Banc.
+   *
+   * Distinct de `label`, qui porte la dénomination complète du vivier
+   * (« EOPAN — Élève Officier Pilote de l'Aéronautique Navale ») : lue à
+   * l'entrée en séance, elle est longue et ne dit rien de la tâche. Le
+   * lecteur de quiz la conserve, lui, comme nom de sa section.
+   */
+  labelSeance?: string;
 }
 
 type Phase = "config" | "loading" | "error" | "playing";
@@ -63,6 +73,7 @@ export function PoolQuiz({
   blurb,
   variant = "legacy",
   entete,
+  labelSeance,
 }: PoolQuizProps) {
   const banc = variant === "banc";
   const options = LENGTHS.filter((n) => n <= totalAvailable);
@@ -136,7 +147,7 @@ export function PoolQuiz({
 
     return (
       <ModeSeance
-        labelSeance={`Série — ${label}`}
+        labelSeance={labelSeance ?? `Série — ${label}`}
         libelleLancement={phase === "loading" ? "Préparation…" : "Commencer la série"}
         // Le vivier n'est demandé qu'ici : l'aire est en place et le focus
         // posé quand le chargement commence.

@@ -84,12 +84,35 @@ for (const registre of ["light", "dark"] as const) {
     });
 
     test("la séance psychotechnique nomme sa progression", async ({ page }) => {
+      /*
+        DÉFAUT PRÉEXISTANT DU CONTRÔLE, révélé par la campagne complète du
+        lot F2a — il échouait environ une fois sur deux, tantôt sur un
+        projet, tantôt sur l'autre.
+
+        Trois familles sur cinq s'ouvrent sur une phase de MÉMORISATION, qui
+        ne porte délibérément aucune barre de progression et dure 3 à 5
+        secondes — soit exactement le délai d'attente par défaut de
+        Playwright. La famille étant TIRÉE AU HASARD, le résultat dépendait
+        du tirage et non de ce que le contrôle prétend vérifier : c'est le
+        défaut même qui avait invalidé la première campagne d'audit F0b-2.
+
+        On franchit donc la phase par l'horloge, seconde par seconde et pas
+        plus loin que nécessaire — avancer en bloc ferait expirer le
+        chronomètre de réponse, la question serait comptée manquée et la
+        barre ne vaudrait plus zéro.
+      */
+      await page.clock.install();
       await page.goto("/psychotechnique/entrainement");
       await page.getByRole("button", { name: /^Lancer la session/i }).click();
       await page.getByRole("button", { name: /^Démarrer$/ }).click();
-      await expect(
-        page.getByRole("progressbar", { name: "Progression de la séance" })
-      ).toHaveAttribute("aria-valuenow", "0");
+
+      const barre = page.getByRole("progressbar", { name: "Progression de la séance" });
+      for (let seconde = 0; seconde < 8 && (await barre.count()) === 0; seconde += 1) {
+        await page.clock.runFor(1000);
+      }
+
+      await expect(barre).toHaveAttribute("aria-valuenow", "0");
+      await expect(barre).toHaveAttribute("aria-valuetext", /0 question terminée sur \d+/);
     });
 
     test("aucune violation axe pendant une séance ni à la correction", async ({ page }) => {
@@ -120,8 +143,32 @@ test.describe("contrat de focus et d'annonce", () => {
     await page.getByRole("button", { name: /Commencer la série/i }).click();
     await page.waitForSelector(SEANCE);
 
-    // Démarrage : le focus entre dans la séance au lieu de retomber sur body.
-    expect(await focalise(page)).toMatch(/^Question 1 sur \d+$/);
+    /*
+      Démarrage : le focus entre dans la séance au lieu de retomber sur body.
+
+      **La cible a changé au lot F2a**, et c'est une conséquence assumée de
+      la migration de cette route vers le Banc. Deux zones focalisables sont
+      désormais imbriquées : l'aire de séance de `ModeSeance`, qui vient
+      d'apparaître, et le groupe « Question N sur T » du lecteur, qu'elle
+      contient. C'est l'aire de séance qui reçoit le focus, et non plus la
+      question, pour trois raisons :
+
+        1. c'est le conteneur qui vient d'apparaître — le focus suit ce qui
+           s'est produit ;
+        2. elle englobe la barre de progression et le niveau de difficulté,
+           que le groupe de question, lui, laisse en dehors : viser la
+           question ferait sauter ces informations ;
+        3. `ModeSeance` doit poser le focus AVANT de prévenir le moteur, sans
+           quoi le temps courrait pendant la réorganisation de l'écran (lot
+           F1b). Laisser aussi le lecteur revendiquer le focus au premier
+           rendu créerait deux prétendants.
+
+      La propriété que ce contrôle protège est inchangée : le focus ne
+      retombe pas sur `body`, et l'élément atteint NOMME l'écran. Sur les
+      routes non migrées — l'examen BIA ci-dessous — la cible reste le
+      groupe de question, et le contrôle correspondant n'a pas bougé.
+    */
+    expect(await focalise(page)).toBe("Série d'entraînement — EOPAN");
 
     await page.locator(SEANCE).first().click();
     await page.getByRole("button", { name: /^Valider$/ }).click();

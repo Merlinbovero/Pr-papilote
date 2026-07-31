@@ -172,9 +172,10 @@ test("la séance se joue entièrement au clavier", async ({ page }) => {
   await page.getByRole("button", { name: /Commencer la série/i }).focus();
   await page.keyboard.press("Enter");
   await page.locator(".banc-reponse").first().waitFor();
-  // Le libellé complet du vivier vient du référentiel (`fullName`) : on vise
-  // le préfixe, pas la dénomination officielle, qui n'est pas l'objet du test.
-  expect(await focalise(page)).toMatch(/^Série — EOPAN — /);
+  // L'aire de séance nomme la TÂCHE, pas la dénomination officielle du
+  // concours : celle-ci reste le nom de section du lecteur, où elle est utile,
+  // mais elle serait longue et peu informative à l'entrée en séance.
+  expect(await focalise(page)).toBe("Série d'entraînement — EOPAN");
 
   // Réponse au clavier.
   await page.locator(".banc-reponse").first().focus();
