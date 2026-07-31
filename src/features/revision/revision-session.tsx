@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CheckCircle2Icon, SparklesIcon } from "lucide-react";
+import { CheckCircle2Icon, RotateCcwIcon, SparklesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuizPlayer, type PlayerQuestion } from "@/features/quiz/quiz-player";
 import { ModeSeance } from "@/features/banc/mode-seance";
+import { deplacerFocus } from "@/lib/a11y/focus-transition";
 import {
   buildReviewQueue,
   reviewStats,
@@ -38,6 +39,8 @@ interface RevisionSessionProps {
   initialConcours?: string;
 }
 
+const ID_CONSIGNE = "reviser-consigne-concours";
+
 type Phase = "idle" | "loading" | "error" | "empty" | "playing";
 
 export function RevisionSession({ concoursList, initialConcours, entete }: RevisionSessionProps) {
@@ -47,7 +50,27 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
   const [queue, setQueue] = React.useState<PlayerQuestion[]>([]);
   const [stats, setStats] = React.useState<ReviewStats | null>(null);
   const [sessionId, setSessionId] = React.useState(0);
+  const [prochaineEcheance, setProchaineEcheance] = React.useState<Date | null>(null);
   const poolCache = React.useRef<Record<string, PlayerQuestion[]>>({});
+
+  /*
+    Focus des états TERMINAUX (rien à réviser, erreur).
+
+    `ModeSeance` a déjà posé le focus sur l'aire de séance au lancement ; le
+    résultat du chargement arrive ensuite, de façon asynchrone. On mémorise
+    donc où le système avait mis le focus, et on ne le déplace que s'il s'y
+    trouve encore : si le candidat l'a bougé entre-temps, la règle de non-vol
+    du lot F1a refuse, comme il se doit.
+  */
+  const zoneTerminale = React.useRef<HTMLElement>(null);
+  const focusAuLancement = React.useRef<Element | null>(null);
+
+  React.useEffect(() => {
+    if (phase !== "empty" && phase !== "error") {
+      return;
+    }
+    deplacerFocus(zoneTerminale.current, { declencheur: focusAuLancement.current });
+  }, [phase]);
 
   // Préselection : « Ma préparation » si aucun concours n'est imposé.
   React.useEffect(() => {
@@ -76,6 +99,15 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
       .map((id) => byId.get(id))
       .filter((q): q is PlayerQuestion => Boolean(q));
     setStats(reviewStats(ids, state));
+    /* Dérivée de l'état déjà en main : la plus proche échéance encore à
+       venir parmi les questions de CE vivier. Aucune donnée inventée. */
+    const echeances = ids
+      .map((id) => state[id]?.dueAt)
+      .filter((d): d is string => Boolean(d))
+      .map((d) => new Date(d))
+      .filter((d) => d.getTime() > Date.now())
+      .sort((a, b) => a.getTime() - b.getTime());
+    setProchaineEcheance(echeances[0] ?? null);
     setQueue(selected);
     setSessionId((n) => n + 1);
     setPhase(selected.length > 0 ? "playing" : "empty");
@@ -162,8 +194,10 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
       // Le concours doit être choisi avant de démarrer : comportement
       // historique de la route, conservé à l'identique.
       lancementDesactive={!concours}
+      idDescriptionLancement={ID_CONSIGNE}
       // Le vivier n'est demandé qu'ici — l'aire est en place et le focus posé.
       onSeanceEntree={() => {
+        focusAuLancement.current = document.activeElement;
         if (concours) void startFor(concours);
       }}
       onSortie={() => {
@@ -179,6 +213,14 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
               échéances sont calculées à partir de vos réponses et restent sur cet appareil.
             </p>
             {selecteur}
+            {/* Le motif de l'indisponibilité du lancement, visible ET rattaché
+                au bouton par `aria-describedby`. Il disparaît dès qu'un choix
+                valide est fait, puisqu'il n'a alors plus d'objet. */}
+            {!concours ? (
+              <p id={ID_CONSIGNE} className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+                Choisissez un concours pour commencer.
+              </p>
+            ) : null}
           </div>
         </div>
       }
@@ -204,30 +246,88 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
           />
         </div>
       ) : phase === "empty" ? (
-        <div className="bg-card space-y-4 rounded-2xl border p-6">
-          <p className="flex items-center gap-2 font-medium">
-            <CheckCircle2Icon aria-hidden className="text-success size-5" />
-            Rien à réviser aujourd&apos;hui pour {currentName}.
+        /*
+          Rien à réviser : ce n'est pas une erreur, c'est l'aboutissement
+          normal d'une révision à jour. Surface du Banc et non carte bordée,
+          verdict écrit et pas seulement teinté, et les seuls chiffres que la
+          séance possède réellement.
+        */
+        <section
+          ref={zoneTerminale}
+          tabIndex={-1}
+          aria-labelledby="reviser-vide-titre"
+          className="banc-stimulus space-y-3 outline-none"
+        >
+          <h2 id="reviser-vide-titre" className="flex items-center gap-2 font-semibold">
+            <CheckCircle2Icon aria-hidden className="size-5" style={{ color: "var(--bc-juste)" }} />
+            {`Révision à jour${currentName ? ` — ${currentName}` : ""}`}
+          </h2>
+          <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+            Aucune question n’est échue aujourd’hui. Revenez quand la prochaine échéance sera
+            atteinte, ou entraînez-vous librement en attendant.
           </p>
           {stats ? (
-            <p className="text-muted-foreground text-sm">
-              {stats.upcoming} question{stats.upcoming > 1 ? "s" : ""} programmée
-              {stats.upcoming > 1 ? "s" : ""} pour plus tard, {stats.mastered} acquise
-              {stats.mastered > 1 ? "s" : ""}, {stats.neverSeen} encore jamais vue
-              {stats.neverSeen > 1 ? "s" : ""}.
+            /* `dueNow` et `neverSeen` valent nécessairement zéro ici — sinon
+               la file ne serait pas vide. Les afficher serait du bruit. */
+            <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+              {/* La clause « dont N acquise » n'apparaît que si N > 0 :
+                  annoncer « dont 0 acquise » n'apprend rien. */}
+              {`${stats.upcoming} question${stats.upcoming > 1 ? "s" : ""} programmée${
+                stats.upcoming > 1 ? "s" : ""
+              } pour plus tard${
+                stats.mastered > 0
+                  ? `, dont ${stats.mastered} acquise${stats.mastered > 1 ? "s" : ""}`
+                  : ""
+              }.`}
+              {prochaineEcheance
+                ? ` Prochaine échéance : ${prochaineEcheance.toLocaleDateString("fr-FR", {
+                    day: "numeric",
+                    month: "long",
+                  })}.`
+                : null}
             </p>
           ) : null}
-          <Button asChild variant="outline" size="sm">
-            <Link href={`/entrainement/${concours}`}>
-              <SparklesIcon aria-hidden className="size-4" />
-              S&apos;entraîner librement
-            </Link>
-          </Button>
-        </div>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <Button asChild variant="outline" size="sm">
+              <Link href={`/entrainement/${concours}`}>
+                <SparklesIcon aria-hidden className="size-4" />
+                S&apos;entraîner librement
+              </Link>
+            </Button>
+          </div>
+        </section>
       ) : phase === "error" ? (
-        <div className="border-destructive/40 text-muted-foreground rounded-2xl border p-6 text-sm">
-          Le vivier n&apos;a pas pu être récupéré. Vérifiez votre connexion et réessayez.
-        </div>
+        /*
+          L'erreur interrompt le parcours : elle porte donc `role="alert"`,
+          elle reçoit le focus, et elle offre une sortie — un message sans
+          action laisserait le candidat dans une impasse.
+        */
+        <section
+          ref={zoneTerminale}
+          tabIndex={-1}
+          role="alert"
+          className="banc-stimulus space-y-3 outline-none"
+          style={{ borderLeft: "3px solid var(--bc-erreur)" }}
+        >
+          <h2 className="font-semibold" style={{ color: "var(--bc-erreur)" }}>
+            Chargement impossible
+          </h2>
+          <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+            La banque de questions n’a pas pu être récupérée. Vérifiez votre connexion, puis
+            relancez la séance. Vos échéances déjà enregistrées sont intactes.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <Button
+              size="sm"
+              onClick={() => {
+                if (concours) void startFor(concours);
+              }}
+            >
+              <RotateCcwIcon aria-hidden className="size-4" />
+              Réessayer
+            </Button>
+          </div>
+        </section>
       ) : (
         /* `idle` et `loading` : l'aire est en place, le vivier arrive. Le
            bouton de lancement n'est plus dupliqué ici — c'est `ModeSeance`

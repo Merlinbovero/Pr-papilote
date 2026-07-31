@@ -71,6 +71,13 @@ export interface ModeSeanceProps {
    * la présentation.
    */
   lancementDesactive?: boolean;
+  /**
+   * Identifiant de la consigne qui EXPLIQUE l'indisponibilité du lancement.
+   *
+   * Un bouton désactivé sans motif est une impasse : la relation est donc
+   * explicite (`aria-describedby`), et non laissée à la proximité visuelle.
+   */
+  idDescriptionLancement?: string;
   className?: string;
 }
 
@@ -82,6 +89,7 @@ export function ModeSeance({
   onSeanceEntree,
   onSortie,
   lancementDesactive = false,
+  idDescriptionLancement,
   className,
 }: ModeSeanceProps) {
   const [enSeance, setEnSeance] = React.useState(false);
@@ -115,6 +123,7 @@ export function ModeSeance({
           <Button
             className="mt-6"
             disabled={lancementDesactive}
+            aria-describedby={lancementDesactive ? idDescriptionLancement : undefined}
             onClick={(evenement) => {
               declencheur.current = evenement.currentTarget;
               setEnSeance(true);
