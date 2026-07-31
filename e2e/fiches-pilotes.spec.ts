@@ -68,8 +68,15 @@ test.describe("fiches pilotes — gabarit sur le graphe réel", () => {
     const section = page.getByRole("region", { name: "Tester cette notion" });
     await expect(section).toBeVisible();
     await section.getByRole("button", { name: "Tester cette notion" }).click();
-    // Le player affiche une première question à répondre.
-    await expect(page.getByText(/Question 1 \//)).toBeVisible();
+    /*
+      Le player est monté à la demande : son fragment est récupéré puis
+      hydraté au clic. Mesuré 2,2 s sur une machine au repos, mais 6,3 s
+      sous la charge d'une campagne complète — au-delà du délai par défaut
+      de 5 s, d'où un échec intermittent observé au lot F2a. Le délai est
+      donc explicite ici, et cadré sur ce qu'on attend réellement : un
+      chargement, pas un rendu immédiat.
+    */
+    await expect(page.getByText(/Question 1 \//)).toBeVisible({ timeout: 20_000 });
     await expect(page.getByRole("button", { name: "Valider" })).toBeVisible();
   });
 

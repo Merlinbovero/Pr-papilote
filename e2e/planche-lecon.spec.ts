@@ -98,7 +98,15 @@ test.describe("sommaire ancré", () => {
       await expect(liens.nth(i)).toBeFocused();
     }
     await page.keyboard.press("Enter");
-    expect(new URL(page.url()).hash).not.toBe("");
+    /*
+      `page.url()` était lu SYNCHRONIQUEMENT après la frappe, sans aucune
+      attente : l'assertion courait avant que la navigation d'ancre ne soit
+      validée. Elle passait sur une machine au repos et tombait sous charge
+      — observé lors d'une campagne complète du lot F2a. `expect.poll`
+      réessaie jusqu'au délai imparti, sans rien changer à ce qui est
+      vérifié.
+    */
+    await expect.poll(() => new URL(page.url()).hash).not.toBe("");
   });
 
   test("le repère suit la lecture sans jamais toucher à l'adresse", async ({ page }) => {
