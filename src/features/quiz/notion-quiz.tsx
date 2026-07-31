@@ -48,6 +48,26 @@ export function NotionQuiz({
   idBloc = "s-entrainer",
 }: NotionQuizProps) {
   const [series, setSeries] = React.useState<PlayerQuestion[] | null>(null);
+  /*
+    Le tirage porte un numéro, et ce numéro est la CLÉ du lecteur.
+
+    `QuizPlayer` garde sa phase, son index, sa sélection et ses résultats dans
+    son propre état. Remplacer la prop `questions` ne les réinitialise pas :
+    React réutilise l'instance, et le lecteur reste figé sur l'écran de score.
+    « Nouvelle série » ne relançait donc rien une fois la série terminée —
+    défaut relevé par la campagne de référence du lot F4, avant toute
+    migration, et reproduit par un contrôle unitaire dédié.
+
+    Changer la clé force le remontage : c'est le moyen prévu par React pour
+    réinitialiser un état, et il ne touche pas au moteur partagé par les
+    routes déjà migrées.
+  */
+  const [tirage, setTirage] = React.useState(0);
+
+  const tirer = React.useCallback(() => {
+    setSeries(drawSeries(pool, seriesSize));
+    setTirage((n) => n + 1);
+  }, [pool, seriesSize]);
 
   if (pool.length === 0) {
     return null;
@@ -74,7 +94,7 @@ export function NotionQuiz({
           {pool.length > 1 ? "nt" : ""} sur cette fiche — série de {drawCount}, correction
           immédiate, renvoi vers la fiche.
         </p>
-        <Button onClick={() => setSeries(drawSeries(pool, seriesSize))}>
+        <Button onClick={tirer}>
           <TargetIcon aria-hidden className="size-4" />
           Tester cette notion
         </Button>
@@ -88,10 +108,10 @@ export function NotionQuiz({
       aria-label="Quiz de la notion"
       className="scroll-mt-20 space-y-4 print:hidden"
     >
-      <QuizPlayer title={`Tester — ${ficheTitle}`} questions={series} />
+      <QuizPlayer key={tirage} title={`Tester — ${ficheTitle}`} questions={series} />
       <div className="flex flex-wrap gap-3">
         {pool.length > drawCount ? (
-          <Button variant="outline" onClick={() => setSeries(drawSeries(pool, seriesSize))}>
+          <Button variant="outline" onClick={tirer}>
             Nouvelle série
           </Button>
         ) : null}
