@@ -420,12 +420,13 @@ test("le lien « Pour approfondir » est souligné au repos sur la route pilote"
  * sur une page 404 ; la garde ci-dessous l'empêche.
  */
 const AUTRES_APPELANTS = [
-  "/entrainement/eopn", // même gabarit, variante legacy
-  "/entrainement/alat",
+  "/entrainement/eopn", // PoolQuiz — même gabarit, variante legacy
+  "/entrainement/alat", // PoolQuiz
   "/anglais", // PoolQuiz — anglais aéronautique
-  "/design-system/quiz", // QuizPlayer nu
-  "/bia/aerodynamique-et-principes-du-vol", // quiz de matière BIA
-  "/fondamentaux/aerodynamique/l-aerostatique", // fiche : identification
+  "/design-system/quiz", // QuizPlayer nu — vitrine interne
+  "/bia/aerodynamique-et-principes-du-vol", // MatiereQuiz — quiz de matière BIA
+  "/fondamentaux/aerodynamique/l-aerostatique", // NotionQuiz — fiche d'archétype `lecon`
+  "/cours/forces-et-lois-de-newton", // CourseExperience — leçon canonique
   /*
     `/reviser` a QUITTÉ cette liste au lot F2b : la route est migrée, elle
     porte donc le Banc et ce contrôle y échouerait — à juste titre. Elle est
@@ -434,6 +435,27 @@ const AUTRES_APPELANTS = [
     Cette liste est le registre des routes NON migrées : chaque migration en
     retire une ligne, et l'oubli se voit immédiatement puisque le contrôle
     tombe.
+
+    ── Ce que le registre couvre, et comment on le vérifie ─────────────────
+    Une ligne par COMPOSANT qui importe `QuizPlayer`, et non par route : une
+    fuite du Banc viendrait du composant ou de la page qui pose `.banc`, pas
+    de la multiplication des URL qui les rendent. La correspondance se relit
+    par `grep -rl "<QuizPlayer" src/`, qui doit donner exactement six
+    composants — les cinq ci-dessus, plus `revision-session`, migré.
+
+    `CourseExperience` manquait à ce registre jusqu'au 2026-07-31 : les
+    quatorze leçons canoniques rendaient un `QuizPlayer` en rendu historique
+    sans aucun témoin de non-régression. Relevé par la recette de production,
+    en recomptant les appelants à partir des imports réels plutôt que d'après
+    la documentation.
+
+    ── Une couverture qui reste partielle, et qui le dit ───────────────────
+    `NotionQuiz` est rendu par CINQ gabarits de fiche — `situation`,
+    `cahier`, `planche-identification`, `lecon-fiche`, `dossier` — et une
+    seule route en témoigne. Le registre attrape donc une fuite venue du
+    composant, mais pas une fuite venue d'un seul gabarit. Élargir à cinq
+    routes changerait la granularité du registre : c'est un arbitrage de
+    doctrine, laissé ouvert plutôt que tranché en passant.
   */
 ];
 

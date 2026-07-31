@@ -46,17 +46,26 @@ Ce sont les **composants non migrés**, `revision-session` exclu. Le chiffre est
 juste dans sa définition ; `pool-quiz` y compte pour un, bien qu'il serve les
 deux registres.
 
-### 3. Registre `AUTRES_APPELANTS` — **six routes témoins**, pas six composants
+### 3. Registre `AUTRES_APPELANTS` — **sept routes témoins**, pas sept composants
 
 `e2e/banc-route-pilote.spec.ts` liste des **routes** servant de témoins de
-non-régression, à raison d'une par surface à surveiller. Comparer ce nombre à
-celui des composants n'a donc pas de sens.
+non-régression, **une par composant non migré**. Comparer ce nombre à celui des
+composants n'a donc pas de sens : `pool-quiz` en occupe trois à lui seul, parce
+qu'il sert trois surfaces distinctes.
 
-> **Lacune connue, non comblée.** Le registre ne contient **aucune route
-> `/cours/`**, alors que `/cours/[slug]` rend `CourseExperience`, donc un
-> `QuizPlayer` en rendu historique. **Quatorze cours** sont ainsi dépourvus de
-> témoin de non-régression. Relevé le 2026-07-31 ; combler cette lacune relève
-> d'un lot de test, pas d'une correction documentaire.
+**Lacune comblée le 2026-07-31.** Le registre ne contenait aucune route
+`/cours/`, alors que `/cours/[slug]` rend `CourseExperience`, donc un
+`QuizPlayer` en rendu historique : les quatorze leçons canoniques n'avaient
+aucun témoin. `/cours/forces-et-lois-de-newton` l'a rejoint, et le témoin a été
+vérifié par rupture — poser `.banc` sur le titre de la leçon fait bien tomber le
+contrôle.
+
+> **Une couverture qui reste partielle, et qui le dit.** `NotionQuiz` est rendu
+> par **cinq** gabarits de fiche — `situation`, `cahier`,
+> `planche-identification`, `lecon-fiche`, `dossier` — et une seule route en
+> témoigne. Le registre attrape donc une fuite venue du composant, mais pas une
+> fuite venue d'un seul gabarit. Élargir à cinq routes changerait la granularité
+> du registre : arbitrage de doctrine **laissé ouvert**, pas tranché en passant.
 
 ## Campagnes de tests
 
