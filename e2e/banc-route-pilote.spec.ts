@@ -424,9 +424,17 @@ const AUTRES_APPELANTS = [
   "/entrainement/alat",
   "/anglais", // PoolQuiz — anglais aéronautique
   "/design-system/quiz", // QuizPlayer nu
-  "/reviser", // révision espacée
   "/bia/aerodynamique-et-principes-du-vol", // quiz de matière BIA
   "/fondamentaux/aerodynamique/l-aerostatique", // fiche : identification
+  /*
+    `/reviser` a QUITTÉ cette liste au lot F2b : la route est migrée, elle
+    porte donc le Banc et ce contrôle y échouerait — à juste titre. Elle est
+    désormais couverte par `revision-banc.spec.ts`.
+
+    Cette liste est le registre des routes NON migrées : chaque migration en
+    retire une ligne, et l'oubli se voit immédiatement puisque le contrôle
+    tombe.
+  */
 ];
 
 for (const route of AUTRES_APPELANTS) {

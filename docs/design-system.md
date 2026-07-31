@@ -218,10 +218,19 @@ Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0
 
 Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.
 
-| Route                 | Lot | État                                                                                                       |
-| --------------------- | --- | ---------------------------------------------------------------------------------------------------------- |
-| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement. |
-| Six autres appelants  | —   | Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`.                  |
+| Route                 | Lot | État                                                                                                                                            |
+| --------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement.                                      |
+| `/reviser`            | F2b | **Migrée.** Mêmes états, plus deux propres à la révision : « rien à réviser » et erreur de chargement récupérable.                              |
+| Cinq autres appelants | —   | Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`, dont la liste est le registre des routes non migrées. |
+
+**Ce que la deuxième route a apporté au Banc**, sans architecture parallèle :
+
+- `lancementDesactive` et `idDescriptionLancement` sur `ModeSeance` — un lancement peut dépendre d'un préalable, et un bouton désactivé doit **dire pourquoi** (`aria-describedby`), sans quoi il forme une impasse ;
+- deux **états terminaux** qui ne sont pas des questions : un aboutissement normal (« rien à réviser ») et une erreur bloquante. Tous deux prennent une surface, un titre, et le focus — mais seulement si le système l'a encore, jamais s'il a été déplacé par le candidat entre-temps ;
+- la règle du **choix exclusif** : `fieldset` + `legend` + boutons radio natifs, jamais une imitation ARIA. Le contrôle recouvre la pastille (`absolute inset-0 opacity-0`) pour que cible réelle et cible visible coïncident, et la sélection porte une coche en plus de sa teinte.
+
+**Migrer une route, c'est aussi prouver que le moteur n'a pas bougé.** La méthode retenue en F2b : écrire la campagne comportementale **avant** la migration, la faire passer sur la route non migrée, puis la rejouer **octet pour octet** après. Ce que la migration ne doit pas toucher se prouve alors par un `git diff` vide, et non par une affirmation.
 
 **Deux règles nées de la première migration, et vérifiées par rupture délibérée :**
 
