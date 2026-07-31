@@ -8,6 +8,15 @@ import { getModule } from "@/lib/content/referentials";
 
 export const dynamicParams = false;
 
+/**
+ * Route pilote de l'identité Banc — lot F2a.
+ *
+ * Un seul concours l'active. Les autres gabarits d'entraînement, servis par
+ * ce même fichier, gardent le rendu historique : la migration se fait route
+ * par route, et se compare donc à un témoin non migré.
+ */
+const CONCOURS_BANC = "eopan";
+
 interface EntrainementPageProps {
   params: Promise<{ concours: string }>;
 }
@@ -43,31 +52,52 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
 
   const totalAvailable = buildConcoursPool(parsed.data).length;
   const label = mod.fullName ? `${mod.name} — ${mod.fullName}` : mod.name;
+  const banc = parsed.data === CONCOURS_BANC;
+
+  const entete = (
+    <header className="space-y-2">
+      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+        S&apos;entraîner — {mod.name}
+      </h1>
+      <p
+        className={banc ? "banc-consigne text-lg" : "text-muted-foreground max-w-prose text-lg"}
+        style={banc ? { color: "var(--bc-encre2)" } : undefined}
+      >
+        Révision active sur la banque de questions du concours : choisissez une longueur, répondez,
+        et lisez la correction de chaque question. Rien n&apos;est enregistré sans compte.
+      </p>
+    </header>
+  );
 
   return (
     <StandalonePageShell
+      /*
+        Le registre Banc est porté par la page entière, pas par un bloc : un
+        `.banc` posé sur la seule aire de séance dessinerait un rectangle
+        tiède au milieu d'un fond froid. Le fond du site est le plus clair
+        des deux (ΔE00 2,16 en clair, 0,86 en sombre) — toutes les encres du
+        Banc y mesurent un contraste SUPÉRIEUR à celui vérifié sur
+        `--bc-fond`, qui reste donc le pire cas des tests de jetons.
+      */
+      className={banc ? "banc" : undefined}
       breadcrumb={[
         { label: "Accueil", href: "/" },
         { label: mod.name, href: `/${mod.slug}` },
         { label: "S'entraîner" },
       ]}
     >
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          S&apos;entraîner — {mod.name}
-        </h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
-          Révision active sur la banque de questions du concours : choisissez une longueur,
-          répondez, et lisez la correction de chaque question. Rien n&apos;est enregistré sans
-          compte.
-        </p>
-      </header>
+      {/* En variante Banc, l'en-tête est confié au lanceur pour qu'il se
+          replie avec le reste de l'introduction au lancement. Sans vivier il
+          n'y a pas de séance : la page le rend alors elle-même. */}
+      {banc && totalAvailable > 0 ? null : entete}
 
       {totalAvailable > 0 ? (
         <PoolQuiz
           label={label}
           poolUrl={`/entrainement/${mod.slug}/pool`}
           totalAvailable={totalAvailable}
+          variant={banc ? "banc" : "legacy"}
+          entete={banc ? entete : undefined}
           blurb={
             <>
               Une série de questions tirées au hasard dans la banque du concours ({totalAvailable}{" "}
