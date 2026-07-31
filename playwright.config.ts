@@ -45,25 +45,71 @@ export default defineConfig({
   ],
   webServer: {
     /*
-     * L'index de recherche est généré AVANT le serveur.
+     * La suite s'exécute sur une COMPILATION DE PRODUCTION, jamais sur le
+     * serveur de développement.
      *
-     * `public/generated/recherche-index.json` est un artefact : il est exclu
-     * de Git (`.gitignore`) et produit par le hook `prebuild`, donc par
-     * `npm run build` uniquement. Or le job e2e de la CI ne construit pas —
-     * il enchaîne `npm ci`, l'installation des navigateurs, puis les tests —
-     * et `next dev` ne déclenche pas `prebuild`. Sur un dépôt fraîchement
-     * cloné, l'index n'existait donc jamais : la palette de recherche
-     * recevait un 404 et dix-sept contrôles tombaient.
+     * ── Pourquoi ────────────────────────────────────────────────────────
+     * `next dev` compile chaque route à la demande, au premier accès. Sur
+     * une machine au repos, `/eopn/grades/grades-de-l-armee-de-l-air` met
+     * **7,52 s** à répondre à froid, puis 0,199 s à chaud. En CI, Playwright
+     * prend 2 des 4 cœurs et plusieurs routes compilent simultanément : le
+     * délai de 30 s d'un test a été dépassé sur les trente dernières
+     * poussées vers `main`, sans qu'aucune assertion ne soit en cause.
      *
-     * Reproduit en environnement propre : sans index 5 échecs, avec index
-     * généré au préalable 13 réussites, une seule variable changée.
+     * Servie depuis une compilation de production, la même route répond en
+     * **0,0125 s** — soit six cents fois moins. Il n'y a plus de
+     * compilation à la demande, donc plus rien à dépasser.
      *
-     * La suite devient ainsi autosuffisante — elle ne suppose plus qu'un
-     * build a eu lieu auparavant sur la machine.
+     * Le coût est un build de ~47 s, payé une fois, contre une compilation
+     * par route payée à chaque campagne.
+     *
+     * ── Ce que ce choix corrige, et ce qu'il ne masque pas ──────────────
+     * Aucun délai de test n'est allongé, aucune reprise n'est ajoutée,
+     * aucun test n'est filtré ni désactivé, aucune page n'est modifiée. La
+     * cause est supprimée, pas contournée. Les deux projets, l'inventaire
+     * complet et l'absence de filtre sont inchangés.
+     *
+     * ── L'index de recherche reste garanti ──────────────────────────────
+     * `public/generated/recherche-index.json` est un artefact exclu de Git,
+     * produit par le hook `prebuild`. `npm run build` le déclenche : la
+     * garantie obtenue précédemment par un appel explicite est désormais
+     * portée par le build lui-même, et vérifiée par mesure (HTTP 200 sur
+     * l'artefact, serveur de production, dépôt propre).
+     *
+     * ── Les quatre dépendances au mode de compilation ───────────────────
+     * Quitter `next dev` réveille tout ce que le code conditionnait au mode.
+     * L'inventaire a été fait en entier, et non corrigé au fil des échecs :
+     *
+     * 1. `/design-lab/*` — `isDesignLabEnabled()` est vrai si
+     *    `NEXT_PUBLIC_DESIGN_LAB` vaut « 1 » OU en développement.
+     * 2. `/design-system/*` — quatre pages appellent `notFound()` en
+     *    production sauf si `NEXT_PUBLIC_SHOW_DESIGN_SYSTEM` vaut « 1 ».
+     *    Garde DISTINCTE de la précédente : ne poser que la première laisse
+     *    tomber douze contrôles, ce que la campagne a montré.
+     * 3. Brouillons (`fiches.ts`, `cours.ts`) — masqués en production sauf
+     *    `NEXT_PUBLIC_SHOW_DRAFTS`. **Volontairement non posée** : le corpus
+     *    ne compte aucun brouillon, et le jour où il en comptera, la vérité
+     *    à tester est bien que la production ne les sert pas.
+     * 4. Service worker — il ne s'enregistrait pas sous `next dev` ; il
+     *    s'enregistre maintenant. Différence assumée : la suite s'approche
+     *    de ce que le visiteur reçoit vraiment.
+     *
+     * Les deux variables posées ici ne fuient pas en production réelle :
+     * `NEXT_PUBLIC_` est figée à la compilation et le déploiement Vercel ne
+     * les définit pas — `/design-lab/*` et `/design-system/*` y restent en
+     * 404. Elles servent à conserver EXACTEMENT la surface testée jusqu'ici.
      */
-    command: "npm run generate:search-index && npm run dev",
+    command: "npm run build && npm start",
+    env: { NEXT_PUBLIC_DESIGN_LAB: "1", NEXT_PUBLIC_SHOW_DESIGN_SYSTEM: "1" },
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    /*
+     * Budget de démarrage porté de 120 s à 300 s : il doit désormais couvrir
+     * un build complet, mesuré à 47 s en local et plus lent sur un runner
+     * partagé. Ce n'est pas un délai de test allongé pour faire passer une
+     * assertion — aucun `timeout` de test n'est touché — mais le temps
+     * accordé au serveur pour exister.
+     */
+    timeout: 300_000,
   },
 });
