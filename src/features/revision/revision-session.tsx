@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CheckCircle2Icon, RotateCcwIcon, SparklesIcon } from "lucide-react";
+import { CheckCircle2Icon, CheckIcon, RotateCcwIcon, SparklesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuizPlayer, type PlayerQuestion } from "@/features/quiz/quiz-player";
 import { ModeSeance } from "@/features/banc/mode-seance";
@@ -35,17 +35,14 @@ interface RevisionSessionProps {
    * condition pour que l'aire de jeu entre dans le cadre.
    */
   entete?: React.ReactNode;
-  /** Concours présélectionné (issu de « Ma préparation »), sinon choix manuel. */
-  initialConcours?: string;
 }
 
 const ID_CONSIGNE = "reviser-consigne-concours";
 
 type Phase = "idle" | "loading" | "error" | "empty" | "playing";
 
-export function RevisionSession({ concoursList, initialConcours, entete }: RevisionSessionProps) {
-  const [mounted, setMounted] = React.useState(false);
-  const [concours, setConcours] = React.useState<string | undefined>(initialConcours);
+export function RevisionSession({ concoursList, entete }: RevisionSessionProps) {
+  const [concours, setConcours] = React.useState<string | undefined>(undefined);
   const [phase, setPhase] = React.useState<Phase>("idle");
   const [queue, setQueue] = React.useState<PlayerQuestion[]>([]);
   const [stats, setStats] = React.useState<ReviewStats | null>(null);
@@ -72,24 +69,29 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
     deplacerFocus(zoneTerminale.current, { declencheur: focusAuLancement.current });
   }, [phase]);
 
-  // Préselection : « Ma préparation » si aucun concours n'est imposé.
-  React.useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      if (!initialConcours) {
-        try {
-          const raw = window.localStorage.getItem("prepapilote:preparation");
-          if (raw) {
-            const parsed = JSON.parse(raw) as { concours?: string };
-            if (parsed?.concours) setConcours(parsed.concours);
-          }
-        } catch {
-          // pas de préparation mémorisée : choix manuel
-        }
-      }
-      setMounted(true);
-    });
-    return () => cancelAnimationFrame(id);
-  }, [initialConcours]);
+  /*
+    NETTOYAGE — lot F2b.
+
+    Cette route lisait `prepapilote:preparation` pour présélectionner un
+    concours. L'audit F0c a établi, et une nouvelle vérification a confirmé,
+    que **rien n'écrit jamais cette clé** : une seule occurrence dans tout le
+    dépôt, en lecture, la fonctionnalité qui l'alimentait ayant été
+    supprimée. La présélection ne s'est donc jamais produite en pratique.
+
+    La lecture orpheline part, et avec elle le sursis de montage qu'elle
+    seule justifiait : `mounted` n'existait que pour éviter une divergence
+    d'hydratation causée par cette lecture côté client. Sans elle, l'état
+    initial est purement déterministe, la page se rend directement et le
+    trou de 8 rem disparaît.
+
+    La clé n'est PAS effacée du navigateur et aucune migration n'est lancée :
+    une valeur résiduelle reste simplement sans effet. Si « Ma préparation »
+    revient, elle exigera un contrat versionné, pas ce vestige.
+
+    Comportement par défaut, désormais explicite : aucun concours
+    présélectionné, invitation visible à en choisir un, lancement désactivé
+    jusqu'au choix.
+  */
 
   const buildFrom = React.useCallback((pool: PlayerQuestion[], state: ReviewState) => {
     const byId = new Map(pool.map((q) => [q.id, q]));
@@ -144,47 +146,67 @@ export function RevisionSession({ concoursList, initialConcours, entete }: Revis
     }
   }, [concours]);
 
-  if (!mounted) {
-    return <div aria-hidden className="min-h-[8rem]" />;
-  }
-
   const currentName = concoursList.find((c) => c.slug === concours)?.name;
 
-  /* Le sélecteur garde ici sa sémantique historique (`aria-pressed`) : le
-     passage au choix exclusif natif est le sujet du commit 3, pour que la
-     migration visuelle et le changement de sémantique restent relisibles
-     séparément. Seule la teinte passe au registre du Banc. */
+  /*
+    Choix exclusif NATIF — lot F2b.
+
+    Le rendu reste celui validé en F2a (pastilles), mais la sémantique n'est
+    plus imitée : `fieldset` + `legend` + `input type="radio"` donnent
+    gratuitement et correctement ce qu'un radiogroup ARIA oblige à
+    reconstruire — un seul arrêt de tabulation pour le groupe, navigation
+    aux flèches, Home/End, état coché exact, nom accessible porté par la
+    légende. Le contrôle réel est visuellement masqué mais reste focalisable :
+    c'est lui qui reçoit le focus, et l'étiquette qui le montre.
+
+    L'état sélectionné n'est **pas porté par la seule couleur** : la pastille
+    retenue affiche aussi une coche. Les cibles font 44 px de haut.
+  */
   const selecteur = (
-    <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Concours à réviser">
-      {concoursList.map((c) => {
-        const active = concours === c.slug;
-        return (
-          <button
-            key={c.slug}
-            type="button"
-            aria-pressed={active}
-            onClick={() => {
-              setConcours(c.slug);
-              setPhase("idle");
-              setQueue([]);
-              setStats(null);
-            }}
-            className="focus-visible:ring-ring rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
-            style={
-              active
-                ? {
-                    borderColor: "var(--bc-banc)",
-                    color: "var(--bc-banc)",
-                    backgroundColor: "var(--bc-fond2)",
-                  }
-                : { borderColor: "var(--bc-filet)", color: "var(--bc-encre2)" }
-            }
-          >
-            {c.name}
-          </button>
-        );
-      })}
-    </div>
+    <fieldset className="space-y-2">
+      <legend className="text-sm font-medium">Concours à réviser</legend>
+      <div className="flex flex-wrap gap-2">
+        {concoursList.map((c) => {
+          const active = concours === c.slug;
+          return (
+            <label key={c.slug} className="relative inline-flex cursor-pointer">
+              {/* Le contrôle RECOUVRE la pastille au lieu d'être réduit à un
+                  pixel : la cible réelle et la cible visible coïncident, donc
+                  ce que l'on clique est bien ce que l'on voit. Invisible, mais
+                  ni masqué ni déplacé. */}
+              <input
+                type="radio"
+                name="concours-a-reviser"
+                value={c.slug}
+                checked={active}
+                onChange={() => {
+                  setConcours(c.slug);
+                  setPhase("idle");
+                  setQueue([]);
+                  setStats(null);
+                }}
+                className="peer absolute inset-0 z-10 cursor-pointer opacity-0"
+              />
+              <span
+                className="peer-focus-visible:ring-ring flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2"
+                style={
+                  active
+                    ? {
+                        borderColor: "var(--bc-banc)",
+                        color: "var(--bc-banc)",
+                        backgroundColor: "var(--bc-fond2)",
+                      }
+                    : { borderColor: "var(--bc-filet)", color: "var(--bc-encre2)" }
+                }
+              >
+                {active ? <CheckIcon aria-hidden className="size-4 shrink-0" /> : null}
+                {c.name}
+              </span>
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 
   return (

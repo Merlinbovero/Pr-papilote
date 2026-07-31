@@ -36,8 +36,9 @@ async function semerToutAJour(page: Page) {
   return ids.length;
 }
 
+/** Le contrôle EOPAN, désormais un bouton radio natif (lot F2b, commit 3). */
 const choisirEopan = (page: Page) =>
-  page.getByRole("group", { name: "Concours à réviser" }).getByRole("button", { name: "EOPAN" });
+  page.getByRole("group", { name: "Concours à réviser" }).getByRole("radio", { name: "EOPAN" });
 
 const focalise = (page: Page) =>
   page.evaluate(() => {
@@ -90,6 +91,101 @@ test("le lancement indisponible dit pourquoi, et le dit au bouton", async ({ pag
   await choisirEopan(page).click();
   await expect(lancer).toBeEnabled();
   await expect(consigne).toHaveCount(0);
+});
+
+// ---------------------------------------------------------------------------
+// 1 bis. Le choix du concours est exclusif, et natif
+// ---------------------------------------------------------------------------
+
+test("le sélecteur est un choix exclusif natif, pilotable au clavier", async ({ page }) => {
+  await page.goto("/reviser");
+
+  const groupe = page.getByRole("group", { name: "Concours à réviser" });
+  const options = groupe.getByRole("radio");
+  await expect(options).toHaveCount(3);
+  // Aucun présélectionné : c'est le comportement par défaut explicite.
+  await expect(groupe.getByRole("radio", { checked: true })).toHaveCount(0);
+
+  // Tab entre dans le groupe : c'est le CONTRÔLE qui prend le focus, même si
+  // c'est l'étiquette qui le donne à voir.
+  await options.first().focus();
+  await expect(options.first()).toBeFocused();
+
+  // Espace sélectionne.
+  await page.keyboard.press("Space");
+  await expect(options.first()).toBeChecked();
+  // …et le lancement s'active immédiatement.
+  await expect(page.getByRole("button", { name: /Commencer la révision/i })).toBeEnabled();
+
+  // Les flèches changent le choix, sans quitter le groupe : c'est le propre
+  // d'un groupe de boutons radio, et ce qu'un radiogroup ARIA devrait imiter.
+  await page.keyboard.press("ArrowDown");
+  await expect(options.nth(1)).toBeChecked();
+  await expect(options.nth(1)).toBeFocused();
+  await expect(options.first()).not.toBeChecked();
+
+  await page.keyboard.press("ArrowUp");
+  await expect(options.first()).toBeChecked();
+
+  // Un seul arrêt de tabulation pour tout le groupe : après le choix, Tab
+  // sort du groupe au lieu de visiter les deux autres options.
+  await page.keyboard.press("Tab");
+  await expect(options.nth(1)).not.toBeFocused();
+  await expect(options.nth(2)).not.toBeFocused();
+});
+
+test("l'option retenue ne se signale pas par la seule couleur", async ({ page }) => {
+  await page.goto("/reviser");
+  await choisirEopan(page).click();
+
+  // Une coche accompagne la teinte : la sélection reste lisible sans elle.
+  // Portée au groupe : « EOPAN » nomme aussi un menu de navigation et un
+  // lien de pied de page.
+  const pastille = page
+    .getByRole("group", { name: "Concours à réviser" })
+    .getByText("EOPAN", { exact: true });
+  const aUneIcone = await pastille.evaluate((el) => Boolean(el.querySelector("svg")));
+  expect(aUneIcone).toBe(true);
+
+  // La cible tactile se mesure sur le CONTRÔLE, qui recouvre la pastille.
+  const boite = await choisirEopan(page).boundingBox();
+  expect(boite!.height).toBeGreaterThanOrEqual(44);
+});
+
+// ---------------------------------------------------------------------------
+// 1 ter. La clé morte n'influence plus rien
+// ---------------------------------------------------------------------------
+
+test.describe("prepapilote:preparation — vestige sans effet", () => {
+  /** L'état de départ observable : rien de coché, lancement bloqué, consigne. */
+  async function attendreEtatInitial(page: Page) {
+    const groupe = page.getByRole("group", { name: "Concours à réviser" });
+    await expect(groupe.getByRole("radio", { checked: true })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /Commencer la révision/i })).toBeDisabled();
+    await expect(page.getByText("Choisissez un concours pour commencer.")).toBeVisible();
+  }
+
+  test("clé absente : aucun concours présélectionné", async ({ page }) => {
+    await page.goto("/reviser");
+    await attendreEtatInitial(page);
+  });
+
+  test("clé présente avec une ancienne valeur : comportement identique", async ({ page }) => {
+    // La valeur qu'écrivait l'ancienne fonctionnalité « Ma préparation ».
+    await page.addInitScript(() =>
+      window.localStorage.setItem(
+        "prepapilote:preparation",
+        JSON.stringify({ concours: "alat", dateConcours: "2027-05-01" })
+      )
+    );
+    await page.goto("/reviser");
+    await attendreEtatInitial(page);
+
+    // Et le vestige n'est pas effacé de force : on ne migre ni ne nettoie
+    // le navigateur du candidat, on cesse simplement d'en tenir compte.
+    const reste = await page.evaluate(() => window.localStorage.getItem("prepapilote:preparation"));
+    expect(reste).not.toBeNull();
+  });
 });
 
 // ---------------------------------------------------------------------------
