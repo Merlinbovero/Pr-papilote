@@ -420,8 +420,6 @@ test("le lien « Pour approfondir » est souligné au repos sur la route pilote"
  * sur une page 404 ; la garde ci-dessous l'empêche.
  */
 const AUTRES_APPELANTS = [
-  "/entrainement/eopn", // PoolQuiz — même gabarit, variante legacy
-  "/entrainement/alat", // PoolQuiz
   "/anglais", // PoolQuiz — anglais aéronautique
   "/design-system/quiz", // QuizPlayer nu — vitrine interne
   "/bia/aerodynamique-et-principes-du-vol", // MatiereQuiz — quiz de matière BIA
@@ -464,9 +462,10 @@ const AUTRES_APPELANTS = [
     par rupture délibérée, et chacune des cinq ruptures ne fait tomber QUE son
     témoin — preuve qu'ils ne se recouvrent pas.
 
-    Deux entrées restent volontairement redondantes : `/entrainement/eopn` et
-    `/entrainement/alat` coïncident sur les quatre frontières. Les garder ne
-    coûte rien et documente que la migration les traitera ensemble.
+    `/entrainement/eopn` et `/entrainement/alat` ont quitté cette liste au lot
+    F3, comme `/reviser` l'avait quittée à F2b. Leur comportement est désormais
+    tenu par `e2e/entrainement-f3-reference.spec.ts`, écrite AVANT leur
+    migration et rejouée sans une retouche après — `git diff` vide.
 
     ── Vérifier que le registre est complet ────────────────────────────────
     `grep -rl "<QuizPlayer" src/` doit donner exactement six composants — les

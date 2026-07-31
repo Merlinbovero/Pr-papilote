@@ -21,9 +21,23 @@ production) et sur la branche de recette qui le prolonge.
 | --------------------- | -------- | --- |
 | `/entrainement/eopan` | **Banc** | F2a |
 | `/reviser`            | **Banc** | F2b |
+| `/entrainement/eopn`  | **Banc** | F3  |
+| `/entrainement/alat`  | **Banc** | F3  |
 
-Vérifié en production : ces deux routes seules portent le marquage `.banc`, et
-aucune route témoin ne l'a reçu par accident.
+Les deux premières sont vérifiées en production ; les deux suivantes ne sont pas
+encore déployées.
+
+**Gain mesuré au lot F3**, bas du bouton « Valider », même environnement et une
+seule variable changée — la constante qui active le registre :
+
+| Viewport   | Rendu historique | Banc       | Gain        |
+| ---------- | ---------------- | ---------- | ----------- |
+| 1440 × 900 | 623 px           | **461 px** | −162 px     |
+| 390 × 844  | 783 px           | **489 px** | **−294 px** |
+
+Ces valeurs ne se comparent pas à celles publiées en F2a : le point de mesure
+diffère — bas du bouton de validation ici, bas du premier contrôle de réponse
+là-bas.
 
 ## Le décompte des appelants — trois définitions, trois nombres
 
@@ -97,11 +111,11 @@ notion ».
 
 ## Campagnes de tests
 
-| Mesure                                  | Valeur                                                                                                  |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Tests découverts                        | **754** en 39 fichiers, deux projets (`chromium`, `mobile`)                                             |
-| Dernière campagne complète, sans filtre | **730 réussis, 14 ignorés, 0 échec, 0 flaky** — inventaire de 744, avant les dix témoins ajoutés depuis |
-| Tests unitaires (`npm run check`)       | **823** en 55 fichiers                                                                                  |
+| Mesure                                  | Valeur                                                      |
+| --------------------------------------- | ----------------------------------------------------------- |
+| Tests découverts                        | **778** en 40 fichiers, deux projets (`chromium`, `mobile`) |
+| Dernière campagne complète, sans filtre | **764 réussis, 14 ignorés, 0 échec, 0 flaky** — après F3    |
+| Tests unitaires (`npm run check`)       | **823** en 55 fichiers                                      |
 
 La suite s'exécute sur une **compilation de production**, jamais sur le serveur
 de développement — voir le commentaire de `playwright.config.ts` pour les quatre
