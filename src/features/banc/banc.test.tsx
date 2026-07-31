@@ -25,15 +25,16 @@ describe("Chronometre", () => {
     render(<Chronometre secondes={425} label="Temps restant" />);
     const chrono = screen.getByRole("timer");
     expect(chrono).toHaveTextContent("7:05");
-    // « 7:05 » se lit « sept-cent-cinq » selon les lecteurs d'écran.
-    expect(chrono).toHaveAttribute("aria-valuetext", "7 minutes et 5 secondes restantes");
+    // La phrase passe par le contenu accessible : `aria-valuetext` n'est pas
+    // supporté par `role="timer"` et aurait pu être ignoré en silence.
+    expect(chrono).toHaveTextContent("7 minutes et 5 secondes restantes");
+    expect(chrono).not.toHaveAttribute("aria-valuetext");
   });
 
   it("passe en H:MM:SS au-delà d'une heure", () => {
     render(<Chronometre secondes={4328} label="Temps restant" />);
     expect(screen.getByRole("timer")).toHaveTextContent("1:12:08");
-    expect(screen.getByRole("timer")).toHaveAttribute(
-      "aria-valuetext",
+    expect(screen.getByRole("timer")).toHaveTextContent(
       "1 heure, 12 minutes et 8 secondes restantes"
     );
   });
@@ -58,7 +59,7 @@ describe("Chronometre", () => {
     rerender(<Chronometre secondes={3} etat="critical" label="Temps" />);
     expect(screen.getByText("Temps critique")).toBeInTheDocument();
     rerender(<Chronometre secondes={0} etat="expired" label="Temps" />);
-    expect(screen.getByText("Temps écoulé")).toBeInTheDocument();
+    expect(screen.getByRole("timer")).toHaveTextContent("Temps écoulé");
   });
 
   it("traite l'absence de chronomètre comme un état, pas comme un vide", () => {

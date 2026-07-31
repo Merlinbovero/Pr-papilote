@@ -128,6 +128,21 @@
   font-feature-settings: "tnum";
 }
 
+/* Le chronomètre est la contrainte principale de l'épreuve, pas une
+   métadonnée : l'audit F0b l'a trouvé partout en gris, à la taille du
+   compteur de questions. Cette variante lui donne le poids qui lui revient. */
+.banc-chrono-cadre {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: var(--bc-fond2);
+  border: 1px solid var(--bc-filet);
+  border-radius: var(--bc-rayon);
+}
+
 .banc-chrono[data-etat="warning"] {
   color: var(--bc-attention);
 }

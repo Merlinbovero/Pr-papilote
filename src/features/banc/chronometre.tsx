@@ -72,10 +72,6 @@ export function Chronometre({
       role="timer"
       aria-live="off"
       aria-label={label}
-      // Ce que la technique d'assistance lit à la demande : une formulation
-      // naturelle, jamais « 7:05 », que les lecteurs d'écran énoncent
-      // « sept-cent-cinq » ou « sept cinq » selon l'implémentation.
-      aria-valuetext={parle}
       data-etat={etat}
       className={cn("banc-chrono inline-flex items-center gap-1.5 text-sm font-medium", className)}
     >
@@ -85,9 +81,16 @@ export function Chronometre({
       ) : (
         <ClockIcon aria-hidden className="size-4" />
       )}
+      {/*
+        Deux écritures de la même valeur : la compacte pour l'œil, la
+        naturelle pour l'oreille. « 7:05 » s'énonce « sept-cent-cinq » ou
+        « sept cinq » selon le lecteur d'écran.
+        La phrase passe par le CONTENU et non par `aria-valuetext` : cet
+        attribut appartient aux rôles à valeur et n'est pas supporté par
+        `timer`, où il aurait pu être ignoré sans que rien ne le signale.
+      */}
       <span aria-hidden>{etat === "expired" ? "0:00" : affiche}</span>
-      {/* Le libellé d'état est écrit, pas seulement coloré. */}
-      {etat === "expired" ? <span className="sr-only">Temps écoulé</span> : null}
+      <span className="sr-only">{parle}</span>
       {etat === "warning" || etat === "critical" ? (
         <span className="sr-only">{etat === "warning" ? "Temps faible" : "Temps critique"}</span>
       ) : null}
