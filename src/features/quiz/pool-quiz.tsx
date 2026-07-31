@@ -193,7 +193,15 @@ export function PoolQuiz({
           </div>
         ) : draw.length > 0 ? (
           <div className="space-y-5">
-            <QuizPlayer key={drawId} title={label} questions={draw} variant="banc" />
+            <QuizPlayer
+              key={drawId}
+              title={label}
+              questions={draw}
+              variant="banc"
+              // Premier tirage : le cadre de séance prend le focus.
+              // Tirages suivants : ils concluent un « Nouvelle série ».
+              focusAuMontage={drawId > 1}
+            />
             <div className="banc-separateur pt-4">
               <Button
                 size="sm"

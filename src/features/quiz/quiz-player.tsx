@@ -61,6 +61,19 @@ interface QuizPlayerProps {
    * aurait créé deux moteurs à maintenir, et deux occasions de diverger.
    */
   variant?: "legacy" | "banc";
+  /**
+   * Déplacer le focus dès le montage, et pas seulement aux transitions.
+   *
+   * Réservé au **remontage demandé par l'utilisateur** — le lecteur est
+   * reconstruit sous une nouvelle clé de tirage après « Nouvelle série ».
+   * Le contrat de focus veut alors la première question, comme après
+   * « Recommencer », et non le bouton qui vient d'être actionné.
+   *
+   * Reste `false` au premier tirage : c'est `ModeSeance` qui pose le focus
+   * sur le cadre de séance, et deux composants ne peuvent pas le revendiquer
+   * ensemble.
+   */
+  focusAuMontage?: boolean;
 }
 
 type Phase = "answering" | "correction" | "finished";
@@ -73,6 +86,7 @@ export function QuizPlayer({
   onFinished,
   onAnswered,
   variant = "legacy",
+  focusAuMontage = false,
 }: QuizPlayerProps) {
   const banc = variant === "banc";
   const [index, setIndex] = React.useState(0);
@@ -103,7 +117,21 @@ export function QuizPlayer({
   React.useEffect(() => {
     if (premierRendu.current) {
       premierRendu.current = false;
-      return;
+      if (!focusAuMontage) {
+        return;
+      }
+      /*
+        Cas du REMONTAGE demandé par l'utilisateur (« Nouvelle série ») : le
+        lecteur est reconstruit sous une nouvelle clé, donc ce rendu est bien
+        le premier — mais il conclut une action explicite, et laisser le
+        focus sur le bouton actionné laisserait la nouvelle série muette.
+
+        Le déclencheur est le contrôle que l'utilisateur vient d'actionner :
+        il porte encore le focus à l'instant du remontage. Le passer ici
+        satisfait la règle de non-vol du lot F1a par sa clause « le focus est
+        resté sur le déclencheur », ce qui est exactement la situation.
+      */
+      declencheur.current = document.activeElement;
     }
     const cible =
       phase === "finished"

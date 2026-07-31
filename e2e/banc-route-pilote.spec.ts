@@ -196,6 +196,89 @@ test("la séance se joue entièrement au clavier", async ({ page }) => {
   expect(await focalise(page)).toBe("Résultats");
 });
 
+/**
+ * Le contrat de focus arbitré à la validation de F2a, transition par
+ * transition — y compris les deux redémarrages, qui doivent se comporter de
+ * la même façon.
+ */
+test("le focus suit le contrat à chacune des six transitions", async ({ page }) => {
+  await vivierFixe(page);
+
+  const focalisee = () =>
+    page.evaluate(() => {
+      const actif = document.activeElement;
+      if (!actif || actif === document.body) return { role: "—", nom: "body", tabindex: null };
+      return {
+        role: actif.getAttribute("role") ?? actif.tagName.toLowerCase(),
+        nom: actif.getAttribute("aria-label") ?? (actif.textContent || "").trim().slice(0, 40),
+        tabindex: actif.getAttribute("tabindex"),
+      };
+    });
+
+  // 1 — lancement → cadre de séance
+  await lancer(page);
+  expect(await focalisee()).toEqual({
+    role: "group",
+    nom: "Série d'entraînement — EOPAN",
+    tabindex: "-1",
+  });
+
+  // Le cadre laisse la question devenir l'étape suivante de tabulation.
+  await page.keyboard.press("Tab");
+  expect((await focalisee()).nom).toBe("Vrai");
+
+  // 2 — validation → bloc de correction
+  await page.locator(".banc-reponse").first().click();
+  await page.getByRole("button", { name: "Valider" }).click();
+  expect((await focalisee()).nom).toBe("Correction");
+
+  // 3 — question suivante → groupe de la nouvelle question
+  await page.getByRole("button", { name: /Question suivante/i }).click();
+  expect((await focalisee()).nom).toBe("Question 2 sur 2");
+
+  // 4 — résultats → groupe des résultats
+  await page.locator(".banc-reponse").first().click();
+  await page.getByRole("button", { name: "Valider" }).click();
+  await page.getByRole("button", { name: /Voir le résultat/i }).click();
+  expect((await focalisee()).nom).toBe("Résultats");
+
+  // 5 — « Recommencer » → première question
+  await page.getByRole("button", { name: "Recommencer" }).click();
+  await page.locator(".banc-reponse").first().waitFor();
+  expect((await focalisee()).nom).toBe("Question 1 sur 2");
+
+  // 6 — « Nouvelle série » → première question du nouveau tirage.
+  //     Le lecteur est REMONTÉ sous une nouvelle clé : sans traitement
+  //     explicite, le focus resterait sur le bouton actionné et la nouvelle
+  //     série serait muette. Les deux redémarrages se comportent donc pareil.
+  await page.getByRole("button", { name: /Nouvelle série/i }).click();
+  await page.locator(".banc-reponse").first().waitFor();
+  expect((await focalisee()).nom).toBe("Question 1 sur 2");
+});
+
+/**
+ * Le nom accessible du cadre ne doit pas aspirer son contenu : `aria-label`
+ * l'emporte sur les descendants, mais une régression vers `aria-labelledby`
+ * ou vers un nom calculé par le contenu produirait une annonce de plusieurs
+ * lignes à l'entrée en séance.
+ */
+test("le cadre de séance nomme la tâche, pas son contenu", async ({ page }) => {
+  await vivierFixe(page);
+  await lancer(page);
+
+  const cadre = page.getByRole("group", { name: "Série d'entraînement — EOPAN" });
+  const mesures = await cadre.evaluate((el) => ({
+    nom: el.getAttribute("aria-label") ?? "",
+    longueurContenu: (el.textContent || "").trim().length,
+  }));
+
+  // Le contenu du cadre est bien plus long que son nom : la preuve que le
+  // nom ne le reprend pas.
+  expect(mesures.longueurContenu).toBeGreaterThan(mesures.nom.length * 2);
+  // Une annonce d'entrée doit rester courte.
+  expect(mesures.nom.length).toBeLessThanOrEqual(40);
+});
+
 // ---------------------------------------------------------------------------
 // 4. Les deux corrections, et l'annonce qui les accompagne
 // ---------------------------------------------------------------------------
