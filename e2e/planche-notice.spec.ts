@@ -169,13 +169,131 @@ test.describe("La Planche d'identification", () => {
   });
 
   test("le corps ne déborde jamais, du mobile au desktop", async ({ page }) => {
+    /*
+      ────────────────────────────────────────────────────────────────────
+      INSTRUMENTATION TEMPORAIRE — À RETIRER APRÈS DIAGNOSTIC.
+
+      Ce contrôle échoue en intégration continue, et seulement là, sur les
+      deux projets et après deux reprises :
+
+          page.goto: Test timeout of 30000ms exceeded
+          navigating to "…/eopn/grades/grades-de-l-armee-de-l-air",
+          waiting until "load"
+
+      Il passe en local, sur machine au repos comme en campagne complète.
+      Changer `next dev` pour une compilation de production N'A RIEN CHANGÉ :
+      la compilation à la demande n'est donc pas la cause racine.
+
+      Ce qu'il faut établir : laquelle des trois conditions d'une navigation
+      n'est pas atteinte — document reçu, DOMContentLoaded, `load` — et ce
+      qui la retient. Le découpage `commit` → `domcontentloaded` → `load`
+      ci-dessous sert à isoler la phase ; il n'est PAS le correctif.
+
+      Piste principale : la route porte UNE seule image, en `fill`, SANS
+      `loading="lazy"` — donc attendue par `load` — servie par
+      `/_next/image` et dotée d'un `sizes` responsive. Chaque changement de
+      viewport peut donc réclamer une variante différente, optimisée à la
+      demande. Mesuré au repos : 0,07 à 0,16 s par largeur. Reste à savoir
+      ce que cela devient sous contention du runner.
+      ────────────────────────────────────────────────────────────────────
+    */
+    const ouvertes = new Map<string, { debut: number; type: string; statut?: number }>();
+    const dernieres: string[] = [];
+    const journal: string[] = [];
+    let largeurCourante = 0;
+
+    page.on("request", (r) => ouvertes.set(r.url(), { debut: Date.now(), type: r.resourceType() }));
+    page.on("response", (r) => {
+      const e = ouvertes.get(r.url());
+      if (e) e.statut = r.status();
+      dernieres.push(`${r.status()} ${r.request().resourceType()} ${r.url().slice(0, 110)}`);
+      if (dernieres.length > 12) dernieres.shift();
+    });
+    page.on("requestfinished", (r) => ouvertes.delete(r.url()));
+    page.on("requestfailed", (r) => ouvertes.delete(r.url()));
+    page.on("domcontentloaded", () => journal.push(`[${largeurCourante}] domcontentloaded`));
+    page.on("load", () => journal.push(`[${largeurCourante}] load`));
+    page.on("console", (m) => {
+      if (m.type() === "error")
+        journal.push(`[${largeurCourante}] console: ${m.text().slice(0, 120)}`);
+    });
+    page.on("pageerror", (e) =>
+      journal.push(`[${largeurCourante}] pageerror: ${e.message.slice(0, 120)}`)
+    );
+    page.on("crash", () => journal.push(`[${largeurCourante}] CRASH`));
+
+    async function rapport(phase: string) {
+      const readyState = await page
+        .evaluate(() => document.readyState)
+        .catch(() => "(page.evaluate ne répond plus)");
+      const images = await page
+        .evaluate(() =>
+          [...document.images]
+            .filter((i) => !i.complete)
+            .map((i) => ({
+              currentSrc: i.currentSrc.slice(0, 130),
+              loading: i.loading,
+              naturalWidth: i.naturalWidth,
+            }))
+        )
+        .catch(() => "(indisponible)");
+      const sw = await page
+        .evaluate(() => Boolean(navigator.serviceWorker?.controller))
+        .catch(() => "(indisponible)");
+      console.log(
+        [
+          `\n═══ DIAGNOSTIC — bloqué en « ${phase} » à ${largeurCourante}px ═══`,
+          `readyState        : ${readyState}`,
+          `serviceWorker     : ${JSON.stringify(sw)}`,
+          `requêtes ouvertes : ${ouvertes.size}`,
+          ...[...ouvertes.entries()].map(
+            ([u, e]) =>
+              `   ${e.type} statut=${e.statut ?? "AUCUN"} depuis ${Date.now() - e.debut}ms — ${u.slice(0, 130)}`
+          ),
+          `images incomplètes: ${JSON.stringify(images)}`,
+          `dernières réponses:`,
+          ...dernieres.map((d) => `   ${d}`),
+          `journal           :`,
+          ...journal.map((j) => `   ${j}`),
+          "════════════════════════════════════════════════════════════\n",
+        ].join("\n")
+      );
+    }
+
     for (const largeur of [390, 834, 1440]) {
+      largeurCourante = largeur;
+      const t0 = Date.now();
       await page.setViewportSize({ width: largeur, height: 900 });
-      await page.goto("/eopn/grades/grades-de-l-armee-de-l-air");
+      journal.push(`[${largeur}] viewport posé en ${Date.now() - t0}ms`);
+
+      try {
+        const t1 = Date.now();
+        await page.goto("/eopn/grades/grades-de-l-armee-de-l-air", { waitUntil: "commit" });
+        journal.push(`[${largeur}] commit en ${Date.now() - t1}ms`);
+
+        const t2 = Date.now();
+        await page.waitForLoadState("domcontentloaded", { timeout: 8000 }).catch(async (e) => {
+          await rapport("domcontentloaded");
+          throw e;
+        });
+        journal.push(`[${largeur}] domcontentloaded en ${Date.now() - t2}ms`);
+
+        const t3 = Date.now();
+        await page.waitForLoadState("load", { timeout: 8000 }).catch(async (e) => {
+          await rapport("load");
+          throw e;
+        });
+        journal.push(`[${largeur}] load en ${Date.now() - t3}ms`);
+      } catch (e) {
+        console.log(`\n[DIAGNOSTIC] échec à ${largeur}px : ${(e as Error).message.slice(0, 200)}`);
+        throw e;
+      }
+
       const debordement = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth
       );
       expect(debordement, `débordement à ${largeur}px`).toBe(0);
     }
+    console.log(`\n[DIAGNOSTIC] parcours complet :\n   ${journal.join("\n   ")}`);
   });
 });
