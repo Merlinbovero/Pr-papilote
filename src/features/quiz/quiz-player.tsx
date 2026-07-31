@@ -311,7 +311,13 @@ export function QuizPlayer({
     <section aria-label={title} className="space-y-6">
       <Annonce message={annonce} />
       <div className="space-y-2">
-        <div className="text-muted-foreground flex items-center justify-between text-sm">
+        <div
+          className={cn(
+            "flex items-center justify-between text-sm",
+            !banc && "text-muted-foreground"
+          )}
+          style={banc ? { color: "var(--bc-encre2)" } : undefined}
+        >
           <span>
             Question {index + 1} / {questions.length}
           </span>
@@ -351,12 +357,26 @@ export function QuizPlayer({
         aria-label={`Question ${index + 1} sur ${questions.length}`}
         className="space-y-6 outline-none"
       >
-        <h2 className="text-xl font-semibold">{question.statement}</h2>
+        {/* Le stimulus prend une SURFACE, pas une bordure : c'est la règle de
+            hiérarchie du Banc, et c'est ce qui distingue l'instrument du
+            registre documentaire. L'étalon est `/design-lab/banc/seance`. */}
+        {banc ? (
+          <div className="banc-stimulus">
+            <h2 className="banc-enonce text-xl font-semibold">{question.statement}</h2>
+          </div>
+        ) : (
+          <h2 className="text-xl font-semibold">{question.statement}</h2>
+        )}
         {isMultiple && phase === "answering" ? (
-          <p className="text-muted-foreground text-sm">Plusieurs réponses possibles.</p>
+          <p
+            className={cn("text-sm", !banc && "text-muted-foreground")}
+            style={banc ? { color: "var(--bc-encre2)" } : undefined}
+          >
+            Plusieurs réponses possibles.
+          </p>
         ) : null}
 
-        <ul className={banc ? "space-y-2" : "space-y-2"} role="list">
+        <ul className="space-y-2" role="list">
           {question.choices.map((choice, choiceIndex) => {
             const isSelected = selected.includes(choiceIndex);
             const isRight = question.correctChoices.includes(choiceIndex);
@@ -452,7 +472,10 @@ export function QuizPlayer({
             </p>
             <p className="text-sm leading-7">{question.explanation}</p>
             {question.furtherReading && question.furtherReading.length > 0 ? (
-              <p className="text-muted-foreground text-sm">
+              <p
+                className={cn("text-sm", !banc && "text-muted-foreground")}
+                style={banc ? { color: "var(--bc-encre2)" } : undefined}
+              >
                 Pour approfondir :{" "}
                 {question.furtherReading.map((fiche, ficheIndex) => (
                   <React.Fragment key={fiche.href}>

@@ -38,6 +38,17 @@
 
   color: var(--bc-encre);
   background-color: var(--bc-fond);
+
+  /* Réaffectation locale du bouton primaire — lot F2a.
+     Les primitives shadcn consomment `--primary` ; les redéclarer ici fait
+     adopter le registre du Banc à `Button`, sans réécrire une primitive ni
+     dupliquer un composant (règle 4 d'AGENTS.md). La portée reste `.banc` :
+     hors du Banc, le bleu de navigation est intact.
+     Mesuré : 6,60:1 en clair, 8,45:1 en sombre — texte et fond confondus,
+     puisque l'encre du Banc sert de fond au bouton et le fond de page
+     d'encre au libellé. */
+  --primary: var(--bc-banc);
+  --primary-foreground: var(--bc-fond);
 }
 
 .dark .banc {

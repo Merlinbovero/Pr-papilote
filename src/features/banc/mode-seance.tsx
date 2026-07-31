@@ -7,6 +7,18 @@ import { Button } from "@/components/ui/button";
 import { deplacerFocus } from "@/lib/a11y/focus-transition";
 import { cn } from "@/lib/utils";
 
+/*
+  Le registre est chargé par le POINT D'ADHÉSION, c'est-à-dire par ce qui
+  pose la classe `.banc` — ici, et la route pilote. Tous les `.banc-*` n'ont
+  de sens que dans un tel sous-arbre, donc cette règle suffit et se vérifie.
+  Elle a été écrite après coup : en F1b, `banc.css` n'était importé que par
+  la mise en page du laboratoire, si bien que la première migration a rendu
+  des classes INERTES — flex non appliqué, surfaces absentes. Le contrôle
+  `e2e/banc-route-pilote.spec.ts` mesure désormais le style calculé, et non
+  la présence de la classe ; la rupture délibérée a été vérifiée.
+*/
+import "@/styles/banc.css";
+
 /**
  * Mode séance — lot F1b.
  *

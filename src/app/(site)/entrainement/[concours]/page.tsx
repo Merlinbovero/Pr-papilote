@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
+import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { PoolQuiz } from "@/features/quiz/pool-quiz";
 import { buildConcoursPool } from "@/features/quiz/notion-pool";
 import { concoursSchema } from "@/lib/content/content-schemas";
 import { getModule } from "@/lib/content/referentials";
+import { cn } from "@/lib/utils";
+
+// La page pose `.banc` sur son `<main>` : c'est un point d'adhésion, donc
+// elle charge le registre (voir `mode-seance.tsx`).
+import "@/styles/banc.css";
 
 export const dynamicParams = false;
 
@@ -69,6 +75,12 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
     </header>
   );
 
+  const filDAriane = [
+    { label: "Accueil", href: "/" },
+    { label: mod.name, href: `/${mod.slug}` },
+    { label: "S'entraîner" },
+  ];
+
   return (
     <StandalonePageShell
       /*
@@ -78,18 +90,29 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
         des deux (ΔE00 2,16 en clair, 0,86 en sombre) — toutes les encres du
         Banc y mesurent un contraste SUPÉRIEUR à celui vérifié sur
         `--bc-fond`, qui reste donc le pire cas des tests de jetons.
+
+        La largeur et les marges passent à `.banc-cadre` : le Banc n'a qu'UN
+        cadre, et le fil d'Ariane doit s'y aligner. Laissé au gabarit
+        (`max-w-7xl`), il flottait 145 px à gauche de la séance.
       */
-      className={banc ? "banc" : undefined}
-      breadcrumb={[
-        { label: "Accueil", href: "/" },
-        { label: mod.name, href: `/${mod.slug}` },
-        { label: "S'entraîner" },
-      ]}
+      className={banc ? "banc max-w-none px-0 sm:px-0 lg:px-0" : undefined}
+      breadcrumb={banc ? undefined : filDAriane}
     >
+      {banc ? (
+        <div className="banc-cadre">
+          <SiteBreadcrumb items={filDAriane} />
+        </div>
+      ) : null}
+
       {/* En variante Banc, l'en-tête est confié au lanceur pour qu'il se
           replie avec le reste de l'introduction au lancement. Sans vivier il
-          n'y a pas de séance : la page le rend alors elle-même. */}
-      {banc && totalAvailable > 0 ? null : entete}
+          n'y a pas de séance : la page le rend alors elle-même, et doit alors
+          fournir le cadre que `ModeSeance` aurait posé. */}
+      {banc && totalAvailable > 0 ? null : banc ? (
+        <div className="banc-cadre">{entete}</div>
+      ) : (
+        entete
+      )}
 
       {totalAvailable > 0 ? (
         <PoolQuiz
@@ -106,7 +129,12 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
           }
         />
       ) : (
-        <p className="text-muted-foreground rounded-lg border border-dashed p-6 text-sm">
+        <p
+          className={cn(
+            "text-muted-foreground rounded-lg border border-dashed p-6 text-sm",
+            banc && "banc-cadre"
+          )}
+        >
           La banque de questions de ce concours se remplit progressivement.
         </p>
       )}
