@@ -584,7 +584,15 @@ export function OrientationTest() {
     return (
       <div className="mx-auto max-w-xl">
         <div className="bg-card rounded-2xl border p-6 text-center shadow-sm sm:p-8">
-          <h1 className="text-3xl font-bold tracking-tight">Orientation</h1>
+          {/*
+            `h2` et non `h1` : la page porte déjà son titre — « Test
+            d'orientation », rendu par l'en-tête de
+            `psychotechnique/orientation/page.tsx`, qui reste visible dans les
+            trois phases puisque cet exercice est un frère en dessous, et non
+            un plein écran qui le remplacerait. Deux `h1` sur la même page
+            privent le lecteur d'écran d'un titre de niveau 1 unique.
+          */}
+          <h2 className="text-3xl font-bold tracking-tight">Orientation</h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">
             Observez l’instrument de bord (horizon et compas), puis désignez l’aéronef dans la
             position correspondante. Choisissez votre format.
@@ -688,7 +696,7 @@ export function OrientationTest() {
     return (
       <div className="mx-auto max-w-2xl">
         <div className="bg-card rounded-2xl border p-6 shadow-sm sm:p-8">
-          <h1 className="text-center text-2xl font-bold tracking-tight">Résultats</h1>
+          <h2 className="text-center text-2xl font-bold tracking-tight">Résultats</h2>
 
           <div
             className="mt-6 flex items-end justify-center gap-6 sm:gap-10"
@@ -740,7 +748,7 @@ export function OrientationTest() {
   return (
     <div className="mx-auto max-w-3xl">
       <div className="mb-3 flex items-center justify-between">
-        <h1 className="text-lg font-semibold tracking-tight">Orientation</h1>
+        <h2 className="text-lg font-semibold tracking-tight">Orientation</h2>
         <span
           className={`rounded-md border px-2.5 py-1 text-sm font-medium tabular-nums ${
             timeLeft <= 30 ? "text-destructive border-destructive/40" : "text-muted-foreground"

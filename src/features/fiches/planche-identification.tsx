@@ -196,7 +196,37 @@ export function PlancheIdentification({
                   alt={fiche.image.alt}
                   fill
                   priority
-                  sizes="(min-width: 1180px) 720px, 100vw"
+                  /*
+                    Largeurs MESURÉES du conteneur `.pl-photo-c`, pas déclarées
+                    au jugé. Balayage de 320 à 1920 px : le point de bascule est
+                    1180 px — au-delà, la colonne de corps est figée à 620 px
+                    (`--pl-corps`) ; en deçà, le conteneur occupe 90 à 95 % du
+                    viewport.
+
+                    L'ancienne valeur annonçait 720 px et `100vw`, toutes deux
+                    fausses. Sur Pixel 7 (DPR 2,625) à 834 px de viewport,
+                    `100vw` faisait réclamer 2 189 px, donc la candidate
+                    `w=3840` — dont la sortie est identique, octet pour octet,
+                    à celle de `w=1920` : 1600×1064, la taille native de la
+                    source. L'optimiseur n'agrandit pas (`withoutEnlargement`),
+                    si bien que cette requête ne gagnait aucun détail et ne
+                    créait qu'une entrée de cache et un travail d'optimisation
+                    en doublon.
+
+                    En intégration continue, c'est cette requête-là qui restait
+                    sans statut et empêchait l'événement `load`.
+
+                    ── Pourquoi `calc()` et non un pourcentage ──────────────
+                    L'écart entre viewport et conteneur est une GOUTTIÈRE
+                    FIXE, jamais une proportion : 32 px sous 768, 56 px
+                    au-delà, mesurés de 320 à 1100. Un `95vw` — première
+                    version de ce correctif — restait une approximation, et
+                    la garde `e2e/image-variante.spec.ts` l'a fait tomber :
+                    95 % de 834 font 792 px, soit 2 080 px utiles, ce qui
+                    dépasse d'une trentaine de pixels la candidate 2048 et
+                    faisait donc réclamer 3840 malgré tout.
+                  */
+                  sizes="(min-width: 1180px) 620px, (min-width: 768px) calc(100vw - 56px), calc(100vw - 32px)"
                   style={fiche.image.focal ? { objectPosition: fiche.image.focal } : undefined}
                 />
               </div>

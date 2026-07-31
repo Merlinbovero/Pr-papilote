@@ -5,6 +5,22 @@ les dettes qui restent et la façon de revenir en arrière. Il ne décrit aucune
 intention : tout ce qu'il affirme a été mesuré, et ce qui relève de l'hypothèse
 est signalé comme tel.
 
+> **Ce document est daté et ne bouge pas — note du 2026-07-31.**
+>
+> Il vaut **pour l'état à la clôture de M10**, et c'est ce qui fait sa valeur :
+> un procès-verbal qu'on rectifie a posteriori ne prouve plus rien de ce qu'il
+> attestait. Ce qu'il dit du **Banc** — famille F réservée, aucune interface
+> produite, chantier non engagé — était vrai à M10 et ne l'est plus.
+>
+> | Moment        | Le Banc                                                                                                                                              |
+> | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+> | **À M10**     | lettre de cote F réservée, zéro document, aucune interface.                                                                                          |
+> | **F1a — F1b** | contrat de focus, jetons `--bc-`, trois composants de fondation, vitrine interne derrière un drapeau. Toujours **aucun moteur de production migré**. |
+> | **F2a — F2b** | deux routes réelles migrées : `/entrainement/eopan` et `/reviser`. **En production** depuis le 2026-07-31.                                           |
+>
+> L'état courant — routes migrées, appelants restants et leurs définitions —
+> est tenu par [`etat-actuel.md`](etat-actuel.md), qui a vocation à bouger.
+
 ---
 
 ## 1. État final
