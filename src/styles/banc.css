@@ -49,6 +49,14 @@
      d'encre au libellé. */
   --primary: var(--bc-banc);
   --primary-foreground: var(--bc-fond);
+
+  /* Survol du bouton primaire — correctif d'un défaut réel introduit en F2a.
+     La primitive `Button` applique `hover:bg-primary/80`, ce qui MÉLANGE
+     l'encre au fond. En clair, le turquoise s'éclaircit vers #358382 et le
+     libellé n'y tient plus que 4,26:1 — sous le seuil de 4,5. J'avais mesuré
+     l'état de REPOS (6,60:1) et omis l'état de survol que le design system
+     définit pourtant. Une teinte solide remplace le mélange : 8,67:1. */
+  --bc-banc-survol: #02524f;
 }
 
 .dark .banc {
@@ -63,6 +71,16 @@
   --bc-juste: #72c78b;
   --bc-attention: #efb062;
   --bc-erreur: #ed756a;
+  /* En sombre le mélange restait au-dessus du seuil (5,79:1) ; la teinte
+     solide est retenue pour que le survol se comporte pareil dans les deux
+     registres — et elle mesure 10,45:1. */
+  --bc-banc-survol: #8acfcc;
+}
+
+/* Le survol du bouton primaire ne passe plus par une opacité : mélanger une
+   teinte au fond change sa luminance, donc son contraste avec le libellé. */
+.banc [data-slot="button"][data-variant="default"]:hover:not(:disabled) {
+  background-color: var(--bc-banc-survol);
 }
 
 /* --- Cadre de séance ------------------------------------------------------

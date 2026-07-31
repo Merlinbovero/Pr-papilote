@@ -44,7 +44,24 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    /*
+     * L'index de recherche est généré AVANT le serveur.
+     *
+     * `public/generated/recherche-index.json` est un artefact : il est exclu
+     * de Git (`.gitignore`) et produit par le hook `prebuild`, donc par
+     * `npm run build` uniquement. Or le job e2e de la CI ne construit pas —
+     * il enchaîne `npm ci`, l'installation des navigateurs, puis les tests —
+     * et `next dev` ne déclenche pas `prebuild`. Sur un dépôt fraîchement
+     * cloné, l'index n'existait donc jamais : la palette de recherche
+     * recevait un 404 et dix-sept contrôles tombaient.
+     *
+     * Reproduit en environnement propre : sans index 5 échecs, avec index
+     * généré au préalable 13 réussites, une seule variable changée.
+     *
+     * La suite devient ainsi autosuffisante — elle ne suppose plus qu'un
+     * build a eu lieu auparavant sur la machine.
+     */
+    command: "npm run generate:search-index && npm run dev",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
