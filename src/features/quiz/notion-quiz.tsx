@@ -16,6 +16,20 @@ interface NotionQuizProps {
   pool: PlayerQuestion[];
   /** Taille maximale d'une série (le vivier peut être plus petit). */
   seriesSize?: number;
+  /**
+   * Identifiant du bloc — lot M8b.
+   *
+   * Par défaut « s-entrainer », l'ancre publique historique : tous les appels
+   * existants rendent le même HTML au caractère près. Le paramètre n'existe que
+   * pour un cas : **une fiche du corpus rédige une section portant déjà cet
+   * identifiant**, et deux éléments ne peuvent pas le partager. Le gabarit y
+   * bascule sur une ancre de repli plutôt que de renommer la section de
+   * l'auteur ou de retirer le quiz.
+   *
+   * Aucun autre comportement du lecteur, des questions, des scores ou de la
+   * progression n'est touché.
+   */
+  idBloc?: string;
 }
 
 function drawSeries(pool: PlayerQuestion[], size: number): PlayerQuestion[] {
@@ -27,7 +41,12 @@ function drawSeries(pool: PlayerQuestion[], size: number): PlayerQuestion[] {
   return shuffled.slice(0, Math.min(size, shuffled.length));
 }
 
-export function NotionQuiz({ ficheTitle, pool, seriesSize = 5 }: NotionQuizProps) {
+export function NotionQuiz({
+  ficheTitle,
+  pool,
+  seriesSize = 5,
+  idBloc = "s-entrainer",
+}: NotionQuizProps) {
   const [series, setSeries] = React.useState<PlayerQuestion[] | null>(null);
 
   if (pool.length === 0) {
@@ -39,7 +58,7 @@ export function NotionQuiz({ ficheTitle, pool, seriesSize = 5 }: NotionQuizProps
   if (!series) {
     return (
       <section
-        id="s-entrainer"
+        id={idBloc}
         aria-labelledby="s-entrainer-titre"
         className="bg-card scroll-mt-20 rounded-xl border p-6 print:hidden"
       >
@@ -65,7 +84,7 @@ export function NotionQuiz({ ficheTitle, pool, seriesSize = 5 }: NotionQuizProps
 
   return (
     <section
-      id="s-entrainer"
+      id={idBloc}
       aria-label="Quiz de la notion"
       className="scroll-mt-20 space-y-4 print:hidden"
     >

@@ -11,7 +11,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="calages-altimetriques__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
@@ -29,11 +29,11 @@
   <!-- Guides horizontaux -->
   <line class="guide" x1="62" y1="82" x2="372" y2="82" />
   <!-- QNH : altitude / mer -->
-  <line class="measure" x1="62" y1="240" x2="62" y2="82" marker-start="url(#ac)" marker-end="url(#ac)" />
+  <line class="measure" x1="62" y1="240" x2="62" y2="82" marker-start="url(#calages-altimetriques__ac)" marker-end="url(#calages-altimetriques__ac)" />
   <text class="accent-t" x="72" y="150" text-anchor="start">altitude</text>
   <text class="accent-t" x="72" y="166" text-anchor="start">(QNH)</text>
   <!-- QFE : hauteur / aérodrome -->
-  <line class="measure" x1="372" y1="190" x2="372" y2="82" marker-start="url(#ac)" marker-end="url(#ac)" />
+  <line class="measure" x1="372" y1="190" x2="372" y2="82" marker-start="url(#calages-altimetriques__ac)" marker-end="url(#calages-altimetriques__ac)" />
   <text class="accent-t" x="362" y="132" text-anchor="end">hauteur</text>
   <text class="accent-t" x="362" y="148" text-anchor="end">(QFE)</text>
   <text class="sub" x="230" y="274" text-anchor="middle">au sol, l'altimètre indique l'altitude du terrain (QNH) ou 0 (QFE)</text>

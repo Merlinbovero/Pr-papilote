@@ -1,29 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist, Geist_Mono } from "next/font/google";
 import { ServiceWorkerRegistrar } from "@/components/layout/service-worker-registrar";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Police display des titres : grotesque institutionnelle sobre (graisses
-// fortes pour les grands titres cinématiques), sans effet « gaming ».
-const archivo = Archivo({
-  variable: "--font-display",
-  subsets: ["latin"],
-});
+/**
+ * Racine commune — lot M3.
+ *
+ * Volontairement minimale : elle ne porte que ce que les deux univers
+ * partagent réellement. **Aucune fonte, aucun bandeau, aucun pied de page,
+ * aucune classe typographique.** Le chrome et la typographie appartiennent
+ * aux layouts de groupe : `(site)` pour la charte historique, `(planche)`
+ * pour le système PLANCHE.
+ *
+ * Cette racine unique est ce qui permet à la navigation entre les deux
+ * univers de rester une navigation client : deux layouts racine distincts
+ * auraient imposé un rechargement complet du document à chaque traversée.
+ */
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,16 +60,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
+    <html lang="fr" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex min-h-full flex-col">
         <ThemeProvider>
-          <SiteHeader />
           {children}
-          <SiteFooter />
           <Toaster />
           <ServiceWorkerRegistrar />
         </ThemeProvider>

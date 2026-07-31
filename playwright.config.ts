@@ -10,7 +10,23 @@ export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  /*
+   * Une reprise en local, deux en CI.
+   *
+   * Arbitré à la clôture de F2a, sur mesure et non par confort. Cinq
+   * campagnes complètes ont produit cinq échecs DIFFÉRENTS, tous par
+   * contention et jamais par assertion : la machine offre 4 cœurs, Playwright
+   * en prend 2 pour ses navigateurs, et le serveur de développement compile
+   * ses routes à la demande sur les mêmes cœurs. Mesuré : la route qui a fait
+   * tomber la cinquième campagne au bout de 30 s est servie en 0,55 s à
+   * chaud. Ce n'est pas une page lente, c'est un pic de contention.
+   *
+   * Ce réglage ne masque rien : Playwright compte les tests repris comme
+   * « flaky », séparément des « passed », et un test qui échoue DEUX fois
+   * reste un échec. Toute campagne doit donc être rapportée avec sa liste de
+   * flaky, jamais comme simplement verte.
+   */
+  retries: process.env.CI ? 2 : 1,
   reporter: process.env.CI ? "github" : "list",
   use: {
     baseURL: "http://localhost:3000",
@@ -28,7 +44,24 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    /*
+     * L'index de recherche est généré AVANT le serveur.
+     *
+     * `public/generated/recherche-index.json` est un artefact : il est exclu
+     * de Git (`.gitignore`) et produit par le hook `prebuild`, donc par
+     * `npm run build` uniquement. Or le job e2e de la CI ne construit pas —
+     * il enchaîne `npm ci`, l'installation des navigateurs, puis les tests —
+     * et `next dev` ne déclenche pas `prebuild`. Sur un dépôt fraîchement
+     * cloné, l'index n'existait donc jamais : la palette de recherche
+     * recevait un 404 et dix-sept contrôles tombaient.
+     *
+     * Reproduit en environnement propre : sans index 5 échecs, avec index
+     * généré au préalable 13 réussites, une seule variable changée.
+     *
+     * La suite devient ainsi autosuffisante — elle ne suppose plus qu'un
+     * build a eu lieu auparavant sur la machine.
+     */
+    command: "npm run generate:search-index && npm run dev",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

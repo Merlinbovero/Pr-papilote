@@ -7,13 +7,13 @@
     .bar { fill: #3b82f6; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="pression-altitude__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="190" y="24" text-anchor="middle">La pression diminue avec l'altitude</text>
   <!-- Axe altitude (accent, fléché) -->
-  <line class="accent-axis" x1="92" y1="222" x2="92" y2="46" marker-end="url(#ac)" />
+  <line class="accent-axis" x1="92" y1="222" x2="92" y2="46" marker-end="url(#pression-altitude__ac)" />
   <text class="lbl" x="92" y="40" text-anchor="middle">altitude</text>
   <!-- Barres de pression (proportionnelles) -->
   <g>

@@ -45,6 +45,16 @@ Engagement **WCAG 2.1 AA**, vérifié **automatiquement** : scan **axe** (`@axe-
 
 Si un espace collé apparaît malgré tout après une balise (`</strong>`, `</em>`), c'est le symptôme : chercher l'entité dans le nœud de texte, pas l'espace manquant.
 
+### Transformations automatisées de source
+
+**Un script de remplacement ne normalise que ce qu'il cible explicitement.** Pendant le lot M4, un script qui remplaçait des classes CSS « nettoyait » aussi les espaces avant chaque guillemet : il a transformé `{" "}` en `{""}` dans sept fichiers, c'est-à-dire **supprimé des espaces rendus** — « à 20 m/s » devenait « à20 m/s ». Aucune suite ne l'a signalé ; c'est la lecture du diff qui l'a trouvé.
+
+Trois règles en découlent, et elles s'appliquent à toute transformation mécanique de code :
+
+1. **Portée explicite.** Une substitution s'applique à la valeur nommée, jamais « au passage » à la mise en forme. Si un script doit normaliser l'intérieur d'un `className`, il capture ce `className` et ne touche à rien d'autre.
+2. **Lecture du diff, systématiquement.** Un script n'est pas relu par les tests : il est relu par un humain, ligne à ligne, avant toute exécution de suite. Un test vert sur un contenu abîmé reste vert.
+3. **Un garde-fou pour la classe de régression.** `src/features/interactions/libelles.test.tsx` porte les deux sondes : `{""}` n'existe nulle part (il ne rend rien, c'est toujours un espace perdu), et une poignée de **libellés composés vérifiés au caractère près** là où texte et expressions se recollent. Pas d'instantané global : un instantané casse à chaque virgule, finit régénéré sans être lu, et ne garde plus rien. Les deux sondes ont été validées en réinjectant volontairement le défaut.
+
 ## Responsive (§6)
 
 Conception desktop-first, implémentation CSS mobile-first. **Aucune fonctionnalité ne disparaît** sur mobile : seule la présentation évolue. Tests E2E Playwright sur deux profils (Desktop Chrome + Pixel 7).

@@ -12,7 +12,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="croire-instruments__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
     <clipPath id="mini"><circle cx="342" cy="112" r="48" /></clipPath>
@@ -24,7 +24,7 @@
   <text class="lbl" x="110" y="180" text-anchor="middle">sensations</text>
   <text class="sub" x="110" y="196" text-anchor="middle">(oreille interne) trompeuses</text>
   <!-- Flèche -->
-  <line class="flow" x1="166" y1="112" x2="286" y2="112" marker-end="url(#ac)" />
+  <line class="flow" x1="166" y1="112" x2="286" y2="112" marker-end="url(#croire-instruments__ac)" />
   <text class="accent-t" x="226" y="102" text-anchor="middle">en cas de doute</text>
   <!-- Instrument : horizon artificiel -->
   <g clip-path="url(#mini)">

@@ -15,9 +15,9 @@ Tous les tokens vivent dans `src/app/globals.css` (`:root` clair, `.dark` sombre
 | `primary`                         | Navigation, action principale, lien         | **Bleu drapeau français** (≈ #0055A4) |
 | `secondary`                       | Fonds d'action secondaire                   | Neutre                                |
 | `accent`                          | Survols, sélection, état actif de nav       | Bleu très pâle (teinte de `primary`)  |
-| `success`                         | Validation, réponse juste, vérifié          | Vert                                  |
+| `success`                         | Validation, réponse juste, vérifié          | Vert (clarté 0,515 en clair — F1a)    |
 | `warning`                         | Attention, à re-vérifier                    | Orange                                |
-| `destructive`                     | Erreur, danger, réponse fausse              | Rouge                                 |
+| `destructive`                     | Erreur, danger, réponse fausse              | Rouge (clarté 0,528 en clair — F1a)   |
 | `info`                            | Information neutre (encarts, notes)         | Bleu clair, distinct de `primary`     |
 | `background` / `card` / `popover` | Fonds et surfaces                           | 3 niveaux de surface                  |
 | `border` / `input` / `ring`       | Séparateurs, contours, focus                |                                       |
@@ -193,6 +193,60 @@ Règle éditoriale : **uniquement de vraies photographies, jamais d'images gén�
 **Photo par fiche** : chaque fiche peut porter une photographie d'illustration (champ `image` du schéma de fiche — src, alt, auteur, licence, source) qui montre le sujet (appareil, base, instrument). Affichée en bannière 2:1 en tête de fiche (`FichePhotoBanner`) avec crédit et lien source ; agrégée sur `/credits-photos`. Objectif : aucune fiche sans visuel (chantier progressif par lots).
 
 **En-tête de page unique** : toutes les pages intérieures utilisent `PageHeader` (`src/components/layout/page-header.tsx`) — bandeau photo réelle créditée, **filet d'accent à la couleur du concours** (`getModuleAccentVar` : EOPAN bleu Marine, EOPN bleu Air, ALAT vert Terre, transverses en `primary`), libellé de section en capitales (eyebrow **précédé d'un filet d'accent**), titre et description. Le titre est en **police display** (`--font-heading`) ; en taille `hero` (portes d'entrée : hubs concours, BIA) il est agrandi (`text-4xl` → `lg:text-6xl`, extra-bold, `text-balance`) sur une bannière plus haute (18–26 rem), pour le même langage cinématique que le hero d'accueil. Les catégories tirent leur photo de `getCategoryPhoto` (photo thématique de la famille, sinon photo du module) : aucune page sans visuel. Sans photo, `PageHeader` se réduit à un en-tête typographique à filet d'accent.
+
+## 6ter. Le Banc — charte fonctionnelle (lot F1b)
+
+Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0b §1 avait montré que les séances empruntaient le vocabulaire des pages de consultation — cartes bordées, même densité, jusqu'à 203 caractères par ligne — alors qu'elles sont l'inverse d'une lecture. Sa charte est donc distincte, et **autonome** : elle suit la discipline colorimétrique de PLANCHE sans dépendre d'aucun de ses fichiers.
+
+**Portée.** Tout est émis sous `.banc` (`src/styles/banc.css`), jamais sur `:root`, et préfixé `--bc-`. Tant qu'aucun élément ne porte la classe, le produit est inchangé.
+
+| Sujet              | Règle                                                                                                                                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Encre de famille F | Turquoise h 193 — `#036564` clair, `#6BBDBA` sombre. Choisie par la mesure : seul créneau libre de la famille isoluminante, ΔE00 ≥ 13,9 des sept encres PLANCHE, ≥ 16,6 des trois états, dans le gamut sRGB.                          |
+| Fonds              | Trois niveaux : cadre, stimulus, réponses. **Recalculés** — les niveaux de PLANCHE, taillés pour du texte documentaire, faisaient tomber `juste` et `attention` sous 4,5.                                                             |
+| Hiérarchie         | Par la **surface**, jamais par la bordure : la carte bordée appartient au registre documentaire.                                                                                                                                      |
+| États de réponse   | `juste`, `erreur`, `attention`, `neutre` — chacun avec un **repère non chromatique**. Jamais la couleur seule, jamais l'opacité seule. « Neutralisé après correction » et « désactivé » sont distincts.                               |
+| Chronomètre        | Une écriture (`M:SS`, `H:MM:SS`), `role="timer"`, `aria-live="off"`, chiffres tabulaires, formulation naturelle par le contenu accessible. **Aucun seuil n'est codé** : l'état vient du moteur. L'absence de chronomètre est un état. |
+| Progression        | Dit l'**avancement**, jamais la position — celle-ci appartient au titre de la question. Une seule barre par séance ; aucune barre si la séance n'a pas de fin connue.                                                                 |
+| Mesure de lecture  | Consignes 60–75 caractères, énoncé jusqu'à ~90, stimulus graphique en largeur libre. Des **plafonds CSS**, jamais des coupes.                                                                                                         |
+| Cadre              | Une seule largeur, partagée par tous les moteurs.                                                                                                                                                                                     |
+| Mode séance        | Au lancement : l'introduction se replie, l'aire entre dans le cadre, le focus s'y déplace, **et le temps ne démarre qu'ensuite**. Consignes rappelables, sortie explicite.                                                            |
+
+**Vitrine** : `/design-lab/banc` (catalogue) et `/design-lab/banc/seance` (étalon de densité), derrière `NEXT_PUBLIC_DESIGN_LAB`, `noindex`.
+
+### Migration route par route
+
+Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.
+
+| Route                 | Lot | État                                                                                                                                            |
+| --------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement.                                      |
+| `/reviser`            | F2b | **Migrée.** Mêmes états, plus deux propres à la révision : « rien à réviser » et erreur de chargement récupérable.                              |
+| Cinq autres appelants | —   | Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`, dont la liste est le registre des routes non migrées. |
+
+**Ce que la deuxième route a apporté au Banc**, sans architecture parallèle :
+
+- `lancementDesactive` et `idDescriptionLancement` sur `ModeSeance` — un lancement peut dépendre d'un préalable, et un bouton désactivé doit **dire pourquoi** (`aria-describedby`), sans quoi il forme une impasse ;
+- deux **états terminaux** qui ne sont pas des questions : un aboutissement normal (« rien à réviser ») et une erreur bloquante. Tous deux prennent une surface, un titre, et le focus — mais seulement si le système l'a encore, jamais s'il a été déplacé par le candidat entre-temps ;
+- la règle du **choix exclusif** : `fieldset` + `legend` + boutons radio natifs, jamais une imitation ARIA. Le contrôle recouvre la pastille (`absolute inset-0 opacity-0`) pour que cible réelle et cible visible coïncident, et la sélection porte une coche en plus de sa teinte.
+
+**Migrer une route, c'est aussi prouver que le moteur n'a pas bougé.** La méthode retenue en F2b : écrire la campagne comportementale **avant** la migration, la faire passer sur la route non migrée, puis la rejouer **octet pour octet** après. Ce que la migration ne doit pas toucher se prouve alors par un `git diff` vide, et non par une affirmation.
+
+**Deux règles nées de la première migration, et vérifiées par rupture délibérée :**
+
+1. **Le registre est chargé par le point d'adhésion** — ce qui pose `.banc` importe `banc.css`. En F1b la feuille n'était importée que par la mise en page du laboratoire : la première migration a donc rendu des classes **inertes**, sans flex, sans surface, sans teinte. Un test qui vérifie la présence de la classe serait passé ; seule la mesure du **style calculé** l'a vu. Les contrôles portent désormais sur `getComputedStyle`.
+2. **Le registre est porté par la page, pas par un bloc** — un `.banc` posé sur la seule aire de séance dessine un rectangle tiède dans un fond froid. Le fond du site étant le plus clair des deux (ΔE00 2,16 en clair, 0,86 en sombre), toutes les encres du Banc y mesurent un contraste **supérieur** à celui vérifié sur `--bc-fond` : les tests de jetons gardent le pire cas.
+
+**Effet mesuré sur la route pilote**, bas du premier contrôle de réponse, comparé au **témoin vivant** qu'est `/entrainement/eopn` — même gabarit, variante `legacy`, mesuré le même jour :
+
+| Viewport           | Témoin `legacy` | Route migrée |
+| ------------------ | --------------- | ------------ |
+| 1440 × 900         | 509 px          | **347 px**   |
+| 390 × 844 (mobile) | 670 px          | **403 px**   |
+
+Sur mobile, la séance entière — énoncé, quatre réponses, validation et les deux issues — tient désormais dans le premier écran.
+
+Les valeurs de 891, 995 et 994 px citées ailleurs dans ce document proviennent de **trois épreuves psychotechniques**, et non de cette route : elles mesurent la même maladie sur les moteurs qui restent à migrer, pas l'avant de celui-ci.
 
 ## 7. Risques identifiés
 

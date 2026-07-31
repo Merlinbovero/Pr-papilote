@@ -10,7 +10,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="vrille-asymetrie__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -22,13 +22,13 @@
   <line class="plane" x1="150" y1="120" x2="310" y2="168" />
   <circle class="plane" cx="230" cy="144" r="7" />
   <!-- Aile gauche : encore portante (écoulement collé) -->
-  <path class="flow" d="M132,108 C160,96 190,100 214,116" marker-end="url(#ac)" />
+  <path class="flow" d="M132,108 C160,96 190,100 214,116" marker-end="url(#vrille-asymetrie__ac)" />
   <text class="lbl" x="118" y="104" text-anchor="middle">encore</text>
   <text class="lbl" x="118" y="118" text-anchor="middle">portante</text>
   <text class="sub" x="118" y="132" text-anchor="middle">(monte)</text>
   <!-- Aile droite : décrochée (écoulement décollé, tourbillons) -->
-  <path class="flow" d="M300,150 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
-  <path class="flow" d="M326,158 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#ac)" />
+  <path class="flow" d="M300,150 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#vrille-asymetrie__ac)" />
+  <path class="flow" d="M326,158 c9,-6 17,3 8,9 c-6,4 -13,-3 -5,-9" marker-end="url(#vrille-asymetrie__ac)" />
   <text class="lbl" x="342" y="132" text-anchor="middle">plus décrochée</text>
   <text class="sub" x="342" y="146" text-anchor="middle">(incidence forte, s'enfonce)</text>
   <!-- Autorotation -->

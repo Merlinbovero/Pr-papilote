@@ -14,7 +14,7 @@
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="triangle-des-vitesses__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
@@ -23,7 +23,7 @@
   <line class="air" x1="90" y1="196" x2="250" y2="80" marker-end="url(#a)" />
   <text class="lbl" x="150" y="120" text-anchor="end">vitesse propre (cap)</text>
   <!-- Vent : A -> B -->
-  <line class="wind" x1="250" y1="80" x2="322" y2="104" marker-end="url(#ac)" />
+  <line class="wind" x1="250" y1="80" x2="322" y2="104" marker-end="url(#triangle-des-vitesses__ac)" />
   <text class="accent-t" x="292" y="72" text-anchor="middle">vent</text>
   <!-- Vitesse sol (route) : O -> B -->
   <line class="ground" x1="90" y1="196" x2="322" y2="104" marker-end="url(#a)" />

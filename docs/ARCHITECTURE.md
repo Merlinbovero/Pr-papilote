@@ -63,8 +63,14 @@ content/                        ← la richesse du projet (texte structuré)
   glossaire/  questions/  quiz/  documents/
 src/
   app/                          routes = gabarits
+    layout.tsx                  racine commune minimale : html/body, thème, service worker
+    (site)/                     groupe historique — Geist + Archivo, header et footer du site
+    (planche)/                  groupe PLANCHE — Spectral, Fira Sans, Fira Mono, bandeau planche
   components/ui                 primitives shadcn (design system)
   components/layout              header, footer, sidebar, breadcrumb
+  components/planche             ossature du système PLANCHE (docs/design-manifesto.md)
+  features/banc                  charte fonctionnelle du Banc (docs/design-system.md §6ter) —
+                                 jetons sous `.banc`, vitrine `/design-lab/banc`, aucun moteur migré
   components/content             rendu du contenu structuré (RSC purs)
   components/shared              cartes et blocs métier réutilisés
   features/                     moteurs verticaux (composants + logique colocalisés)
@@ -110,6 +116,27 @@ Sept entités (fiche, question, quiz, document, schéma, terme, exercice psychot
 ```
 
 Gabarits limités (~11) : accueil, hub module, hub catégorie, fiche, fiche-objet, notice document, lecteur quiz, restitution, moteur psychotechnique, progression, recherche. Toute nouvelle page doit répondre à « quel gabarit ? ».
+
+### Deux chartes en coexistence — groupes de routes
+
+La migration vers le système PLANCHE (`docs/design-manifesto.md`) est
+progressive : deux directions artistiques cohabitent pendant plusieurs lots.
+Elles sont séparées par des **groupes de routes**, invisibles dans l'URL.
+
+`app/layout.tsx` ne contient que ce que les deux univers partagent réellement —
+`html`, `body`, la langue, le thème, le service worker. **Aucune fonte, aucun
+chrome, aucune classe typographique.** C'est cette racine unique qui permet à la
+traversée d'un univers à l'autre de rester une navigation client : deux layouts
+racine distincts imposeraient un rechargement complet du document.
+
+Chaque groupe déclare ses fontes et son chrome dans son propre gabarit, et rien
+ne fuit : une route `(site)` ne charge aucune fonte PLANCHE, une route
+`(planche)` ne charge ni Geist ni Archivo. Les règles typographiques historiques
+sont portées par `.site-root`, celles de PLANCHE par `.pl-root` et `.pl-univers`.
+Des tests Playwright (`e2e/planche-groupe.spec.ts`) tiennent ces frontières.
+
+Déplacer une route d'un groupe à l'autre ne change **jamais** son URL. Le plan du
+site, les identifiants de contenu et les métadonnées sont indépendants du groupe.
 
 ## Base de données (données utilisateur uniquement)
 
@@ -203,3 +230,30 @@ Chaîne éditoriale consacrée (docs/editorial/gestion-documentaire.md) : le con
 Exigences techniques permanentes consacrées (docs/qualite-technique.md) : la qualité technique est une fonctionnalité, aussi importante que l'éditoriale. Budgets Core Web Vitals (LCP < 2,5 s, INP < 200 ms, CLS < 0,1), sobriété, refus des dépendances lourdes.
 
 **SEO** — helper `SITE_URL` (configurable, jamais de domaine codé en dur), `metadataBase` + Open Graph au layout racine, `sitemap.ts` et `robots.ts` générés depuis le contenu (espace personnel et prévisualisations exclus), URL canonique + OG par fiche et par document ; maillage interne porté par le graphe. **Robustesse** — frontières d'erreur `error.tsx` (segment) et `global-error.tsx` (racine autonome), point d'accroche `console.error` pour le monitoring futur ; jamais d'impasse (404 dédiée, notFound, intégrité des liens au build). **Images** — composant unique `ContentImage` sur next/image (alt obligatoire, dimensions explicites → zéro CLS, lazy, AVIF/WebP). **Accessibilité automatisée** — `@axe-core/playwright`, scan WCAG A/AA des pages clés en CI (e2e/accessibility.spec.ts) ; a corrigé trois défauts réels : contraste `--muted-foreground` (0.556 → 0.52), lien de connexion icône-seule sans nom accessible sur mobile (sr-only), liens de sources distingués par la seule couleur (soulignement permanent). **Observabilité** V1 = intégrité au build (content:check + Zod + graphe + axe) ; monitoring runtime différé à l'intégration. Lighthouse CI différé au premier déploiement réel.
+
+## `tsx` — dépendance de développement (lot M10)
+
+**Pourquoi Node seul ne suffit pas.** L'index de recherche doit être généré
+**avant** `next build`, donc hors de Next. Le générateur appelle
+`buildSearchEntries()`, écrite en TypeScript et important ses dépendances par
+l'alias `@/…`. Node n'exécute pas TypeScript avec alias : ni un script `.mjs`
+ni `--experimental-strip-types` ne résolvent `@/`.
+
+**Pourquoi il faut résoudre les alias plutôt que les contourner.** L'alternative
+était de réécrire en chemins relatifs la chaîne d'imports d'`entries.ts` — donc
+de modifier du code de production pour un besoin d'outillage. La règle inverse
+prime : l'outillage s'adapte au code, pas l'inverse.
+
+**Pourquoi pas Vitest comme lanceur.** Il est déjà présent et résout les alias,
+mais c'est un exécuteur de tests. Un test qui écrit un artefact de build
+détourne son rôle, brouille la frontière entre vérifier et produire, et rendrait
+`npm run test` producteur d'effets de bord.
+
+**Portée.** `tsx` est en `devDependencies` uniquement. Il n'est appelé que par
+`npm run generate:search-index`, lui-même raccordé à `prebuild`. Il n'entre ni
+dans le bundle client, ni dans le runtime de production : le serveur ne sert que
+le JSON déjà écrit sous `public/generated/`.
+
+**L'artefact n'est pas versionné** (`.gitignore`). Il est régénéré à chaque
+build et ne doit jamais être édité à la main : sa seule vérité est
+`buildSearchEntries()`.

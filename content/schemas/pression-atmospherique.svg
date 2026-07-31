@@ -7,15 +7,15 @@
     .muted { stroke: #94a3b8; fill: none; stroke-width: 1.5; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="pression-atmospherique__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text x="210" y="28" text-anchor="middle" class="lbl">colonne d'air</text>
   <rect class="muted" x="150" y="40" width="120" height="170" stroke-dasharray="5 5" />
-  <line class="accent" x1="176" y1="58" x2="176" y2="200" marker-end="url(#ac)" />
-  <line class="accent" x1="210" y1="58" x2="210" y2="200" marker-end="url(#ac)" />
-  <line class="accent" x1="244" y1="58" x2="244" y2="200" marker-end="url(#ac)" />
+  <line class="accent" x1="176" y1="58" x2="176" y2="200" marker-end="url(#pression-atmospherique__ac)" />
+  <line class="accent" x1="210" y1="58" x2="210" y2="200" marker-end="url(#pression-atmospherique__ac)" />
+  <line class="accent" x1="244" y1="58" x2="244" y2="200" marker-end="url(#pression-atmospherique__ac)" />
   <line class="ink" x1="70" y1="210" x2="350" y2="210" />
   <line class="muted" x1="95" y1="210" x2="85" y2="222" />
   <line class="muted" x1="130" y1="210" x2="120" y2="222" />

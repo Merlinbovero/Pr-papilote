@@ -1,0 +1,99 @@
+/*
+ * Lot M1 — les jetons du système PLANCHE entrent en production.
+ *
+ * PORTÉE : la classe `.planche`, jamais `:root`. Tant qu'aucun élément ne
+ * porte cette classe, ce fichier ne change **rien** au rendu public : il
+ * n'ajoute que des déclarations de variables inertes. C'est ce qui rend le
+ * lot invisible, et donc annulable sans risque.
+ *
+ * Les valeurs sont celles de `src/lib/design/planche-tokens.ts`, où elles
+ * sont vérifiées par 36 tests de contraste — chaque encre, chaque état et
+ * chaque filet, sur les trois fonds, dans les deux registres. Toute
+ * modification ici doit être répercutée là, et inversement : un test
+ * dédié compare les deux sources.
+ *
+ * Voir docs/design-manifesto.md §3.1 et docs/design-migration.md §10.
+ */
+
+.planche {
+  /* ---- registre clair : papier ---- */
+  --planche-fond: #fbfaf8;
+  --planche-fond-2: #f6f5f2;
+  --planche-fond-3: #efeeeb;
+  --planche-encre: #141b24;
+  --planche-encre-2: #414851;
+  --planche-encre-3: #666c74;
+  --planche-filet: #d5d8db;
+  --planche-filet-fort: #7c8186;
+
+  /* ---- encres de module : elles situent, elles ne décorent pas ---- */
+  --planche-marine: #1d5b8f;
+  --planche-air: #156383;
+  --planche-terre: #376441;
+  --planche-bistre: #79511e;
+  --planche-violine: #624581;
+  --planche-sienne: #8a3d2b;
+  --planche-indigo: #4f5882;
+
+  /* ---- états : registre séparé, réservé au retour d'action ---- */
+  --planche-juste: #117c40;
+  --planche-attention: #986001;
+  --planche-erreur: #be2323;
+
+  /* ---- rythme et grille ---- */
+  --planche-rythme: 28px;
+  --planche-gouttiere: 40px;
+  --planche-corps: 620px;
+  --planche-annexe: 280px;
+  --planche-marge-large: clamp(168px, 13vw, 224px);
+  --planche-marge-rail: 88px;
+}
+
+/* Registre sombre — un charbon bleuté, jamais un papier assombri ni une
+   inversion de gris. Suit le thème du site et la préférence système. */
+.dark .planche,
+.planche[data-registre="sombre"] {
+  --planche-fond: #10141a;
+  --planche-fond-2: #191d24;
+  --planche-fond-3: #22272d;
+  --planche-encre: #e7e6e3;
+  --planche-encre-2: #b4b8bc;
+  --planche-encre-3: #888e94;
+  --planche-filet: #2e333a;
+  --planche-filet-fort: #6b727c;
+
+  --planche-marine: #7db0e1;
+  --planche-air: #74b8db;
+  --planche-terre: #8cb894;
+  --planche-bistre: #d2a979;
+  --planche-violine: #b599d6;
+  --planche-sienne: #e09582;
+  --planche-indigo: #a4afdb;
+
+  --planche-juste: #72c78b;
+  --planche-attention: #efb062;
+  --planche-erreur: #ed756a;
+}
+
+.planche[data-registre="clair"] {
+  --planche-fond: #fbfaf8;
+  --planche-fond-2: #f6f5f2;
+  --planche-fond-3: #efeeeb;
+  --planche-encre: #141b24;
+  --planche-encre-2: #414851;
+  --planche-encre-3: #666c74;
+  --planche-filet: #d5d8db;
+  --planche-filet-fort: #7c8186;
+
+  --planche-marine: #1d5b8f;
+  --planche-air: #156383;
+  --planche-terre: #376441;
+  --planche-bistre: #79511e;
+  --planche-violine: #624581;
+  --planche-sienne: #8a3d2b;
+  --planche-indigo: #4f5882;
+
+  --planche-juste: #117c40;
+  --planche-attention: #986001;
+  --planche-erreur: #be2323;
+}

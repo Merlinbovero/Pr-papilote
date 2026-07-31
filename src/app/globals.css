@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* Lot M1 — jetons PLANCHE, de portée `.planche`. Inertes tant qu'aucun
+   élément ne porte la classe : le rendu public est inchangé. */
+@import "../styles/planche-tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -83,16 +86,31 @@
   --muted-foreground: oklch(0.52 0.008 259);
   --accent: oklch(0.955 0.017 258);
   --accent-foreground: oklch(0.3 0.09 258);
-  --destructive: oklch(0.577 0.245 27.325);
+  /* Clarté abaissée au lot F1a — voir la note « états » plus bas. */
+  --destructive: oklch(0.528 0.245 27.325);
   --border: oklch(0.9 0.006 259);
   --input: oklch(0.9 0.006 259);
   --ring: oklch(0.55 0.13 258);
-  --success: oklch(0.55 0.13 150);
+  --success: oklch(0.515 0.13 150);
   --success-foreground: oklch(0.985 0 0);
   --warning: oklch(0.62 0.13 70);
   --warning-foreground: oklch(0.985 0 0);
   --info: oklch(0.52 0.1 235);
   --info-foreground: oklch(0.985 0 0);
+  /* ÉTATS — clarté arbitrée par le calcul au lot F1a.
+     Le motif « fond à 10 % + texte en teinte pleine », utilisé par les badges
+     de correction, tenait 3,99 (destructive) et 4,03 (success) : sous le seuil
+     AA de 4,5, et répété une fois par item corrigé — 58 nœuds mesurés à
+     l'audit F0b sur les seuls écrans psychotechniques.
+     Deux voies existaient : un couple de jetons dédié aux badges, ou
+     l'abaissement des jetons existants. Le calcul a tranché — abaisser la
+     clarté fait passer les badges à 4,57 et 4,62 SANS dégrader aucun autre
+     usage, tous améliorés : texte sur carte 4,76 → 5,49 et 4,57 → 5,30,
+     bouton plein 4,56 → 5,26 et 4,38 → 5,08. Le bouton `success` plein était
+     d'ailleurs déjà non conforme, ce qu'aucun audit n'avait relevé faute
+     d'occurrence sur les routes inspectées.
+     Le registre sombre n'est PAS touché : il tient déjà de 5,11 à 7,84.
+     Voir `src/app/contraste-etats.test.ts`. */
   --concours-eopan: oklch(0.42 0.09 250);
   --concours-eopn: oklch(0.52 0.1 230);
   --concours-alat: oklch(0.48 0.09 145);
@@ -169,13 +187,17 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
+  /* Lot M3 — la typographie historique passe sous `.site-root`, portée par
+     le layout du groupe `(site)`. Elle s'appliquait auparavant au document
+     entier et atteignait donc aussi les routes PLANCHE. Le rendu des routes
+     historiques est inchangé : `.site-root` enveloppe tout leur contenu. */
+  .site-root {
     @apply font-sans;
   }
   /* Titres en police display (identité « cinématique institutionnelle ») ;
      le corps de texte reste en Geist pour la lisibilité. */
-  h1,
-  h2 {
+  .site-root h1,
+  .site-root h2 {
     @apply font-heading;
   }
 }

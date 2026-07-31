@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheCases, PlancheChoix } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   describeForces,
@@ -45,29 +46,22 @@ export function ForcesEtVecteurs({ onInteract }: { onInteract?: () => void }) {
 
   const controls = (
     <>
-      <fieldset className="flex items-center gap-3 border-0 p-0">
-        <legend className="text-muted-foreground mr-1 text-sm">Situation :</legend>
-        {(["equilibre", "acceleration"] as Scenario[]).map((s) => (
-          <label key={s} className="flex items-center gap-1.5 text-sm">
-            <input
-              type="radio"
-              name="scenario-forces"
-              checked={state.scenario === s}
-              onChange={() => setScenario(s)}
-            />
-            {s === "equilibre" ? "Équilibre" : "Accélération"}
-          </label>
-        ))}
-      </fieldset>
-      <fieldset className="flex flex-wrap items-center gap-3 border-0 p-0">
-        <legend className="text-muted-foreground mr-1 text-sm">Afficher :</legend>
-        {FORCE_KEYS.map((k) => (
-          <label key={k} className="flex items-center gap-1.5 text-sm">
-            <input type="checkbox" checked={state.visible[k]} onChange={() => toggle(k)} />
-            {FORCE_LABELS[k]}
-          </label>
-        ))}
-      </fieldset>
+      <PlancheChoix
+        legende="Situation"
+        nom="scenario-forces"
+        options={[
+          { valeur: "equilibre" as Scenario, libelle: "Équilibre" },
+          { valeur: "acceleration" as Scenario, libelle: "Accélération" },
+        ]}
+        valeur={state.scenario}
+        onChange={setScenario}
+      />
+      <PlancheCases
+        legende="Afficher"
+        options={FORCE_KEYS.map((k) => ({ valeur: k, libelle: FORCE_LABELS[k] }))}
+        actives={state.visible}
+        onToggle={toggle}
+      />
     </>
   );
 
@@ -104,7 +98,7 @@ export function ForcesEtVecteurs({ onInteract }: { onInteract?: () => void }) {
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" className="fill-foreground" />
+            <path d="M0,0 L10,5 L0,10 z" className="pl-f-encre" />
           </marker>
           <marker
             id="fv-arrow-accent"
@@ -115,37 +109,37 @@ export function ForcesEtVecteurs({ onInteract }: { onInteract?: () => void }) {
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" className="fill-primary" />
+            <path d="M0,0 L10,5 L0,10 z" className="pl-f-mod" />
           </marker>
         </defs>
         {/* Avion simplifié */}
-        <g className="stroke-foreground fill-none" strokeWidth={2}>
+        <g className="pl-t-encre fill-none" strokeWidth={2}>
           <path d="M120,150 q90,-26 200,0 q-90,26 -200,0 z" />
           <line x1="210" y1="132" x2="202" y2="104" />
           <line x1="210" y1="132" x2="218" y2="104" />
         </g>
-        <circle cx="220" cy="150" r="4" className="fill-foreground" />
+        <circle cx="220" cy="150" r="4" className="pl-f-encre" />
         {/* Portance (haut, accent) */}
         {state.visible.portance && (
-          <g className="stroke-primary" strokeWidth={3}>
+          <g className="pl-t-mod" strokeWidth={3}>
             <line x1="220" y1="142" x2="220" y2="70" markerEnd="url(#fv-arrow-accent)" />
-            <text x="228" y="76" className="fill-primary text-xs">
+            <text x="228" y="76" className="pl-f-mod">
               Portance
             </text>
           </g>
         )}
         {/* Poids (bas) */}
         {state.visible.poids && (
-          <g className="stroke-foreground" strokeWidth={2}>
+          <g className="pl-t-encre" strokeWidth={2}>
             <line x1="220" y1="158" x2="220" y2="250" markerEnd="url(#fv-arrow)" />
-            <text x="228" y="240" className="fill-foreground text-xs">
+            <text x="228" y="240" className="pl-f-encre">
               Poids
             </text>
           </g>
         )}
         {/* Traction (avant/droite, accent) */}
         {state.visible.traction && (
-          <g className="stroke-primary" strokeWidth={3}>
+          <g className="pl-t-mod" strokeWidth={3}>
             <line
               x1="300"
               y1="150"
@@ -153,16 +147,16 @@ export function ForcesEtVecteurs({ onInteract }: { onInteract?: () => void }) {
               y2="150"
               markerEnd="url(#fv-arrow-accent)"
             />
-            <text x="316" y="142" className="fill-primary text-xs">
+            <text x="316" y="142" className="pl-f-mod">
               Traction
             </text>
           </g>
         )}
         {/* Traînée (arrière/gauche) */}
         {state.visible.trainee && (
-          <g className="stroke-foreground" strokeWidth={2}>
+          <g className="pl-t-encre" strokeWidth={2}>
             <line x1="140" y1="150" x2={140 - traineeLen} y2="150" markerEnd="url(#fv-arrow)" />
-            <text x="30" y="142" className="fill-foreground text-xs">
+            <text x="30" y="142" className="pl-f-encre">
               Traînée
             </text>
           </g>

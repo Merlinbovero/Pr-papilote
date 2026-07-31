@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlancheChoix } from "@/components/planche/planche-commandes";
 import { Interactive } from "./interactive";
 import {
   AXE_INFO,
@@ -34,20 +35,13 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
   const isLacet = state.axe === "lacet";
 
   const controls = (
-    <fieldset className="flex flex-wrap items-center gap-3 border-0 p-0">
-      <legend className="text-muted-foreground mr-1 text-sm">Axe de rotation :</legend>
-      {AXES.map((a) => (
-        <label key={a} className="flex items-center gap-1.5 text-sm">
-          <input
-            type="radio"
-            name="axe-rotation"
-            checked={state.axe === a}
-            onChange={() => setAxe(a)}
-          />
-          {AXE_LABELS[a]}
-        </label>
-      ))}
-    </fieldset>
+    <PlancheChoix
+      legende="Axe de rotation"
+      nom="axe-rotation"
+      options={AXES.map((a) => ({ valeur: a, libelle: AXE_LABELS[a] }))}
+      valeur={state.axe}
+      onChange={setAxe}
+    />
   );
 
   const legend = (
@@ -82,12 +76,12 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
             markerHeight="7"
             orient="auto"
           >
-            <path d="M0,0 L10,5 L0,10 z" className="fill-primary" />
+            <path d="M0,0 L10,5 L0,10 z" className="pl-f-mod" />
           </marker>
         </defs>
 
         {/* Avion vu de dessus (nez en haut) */}
-        <g className="stroke-foreground fill-foreground/10" strokeWidth={2}>
+        <g className="pl-t-encre pl-f-creux" strokeWidth={2}>
           {/* Fuselage */}
           <path d="M204,40 q6,-8 12,0 v150 q-6,10 -12,0 z" />
           {/* Ailes */}
@@ -102,7 +96,7 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           y1="30"
           x2="210"
           y2="210"
-          className={isRoulis ? "stroke-primary" : "stroke-foreground/30"}
+          className={isRoulis ? "pl-t-mod" : "pl-t-mince"}
           strokeWidth={isRoulis ? 2.5 : 1.5}
           strokeDasharray="6 4"
         />
@@ -112,7 +106,7 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           y1="127"
           x2="350"
           y2="127"
-          className={isTangage ? "stroke-primary" : "stroke-foreground/30"}
+          className={isTangage ? "pl-t-mod" : "pl-t-mince"}
           strokeWidth={isTangage ? 2.5 : 1.5}
           strokeDasharray="6 4"
         />
@@ -121,7 +115,7 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           cx="210"
           cy="127"
           r={isLacet ? 7 : 4}
-          className={isLacet ? "fill-primary" : "fill-foreground/40"}
+          className={isLacet ? "pl-f-mod" : "pl-f-creux"}
         />
 
         {/* Gouvernes surlignées selon l'axe */}
@@ -131,14 +125,14 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           y="128"
           width="34"
           height="8"
-          className={isRoulis ? "fill-primary" : "fill-foreground/30"}
+          className={isRoulis ? "pl-f-mod" : "pl-f-creux"}
         />
         <rect
           x="346"
           y="128"
           width="34"
           height="8"
-          className={isRoulis ? "fill-primary" : "fill-foreground/30"}
+          className={isRoulis ? "pl-f-mod" : "pl-f-creux"}
         />
         {/* Gouverne de profondeur (tangage) — bord de fuite empennage */}
         <rect
@@ -146,7 +140,7 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           y="196"
           width="90"
           height="7"
-          className={isTangage ? "fill-primary" : "fill-foreground/30"}
+          className={isTangage ? "pl-f-mod" : "pl-f-creux"}
         />
         {/* Gouverne de direction (lacet) — au tail sur l'axe */}
         <rect
@@ -154,14 +148,14 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
           y="188"
           width="8"
           height="26"
-          className={isLacet ? "fill-primary" : "fill-foreground/30"}
+          className={isLacet ? "pl-f-mod" : "pl-f-creux"}
         />
 
         {/* Flèche de rotation selon l'axe */}
         {isTangage ? (
           <path
             d="M232,64 a26,26 0 0 1 0,44"
-            className="stroke-primary"
+            className="pl-t-mod"
             strokeWidth={2.5}
             fill="none"
             markerEnd="url(#ax-a)"
@@ -170,7 +164,7 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
         {isRoulis ? (
           <path
             d="M300,150 a30,18 0 0 1 -60,0"
-            className="stroke-primary"
+            className="pl-t-mod"
             strokeWidth={2.5}
             fill="none"
             markerEnd="url(#ax-a)"
@@ -179,14 +173,14 @@ export function AxesGouvernes({ onInteract }: { onInteract?: () => void }) {
         {isLacet ? (
           <path
             d="M182,58 a30,30 0 0 1 56,0"
-            className="stroke-primary"
+            className="pl-t-mod"
             strokeWidth={2.5}
             fill="none"
             markerEnd="url(#ax-a)"
           />
         ) : null}
 
-        <text x="210" y="240" textAnchor="middle" className="fill-foreground text-xs">
+        <text x="210" y="240" textAnchor="middle" className="pl-f-encre">
           {info.axeGeometrique}
         </text>
       </svg>

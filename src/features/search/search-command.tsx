@@ -29,16 +29,29 @@ interface SearchCommandProps {
    * de la navigation.
    */
   variant?: "icon" | "compact" | "hero";
+  /**
+   * Pilotage externe — lot M10. Quand `piloté` est vrai, la palette n'affiche
+   * pas son propre bouton : elle est ouverte par le déclencheur des routes
+   * PLANCHE, qui est le lien `/recherche` lui-même. Le moteur, le classement et
+   * le rendu des résultats sont rigoureusement les mêmes.
+   */
+  pilote?: boolean;
+  onFermeture?: () => void;
 }
 
 /**
  * Palette de recherche unique (Ctrl/Cmd+K) — même index, même
  * classement partout. Le module courant (URL) sert de boost contextuel.
  */
-export function SearchCommand({ entries, variant = "compact" }: SearchCommandProps) {
+export function SearchCommand({
+  entries,
+  variant = "compact",
+  pilote = false,
+  onFermeture,
+}: SearchCommandProps) {
   const router = useRouter();
   const params = useParams<{ module?: string }>();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(pilote);
   const [query, setQuery] = React.useState("");
 
   React.useEffect(() => {
@@ -85,7 +98,7 @@ export function SearchCommand({ entries, variant = "compact" }: SearchCommandPro
 
   return (
     <>
-      {variant === "icon" ? (
+      {pilote ? null : variant === "icon" ? (
         <Button
           variant="outline"
           size="icon"
@@ -117,7 +130,10 @@ export function SearchCommand({ entries, variant = "compact" }: SearchCommandPro
       )}
       <CommandDialog
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={(v) => {
+          setOpen(v);
+          if (!v) onFermeture?.();
+        }}
         title="Recherche"
         description="Rechercher dans PrépaPilote"
       >

@@ -11,13 +11,13 @@
     .dot { fill: #3b82f6; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="profil-isa__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="200" y="20" text-anchor="middle">Le profil de température ISA</text>
   <!-- Axe altitude (accent, fléché) -->
-  <line class="accent-axis" x1="70" y1="240" x2="70" y2="42" marker-end="url(#ac)" />
+  <line class="accent-axis" x1="70" y1="240" x2="70" y2="42" marker-end="url(#profil-isa__ac)" />
   <text class="lbl" x="70" y="34" text-anchor="middle">altitude</text>
   <!-- Axe température (ink) -->
   <line class="ink" x1="70" y1="240" x2="362" y2="240" />

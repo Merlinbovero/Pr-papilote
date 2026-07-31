@@ -12,13 +12,13 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="etages-nuages__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
   <text class="title" x="230" y="24" text-anchor="middle">Les étages des nuages</text>
   <!-- Axe altitude -->
-  <line class="axis" x1="54" y1="272" x2="54" y2="44" marker-end="url(#ac)" />
+  <line class="axis" x1="54" y1="272" x2="54" y2="44" marker-end="url(#etages-nuages__ac)" />
   <text class="lbl" x="54" y="38" text-anchor="middle">altitude</text>
   <!-- Séparations d'étages -->
   <line class="sep" x1="54" y1="118" x2="430" y2="118" />

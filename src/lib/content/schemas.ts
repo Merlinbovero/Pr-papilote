@@ -51,6 +51,92 @@ export const categoriesFileSchema = z.object({
   culture: z.array(categorySchema).min(1),
 });
 
+/**
+ * Cote documentaire — `MODULE · F.C.NN` (docs/design-archetypes.md §1).
+ *
+ * La lettre de famille court de A à **G**. `G` rejoint l'alphabet au lot M8a :
+ * elle désigne la **fiche explicative de notion**, pour la distinguer de `B`,
+ * réservée aux 14 leçons canoniques du parcours. Ce n'est pas un septième genre
+ * visuel — les deux partagent la grammaire de La Leçon — mais deux TYPES DE
+ * DOCUMENT, et une cote doit désigner un document et un seul. Sans cette
+ * distinction, la fiche « la-couche-limite » aurait porté `FOND · B.3.07`,
+ * cote de la leçon « couche-limite-et-decrochage » : quatorze collisions,
+ * toutes entre documents voisins, donc toutes indétectables à la lecture.
+ *
+ * Une cote se note sur un cahier et se retrouve six mois plus tard : elle est
+ * donc **inscrite** dans `content/_referentiels/cotes.json`, jamais recalculée
+ * au rendu. Le rendu ne dépend d'aucun tri courant, et ajouter une leçon ne
+ * renumérote rien.
+ */
+export const coteSchema = z
+  .string()
+  .regex(
+    /^[A-Z]{3,5} · [A-G]\.\d{1,2}\.\d{2}$/,
+    "cote invalide (attendu : MODULE · F.C.NN, ex. « FOND · B.3.07 »)"
+  );
+
+export const cotesFileSchema = z.object({
+  /** Commentaire de tête du fichier — ignoré par le chargeur. */
+  _doc: z.array(z.string()).optional(),
+  /** Leçons, clées par slug — dernier segment = rang global au parcours (M5). */
+  cours: z.record(slugSchema, coteSchema),
+  /**
+   * Notices techniques, clées par **identifiant de contenu** — dernier segment
+   * = numéro d'enregistrement dans la catégorie (M6b).
+   *
+   * La clé diffère volontairement de celle des leçons : l'identifiant est gelé
+   * à vie par contrat, le slug ne l'est pas. Un renommage d'URL n'exige donc
+   * même pas de migration de clé ici.
+   */
+  fiches: z.record(contentIdSchema, coteSchema),
+});
+
+/**
+ * Archétype documentaire d'une fiche — la famille dont elle relève
+ * (docs/design-archetypes.md). Référentiel **fermé** : une valeur inconnue
+ * fait échouer le build plutôt que de laisser passer une faute de frappe.
+ *
+ * `dossier` rejoint l'énumération au lot M8a. Le manifeste décrit la famille
+ * Concours — Le Dossier, l'instruction administrative — depuis l'origine ;
+ * elle n'avait simplement pas encore de fiche à classer. Vingt-trois fiches de
+ * missions, sélection, concepts, présentation et procédures y passent, leur
+ * classement en `lecon` ayant été provisoire.
+ */
+export const archetypeSchema = z.enum([
+  "identification",
+  "lecon",
+  "cahier",
+  "situation",
+  "dossier",
+]);
+
+export const archetypesFileSchema = z.object({
+  /** Commentaire de tête du fichier — ignoré par le chargeur. */
+  _doc: z.array(z.string()).optional(),
+  /** Défaut par « module/categorie ». */
+  defauts: z.record(z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/), archetypeSchema),
+  /**
+   * Exception par **identifiant de fiche** — l'emporte sur le défaut.
+   *
+   * La clé est un `contentIdSchema` (« eopan.appareils.rafale-m »), pas un
+   * slug : M6a avait typé ce champ en `slugSchema`, qui interdit le point.
+   * Aucune exception n'aurait donc pu être déclarée sans faire échouer la
+   * validation — un défaut resté invisible tant que la table était vide.
+   */
+  exceptions: z.record(contentIdSchema, archetypeSchema),
+  /**
+   * Libellé de nature du Dossier, par « module/categorie » — lot M9a.
+   *
+   * Il ne se déduit pas du nom de la catégorie : « Parcours de sélection »
+   * donnerait « Parcours de sélection », pas « Sélection ». Une table explicite
+   * évite d'inventer une règle de troncature qui casserait à la première
+   * catégorie nommée autrement.
+   */
+  naturesDossier: z.record(z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/), z.string().min(1)),
+});
+
+export type Archetype = z.infer<typeof archetypeSchema>;
+
 export type Module = z.infer<typeof moduleSchema>;
 export type Category = z.infer<typeof categorySchema>;
 export type ModuleKind = z.infer<typeof moduleKindSchema>;

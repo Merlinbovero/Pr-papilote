@@ -1,3 +1,4 @@
+import { FAMILY_INFO } from "@/lib/psychotech/generators";
 import { expect, test } from "@playwright/test";
 
 test.describe("entraînement psychotechnique", () => {
@@ -41,24 +42,47 @@ test.describe("entraînement psychotechnique", () => {
   });
 
   test("la session personnalisée respecte le choix des familles", async ({ page }) => {
+    // **Rendu déterministe au lot M10.** Ce test listait six familles à
+    // désélectionner en supposant qu'il ne restait alors que « Calcul mental ».
+    // C'était exact le jour où il a été écrit — le module en comptait sept.
+    // Le lot J en a ajouté trois, d'autres ont suivi : il y en a dix-neuf. Douze
+    // familles restaient donc sélectionnées, et une session de dix questions n'y
+    // contenait « Calcul mental » que par chance. Mesuré : six échecs sur seize.
+    //
+    // La liste ne vient plus du test mais du produit : on désélectionne TOUT ce
+    // qui n'est pas la cible. Une vingtième famille ajoutée demain sera
+    // désélectionnée d'elle-même, et le test restera vrai.
     await page.goto("/psychotechnique/entrainement");
 
-    // Ne garder que le calcul mental.
-    for (const family of [
-      "Suites numériques",
-      "Séries logiques",
-      "Mémoire",
-      "Attention",
-      "Orientation",
-      "Rapidité et précision",
-    ]) {
-      await page.getByRole("button", { name: family, exact: true }).click();
+    const CIBLE = FAMILY_INFO["calcul-mental"].name;
+    const autres = Object.values(FAMILY_INFO)
+      .map((f) => f.name)
+      .filter((nom) => nom !== CIBLE);
+
+    for (const nom of autres) {
+      const bouton = page.getByRole("button", { name: nom, exact: true });
+      // Une famille peut n'être pas proposée par cet écran : on ne clique que
+      // ce qui existe, et on ne postule rien sur la composition de la liste.
+      if ((await bouton.count()) === 0) continue;
+      if ((await bouton.first().getAttribute("aria-pressed")) === "true") {
+        await bouton.first().click();
+      }
     }
+
+    // Une seule famille reste active : la cible.
+    const actives = page.locator('[aria-pressed="true"]');
+    await expect(actives).toHaveCount(1);
+    await expect(actives).toHaveText(CIBLE);
+
     await page.getByLabel("Nombre de questions").selectOption("10");
     await page.getByRole("button", { name: "Lancer la session personnalisée" }).click();
 
     await expect(page.getByRole("heading", { name: /Consignes — 10 questions/ })).toBeVisible();
-    await expect(page.getByText(/Calcul mental —/)).toBeVisible();
-    await expect(page.getByText(/Suites numériques —/)).not.toBeVisible();
+    // Le vivier ne peut plus venir que de la cible : la consigne affichée est
+    // donc la sienne, et aucune autre ne peut apparaître.
+    await expect(page.getByText(new RegExp(`${CIBLE} —`))).toBeVisible();
+    for (const nom of autres) {
+      await expect(page.getByText(new RegExp(`${nom} —`)), nom).toHaveCount(0);
+    }
   });
 });

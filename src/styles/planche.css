@@ -1,0 +1,1735 @@
+/*
+ * Système PLANCHE — feuille de style du système.
+ *
+ * Les valeurs de couleur sont celles de `src/styles/planche-tokens.css`
+ * (lot M1) et de `src/lib/design/planche-tokens.ts`, où elles sont testées.
+ *
+ * PORTÉE LOCALE, sans exception : chaque sélecteur descend de `.pl-root`.
+ * Aucun jeton de production n'est touché, `:root` reste intact. Cette
+ * feuille n'est chargée que par les layouts qui l'importent : le groupe de
+ * routes `(planche)` et le laboratoire de design. Elle n'est **pas** dans
+ * `globals.css` : les routes historiques ne la téléchargent pas.
+ *
+ * Lot M3 — le pansement `body:has(.pl-root) > header, > footer { display:none }`
+ * du prototype a disparu : le chrome historique n'est plus monté sur ces
+ * routes, il n'y a donc plus rien à masquer.
+ */
+
+.pl-root,
+.pl-univers {
+  /* ---- registre clair : papier ---- */
+  --pl-fond: #fbfaf8;
+  --pl-fond-2: #f6f5f2;
+  --pl-fond-3: #efeeeb;
+  --pl-encre: #141b24;
+  --pl-encre-2: #414851;
+  --pl-encre-3: #666c74;
+  --pl-filet: #d5d8db;
+  --pl-filet-fort: #7c8186;
+  --pl-marine: #1d5b8f;
+  --pl-air: #156383;
+  --pl-terre: #376441;
+  --pl-sienne: #8a3d2b;
+  --pl-bistre: #79511e;
+  --pl-violine: #624581;
+  --pl-indigo: #4f5882;
+  --pl-juste: #117c40;
+  --pl-attention: #986001;
+  --pl-erreur: #be2323;
+  --pl-t0: #efeeeb;
+  --pl-t1: #c9c6c1;
+  --pl-t2: #9c9892;
+
+  /* Lot M2 — les familles viennent de `next/font/local`
+     (`src/lib/design/planche-fonts.ts`). Les replis sont ceux que le
+     chargeur génère, avec leurs métriques ajustées. */
+  --pl-serif: var(--font-planche-serif), Georgia, serif;
+  --pl-sans: var(--font-planche-sans), system-ui, sans-serif;
+  --pl-mono: var(--font-planche-mono), ui-monospace, monospace;
+
+  --pl-mod: var(--pl-encre-2);
+  --pl-marge: 200px;
+  --pl-annexe: 280px;
+  --pl-corps: 620px;
+  --pl-gouttiere: 40px;
+  --pl-pad: 28px;
+
+  background: var(--pl-fond);
+  color: var(--pl-encre);
+  font-family: var(--pl-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  min-height: 100dvh;
+}
+
+/* Le registre sombre suit le thème du site (classe .dark posée par le
+   ThemeProvider de production) et la préférence système. Ce n'est pas une
+   inversion : c'est un charbon bleuté. */
+.dark .pl-root,
+.dark .pl-univers,
+.pl-root[data-registre="sombre"],
+.pl-univers[data-registre="sombre"] {
+  --pl-fond: #10141a;
+  --pl-fond-2: #191d24;
+  --pl-fond-3: #22272d;
+  --pl-encre: #e7e6e3;
+  --pl-encre-2: #b4b8bc;
+  --pl-encre-3: #888e94;
+  --pl-filet: #2e333a;
+  --pl-filet-fort: #6b727c;
+  --pl-marine: #7db0e1;
+  --pl-air: #74b8db;
+  --pl-terre: #8cb894;
+  --pl-sienne: #e09582;
+  --pl-bistre: #d2a979;
+  --pl-violine: #b599d6;
+  --pl-indigo: #a4afdb;
+  --pl-juste: #72c78b;
+  --pl-attention: #efb062;
+  --pl-erreur: #ed756a;
+  --pl-t0: #2c3138;
+  --pl-t1: #454c55;
+  --pl-t2: #69727c;
+}
+.pl-root[data-registre="clair"],
+.pl-univers[data-registre="clair"] {
+  --pl-fond: #fbfaf8;
+  --pl-fond-2: #f6f5f2;
+  --pl-fond-3: #efeeeb;
+  --pl-encre: #141b24;
+  --pl-encre-2: #414851;
+  --pl-encre-3: #666c74;
+  --pl-filet: #d5d8db;
+  --pl-filet-fort: #7c8186;
+  --pl-marine: #1d5b8f;
+  --pl-air: #156383;
+  --pl-terre: #376441;
+  --pl-sienne: #8a3d2b;
+  --pl-bistre: #79511e;
+  --pl-violine: #624581;
+  --pl-indigo: #4f5882;
+  --pl-juste: #117c40;
+  --pl-attention: #986001;
+  --pl-erreur: #be2323;
+  --pl-t0: #efeeeb;
+  --pl-t1: #c9c6c1;
+  --pl-t2: #9c9892;
+}
+
+.pl-root[data-module="marine"] {
+  --pl-mod: var(--pl-marine);
+}
+.pl-root[data-module="air"] {
+  --pl-mod: var(--pl-air);
+}
+.pl-root[data-module="terre"] {
+  --pl-mod: var(--pl-terre);
+}
+.pl-root[data-module="sienne"] {
+  --pl-mod: var(--pl-sienne);
+}
+.pl-root[data-module="bistre"] {
+  --pl-mod: var(--pl-bistre);
+}
+.pl-root[data-module="violine"] {
+  --pl-mod: var(--pl-violine);
+}
+.pl-root[data-module="indigo"] {
+  --pl-mod: var(--pl-indigo);
+}
+
+/* ---- marginMode : déclaré, jamais déduit du contenu ---- */
+.pl-root[data-marge="rail"] {
+  --pl-marge: 88px;
+  --pl-annexe: 264px;
+}
+.pl-root[data-marge="none"] {
+  --pl-marge: 0px;
+}
+
+/* Repli responsive à l'intérieur du mode déclaré : `wide` retombe sur
+   `rail` puis sur `none`. Une page déclarée `none` ne remonte jamais. */
+@media (max-width: 1439px) {
+  .pl-root[data-marge="wide"] {
+    --pl-marge: 88px;
+    --pl-annexe: 264px;
+  }
+}
+@media (max-width: 1179px) {
+  .pl-root[data-marge="wide"],
+  .pl-root[data-marge="rail"] {
+    --pl-marge: 0px;
+  }
+}
+
+/* ---- bandeau ---- */
+.pl-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  min-height: 56px;
+  padding: 8px var(--pl-pad);
+  border-bottom: 1px solid var(--pl-filet-fort);
+}
+.pl-mark {
+  font-family: var(--pl-serif);
+  font-size: 19px;
+  font-weight: 600;
+}
+.pl-top nav {
+  display: flex;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+}
+.pl-top a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.pl-top a:hover,
+.pl-top a[aria-current="page"] {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-filet-fort);
+}
+a.pl-mark {
+  color: inherit;
+  text-decoration: none;
+}
+/* Fin de bandeau : registre puis état de connexion. */
+.pl-top-fin {
+  display: flex;
+  align-items: center;
+  gap: 10px 16px;
+  flex-wrap: wrap;
+}
+/* Accès à la recherche : un lien, pas la palette. Voir le commentaire de
+   `planche-bandeau.tsx` — la palette sérialise 431 kB d'index par page. */
+.pl-recherche {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet);
+  padding-bottom: 2px;
+}
+.pl-recherche:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-filet-fort);
+}
+/* Bascule de registre — trois libellés, un filet, aucune surface. */
+.pl-registre {
+  display: flex;
+  gap: 2px;
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pl-registre button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--pl-encre-3);
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 5px 9px;
+}
+.pl-registre button:hover {
+  color: var(--pl-encre);
+}
+.pl-registre button[aria-pressed="true"] {
+  border-color: var(--pl-filet-fort);
+  color: var(--pl-encre);
+}
+
+/* ---- pied de page du groupe (à ne pas confondre avec .pl-pied) ---- */
+.pl-foot {
+  border-top: 1px solid var(--pl-filet-fort);
+  margin-top: auto;
+  padding: 20px var(--pl-pad) 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  align-items: baseline;
+  font-size: 12.5px;
+  color: var(--pl-encre-3);
+}
+.pl-foot nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+.pl-foot a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.pl-foot a:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-filet-fort);
+}
+.pl-foot p {
+  margin: 0;
+  flex-basis: 100%;
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.pl-cart {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--pl-encre-3);
+  padding: 12px var(--pl-pad) 0;
+}
+@media (min-width: 1440px) {
+  .pl-root[data-marge="wide"] .pl-cart {
+    display: none;
+  }
+}
+
+/* ---- grille ---- */
+.pl-page {
+  display: grid;
+  grid-template-columns: var(--pl-marge) minmax(0, var(--pl-corps)) var(--pl-annexe);
+  gap: 0 var(--pl-gouttiere);
+  padding: var(--pl-pad);
+  justify-content: center;
+}
+.pl-root[data-marge="none"] .pl-page {
+  grid-template-columns: minmax(0, var(--pl-corps)) var(--pl-annexe);
+}
+@media (max-width: 1179px) {
+  .pl-page {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .pl-marge {
+    display: none;
+  }
+  .pl-annexe {
+    margin-top: 32px;
+    border-top: 1px solid var(--pl-filet-fort);
+    padding-top: 20px;
+  }
+  .pl-pied {
+    order: 3;
+  }
+}
+@media (max-width: 1179px) {
+  .pl-page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pl-marge {
+  border-right: 1px solid var(--pl-filet);
+  padding-right: 16px;
+}
+.pl-cote {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  color: var(--pl-encre-2);
+}
+.pl-rev {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  color: var(--pl-encre-3);
+  margin-top: 8px;
+}
+.pl-mmark {
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--pl-mod);
+  line-height: 1.5;
+  margin-top: 20px;
+  font-variant-caps: small-caps;
+  font-weight: 500;
+}
+.pl-root[data-marge="rail"] .pl-cote,
+.pl-root[data-marge="rail"] .pl-rev,
+.pl-root[data-marge="rail"] .pl-mmark {
+  display: none;
+}
+@media (max-width: 1439px) {
+  .pl-root[data-marge="wide"] .pl-cote,
+  .pl-root[data-marge="wide"] .pl-rev,
+  .pl-root[data-marge="wide"] .pl-mmark {
+    display: none;
+  }
+}
+
+/* ---- corps ---- */
+.pl-corps {
+  min-width: 0;
+}
+.pl-sur {
+  font-size: 12px;
+  letter-spacing: 0.11em;
+  color: var(--pl-encre-3);
+  margin-bottom: 10px;
+  font-variant-caps: small-caps;
+  font-weight: 500;
+}
+.pl-titre {
+  font-family: var(--pl-serif);
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+.pl-stitre {
+  font-size: 13px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-2);
+  margin-bottom: 12px;
+  font-variant-caps: small-caps;
+}
+.pl-ft {
+  height: 1px;
+  background: var(--pl-mod);
+  margin: 0 0 24px;
+}
+.pl-chapo {
+  font-family: var(--pl-serif);
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: var(--pl-encre-2);
+  margin: 0 0 28px;
+  max-width: 66ch;
+}
+/* La typographie du corps s'arrête à la frontière d'un bloc hôte : un
+   composant non encore migré n'est ni ciblé ni restylé, il est laissé
+   tranquille. `:not(<selecteur complexe>)` est du CSS Selectors 4, accepté
+   par tous les navigateurs à feuilles persistantes. */
+.pl-corps p:not(.pl-hote *, .pl-manip *) {
+  font-family: var(--pl-serif);
+  font-size: 17px;
+  line-height: 1.647;
+  margin: 0 0 28px;
+  max-width: 66ch;
+}
+.pl-corps p:not(.pl-hote *, .pl-manip *) strong {
+  font-weight: 600;
+}
+.pl-corps ul:not(.pl-hote *, .pl-manip *) {
+  font-family: var(--pl-serif);
+  font-size: 17px;
+  line-height: 1.647;
+  margin: 0 0 28px;
+  padding-left: 20px;
+  max-width: 66ch;
+}
+.pl-corps li:not(.pl-hote *, .pl-manip *) {
+  margin-bottom: 8px;
+}
+
+/* Fil d'Ariane — mêmes destinations que le fil historique, en cotes. */
+.pl-fil {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-family: var(--pl-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pl-encre-3);
+  margin-bottom: 18px;
+}
+.pl-fil > * + *::before {
+  content: "› ";
+  color: var(--pl-filet-fort);
+}
+.pl-fil a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.pl-fil a:hover {
+  border-bottom-color: var(--pl-filet-fort);
+}
+
+/* Renvois vers d'autres planches : un filet par entrée, aucune carte. */
+.pl-renvois {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 66ch;
+}
+.pl-renvois li {
+  border-top: 1px solid var(--pl-filet);
+  padding: 11px 0;
+  margin: 0;
+}
+.pl-renvois li:last-child {
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-renvois a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.pl-renvoi-t {
+  display: block;
+  font-family: var(--pl-serif);
+  font-size: 17px;
+  color: var(--pl-encre);
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+}
+.pl-renvois a:hover .pl-renvoi-t {
+  border-bottom-color: var(--pl-mod);
+}
+.pl-renvoi-r {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--pl-encre-3);
+  margin-top: 3px;
+}
+
+/* Exercice guidé : un dépliant sobre, filet en tête, pas de surface. */
+.pl-exo {
+  border-top: 1px solid var(--pl-filet);
+  padding: 12px 0;
+  max-width: 66ch;
+}
+.pl-exo:last-of-type {
+  border-bottom: 1px solid var(--pl-filet);
+  margin-bottom: 28px;
+}
+.pl-exo > summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+.pl-exo > p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+/* Navigation de parcours : un rang de renvois sous un filet fort. */
+.pl-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  border-top: 1px solid var(--pl-filet-fort);
+  padding-top: 14px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.pl-nav a {
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-nav a:hover {
+  color: var(--pl-encre);
+  border-bottom-color: var(--pl-mod);
+}
+
+/* La section porte son propre repère de marge, posé en absolu : il tombe
+   toujours en face de son titre, sans aucun calcul en JavaScript. */
+.pl-sec {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 10px;
+  margin: 0 0 18px;
+}
+.pl-sec-n {
+  font-family: var(--pl-mono);
+  color: var(--pl-encre-3);
+  font-weight: 400;
+}
+.pl-repere {
+  position: absolute;
+  right: calc(100% + var(--pl-gouttiere) + 16px);
+  top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+.pl-repere-n {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  text-transform: none;
+}
+.pl-repere::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 2px;
+  background: var(--pl-mod);
+}
+.pl-root[data-marge="none"] .pl-repere,
+.pl-root[data-marge="rail"] .pl-repere-n {
+  position: static;
+}
+.pl-root[data-marge="none"] .pl-repere {
+  order: -1;
+}
+.pl-root[data-marge="rail"] .pl-repere {
+  right: calc(100% + var(--pl-gouttiere) + 10px);
+}
+@media (max-width: 1179px) {
+  .pl-repere {
+    position: static;
+    order: -1;
+  }
+  .pl-repere-n {
+    position: static;
+  }
+}
+
+/* ---- planches ---- */
+.pl-planche {
+  margin: 0 0 28px;
+}
+.pl-planche img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--pl-filet-fort);
+  filter: saturate(0.94) contrast(0.94) sepia(0.04);
+}
+.pl-planche.pl-pano img {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+}
+.pl-planche.pl-port img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.pl-fig {
+  border: 1px solid var(--pl-filet);
+  background: var(--pl-fond-2);
+  padding: 18px;
+  color: var(--pl-mod);
+}
+.pl-fig svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  color: var(--pl-mod);
+}
+.pl-legende {
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  padding-top: 7px;
+  margin: 7px 0 0;
+  border-top: 1px solid var(--pl-filet);
+  line-height: 1.5;
+  max-width: none;
+  font-family: var(--pl-sans);
+}
+.pl-legende .pl-ref {
+  font-family: var(--pl-mono);
+  letter-spacing: 0.05em;
+  color: var(--pl-encre-2);
+}
+.pl-reperes-fig {
+  list-style: none;
+  margin: 9px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--pl-encre-2);
+  font-family: var(--pl-sans);
+}
+.pl-reperes-fig .pl-num {
+  font-family: var(--pl-mono);
+  color: var(--pl-encre-3);
+  margin-right: 5px;
+}
+
+/* ============================================================
+   LE CAHIER — la revue d'histoire (lot M7b)
+
+   Ce que la famille change par rapport à la notice, et rien d'autre :
+   plus de blanc, un titre plus haut, un chapô en italique, et une lettrine.
+   Ce sont les seules dérogations que docs/design-archetypes.md autorise, et
+   elles sont réservées à cette famille — d'où la portée `[data-famille]`.
+
+   Ce que la famille NE FAIT PAS : aucune chronologie en marge. Le motif est
+   décrit au manifeste, mais aucun champ canonique ne porte de chronologie, et
+   « une chronologie non sourcée n'est pas publiée ». La déduire de la prose
+   serait la fabriquer. Elle attend son champ.
+   ============================================================ */
+.pl-root[data-famille="cahier"] .pl-titre {
+  /* 52 px : la seule dérogation à l'échelle du manifeste, réservée au Cahier. */
+  font-size: 52px;
+  /* Trois lignes de rythme vides au-dessus : la respiration de la famille. */
+  margin-top: 84px;
+  margin-bottom: 14px;
+}
+.pl-root[data-famille="cahier"] .pl-ft {
+  border-top-color: var(--pl-mod);
+}
+.pl-root[data-famille="cahier"] .pl-chapo {
+  font-style: italic;
+  font-size: 18.5px;
+}
+@media (max-width: 1179px) {
+  /* Transposition étroite : le titre descend à 34 px et la respiration se
+     réduit — 84 px de blanc au-dessus d'un titre sur mobile, c'est une page
+     vide au premier écran. */
+  .pl-root[data-famille="cahier"] .pl-titre {
+    font-size: 34px;
+    margin-top: 28px;
+  }
+}
+
+/* Lettrine — première lettre du premier paragraphe de l'essentiel.
+
+   Posée par `::first-letter` sur le SEUL bloc d'ouverture : aucun caractère
+   n'est extrait du texte, aucun nœud n'est ajouté, l'ordre de lecture et le
+   texte annoncé restent identiques. Découper la chaîne pour isoler la lettre
+   aurait été un changement de contenu déguisé en ornement.
+
+   Une seule par page : la classe n'est posée qu'une fois par le composant,
+   jamais par une règle `:first-of-type` qui en sèmerait à chaque bloc. */
+.pl-root[data-famille="cahier"] .pl-ouverture > p:first-child::first-letter {
+  float: left;
+  font-family: var(--pl-serif);
+  font-size: 3.3em;
+  line-height: 0.86;
+  font-weight: 600;
+  color: var(--pl-mod);
+  padding: 0.06em 0.09em 0 0;
+}
+/* Sur colonne étroite, une lettrine flottante hache le paragraphe : elle
+   rentre dans le rang. */
+@media (max-width: 599px) {
+  .pl-root[data-famille="cahier"] .pl-ouverture > p:first-child::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+/* ============================================================
+   LA SITUATION — le point de situation daté (lot M7b)
+   ============================================================ */
+
+/* L'appareil documentaire, au-dessus du chapô : le seul bloc du système à la
+   fois obligatoire, non décoratif et placé avant le texte. Il dit au lecteur
+   ce qu'il engage.
+
+   LIBELLÉ — « Informations vérifiées au » et non « Arrêté au ». La nuance
+   n'est pas cosmétique : `verifiedAt` est la date de dernière vérification des
+   faits, pas une date d'arrêt éditorial. Écrire « arrêté au » ferait passer
+   l'une pour l'autre. Une véritable date d'arrêt demandera un champ canonique
+   distinct ; elle ne se simule pas. */
+.pl-arrete {
+  border-top: 2px solid var(--pl-filet-fort);
+  border-bottom: 2px solid var(--pl-filet-fort);
+  padding: 10px 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-family: var(--pl-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+}
+.pl-arrete .pl-alerte {
+  color: var(--pl-attention);
+}
+
+/* La section « ce qui reste incertain » : une section de plein rang, avec son
+   filet et son intertitre, exactement comme les faits. Jamais reléguée en
+   note. Le fond très léger la distingue sans la mettre en alarme. */
+.pl-incertain {
+  border-left: 2px solid var(--pl-filet-fort);
+  background: var(--pl-fond-2);
+  padding: 14px 16px;
+  margin: 0 0 28px;
+  max-width: 66ch;
+}
+.pl-incertain p {
+  margin: 0;
+}
+
+/* ---- photographie documentaire (lot M6b) ----
+   Volontairement distincte de `.pl-planche`, qui teinte ses images au
+   laboratoire (`filter: saturate/contrast/sepia`) et leur impose un rapport
+   fixe. Une photographie de notice est une PIÈCE, pas une illustration : elle
+   n'est ni recadrée arbitrairement, ni transformée. Pas de filtre ici, et le
+   cadrage repris tel quel du gabarit historique — même rapport, même
+   `object-position` d'auteur — pour que les pixels rendus ne bougent pas.
+   Le filet et la légende sont tout ce que PLANCHE ajoute. */
+.pl-photo {
+  margin: 0 0 28px;
+}
+.pl-photo-c {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--pl-filet-fort);
+  background: var(--pl-fond-2);
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .pl-photo-c {
+    aspect-ratio: 2 / 1;
+  }
+}
+.pl-photo img {
+  object-fit: cover;
+}
+.pl-photo .pl-legende a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---- encadrés ---- */
+.pl-enc {
+  border-left: 2px solid var(--pl-mod);
+  background: color-mix(in oklab, var(--pl-mod) 5%, transparent);
+  padding: 14px 16px;
+  margin: 0 0 28px;
+  max-width: 66ch;
+}
+.pl-enc-l {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--pl-mod);
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-variant-caps: small-caps;
+}
+.pl-enc p,
+.pl-enc ul {
+  font-family: var(--pl-serif);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+.pl-enc.pl-piege {
+  --pl-mod: var(--pl-attention);
+}
+
+/* ---- tableaux ---- */
+.pl-tab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+.pl-tab th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-3);
+  font-weight: 500;
+  padding: 8px 14px 7px 0;
+  border-bottom: 1px solid var(--pl-filet-fort);
+  font-variant-caps: small-caps;
+}
+.pl-tab td {
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  vertical-align: top;
+}
+/* En-tête de LIGNE (`scope="row"`) : c'est un libellé, pas un en-tête de
+   colonne. Il garde les petites capitales mais reprend le filet léger des
+   cellules — sinon la même ligne portait deux filets d'épaisseur différente,
+   coupés au milieu du tableau (constaté au rendu, lot M6b). */
+.pl-tab th[scope="row"] {
+  border-bottom: 1px solid var(--pl-filet);
+  padding: 9px 14px 9px 0;
+  vertical-align: top;
+}
+.pl-tab td.pl-v {
+  font-family: var(--pl-mono);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  padding-right: 0;
+  color: var(--pl-encre);
+}
+.pl-tab td.pl-vide {
+  color: var(--pl-encre-3);
+}
+
+.pl-sortie {
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 14px;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+.pl-sortie a {
+  color: var(--pl-encre);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pl-filet-fort);
+}
+.pl-sortie a:hover {
+  border-bottom-color: var(--pl-mod);
+}
+.pl-pied {
+  border-top: 2px solid var(--pl-filet-fort);
+  margin-top: 34px;
+  padding-top: 10px;
+  display: flex;
+  gap: 22px;
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pl-encre-3);
+  flex-wrap: wrap;
+}
+
+/* ---- annexe ---- */
+.pl-annexe {
+  min-width: 0;
+  font-size: 13.5px;
+}
+.pl-an-h {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--pl-encre-3);
+  border-bottom: 1px solid var(--pl-filet-fort);
+  padding-bottom: 6px;
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-variant-caps: small-caps;
+}
+.pl-annexe > * + .pl-an-h {
+  margin-top: 26px;
+}
+.pl-an-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  color: var(--pl-encre-2);
+}
+.pl-an-row .pl-num {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  font-variant-numeric: tabular-nums;
+}
+.pl-an-note {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--pl-encre-3);
+  margin: 10px 0 0;
+}
+.pl-toc {
+  display: flex;
+  flex-direction: column;
+}
+.pl-toc a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 0;
+  color: var(--pl-encre-2);
+  text-decoration: none;
+}
+.pl-toc a::before {
+  content: "";
+  width: 9px;
+  height: 2px;
+  background: var(--pl-filet-fort);
+  flex: none;
+}
+.pl-toc a:hover {
+  color: var(--pl-encre);
+}
+.pl-toc-n {
+  font-family: var(--pl-mono);
+  font-size: 11px;
+  color: var(--pl-encre-3);
+  min-width: 12px;
+}
+/* Repère plein sur la section courante — le sommaire dit où l'on est, sans
+   barre de progression de lecture (docs/design-archetypes.md, La Leçon). */
+.pl-toc a[aria-current="true"] {
+  color: var(--pl-encre);
+}
+.pl-toc a[aria-current="true"]::before {
+  background: var(--pl-mod);
+  height: 3px;
+}
+
+/* ---- voir aussi ---- */
+.pl-voir {
+  display: flex;
+  flex-direction: column;
+}
+.pl-voir a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  color: var(--pl-encre-2);
+  text-decoration: none;
+  line-height: 1.45;
+}
+/* Sur pointeur grossier, un renvoi devient une cible tactile isolée : il doit
+   tenir ses 44 px de haut. Mesuré à 35 px lors de la campagne M6b — l'annexe
+   n'apparaissait jusque-là qu'en desktop, où la règle ne s'applique pas. */
+@media (pointer: coarse) {
+  .pl-voir a {
+    min-height: 44px;
+  }
+}
+.pl-voir a::before {
+  content: "→";
+  color: var(--pl-filet-fort);
+  flex: none;
+}
+.pl-voir a:hover {
+  color: var(--pl-encre);
+}
+.pl-chrono {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  color: var(--pl-encre-2);
+  line-height: 1.45;
+}
+.pl-chrono .pl-num {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  flex: none;
+  width: 84px;
+  font-variant-numeric: tabular-nums;
+}
+.pl-srcs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pl-srcs li {
+  display: flex;
+  gap: 9px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--pl-filet);
+  color: var(--pl-encre-2);
+  line-height: 1.45;
+}
+.pl-srcs .pl-num {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  flex: none;
+}
+
+/* ---- boutons & champs ---- */
+.pl-btn {
+  font-family: var(--pl-sans);
+  font-size: 14.5px;
+  background: var(--pl-encre);
+  color: var(--pl-fond);
+  border: 1px solid var(--pl-encre);
+  border-radius: 2px;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+.pl-btn.pl-ghost {
+  background: transparent;
+  color: var(--pl-encre);
+}
+.pl-btn:hover {
+  border-color: var(--pl-mod);
+}
+.pl-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.pl-radios {
+  display: flex;
+  gap: 22px;
+  margin: 0 0 24px;
+  flex-wrap: wrap;
+}
+.pl-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--pl-encre-2);
+  cursor: pointer;
+}
+.pl-radio input {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  margin: 0;
+  border: 1px solid var(--pl-filet-fort);
+  border-radius: 50%;
+}
+.pl-radio input:checked {
+  border-color: var(--pl-mod);
+  box-shadow:
+    inset 0 0 0 3px var(--pl-fond),
+    inset 0 0 0 13px var(--pl-mod);
+}
+.pl-radio:has(input:checked) {
+  color: var(--pl-encre);
+}
+
+/* ---- champ : une légende, puis ses commandes ---- */
+.pl-champ {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+.pl-champ > legend {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-3);
+  font-variant-caps: small-caps;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 6px;
+}
+.pl-champ .pl-radios {
+  margin: 0;
+}
+
+/* Case à cocher : même gabarit que le radio, angle vif. Le radio est rond
+   parce qu'un choix y est exclusif ; la case est carrée parce qu'elle ne
+   l'est pas. La forme porte le sens, pas seulement le style. */
+.pl-radio input[type="checkbox"] {
+  border-radius: 0;
+}
+.pl-radio input[type="checkbox"]:checked {
+  border-color: var(--pl-mod);
+  background: var(--pl-mod);
+  box-shadow: inset 0 0 0 2px var(--pl-fond);
+}
+
+/* ---- curseur ---- */
+.pl-curseur {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 420px;
+}
+.pl-curseur-t {
+  font-size: 13px;
+  color: var(--pl-encre-2);
+  margin: 0;
+}
+.pl-curseur .pl-v {
+  font-family: var(--pl-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--pl-encre);
+}
+.pl-curseur input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.pl-curseur input[type="range"]::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--pl-filet-fort);
+}
+.pl-curseur input[type="range"]::-moz-range-track {
+  height: 1px;
+  background: var(--pl-filet-fort);
+}
+/* Le curseur est un trait vertical — un repère de règle, pas une pastille. */
+.pl-curseur input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 3px;
+  height: 18px;
+  margin-top: -9px;
+  border: 0;
+  border-radius: 0;
+  background: var(--pl-mod);
+}
+.pl-curseur input[type="range"]::-moz-range-thumb {
+  width: 3px;
+  height: 18px;
+  border: 0;
+  border-radius: 0;
+  background: var(--pl-mod);
+}
+
+/* ---- relevé de progression ---- */
+.pl-releve {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  border-top: 1px solid var(--pl-filet-fort);
+  border-bottom: 1px solid var(--pl-filet);
+  padding: 9px 0;
+  margin: 0 0 28px;
+}
+.pl-releve-l {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--pl-encre-3);
+  font-variant-caps: small-caps;
+  font-weight: 500;
+}
+.pl-releve-v {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pl-encre-2);
+  border: 1px solid var(--pl-filet-fort);
+  border-radius: 2px;
+  padding: 2px 8px;
+}
+/* Vert de validation réservé au seul statut « maîtrisé » : la couleur porte
+   un sens, elle ne décore pas un état intermédiaire. */
+.pl-releve-v[data-etat="maitrise"] {
+  color: var(--pl-juste);
+  border-color: var(--pl-juste);
+}
+.pl-releve .pl-btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* ---- étapes du cours ---- */
+.pl-etapes {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 66ch;
+}
+.pl-etapes li {
+  border-top: 1px solid var(--pl-filet);
+  margin: 0;
+}
+.pl-etapes li:last-child {
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-etape {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 0;
+  font: inherit;
+  font-size: 14.5px;
+  text-align: left;
+  color: var(--pl-encre-2);
+  background: transparent;
+  border: 0;
+}
+button.pl-etape {
+  cursor: pointer;
+}
+button.pl-etape:hover {
+  color: var(--pl-encre);
+}
+/* Le repère d'étape est un carré vide qui se remplit : pas une coche
+   décorative, un état lisible même en niveaux de gris. */
+.pl-etape-m {
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--pl-filet-fort);
+}
+.pl-etapes li[data-fait="oui"] .pl-etape-m {
+  background: var(--pl-juste);
+  border-color: var(--pl-juste);
+}
+.pl-etapes li[data-fait="oui"] .pl-etape {
+  color: var(--pl-encre);
+}
+
+/* ---- bloc de manipulation (les sept interactions) ---- */
+.pl-manip {
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 14px;
+  margin: 0 0 28px;
+}
+.pl-manip-t {
+  font-family: var(--pl-serif);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+.pl-manip-c {
+  font-size: 13.5px;
+  color: var(--pl-encre-2);
+  margin: 0 0 14px;
+}
+.pl-manip-l {
+  font-size: 13.5px;
+  color: var(--pl-encre-2);
+  margin: 12px 0 0;
+}
+.pl-manip-l p {
+  margin: 0;
+}
+.pl-manip-l strong {
+  font-family: var(--pl-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  color: var(--pl-encre);
+}
+.pl-manip-cmd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 32px;
+  margin-top: 16px;
+}
+.pl-manip-d {
+  font-size: 13px;
+  margin-top: 12px;
+}
+.pl-manip-d summary {
+  color: var(--pl-encre-3);
+  cursor: pointer;
+}
+.pl-manip-d p {
+  margin: 6px 0 0;
+}
+.pl-manip-p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 14px;
+  border-top: 1px solid var(--pl-filet);
+  padding-top: 10px;
+}
+.pl-manip-k {
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  margin: 0;
+}
+.pl-manip-p .pl-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* ---- tracé des figures ----
+   Les couleurs seules changent : la géométrie des schémas appartient au
+   chantier « Système d'illustration technique » (docs/roadmap.md). */
+.pl-fig .pl-t-encre {
+  stroke: var(--pl-encre);
+}
+.pl-fig .pl-f-encre {
+  fill: var(--pl-encre);
+}
+.pl-fig .pl-t-mod {
+  stroke: var(--pl-mod);
+}
+.pl-fig .pl-f-mod {
+  fill: var(--pl-mod);
+}
+.pl-fig .pl-t-filet {
+  stroke: var(--pl-filet-fort);
+}
+.pl-fig .pl-f-creux {
+  fill: var(--pl-fond-3);
+}
+.pl-fig .pl-t-juste {
+  stroke: var(--pl-juste);
+}
+.pl-fig .pl-f-juste {
+  fill: color-mix(in oklab, var(--pl-juste) 18%, transparent);
+}
+.pl-fig .pl-f-erreur {
+  fill: var(--pl-erreur);
+}
+.pl-fig .pl-f-encre-2 {
+  fill: var(--pl-encre-2);
+}
+.pl-fig .pl-f-mod-clair {
+  fill: color-mix(in oklab, var(--pl-mod) 22%, transparent);
+}
+.pl-fig .pl-t-mince {
+  stroke: var(--pl-filet);
+}
+.pl-fig text {
+  font-family: var(--pl-sans);
+  font-size: 11px;
+  fill: var(--pl-encre-2);
+  /* Un `<text>` placé dans un `<g stroke=… strokeWidth=2>` héritait du
+     trait : les libellés « Portance », « Poids »… sortaient empâtés, avant
+     ce lot déjà. Une ligne de CSS les rend nets, sans toucher un tracé. */
+  stroke: none;
+}
+.pl-fig text.pl-f-mod {
+  fill: var(--pl-mod);
+}
+
+/* ---- bloc hôte ----
+   Une zone de la planche qui accueille un composant **non migré**. La
+   typographie du corps s'arrête à sa frontière : le bloc n'est pas restylé,
+   il est simplement laissé tranquille. Voir `.pl-corps p:not(.pl-hote *)`. */
+.pl-hote {
+  margin: 0 0 28px;
+}
+
+.pl-root :focus-visible,
+.pl-univers :focus-visible {
+  outline: 2px solid var(--pl-mod);
+  outline-offset: 2px;
+}
+
+/* ---- Le Banc ---- */
+.pl-banc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  min-height: calc(100dvh - 4px);
+}
+.pl-banc-h {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--pl-filet);
+  padding-bottom: 10px;
+  font-family: var(--pl-mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--pl-encre-3);
+  font-variant-numeric: tabular-nums;
+}
+.pl-banc-f {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.pl-banc-f svg {
+  width: min(380px, 70vw);
+  height: auto;
+}
+.pl-banc-sep {
+  width: 100%;
+  max-width: 900px;
+  height: 1px;
+  background: var(--pl-filet);
+}
+.pl-opts {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 700px) {
+  .pl-root {
+    --pl-pad: 16px;
+  }
+  .pl-opts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+.pl-opt {
+  border: 1px solid var(--pl-filet);
+  border-radius: 2px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--pl-sans);
+}
+.pl-opt:hover {
+  border-color: var(--pl-filet-fort);
+}
+.pl-opt svg {
+  width: 72px;
+  height: auto;
+}
+.pl-opt-l {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+  letter-spacing: 0.08em;
+}
+.pl-opt[data-etat="juste"] {
+  border-color: var(--pl-juste);
+  border-width: 2px;
+}
+.pl-opt[data-etat="erreur"] {
+  border-color: var(--pl-erreur);
+  border-width: 2px;
+}
+.pl-cmp {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 0 18px;
+}
+.pl-cmp figure {
+  margin: 0;
+  border: 1px solid var(--pl-filet);
+  padding: 12px;
+  text-align: center;
+}
+.pl-cmp figure svg {
+  width: 78px;
+  height: auto;
+}
+.pl-cmp figcaption {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  font-variant-caps: small-caps;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.pl-cmp .pl-mauvais {
+  border-color: var(--pl-erreur);
+  color: var(--pl-erreur);
+}
+.pl-cmp .pl-bon {
+  border-color: var(--pl-juste);
+  color: var(--pl-juste);
+}
+.pl-score {
+  font-family: var(--pl-mono);
+  font-size: 34px;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 4px;
+}
+.pl-tri polygon {
+  stroke: var(--pl-fond);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.pl-tri .pl-c0 {
+  fill: var(--pl-t0);
+}
+.pl-tri .pl-c1 {
+  fill: var(--pl-t1);
+}
+.pl-tri .pl-c2 {
+  fill: var(--pl-t2);
+}
+.pl-tri .pl-vide {
+  fill: none;
+  stroke: var(--pl-filet-fort);
+  stroke-dasharray: 3 3;
+  stroke-width: 1;
+}
+
+/* ---- index du laboratoire ---- */
+.pl-index {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+.pl-index h1 {
+  font-family: var(--pl-serif);
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+.pl-index p {
+  font-family: var(--pl-serif);
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--pl-encre-2);
+  max-width: 66ch;
+  margin: 0 0 24px;
+}
+.pl-index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pl-index li {
+  border-top: 1px solid var(--pl-filet);
+}
+.pl-index li:last-child {
+  border-bottom: 1px solid var(--pl-filet);
+}
+.pl-index a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+}
+.pl-index a span:last-child {
+  font-family: var(--pl-mono);
+  font-size: 12px;
+  color: var(--pl-encre-3);
+}
+.pl-index a:hover {
+  color: var(--pl-mod);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-root *,
+  .pl-root *::before,
+  .pl-root *::after,
+  .pl-univers *,
+  .pl-univers *::before,
+  .pl-univers *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Rien ne dépasse jamais la largeur de la fenêtre : la page ne défile
+   pas latéralement, seuls les tableaux le font dans leur conteneur. */
+.pl-root,
+.pl-univers {
+  overflow-x: clip;
+}
+/* Le saut vers une ancre n'est adouci que si le lecteur n'a rien demandé
+   d'autre. Déclaré en `no-preference` plutôt que neutralisé plus bas : la
+   règle ne dépend alors pas de l'ordre des blocs — c'est exactement ce qui
+   avait fait échouer la première version, le `smooth` étant redéclaré après
+   son propre correctif. */
+@media (prefers-reduced-motion: no-preference) {
+  .pl-root,
+  .pl-univers {
+    scroll-behavior: smooth;
+  }
+}
+/* Une ancre ne colle pas au bord haut de la fenêtre. */
+.pl-corps [id],
+.pl-annexe [id] {
+  scroll-margin-top: 24px;
+}
+/* Conteneur du groupe de routes — lot M3.
+   Il porte les jetons pour le bandeau et le pied de page, et pousse ce
+   dernier en bas de fenêtre quand la planche est courte.
+   Il ne porte **pas** la classe `.pl-root` : les règles de gabarit sont
+   écrites en descendance (`.pl-root[data-marge="none"] .pl-page`), et un
+   `.pl-root` imbriqué les ferait fuir sur la grille de la page. */
+.pl-univers {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.pl-univers > .pl-root {
+  flex: 1;
+  min-height: 0;
+}
+.pl-root table,
+.pl-univers table {
+  max-width: 100%;
+}
+
+/* ============================================================
+   Arbitrages du 2026-07-28 — mobile et pointeur grossier
+   ============================================================ */
+
+/* Cibles tactiles : plancher de 44 px sur pointeur grossier. La hauteur
+   pousse la ligne au lieu d'étendre une zone invisible : deux cibles
+   voisines ne peuvent donc jamais se chevaucher. */
+@media (pointer: coarse) {
+  .pl-toc a,
+  .pl-top a,
+  .pl-an-row a,
+  .pl-foot a,
+  .pl-corps nav a,
+  .pl-index a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .pl-btn,
+  .pl-registre button,
+  .pl-curseur input[type="range"] {
+    min-height: 44px;
+  }
+  .pl-radio {
+    min-height: 44px;
+  }
+  .pl-opt {
+    min-height: 44px;
+  }
+}
+
+/* Métadonnées sur téléphone : 2,0 mm mesurés sur iPhone, c'est trop peu.
+   Les cotes et légendes montent à 13 px (2,36 mm), les pieds, dates et
+   révisions de 11 à 12,5 px (2,27 mm, soit +15 %). L'interlettrage ne
+   bouge pas : on ne compense pas une taille insuffisante par du tracking. */
+@media (max-width: 700px) {
+  .pl-cote {
+    font-size: 13px;
+  }
+  .pl-legende {
+    font-size: 13px;
+  }
+  .pl-cart {
+    font-size: 12.5px;
+  }
+  .pl-rev,
+  .pl-pied,
+  .pl-foot p,
+  .pl-registre {
+    font-size: 12.5px;
+  }
+  .pl-chrono .pl-num,
+  .pl-srcs .pl-num,
+  .pl-an-row .pl-num {
+    font-size: 13px;
+  }
+  .pl-an-note {
+    font-size: 13px;
+  }
+}

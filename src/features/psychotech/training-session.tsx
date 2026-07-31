@@ -424,7 +424,17 @@ export function TrainingSession() {
             ) : null}
           </span>
         </div>
-        <Progress value={(index / questions.length) * 100} />
+        {/*
+          `index` compte les questions déjà passées — la courante n'est pas
+          terminée. Le libellé dit donc l'avancement, pas la position.
+        */}
+        <Progress
+          aria-label="Progression de la séance"
+          aria-valuetext={`${index} question${index > 1 ? "s" : ""} terminée${
+            index > 1 ? "s" : ""
+          } sur ${questions.length}`}
+          value={(index / questions.length) * 100}
+        />
       </div>
 
       <h2 className="text-xl font-semibold whitespace-pre-line">{question.prompt}</h2>

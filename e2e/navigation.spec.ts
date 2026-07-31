@@ -1,15 +1,24 @@
 import { expect, test, type Page } from "@playwright/test";
 
 /**
- * Ouvre l'accès aux concours : tiroir sur mobile, menu déroulant « Concours »
- * sur desktop. Renvoie le repère de navigation qui contient alors les liens.
+ * Ouvre la section EOPAN : tiroir puis volet dépliable sur mobile, menu
+ * déroulant sur desktop. Renvoie le repère de navigation qui contient alors
+ * les liens.
+ *
+ * Le déclencheur s'appelle « EOPAN » et non « Concours » depuis que la barre
+ * expose six sections nommées : personne ne cherche « concours », on cherche
+ * « EOPAN » (`src/lib/navigation.ts`). Le lien du hub porte le nom complet,
+ * « EOPAN — Marine nationale ».
  */
-async function openConcours(page: Page) {
+async function openEopan(page: Page) {
   const burger = page.getByRole("button", { name: "Ouvrir le menu" });
   if (await burger.isVisible()) {
     await burger.click();
+    // Sur téléphone, aucun volet n'est déplié tant qu'aucune section n'est
+    // courante : il faut ouvrir celui d'EOPAN avant d'atteindre ses liens.
+    await page.getByRole("button", { name: "EOPAN" }).click();
   } else {
-    await page.getByRole("button", { name: "Concours" }).click();
+    await page.getByRole("button", { name: "EOPAN" }).click();
   }
   return page.getByRole("navigation", { name: "Navigation principale" });
 }
@@ -17,8 +26,8 @@ async function openConcours(page: Page) {
 test.describe("navigation globale", () => {
   test("le header mène aux concours", async ({ page }) => {
     await page.goto("/");
-    const nav = await openConcours(page);
-    await nav.getByRole("link", { name: /EOPAN/ }).click();
+    const nav = await openEopan(page);
+    await nav.getByRole("link", { name: /EOPAN — Marine nationale/ }).click();
     await expect(page.getByRole("heading", { level: 1, name: "EOPAN" })).toBeVisible();
   });
 

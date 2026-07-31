@@ -44,3 +44,6 @@ next-env.d.ts
 /coverage
 /playwright-report
 /test-results
+
+# Artefact de recherche — régénéré à chaque build, jamais édité à la main
+public/generated/

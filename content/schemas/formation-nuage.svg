@@ -11,7 +11,7 @@
     .accent-t { fill: #3b82f6; font-weight: 600; font-size: 12px; }
   </style>
   <defs>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="formation-nuage__ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
     </marker>
   </defs>
@@ -23,7 +23,7 @@
   <path class="cloud" d="M156,150 C146,130 166,116 184,124 C190,104 220,104 228,124 C250,116 266,134 256,150 Z" />
   <text class="lbl" x="206" y="98" text-anchor="middle">nuage (vapeur condensée)</text>
   <!-- Air qui monte -->
-  <line class="rise" x1="206" y1="244" x2="206" y2="156" marker-end="url(#ac)" />
+  <line class="rise" x1="206" y1="244" x2="206" y2="156" marker-end="url(#formation-nuage__ac)" />
   <text class="accent-t" x="298" y="196" text-anchor="middle">l'air humide monte</text>
   <text class="sub" x="298" y="212" text-anchor="middle">et se refroidit</text>
   <!-- Sol -->
