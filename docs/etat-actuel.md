@@ -46,34 +46,62 @@ Ce sont les **composants non migrés**, `revision-session` exclu. Le chiffre est
 juste dans sa définition ; `pool-quiz` y compte pour un, bien qu'il serve les
 deux registres.
 
-### 3. Registre `AUTRES_APPELANTS` — **sept routes témoins**, pas sept composants
+### 3. Registre `AUTRES_APPELANTS` — **onze routes témoins**
 
-`e2e/banc-route-pilote.spec.ts` liste des **routes** servant de témoins de
-non-régression, **une par composant non migré**. Comparer ce nombre à celui des
-composants n'a donc pas de sens : `pool-quiz` en occupe trois à lui seul, parce
-qu'il sert trois surfaces distinctes.
+Ce nombre ne se compare pas à celui des composants : depuis le 2026-07-31, le
+registre a **une entrée par chemin d'intégration indépendant**, et non par
+composant.
 
-**Lacune comblée le 2026-07-31.** Le registre ne contenait aucune route
-`/cours/`, alors que `/cours/[slug]` rend `CourseExperience`, donc un
-`QuizPlayer` en rendu historique : les quatorze leçons canoniques n'avaient
-aucun témoin. `/cours/forces-et-lois-de-newton` l'a rejoint, et le témoin a été
-vérifié par rupture — poser `.banc` sur le titre de la leçon fait bien tomber le
-contrôle.
+**La règle de granularité**, générale et applicable à tout registre de ce
+type :
 
-> **Une couverture qui reste partielle, et qui le dit.** `NotionQuiz` est rendu
-> par **cinq** gabarits de fiche — `situation`, `cahier`,
-> `planche-identification`, `lecon-fiche`, `dossier` — et une seule route en
-> témoigne. Le registre attrape donc une fuite venue du composant, mais pas une
-> fuite venue d'un seul gabarit. Élargir à cinq routes changerait la granularité
-> du registre : arbitrage de doctrine **laissé ouvert**, pas tranché en passant.
+> un registre de non-régression a une entrée par **frontière indépendante**
+> capable de violer l'invariant testé.
+
+L'invariant est ici « aucune classe du Banc sur une route encore historique ».
+Quatre frontières peuvent l'enfreindre : le composant de quiz, le gabarit de
+page, l'enveloppe de charte, une branche conditionnelle de rendu. Deux routes
+ne partagent un témoin que si elles coïncident sur les quatre.
+
+Ce n'est pas théorique : aux lots F2a et F2b, c'est la **page** qui posait
+`.banc`, jamais le composant. Un registre indexé sur les seuls composants
+serait aveugle au chemin que le projet a effectivement emprunté deux fois.
+
+| Composant           | Témoins | Pourquoi ce nombre                                 |
+| ------------------- | ------- | -------------------------------------------------- |
+| `pool-quiz`         | 3       | trois pages distinctes (`eopn`, `alat`, `anglais`) |
+| `QuizPlayer` nu     | 1       | vitrine interne                                    |
+| `matiere-quiz`      | 1       | un gabarit                                         |
+| `course-experience` | 1       | un gabarit                                         |
+| `notion-quiz`       | **5**   | rendu par cinq gabarits de fiche                   |
+
+`/entrainement/eopn` et `/entrainement/alat` coïncident sur les quatre
+frontières : leur redondance est volontaire et sans coût.
+
+**Deux niveaux de protection, qui ne se recouvrent pas.**
+`src/features/quiz/notion-quiz.test.tsx` surveille le **composant** — aucune
+classe du Banc, avant comme après le tirage. Le registre surveille les
+**pages**. Une fuite venue du composant se verrait sur les cinq gabarits ; une
+fuite venue d'un seul gabarit ne se verrait que là.
+
+**Vérifié, et pas seulement raisonné.** Les cinq gabarits rompus ensemble font
+tomber les cinq témoins correspondants, les six autres restant verts. Rompu
+seul, `dossier.tsx` ne fait tomber **qu'un** témoin — `/eopan/concepts/catobar`
+— les dix autres restant verts : les entrées sont bien indépendantes. Le
+garde-fou unitaire tombe lui aussi lorsque `NotionQuiz` passe `variant="banc"`.
+
+**Un témoin doit rendre ce qu'il surveille.** `NotionQuiz` retourne `null` sans
+questions : une fiche sans banque passerait le contrôle sans rien prouver. Les
+cinq routes ont été vérifiées en production — chacune rend « Tester cette
+notion ».
 
 ## Campagnes de tests
 
-| Mesure                                  | Valeur                                                      |
-| --------------------------------------- | ----------------------------------------------------------- |
-| Tests découverts                        | **744** en 39 fichiers, deux projets (`chromium`, `mobile`) |
-| Dernière campagne complète, sans filtre | **730 réussis, 14 ignorés, 0 échec, 0 flaky**               |
-| Tests unitaires (`npm run check`)       | **821** en 54 fichiers                                      |
+| Mesure                                  | Valeur                                                                                                  |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Tests découverts                        | **754** en 39 fichiers, deux projets (`chromium`, `mobile`)                                             |
+| Dernière campagne complète, sans filtre | **730 réussis, 14 ignorés, 0 échec, 0 flaky** — inventaire de 744, avant les dix témoins ajoutés depuis |
+| Tests unitaires (`npm run check`)       | **823** en 55 fichiers                                                                                  |
 
 La suite s'exécute sur une **compilation de production**, jamais sur le serveur
 de développement — voir le commentaire de `playwright.config.ts` pour les quatre

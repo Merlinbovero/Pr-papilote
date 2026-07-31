@@ -425,8 +425,13 @@ const AUTRES_APPELANTS = [
   "/anglais", // PoolQuiz — anglais aéronautique
   "/design-system/quiz", // QuizPlayer nu — vitrine interne
   "/bia/aerodynamique-et-principes-du-vol", // MatiereQuiz — quiz de matière BIA
-  "/fondamentaux/aerodynamique/l-aerostatique", // NotionQuiz — fiche d'archétype `lecon`
   "/cours/forces-et-lois-de-newton", // CourseExperience — leçon canonique
+  // NotionQuiz — un témoin par GABARIT, cinq chemins d'intégration distincts :
+  "/fondamentaux/aerodynamique/l-aerostatique", // lecon-fiche.tsx
+  "/eopan/concepts/catobar", // dossier.tsx
+  "/eopan/histoire/histoire-de-l-aeronautique-navale", // cahier.tsx
+  "/eopan/appareils/rafale-m", // planche-identification.tsx
+  "/culture/geopolitique-defense/red-flag", // situation.tsx
   /*
     `/reviser` a QUITTÉ cette liste au lot F2b : la route est migrée, elle
     porte donc le Banc et ce contrôle y échouerait — à juste titre. Elle est
@@ -436,26 +441,55 @@ const AUTRES_APPELANTS = [
     retire une ligne, et l'oubli se voit immédiatement puisque le contrôle
     tombe.
 
-    ── Ce que le registre couvre, et comment on le vérifie ─────────────────
-    Une ligne par COMPOSANT qui importe `QuizPlayer`, et non par route : une
-    fuite du Banc viendrait du composant ou de la page qui pose `.banc`, pas
-    de la multiplication des URL qui les rendent. La correspondance se relit
-    par `grep -rl "<QuizPlayer" src/`, qui doit donner exactement six
-    composants — les cinq ci-dessus, plus `revision-session`, migré.
+    ── GRANULARITÉ : une entrée par chemin d'intégration indépendant ───────
+    Et non « une entrée par composant », comme ce registre le faisait avant le
+    2026-07-31. La règle générale :
 
-    `CourseExperience` manquait à ce registre jusqu'au 2026-07-31 : les
-    quatorze leçons canoniques rendaient un `QuizPlayer` en rendu historique
-    sans aucun témoin de non-régression. Relevé par la recette de production,
-    en recomptant les appelants à partir des imports réels plutôt que d'après
-    la documentation.
+      un registre de non-régression a une entrée par FRONTIÈRE INDÉPENDANTE
+      capable de violer l'invariant testé.
 
-    ── Une couverture qui reste partielle, et qui le dit ───────────────────
-    `NotionQuiz` est rendu par CINQ gabarits de fiche — `situation`,
-    `cahier`, `planche-identification`, `lecon-fiche`, `dossier` — et une
-    seule route en témoigne. Le registre attrape donc une fuite venue du
-    composant, mais pas une fuite venue d'un seul gabarit. Élargir à cinq
-    routes changerait la granularité du registre : c'est un arbitrage de
-    doctrine, laissé ouvert plutôt que tranché en passant.
+    L'invariant est ici « aucune classe du Banc sur une route encore
+    historique ». Les frontières capables de l'enfreindre sont au nombre de
+    quatre : le composant de quiz, le gabarit de page, l'enveloppe de charte,
+    et une branche conditionnelle de rendu. Deux routes ne peuvent partager un
+    témoin QUE si elles coïncident sur les quatre.
+
+    Ce n'est pas une précaution théorique : aux lots F2a et F2b, c'est la PAGE
+    qui posait `.banc`, jamais le composant. Un registre indexé sur les seuls
+    composants serait donc aveugle au chemin même que le projet a emprunté
+    deux fois.
+
+    D'où les cinq témoins de `NotionQuiz` : le composant est rendu par cinq
+    gabarits distincts, donc cinq frontières. Chacun des cinq a été vérifié
+    par rupture délibérée, et chacune des cinq ruptures ne fait tomber QUE son
+    témoin — preuve qu'ils ne se recouvrent pas.
+
+    Deux entrées restent volontairement redondantes : `/entrainement/eopn` et
+    `/entrainement/alat` coïncident sur les quatre frontières. Les garder ne
+    coûte rien et documente que la migration les traitera ensemble.
+
+    ── Vérifier que le registre est complet ────────────────────────────────
+    `grep -rl "<QuizPlayer" src/` doit donner exactement six composants — les
+    cinq appelants ci-dessus, plus `revision-session`, migré. Puis, pour
+    chacun, recenser les gabarits qui le rendent.
+
+    `CourseExperience` manquait entièrement jusqu'au 2026-07-31 : les quatorze
+    leçons canoniques rendaient un `QuizPlayer` historique sans aucun témoin.
+    Relevé en recomptant depuis les imports réels, et non d'après la
+    documentation.
+
+    ── Deuxième niveau, qui ne double pas celui-ci ─────────────────────────
+    `src/features/quiz/notion-quiz.test.tsx` surveille le COMPOSANT : il
+    n'émet aucune classe du Banc, avant comme après le tirage. Une fuite venue
+    du composant se verrait sur les cinq gabarits ; une fuite venue d'un seul
+    gabarit ne se verrait que là. Aucun des deux niveaux ne rend l'autre
+    superflu.
+
+    ── Un témoin doit RENDRE le bloc qu'il surveille ───────────────────────
+    `NotionQuiz` retourne `null` quand la fiche n'a pas de questions : une
+    route sans banque passerait le contrôle sans rien prouver. Les cinq routes
+    ci-dessus ont été vérifiées en production — chacune rend bien « Tester
+    cette notion ».
   */
 ];
 
