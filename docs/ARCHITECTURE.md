@@ -70,7 +70,8 @@ src/
   components/layout              header, footer, sidebar, breadcrumb
   components/planche             ossature du système PLANCHE (docs/design-manifesto.md)
   features/banc                  charte fonctionnelle du Banc (docs/design-system.md §6ter) —
-                                 jetons sous `.banc`, vitrine `/design-lab/banc`, aucun moteur migré
+                                 jetons sous `.banc`, vitrine `/design-lab/banc` ;
+                                 deux moteurs migrés (voir docs/etat-actuel.md)
   components/content             rendu du contenu structuré (RSC purs)
   components/shared              cartes et blocs métier réutilisés
   features/                     moteurs verticaux (composants + logique colocalisés)

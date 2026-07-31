@@ -218,11 +218,11 @@ Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0
 
 Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.
 
-| Route                 | Lot | État                                                                                                                                            |
-| --------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement.                                      |
-| `/reviser`            | F2b | **Migrée.** Mêmes états, plus deux propres à la révision : « rien à réviser » et erreur de chargement récupérable.                              |
-| Cinq autres appelants | —   | Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`, dont la liste est le registre des routes non migrées. |
+| Route                 | Lot | État                                                                                                                                                                                                                                                                                                                                     |
+| --------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/entrainement/eopan` | F2a | **Migrée.** Séance complète : préparation, question, correction, résultats, reprise, erreur de chargement.                                                                                                                                                                                                                               |
+| `/reviser`            | F2b | **Migrée.** Mêmes états, plus deux propres à la révision : « rien à réviser » et erreur de chargement récupérable.                                                                                                                                                                                                                       |
+| Cinq autres appelants | —   | **Composants** non migrés, `revision-session` exclu. Rendu historique, inchangé — vérifié route par route par `e2e/banc-route-pilote.spec.ts`, dont la liste est le registre des **routes** témoins : six entrées, un nombre qui ne compte pas la même chose. Décompte complet et lacune connue dans [`etat-actuel.md`](etat-actuel.md). |
 
 **Ce que la deuxième route a apporté au Banc**, sans architecture parallèle :
 

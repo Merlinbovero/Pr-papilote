@@ -31,11 +31,11 @@ Priorisation issue d'un audit d'usage : l'investissement pédagogique était con
 **Livré**
 
 - **P1a — mode « S'entraîner » par concours** : séries tirées de la banque déjà marquée par concours (`/entrainement/[concours]`), correction détaillée, vivier servi à la demande. Livré (2026-07-17).
-- **P4 — « Ma préparation »** : concours cible + date d'épreuve (saisie utilisateur) → compte à rebours et accès directs sur l'accueil. Livré (2026-07-17).
+- **P4 — « Ma préparation »** : concours cible + date d'épreuve (saisie utilisateur) → compte à rebours et accès directs sur l'accueil. Livré (2026-07-17), puis **retiré (2026-07-25)** à la demande de l'utilisateur, le site restant à usage personnel — voir `CHANGELOG.md`. Le composant et `src/features/preparation/` sont supprimés ; le lot F2b a retiré la dernière lecture orpheline de la clé `prepapilote:preparation`, que plus rien n'écrivait. Les routes `/progression/[concours]` et `/fiche-de-travail/[concours]` restent accessibles par ailleurs.
+- **P2 — Révision espacée** : file « à revoir aujourd'hui » dérivée de l'historique de réponses. **Livré** — `/reviser`, planificateur de Leitner (`prepapilote:revision`, schéma `{box, dueAt}`), passé au registre du Banc au lot F2b (2026-07-31). En production.
 
 **À faire (par ordre de valeur)**
 
-- **P2 — Révision espacée** : file « à revoir aujourd'hui » dérivée de l'historique de réponses (cohérent avec la progression dérivée sans streak). Mécanique pure, sans nouveau contenu — réalisable de façon autonome.
 - **P3 — Psychotechnique en profondeur** : nouvelles familles (mémoire de chiffres/empan, attention soutenue, spatial 3D, double-tâche renforcée) et batterie chronométrée avec restitution. Générateurs algorithmiques, sans donnée factuelle inventée.
 - **Examen blanc au format officiel par concours** : le contrat `examSchema` (déjà défini, sourcé et daté) existe mais n'est pas alimenté. **Bloqué sur sources** : structure officielle des épreuves (nombre de questions, durée, barème) à fournir/valider avant production.
 - **Production de contenu concours** : parcours guidés (cours) et enrichissement des banques EOPAN/EOPN/ALAT. **Bloqué sur sources** (annales, notices officielles).
@@ -95,20 +95,28 @@ graphique ne doit pas les toucher.
 | `e2e/preparation.spec.ts` | le repère `region « Ma préparation »` n'existe plus dans `src/`    |
 | `e2e/revision.spec.ts`    | la séance de révision ne parvient pas à l'état attendu par le test |
 
+> **Résolu depuis — note du 2026-07-31.** Le tableau ci-dessus décrit l'état au
+> lot M3 et reste tel quel : c'en est le procès-verbal. Ces deux fichiers
+> **passent** aujourd'hui, vérifié sur le commit de fusion `b19cac7` et sur la
+> campagne complète de la branche de recette. L'état courant est tenu par
+> [`etat-actuel.md`](etat-actuel.md), qui a vocation à bouger — pas ce
+> constat-ci.
+
 **Comment ils s'exécutent** — et pourquoi ils n'ont pas fait rougir un commit :
 
 - `npm run check` = `lint` + `typecheck` + `format:check` + `vitest run`.
   **Playwright n'en fait pas partie.** Les 633 tests annoncés verts sont les
   tests unitaires et d'intégration Vitest.
 - La suite Playwright s'exécute par `npm run test:e2e` (soit `playwright test`).
-  Elle démarre `npm run dev` par la configuration ; les routes protégées par
-  drapeau exigent `NEXT_PUBLIC_DESIGN_LAB=1` et `NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1`,
-  faute de quoi une trentaine de tests supplémentaires échouent sur des 404
-  attendus. Commande complète :
 
-  ```
-  NEXT_PUBLIC_DESIGN_LAB=1 NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1 npm run test:e2e
-  ```
+  > **Périmé depuis le 2026-07-31.** Cette section décrivait une commande à
+  > rallonge : la configuration démarrait `npm run dev`, et il fallait poser
+  > `NEXT_PUBLIC_DESIGN_LAB=1` et `NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1` à la main,
+  > faute de quoi une trentaine de tests tombaient sur des 404 attendus.
+  >
+  > Le lot R-01 a supprimé les deux corvées. La configuration construit
+  > désormais l'application en **mode production** et pose elle-même les deux
+  > drapeaux : `npm run test:e2e` suffit, sans préfixe d'environnement.
 
   Pour ces deux seuls fichiers :
 
@@ -157,6 +165,13 @@ au caractère près** entre `9dd8810` et `0ba510d`.
 `revision.spec.ts:9` n'échoue que sur chromium ; le même scénario passe sur
 mobile, aux deux commits mesurés. Ce n'est pas une instabilité — le comportement
 est reproductible dans les deux sens.
+
+> **Résolu depuis — note du 2026-07-31.** Ce tableau date le lot M3 et n'est pas
+> corrigé : réécrire un constat daté effacerait la seule trace de l'antériorité
+> qu'il servait à prouver. Les six sont verts aujourd'hui. La campagne complète
+> et sans filtre de la branche de recette donne **730 réussis, 14 ignorés, zéro
+> échec, zéro flaky** sur 744 tests découverts. L'état courant est tenu par
+> [`etat-actuel.md`](etat-actuel.md).
 
 ### `e2e/fiches-pilotes.spec.ts:4` — rouge depuis M6b (chromium + mobile)
 
