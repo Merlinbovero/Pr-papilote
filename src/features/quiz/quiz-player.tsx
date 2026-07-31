@@ -140,7 +140,10 @@ export function QuizPlayer({
           ? zoneCorrection.current
           : zoneQuestion.current;
     deplacerFocus(cible, { declencheur: declencheur.current });
-  }, [phase, index]);
+    // `focusAuMontage` est constant pour un montage donné — le lecteur est
+    // reconstruit par sa clé de tirage, jamais mis à jour en place — donc
+    // le déclarer ici ne provoque aucune exécution supplémentaire.
+  }, [phase, index, focusAuMontage]);
 
   // Notifie la fin de série une seule fois (progression de cours, etc.).
   React.useEffect(() => {
