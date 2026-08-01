@@ -484,6 +484,16 @@ const AUTRES_APPELANTS = [
     gabarit ne se verrait que là. Aucun des deux niveaux ne rend l'autre
     superflu.
 
+    ── CE QUE CE REGISTRE NE VOIT PAS (relevé au lot F5) ───────────────────
+    Il est indexé sur les appelants de `QuizPlayer`. Tout moteur CONCURRENT
+    lui échappe donc entièrement — et il en existe : l'examen blanc BIA
+    (`src/features/bia/exam-player.tsx`) a ses propres phases, son propre
+    chronomètre et sa propre persistance. Il n'a jamais eu de témoin ici, non
+    par oubli de granularité, mais parce que la clé d'indexation ne l'atteint
+    pas. Le lot F5 le migre et le couvre en positif
+    (`e2e/bia-examen-banc.spec.ts`) ; la coquille psychotechnique et SECPIL
+    poseront la même question aux lots F7 et F9.
+
     ── Un témoin doit RENDRE le bloc qu'il surveille ───────────────────────
     `NotionQuiz` retourne `null` quand la fiche n'a pas de questions : une
     route sans banque passerait le contrôle sans rien prouver. Les cinq routes

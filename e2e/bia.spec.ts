@@ -59,9 +59,20 @@ test.describe("parcours BIA", () => {
     await expect(page.getByText(/Question 1 \/ /)).toBeVisible();
 
     // Termine sans tout remplir : correction, note, erreurs listées.
+    //
+    // **Portée resserrée au lot F5.** Ces trois contrôles visaient la page
+    // entière, et `/20` y trouvait d'abord la phrase de l'introduction
+    // (« Admission à 10/20 de moyenne »), pas le résultat. La coïncidence
+    // passait tant que l'introduction disparaissait au lancement ; le mode
+    // séance la MASQUE sans la démonter, et `.first()` désignait dès lors un
+    // élément caché. Le défaut était dans le contrôle, pas dans la page : la
+    // note se lit dans la correction, c'est donc là qu'on la cherche.
     await page.getByRole("button", { name: "Terminer l’examen" }).click();
-    await expect(page.getByText(/\/20/).first()).toBeVisible();
-    await expect(page.getByRole("button", { name: /Mes erreurs/ })).toBeVisible();
-    await expect(page.getByText("Non admis")).toBeVisible();
+    // L'apostrophe du libellé est droite dans la source, courbe dans les
+    // textes rendus : la classe couvre les deux plutôt que d'en parier une.
+    const correction = page.getByRole("region", { name: /Correction de l['’]examen/i });
+    await expect(correction.getByText(/\/20/).first()).toBeVisible();
+    await expect(correction.getByRole("button", { name: /Mes erreurs/ })).toBeVisible();
+    await expect(correction.getByText("Non admis")).toBeVisible();
   });
 });

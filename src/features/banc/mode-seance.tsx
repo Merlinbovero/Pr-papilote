@@ -78,6 +78,22 @@ export interface ModeSeanceProps {
    * explicite (`aria-describedby`), et non laissée à la proximité visuelle.
    */
   idDescriptionLancement?: string;
+  /**
+   * Poser le focus sur le lancement dès le montage — lot F5.
+   *
+   * Sert au seul cas du REMONTAGE : quand l'appelant redémarre une séance en
+   * changeant la clé de ce composant, le bouton qui a déclenché le
+   * redémarrage disparaît avec l'ancienne instance et le focus retombe sur
+   * `body`. Le contrat du lot F1a exige alors de le replacer, et la cible
+   * juste est la commande par laquelle la nouvelle séance commencera.
+   *
+   * Le premier affichage d'une page ne doit JAMAIS l'activer : voler le focus
+   * à l'arrivée ferait sauter la lecture du chapeau.
+   *
+   * La règle de non-vol s'applique quand même : `deplacerFocus` refuse si la
+   * personne a déjà posé le focus ailleurs.
+   */
+  focusAuMontage?: boolean;
   className?: string;
 }
 
@@ -90,13 +106,24 @@ export function ModeSeance({
   onSortie,
   lancementDesactive = false,
   idDescriptionLancement,
+  focusAuMontage = false,
   className,
 }: ModeSeanceProps) {
   const [enSeance, setEnSeance] = React.useState(false);
   const [consignesVisibles, setConsignesVisibles] = React.useState(false);
   const zoneSeance = React.useRef<HTMLDivElement>(null);
+  const boutonLancement = React.useRef<HTMLButtonElement>(null);
   const declencheur = React.useRef<Element | null>(null);
   const entreeNotifiee = React.useRef(false);
+
+  // Au montage seulement — les dépendances ne comportent donc ni `enSeance`
+  // ni le bouton : une fois la séance lancée, la commande n'existe plus.
+  React.useEffect(() => {
+    if (!focusAuMontage) {
+      return;
+    }
+    deplacerFocus(boutonLancement.current, { declencheur: null });
+  }, [focusAuMontage]);
 
   React.useEffect(() => {
     if (!enSeance || entreeNotifiee.current) {
@@ -121,6 +148,7 @@ export function ModeSeance({
         {introduction}
         {!enSeance ? (
           <Button
+            ref={boutonLancement}
             className="mt-6"
             disabled={lancementDesactive}
             aria-describedby={lancementDesactive ? idDescriptionLancement : undefined}
