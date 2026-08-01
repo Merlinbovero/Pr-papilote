@@ -29,7 +29,22 @@ test.describe("entraînement psychotechnique", () => {
         .getByRole("button");
       await firstChoice.waitFor({ state: "visible", timeout: 15000 });
       await firstChoice.click();
-      await expect(page.getByText(/Bonne réponse|Réponse incorrecte|Temps écoulé/)).toBeVisible();
+      /*
+        **Portée resserrée au lot F7a.** Cette assertion visait la page
+        entière. Depuis la migration, le verdict est écrit DEUX fois — en
+        toutes lettres dans le bloc de correction, et sur la réponse concernée
+        par un libellé lisible par une technique d'assistance, qui est
+        précisément ce que le Banc exige (jamais la couleur seule). La
+        recherche non portée trouvait donc les deux et tombait en mode strict.
+
+        Ce n'est pas un affaiblissement : le contrôle vise maintenant l'endroit
+        où le verdict se lit, et il tomberait toujours si ce bloc disparaissait.
+      */
+      await expect(
+        page
+          .getByRole("group", { name: "Correction" })
+          .getByText(/Bonne réponse|Réponse incorrecte|Temps écoulé/)
+      ).toBeVisible();
       await page
         .getByRole("button", { name: i === 9 ? "Voir le résultat" : "Question suivante" })
         .click();

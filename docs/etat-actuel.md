@@ -28,6 +28,7 @@ l'avancement du Banc.
 | Mini-quiz de fiche                      | **documentaire** | F4  |
 | `/bia/examen-blanc`                     | **Banc**         | F5  |
 | `/progression`, `/progression/[module]` | _hors périmètre_ | F6  |
+| `/psychotechnique/entrainement`         | **Banc**         | F7a |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -94,6 +95,46 @@ est ailleurs :
 | Chronomètre — taille / graisse      | 14 px / 400        | **18 px / 600**, sur surface        |
 | Verdict par question en correction  | icône seule        | **mot** (« Juste » / « Ratée »)     |
 | Lien « À réviser »                  | souligné au survol | **souligné au repos** (DT-002)      |
+
+**Gain mesuré au lot F7a** sur l'entraînement psychotechnique, bas du premier
+contrôle de réponse, `git stash` pour seule variable :
+
+| Viewport   | Rendu historique | Banc       | Gain        |
+| ---------- | ---------------- | ---------- | ----------- |
+| 1440 × 900 | 605 px           | **363 px** | −242 px     |
+| 390 × 844  | 779 px           | **367 px** | **−412 px** |
+
+C'est le gain le plus important du chantier, et c'est logique : cette route
+cumulait les deux écrans d'avant-séance — choix de la session **et** consignes
+des familles tirées — au-dessus de l'aire de jeu.
+
+### Le défaut de repli, mesuré sur tout le module
+
+Relevé au lot F7a sur les **sept épreuves de famille**, encore non migrées,
+après lancement et **document remonté en haut** :
+
+| Épreuve           | 1440 × 900 | 390 × 844 |
+| ----------------- | ---------- | --------- |
+| Dominos           | 1004 px    | 962 px    |
+| Calcul mental     | 842 px     | 1268 px   |
+| Codage            | 950 px     | 1482 px   |
+| Appareils photos  | 1083 px    | 1410 px   |
+| Formes imbriquées | 1527 px    | 1427 px   |
+| Triangles         | 1363 px    | 1347 px   |
+| Orientation       | 1068 px    | 1151 px   |
+
+**Treize de ces quatorze mesures sont hors écran.** Le constat est plus large
+que celui de l'audit F0b, qui n'avait relevé que trois épreuves à 891, 995 et
+994 px.
+
+> **Correction d'une première lecture erronée.** Ma première campagne de
+> mesure donnait ces contrôles « dans l'écran ». Elle lisait la position
+> RELATIVE AU VIEWPORT après que Playwright eut fait défiler la page pour
+> cliquer le lanceur : elle mesurait donc un contrôle qu'il avait fallu aller
+> chercher, et le déclarait visible. Remonter le document avant de mesurer
+> renverse le résultat.
+
+Ces sept routes relèvent du lot **F7b**, non encore engagé.
 
 ## Le décompte des appelants — trois définitions, trois nombres
 

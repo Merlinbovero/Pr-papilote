@@ -94,6 +94,31 @@ export interface ModeSeanceProps {
    * personne a déjà posé le focus ailleurs.
    */
   focusAuMontage?: boolean;
+  /**
+   * Pilotage EXTERNE du repli — lot F7a.
+   *
+   * Laissé à `undefined`, le mode séance gère lui-même son état et rend son
+   * bouton de lancement : c'est le cas des trois premières routes migrées.
+   *
+   * Fourni, il devient **contrôlé** : l'appelant décide quand la séance
+   * commence et le bouton de lancement n'est plus rendu du tout.
+   *
+   * ── Pourquoi ce troisième cas existe ────────────────────────────────────
+   * L'entraînement psychotechnique ne se lance pas en un clic mais en **deux
+   * temps** — on choisit d'abord une session (courte, standard, longue,
+   * ciblée, ou personnalisée par familles), puis on lit les consignes de
+   * chaque famille tirée, et c'est seulement là que « Démarrer » lance le
+   * chronomètre. Ces deux écrans sont l'avant-séance : les replier tous les
+   * deux au démarrage est exactement ce que le Banc demande, mais aucun
+   * bouton unique ne peut les résumer.
+   *
+   * Les deux réglages ajoutés aux lots précédents — `lancementDesactive` et
+   * `idDescriptionLancement` — visaient déjà ce besoin sans l'atteindre : ils
+   * supposent un lancement en une commande. Plutôt que d'empiler un quatrième
+   * cas particulier, le composant admet ici que la décision puisse ne pas lui
+   * appartenir.
+   */
+  enSeance?: boolean;
   className?: string;
 }
 
@@ -107,9 +132,12 @@ export function ModeSeance({
   lancementDesactive = false,
   idDescriptionLancement,
   focusAuMontage = false,
+  enSeance: enSeanceControle,
   className,
 }: ModeSeanceProps) {
-  const [enSeance, setEnSeance] = React.useState(false);
+  const controle = enSeanceControle !== undefined;
+  const [enSeanceInterne, setEnSeanceInterne] = React.useState(false);
+  const enSeance = controle ? enSeanceControle : enSeanceInterne;
   const [consignesVisibles, setConsignesVisibles] = React.useState(false);
   const zoneSeance = React.useRef<HTMLDivElement>(null);
   const boutonLancement = React.useRef<HTMLButtonElement>(null);
@@ -126,7 +154,14 @@ export function ModeSeance({
   }, [focusAuMontage]);
 
   React.useEffect(() => {
-    if (!enSeance || entreeNotifiee.current) {
+    if (!enSeance) {
+      // En mode contrôlé, l'appelant peut sortir puis relancer sans que ce
+      // composant ne soit démonté : le drapeau doit alors se réarmer, faute de
+      // quoi la deuxième séance n'aurait ni focus ni notification d'entrée.
+      entreeNotifiee.current = false;
+      return;
+    }
+    if (entreeNotifiee.current) {
       return;
     }
     entreeNotifiee.current = true;
@@ -146,7 +181,10 @@ export function ModeSeance({
         aria-label="Avant la séance"
       >
         {introduction}
-        {!enSeance ? (
+        {/* En mode contrôlé, le lancement appartient à l'appelant : ce
+            composant n'ajoute alors AUCUNE commande à l'avant-séance, sans
+            quoi la page en présenterait deux. */}
+        {controle ? null : !enSeance ? (
           <Button
             ref={boutonLancement}
             className="mt-6"
@@ -154,7 +192,7 @@ export function ModeSeance({
             aria-describedby={lancementDesactive ? idDescriptionLancement : undefined}
             onClick={(evenement) => {
               declencheur.current = evenement.currentTarget;
-              setEnSeance(true);
+              setEnSeanceInterne(true);
             }}
           >
             {libelleLancement}
@@ -194,9 +232,14 @@ export function ModeSeance({
               variant="ghost"
               size="sm"
               onClick={() => {
-                setEnSeance(false);
+                // En mode contrôlé, c'est `onSortie` qui fait foi : le
+                // composant ne peut pas décider seul de quitter une séance
+                // dont il ne détient pas l'état.
+                if (!controle) {
+                  setEnSeanceInterne(false);
+                  entreeNotifiee.current = false;
+                }
                 setConsignesVisibles(false);
-                entreeNotifiee.current = false;
                 onSortie?.();
               }}
             >
