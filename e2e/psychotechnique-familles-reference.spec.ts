@@ -93,6 +93,19 @@ const EPREUVES: Epreuve[] = [
 ];
 
 /**
+ * Le compteur de position **visible**.
+ *
+ * Le filtre n'est pas une commodité : une fois l'introduction repliée, son
+ * contenu reste dans le document. Le tutoriel des dominos y garde un
+ * `<title>` SVG « Domino 1 sur 6, position 1 » qui précède, dans l'ordre du
+ * DOM, le compteur réel de la séance. Sans filtre, `.first()` désigne ce
+ * titre caché — et le contrôle échoue en accusant la séance d'être absente
+ * alors qu'elle est là.
+ */
+const compteurVisible = (page: Page, epreuve: Epreuve) =>
+  page.getByText(epreuve.compteur).filter({ visible: true }).first();
+
+/**
  * Lance l'épreuve et rend la main une fois la séance réellement engagée.
  *
  * Plusieurs de ces écrans proposent la commande une fois par niveau : on prend
@@ -101,7 +114,7 @@ const EPREUVES: Epreuve[] = [
 async function lancer(page: Page, epreuve: Epreuve) {
   await page.goto(epreuve.route);
   await page.getByRole("button", { name: epreuve.lancement }).first().click();
-  await expect(page.getByText(epreuve.compteur).first()).toBeVisible({ timeout: 20_000 });
+  await expect(compteurVisible(page, epreuve)).toBeVisible({ timeout: 20_000 });
 }
 
 for (const epreuve of EPREUVES) {
@@ -132,7 +145,7 @@ for (const epreuve of EPREUVES) {
       await expect(commande).toBeVisible();
 
       await commande.click();
-      await expect(page.getByText(epreuve.compteur).first()).toBeVisible({ timeout: 20_000 });
+      await expect(compteurVisible(page, epreuve)).toBeVisible({ timeout: 20_000 });
       await expect(page.getByRole("button", { name: epreuve.lancement })).toHaveCount(0);
     });
 

@@ -30,6 +30,7 @@ l'avancement du Banc.
 | `/progression`, `/progression/[module]` | _hors périmètre_ | F6  |
 | `/psychotechnique/entrainement`         | **Banc**         | F7a |
 | `/psychotechnique/triangles`            | **Banc**         | F7b |
+| Les six autres épreuves de famille      | **Banc**         | F7c |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -142,9 +143,25 @@ que celui de l'audit F0b, qui n'avait relevé que trois épreuves à 891, 995 et
 | 1440 × 900 | 1363 px          | **740 px** | −623 px     |
 | 390 × 844  | 1347 px          | **662 px** | **−685 px** |
 
-Les **six autres** — dominos, calcul mental, codage, appareils photos, formes
-imbriquées, orientation — restent à migrer. La recette est établie et
-vérifiée ; elle est décrite dans `triangles-test.tsx`, qui sert de modèle.
+**Le lot F7c a migré les six autres.** Bas du premier contrôle de réponse,
+après lancement et document remonté en haut :
+
+| Épreuve           | 1440 × 900 avant → après | 390 × 844 avant → après |
+| ----------------- | ------------------------ | ----------------------- |
+| Dominos           | 1004 → **547 px**        | 962 → **531 px**        |
+| Calcul mental     | 842 → **357 px**         | 1268 → **361 px**       |
+| Codage            | 950 → **465 px**         | 1482 → **841 px**       |
+| Appareils photos  | 1083 → **550 px**        | 1410 → **785 px**       |
+| Formes imbriquées | 1527 → **967 px**        | 1427 → **729 px**       |
+| Triangles         | 1363 → **853 px**        | 1347 → **775 px**       |
+| Orientation       | 1068 → **630 px**        | 1151 → **590 px**       |
+
+**Treize des quatorze mesures sont désormais dans le premier écran**, contre
+une seule avant. Le relevé qui reste dehors est nommé plutôt que tu :
+**formes imbriquées en 1440 × 900, à 967 px pour un écran de 900**. Son
+tutoriel de présentation est le plus haut des sept, et le repli ne suffit pas
+à lui seul. Le traiter demande de raccourcir le contenu ou de réorganiser
+l'écran de choix — décision éditoriale, pas de registre : elle reste ouverte.
 
 ### Une observation à trancher à la clôture du Banc
 

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import { DominoHalfTile, DominoSeries, DominoTile } from "@/features/psychotech/domino-tile";
 import {
   buildDominoSession,
@@ -295,7 +296,17 @@ function DominosTutorial() {
 // Composant principal
 // ---------------------------------------------------------------------------
 
-export function DominosTest() {
+export interface DominosTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 1 004 px sur un écran de 900 et à 962 px sur
+   * un écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function DominosTest({ entete }: DominosTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [level, setLevel] = React.useState<DominoLevel>(1);
   const [training, setTraining] = React.useState(false);
@@ -395,179 +406,184 @@ export function DominosTest() {
     setChecked(false);
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
-    const bestByLevel = new Map<DominoLevel, number>();
-    for (const entry of history) {
-      if (entry.training) continue;
-      bestByLevel.set(entry.level, Math.max(bestByLevel.get(entry.level) ?? 0, entry.correct));
-    }
-    return (
-      <div className="space-y-6">
-        <DominosTutorial />
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Choisissez un niveau</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {DOMINO_LEVEL_LIST.map((info) => {
-              const best = bestByLevel.get(info.level);
-              return (
-                <div key={info.level} className="bg-card flex flex-col rounded-lg border p-4">
-                  <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-                    Niveau {info.level}
-                  </p>
-                  <p className="mt-0.5 text-base font-semibold">{info.label}</p>
-                  <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                  <p className="text-muted-foreground mt-3 text-sm tabular-nums">
-                    {info.size} dominos · {formatDuration(info.durationSeconds)}
-                  </p>
-                  {best !== undefined ? (
-                    <p className="text-success mt-1 text-sm font-semibold tabular-nums">
-                      Record : {best}/{info.size}
-                    </p>
-                  ) : null}
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <Button size="sm" onClick={() => start(info.level, false)}>
-                      Lancer le test
-                    </Button>
-                    <Button size="sm" variant="outline" onClick={() => start(info.level, true)}>
-                      Entraînement
-                    </Button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            En <strong>mode entraînement</strong>, pas de chronomètre : la règle vous est expliquée
-            après chaque domino.
-          </p>
-        </section>
-
-        {history.length > 0 ? (
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
-            <div className="overflow-hidden rounded-lg border">
-              <table className="w-full text-sm">
-                <tbody>
-                  {history.map((entry, i) => (
-                    <tr key={i} className="border-t first:border-t-0">
-                      <td className="text-muted-foreground p-2.5">
-                        {new Date(entry.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </td>
-                      <td className="p-2.5">
-                        Niveau {entry.level} · {DOMINO_LEVELS[entry.level].label}
-                        {entry.training ? " · entraînement" : ""}
-                      </td>
-                      <td className="p-2.5 text-right font-semibold tabular-nums">
-                        {entry.correct}/{entry.total}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        ) : null}
-
-        <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Reconstitution pédagogique.</strong> Les dominos ont
-            été <strong>retirés de la sélection EOPAN en 2025</strong> mais restent au programme
-            d’autres sélections et concourent à la même aptitude — le raisonnement logique sur deux
-            variables simultanées.
-          </p>
-        </div>
-      </div>
-    );
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const bestByLevel = new Map<DominoLevel, number>();
+  for (const entry of history) {
+    if (entry.training) continue;
+    bestByLevel.set(entry.level, Math.max(bestByLevel.get(entry.level) ?? 0, entry.correct));
   }
+  const ecranIntro = (
+    <div className="space-y-6">
+      {entete}
+      <DominosTutorial />
 
-  // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
-    const score = scoreDominoSession(puzzles, answers);
-    const info = DOMINO_LEVELS[level];
-    return (
-      <div className="space-y-6">
-        <div className="bg-card rounded-lg border p-5 text-center">
-          <p className="text-muted-foreground text-sm">
-            Niveau {info.level} · {info.label}
-            {training ? " · entraînement" : ""}
-          </p>
-          <p
-            className={cn(
-              "mt-1 text-5xl font-bold tabular-nums",
-              score.precision >= 80
-                ? "text-success"
-                : score.precision >= 50
-                  ? "text-warning"
-                  : "text-destructive"
-            )}
-          >
-            {score.correct}
-            <span className="text-muted-foreground text-2xl">/{score.total}</span>
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            {score.halvesCorrect} moitiés justes sur {score.total * 2} — une tuile ne compte que si
-            les deux le sont.
-          </p>
-        </div>
-
-        <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Correction</h2>
-          {puzzles.map((puzzle, i) => {
-            const verdict = verdictFor(answers[i] ?? EMPTY_ANSWER, puzzle.solution);
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Choisissez un niveau</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {DOMINO_LEVEL_LIST.map((info) => {
+            const best = bestByLevel.get(info.level);
             return (
-              <div key={i} className="bg-card rounded-lg border p-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold">Domino {i + 1}</p>
-                  <span
-                    className={cn(
-                      "rounded-full px-2 py-0.5 text-xs font-semibold",
-                      verdict.correct
-                        ? "bg-success/10 text-success"
-                        : "bg-destructive/10 text-destructive"
-                    )}
-                  >
-                    {verdict.correct ? "Juste" : "Faux"}
-                  </span>
-                </div>
-                <div className="mt-3">
-                  <DominoSeries
-                    puzzle={puzzle}
-                    tileSize={38}
-                    revealed={{ domino: puzzle.solution, tone: "correct" }}
-                  />
-                </div>
-                {!verdict.correct ? (
-                  <AnswerComparison answer={answers[i]} solution={puzzle.solution} />
-                ) : null}
-                <p className="text-muted-foreground mt-2 text-sm">
-                  <strong className="text-foreground">La règle :</strong> {puzzle.rule}
+              <div key={info.level} className="bg-card flex flex-col rounded-lg border p-4">
+                <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                  Niveau {info.level}
                 </p>
+                <p className="mt-0.5 text-base font-semibold">{info.label}</p>
+                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
+                <p className="text-muted-foreground mt-3 text-sm tabular-nums">
+                  {info.size} dominos · {formatDuration(info.durationSeconds)}
+                </p>
+                {best !== undefined ? (
+                  <p className="text-success mt-1 text-sm font-semibold tabular-nums">
+                    Record : {best}/{info.size}
+                  </p>
+                ) : null}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Button size="sm" onClick={() => start(info.level, false)}>
+                    Lancer le test
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => start(info.level, true)}>
+                    Entraînement
+                  </Button>
+                </div>
               </div>
             );
           })}
-        </section>
-
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={() => start(level, training)}>Refaire ce niveau</Button>
-          <Button variant="outline" onClick={() => setPhase("intro")}>
-            Changer de niveau
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/les-dominos">Lire la méthode</Link>
-          </Button>
         </div>
-      </div>
-    );
-  }
+        <p className="text-muted-foreground text-sm">
+          En <strong>mode entraînement</strong>, pas de chronomètre : la règle vous est expliquée
+          après chaque domino.
+        </p>
+      </section>
 
-  // --- Session -------------------------------------------------------------
-  const verdict = checked ? verdictFor(answer, current.solution) : null;
-  return (
+      {history.length > 0 ? (
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+          <div className="overflow-hidden rounded-lg border">
+            <table className="w-full text-sm">
+              <tbody>
+                {history.map((entry, i) => (
+                  <tr key={i} className="border-t first:border-t-0">
+                    <td className="text-muted-foreground p-2.5">
+                      {new Date(entry.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                      })}
+                    </td>
+                    <td className="p-2.5">
+                      Niveau {entry.level} · {DOMINO_LEVELS[entry.level].label}
+                      {entry.training ? " · entraînement" : ""}
+                    </td>
+                    <td className="p-2.5 text-right font-semibold tabular-nums">
+                      {entry.correct}/{entry.total}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
+        <p className="text-muted-foreground text-sm">
+          <strong className="text-foreground">Reconstitution pédagogique.</strong> Les dominos ont
+          été <strong>retirés de la sélection EOPAN en 2025</strong> mais restent au programme
+          d’autres sélections et concourent à la même aptitude — le raisonnement logique sur deux
+          variables simultanées.
+        </p>
+      </div>
+    </div>
+  );
+
+  // --- Bilan ---------------------------------------------------------------
+  const score = scoreDominoSession(puzzles, answers);
+  const info = DOMINO_LEVELS[level];
+  const ecranBilan = (
+    <div className="space-y-6">
+      <div className="bg-card rounded-lg border p-5 text-center">
+        <p className="text-muted-foreground text-sm">
+          Niveau {info.level} · {info.label}
+          {training ? " · entraînement" : ""}
+        </p>
+        <p
+          className={cn(
+            "mt-1 text-5xl font-bold tabular-nums",
+            score.precision >= 80
+              ? "text-success"
+              : score.precision >= 50
+                ? "text-warning"
+                : "text-destructive"
+          )}
+        >
+          {score.correct}
+          <span className="text-muted-foreground text-2xl">/{score.total}</span>
+        </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          {score.halvesCorrect} moitiés justes sur {score.total * 2} — une tuile ne compte que si
+          les deux le sont.
+        </p>
+      </div>
+
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">Correction</h2>
+        {puzzles.map((puzzle, i) => {
+          const verdict = verdictFor(answers[i] ?? EMPTY_ANSWER, puzzle.solution);
+          return (
+            <div key={i} className="bg-card rounded-lg border p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-semibold">Domino {i + 1}</p>
+                <span
+                  className={cn(
+                    "rounded-full px-2 py-0.5 text-xs font-semibold",
+                    verdict.correct
+                      ? "bg-success/10 text-success"
+                      : "bg-destructive/10 text-destructive"
+                  )}
+                >
+                  {verdict.correct ? "Juste" : "Faux"}
+                </span>
+              </div>
+              <div className="mt-3">
+                <DominoSeries
+                  puzzle={puzzle}
+                  tileSize={38}
+                  revealed={{ domino: puzzle.solution, tone: "correct" }}
+                />
+              </div>
+              {!verdict.correct ? (
+                <AnswerComparison answer={answers[i]} solution={puzzle.solution} />
+              ) : null}
+              <p className="text-muted-foreground mt-2 text-sm">
+                <strong className="text-foreground">La règle :</strong> {puzzle.rule}
+              </p>
+            </div>
+          );
+        })}
+      </section>
+
+      <div className="flex flex-wrap gap-3">
+        <Button onClick={() => start(level, training)}>Refaire ce niveau</Button>
+        <Button variant="outline" onClick={() => setPhase("intro")}>
+          Changer de niveau
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/psychotechnique/exercices/les-dominos">Lire la méthode</Link>
+        </Button>
+      </div>
+    </div>
+  );
+
+  /*
+    GARDE EXPLICITE : hors séance, `puzzles` est vide et `current` vaut
+    `undefined`. Les sorties anticipées protégeaient ce code ; calculés en
+    toutes phases, ces écrans perdent cette protection.
+  */
+  const verdict = checked && current ? verdictFor(answer, current.solution) : null;
+  const ecranSession = !current ? null : (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
@@ -630,10 +646,23 @@ export function DominosTest() {
             {index + 1 >= puzzles.length ? "Terminer" : "Domino suivant"}
           </Button>
         )}
-        <Button variant="ghost" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance par l'un des trois boutons de
+    niveau de sa présentation. « Abandonner » cède la place à « Quitter la
+    séance », au même endroit sur toutes les routes du Banc.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Test de dominos"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }

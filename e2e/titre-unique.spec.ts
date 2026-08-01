@@ -88,5 +88,22 @@ test("l'exercice d'orientation garde un titre unique dans ses phases", async ({ 
   // La phase de jeu est atteinte quand une question est posée — et non après
   // un délai arbitraire, qui rendrait le contrôle dépendant de la machine.
   await expect(page.getByRole("button", { name: /Commencer/ })).toHaveCount(0);
-  await expect(titres, "phase de jeu").toHaveCount(1);
+  /*
+    « AU PLUS un » en phase de jeu — élargi au lot F7b, et c'est un
+    ASSOUPLISSEMENT ASSUMÉ, pas une commodité.
+
+    Le défaut R-02 que ce contrôle fige était l'apparition d'un SECOND titre de
+    niveau 1 pendant une phase de jeu ; c'est cela qu'il doit interdire, et il
+    l'interdit toujours. Mais depuis que cette route porte le Banc, le mode
+    séance replie le chapeau éditorial — titre compris — et la séance n'expose
+    plus aucun `<h1>`. « Exactement un » y échouerait en signalant le repli,
+    qui est le but du chantier.
+
+    L'absence de titre en séance est consignée comme une question de doctrine à
+    trancher à la clôture du Banc : elle vaut pour toutes les routes migrées, et
+    la réponse — laisser le nom accessible du cadre de séance tenir ce rôle, ou
+    porter un titre dans la séance — appartient au design system, pas à ce
+    fichier. La phase d'introduction, elle, reste tenue à « exactement un ».
+  */
+  expect(await titres.count(), "phase de jeu — jamais deux titres").toBeLessThanOrEqual(1);
 });
