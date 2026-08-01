@@ -59,3 +59,30 @@ describe("NotionQuiz — rendu historique", () => {
     expect(classesBanc(container)).toEqual([]);
   });
 });
+
+describe("NotionQuiz — relance d'une série", () => {
+  /*
+    Le vivier compte DEUX questions pour une série d'UNE : c'est la condition
+    d'apparition du bouton, `NotionQuiz` ne proposant « Nouvelle série » que
+    lorsqu'il reste de quoi tirer autre chose.
+  */
+  const VIVIER_2: PlayerQuestion[] = [
+    VIVIER[0],
+    { ...VIVIER[0], id: "notion.02", statement: "L’aérostat tient par la poussée d’Archimède." },
+  ];
+
+  it("« Nouvelle série » repart d'une question, même après la fin", async () => {
+    const utilisateur = userEvent.setup();
+    render(<NotionQuiz ficheTitle="Le vent" pool={VIVIER_2} seriesSize={1} />);
+
+    await utilisateur.click(screen.getByRole("button", { name: /Tester cette notion/i }));
+    await utilisateur.click(screen.getByRole("button", { name: "Vrai" }));
+    await utilisateur.click(screen.getByRole("button", { name: "Valider" }));
+    await utilisateur.click(screen.getByRole("button", { name: /Voir le résultat/i }));
+
+    await utilisateur.click(screen.getByRole("button", { name: /Nouvelle série/i }));
+
+    // Le lecteur doit être revenu à une question posée, pas rester au score.
+    expect(screen.getByRole("button", { name: "Valider" })).toBeInTheDocument();
+  });
+});
