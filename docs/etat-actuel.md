@@ -18,15 +18,16 @@ l'avancement du Banc.
 
 ## Le Banc — avancement
 
-| Route / surface       | Registre         | Lot |
-| --------------------- | ---------------- | --- |
-| `/entrainement/eopan` | **Banc**         | F2a |
-| `/reviser`            | **Banc**         | F2b |
-| `/entrainement/eopn`  | **Banc**         | F3  |
-| `/entrainement/alat`  | **Banc**         | F3  |
-| Quiz de matière BIA   | **documentaire** | F4  |
-| Mini-quiz de fiche    | **documentaire** | F4  |
-| `/bia/examen-blanc`   | **Banc**         | F5  |
+| Route / surface                         | Registre         | Lot |
+| --------------------------------------- | ---------------- | --- |
+| `/entrainement/eopan`                   | **Banc**         | F2a |
+| `/reviser`                              | **Banc**         | F2b |
+| `/entrainement/eopn`                    | **Banc**         | F3  |
+| `/entrainement/alat`                    | **Banc**         | F3  |
+| Quiz de matière BIA                     | **documentaire** | F4  |
+| Mini-quiz de fiche                      | **documentaire** | F4  |
+| `/bia/examen-blanc`                     | **Banc**         | F5  |
+| `/progression`, `/progression/[module]` | _hors périmètre_ | F6  |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -40,6 +41,22 @@ chronomètre et se termine. Changement de tâche principale, donc changement de
 registre. Le critère, dans les deux sens : _un registre visuel distinct est
 déclenché par un changement de tâche principale, pas par la simple présence
 d'une interaction._
+
+**Le lot F6 se solde par un arbitrage, non par une migration.** Le plan du
+chantier prévoyait « la progression au registre du Banc » ; l'examen du code a
+montré que la prémisse était fausse. `/progression` et `/progression/[module]`
+ne sont pas des séances : aucune épreuve, aucun chronomètre, aucun contrôle de
+réponse, aucun état à sauvegarder — des cartes, des listes et des liens. Le
+bloc « Reprendre » lui-même n'ouvre rien : il **navigue** vers `/reviser` ou
+vers un entraînement. Ce sont donc des surfaces de LECTURE, et le critère de F4
+les classe documentaires sans hésitation. Leur poser `.banc` reviendrait à
+peindre un tableau de bord aux couleurs d'un instrument de mesure au motif
+qu'il en parle. Vérifié plutôt que supposé : `grep` ne trouve aucune mécanique
+de séance dans `src/features/progression/` ni dans les deux gabarits.
+
+Ce que le Banc doit à ces pages est d'un autre ordre — que leurs **entrées**
+vers les séances soient lisibles — et cela relève de la navigation, pas du
+registre.
 
 Les deux premières lignes sont vérifiées en production ; les suivantes ne sont
 pas encore déployées — la mise en ligne attend la clôture du Banc.
