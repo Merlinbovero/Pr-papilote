@@ -29,6 +29,7 @@ l'avancement du Banc.
 | `/bia/examen-blanc`                     | **Banc**         | F5  |
 | `/progression`, `/progression/[module]` | _hors périmètre_ | F6  |
 | `/psychotechnique/entrainement`         | **Banc**         | F7a |
+| `/psychotechnique/triangles`            | **Banc**         | F7b |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -134,7 +135,25 @@ que celui de l'audit F0b, qui n'avait relevé que trois épreuves à 891, 995 et
 > chercher, et le déclarait visible. Remonter le document avant de mesurer
 > renverse le résultat.
 
-Ces sept routes relèvent du lot **F7b**, non encore engagé.
+**Le lot F7b a commencé par les triangles**, mesurés après migration :
+
+| Viewport   | Rendu historique | Banc       | Gain        |
+| ---------- | ---------------- | ---------- | ----------- |
+| 1440 × 900 | 1363 px          | **740 px** | −623 px     |
+| 390 × 844  | 1347 px          | **662 px** | **−685 px** |
+
+Les **six autres** — dominos, calcul mental, codage, appareils photos, formes
+imbriquées, orientation — restent à migrer. La recette est établie et
+vérifiée ; elle est décrite dans `triangles-test.tsx`, qui sert de modèle.
+
+### Une observation à trancher à la clôture du Banc
+
+Le mode séance replie le chapeau éditorial, **titre de niveau 1 compris**. En
+séance, une route migrée n'expose donc **aucun `<h1>`** — cela vaut pour les
+six routes déjà portées par le Banc, pas seulement pour les psychotechniques.
+La question « où suis-je » repose alors sur le seul nom accessible du cadre de
+séance, qui existe et est vérifié. Savoir si cela suffit est une décision de
+doctrine, à prendre explicitement plutôt qu'à subir.
 
 ## Le décompte des appelants — trois définitions, trois nombres
 
