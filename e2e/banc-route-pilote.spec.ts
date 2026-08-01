@@ -215,10 +215,19 @@ test("le focus suit le contrat à chacune des six transitions", async ({ page })
       };
     });
 
-  // 1 — lancement → cadre de séance
+  /*
+    1 — lancement → TITRE de séance.
+
+    **Modifié au lot F7d, et c'est le cœur de l'arbitrage.** La cible était le
+    cadre de séance ; c'est désormais son titre de niveau 1. Le cadre nommait
+    la tâche sans avoir la sémantique d'un titre : il n'apparaissait dans
+    aucune liste de titres, ne constituait pas un point de repère, et
+    n'exposait pas la séance comme le nouveau sujet de la vue. Le titre le
+    fait, et le cadre reste nommé par lui — rien n'a été retiré.
+  */
   await lancer(page);
   expect(await focalisee()).toEqual({
-    role: "group",
+    role: "h1",
     nom: "Série d'entraînement — EOPAN",
     tabindex: "-1",
   });
@@ -267,10 +276,19 @@ test("le cadre de séance nomme la tâche, pas son contenu", async ({ page }) =>
   await lancer(page);
 
   const cadre = page.getByRole("group", { name: "Série d'entraînement — EOPAN" });
-  const mesures = await cadre.evaluate((el) => ({
-    nom: el.getAttribute("aria-label") ?? "",
-    longueurContenu: (el.textContent || "").trim().length,
-  }));
+  /*
+    Le nom vient désormais du TITRE de séance, par `aria-labelledby` (lot F7d).
+    Le lire sur l'élément lui-même donnerait une chaîne vide et le contrôle
+    passerait pour de mauvaises raisons : on remonte donc à la cible.
+  */
+  const mesures = await cadre.evaluate((el) => {
+    const id = el.getAttribute("aria-labelledby");
+    const titre = id ? document.getElementById(id) : null;
+    return {
+      nom: (titre?.textContent ?? "").trim(),
+      longueurContenu: (el.textContent || "").trim().length,
+    };
+  });
 
   // Le contenu du cadre est bien plus long que son nom : la preuve que le
   // nom ne le reprend pas.

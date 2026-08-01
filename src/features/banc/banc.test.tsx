@@ -131,16 +131,42 @@ describe("ModeSeance", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("replie l'introduction et donne le focus à la séance au lancement", async () => {
+  it("replie l'introduction et donne le focus au TITRE de séance au lancement", async () => {
     rendre();
     await userEvent.click(screen.getByRole("button", { name: "Commencer" }));
 
     // C'est le défaut mesuré : l'introduction restait empilée au-dessus et
     // l'aire de jeu tombait sous le pli.
     expect(screen.getByText("Présentation de l’épreuve")).not.toBeVisible();
+
+    /*
+      **Cible du focus modifiée au lot F7d.** C'était le cadre ; c'est
+      désormais le titre de niveau 1 de la séance. Le cadre nommait la tâche
+      sans avoir la sémantique d'un titre — il n'apparaissait dans aucune liste
+      de titres et n'exposait pas la séance comme le nouveau sujet de la vue.
+    */
+    const titre = screen.getByRole("heading", { level: 1, name: "Séance de démonstration" });
+    expect(titre).toHaveFocus();
+
+    // Le cadre existe toujours, et il est nommé PAR ce titre.
     const zone = screen.getByRole("group", { name: "Séance de démonstration" });
     expect(zone).toBeVisible();
-    expect(zone).toHaveFocus();
+    expect(zone.getAttribute("aria-labelledby")).toBe(titre.id);
+  });
+
+  it("n'expose qu'un seul titre de niveau 1 par phase", () => {
+    /*
+      Ni zéro ni deux, à aucun moment. Au repos, c'est le titre éditorial de la
+      page qui tient ce rôle — ici représenté par l'introduction — et la séance
+      n'en ajoute aucun ; en séance, c'est l'inverse.
+    */
+    const { container } = render(
+      <ModeSeance introduction={<h1>Titre éditorial</h1>} labelSeance="Séance de démonstration">
+        <button type="button">Première réponse</button>
+      </ModeSeance>
+    );
+    expect(container.querySelectorAll("h1")).toHaveLength(1);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Titre éditorial");
   });
 
   it("ne prévient le moteur qu'une fois l'aire en place ET focalisée", async () => {
@@ -152,9 +178,11 @@ describe("ModeSeance", () => {
     let zoneAuMomentDeLAppel: string | null = null;
     let focusAuMomentDeLAppel: string | null = null;
     const entree = vi.fn(() => {
-      zoneAuMomentDeLAppel =
-        document.querySelector('[aria-label="Séance de démonstration"]')?.tagName ?? null;
-      focusAuMomentDeLAppel = document.activeElement?.getAttribute("aria-label") ?? null;
+      // Le cadre n'a plus d'`aria-label` : il est nommé par le titre de
+      // séance (lot F7d). On le repère donc par sa classe, et le focus par le
+      // texte de l'élément actif — qui est ce titre.
+      zoneAuMomentDeLAppel = document.querySelector(".banc-zone-seance")?.tagName ?? null;
+      focusAuMomentDeLAppel = document.activeElement?.textContent?.trim() ?? null;
     });
 
     rendre({ onSeanceEntree: entree });

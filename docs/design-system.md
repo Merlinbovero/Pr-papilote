@@ -211,8 +211,54 @@ Le Banc est un **poste de travail sous contrainte**, pas un document. L'audit F0
 | Mesure de lecture  | Consignes 60–75 caractères, énoncé jusqu'à ~90, stimulus graphique en largeur libre. Des **plafonds CSS**, jamais des coupes.                                                                                                         |
 | Cadre              | Une seule largeur, partagée par tous les moteurs.                                                                                                                                                                                     |
 | Mode séance        | Au lancement : l'introduction se replie, l'aire entre dans le cadre, le focus s'y déplace, **et le temps ne démarre qu'ensuite**. Consignes rappelables, sortie explicite.                                                            |
+| Titre de séance    | La séance porte **son propre `<h1>`**, court, nommant la tâche et jamais la position. Il reçoit le focus au lancement et **nomme le cadre** (`aria-labelledby`). Exactement un `<h1>` par phase — jamais zéro, jamais deux.           |
 
 **Vitrine** : `/design-lab/banc` (catalogue) et `/design-lab/banc/seance` (étalon de densité), derrière `NEXT_PUBLIC_DESIGN_LAB`, `noindex`.
+
+### Le titre principal d'un état interactif
+
+**La règle**, arbitrée le 2026-08-01 :
+
+> Lorsqu'un état interactif remplace la tâche principale et retire le titre de
+> la vue précédente, il doit fournir **son propre titre principal**. Un nom
+> accessible sur un groupe complète cette structure ; il ne la remplace pas.
+
+Elle dépasse le Banc : elle vaut pour tout écran qui se substitue à un autre
+sans changer d'URL.
+
+**Ce que le `role="group"` nommé ne fait pas**, et qui a motivé l'arbitrage. Il
+nomme l'aire de jeu, mais il n'a pas la sémantique `heading` ; il n'apparaît
+pas dans la liste des titres d'un lecteur d'écran ; il ne constitue pas un
+point de repère ; et il n'expose pas la séance comme le nouveau sujet
+principal de la vue. L'absence de `<h1>` n'est pas en soi une non-conformité
+WCAG A/AA — la norme n'impose pas littéralement un titre de niveau 1 par vue —
+mais quand le chapeau éditorial disparaît, la séance devient fonctionnellement
+une nouvelle vue et doit en exposer la structure.
+
+**La structure retenue** :
+
+```tsx
+<h1 id={idTitre} tabIndex={-1}>Test de dominos</h1>
+<div role="group" aria-labelledby={idTitre}>…</div>
+```
+
+**Les trois phases** :
+
+| Phase       | `<h1>` présent                 | Focus                         |
+| ----------- | ------------------------------ | ----------------------------- |
+| Au repos    | le titre **éditorial**         | inchangé                      |
+| En séance   | le titre **de séance**, seul   | déplacé sur ce titre          |
+| À la sortie | le titre **éditorial** revient | contrat de non-vol du lot F1a |
+
+Le titre de séance est **visible** par défaut, à une échelle de conduite et non
+d'édition. Il peut être masqué en `sr-only` si sa présence visuelle est
+réellement redondante avec une information déjà affichée — jamais retiré de
+l'arbre d'accessibilité. Aucune route ne l'emploie aujourd'hui : vérifié
+appelant par appelant, aucune n'affiche son propre titre en séance.
+
+**Une région live n'est pas un substitut** à la structure de titres.
+
+Garde : `e2e/banc-titre-seance.spec.ts`, onze routes × quatre phases.
 
 ### Quand une activité prend le registre du Banc
 
