@@ -206,10 +206,26 @@ test.describe("contrat de focus et d'annonce", () => {
   });
 
   test("le focus suit la navigation entre questions de l'examen", async ({ page }) => {
+    /*
+      RÉÉCRIT AU LOT F5, et c'est un CHANGEMENT DE COMPORTEMENT assumé, pas
+      un ajustement de confort.
+
+      Avant migration, l'examen n'avait pas d'aire de séance : le lancement
+      remplaçait la page entière, et la seule cible de focus possible était le
+      groupe de la première question. Le mode séance du Banc en crée une, et le
+      contrat arbitré au lot F2a — déjà tenu par `/entrainement/eopan` et
+      `/reviser` — veut que le LANCEMENT pose le focus sur le cadre, dont le
+      nom énonce la tâche en quelques mots, et que les transitions internes le
+      posent sur le groupe de la question.
+
+      Ce qui est vérifié n'a donc pas été affaibli : les deux étapes sont
+      toujours contrôlées, et l'examen rejoint la règle des autres séances au
+      lieu d'avoir la sienne.
+    */
     await page.goto("/bia/examen-blanc");
     await page.getByRole("button", { name: /Commencer l’examen/i }).click();
     await page.waitForSelector(SEANCE, { timeout: 20000 });
-    expect(await focalise(page)).toMatch(/^Question 1 sur \d+$/);
+    expect(await focalise(page)).toBe("Examen blanc BIA");
 
     await page.getByRole("button", { name: /^Suivante$/ }).click();
     expect(await focalise(page)).toMatch(/^Question 2 sur \d+$/);

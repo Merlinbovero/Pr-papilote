@@ -1,21 +1,18 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import {
-  BookmarkIcon,
-  CircleCheckIcon,
-  CircleXIcon,
-  ClockIcon,
-  FlagIcon,
-  PlayIcon,
-} from "lucide-react";
+import { BookmarkIcon, FlagIcon, RotateCcwIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Annonce } from "@/components/a11y/annonce";
+import { Chronometre } from "@/features/banc/chronometre";
+import { LienApprofondir } from "@/features/banc/lien-approfondir";
+import { ModeSeance } from "@/features/banc/mode-seance";
+import { ReponseBanc } from "@/features/banc/etat-reponse";
 import { deplacerFocus } from "@/lib/a11y/focus-transition";
+import type { EtatChrono } from "@/lib/design/banc-tokens";
 import { cn } from "@/lib/utils";
 import {
   composeBiaExam,
@@ -33,10 +30,52 @@ import type { BiaConfig, BiaPlayerQuestion } from "@/lib/bia/schema";
  * finale, correction détaillée avec renvoi vers les fiches, score par
  * matière et synthèse. Le moteur (composition, notation) vient de
  * src/lib/bia/exam — aucune logique de barème ici.
+ *
+ * ── Lot F5 — le Banc, sur la première séance réellement autonome ─────────
+ * Les lots F2 et F3 ont porté le Banc sur des entraînements libres ; F4 a
+ * arbitré que les quiz ENCASTRÉS restent documentaires. L'examen blanc est
+ * l'autre bord de cette frontière, et le plus net : il se lance
+ * explicitement, occupe cent questions et deux heures et demie, se chronomètre
+ * et se termine. Changement de tâche principale, donc changement de registre.
+ *
+ * Ce que la migration change, et rien d'autre :
+ *  1. l'introduction se replie au lancement (`ModeSeance`) — le chapeau ne
+ *     reste plus empilé au-dessus de l'aire de jeu pendant que le temps court ;
+ *  2. le chronomètre cesse d'être une métadonnée grise de la taille du
+ *     compteur de questions : il prend le poids de la contrainte qu'il est ;
+ *  3. les réponses passent par `ReponseBanc` — verdict ÉCRIT et non seulement
+ *     teinté — et les renvois de correction par `LienApprofondir`, ce qui
+ *     rembourse DT-002 sur cette route ;
+ *  4. les surfaces remplacent les cartes bordées du registre documentaire.
+ *
+ * Ce qu'elle ne change pas, et que `e2e/bia-examen-f5-reference.spec.ts` fige
+ * depuis AVANT la migration : les trois phases, leurs noms accessibles, la
+ * navigation libre, le marquage, le pavé, la note, l'historique et sa clé.
  */
 
 const SEEN_STORAGE_KEY = "prepapilote.bia.seenQuestions";
 const HISTORY_STORAGE_KEY = "prepapilote.bia.examHistory";
+
+/**
+ * Seuils du chronomètre — décidés **par le moteur**, jamais par le composant.
+ *
+ * `Chronometre` sait rendre `normal`, `warning`, `critical` et `expired` ; il
+ * refuse délibérément de déduire lequel s'applique, parce que cinq secondes
+ * sont critiques sur une question de quinze et anodines sur une épreuve de
+ * deux heures et demie. Ici, l'échelle est celle de l'examen : le quart
+ * d'heure qui reste mérite un signal, les cinq dernières minutes en méritent
+ * un autre. Le rendu historique n'avait qu'un seuil, à 300 s ; il est
+ * conservé et complété, pas remplacé.
+ */
+const CHRONO_ATTENTION = 900;
+const CHRONO_CRITIQUE = 300;
+
+function etatChrono(restant: number): EtatChrono {
+  if (restant <= 0) return "expired";
+  if (restant <= CHRONO_CRITIQUE) return "critical";
+  if (restant <= CHRONO_ATTENTION) return "warning";
+  return "normal";
+}
 
 interface ExamHistoryEntry {
   finishedAt: string;
@@ -69,20 +108,32 @@ interface BiaExamPlayerProps {
   totalAvailable: number;
   config: BiaConfig;
   matiereNames: Record<string, string>;
+  /**
+   * En-tête de page, confié à la séance pour qu'il **se replie au lancement**
+   * — même contrat qu'aux routes déjà migrées (F2a, F2b, F3). C'est la
+   * condition pour que l'aire de jeu entre dans le cadre.
+   */
+  entete?: React.ReactNode;
 }
 
-type Phase = "intro" | "running" | "review";
+/**
+ * Les phases du joueur — l'avant-séance n'en fait plus partie.
+ *
+ * C'est `ModeSeance` qui porte désormais la présentation et le lancement :
+ * `attente` est donc le premier état du joueur, celui où l'aire existe et le
+ * vivier arrive.
+ */
+type Phase = "attente" | "erreur" | "running" | "review";
 
 export function BiaExamPlayer({
   poolUrl,
   totalAvailable,
   config,
   matiereNames,
+  entete,
 }: BiaExamPlayerProps) {
-  const [phase, setPhase] = React.useState<Phase>("intro");
+  const [phase, setPhase] = React.useState<Phase>("attente");
   const poolsCache = React.useRef<Record<string, BiaPlayerQuestion[]> | null>(null);
-  const [loading, setLoading] = React.useState(false);
-  const [loadError, setLoadError] = React.useState(false);
   const [questions, setQuestions] = React.useState<BiaExamQuestion<BiaPlayerQuestion>[]>([]);
   const [shortagesCount, setShortagesCount] = React.useState(0);
   const [index, setIndex] = React.useState(0);
@@ -93,6 +144,16 @@ export function BiaExamPlayer({
   const [report, setReport] = React.useState<BiaExamReport | null>(null);
   const [elapsed, setElapsed] = React.useState(0);
   const [history, setHistory] = React.useState<ExamHistoryEntry[]>([]);
+  /**
+   * Compteur de séances — clé de `ModeSeance`.
+   *
+   * « Nouvel examen » doit ramener à la présentation ; or le repli de
+   * l'introduction est un état INTERNE au mode séance. Plutôt que d'ouvrir ce
+   * composant partagé à un pilotage externe, on le remonte : un nouvel examen
+   * EST une nouvelle séance, et la remise à zéro est alors exacte par
+   * construction. Même procédé qu'au lot F4 pour les nouveaux tirages.
+   */
+  const [seance, setSeance] = React.useState(0);
 
   // Chargé après l'hydratation (asynchrone : pas de rendu en cascade,
   // et le HTML serveur — sans historique — reste identique au premier
@@ -104,22 +165,19 @@ export function BiaExamPlayer({
     return () => cancelAnimationFrame(id);
   }, []);
 
-  const start = async () => {
+  const start = React.useCallback(async () => {
     let pools = poolsCache.current;
     if (!pools) {
-      setLoading(true);
-      setLoadError(false);
+      setPhase("attente");
       try {
         const res = await fetch(poolUrl);
         if (!res.ok) throw new Error(String(res.status));
         pools = (await res.json()) as Record<string, BiaPlayerQuestion[]>;
         poolsCache.current = pools;
       } catch {
-        setLoading(false);
-        setLoadError(true);
+        setPhase("erreur");
         return;
       }
-      setLoading(false);
     }
     const seenIds = new Set(readJson<string[]>(SEEN_STORAGE_KEY, []));
     const byMatiere = new Map(Object.entries(pools));
@@ -138,7 +196,7 @@ export function BiaExamPlayer({
     setStartedAt(Date.now());
     setReport(null);
     setPhase("running");
-  };
+  }, [poolUrl, config]);
 
   // Annonces et focus — lot F1a. L'examen est le cas le plus sensible au
   // temps : une transition qui laisse le focus sur `body` renvoie au haut du
@@ -161,6 +219,24 @@ export function BiaExamPlayer({
       deplacerFocus(zoneQuestion.current, { declencheur: declencheur.current });
     }
   }, [phase, index]);
+
+  /*
+    Focus des états ASYNCHRONES (erreur de chargement).
+
+    `ModeSeance` a déjà posé le focus sur l'aire de séance au lancement ; le
+    résultat du chargement arrive ensuite. On mémorise donc où le système
+    avait laissé le focus et on ne le déplace que s'il s'y trouve encore —
+    même précaution qu'à `/reviser`.
+  */
+  const zoneErreur = React.useRef<HTMLElement>(null);
+  const focusAuLancement = React.useRef<Element | null>(null);
+
+  React.useEffect(() => {
+    if (phase !== "erreur") {
+      return;
+    }
+    deplacerFocus(zoneErreur.current, { declencheur: focusAuLancement.current });
+  }, [phase]);
 
   const finish = React.useCallback(() => {
     if (phase !== "running") {
@@ -222,35 +298,137 @@ export function BiaExamPlayer({
     return () => clearInterval(id);
   }, [phase, finish]);
 
-  if (phase === "intro") {
-    return (
-      <ExamIntro
-        config={config}
-        history={history}
-        totalAvailable={totalAvailable}
-        onStart={start}
-        loading={loading}
-        loadError={loadError}
-      />
-    );
-  }
+  const total = config.matieres.length * config.examen.questionsParMatiere;
 
-  if (phase === "review" && report) {
-    return (
-      <>
-        <Annonce message={annonce} />
-        <ExamReview
+  return (
+    <ModeSeance
+      key={seance}
+      // Une seule séance à la fois, remontée à chaque nouvel examen : le
+      // focus doit alors être replacé, le bouton actionné ayant disparu.
+      focusAuMontage={seance > 0}
+      labelSeance="Examen blanc BIA"
+      libelleLancement="Commencer l’examen"
+      onSeanceEntree={() => {
+        focusAuLancement.current = document.activeElement;
+        void start();
+      }}
+      onSortie={() => {
+        setPhase("attente");
+        setQuestions([]);
+        setReport(null);
+      }}
+      introduction={
+        <div className="space-y-6">
+          {entete}
+          <ExamIntro config={config} history={history} totalAvailable={totalAvailable} />
+        </div>
+      }
+    >
+      {phase === "review" && report ? (
+        <>
+          <Annonce message={annonce} />
+          <ExamReview
+            questions={questions}
+            answers={answers}
+            report={report}
+            matiereNames={matiereNames}
+            elapsedSeconds={elapsed}
+            onRestart={() => {
+              setPhase("attente");
+              setReport(null);
+              setQuestions([]);
+              setSeance((n) => n + 1);
+            }}
+          />
+        </>
+      ) : phase === "erreur" ? (
+        /*
+          L'erreur interrompt le parcours : elle porte `role="alert"`, reçoit
+          le focus et offre une sortie. Un message sans action laisserait le
+          candidat dans une impasse — le rendu historique affichait l'alerte
+          dans l'introduction, qui est désormais repliée.
+        */
+        <section
+          ref={zoneErreur}
+          tabIndex={-1}
+          role="alert"
+          className="banc-stimulus space-y-3 outline-none"
+          style={{ borderLeft: "3px solid var(--bc-erreur)" }}
+        >
+          <h2 className="font-semibold" style={{ color: "var(--bc-erreur)" }}>
+            Chargement impossible
+          </h2>
+          <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+            Le vivier de questions n’a pas pu être récupéré. Vérifiez votre connexion, puis relancez
+            l’examen. Vos examens déjà passés sont intacts.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <Button size="sm" onClick={() => void start()}>
+              <RotateCcwIcon aria-hidden className="size-4" />
+              Réessayer
+            </Button>
+          </div>
+        </section>
+      ) : phase === "running" ? (
+        <ExamRunning
           questions={questions}
+          index={index}
           answers={answers}
-          report={report}
+          marked={marked}
+          remaining={remaining}
+          shortagesCount={shortagesCount}
           matiereNames={matiereNames}
-          elapsedSeconds={elapsed}
-          onRestart={() => setPhase("intro")}
+          zoneQuestion={zoneQuestion}
+          noterDeclencheur={noterDeclencheur}
+          onIndex={setIndex}
+          onAnswers={setAnswers}
+          onMarked={setMarked}
+          onFinish={finish}
         />
-      </>
-    );
-  }
+      ) : (
+        /* `attente` : l'aire est en place, le vivier arrive. Le bouton de
+           lancement n'est plus dupliqué ici — `ModeSeance` le porte. */
+        <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+          {`Préparation de l’examen — ${total} questions en cours de tirage…`}
+        </p>
+      )}
+    </ModeSeance>
+  );
+}
 
+// ---------------------------------------------------------------------------
+// Séance en cours
+// ---------------------------------------------------------------------------
+
+function ExamRunning({
+  questions,
+  index,
+  answers,
+  marked,
+  remaining,
+  shortagesCount,
+  matiereNames,
+  zoneQuestion,
+  noterDeclencheur,
+  onIndex,
+  onAnswers,
+  onMarked,
+  onFinish,
+}: {
+  questions: BiaExamQuestion<BiaPlayerQuestion>[];
+  index: number;
+  answers: Record<string, number[]>;
+  marked: Set<string>;
+  remaining: number;
+  shortagesCount: number;
+  matiereNames: Record<string, string>;
+  zoneQuestion: React.RefObject<HTMLDivElement | null>;
+  noterDeclencheur: (evenement: { currentTarget: Element }) => void;
+  onIndex: React.Dispatch<React.SetStateAction<number>>;
+  onAnswers: React.Dispatch<React.SetStateAction<Record<string, number[]>>>;
+  onMarked: React.Dispatch<React.SetStateAction<Set<string>>>;
+  onFinish: () => void;
+}) {
   const current = questions[index];
   if (!current) {
     return null;
@@ -258,9 +436,10 @@ export function BiaExamPlayer({
   const answered = Object.keys(answers).filter((id) => answers[id].length > 0).length;
   const isMultiple = current.question.correctChoices.length > 1;
   const selected = answers[current.question.id] ?? [];
+  const estMarquee = marked.has(current.question.id);
 
   const toggle = (choiceIndex: number) => {
-    setAnswers((previous) => {
+    onAnswers((previous) => {
       const before = previous[current.question.id] ?? [];
       const next = isMultiple
         ? before.includes(choiceIndex)
@@ -272,7 +451,7 @@ export function BiaExamPlayer({
   };
 
   const toggleMark = () => {
-    setMarked((previous) => {
+    onMarked((previous) => {
       const next = new Set(previous);
       if (next.has(current.question.id)) {
         next.delete(current.question.id);
@@ -285,23 +464,25 @@ export function BiaExamPlayer({
 
   return (
     <section aria-label="Examen blanc en cours" className="space-y-6">
-      <div className="space-y-2">
-        <div className="text-muted-foreground flex flex-wrap items-center justify-between gap-2 text-sm">
-          <span>
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
+          <span style={{ color: "var(--bc-encre2)" }}>
             Question {index + 1} / {questions.length} ·{" "}
             {matiereNames[current.matiere] ?? current.matiere}
           </span>
           <span className="flex items-center gap-3">
-            <span>{answered} répondues</span>
-            <span
-              className={cn(
-                "flex items-center gap-1 tabular-nums",
-                remaining < 300 && "text-destructive font-medium"
-              )}
-            >
-              <ClockIcon aria-hidden className="size-4" />
-              {formatDuration(remaining)}
-            </span>
+            <span style={{ color: "var(--bc-encre2)" }}>{answered} répondues</span>
+            {/*
+              Le temps est la contrainte principale de l'épreuve, pas une
+              métadonnée : le cadre lui donne le poids relevé manquant à
+              l'audit F0b, où il était gris et de la taille du compteur.
+            */}
+            <Chronometre
+              secondes={remaining}
+              etat={etatChrono(remaining)}
+              label="Temps restant à l’examen"
+              className="banc-chrono-cadre"
+            />
           </span>
         </div>
         {/*
@@ -338,39 +519,26 @@ export function BiaExamPlayer({
         tabIndex={-1}
         role="group"
         aria-label={`Question ${index + 1} sur ${questions.length}`}
-        className="space-y-6 outline-none"
+        className="banc-stimulus space-y-5 outline-none"
       >
-        <h2 className="text-xl font-semibold">{current.question.statement}</h2>
+        <h2 className="banc-enonce text-xl font-semibold">{current.question.statement}</h2>
         {isMultiple ? (
-          <p className="text-muted-foreground text-sm">Plusieurs réponses possibles.</p>
+          <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+            Plusieurs réponses possibles.
+          </p>
         ) : null}
 
-        <ul className="space-y-2" role="list">
-          {current.question.choices.map((choice, choiceIndex) => {
-            const isSelected = selected.includes(choiceIndex);
-            return (
-              <li key={choiceIndex}>
-                <button
-                  type="button"
-                  onClick={() => toggle(choiceIndex)}
-                  aria-pressed={isSelected}
-                  className={cn(
-                    "focus-visible:ring-ring flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                    isSelected ? "border-primary bg-accent" : "hover:bg-accent/50"
-                  )}
-                >
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "size-4 shrink-0 rounded-full border",
-                      isSelected && "border-primary bg-primary"
-                    )}
-                  />
-                  <span className="flex-1">{choice.label}</span>
-                </button>
-              </li>
-            );
-          })}
+        <ul className="flex flex-col" style={{ gap: "var(--bc-espace-reponse)" }} role="list">
+          {current.question.choices.map((choice, choiceIndex) => (
+            <li key={choiceIndex}>
+              <ReponseBanc
+                selectionnee={selected.includes(choiceIndex)}
+                onClick={() => toggle(choiceIndex)}
+              >
+                {choice.label}
+              </ReponseBanc>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -379,7 +547,7 @@ export function BiaExamPlayer({
           variant="outline"
           onClick={(evenement) => {
             noterDeclencheur(evenement);
-            setIndex((i) => Math.max(0, i - 1));
+            onIndex((i) => Math.max(0, i - 1));
           }}
         >
           Précédente
@@ -388,27 +556,42 @@ export function BiaExamPlayer({
           variant="outline"
           onClick={(evenement) => {
             noterDeclencheur(evenement);
-            setIndex((i) => Math.min(questions.length - 1, i + 1));
+            onIndex((i) => Math.min(questions.length - 1, i + 1));
           }}
         >
           Suivante
         </Button>
         <Button
-          variant={marked.has(current.question.id) ? "secondary" : "ghost"}
+          variant={estMarquee ? "secondary" : "ghost"}
           onClick={toggleMark}
-          aria-pressed={marked.has(current.question.id)}
+          aria-pressed={estMarquee}
         >
           <BookmarkIcon aria-hidden className="size-4" />
-          {marked.has(current.question.id) ? "Marquée" : "Marquer"}
+          {estMarquee ? "Marquée" : "Marquer"}
         </Button>
         <span className="flex-1" />
-        <Button variant="destructive" onClick={finish}>
+        {/*
+          Rendre sa copie n'est pas une erreur, c'est la conclusion normale de
+          l'épreuve — et le code couleur du projet réserve le rouge à l'erreur.
+          La commande porte donc la teinte du Banc, celle de l'action
+          principale, et non la variante destructive.
+
+          La mesure a confirmé le raisonnement : sur la surface du Banc, cette
+          variante tombait à **4,38:1** (#d50000 sur #f7e1df), sous le seuil
+          AA de 4,5. Le défaut n'existait pas avant la migration, le fond de
+          page étant différent ; il est corrigé ici, pas contourné.
+        */}
+        <Button onClick={onFinish}>
           <FlagIcon aria-hidden className="size-4" />
           Terminer l’examen
         </Button>
       </div>
 
-      <nav aria-label="Navigation entre les questions" className="bg-card rounded-xl border p-4">
+      <nav
+        aria-label="Navigation entre les questions"
+        className="banc-stimulus"
+        style={{ padding: "1rem" }}
+      >
         <ol className="flex flex-wrap gap-1.5">
           {questions.map(({ question }, i) => {
             const hasAnswer = (answers[question.id] ?? []).length > 0;
@@ -419,16 +602,25 @@ export function BiaExamPlayer({
                   type="button"
                   onClick={(evenement) => {
                     noterDeclencheur(evenement);
-                    setIndex(i);
+                    onIndex(i);
                   }}
                   aria-label={`Question ${i + 1}${hasAnswer ? ", répondue" : ""}${isMarked ? ", marquée" : ""}`}
                   aria-current={i === index ? "true" : undefined}
                   className={cn(
-                    "focus-visible:ring-ring size-8 rounded-md border text-xs tabular-nums transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                    i === index && "ring-primary ring-2",
-                    hasAnswer && "bg-primary/15 border-primary/40",
-                    isMarked && "border-warning bg-warning/15"
+                    "focus-visible:ring-ring size-8 rounded-md border text-xs tabular-nums transition-colors focus-visible:ring-2 focus-visible:outline-none"
                   )}
+                  style={{
+                    borderColor: isMarked
+                      ? "var(--bc-attention)"
+                      : hasAnswer
+                        ? "var(--bc-banc)"
+                        : "var(--bc-filet)",
+                    backgroundColor: hasAnswer ? "var(--bc-fond)" : "transparent",
+                    color: "var(--bc-encre)",
+                    // La position courante ne se signale pas par la seule
+                    // teinte : `aria-current` la porte, l'anneau la montre.
+                    boxShadow: i === index ? "0 0 0 2px var(--bc-banc)" : undefined,
+                  }}
                 >
                   {i + 1}
                 </button>
@@ -445,33 +637,34 @@ export function BiaExamPlayer({
 // Écran d'introduction
 // ---------------------------------------------------------------------------
 
+/**
+ * Ce que le candidat lit AVANT de lancer.
+ *
+ * Le bouton de lancement n'est plus rendu ici : c'est `ModeSeance` qui le
+ * porte, dans l'introduction qu'il replie. L'alerte de chargement non plus —
+ * elle survient après le repli, et vit donc dans l'aire de séance.
+ */
 function ExamIntro({
   config,
   history,
   totalAvailable,
-  onStart,
-  loading,
-  loadError,
 }: {
   config: BiaConfig;
   history: ExamHistoryEntry[];
   totalAvailable: number;
-  onStart: () => void;
-  loading: boolean;
-  loadError: boolean;
 }) {
   const total = config.matieres.length * config.examen.questionsParMatiere;
   return (
     <section aria-label="Présentation de l'examen blanc" className="space-y-6">
-      <div className="bg-card space-y-4 rounded-xl border p-6">
+      <div className="banc-stimulus space-y-4">
         <h2 className="text-lg font-semibold">Les conditions de l’épreuve</h2>
-        <ul className="space-y-2 text-sm leading-6">
+        <ul className="banc-consigne space-y-2 text-sm leading-6">
           <li>
             <strong>{total} questions</strong> — {config.examen.questionsParMatiere} par matière,
             dans l’ordre officiel des cinq matières.
           </li>
           <li>
-            <strong>{formatDuration(config.examen.dureeSecondes)}</strong> de chronomètre global —
+            <strong>{formatDuree(config.examen.dureeSecondes)}</strong> de chronomètre global —
             comme à l’épreuve réelle. À zéro, la copie est relevée en l’état.
           </li>
           <li>
@@ -484,28 +677,15 @@ function ExamIntro({
             rencontrées ({totalAvailable} questions au total dans les viviers).
           </li>
         </ul>
-        <Button size="lg" onClick={onStart} disabled={loading}>
-          <PlayIcon aria-hidden className="size-4" />
-          {loading ? "Préparation…" : "Commencer l’examen"}
-        </Button>
-        {loadError ? (
-          <Alert variant="destructive">
-            <AlertTitle>Chargement impossible</AlertTitle>
-            <AlertDescription>
-              Le vivier de questions n’a pas pu être récupéré. Vérifiez votre connexion et
-              réessayez.
-            </AlertDescription>
-          </Alert>
-        ) : null}
       </div>
 
       {history.length > 0 ? (
-        <div className="bg-card space-y-3 rounded-xl border p-6">
+        <div className="banc-stimulus space-y-3">
           <h2 className="text-lg font-semibold">Vos examens précédents</h2>
           <ul className="space-y-1 text-sm">
             {history.slice(0, 5).map((entry) => (
               <li key={entry.finishedAt} className="flex items-center justify-between gap-3">
-                <span className="text-muted-foreground">
+                <span style={{ color: "var(--bc-encre2)" }}>
                   {new Date(entry.finishedAt).toLocaleDateString("fr-FR", {
                     day: "numeric",
                     month: "long",
@@ -522,7 +702,7 @@ function ExamIntro({
               </li>
             ))}
           </ul>
-          <p className="text-muted-foreground text-xs">
+          <p className="text-xs" style={{ color: "var(--bc-encre2)" }}>
             Historique conservé sur cet appareil uniquement.
           </p>
         </div>
@@ -560,26 +740,30 @@ function ExamReview({
 
   return (
     <section aria-label="Correction de l'examen blanc" className="space-y-8">
-      <div className="bg-card space-y-2 rounded-xl border p-6 text-center">
-        <p className="text-muted-foreground text-sm tracking-wide uppercase">Résultat</p>
+      <div className="banc-stimulus space-y-2 text-center">
+        <p className="text-sm tracking-wide uppercase" style={{ color: "var(--bc-encre2)" }}>
+          Résultat
+        </p>
         <p className="text-4xl font-bold tracking-tight">{report.noteGlobale20}/20</p>
         <p className="text-lg font-medium">
           {report.admis
             ? `Admis${report.mention ? ` — mention ${report.mention}` : ""}`
             : "Non admis"}
         </p>
-        <p className="text-muted-foreground text-sm">
-          {formatDuration(elapsedSeconds)} passées · {report.sansReponse.length} question
+        <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+          {formatDuree(elapsedSeconds)} passées · {report.sansReponse.length} question
           {report.sansReponse.length > 1 ? "s" : ""} sans réponse
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
         {report.parMatiere.map((score) => (
-          <div key={score.matiere} className="bg-card rounded-xl border p-4">
-            <p className="text-muted-foreground text-xs">{matiereNames[score.matiere]}</p>
+          <div key={score.matiere} className="banc-stimulus" style={{ padding: "1rem" }}>
+            <p className="text-xs" style={{ color: "var(--bc-encre2)" }}>
+              {matiereNames[score.matiere]}
+            </p>
             <p className="text-2xl font-semibold tabular-nums">{score.note20}/20</p>
-            <p className="text-muted-foreground text-xs">
+            <p className="text-xs" style={{ color: "var(--bc-encre2)" }}>
               {score.correct}/{score.total} bonnes réponses
             </p>
           </div>
@@ -587,22 +771,24 @@ function ExamReview({
       </div>
 
       {(forces.length > 0 || faiblesses.length > 0) && (
-        <div className="bg-card space-y-2 rounded-xl border p-6 text-sm leading-6">
+        <div className="banc-stimulus space-y-2 text-sm leading-6">
           <h2 className="font-semibold">Synthèse</h2>
           {forces.length > 0 ? (
-            <p>
+            <p className="banc-consigne">
               <strong>Points forts</strong> —{" "}
               {forces.map((m) => matiereNames[m.matiere]).join(", ")}.
             </p>
           ) : null}
           {faiblesses.length > 0 ? (
-            <p>
+            <p className="banc-consigne">
               <strong>À travailler en priorité</strong> —{" "}
               {faiblesses.map((m) => matiereNames[m.matiere]).join(", ")} : reprenez les fiches
               liées aux questions ratées ci-dessous.
             </p>
           ) : (
-            <p>Aucune matière sous la moyenne — continuez à creuser vos erreurs restantes.</p>
+            <p className="banc-consigne">
+              Aucune matière sous la moyenne — continuez à creuser vos erreurs restantes.
+            </p>
           )}
         </div>
       )}
@@ -632,46 +818,42 @@ function ExamReview({
           const expected = new Set(question.correctChoices);
           const wasCorrect = given.length === expected.size && given.every((c) => expected.has(c));
           return (
-            <li key={question.id} className="bg-card space-y-3 rounded-xl border p-4">
+            <li key={question.id} className="banc-stimulus space-y-3">
               <div className="flex items-start justify-between gap-3">
-                <p className="font-medium">{question.statement}</p>
-                {wasCorrect ? (
-                  <CircleCheckIcon aria-hidden className="text-success mt-1 size-5 shrink-0" />
-                ) : (
-                  <CircleXIcon aria-hidden className="text-destructive mt-1 size-5 shrink-0" />
-                )}
+                <p className="banc-enonce font-medium">{question.statement}</p>
+                {/* Le verdict est ÉCRIT, pas seulement icôné : l'icône seule
+                    ne dit rien à l'oreille (DT-002, même famille de défaut). */}
+                <span
+                  className="shrink-0 text-sm font-medium"
+                  style={{ color: wasCorrect ? "var(--bc-juste)" : "var(--bc-erreur)" }}
+                >
+                  {wasCorrect ? "Juste" : "Ratée"}
+                </span>
               </div>
-              <p className="text-muted-foreground text-xs">{matiereNames[matiere]}</p>
-              <ul className="space-y-1 text-sm">
+              <p className="text-xs" style={{ color: "var(--bc-encre2)" }}>
+                {matiereNames[matiere]}
+              </p>
+              <ul className="flex flex-col text-sm" style={{ gap: "var(--bc-espace-reponse)" }}>
                 {question.choices.map((choice, i) => (
-                  <li
-                    key={i}
-                    className={cn(
-                      "rounded-md border px-3 py-1.5",
-                      expected.has(i) && "border-success bg-success/10",
-                      given.includes(i) &&
-                        !expected.has(i) &&
-                        "border-destructive bg-destructive/10"
-                    )}
-                  >
-                    {choice.label}
-                    {expected.has(i) ? " ✓" : given.includes(i) ? " — votre réponse" : ""}
+                  <li key={i}>
+                    <ReponseBanc
+                      desactive
+                      etat={expected.has(i) ? "juste" : given.includes(i) ? "erreur" : "neutre"}
+                    >
+                      {choice.label}
+                      {given.includes(i) && !expected.has(i) ? " — votre réponse" : ""}
+                    </ReponseBanc>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm leading-6">{question.explanation}</p>
+              <p className="banc-consigne text-sm leading-6">{question.explanation}</p>
               {question.furtherReading.length > 0 ? (
-                <p className="text-muted-foreground text-sm">
+                <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
                   À réviser :{" "}
                   {question.furtherReading.map((fiche, i) => (
                     <React.Fragment key={fiche.href}>
                       {i > 0 ? ", " : ""}
-                      <Link
-                        href={fiche.href}
-                        className="text-primary underline-offset-4 hover:underline"
-                      >
-                        {fiche.label}
-                      </Link>
+                      <LienApprofondir href={fiche.href}>{fiche.label}</LienApprofondir>
                     </React.Fragment>
                   ))}
                 </p>
@@ -684,7 +866,11 @@ function ExamReview({
   );
 }
 
-function formatDuration(totalSeconds: number): string {
+/**
+ * Durée en toutes lettres abrégées — pour les PHRASES (« 2 h 30 min de
+ * chronomètre »), là où `formatChrono` sert le compteur qui défile.
+ */
+function formatDuree(totalSeconds: number): string {
   const hours = Math.floor(totalSeconds / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;

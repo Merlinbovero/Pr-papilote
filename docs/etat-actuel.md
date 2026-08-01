@@ -10,8 +10,9 @@ Chaque nombre est donné **avec sa définition**. Deux chiffres différents sur 
 même sujet ne sont pas nécessairement une erreur : le plus souvent, ils ne
 comptent pas la même chose.
 
-Dernière vérification : **2026-07-31**, sur `b19cac7` (commit servi en
-production) et sur la branche de recette qui le prolonge.
+Dernière vérification : **2026-08-01**, sur `b19cac7` (commit servi en
+production) pour les mesures de production, et sur `banc/integration` pour
+l'avancement du Banc.
 
 ---
 
@@ -25,6 +26,7 @@ production) et sur la branche de recette qui le prolonge.
 | `/entrainement/alat`  | **Banc**         | F3  |
 | Quiz de matière BIA   | **documentaire** | F4  |
 | Mini-quiz de fiche    | **documentaire** | F4  |
+| `/bia/examen-blanc`   | **Banc**         | F5  |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -32,8 +34,15 @@ immédiate d'une lecture, subordonnés à leur document, sans destination autono
 Ils gardent l'apparence de leur hôte **et** tiennent le contrat d'accessibilité
 du Banc — DT-002 y est remboursée. Voir la règle dans `design-system.md`.
 
-Les deux premières sont vérifiées en production ; les deux suivantes ne sont pas
-encore déployées.
+L'examen blanc est l'autre bord de cette même frontière, et le plus net : il se
+lance explicitement, occupe cent questions et deux heures et demie, se
+chronomètre et se termine. Changement de tâche principale, donc changement de
+registre. Le critère, dans les deux sens : _un registre visuel distinct est
+déclenché par un changement de tâche principale, pas par la simple présence
+d'une interaction._
+
+Les deux premières lignes sont vérifiées en production ; les suivantes ne sont
+pas encore déployées — la mise en ligne attend la clôture du Banc.
 
 **Gain mesuré au lot F3**, bas du bouton « Valider », même environnement et une
 seule variable changée — la constante qui active le registre :
@@ -47,20 +56,48 @@ Ces valeurs ne se comparent pas à celles publiées en F2a : le point de mesure
 diffère — bas du bouton de validation ici, bas du premier contrôle de réponse
 là-bas.
 
+**Gain mesuré au lot F5** sur l'examen blanc, bas du premier contrôle de
+réponse, `git stash` pour seule variable — même machine, même vivier fixe, deux
+compilations de production successives :
+
+| Viewport   | Rendu historique | Banc       | Gain    |
+| ---------- | ---------------- | ---------- | ------- |
+| 1280 × 720 | 519 px           | **423 px** | −96 px  |
+| 412 × 839  | 639 px           | **523 px** | −116 px |
+
+Le premier contrôle tenait déjà dans l'écran avant migration : l'examen blanc
+n'était pas atteint par le défaut le plus grave de l'audit F0b — contrairement
+aux épreuves psychotechniques, mesurées à 891, 995 et 994 px pour un écran de 844. Le gain de F5 est donc réel mais modeste sur ce point, et l'apport du lot
+est ailleurs :
+
+| Repère                              | Avant              | Après                               |
+| ----------------------------------- | ------------------ | ----------------------------------- |
+| Titre `h1` encore affiché en séance | oui                | **non** (replié, rappelable)        |
+| Chronomètre — rôle                  | aucun              | **`timer`**, nommé, `aria-live=off` |
+| Chronomètre — taille / graisse      | 14 px / 400        | **18 px / 600**, sur surface        |
+| Verdict par question en correction  | icône seule        | **mot** (« Juste » / « Ratée »)     |
+| Lien « À réviser »                  | souligné au survol | **souligné au repos** (DT-002)      |
+
 ## Le décompte des appelants — trois définitions, trois nombres
 
 La confusion vient de ce que trois documents comptent trois choses.
 
 ### 1. Composants qui importent et rendent `QuizPlayer` — **six**
 
-| Composant                                | État                                                                                 |
-| ---------------------------------------- | ------------------------------------------------------------------------------------ |
-| `features/revision/revision-session.tsx` | **migré** (F2b)                                                                      |
-| `features/quiz/pool-quiz.tsx`            | **mixte** — `banc` sur `/entrainement/eopan`, `legacy` sur `eopn`, `alat`, `anglais` |
-| `features/quiz/notion-quiz.tsx`          | legacy                                                                               |
-| `features/cours/course-experience.tsx`   | legacy                                                                               |
-| `features/bia/matiere-quiz.tsx`          | legacy                                                                               |
-| `app/(site)/design-system/quiz/page.tsx` | legacy — vitrine interne, hors surface publique                                      |
+| Composant                                | État                                                                         |
+| ---------------------------------------- | ---------------------------------------------------------------------------- |
+| `features/revision/revision-session.tsx` | **migré** (F2b)                                                              |
+| `features/quiz/pool-quiz.tsx`            | **mixte** — `banc` sur les trois concours (F2a, F3), `legacy` sur `/anglais` |
+| `features/quiz/notion-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc              |
+| `features/cours/course-experience.tsx`   | legacy                                                                       |
+| `features/bia/matiere-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc              |
+| `app/(site)/design-system/quiz/page.tsx` | legacy — vitrine interne, hors surface publique                              |
+
+**Ce tableau ne recense pas tout ce qui joue une séance.** `BiaExamPlayer`
+(examen blanc, migré au lot F5) n'importe pas `QuizPlayer` : c'est un moteur
+distinct, avec ses propres phases, son chronomètre et sa persistance. Les
+épreuves psychotechniques et SECPIL sont dans le même cas. Un décompte fondé
+sur les appelants d'un composant ne les verra jamais.
 
 ### 2. « Cinq autres appelants » de `design-system.md` — **cohérent**
 
@@ -68,7 +105,12 @@ Ce sont les **composants non migrés**, `revision-session` exclu. Le chiffre est
 juste dans sa définition ; `pool-quiz` y compte pour un, bien qu'il serve les
 deux registres.
 
-### 3. Registre `AUTRES_APPELANTS` — **onze routes témoins**
+### 3. Registre `AUTRES_APPELANTS` — **neuf routes témoins**
+
+> **Correction du 2026-08-01.** Ce document annonçait **onze**. Le nombre était
+> celui d'avant le lot F3, qui a retiré `/entrainement/eopn` et
+> `/entrainement/alat` en les migrant ; je ne l'avais pas reporté ici. Recompté
+> depuis la source (`playwright test --list`), le registre en a **neuf**.
 
 Ce nombre ne se compare pas à celui des composants : depuis le 2026-07-31, le
 registre a **une entrée par chemin d'intégration indépendant**, et non par
@@ -89,16 +131,17 @@ Ce n'est pas théorique : aux lots F2a et F2b, c'est la **page** qui posait
 `.banc`, jamais le composant. Un registre indexé sur les seuls composants
 serait aveugle au chemin que le projet a effectivement emprunté deux fois.
 
-| Composant           | Témoins | Pourquoi ce nombre                                 |
-| ------------------- | ------- | -------------------------------------------------- |
-| `pool-quiz`         | 3       | trois pages distinctes (`eopn`, `alat`, `anglais`) |
-| `QuizPlayer` nu     | 1       | vitrine interne                                    |
-| `matiere-quiz`      | 1       | un gabarit                                         |
-| `course-experience` | 1       | un gabarit                                         |
-| `notion-quiz`       | **5**   | rendu par cinq gabarits de fiche                   |
+| Composant           | Témoins | Pourquoi ce nombre                                  |
+| ------------------- | ------- | --------------------------------------------------- |
+| `pool-quiz`         | 1       | `/anglais` — `eopn` et `alat` sont partis au lot F3 |
+| `QuizPlayer` nu     | 1       | vitrine interne                                     |
+| `matiere-quiz`      | 1       | un gabarit                                          |
+| `course-experience` | 1       | un gabarit                                          |
+| `notion-quiz`       | **5**   | rendu par cinq gabarits de fiche                    |
 
-`/entrainement/eopn` et `/entrainement/alat` coïncident sur les quatre
-frontières : leur redondance est volontaire et sans coût.
+Chaque migration retire une ligne du registre, et l'oubli se voit
+immédiatement : le contrôle correspondant tombe, puisque la route porte
+désormais `.banc`.
 
 **Deux niveaux de protection, qui ne se recouvrent pas.**
 `src/features/quiz/notion-quiz.test.tsx` surveille le **composant** — aucune
@@ -107,23 +150,37 @@ classe du Banc, avant comme après le tirage. Le registre surveille les
 fuite venue d'un seul gabarit ne se verrait que là.
 
 **Vérifié, et pas seulement raisonné.** Les cinq gabarits rompus ensemble font
-tomber les cinq témoins correspondants, les six autres restant verts. Rompu
-seul, `dossier.tsx` ne fait tomber **qu'un** témoin — `/eopan/concepts/catobar`
-— les dix autres restant verts : les entrées sont bien indépendantes. Le
-garde-fou unitaire tombe lui aussi lorsque `NotionQuiz` passe `variant="banc"`.
+tomber les cinq témoins correspondants, les autres restant verts. Rompu seul,
+`dossier.tsx` ne fait tomber **qu'un** témoin — `/eopan/concepts/catobar` — les
+autres restant verts : les entrées sont bien indépendantes. Le garde-fou
+unitaire tombe lui aussi lorsque `NotionQuiz` passe `variant="banc"`. (Ces
+ruptures ont été faites au lot F3, quand le registre comptait onze entrées ;
+les deux entrées retirées depuis n'appartenaient pas au groupe `notion-quiz`,
+la démonstration d'indépendance reste donc valable telle quelle.)
 
 **Un témoin doit rendre ce qu'il surveille.** `NotionQuiz` retourne `null` sans
 questions : une fiche sans banque passerait le contrôle sans rien prouver. Les
 cinq routes ont été vérifiées en production — chacune rend « Tester cette
 notion ».
 
+**Ce que ce registre ne couvre pas, et pourquoi — relevé au lot F5.**
+`/bia/examen-blanc` n'y a jamais figuré : son moteur est distinct de
+`QuizPlayer`, et le registre est indexé sur les appelants de ce dernier. La
+route était donc, jusqu'à F5, une page de production sans témoin de
+non-régression sur l'invariant « aucune classe du Banc hors des routes
+migrées ». Le trou est refermé par le fait même de la migration —
+`e2e/bia-examen-banc.spec.ts` la couvre désormais en positif — mais il faut le
+noter : **un registre indexé sur un composant est aveugle à tout moteur
+concurrent**. Le lot F9 (SECPIL) et le lot F7 (coquille psychotechnique)
+présenteront la même configuration.
+
 ## Campagnes de tests
 
 | Mesure                                  | Valeur                                                      |
 | --------------------------------------- | ----------------------------------------------------------- |
-| Tests découverts                        | **778** en 40 fichiers, deux projets (`chromium`, `mobile`) |
-| Dernière campagne complète, sans filtre | **764 réussis, 14 ignorés, 0 échec, 0 flaky** — après F3    |
-| Tests unitaires (`npm run check`)       | **823** en 55 fichiers                                      |
+| Tests découverts                        | **834** en 44 fichiers, deux projets (`chromium`, `mobile`) |
+| Dernière campagne complète, sans filtre | **820 réussis, 14 ignorés, 0 échec, 0 flaky** — après F5    |
+| Tests unitaires (`npm run check`)       | **824** en 55 fichiers                                      |
 
 La suite s'exécute sur une **compilation de production**, jamais sur le serveur
 de développement — voir le commentaire de `playwright.config.ts` pour les quatre
