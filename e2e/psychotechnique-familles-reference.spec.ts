@@ -157,7 +157,27 @@ for (const epreuve of EPREUVES) {
         (défaut R-02), et aucune inspection statique ne l'atteignait.
       */
       await lancer(page, epreuve);
-      await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+      /*
+        « AU PLUS un », et non « exactement un » — corrigé après la première
+        migration du lot F7b, qui a montré que l'assertion encodait un état
+        plutôt qu'un invariant.
+
+        Le défaut R-02 était l'apparition d'un SECOND titre de niveau 1 pendant
+        une phase de jeu. C'est cela qu'il faut interdire. Or le mode séance
+        replie le chapeau éditorial, titre compris : sur une route migrée, la
+        séance n'expose plus aucun `<h1>`, et « exactement un » y échouerait —
+        en signalant le repli, qui est le but du chantier, et non une
+        régression.
+
+        **Ce zéro est consigné comme une observation à trancher à la clôture du
+        Banc**, et il vaut pour les cinq routes déjà migrées, pas seulement
+        pour celles-ci : une séance sans titre de niveau 1 laisse la question
+        « où suis-je » au seul nom accessible du cadre de séance. Ce nom
+        existe et est vérifié ailleurs ; savoir s'il suffit est une décision de
+        doctrine, pas un correctif à glisser dans une référence.
+      */
+      const titres = await page.getByRole("heading", { level: 1 }).count();
+      expect(titres, `${epreuve.nom} — jamais deux titres de niveau 1`).toBeLessThanOrEqual(1);
     });
   });
 }

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import { TriangleFigure, TrianglePieceView } from "@/features/psychotech/triangle-figure";
 import {
   buildTriangleSession,
@@ -111,7 +112,18 @@ function TrianglesTutorial() {
   );
 }
 
-export function TrianglesTest() {
+export interface TrianglesTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. C'est la condition pour que l'aire
+   * de jeu entre dans le cadre : mesuré avant migration, le premier contrôle
+   * de réponse tombait à 1 363 px sur un écran de 900 et à 1 347 px sur un
+   * écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function TrianglesTest({ entete }: TrianglesTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [format, setFormat] = React.useState<TriangleFormatKey>("officiel");
   const [training, setTraining] = React.useState(false);
@@ -122,29 +134,11 @@ export function TrianglesTest() {
   const [remaining, setRemaining] = React.useState(0);
   const [history, setHistory] = React.useState<HistoryEntry[]>([]);
   const deadlineRef = React.useRef(0);
-  const rootRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const id = requestAnimationFrame(() => setHistory(loadHistory()));
     return () => cancelAnimationFrame(id);
   }, []);
-
-  /**
-   * Ramène l'exercice en haut de l'écran **après** le changement de phase :
-   * mesurer avant que React n'ait remplacé le contenu reviendrait à calculer
-   * un défilement sur une page qui n'existe déjà plus.
-   */
-  const first = React.useRef(true);
-  React.useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
-    const element = rootRef.current;
-    if (!element) return;
-    const top = element.getBoundingClientRect().top + window.scrollY - 88;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [phase, index]);
 
   const sessionRef = React.useRef<{
     puzzles: TrianglePuzzle[];
@@ -219,218 +213,230 @@ export function TrianglesTest() {
     setChecked(false);
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
-    return (
-      <div ref={rootRef} className="space-y-6">
-        <TrianglesTutorial />
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b.
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Les trois niveaux</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {TRIANGLE_LEVEL_LIST.map((info) => (
-              <div key={info.level} className="bg-card rounded-lg border p-4">
-                <p className="text-primary text-xs font-semibold tracking-wide uppercase">
-                  Niveau {info.level}
-                </p>
-                <p className="mt-0.5 text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            Les niveaux s’enchaînent par tiers au fil de la session — comme à l’épreuve, où les
-            motifs se combinent de la première à la dernière question.
-          </p>
-        </section>
+    `ModeSeance` ne démonte pas l'introduction, il la masque : « Revoir les
+    consignes » doit pouvoir la ramener sans rien reconstruire. Le rendu
+    historique la retournait par sortie anticipée, ce qui la faisait
+    disparaître du document au lancement.
+  */
+  const ecranIntro = (
+    <div className="space-y-6">
+      {entete}
+      <TrianglesTutorial />
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Lancer une session</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {Object.values(TRIANGLE_FORMATS).map((info) => (
-              <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
-                <p className="text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                <p className="text-muted-foreground mt-2 text-sm tabular-nums">
-                  {info.size} figures · {formatDuration(info.durationSeconds)}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button size="sm" onClick={() => start(info.key, false)}>
-                    Lancer le test
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
-                    Entraînement
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            En <strong>mode entraînement</strong>, pas de chronomètre : la règle et la figure
-            complétée s’affichent après chaque réponse.
-          </p>
-        </section>
-
-        {history.length > 0 ? (
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
-            <div className="overflow-hidden rounded-lg border">
-              <table className="w-full text-sm">
-                <tbody>
-                  {history.map((entry, i) => (
-                    <tr key={i} className="border-t first:border-t-0">
-                      <td className="text-muted-foreground p-2.5">
-                        {new Date(entry.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </td>
-                      <td className="p-2.5">
-                        {TRIANGLE_FORMATS[entry.format].label}
-                        {entry.training ? " · entraînement" : ""}
-                      </td>
-                      <td className="p-2.5 text-right font-semibold tabular-nums">
-                        {entry.correct}/{entry.total}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Les trois niveaux</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {TRIANGLE_LEVEL_LIST.map((info) => (
+            <div key={info.level} className="bg-card rounded-lg border p-4">
+              <p className="text-primary text-xs font-semibold tracking-wide uppercase">
+                Niveau {info.level}
+              </p>
+              <p className="mt-0.5 text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
             </div>
-          </section>
-        ) : null}
-
-        <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
-            reproduit le <em>principe</em> du test des triangles (reconnaissance de motifs et
-            déduction) avec nos propres figures. Sans lien avec le logiciel officiel des armées.
-          </p>
+          ))}
         </div>
+        <p className="text-muted-foreground text-sm">
+          Les niveaux s’enchaînent par tiers au fil de la session — comme à l’épreuve, où les motifs
+          se combinent de la première à la dernière question.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Lancer une session</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {Object.values(TRIANGLE_FORMATS).map((info) => (
+            <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
+              <p className="text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
+              <p className="text-muted-foreground mt-2 text-sm tabular-nums">
+                {info.size} figures · {formatDuration(info.durationSeconds)}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button size="sm" onClick={() => start(info.key, false)}>
+                  Lancer le test
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
+                  Entraînement
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-muted-foreground text-sm">
+          En <strong>mode entraînement</strong>, pas de chronomètre : la règle et la figure
+          complétée s’affichent après chaque réponse.
+        </p>
+      </section>
+
+      {history.length > 0 ? (
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+          <div className="overflow-hidden rounded-lg border">
+            <table className="w-full text-sm">
+              <tbody>
+                {history.map((entry, i) => (
+                  <tr key={i} className="border-t first:border-t-0">
+                    <td className="text-muted-foreground p-2.5">
+                      {new Date(entry.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                      })}
+                    </td>
+                    <td className="p-2.5">
+                      {TRIANGLE_FORMATS[entry.format].label}
+                      {entry.training ? " · entraînement" : ""}
+                    </td>
+                    <td className="p-2.5 text-right font-semibold tabular-nums">
+                      {entry.correct}/{entry.total}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
+        <p className="text-muted-foreground text-sm">
+          <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
+          reproduit le <em>principe</em> du test des triangles (reconnaissance de motifs et
+          déduction) avec nos propres figures. Sans lien avec le logiciel officiel des armées.
+        </p>
       </div>
-    );
-  }
+    </div>
+  );
 
   // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
-    const score = scoreTriangleSession(puzzles, answers);
-    return (
-      <div ref={rootRef} className="space-y-6">
-        <div className="bg-card rounded-lg border p-5 text-center">
-          <p className="text-muted-foreground text-sm">
-            {TRIANGLE_FORMATS[format].label}
-            {training ? " · entraînement" : ""}
-          </p>
-          <p
-            className={cn(
-              "mt-1 text-5xl font-bold tabular-nums",
-              score.precision >= 80
-                ? "text-success"
-                : score.precision >= 50
-                  ? "text-warning"
-                  : "text-destructive"
-            )}
-          >
-            {score.correct}
-            <span className="text-muted-foreground text-2xl">/{score.total}</span>
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            {score.answered} figure{score.answered > 1 ? "s" : ""} traitée
-            {score.answered > 1 ? "s" : ""} sur {score.total} · meilleure série&nbsp;:{" "}
-            {score.bestStreak}
-          </p>
-        </div>
+  const score = scoreTriangleSession(puzzles, answers);
+  const ecranBilan = (
+    <div className="space-y-6">
+      <div className="bg-card rounded-lg border p-5 text-center">
+        <p className="text-muted-foreground text-sm">
+          {TRIANGLE_FORMATS[format].label}
+          {training ? " · entraînement" : ""}
+        </p>
+        <p
+          className={cn(
+            "mt-1 text-5xl font-bold tabular-nums",
+            score.precision >= 80
+              ? "text-success"
+              : score.precision >= 50
+                ? "text-warning"
+                : "text-destructive"
+          )}
+        >
+          {score.correct}
+          <span className="text-muted-foreground text-2xl">/{score.total}</span>
+        </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          {score.answered} figure{score.answered > 1 ? "s" : ""} traitée
+          {score.answered > 1 ? "s" : ""} sur {score.total} · meilleure série&nbsp;:{" "}
+          {score.bestStreak}
+        </p>
+      </div>
 
-        <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Correction</h2>
-          {puzzles.map((puzzle, i) => {
-            const given = answers[i];
-            const right = given === puzzle.answerIndex;
-            const goodLabel = OPTION_LABELS[puzzle.answerIndex];
-            return (
-              <div key={i} className="bg-card rounded-lg border p-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold">
-                    Figure {i + 1}
-                    <span className="text-muted-foreground font-normal">
-                      {" "}
-                      · niveau {puzzle.level}
-                    </span>
-                  </p>
-                  <span className="flex flex-wrap items-center gap-2">
-                    {!right ? (
-                      <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
-                        {given === null
-                          ? "Non traitée"
-                          : `Vous aviez répondu ${OPTION_LABELS[given]}`}
-                      </span>
-                    ) : null}
-                    <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
-                      {right ? `Juste — ${goodLabel}` : `Bonne réponse : ${goodLabel}`}
-                    </span>
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">Correction</h2>
+        {puzzles.map((puzzle, i) => {
+          const given = answers[i];
+          const right = given === puzzle.answerIndex;
+          const goodLabel = OPTION_LABELS[puzzle.answerIndex];
+          return (
+            <div key={i} className="bg-card rounded-lg border p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-semibold">
+                  Figure {i + 1}
+                  <span className="text-muted-foreground font-normal">
+                    {" "}
+                    · niveau {puzzle.level}
                   </span>
-                </div>
-
-                <p className="text-muted-foreground mt-2 text-sm">
-                  <strong className="text-foreground">La règle.</strong> {puzzle.rule}
                 </p>
+                <span className="flex flex-wrap items-center gap-2">
+                  {!right ? (
+                    <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
+                      {given === null
+                        ? "Non traitée"
+                        : `Vous aviez répondu ${OPTION_LABELS[given]}`}
+                    </span>
+                  ) : null}
+                  <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
+                    {right ? `Juste — ${goodLabel}` : `Bonne réponse : ${goodLabel}`}
+                  </span>
+                </span>
+              </div>
 
-                <div className="mt-3 grid gap-4 sm:grid-cols-3">
+              <p className="text-muted-foreground mt-2 text-sm">
+                <strong className="text-foreground">La règle.</strong> {puzzle.rule}
+              </p>
+
+              <div className="mt-3 grid gap-4 sm:grid-cols-3">
+                <div>
+                  <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                    La figure posée
+                  </p>
+                  <TriangleFigure puzzle={puzzle} />
+                </div>
+                <div>
+                  <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
+                    Complétée — pièce {goodLabel}
+                  </p>
+                  <TriangleFigure
+                    puzzle={puzzle}
+                    filled={puzzle.options[puzzle.answerIndex]}
+                    className="ring-success/50 rounded-lg ring-2"
+                  />
+                </div>
+                {!right && given !== null ? (
                   <div>
-                    <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
-                      La figure posée
-                    </p>
-                    <TriangleFigure puzzle={puzzle} />
-                  </div>
-                  <div>
-                    <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
-                      Complétée — pièce {goodLabel}
+                    <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                      Votre pièce {OPTION_LABELS[given]}
                     </p>
                     <TriangleFigure
                       puzzle={puzzle}
-                      filled={puzzle.options[puzzle.answerIndex]}
-                      className="ring-success/50 rounded-lg ring-2"
+                      filled={puzzle.options[given]}
+                      className="ring-destructive/50 rounded-lg ring-2"
                     />
+                    <p className="text-muted-foreground mt-2 text-sm">
+                      {puzzle.differences[given]}.
+                    </p>
                   </div>
-                  {!right && given !== null ? (
-                    <div>
-                      <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
-                        Votre pièce {OPTION_LABELS[given]}
-                      </p>
-                      <TriangleFigure
-                        puzzle={puzzle}
-                        filled={puzzle.options[given]}
-                        className="ring-destructive/50 rounded-lg ring-2"
-                      />
-                      <p className="text-muted-foreground mt-2 text-sm">
-                        {puzzle.differences[given]}.
-                      </p>
-                    </div>
-                  ) : null}
-                </div>
+                ) : null}
               </div>
-            );
-          })}
-        </section>
+            </div>
+          );
+        })}
+      </section>
 
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={() => start(format, training)}>Recommencer</Button>
-          <Button variant="outline" onClick={() => setPhase("intro")}>
-            Changer de format
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/le-test-des-triangles">Lire la méthode</Link>
-          </Button>
-        </div>
+      <div className="flex flex-wrap gap-3">
+        <Button onClick={() => start(format, training)}>Recommencer</Button>
+        <Button variant="outline" onClick={() => setPhase("intro")}>
+          Changer de format
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/psychotechnique/exercices/le-test-des-triangles">Lire la méthode</Link>
+        </Button>
       </div>
-    );
-  }
+    </div>
+  );
 
-  // --- Session -------------------------------------------------------------
-  const right = checked && answer === current.answerIndex;
+  /*
+    GARDE EXPLICITE — et c'est la campagne qui l'a exigée.
 
-  return (
-    <div ref={rootRef} className="min-h-[calc(100svh-7rem)] space-y-5">
+    Le rendu historique protégeait le code de séance par ses sorties
+    anticipées : hors séance, `puzzles` est vide, `current` vaut `undefined`,
+    et rien ne lisait jamais ses champs. Calculés en toutes phases, ces écrans
+    perdent cette protection ; la première version de ce fichier faisait
+    tomber la PRÉ-COMPILATION de la route sur `current.level`.
+  */
+  const right = checked && answer !== null && current ? answer === current.answerIndex : false;
+
+  const ecranSession = !current ? null : (
+    <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
           Figure {index + 1}
@@ -525,10 +531,30 @@ export function TrianglesTest() {
         <Button onClick={goNext} disabled={!training && answer === null}>
           {index + 1 >= puzzles.length ? "Terminer" : "Figure suivante"}
         </Button>
-        <Button variant="ghost" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance par l'un des trois boutons de
+    niveau de sa présentation, jamais par une commande unique — c'est le cas
+    prévu au lot F7a. L'ancienne commande « Abandonner » disparaît : le mode
+    séance offre « Quitter la séance », qui fait la même chose et se trouve
+    au même endroit sur toutes les routes du Banc.
+
+    Le défilement automatique maison part avec elle. Il replaçait la vue sans
+    déplacer le focus : au clavier, on restait donc en haut du document
+    pendant que l'écran, lui, avait bougé. Le contrat de focus du lot F1a fait
+    les deux, et une seule fois.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Test des triangles"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }
