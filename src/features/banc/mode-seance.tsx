@@ -51,8 +51,42 @@ export interface ModeSeanceProps {
   children: React.ReactNode;
   /** Libellé du bouton de lancement. */
   libelleLancement?: string;
-  /** Nom accessible de l'aire de séance — ce que le focus fera lire. */
+  /**
+   * Le titre de la séance — **et son titre de niveau 1** — lot F7d.
+   *
+   * Court : c'est ce que le focus fait lire à l'entrée, et ce que la
+   * navigation par titres annonce.
+   *
+   * ── Pourquoi la séance porte un `<h1>` ──────────────────────────────────
+   * Arbitrage du 2026-08-01. Le mode séance retire le chapeau éditorial de
+   * l'arbre d'accessibilité, titre compris : la séance devient
+   * fonctionnellement une nouvelle vue et doit donc exposer une structure
+   * complète. Le `role="group"` nommé ne suffisait pas — il nomme l'aire de
+   * jeu, mais il n'a pas la sémantique `heading`, n'apparaît pas dans la
+   * liste des titres d'un lecteur d'écran, n'est pas un point de repère, et
+   * n'expose pas la séance comme le nouveau sujet principal de la vue.
+   *
+   * La règle générale, applicable au-delà du Banc :
+   *
+   *   lorsqu'un état interactif remplace la tâche principale et retire le
+   *   titre de la vue précédente, il doit fournir son propre titre principal.
+   *   Un nom accessible sur un groupe complète cette structure ; il ne la
+   *   remplace pas.
+   *
+   * Le groupe est donc nommé PAR ce titre (`aria-labelledby`), et non plus
+   * par un `aria-label` qui le doublait.
+   */
   labelSeance: string;
+  /**
+   * Masquer visuellement le titre de séance — **jamais** de l'arbre
+   * d'accessibilité.
+   *
+   * À n'employer que si sa présence visuelle est réellement redondante avec
+   * une information déjà affichée par la séance. Aucune route ne l'utilise
+   * aujourd'hui : vérifié appelant par appelant, aucune n'affiche son propre
+   * titre en séance — `QuizPlayer` ne rend le sien qu'en `aria-label`.
+   */
+  titreSeanceMasque?: boolean;
   /**
    * Appelé **après** que l'aire est en place et le focus déplacé.
    *
@@ -132,14 +166,17 @@ export function ModeSeance({
   lancementDesactive = false,
   idDescriptionLancement,
   focusAuMontage = false,
+  titreSeanceMasque = false,
   enSeance: enSeanceControle,
   className,
 }: ModeSeanceProps) {
   const controle = enSeanceControle !== undefined;
+  const idTitreSeance = React.useId();
   const [enSeanceInterne, setEnSeanceInterne] = React.useState(false);
   const enSeance = controle ? enSeanceControle : enSeanceInterne;
   const [consignesVisibles, setConsignesVisibles] = React.useState(false);
   const zoneSeance = React.useRef<HTMLDivElement>(null);
+  const titreSeance = React.useRef<HTMLHeadingElement>(null);
   const boutonLancement = React.useRef<HTMLButtonElement>(null);
   const declencheur = React.useRef<Element | null>(null);
   const entreeNotifiee = React.useRef(false);
@@ -165,9 +202,17 @@ export function ModeSeance({
       return;
     }
     entreeNotifiee.current = true;
-    // L'ordre compte : l'aire est rendue, le focus s'y pose, et seulement
-    // ensuite le moteur est prévenu qu'il peut lancer son temps.
-    deplacerFocus(zoneSeance.current, { declencheur: declencheur.current });
+    /*
+      L'ordre compte : l'aire est rendue, le focus s'y pose, et seulement
+      ensuite le moteur est prévenu qu'il peut lancer son temps.
+
+      **La cible du focus est le TITRE de séance depuis le lot F7d**, et non
+      plus le cadre. Le titre est ce qui annonce le nouveau sujet de la vue ;
+      le laisser de côté aurait fait lire un nom de groupe sans jamais situer
+      la personne dans la structure du document. Le cadre reste nommé par ce
+      même titre, il n'a donc rien perdu.
+    */
+    deplacerFocus(titreSeance.current, { declencheur: declencheur.current });
     onSeanceEntree?.();
   }, [enSeance, onSeanceEntree]);
 
@@ -206,11 +251,25 @@ export function ModeSeance({
 
       {enSeance ? (
         <>
+          {/*
+            Le titre principal de l'état actif. Il n'existe QUE pendant la
+            séance : au repos, c'est le titre éditorial de la page qui tient ce
+            rôle, et il n'y a jamais deux `<h1>` dans une même phase.
+          */}
+          <h1
+            ref={titreSeance}
+            id={idTitreSeance}
+            tabIndex={-1}
+            className={cn("banc-titre-seance", titreSeanceMasque && "sr-only")}
+          >
+            {labelSeance}
+          </h1>
+
           <div
             ref={zoneSeance}
             tabIndex={-1}
             role="group"
-            aria-label={labelSeance}
+            aria-labelledby={idTitreSeance}
             className="banc-zone-seance"
           >
             {children}

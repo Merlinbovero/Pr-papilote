@@ -163,14 +163,27 @@ tutoriel de présentation est le plus haut des sept, et le repli ne suffit pas
 à lui seul. Le traiter demande de raccourcir le contenu ou de réorganiser
 l'écran de choix — décision éditoriale, pas de registre : elle reste ouverte.
 
-### Une observation à trancher à la clôture du Banc
+### Le titre de séance — question tranchée le 2026-08-01
 
-Le mode séance replie le chapeau éditorial, **titre de niveau 1 compris**. En
-séance, une route migrée n'expose donc **aucun `<h1>`** — cela vaut pour les
-six routes déjà portées par le Banc, pas seulement pour les psychotechniques.
-La question « où suis-je » repose alors sur le seul nom accessible du cadre de
-séance, qui existe et est vérifié. Savoir si cela suffit est une décision de
-doctrine, à prendre explicitement plutôt qu'à subir.
+Le mode séance replie le chapeau éditorial, titre de niveau 1 compris. La
+question posée était : le nom accessible du cadre de séance suffit-il à tenir
+ce rôle ?
+
+**Réponse : non, et la séance porte désormais son propre `<h1>`** (lot F7d,
+appliqué aux onze routes en un seul point). Le `role="group"` nommé n'a pas la
+sémantique `heading`, n'apparaît pas dans la liste des titres d'un lecteur
+d'écran, ne constitue pas un point de repère, et n'expose pas la séance comme
+le nouveau sujet principal de la vue. Le groupe est conservé, mais nommé **par**
+ce titre.
+
+La règle générale, qui dépasse le Banc, est dans `design-system.md` :
+
+> lorsqu'un état interactif remplace la tâche principale et retire le titre de
+> la vue précédente, il doit fournir son propre titre principal. Un nom
+> accessible sur un groupe complète cette structure ; il ne la remplace pas.
+
+Garde : `e2e/banc-titre-seance.spec.ts` — onze routes × quatre phases, aucune
+phase à zéro ou deux titres.
 
 ## Le décompte des appelants — trois définitions, trois nombres
 

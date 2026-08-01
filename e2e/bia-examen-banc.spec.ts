@@ -188,7 +188,16 @@ test("le chapeau éditorial se replie au lancement et reste rappelable", async (
   await vivierFixe(page);
   await page.goto(EXAMEN);
 
-  const titre = page.getByRole("heading", { level: 1, name: /Examen blanc BIA/i });
+  /*
+    **Précisé au lot F7d.** La séance porte désormais son propre `<h1>`, et il
+    s'appelle lui aussi « Examen blanc BIA » — c'est voulu, la tâche et la page
+    ont le même nom. Le contrôle doit donc désigner le titre ÉDITORIAL, celui
+    de l'avant-séance, sans quoi il lit le titre de séance et conclut que le
+    chapeau ne s'est pas replié.
+  */
+  const titre = page
+    .locator(".banc-introduction")
+    .getByRole("heading", { level: 1, name: /Examen blanc BIA/i });
   await expect(titre).toBeVisible();
 
   await page.getByRole("button", { name: /Commencer l['’]examen/i }).click();
