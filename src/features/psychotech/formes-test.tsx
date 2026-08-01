@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import { FormeImage, usePreloadFormes } from "@/features/psychotech/forme-scene";
 import {
   boundingRadius,
@@ -170,7 +171,17 @@ function PieceComparison({
   );
 }
 
-export function FormesTest() {
+export interface FormesTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 1 527 px sur un écran de 900 et à 1 427 px
+   * sur un écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function FormesTest({ entete }: FormesTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [format, setFormat] = React.useState<FormeFormatKey>("officiel");
   const [training, setTraining] = React.useState(false);
@@ -181,22 +192,15 @@ export function FormesTest() {
   const [remaining, setRemaining] = React.useState(0);
   const [history, setHistory] = React.useState<HistoryEntry[]>([]);
   const deadlineRef = React.useRef(0);
-  const rootRef = React.useRef<HTMLDivElement>(null);
+  /*
+    Le défilement automatique maison est retiré au lot F7b.
 
-  /**
-   * Ramène l'exercice en haut de l'écran. Sans cela on atterrit au milieu des
-   * propositions, l'assemblage hors champ : il faut remonter à la main avant de
-   * pouvoir répondre. Même chose au bilan, où l'on tombait sur la dernière
-   * correction plutôt que sur son score.
-   */
-  const scrollToTop = React.useCallback(() => {
-    requestAnimationFrame(() => {
-      const element = rootRef.current;
-      if (!element) return;
-      const top = element.getBoundingClientRect().top + window.scrollY - 88;
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-    });
-  }, []);
+    Il répondait à un vrai défaut — on atterrissait au milieu des propositions,
+    l'assemblage hors champ — mais il replaçait la VUE sans déplacer le FOCUS :
+    au clavier, on restait en haut du document pendant que l'écran avait bougé.
+    Le contrat de focus du lot F1a, porté par `ModeSeance`, fait les deux et
+    une seule fois.
+  */
 
   usePreloadFormes();
 
@@ -237,8 +241,7 @@ export function FormesTest() {
       return next;
     });
     setPhase("done");
-    scrollToTop();
-  }, [scrollToTop]);
+  }, []);
 
   React.useEffect(() => {
     if (phase !== "playing" || training) return;
@@ -253,22 +256,18 @@ export function FormesTest() {
     return () => window.clearInterval(id);
   }, [phase, training, finish]);
 
-  const start = React.useCallback(
-    (key: FormeFormatKey, isTraining: boolean) => {
-      const session = buildFormeSession(Math.floor(Math.random() * 1_000_000_000), key);
-      setFormat(key);
-      setTraining(isTraining);
-      setPuzzles(session);
-      setAnswers(session.map(() => null));
-      setIndex(0);
-      setChecked(false);
-      deadlineRef.current = Date.now() + FORME_FORMATS[key].durationSeconds * 1000;
-      setRemaining(FORME_FORMATS[key].durationSeconds);
-      setPhase("playing");
-      scrollToTop();
-    },
-    [scrollToTop]
-  );
+  const start = React.useCallback((key: FormeFormatKey, isTraining: boolean) => {
+    const session = buildFormeSession(Math.floor(Math.random() * 1_000_000_000), key);
+    setFormat(key);
+    setTraining(isTraining);
+    setPuzzles(session);
+    setAnswers(session.map(() => null));
+    setIndex(0);
+    setChecked(false);
+    deadlineRef.current = Date.now() + FORME_FORMATS[key].durationSeconds * 1000;
+    setRemaining(FORME_FORMATS[key].durationSeconds);
+    setPhase("playing");
+  }, []);
 
   const current = puzzles[index];
   const answer = answers[index] ?? null;
@@ -286,229 +285,233 @@ export function FormesTest() {
     }
     setIndex(index + 1);
     setChecked(false);
-    scrollToTop();
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
-    return (
-      <div ref={rootRef} className="space-y-6">
-        <FormesTutorial />
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const ecranIntro = (
+    <div className="space-y-6">
+      {entete}
+      <FormesTutorial />
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Les trois niveaux</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {FORME_LEVEL_LIST.map((info) => (
-              <div key={info.level} className="bg-card rounded-lg border p-4">
-                <p className="text-primary text-xs font-semibold tracking-wide uppercase">
-                  Niveau {info.level}
-                </p>
-                <p className="mt-0.5 text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            Les niveaux s’enchaînent au fil de la session, par tiers — comme à l’épreuve, où la
-            difficulté monte de la première à la dernière question.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Lancer une session</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {Object.values(FORME_FORMATS).map((info) => (
-              <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
-                <p className="text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                <p className="text-muted-foreground mt-2 text-sm tabular-nums">
-                  {info.size} assemblages · {formatDuration(info.durationSeconds)}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button size="sm" onClick={() => start(info.key, false)}>
-                    Lancer le test
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
-                    Entraînement
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            En <strong>mode entraînement</strong>, pas de chronomètre : la réponse est commentée
-            après chaque assemblage, et l’on voit ce qui clochait dans le jeu choisi.
-          </p>
-        </section>
-
-        {history.length > 0 ? (
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
-            <div className="overflow-hidden rounded-lg border">
-              <table className="w-full text-sm">
-                <tbody>
-                  {history.map((entry, i) => (
-                    <tr key={i} className="border-t first:border-t-0">
-                      <td className="text-muted-foreground p-2.5">
-                        {new Date(entry.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </td>
-                      <td className="p-2.5">
-                        {FORME_FORMATS[entry.format].label}
-                        {entry.training ? " · entraînement" : ""}
-                      </td>
-                      <td className="p-2.5 text-right font-semibold tabular-nums">
-                        {entry.correct}/{entry.total}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Les trois niveaux</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {FORME_LEVEL_LIST.map((info) => (
+            <div key={info.level} className="bg-card rounded-lg border p-4">
+              <p className="text-primary text-xs font-semibold tracking-wide uppercase">
+                Niveau {info.level}
+              </p>
+              <p className="mt-0.5 text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
             </div>
-          </section>
-        ) : null}
-
-        <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
-            reproduit le <em>principe</em> du test des formes imbriquées (visualisation dans
-            l’espace et projection en 3D) avec nos propres assemblages. Sans lien avec le logiciel
-            officiel des armées.
-          </p>
+          ))}
         </div>
+        <p className="text-muted-foreground text-sm">
+          Les niveaux s’enchaînent au fil de la session, par tiers — comme à l’épreuve, où la
+          difficulté monte de la première à la dernière question.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Lancer une session</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {Object.values(FORME_FORMATS).map((info) => (
+            <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
+              <p className="text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
+              <p className="text-muted-foreground mt-2 text-sm tabular-nums">
+                {info.size} assemblages · {formatDuration(info.durationSeconds)}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button size="sm" onClick={() => start(info.key, false)}>
+                  Lancer le test
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
+                  Entraînement
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-muted-foreground text-sm">
+          En <strong>mode entraînement</strong>, pas de chronomètre : la réponse est commentée après
+          chaque assemblage, et l’on voit ce qui clochait dans le jeu choisi.
+        </p>
+      </section>
+
+      {history.length > 0 ? (
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+          <div className="overflow-hidden rounded-lg border">
+            <table className="w-full text-sm">
+              <tbody>
+                {history.map((entry, i) => (
+                  <tr key={i} className="border-t first:border-t-0">
+                    <td className="text-muted-foreground p-2.5">
+                      {new Date(entry.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                      })}
+                    </td>
+                    <td className="p-2.5">
+                      {FORME_FORMATS[entry.format].label}
+                      {entry.training ? " · entraînement" : ""}
+                    </td>
+                    <td className="p-2.5 text-right font-semibold tabular-nums">
+                      {entry.correct}/{entry.total}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
+        <p className="text-muted-foreground text-sm">
+          <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
+          reproduit le <em>principe</em> du test des formes imbriquées (visualisation dans l’espace
+          et projection en 3D) avec nos propres assemblages. Sans lien avec le logiciel officiel des
+          armées.
+        </p>
       </div>
-    );
-  }
+    </div>
+  );
 
   // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
-    const score = scoreFormeSession(puzzles, answers);
-    return (
-      <div ref={rootRef} className="space-y-6">
-        <div className="bg-card rounded-lg border p-5 text-center">
-          <p className="text-muted-foreground text-sm">
-            {FORME_FORMATS[format].label}
-            {training ? " · entraînement" : ""}
-          </p>
-          <p
-            className={cn(
-              "mt-1 text-5xl font-bold tabular-nums",
-              score.precision >= 80
-                ? "text-success"
-                : score.precision >= 50
-                  ? "text-warning"
-                  : "text-destructive"
-            )}
-          >
-            {score.correct}
-            <span className="text-muted-foreground text-2xl">/{score.total}</span>
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            {score.answered} assemblage{score.answered > 1 ? "s" : ""} traité
-            {score.answered > 1 ? "s" : ""} sur {score.total} · meilleure série&nbsp;:{" "}
-            {score.bestStreak}
-          </p>
-        </div>
-
-        <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Correction</h2>
-          {puzzles.map((puzzle, i) => {
-            const given = answers[i];
-            const right = given === puzzle.answerIndex;
-            const goodLabel = OPTION_LABELS[puzzle.answerIndex];
-            return (
-              <div key={i} className="bg-card rounded-lg border p-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold">
-                    Assemblage {i + 1}
-                    <span className="text-muted-foreground font-normal">
-                      {" "}
-                      · niveau {puzzle.level}
-                    </span>
-                  </p>
-                  {/* La bonne réponse est annoncée en clair, pas à chercher
-                      dans le paragraphe d'explication. */}
-                  <span className="flex flex-wrap items-center gap-2">
-                    {!right ? (
-                      <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
-                        {given === null
-                          ? "Non traité"
-                          : `Vous aviez répondu jeu ${OPTION_LABELS[given]}`}
-                      </span>
-                    ) : null}
-                    <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
-                      {right ? `Juste — jeu ${goodLabel}` : `Bonne réponse : jeu ${goodLabel}`}
-                    </span>
-                  </span>
-                </div>
-
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  <div>
-                    <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
-                      L’assemblage
-                    </p>
-                    <FormeImage
-                      puzzle={puzzle}
-                      kind={{ mode: "assembly" }}
-                      alt={`Assemblage ${i + 1}.`}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
-                      Le bon jeu — {goodLabel}
-                    </p>
-                    <FormeImage
-                      puzzle={puzzle}
-                      kind={{ mode: "option", optionIndex: puzzle.answerIndex }}
-                      alt={`Le jeu ${goodLabel}, celui qui construit l’assemblage ${i + 1}.`}
-                      className="ring-success/60 ring-2"
-                    />
-                  </div>
-                </div>
-
-                {/* Voir côte à côte le jeu choisi et le bon vaut mieux que
-                    n'importe quelle phrase pour comprendre son erreur. */}
-                {!right && given !== null ? (
-                  <>
-                    <div className="mt-3">
-                      <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
-                        Le jeu {OPTION_LABELS[given]}, votre réponse
-                      </p>
-                      <FormeImage
-                        puzzle={puzzle}
-                        kind={{ mode: "option", optionIndex: given }}
-                        alt={`Le jeu ${OPTION_LABELS[given]}, celui que vous aviez choisi.`}
-                        className="ring-destructive/50 ring-2"
-                      />
-                    </div>
-                    <PieceComparison puzzle={puzzle} given={given} label={OPTION_LABELS[given]} />
-                  </>
-                ) : null}
-              </div>
-            );
-          })}
-        </section>
-
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={() => start(format, training)}>Recommencer</Button>
-          <Button variant="outline" onClick={() => setPhase("intro")}>
-            Changer de format
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/les-formes-imbriquees">Lire la méthode</Link>
-          </Button>
-        </div>
+  const score = scoreFormeSession(puzzles, answers);
+  const ecranBilan = (
+    <div className="space-y-6">
+      <div className="bg-card rounded-lg border p-5 text-center">
+        <p className="text-muted-foreground text-sm">
+          {FORME_FORMATS[format].label}
+          {training ? " · entraînement" : ""}
+        </p>
+        <p
+          className={cn(
+            "mt-1 text-5xl font-bold tabular-nums",
+            score.precision >= 80
+              ? "text-success"
+              : score.precision >= 50
+                ? "text-warning"
+                : "text-destructive"
+          )}
+        >
+          {score.correct}
+          <span className="text-muted-foreground text-2xl">/{score.total}</span>
+        </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          {score.answered} assemblage{score.answered > 1 ? "s" : ""} traité
+          {score.answered > 1 ? "s" : ""} sur {score.total} · meilleure série&nbsp;:{" "}
+          {score.bestStreak}
+        </p>
       </div>
-    );
-  }
 
-  // --- Session -------------------------------------------------------------
-  const right = checked && answer === current.answerIndex;
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">Correction</h2>
+        {puzzles.map((puzzle, i) => {
+          const given = answers[i];
+          const right = given === puzzle.answerIndex;
+          const goodLabel = OPTION_LABELS[puzzle.answerIndex];
+          return (
+            <div key={i} className="bg-card rounded-lg border p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-semibold">
+                  Assemblage {i + 1}
+                  <span className="text-muted-foreground font-normal">
+                    {" "}
+                    · niveau {puzzle.level}
+                  </span>
+                </p>
+                {/* La bonne réponse est annoncée en clair, pas à chercher
+                      dans le paragraphe d'explication. */}
+                <span className="flex flex-wrap items-center gap-2">
+                  {!right ? (
+                    <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
+                      {given === null
+                        ? "Non traité"
+                        : `Vous aviez répondu jeu ${OPTION_LABELS[given]}`}
+                    </span>
+                  ) : null}
+                  <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
+                    {right ? `Juste — jeu ${goodLabel}` : `Bonne réponse : jeu ${goodLabel}`}
+                  </span>
+                </span>
+              </div>
 
-  return (
-    <div ref={rootRef} className="space-y-5">
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div>
+                  <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                    L’assemblage
+                  </p>
+                  <FormeImage
+                    puzzle={puzzle}
+                    kind={{ mode: "assembly" }}
+                    alt={`Assemblage ${i + 1}.`}
+                  />
+                </div>
+                <div>
+                  <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
+                    Le bon jeu — {goodLabel}
+                  </p>
+                  <FormeImage
+                    puzzle={puzzle}
+                    kind={{ mode: "option", optionIndex: puzzle.answerIndex }}
+                    alt={`Le jeu ${goodLabel}, celui qui construit l’assemblage ${i + 1}.`}
+                    className="ring-success/60 ring-2"
+                  />
+                </div>
+              </div>
+
+              {/* Voir côte à côte le jeu choisi et le bon vaut mieux que
+                    n'importe quelle phrase pour comprendre son erreur. */}
+              {!right && given !== null ? (
+                <>
+                  <div className="mt-3">
+                    <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                      Le jeu {OPTION_LABELS[given]}, votre réponse
+                    </p>
+                    <FormeImage
+                      puzzle={puzzle}
+                      kind={{ mode: "option", optionIndex: given }}
+                      alt={`Le jeu ${OPTION_LABELS[given]}, celui que vous aviez choisi.`}
+                      className="ring-destructive/50 ring-2"
+                    />
+                  </div>
+                  <PieceComparison puzzle={puzzle} given={given} label={OPTION_LABELS[given]} />
+                </>
+              ) : null}
+            </div>
+          );
+        })}
+      </section>
+
+      <div className="flex flex-wrap gap-3">
+        <Button onClick={() => start(format, training)}>Recommencer</Button>
+        <Button variant="outline" onClick={() => setPhase("intro")}>
+          Changer de format
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/psychotechnique/exercices/les-formes-imbriquees">Lire la méthode</Link>
+        </Button>
+      </div>
+    </div>
+  );
+
+  /*
+    GARDE EXPLICITE : hors séance, `puzzles` est vide et `current` vaut
+    `undefined`. Les sorties anticipées protégeaient ce code ; calculés en
+    toutes phases, ces écrans perdent cette protection.
+  */
+  const right = checked && answer !== null && current ? answer === current.answerIndex : false;
+
+  const ecranSession = !current ? null : (
+    <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
           Assemblage {index + 1}
@@ -605,10 +608,24 @@ export function FormesTest() {
         <Button onClick={goNext} disabled={!training && answer === null}>
           {index + 1 >= puzzles.length ? "Terminer" : "Assemblage suivant"}
         </Button>
-        <Button variant="ghost" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance par l'un des boutons de niveau de
+    sa présentation, jamais par une commande unique. « Abandonner » cède la
+    place à « Quitter la séance », au même endroit sur toutes les routes du
+    Banc.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Formes imbriquées"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }

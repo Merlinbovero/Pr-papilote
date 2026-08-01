@@ -4,6 +4,10 @@ import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { FormesTest } from "@/features/psychotech/formes-test";
 
+// La page pose `.banc` sur son `<main>` : c'est un point d'adhésion, donc
+// elle charge le registre (voir `mode-seance.tsx`).
+import "@/styles/banc.css";
+
 export const metadata: Metadata = {
   title: "Test des formes imbriquées — de quel jeu de pièces vient cet assemblage ?",
   description:
@@ -15,15 +19,8 @@ export const metadata: Metadata = {
  * notation vivent dans `src/lib/psychotech/formes.ts`.
  */
 export default function FormesImbriqueesPage() {
-  return (
-    <StandalonePageShell>
-      <SiteBreadcrumb
-        items={[
-          { label: "Accueil", href: "/" },
-          { label: "Psychotechnique", href: "/psychotechnique" },
-          { label: "Formes imbriquées" },
-        ]}
-      />
+  const entete = (
+    <>
       <header className="space-y-2">
         <p className="text-primary text-sm font-semibold tracking-wide uppercase">
           Psychotechnique · visualisation dans l’espace
@@ -31,7 +28,7 @@ export default function FormesImbriqueesPage() {
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
           Test des formes imbriquées
         </h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
+        <p className="banc-consigne text-lg" style={{ color: "var(--bc-encre2)" }}>
           Un assemblage de pièces enchevêtrées, quatre jeux de pièces désassemblées :{" "}
           <strong>un seul a servi à le construire</strong>. Trois niveaux, du jeu de trois pièces
           bien distinctes aux cinq pièces que seul un détail sépare. Les assemblages sont générés et
@@ -42,7 +39,21 @@ export default function FormesImbriqueesPage() {
         ficheId="psychotechnique.exercices.les-formes-imbriquees"
         intro="Compter les pièces, lire les contours avant les volumes, cartographier les jonctions, puis éliminer plutôt que confirmer — et pourquoi deux passages valent mieux qu'un."
       />
-      <FormesTest />
+    </>
+  );
+
+  return (
+    <StandalonePageShell className="banc max-w-none px-0 sm:px-0 lg:px-0">
+      <div className="banc-cadre">
+        <SiteBreadcrumb
+          items={[
+            { label: "Accueil", href: "/" },
+            { label: "Psychotechnique", href: "/psychotechnique" },
+            { label: "Formes imbriquées" },
+          ]}
+        />
+      </div>
+      <FormesTest entete={entete} />
     </StandalonePageShell>
   );
 }

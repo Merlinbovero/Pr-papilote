@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import {
   buildCodageSession,
   CODAGE_FORMATS,
@@ -120,7 +121,17 @@ function CodageGrid({
   );
 }
 
-export function CodageTest() {
+export interface CodageTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 950 px sur un écran de 900 et à 1 482 px sur
+   * un écran de 844 — le pire relevé du module.
+   */
+  entete?: React.ReactNode;
+}
+
+export function CodageTest({ entete }: CodageTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [format, setFormat] = React.useState<CodageFormatKey>("officiel");
   const [level, setLevel] = React.useState<CodageLevel>(1);
@@ -132,7 +143,6 @@ export function CodageTest() {
   const [remaining, setRemaining] = React.useState(0);
   const [history, setHistory] = React.useState<HistoryEntry[]>([]);
   const deadlineRef = React.useRef(0);
-  const rootRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const id = requestAnimationFrame(() => setHistory(loadHistory()));
@@ -145,17 +155,11 @@ export function CodageTest() {
    * avant que React n'ait remplacé le contenu donnait un défilement calculé sur
    * une page qui n'existait déjà plus.
    */
-  const firstRender = React.useRef(true);
-  React.useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
-    const element = rootRef.current;
-    if (!element) return;
-    const top = element.getBoundingClientRect().top + window.scrollY - 88;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [phase]);
+  /*
+    Le défilement automatique maison est retiré au lot F7b : il replaçait la
+    VUE sans déplacer le FOCUS. Le contrat du lot F1a, porté par `ModeSeance`,
+    fait les deux et une seule fois.
+  */
 
   const sessionRef = React.useRef<{
     session: CodageSession | null;
@@ -248,158 +252,164 @@ export function CodageTest() {
     window.setTimeout(advance, 1100);
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
-    const demo = buildCodageSession(20260727, "court", 1);
-    return (
-      <div ref={rootRef} className="space-y-6">
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Comment ça marche</h2>
-          <p className="text-muted-foreground max-w-prose text-sm">
-            Une <strong>grille de mots</strong> est affichée, chacun avec son{" "}
-            <strong>code à quatre chiffres</strong>. À chaque question, un mot est demandé : il faut
-            désigner son code parmi cinq propositions. La grille{" "}
-            <strong>ne change pas de toute la session</strong> — on la mémorise peu à peu, et c’est
-            ce qui fait gagner du temps.
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const demo = buildCodageSession(20260727, "court", 1);
+  const ecranIntro = (
+    <div className="space-y-6">
+      {entete}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Comment ça marche</h2>
+        <p className="text-muted-foreground max-w-prose text-sm">
+          Une <strong>grille de mots</strong> est affichée, chacun avec son{" "}
+          <strong>code à quatre chiffres</strong>. À chaque question, un mot est demandé : il faut
+          désigner son code parmi cinq propositions. La grille{" "}
+          <strong>ne change pas de toute la session</strong> — on la mémorise peu à peu, et c’est ce
+          qui fait gagner du temps.
+        </p>
+        <p className="text-muted-foreground max-w-prose text-sm">
+          Le piège : les <strong>cinq codes proposés viennent tous de la grille</strong>. Aucun
+          n’est inventé, donc aucun ne s’élimine sans avoir retrouvé la bonne ligne. Et ils se
+          ressemblent.
+        </p>
+        <div className="bg-card space-y-3 rounded-lg border p-4">
+          <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+            Exemple — quel code est associé au mot{" "}
+            <span className="text-foreground">{demo.grid[demo.questions[0].entryIndex].word}</span>{" "}
+            ?
           </p>
-          <p className="text-muted-foreground max-w-prose text-sm">
-            Le piège : les <strong>cinq codes proposés viennent tous de la grille</strong>. Aucun
-            n’est inventé, donc aucun ne s’élimine sans avoir retrouvé la bonne ligne. Et ils se
-            ressemblent.
-          </p>
-          <div className="bg-card space-y-3 rounded-lg border p-4">
-            <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-              Exemple — quel code est associé au mot{" "}
-              <span className="text-foreground">
-                {demo.grid[demo.questions[0].entryIndex].word}
-              </span>{" "}
-              ?
-            </p>
-            <CodageGrid session={demo} highlight={demo.questions[0].entryIndex} />
-            <div className="flex flex-wrap gap-2">
-              {demo.questions[0].options.map((code) => (
-                <span
-                  key={code}
-                  className="bg-muted/50 rounded-md border px-3 py-1.5 font-mono text-sm tabular-nums"
-                >
-                  {code}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Choisir sa grille</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {CODAGE_LEVEL_LIST.map((info) => (
-              <button
-                key={info.level}
-                type="button"
-                onClick={() => setLevel(info.level)}
-                aria-pressed={level === info.level}
-                className={cn(
-                  "focus-visible:ring-ring rounded-lg border p-4 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                  level === info.level
-                    ? "border-primary bg-primary/5 ring-primary/30 ring-2"
-                    : "bg-card hover:border-primary/50"
-                )}
+          <CodageGrid session={demo} highlight={demo.questions[0].entryIndex} />
+          <div className="flex flex-wrap gap-2">
+            {demo.questions[0].options.map((code) => (
+              <span
+                key={code}
+                className="bg-muted/50 rounded-md border px-3 py-1.5 font-mono text-sm tabular-nums"
               >
-                <p className="text-primary text-xs font-semibold tracking-wide uppercase">
-                  Niveau {info.level}
-                </p>
-                <p className="mt-0.5 text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
-              </button>
+                {code}
+              </span>
             ))}
           </div>
-          <p className="text-muted-foreground text-sm">
-            La difficulté ne monte pas en cours de session, contrairement à nos autres épreuves : la
-            grille étant fixe, elle se choisit au départ. Le{" "}
-            <strong>niveau 1 est le format de l’épreuve</strong> — douze mots.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Lancer une session</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {Object.values(CODAGE_FORMATS).map((info) => (
-              <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
-                <p className="text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                <p className="text-muted-foreground mt-2 text-sm tabular-nums">
-                  {info.size} questions · {formatDuration(info.durationSeconds)}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button size="sm" onClick={() => start(info.key, level, false)}>
-                    Lancer le test
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={() => start(info.key, level, true)}>
-                    Entraînement
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            <strong>Répondre enchaîne aussitôt</strong> : à 3,3 secondes la question, un bouton «
-            suivant » coûterait la moitié du temps. En <strong>mode entraînement</strong>, pas de
-            chronomètre, et la bonne ligne de la grille s’allume une seconde après chaque réponse.
-          </p>
-        </section>
-
-        {history.length > 0 ? (
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
-            <div className="overflow-hidden rounded-lg border">
-              <table className="w-full text-sm">
-                <tbody>
-                  {history.map((entry, i) => (
-                    <tr key={i} className="border-t first:border-t-0">
-                      <td className="text-muted-foreground p-2.5">
-                        {new Date(entry.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </td>
-                      <td className="p-2.5">
-                        {CODAGE_FORMATS[entry.format].label} · grille de{" "}
-                        {CODAGE_LEVELS[entry.level].size}
-                        {entry.training ? " · entraînement" : ""}
-                      </td>
-                      <td className="p-2.5 text-right font-semibold tabular-nums">
-                        {entry.correct}/{entry.total}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        ) : null}
-
-        <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
-            reproduit le <em>principe</em> du test de codage du TAMI-C (vitesse de recherche et
-            rigueur) avec nos propres grilles. Sans lien avec le logiciel officiel des armées.
-          </p>
         </div>
-      </div>
-    );
-  }
+      </section>
 
-  if (!session) return null;
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Choisir sa grille</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {CODAGE_LEVEL_LIST.map((info) => (
+            <button
+              key={info.level}
+              type="button"
+              onClick={() => setLevel(info.level)}
+              aria-pressed={level === info.level}
+              className={cn(
+                "focus-visible:ring-ring rounded-lg border p-4 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                level === info.level
+                  ? "border-primary bg-primary/5 ring-primary/30 ring-2"
+                  : "bg-card hover:border-primary/50"
+              )}
+            >
+              <p className="text-primary text-xs font-semibold tracking-wide uppercase">
+                Niveau {info.level}
+              </p>
+              <p className="mt-0.5 text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 text-sm">{info.hint}</p>
+            </button>
+          ))}
+        </div>
+        <p className="text-muted-foreground text-sm">
+          La difficulté ne monte pas en cours de session, contrairement à nos autres épreuves : la
+          grille étant fixe, elle se choisit au départ. Le{" "}
+          <strong>niveau 1 est le format de l’épreuve</strong> — douze mots.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Lancer une session</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {Object.values(CODAGE_FORMATS).map((info) => (
+            <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
+              <p className="text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
+              <p className="text-muted-foreground mt-2 text-sm tabular-nums">
+                {info.size} questions · {formatDuration(info.durationSeconds)}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button size="sm" onClick={() => start(info.key, level, false)}>
+                  Lancer le test
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => start(info.key, level, true)}>
+                  Entraînement
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-muted-foreground text-sm">
+          <strong>Répondre enchaîne aussitôt</strong> : à 3,3 secondes la question, un bouton «
+          suivant » coûterait la moitié du temps. En <strong>mode entraînement</strong>, pas de
+          chronomètre, et la bonne ligne de la grille s’allume une seconde après chaque réponse.
+        </p>
+      </section>
+
+      {history.length > 0 ? (
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+          <div className="overflow-hidden rounded-lg border">
+            <table className="w-full text-sm">
+              <tbody>
+                {history.map((entry, i) => (
+                  <tr key={i} className="border-t first:border-t-0">
+                    <td className="text-muted-foreground p-2.5">
+                      {new Date(entry.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                      })}
+                    </td>
+                    <td className="p-2.5">
+                      {CODAGE_FORMATS[entry.format].label} · grille de{" "}
+                      {CODAGE_LEVELS[entry.level].size}
+                      {entry.training ? " · entraînement" : ""}
+                    </td>
+                    <td className="p-2.5 text-right font-semibold tabular-nums">
+                      {entry.correct}/{entry.total}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
+        <p className="text-muted-foreground text-sm">
+          <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
+          reproduit le <em>principe</em> du test de codage du TAMI-C (vitesse de recherche et
+          rigueur) avec nos propres grilles. Sans lien avec le logiciel officiel des armées.
+        </p>
+      </div>
+    </div>
+  );
+
+  /*
+    GARDE EXPLICITE : hors séance, `session` vaut `null`. La sortie anticipée
+    protégeait les deux écrans suivants ; calculés en toutes phases, ils
+    perdent cette protection.
+  */
+  const score = session ? scoreCodageSession(session.questions, answers) : null;
+  const erreurs = session
+    ? session.questions
+        .map((question, i) => ({ question, i, given: answers[i] }))
+        .filter(({ question, given }) => given !== null && given !== question.answerIndex)
+    : [];
 
   // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
-    const score = scoreCodageSession(session.questions, answers);
-    const erreurs = session.questions
-      .map((question, i) => ({ question, i, given: answers[i] }))
-      .filter(({ question, given }) => given !== null && given !== question.answerIndex);
-
-    return (
-      <div ref={rootRef} className="space-y-6">
+  const ecranBilan =
+    !session || !score ? null : (
+      <div className="space-y-6">
         <div className="bg-card rounded-lg border p-5 text-center">
           <p className="text-muted-foreground text-sm">
             {CODAGE_FORMATS[format].label} · grille de {CODAGE_LEVELS[level].size}
@@ -497,90 +507,101 @@ export function CodageTest() {
         </div>
       </div>
     );
-  }
 
   // --- Session -------------------------------------------------------------
-  const question = session.questions[index];
-  const target = session.grid[question.entryIndex];
+  const question = session?.questions[index];
+  const target = question ? session!.grid[question.entryIndex] : null;
   const answered = feedback !== null;
-  const right = answered && feedback === question.answerIndex;
+  const right = answered && !!question && feedback === question.answerIndex;
 
-  return (
-    // Pleine hauteur d'écran pendant la session : à 3,3 secondes la question,
-    // rien de ce qui précède ne doit rester en vue — et c'est aussi ce qui
-    // permet au recentrage d'aboutir, une page trop courte ne défilant pas.
-    <div ref={rootRef} className="min-h-[calc(100svh-7rem)] space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm font-semibold">
-          Question {index + 1}
-          <span className="text-muted-foreground font-normal"> / {session.questions.length}</span>
-          <span className="text-muted-foreground font-normal">
-            {" "}
-            · grille de {session.grid.length}
-          </span>
-        </p>
-        {training ? (
-          <span className="text-muted-foreground text-sm">Entraînement — sans chronomètre</span>
-        ) : (
-          <span
-            className={cn(
-              "text-sm font-semibold tabular-nums",
-              remaining <= 20 ? "text-destructive" : "text-muted-foreground"
-            )}
-          >
-            {formatDuration(remaining)}
-          </span>
-        )}
-      </div>
-
-      <p className="text-center text-xl font-semibold md:text-2xl">
-        Quel code est associé au mot <span className="text-primary">{target.word}</span> ?
-      </p>
-
-      <CodageGrid
-        session={session}
-        highlight={answered ? question.entryIndex : undefined}
-        marks={
-          answered
-            ? {
-                correct: question.options[question.answerIndex],
-                wrong: right ? undefined : question.options[feedback as number],
-              }
-            : undefined
-        }
-      />
-
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-        {question.options.map((code, i) => {
-          const isRight = answered && i === question.answerIndex;
-          const isWrong = answered && i === feedback && i !== question.answerIndex;
-          return (
-            <button
-              key={code}
-              type="button"
-              onClick={() => choose(i)}
-              disabled={answered}
+  const ecranSession =
+    !session || !question || !target ? null : (
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm font-semibold">
+            Question {index + 1}
+            <span className="text-muted-foreground font-normal"> / {session.questions.length}</span>
+            <span className="text-muted-foreground font-normal">
+              {" "}
+              · grille de {session.grid.length}
+            </span>
+          </p>
+          {training ? (
+            <span className="text-muted-foreground text-sm">Entraînement — sans chronomètre</span>
+          ) : (
+            <span
               className={cn(
-                "focus-visible:ring-ring min-w-[5.5rem] rounded-lg border px-4 py-3 font-mono text-lg font-bold tabular-nums transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                !answered && "hover:border-primary hover:bg-primary/5",
-                isRight && "border-success bg-success/10 text-success",
-                isWrong && "border-destructive bg-destructive/10 text-destructive"
+                "text-sm font-semibold tabular-nums",
+                remaining <= 20 ? "text-destructive" : "text-muted-foreground"
               )}
             >
-              {code}
-            </button>
-          );
-        })}
-      </div>
+              {formatDuration(remaining)}
+            </span>
+          )}
+        </div>
 
-      <div className="flex flex-wrap justify-center gap-3">
-        <Button variant="ghost" size="sm" onClick={finish}>
-          Terminer maintenant
-        </Button>
-        <Button variant="ghost" size="sm" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
+        <p className="text-center text-xl font-semibold md:text-2xl">
+          Quel code est associé au mot <span className="text-primary">{target.word}</span> ?
+        </p>
+
+        <CodageGrid
+          session={session}
+          highlight={answered ? question.entryIndex : undefined}
+          marks={
+            answered
+              ? {
+                  correct: question.options[question.answerIndex],
+                  wrong: right ? undefined : question.options[feedback as number],
+                }
+              : undefined
+          }
+        />
+
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          {question.options.map((code, i) => {
+            const isRight = answered && i === question.answerIndex;
+            const isWrong = answered && i === feedback && i !== question.answerIndex;
+            return (
+              <button
+                key={code}
+                type="button"
+                onClick={() => choose(i)}
+                disabled={answered}
+                className={cn(
+                  "focus-visible:ring-ring min-w-[5.5rem] rounded-lg border px-4 py-3 font-mono text-lg font-bold tabular-nums transition-colors focus-visible:ring-2 focus-visible:outline-none",
+                  !answered && "hover:border-primary hover:bg-primary/5",
+                  isRight && "border-success bg-success/10 text-success",
+                  isWrong && "border-destructive bg-destructive/10 text-destructive"
+                )}
+              >
+                {code}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-3">
+          <Button variant="ghost" size="sm" onClick={finish}>
+            Terminer maintenant
+          </Button>
+        </div>
       </div>
-    </div>
+    );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance par l'un des boutons de format de
+    sa présentation. « Abandonner » cède la place à « Quitter la séance », au
+    même endroit sur toutes les routes du Banc — « Terminer maintenant » reste,
+    car il ne quitte pas la séance : il la conclut et affiche le bilan.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Test de codage"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }

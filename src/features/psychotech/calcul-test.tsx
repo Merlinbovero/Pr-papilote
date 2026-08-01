@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import {
   CALC_FORMAT_LIST,
   CALC_FORMATS,
@@ -216,7 +217,17 @@ function CalcGridView({ grid }: { grid: CalcGrid }) {
 // Composant principal
 // ---------------------------------------------------------------------------
 
-export function CalculTest() {
+export interface CalculTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 842 px sur un écran de 900 et à 1 268 px sur
+   * un écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function CalculTest({ entete }: CalculTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [theme, setTheme] = React.useState<CalcTheme>("melange");
   const [levelChoice, setLevelChoice] = React.useState<CalcLevelChoice>("progressif");
@@ -336,8 +347,14 @@ export function CalculTest() {
     setChecked(false);
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire. Les définitions locales de
+    l'ancien bloc restent groupées dans une fonction, pour ne pas les hisser
+    inutilement dans le corps du composant.
+  */
+  const ecranIntro = (() => {
     const themeInfo = CALC_THEMES.find((t) => t.theme === theme);
     const levelInfo = LEVEL_CHOICES.find((l) => l.value === levelChoice);
     const formatInfo = CALC_FORMATS[format];
@@ -390,6 +407,7 @@ export function CalculTest() {
 
     return (
       <div className="space-y-8">
+        {entete}
         <section className="space-y-3">
           <SectionTitle aside="Le calcul que vous rencontrerez">Le thème</SectionTitle>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -595,10 +613,10 @@ export function CalculTest() {
         </div>
       </div>
     );
-  }
+  })();
 
   // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
+  const ecranBilan = (() => {
     const asked = answers.map((_, i) => questionFor(i));
     const score = scoreCalcSession(asked, answers);
     // Sans fin, personne ne relit deux cents bonnes réponses : on ne montre
@@ -696,17 +714,20 @@ export function CalculTest() {
         </div>
       </div>
     );
-  }
+  })();
 
-  // --- Session -------------------------------------------------------------
-  if (!current) return null;
-  const right = checked && answer === current.correctIndex;
+  /*
+    GARDE EXPLICITE : hors séance, `current` vaut `null`. La sortie anticipée
+    protégeait ce code ; calculés en toutes phases, ces écrans perdent cette
+    protection.
+  */
+  const right = checked && current ? answer === current.correctIndex : false;
   const doneSoFar = answers.filter((a) => a !== null).length;
   const correctSoFar = answers.filter(
     (a, i) => a !== null && a === questionFor(i).correctIndex
   ).length;
 
-  return (
+  const ecranSession = !current ? null : (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
@@ -805,10 +826,24 @@ export function CalculTest() {
             Arrêter et voir le bilan
           </Button>
         ) : null}
-        <Button variant="ghost" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance depuis un écran de réglages —
+    thème, niveau, format — jamais par une commande unique. « Abandonner »
+    cède la place à « Quitter la séance », au même endroit sur toutes les
+    routes du Banc.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Calcul mental"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }

@@ -4,6 +4,10 @@ import { SiteBreadcrumb } from "@/components/layout/site-breadcrumb";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
 import { CodageTest } from "@/features/psychotech/codage-test";
 
+// La page pose `.banc` sur son `<main>` : c'est un point d'adhésion, donc
+// elle charge le registre (voir `mode-seance.tsx`).
+import "@/styles/banc.css";
+
 export const metadata: Metadata = {
   title: "Test de codage (TAMI-C) — 45 questions en 2 min 30",
   description:
@@ -15,21 +19,14 @@ export const metadata: Metadata = {
  * vivent dans `src/lib/psychotech/codage.ts`.
  */
 export default function CodagePage() {
-  return (
-    <StandalonePageShell>
-      <SiteBreadcrumb
-        items={[
-          { label: "Accueil", href: "/" },
-          { label: "Psychotechnique", href: "/psychotechnique" },
-          { label: "Codage" },
-        ]}
-      />
+  const entete = (
+    <>
       <header className="space-y-2">
         <p className="text-primary text-sm font-semibold tracking-wide uppercase">
           Psychotechnique · vitesse de recherche
         </p>
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Test de codage</h1>
-        <p className="text-muted-foreground max-w-prose text-lg">
+        <p className="banc-consigne text-lg" style={{ color: "var(--bc-encre2)" }}>
           Une grille de mots, un code à quatre chiffres pour chacun, et{" "}
           <strong>45 questions en 2 min 30</strong> — 3,3 secondes l’unité. La grille ne change pas
           de la session : on la mémorise peu à peu, et c’est ce qui fait gagner du temps. Les cinq
@@ -41,7 +38,21 @@ export default function CodagePage() {
         ficheId="psychotechnique.exercices.le-test-de-codage"
         intro="La boucle de lecture à installer, la comparaison chiffre par chiffre qui sépare 1985 de 1988, et pourquoi le débit compte ici autant que la justesse."
       />
-      <CodageTest />
+    </>
+  );
+
+  return (
+    <StandalonePageShell className="banc max-w-none px-0 sm:px-0 lg:px-0">
+      <div className="banc-cadre">
+        <SiteBreadcrumb
+          items={[
+            { label: "Accueil", href: "/" },
+            { label: "Psychotechnique", href: "/psychotechnique" },
+            { label: "Codage" },
+          ]}
+        />
+      </div>
+      <CodageTest entete={entete} />
     </StandalonePageShell>
   );
 }

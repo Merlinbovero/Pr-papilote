@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import { SITE_3D_MODELS, type ModelKey } from "@/lib/models-3d";
 import {
   composeOrientationSession,
@@ -444,7 +445,17 @@ function saveHistory(entries: SessionHistoryEntry[]) {
 
 type Phase = "intro" | "playing" | "done";
 
-export function OrientationTest() {
+export interface OrientationTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 1 068 px sur un écran de 900 et à 1 151 px
+   * sur un écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function OrientationTest({ entete }: OrientationTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [training, setTraining] = React.useState(false);
   const [questions, setQuestions] = React.useState<OrientationQuestion[]>([]);
@@ -579,12 +590,16 @@ export function OrientationTest() {
   const seconds = timeLeft % 60;
   const progress = questions.length ? (index / questions.length) * 100 : 0;
 
-  // ---- Intro ----
-  if (phase === "intro") {
-    return (
-      <div className="mx-auto max-w-xl">
-        <div className="bg-card rounded-2xl border p-6 text-center shadow-sm sm:p-8">
-          {/*
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const ecranIntro = (
+    <div className="mx-auto max-w-xl">
+      {entete}
+      <div className="bg-card rounded-2xl border p-6 text-center shadow-sm sm:p-8">
+        {/*
             `h2` et non `h1` : la page porte déjà son titre — « Test
             d'orientation », rendu par l'en-tête de
             `psychotechnique/orientation/page.tsx`, qui reste visible dans les
@@ -592,83 +607,82 @@ export function OrientationTest() {
             un plein écran qui le remplacerait. Deux `h1` sur la même page
             privent le lecteur d'écran d'un titre de niveau 1 unique.
           */}
-          <h2 className="text-3xl font-bold tracking-tight">Orientation</h2>
-          <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">
-            Observez l’instrument de bord (horizon et compas), puis désignez l’aéronef dans la
-            position correspondante. Choisissez votre format.
-          </p>
+        <h2 className="text-3xl font-bold tracking-tight">Orientation</h2>
+        <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">
+          Observez l’instrument de bord (horizon et compas), puis désignez l’aéronef dans la
+          position correspondante. Choisissez votre format.
+        </p>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {(["officiel", "court"] as const).map((key) => {
-              const f = ORIENTATION_FORMATS[key];
-              const officiel = key === "officiel";
-              return (
-                <div key={key} className="bg-muted/30 flex flex-col rounded-xl border p-4">
-                  <p className="text-base font-semibold">{f.label}</p>
-                  <p className="text-primary mt-1 text-sm font-medium tabular-nums">
-                    {f.size} questions · {formatDuration(f.durationSeconds)}
-                  </p>
-                  <p className="text-muted-foreground mt-1 mb-4 text-sm">{f.hint}</p>
-                  <Button
-                    className="mt-auto w-full"
-                    variant={officiel ? "default" : "outline"}
-                    onClick={() => start(key)}
-                  >
-                    Commencer →
-                  </Button>
-                </div>
-              );
-            })}
-          </div>
-
-          <label className="mt-5 flex items-center justify-center gap-2 text-sm">
-            <input
-              type="checkbox"
-              checked={training}
-              onChange={(e) => setTraining(e.target.checked)}
-              className="border-input size-4 rounded"
-            />
-            Mode entraînement (la bonne réponse est montrée après chaque question)
-          </label>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {(["officiel", "court"] as const).map((key) => {
+            const f = ORIENTATION_FORMATS[key];
+            const officiel = key === "officiel";
+            return (
+              <div key={key} className="bg-muted/30 flex flex-col rounded-xl border p-4">
+                <p className="text-base font-semibold">{f.label}</p>
+                <p className="text-primary mt-1 text-sm font-medium tabular-nums">
+                  {f.size} questions · {formatDuration(f.durationSeconds)}
+                </p>
+                <p className="text-muted-foreground mt-1 mb-4 text-sm">{f.hint}</p>
+                <Button
+                  className="mt-auto w-full"
+                  variant={officiel ? "default" : "outline"}
+                  onClick={() => start(key)}
+                >
+                  Commencer →
+                </Button>
+              </div>
+            );
+          })}
         </div>
 
-        <OrientationTutorial />
-
-        {history.length > 0 ? (
-          <div className="mt-6">
-            <h2 className="text-muted-foreground mb-2 text-xs font-semibold tracking-wide uppercase">
-              Dernières sessions
-            </h2>
-            <ul className="space-y-2">
-              {history.slice(0, 5).map((h, i) => (
-                <li
-                  key={i}
-                  className="bg-card flex items-center justify-between rounded-lg border px-4 py-2 text-sm"
-                >
-                  <span className="text-muted-foreground">
-                    {new Date(h.date).toLocaleDateString("fr-FR", {
-                      day: "2-digit",
-                      month: "short",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                    {h.format ? ` · ${ORIENTATION_FORMATS[h.format].label.toLowerCase()}` : ""}
-                    {h.training ? " · entraînement" : ""}
-                  </span>
-                  <span className="font-medium tabular-nums">
-                    {h.correct}/{h.total} · {Math.round(h.precision * 100)} %
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+        <label className="mt-5 flex items-center justify-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={training}
+            onChange={(e) => setTraining(e.target.checked)}
+            className="border-input size-4 rounded"
+          />
+          Mode entraînement (la bonne réponse est montrée après chaque question)
+        </label>
       </div>
-    );
-  }
+
+      <OrientationTutorial />
+
+      {history.length > 0 ? (
+        <div className="mt-6">
+          <h2 className="text-muted-foreground mb-2 text-xs font-semibold tracking-wide uppercase">
+            Dernières sessions
+          </h2>
+          <ul className="space-y-2">
+            {history.slice(0, 5).map((h, i) => (
+              <li
+                key={i}
+                className="bg-card flex items-center justify-between rounded-lg border px-4 py-2 text-sm"
+              >
+                <span className="text-muted-foreground">
+                  {new Date(h.date).toLocaleDateString("fr-FR", {
+                    day: "2-digit",
+                    month: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                  {h.format ? ` · ${ORIENTATION_FORMATS[h.format].label.toLowerCase()}` : ""}
+                  {h.training ? " · entraînement" : ""}
+                </span>
+                <span className="font-medium tabular-nums">
+                  {h.correct}/{h.total} · {Math.round(h.precision * 100)} %
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
 
   // ---- Résultats ----
-  if (phase === "done") {
+  const ecranResultats = (() => {
     const totalQuestions = questions.length;
     const correct = answers.filter((a) => a.chosenIndex === a.correctIndex).length;
     const answered = answers.filter((a) => a.chosenIndex !== null).length;
@@ -742,10 +756,14 @@ export function OrientationTest() {
         </div>
       </div>
     );
-  }
+  })();
 
-  // ---- Player ----
-  return (
+  /*
+    GARDE EXPLICITE : hors séance, `questions` est vide et `current` vaut
+    `undefined`. Les sorties anticipées protégeaient ce code ; calculés en
+    toutes phases, ces écrans perdent cette protection.
+  */
+  const ecranPlayer = !current ? null : (
     <div className="mx-auto max-w-3xl">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-lg font-semibold tracking-tight">Orientation</h2>
@@ -821,5 +839,23 @@ export function OrientationTest() {
         </div>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance depuis son écran de présentation,
+    par l'un des boutons de format. « Terminer » reste — il conclut la séance
+    et affiche le résultat, il ne la quitte pas — et « Quitter la séance » est
+    offert par le mode séance, au même endroit que sur toutes les routes du
+    Banc.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Test d'orientation"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranResultats : ecranPlayer}
+    </ModeSeance>
   );
 }

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { ModeSeance } from "@/features/banc/mode-seance";
 import { ScenePlan } from "@/features/psychotech/camera-plan";
 import { SceneImage, usePreloadScene } from "@/features/psychotech/camera-scene";
 import {
@@ -141,7 +142,17 @@ function CamerasTutorial() {
 // Composant principal
 // ---------------------------------------------------------------------------
 
-export function CamerasTest() {
+export interface CamerasTestProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**. Mesuré avant migration, le premier
+   * contrôle de réponse tombait à 1 083 px sur un écran de 900 et à 1 410 px
+   * sur un écran de 844.
+   */
+  entete?: React.ReactNode;
+}
+
+export function CamerasTest({ entete }: CamerasTestProps = {}) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [format, setFormat] = React.useState<CameraFormatKey>("officiel");
   const [training, setTraining] = React.useState(false);
@@ -241,229 +252,233 @@ export function CamerasTest() {
     setShowPlan(false);
   }
 
-  // --- Intro ---------------------------------------------------------------
-  if (phase === "intro") {
-    return (
-      <div className="space-y-6">
-        <CamerasTutorial />
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F7b. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const ecranIntro = (
+    <div className="space-y-6">
+      {entete}
+      <CamerasTutorial />
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Lancer une session</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {Object.values(CAMERA_FORMATS).map((info) => (
-              <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
-                <p className="text-base font-semibold">{info.label}</p>
-                <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
-                <p className="text-muted-foreground mt-2 text-sm tabular-nums">
-                  {info.size} vues · {formatDuration(info.durationSeconds)}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button size="sm" onClick={() => start(info.key, false)}>
-                    Lancer le test
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
-                    Entraînement
-                  </Button>
-                </div>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Lancer une session</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {Object.values(CAMERA_FORMATS).map((info) => (
+            <div key={info.key} className="bg-card flex flex-col rounded-lg border p-4">
+              <p className="text-base font-semibold">{info.label}</p>
+              <p className="text-muted-foreground mt-1 flex-1 text-sm">{info.hint}</p>
+              <p className="text-muted-foreground mt-2 text-sm tabular-nums">
+                {info.size} vues · {formatDuration(info.durationSeconds)}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button size="sm" onClick={() => start(info.key, false)}>
+                  Lancer le test
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => start(info.key, true)}>
+                  Entraînement
+                </Button>
               </div>
-            ))}
-          </div>
-          <p className="text-muted-foreground text-sm">
-            En <strong>mode entraînement</strong>, pas de chronomètre : la réponse est commentée
-            après chaque vue, et le <strong>plan de la scène</strong> reste consultable. En test, il
-            n’est disponible que sur le premier tiers — apprendre à s’en passer fait partie de
-            l’exercice.
-          </p>
-        </section>
-
-        {history.length > 0 ? (
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
-            <div className="overflow-hidden rounded-lg border">
-              <table className="w-full text-sm">
-                <tbody>
-                  {history.map((entry, i) => (
-                    <tr key={i} className="border-t first:border-t-0">
-                      <td className="text-muted-foreground p-2.5">
-                        {new Date(entry.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                        })}
-                      </td>
-                      <td className="p-2.5">
-                        {CAMERA_FORMATS[entry.format].label}
-                        {entry.training ? " · entraînement" : ""}
-                      </td>
-                      <td className="p-2.5 text-right font-semibold tabular-nums">
-                        {entry.correct}/{entry.total}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
-          </section>
-        ) : null}
-
-        <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
-            reproduit le <em>principe</em> du test des appareils photos (visualisation dans l’espace
-            et projection en 3D) avec nos propres scènes. Sans lien avec le logiciel officiel des
-            armées.
-          </p>
+          ))}
         </div>
+        <p className="text-muted-foreground text-sm">
+          En <strong>mode entraînement</strong>, pas de chronomètre : la réponse est commentée après
+          chaque vue, et le <strong>plan de la scène</strong> reste consultable. En test, il n’est
+          disponible que sur le premier tiers — apprendre à s’en passer fait partie de l’exercice.
+        </p>
+      </section>
+
+      {history.length > 0 ? (
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">Vos dernières sessions</h2>
+          <div className="overflow-hidden rounded-lg border">
+            <table className="w-full text-sm">
+              <tbody>
+                {history.map((entry, i) => (
+                  <tr key={i} className="border-t first:border-t-0">
+                    <td className="text-muted-foreground p-2.5">
+                      {new Date(entry.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                      })}
+                    </td>
+                    <td className="p-2.5">
+                      {CAMERA_FORMATS[entry.format].label}
+                      {entry.training ? " · entraînement" : ""}
+                    </td>
+                    <td className="p-2.5 text-right font-semibold tabular-nums">
+                      {entry.correct}/{entry.total}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
+
+      <div className="border-warning/40 bg-warning/5 rounded-lg border p-4">
+        <p className="text-muted-foreground text-sm">
+          <strong className="text-foreground">Reconstitution pédagogique.</strong> Cet exercice
+          reproduit le <em>principe</em> du test des appareils photos (visualisation dans l’espace
+          et projection en 3D) avec nos propres scènes. Sans lien avec le logiciel officiel des
+          armées.
+        </p>
       </div>
-    );
-  }
+    </div>
+  );
 
   // --- Bilan ---------------------------------------------------------------
-  if (phase === "done") {
-    const score = scoreCameraSession(puzzles, answers);
-    return (
-      <div className="space-y-6">
-        <div className="bg-card rounded-lg border p-5 text-center">
-          <p className="text-muted-foreground text-sm">
-            {CAMERA_FORMATS[format].label}
-            {training ? " · entraînement" : ""}
-          </p>
-          <p
-            className={cn(
-              "mt-1 text-5xl font-bold tabular-nums",
-              score.precision >= 80
-                ? "text-success"
-                : score.precision >= 50
-                  ? "text-warning"
-                  : "text-destructive"
-            )}
-          >
-            {score.correct}
-            <span className="text-muted-foreground text-2xl">/{score.total}</span>
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            {score.answered} vue{score.answered > 1 ? "s" : ""} traitée
-            {score.answered > 1 ? "s" : ""} sur {score.total}.
-          </p>
-        </div>
+  const score = scoreCameraSession(puzzles, answers);
+  const ecranBilan = (
+    <div className="space-y-6">
+      <div className="bg-card rounded-lg border p-5 text-center">
+        <p className="text-muted-foreground text-sm">
+          {CAMERA_FORMATS[format].label}
+          {training ? " · entraînement" : ""}
+        </p>
+        <p
+          className={cn(
+            "mt-1 text-5xl font-bold tabular-nums",
+            score.precision >= 80
+              ? "text-success"
+              : score.precision >= 50
+                ? "text-warning"
+                : "text-destructive"
+          )}
+        >
+          {score.correct}
+          <span className="text-muted-foreground text-2xl">/{score.total}</span>
+        </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          {score.answered} vue{score.answered > 1 ? "s" : ""} traitée
+          {score.answered > 1 ? "s" : ""} sur {score.total}.
+        </p>
+      </div>
 
-        <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Correction</h2>
-          {puzzles.map((puzzle, i) => {
-            const given = answers[i];
-            const right = given === puzzle.answerIndex;
-            const goodLabel = puzzle.cameras[puzzle.answerIndex].label;
-            return (
-              <div key={i} className="bg-card rounded-lg border p-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm font-semibold">
-                    Vue {i + 1}
-                    <span className="text-muted-foreground font-normal">
-                      {" "}
-                      · niveau {puzzle.level}
-                    </span>
-                  </p>
-                  {/* La bonne réponse est annoncée ici, en clair : elle ne doit
-                      pas se chercher dans le paragraphe d’explication. */}
-                  <span className="flex flex-wrap items-center gap-2">
-                    {!right ? (
-                      <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
-                        {given === null
-                          ? "Non traité"
-                          : `Vous aviez répondu appareil ${puzzle.cameras[given].label}`}
-                      </span>
-                    ) : null}
-                    <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
-                      {right
-                        ? `Juste — appareil ${goodLabel}`
-                        : `Bonne réponse : appareil ${goodLabel}`}
-                    </span>
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">Correction</h2>
+        {puzzles.map((puzzle, i) => {
+          const given = answers[i];
+          const right = given === puzzle.answerIndex;
+          const goodLabel = puzzle.cameras[puzzle.answerIndex].label;
+          return (
+            <div key={i} className="bg-card rounded-lg border p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-semibold">
+                  Vue {i + 1}
+                  <span className="text-muted-foreground font-normal">
+                    {" "}
+                    · niveau {puzzle.level}
                   </span>
-                </div>
+                </p>
+                {/* La bonne réponse est annoncée ici, en clair : elle ne doit
+                      pas se chercher dans le paragraphe d’explication. */}
+                <span className="flex flex-wrap items-center gap-2">
+                  {!right ? (
+                    <span className="bg-destructive/10 text-destructive rounded-full px-2 py-0.5 text-xs font-semibold">
+                      {given === null
+                        ? "Non traité"
+                        : `Vous aviez répondu appareil ${puzzle.cameras[given].label}`}
+                    </span>
+                  ) : null}
+                  <span className="bg-success/10 text-success rounded-full px-2.5 py-0.5 text-xs font-semibold">
+                    {right
+                      ? `Juste — appareil ${goodLabel}`
+                      : `Bonne réponse : appareil ${goodLabel}`}
+                  </span>
+                </span>
+              </div>
 
-                <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_auto]">
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div>
-                      <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
-                        La scène
-                      </p>
-                      <SceneImage
-                        puzzle={puzzle}
-                        kind={{ mode: "overview" }}
-                        alt={`Vue ${i + 1} : la scène et les trois appareils.`}
-                      />
-                    </div>
-                    <div>
-                      <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
-                        La photo — appareil {goodLabel}
-                      </p>
-                      <SceneImage
-                        puzzle={puzzle}
-                        kind={{ mode: "view", cameraIndex: puzzle.answerIndex }}
-                        alt={`Vue ${i + 1} : la photo montrée, prise par l’appareil ${goodLabel}.`}
-                        className="ring-success/60 ring-2"
-                      />
-                    </div>
-                  </div>
-                  <div className="lg:w-44">
+              <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_auto]">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
                     <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
-                      Le plan
+                      La scène
                     </p>
-                    <ScenePlan
+                    <SceneImage
                       puzzle={puzzle}
-                      correctLabel={goodLabel}
-                      chosenLabel={given !== null ? puzzle.cameras[given].label : undefined}
+                      kind={{ mode: "overview" }}
+                      alt={`Vue ${i + 1} : la scène et les trois appareils.`}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-success mb-1 text-xs font-semibold tracking-wide uppercase">
+                      La photo — appareil {goodLabel}
+                    </p>
+                    <SceneImage
+                      puzzle={puzzle}
+                      kind={{ mode: "view", cameraIndex: puzzle.answerIndex }}
+                      alt={`Vue ${i + 1} : la photo montrée, prise par l’appareil ${goodLabel}.`}
+                      className="ring-success/60 ring-2"
                     />
                   </div>
                 </div>
+                <div className="lg:w-44">
+                  <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-wide uppercase">
+                    Le plan
+                  </p>
+                  <ScenePlan
+                    puzzle={puzzle}
+                    correctLabel={goodLabel}
+                    chosenLabel={given !== null ? puzzle.cameras[given].label : undefined}
+                  />
+                </div>
+              </div>
 
-                {/* S’être trompé s’explique mieux en voyant ce que l’appareil
+              {/* S’être trompé s’explique mieux en voyant ce que l’appareil
                     choisi aurait donné : la comparaison est plus parlante que
                     n’importe quelle phrase. */}
-                {!right && given !== null ? (
-                  <div className="mt-3">
-                    <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
-                      Ce qu’aurait donné l’appareil {puzzle.cameras[given].label}, votre réponse
-                    </p>
-                    <div className="sm:max-w-sm">
-                      <SceneImage
-                        puzzle={puzzle}
-                        kind={{ mode: "view", cameraIndex: given }}
-                        alt={`Ce que l’appareil ${puzzle.cameras[given].label} aurait photographié.`}
-                        className="ring-destructive/50 ring-2"
-                      />
-                    </div>
+              {!right && given !== null ? (
+                <div className="mt-3">
+                  <p className="text-destructive mb-1 text-xs font-semibold tracking-wide uppercase">
+                    Ce qu’aurait donné l’appareil {puzzle.cameras[given].label}, votre réponse
+                  </p>
+                  <div className="sm:max-w-sm">
+                    <SceneImage
+                      puzzle={puzzle}
+                      kind={{ mode: "view", cameraIndex: given }}
+                      alt={`Ce que l’appareil ${puzzle.cameras[given].label} aurait photographié.`}
+                      className="ring-destructive/50 ring-2"
+                    />
                   </div>
-                ) : null}
+                </div>
+              ) : null}
 
-                <p className="text-muted-foreground mt-3 text-sm">
-                  <strong className="text-foreground">Appareil {goodLabel}.</strong>{" "}
-                  {puzzle.explanation}
-                </p>
-              </div>
-            );
-          })}
-        </section>
+              <p className="text-muted-foreground mt-3 text-sm">
+                <strong className="text-foreground">Appareil {goodLabel}.</strong>{" "}
+                {puzzle.explanation}
+              </p>
+            </div>
+          );
+        })}
+      </section>
 
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={() => start(format, training)}>Recommencer</Button>
-          <Button variant="outline" onClick={() => setPhase("intro")}>
-            Changer de format
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/psychotechnique/exercices/le-test-des-appareils-photos">
-              Lire la méthode
-            </Link>
-          </Button>
-        </div>
+      <div className="flex flex-wrap gap-3">
+        <Button onClick={() => start(format, training)}>Recommencer</Button>
+        <Button variant="outline" onClick={() => setPhase("intro")}>
+          Changer de format
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/psychotechnique/exercices/le-test-des-appareils-photos">
+            Lire la méthode
+          </Link>
+        </Button>
       </div>
-    );
-  }
+    </div>
+  );
 
-  // --- Session -------------------------------------------------------------
+  /*
+    GARDE EXPLICITE : hors séance, `puzzles` est vide et `current` vaut
+    `undefined`. Les sorties anticipées protégeaient ce code ; calculés en
+    toutes phases, ces écrans perdent cette protection.
+  */
   const planAllowed = training || index < puzzles.length / 3;
-  const right = checked && answer === current.answerIndex;
+  const right = checked && answer !== null && current ? answer === current.answerIndex : false;
 
-  return (
+  const ecranSession = !current ? null : (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-semibold">
@@ -596,10 +611,23 @@ export function CamerasTest() {
         <Button onClick={goNext} disabled={!training && answer === null}>
           {index + 1 >= puzzles.length ? "Terminer" : "Vue suivante"}
         </Button>
-        <Button variant="ghost" onClick={() => setPhase("intro")}>
-          Abandonner
-        </Button>
       </div>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : l'épreuve se lance par l'un des boutons de format de
+    sa présentation. « Abandonner » cède la place à « Quitter la séance », au
+    même endroit sur toutes les routes du Banc.
+  */
+  return (
+    <ModeSeance
+      enSeance={phase !== "intro"}
+      labelSeance="Test des appareils photos"
+      onSortie={() => setPhase("intro")}
+      introduction={ecranIntro}
+    >
+      {phase === "done" ? ecranBilan : ecranSession}
+    </ModeSeance>
   );
 }
