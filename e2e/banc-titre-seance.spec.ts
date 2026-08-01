@@ -124,6 +124,15 @@ const ROUTES: Route[] = [
     titreSeance: "Test des triangles",
   },
   {
+    nom: "SECPIL",
+    chemin: "/psychotechnique/secpil",
+    titreEditorial: /Simulateur SECPIL/i,
+    lancement: /Démarrer la session/i,
+    // La séance porte le même nom que la page — c'est voulu : la tâche EST le
+    // sujet de la page. Les deux titres ne coexistent jamais.
+    titreSeance: "Simulateur SECPIL",
+  },
+  {
     nom: "Orientation",
     chemin: "/psychotechnique/orientation",
     titreEditorial: /Test d['’]orientation/i,

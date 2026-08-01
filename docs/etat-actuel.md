@@ -31,6 +31,7 @@ l'avancement du Banc.
 | `/psychotechnique/entrainement`         | **Banc**         | F7a |
 | `/psychotechnique/triangles`            | **Banc**         | F7b |
 | Les six autres épreuves de famille      | **Banc**         | F7c |
+| `/psychotechnique/secpil`               | **Banc**         | F9  |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -162,6 +163,22 @@ une seule avant. Le relevé qui reste dehors est nommé plutôt que tu :
 tutoriel de présentation est le plus haut des sept, et le repli ne suffit pas
 à lui seul. Le traiter demande de raccourcir le contenu ou de réorganiser
 l'écran de choix — décision éditoriale, pas de registre : elle reste ouverte.
+
+**Gain mesuré au lot F9** sur SECPIL, bas de l'écran de simulation, `git stash`
+pour seule variable :
+
+| Viewport   | Rendu historique | Banc       | Gain    |
+| ---------- | ---------------- | ---------- | ------- |
+| 1440 × 900 | 1254 px          | **749 px** | −505 px |
+| 390 × 844  | 900 px           | **428 px** | −472 px |
+
+Les deux relevés passaient **hors écran** ; ils tiennent désormais dans le
+premier écran. Le lot corrige en outre un défaut nommé dès la charte du Banc
+(lot F1b) : le temps restant et la précision étaient dessinés **dans** le
+`<svg>`, lequel porte `role="img"` et un libellé statique — ces deux valeurs
+n'atteignaient donc jamais une technique d'assistance, sur l'épreuve la plus
+chronométrée du produit. Elles sont désormais exposées hors du dessin, le
+chronomètre par le composant du Banc.
 
 ### Le titre de séance — question tranchée le 2026-08-01
 
