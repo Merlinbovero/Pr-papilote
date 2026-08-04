@@ -41,11 +41,27 @@ async function semer(page: Page, etat: EtatRevision) {
   );
 }
 
+/**
+ * Lit l'état de révision, **quelle que soit sa forme de stockage**.
+ *
+ * Élargi au lot F11, qui a mis le contenu sous enveloppe versionnée
+ * (`{ v, d }`). Ce lecteur accepte les deux formes, et c'est délibéré : les
+ * données déjà présentes chez les utilisateurs sont nues, celles écrites
+ * désormais sont enveloppées, et le produit doit lire les deux. Un lecteur qui
+ * n'accepterait que la nouvelle forme masquerait justement le risque que ce
+ * lot devait écarter.
+ */
 const lireEtat = (page: Page) =>
   page.evaluate((cle) => {
     const brut = window.localStorage.getItem(cle);
-    return brut ? (JSON.parse(brut) as EtatRevision) : null;
+    if (!brut) return null;
+    const analyse: unknown = JSON.parse(brut);
+    const enveloppe = analyse as { v?: unknown; d?: EtatRevision };
+    return typeof enveloppe.v === "number" && enveloppe.d ? enveloppe.d : (analyse as EtatRevision);
   }, CLE);
+
+/** La forme brute, pour les contrôles qui portent sur le stockage lui-même. */
+const lireBrut = (page: Page) => page.evaluate((cle) => window.localStorage.getItem(cle), CLE);
 
 /**
  * Choisit un concours **sans présumer du rôle du contrôle**.
@@ -191,13 +207,59 @@ test("une interruption ne perd pas les réponses déjà validées", async ({ pag
   expect(apres![premier].box).toBe(1);
 });
 
-test("le schéma de prepapilote:revision est inchangé", async ({ page }) => {
+test("le schéma d'une entrée de révision est inchangé", async ({ page }) => {
+  /*
+    **Réécrit au lot F11, et c'est un changement de format ASSUMÉ.**
+
+    Ce contrôle s'appelait « le schéma de prepapilote:revision est inchangé ».
+    Il ne l'est plus : le contenu est désormais enveloppé (`{ v, d }`) pour que
+    la version soit une propriété de la donnée et non du nom de la clé — le
+    défaut que le lot corrige, huit clés portant un `.v1` que personne ne
+    lisait.
+
+    Ce que ce contrôle protégeait vraiment reste intact et se vérifie toujours :
+    la forme d'UNE ENTRÉE — deux champs, une boîte entière et une échéance ISO —
+    et le fait qu'un état déjà présent chez un utilisateur continue d'être lu
+    (contrôle suivant).
+  */
   await lancerRevision(page);
   const id = await repondre(page, true);
   const etat = await lireEtat(page);
 
-  // Deux champs, exactement : une boîte entière et une échéance ISO.
   expect(Object.keys(etat![id]).sort()).toEqual(["box", "dueAt"]);
   expect(Number.isInteger(etat![id].box)).toBe(true);
   expect(etat![id].dueAt).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
+
+  // La version est explicite, et dans la donnée.
+  const brut = JSON.parse((await lireBrut(page))!) as { v: number };
+  expect(brut.v, "le contenu porte une version").toBe(1);
+});
+
+test("un état écrit AVANT le lot F11 reste lu, et n'est pas perdu", async ({ page }) => {
+  /*
+    Le contrôle qui décide du lot. Les utilisateurs qui révisent déjà ont un
+    objet NU sous cette clé. S'il cessait d'être lu, leurs échéances
+    repartiraient de zéro sans que rien ne le signale — la perte silencieuse
+    que ce lot existe pour empêcher.
+
+    `semer` écrit délibérément la forme héritée, sans enveloppe.
+  */
+  const [a, b] = await identifiantsDuVivier(page, 2);
+  const futur = new Date(MAINTENANT.getTime() + 30 * JOUR_MS).toISOString();
+  await semer(page, { [a]: { box: 5, dueAt: futur }, [b]: { box: 4, dueAt: futur } });
+
+  await lancerRevision(page);
+  await repondre(page, true);
+
+  const etat = await lireEtat(page);
+  // Les deux échéances héritées sont toujours là, à l'identique.
+  expect(etat![a], "échéance héritée conservée").toEqual({ box: 5, dueAt: futur });
+  expect(etat![b], "échéance héritée conservée").toEqual({ box: 4, dueAt: futur });
+
+  // Rien n'a été mis en quarantaine : la donnée héritée est VALIDE, pas tolérée.
+  const quarantaine = await page.evaluate(
+    (cle) => window.localStorage.getItem(`${cle}.rejete`),
+    CLE
+  );
+  expect(quarantaine, "aucune mise en quarantaine sur une donnée héritée valide").toBeNull();
 });

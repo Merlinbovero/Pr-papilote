@@ -202,6 +202,58 @@ La règle générale, qui dépasse le Banc, est dans `design-system.md` :
 Garde : `e2e/banc-titre-seance.spec.ts` — onze routes × quatre phases, aucune
 phase à zéro ou deux titres.
 
+### Le stockage local — lot F11
+
+Le Banc a fini par toucher toutes les séances ; il restait à traiter ce
+qu'elles **écrivent**. L'inventaire a trouvé **douze clés** dans
+`localStorage`, réparties en **trois conventions incompatibles** :
+`prepapilote:revision` (deux-points), trois clés `prepapilote.…` (pointées,
+sans version), huit clés `pp.<famille>.history.v1` (préfixe abrégé, **avec** un
+suffixe de version), et `module-sidebar-collapsed` (sans espace de noms).
+
+Deux défauts en découlaient, et ce sont eux qui ont été corrigés — pas le
+désordre des noms.
+
+**1. Le marqueur de version était décoratif.** `grep` sur tout le dépôt : le
+`.v1` de ces huit clés n'apparaît que dans leur propre déclaration. Rien ne le
+lit, rien ne le compare. Passer à `.v2` n'aurait migré aucune donnée : cela
+aurait écrit **ailleurs**, en abandonnant les anciennes sans les lire ni les
+effacer. Une perte silencieuse, prête à se produire au premier changement de
+forme.
+
+**2. Rien n'était validé.** Douze lecteurs faisaient `JSON.parse(brut) as T`.
+Un `as` n'est pas une vérification, c'est une affirmation ; et ce que rend
+`localStorage` vient de l'extérieur du programme — version antérieure, autre
+onglet, extension, écriture interrompue. La panne survenait alors loin de sa
+cause : une échéance `undefined`, une date illisible, un score qui n'est pas un
+nombre.
+
+La règle appliquée par `src/lib/stockage/` :
+
+> une donnée relue depuis le stockage est une donnée **externe**. Elle est
+> validée à l'entrée, jamais castée ; et si elle est refusée, elle est mise de
+> côté sous `<clé>.rejete`, jamais détruite.
+
+**Ce que le lot ne fait pas, délibérément : il ne renomme aucune clé.**
+Renommer reviendrait à abandonner les données de ceux qui ont déjà travaillé —
+exactement le défaut relevé au point 1. Les clés gardent leur nom historique ;
+c'est leur **contenu** qui devient versionné, sous enveloppe `{ v, d }`. Les
+données déjà présentes chez les utilisateurs sont des tableaux nus : elles sont
+acceptées telles quelles et enveloppées à la première écriture.
+
+**Un défaut a été introduit puis rattrapé pendant le lot**, et il mérite d'être
+nommé ici parce qu'aucun test ne l'a vu : la première version du module imposait
+une borne de 20 entrées à tous les historiques, alors que trois épreuves
+(`codage`, `formes`, `triangles`) bornaient déjà au site d'appel à 10 et
+écrivaient ensuite tout ce qu'elles recevaient. C'est la relecture du diff, pas
+la campagne, qui l'a arrêté. `limite` est donc **facultative**, et la raison est
+écrite dans `historique.ts`.
+
+Gardes : 12 tests unitaires sur le contrat (`stockage.test.ts`), et deux
+contrôles e2e qui vérifient qu'un état écrit **avant** ce lot reste lu et n'est
+pas mis en quarantaine (`revision-leitner.spec.ts`,
+`bia-examen-f5-reference.spec.ts`).
+
 ## Le décompte des appelants — trois définitions, trois nombres
 
 La confusion vient de ce que trois documents comptent trois choses.

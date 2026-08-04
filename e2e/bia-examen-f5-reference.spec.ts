@@ -111,12 +111,24 @@ test.describe("examen blanc BIA — référence F5", () => {
 
     // L'examen blanc PERSISTE son historique — contrairement aux séances
     // d'entraînement. La migration ne doit ni le supprimer ni en changer la clé.
-    const historique = await page.evaluate(
-      (cle) => window.localStorage.getItem(cle),
-      CLE_HISTORIQUE
-    );
+    //
+    // La FORME du contenu, elle, a changé au lot F11 : il est désormais écrit
+    // sous enveloppe versionnée `{ v, d }`. Ce lecteur accepte les deux formes
+    // plutôt que d'affaiblir l'assertion, pour la même raison qu'en révision
+    // espacée — les données déjà présentes chez les utilisateurs sont nues, et
+    // un lecteur qui n'accepterait que la nouvelle forme masquerait le risque
+    // que ce lot devait écarter. La garantie protégée ici est intacte : la clé
+    // n'a pas bougé, et l'historique est toujours écrit.
+    const historique = await page.evaluate((cle) => {
+      const brut = window.localStorage.getItem(cle);
+      if (brut === null) return null;
+      const analyse: unknown = JSON.parse(brut);
+      const enveloppe = analyse as { v?: unknown; d?: unknown };
+      const charge = typeof enveloppe.v === "number" ? enveloppe.d : analyse;
+      return Array.isArray(charge) ? charge.length : -1;
+    }, CLE_HISTORIQUE);
     expect(historique, "l'historique doit être écrit").not.toBeNull();
-    expect(JSON.parse(historique!).length, "au moins une entrée").toBeGreaterThan(0);
+    expect(historique, "au moins une entrée, sous forme de tableau").toBeGreaterThan(0);
   });
 
   test("un nouvel examen repart de la présentation", async ({ page }) => {

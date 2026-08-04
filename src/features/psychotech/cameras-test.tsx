@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ecrireHistorique, lireHistorique } from "@/lib/stockage/historique";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,15 @@ import { cn } from "@/lib/utils";
 
 type Phase = "intro" | "playing" | "done";
 
+/*
+  La clé garde son nom — lot F11.
+
+  Le suffixe `.v1` y est resté sans jamais être lu par personne : c'était un
+  marqueur décoratif. Le renommer maintenant abandonnerait l'historique déjà
+  constitué, ce qui est précisément le défaut que le lot corrige. La version
+  vit désormais DANS le contenu (`{ v, d }`), et ce nom n'est plus qu'un
+  identifiant d'emplacement.
+*/
 const HISTORY_KEY = "pp.appareils.history.v1";
 const HISTORY_LIMIT = 10;
 
@@ -40,21 +50,11 @@ interface HistoryEntry {
 }
 
 function loadHistory(): HistoryEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(HISTORY_KEY);
-    return raw ? (JSON.parse(raw) as HistoryEntry[]) : [];
-  } catch {
-    return [];
-  }
+  return lireHistorique<HistoryEntry>(HISTORY_KEY);
 }
 
 function saveHistory(entries: readonly HistoryEntry[]) {
-  try {
-    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(entries.slice(0, HISTORY_LIMIT)));
-  } catch {
-    /* quota / navigation privée : on ignore silencieusement */
-  }
+  ecrireHistorique(HISTORY_KEY, entries, HISTORY_LIMIT);
 }
 
 function formatDuration(totalSeconds: number): string {

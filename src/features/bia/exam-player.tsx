@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { z } from "zod";
 import { BookmarkIcon, FlagIcon, RotateCcwIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +14,7 @@ import { ModeSeance } from "@/features/banc/mode-seance";
 import { ReponseBanc } from "@/features/banc/etat-reponse";
 import { deplacerFocus } from "@/lib/a11y/focus-transition";
 import type { EtatChrono } from "@/lib/design/banc-tokens";
+import { ecrireStocke, lireStocke, VERSION_HERITEE } from "@/lib/stockage/stockage";
 import { cn } from "@/lib/utils";
 import {
   composeBiaExam,
@@ -84,22 +86,38 @@ interface ExamHistoryEntry {
   dureeSecondes: number;
 }
 
-function readJson<T>(key: string, fallback: T): T {
-  try {
-    const raw = window.localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
+/**
+ * Version du contenu stocké — lot F11. Les CLÉS ne changent pas : renommer
+ * abandonnerait les historiques déjà constitués.
+ */
+const VERSION_STOCKAGE = 1;
 
-function writeJson(key: string, value: unknown) {
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch {
-    // Stockage indisponible (navigation privée…) : l'examen reste jouable.
-  }
-}
+/**
+ * Les deux schémas, appliqués à la LECTURE.
+ *
+ * Avant le lot F11, ce fichier faisait `JSON.parse(raw) as T` : un `as`
+ * affirme, il ne vérifie pas. Une note stockée en chaîne, une date illisible
+ * ou un tableau tronqué par une écriture interrompue entraient sans contrôle
+ * et se manifestaient bien plus loin — dans l'affichage de l'historique, ou
+ * dans le tirage qui exclut les questions déjà vues.
+ */
+const historiqueSchema = z.array(
+  z.object({
+    finishedAt: z.string().refine((v) => !Number.isNaN(Date.parse(v))),
+    noteGlobale20: z.number(),
+    admis: z.boolean(),
+    dureeSecondes: z.number().nonnegative(),
+  })
+);
+const vuesSchema = z.array(z.string());
+
+/**
+ * Les données écrites avant ce lot sont des tableaux nus : leur forme est
+ * déjà la bonne, seul l'emballage est nouveau. On les accepte telles quelles,
+ * et la première écriture les enveloppe.
+ */
+const heritage = (depuis: number, charge: unknown) =>
+  depuis === VERSION_HERITEE ? charge : undefined;
 
 interface BiaExamPlayerProps {
   /** URL du vivier JSON, récupéré à la demande au lancement (Phase 16). */
@@ -160,7 +178,12 @@ export function BiaExamPlayer({
   // rendu client).
   React.useEffect(() => {
     const id = requestAnimationFrame(() => {
-      setHistory(readJson<ExamHistoryEntry[]>(HISTORY_STORAGE_KEY, []));
+      setHistory(
+        lireStocke<ExamHistoryEntry[]>(HISTORY_STORAGE_KEY, historiqueSchema, [], {
+          version: VERSION_STOCKAGE,
+          migrer: heritage,
+        })
+      );
     });
     return () => cancelAnimationFrame(id);
   }, []);
@@ -179,7 +202,12 @@ export function BiaExamPlayer({
         return;
       }
     }
-    const seenIds = new Set(readJson<string[]>(SEEN_STORAGE_KEY, []));
+    const seenIds = new Set(
+      lireStocke<string[]>(SEEN_STORAGE_KEY, vuesSchema, [], {
+        version: VERSION_STOCKAGE,
+        migrer: heritage,
+      })
+    );
     const byMatiere = new Map(Object.entries(pools));
     const exam = composeBiaExam({
       pools: { byMatiere },
@@ -262,12 +290,17 @@ export function BiaExamPlayer({
       dureeSecondes: spent,
     };
     const nextHistory = [entry, ...history].slice(0, 20);
-    writeJson(HISTORY_STORAGE_KEY, nextHistory);
-    const seen = new Set(readJson<string[]>(SEEN_STORAGE_KEY, []));
+    ecrireStocke(HISTORY_STORAGE_KEY, nextHistory, VERSION_STOCKAGE);
+    const seen = new Set(
+      lireStocke<string[]>(SEEN_STORAGE_KEY, vuesSchema, [], {
+        version: VERSION_STOCKAGE,
+        migrer: heritage,
+      })
+    );
     for (const { question } of questions) {
       seen.add(question.id);
     }
-    writeJson(SEEN_STORAGE_KEY, [...seen].slice(-2000));
+    ecrireStocke(SEEN_STORAGE_KEY, [...seen].slice(-2000), VERSION_STOCKAGE);
 
     setReport(graded);
     setElapsed(spent);
