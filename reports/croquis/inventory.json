@@ -1,0 +1,1488 @@
+{
+  "generatedAt": "2026-08-04",
+  "generator": "scripts/audit-croquis-inventory.mjs",
+  "measuredInputs": [
+    "content",
+    "src/features/interactions/registry.ts"
+  ],
+  "sourceCommit": "3890d9244f04d98520bf0573ba1aa2a94a61b5ee",
+  "sourceCommitDate": "2026-07-30T11:02:28+00:00",
+  "measuredInputsClean": true,
+  "totals": {
+    "yamlFilesScanned": 1569,
+    "yamlFilesParsed": 1569,
+    "parseErrors": 0,
+    "svgFilesOnDisk": 106,
+    "distinctSchemaIdsReferenced": 106,
+    "figureReferences": 107,
+    "documentsWithAtLeastOneFigure": 73,
+    "orphanSvg": 0,
+    "brokenReferences": 0,
+    "sharedSchemas": 1,
+    "figuresWithMeta": 0,
+    "figuresWithoutMeta": 107,
+    "figuresWithoutAlt": 0,
+    "interactions": 7
+  },
+  "distributions": {
+    "yamlFilesByFolder": {
+      "alat": 21,
+      "cours": 14,
+      "culture": 31,
+      "eopan": 42,
+      "eopn": 30,
+      "exercices": 45,
+      "fondamentaux": 93,
+      "glossaire": 136,
+      "lectures": 4,
+      "psychotechnique": 21,
+      "questions": 1127,
+      "videos": 5
+    },
+    "documentsWithFigureByModule": {
+      "alat": 3,
+      "eopan": 15,
+      "eopn": 3,
+      "fondamentaux": 50,
+      "psychotechnique": 2
+    },
+    "figureReferencesByModule": {
+      "alat": 3,
+      "eopan": 15,
+      "eopn": 3,
+      "fondamentaux": 84,
+      "psychotechnique": 2
+    },
+    "figureReferencesByLevel": {
+      "1": 85,
+      "2": 22
+    }
+  },
+  "parseErrors": [],
+  "orphanSvg": [],
+  "brokenReferences": [],
+  "sharedSchemas": [
+    {
+      "schemaId": "nord-vrai-magnetique",
+      "files": [
+        "content/fondamentaux/navigation/cap-route-et-derive.yaml",
+        "content/fondamentaux/navigation/declinaison-magnetique.yaml"
+      ]
+    }
+  ],
+  "figuresWithoutAlt": [],
+  "figuresWithMeta": [],
+  "interactions": [
+    "axes-gouvernes",
+    "centrage",
+    "forces-et-vecteurs",
+    "incidence-decrochage",
+    "polaire",
+    "soufflerie-zones",
+    "venturi"
+  ],
+  "documentsWithFigures": [
+    {
+      "file": "content/alat/appareils/gazelle.yaml",
+      "id": "alat.appareils.gazelle",
+      "module": "alat",
+      "type": "helicoptere",
+      "level": 2,
+      "schemaIds": [
+        "fenestron-rotor-anticouple"
+      ]
+    },
+    {
+      "file": "content/alat/organisation/aviation-legere-armee-de-terre.yaml",
+      "id": "alat.organisation.aviation-legere-armee-de-terre",
+      "module": "alat",
+      "type": "organisation",
+      "level": 1,
+      "schemaIds": [
+        "structure-alat"
+      ]
+    },
+    {
+      "file": "content/alat/presentation/devenir-pilote-alat.yaml",
+      "id": "alat.presentation.devenir-pilote-alat",
+      "module": "alat",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "parcours-formation-alat"
+      ]
+    },
+    {
+      "file": "content/eopan/appareils/atlantique-2.yaml",
+      "id": "eopan.appareils.atlantique-2",
+      "module": "eopan",
+      "type": "appareil",
+      "level": 2,
+      "schemaIds": [
+        "patrouille-maritime-atl2"
+      ]
+    },
+    {
+      "file": "content/eopan/appareils/e-2c-hawkeye.yaml",
+      "id": "eopan.appareils.e-2c-hawkeye",
+      "module": "eopan",
+      "type": "appareil",
+      "level": 2,
+      "schemaIds": [
+        "guet-aerien-hawkeye"
+      ]
+    },
+    {
+      "file": "content/eopan/appareils/nh90-caiman.yaml",
+      "id": "eopan.appareils.nh90-caiman",
+      "module": "eopan",
+      "type": "helicoptere",
+      "level": 2,
+      "schemaIds": [
+        "caiman-lutte-asm"
+      ]
+    },
+    {
+      "file": "content/eopan/ban/landivisiau.yaml",
+      "id": "eopan.ban.landivisiau",
+      "module": "eopan",
+      "type": "ban",
+      "level": 1,
+      "schemaIds": [
+        "ban-porte-avions-granit"
+      ]
+    },
+    {
+      "file": "content/eopan/ban/lann-bihoue.yaml",
+      "id": "eopan.ban.lann-bihoue",
+      "module": "eopan",
+      "type": "ban",
+      "level": 1,
+      "schemaIds": [
+        "lann-bihoue-missions"
+      ]
+    },
+    {
+      "file": "content/eopan/ban/lanveoc-poulmic.yaml",
+      "id": "eopan.ban.lanveoc-poulmic",
+      "module": "eopan",
+      "type": "ban",
+      "level": 1,
+      "schemaIds": [
+        "carte-ban-aeronavale"
+      ]
+    },
+    {
+      "file": "content/eopan/concepts/groupe-aeronaval.yaml",
+      "id": "eopan.concepts.groupe-aeronaval",
+      "module": "eopan",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "groupe-aeronaval"
+      ]
+    },
+    {
+      "file": "content/eopan/concepts/pont-d-envol.yaml",
+      "id": "eopan.concepts.pont-d-envol",
+      "module": "eopan",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "pont-envol-piste-oblique"
+      ]
+    },
+    {
+      "file": "content/eopan/culture-militaire/culture-et-valeurs-de-la-marine.yaml",
+      "id": "eopan.culture-militaire.culture-et-valeurs-de-la-marine",
+      "module": "eopan",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "valeurs-marine"
+      ]
+    },
+    {
+      "file": "content/eopan/histoire/histoire-de-l-aeronautique-navale.yaml",
+      "id": "eopan.histoire.histoire-de-l-aeronautique-navale",
+      "module": "eopan",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "chronologie-aeronavale"
+      ]
+    },
+    {
+      "file": "content/eopan/missions/missions-de-la-marine.yaml",
+      "id": "eopan.missions.missions-de-la-marine",
+      "module": "eopan",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "missions-marine"
+      ]
+    },
+    {
+      "file": "content/eopan/organisation/aeronautique-navale.yaml",
+      "id": "eopan.organisation.aeronautique-navale",
+      "module": "eopan",
+      "type": "organisation",
+      "level": 1,
+      "schemaIds": [
+        "structure-aeronautique-navale"
+      ]
+    },
+    {
+      "file": "content/eopan/organisation/marine-nationale.yaml",
+      "id": "eopan.organisation.marine-nationale",
+      "module": "eopan",
+      "type": "organisation",
+      "level": 1,
+      "schemaIds": [
+        "organisation-marine-commandement"
+      ]
+    },
+    {
+      "file": "content/eopan/presentation/le-concours-eopan.yaml",
+      "id": "eopan.presentation.le-concours-eopan",
+      "module": "eopan",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "parcours-selection-eopan"
+      ]
+    },
+    {
+      "file": "content/eopan/procedures/catapultage.yaml",
+      "id": "eopan.procedures.catapultage",
+      "module": "eopan",
+      "type": "procedure",
+      "level": 2,
+      "schemaIds": [
+        "catapultage-principe"
+      ]
+    },
+    {
+      "file": "content/eopn/organisation/armee-de-l-air-et-de-l-espace.yaml",
+      "id": "eopn.organisation.armee-de-l-air-et-de-l-espace",
+      "module": "eopn",
+      "type": "organisation",
+      "level": 1,
+      "schemaIds": [
+        "structure-armee-air-espace"
+      ]
+    },
+    {
+      "file": "content/eopn/presentation/le-concours-eopn.yaml",
+      "id": "eopn.presentation.le-concours-eopn",
+      "module": "eopn",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "parcours-selection-eopn"
+      ]
+    },
+    {
+      "file": "content/eopn/selection/la-formation-du-pilote-de-chasse.yaml",
+      "id": "eopn.selection.la-formation-du-pilote-de-chasse",
+      "module": "eopn",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "cursus-pilote-chasse-aae"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/air-et-proprietes.yaml",
+      "id": "fondamentaux.aerodynamique.air-et-proprietes",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "air-masse",
+        "air-densite-altitude"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/conservation-du-debit.yaml",
+      "id": "fondamentaux.aerodynamique.conservation-du-debit",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "conservation-debit"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/decrochage.yaml",
+      "id": "fondamentaux.aerodynamique.decrochage",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "decrochage-ecoulement",
+        "decrochage-courbe-cz"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/ecoulement-de-l-air.yaml",
+      "id": "fondamentaux.aerodynamique.ecoulement-de-l-air",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "filets-air",
+        "venturi"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/l-allongement-et-les-winglets.yaml",
+      "id": "fondamentaux.aerodynamique.l-allongement-et-les-winglets",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "allongement"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/la-couche-limite.yaml",
+      "id": "fondamentaux.aerodynamique.la-couche-limite",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "couche-limite"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/la-force-aerodynamique.yaml",
+      "id": "fondamentaux.aerodynamique.la-force-aerodynamique",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "force-aerodynamique-decomposition"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/la-polaire.yaml",
+      "id": "fondamentaux.aerodynamique.la-polaire",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "polaire-eiffel"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/la-trainee-induite.yaml",
+      "id": "fondamentaux.aerodynamique.la-trainee-induite",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "tourbillon-marginal"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-axes-et-les-gouvernes.yaml",
+      "id": "fondamentaux.aerodynamique.les-axes-et-les-gouvernes",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "les-trois-axes"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-bilans-de-forces.yaml",
+      "id": "fondamentaux.aerodynamique.les-bilans-de-forces",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "virage-facteur-charge"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-effets-moteur.yaml",
+      "id": "fondamentaux.aerodynamique.les-effets-moteur",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "effets-moteur"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-souffleries.yaml",
+      "id": "fondamentaux.aerodynamique.les-souffleries",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "soufflerie"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-types-de-profils.yaml",
+      "id": "fondamentaux.aerodynamique.les-types-de-profils",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "types-de-profils"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/les-volets-et-becs.yaml",
+      "id": "fondamentaux.aerodynamique.les-volets-et-becs",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "volets-becs"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/portance.yaml",
+      "id": "fondamentaux.aerodynamique.portance",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "portance-origine",
+        "portance-incidence"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/pression-statique-dynamique-totale.yaml",
+      "id": "fondamentaux.aerodynamique.pression-statique-dynamique-totale",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "pressions-statique-dynamique"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/profil-d-aile.yaml",
+      "id": "fondamentaux.aerodynamique.profil-d-aile",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "profil-anatomie",
+        "profil-incidence"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/stabilite-et-centrage.yaml",
+      "id": "fondamentaux.aerodynamique.stabilite-et-centrage",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "stabilite-centrage"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/theoreme-de-bernoulli.yaml",
+      "id": "fondamentaux.aerodynamique.theoreme-de-bernoulli",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "bernoulli-venturi"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/aerodynamique/trainee.yaml",
+      "id": "fondamentaux.aerodynamique.trainee",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "trainee-forces",
+        "trainee-sources"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/anglais-aeronautique/vocabulaire-de-base.yaml",
+      "id": "fondamentaux.anglais-aeronautique.vocabulaire-de-base",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "avion-anglais"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/cartographie/echelle-et-mesures.yaml",
+      "id": "fondamentaux.cartographie.echelle-et-mesures",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "echelle-principe",
+        "grande-petite-echelle"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/facteurs-humains/desorientation-et-illusions.yaml",
+      "id": "fondamentaux.facteurs-humains.desorientation-et-illusions",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "illusion-acceleration",
+        "croire-instruments"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/facteurs-humains/hypoxie-et-altitude.yaml",
+      "id": "fondamentaux.facteurs-humains.hypoxie-et-altitude",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "hypoxie-pression-o2",
+        "temps-utile-conscience"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/instruments/altimetre.yaml",
+      "id": "fondamentaux.instruments.altimetre",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "altimetre-principe",
+        "altimetre-cadran"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/instruments/anemometre.yaml",
+      "id": "fondamentaux.instruments.anemometre",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "anemometre-vitesses",
+        "badin-arcs"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/instruments/chaine-pitot-statique.yaml",
+      "id": "fondamentaux.instruments.chaine-pitot-statique",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "pitot-statique-sources",
+        "chaine-anemobarometrique"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/instruments/compas-et-conservateur.yaml",
+      "id": "fondamentaux.instruments.compas-et-conservateur",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "compas-magnetique",
+        "compas-conservateur"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/instruments/horizon-artificiel.yaml",
+      "id": "fondamentaux.instruments.horizon-artificiel",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "gyroscope-fixite",
+        "horizon-artificiel-lecture"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/mecanique-du-vol/axes-et-gouvernes.yaml",
+      "id": "fondamentaux.mecanique-du-vol.axes-et-gouvernes",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "trois-axes",
+        "gouvernes"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/mecanique-du-vol/decrochage-et-vrille.yaml",
+      "id": "fondamentaux.mecanique-du-vol.decrochage-et-vrille",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 2,
+      "schemaIds": [
+        "vrille-asymetrie",
+        "vrille-trajectoire"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/mecanique-du-vol/equilibre-et-centrage.yaml",
+      "id": "fondamentaux.mecanique-du-vol.equilibre-et-centrage",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "equilibre-longitudinal",
+        "plage-de-centrage"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/mecanique-du-vol/quatre-forces.yaml",
+      "id": "fondamentaux.mecanique-du-vol.quatre-forces",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "quatre-forces-avion",
+        "equilibre-en-palier"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/mecanique-du-vol/virage.yaml",
+      "id": "fondamentaux.mecanique-du-vol.virage",
+      "module": "fondamentaux",
+      "type": "notion-aerodynamique",
+      "level": 1,
+      "schemaIds": [
+        "virage-decomposition",
+        "facteur-de-charge"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/atmosphere-standard.yaml",
+      "id": "fondamentaux.meteorologie.atmosphere-standard",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 1,
+      "schemaIds": [
+        "profil-isa",
+        "pression-altitude"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/le-vent.yaml",
+      "id": "fondamentaux.meteorologie.le-vent",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 1,
+      "schemaIds": [
+        "vent-pression",
+        "triangle-des-vitesses"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/les-nuages.yaml",
+      "id": "fondamentaux.meteorologie.les-nuages",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 1,
+      "schemaIds": [
+        "formation-nuage",
+        "etages-nuages"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/phenomenes-dangereux.yaml",
+      "id": "fondamentaux.meteorologie.phenomenes-dangereux",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 2,
+      "schemaIds": [
+        "cisaillement-microrafale",
+        "cumulonimbus-dangers"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/pression-et-calage.yaml",
+      "id": "fondamentaux.meteorologie.pression-et-calage",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 1,
+      "schemaIds": [
+        "calages-altimetriques",
+        "calage-transition"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/meteorologie/temperature-et-humidite.yaml",
+      "id": "fondamentaux.meteorologie.temperature-et-humidite",
+      "module": "fondamentaux",
+      "type": "notion-meteo",
+      "level": 1,
+      "schemaIds": [
+        "humidite-relative",
+        "point-de-rosee"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/navigation/cap-route-et-derive.yaml",
+      "id": "fondamentaux.navigation.cap-route-et-derive",
+      "module": "fondamentaux",
+      "type": "notion-navigation",
+      "level": 1,
+      "schemaIds": [
+        "cap-route-derive",
+        "nord-vrai-magnetique"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/navigation/declinaison-magnetique.yaml",
+      "id": "fondamentaux.navigation.declinaison-magnetique",
+      "module": "fondamentaux",
+      "type": "notion-navigation",
+      "level": 2,
+      "schemaIds": [
+        "nord-vrai-magnetique",
+        "declinaison-est-ouest"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/navigation/temps-vitesse-distance.yaml",
+      "id": "fondamentaux.navigation.temps-vitesse-distance",
+      "module": "fondamentaux",
+      "type": "notion-navigation",
+      "level": 1,
+      "schemaIds": [
+        "triangle-dvt",
+        "regle-6-minutes"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/navigation/terre-et-coordonnees.yaml",
+      "id": "fondamentaux.navigation.terre-et-coordonnees",
+      "module": "fondamentaux",
+      "type": "notion-navigation",
+      "level": 1,
+      "schemaIds": [
+        "coordonnees-geographiques",
+        "mille-marin"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/physique/les-trois-lois-de-newton.yaml",
+      "id": "fondamentaux.physique.les-trois-lois-de-newton",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "newton-inertie-equilibre",
+        "newton-action-reaction"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/physique/pression-forces-unites.yaml",
+      "id": "fondamentaux.physique.pression-forces-unites",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "force-vecteur",
+        "pression-force-surface",
+        "pression-atmospherique"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/physique/systeme-international-et-unites.yaml",
+      "id": "fondamentaux.physique.systeme-international-et-unites",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "unites-en-situation",
+        "abaque-vitesse"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/radio-communications/alphabet-oaci.yaml",
+      "id": "fondamentaux.radio-communications.alphabet-oaci",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "epellation-principe"
+      ]
+    },
+    {
+      "file": "content/fondamentaux/reglementation/espaces-aeriens.yaml",
+      "id": "fondamentaux.reglementation.espaces-aeriens",
+      "module": "fondamentaux",
+      "type": "concept",
+      "level": 2,
+      "schemaIds": [
+        "classes-espaces",
+        "structure-espace"
+      ]
+    },
+    {
+      "file": "content/psychotechnique/exercices/la-vision-spatiale.yaml",
+      "id": "psychotechnique.exercices.la-vision-spatiale",
+      "module": "psychotechnique",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "rotation-mentale-exemple"
+      ]
+    },
+    {
+      "file": "content/psychotechnique/exercices/les-dominos.yaml",
+      "id": "psychotechnique.exercices.les-dominos",
+      "module": "psychotechnique",
+      "type": "concept",
+      "level": 1,
+      "schemaIds": [
+        "dominos-exemple"
+      ]
+    }
+  ],
+  "svgFiles": [
+    {
+      "schemaId": "abaque-vitesse",
+      "file": "content/schemas/abaque-vitesse.svg",
+      "bytes": 1972,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "air-densite-altitude",
+      "file": "content/schemas/air-densite-altitude.svg",
+      "bytes": 2176,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "air-masse",
+      "file": "content/schemas/air-masse.svg",
+      "bytes": 1498,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "allongement",
+      "file": "content/schemas/allongement.svg",
+      "bytes": 2160,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "altimetre-cadran",
+      "file": "content/schemas/altimetre-cadran.svg",
+      "bytes": 2427,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "altimetre-principe",
+      "file": "content/schemas/altimetre-principe.svg",
+      "bytes": 2207,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "anemometre-vitesses",
+      "file": "content/schemas/anemometre-vitesses.svg",
+      "bytes": 2089,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "avion-anglais",
+      "file": "content/schemas/avion-anglais.svg",
+      "bytes": 2469,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "badin-arcs",
+      "file": "content/schemas/badin-arcs.svg",
+      "bytes": 2477,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "ban-porte-avions-granit",
+      "file": "content/schemas/ban-porte-avions-granit.svg",
+      "bytes": 2301,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "bernoulli-venturi",
+      "file": "content/schemas/bernoulli-venturi.svg",
+      "bytes": 2098,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "caiman-lutte-asm",
+      "file": "content/schemas/caiman-lutte-asm.svg",
+      "bytes": 2200,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "calage-transition",
+      "file": "content/schemas/calage-transition.svg",
+      "bytes": 2247,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "calages-altimetriques",
+      "file": "content/schemas/calages-altimetriques.svg",
+      "bytes": 2483,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "cap-route-derive",
+      "file": "content/schemas/cap-route-derive.svg",
+      "bytes": 2378,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "carte-ban-aeronavale",
+      "file": "content/schemas/carte-ban-aeronavale.svg",
+      "bytes": 1749,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "catapultage-principe",
+      "file": "content/schemas/catapultage-principe.svg",
+      "bytes": 2373,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "chaine-anemobarometrique",
+      "file": "content/schemas/chaine-anemobarometrique.svg",
+      "bytes": 2686,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "chronologie-aeronavale",
+      "file": "content/schemas/chronologie-aeronavale.svg",
+      "bytes": 2702,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "cisaillement-microrafale",
+      "file": "content/schemas/cisaillement-microrafale.svg",
+      "bytes": 2156,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "classes-espaces",
+      "file": "content/schemas/classes-espaces.svg",
+      "bytes": 2716,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "compas-conservateur",
+      "file": "content/schemas/compas-conservateur.svg",
+      "bytes": 2104,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "compas-magnetique",
+      "file": "content/schemas/compas-magnetique.svg",
+      "bytes": 1680,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "conservation-debit",
+      "file": "content/schemas/conservation-debit.svg",
+      "bytes": 1911,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "coordonnees-geographiques",
+      "file": "content/schemas/coordonnees-geographiques.svg",
+      "bytes": 1946,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "couche-limite",
+      "file": "content/schemas/couche-limite.svg",
+      "bytes": 1984,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "croire-instruments",
+      "file": "content/schemas/croire-instruments.svg",
+      "bytes": 2324,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "cumulonimbus-dangers",
+      "file": "content/schemas/cumulonimbus-dangers.svg",
+      "bytes": 2135,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "cursus-pilote-chasse-aae",
+      "file": "content/schemas/cursus-pilote-chasse-aae.svg",
+      "bytes": 2548,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "declinaison-est-ouest",
+      "file": "content/schemas/declinaison-est-ouest.svg",
+      "bytes": 2247,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "decrochage-courbe-cz",
+      "file": "content/schemas/decrochage-courbe-cz.svg",
+      "bytes": 1916,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "decrochage-ecoulement",
+      "file": "content/schemas/decrochage-ecoulement.svg",
+      "bytes": 2662,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "dominos-exemple",
+      "file": "content/schemas/dominos-exemple.svg",
+      "bytes": 2531,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "echelle-principe",
+      "file": "content/schemas/echelle-principe.svg",
+      "bytes": 1476,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "effets-moteur",
+      "file": "content/schemas/effets-moteur.svg",
+      "bytes": 1694,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "epellation-principe",
+      "file": "content/schemas/epellation-principe.svg",
+      "bytes": 1930,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "equilibre-en-palier",
+      "file": "content/schemas/equilibre-en-palier.svg",
+      "bytes": 2300,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "equilibre-longitudinal",
+      "file": "content/schemas/equilibre-longitudinal.svg",
+      "bytes": 2612,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "etages-nuages",
+      "file": "content/schemas/etages-nuages.svg",
+      "bytes": 2803,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "facteur-de-charge",
+      "file": "content/schemas/facteur-de-charge.svg",
+      "bytes": 2094,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "fenestron-rotor-anticouple",
+      "file": "content/schemas/fenestron-rotor-anticouple.svg",
+      "bytes": 2323,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "filets-air",
+      "file": "content/schemas/filets-air.svg",
+      "bytes": 1336,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "force-aerodynamique-decomposition",
+      "file": "content/schemas/force-aerodynamique-decomposition.svg",
+      "bytes": 2766,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "force-vecteur",
+      "file": "content/schemas/force-vecteur.svg",
+      "bytes": 1418,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "formation-nuage",
+      "file": "content/schemas/formation-nuage.svg",
+      "bytes": 1885,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "gouvernes",
+      "file": "content/schemas/gouvernes.svg",
+      "bytes": 2250,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "grande-petite-echelle",
+      "file": "content/schemas/grande-petite-echelle.svg",
+      "bytes": 1667,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "groupe-aeronaval",
+      "file": "content/schemas/groupe-aeronaval.svg",
+      "bytes": 3124,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "guet-aerien-hawkeye",
+      "file": "content/schemas/guet-aerien-hawkeye.svg",
+      "bytes": 2501,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "gyroscope-fixite",
+      "file": "content/schemas/gyroscope-fixite.svg",
+      "bytes": 2132,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "horizon-artificiel-lecture",
+      "file": "content/schemas/horizon-artificiel-lecture.svg",
+      "bytes": 2066,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "humidite-relative",
+      "file": "content/schemas/humidite-relative.svg",
+      "bytes": 1735,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "hypoxie-pression-o2",
+      "file": "content/schemas/hypoxie-pression-o2.svg",
+      "bytes": 2277,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "illusion-acceleration",
+      "file": "content/schemas/illusion-acceleration.svg",
+      "bytes": 2078,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "lann-bihoue-missions",
+      "file": "content/schemas/lann-bihoue-missions.svg",
+      "bytes": 2069,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "les-trois-axes",
+      "file": "content/schemas/les-trois-axes.svg",
+      "bytes": 1731,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "mille-marin",
+      "file": "content/schemas/mille-marin.svg",
+      "bytes": 1710,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "missions-marine",
+      "file": "content/schemas/missions-marine.svg",
+      "bytes": 2165,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "newton-action-reaction",
+      "file": "content/schemas/newton-action-reaction.svg",
+      "bytes": 1835,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "newton-inertie-equilibre",
+      "file": "content/schemas/newton-inertie-equilibre.svg",
+      "bytes": 2177,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "nord-vrai-magnetique",
+      "file": "content/schemas/nord-vrai-magnetique.svg",
+      "bytes": 1922,
+      "referenceCount": 2
+    },
+    {
+      "schemaId": "organisation-marine-commandement",
+      "file": "content/schemas/organisation-marine-commandement.svg",
+      "bytes": 3261,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "parcours-formation-alat",
+      "file": "content/schemas/parcours-formation-alat.svg",
+      "bytes": 2809,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "parcours-selection-eopan",
+      "file": "content/schemas/parcours-selection-eopan.svg",
+      "bytes": 2673,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "parcours-selection-eopn",
+      "file": "content/schemas/parcours-selection-eopn.svg",
+      "bytes": 2744,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "patrouille-maritime-atl2",
+      "file": "content/schemas/patrouille-maritime-atl2.svg",
+      "bytes": 2142,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pitot-statique-sources",
+      "file": "content/schemas/pitot-statique-sources.svg",
+      "bytes": 2124,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "plage-de-centrage",
+      "file": "content/schemas/plage-de-centrage.svg",
+      "bytes": 2125,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "point-de-rosee",
+      "file": "content/schemas/point-de-rosee.svg",
+      "bytes": 2131,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "polaire-eiffel",
+      "file": "content/schemas/polaire-eiffel.svg",
+      "bytes": 1901,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pont-envol-piste-oblique",
+      "file": "content/schemas/pont-envol-piste-oblique.svg",
+      "bytes": 2391,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "portance-incidence",
+      "file": "content/schemas/portance-incidence.svg",
+      "bytes": 1692,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "portance-origine",
+      "file": "content/schemas/portance-origine.svg",
+      "bytes": 1839,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pression-altitude",
+      "file": "content/schemas/pression-altitude.svg",
+      "bytes": 1756,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pression-atmospherique",
+      "file": "content/schemas/pression-atmospherique.svg",
+      "bytes": 1737,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pression-force-surface",
+      "file": "content/schemas/pression-force-surface.svg",
+      "bytes": 1681,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "pressions-statique-dynamique",
+      "file": "content/schemas/pressions-statique-dynamique.svg",
+      "bytes": 1773,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "profil-anatomie",
+      "file": "content/schemas/profil-anatomie.svg",
+      "bytes": 1755,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "profil-incidence",
+      "file": "content/schemas/profil-incidence.svg",
+      "bytes": 1577,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "profil-isa",
+      "file": "content/schemas/profil-isa.svg",
+      "bytes": 1942,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "quatre-forces-avion",
+      "file": "content/schemas/quatre-forces-avion.svg",
+      "bytes": 2026,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "regle-6-minutes",
+      "file": "content/schemas/regle-6-minutes.svg",
+      "bytes": 1515,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "rotation-mentale-exemple",
+      "file": "content/schemas/rotation-mentale-exemple.svg",
+      "bytes": 2102,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "soufflerie",
+      "file": "content/schemas/soufflerie.svg",
+      "bytes": 2349,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "stabilite-centrage",
+      "file": "content/schemas/stabilite-centrage.svg",
+      "bytes": 2152,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "structure-aeronautique-navale",
+      "file": "content/schemas/structure-aeronautique-navale.svg",
+      "bytes": 2616,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "structure-alat",
+      "file": "content/schemas/structure-alat.svg",
+      "bytes": 2422,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "structure-armee-air-espace",
+      "file": "content/schemas/structure-armee-air-espace.svg",
+      "bytes": 2340,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "structure-espace",
+      "file": "content/schemas/structure-espace.svg",
+      "bytes": 2039,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "temps-utile-conscience",
+      "file": "content/schemas/temps-utile-conscience.svg",
+      "bytes": 1669,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "tourbillon-marginal",
+      "file": "content/schemas/tourbillon-marginal.svg",
+      "bytes": 2094,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "trainee-forces",
+      "file": "content/schemas/trainee-forces.svg",
+      "bytes": 1887,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "trainee-sources",
+      "file": "content/schemas/trainee-sources.svg",
+      "bytes": 1912,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "triangle-des-vitesses",
+      "file": "content/schemas/triangle-des-vitesses.svg",
+      "bytes": 2085,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "triangle-dvt",
+      "file": "content/schemas/triangle-dvt.svg",
+      "bytes": 1341,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "trois-axes",
+      "file": "content/schemas/trois-axes.svg",
+      "bytes": 2257,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "types-de-profils",
+      "file": "content/schemas/types-de-profils.svg",
+      "bytes": 1592,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "unites-en-situation",
+      "file": "content/schemas/unites-en-situation.svg",
+      "bytes": 1298,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "valeurs-marine",
+      "file": "content/schemas/valeurs-marine.svg",
+      "bytes": 2493,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "vent-pression",
+      "file": "content/schemas/vent-pression.svg",
+      "bytes": 1799,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "venturi",
+      "file": "content/schemas/venturi.svg",
+      "bytes": 1514,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "virage-decomposition",
+      "file": "content/schemas/virage-decomposition.svg",
+      "bytes": 2563,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "virage-facteur-charge",
+      "file": "content/schemas/virage-facteur-charge.svg",
+      "bytes": 2285,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "volets-becs",
+      "file": "content/schemas/volets-becs.svg",
+      "bytes": 1779,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "vrille-asymetrie",
+      "file": "content/schemas/vrille-asymetrie.svg",
+      "bytes": 2359,
+      "referenceCount": 1
+    },
+    {
+      "schemaId": "vrille-trajectoire",
+      "file": "content/schemas/vrille-trajectoire.svg",
+      "bytes": 1883,
+      "referenceCount": 1
+    }
+  ]
+}
