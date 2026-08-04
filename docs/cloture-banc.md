@@ -175,15 +175,44 @@ laissé ouvert pour une raison écrite.
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | **Formes imbriquées à 967 px en 1440 × 900** — seul relevé encore hors du premier écran                 | son tutoriel est le plus haut des sept ; le raccourcir est une décision **éditoriale**   |
 | **`sizes` fautif sur `dossier`, `cahier`, `situation`, `lecon-fiche`**                                  | défaut systémique nommé au lot R-01, hors périmètre du registre                          |
-| **Défauts d'audit R-03 à R-10**                                                                         | relevés en recette de production, séquencés après la mise en ligne                       |
+| **Défauts d'audit R-03 à R-10**                                                                         | **Ligne erronée — voir la rectification ci-dessous**                                     |
 | **Contention CI intermittente**                                                                         | cause racine non établie ; reproduite sur l'arbre de `main`, donc antérieure au chantier |
 | **Branches distantes obsolètes** (`correctif/index-recherche-vercel`, `diagnostic/planche-notice-load`) | ménage, sans effet sur le produit                                                        |
 
+> **Rectification du 2026-08-04, le jour même.** La ligne « défauts d'audit
+> R-03 à R-10 » est **fausse**. Cette numérotation n'existe nulle part dans le
+> dépôt : le registre des défauts de recette ne compte que **R-01** (CI rouge
+> sur `main`) et **R-02** (deux titres de niveau 1 sur
+> `/psychotechnique/orientation`), **tous deux soldés**. Je l'ai écrite de
+> mémoire sans la vérifier, et rien ne la soutenait.
+>
+> Elle est rectifiée plutôt que laissée en place, malgré l'engagement de
+> non-rectification annoncé en tête de ce document. La raison : cet engagement
+> protège les **constats** — mesures, dates, arbitrages — contre une réécriture
+> commode a posteriori. Il ne couvre pas une référence inventée, dont le
+> maintien ferait chercher à un lecteur un registre qui n'existe pas. Le
+> constat n'est pas corrigé ; une invention est retirée, en le disant.
+>
+> Ce qui reste réellement ouvert du côté de la recette est consigné ailleurs,
+> et sous une autre forme : les **quatre limites assumées de la V1** listées
+> dans [`audit-preproduction.md`](audit-preproduction.md) §« Limites connues »
+> — historiques locaux à l'appareil en attendant Supabase, examen blanc en QCM
+> pur, lecture d'instruments et multi-tâches psychotechniques reportées,
+> cartes sans implantations outre-mer. Ce sont des **reports de périmètre**,
+> pas des défauts.
+
 ## 6. État de la déploiabilité
 
-Les deux premières routes migrées (`/entrainement/eopan`, `/reviser`) sont
-vérifiées en production. **Tout le reste du chantier attend la mise en ligne**,
-qui était explicitement suspendue à cette clôture.
+**Mis en ligne le 2026-08-04**, immédiatement après cette clôture : `main` est
+passé de `61a9499` (lot F3) à `0ebef57` (lot F12) en avance rapide, 23 commits.
+Avant ce déploiement, seules `/entrainement/eopan` et `/reviser` étaient
+vérifiées en production ; tout le reste du chantier attendait, la mise en ligne
+ayant été explicitement suspendue à cette clôture.
+
+Vérifié en production après déploiement : `/anglais/quiz` répond 200 et **sert
+réellement le registre** (`main class="… banc"`, `.banc-cadre` présents dans le
+HTML servi — la vérification porte sur le style servi, pas sur la seule présence
+d'une classe, conformément à la garde du lot F2a).
 
 - `npm run check` : vert — 837 tests unitaires, 0 erreur, 2 avertissements
   préexistants (`formes.ts`, `triangles.ts`, variable `int` non utilisée).
