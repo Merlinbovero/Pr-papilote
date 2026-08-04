@@ -56,6 +56,17 @@ const ROUTES: Route[] = [
     titreSeance: "Série d'entraînement — EOPAN",
   },
   {
+    // Treizième route, née de la clôture (lot F12) : la série d'anglais a
+    // quitté le hub `/anglais` pour sa propre page, et entre donc sous le
+    // même contrat que les douze autres — pas d'exception pour une
+    // nouvelle venue.
+    nom: "Quiz d'anglais",
+    chemin: "/anglais/quiz",
+    titreEditorial: /Quiz d'anglais/i,
+    lancement: /Commencer la série/i,
+    titreSeance: "Série d'anglais aéronautique",
+  },
+  {
     nom: "Révision espacée",
     chemin: "/reviser",
     titreEditorial: /^Réviser$/,

@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpenTextIcon, MessagesSquareIcon, RadioTowerIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  BookOpenTextIcon,
+  ClipboardCheckIcon,
+  MessagesSquareIcon,
+  RadioTowerIcon,
+} from "lucide-react";
 import { StandalonePageShell } from "@/components/layout/standalone-page-shell";
-import { PoolQuiz } from "@/features/quiz/pool-quiz";
 import { BilingualVocab, type BilingualEntry } from "@/features/anglais/bilingual-vocab";
 import { PhoneticTrainer } from "@/features/anglais/phonetic-trainer";
 import { buildEnglishPool } from "@/features/quiz/notion-pool";
@@ -118,24 +123,39 @@ export default function AnglaisPage() {
         <PhoneticTrainer />
       </section>
 
-      {/* Quiz d'anglais */}
+      {/*
+        Quiz d'anglais — **une entrée, plus un lecteur** (lot F12).
+
+        La série vivait ici, encastrée dans le hub, et c'était la dernière
+        surface du produit en registre `legacy`. Dix à quarante questions
+        tirées dans toute la banque, avec un résultat final : c'est une séance
+        autonome, pas la prolongation de la section qui la précède. La doctrine
+        du lot F4 prescrit alors une **entrée explicite** vers le Banc plutôt
+        qu'une transformation silencieuse de la page documentaire — ce que ce
+        bloc réalise, et la séance vit désormais sur `/anglais/quiz`.
+      */}
       {englishTotal > 0 ? (
         <section aria-labelledby="quiz-titre" className="space-y-4">
-          <h2 id="quiz-titre" className="sr-only">
-            Quiz d&apos;anglais aéronautique
-          </h2>
-          <PoolQuiz
-            label="Anglais aéronautique"
-            poolUrl="/anglais/quiz/pool"
-            totalAvailable={englishTotal}
-            blurb={
-              <>
-                Une série de questions d&apos;anglais aéronautique tirées au hasard ({englishTotal}{" "}
-                disponibles) — phraséologie, vocabulaire, grammaire et compréhension, avec
-                correction détaillée.
-              </>
-            }
-          />
+          <div className="space-y-1">
+            <h2
+              id="quiz-titre"
+              className="flex items-center gap-2 text-2xl font-semibold tracking-tight"
+            >
+              <ClipboardCheckIcon aria-hidden className="text-primary size-5" />
+              Le quiz d&apos;anglais
+            </h2>
+            <p className="text-muted-foreground max-w-prose text-sm">
+              {englishTotal} questions de phraséologie, vocabulaire, grammaire et compréhension —
+              tirées au hasard, avec correction détaillée. La série se joue sur sa propre page.
+            </p>
+          </div>
+          <Link
+            href="/anglais/quiz"
+            className="bg-card hover:border-primary/40 hover:bg-elevated focus-visible:ring-ring inline-flex items-center gap-2 rounded-xl border px-4 py-3 font-semibold transition-colors focus-visible:ring-2 focus-visible:outline-none"
+          >
+            Commencer une série d&apos;anglais
+            <ArrowRightIcon aria-hidden className="size-4" />
+          </Link>
         </section>
       ) : null}
     </StandalonePageShell>

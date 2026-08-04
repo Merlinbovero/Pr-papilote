@@ -1,10 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { RotateCcwIcon, SlidersHorizontalIcon } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { RotateCcwIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { QuizPlayer, type PlayerQuestion } from "./quiz-player";
 import { ModeSeance } from "@/features/banc/mode-seance";
 
@@ -14,6 +12,18 @@ import { ModeSeance } from "@/features/banc/mode-seance";
  * aléatoire alimente le lecteur de quiz. Générique — réutilisé pour
  * l'entraînement par concours comme pour l'anglais aéronautique. Rien n'est
  * enregistré sans compte (le lecteur l'indique).
+ *
+ * ── Un seul registre depuis le lot F12 ──────────────────────────────────
+ * Ce composant portait une prop `variant`, `legacy` par défaut, et deux
+ * rendus complets. Le lot F12 constate qu'il **n'a plus qu'une sorte
+ * d'appelant** : ce qu'il lance est toujours une séance autonome — dix à
+ * quarante questions, lancement explicite, résultat final. C'était déjà vrai
+ * du quiz d'anglais, seule surface encore en `legacy`, et c'est pourquoi il a
+ * reçu sa propre route au lieu de rester encastré dans un hub.
+ *
+ * Le second rendu est donc supprimé, et avec lui la prop. Garder une variante
+ * dont une seule valeur est atteignable, c'est conserver du code que rien
+ * n'exerce et qui diverge en silence.
  */
 
 interface PoolQuizProps {
@@ -25,11 +35,6 @@ interface PoolQuizProps {
   totalAvailable: number;
   /** Phrase d'introduction (contextualise le vivier). */
   blurb?: React.ReactNode;
-  /**
-   * Registre visuel — lot F2a. `legacy` par défaut : les autres appelants
-   * (anglais aéronautique) ne changent pas d'apparence.
-   */
-  variant?: "legacy" | "banc";
   /**
    * En-tête de page, en variante Banc uniquement.
    *
@@ -71,11 +76,9 @@ export function PoolQuiz({
   poolUrl,
   totalAvailable,
   blurb,
-  variant = "legacy",
   entete,
   labelSeance,
 }: PoolQuizProps) {
-  const banc = variant === "banc";
   const options = LENGTHS.filter((n) => n <= totalAvailable);
   const [count, setCount] = React.useState<number>(options[0] ?? Math.min(10, totalAvailable));
   const [phase, setPhase] = React.useState<Phase>("config");
@@ -83,154 +86,135 @@ export function PoolQuiz({
   const [drawId, setDrawId] = React.useState(0);
   const poolCache = React.useRef<PlayerQuestion[] | null>(null);
 
-  const drawSeries = React.useCallback((pool: PlayerQuestion[], length: number) => {
+  /*
+    Mémoïsation confiée au compilateur React — lot F12.
+
+    Ces deux fonctions étaient enveloppées dans `React.useCallback`. La
+    suppression de la branche historique a rendu ce composant compilable, et le
+    compilateur a immédiatement signalé qu'il ne pouvait pas **préserver** cette
+    mémoïsation manuelle (`react-hooks/preserve-manual-memoization`) : `start`
+    lit et réécrit `poolCache.current` en réaffectant sa variable locale, ce que
+    ses règles sur les références n'admettent pas dans un `useCallback`.
+
+    Le défaut ne vient donc pas du lot : il était **masqué** tant que le
+    composant n'était pas compilé. Les enveloppes sont retirées plutôt que
+    l'erreur contournée — aucune des deux fonctions n'est dépendance d'un effet
+    ici, elles ne servent qu'à des gestionnaires d'événement, et le compilateur
+    mémoïse ce qui doit l'être.
+  */
+  const drawSeries = (pool: PlayerQuestion[], length: number) => {
     setDraw(shuffled(pool).slice(0, Math.min(length, pool.length)));
     setDrawId((id) => id + 1);
     setPhase("playing");
-  }, []);
+  };
 
-  const start = React.useCallback(
-    async (length: number) => {
-      let pool = poolCache.current;
-      if (!pool) {
-        setPhase("loading");
-        try {
-          const res = await fetch(poolUrl);
-          if (!res.ok) throw new Error(String(res.status));
-          pool = (await res.json()) as PlayerQuestion[];
-          poolCache.current = pool;
-        } catch {
-          setPhase("error");
-          return;
-        }
+  const start = async (length: number) => {
+    let pool = poolCache.current;
+    if (!pool) {
+      setPhase("loading");
+      try {
+        const res = await fetch(poolUrl);
+        if (!res.ok) throw new Error(String(res.status));
+        pool = (await res.json()) as PlayerQuestion[];
+        poolCache.current = pool;
+      } catch {
+        setPhase("error");
+        return;
       }
-      drawSeries(pool, length);
-    },
-    [poolUrl, drawSeries]
+    }
+    drawSeries(pool, length);
+  };
+
+  const reglages = (
+    <fieldset className="space-y-2">
+      <legend className="text-sm font-medium">Longueur de la série</legend>
+      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Longueur de la série">
+        {options.map((n) => {
+          const active = n === count;
+          return (
+            <button
+              key={n}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => setCount(n)}
+              className="focus-visible:ring-ring rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+              style={
+                active
+                  ? {
+                      borderColor: "var(--bc-banc)",
+                      color: "var(--bc-banc)",
+                      backgroundColor: "var(--bc-fond2)",
+                    }
+                  : { borderColor: "var(--bc-filet)", color: "var(--bc-encre2)" }
+              }
+            >
+              {n} questions
+            </button>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 
-  // ---------------------------------------------------------------------------
-  // Variante Banc — lot F2a
-  // ---------------------------------------------------------------------------
-  if (banc) {
-    const reglages = (
-      <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">Longueur de la série</legend>
-        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Longueur de la série">
-          {options.map((n) => {
-            const active = n === count;
-            return (
-              <button
-                key={n}
-                type="button"
-                role="radio"
-                aria-checked={active}
-                onClick={() => setCount(n)}
-                className="focus-visible:ring-ring rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
-                style={
-                  active
-                    ? {
-                        borderColor: "var(--bc-banc)",
-                        color: "var(--bc-banc)",
-                        backgroundColor: "var(--bc-fond2)",
-                      }
-                    : { borderColor: "var(--bc-filet)", color: "var(--bc-encre2)" }
-                }
-              >
-                {n} questions
-              </button>
-            );
-          })}
-        </div>
-      </fieldset>
-    );
-
-    return (
-      <ModeSeance
-        labelSeance={labelSeance ?? `Série — ${label}`}
-        libelleLancement={phase === "loading" ? "Préparation…" : "Commencer la série"}
-        // Le vivier n'est demandé qu'ici : l'aire est en place et le focus
-        // posé quand le chargement commence.
-        onSeanceEntree={() => {
-          void start(count);
-        }}
-        onSortie={() => {
-          setPhase("config");
-          setDraw([]);
-        }}
-        introduction={
-          <div className="space-y-6">
-            {entete}
-            <div className="space-y-4">
-              <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
-                {blurb ?? (
-                  <>
-                    Une série de questions tirées au hasard ({totalAvailable} disponibles), avec
-                    correction détaillée.
-                  </>
-                )}
-              </p>
-              {reglages}
-            </div>
-          </div>
-        }
-      >
-        {phase === "error" ? (
-          // Erreur de chargement : elle interrompt la séance, donc elle
-          // interrompt aussi la lecture en cours.
-          <div
-            role="alert"
-            className="banc-stimulus space-y-1"
-            style={{ borderLeft: "3px solid var(--bc-erreur)" }}
-          >
-            <p className="font-medium" style={{ color: "var(--bc-erreur)" }}>
-              Chargement impossible
-            </p>
+  return (
+    <ModeSeance
+      labelSeance={labelSeance ?? `Série — ${label}`}
+      libelleLancement={phase === "loading" ? "Préparation…" : "Commencer la série"}
+      // Le vivier n'est demandé qu'ici : l'aire est en place et le focus
+      // posé quand le chargement commence.
+      onSeanceEntree={() => {
+        void start(count);
+      }}
+      onSortie={() => {
+        setPhase("config");
+        setDraw([]);
+      }}
+      introduction={
+        <div className="space-y-6">
+          {entete}
+          <div className="space-y-4">
             <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
-              Le vivier n&apos;a pas pu être récupéré. Vérifiez votre connexion, puis relancez la
-              série.
+              {blurb ?? (
+                <>
+                  Une série de questions tirées au hasard ({totalAvailable} disponibles), avec
+                  correction détaillée.
+                </>
+              )}
             </p>
+            {reglages}
           </div>
-        ) : draw.length > 0 ? (
-          <div className="space-y-5">
-            <QuizPlayer
-              key={drawId}
-              title={label}
-              questions={draw}
-              variant="banc"
-              // Premier tirage : le cadre de séance prend le focus.
-              // Tirages suivants : ils concluent un « Nouvelle série ».
-              focusAuMontage={drawId > 1}
-            />
-            <div className="banc-separateur pt-4">
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => poolCache.current && drawSeries(poolCache.current, count)}
-              >
-                <RotateCcwIcon aria-hidden className="size-4" />
-                Nouvelle série
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
-            Préparation de la série…
+        </div>
+      }
+    >
+      {phase === "error" ? (
+        // Erreur de chargement : elle interrompt la séance, donc elle
+        // interrompt aussi la lecture en cours.
+        <div
+          role="alert"
+          className="banc-stimulus space-y-1"
+          style={{ borderLeft: "3px solid var(--bc-erreur)" }}
+        >
+          <p className="font-medium" style={{ color: "var(--bc-erreur)" }}>
+            Chargement impossible
           </p>
-        )}
-      </ModeSeance>
-    );
-  }
-
-  if (phase === "playing" && draw.length > 0) {
-    return (
-      <div className="space-y-5">
-        <div className="bg-card flex flex-wrap items-center justify-between gap-3 rounded-xl border p-3">
-          <p className="text-muted-foreground text-sm">
-            Série de <span className="text-foreground font-medium">{draw.length}</span> questions ·{" "}
-            {label}
+          <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+            Le vivier n&apos;a pas pu être récupéré. Vérifiez votre connexion, puis relancez la
+            série.
           </p>
-          <div className="flex gap-2">
+        </div>
+      ) : draw.length > 0 ? (
+        <div className="space-y-5">
+          <QuizPlayer
+            key={drawId}
+            title={label}
+            questions={draw}
+            variant="banc"
+            // Premier tirage : le cadre de séance prend le focus.
+            // Tirages suivants : ils concluent un « Nouvelle série ».
+            focusAuMontage={drawId > 1}
+          />
+          <div className="banc-separateur pt-4">
             <Button
               size="sm"
               variant="outline"
@@ -239,69 +223,13 @@ export function PoolQuiz({
               <RotateCcwIcon aria-hidden className="size-4" />
               Nouvelle série
             </Button>
-            <Button size="sm" variant="ghost" onClick={() => setPhase("config")}>
-              <SlidersHorizontalIcon aria-hidden className="size-4" />
-              Réglages
-            </Button>
           </div>
         </div>
-        <QuizPlayer key={drawId} title={label} questions={draw} />
-      </div>
-    );
-  }
-
-  return (
-    <section aria-label={`Quiz ${label}`} className="bg-card space-y-5 rounded-xl border p-6">
-      <div className="space-y-1">
-        <h2 className="text-xl font-semibold tracking-tight">Quiz</h2>
-        <p className="text-muted-foreground text-sm">
-          {blurb ?? (
-            <>
-              Une série de questions tirées au hasard ({totalAvailable} disponibles), avec
-              correction détaillée.
-            </>
-          )}
+      ) : (
+        <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+          Préparation de la série…
         </p>
-      </div>
-
-      <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">Longueur de la série</legend>
-        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Longueur de la série">
-          {options.map((n) => {
-            const active = n === count;
-            return (
-              <button
-                key={n}
-                type="button"
-                role="radio"
-                aria-checked={active}
-                onClick={() => setCount(n)}
-                className={cn(
-                  "focus-visible:ring-ring rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                  active
-                    ? "border-primary bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:border-foreground/20"
-                )}
-              >
-                {n} questions
-              </button>
-            );
-          })}
-        </div>
-      </fieldset>
-
-      {phase === "error" ? (
-        <Alert variant="destructive">
-          <AlertTitle>Chargement impossible</AlertTitle>
-          <AlertDescription>
-            Le vivier n&apos;a pas pu être récupéré. Vérifiez votre connexion et réessayez.
-          </AlertDescription>
-        </Alert>
-      ) : null}
-
-      <Button onClick={() => start(count)} disabled={phase === "loading"}>
-        {phase === "loading" ? "Préparation…" : "Commencer la série"}
-      </Button>
-    </section>
+      )}
+    </ModeSeance>
   );
 }

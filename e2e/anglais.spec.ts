@@ -37,8 +37,15 @@ test("l'épeleur de l'alphabet OACI transcrit un mot", async ({ page }) => {
   await expect(speller.getByText("Foxtrot")).toBeVisible();
 });
 
+/*
+  Le quiz a CHANGÉ DE PAGE au lot F12, et ce contrôle le suit plutôt que de
+  disparaître : ce qu'il protège — « la série se lance et sert une première
+  question » — n'a rien perdu de sa valeur, seule son adresse a bougé. La
+  séance vit désormais sur `/anglais/quiz` ; que le hub y mène est vérifié
+  dans `banc-f12-cloture.spec.ts`.
+*/
 test("le quiz d'anglais se lance", async ({ page }) => {
-  await page.goto("/anglais");
+  await page.goto("/anglais/quiz");
   await page.getByRole("radio", { name: "10 questions" }).click();
   await page.getByRole("button", { name: /Commencer la série/i }).click();
   await expect(page.getByText(/Question 1 \//)).toBeVisible();

@@ -288,15 +288,28 @@ lot : le **registre visuel**, le **moteur fonctionnel**, le **contrat
 d'accessibilité** et le **modèle de données**. Un quiz encastré garde le premier
 de son hôte tout en partageant les trois autres avec le Banc.
 
-| Variante       | Pour                   | Prend                                                                                                                                                   | Ne prend pas                                                                                            |
-| -------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `banc`         | séances autonomes      | tout le registre                                                                                                                                        | —                                                                                                       |
-| `documentaire` | quiz encastrés         | sémantique, focus après validation, annonces, corrections accessibles, clavier, états juste/faux/désactivé, lien distingué autrement que par la couleur | fond du Banc, cadre de séance, plein écran, typographie complète, disparition de l'en-tête documentaire |
-| `legacy`       | **non encore arbitré** | rien                                                                                                                                                    | —                                                                                                       |
+| Variante       | Pour              | Prend                                                                                                                                                   | Ne prend pas                                                                                            |
+| -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `banc`         | séances autonomes | tout le registre                                                                                                                                        | —                                                                                                       |
+| `documentaire` | quiz encastrés    | sémantique, focus après validation, annonces, corrections accessibles, clavier, états juste/faux/désactivé, lien distingué autrement que par la couleur | fond du Banc, cadre de séance, plein écran, typographie complète, disparition de l'en-tête documentaire |
 
-`legacy` ne signifie pas « en attente de migration » mais **en attente
-d'arbitrage** : chaque appelant qui le porte doit être classé en `banc` ou en
-`documentaire`.
+**Il n'y a que ces deux valeurs, et il n'y a plus de défaut — clôture au lot
+F12.** Une troisième, `legacy`, a existé de F2a à F12 pour désigner le rendu
+**non encore arbitré** ; elle était la valeur par défaut. C'était juste pendant
+la migration : un appelant que personne n'avait encore examiné ne changeait pas
+d'apparence tout seul. C'est faux une fois la migration finie — un défaut
+permet d'**omettre** le choix, et une omission ne se lit pas dans le code, elle
+se déduit de son absence.
+
+La propriété est donc **obligatoire**. Un nouvel appelant ne compile pas sans
+avoir tranché : le compilateur pose la question à la place d'une relecture.
+
+**Conséquence, et principal acquis de la clôture** : le contrat
+d'accessibilité devient **inconditionnel**. Il était porté par un booléen vrai
+pour `banc` et `documentaire`, faux pour `legacy` ; les deux registres restants
+le tenant, le booléen disparaît. DT-002 — le lien « Pour approfondir » distingué
+par la seule couleur — est soldée par là même, et l'exclusion `link-in-text-block`
+qui protégeait la campagne axe est retirée.
 
 **Reclassement.** Si un quiz encastré devient long, chronométré, persistant ou
 doté d'un résultat autonome, il franchit le seuil de la séance : il doit alors
@@ -305,7 +318,7 @@ la page documentaire.
 
 ### Migration route par route
 
-Le Banc entre dans le produit **une route à la fois**, chacune servant de témoin à la suivante. L'activation est explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne change pas d'apparence, et le lecteur de quiz n'existe qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique.
+Le Banc est entré dans le produit **une route à la fois**, chacune servant de témoin à la suivante. Pendant tout le chantier, l'activation a été explicite et typée (`variant="legacy" | "banc"`), `legacy` par défaut : un appelant non migré ne changeait pas d'apparence, et le lecteur de quiz n'a jamais existé qu'en un seul exemplaire — la variante ne porte que la **présentation**, jamais la logique. Le défaut a été retiré à la clôture (F12), une fois qu'il n'y avait plus rien à ne pas migrer.
 
 | Route                 | Lot | État                                                                                                                                                                                                                                                                                                                                     |
 | --------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -326,7 +339,7 @@ Le Banc entre dans le produit **une route à la fois**, chacune servant de témo
 1. **Le registre est chargé par le point d'adhésion** — ce qui pose `.banc` importe `banc.css`. En F1b la feuille n'était importée que par la mise en page du laboratoire : la première migration a donc rendu des classes **inertes**, sans flex, sans surface, sans teinte. Un test qui vérifie la présence de la classe serait passé ; seule la mesure du **style calculé** l'a vu. Les contrôles portent désormais sur `getComputedStyle`.
 2. **Le registre est porté par la page, pas par un bloc** — un `.banc` posé sur la seule aire de séance dessine un rectangle tiède dans un fond froid. Le fond du site étant le plus clair des deux (ΔE00 2,16 en clair, 0,86 en sombre), toutes les encres du Banc y mesurent un contraste **supérieur** à celui vérifié sur `--bc-fond` : les tests de jetons gardent le pire cas.
 
-**Effet mesuré sur la route pilote**, bas du premier contrôle de réponse, comparé au **témoin vivant** qu'est `/entrainement/eopn` — même gabarit, variante `legacy`, mesuré le même jour :
+**Effet mesuré sur la route pilote**, bas du premier contrôle de réponse, comparé au **témoin vivant** qu'était alors `/entrainement/eopn` — même gabarit, variante `legacy`, mesuré le même jour (ce témoin a lui-même été migré au lot F3 ; la mesure reste celle du jour où elle a été prise) :
 
 | Viewport           | Témoin `legacy` | Route migrée |
 | ------------------ | --------------- | ------------ |

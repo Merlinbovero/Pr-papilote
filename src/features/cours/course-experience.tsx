@@ -224,7 +224,22 @@ export function CourseExperience({
             Réussissez au moins {seuilPct} % pour atteindre le statut « maîtrisé ».
           </p>
           <div className="pl-hote">
-            <QuizPlayer title="Quiz du cours" questions={quizPool} onFinished={onQuizFinished} />
+            {/*
+              Registre arbitré au lot F12 : **documentaire**. Le quiz du cours
+              est la section « Se tester » d'une leçon — il porte sur ce qui
+              vient d'être lu, dépend du contexte de la page, et n'a aucune
+              destination propre. Il garde donc l'habillage PLANCHE de son hôte
+              et tient le contrat d'accessibilité du Banc, ce qui est
+              exactement ce que `documentaire` désigne. C'est la couture
+              annoncée plus haut : elle n'est plus « assumée jusqu'au lot du
+              Banc », elle est classée.
+            */}
+            <QuizPlayer
+              title="Quiz du cours"
+              questions={quizPool}
+              variant="documentaire"
+              onFinished={onQuizFinished}
+            />
           </div>
         </section>
       ) : null}

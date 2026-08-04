@@ -16,7 +16,7 @@ l'avancement du Banc.
 
 ---
 
-## Le Banc — avancement
+## Le Banc — **clos au lot F12**
 
 | Route / surface                         | Registre         | Lot |
 | --------------------------------------- | ---------------- | --- |
@@ -32,6 +32,14 @@ l'avancement du Banc.
 | `/psychotechnique/triangles`            | **Banc**         | F7b |
 | Les six autres épreuves de famille      | **Banc**         | F7c |
 | `/psychotechnique/secpil`               | **Banc**         | F9  |
+| `/anglais/quiz`                         | **Banc**         | F12 |
+| Quiz de cours                           | **documentaire** | F12 |
+| `/design-system/quiz` (vitrine)         | **documentaire** | F12 |
+
+**Le tableau est complet, et c'est le compilateur qui le garantit** : depuis le
+lot F12, la propriété `variant` est obligatoire sur le lecteur de quiz. Il n'y
+a plus de valeur par défaut, donc plus de surface qui puisse échapper à
+l'arbitrage par simple omission. Une surface non classée ne compile pas.
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -260,14 +268,18 @@ La confusion vient de ce que trois documents comptent trois choses.
 
 ### 1. Composants qui importent et rendent `QuizPlayer` — **six**
 
-| Composant                                | État                                                                         |
-| ---------------------------------------- | ---------------------------------------------------------------------------- |
-| `features/revision/revision-session.tsx` | **migré** (F2b)                                                              |
-| `features/quiz/pool-quiz.tsx`            | **mixte** — `banc` sur les trois concours (F2a, F3), `legacy` sur `/anglais` |
-| `features/quiz/notion-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc              |
-| `features/cours/course-experience.tsx`   | legacy                                                                       |
-| `features/bia/matiere-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc              |
-| `app/(site)/design-system/quiz/page.tsx` | legacy — vitrine interne, hors surface publique                              |
+| Composant                                | État                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------ |
+| `features/revision/revision-session.tsx` | **banc** (F2b)                                                     |
+| `features/quiz/pool-quiz.tsx`            | **banc** — les trois concours (F2a, F3) et le quiz d'anglais (F12) |
+| `features/quiz/notion-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc    |
+| `features/cours/course-experience.tsx`   | **documentaire** (F12) — section « Se tester » d'une leçon         |
+| `features/bia/matiere-quiz.tsx`          | **documentaire** (F4) — encastré, hors périmètre visuel du Banc    |
+| `app/(site)/design-system/quiz/page.tsx` | **documentaire** (F12) — vitrine interne, hors surface publique    |
+
+**Plus une seule ligne sans registre depuis le lot F12**, et ce n'est pas un
+effet de rédaction : la propriété est devenue obligatoire, donc ce tableau ne
+peut plus contenir de case vide sans que le projet cesse de compiler.
 
 **Ce tableau ne recense pas tout ce qui joue une séance.** `BiaExamPlayer`
 (examen blanc, migré au lot F5) n'importe pas `QuizPlayer` : c'est un moteur
@@ -275,11 +287,13 @@ distinct, avec ses propres phases, son chronomètre et sa persistance. Les
 épreuves psychotechniques et SECPIL sont dans le même cas. Un décompte fondé
 sur les appelants d'un composant ne les verra jamais.
 
-### 2. « Cinq autres appelants » de `design-system.md` — **cohérent**
+### 2. « Cinq autres appelants » de `design-system.md` — **périmé depuis F12**
 
-Ce sont les **composants non migrés**, `revision-session` exclu. Le chiffre est
-juste dans sa définition ; `pool-quiz` y compte pour un, bien qu'il serve les
-deux registres.
+Ce chiffre comptait les **composants non migrés**, `revision-session` exclu. Il
+n'a plus d'objet : il n'existe plus de composant non migré, seulement des
+composants **classés**, en `banc` ou en `documentaire`. La phrase est conservée
+dans `design-system.md` au titre du récit de la migration, pas de l'état
+courant — c'est ce document-ci qui fait foi sur l'état courant.
 
 ### 3. Registre `AUTRES_APPELANTS` — **neuf routes témoins**
 

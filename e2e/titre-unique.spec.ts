@@ -31,6 +31,7 @@ const ROUTES = [
   "/alat",
   "/bia",
   "/anglais",
+  "/anglais/quiz", // née au lot F12 ; une route publique de plus, un titre de plus à tenir
   "/cartes",
   "/mentions-legales",
   "/confidentialite",

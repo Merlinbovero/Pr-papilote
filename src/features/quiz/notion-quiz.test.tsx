@@ -16,9 +16,16 @@ import type { PlayerQuestion } from "./quiz-player";
  * verrait sur les cinq gabarits à la fois ; une fuite venue d'un seul gabarit
  * ne se verrait que là. Aucun des deux ne rend l'autre superflu.
  *
- * `NotionQuiz` ne passe aucun `variant` à `QuizPlayer`, qui retombe donc sur
- * `legacy`. C'est cette omission — invisible à la lecture, facile à défaire —
- * que le contrôle grave.
+ * **Ce paragraphe disait le contraire du code, et il est corrigé au lot F12.**
+ * Il affirmait que `NotionQuiz` ne passait aucun `variant` et retombait donc
+ * sur `legacy` : c'était vrai avant le lot F4, qui l'a classé `documentaire`
+ * sans mettre à jour ce commentaire. Le fichier même dont la raison d'être est
+ * d'empêcher une dérive silencieuse de registre en décrivait un faux — un
+ * relecteur s'y fiant aurait cru l'arbitrage encore à faire.
+ *
+ * Ce que le contrôle grave est donc exact, et inchangé : `documentaire` **ne
+ * prend pas** l'apparence du Banc. Il tient son contrat d'accessibilité, ce
+ * qui est une autre chose, et se vérifie ailleurs.
  */
 
 const VIVIER: PlayerQuestion[] = [

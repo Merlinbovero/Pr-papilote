@@ -14,33 +14,25 @@ import { expect, test, type Page } from "@playwright/test";
 const SEANCE = 'main section[aria-label] ul[role="list"] button';
 
 /**
- * Défaut connu, relevé à l'audit F0b §1 et **explicitement hors périmètre
- * F1a** : dans la correction, le lien « Pour approfondir » n'est distingué du
- * texte que par la couleur. Il n'apparaît que si la question tirée porte un
- * renvoi, ce qui rendrait ce contrôle aléatoire selon le tirage. On l'écarte
- * donc nommément — en le taisant, la suite masquerait un défaut réel ; en le
- * laissant, elle échouerait un jour sur deux pour une cause étrangère au lot.
+ * **Plus aucune exclusion — lot F12.**
+ *
+ * Ce fichier écartait nommément `link-in-text-block` (DT-002) : dans la
+ * correction, le lien « Pour approfondir » n'était distingué du texte que par
+ * la couleur, et la règle ne se déclenchait qu'au hasard des tirages, ce qui
+ * aurait rendu la campagne instable. L'exclusion était encadrée par une garde
+ * qui interdisait d'en ajouter une seconde.
+ *
+ * La dette est soldée : `legacy` était le dernier rendu à ne pas souligner ce
+ * lien au repos, et il n'existe plus. L'exclusion, sa garde et le test de
+ * dette (`dette-lien-correction.spec.ts`) disparaissent donc ensemble — une
+ * exclusion sans défaut à couvrir est un trou dans la mesure, pas une
+ * précaution.
  */
-const HORS_PERIMETRE_F1A = ["link-in-text-block"];
-
-// L'exclusion reste **strictement limitée à cette règle** : toute autre
-// violation doit faire échouer la campagne. Cette garde le rend impossible à
-// contourner par ajout discret d'une seconde entrée.
-if (HORS_PERIMETRE_F1A.length !== 1 || HORS_PERIMETRE_F1A[0] !== "link-in-text-block") {
-  throw new Error(
-    "L'exclusion axe de F1a ne couvre que `link-in-text-block` (DT-002). " +
-      "Toute autre règle écartée doit être justifiée et consignée dans " +
-      "docs/dette-technique.md avant d'être ajoutée ici."
-  );
-}
-
 async function violations(page: Page) {
   const resultat = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
     .analyze();
-  return resultat.violations
-    .filter((v) => !HORS_PERIMETRE_F1A.includes(v.id))
-    .map((v) => `${v.id} (${v.nodes.length})`);
+  return resultat.violations.map((v) => `${v.id} (${v.nodes.length})`);
 }
 
 const focalise = (page: Page) =>
