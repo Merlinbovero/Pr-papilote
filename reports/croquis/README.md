@@ -3,10 +3,10 @@
 **Tous les fichiers de ce dossier sont générés.** La source de vérité est le
 script qui les produit, jamais le fichier lui-même :
 
-| Fichier | Producteur |
-| --- | --- |
+| Fichier                           | Producteur                            |
+| --------------------------------- | ------------------------------------- |
 | `inventory.json` · `inventory.md` | `scripts/audit-croquis-inventory.mjs` |
-| `validation-humaine/*` | `scripts/audit-croquis-sample.mjs` |
+| `validation-humaine/*`            | `scripts/audit-croquis-sample.mjs`    |
 
 Ne pas les modifier à la main : la génération suivante écraserait la retouche.
 
