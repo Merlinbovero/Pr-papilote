@@ -10,9 +10,54 @@ Chaque nombre est donné **avec sa définition**. Deux chiffres différents sur 
 même sujet ne sont pas nécessairement une erreur : le plus souvent, ils ne
 comptent pas la même chose.
 
-Dernière vérification : **2026-08-01**, sur `b19cac7` (commit servi en
-production) pour les mesures de production, et sur `banc/integration` pour
-l'avancement du Banc.
+Dernière vérification : **2026-08-04**, sur `0ebef57` — commit désormais servi
+en production, le Banc ayant été mis en ligne le jour de sa clôture.
+
+---
+
+## Ce qui a changé depuis la clôture du Banc
+
+Le procès-verbal [`cloture-banc.md`](cloture-banc.md) est **daté et figé** : il
+atteste l'état au 2026-08-04 à la clôture, y compris la liste des sujets alors
+ouverts. Cette section-ci porte ce qui a bougé **après**, et c'est elle qui fait
+foi sur l'état courant.
+
+### Le `sizes` des gabarits de fiche — soldé le 2026-08-04
+
+Le lot R-01 avait corrigé **un** gabarit et signalé les quatre autres sans les
+traiter. Ils sont corrigés. La supposition de l'audit — « le même conteneur de
+620 px » — a été **vérifiée avant d'être exploitée** : `.pl-photo-c` est en
+`width: 100%`, sa largeur ne lui appartient donc pas, et deux gabarits auraient
+pu vivre dans deux mises en page distinctes. Mesure sur onze viewports de 320 à
+1920 px, cinq gabarits, une route réelle chacun — la géométrie est identique au
+pixel près.
+
+**Coût du défaut, mesuré sur `/eopan/concepts/catobar` en DPR 1 :**
+
+| Viewport | Conteneur | Avant    | Après       | Gain        |
+| -------- | --------- | -------- | ----------- | ----------- |
+| 390 px   | 358 px    | `w=640`  | **`w=384`** | **−57,2 %** |
+| 834 px   | 778 px    | `w=1080` | **`w=828`** | −31,3 %     |
+| 1180 px  | 620 px    | `w=1200` | **`w=640`** | −60,1 %     |
+| 1280 px  | 620 px    | `w=1920` | **`w=640`** | **−73,5 %** |
+
+À 1280 px — le poste de travail le plus courant — le navigateur réclamait
+**96 460 octets au lieu de 25 540** pour la même image affichée à l'identique.
+
+**Le gain n'est pas universel, et le taire serait trompeur.** En DPR 2,625 à
+1280 px, la demande passe de `w=3840` à `w=1920` **sans économiser un octet** :
+`withoutEnlargement` rend les deux variantes identiques au-delà de la source.
+Ce qui est évité là n'est pas du transfert, mais une entrée de cache et un
+travail d'optimisation en doublon — exactement le constat déjà fait au lot R-01.
+
+**La garde avait un angle mort, et c'est le plus instructif de ce lot.** Elle
+mesurait 390, 834 et 1440 px sur une seule route ; le défaut culminait à
+**1280 px**, précisément absent de la liste. Elle couvre désormais cinq
+gabarits × quatre viewports. Vérifiée par rupture délibérée : l'ancien `sizes`
+restauré fait tomber **exactement 12 contrôles**, les quatre gabarits fautifs ×
+les trois viewports concernés, et laisse passer le gabarit déjà corrigé.
+
+Campagne après correctif : **1030 réussis, 14 ignorés, 0 échec.**
 
 ---
 
@@ -70,8 +115,9 @@ Ce que le Banc doit à ces pages est d'un autre ordre — que leurs **entrées**
 vers les séances soient lisibles — et cela relève de la navigation, pas du
 registre.
 
-Les deux premières lignes sont vérifiées en production ; les suivantes ne sont
-pas encore déployées — la mise en ligne attend la clôture du Banc.
+**Toutes ces lignes sont désormais en production**, depuis la mise en ligne du
+2026-08-04. Jusque-là, seules les deux premières l'étaient : la mise en ligne
+était suspendue à la clôture du Banc, et elle l'a suivie le jour même.
 
 **Gain mesuré au lot F3**, bas du bouton « Valider », même environnement et une
 seule variable changée — la constante qui active le registre :
