@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ecrireHistorique, lireHistorique } from "@/lib/stockage/historique";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Chronometre } from "@/features/banc/chronometre";
@@ -87,27 +88,23 @@ function etatChrono(restant: number): EtatChrono {
   return "normal";
 }
 
+/*
+  La clé garde son nom — lot F11.
+
+  Le suffixe `.v1` y est resté sans jamais être lu par personne : c'était un
+  marqueur décoratif. Le renommer maintenant abandonnerait l'historique déjà
+  constitué, ce qui est précisément le défaut que le lot corrige. La version
+  vit désormais DANS le contenu (`{ v, d }`), et ce nom n'est plus qu'un
+  identifiant d'emplacement.
+*/
 const HISTORY_KEY = "pp.secpil.history.v1";
 
 function loadHistory(): SecpilSessionEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(HISTORY_KEY);
-    return raw ? (JSON.parse(raw) as SecpilSessionEntry[]) : [];
-  } catch {
-    return [];
-  }
+  return lireHistorique<SecpilSessionEntry>(HISTORY_KEY);
 }
 
 function saveHistory(entries: readonly SecpilSessionEntry[]) {
-  try {
-    window.localStorage.setItem(
-      HISTORY_KEY,
-      JSON.stringify(entries.slice(0, SECPIL_HISTORY_LIMIT))
-    );
-  } catch {
-    /* quota / mode privé : on ignore silencieusement */
-  }
+  ecrireHistorique(HISTORY_KEY, entries, SECPIL_HISTORY_LIMIT);
 }
 
 function projMancheX(x: number): number {

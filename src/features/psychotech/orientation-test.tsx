@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ecrireHistorique, lireHistorique } from "@/lib/stockage/historique";
 import { Button } from "@/components/ui/button";
 import { ModeSeance } from "@/features/banc/mode-seance";
 import { SITE_3D_MODELS, type ModelKey } from "@/lib/models-3d";
@@ -65,6 +66,15 @@ const PITCH_SIGN = -1;
 const ROLL_SIGN = +1;
 
 const DEG = Math.PI / 180;
+/*
+  La clé garde son nom — lot F11.
+
+  Le suffixe `.v1` y est resté sans jamais être lu par personne : c'était un
+  marqueur décoratif. Le renommer maintenant abandonnerait l'historique déjà
+  constitué, ce qui est précisément le défaut que le lot corrige. La version
+  vit désormais DANS le contenu (`{ v, d }`), et ce nom n'est plus qu'un
+  identifiant d'emplacement.
+*/
 const HISTORY_KEY = "pp.orientation.history.v1";
 
 type ThreeMod = typeof import("three");
@@ -422,21 +432,11 @@ function OrientationTutorial() {
 // --------------------------------------------------------------------------
 
 function loadHistory(): SessionHistoryEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(HISTORY_KEY);
-    return raw ? (JSON.parse(raw) as SessionHistoryEntry[]) : [];
-  } catch {
-    return [];
-  }
+  return lireHistorique<SessionHistoryEntry>(HISTORY_KEY);
 }
 
 function saveHistory(entries: SessionHistoryEntry[]) {
-  try {
-    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(entries.slice(0, 10)));
-  } catch {
-    /* quota / mode privé : on ignore silencieusement */
-  }
+  ecrireHistorique(HISTORY_KEY, entries, 10);
 }
 
 // --------------------------------------------------------------------------
