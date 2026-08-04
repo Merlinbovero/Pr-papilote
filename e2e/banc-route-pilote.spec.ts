@@ -432,13 +432,33 @@ test("le lien « Pour approfondir » est souligné au repos sur la route pilote"
 // ---------------------------------------------------------------------------
 
 /**
- * Les autres appelants du lecteur, par une route qui les rend réellement.
- * La liste est vérifiée : une route qui répondrait 404 doit FAIRE ÉCHOUER le
- * contrôle, jamais l'ignorer. Un audit précédent a publié une mesure prise
- * sur une page 404 ; la garde ci-dessous l'empêche.
+ * Les surfaces en registre **documentaire**, par une route qui les rend
+ * réellement. La liste est vérifiée : une route qui répondrait 404 doit FAIRE
+ * ÉCHOUER le contrôle, jamais l'ignorer. Un audit précédent a publié une
+ * mesure prise sur une page 404 ; la garde ci-dessous l'empêche.
+ *
+ * ── Ce registre a CHANGÉ DE SENS au lot F12, sans changer d'invariant ────
+ * De F2a à F11, il recensait les routes **non encore migrées** : chaque
+ * migration en retirait une ligne, et la liste devait finir vide. Elle ne
+ * finit pas vide, et c'est le résultat de l'arbitrage, pas un reliquat — les
+ * routes qui restent ne sont pas en attente, elles sont **classées
+ * documentaires à titre définitif** (lot F4). Une ligne ne s'en retire donc
+ * plus par migration ; elle ne s'en retirerait que par reclassement, ce qui
+ * demanderait de refaire l'arbitrage.
+ *
+ * L'invariant testé, lui, n'a pas bougé d'un mot : aucune classe du Banc sur
+ * ces routes. C'est ce qui rend le registre encore utile après la clôture —
+ * il ne surveille plus un chantier, il surveille une frontière.
  */
 const AUTRES_APPELANTS = [
-  "/anglais", // PoolQuiz — anglais aéronautique
+  /*
+    `/anglais` ne rend plus aucun lecteur depuis le lot F12 : sa série a reçu
+    sa propre route (`/anglais/quiz`, au Banc), et le hub n'en garde qu'une
+    entrée nommée. Le témoin RESTE malgré tout, et pour une raison précise —
+    c'est cette page-là qu'on aurait été tenté de repeindre pour éviter de
+    créer une route, et le contrôle grave qu'on ne l'a pas fait.
+  */
+  "/anglais", // hub documentaire — entrée explicite vers /anglais/quiz
   "/design-system/quiz", // QuizPlayer nu — vitrine interne
   "/bia/aerodynamique-et-principes-du-vol", // MatiereQuiz — quiz de matière BIA
   "/cours/forces-et-lois-de-newton", // CourseExperience — leçon canonique
@@ -453,9 +473,9 @@ const AUTRES_APPELANTS = [
     porte donc le Banc et ce contrôle y échouerait — à juste titre. Elle est
     désormais couverte par `revision-banc.spec.ts`.
 
-    Cette liste est le registre des routes NON migrées : chaque migration en
-    retire une ligne, et l'oubli se voit immédiatement puisque le contrôle
-    tombe.
+    Chaque migration en a retiré une ligne, et l'oubli se voyait
+    immédiatement puisque le contrôle tombait. Depuis la clôture (F12), plus
+    aucune ligne n'est en instance : voir l'en-tête ci-dessus.
 
     ── GRANULARITÉ : une entrée par chemin d'intégration indépendant ───────
     Et non « une entrée par composant », comme ce registre le faisait avant le

@@ -62,35 +62,47 @@ interface QuizPlayerProps {
    * « exercice subordonné au document » contre « séance autonome qui
    * remplace momentanément le document comme tâche principale ».
    *
-   * ── Les trois valeurs ───────────────────────────────────────────────
-   * - `banc` — séances autonomes : `/entrainement/*`, `/reviser`. Lancement
-   *   explicite, plusieurs questions, progression propre, résultat final,
-   *   reprise possible, et besoin d'un espace sans concurrence.
+   * ── Les deux valeurs ────────────────────────────────────────────────
+   * - `banc` — séances autonomes : `/entrainement/*`, `/reviser`,
+   *   `/anglais/quiz`. Lancement explicite, plusieurs questions, progression
+   *   propre, résultat final, reprise possible, et besoin d'un espace sans
+   *   concurrence.
    * - `documentaire` — quiz encastrés : mini-quiz de fiche, quiz de matière
-   *   BIA. Prolongation immédiate de la lecture, dépendante du contexte
-   *   présent sur la page, sans destination autonome. Garde le registre de
-   *   son hôte, mais **doit** tenir le contrat d'accessibilité du Banc :
-   *   sémantique, focus après validation, annonces dynamiques, corrections
-   *   accessibles, clavier, états juste/faux/désactivé, et lien de renvoi
-   *   distingué autrement que par la couleur. Ne prend **pas** le fond du
-   *   Banc, ni le cadre de séance, ni le plein écran, ni sa typographie
+   *   BIA, quiz de cours. Prolongation immédiate de la lecture, dépendante du
+   *   contexte présent sur la page, sans destination autonome. Garde le
+   *   registre de son hôte, mais **doit** tenir le contrat d'accessibilité du
+   *   Banc : sémantique, focus après validation, annonces dynamiques,
+   *   corrections accessibles, clavier, états juste/faux/désactivé, et lien de
+   *   renvoi distingué autrement que par la couleur. Ne prend **pas** le fond
+   *   du Banc, ni le cadre de séance, ni le plein écran, ni sa typographie
    *   complète, et ne fait pas disparaître l'en-tête documentaire.
-   * - `legacy` — rendu historique **non encore arbitré**, et défaut. Les
-   *   appelants qui le portent attendent soit une migration vers `banc`,
-   *   soit un reclassement en `documentaire`.
+   *
+   * ── Il n'y a plus de troisième valeur, ni de défaut — lot F12 ────────
+   * `legacy` a existé de F2a à F12 pour désigner le rendu **non encore
+   * arbitré**, et il était le défaut. C'était le bon choix pendant la
+   * migration : un appelant non migré ne changeait pas d'apparence tant que
+   * personne ne l'avait examiné. C'en est un mauvais une fois la migration
+   * finie — un défaut permet d'omettre le choix, et une omission ne se lit
+   * pas dans le code, elle se déduit de son absence.
+   *
+   * La propriété est donc **obligatoire**. Un nouvel appelant ne compile pas
+   * sans avoir tranché, et le compilateur pose la question à la place d'une
+   * relecture.
    *
    * ── Ce que la variante ne porte pas ─────────────────────────────────
    * Phases, chronomètre, annonces, focus et calcul du score sont communs.
    * Dupliquer la logique aurait créé deux moteurs à maintenir, et deux
-   * occasions de diverger.
+   * occasions de diverger. Le **contrat d'accessibilité** ne l'est pas non
+   * plus : depuis F12 il est inconditionnel, les deux registres le tenant.
    *
    * ── Reclassement ────────────────────────────────────────────────────
    * Si un quiz encastré devient long, chronométré, persistant ou doté d'un
    * résultat autonome, il franchit le seuil de la séance : il doit alors
    * proposer une **entrée explicite** vers le Banc, et non transformer
-   * silencieusement la page documentaire.
+   * silencieusement la page documentaire. C'est exactement ce qui a été
+   * appliqué au quiz d'anglais au lot F12.
    */
-  variant?: "legacy" | "documentaire" | "banc";
+  variant: "documentaire" | "banc";
   /**
    * Déplacer le focus dès le montage, et pas seulement aux transitions.
    *
@@ -115,17 +127,25 @@ export function QuizPlayer({
   persisted = false,
   onFinished,
   onAnswered,
-  variant = "legacy",
+  variant,
   focusAuMontage = false,
 }: QuizPlayerProps) {
   const banc = variant === "banc";
   /*
     Le registre documentaire garde l'apparence de son hôte, mais tient le
-    CONTRAT D'ACCESSIBILITÉ du Banc. Les deux notions sont distinctes et ne
-    doivent pas être confondues : `banc` décide de la présentation, `reglesA11y`
-    décide de ce qui est dû au lecteur quelle que soit la présentation.
+    CONTRAT D'ACCESSIBILITÉ du Banc. Les deux notions restent distinctes et ne
+    doivent pas être confondues : `variant` décide de la PRÉSENTATION, jamais
+    de ce qui est dû au lecteur.
+
+    Au lot F4, la distinction s'incarnait dans un booléen `reglesA11y`, vrai
+    pour `banc` et `documentaire`, faux pour `legacy`. `legacy` disparaissant
+    au lot F12, ce booléen serait désormais toujours vrai : le garder
+    donnerait à croire qu'un troisième cas existe encore, et rouvrirait la
+    porte à un registre qui n'honorerait pas le contrat. Il est donc supprimé,
+    et le contrat devient inconditionnel — c'est le principal acquis de la
+    clôture, et il vaut pour tout le produit, pas seulement pour les surfaces
+    migrées.
   */
-  const reglesA11y = banc || variant === "documentaire";
   const [index, setIndex] = React.useState(0);
   const [phase, setPhase] = React.useState<Phase>("answering");
   const [selected, setSelected] = React.useState<number[]>([]);
@@ -563,23 +583,16 @@ export function QuizPlayer({
                 {question.furtherReading.map((fiche, ficheIndex) => (
                   <React.Fragment key={fiche.href}>
                     {ficheIndex > 0 ? ", " : ""}
-                    {reglesA11y ? (
-                      // DT-002 remboursée dès qu'un registre tient le contrat
-                      // d'accessibilité — Banc comme documentaire :
-                      // soulignement PERMANENT, seul repère non chromatique
-                      // qu'exige WCAG 1.4.1. Le rendu `legacy`, non encore
-                      // arbitré, garde `hover:underline` ; la dette y reste
-                      // ouverte et prouvée par
-                      // `e2e/dette-lien-correction.spec.ts`.
-                      <LienApprofondir href={fiche.href}>{fiche.label}</LienApprofondir>
-                    ) : (
-                      <a
-                        href={fiche.href}
-                        className="text-primary underline-offset-4 hover:underline"
-                      >
-                        {fiche.label}
-                      </a>
-                    )}
+                    {/*
+                      DT-002 est **soldée ici**, au lot F12. Le soulignement est
+                      permanent : c'est le seul repère non chromatique qu'exige
+                      WCAG 1.4.1, et il n'est plus conditionné à quoi que ce
+                      soit. La branche `hover:underline` qui subsistait pour le
+                      rendu `legacy` a disparu avec lui — la dette ne pouvait
+                      pas être close tant qu'un appelant pouvait encore
+                      l'atteindre par omission.
+                    */}
+                    <LienApprofondir href={fiche.href}>{fiche.label}</LienApprofondir>
                   </React.Fragment>
                 ))}
               </p>

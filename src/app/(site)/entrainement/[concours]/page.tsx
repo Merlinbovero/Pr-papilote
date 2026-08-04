@@ -6,7 +6,6 @@ import { PoolQuiz } from "@/features/quiz/pool-quiz";
 import { buildConcoursPool } from "@/features/quiz/notion-pool";
 import { concoursSchema } from "@/lib/content/content-schemas";
 import { getModule } from "@/lib/content/referentials";
-import { cn } from "@/lib/utils";
 
 // La page pose `.banc` sur son `<main>` : c'est un point d'adhésion, donc
 // elle charge le registre (voir `mode-seance.tsx`).
@@ -14,24 +13,26 @@ import "@/styles/banc.css";
 
 export const dynamicParams = false;
 
-/**
- * Identité Banc — lot F2a (pilote `eopan`), étendu au lot F3.
+/*
+ * Identité Banc — lot F2a (pilote `eopan`), étendu au lot F3, **soldé au lot
+ * F12**.
  *
- * Les trois concours servis par ce fichier portent désormais le Banc. Le
- * gabarit est commun : `eopan` a servi de pilote pendant que `eopn` et `alat`
- * restaient témoins, et c'est cette comparaison qui a mesuré le gain avant de
- * l'étendre.
+ * Ce fichier portait un ensemble `CONCOURS_BANC = {eopan, eopn, alat}` et une
+ * branche conditionnelle complète pour les concours qui n'y figuraient pas.
+ * Cette branche était **morte depuis le lot F3**, et le prouver ne demande que
+ * de lire trois lignes :
  *
- * **Le témoin ne disparaît pas pour autant.** Les autres appelants du lecteur
- * de quiz — `/anglais`, les quiz de matière BIA, les mini-quiz de fiche, les
- * leçons canoniques — gardent le rendu historique, et leur registre vit dans
- * `e2e/banc-route-pilote.spec.ts`. La comparaison reste donc possible ; elle
- * change simplement de surface.
+ *   - `concoursSchema` est `z.enum(["eopan", "eopn", "alat"])` — il n'existe
+ *     pas d'autre concours ;
+ *   - `generateStaticParams` n'énumère que ces trois valeurs, et
+ *     `dynamicParams = false` interdit toute autre URL ;
+ *   - l'ensemble contenait exactement ces trois valeurs.
  *
- * Un ensemble plutôt qu'une valeur : ajouter un concours au Banc ne doit pas
- * demander de retoucher la condition, seulement cette ligne.
+ * Le drapeau était donc toujours vrai, et la moitié du gabarit inatteignable —
+ * du code que rien n'exerçait, mais que toute relecture devait continuer à
+ * comprendre et que toute modification devait continuer à maintenir. Il est
+ * supprimé, et la page est écrite au seul registre qu'elle sert.
  */
-const CONCOURS_BANC = new Set(["eopan", "eopn", "alat"]);
 
 interface EntrainementPageProps {
   params: Promise<{ concours: string }>;
@@ -68,17 +69,13 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
 
   const totalAvailable = buildConcoursPool(parsed.data).length;
   const label = mod.fullName ? `${mod.name} — ${mod.fullName}` : mod.name;
-  const banc = CONCOURS_BANC.has(parsed.data);
 
   const entete = (
     <header className="space-y-2">
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         S&apos;entraîner — {mod.name}
       </h1>
-      <p
-        className={banc ? "banc-consigne text-lg" : "text-muted-foreground max-w-prose text-lg"}
-        style={banc ? { color: "var(--bc-encre2)" } : undefined}
-      >
+      <p className="banc-consigne text-lg" style={{ color: "var(--bc-encre2)" }}>
         Révision active sur la banque de questions du concours : choisissez une longueur, répondez,
         et lisez la correction de chaque question. Rien n&apos;est enregistré sans compte.
       </p>
@@ -105,33 +102,25 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
         cadre, et le fil d'Ariane doit s'y aligner. Laissé au gabarit
         (`max-w-7xl`), il flottait 145 px à gauche de la séance.
       */
-      className={banc ? "banc max-w-none px-0 sm:px-0 lg:px-0" : undefined}
-      breadcrumb={banc ? undefined : filDAriane}
+      className="banc max-w-none px-0 sm:px-0 lg:px-0"
     >
-      {banc ? (
-        <div className="banc-cadre">
-          <SiteBreadcrumb items={filDAriane} />
-        </div>
-      ) : null}
+      <div className="banc-cadre">
+        <SiteBreadcrumb items={filDAriane} />
+      </div>
 
-      {/* En variante Banc, l'en-tête est confié au lanceur pour qu'il se
-          replie avec le reste de l'introduction au lancement. Sans vivier il
-          n'y a pas de séance : la page le rend alors elle-même, et doit alors
-          fournir le cadre que `ModeSeance` aurait posé. */}
-      {banc && totalAvailable > 0 ? null : banc ? (
-        <div className="banc-cadre">{entete}</div>
-      ) : (
-        entete
-      )}
+      {/* L'en-tête est confié au lanceur pour qu'il se replie avec le reste de
+          l'introduction au lancement. Sans vivier il n'y a pas de séance : la
+          page le rend alors elle-même, et doit fournir le cadre que
+          `ModeSeance` aurait posé. */}
+      {totalAvailable > 0 ? null : <div className="banc-cadre">{entete}</div>}
 
       {totalAvailable > 0 ? (
         <PoolQuiz
           label={label}
           poolUrl={`/entrainement/${mod.slug}/pool`}
           totalAvailable={totalAvailable}
-          variant={banc ? "banc" : "legacy"}
-          entete={banc ? entete : undefined}
-          labelSeance={banc ? `Série d'entraînement — ${mod.name}` : undefined}
+          entete={entete}
+          labelSeance={`Série d'entraînement — ${mod.name}`}
           blurb={
             <>
               Une série de questions tirées au hasard dans la banque du concours ({totalAvailable}{" "}
@@ -140,12 +129,7 @@ export default async function EntrainementPage({ params }: EntrainementPageProps
           }
         />
       ) : (
-        <p
-          className={cn(
-            "text-muted-foreground rounded-lg border border-dashed p-6 text-sm",
-            banc && "banc-cadre"
-          )}
-        >
+        <p className="banc-cadre text-muted-foreground rounded-lg border border-dashed p-6 text-sm">
           La banque de questions de ce concours se remplit progressivement.
         </p>
       )}

@@ -60,9 +60,19 @@ export default function QuizPreviewPage() {
         </AlertDescription>
       </Alert>
       <h1 className="mb-6 text-3xl font-bold tracking-tight">Quiz de démonstration</h1>
+      {/*
+        Registre arbitré au lot F12 : **documentaire**. Cette vitrine était la
+        dernière surface à ne rien passer du tout, retombant donc sur le défaut
+        `legacy` — et c'est précisément ce qu'une vitrine ne doit pas faire :
+        montrer un rendu qu'aucune page réelle n'emploie. Le lecteur est ici
+        déposé dans une page de documentation, sous un chapeau qui reste
+        visible ; c'est la définition de `documentaire`. L'étalon du registre
+        Banc a sa propre vitrine, `/design-lab/banc/seance`.
+      */}
       <QuizPlayer
         title="Quiz de démonstration"
         questions={demoQuestions}
+        variant="documentaire"
         timePerQuestionSeconds={45}
       />
     </main>
