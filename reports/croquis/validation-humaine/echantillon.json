@@ -1,0 +1,311 @@
+{
+  "generatedAt": "2026-08-04",
+  "generator": "scripts/audit-croquis-sample.mjs",
+  "sourceCommit": "3890d9244f04d98520bf0573ba1aa2a94a61b5ee",
+  "inventoryGeneratedAt": "2026-08-04",
+  "sampleSize": 30,
+  "populationSize": 106,
+  "selection": "empreinte FNV-1a du schemaId, stratifiée par module, plus fort reste",
+  "sample": [
+    {
+      "schemaId": "allongement",
+      "file": "content/schemas/allongement.svg",
+      "bytes": 2160,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.aerodynamique.l-allongement-et-les-winglets",
+      "ficheFile": "content/fondamentaux/aerodynamique/l-allongement-et-les-winglets.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "avion-anglais",
+      "file": "content/schemas/avion-anglais.svg",
+      "bytes": 2469,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.anglais-aeronautique.vocabulaire-de-base",
+      "ficheFile": "content/fondamentaux/anglais-aeronautique/vocabulaire-de-base.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "ban-porte-avions-granit",
+      "file": "content/schemas/ban-porte-avions-granit.svg",
+      "bytes": 2301,
+      "referenceCount": 1,
+      "module": "eopan",
+      "contentId": "eopan.ban.landivisiau",
+      "ficheFile": "content/eopan/ban/landivisiau.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "calage-transition",
+      "file": "content/schemas/calage-transition.svg",
+      "bytes": 2247,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.meteorologie.pression-et-calage",
+      "ficheFile": "content/fondamentaux/meteorologie/pression-et-calage.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "calages-altimetriques",
+      "file": "content/schemas/calages-altimetriques.svg",
+      "bytes": 2483,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.meteorologie.pression-et-calage",
+      "ficheFile": "content/fondamentaux/meteorologie/pression-et-calage.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "carte-ban-aeronavale",
+      "file": "content/schemas/carte-ban-aeronavale.svg",
+      "bytes": 1749,
+      "referenceCount": 1,
+      "module": "eopan",
+      "contentId": "eopan.ban.lanveoc-poulmic",
+      "ficheFile": "content/eopan/ban/lanveoc-poulmic.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "chronologie-aeronavale",
+      "file": "content/schemas/chronologie-aeronavale.svg",
+      "bytes": 2702,
+      "referenceCount": 1,
+      "module": "eopan",
+      "contentId": "eopan.histoire.histoire-de-l-aeronautique-navale",
+      "ficheFile": "content/eopan/histoire/histoire-de-l-aeronautique-navale.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "croire-instruments",
+      "file": "content/schemas/croire-instruments.svg",
+      "bytes": 2324,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.facteurs-humains.desorientation-et-illusions",
+      "ficheFile": "content/fondamentaux/facteurs-humains/desorientation-et-illusions.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "cumulonimbus-dangers",
+      "file": "content/schemas/cumulonimbus-dangers.svg",
+      "bytes": 2135,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.meteorologie.phenomenes-dangereux",
+      "ficheFile": "content/fondamentaux/meteorologie/phenomenes-dangereux.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "cursus-pilote-chasse-aae",
+      "file": "content/schemas/cursus-pilote-chasse-aae.svg",
+      "bytes": 2548,
+      "referenceCount": 1,
+      "module": "eopn",
+      "contentId": "eopn.selection.la-formation-du-pilote-de-chasse",
+      "ficheFile": "content/eopn/selection/la-formation-du-pilote-de-chasse.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "effets-moteur",
+      "file": "content/schemas/effets-moteur.svg",
+      "bytes": 1694,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.aerodynamique.les-effets-moteur",
+      "ficheFile": "content/fondamentaux/aerodynamique/les-effets-moteur.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "equilibre-en-palier",
+      "file": "content/schemas/equilibre-en-palier.svg",
+      "bytes": 2300,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.mecanique-du-vol.quatre-forces",
+      "ficheFile": "content/fondamentaux/mecanique-du-vol/quatre-forces.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "fenestron-rotor-anticouple",
+      "file": "content/schemas/fenestron-rotor-anticouple.svg",
+      "bytes": 2323,
+      "referenceCount": 1,
+      "module": "alat",
+      "contentId": "alat.appareils.gazelle",
+      "ficheFile": "content/alat/appareils/gazelle.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "force-vecteur",
+      "file": "content/schemas/force-vecteur.svg",
+      "bytes": 1418,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.physique.pression-forces-unites",
+      "ficheFile": "content/fondamentaux/physique/pression-forces-unites.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "gyroscope-fixite",
+      "file": "content/schemas/gyroscope-fixite.svg",
+      "bytes": 2132,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.instruments.horizon-artificiel",
+      "ficheFile": "content/fondamentaux/instruments/horizon-artificiel.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "horizon-artificiel-lecture",
+      "file": "content/schemas/horizon-artificiel-lecture.svg",
+      "bytes": 2066,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.instruments.horizon-artificiel",
+      "ficheFile": "content/fondamentaux/instruments/horizon-artificiel.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "hypoxie-pression-o2",
+      "file": "content/schemas/hypoxie-pression-o2.svg",
+      "bytes": 2277,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.facteurs-humains.hypoxie-et-altitude",
+      "ficheFile": "content/fondamentaux/facteurs-humains/hypoxie-et-altitude.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "mille-marin",
+      "file": "content/schemas/mille-marin.svg",
+      "bytes": 1710,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.navigation.terre-et-coordonnees",
+      "ficheFile": "content/fondamentaux/navigation/terre-et-coordonnees.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "portance-origine",
+      "file": "content/schemas/portance-origine.svg",
+      "bytes": 1839,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.aerodynamique.portance",
+      "ficheFile": "content/fondamentaux/aerodynamique/portance.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "pression-atmospherique",
+      "file": "content/schemas/pression-atmospherique.svg",
+      "bytes": 1737,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.physique.pression-forces-unites",
+      "ficheFile": "content/fondamentaux/physique/pression-forces-unites.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "pressions-statique-dynamique",
+      "file": "content/schemas/pressions-statique-dynamique.svg",
+      "bytes": 1773,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.aerodynamique.pression-statique-dynamique-totale",
+      "ficheFile": "content/fondamentaux/aerodynamique/pression-statique-dynamique-totale.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "profil-isa",
+      "file": "content/schemas/profil-isa.svg",
+      "bytes": 1942,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.meteorologie.atmosphere-standard",
+      "ficheFile": "content/fondamentaux/meteorologie/atmosphere-standard.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "regle-6-minutes",
+      "file": "content/schemas/regle-6-minutes.svg",
+      "bytes": 1515,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.navigation.temps-vitesse-distance",
+      "ficheFile": "content/fondamentaux/navigation/temps-vitesse-distance.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "rotation-mentale-exemple",
+      "file": "content/schemas/rotation-mentale-exemple.svg",
+      "bytes": 2102,
+      "referenceCount": 1,
+      "module": "psychotechnique",
+      "contentId": "psychotechnique.exercices.la-vision-spatiale",
+      "ficheFile": "content/psychotechnique/exercices/la-vision-spatiale.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "temps-utile-conscience",
+      "file": "content/schemas/temps-utile-conscience.svg",
+      "bytes": 1669,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.facteurs-humains.hypoxie-et-altitude",
+      "ficheFile": "content/fondamentaux/facteurs-humains/hypoxie-et-altitude.yaml",
+      "ficheLevel": 2
+    },
+    {
+      "schemaId": "triangle-dvt",
+      "file": "content/schemas/triangle-dvt.svg",
+      "bytes": 1341,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.navigation.temps-vitesse-distance",
+      "ficheFile": "content/fondamentaux/navigation/temps-vitesse-distance.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "trois-axes",
+      "file": "content/schemas/trois-axes.svg",
+      "bytes": 2257,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.mecanique-du-vol.axes-et-gouvernes",
+      "ficheFile": "content/fondamentaux/mecanique-du-vol/axes-et-gouvernes.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "unites-en-situation",
+      "file": "content/schemas/unites-en-situation.svg",
+      "bytes": 1298,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.physique.systeme-international-et-unites",
+      "ficheFile": "content/fondamentaux/physique/systeme-international-et-unites.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "valeurs-marine",
+      "file": "content/schemas/valeurs-marine.svg",
+      "bytes": 2493,
+      "referenceCount": 1,
+      "module": "eopan",
+      "contentId": "eopan.culture-militaire.culture-et-valeurs-de-la-marine",
+      "ficheFile": "content/eopan/culture-militaire/culture-et-valeurs-de-la-marine.yaml",
+      "ficheLevel": 1
+    },
+    {
+      "schemaId": "vrille-asymetrie",
+      "file": "content/schemas/vrille-asymetrie.svg",
+      "bytes": 2359,
+      "referenceCount": 1,
+      "module": "fondamentaux",
+      "contentId": "fondamentaux.mecanique-du-vol.decrochage-et-vrille",
+      "ficheFile": "content/fondamentaux/mecanique-du-vol/decrochage-et-vrille.yaml",
+      "ficheLevel": 2
+    }
+  ]
+}
