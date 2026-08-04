@@ -31,6 +31,7 @@ l'avancement du Banc.
 | `/psychotechnique/entrainement`         | **Banc**         | F7a |
 | `/psychotechnique/triangles`            | **Banc**         | F7b |
 | Les six autres épreuves de famille      | **Banc**         | F7c |
+| `/psychotechnique/secpil`               | **Banc**         | F9  |
 
 Le registre `documentaire` n'est pas une étape vers le Banc : c'est un
 **classement définitif**, arbitré au lot F4. Ces quiz sont la prolongation
@@ -163,14 +164,43 @@ tutoriel de présentation est le plus haut des sept, et le repli ne suffit pas
 à lui seul. Le traiter demande de raccourcir le contenu ou de réorganiser
 l'écran de choix — décision éditoriale, pas de registre : elle reste ouverte.
 
-### Une observation à trancher à la clôture du Banc
+**Gain mesuré au lot F9** sur SECPIL, bas de l'écran de simulation, `git stash`
+pour seule variable :
 
-Le mode séance replie le chapeau éditorial, **titre de niveau 1 compris**. En
-séance, une route migrée n'expose donc **aucun `<h1>`** — cela vaut pour les
-six routes déjà portées par le Banc, pas seulement pour les psychotechniques.
-La question « où suis-je » repose alors sur le seul nom accessible du cadre de
-séance, qui existe et est vérifié. Savoir si cela suffit est une décision de
-doctrine, à prendre explicitement plutôt qu'à subir.
+| Viewport   | Rendu historique | Banc       | Gain    |
+| ---------- | ---------------- | ---------- | ------- |
+| 1440 × 900 | 1254 px          | **749 px** | −505 px |
+| 390 × 844  | 900 px           | **428 px** | −472 px |
+
+Les deux relevés passaient **hors écran** ; ils tiennent désormais dans le
+premier écran. Le lot corrige en outre un défaut nommé dès la charte du Banc
+(lot F1b) : le temps restant et la précision étaient dessinés **dans** le
+`<svg>`, lequel porte `role="img"` et un libellé statique — ces deux valeurs
+n'atteignaient donc jamais une technique d'assistance, sur l'épreuve la plus
+chronométrée du produit. Elles sont désormais exposées hors du dessin, le
+chronomètre par le composant du Banc.
+
+### Le titre de séance — question tranchée le 2026-08-01
+
+Le mode séance replie le chapeau éditorial, titre de niveau 1 compris. La
+question posée était : le nom accessible du cadre de séance suffit-il à tenir
+ce rôle ?
+
+**Réponse : non, et la séance porte désormais son propre `<h1>`** (lot F7d,
+appliqué aux onze routes en un seul point). Le `role="group"` nommé n'a pas la
+sémantique `heading`, n'apparaît pas dans la liste des titres d'un lecteur
+d'écran, ne constitue pas un point de repère, et n'expose pas la séance comme
+le nouveau sujet principal de la vue. Le groupe est conservé, mais nommé **par**
+ce titre.
+
+La règle générale, qui dépasse le Banc, est dans `design-system.md` :
+
+> lorsqu'un état interactif remplace la tâche principale et retire le titre de
+> la vue précédente, il doit fournir son propre titre principal. Un nom
+> accessible sur un groupe complète cette structure ; il ne la remplace pas.
+
+Garde : `e2e/banc-titre-seance.spec.ts` — onze routes × quatre phases, aucune
+phase à zéro ou deux titres.
 
 ## Le décompte des appelants — trois définitions, trois nombres
 

@@ -224,3 +224,24 @@
     transition: none;
   }
 }
+
+/* --- Titre de séance ------------------------------------------------------
+   Arbitrage du 2026-08-01 : quand le mode séance retire le chapeau éditorial
+   de l'arbre d'accessibilité, la séance devient fonctionnellement une nouvelle
+   vue et doit porter son propre titre principal. Il est donc rendu en `h1`,
+   mais à une échelle de conduite et non d'édition : la séance vient de gagner
+   entre 400 et 700 px de hauteur utile, et ce titre n'en reprend qu'une ligne.
+
+   Il reste focalisable et atteignable par la navigation par titres ; masqué
+   visuellement (`sr-only`, réservé aux cas de redondance réelle), il demeure
+   dans l'arbre d'accessibilité. */
+
+.banc-titre-seance {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--bc-encre2);
+  outline: none;
+}

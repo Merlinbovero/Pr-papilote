@@ -55,10 +55,20 @@ test.describe("contrats du Banc", () => {
       await page.setViewportSize({ width: largeur, height: hauteur });
       await page.goto("/design-lab/banc/seance");
       await page.getByRole("button", { name: /Commencer la séance/i }).click();
-      await expect(page.getByRole("group", { name: /Question 1 sur 3/ })).toBeVisible();
+      /*
+        **Réécrit au lot F7d.** Le cadre de séance était nommé « Question N sur
+        3 » et repéré par un sélecteur d'attribut `[aria-label^=…]`. Deux
+        choses ont changé, et toutes deux volontairement : le titre de séance
+        nomme désormais la TÂCHE et non la position — un titre principal qui
+        change à chaque question ne situe plus rien — et le cadre est nommé PAR
+        ce titre (`aria-labelledby`), si bien qu'aucun `aria-label` ne subsiste
+        à interroger. Le repère passe donc par le rôle et le nom accessible,
+        qui est ce que la personne entend réellement.
+      */
+      await expect(page.getByRole("group", { name: "Séance de démonstration" })).toBeVisible();
 
       const mesures = await page.evaluate(() => {
-        const zone = document.querySelector('[aria-label^="Question 1 sur"]');
+        const zone = document.querySelector(".banc-zone-seance");
         const premier = zone?.querySelector("ul button");
         const chrono = document.querySelector('[role="timer"]');
         const boite = (el: Element | null | undefined) => el?.getBoundingClientRect() ?? null;

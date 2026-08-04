@@ -3,6 +3,9 @@
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Chronometre } from "@/features/banc/chronometre";
+import { ModeSeance } from "@/features/banc/mode-seance";
+import type { EtatChrono } from "@/lib/design/banc-tokens";
 import {
   SecpilProgressTable,
   SecpilSessionReport,
@@ -67,6 +70,23 @@ const SMOOTH_TAU = 0.09;
 
 type Screen = "select" | "running" | "done";
 
+/**
+ * Seuils du chronomètre — décidés **par le moteur**, jamais par le composant.
+ *
+ * L'échelle est ici celle d'une session SECPIL : soixante secondes, ou deux
+ * périodes du « 8 ». Vingt secondes méritent un signal, dix en méritent un
+ * autre.
+ */
+const CHRONO_ATTENTION = 20;
+const CHRONO_CRITIQUE = 10;
+
+function etatChrono(restant: number): EtatChrono {
+  if (restant <= 0) return "expired";
+  if (restant <= CHRONO_CRITIQUE) return "critical";
+  if (restant <= CHRONO_ATTENTION) return "warning";
+  return "normal";
+}
+
 const HISTORY_KEY = "pp.secpil.history.v1";
 
 function loadHistory(): SecpilSessionEntry[] {
@@ -113,7 +133,15 @@ const MANCHE_PATH = (() => {
   return "M" + pts.join(" L");
 })();
 
-export function SecpilSimulator() {
+export interface SecpilSimulatorProps {
+  /**
+   * En-tête de page — titre, chapeau et fiche MÉTHODE — confié à la séance
+   * pour qu'il **se replie au lancement**.
+   */
+  entete?: React.ReactNode;
+}
+
+export function SecpilSimulator({ entete }: SecpilSimulatorProps = {}) {
   const [screen, setScreen] = React.useState<Screen>("select");
   const [mode, setMode] = React.useState<SecpilMode>("tout");
   const [level, setLevel] = React.useState(1);
@@ -427,8 +455,14 @@ export function SecpilSimulator() {
     };
   }
 
-  if (screen === "select") {
-    return (
+  /*
+    Les trois écrans sont calculés en toutes phases — lot F9. `ModeSeance` ne
+    démonte pas l'introduction, il la masque : « Revoir les consignes » doit
+    pouvoir la ramener sans rien reconstruire.
+  */
+  const ecranSelection = (
+    <div className="space-y-6">
+      {entete}
       <SecpilSelect
         mode={mode}
         level={level}
@@ -437,27 +471,25 @@ export function SecpilSimulator() {
         onLevel={setLevel}
         onStart={() => start(mode, level)}
       />
-    );
-  }
+    </div>
+  );
 
-  if (screen === "done" && results) {
-    return (
-      <SecpilResults
-        results={results}
-        entry={lastEntry}
-        delta={lastDelta}
-        best={lastEntry ? bestFor(history, lastEntry.mode, lastEntry.level) : null}
-        series={lastEntry ? progressionSeries(history, lastEntry.mode, lastEntry.level) : []}
-        advice={
-          lastEntry
-            ? adviseAfter(history, lastEntry.mode, lastEntry.level)
-            : { kind: "keep-going", suggested: null }
-        }
-        onReplay={() => start(mode, level)}
-        onMenu={() => setScreen("select")}
-      />
-    );
-  }
+  const ecranResultats = !results ? null : (
+    <SecpilResults
+      results={results}
+      entry={lastEntry}
+      delta={lastDelta}
+      best={lastEntry ? bestFor(history, lastEntry.mode, lastEntry.level) : null}
+      series={lastEntry ? progressionSeries(history, lastEntry.mode, lastEntry.level) : []}
+      advice={
+        lastEntry
+          ? adviseAfter(history, lastEntry.mode, lastEntry.level)
+          : { kind: "keep-going", suggested: null }
+      }
+      onReplay={() => start(mode, level)}
+      onMenu={() => setScreen("select")}
+    />
+  );
 
   // Dérivé de l'état `mode` (pas du ref) : identique aux tâches de la session en cours.
   const tasks = modeTasks(mode);
@@ -468,8 +500,35 @@ export function SecpilSimulator() {
   const fillTone =
     hud.accuracy >= 80 ? "fill-success" : hud.accuracy >= 55 ? "fill-warning" : "fill-destructive";
 
-  return (
+  const ecranSimulation = (
     <div className="space-y-3">
+      {/*
+        LE CHRONOMÈTRE ET LA PRÉCISION, EXPOSÉS — correction du lot F9.
+
+        Les deux valeurs étaient dessinées DANS le `<svg>`, lequel porte
+        `role="img"` et un libellé statique : elles n'atteignaient donc jamais
+        une technique d'assistance, sur l'épreuve la plus chronométrée du
+        produit. La charte du Banc nommait déjà ce défaut au lot F1b.
+
+        Le dessin reste — c'est l'affichage instrument, et il a sa raison
+        d'être — mais il n'est plus le seul porteur de l'information.
+      */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Chronometre
+          secondes={hud.remainingS}
+          etat={etatChrono(hud.remainingS)}
+          label="Temps restant dans la session"
+          className="banc-chrono-cadre"
+        />
+        {showManche || showPalonnier ? (
+          <p className="text-sm" style={{ color: "var(--bc-encre2)" }}>
+            <span className="sr-only">Précision de suivi : </span>
+            <span aria-hidden>Précision </span>
+            <span className="font-semibold tabular-nums">{hud.accuracy} %</span>
+          </p>
+        ) : null}
+      </div>
+
       <div className="dark relative overflow-hidden rounded-lg border">
         <svg
           ref={zoneRef}
@@ -592,12 +651,37 @@ export function SecpilSimulator() {
         {paused && <SecpilKeypad value={keypad} onChange={setKeypad} onSubmit={submitKeypad} />}
       </div>
 
-      <p className="text-muted-foreground text-sm">
-        <span className="text-foreground font-medium">{modeLabel}</span>
+      <p className="banc-consigne text-sm" style={{ color: "var(--bc-encre2)" }}>
+        <span className="font-medium" style={{ color: "var(--bc-encre)" }}>
+          {modeLabel}
+        </span>
         {showCalcul ? ` · niveau ${level} — ${levelInfo(level).label}.` : "."} Additionnez les
         nombres ; la somme vous sera demandée aux moments clés.
       </p>
     </div>
+  );
+
+  /*
+    Mode séance CONTRÔLÉ : la session se lance depuis un écran de réglages —
+    mode et niveau de calcul — jamais par une commande unique.
+
+    **Une exception au contrat commun, et elle est motivée.** La commande
+    « Quitter » posée SUR l'écran de simulation est conservée en plus de
+    « Quitter la séance » du mode séance. Sur une épreuve psychomotrice
+    chronométrée, jouée à la souris et aux flèches, la sortie doit rester sous
+    la main : la reléguer sous l'affichage obligerait à quitter des yeux
+    l'instrument, et à faire défiler, pour abandonner. Les deux commandes
+    appellent le même `abort`.
+  */
+  return (
+    <ModeSeance
+      enSeance={screen !== "select"}
+      labelSeance="Simulateur SECPIL"
+      onSortie={abort}
+      introduction={ecranSelection}
+    >
+      {screen === "done" ? ecranResultats : ecranSimulation}
+    </ModeSeance>
   );
 }
 

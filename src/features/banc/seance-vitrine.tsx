@@ -49,7 +49,15 @@ export function SeanceVitrine() {
   return (
     <div className="banc min-h-screen py-6">
       <ModeSeance
-        labelSeance={`Question ${index + 1} sur ${QUESTIONS.length}`}
+        /*
+          Le titre de séance nomme la TÂCHE, pas la position — corrigé au lot
+          F7d. La vitrine passait ici « Question N sur 3 », ce qui était déjà
+          discutable pour un nom de groupe et devient franchement faux depuis
+          que ce libellé est rendu en `<h1>` : un titre principal qui change à
+          chaque question ne situe plus rien. La position reste où elle a
+          toujours eu sa place, sur le groupe de la question.
+        */
+        labelSeance="Séance de démonstration"
         libelleLancement="Commencer la séance"
         introduction={
           /*
