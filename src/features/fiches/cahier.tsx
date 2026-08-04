@@ -158,7 +158,29 @@ export function Cahier({
                   alt={fiche.image.alt}
                   fill
                   priority
-                  sizes="(min-width: 1440px) 720px, 100vw"
+                  /*
+                    `sizes` MESURÉ, et non déclaré — correctif du défaut
+                    systémique nommé au lot R-01 et laissé ouvert sur ce
+                    gabarit.
+
+                    L'ancienne valeur, `(min-width: 1440px) 720px, 100vw`,
+                    était fausse deux fois. `100vw` en dessous de 1440 est un
+                    mensonge : `.pl-photo-c` se fige à 620 px dès 1180. Et le
+                    seuil lui-même était mal placé — la bascule réelle est à
+                    1180, pas à 1440.
+
+                    Conséquence mesurée à 1280 px, le poste le plus courant :
+                    le navigateur réclamait la variante **1920 pour un
+                    conteneur de 620** — 96 460 octets au lieu de 25 540, soit
+                    **73,5 % de transfert inutile** sur la même image affichée
+                    à l'identique.
+
+                    Les trois branches ci-dessous restituent les onze largeurs
+                    relevées de 320 à 1920 px : 288, 343, 358, 608, 712, 778,
+                    968, puis 620 fixe. La gouttière est de 32 px sous 768 et
+                    de 56 px au-delà — d'où les deux `calc()`.
+                  */
+                  sizes="(min-width: 1180px) 620px, (min-width: 768px) calc(100vw - 56px), calc(100vw - 32px)"
                   style={fiche.image.focal ? { objectPosition: fiche.image.focal } : undefined}
                 />
               </div>
