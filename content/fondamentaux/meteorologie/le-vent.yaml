@@ -117,16 +117,19 @@ content:
       figures:
         - schemaId: triangle-des-vitesses
           alt: >-
-            Triangle des vitesses. Depuis un point d'origine, un vecteur horizontal vers la
-            droite représente la vitesse propre — 120 nœuds au cap 090 degrés. À son extrémité,
-            un vecteur en pointillé descend vers le bas : le vent, 30 nœuds venant du 360, donc
-            se déplaçant vers le 180. Un troisième vecteur relie directement l'origine à
-            l'extrémité du vent : la vitesse sol, environ 124 nœuds pour une route d'environ
-            104 degrés. L'écart de 14 degrés entre le cap et la route est la dérive. Un repère
-            Nord est indiqué en haut à gauche.
-          caption: "Le vent est nommé par sa provenance, mais son vecteur pointe vers où l'air se déplace : c'est cette flèche-là qui s'ajoute à la vitesse propre."
-          width: 460
-          height: 300
+            Triangle des vitesses construit sur une origine unique. De ce point partent trois
+            tracés : un axe vertical vers le Nord, un vecteur horizontal vers la droite qui est
+            la vitesse propre de 120 nœuds au cap 090 degrés, et un vecteur légèrement
+            descendant qui est la vitesse sol. Deux arcs mesurent les angles depuis le Nord :
+            le cap à 090 degrés et la route à environ 104 degrés. À l'extrémité du vecteur
+            vitesse propre, un vecteur en pointillé descend vers le bas et rejoint l'extrémité
+            du vecteur sol : c'est le vent, 30 nœuds venant du 360 et se déplaçant donc vers le
+            180. Un troisième arc, entre les deux vecteurs, marque la dérive de plus 14 degrés.
+            La vitesse sol vaut environ 124 nœuds. L'égalité vectorielle Vs égale Vp plus Vvent
+            est rappelée en bas, avec la mention d'une échelle commune.
+          caption: "Cap et route se lisent sur la même origine, depuis le même Nord : leur écart est la dérive."
+          width: 420
+          height: 240
           meta:
             family: F3
             function: scientific_diagram
@@ -135,7 +138,7 @@ content:
             modality: static
             scientificNatures: [analytical]
             scope: operational_environment
-            diagramVersion: 2
+            diagramVersion: 3
             scientificallyVerifiedAt: "2026-08-05"
             sources:
               - id: FR-02
@@ -165,16 +168,21 @@ content:
               compas, ni déclinaison, ni déviation n'y interviennent — ces corrections
               relèvent d'un autre croquis.
             longDescription: >-
-              La relation représentée est une somme vectorielle : vitesse sol = vitesse propre
-              + vent, les trois vecteurs étant tracés à une échelle commune de 1,8 unité de
-              dessin par nœud. L'exemple construit prend une vitesse propre de 120 kt au cap
-              vrai 090 degrés et un vent de 30 kt venant du 360 degrés. Le vecteur vent est
-              donc orienté vers le 180 degrés, conformément à la distinction entre la direction
-              météorologique du vent, qui nomme sa provenance, et le vecteur vitesse de la
-              masse d'air, qui pointe vers son déplacement. La somme donne une vitesse sol de
-              123,7 kt pour une route vraie de 104,0 degrés, arrondies sur le dessin à 124 kt
-              et 104 degrés. La dérive vaut donc environ plus 14 degrés : le vent venant de la
-              gauche, l'avion dérive vers la droite, et Route égale Cap plus Dérive.
+              Couche P2, déportée hors du dessin pour préserver la lisibilité mobile.
+              Convention d'axes retenue : l'axe est compté positivement vers l'est, l'axe nord
+              positivement vers le nord, et tout relèvement est exprimé en degrés vrais mesurés
+              depuis le Nord dans le sens horaire. Les composantes de l'exemple construit sont
+              alors les suivantes. Vitesse propre, cap 090 degrés, 120 nœuds : composantes est
+              120 et nord 0. Vent venant du 360 degrés à 30 nœuds, donc se déplaçant vers le
+              180 : composantes est 0 et nord moins 30. Somme : composantes est 120 et nord
+              moins 30. La norme vaut racine de la somme des carrés de 120 et de 30, soit
+              racine de 15 300, c'est-à-dire 123,69 nœuds, arrondis à 124 sur le dessin. Le
+              relèvement vaut 90 degrés plus l'arc tangente de 30 sur 120, soit 104,04 degrés,
+              arrondis à 104. La dérive est la différence entre la route et le cap, soit 14,04
+              degrés, arrondis à plus 14 : le vent venant de la gauche, l'avion dérive vers la
+              droite, et Route égale Cap plus Dérive. L'échelle du tracé est de 1,6 unité de
+              dessin par nœud, commune aux trois vecteurs — c'est cette échelle unique qui rend
+              la construction mesurable, et non seulement illustrative.
     - id: decoller-et-se-diriger-avec-le-vent
       title: Décoller et se diriger avec le vent
       strate: maitriser

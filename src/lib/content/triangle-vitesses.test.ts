@@ -28,7 +28,7 @@ const SVG = readFileSync(
 );
 
 /** Échelle annoncée sur le croquis et dans ses métadonnées. */
-const UNITES_PAR_NOEUD = 1.8;
+const UNITES_PAR_NOEUD = 1.6;
 
 /** L'exemple construit, tel qu'il est écrit sur le dessin. */
 const EXEMPLE = {

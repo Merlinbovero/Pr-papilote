@@ -45,8 +45,41 @@ const VIEWBOX_CANONIQUES = ["0 0 460 260", "0 0 460 300", "0 0 420 240", "0 0 34
 /** Marge de sécurité, en unités de `viewBox` (doctrine §10.2). */
 export const MARGE_SECURITE = 12;
 
-/** Taille de texte minimale, en unités de `viewBox` (doctrine §10.2). */
-export const TEXTE_MINIMAL = 11;
+/**
+ * Largeur réellement rendue d'un croquis dans une fiche, à 390 px de viewport.
+ *
+ * **Mesurée**, pas déduite : la carte, sa bordure et son rembourrage retirent
+ * 66 px des 390. C'est ce nombre qui transforme des unités de `viewBox` en
+ * pixels CSS, et c'est lui qui manquait en C2.
+ */
+export const LARGEUR_RENDUE_390 = 324;
+
+/**
+ * Tailles minimales **en pixels CSS effectifs**, à 390 px de viewport.
+ *
+ * ── Pourquoi la règle a changé ──────────────────────────────────────────
+ * C2 exigeait 11 unités de `viewBox`. C'était une règle sur le fichier, pas
+ * sur ce que l'œil reçoit : dans un `viewBox` de 460 réduit au facteur 0,704,
+ * ces 11 unités se rendaient à **7,75 px**. La garde était verte et le texte
+ * illisible — le pire des deux mondes, une règle qui rassure sans protéger.
+ *
+ * Le seuil porte désormais sur la taille rendue. Il est **indépendant du
+ * format** : élargir le `viewBox` sans grossir les caractères fait tomber le
+ * test, ce qui est exactement l'effet recherché.
+ */
+export const TAILLE_EFFECTIVE_MIN = {
+  /** Texte porteur d'information scientifique. */
+  essentiel: 12,
+  /** Libellés secondaires, légendes, unités. */
+  secondaire: 11,
+} as const;
+
+/**
+ * Sous ce seuil, aucune information scientifique indispensable.
+ * C'est le plancher absolu : un texte plus petit est un défaut, quel que soit
+ * son rôle.
+ */
+export const PLANCHER_EFFECTIF = TAILLE_EFFECTIVE_MIN.secondaire;
 
 /**
  * Valeurs de couleur admises.
@@ -164,16 +197,28 @@ export function controlerCroquis(schemaId: string, svg: string): Violation[] {
     }
   }
 
+  /*
+    Le contrôle porte sur la taille EFFECTIVE, pas sur les unités déclarées.
+    Sans le facteur d'échelle, un croquis peut respecter la règle au fichier et
+    rendre du 7,75 px à l'écran — c'est ce qui s'est produit en C2.
+  */
+  const largeurViewBox = viewBox ? Number(viewBox.split(/\s+/)[2]) : NaN;
+  const echelle390 = Number.isFinite(largeurViewBox)
+    ? LARGEUR_RENDUE_390 / largeurViewBox
+    : Number.NaN;
+
   const taillesTexte = [
     ...[...svg.matchAll(/font-size:\s*([\d.]+)px/g)].map((m) => Number(m[1])),
     ...[...svg.matchAll(/\sfont-size="([\d.]+)"/g)].map((m) => Number(m[1])),
     ...[...svg.matchAll(/font:\s*([\d.]+)px/g)].map((m) => Number(m[1])),
   ];
   for (const taille of taillesTexte) {
-    if (taille < TEXTE_MINIMAL) {
+    const effective = taille * echelle390;
+    if (Number.isFinite(effective) && effective < PLANCHER_EFFECTIF) {
       ajouter(
         "texte-minimal",
-        `font-size ${taille} < ${TEXTE_MINIMAL} unités de viewBox (doctrine §10.2)`
+        `font-size ${taille} unités → ${effective.toFixed(2)} px effectifs à 390 px, ` +
+          `sous le plancher de ${PLANCHER_EFFECTIF} px`
       );
     }
   }

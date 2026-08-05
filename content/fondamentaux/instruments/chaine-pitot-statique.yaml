@@ -126,15 +126,19 @@ content:
       figures:
         - schemaId: chaine-anemobarometrique
           alt: >-
-            Circuit Pitot-statique. À gauche, l'écoulement relatif alimente la prise de
-            pression totale (tube de Pitot) ; en dessous, la prise de pression statique,
-            affleurante sur le fuselage. Un trait plein part de la prise totale vers le seul
-            anémomètre. Un trait pointillé part de la prise statique, remonte en une
-            canalisation unique et se divise en trois dérivations vers l'anémomètre,
-            l'altimètre et le variomètre. L'anémomètre porte la relation q égale Pt moins Ps.
-          caption: "Seul l'anémomètre reçoit les deux pressions : c'est leur différence qu'il affiche."
-          width: 460
-          height: 300
+            Circuit Pitot-statique en trois bandes. À gauche, la captation physique : une
+            flèche de vent relatif arrive de face dans l'ouverture frontale d'une sonde Pitot
+            dessinée de profil, dont le mât rejoint la paroi du fuselage ; sur cette même
+            paroi, deux orifices affleurants sont les prises statiques. Au centre, les
+            canalisations : un trait plein marqué Pt part de la sonde et monte vers
+            l'anémomètre seul ; un trait pointillé marqué Ps part des orifices, rejoint une
+            canalisation unique verticale et se divise en trois dérivations. À droite, les
+            trois instruments, chacun suivi de la grandeur qu'il en déduit : anémomètre puis
+            vitesse indiquée, altimètre puis altitude-pression, variomètre puis vitesse
+            verticale.
+          caption: "Ce que la canalisation transporte est une pression ; la vitesse, l'altitude et la vitesse verticale en sont déduites."
+          width: 420
+          height: 240
           meta:
             family: F7
             function: scientific_diagram
@@ -143,7 +147,7 @@ content:
             modality: static
             scientificNatures: [analytical]
             scope: system
-            diagramVersion: 2
+            diagramVersion: 3
             scientificallyVerifiedAt: "2026-08-05"
             sources:
               - id: F-02
@@ -188,16 +192,25 @@ content:
               très basses vitesses, l'écart de pression devient trop faible pour être mesuré
               utilement (N-05).
             longDescription: >-
-              Couche analytique, volontairement hors du dessin. La prise totale capte
-              Pt = Ps + q ; la prise statique capte Ps seule. Leur différence isole la pression
-              dynamique q = Pt − Ps, d'où la vitesse se déduit sous les hypothèses ci-dessus par
-              V = racine de (2q / rho), avec q en pascals, rho la masse volumique de l'air en
-              kilogrammes par mètre cube et V en mètres par seconde. Le tube de Pitot ne mesure
-              pas une vitesse : il fournit une pression, et la vitesse en est déduite dans un
-              modèle, après étalonnage de l'instrument et de son installation. De même, le
-              variomètre ne mesure pas une vitesse verticale : il exploite l'écart entre la
-              pression statique reçue directement et cette même pression retardée par une fuite
-              calibrée (F-02, p. 8-7).
+              Couche P2, volontairement hors du dessin pour préserver la lisibilité mobile.
+              La prise de pression totale capte Pt = Ps + q ; les prises statiques captent Ps
+              seule. Leur différence isole la pression dynamique q = Pt − Ps, exprimée en
+              pascals. Sous les hypothèses ci-dessus, la vitesse s'en déduit par
+              V = racine de (2q / rho), avec rho la masse volumique de l'air en kilogrammes
+              par mètre cube et V en mètres par seconde. Trois distinctions que le dessin
+              porte et que cette note explicite. Premièrement, la sonde Pitot ne mesure pas
+              une vitesse : elle fournit une pression, et la vitesse en est déduite dans un
+              modèle, après étalonnage de l'instrument et de son installation — c'est
+              pourquoi l'anémomètre affiche une vitesse indiquée, non une vitesse propre.
+              Deuxièmement, l'altimètre exploite la pression statique et affiche une
+              altitude-pression, c'est-à-dire une altitude relative à un calage, non une
+              hauteur mesurée. Troisièmement, le variomètre n'observe pas un déplacement
+              vertical : il exploite l'écart entre la pression statique reçue directement et
+              cette même pression retardée par une fuite calibrée, et c'est le régime de cet
+              écart qui est gradué en pieds par minute (F-02, p. 8-7). Le principe interne des
+              instruments — capsules anéroïdes, diaphragme, fuite calibrée — a été
+              volontairement écarté du croquis : il relève d'une figure distincte, et
+              l'ajouter ici aurait transformé une chaîne fonctionnelle en vue de maintenance.
     - id: obstructions-et-securite
       title: Obstructions et sécurité
       strate: maitriser

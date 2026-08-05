@@ -4,11 +4,11 @@
 
 | Provenance | Valeur |
 | ---------- | ------ |
-| Instant de génération (UTC) | 2026-08-05T14:33:32.811Z |
-| Empreinte du contenu | `4074ef8c694a3e55c91cf8312f84d504a1c70f52d0a675fda54a5e0907463ff2` |
+| Instant de génération (UTC) | 2026-08-05T17:22:50.017Z |
+| Empreinte du contenu | `17dc97fc8845aa0b0a062e646008b924ff8700c124abf0ed13445ac983446902` |
 | Commit source | `7dc4e26e07813c3edb067265af3a6aceb2c43998` |
 | Date du commit source | 2026-08-05T14:31:18+00:00 |
-| Entrées mesurées inchangées | oui |
+| Entrées mesurées inchangées | **non — le rapport ne décrit aucun commit** |
 
 L'instant de génération change à chaque exécution ; **l'empreinte du contenu
 ne change que si le contenu change**. Deux rapports de même empreinte disent

@@ -273,7 +273,12 @@ Les croquis existants emploient de nombreux `viewBox` distincts, avec une nette 
 ### 10.2 Marges, densité, lisibilité
 
 - **Marge de sécurité** : 12 unités de `viewBox` sur les quatre bords.
-- **Texte minimal** : 11 unités de `viewBox`. La taille effective en pixels CSS à 390 px de large est **à mesurer en C2**, pas à supposer.
+- **Texte minimal — règle refondée en C2-bis, sur le rendu et non sur le fichier.** Le seuil porte sur la **taille effective en pixels CSS à 390 px de viewport** : **12 px pour le texte essentiel**, **11 px pour le secondaire**, et **aucune information scientifique indispensable sous 11 px**.
+
+  L'ancienne règle — 11 unités de `viewBox` — était verte pendant que le texte se rendait à **7,75 px** : une règle sur le fichier ne protège rien, elle rassure. Le facteur d'échelle vaut `324 / largeur du viewBox`, la largeur rendue de 324 px ayant été **mesurée** dans une fiche à 390 px. Un format large impose donc de gros caractères, ce qui est l'arbitrage voulu.
+
+  **Le titre interne d'un croquis est supprimé** quand la légende ou le titre de section le répète : c'est le premier levier avant d'agrandir quoi que ce soit. Grossir sans retirer produit des collisions.
+
 - **Densité** : proportionnée au format et au niveau. **Aucun maximum universel d'étiquettes** — un P3 en porte légitimement davantage qu'un P1. La règle opérante est qu'aucune étiquette n'en chevauche une autre à 390 px.
 
 ### 10.3 Conventions de tracé

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:33:32.811Z",
+  "generatedAt": "2026-08-05T17:22:50.017Z",
   "generator": "scripts/audit-croquis-inventory.mjs",
   "measuredInputs": [
     "content",
@@ -7,8 +7,8 @@
   ],
   "sourceCommit": "7dc4e26e07813c3edb067265af3a6aceb2c43998",
   "sourceCommitDate": "2026-08-05T14:31:18+00:00",
-  "measuredInputsClean": true,
-  "contentDigest": "4074ef8c694a3e55c91cf8312f84d504a1c70f52d0a675fda54a5e0907463ff2",
+  "measuredInputsClean": false,
+  "contentDigest": "17dc97fc8845aa0b0a062e646008b924ff8700c124abf0ed13445ac983446902",
   "totals": {
     "yamlFilesScanned": 1569,
     "yamlFilesParsed": 1569,
@@ -977,7 +977,7 @@
     {
       "schemaId": "chaine-anemobarometrique",
       "file": "content/schemas/chaine-anemobarometrique.svg",
-      "bytes": 4194,
+      "bytes": 4605,
       "referenceCount": 1
     },
     {
@@ -1433,7 +1433,7 @@
     {
       "schemaId": "triangle-des-vitesses",
       "file": "content/schemas/triangle-des-vitesses.svg",
-      "bytes": 3713,
+      "bytes": 3971,
       "referenceCount": 1
     },
     {

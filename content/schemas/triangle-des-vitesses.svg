@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
   <style>
-    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--schema-ink); }
-    .titre { font-size: 15px; font-weight: 600; }
-    .sub { font-size: 12px; fill: var(--schema-muted); }
-    .air { stroke: var(--schema-ink); fill: none; stroke-width: 2.5; }
-    .sol { stroke: var(--schema-accent); fill: none; stroke-width: 3; }
-    .vent { stroke: var(--schema-muted); fill: none; stroke-width: 2.5; stroke-dasharray: 6 3; }
+    text { font: 16px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--schema-ink); }
+    .sub { font-size: 15px; fill: var(--schema-muted); }
+    .air { stroke: var(--schema-ink); fill: none; stroke-width: 3; }
+    .sol { stroke: var(--schema-accent); fill: none; stroke-width: 3.5; }
+    .vent { stroke: var(--schema-muted); fill: none; stroke-width: 3; stroke-dasharray: 7 4; }
     .repere { stroke: var(--schema-muted); fill: none; stroke-width: 1.5; }
-    .amorce { stroke: var(--schema-grid); fill: none; stroke-width: 1; }
+    .arc { stroke: var(--schema-ink); fill: none; stroke-width: 1.5; }
   </style>
   <defs>
     <marker id="triangle-des-vitesses__f-air" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
@@ -19,41 +18,47 @@
     <marker id="triangle-des-vitesses__f-vent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-muted)" />
     </marker>
+    <marker id="triangle-des-vitesses__f-nord" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-muted)" />
+    </marker>
   </defs>
 
-  <text class="titre" x="230" y="24" text-anchor="middle">Le triangle des vitesses</text>
-  <text class="sub" x="444" y="46" text-anchor="end">Exemple pédagogique — valeurs construites</text>
+  <text class="sub" x="406" y="28" text-anchor="end">Exemple pédagogique — valeurs construites</text>
 
-  <!-- Repère : Nord, et la convention angulaire qui va avec -->
-  <line class="repere" x1="52" y1="88" x2="52" y2="46" marker-end="url(#triangle-des-vitesses__f-air)" />
-  <text x="52" y="38" text-anchor="middle">N</text>
-  <text class="sub" x="52" y="112" text-anchor="start">angles en degrés vrais, du Nord, sens horaire</text>
+  <!-- ═══ ORIGINE COMMUNE ════════════════════════════════════════════════
+       Nord, cap et route partent tous du MÊME point : c'est ce qui permet
+       de lire les deux angles sur le même sommet, et la dérive comme leur
+       différence. -->
+  <line class="repere" x1="112" y1="140" x2="112" y2="60" marker-end="url(#triangle-des-vitesses__f-nord)" />
+  <text class="sub" x="112" y="50" text-anchor="middle">N</text>
 
-  <!-- Amorce de la direction du cap, prolongée au-delà de A : c'est par
-       rapport à elle que la dérive se lit. -->
-  <line class="amorce" x1="326" y1="190" x2="376" y2="190" />
+  <!-- Arc du cap : du Nord jusqu'au vecteur air, 90° -->
+  <path class="arc" d="M112,84 A56,56 0 0,1 168,140" />
+  <text class="sub" x="174" y="80" text-anchor="start">cap 090°</text>
 
-  <!-- Vitesse propre : O → A. Cap 090°, 120 kt, échelle 1,8 unité par nœud. -->
-  <line class="air" x1="110" y1="190" x2="326" y2="190" marker-end="url(#triangle-des-vitesses__f-air)" />
-  <text x="212" y="164" text-anchor="middle">vitesse propre (Vp)</text>
-  <text class="sub" x="212" y="180" text-anchor="middle">120 kt — cap 090°</text>
+  <!-- Arc de la route : du Nord jusqu'au vecteur sol, 104° -->
+  <path class="arc" d="M112,62 A78,78 0 0,1 187.7,158.9" />
 
-  <!-- Vent : A → B. Nommé par sa PROVENANCE (360°), tracé vers où l'air VA. -->
-  <line class="vent" x1="326" y1="190" x2="326" y2="244" marker-end="url(#triangle-des-vitesses__f-vent)" />
-  <text class="sub" x="336" y="206" text-anchor="start">vent 30 kt</text>
-  <text class="sub" x="336" y="222" text-anchor="start">du 360°</text>
-  <text class="sub" x="336" y="238" text-anchor="start">vers le 180°</text>
+  <!-- Vitesse propre : O → A. 120 kt au cap 090°, échelle 1,6 unité/nœud. -->
+  <line class="air" x1="112" y1="140" x2="304" y2="140" marker-end="url(#triangle-des-vitesses__f-air)" />
+  <text x="230" y="126" text-anchor="middle">Vp 120 kt</text>
 
-  <!-- Vitesse sol : O → B, somme vectorielle exacte des deux précédents. -->
-  <line class="sol" x1="110" y1="190" x2="326" y2="244" marker-end="url(#triangle-des-vitesses__f-sol)" />
-  <text x="150" y="250" text-anchor="start">vitesse sol (Vs)</text>
-  <text class="sub" x="150" y="266" text-anchor="start">≈ 124 kt — route ≈ 104°</text>
+  <!-- Vent : A → B, tête-à-queue. Nommé par sa PROVENANCE, tracé vers où
+       l'air VA — les deux mentions figurent côte à côte pour que l'écart
+       ne puisse pas être lu à l'envers. -->
+  <line class="vent" x1="304" y1="140" x2="304" y2="188" marker-end="url(#triangle-des-vitesses__f-vent)" />
+  <text class="sub" x="314" y="154" text-anchor="start">vent 30 kt</text>
+  <text class="sub" x="314" y="176" text-anchor="start">du 360°</text>
+  <text class="sub" x="314" y="198" text-anchor="start">vers 180°</text>
 
-  <!-- Dérive : l'écart entre le cap et la route, lu à l'origine -->
-  <path class="repere" d="M172,190 A62,62 0 0,1 170.2,205.0" />
-  <line class="repere" x1="104" y1="206" x2="164" y2="199" />
-  <text class="sub" x="100" y="200" text-anchor="end">dérive</text>
-  <text class="sub" x="100" y="216" text-anchor="end">≈ +14°</text>
+  <!-- Vitesse sol : O → B, somme vectorielle exacte -->
+  <line class="sol" x1="112" y1="140" x2="304" y2="188" marker-end="url(#triangle-des-vitesses__f-sol)" />
+  <text x="14" y="206" text-anchor="start">Vs ≈ 124 kt · route ≈ 104°</text>
 
-  <text class="sub" x="52" y="286" text-anchor="start">Vecteurs à la même échelle.</text>
+  <!-- Dérive : lue dans l'ouverture entre les deux vecteurs, là où elle
+       est la plus large — près des pointes, pas au sommet. -->
+  <path class="arc" d="M232,140 A120,120 0 0,1 228.4,169.1" />
+  <text class="sub" x="196" y="170" text-anchor="start">dérive +14°</text>
+
+  <text class="sub" x="14" y="228" text-anchor="start">Vs = Vp + Vvent · même échelle</text>
 </svg>

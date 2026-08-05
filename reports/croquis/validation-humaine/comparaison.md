@@ -4,7 +4,7 @@
 
 | Provenance | Valeur |
 | ---------- | ------ |
-| Instant de génération (UTC) | 2026-08-05T14:33:34.949Z |
+| Instant de génération (UTC) | 2026-08-05T17:22:52.379Z |
 | Grille lue | `reports/croquis/validation-humaine/grille-remplie.yaml` |
 | Grille présente | **non** |
 | Erreur d'analyse | aucune |

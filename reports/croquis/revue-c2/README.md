@@ -1,5 +1,8 @@
 # Revue visuelle des pilotes C2
 
+`avant/` conserve les rendus de C2, avant l'élévation du standard menée en
+C2-bis. Les fichiers à la racine du dossier sont l'état courant.
+
 Dix captures, deux croquis × cinq conditions : clair et sombre à 390 px, clair
 et sombre en largeur bureau, et une simulation noir et blanc.
 
@@ -41,3 +44,22 @@ npm run build && npm start
 
 Les captures ne sont pas produites par un script versionné : elles sont un
 artefact de revue, pas une sortie déterministe du dépôt.
+
+## C2-bis — ce que la revue humaine a changé
+
+**Règle typographique refondée sur le rendu.** C2 mesurait 11 unités de
+`viewBox` ; à 390 px cela donnait 7,75 puis 8,45 px effectifs. Une règle sur le
+fichier ne protège rien. Le seuil porte désormais sur la **taille rendue** :
+12 px effectifs pour le texte essentiel, 11 px pour le secondaire, mesurés à
+390 px de viewport. Les deux pilotes passent au format canonique 420 × 240,
+dont le facteur d'échelle (0,771) permet d'y satisfaire, et leurs titres
+internes sont **supprimés** — la légende et le titre de section les répétaient.
+
+**Trois défauts trouvés par l'image, invisibles à la mesure de boîtes :**
+
+1. Une canalisation traversait un libellé sur P-4. Le contrôle de chevauchement
+   compare des étiquettes entre elles, jamais une étiquette et un trait.
+2. La sonde Pitot, dessinée comme un tracé ouvert, se lisait comme un crochet.
+   Elle est redessinée en tube arrondi avec son ouverture frontale marquée.
+3. Les arcs angulaires de P-6 étaient trop petits pour être lus ; leurs rayons
+   passent de 40 et 58 à 56 et 78 unités.
