@@ -1,6 +1,13 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import {
+  contraste,
+  melanger,
+  oklchVersSrgb as versSrgb,
+  type Oklch,
+  type Srgb,
+} from "@/lib/design/contraste";
 
 /**
  * Contraste des jetons d'état — lot F1a.
@@ -17,7 +24,7 @@ import { describe, expect, it } from "vitest";
 const CSS = readFileSync(path.join(process.cwd(), "src", "app", "globals.css"), "utf-8");
 
 /** Lit un jeton `--nom: oklch(L C H)` dans le bloc demandé. */
-function jeton(nom: string, registre: "clair" | "sombre"): [number, number, number] {
+function jeton(nom: string, registre: "clair" | "sombre"): Oklch {
   // Le bloc clair est `:root`, le bloc sombre `.dark` : on coupe le fichier au
   // début de `.dark` pour ne jamais confondre les deux déclarations.
   const debutSombre = CSS.indexOf(".dark {");
@@ -31,45 +38,10 @@ function jeton(nom: string, registre: "clair" | "sombre"): [number, number, numb
   return [Number(trouve[1]), Number(trouve[2]), Number(trouve[3])];
 }
 
-/** OKLCH → sRGB (composantes 0–1). */
-function versSrgb([L, C, h]: [number, number, number]): [number, number, number] {
-  const hr = (h * Math.PI) / 180;
-  const a = C * Math.cos(hr);
-  const b = C * Math.sin(hr);
-  const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
-  const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3;
-  const s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
-  const lin = [
-    4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
-    -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
-    -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s,
-  ];
-  return lin.map((c) => {
-    const v = Math.min(1, Math.max(0, c));
-    return v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055;
-  }) as [number, number, number];
-}
-
-function luminance([r, g, b]: [number, number, number]): number {
-  const f = (c: number) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-  return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
-}
-
-function contraste(a: [number, number, number], b: [number, number, number]): number {
-  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
-  return (hi + 0.05) / (lo + 0.05);
-}
+const SEUIL_AA = 4.5;
 
 /** Composition alpha : la teinte posée à `alpha` sur un fond opaque. */
-function sur(
-  teinte: [number, number, number],
-  fond: [number, number, number],
-  alpha: number
-): [number, number, number] {
-  return teinte.map((c, i) => c * alpha + fond[i] * (1 - alpha)) as [number, number, number];
-}
-
-const SEUIL_AA = 4.5;
+const sur = (teinte: Srgb, fond: Srgb, alpha: number) => melanger(teinte, fond, alpha);
 
 describe.each([
   { registre: "clair" as const, carte: "card", texteSurPlein: "success-foreground" },
