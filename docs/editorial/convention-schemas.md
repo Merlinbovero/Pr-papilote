@@ -290,7 +290,9 @@ Les croquis existants emploient de nombreux `viewBox` distincts, avec une nette 
 
 ### 10.4 Jetons sémantiques
 
-Rôles définis dès C1 ; **valeurs fixées en C2**, après mesure de contraste dans les deux thèmes. Aucune couleur n'est retenue pour son esthétique.
+Rôles définis dès C1 ; **valeurs fixées en C2** (`src/app/globals.css`), après mesure de contraste dans les deux thèmes. Aucune couleur n'est retenue pour son esthétique.
+
+Chaque jeton est un **alias** d'un jeton PLANCHE existant, jamais une couleur propre : c'est ce qui empêche le chantier croquis de devenir un second système graphique. Une seule dérogation, mesurée et testée — en registre sombre, `--schema-grid` est opaque plutôt qu'aliasé sur `--border`, qui porte une transparence de 12 % ; un trait semi-transparent se compose sur ce qu'il y a derrière et changerait d'aspect selon le fond.
 
 | Jeton             | Rôle sémantique                                            |
 | ----------------- | ---------------------------------------------------------- |
@@ -303,11 +305,17 @@ Rôles définis dès C1 ; **valeurs fixées en C2**, après mesure de contraste 
 | `schema-warning`  | Zone de prudence, seuil approché                           |
 | `schema-danger`   | Limite à ne pas franchir, état critique                    |
 
-Chaque valeur devra satisfaire les seuils du §7 **dans les deux thèmes** — c'est ce qui a manqué aux couleurs actuelles, choisies en regardant le rendu sombre.
+Chaque valeur satisfait les seuils du §7 **dans les deux thèmes** — c'est ce qui a manqué aux couleurs actuelles, choisies en regardant le rendu sombre.
+
+**Le seuil dépend du rôle, et le rôle est déclaré.** Appliquer 4,5:1 à tout aurait été plus simple et faux : un trait de grille tenu à 4,5:1 n'est plus une grille. `src/app/contraste-croquis.test.ts` associe donc chaque jeton à `text`, `essential_graphic` ou `decorative`, et mesure contre le seuil correspondant. La déclaration est le vrai contrôle : elle oblige à dire, jeton par jeton, ce qui est perdu si l'élément n'est pas distinguable.
 
 ### 10.5 Identifiants SVG
 
-Tout `id` interne est préfixé par un trigramme propre au croquis (`cl-` pour `couche-limite`). Plusieurs SVG coexistent sur une page ; sans préfixe, un `url(#a)` résout vers le mauvais marqueur. La garde existe : `e2e/schemas-identifiants.spec.ts`.
+Tout `id` interne est préfixé par **le `schemaId` du croquis suivi de `__`** (`triangle-des-vitesses__f-air`). Plusieurs SVG coexistent sur une page ; sans préfixe, un `url(#a)` résout vers le mauvais marqueur.
+
+C1 évoquait un « trigramme » ; C2 retient le `schemaId` complet, qui est la convention **déjà appliquée** au corpus par le lot M10 et déjà unique par construction. Deux conventions concurrentes auraient été pires que celle qu'on corrige.
+
+Deux gardes : `src/lib/content/croquis-garde.ts` sur les fichiers, `e2e/schemas-identifiants.spec.ts` sur le DOM rendu.
 
 ### 10.6 Emplacement des hypothèses et des sources
 

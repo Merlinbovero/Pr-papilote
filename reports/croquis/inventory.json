@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-05T13:26:51.232Z",
+  "generatedAt": "2026-08-05T14:33:32.811Z",
   "generator": "scripts/audit-croquis-inventory.mjs",
   "measuredInputs": [
     "content",
     "src/features/interactions/registry.ts"
   ],
-  "sourceCommit": "3890d9244f04d98520bf0573ba1aa2a94a61b5ee",
-  "sourceCommitDate": "2026-07-30T11:02:28+00:00",
+  "sourceCommit": "7dc4e26e07813c3edb067265af3a6aceb2c43998",
+  "sourceCommitDate": "2026-08-05T14:31:18+00:00",
   "measuredInputsClean": true,
-  "contentDigest": "7839b1d3a5a577d255848f520c71bd14e3a4dec9947dc7df8b9924fe8f2e4928",
+  "contentDigest": "4074ef8c694a3e55c91cf8312f84d504a1c70f52d0a675fda54a5e0907463ff2",
   "totals": {
     "yamlFilesScanned": 1569,
     "yamlFilesParsed": 1569,
@@ -22,8 +22,8 @@
     "orphanSvg": 0,
     "brokenReferences": 0,
     "sharedSchemas": 1,
-    "figuresWithMeta": 0,
-    "figuresWithoutMeta": 107,
+    "figuresWithMeta": 2,
+    "figuresWithoutMeta": 105,
     "figuresWithoutAlt": 0,
     "interactions": 7
   },
@@ -84,7 +84,18 @@
     }
   ],
   "figuresWithoutAlt": [],
-  "figuresWithMeta": [],
+  "figuresWithMeta": [
+    {
+      "schemaId": "chaine-anemobarometrique",
+      "file": "content/fondamentaux/instruments/chaine-pitot-statique.yaml",
+      "path": "content.sections[1].figures[0]"
+    },
+    {
+      "schemaId": "triangle-des-vitesses",
+      "file": "content/fondamentaux/meteorologie/le-vent.yaml",
+      "path": "content.sections[1].figures[0]"
+    }
+  ],
   "interactions": [
     "axes-gouvernes",
     "centrage",
@@ -966,7 +977,7 @@
     {
       "schemaId": "chaine-anemobarometrique",
       "file": "content/schemas/chaine-anemobarometrique.svg",
-      "bytes": 2686,
+      "bytes": 4194,
       "referenceCount": 1
     },
     {
@@ -1422,7 +1433,7 @@
     {
       "schemaId": "triangle-des-vitesses",
       "file": "content/schemas/triangle-des-vitesses.svg",
-      "bytes": 2085,
+      "bytes": 3713,
       "referenceCount": 1
     },
     {

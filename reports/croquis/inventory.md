@@ -4,10 +4,10 @@
 
 | Provenance | Valeur |
 | ---------- | ------ |
-| Instant de génération (UTC) | 2026-08-05T13:26:51.232Z |
-| Empreinte du contenu | `7839b1d3a5a577d255848f520c71bd14e3a4dec9947dc7df8b9924fe8f2e4928` |
-| Commit source | `3890d9244f04d98520bf0573ba1aa2a94a61b5ee` |
-| Date du commit source | 2026-07-30T11:02:28+00:00 |
+| Instant de génération (UTC) | 2026-08-05T14:33:32.811Z |
+| Empreinte du contenu | `4074ef8c694a3e55c91cf8312f84d504a1c70f52d0a675fda54a5e0907463ff2` |
+| Commit source | `7dc4e26e07813c3edb067265af3a6aceb2c43998` |
+| Date du commit source | 2026-08-05T14:31:18+00:00 |
 | Entrées mesurées inchangées | oui |
 
 L'instant de génération change à chaque exécution ; **l'empreinte du contenu
@@ -38,8 +38,8 @@ définit — un YAML placé sous un dossier de module de `modules.json`.
 | orphanSvg | 0 |
 | brokenReferences | 0 |
 | sharedSchemas | 1 |
-| figuresWithMeta | 0 |
-| figuresWithoutMeta | 107 |
+| figuresWithMeta | 2 |
+| figuresWithoutMeta | 105 |
 | figuresWithoutAlt | 0 |
 | interactions | 7 |
 
@@ -125,9 +125,10 @@ _(liste vide)_
 
 ## Couverture des métadonnées scientifiques
 
-### Figures portant le contrat `meta` (0)
+### Figures portant le contrat `meta` (2)
 
-_(liste vide)_
+- `chaine-anemobarometrique` — `content/fondamentaux/instruments/chaine-pitot-statique.yaml`
+- `triangle-des-vitesses` — `content/fondamentaux/meteorologie/le-vent.yaml`
 
 ### Croquis partagés par plusieurs contenus (1)
 
