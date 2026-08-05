@@ -4,10 +4,23 @@
 
 | Provenance | Valeur |
 | ---------- | ------ |
-| Date de génération (UTC, jour) | 2026-08-04 |
+| Instant de génération (UTC) | 2026-08-05T13:26:51.232Z |
+| Empreinte du contenu | `7839b1d3a5a577d255848f520c71bd14e3a4dec9947dc7df8b9924fe8f2e4928` |
 | Commit source | `3890d9244f04d98520bf0573ba1aa2a94a61b5ee` |
 | Date du commit source | 2026-07-30T11:02:28+00:00 |
 | Entrées mesurées inchangées | oui |
+
+L'instant de génération change à chaque exécution ; **l'empreinte du contenu
+ne change que si le contenu change**. Deux rapports de même empreinte disent
+exactement la même chose, quelle que soit leur date.
+
+## Ce que compte ce rapport
+
+`yamlFilesScanned` compte **tous les fichiers YAML de `content/`**, banque de
+questions comprise. Ce n'est ni le nombre de fiches, ni le total employé par
+les rapports antérieurs à ce chantier : la répartition `yamlDocumentsByKind`
+ci-dessous donne le détail, et une fiche y est définie comme le chargeur la
+définit — un YAML placé sous un dossier de module de `modules.json`.
 
 ## Totaux
 
@@ -15,6 +28,8 @@
 | ------ | ------ |
 | yamlFilesScanned | 1569 |
 | yamlFilesParsed | 1569 |
+| yamlRootDocuments | 1569 |
+| multiDocumentFiles | 0 |
 | parseErrors | 0 |
 | svgFilesOnDisk | 106 |
 | distinctSchemaIdsReferenced | 106 |
@@ -44,6 +59,18 @@
 | glossaire | 136 |
 | lectures | 4 |
 | psychotechnique | 21 |
+| questions | 1127 |
+| videos | 5 |
+
+### yamlDocumentsByKind
+
+| Clé | Nombre |
+| --- | ------ |
+| cours | 14 |
+| exercices | 45 |
+| fiche | 238 |
+| glossaire | 136 |
+| lectures | 4 |
 | questions | 1127 |
 | videos | 5 |
 
@@ -77,6 +104,10 @@
 ## Anomalies
 
 ### Erreurs d'analyse YAML (0)
+
+_(liste vide)_
+
+### Fichiers portant plusieurs documents YAML (le second serait ignoré en silence) (0)
 
 _(liste vide)_
 

@@ -126,7 +126,7 @@ const nonRelus = predictionsFichier.predictions
 // ---------------------------------------------------------------------------
 
 const rapport = {
-  generatedAt: new Date().toISOString().slice(0, 10),
+  generatedAt: new Date().toISOString(),
   generator: "scripts/audit-croquis-compare.mjs",
   gridPath: relative(RACINE, cheminGrille),
   gridPresent: grilleExiste,
@@ -157,7 +157,7 @@ const md = [
   "",
   "| Provenance | Valeur |",
   "| ---------- | ------ |",
-  `| Date de génération (UTC, jour) | ${rapport.generatedAt} |`,
+  `| Instant de génération (UTC) | ${rapport.generatedAt} |`,
   `| Grille lue | \`${rapport.gridPath}\` |`,
   `| Grille présente | ${rapport.gridPresent ? "oui" : "**non**"} |`,
   `| Erreur d'analyse | ${rapport.gridParseError ?? "aucune"} |`,

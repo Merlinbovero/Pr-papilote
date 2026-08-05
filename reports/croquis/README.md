@@ -16,18 +16,38 @@ Prettier les réécrirait, le générateur les réécrirait à son tour, et
 ## Pourquoi ce dossier est versionné
 
 Ces rapports sont **déterministes** — deux exécutions sur le même contenu
-donnent des fichiers identiques à l'octet près. Les versionner rend donc leurs
-évolutions lisibles dans l'historique, ce qui est précisément l'intérêt : une
-fiche qui gagne un croquis, un SVG qui devient orphelin, un statut qui bascule
-se voient alors dans un diff.
+décrivent exactement la même chose. Les versionner rend donc leurs évolutions
+lisibles dans l'historique, ce qui est précisément l'intérêt : une fiche qui
+gagne un croquis, un SVG qui devient orphelin, un statut qui bascule se voient
+alors dans un diff.
 
-Le déterminisme a **une limite, et une seule** : le champ `generatedAt` porte la
-date UTC du jour, donc une régénération le lendemain change ce champ même si
-rien n'a bougé. Le champ qui identifie l'état réellement mesuré est
-`sourceCommit` — et il n'est pas `HEAD` : c'est le dernier commit ayant touché
-les entrées lues (`content/` et le registre des interactions). Sans cela, le
-commit qui enregistre le rapport modifierait le rapport suivant, et celui-ci
-n'aurait aucun point fixe.
+## Comment le déterminisme se prouve
+
+`contentDigest` est l'empreinte SHA-256 de tout le rapport **sauf sa
+provenance**. Deux exécutions sur le même contenu donnent la même empreinte ;
+un diff qui ne toucherait que `generatedAt` est donc démontrablement sans
+effet.
+
+**La première version datait au jour UTC** et se disait identique à l'octet
+près. C'était vrai le même jour, et cela créait une ambiguïté le lendemain : un
+rapport inchangé affichait la veille, sans qu'on puisse distinguer « le contenu
+n'a pas bougé » de « le rapport n'a pas été régénéré ». Tronquer une date au
+jour n'apporte rien et coûte cette confusion. `generatedAt` porte donc
+l'**instant complet**, et la preuve de reproductibilité est passée à
+l'empreinte — qui la démontre au lieu de l'affirmer.
+
+L'état réellement mesuré est identifié par `sourceCommit` — et il n'est pas
+`HEAD` : c'est le dernier commit ayant touché les entrées lues (`content/` et
+le registre des interactions). Sans cela, le commit qui enregistre le rapport
+modifierait le rapport suivant, et celui-ci n'aurait aucun point fixe.
+
+## Ce que compte l'inventaire
+
+`yamlFilesScanned` compte **tous les fichiers YAML de `content/`**, banque de
+questions comprise — ce n'est ni le nombre de fiches, ni le total employé par
+les rapports antérieurs à ce chantier. La répartition `yamlDocumentsByKind` du
+rapport donne le détail, et « fiche » y est défini comme le chargeur le
+définit : un YAML placé sous un dossier de module de `modules.json`.
 
 ## Reconstruction
 

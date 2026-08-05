@@ -19,21 +19,30 @@
  * de relecture humaine (C2), et l'échantillon qu'il prépare est produit par un
  * autre script.
  *
- * ── Déterminisme ──────────────────────────────────────────────────────────
- * Deux exécutions sur le même contenu, le même jour, produisent des fichiers
- * identiques à l'octet près : tous les ensembles sont triés, et la seule
- * donnée horaire est la date UTC (jour), pas l'heure. La limite est donc
- * réelle et connue : le champ `generatedAt` change d'un jour à l'autre même si
- * le contenu n'a pas bougé. Le champ qui identifie vraiment l'état mesuré est
- * `sourceCommit`.
+ * ── Déterminisme, et pourquoi il ne se mesure plus à l'octet ───────────────
+ * La première version datait le rapport au **jour UTC**. Deux exécutions le
+ * même jour donnaient donc des fichiers identiques à l'octet près — mais le
+ * lendemain, un rapport inchangé affichait la veille, et rien ne permettait de
+ * distinguer « le contenu n'a pas bougé » de « le rapport n'a pas été
+ * régénéré ». Une date tronquée au jour crée cette ambiguïté sans rien
+ * apporter.
+ *
+ * `generatedAt` porte donc l'**instant complet** de la génération, et le
+ * déterminisme est prouvé autrement : `contentDigest` est l'empreinte SHA-256
+ * de tout le rapport **sauf sa provenance**. Deux exécutions sur le même
+ * contenu donnent la même empreinte ; si un diff ne touche que `generatedAt`,
+ * l'empreinte le prouve, ligne à ligne.
+ *
+ * L'état réellement décrit reste identifié par `sourceCommit`.
  *
  * Usage : node scripts/audit-croquis-inventory.mjs
  */
 
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import { parse as parseYaml } from "yaml";
+import { parseAllDocuments as parseAllYamlDocuments, parse as parseYaml } from "yaml";
 
 const RACINE = resolve(import.meta.dirname, "..");
 const DOSSIER_CONTENU = join(RACINE, "content");
@@ -72,8 +81,8 @@ const ENTREES_MESUREES = ["content", "src/features/interactions/registry.ts"];
   rapport lui-même.
 */
 const provenance = {
-  /** Date UTC (jour). Voir la note sur le déterminisme en tête de fichier. */
-  generatedAt: new Date().toISOString().slice(0, 10),
+  /** Instant complet, UTC. Voir la note sur le déterminisme en tête de fichier. */
+  generatedAt: new Date().toISOString(),
   generator: "scripts/audit-croquis-inventory.mjs",
   measuredInputs: ENTREES_MESUREES,
   sourceCommit: git("log", "-1", "--format=%H", "--", ...ENTREES_MESUREES),
@@ -140,11 +149,27 @@ function collecterFigures(valeur, chemin, sortie) {
 const documents = [];
 const erreursAnalyse = [];
 
+/*
+  Fichiers portant plusieurs documents YAML (séparateurs `---`).
+
+  L'analyse ne lit que la racine de chaque fichier. Si un fichier en contenait
+  deux, le second serait ignoré **en silence** — et l'inventaire mentirait par
+  omission sans qu'aucun compteur ne bouge. La liste ci-dessous existe pour que
+  ce cas ne puisse pas se produire sans être vu ; elle est vide, et c'est ce qui
+  autorise à dire « un fichier = un document ».
+*/
+const fichiersMultiDocuments = [];
+
 for (const chemin of fichiersYaml) {
   const relatif = relative(RACINE, chemin);
   let donnees;
   try {
-    donnees = parseYaml(readFileSync(chemin, "utf8"));
+    const brut = readFileSync(chemin, "utf8");
+    const racines = parseAllYamlDocuments(brut);
+    if (racines.length !== 1) {
+      fichiersMultiDocuments.push({ file: relatif, documents: racines.length });
+    }
+    donnees = parseYaml(brut);
   } catch (erreur) {
     erreursAnalyse.push({ file: relatif, error: String(erreur.message ?? erreur).split("\n")[0] });
     continue;
@@ -242,9 +267,39 @@ function compter(paires) {
 
 const documentsAvecFigure = documents.filter((d) => d.figures.length > 0);
 
+/*
+  Nature des documents — ajouté après le contrôle de cohérence de C1.
+
+  Le rapport annonçait « 1 569 fichiers YAML analysés » quand les rapports
+  antérieurs parlaient de 238 fiches et de 442 documents. Les trois nombres
+  étaient exacts et **ne comptaient pas la même chose** : 1 569 est le nombre de
+  fichiers YAML de `content/`, banque de questions comprise ; 442 est ce même
+  total sans la banque ; 238 est le nombre de fiches. Rien n'était faux, et
+  pourtant le rapport laissait le lecteur en tirer une contradiction.
+
+  La parade n'est pas une note de bas de page : c'est que le rapport dise
+  lui-même ce qu'il compte. La nature d'un document est déduite de son dossier
+  de tête, et « fiche » est défini comme le chargeur le définit — un YAML placé
+  sous un dossier de module de `modules.json` — plutôt que par une liste écrite
+  ici, qui divergerait au premier module ajouté.
+*/
+const modulesDeContenu = new Set(
+  JSON.parse(readFileSync(join(DOSSIER_CONTENU, "_referentiels", "modules.json"), "utf8")).map(
+    (m) => m.slug
+  )
+);
+const natureDuDocument = (cheminRelatifContenu) => {
+  const dossier = cheminRelatifContenu.split("/")[0];
+  return modulesDeContenu.has(dossier) ? "fiche" : dossier;
+};
+
 const repartitions = {
   /** Fichiers YAML analysés, par premier segment de chemin sous `content/`. */
   yamlFilesByFolder: compter(fichiersYaml.map((c) => relative(DOSSIER_CONTENU, c).split("/")[0])),
+  /** Les mêmes fichiers, regroupés par nature d'entité éditoriale. */
+  yamlDocumentsByKind: compter(
+    fichiersYaml.map((c) => natureDuDocument(relative(DOSSIER_CONTENU, c)))
+  ),
   /** Documents portant au moins une figure, par module déclaré. */
   documentsWithFigureByModule: compter(documentsAvecFigure.map((d) => d.module ?? "(sans module)")),
   /** Références de figures, par module du document citant. */
@@ -286,8 +341,13 @@ const interactions = trier(
 // ---------------------------------------------------------------------------
 
 const totaux = {
+  /** Fichiers YAML physiques de `content/`, banque de questions comprise. */
   yamlFilesScanned: fichiersYaml.length,
   yamlFilesParsed: documents.length,
+  /** Documents racines. Égal au nombre de fichiers tant que la liste ci-dessous est vide. */
+  yamlRootDocuments:
+    documents.length + fichiersMultiDocuments.reduce((n, f) => n + f.documents - 1, 0),
+  multiDocumentFiles: fichiersMultiDocuments.length,
   parseErrors: erreursAnalyse.length,
   svgFilesOnDisk: svgSurDisque.size,
   distinctSchemaIdsReferenced: referencesParSchema.size,
@@ -302,10 +362,10 @@ const totaux = {
   interactions: interactions.length,
 };
 
-const rapport = {
-  ...provenance,
+const contenu = {
   totals: totaux,
   distributions: repartitions,
+  multiDocumentFiles: fichiersMultiDocuments,
   parseErrors: erreursAnalyse,
   orphanSvg: orphelins,
   brokenReferences: referencesCassees,
@@ -328,6 +388,18 @@ const rapport = {
   })),
 };
 
+/**
+ * Empreinte de tout le rapport **sauf sa provenance**.
+ *
+ * C'est elle qui porte la preuve de reproductibilité, à la place de l'égalité
+ * octet à octet que l'instant de génération rend impossible. Deux exécutions
+ * sur le même contenu donnent la même empreinte ; un diff qui ne touche que
+ * `generatedAt` est donc démontrablement sans effet.
+ */
+const contentDigest = createHash("sha256").update(JSON.stringify(contenu)).digest("hex");
+
+const rapport = { ...provenance, contentDigest, ...contenu };
+
 /** Une liste vide s'écrit comme une liste vide — jamais comme une phrase. */
 function bloc(titre, elements, rendu) {
   const lignes = [`### ${titre} (${elements.length})`, ""];
@@ -343,10 +415,23 @@ const md = [
   "",
   "| Provenance | Valeur |",
   "| ---------- | ------ |",
-  `| Date de génération (UTC, jour) | ${rapport.generatedAt} |`,
+  `| Instant de génération (UTC) | ${rapport.generatedAt} |`,
+  `| Empreinte du contenu | \`${rapport.contentDigest}\` |`,
   `| Commit source | \`${rapport.sourceCommit ?? "(indisponible)"}\` |`,
   `| Date du commit source | ${rapport.sourceCommitDate ?? "(indisponible)"} |`,
   `| Entrées mesurées inchangées | ${rapport.measuredInputsClean ? "oui" : "**non — le rapport ne décrit aucun commit**"} |`,
+  "",
+  "L'instant de génération change à chaque exécution ; **l'empreinte du contenu",
+  "ne change que si le contenu change**. Deux rapports de même empreinte disent",
+  "exactement la même chose, quelle que soit leur date.",
+  "",
+  "## Ce que compte ce rapport",
+  "",
+  "`yamlFilesScanned` compte **tous les fichiers YAML de `content/`**, banque de",
+  "questions comprise. Ce n'est ni le nombre de fiches, ni le total employé par",
+  "les rapports antérieurs à ce chantier : la répartition `yamlDocumentsByKind`",
+  "ci-dessous donne le détail, et une fiche y est définie comme le chargeur la",
+  "définit — un YAML placé sous un dossier de module de `modules.json`.",
   "",
   "## Totaux",
   "",
@@ -367,6 +452,11 @@ const md = [
   "## Anomalies",
   "",
   ...bloc("Erreurs d'analyse YAML", erreursAnalyse, (e) => `- \`${e.file}\` — ${e.error}`),
+  ...bloc(
+    "Fichiers portant plusieurs documents YAML (le second serait ignoré en silence)",
+    fichiersMultiDocuments,
+    (f) => `- \`${f.file}\` — ${f.documents} documents`
+  ),
   ...bloc(
     "SVG orphelins (présents sur disque, cités par aucun contenu)",
     orphelins,

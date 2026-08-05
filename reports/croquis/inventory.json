@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05T13:26:51.232Z",
   "generator": "scripts/audit-croquis-inventory.mjs",
   "measuredInputs": [
     "content",
@@ -8,9 +8,12 @@
   "sourceCommit": "3890d9244f04d98520bf0573ba1aa2a94a61b5ee",
   "sourceCommitDate": "2026-07-30T11:02:28+00:00",
   "measuredInputsClean": true,
+  "contentDigest": "7839b1d3a5a577d255848f520c71bd14e3a4dec9947dc7df8b9924fe8f2e4928",
   "totals": {
     "yamlFilesScanned": 1569,
     "yamlFilesParsed": 1569,
+    "yamlRootDocuments": 1569,
+    "multiDocumentFiles": 0,
     "parseErrors": 0,
     "svgFilesOnDisk": 106,
     "distinctSchemaIdsReferenced": 106,
@@ -39,6 +42,15 @@
       "questions": 1127,
       "videos": 5
     },
+    "yamlDocumentsByKind": {
+      "cours": 14,
+      "exercices": 45,
+      "fiche": 238,
+      "glossaire": 136,
+      "lectures": 4,
+      "questions": 1127,
+      "videos": 5
+    },
     "documentsWithFigureByModule": {
       "alat": 3,
       "eopan": 15,
@@ -58,6 +70,7 @@
       "2": 22
     }
   },
+  "multiDocumentFiles": [],
   "parseErrors": [],
   "orphanSvg": [],
   "brokenReferences": [],

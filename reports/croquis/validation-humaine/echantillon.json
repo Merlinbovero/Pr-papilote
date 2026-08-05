@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05T13:26:53.069Z",
   "generator": "scripts/audit-croquis-sample.mjs",
   "sourceCommit": "3890d9244f04d98520bf0573ba1aa2a94a61b5ee",
-  "inventoryGeneratedAt": "2026-08-04",
+  "inventoryGeneratedAt": "2026-08-05T13:26:51.232Z",
+  "inventoryContentDigest": "7839b1d3a5a577d255848f520c71bd14e3a4dec9947dc7df8b9924fe8f2e4928",
   "sampleSize": 30,
   "populationSize": 106,
   "selection": "empreinte FNV-1a du schemaId, stratifiée par module, plus fort reste",
+  "contentDigest": "db0694768949025779e90c676001ee3f30c1e53df38c5c206c11f9b44db51d4e",
   "sample": [
     {
       "schemaId": "allongement",

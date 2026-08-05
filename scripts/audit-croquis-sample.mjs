@@ -28,10 +28,15 @@
  * échantillon, indéfiniment — sans quoi la relecture ne serait pas
  * reproductible et l'on ne saurait jamais ce qui a été relu.
  *
+ * Comme pour l'inventaire, l'instant de génération est complet et change donc
+ * à chaque exécution ; c'est `contentDigest` qui porte la preuve que le tirage
+ * et les prédictions, eux, n'ont pas bougé.
+ *
  * Usage : node scripts/audit-croquis-sample.mjs
  */
 
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
@@ -336,10 +341,11 @@ couverture.byFamily = Object.fromEntries(
 // ---------------------------------------------------------------------------
 
 const provenance = {
-  generatedAt: new Date().toISOString().slice(0, 10),
+  generatedAt: new Date().toISOString(),
   generator: "scripts/audit-croquis-sample.mjs",
   sourceCommit: inventaire.sourceCommit,
   inventoryGeneratedAt: inventaire.generatedAt,
+  inventoryContentDigest: inventaire.contentDigest,
   sampleSize: echantillon.length,
   populationSize: population.length,
   selection: "empreinte FNV-1a du schemaId, stratifiée par module, plus fort reste",
@@ -381,16 +387,29 @@ const grille = [
   "",
 ].join("\n");
 
+/**
+ * Même règle que l'inventaire : l'instant de génération est complet et change
+ * à chaque exécution, donc la reproductibilité se prouve par une empreinte du
+ * contenu seul. Le tirage et les prédictions sont déterministes ; leur
+ * empreinte doit rester identique d'une exécution à l'autre.
+ */
+const ecrireAvecEmpreinte = (nom, contenu) => {
+  const contentDigest = createHash("sha256").update(JSON.stringify(contenu)).digest("hex");
+  writeFileSync(
+    join(DOSSIER_SORTIE, nom),
+    `${JSON.stringify({ ...provenance, contentDigest, ...contenu }, null, 2)}\n`
+  );
+};
+
 mkdirSync(DOSSIER_SORTIE, { recursive: true });
 writeFileSync(join(DOSSIER_SORTIE, "grille-vierge.yaml"), grille);
-writeFileSync(
-  join(DOSSIER_SORTIE, "predictions-machine.json"),
-  `${JSON.stringify({ ...provenance, populationCoverage: couverture, predictions }, null, 2)}\n`
-);
-writeFileSync(
-  join(DOSSIER_SORTIE, "echantillon.json"),
-  `${JSON.stringify({ ...provenance, sample: echantillon.map(({ hash: _h, ...reste }) => reste) }, null, 2)}\n`
-);
+ecrireAvecEmpreinte("predictions-machine.json", {
+  populationCoverage: couverture,
+  predictions,
+});
+ecrireAvecEmpreinte("echantillon.json", {
+  sample: echantillon.map(({ hash: _h, ...reste }) => reste),
+});
 
 console.log(`Échantillon de ${echantillon.length} croquis sur ${population.length}.`);
 console.log("  reports/croquis/validation-humaine/grille-vierge.yaml  (à remplir)");

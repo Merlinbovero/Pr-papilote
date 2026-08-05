@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-05T13:26:53.308Z",
   "generator": "scripts/audit-croquis-compare.mjs",
   "gridPath": "reports/croquis/validation-humaine/grille-remplie.yaml",
   "gridPresent": false,
