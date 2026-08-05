@@ -72,10 +72,10 @@ describe("garde des croquis — chaque fixture invalide tombe sur SA règle", ()
 });
 
 describe("garde des croquis — le registre", () => {
-  it("est vide tant qu'aucun croquis n'a été reconstruit", () => {
-    // La garde précède les pilotes. Chacun s'inscrira ici dans son propre
+  it("ne contient que ce qui a été reconstruit, nommément", () => {
+    // La garde a précédé les pilotes ; chacun s'y inscrit dans son propre
     // commit, avec la preuve qu'il passe — jamais par un balayage de dossier.
-    expect(CROQUIS_SOUS_CONTRAT).toEqual([]);
+    expect(CROQUIS_SOUS_CONTRAT).toEqual(["chaine-anemobarometrique"]);
   });
 
   it.each([...CROQUIS_SOUS_CONTRAT])("%s ne déclenche aucune violation", (id) => {

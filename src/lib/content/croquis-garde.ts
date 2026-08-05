@@ -29,12 +29,12 @@
 /**
  * Les croquis soumis au contrat. Grandit lot par lot, jamais d'un bloc.
  *
- * **Vide à l'introduction de la garde**, et ce n'est pas un oubli : la garde
- * est livrée et prouvée avant que le premier croquis ne l'honore. L'ordre
- * inverse — dessiner puis écrire la règle qui accepte le dessin — produit une
- * règle taillée sur son unique exemple.
+ * Elle était **vide à l'introduction de la garde**, et ce n'était pas un
+ * oubli : la garde a été livrée et prouvée avant que le premier croquis ne
+ * l'honore. L'ordre inverse — dessiner puis écrire la règle qui accepte le
+ * dessin — produit une règle taillée sur son unique exemple.
  */
-export const CROQUIS_SOUS_CONTRAT: readonly string[] = [];
+export const CROQUIS_SOUS_CONTRAT: readonly string[] = ["chaine-anemobarometrique"];
 
 /** Formats canoniques de la doctrine §10.1. */
 const VIEWBOX_CANONIQUES = ["0 0 460 260", "0 0 460 300", "0 0 420 240", "0 0 340 340"];

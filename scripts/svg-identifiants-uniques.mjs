@@ -18,19 +18,23 @@
  * Le script le vérifie lui-même en comparant le fichier privé de ses
  * identifiants avant et après.
  *
- * EXCLUSION. `chaine-anemobarometrique` et `pitot-statique-sources` sont
- * laissés intacts. Leurs deux `id="ac"` DIFFÈRENT (markerWidth 6 contre 7) :
- * les rendre uniques changerait le rendu de la seconde figure — un retour à
- * l'intention de son auteur, mais un changement visuel tout de même, que la
- * consigne du lot exclut. Ils restent dans la dette du chantier illustration.
+ * EXCLUSION. À l'origine, `chaine-anemobarometrique` et
+ * `pitot-statique-sources` étaient tous deux laissés intacts : leurs `id="ac"`
+ * DIFFÉRAIENT (markerWidth 6 contre 7), et les rendre uniques aurait changé le
+ * rendu de la seconde figure — ce que la consigne de M10 excluait.
+ *
+ * Le lot C2 a reconstruit `chaine-anemobarometrique` de fond en comble : il
+ * sort de l'exclusion parce qu'il n'a plus rien à préfixer, ses identifiants
+ * naissant préfixés. `pitot-statique-sources` y reste, seul, et sans risque :
+ * son `id="ac"` n'a plus de jumeau sur la page.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const SCHEMAS = path.join(process.cwd(), "content", "schemas");
 
-/** Les deux fichiers de la paire divergente — hors périmètre, voir en-tête. */
-export const EXCLUS = new Set(["chaine-anemobarometrique", "pitot-statique-sources"]);
+/** Le dernier fichier hors périmètre — voir en-tête. */
+export const EXCLUS = new Set(["pitot-statique-sources"]);
 
 /** Retire tout identifiant et toute référence : ce qui reste doit être identique. */
 function squelette(svg) {

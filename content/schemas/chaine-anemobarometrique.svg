@@ -1,44 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
   <style>
-    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
-    .title { font-size: 14px; font-weight: 600; }
-    .lbl { font-size: 12px; }
-    .sub { font-size: 11px; fill: #94a3b8; }
-    .box { stroke: currentColor; fill: none; stroke-width: 2; }
-    .boxA { stroke: #3b82f6; fill: none; stroke-width: 2; }
-    .ps { stroke: #94a3b8; fill: none; stroke-width: 1.8; }
-    .pt { stroke: #3b82f6; fill: none; stroke-width: 2.2; }
-    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 11px; }
+    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--schema-ink); }
+    .titre { font-size: 15px; font-weight: 600; }
+    .sub { font-size: 12px; fill: var(--schema-muted); }
+    .organe { stroke: var(--schema-ink); fill: none; stroke-width: 2; }
+    .flux { stroke: var(--schema-ink); fill: none; stroke-width: 2; }
+    .pt { stroke: var(--schema-accent); fill: none; stroke-width: 2.5; }
+    .ps { stroke: var(--schema-muted); fill: none; stroke-width: 2; stroke-dasharray: 5 3; }
+    .repere { font-size: 12px; font-weight: 600; }
   </style>
   <defs>
-    <marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
+    <marker id="chaine-anemobarometrique__f-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-ink)" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    <marker id="chaine-anemobarometrique__f-pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-accent)" />
+    </marker>
+    <marker id="chaine-anemobarometrique__f-ps" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-muted)" />
     </marker>
   </defs>
-  <text class="title" x="230" y="24" text-anchor="middle">La chaîne anémobarométrique</text>
-  <!-- Sources -->
-  <rect class="box" x="24" y="62" width="150" height="46" rx="5" />
-  <text class="lbl" x="99" y="84" text-anchor="middle">Tube de Pitot</text>
-  <text class="sub" x="99" y="100" text-anchor="middle">pression totale (Pt)</text>
-  <rect class="box" x="24" y="168" width="150" height="46" rx="5" />
-  <text class="lbl" x="99" y="190" text-anchor="middle">Prise statique</text>
-  <text class="sub" x="99" y="206" text-anchor="middle">pression statique (Ps)</text>
+
+  <text class="titre" x="230" y="24" text-anchor="middle">Le circuit Pitot-statique</text>
+
+  <!-- L'écoulement relatif n'alimente que la prise totale : la flèche entre
+       par le haut de cette boîte-là, et d'aucune autre. -->
+  <text class="sub" x="136" y="46" text-anchor="middle">écoulement relatif</text>
+  <line class="flux" x1="136" y1="52" x2="136" y2="64" marker-end="url(#chaine-anemobarometrique__f-ink)" />
+
+  <!-- Prises de pression — nomenclature FR-01 (DGAC/DSAC), §4 -->
+  <rect class="organe" x="52" y="68" width="168" height="44" rx="5" />
+  <text x="136" y="88" text-anchor="middle">prise de pression totale</text>
+  <text class="sub" x="136" y="104" text-anchor="middle">tube de Pitot</text>
+
+  <rect class="organe" x="52" y="200" width="168" height="44" rx="5" />
+  <text x="136" y="220" text-anchor="middle">prise de pression statique</text>
+  <text class="sub" x="136" y="236" text-anchor="middle">affleurante, sur le fuselage</text>
+
   <!-- Instruments -->
-  <rect class="box" x="300" y="50" width="140" height="38" rx="5" />
-  <text class="lbl" x="370" y="73" text-anchor="middle">Altimètre</text>
-  <rect class="box" x="300" y="108" width="140" height="38" rx="5" />
-  <text class="lbl" x="370" y="131" text-anchor="middle">Variomètre</text>
-  <rect class="boxA" x="300" y="176" width="140" height="46" rx="5" />
-  <text class="lbl" x="370" y="199" text-anchor="middle">Anémomètre</text>
-  <text class="accent-t" x="370" y="214" text-anchor="middle">Pt − Ps</text>
-  <!-- Liaisons statique (Ps) -->
-  <path class="ps" d="M174,182 L240,182 L240,69 L300,69" marker-end="url(#am)" />
-  <path class="ps" d="M174,190 L228,190 L228,127 L300,127" marker-end="url(#am)" />
-  <path class="ps" d="M174,200 L300,200" marker-end="url(#am)" />
-  <!-- Liaison totale (Pt) -->
-  <path class="pt" d="M174,85 L260,85 L260,190 L300,190" marker-end="url(#ac)" />
-  <text class="sub" x="230" y="262" text-anchor="middle">statique → altimètre, variomètre, anémomètre · totale → anémomètre</text>
+  <rect class="organe" x="300" y="48" width="144" height="52" rx="5" />
+  <text x="372" y="70" text-anchor="middle">Anémomètre</text>
+  <text class="repere" x="372" y="90" text-anchor="middle">q = Pt − Ps</text>
+
+  <rect class="organe" x="300" y="124" width="144" height="38" rx="5" />
+  <text x="372" y="148" text-anchor="middle">Altimètre</text>
+
+  <rect class="organe" x="300" y="186" width="144" height="38" rx="5" />
+  <text x="372" y="210" text-anchor="middle">Variomètre</text>
+
+  <!-- Pression totale : une seule destination, l'anémomètre.
+       Elle sort en haut de la prise et passe AU-DESSUS de la canalisation
+       statique : aucun croisement de traits sur ce croquis. -->
+  <path class="pt" d="M220,76 L280,76 L280,60 L300,60" marker-end="url(#chaine-anemobarometrique__f-pt)" />
+  <text class="repere" x="246" y="68" text-anchor="middle">Pt</text>
+
+  <!-- Pression statique : une canalisation unique, trois dérivations -->
+  <path class="ps" d="M220,222 L250,222 L250,88" />
+  <text class="repere" x="235" y="212" text-anchor="middle">Ps</text>
+  <path class="ps" d="M250,88 L300,88" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+  <path class="ps" d="M250,143 L300,143" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+  <path class="ps" d="M250,205 L300,205" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+
+  <!-- Légende : le trait plein et le pointillé disent déjà ce que dit la
+       couleur — le croquis reste lisible imprimé en noir et blanc. -->
+  <line class="pt" x1="52" y1="270" x2="80" y2="270" />
+  <text class="sub" x="86" y="274" text-anchor="start">pression totale (Pt)</text>
+  <line class="ps" x1="250" y1="270" x2="278" y2="270" />
+  <text class="sub" x="284" y="274" text-anchor="start">pression statique (Ps)</text>
 </svg>
