@@ -116,10 +116,65 @@ content:
         dans l'eau, mais le courant nous emporte aussi.
       figures:
         - schemaId: triangle-des-vitesses
-          alt: Un triangle des vitesses où la vitesse propre plus le vent donnent la vitesse sol, avec un angle de dérive.
-          caption: La vitesse sol (route) est la somme de la vitesse propre et du vent ; le vent de travers crée la dérive.
+          alt: >-
+            Triangle des vitesses. Depuis un point d'origine, un vecteur horizontal vers la
+            droite représente la vitesse propre — 120 nœuds au cap 090 degrés. À son extrémité,
+            un vecteur en pointillé descend vers le bas : le vent, 30 nœuds venant du 360, donc
+            se déplaçant vers le 180. Un troisième vecteur relie directement l'origine à
+            l'extrémité du vent : la vitesse sol, environ 124 nœuds pour une route d'environ
+            104 degrés. L'écart de 14 degrés entre le cap et la route est la dérive. Un repère
+            Nord est indiqué en haut à gauche.
+          caption: "Le vent est nommé par sa provenance, mais son vecteur pointe vers où l'air se déplace : c'est cette flèche-là qui s'ajoute à la vitesse propre."
           width: 460
-          height: 260
+          height: 300
+          meta:
+            family: F3
+            function: scientific_diagram
+            editorialDecision: keep
+            level: P2
+            modality: static
+            scientificNatures: [analytical]
+            scope: operational_environment
+            diagramVersion: 2
+            scientificallyVerifiedAt: "2026-08-05"
+            sources:
+              - id: FR-02
+                title: "Manuel du Brevet d'Initiation Aéronautique, version 4.0, édition 2021 (éduscol STI, © CIRAS Toulouse)"
+                url: https://sti.eduscol.education.fr/sites/eduscol.education.fr.sti/files/ressources/pedagogiques/11283/11283-bia-2021-vf1-copie.pdf
+                location: "p. 198 (cap, route, dérive) ; p. 207 (vitesse propre, vitesse sol) ; p. 127 (direction du vent)"
+                kind: institutional
+                verificationStatus: document_consulted
+                legalStatus: uncertain
+              - id: F-03
+                title: "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25B), « Wind Triangle or Vector Analysis »"
+                url: https://www.faa.gov/sites/faa.gov/files/pilots/pilot_handbook.pdf
+                location: "p. 16-13 à 16-15 ; figures 16-19 à 16-23"
+                kind: regulatory
+                verificationStatus: figure_verified
+                legalStatus: uncertain
+            assumptions:
+              - Vent uniforme et constant sur le segment considéré.
+              - Vitesse propre constante.
+              - "Construction dans le plan horizontal : ni montée, ni descente."
+              - Cap et route exprimés dans le même repère — ici le Nord vrai, pour les deux.
+              - Valeurs de l'exemple construites pour la démonstration, non mesurées.
+            validityDomain: >-
+              Navigation à l'estime en vol horizontal, vent homogène sur le segment. La
+              construction ne dit rien d'un vent tournant ni d'un profil de vent variable avec
+              l'altitude. Elle est menée entièrement en valeurs vraies : ni magnétique, ni
+              compas, ni déclinaison, ni déviation n'y interviennent — ces corrections
+              relèvent d'un autre croquis.
+            longDescription: >-
+              La relation représentée est une somme vectorielle : vitesse sol = vitesse propre
+              + vent, les trois vecteurs étant tracés à une échelle commune de 1,8 unité de
+              dessin par nœud. L'exemple construit prend une vitesse propre de 120 kt au cap
+              vrai 090 degrés et un vent de 30 kt venant du 360 degrés. Le vecteur vent est
+              donc orienté vers le 180 degrés, conformément à la distinction entre la direction
+              météorologique du vent, qui nomme sa provenance, et le vecteur vitesse de la
+              masse d'air, qui pointe vers son déplacement. La somme donne une vitesse sol de
+              123,7 kt pour une route vraie de 104,0 degrés, arrondies sur le dessin à 124 kt
+              et 104 degrés. La dérive vaut donc environ plus 14 degrés : le vent venant de la
+              gauche, l'avion dérive vers la droite, et Route égale Cap plus Dérive.
     - id: decoller-et-se-diriger-avec-le-vent
       title: Décoller et se diriger avec le vent
       strate: maitriser

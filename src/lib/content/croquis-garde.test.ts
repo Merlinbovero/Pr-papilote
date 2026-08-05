@@ -75,7 +75,7 @@ describe("garde des croquis — le registre", () => {
   it("ne contient que ce qui a été reconstruit, nommément", () => {
     // La garde a précédé les pilotes ; chacun s'y inscrit dans son propre
     // commit, avec la preuve qu'il passe — jamais par un balayage de dossier.
-    expect(CROQUIS_SOUS_CONTRAT).toEqual(["chaine-anemobarometrique"]);
+    expect(CROQUIS_SOUS_CONTRAT).toEqual(["chaine-anemobarometrique", "triangle-des-vitesses"]);
   });
 
   it.each([...CROQUIS_SOUS_CONTRAT])("%s ne déclenche aucune violation", (id) => {
