@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-05T17:22:52.109Z",
+  "generatedAt": "2026-08-05T21:24:49.138Z",
   "generator": "scripts/audit-croquis-sample.mjs",
-  "sourceCommit": "7dc4e26e07813c3edb067265af3a6aceb2c43998",
-  "inventoryGeneratedAt": "2026-08-05T17:22:50.017Z",
-  "inventoryContentDigest": "17dc97fc8845aa0b0a062e646008b924ff8700c124abf0ed13445ac983446902",
+  "sourceCommit": "554ff62d19bc3ae8a080eda166d7c2cde495b033",
+  "inventoryGeneratedAt": "2026-08-05T21:24:47.763Z",
+  "inventoryContentDigest": "79186fc90299804b2cd2737b0075d5c2574cda1f87f0c4fb4a39d31a614ce17b",
   "sampleSize": 30,
   "populationSize": 106,
   "selection": "empreinte FNV-1a du schemaId, stratifiée par module, plus fort reste",

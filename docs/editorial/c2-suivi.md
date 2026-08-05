@@ -72,3 +72,23 @@ fichier **dans le HTML servi** avant toute mesure.
 des libellés débordant de leurs boîtes, invisibles au contrôle de chevauchement
 puisque les boîtes ne sont pas des étiquettes. Elles se mesurent maintenant avec
 `getBBox` dans le navigateur.
+
+## Clôture C2 — validation humaine et report en C3
+
+**Statut : `accepted_as_initial_standard`** (direction produit, 2026-08-05).
+Détail et réserve : `reports/croquis/revue-c2/grille-revue-humaine.md`.
+
+Une correction a été demandée et appliquée : le libellé du variomètre devient
+« vitesse verticale **indiquée** ». L'instrument n'observe pas un déplacement
+vertical — il exploite un écart de pression statique entretenu par une fuite
+calibrée (F-02, p. 8-7) — et l'ancien libellé laissait croire à une mesure
+directe. Le mot « indiquée » aligne ce croquis sur la même précaution que
+« vitesse indiquée » de l'anémomètre et « altitude-pression » de l'altimètre.
+
+### Backlog C3 — reporté, non corrigé ici
+
+| Point                                    | Constat                                                                                                                                                                                                                                                             | Pourquoi c'est reporté                                                                                                                                                                          |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pitot-statique-sources`                 | Deux de ses libellés se chevauchent à **toutes** les largeurs, en clair comme en sombre : « tube de Pitot » ✕ « (pression totale) » et « prise statique » ✕ « (pression statique) ». Défaut **préexistant**, mesuré pendant C2 sur la même fiche que le pilote P-4. | Il n'est pas sous contrat. Le corriger ici aurait modifié un troisième SVG dans un lot dont la portée annoncée est de deux, et sans passer par la vérification de sources qu'exige la doctrine. |
+| Identifiants de `pitot-statique-sources` | Il conserve un `id="ac"` non préfixé. Sans jumeau sur sa page, il ne crée plus de collision, mais il reste hors convention.                                                                                                                                         | Même motif : son préfixage appartient au lot qui l'inscrira au registre.                                                                                                                        |
+| Minimum typographique de la doctrine     | §10.2 a été refondé sur la taille rendue en C2-bis. Les 104 croquis non migrés ne le respectent pas.                                                                                                                                                                | La garde ne s'applique qu'au registre. Chaque croquis migré devra s'y conformer, un lot à la fois.                                                                                              |

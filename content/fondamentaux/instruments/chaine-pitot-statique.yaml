@@ -135,8 +135,8 @@ content:
             canalisation unique verticale et se divise en trois dérivations. À droite, les
             trois instruments, chacun suivi de la grandeur qu'il en déduit : anémomètre puis
             vitesse indiquée, altimètre puis altitude-pression, variomètre puis vitesse
-            verticale.
-          caption: "Ce que la canalisation transporte est une pression ; la vitesse, l'altitude et la vitesse verticale en sont déduites."
+            verticale indiquée.
+          caption: "Ce que la canalisation transporte est une pression ; les trois indications en sont déduites, et chacune porte le mot « indiquée » ou « pression » qui le rappelle."
           width: 420
           height: 240
           meta:

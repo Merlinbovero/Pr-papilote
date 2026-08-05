@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-05T17:22:50.017Z",
+  "generatedAt": "2026-08-05T21:24:47.763Z",
   "generator": "scripts/audit-croquis-inventory.mjs",
   "measuredInputs": [
     "content",
     "src/features/interactions/registry.ts"
   ],
-  "sourceCommit": "7dc4e26e07813c3edb067265af3a6aceb2c43998",
-  "sourceCommitDate": "2026-08-05T14:31:18+00:00",
+  "sourceCommit": "554ff62d19bc3ae8a080eda166d7c2cde495b033",
+  "sourceCommitDate": "2026-08-05T17:24:43+00:00",
   "measuredInputsClean": false,
-  "contentDigest": "17dc97fc8845aa0b0a062e646008b924ff8700c124abf0ed13445ac983446902",
+  "contentDigest": "79186fc90299804b2cd2737b0075d5c2574cda1f87f0c4fb4a39d31a614ce17b",
   "totals": {
     "yamlFilesScanned": 1569,
     "yamlFilesParsed": 1569,
@@ -977,7 +977,7 @@
     {
       "schemaId": "chaine-anemobarometrique",
       "file": "content/schemas/chaine-anemobarometrique.svg",
-      "bytes": 4605,
+      "bytes": 4678,
       "referenceCount": 1
     },
     {
