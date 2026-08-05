@@ -195,6 +195,24 @@ Une carte d'implantation de bases aéronavales qui sert à mémoriser _quelles_ 
 
 Ne pas imposer mécaniquement ces éléments à toute représentation spatiale : ce serait le défaut symétrique de celui que ce document corrige — exiger d'une famille ce qui n'a de sens que pour une autre.
 
+### 8 bis. Le vent — deux objets, deux orientations opposées
+
+**Ajouté en C2, sur source.** Tout croquis portant un vent doit distinguer :
+
+| Objet                                | Ce qu'il désigne                                           | Sens                                 |
+| ------------------------------------ | ---------------------------------------------------------- | ------------------------------------ |
+| **Direction météorologique du vent** | La direction **d'où le vent vient**                        | Degrés, sens horaire, depuis le Nord |
+| **Vecteur vitesse du vent**          | Le déplacement réel de la masse d'air, **vers où elle va** | Opposé au précédent                  |
+
+Un vent « de 045° » vient du nord-est ; **son vecteur pointe vers le sud-ouest**. Les deux sont justes, et leurs flèches sont opposées.
+
+Les deux conventions sont sourcées, et par deux documents indépendants :
+
+- **FR-02** (manuel BIA, éduscol, p. 127) : « La direction du vent indique toujours la provenance du vent », observée « en degrés et mesurée dans le sens des aiguilles d'une montre ».
+- **F-03** (FAA PHAK 25B, p. 16-14, étape 3 de la construction du triangle) : tracer la flèche de vent « **not toward 045°, but downwind in the direction the wind is blowing** ».
+
+**Règle applicable.** Dès qu'un croquis dessine une flèche de vent, il indique laquelle des deux il représente. Une flèche de vent non qualifiée est un défaut : elle est lue à l'envers une fois sur deux, et rien dans le dessin ne permet de trancher.
+
 ---
 
 ## 9. Doctrine juridique

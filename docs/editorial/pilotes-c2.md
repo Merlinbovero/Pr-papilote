@@ -54,18 +54,19 @@ Si le contrat tient sur ces deux-là, il tient sur les familles intermédiaires.
 
 ### Métadonnées pré-déclarées
 
-| Champ                      | Valeur                                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------------------ |
-| `family`                   | `F7` — chaîne fonctionnelle                                                                |
-| `function`                 | `scientific_diagram`                                                                       |
-| `level`                    | `P2` — la relation entre pressions est exploitée, pas seulement illustrée                  |
-| `modality`                 | `static`                                                                                   |
-| `scientificNatures`        | `["analytical"]`                                                                           |
-| `scope`                    | `system`                                                                                   |
-| `sources`                  | **F-02** (FAA PHAK ch. 8, source principale) ; **N-05** (NASA Glenn, exposé de la méthode) |
-| `assumptions`              | voir ci-dessous — au moins quatre, explicites                                              |
-| `validityDomain`           | voir ci-dessous                                                                            |
-| `scientificallyVerifiedAt` | à renseigner à la relecture, jamais à l'avance                                             |
+| Champ                      | Valeur                                                                                                                                        |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `family`                   | `F7` — chaîne fonctionnelle                                                                                                                   |
+| `function`                 | `scientific_diagram`                                                                                                                          |
+| `level`                    | `P2` — la relation entre pressions est exploitée, pas seulement illustrée                                                                     |
+| `editorialDecision`        | `keep`                                                                                                                                        |
+| `modality`                 | `static`                                                                                                                                      |
+| `scientificNatures`        | `["analytical"]`                                                                                                                              |
+| `scope`                    | `system`                                                                                                                                      |
+| `sources`                  | **F-02** (FAA PHAK ch. 8) ; **F-06** (FAA Glider FH ch. 4) ; **N-05** (NASA Glenn, équations) ; **FR-01** (DGAC/DSAC, nomenclature française) |
+| `assumptions`              | voir ci-dessous — au moins quatre, explicites                                                                                                 |
+| `validityDomain`           | voir ci-dessous                                                                                                                               |
+| `scientificallyVerifiedAt` | à renseigner à la relecture, jamais à l'avance                                                                                                |
 
 ### Hypothèses à écrire dans `assumptions`
 
@@ -77,19 +78,46 @@ Si le contrat tient sur ces deux-là, il tient sur les familles intermédiaires.
    précisément pourquoi l'indication est une vitesse **indiquée** et non une
    vitesse vraie.
 
-### Domaine de validité
+### Domaine de validité — révisé sur source
 
-Régime subsonique bas, incidence et dérapage faibles, circuit non obstrué. Hors
-de ce domaine — givrage, obstruction, forte incidence — la chaîne ne mesure plus
-ce qu'elle affiche, et c'est **cela** que le croquis doit rendre lisible plutôt
-que de le taire.
+**Écoulement incompressible, environ jusqu'à 250 kt** (FR-01), incidence et
+dérapage faibles, circuit non obstrué.
 
-### État de vérification des sources — à corriger avant publication
+La borne n'est plus « subsonique bas » mais un chiffre sourcé. FR-01 énonce que
+la vitesse relève en subsonique de la **relation de Saint-Venant**, et que
+« cette relation s'approxime bien **jusqu'à 250 kt** par la relation de
+Bernoulli ». La forme `V = √(2q/ρ)` n'est donc pas la loi du régime subsonique :
+c'est une approximation dont la source donne elle-même la portée.
 
-Le registre le dit : **F-02 est marquée `document_consulted: non`**. Le PDF
-répond HTTP 200, personne ne l'a ouvert. Le pilote P-4 ne peut donc pas être
-déclaré `figure_verified` tant que le chapitre 8 n'a pas été lu et la page
-notée. C'est la première tâche de C2 sur ce pilote, avant tout tracé.
+Hors de ce domaine — givrage, obstruction, forte incidence — la chaîne ne mesure
+plus ce qu'elle affiche, et c'est **cela** que le croquis doit rendre lisible
+plutôt que de le taire.
+
+### État de vérification des sources — levé en C2
+
+C1 écrivait ici que F-02 était marquée `document_consulted: non`, que le PDF
+répondait HTTP 200 sans que personne ne l'ait ouvert, et que c'était la
+première tâche de C2. **C'est fait.** Le chapitre 8 (28 pages) a été
+téléchargé, extrait et lu ; les pages 8-2, 8-7 et 8-8 et les figures 8-1, 8-2
+et 8-5 sont identifiées au registre, avec les passages cités littéralement.
+
+Trois corrections que la lecture a imposées à cette spécification :
+
+1. **La source française manquait, et elle existe.** C1 n'en prévoyait aucune
+   pour P-4. `FR-01` (DGAC/DSAC, _Notions d'anémométrie_, version 22/08/2025)
+   donne la nomenclature française exacte — « prise de pression statique »,
+   « prise de pression totale », « canalisations », « installation
+   anémométrique » — et évite d'inventer une traduction.
+2. **Le domaine de validité était vague, il est désormais chiffré.** C1 écrivait
+   « régime subsonique bas ». FR-01 dit précisément que la relation de Bernoulli
+   **approxime** celle de Saint-Venant **jusqu'à environ 250 kt**. La forme
+   simplifiée n'est donc pas « la loi en subsonique » : c'est une approximation
+   bornée, et le croquis le dit ainsi.
+3. **Le variomètre était mal cadré.** C1 n'en disait rien de précis. F-02
+   (p. 8-7) impose une formulation : « Although the VSI operates solely from
+   static pressure, it is a **differential** pressure instrument », avec une
+   fuite calibrée. Le variomètre ne mesure donc pas une vitesse verticale ; il
+   mesure un **écart** de pression statique entretenu par cette fuite.
 
 ### Critères d'acceptation
 
@@ -115,17 +143,18 @@ réussite graphique.
 
 ### Métadonnées pré-déclarées
 
-| Champ               | Valeur                                                                    |
-| ------------------- | ------------------------------------------------------------------------- |
-| `family`            | `F3` — décomposition vectorielle                                          |
-| `function`          | `scientific_diagram`                                                      |
-| `level`             | `P2`                                                                      |
-| `modality`          | `static`                                                                  |
-| `scientificNatures` | `["analytical"]`                                                          |
-| `scope`             | `operational_environment`                                                 |
-| `sources`           | **F-03** (FAA PHAK complet, source du pilote) — édition exacte à trancher |
-| `assumptions`       | voir ci-dessous                                                           |
-| `validityDomain`    | voir ci-dessous                                                           |
+| Champ               | Valeur                                                                                                      |
+| ------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `family`            | `F3` — décomposition vectorielle                                                                            |
+| `function`          | `scientific_diagram`                                                                                        |
+| `level`             | `P2`                                                                                                        |
+| `editorialDecision` | `keep`                                                                                                      |
+| `modality`          | `static`                                                                                                    |
+| `scientificNatures` | `["analytical"]`                                                                                            |
+| `scope`             | `operational_environment`                                                                                   |
+| `sources`           | **FR-02** (manuel BIA éduscol, nomenclature française) ; **F-03** (FAA PHAK 25B, démonstration vectorielle) |
+| `assumptions`       | voir ci-dessous                                                                                             |
+| `validityDomain`    | voir ci-dessous                                                                                             |
 
 ### Hypothèses à écrire dans `assumptions`
 
