@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-08-05T21:24:49.357Z",
+  "generator": "scripts/audit-croquis-compare.mjs",
+  "gridPath": "reports/croquis/validation-humaine/grille-remplie.yaml",
+  "gridPresent": false,
+  "gridParseError": null,
+  "reviewer": null,
+  "reviewedAt": null,
+  "sampleSize": 30,
+  "reviewedCount": 0,
+  "agreement": {
+    "family": {
+      "compared": 0,
+      "agreed": 0,
+      "machineSilent": 0
+    },
+    "function": {
+      "compared": 0,
+      "agreed": 0,
+      "machineSilent": 0
+    }
+  },
+  "divergences": [],
+  "toFix": [],
+  "notReviewed": [
+    "allongement",
+    "avion-anglais",
+    "ban-porte-avions-granit",
+    "calage-transition",
+    "calages-altimetriques",
+    "carte-ban-aeronavale",
+    "chronologie-aeronavale",
+    "croire-instruments",
+    "cumulonimbus-dangers",
+    "cursus-pilote-chasse-aae",
+    "effets-moteur",
+    "equilibre-en-palier",
+    "fenestron-rotor-anticouple",
+    "force-vecteur",
+    "gyroscope-fixite",
+    "horizon-artificiel-lecture",
+    "hypoxie-pression-o2",
+    "mille-marin",
+    "portance-origine",
+    "pression-atmospherique",
+    "pressions-statique-dynamique",
+    "profil-isa",
+    "regle-6-minutes",
+    "rotation-mentale-exemple",
+    "temps-utile-conscience",
+    "triangle-dvt",
+    "trois-axes",
+    "unites-en-situation",
+    "valeurs-marine",
+    "vrille-asymetrie"
+  ],
+  "outOfSample": []
+}

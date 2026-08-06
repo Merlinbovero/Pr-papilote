@@ -114,6 +114,22 @@
   --concours-eopan: oklch(0.42 0.09 250);
   --concours-eopn: oklch(0.52 0.1 230);
   --concours-alat: oklch(0.48 0.09 145);
+  /* JETONS DE CROQUIS SCIENTIFIQUE — lot C2.
+     Huit rôles, et pas une couleur de plus. Chacun est un ALIAS d'un jeton
+     existant : c'est ce qui empêche le chantier croquis de devenir un second
+     système graphique à côté de PLANCHE. Retoucher la charte retouche les
+     croquis, sans double maintenance et sans dérive silencieuse.
+     Leur contraste est mesuré dans `src/app/contraste-croquis.test.ts`, chacun
+     contre le SEUIL DE SON RÔLE — un trait de grille n'a pas à tenir 4,5:1, et
+     l'exiger aurait poussé à foncer une grille qui doit rester discrète. */
+  --schema-surface: var(--card);
+  --schema-ink: var(--foreground);
+  --schema-muted: var(--muted-foreground);
+  --schema-accent: var(--primary);
+  --schema-grid: var(--border);
+  --schema-positive: var(--success);
+  --schema-warning: var(--warning);
+  --schema-danger: var(--destructive);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -165,6 +181,19 @@
   --concours-eopan: oklch(0.68 0.1 250);
   --concours-eopn: oklch(0.72 0.1 230);
   --concours-alat: oklch(0.7 0.11 145);
+  /* Croquis, registre sombre — mêmes alias, donc mêmes rôles.
+     `--schema-grid` fait exception et ne suit pas `--border` : en sombre,
+     `--border` est semi-transparent (`/ 12%`), or un trait de grille se compose
+     sur la surface du croquis et non sur le fond de page. Une valeur opaque
+     évite que la grille change d'aspect selon ce qu'il y a derrière. */
+  --schema-surface: var(--card);
+  --schema-ink: var(--foreground);
+  --schema-muted: var(--muted-foreground);
+  --schema-accent: var(--primary);
+  --schema-grid: oklch(0.34 0.02 259);
+  --schema-positive: var(--success);
+  --schema-warning: var(--warning);
+  --schema-danger: var(--destructive);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

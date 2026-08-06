@@ -7,3 +7,12 @@ playwright-report
 test-results
 package-lock.json
 public
+
+# Rapports générés du chantier croquis : Prettier les réécrirait, le
+# générateur les réécrirait à son tour, et `format:check` resterait rouge.
+# La règle est volontairement étroite — elle ne couvre que ce dossier.
+# Les fichiers générés sont nommés un par un : le README du dossier, lui, est
+# écrit à la main et reste formaté.
+reports/croquis/inventory.json
+reports/croquis/inventory.md
+reports/croquis/validation-humaine/

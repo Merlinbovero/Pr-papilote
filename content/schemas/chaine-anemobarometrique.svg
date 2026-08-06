@@ -1,44 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
   <style>
-    text { font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; fill: currentColor; }
-    .title { font-size: 14px; font-weight: 600; }
-    .lbl { font-size: 12px; }
-    .sub { font-size: 11px; fill: #94a3b8; }
-    .box { stroke: currentColor; fill: none; stroke-width: 2; }
-    .boxA { stroke: #3b82f6; fill: none; stroke-width: 2; }
-    .ps { stroke: #94a3b8; fill: none; stroke-width: 1.8; }
-    .pt { stroke: #3b82f6; fill: none; stroke-width: 2.2; }
-    .accent-t { fill: #3b82f6; font-weight: 600; font-size: 11px; }
+    text { font: 16px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--schema-ink); }
+    .sub { font-size: 15px; fill: var(--schema-muted); }
+    .repere { font-size: 16px; font-weight: 600; }
+    .organe { stroke: var(--schema-ink); fill: none; stroke-width: 2; }
+    .paroi { stroke: var(--schema-ink); fill: none; stroke-width: 3.5; }
+    .flux { stroke: var(--schema-ink); fill: none; stroke-width: 2; }
+    .pt { stroke: var(--schema-accent); fill: none; stroke-width: 2.5; }
+    .ps { stroke: var(--schema-muted); fill: none; stroke-width: 2; stroke-dasharray: 5 3; }
   </style>
   <defs>
-    <marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
+    <marker id="chaine-anemobarometrique__f-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-ink)" />
     </marker>
-    <marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+    <marker id="chaine-anemobarometrique__f-pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-accent)" />
+    </marker>
+    <marker id="chaine-anemobarometrique__f-ps" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--schema-muted)" />
     </marker>
   </defs>
-  <text class="title" x="230" y="24" text-anchor="middle">La chaîne anémobarométrique</text>
-  <!-- Sources -->
-  <rect class="box" x="24" y="62" width="150" height="46" rx="5" />
-  <text class="lbl" x="99" y="84" text-anchor="middle">Tube de Pitot</text>
-  <text class="sub" x="99" y="100" text-anchor="middle">pression totale (Pt)</text>
-  <rect class="box" x="24" y="168" width="150" height="46" rx="5" />
-  <text class="lbl" x="99" y="190" text-anchor="middle">Prise statique</text>
-  <text class="sub" x="99" y="206" text-anchor="middle">pression statique (Ps)</text>
-  <!-- Instruments -->
-  <rect class="box" x="300" y="50" width="140" height="38" rx="5" />
-  <text class="lbl" x="370" y="73" text-anchor="middle">Altimètre</text>
-  <rect class="box" x="300" y="108" width="140" height="38" rx="5" />
-  <text class="lbl" x="370" y="131" text-anchor="middle">Variomètre</text>
-  <rect class="boxA" x="300" y="176" width="140" height="46" rx="5" />
-  <text class="lbl" x="370" y="199" text-anchor="middle">Anémomètre</text>
-  <text class="accent-t" x="370" y="214" text-anchor="middle">Pt − Ps</text>
-  <!-- Liaisons statique (Ps) -->
-  <path class="ps" d="M174,182 L240,182 L240,69 L300,69" marker-end="url(#am)" />
-  <path class="ps" d="M174,190 L228,190 L228,127 L300,127" marker-end="url(#am)" />
-  <path class="ps" d="M174,200 L300,200" marker-end="url(#am)" />
-  <!-- Liaison totale (Pt) -->
-  <path class="pt" d="M174,85 L260,85 L260,190 L300,190" marker-end="url(#ac)" />
-  <text class="sub" x="230" y="262" text-anchor="middle">statique → altimètre, variomètre, anémomètre · totale → anémomètre</text>
+
+  <!-- A · CAPTATION PHYSIQUE
+       La sonde est vue de profil, ouverture frontale face au vent relatif :
+       c'est cet alignement qui explique qu'elle capte la pression totale.
+       Les prises statiques affleurent la paroi, perpendiculaires à
+       l'écoulement — d'où la pression statique seule. -->
+  <text class="sub" x="14" y="30" text-anchor="start">vent relatif</text>
+  <line class="flux" x1="14" y1="48" x2="54" y2="48" marker-end="url(#chaine-anemobarometrique__f-ink)" />
+
+  <rect class="organe" x="66" y="40" width="54" height="16" rx="8" />
+  <circle cx="66" cy="48" r="3.5" fill="none" stroke="var(--schema-ink)" stroke-width="2" />
+  <line class="organe" x1="112" y1="56" x2="112" y2="96" />
+  <text class="sub" x="90" y="76" text-anchor="middle">Pitot</text>
+
+  <line class="paroi" x1="14" y1="96" x2="150" y2="96" />
+  <circle cx="36" cy="96" r="4" fill="var(--schema-ink)" />
+  <circle cx="54" cy="96" r="4" fill="var(--schema-ink)" />
+  <text class="sub" x="58" y="124" text-anchor="start">prises</text>
+  <text class="sub" x="58" y="146" text-anchor="start">statiques</text>
+
+  <!-- B · CANALISATIONS
+       La conduite de pression totale passe au-dessus de la canalisation
+       statique : aucun trait n'en croise un autre, ni ne traverse un
+       libellé. -->
+  <path class="pt" d="M112,96 L112,116 L160,116 L160,40 L244,40" marker-end="url(#chaine-anemobarometrique__f-pt)" />
+  <text class="repere" x="200" y="32" text-anchor="middle">Pt</text>
+
+  <path class="ps" d="M45,96 L45,152 L200,152" />
+  <path class="ps" d="M200,60 L200,190" />
+  <text class="repere" x="192" y="172" text-anchor="end">Ps</text>
+  <path class="ps" d="M200,60 L244,60" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+  <path class="ps" d="M200,122 L244,122" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+  <path class="ps" d="M200,190 L244,190" marker-end="url(#chaine-anemobarometrique__f-ps)" />
+
+  <!-- C · INSTRUMENTS ET GRANDEUR DÉDUITE
+       Chaque boîte porte l'instrument, puis la grandeur qu'il en DÉDUIT :
+       ce que la canalisation transporte est une pression, jamais une
+       vitesse ni une altitude. -->
+  <rect class="organe" x="244" y="24" width="162" height="54" rx="5" />
+  <text x="325" y="46" text-anchor="middle">Anémomètre</text>
+  <text class="sub" x="325" y="68" text-anchor="middle">vitesse indiquée</text>
+
+  <rect class="organe" x="244" y="98" width="162" height="46" rx="5" />
+  <text x="325" y="118" text-anchor="middle">Altimètre</text>
+  <text class="sub" x="325" y="138" text-anchor="middle">altitude-pression</text>
+
+  <rect class="organe" x="244" y="158" width="162" height="70" rx="5" />
+  <text x="325" y="180" text-anchor="middle">Variomètre</text>
+  <text class="sub" x="325" y="202" text-anchor="middle">vitesse verticale</text>
+  <text class="sub" x="325" y="224" text-anchor="middle">indiquée</text>
+
+  <!-- Légende : le plein et le pointillé disent déjà ce que dit la couleur -->
+  <line class="pt" x1="14" y1="176" x2="40" y2="176" />
+  <text class="sub" x="46" y="181" text-anchor="start">pression totale</text>
+  <line class="ps" x1="14" y1="204" x2="40" y2="204" />
+  <text class="sub" x="46" y="209" text-anchor="start">pression statique</text>
 </svg>

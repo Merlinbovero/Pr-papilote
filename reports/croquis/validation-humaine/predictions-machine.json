@@ -1,0 +1,360 @@
+{
+  "generatedAt": "2026-08-05T21:24:49.138Z",
+  "generator": "scripts/audit-croquis-sample.mjs",
+  "sourceCommit": "554ff62d19bc3ae8a080eda166d7c2cde495b033",
+  "inventoryGeneratedAt": "2026-08-05T21:24:47.763Z",
+  "inventoryContentDigest": "79186fc90299804b2cd2737b0075d5c2574cda1f87f0c4fb4a39d31a614ce17b",
+  "sampleSize": 30,
+  "populationSize": 106,
+  "selection": "empreinte FNV-1a du schemaId, stratifiée par module, plus fort reste",
+  "contentDigest": "071e20cfcd7a8ead62b2316e23cecaaa1648aa1d018853513efa17c19f1f2240",
+  "populationCoverage": {
+    "classified": 84,
+    "unclassified": 22,
+    "byFamily": {
+      "F1": 4,
+      "F10": 16,
+      "F11": 12,
+      "F12": 3,
+      "F13": 12,
+      "F2": 9,
+      "F3": 4,
+      "F4": 6,
+      "F5": 11,
+      "F6": 1,
+      "F7": 4,
+      "F8": 2
+    }
+  },
+  "predictions": [
+    {
+      "schemaId": "allongement",
+      "predictedFamily": "F2",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "traînée"
+      ],
+      "textLength": 186,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "avion-anglais",
+      "predictedFamily": "F11",
+      "predictedFunction": "map",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "base"
+      ],
+      "textLength": 135,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "ban-porte-avions-granit",
+      "predictedFamily": "F11",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "porte-avions"
+      ],
+      "textLength": 136,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "calage-transition",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "altitude"
+      ],
+      "textLength": 141,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "calages-altimetriques",
+      "predictedFamily": "F13",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "altimètre"
+      ],
+      "textLength": 149,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "carte-ban-aeronavale",
+      "predictedFamily": "F11",
+      "predictedFunction": "map",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "base",
+        "carte"
+      ],
+      "textLength": 147,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "chronologie-aeronavale",
+      "predictedFamily": "F12",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "chronologie"
+      ],
+      "textLength": 482,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "croire-instruments",
+      "predictedFamily": "F13",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "instrument"
+      ],
+      "textLength": 125,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "cumulonimbus-dangers",
+      "predictedFamily": null,
+      "predictedFunction": null,
+      "carriesNumbers": false,
+      "matchedKeywords": [],
+      "textLength": 101,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "cursus-pilote-chasse-aae",
+      "predictedFamily": "F12",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "cursus"
+      ],
+      "textLength": 470,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "effets-moteur",
+      "predictedFamily": "F4",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "souffle"
+      ],
+      "textLength": 155,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "equilibre-en-palier",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "altitude"
+      ],
+      "textLength": 127,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "fenestron-rotor-anticouple",
+      "predictedFamily": "F2",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "équilibre"
+      ],
+      "textLength": 236,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "force-vecteur",
+      "predictedFamily": "F5",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "pression"
+      ],
+      "textLength": 48,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "gyroscope-fixite",
+      "predictedFamily": "F13",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "horizon artificiel",
+        "instrument"
+      ],
+      "textLength": 151,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "horizon-artificiel-lecture",
+      "predictedFamily": "F13",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "horizon artificiel",
+        "instrument"
+      ],
+      "textLength": 68,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "hypoxie-pression-o2",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "altitude"
+      ],
+      "textLength": 128,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "mille-marin",
+      "predictedFamily": null,
+      "predictedFunction": null,
+      "carriesNumbers": true,
+      "matchedKeywords": [],
+      "textLength": 136,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "portance-origine",
+      "predictedFamily": "F5",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "dépression",
+        "extrados",
+        "intrados",
+        "pression",
+        "surpression"
+      ],
+      "textLength": 131,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "pression-atmospherique",
+      "predictedFamily": "F5",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "pression"
+      ],
+      "textLength": 44,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "pressions-statique-dynamique",
+      "predictedFamily": "F5",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "pression"
+      ],
+      "textLength": 97,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "profil-isa",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "altitude",
+        "profil isa",
+        "température"
+      ],
+      "textLength": 102,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "regle-6-minutes",
+      "predictedFamily": null,
+      "predictedFunction": null,
+      "carriesNumbers": true,
+      "matchedKeywords": [],
+      "textLength": 116,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "rotation-mentale-exemple",
+      "predictedFamily": null,
+      "predictedFunction": null,
+      "carriesNumbers": true,
+      "matchedKeywords": [],
+      "textLength": 259,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "temps-utile-conscience",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": true,
+      "matchedKeywords": [
+        "altitude"
+      ],
+      "textLength": 140,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "triangle-dvt",
+      "predictedFamily": "F1",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "angle"
+      ],
+      "textLength": 70,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "trois-axes",
+      "predictedFamily": "F7",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "gouverne"
+      ],
+      "textLength": 152,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "unites-en-situation",
+      "predictedFamily": "F10",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "altitude"
+      ],
+      "textLength": 69,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "valeurs-marine",
+      "predictedFamily": null,
+      "predictedFunction": null,
+      "carriesNumbers": false,
+      "matchedKeywords": [],
+      "textLength": 213,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    },
+    {
+      "schemaId": "vrille-asymetrie",
+      "predictedFamily": "F1",
+      "predictedFunction": "scientific_diagram",
+      "carriesNumbers": false,
+      "matchedKeywords": [
+        "incidence"
+      ],
+      "textLength": 133,
+      "basis": "lexical — texte des <text> du SVG + identifiant de la fiche citante"
+    }
+  ]
+}

@@ -116,10 +116,73 @@ content:
         dans l'eau, mais le courant nous emporte aussi.
       figures:
         - schemaId: triangle-des-vitesses
-          alt: Un triangle des vitesses où la vitesse propre plus le vent donnent la vitesse sol, avec un angle de dérive.
-          caption: La vitesse sol (route) est la somme de la vitesse propre et du vent ; le vent de travers crée la dérive.
-          width: 460
-          height: 260
+          alt: >-
+            Triangle des vitesses construit sur une origine unique. De ce point partent trois
+            tracés : un axe vertical vers le Nord, un vecteur horizontal vers la droite qui est
+            la vitesse propre de 120 nœuds au cap 090 degrés, et un vecteur légèrement
+            descendant qui est la vitesse sol. Deux arcs mesurent les angles depuis le Nord :
+            le cap à 090 degrés et la route à environ 104 degrés. À l'extrémité du vecteur
+            vitesse propre, un vecteur en pointillé descend vers le bas et rejoint l'extrémité
+            du vecteur sol : c'est le vent, 30 nœuds venant du 360 et se déplaçant donc vers le
+            180. Un troisième arc, entre les deux vecteurs, marque la dérive de plus 14 degrés.
+            La vitesse sol vaut environ 124 nœuds. L'égalité vectorielle Vs égale Vp plus Vvent
+            est rappelée en bas, avec la mention d'une échelle commune.
+          caption: "Cap et route se lisent sur la même origine, depuis le même Nord : leur écart est la dérive."
+          width: 420
+          height: 240
+          meta:
+            family: F3
+            function: scientific_diagram
+            editorialDecision: keep
+            level: P2
+            modality: static
+            scientificNatures: [analytical]
+            scope: operational_environment
+            diagramVersion: 3
+            scientificallyVerifiedAt: "2026-08-05"
+            sources:
+              - id: FR-02
+                title: "Manuel du Brevet d'Initiation Aéronautique, version 4.0, édition 2021 (éduscol STI, © CIRAS Toulouse)"
+                url: https://sti.eduscol.education.fr/sites/eduscol.education.fr.sti/files/ressources/pedagogiques/11283/11283-bia-2021-vf1-copie.pdf
+                location: "p. 198 (cap, route, dérive) ; p. 207 (vitesse propre, vitesse sol) ; p. 127 (direction du vent)"
+                kind: institutional
+                verificationStatus: document_consulted
+                legalStatus: uncertain
+              - id: F-03
+                title: "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25B), « Wind Triangle or Vector Analysis »"
+                url: https://www.faa.gov/sites/faa.gov/files/pilots/pilot_handbook.pdf
+                location: "p. 16-13 à 16-15 ; figures 16-19 à 16-23"
+                kind: regulatory
+                verificationStatus: figure_verified
+                legalStatus: uncertain
+            assumptions:
+              - Vent uniforme et constant sur le segment considéré.
+              - Vitesse propre constante.
+              - "Construction dans le plan horizontal : ni montée, ni descente."
+              - Cap et route exprimés dans le même repère — ici le Nord vrai, pour les deux.
+              - Valeurs de l'exemple construites pour la démonstration, non mesurées.
+            validityDomain: >-
+              Navigation à l'estime en vol horizontal, vent homogène sur le segment. La
+              construction ne dit rien d'un vent tournant ni d'un profil de vent variable avec
+              l'altitude. Elle est menée entièrement en valeurs vraies : ni magnétique, ni
+              compas, ni déclinaison, ni déviation n'y interviennent — ces corrections
+              relèvent d'un autre croquis.
+            longDescription: >-
+              Couche P2, déportée hors du dessin pour préserver la lisibilité mobile.
+              Convention d'axes retenue : l'axe est compté positivement vers l'est, l'axe nord
+              positivement vers le nord, et tout relèvement est exprimé en degrés vrais mesurés
+              depuis le Nord dans le sens horaire. Les composantes de l'exemple construit sont
+              alors les suivantes. Vitesse propre, cap 090 degrés, 120 nœuds : composantes est
+              120 et nord 0. Vent venant du 360 degrés à 30 nœuds, donc se déplaçant vers le
+              180 : composantes est 0 et nord moins 30. Somme : composantes est 120 et nord
+              moins 30. La norme vaut racine de la somme des carrés de 120 et de 30, soit
+              racine de 15 300, c'est-à-dire 123,69 nœuds, arrondis à 124 sur le dessin. Le
+              relèvement vaut 90 degrés plus l'arc tangente de 30 sur 120, soit 104,04 degrés,
+              arrondis à 104. La dérive est la différence entre la route et le cap, soit 14,04
+              degrés, arrondis à plus 14 : le vent venant de la gauche, l'avion dérive vers la
+              droite, et Route égale Cap plus Dérive. L'échelle du tracé est de 1,6 unité de
+              dessin par nœud, commune aux trois vecteurs — c'est cette échelle unique qui rend
+              la construction mesurable, et non seulement illustrative.
     - id: decoller-et-se-diriger-avec-le-vent
       title: Décoller et se diriger avec le vent
       strate: maitriser

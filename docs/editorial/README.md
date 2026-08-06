@@ -12,7 +12,9 @@ Architecture documentaire officielle. Ces documents gouvernent toute production 
 | [regles-editoriales.md](regles-editoriales.md)             | Qualité, style, neutralité, règles de rédaction                                                    |
 | [gestion-documentaire.md](gestion-documentaire.md)         | **Chaîne éditoriale (ch. 8)** : workflow, versions/motif, documents, contrôle qualité              |
 | [processus-production.md](processus-production.md)         | **Processus officiel** : dossier de conception validé avant rédaction, champ `objectifs[]`         |
-| [convention-schemas.md](convention-schemas.md)             | **Convention graphique** des schémas : une grandeur = une représentation constante                 |
+| [convention-schemas.md](convention-schemas.md)             | **Doctrine normative des croquis** (C1) : familles F1-F13, niveaux P1/P2/P3, checklists            |
+| [references-schemas.md](references-schemas.md)             | **Registre des sources** scientifiques citables par les métadonnées de croquis                     |
+| [pilotes-c2.md](pilotes-c2.md)                             | **Spécification des deux croquis pilotes** de C2 (P-4 Pitot-statique, P-6 triangle des vitesses)   |
 | [plan-fondamentaux.md](plan-fondamentaux.md)               | **Plan de production** de la famille Fondamentaux aéronautiques (socle 37 fiches, priorités A/B/C) |
 
 ## Principes fondateurs

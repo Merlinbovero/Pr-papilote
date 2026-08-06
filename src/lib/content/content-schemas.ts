@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { figureMetaSchema } from "./figure-meta";
 import { contentIdSchema, slugSchema } from "./schemas";
 
 /**
@@ -505,6 +506,18 @@ export const ficheFigureSchema = z.object({
   /** Dimensions du viewBox (ratio) — évite tout décalage de mise en page. */
   width: z.int().positive(),
   height: z.int().positive(),
+  /**
+   * Métadonnées scientifiques (lot C1, voir `figure-meta.ts`).
+   *
+   * **Facultatif, et c'est la décision structurante** : les croquis existants
+   * n'en portent aucune. Les rendre obligatoires forcerait à remplir cent fois
+   * des champs non vérifiés — c'est-à-dire à inventer, exactement ce que ce
+   * contrat existe pour empêcher.
+   *
+   * - absent  → croquis historique, accepté tel quel, hors couverture ;
+   * - présent → le contrat complet s'applique, sans demi-mesure.
+   */
+  meta: figureMetaSchema.optional(),
 });
 export type FicheFigure = z.infer<typeof ficheFigureSchema>;
 

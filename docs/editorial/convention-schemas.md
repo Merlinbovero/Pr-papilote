@@ -1,45 +1,404 @@
-# Convention graphique des schémas pédagogiques
+# Convention des croquis pédagogiques
 
-**Règle officielle (2026-07-09).** Tous les schémas de PrépaPilote suivent une **convention visuelle homogène** : une même grandeur physique garde **la même représentation** partout, pour faciliter l'apprentissage. Un schéma est un SVG original, sobre, libre de droits, stocké dans `content/schemas/` et inséré en ligne (`FicheFigure`) — ses traits héritent de `currentColor` et s'adaptent au thème clair/sombre.
+**Document normatif.** Il fait autorité sur tout croquis produit à partir du lot C1. Il remplace la convention du 2026-07-09, dont la palette et les règles typographiques sont conservées au §12.
 
-## Palette (trois rôles seulement)
+Contrat machine : [`src/lib/content/figure-meta.ts`](../../src/lib/content/figure-meta.ts). Registre des sources : [`references-schemas.md`](references-schemas.md). Inventaire des besoins : `reports/croquis/inventory.md`, **généré** par `scripts/audit-croquis-inventory.mjs`.
 
-| Rôle                                | Couleur                 | Emploi                                                                |
-| ----------------------------------- | ----------------------- | --------------------------------------------------------------------- |
-| **Structure & légendes**            | `currentColor` (ink)    | contours, textes, axes principaux, matière (points)                   |
-| **Grandeur mise en avant / action** | bleu `#3b82f6` (accent) | la grandeur étudiée, la force active, l'axe fléché de la variable clé |
-| **Repères secondaires**             | gris `#94a3b8` (muted)  | traits d'appui, pointillés, sous-légendes                             |
+> **Aucun chiffre de ce document n'est saisi à la main.** Les totaux — fiches, croquis, références, orphelins, répartition par statut — vivent dans les rapports générés. Cette règle vient d'une série d'erreurs de comptage recopiées de rapport en rapport pendant les phases C0 et C1.
 
-Fond **transparent** (la carte `bg-card` de `FicheFigure` fournit l'arrière-plan). Jamais d'autre couleur sans justification.
+---
 
-### Exception justifiée — codes couleur normalisés (2026-07-12)
+## 1. Finalité — un croquis n'est pas une décoration
 
-Certains instruments portent un **code couleur normalisé** dont les couleurs _sont_ l'information pédagogique : elles doivent être reconnues telles quelles par le candidat. Les représenter en niveaux de gris trahirait le sujet. On admet donc, **pour ces seuls schémas** (cadran du badin et cadrans normalisés à venir), l'emploi des **couleurs réglementaires réelles** — par exemple, sur l'anémomètre : arc **blanc** (volets), arc **vert** (utilisation normale), arc **jaune** (prudence), trait **rouge** (VNE). Le reste du schéma reste sobre (encre, accent, gris). Cette exception est **fermée** : elle ne s'applique qu'aux codes couleur officiels d'instruments, jamais par confort esthétique.
+Tout croquis remplit une fonction explicite, déclarée dans ses métadonnées :
 
-## Typographie
+**comprendre** · **calculer** · **comparer** · **reconnaître** · **localiser** · **mémoriser** · **suivre une séquence** · **interpréter une donnée**
 
-`system-ui` — titre 14 px semi-gras, libellés 13 px, sous-texte 11 px (muted). Nombres et unités lisibles, jamais tronqués.
+Un visuel qui n'en remplit aucune est supprimé, et **n'est jamais compté dans la couverture scientifique**.
 
-## Représentation homogène des grandeurs
+---
 
-| Grandeur                                      | Représentation constante                                                  |
-| --------------------------------------------- | ------------------------------------------------------------------------- |
-| **Force** (poids, portance, traînée, poussée) | flèche vectorielle pleine ; la force étudiée en **accent**                |
-| **Vitesse / écoulement de l'air**             | filet d'air = ligne fléchée (le sens est toujours indiqué)                |
-| **Pression**                                  | petites flèches perpendiculaires à la surface, ou barres proportionnelles |
-| **Altitude**                                  | axe vertical **fléché vers le haut**, placé à gauche, en accent           |
-| **Température**                               | échelle ou valeur en °C, en ink (pas de couleur dédiée)                   |
-| **Densité de l'air**                          | densité de **points** (molécules) — dense = serré, raréfié = espacé       |
-| **Surface**                                   | segment ou rectangle en ink                                               |
+## 2. Doctrine scientifique
 
-## Marqueurs de flèche standard
+### 2.1 Les quatre repères, à ne jamais confondre
 
-Deux marqueurs par schéma : `#a` (pointe en `currentColor`) et `#ac` (pointe en accent `#3b82f6`), `orient="auto"`.
+| Repère            | Définition                                          | Emploi                        |
+| ----------------- | --------------------------------------------------- | ----------------------------- |
+| **Terrestre**     | Lié au sol ; la verticale est celle de la pesanteur | Poids, altitude, relief       |
+| **Avion**         | Lié à la cellule : roulis, tangage, lacet           | Axes, gouvernes, assiette     |
+| **Trajectoire**   | Lié au vecteur vitesse                              | Pente, décomposition du poids |
+| **Aérodynamique** | Lié au vent relatif                                 | Portance, traînée, incidence  |
 
-## Dimensions
+**Tout croquis portant une orientation physique déclare lequel il emploie.** Aucun croquis de l'échantillon audité en C0 ne le faisait.
 
-`viewBox="0 0 W H"`, `width="100%" height="100%"`, `preserveAspectRatio="xMidYMid meet"`. Les valeurs `width`/`height` déclarées dans `figures[]` reprennent W et H (réservation d'espace, aucun décalage de mise en page).
+### 2.2 Portée — profil 2D, aile finie, aéronef complet
 
-## Portée
+Un profil (2D), une aile finie et un aéronef complet **ne donnent pas les mêmes valeurs**. Cz max et l'angle critique dépendent de l'allongement et du nombre de Reynolds. Un croquis d'écoulement, de distribution de pression ou de polaire déclare donc sa portée — obligation machine (`scope`, familles F4, F5, F10).
 
-Cette convention s'applique à **tout** schéma produit désormais. Un schéma qui s'en écarte doit le justifier. Elle complète `processus-production.md` (schémas obligatoires dès que leur absence pénalise la compréhension) et le design system.
+### 2.3 Force, coefficient, grandeur adimensionnelle
+
+- une **force** a une unité (N) et une direction ;
+- un **coefficient** (Cz, Cx, Cp) est **sans dimension** et dépend des conditions ;
+- un coefficient **n'est pas une force réduite** : passer de l'un à l'autre demande ρ, V et S.
+
+Ne jamais annoter une flèche « Cz ». Ne jamais graduer un axe de force en coefficients.
+
+### 2.4 Qualitatif, analytique, mesuré, simulé
+
+| Nature         | Ce que le croquis montre      | Ce qu'il doit déclarer                                |
+| -------------- | ----------------------------- | ----------------------------------------------------- |
+| **Qualitatif** | Une tendance, un mécanisme    | Rien de plus                                          |
+| **Analytique** | Un modèle et ses conséquences | Hypothèses, domaine                                   |
+| **Mesuré**     | Des points expérimentaux      | Conditions (Re, Mach…), source, incertitude si connue |
+| **Simulé**     | Un résultat numérique         | Modèle, méthode, domaine                              |
+
+**Une visualisation numérique n'est pas une mesure de soufflerie.** Les présenter de la même façon est une faute.
+
+### 2.5 Obligations générales
+
+1. Déclarer les **simplifications** — une exagération d'échelle est légitime, la taire ne l'est pas.
+2. Déclarer le **domaine de validité**.
+3. Donner les **unités** de toute grandeur dimensionnée.
+4. Citer les **sources**.
+5. **Ne jamais présenter une convention graphique comme une loi physique.** Qu'on dessine traditionnellement la portance vers le haut ne fait pas de la portance une force verticale.
+
+### 2.6 Les quatre forces — formulation rigoureuse
+
+Défaut **A-01** de l'audit C0, sur le croquis le plus vu du module fondamentaux.
+
+- le **poids** est vertical **dans le repère terrestre** ;
+- la **portance** est définie **perpendiculairement au vent relatif** ;
+- la **traînée** est **parallèle et opposée au vent relatif** ;
+- la **traction** dépend de l'axe ou de la direction de poussée, qui n'est pas nécessairement celui de la trajectoire ;
+- dans un repère lié à la **trajectoire**, le poids se décompose en une composante **longitudinale** et une composante **normale**.
+
+> **« Deux forces verticales et deux forces horizontales » n'est valable que dans un cas particulier explicitement défini** — le vol rectiligne, en palier, stabilisé, sans vent. Hors de ce cas, l'énoncé est faux.
+
+### 2.7 Facteur de charge
+
+`n = 1 / cos φ` ne se présente que pour un virage **coordonné**, **stabilisé**, **à altitude constante**, **sans accélération verticale supplémentaire**.
+
+En virage descendant, `n` peut être inférieur ou égal à 1. La formulation `n = portance / poids` reste correcte mais moins opérante.
+
+### 2.8 Épaisseur de couche limite — ce qu'on ne dira pas
+
+Le rapport C0 affirmait qu'« une couche limite réelle fait moins de 1 % de corde ». **Cette affirmation est retirée** : l'épaisseur dépend du nombre de Reynolds, de la position sur le profil, du régime laminaire ou turbulent, du gradient de pression et de la proximité d'une séparation.
+
+Aucune valeur générale ne la remplace. La seule conclusion tenable :
+
+> L'épaisseur est **volontairement exagérée** pour rendre le phénomène visible. Le facteur d'exagération doit être **déclaré**, ou le dessin marqué **non à l'échelle**.
+
+---
+
+## 3. Niveaux P1 / P2 / P3
+
+|             | **P1 — Comprendre ou reconnaître**                         | **P2 — Lire techniquement**                                                       | **P3 — Exploiter un modèle**                                                                                                 |
+| ----------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Le lecteur… | comprend le phénomène ou identifie les éléments essentiels | interprète repères, variables, unités, relations, hypothèses et domaine principal | calcule, compare des paramètres, interprète des données mesurées ou simulées, évalue une incertitude, étudie une sensibilité |
+| Requiert    | fonction claire, sens de lecture                           | + repère nommé, symboles, unités, hypothèses et domaine accessibles               | + modèle ou données exploitables, nature déclarée                                                                            |
+
+**Une formule simple reste possible en P1** si elle est secondaire et ne bloque pas la compréhension immédiate. `n = portance / poids` sur un croquis de virage en est un bon exemple : l'interdire aurait dégradé un bon croquis pour respecter une règle de forme.
+
+**Une question de concours peut justifier P3 ; elle ne le définit pas.** Le critère est l'exploitation d'un modèle quantitatif, pas le programme d'un examen — qui change à chaque réforme.
+
+---
+
+## 4. Taxonomie — familles F1 à F13
+
+| Famille                                 | Fonction pédagogique         | Conventions obligatoires                                                      | Erreurs fréquentes                             | Niveau | Format       | Cas PrépaPilote                |
+| --------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- | ------ | ------------ | ------------------------------ |
+| **F1** Géométrie                        | Nommer et situer les parties | Cotes, référence de mesure, échelle ou mention « non à l'échelle »            | Proportions fantaisistes                       | P1+P2  | SVG          | `profil-anatomie`              |
+| **F2** Corps libre                      | Bilan de forces              | Repère, point d'application, échelle des vecteurs                             | Portance dessinée verticale hors palier        | P1+P2  | SVG          | `quatre-forces-avion`          |
+| **F3** Décomposition vectorielle        | Projeter, composer           | Angles cotés, composantes nommées, **somme vectorielle explicite**            | « somme » au lieu de « somme vectorielle »     | P2     | SVG          | `triangle-des-vitesses`        |
+| **F4** Écoulement                       | Montrer le fluide            | Sens, vent relatif, **portée**, mention de l'exagération d'échelle            | Couche limite exagérée sans le dire            | P1+P2  | SVG ou animé | `couche-limite`                |
+| **F5** Distribution de pression         | Champ scalaire               | Signe, référence, échelle, **portée**                                         | Confusion −Cp / +Cp                            | P2+P3  | SVG          | `pressions-statique-dynamique` |
+| **F6** Coupe fonctionnelle              | Voir l'intérieur             | Plan de coupe situé, hachures cohérentes                                      | Coupe non située                               | P1+P2  | SVG          | `altimetre-principe`           |
+| **F7** Chaîne fonctionnelle             | Relier des organes           | Sens du flux, nature du flux                                                  | Flux non orienté                               | P1+P2  | SVG          | `pitot-statique-sources`       |
+| **F8** Séquence                         | Ordonner dans le temps       | Numérotation, durées si connues                                               | Étapes non numérotées                          | P1     | SVG          | `catapultage-principe`         |
+| **F9** Comparaison                      | Opposer deux cas             | **Même échelle, même cadrage**, une seule variable changée                    | Deux échelles différentes                      | P1+P2  | SVG          | `fenestron-rotor-anticouple`   |
+| **F10** Graphique scientifique          | Relation quantifiée          | Axes nommés + unités, origine, domaine, **portée**, conditions si mesuré      | Courbe sans axes ; 2D confondu avec aile finie | P2+P3  | SVG          | `polaire-eiffel`               |
+| **F11** Carte ou implantation           | Situer                       | Voir §8 — Nord et échelle **conditionnels**                                   | Nord absent là où l'orientation compte         | P1     | SVG          | `carte-ban-aeronavale`         |
+| **F12** Organigramme ou frise           | Structurer, ordonner         | Sens de lecture, dates sourcées                                               | Hiérarchie ambiguë                             | P1     | SVG          | `structure-alat`               |
+| **F13** Instrument ou affichage cockpit | Lire un instrument           | Marquages normalisés, sens de rotation, plage de lecture, mode de défaillance | Couleurs inventées ; couleur non doublée       | P1+P2  | SVG          | `badin-arcs`                   |
+
+**F13 a été créée en C0-bis.** Plusieurs croquis existants en relèvent, deux fiches S3 la réclament, et elle porte une **clause d'accessibilité inversée** (§7).
+
+---
+
+## 5. Axes orthogonaux — obligatoires
+
+Toute famille se croise avec trois axes. **Une interaction ou une simulation reçoit aussi une famille scientifique** : elle n'est jamais classée par son seul format technique.
+
+**A. Modalité** — `static` · `animated` · `interactive_2d` · `interactive_3d` · `simulation`
+
+**B. Nature scientifique** — `qualitative` · `analytical` · `measured` · `simulated`
+**Plusieurs valeurs possibles** : un croquis peut poser un modèle analytique et y placer des points mesurés.
+
+**C. Portée** — `airfoil_2d` · `finite_wing` · `complete_aircraft` · `system` · `operational_environment`
+**Obligatoire seulement lorsqu'elle a un sens** : imposée sur F4, F5 et F10, facultative ailleurs.
+
+### Classement des interactions existantes
+
+| Interaction            | Famille | Modalité       | Nature      | Portée            |
+| ---------------------- | ------- | -------------- | ----------- | ----------------- |
+| `forces-et-vecteurs`   | F2      | interactive_2d | analytical  | complete_aircraft |
+| `venturi`              | F5      | interactive_2d | analytical  | system            |
+| `incidence-decrochage` | F4      | interactive_2d | qualitative | airfoil_2d        |
+| `polaire`              | F10     | interactive_2d | analytical  | airfoil_2d        |
+| `axes-gouvernes`       | F2      | interactive_2d | qualitative | complete_aircraft |
+| `centrage`             | F2      | interactive_2d | analytical  | complete_aircraft |
+| `soufflerie-zones`     | F6      | interactive_2d | qualitative | system            |
+
+---
+
+## 6. Fonctions éditoriales — six, et deux décisions distinctes
+
+**Les six fonctions acceptées :**
+
+`scientific_diagram` · `identification` · `orientation` · `map` · `organization_chart` · `timeline`
+
+**Les deux décisions éditoriales**, qui **ne sont pas des familles de croquis** :
+
+- `photo_preferred` — le réel dit mieux que le trait ; le croquis cède la place ;
+- `reject_no_pedagogical_function` — ne sert ni à comprendre, ni à reconnaître, ni à situer : **supprimer**, et ne pas compter dans la couverture scientifique.
+
+Les confondre reviendrait à dire qu'« à supprimer » est un genre de dessin. `editorialDecision` est donc un champ **séparé** de `function`.
+
+**Une illustration d'identification est légitime** si elle aide à reconnaître, comparer, localiser ou mémoriser. L'audit C0 avait qualifié un lot de visuels de « peut-être décoratifs » ; le reclassement par fonction en a rendu la quasi-totalité légitimes.
+
+---
+
+## 7. Accessibilité
+
+| Élément                                          | Contraste minimal |
+| ------------------------------------------------ | ----------------- |
+| Texte ordinaire                                  | **4,5:1**         |
+| Grand texte (≥ 24 px, ou ≥ 18,66 px gras)        | **3:1**           |
+| Objets graphiques nécessaires à la compréhension | **3:1**           |
+
+Mesurés **dans les deux thèmes**. Un contraste correct en sombre et fautif en clair est un défaut — c'est l'état actuel de la majorité des croquis, traité au lot C5.
+
+- **Aucune information portée uniquement par la couleur.**
+- **Exception — couleurs normalisées d'un instrument réel** (F13) : sur un badin, la couleur _est_ l'information, parce qu'elle est normalisée sur l'instrument. Elle est admise, **à condition d'être doublée** d'un texte, d'un symbole ou d'une position. `badin-arcs` le fait déjà.
+- **Texte alternatif** fondé sur **l'objectif et la conclusion**, sans minimum arbitraire de caractères.
+- **Description longue séparée** (`longDescription`) lorsque le croquis est trop complexe pour un `alt` concis.
+- **Impression en noir et blanc** : lisible sans couleur.
+- **Test à 390 px** : le croquis reste lisible à la largeur mobile de référence.
+
+---
+
+## 8. Cartes — Nord et échelle conditionnels
+
+**Le Nord et l'échelle ne sont obligatoires que lorsque l'orientation ou les distances ont une fonction pédagogique.**
+
+Une carte d'implantation de bases aéronavales qui sert à mémoriser _quelles_ bases existent n'a pas besoin d'une échelle. Une carte de navigation qui sert à mesurer une route a besoin des deux.
+
+Ne pas imposer mécaniquement ces éléments à toute représentation spatiale : ce serait le défaut symétrique de celui que ce document corrige — exiger d'une famille ce qui n'a de sens que pour une autre.
+
+### 8 bis. Le vent — deux objets, deux orientations opposées
+
+**Ajouté en C2, sur source.** Tout croquis portant un vent doit distinguer :
+
+| Objet                                | Ce qu'il désigne                                           | Sens                                 |
+| ------------------------------------ | ---------------------------------------------------------- | ------------------------------------ |
+| **Direction météorologique du vent** | La direction **d'où le vent vient**                        | Degrés, sens horaire, depuis le Nord |
+| **Vecteur vitesse du vent**          | Le déplacement réel de la masse d'air, **vers où elle va** | Opposé au précédent                  |
+
+Un vent « de 045° » vient du nord-est ; **son vecteur pointe vers le sud-ouest**. Les deux sont justes, et leurs flèches sont opposées.
+
+Les deux conventions sont sourcées, et par deux documents indépendants :
+
+- **FR-02** (manuel BIA, éduscol, p. 127) : « La direction du vent indique toujours la provenance du vent », observée « en degrés et mesurée dans le sens des aiguilles d'une montre ».
+- **F-03** (FAA PHAK 25B, p. 16-14, étape 3 de la construction du triangle) : tracer la flèche de vent « **not toward 045°, but downwind in the direction the wind is blowing** ».
+
+**Règle applicable.** Dès qu'un croquis dessine une flèche de vent, il indique laquelle des deux il représente. Une flèche de vent non qualifiée est un défaut : elle est lue à l'envers une fois sur deux, et rien dans le dessin ne permet de trancher.
+
+---
+
+## 9. Doctrine juridique
+
+> **Données et faits issus de sources traçables ; composition, dessin, légendes et identité graphique originaux.**
+
+### Vérification document par document
+
+Jamais en bloc, jamais par organisme :
+
+- **auteur** — agence gouvernementale ou **contractant privé** (fréquent chez NASA) ;
+- **mention de copyright** explicite ;
+- **éléments de tiers** incorporés ;
+- **conditions propres** au document ;
+- **logos, marques, personnes reconnaissables**.
+
+### Citation ≠ autorisation
+
+**Une citation établit la traçabilité scientifique. Elle ne constitue pas une autorisation de reproduction.** Une courbe peut être une œuvre protégée ; les **données** sous-jacentes ne le sont généralement pas. La voie correcte est de **retracer les données dans une composition originale**, lorsque le droit le permet, en citant leur origine.
+
+### Licences
+
+| Licence        | Usage commercial           | Conditions à étudier séparément                                                               |
+| -------------- | -------------------------- | --------------------------------------------------------------------------------------------- |
+| **CC BY-SA**   | **Permis** sous conditions | Attribution · partage à l'identique · fourniture de la licence · indication des modifications |
+| **GFDL**       | **Permis** sous conditions | Conditions propres, plus lourdes                                                              |
+| **Clauses NC** | **Interdit**               | Bloquant si le service devient payant                                                         |
+
+Ce ne sont pas CC BY-SA et GFDL qui bloquent un passage au payant — ce sont les clauses **NC**.
+
+### Statut juridique
+
+Deux valeurs, et deux seulement : `verified` ou `uncertain`.
+
+**Ne jamais écrire « domaine public » sans vérification documentaire.** C'est une conclusion, pas une donnée.
+
+### Silhouettes d'aéronefs
+
+**Un avis juridique est requis avant toute industrialisation de silhouettes reconnaissables d'aéronefs.** C'est l'incertitude majeure du chantier. Elle n'est pas requise avant les deux pilotes génériques de C2, qui n'en comportent aucune.
+
+---
+
+## 10. Contrat graphique (applicable dès C2)
+
+### 10.1 Formats canoniques
+
+Les croquis existants emploient de nombreux `viewBox` distincts, avec une nette convergence. Quatre formats canoniques sont retenus ; tout écart se justifie.
+
+| Format            | `viewBox`     | Emploi                            |
+| ----------------- | ------------- | --------------------------------- |
+| **Paysage large** | `0 0 460 260` | Défaut — le plus répandu          |
+| **Paysage haut**  | `0 0 460 300` | Superpositions verticales, étages |
+| **Compact**       | `0 0 420 240` | Schéma simple, une seule idée     |
+| **Portrait**      | `0 0 340 340` | Coupes verticales, organigrammes  |
+
+**Les croquis existants ne sont pas recadrés.** Normaliser recadrerait des dessins justes, pour un gain d'homogénéité qui ne vaut pas ce risque.
+
+### 10.2 Marges, densité, lisibilité
+
+- **Marge de sécurité** : 12 unités de `viewBox` sur les quatre bords.
+- **Texte minimal — règle refondée en C2-bis, sur le rendu et non sur le fichier.** Le seuil porte sur la **taille effective en pixels CSS à 390 px de viewport** : **12 px pour le texte essentiel**, **11 px pour le secondaire**, et **aucune information scientifique indispensable sous 11 px**.
+
+  L'ancienne règle — 11 unités de `viewBox` — était verte pendant que le texte se rendait à **7,75 px** : une règle sur le fichier ne protège rien, elle rassure. Le facteur d'échelle vaut `324 / largeur du viewBox`, la largeur rendue de 324 px ayant été **mesurée** dans une fiche à 390 px. Un format large impose donc de gros caractères, ce qui est l'arbitrage voulu.
+
+  **Le titre interne d'un croquis est supprimé** quand la légende ou le titre de section le répète : c'est le premier levier avant d'agrandir quoi que ce soit. Grossir sans retirer produit des collisions.
+
+- **Densité** : proportionnée au format et au niveau. **Aucun maximum universel d'étiquettes** — un P3 en porte légitimement davantage qu'un P1. La règle opérante est qu'aucune étiquette n'en chevauche une autre à 390 px.
+
+### 10.3 Conventions de tracé
+
+| Élément                   | Convention                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Trait principal**       | 2 unités, `schema-ink`                                                                                         |
+| **Trait secondaire**      | 1,5 unité, `schema-muted`                                                                                      |
+| **Trait de construction** | 1 unité, pointillé `2 3`, `schema-muted`                                                                       |
+| **Vecteur force**         | Flèche pleine, tête `orient="auto"`, longueur **proportionnelle à l'intensité** si plusieurs forces coexistent |
+| **Filet d'air**           | Ligne fléchée, sens toujours indiqué                                                                           |
+| **Coupe**                 | Hachures à 45°, plan de coupe repéré par deux traits et une lettre                                             |
+| **Axe**                   | Flèche à l'extrémité positive, nom de la grandeur **et son unité**                                             |
+
+### 10.4 Jetons sémantiques
+
+Rôles définis dès C1 ; **valeurs fixées en C2** (`src/app/globals.css`), après mesure de contraste dans les deux thèmes. Aucune couleur n'est retenue pour son esthétique.
+
+Chaque jeton est un **alias** d'un jeton PLANCHE existant, jamais une couleur propre : c'est ce qui empêche le chantier croquis de devenir un second système graphique. Une seule dérogation, mesurée et testée — en registre sombre, `--schema-grid` est opaque plutôt qu'aliasé sur `--border`, qui porte une transparence de 12 % ; un trait semi-transparent se compose sur ce qu'il y a derrière et changerait d'aspect selon le fond.
+
+| Jeton             | Rôle sémantique                                            |
+| ----------------- | ---------------------------------------------------------- |
+| `schema-ink`      | Structure, contours, texte principal, axes                 |
+| `schema-muted`    | Repères secondaires, traits de construction, sous-légendes |
+| `schema-accent`   | La grandeur étudiée, la variable dont parle le croquis     |
+| `schema-surface`  | Fond d'une zone, remplissage de matière                    |
+| `schema-grid`     | Grille d'un graphique                                      |
+| `schema-positive` | État normal, plage autorisée                               |
+| `schema-warning`  | Zone de prudence, seuil approché                           |
+| `schema-danger`   | Limite à ne pas franchir, état critique                    |
+
+Chaque valeur satisfait les seuils du §7 **dans les deux thèmes** — c'est ce qui a manqué aux couleurs actuelles, choisies en regardant le rendu sombre.
+
+**Le seuil dépend du rôle, et le rôle est déclaré.** Appliquer 4,5:1 à tout aurait été plus simple et faux : un trait de grille tenu à 4,5:1 n'est plus une grille. `src/app/contraste-croquis.test.ts` associe donc chaque jeton à `text`, `essential_graphic` ou `decorative`, et mesure contre le seuil correspondant. La déclaration est le vrai contrôle : elle oblige à dire, jeton par jeton, ce qui est perdu si l'élément n'est pas distinguable.
+
+### 10.5 Identifiants SVG
+
+Tout `id` interne est préfixé par **le `schemaId` du croquis suivi de `__`** (`triangle-des-vitesses__f-air`). Plusieurs SVG coexistent sur une page ; sans préfixe, un `url(#a)` résout vers le mauvais marqueur.
+
+C1 évoquait un « trigramme » ; C2 retient le `schemaId` complet, qui est la convention **déjà appliquée** au corpus par le lot M10 et déjà unique par construction. Deux conventions concurrentes auraient été pires que celle qu'on corrige.
+
+Deux gardes : `src/lib/content/croquis-garde.ts` sur les fichiers, `e2e/schemas-identifiants.spec.ts` sur le DOM rendu.
+
+### 10.6 Emplacement des hypothèses et des sources
+
+**Les hypothèses et le domaine de validité n'ont pas à surcharger le dessin.** Ils doivent être disponibles **dans la même figure ou dans son composant documentaire directement associé** — c'est-à-dire portés par les métadonnées et rendus par `FicheFigure`.
+
+Ce qui reste **sur le dessin** : ce dont la lecture immédiate dépend — une mention « non à l'échelle », un régime de vol qui change le sens des flèches.
+
+---
+
+## 11. Checklists d'acceptation
+
+### 11.1 Croquis scientifique
+
+Les lignes conditionnelles ne s'appliquent que si leur condition est remplie.
+
+**Fond**
+
+1. Objectif pédagogique énoncé.
+2. **Si le dessin porte une orientation physique** : repère nommé (§2.1).
+3. Variables symbolisées.
+4. **Si grandeur dimensionnée** : unité présente.
+5. **Si le signe porte du sens** : convention explicite.
+6. Échelle réelle, relative, ou mention « non à l'échelle ».
+7. Hypothèses disponibles (§10.6).
+8. Domaine de validité disponible.
+9. **Au moins une source**, avec sa localisation ou `à vérifier`.
+10. Nature scientifique déclarée.
+11. **Si mesuré ou simulé** : conditions expérimentales ou numériques.
+12. **Si famille F4, F5 ou F10** : portée physique déclarée.
+
+**Forme** 13. Aucune information portée uniquement par la couleur (exception F13, §7). 14. Contrastes du §7 respectés **dans les deux thèmes**. 15. Lisible à 390 px, sans chevauchement d'étiquettes. 16. Imprimable en noir et blanc. 17. Identifiants SVG préfixés.
+
+**Documentaire** 18. Texte alternatif portant l'objectif et la conclusion. 19. **Si trop complexe pour un `alt` concis** : description longue. 20. Version du croquis. 21. Date de vérification scientifique.
+
+### 11.2 Illustration d'identification ou d'orientation
+
+Neuf lignes. **Ni repère, ni unités, ni hypothèses, ni domaine de validité** : ces exigences n'ont pas d'objet ici.
+
+1. Fonction déclarée — identifier, orienter, situer ou mémoriser.
+2. Élément distinctif visible : ce qui permet de reconnaître, pas une forme générique.
+3. Exactitude factuelle de ce qui est représenté.
+4. **Si la forme ou la donnée dérive d'un document tiers** : source citée.
+5. Statut juridique renseigné (`verified` ou `uncertain`).
+6. Contrastes du §7.
+7. Aucune dépendance exclusive à la couleur.
+8. Texte alternatif transmettant ce qu'il faut reconnaître.
+9. Lisible à 390 px.
+
+---
+
+## 12. Palette et typographie actuelles (héritées du 2026-07-09)
+
+Conservées telles quelles jusqu'à la fixation des jetons en C2.
+
+**Palette** — `currentColor` pour la structure et les légendes ; bleu `#3b82f6` pour la grandeur mise en avant ; gris `#94a3b8` pour les repères secondaires. Fond transparent. **Ces deux couleurs sont sous le seuil de contraste en thème clair** (2,56:1 et 3,68:1 mesurés en C0) : défaut traité au lot C5.
+
+**Typographie** — `system-ui` ; titre 14 px semi-gras, libellés 13 px, sous-texte 11 px.
+
+**Représentation homogène des grandeurs** — une même grandeur garde la même représentation partout :
+
+| Grandeur            | Représentation constante                                          |
+| ------------------- | ----------------------------------------------------------------- |
+| Force               | Flèche vectorielle pleine ; la force étudiée en accent            |
+| Vitesse, écoulement | Filet d'air fléché, sens toujours indiqué                         |
+| Pression            | Flèches perpendiculaires à la surface, ou barres proportionnelles |
+| Altitude            | Axe vertical fléché vers le haut, à gauche                        |
+| Température         | Échelle ou valeur en °C, en encre                                 |
+| Densité de l'air    | Densité de points                                                 |
+| Surface             | Segment ou rectangle en encre                                     |
+
+**Marqueurs de flèche** — deux par croquis : `#a` (encre) et `#ac` (accent), `orient="auto"`, préfixés selon §10.5.
+
+**Dimensions** — `viewBox="0 0 W H"`, `width="100%" height="100%"`, `preserveAspectRatio="xMidYMid meet"`. Les `width`/`height` de `figures[]` reprennent W et H.
+
+---
+
+## 13. Portée de ce document
+
+S'applique à **tout croquis produit à partir de C1**. Les croquis antérieurs restent servis sans métadonnées (`meta` facultatif) ; ils ne sont simplement **pas comptés dans la couverture scientifique** tant qu'ils ne sont pas repris.
+
+Complète [`processus-production.md`](processus-production.md) et le design system.

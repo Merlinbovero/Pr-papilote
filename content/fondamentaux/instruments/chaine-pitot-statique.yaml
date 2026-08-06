@@ -125,10 +125,92 @@ content:
         **pression** (baro-).
       figures:
         - schemaId: chaine-anemobarometrique
-          alt: Un schéma reliant la prise statique à l'altimètre, au variomètre et à l'anémomètre, et le tube de Pitot à l'anémomètre seul.
-          caption: La pression statique alimente les trois instruments ; seul l'anémomètre reçoit aussi la pression totale du Pitot.
-          width: 460
-          height: 280
+          alt: >-
+            Circuit Pitot-statique en trois bandes. À gauche, la captation physique : une
+            flèche de vent relatif arrive de face dans l'ouverture frontale d'une sonde Pitot
+            dessinée de profil, dont le mât rejoint la paroi du fuselage ; sur cette même
+            paroi, deux orifices affleurants sont les prises statiques. Au centre, les
+            canalisations : un trait plein marqué Pt part de la sonde et monte vers
+            l'anémomètre seul ; un trait pointillé marqué Ps part des orifices, rejoint une
+            canalisation unique verticale et se divise en trois dérivations. À droite, les
+            trois instruments, chacun suivi de la grandeur qu'il en déduit : anémomètre puis
+            vitesse indiquée, altimètre puis altitude-pression, variomètre puis vitesse
+            verticale indiquée.
+          caption: "Ce que la canalisation transporte est une pression ; les trois indications en sont déduites, et chacune porte le mot « indiquée » ou « pression » qui le rappelle."
+          width: 420
+          height: 240
+          meta:
+            family: F7
+            function: scientific_diagram
+            editorialDecision: keep
+            level: P2
+            modality: static
+            scientificNatures: [analytical]
+            scope: system
+            diagramVersion: 3
+            scientificallyVerifiedAt: "2026-08-05"
+            sources:
+              - id: F-02
+                title: "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25B), ch. 8 « Flight Instruments »"
+                url: https://www.faa.gov/sites/faa.gov/files/10_phak_ch8.pdf
+                location: "p. 8-2, 8-7 et 8-8 ; figures 8-1, 8-2, 8-5"
+                kind: regulatory
+                verificationStatus: figure_verified
+                legalStatus: uncertain
+              - id: F-06
+                title: "FAA, Glider Flying Handbook, ch. 4 « Flight Instruments »"
+                url: https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/glider_handbook/gfh_chapter_4.pdf
+                location: "p. 4-1 et 4-2 ; figures 4-1, 4-3, 4-4"
+                kind: regulatory
+                verificationStatus: figure_verified
+                legalStatus: uncertain
+              - id: FR-01
+                title: "Ministère chargé de l'aviation civile (DSAC/NO/NAV), Notions d'anémométrie, version 22/08/2025"
+                url: https://www.ecologie.gouv.fr/sites/default/files/documents/notions_danemometrie.pdf
+                location: "§2 (p. 1-2) et §4 (p. 4)"
+                kind: regulatory
+                verificationStatus: document_consulted
+                legalStatus: uncertain
+              - id: N-05
+                title: "NASA Glenn Research Center, Beginner's Guide to Aeronautics — Pitot-Static Tube (Speedometer)"
+                url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/pitot-static-tube-speedometer/
+                location: bloc d'équations de la page
+                kind: academic
+                verificationStatus: document_consulted
+                legalStatus: uncertain
+            assumptions:
+              - Écoulement incompressible — la forme simplifiée cesse d'être exacte dès que la compressibilité intervient.
+              - Prise statique non perturbée par l'écoulement local autour du fuselage (erreur de statique, FR-01 §4).
+              - "Tube de Pitot aligné sur l'écoulement relatif : incidence et dérapage faibles."
+              - Masse volumique prise à sa valeur en atmosphère standard — c'est pourquoi l'instrument affiche une vitesse indiquée, non une vitesse propre.
+              - "Circuit non obstrué : ni givrage, ni eau, ni corps étranger dans les prises ou les canalisations."
+            validityDomain: >-
+              Écoulement incompressible, environ jusqu'à 250 kt. FR-01 énonce que la vitesse
+              relève en subsonique de la relation de Saint-Venant, « bien approximée jusqu'à
+              250 kt par la relation de Bernoulli » : la forme simplifiée n'est donc pas la loi
+              du régime subsonique, mais une approximation dont la source donne la portée. Aux
+              très basses vitesses, l'écart de pression devient trop faible pour être mesuré
+              utilement (N-05).
+            longDescription: >-
+              Couche P2, volontairement hors du dessin pour préserver la lisibilité mobile.
+              La prise de pression totale capte Pt = Ps + q ; les prises statiques captent Ps
+              seule. Leur différence isole la pression dynamique q = Pt − Ps, exprimée en
+              pascals. Sous les hypothèses ci-dessus, la vitesse s'en déduit par
+              V = racine de (2q / rho), avec rho la masse volumique de l'air en kilogrammes
+              par mètre cube et V en mètres par seconde. Trois distinctions que le dessin
+              porte et que cette note explicite. Premièrement, la sonde Pitot ne mesure pas
+              une vitesse : elle fournit une pression, et la vitesse en est déduite dans un
+              modèle, après étalonnage de l'instrument et de son installation — c'est
+              pourquoi l'anémomètre affiche une vitesse indiquée, non une vitesse propre.
+              Deuxièmement, l'altimètre exploite la pression statique et affiche une
+              altitude-pression, c'est-à-dire une altitude relative à un calage, non une
+              hauteur mesurée. Troisièmement, le variomètre n'observe pas un déplacement
+              vertical : il exploite l'écart entre la pression statique reçue directement et
+              cette même pression retardée par une fuite calibrée, et c'est le régime de cet
+              écart qui est gradué en pieds par minute (F-02, p. 8-7). Le principe interne des
+              instruments — capsules anéroïdes, diaphragme, fuite calibrée — a été
+              volontairement écarté du croquis : il relève d'une figure distincte, et
+              l'ajouter ici aurait transformé une chaîne fonctionnelle en vue de maintenance.
     - id: obstructions-et-securite
       title: Obstructions et sécurité
       strate: maitriser
