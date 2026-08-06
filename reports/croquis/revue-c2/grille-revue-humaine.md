@@ -1,24 +1,56 @@
 # Grille de revue humaine — pilotes C2
 
-> **Statut : `accepted_as_initial_standard`**
-> **Relecteur :** direction produit — **Date :** 2026-08-05
+> **Statut : `accepted_after_real_device_preview`**
+> **Relecteur :** direction produit — **Date :** 2026-08-06
 >
-> **Appréciation générale.** « Les rendus sont jugés visuellement réussis et
-> suffisamment sérieux pour servir de standard initial aux futurs croquis
-> scientifiques. »
+> **La réserve est levée, et par le seul moyen qui pouvait la lever.** La
+> prévisualisation Vercel réelle a été consultée sur **iPad**, dans les deux
+> registres. Aucune mesure de ce lot ne pouvait trancher ce point : toutes
+> venaient d'un navigateur headless dont la pile de polices ne contient pas
+> `system-ui`, où la graisse 600 est synthétisée.
 >
-> **Réserve.** « Validation définitive du rendu typographique à confirmer sur la
-> prévisualisation web réelle. »
+> Faits confirmés par la direction produit, et rien de plus :
+>
+> | Point                                          | Réponse              |
+> | ---------------------------------------------- | -------------------- |
+> | Prévisualisation réelle consultée              | **oui**              |
+> | Appareil                                       | **iPad**             |
+> | Thème clair                                    | **vérifié**          |
+> | Thème sombre                                   | **vérifié**          |
+> | Lisibilité sans zoom                           | **oui**              |
+> | Graisses des caractères                        | **correctes**        |
+> | Collisions                                     | **aucune constatée** |
+> | Troncatures                                    | **aucune constatée** |
+> | Intégration dans les fiches                    | **correcte**         |
+> | Cohérence prévisualisation ↔ captures validées | **oui**              |
+>
+> **Ce qui reste non contrôlé :** l'iPhone. Le contrôle a porté sur iPad ; la
+> règle typographique est exprimée en pixels effectifs à **390 px** de largeur
+> de viewport, une valeur plus étroite que celle d'un iPad. Le cas le plus
+> contraint de la doctrine n'a donc pas été vu sur appareil réel.
 >
 > Les deux modèles deviennent la référence des prochains lots.
 
+## Historique de la validation
+
+| Date       | Statut                               | Support                                       | Portée                                                   |
+| ---------- | ------------------------------------ | --------------------------------------------- | -------------------------------------------------------- |
+| 2026-08-05 | `accepted_as_initial_standard`       | captures versionnées                          | acceptation avec réserve sur le rendu typographique réel |
+| 2026-08-06 | `accepted_after_real_device_preview` | prévisualisation Vercel, iPad, clair + sombre | réserve levée                                            |
+
+**Correction demandée le 2026-08-05, appliquée avant ce contrôle :** le libellé
+du variomètre est devenu « vitesse verticale **indiquée** ».
+
 ## Ce qui a été évalué, et ce qui ne l'a pas été
 
-Le retour reçu porte sur l'**impression d'ensemble** : rendu visuel, sérieux de
-la structure, lisibilité, hiérarchie. Les questions ci-dessous n'ont **pas**
-reçu de réponse individuelle. Elles restent telles quelles, marquées
+Les deux retours reçus — celui sur captures, puis celui sur la prévisualisation
+réelle — portent sur l'**impression d'ensemble** : rendu visuel, sérieux de la
+structure, lisibilité, hiérarchie, et pour le second, graisse, collisions,
+troncatures et intégration. Les questions ci-dessous n'ont **toujours pas** reçu
+de réponse individuelle. Elles restent telles quelles, marquées
 `non évalué séparément`, plutôt que remplies d'après ce que la décision globale
-laisse supposer : une appréciation d'ensemble n'est pas dix réponses.
+laisse supposer : une appréciation d'ensemble n'est pas dix réponses, et une
+validation sur appareil réel ne les remplit pas rétroactivement.
 
 La grille reste ouverte — un relecteur peut la compléter question par question
 sans que la validation déjà acquise soit remise en cause.
@@ -102,14 +134,23 @@ déclinaison magnétique ? Les trois vecteurs semblent-ils à la même échelle 
 
 - [x] **Accepter comme standard initial** — direction produit, 2026-08-05. Les
       prochains croquis suivront ce modèle.
+- [x] **Confirmer après contrôle sur appareil réel** — direction produit,
+      2026-08-06, prévisualisation Vercel sur iPad, thèmes clair et sombre.
 - [ ] Réviser encore.
 - [ ] Abandonner le modèle.
 
-**Condition qui reste attachée à cette acceptation :** la typographie doit être
-confirmée sur la prévisualisation web réelle. Les mesures de ce lot ont été
-prises dans un navigateur **headless**, dont la pile de polices ne contient pas
-`system-ui` ; la graisse y est synthétisée, et les libellés en 600 y paraissent
-creux. Ce point n'a **pas** été vérifié sur un appareil réel.
+**La condition attachée à l'acceptation du 2026-08-05 est levée.** Elle portait
+sur la typographie : les mesures de ce lot ont toutes été prises dans un
+navigateur **headless**, dont la pile de polices ne contient pas `system-ui` ; la
+graisse y est synthétisée, et les libellés en 600 y paraissent creux. La
+prévisualisation réelle a été ouverte sur iPad, en clair et en sombre, et les
+graisses ont été jugées correctes.
+
+**Ce que ce contrôle ne couvre pas.** L'iPhone. La règle typographique du lot est
+exprimée en pixels effectifs à **390 px** de largeur de viewport — plus étroit
+qu'un iPad, donc plus contraint. Le cas limite de la doctrine reste non observé
+sur appareil réel, et il faut le savoir avant de s'appuyer sur cette validation
+pour un croquis plus dense.
 
 ## Correction demandée à la validation, et appliquée
 

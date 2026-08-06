@@ -75,8 +75,22 @@ puisque les boîtes ne sont pas des étiquettes. Elles se mesurent maintenant av
 
 ## Clôture C2 — validation humaine et report en C3
 
-**Statut : `accepted_as_initial_standard`** (direction produit, 2026-08-05).
-Détail et réserve : `reports/croquis/revue-c2/grille-revue-humaine.md`.
+**Statut : `accepted_after_real_device_preview`** (direction produit,
+2026-08-06). Détail : `reports/croquis/revue-c2/grille-revue-humaine.md`.
+
+La validation s'est faite en deux temps. Le 2026-08-05, les captures ont valu
+`accepted_as_initial_standard`, **avec une réserve** : le rendu typographique
+restait à confirmer sur la prévisualisation web réelle. Cette réserve n'était
+pas une précaution de forme — toutes les mesures du lot viennent d'un navigateur
+headless sans `system-ui`, où la graisse 600 est synthétisée, et aucune d'elles
+ne pouvait donc la lever. Le 2026-08-06, la prévisualisation Vercel a été
+consultée sur **iPad**, dans les deux registres : lisibilité sans zoom, graisses,
+absence de collision et de troncature, intégration aux fiches et cohérence avec
+les captures sont confirmées. La réserve est levée.
+
+**Ce que ce contrôle ne couvre pas :** l'iPhone. La règle typographique est
+exprimée à 390 px de largeur de viewport, plus étroit qu'un iPad ; le cas le
+plus contraint de la doctrine n'a pas été vu sur appareil réel.
 
 Une correction a été demandée et appliquée : le libellé du variomètre devient
 « vitesse verticale **indiquée** ». L'instrument n'observe pas un déplacement
